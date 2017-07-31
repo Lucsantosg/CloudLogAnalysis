@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-07-31"
 
 ---
 
@@ -22,7 +22,7 @@ Here are the answers to common questions about using {{site.data.keyword.Bluemix
 
 * [What can I do if I cannot see data in the Discover page in Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_discover_kibana)
 * [What can I do if I get an authentication exception](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_dashboard_kibana)
-* [How do I launch Kibana 3](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
+* [How do I launch Kibana 3 or Kibana 4](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
 * [Why do I see the symbol ? by fields in the Kibana Discover page](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
 * [I get a 403 error when I try to change the default index pattern](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
 * [Short URL does not work](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
@@ -76,14 +76,14 @@ To resolve this problem, complete the following steps:
 
     If you share the Dashboard, do not delete visualizations since that will affect other team members that use the same dashboard.
 
-## How do I launch Kibana 3
+## How do I launch Kibana 3 or Kibana 4
 {: #logging_qa_kibana3}
 
 **Note:** Kibana 3 is deprecated.
 
-You can launch Kibana 3 from a browser.
+You can launch Kibana 3 or Kibana 4 from a browser.
 
-Complete the following step to launch Kibana 3 from a browser:
+Complete the following step to launch Kibana from a browser:
 
 1. Open [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net) to log in to the Kibana user interface.
     

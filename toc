@@ -84,7 +84,6 @@ IBM Cloud Log Analysis
         kibana3/logging_kibana_filter_by_message_type.md
         kibana3/logging_kibana_tables_graphs.md
         kibana3/logging_kibana_export_share_dashboard.md
-
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
