@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-07-31"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2017-07-19"
 {:pre: .pre}
 
 
-# About
+# Logging in Bluemix
 {: #log_analysis_ov}
 
 Use the {{site.data.keyword.loganalysisfull}} service to expand your log collection, log retention, and log search abilities in {{site.data.keyword.Bluemix}}. Empower your DevOps team with features such as aggregation of application and environment logs for consolidated application or environment insights, encryption of logs, retention of log data for as long as it is required, and quick detection and troubleshooting of issues. Use Kibana for advanced analysis tasks.
@@ -27,6 +27,8 @@ Use the {{site.data.keyword.loganalysisfull}} service to expand your log collect
 * Logs for the last 3 days are stored in Log Search, a component of the {{site.data.keyword.loganalysisshort}} service.
 
 You can use the logging capabilities in {{site.data.keyword.Bluemix_notm}} to understand the behavior of the cloud platform and the resources that are running in it. No special instrumentation is required to collect the standard out and the standard err logs. For example, you can use logs to provide an audit trail for an application, detect problems in your service, identify vulnerabilities, troubleshoot your app deployments and runtime behavior, detect problems in the infrastructure where your app is running, trace your app across components in the cloud platform, and detect patterns that you can use to preempt actions that could affect your service SLA.
+
+The {{site.data.keyword.loganalysisfull}} service provides log collection and log search services for the {{site.data.keyword.Bluemix_notm}} platform, automatically collecting application and {{site.data.keyword.Bluemix_notm}} services’ data from select {{site.data.keyword.Bluemix_notm}} services.
 
 The following figure shows a high level view of the {{site.data.keyword.loganalysisshort}} service components: 
 
