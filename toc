@@ -76,7 +76,6 @@ IBM Cloud Log Analysis
 
     {: .topicgroup}
     Log analysis (Kibana 3) Deprecated
-        kibana3/logging_view_kibana3.md
         kibana3/logging_kibana_query.md
         kibana3/logging_kibana_filter_by_component.md
         kibana3/logging_kibana_filter_by_time_period.md
