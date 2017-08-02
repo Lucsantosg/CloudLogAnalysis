@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-31"
+lastupdated: "2017-08-01"
 
 ---
 
@@ -26,6 +26,8 @@ Here are the answers to common questions about using {{site.data.keyword.Bluemix
 * [Why do I see the symbol ? by fields in the Kibana Discover page](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
 * [I get a 403 error when I try to change the default index pattern](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
 * [Short URL does not work](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
+* [Can I search my account logs in Bluemix?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
+
 
 ## What can I do if I cannot see data in the Discover page in Kibana
 {: #logging_qa_no_data_discover_kibana}
@@ -109,3 +111,15 @@ If you try to set a different index pattern as the new default one, you get the 
 {: #short_url}
 
 Sharing a search, a visualization, or a dashboard is not supported. Therefore, any short URL for a Kibana object that you want to share does not work either. 
+
+## Can I search my account logs in Bluemix?
+{: #acc_logs_1}
+
+As an account owner, you can search and analyze your account logs.
+
+Complete the following steps to see your account logs:
+
+1. [Launch Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) For example for the US South region, use the URL https://logging.ng.bluemix.net,
+
+2. Select the option **View AccountName account Logs** to display the account logs. *AccountName* is the name of the account.
+

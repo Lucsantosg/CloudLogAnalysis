@@ -1,0 +1,86 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="cloudloganalysis" audience="service" href="/docs/services/CloudLogAnalysis/index.html"}
+IBM Cloud Log Analysis
+
+    {: .navgroup id="learn"}
+    index.md
+    
+    {: .topicgroup}
+    ロギング概要
+        log_analysis_ov.md
+        cfapps/logging_cf_apps.md
+        containers/logging_containers_ov.md
+        vm/logging_vm_ov.md
+        kibana/analyzing_logs_Kibana.md
+        
+    {: .topicgroup}
+    新機能
+        migration/es17_to_es51.md
+    
+    {: .topicgroup}
+    チュートリアル
+        containers/tutorials/kibana_tutorial_1.md
+
+    {: .topicgroup}
+    関連リンク
+        [Learn more about Kibana](https://www.elastic.co/guide/en/kibana/5.1/index.html)
+        [Apache Lucene - Query Parser Syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
+    {: .navgroup-end}
+    
+    {: .navgroup id="howto"}
+    logging_view_dashboard.md
+    logging_view_cli.md
+    
+    {: .topicgroup}
+    高度なログ分析 (Kibana)
+        kibana/analize_logs_interactively.md
+        kibana/kibana_visualizations.md
+        kibana/analize_logs_dashboard.md
+        kibana/define_search.md
+        kibana/filter_logs.md
+        kibana/launch.md
+
+    plan/change_plan.md
+    how-to/provision.md
+
+    {: .topicgroup}
+    CF アプリ
+        cfapps/logging_writing_to_log_from_cf_app.md
+        external/logging_external_hosts.md
+
+    {: .topicgroup}
+    Docker コンテナー
+        containers/logging_containers_other_logs.md
+
+    {: .topicgroup}
+    ログ収集
+        how-to/manage-logs/config_log_collection_cli.md
+        how-to/manage-logs/configuring_retention_policy.md
+        how-to/manage-logs/discarding_logs.md
+        how-to/manage-logs/downloading_logs.md
+        how-to/manage-logs/viewing_log_information.md
+        how-to/send-data/send_data_mt.md
+    {: .navgroup-end}
+    
+    {: .navgroup id="reference"}
+    reference/logging_cli.md    
+
+    [Log Collection API](https://console.stage1.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
+    {: .navgroup-end}     
+    
+    {: .navgroup id="help"}
+    gettinghelp.md
+	
+    {: .topicgroup}
+    トラブルシューティング
+        troubleshooting/error_msgs.md
+        
+    {: .topicgroup}
+    FAQ
+        qa/faq_kibana.md
+        qa/kibana_formats.md
+
+    {: .navgroup-end}
+    

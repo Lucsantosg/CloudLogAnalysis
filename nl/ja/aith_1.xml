@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with AI Text Handler 1.0.0 -->
+<ExtractedAITHs>
+<ExtractedAITH file="/cfapps/images/logging_cf_apps_ov.ai">
+<text>BLUEMIX</text>
+<text>IBM Cloud Log Analysis</text>
+<text>着信
+データの
+処理</text>
+<text>ログ検索</text>
+<text>Kibana</text>
+<text>Bluemix UI</text>
+<text>検索可能なログ・レコードの保管</text>
+<text>Cloud Foundry アプリ</text>
+<text>STDOUT、STDERR</text>
+<text>Loggregator</text>
+<text>ログ・レコード</text>
+<text>ログ・
+レコードの
+転送</text>
+<text>スペース</text>
+<text>組織</text>
+<text></text>
+<text>CLI</text>
+<text>API</text>
+<text>ログ収集</text>
+<text>データの送信、削除、ダウンロード
+</text>
+</ExtractedAITH>
+<ExtractedAITH file="/containers/images/containers_kube.ai">
+<text>
+最新アクティビティーの表示
+コマンド: kubectl logs
+</text>
+<text>端末 (Kubernetes CLI)</text>
+<text>
+高度な
+分析タスク
+
+</text>
+<text>
+最新アクティビティーの表示
+</text>
+<text>.Docker.log
+.var/log/messages
+その他のログ・ファイル</text>
+<text>BLUEMIX</text>
+<text>ログ・レコード</text>
+<text></text>
+<text>クローラー</text>
+<text>組織</text>
+<text>スペース</text>
+<text>IBM Bluemix Container Service</text>
+<text>IBM Cloud Log Analysis</text>
+<text>Kubernetes UI</text>
+<text>Kibana</text>
+<text>ログ・
+レコードの
+転送</text>
+</ExtractedAITH>
+<ExtractedAITH file="/containers/images/container_bmx.ai">
+<text>
+最新アクティビティーの表示 </text>
+<text>端末 (CLI)</text>
+<text>
+高度な
+分析タスク
+
+</text>
+<text>着信
+データの
+処理</text>
+<text>.Docker.log
+.var/log/messages
+その他のログ・ファイル</text>
+<text>IBM Cloud Log Analysis</text>
+<text>ログ・レコード</text>
+<text></text>
+<text>クローラー</text>
+<text>組織</text>
+<text>スペース</text>
+<text>IBM Bluemix Container Service</text>
+<text>BLUEMIX</text>
+<text>Bluemix UI</text>
+<text>Kibana</text>
+<text>ログ・
+レコードの
+転送</text>
+<text>
+最新アクティビティーの表示
+コマンド: cf ic logs
+</text>
+</ExtractedAITH>
+<ExtractedAITH file="/images/loganalysis_F1.ai">
+<text>BLUEMIX</text>
+<text>IBM Cloud Log Analysis</text>
+<text>着信
+データの
+処理</text>
+<text>ログ収集</text>
+<text>Kibana</text>
+<text>ログ検索</text>
+<text>データの送信、削除、ダウンロード
+</text>
+<text>CLI</text>
+<text>API</text>
+<text>検索可能なログ・レコードの保管</text>
+</ExtractedAITH>
+</ExtractedAITHs>

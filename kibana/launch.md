@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-07-31"
 
 ---
 
@@ -90,7 +90,7 @@ Complete the following steps to launch Kibana from a browser:
 
 1. Open a web browser and launch Kibana. Then, log in to the Kibana user interface.
     
-    For example, the following table lists the URL that you must use to launch Kibana in the US South region:
+    For example, the following table lists the URL that you must use to launch Kibana per region:
       
     <table>
           <caption>Table 1. URLs to launch Kibana per region</caption>
@@ -100,7 +100,15 @@ Complete the following steps to launch Kibana from a browser:
           </tr>
           <tr>
             <td>US South</td>
-            <td>https://logging.ng.bluemix.net/ </td>
+            <td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net) </td>
+          </tr>
+		  <tr>
+            <td>United Kingdom</td>
+            <td>[https://logmet.eu-gb.bluemix.net](https://logmet.eu-gb.bluemix.net)</td>
+          </tr>
+		  <tr>
+            <td>Frankfurt</td>
+            <td>[https://logging.eu-de.bluemix.net](https://logging.eu-de.bluemix.net)</td>
           </tr>
     </table>
 	

@@ -1,0 +1,86 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="cloudloganalysis" audience="service" href="/docs/services/CloudLogAnalysis/index.html"}
+IBM Cloud Log Analysis
+
+    {: .navgroup id="learn"}
+    index.md
+    
+    {: .topicgroup}
+    Informazioni sulla registrazione
+        log_analysis_ov.md
+        cfapps/logging_cf_apps.md
+        containers/logging_containers_ov.md
+        vm/logging_vm_ov.md
+        kibana/analyzing_logs_Kibana.md
+        
+    {: .topicgroup}
+    Novità
+        migration/es17_to_es51.md
+    
+    {: .topicgroup}
+    Esercitazioni
+        containers/tutorials/kibana_tutorial_1.md
+
+    {: .topicgroup}
+    Link correlati
+        [Ulteriori informazioni su Kibana](https://www.elastic.co/guide/en/kibana/5.1/index.html)
+        [Apache Lucene - sintassi del Query Parser](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
+    {: .navgroup-end}
+    
+    {: .navgroup id="howto"}
+    logging_view_dashboard.md
+    logging_view_cli.md
+    
+    {: .topicgroup}
+    Analisi dei log avanzata (Kibana)
+        kibana/analize_logs_interactively.md
+        kibana/kibana_visualizations.md
+        kibana/analize_logs_dashboard.md
+        kibana/define_search.md
+        kibana/filter_logs.md
+        kibana/launch.md
+
+    plan/change_plan.md
+    how-to/provision.md
+
+    {: .topicgroup}
+    Applicazioni CF
+        cfapps/logging_writing_to_log_from_cf_app.md
+        external/logging_external_hosts.md
+
+    {: .topicgroup}
+    Contenitori Docker
+        containers/logging_containers_other_logs.md
+
+    {: .topicgroup}
+    Raccolta dei log
+        how-to/manage-logs/config_log_collection_cli.md
+        how-to/manage-logs/configuring_retention_policy.md
+        how-to/manage-logs/discarding_logs.md
+        how-to/manage-logs/downloading_logs.md
+        how-to/manage-logs/viewing_log_information.md
+        how-to/send-data/send_data_mt.md
+    {: .navgroup-end}
+    
+    {: .navgroup id="reference"}
+    reference/logging_cli.md    
+
+    [API della raccolta dei log](https://console.stage1.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
+    {: .navgroup-end}     
+    
+    {: .navgroup id="help"}
+    gettinghelp.md
+	
+    {: .topicgroup}
+    Risoluzione dei problemi
+        troubleshooting/error_msgs.md
+        
+    {: .topicgroup}
+    Domande frequenti
+        qa/faq_kibana.md
+        qa/kibana_formats.md
+
+    {: .navgroup-end}
+    

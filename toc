@@ -54,7 +54,10 @@ IBM Cloud Log Analysis
         how-to/manage-logs/discarding_logs.md
         how-to/manage-logs/downloading_logs.md
         how-to/manage-logs/viewing_log_information.md
-        how-to/send-data/send_data_mt.md
+
+    {: .topicgroup}
+    Sending logs
+		how-to/send-data/send_data_mt.md
 
     {: .topicgroup}
     CF apps

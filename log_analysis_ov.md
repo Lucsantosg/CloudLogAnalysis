@@ -102,14 +102,44 @@ You can use the Log Collection API or the Log Collection CLI to delete logs manu
 ## Ingesting logs
 {: #log_ingestion}
 
-All the {{site.data.keyword.loganalysisshort}} service plans, with the exception of the *Lite* plan, include the ability to send logs into Log Collection from outside the {{site.data.keyword.IBM_notm}} Cloud. For more information about the plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+All the {{site.data.keyword.loganalysisshort}} service plans, with the exception of the *Lite* plan, include the ability to send logs into Log Collection from outside the {{site.data.keyword.IBM_notm}} Cloud. 
 
-You can send logs into the {{site.data.keyword.loganalysisshort}} by using the multi-tenant Logstash Forwarder. For more information, see [Send log data by using a Multi-Tenant Logstash Forwarder (mt-logstash-forwarder).](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
+* For more information about the plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+* For more information about the ingestion URLs, see [Ingestion URLs](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_ingestion_urls).
+
+You can send logs into the {{site.data.keyword.loganalysisshort}} by using the multi-tenant Logstash Forwarder. For more information, see [Send log data by using a Multi-Tenant Logstash Forwarder (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
+
+## Ingestion URLs
+{: #log_ingestion_urls}
+
+The following table lists the URLs that you must use to send logs into {{site.data.keyword.Bluemix_notm}}:
+
+<table>
+  <caption>Ingestion URLs</caption>
+    <tr>
+      <th>Region</th>
+      <th>URL</th>
+    </tr>
+  <tr>
+    <td>US South</td>
+	<td>ingest.logging.ng.bluemix.net:9091</td>
+  </tr>
+  <tr>
+    <td>United Kingdom</td>
+	<td>logs.eu-gb.opvis.bluemix.net:9091</td>
+  </tr>
+  <tr>
+    <td>Frankfurt</td>
+	<td>ingest.logging.eu-de.bluemix.net</td>
+  </tr>
+</table>
 
 ## Searching logs
 {: #log_search}
 
-By default, you can use Kibana 5.1 to search up to 500 MB of logs per day in {{site.data.keyword.Bluemix_notm}}. 
+By default, you can use Kibana to search up to 500 MB of logs per day in {{site.data.keyword.Bluemix_notm}}. For more information on how to define custom search queries in Kibana, see [Defining custom search queries in Kibana](/docs/services/CloudLogAnalysis/kibana/define_search.html#define_search).
+
+To launch Kibana, see [Navigating to the Kibana dashboard](/docs/services/CloudLogAnalysis/kibana/launch.html#launch).
 
 The {{site.data.keyword.loganalysisshort}} service provides multiple plans. Each plan has different log search capabilities, for example, the *Log Collection* plan allows you to search up to 1 GB of data per day. For more information about the plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
@@ -130,6 +160,7 @@ In {{site.data.keyword.Bluemix_notm}}, you can view the recent logs or tail logs
 
 In {{site.data.keyword.Bluemix_notm}}, you can use Kibana, an open source analytics and visualization platform, to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. For more information, see [Advanced log analysis with Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
 
+For more information on how to launch Kibana, see [Navigating to the Kibana dashboard](/docs/services/CloudLogAnalysis/kibana/launch.html#launch).
 
 ## Managing logs through the CLI
 {: #managing_logs}
@@ -169,6 +200,13 @@ You can use the {{site.data.keyword.loganalysisshort}} CLI to view and configure
 **Note:** When you disable the log retention policy, you must maintain the logs in Log Collection. You can use the CLI command [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete) to delete old logs.
 
 For more information, see [Viewing and configuring the log retention policy](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy.html#configuring_retention_policy).
+
+## Regions
+{: #regions}
+
+The {{site.data.keyword.loganalysisfull_notm}} service is available in the following region:
+
+* US South
 
 
 ## Service plans
@@ -228,11 +266,38 @@ The following table outlines the plans that are available:
 
 **Note:** The monthly cost of Log Collection storage is calculated as an average of the billing cycle.
 
-## Regions
-{: #regions}
 
-The {{site.data.keyword.loganalysisfull_notm}} service is available in the following region:
 
-* US South
+## URLs to launch Kibana
+{: #urls_kibana}
+
+The following table lists the URLs to launch Kibana, and the versions of Kibana per region:
+
+<table>
+    <caption>URLs to launch Kibana</caption>
+    <tr>
+      <th>Region</th>
+      <th>URL</th>
+      <th>Kibana version</th>
+    </tr>
+    <tr>
+      <td>US South</td>
+      <td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+	  <td>[https://logmet.eu-gb.bluemix.net](https://logmet.eu-gb.bluemix.net)</td>
+	  <td>Kibana 4, Kibana 3</td>
+    </tr>
+    <tr>
+      <td>Frankfurt</td>
+	  <td>[https://logging.eu-de.bluemix.net](https://logging.eu-de.bluemix.net)</td>
+	  <td>Kibana 4</td>
+    </tr>
+</table>
+
+
+
 
 
