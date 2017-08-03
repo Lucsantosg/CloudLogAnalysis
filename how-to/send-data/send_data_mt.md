@@ -85,7 +85,7 @@ Complete the following steps to configure mt-logstash-forwarder in the environme
     
 2.	Install the Network Time Protocol (NTP) package to synchronize the time of the logs. 
 
-    For example, for an Ubunutu system, chek if `timedatectl status` shows *Network time on: yes*. If it does, your Ubuntu system is already configured to use ntp and you can skip this step.
+    For example, for an Ubunutu system, check if `timedatectl status` shows *Network time on: yes*. If it does, your Ubuntu system is already configured to use ntp and you can skip this step.
     
     ```
     # timedatectl status
@@ -239,14 +239,7 @@ Complete the following steps to configure mt-logstash-forwarder in the environme
        service mt-logstash-forwarder start
        ```
        {: codeblock}
-        
-       Enable the mt-logstash-forwarder to start automatically after a crash or reboot. 
-        
-       ```
-       service mt-logstash-forwarder enable
-       ```
-       {: codeblock}
-        
+                
        **Tip:** To restart the mt-logstash-forwarder service, run the following command:
     
        ```
