@@ -10,11 +10,12 @@ IBM Cloud Log Analysis
     {: .topicgroup}
     About logging
         log_analysis_ov.md
+        security_ov.md
         cfapps/logging_cf_apps.md
         containers/logging_containers_ov.md
         vm/logging_vm_ov.md
         kibana/analyzing_logs_Kibana.md
-        
+
     {: .topicgroup}
     What's new
         migration/es17_to_es51.md
@@ -57,7 +58,13 @@ IBM Cloud Log Analysis
 
     {: .topicgroup}
     Sending logs
-		how-to/send-data/send_data_mt.md
+        how-to/send-data/send_data_mt.md
+
+    {: .topicgroup}
+    Security
+        security/auth_uaa.md
+        security/auth_iam.md
+        security/grant_permissions.md
 
     {: .topicgroup}
     CF apps
@@ -106,6 +113,7 @@ IBM Cloud Log Analysis
     FAQ
         qa/faq_kibana.md
         qa/kibana_formats.md
+        qa/cli_qa.md
 
     {: .navgroup-end}
     
