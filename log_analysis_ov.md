@@ -87,6 +87,7 @@ The {{site.data.keyword.loganalysisfull_notm}} service is available in the follo
 
 * Germany
 * US South
+* Sydney
 
 ## Service plans
 {: #plans}
