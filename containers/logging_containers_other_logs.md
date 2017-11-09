@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -15,23 +15,23 @@ lastupdated: "2017-07-19"
 {:pre: .pre}
 
 
-# Collecting non-default log data from a container
+# Collecting non-default log data from a container (DEPRECATED)
 {: #logging_containers_collect_data}
 
-To capture data from non-default log locations inside a container that is deployed in the {{site.data.keyword.Bluemix_notm}}-managed cloud  infrastructure, set the environment variable **LOG_LOCATIONS** when you create a container. 
+To capture data from non-default log locations inside a container that is deployed in the {{site.data.keyword.Bluemix_notm}}-managed infrastructure, set the environment variable **LOG_LOCATIONS** when you create a container. 
 {:shortdesc}
 
 * Add the **LOG_LOCATIONS** environment variable with a path to the log file when you create the container. 
 * You can add multiple log files by separating them with commas. 
 
-## Collecting non-default log data through the Bluemix console
+## Collecting non-default log data through the IBM Cloud console
 {: #logging_containers_collect_data_ui}
 
 Complete the following steps to collect non-default data through the console:
 
 1. From the catalog, select **Containers** and choose an image. 
 
-    The list of images that are displayed include images that are provided by {{site.data.keyword.IBM}} and images that are stored in your private {{site.data.keyword.Bluemix_notm}} registry. 
+    The list of images that are displayed include images that are provided by {{site.data.keyword.IBM_notm}} and images that are stored in your private {{site.data.keyword.Bluemix_notm}} registry. 
 
 2. Define your container. Choose the type, enter a name for the container, select its size, and define other attributes such as IP address details and ports. For more information, see [Create and deploy a single container through the {{site.data.keyword.Bluemix_notm}} UI](/docs/containers/container_single_ui.html#gui). 
 
@@ -65,38 +65,11 @@ The container dashboard opens. Check the status of the container is *Running*, t
 
 Complete the following steps to collect non-default log data through the CLI:
 
-1. Set up a terminal to use the {{site.data.keyword.containershort}} CLI. For more information, see [Setting up the IBM Bluemix Container Service CLI](/docs/containers/container_cli_cfic_install.html).
+1. Set up a terminal to use the {{site.data.keyword.containershort}} CLI. For more information, see [Setting up the {{site.data.keyword.containershort}} CLI](/docs/containers/container_cli_cfic_install.html).
 
-2. Log in to the Cloud Foundry CLI by using the following command: `cf login`. Enter your {{site.data.keyword.Bluemix_notm}} ID, password, organization, and space as you are prompted. 
+2. Log in to the Cloud Foundry CLI by using the following command: `bx login`. Enter your {{site.data.keyword.IBM_notm}}ID, password, organization, and space as you are prompted. 
 
-    By default, you are logged in to the US South region or the last region you logged in to. 
-    
-    You can include the **–a** option to log in to a specific region in {{site.data.keyword.Bluemix_notm}}. For example, the following table lists the commands per region:
-
-    <table>
-      <caption>Table 2. Commands per region</caption>
-      <tbody>
-        <tr>
-          <th align="center">Region</th>
-          <th align="center">Command</th>
-        </tr>
-        <tr>
-          <td align="left">US South</td>
-          <td align="left"> cf login -a api.ng.bluemix.net</td>
-        </tr>
-        <tr>
-          <td align="left">United Kingdom</td>
-          <td align="left">cf login -a api.eu-gb.bluemix.net</td>
-        </tr>
-	 <tr>
-          <td align="left">Frankfurt</td>
-          <td align="left">cf login -a api.eu-de.bluemix.net</td>
-        </tr>
-       </tbody>
-    </table>
-    
-
-3. Log in to the {{site.data.keyword.containershort}} by using the following command: `cf ic login`
+3. Log in to the {{site.data.keyword.containershort}} by using the following command: `bx cf ic login`
 
 4. Create a single container from an image. Include the LOG_LOCATIONS environment variable to include non-default log locations.  
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-08-25"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -18,12 +18,12 @@ lastupdated: "2017-08-25"
 # Granting permissions
 {: #grant_permissions}
 
-In {{site.data.keyword.Bluemix}}, you can assign one or more roles to users. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service. 
+In the {{site.data.keyword.Bluemix}}, you can assign one or more roles to users. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service. 
 {:shortdesc}
 
 
 
-## Granting a user permission to view account logs by using the Bluemix UI
+## Granting a user permission to view account logs by using the {{site.data.keyword.Bluemix_notm}} UI
 {: #grant_permissions_ui_account}
 
 To grant a user permissions to view and manage account logs, you must add a policy for that user that describes the actions that this user can do with the {{site.data.keyword.loganalysisshort}} service in the account. Only account owners can assign individual policies to users.
@@ -62,7 +62,7 @@ In {{site.data.keyword.Bluemix_notm}}, complete the following steps to grant a u
 	  </tr>
 	  <tr>
 	    <td>Roles</td>
-		<td>Select one or more IAM roles. <br>Valid roles are: *administrator*, *operator*, *editor*, and *viewer*. <br>For more information about the actions that are allowed per role, see [Bluemix IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).</td>
+		<td>Select one or more IAM roles. <br>Valid roles are: *administrator*, *operator*, *editor*, and *viewer*. <br>For more information about the actions that are allowed per role, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).</td>
 		<td>Required</td>
 	  </tr>
 	  <tr>
@@ -78,12 +78,12 @@ The policy that you configure is applicable to the selected regions.
 
 
 
-## Granting a user permission to work with space logs by using the Bluemix UI
+## Granting a user permission to work with space logs by using the {{site.data.keyword.Bluemix_notm}} UI
 {: #grant_permissions_ui_space}
 
 To grant a user permissions to view and manage space logs, you must assign the user a Cloud Foundry role that describes the actions that this user can do with the {{site.data.keyword.loganalysisshort}} service in a space. 
 
-In {{site.data.keyword.Bluemix_notm}}, complete the following steps to grant a user permissions to work with the {{site.data.keyword.loganalysisshort}} service:
+In the {{site.data.keyword.Bluemix_notm}}, complete the following steps to grant a user permissions to work with the {{site.data.keyword.loganalysisshort}} service:
 
 1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
 
@@ -139,7 +139,7 @@ The policy that you configure is applicable to the selected regions.
 ## Granting a user permissions to view account logs by using the command line
 {: #grant_permissions_commandline}
 
-To grant a user permissions to view and manage account logs, you must grant the user an IAM role. For more information about IAM roles and what tasks are enabled by role to work with the {{site.data.keyword.loganalysisshort}} service, see [Bluemix IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+To grant a user permissions to view and manage account logs, you must grant the user an IAM role. For more information about IAM roles and what tasks are enabled by role to work with the {{site.data.keyword.loganalysisshort}} service, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
 
 This operation can be performed only by the account owner.
 
@@ -176,7 +176,7 @@ Complete the following steps to grant a user access to view account logs by usin
 	
 	    For example, request the user to run the following commands to get his user ID:
 		
-		Get the IAM token. For more information, see [Getting the IAM token by using the Bluemix CLI](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
+		Get the IAM token. For more information, see [Getting the IAM token by using the {{site.data.keyword.Bluemix_notm}} CLI](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
 
         Get the data from the IAM token that is between the first 2 dots in the IAM token. Export the data to a shell variable such as `$user_data`. 
 		
@@ -248,7 +248,7 @@ Complete the following steps to grant a user access to view account logs by usin
 	
 5. Get the IAM token for your user ID.
 
-    For more information, see [Getting the IAM token by using the Bluemix CLI](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
+    For more information, see [Getting the IAM token by using the {{site.data.keyword.Bluemix_notm}} CLI](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
 
     Export the IAM token to a shell variable such as `$iam_token`, for example:
 	
@@ -274,6 +274,6 @@ Complete the following steps to grant a user access to view account logs by usin
 	{: codeblock}
 
 	
-After you grant permissions to a user, the user can log in to {{site.data.keyword.Bluemix_notm}}, and see account level logs.
+After you grant permissions to a user, the user can log in to the {{site.data.keyword.Bluemix_notm}}, and see account level logs.
 
 

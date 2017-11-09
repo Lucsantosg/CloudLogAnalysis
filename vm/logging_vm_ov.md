@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-07-14"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -22,7 +22,7 @@ Logging capabilities are not enabled automatically for virtual machines (VMs). H
 ## Log ingestion
 {: #log_ingestion}
 
-The {{site.data.keyword.loganalysisshort}} service offers different plans. Each plan defines whether or not you can send logs into Log Collection. All plans, with the exception of the *Lite* plan, include the ability to send logs into Log Collection. For more information about the plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+The {{site.data.keyword.loganalysisshort}} service offers different plans. All plans, with the exception of the *Lite* plan, include the ability to send logs into Log Collection. For more information about the plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 You can send logs into the {site.data.keyword.loganalysisshort}} by using the mt-logstash-forwarder. For more information, see [Send log data by using a Multi-Tenant Logstash Forwarder (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
 
@@ -30,7 +30,7 @@ You can send logs into the {site.data.keyword.loganalysisshort}} by using the mt
 ## Log collection
 {: #log_collection}
 
-By default, {{site.data.keyword.Bluemix_notm}} stores log data for up to 3 days:   
+By default, the {{site.data.keyword.Bluemix_notm}} stores log data for up to 3 days:   
 
 * A maximum of 500 MB per space of data is stored per day. Any logs beyond that 500 MB cap are discarded. Cap allotments reset each 
 day at 12:30 AM UTC.
@@ -38,13 +38,14 @@ day at 12:30 AM UTC.
 
 The {{site.data.keyword.loganalysisshort}} service provides additional plans that allow you to store logs in Log Collection for as long as you require. For more information about the price of each plan, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-You can configure a log retention policy that you can use to define the number of days that you want to keep logs in Log Collection. For more information, see [Log Retention policy](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* You can configure a log retention policy that you can use to define the number of days that you want to keep logs in Log Collection. For more information, see [Log Retention policy](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* You can delete logs manually by using the Log Collection CLI or the API.
 
 
 ## Log search
 {: #log_search}
 
-By default, you can use Kibana to search up to 500 MB of logs per day in {{site.data.keyword.Bluemix_notm}}. 
+By default, you can use Kibana to search up to 500 MB of logs per day in the {{site.data.keyword.Bluemix_notm}}. 
 
 {{site.data.keyword.loganalysisshort}} service provides multiple plans. Each plan has different log search capabilities, for example, the *Log Collection* plan allows you to search up to 1 GB of data per day. For more information about the plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 

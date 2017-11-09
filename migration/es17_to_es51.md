@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-07-31"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -15,7 +15,7 @@ lastupdated: "2017-07-31"
 # Migration considerations after the upgrade of the Elastic Stack to version 5.1 
 {: #es17_to_es51}
 
-In {{site.data.keyword.Bluemix}}, the ElasticSearch (ELK) stack is upgraded from version 1.7 to version 5.1. New features, new URLS to ingest logs, and new URLs to analyze logs in Kibana are available. For more information, see [ElasticSearch 5.1 ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/elasticsearch/reference/5.1/index.html).
+In the {{site.data.keyword.Bluemix}}, the ElasticSearch (ELK) stack is upgraded from version 1.7 to version 5.1. New features, new URLS to ingest logs, and new URLs to analyze logs in Kibana are available. For more information, see [ElasticSearch 5.1 ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/elasticsearch/reference/5.1/index.html).
 {:shortdesc}
 
 This feature does not apply to users that use the logging service with Docker containers that are deployed in a Kubernetes cluster. 
@@ -75,7 +75,7 @@ The Elastic version 5.1 is available in the following region:
 ## Logging URLs
 {: #logging}
 
-Different URLs are used to send logs into {{site.data.keyword.Bluemix_notm}} and to analyze data in Kibana.
+Different URLs are used to send logs into the {{site.data.keyword.Bluemix_notm}} and to analyze data in Kibana.
 
 The following table lists URLs for the US South region:
 
@@ -136,7 +136,7 @@ The following table lists URLs for the Frankfurt region:
   <tr>
      <td>Kibana URL to analyze logs</td>
 	 <td>[https://logging.eu-de.bluemix.net](https://logging.eu-de.bluemix.net)</td>
-	 <td>Not vavailable yet</td>
+	 <td>Not available yet</td>
   </tr>
 </table>
 

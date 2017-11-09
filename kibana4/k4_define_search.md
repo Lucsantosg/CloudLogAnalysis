@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2017
 
-lastupdated: "2017-05-22"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -39,7 +39,7 @@ Complete the following tasks to define a custom search:
 
     **Note:** Use the Lucene query language to define your custom query. For more information, see [Apache Lucene - Query Parser Syntax  ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}
     
-    When Kibana is launched from {{site.data.keyword.Bluemix_notm}}, to modify the query and define multiple search criteria, you can use the logical terms **AND** and **OR**. These operators must be in uppercase.    
+    When Kibana is launched from the {{site.data.keyword.Bluemix_notm}}, to modify the query and define multiple search criteria, you can use the logical terms **AND** and **OR**. These operators must be in uppercase.    
     
     * To search for a keyword, or part of a keyword, enter a word, followed by a wildcard symbol \*; for example, `Java*`. 
     * To search for a particular phrase, enter that phrase in double quotation marks; for example, `"Java/1.8.0"`.

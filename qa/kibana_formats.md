@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -35,8 +35,8 @@ You can configure Kibana to display in the *Discover* page the following fields 
 | \_id | The unique id for your log document. |
 | \_index | The index for your log entry. |
 | \_type | The type of log; for example, *syslog*. |
-| app_name | The name of your {{site.data.keyword.Bluemix_notm}} application. |
-| application_id | The unique id of your {{site.data.keyword.Bluemix_notm}} application. |
+| app_name | The name of your application. |
+| application_id | The unique id of your application. |
 | host | The name of your application that produced the log data. |
 | instance_id | The instance id of your application instance that produced the log data. |
 | loglevel | The severity of the logged event. |
@@ -52,7 +52,7 @@ You can configure Kibana to display in the *Discover* page the following fields 
 
 
 
-## Kibana log format for Docker containers that are deployed in a Bluemix-managed infrastructure
+## Kibana log format for Docker containers that are deployed in an IBM-managed infrastructure (Deprecated)
 {: #kibana_log_format_containers}
 
 You can configure Kibana to display in the *Discover* page the following fields for each log entry:

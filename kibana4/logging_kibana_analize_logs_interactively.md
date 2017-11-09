@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2017
 
-lastupdated: "2017-04-06"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -19,9 +19,9 @@ lastupdated: "2017-04-06"
 In the the Discover page, you can view and analyze your {{site.data.keyword.Bluemix}} logs interactively. You can define search queries to filter that data by using the Lucene query language. For each search query, you can apply filters to refine the entries that are available for analysis. You can save a search for future reuse.
 {:shortdesc}
 
-In {{site.data.keyword.Bluemix_notm}}, by default, the set of data that is displayed in the Discover page when you launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI is configured to only show the entries for the Cloud Foundry (CF) application or container from which you launch Kibana. For more information on how to see what subset of your data the Discover page displays, see [Identifying the data that is displayed](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+In the {{site.data.keyword.Bluemix_notm}}, by default, the set of data that is displayed in the Discover page when you launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI is configured to only show the entries for the Cloud Foundry (CF) application or container from which you launch Kibana. For more information on how to see what subset of your data the Discover page displays, see [Identifying the data that is displayed](logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
-The following table shows the default query per resource when you launch Kibana from {{site.data.keyword.Bluemix_notm}}:
+The following table shows the default query per resource when you launch Kibana from the {{site.data.keyword.Bluemix_notm}}:
 
 | Resource | Default Kibana Search Query |
 |---------------|---------------|
@@ -97,7 +97,7 @@ For more information, see [Viewing Field Data Statistics](logging_kibana_analize
 {: #kibana_discover_add_fields_to_table}
 
 The table that is available to analyze data in the Discover page includes the following fields by default:
-* **time:** This field indicates when the entry was captured and recorded in {{site.data.keyword.Bluemix_notm}}.
+* **time:** This field indicates when the entry was captured and recorded in the {{site.data.keyword.Bluemix_notm}}.
 * **_source:**  This field includes the original data of the entry.
 
 You can add a field column to the table by choosing any of the following options:
@@ -131,7 +131,7 @@ For example, if you add the *application_id* field to the table, the table chang
 ## Automatically refreshing the data
 {: #kibana_discover_view_refresh_interval}
 
-By default, in {{site.data.keyword.Bluemix_notm}}, the *Auto refresh* period is set to **OFF** and the data that you can see in Kibana corresponds to the last 15 minutes since you launched Kibana. The 15 minutes correspond to the time filter that is pre-configured. You can change it by setting a different time period. For more information, see [Setting a time filter](logging_kibana_set_time_filter.html#set_time_filter).
+By default, in the {{site.data.keyword.Bluemix_notm}}, the *Auto refresh* period is set to **OFF** and the data that you can see in Kibana corresponds to the last 15 minutes since you launched Kibana. The 15 minutes correspond to the time filter that is pre-configured. You can change it by setting a different time period. For more information, see [Setting a time filter](logging_kibana_set_time_filter.html#set_time_filter).
 
 Complete the following steps to set an *Auto refresh* period:
 
@@ -150,13 +150,13 @@ You can pause the refresh interval by clicking the pause button ![Pause button](
 ## Identifying the data that is displayed in the Discover page
 {:#k4_identify_data}
 
-When you use Kibana to analyze {{site.data.keyword.Bluemix_notm}} logs, the data that you can see depends on how you launch Kibana, the index pattern that is configured, and the custom query and filters that you might have applied.
+When you use Kibana to analyze the {{site.data.keyword.Bluemix_notm}} logs, the data that you can see depends on how you launch Kibana, the index pattern that is configured, and the custom query and filters that you might have applied.
 
 Consider the following information to identify the data that is available in the table and histogram of the Discover page:
 
 1. Check the index pattern in the Settings page.
 
-    The index pattern defines the search query that is applied by default to show entries in your Kibana pages. By default, the index pattern in pre-configured and set to all the data that is available in a {{site.data.keyword.Bluemix_notm}} space. For example,
+    The index pattern defines the search query that is applied by default to show entries in your Kibana pages. By default, the index pattern in pre-configured and set to all the data that is available in a space. For example,
 
     * If you launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI, that is, from the *Log* section of the UI pages of a specific resource like a Cloud Foundry (CF) application or a container, the index pattern that is applied includes all entries that are available in the space.
     

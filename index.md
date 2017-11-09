@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -21,7 +21,7 @@ In this getting started tutorial, we'll take you through the steps to perform ad
 ## Before you begin
 {: #prereqs}
 
-Create a [{{site.data.keyword.Bluemix_notm}} account](https://console.bluemix.net/registration/). Your user ID must be a member or an owner of a {{site.data.keyword.Bluemix_notm}} account with permissions to create Kubernetes clusters, deploy apps into clusters, and query the logs in {{site.data.keyword.Bluemix_notm}} for advanced analysis in Kibana.
+Create a [{{site.data.keyword.Bluemix_notm}} account](https://console.bluemix.net/registration/). Your user ID must be a member or an owner of an {{site.data.keyword.Bluemix_notm}} account with permissions to create Kubernetes clusters, deploy apps into clusters, and query logs for advanced analysis in Kibana.
 
 Open a terminal session from where you can manage the Kubernetes cluster and deploy apps from the command line. The examples in this tutorial are given for an Ubuntu Linux system.
 
@@ -34,7 +34,32 @@ Open a terminal session from where you can manage the Kubernetes cluster and dep
 
 1. [Create a Kubernetes cluster](/docs/containers/cs_cluster.html#cs_cluster_ui).
 
-2. [Set up the cluster context](/docs/containers/cs_cli_install.html#cs_cli_configure) in a Linux terminal. After the context is set, you can manage the Kubernetes cluster and deploy the application in the Kubernetes cluster.
+2. Set up the cluster context in a Linux terminal. After the context is set, you can manage the Kubernetes cluster and deploy the application in the Kubernetes cluster.
+
+    Log in to the region, organization, and space in the {{site.data.keyword.Bluemix_notm}} that is associated with the cluster that you created. For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+
+	Initialize the {{site.data.keyword.loganalysisshort}} service plug-in.
+
+	```
+	bx cs init
+	```
+	{: codeblock}
+
+    Set your terminal context to your cluster.
+    
+	```
+	bx cs cluster-config MyCluster
+	```
+	{: codeblock}
+
+    The output of running this command provides the command that you must run in your terminal to set the path to your configuration file. For example:
+
+	```
+	export KUBECONFIG=/Users/ibm/.bluemix/plugins/container-service/clusters/MyCluster/kube-config-hou02-MyCluster.yml
+	```
+	{: codeblock}
+
+    Copy and paste the command to set the environment variable in your terminal, and then press **Enter**.
 
 3. Deploy and run a sample app in the Kubernetes cluster. [Complete the steps for lesson 1](/docs/containers/cs_tutorials.html#cs_apps_tutorial).
 
@@ -60,7 +85,7 @@ Open a terminal session from where you can manage the Kubernetes cluster and dep
 ## Step 2: Navigate to the Kibana dashboard
 {: #step2}
 
-To analyze log data for a cluster, you must access Kibana in the cloud Public region where the cluster is created. 
+To analyze log data for a cluster, you must access Kibana in the cloud Public region where the cluster is created. For more information on how to launch Kibana, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 
 For example, to launch Kibana in the US South region, navigate to the following URL:
 

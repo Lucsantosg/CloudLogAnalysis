@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-07-28"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -20,24 +20,19 @@ You can download logs to a local file or pipe data into another program. You dow
 
 Complete the following steps to download log data that is available in a {{site.data.keyword.Bluemix_notm}} space into a local file:
 
-## Step 1: Log in to Bluemix
+## Step 1: Log in to the IBM Cloud
 
-Before you start, log in to a {{site.data.keyword.Bluemix_notm}} region, organization, and space. 
+Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-For example, to log in to the US South region, run the following command:
-	
-```
-cf login -a https://api.ng.bluemix.net
-```
-{: codeblock}
+For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 ## Step 2: Identify what logs are available
 {: #step2}
 
-1. Use the `cf logging status` command to see what logs are available for the last 2 weeks. Run the following command:
+1. Use the `bx cf logging status` command to see what logs are available for the last 2 weeks. Run the following command:
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
@@ -70,7 +65,7 @@ Use the command [cf logging session create](/docs/services/CloudLogAnalysis/refe
 To create a session that is used to download logs of type *log*, run the following command:
 
 ```
-cf logging session create -t log
+bx cf logging session create -t log
 ```
 {: codeblock}
 
@@ -84,7 +79,7 @@ The session returns the following information:
 For example,
 
 ```
-$ cf logging session create -t log     
+$ bx cf logging session create -t log     
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -112,7 +107,7 @@ $ cf logging session create -t log
 To download the logs that are specified by the session parameters, run the following command:
 
 ```
-cf logging download -o Log_File_Name Session_ID
+bx cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -124,7 +119,7 @@ where
 For example,
 
 ```
-cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -145,7 +140,7 @@ After the download is complete, you must delete the session by using the [cf log
 Run the following command to delete a session:
 
 ```
-cf logging session delete Session_ID
+bx cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -154,7 +149,7 @@ Where Session_ID is the GUID of the session that you created in a previous step.
 For example,
 
 ```
-cf logging session delete -jshdjsunelsssr4566722==
+bx cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

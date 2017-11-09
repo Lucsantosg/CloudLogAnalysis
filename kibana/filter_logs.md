@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -238,7 +238,7 @@ The table shows entries for your CF app where the text *CWWKT0016I* is part of t
 ## Setting a time filter
 {: #set_time_filter}
 
-View and filter {{site.data.keyword.Bluemix_notm}} logs within a time period by configuring the *Time Picker*.
+View and filter logs within a time period by configuring the *Time Picker*.
 
 You can configure the *Time Picker* in the Discover page. By default, it is set to the last 15 minutes. 
 

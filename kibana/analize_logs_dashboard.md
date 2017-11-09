@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -20,16 +20,16 @@ lastupdated: "2017-07-19"
 Use the *Dashboard* page in Kibana to display collections of visualizations that are grouped in dashboards. Use the dashboards to analyze your log data and compare results.
 {:shortdesc}
 
-In {{site.data.keyword.Bluemix}}, there are different types of dashboards that you can define and customize to visualize and analyze the data. For example, the following table lists some common dashboard types:
+In the {{site.data.keyword.Bluemix}}, there are different types of dashboards that you can define and customize to visualize and analyze the data. For example, the following table lists some common dashboard types:
 
 | Type of dashboard | Description |
 |-------------------|-------------|
 | Single-cf-app dashboard | This is a dashboard that shows information for a single Cloud Foundry application. |
 | Single container dashboard  | This is a dashboard that shows information for a single container.  |
 | Container group dashboard  | This is a dashboard that shows information for a specific container group.  |
-| Multi-cf-app dashboard | This is a dashboard that shows information for all the Cloud Foundry applications that are deployed in the same  {{site.data.keyword.Bluemix_notm}} space.  | 
-| Multi-container dashboard | This is a dashboard that shows information for all the containers that are deployed in the same {{site.data.keyword.Bluemix_notm}} space.  |
-| Space dashboard | This is a dashboard that shows logging data that is available in a {{site.data.keyword.Bluemix_notm}} space.  | 
+| Multi-cf-app dashboard | This is a dashboard that shows information for all the Cloud Foundry applications that are deployed in the same space.  | 
+| Multi-container dashboard | This is a dashboard that shows information for all the containers that are deployed in the same space.  |
+| Space dashboard | This is a dashboard that shows logging data that is available in a space.  | 
 {: caption="Table 1. Samples of dashboard types" caption-side="top"}
 
 To visualize the data in a dashboard, you configure panels. Kibana includes different visualizations such as table, trends, and histogram that you can use to analyze the information. A visualization is added as a panel to a dashboard. You can add, remove, and rearrange panels in the dashboard. The objective of each panel varies. Some panels are organized into rows that provide the results of a one or more queries. Other panels display documents or custom information. Each panel is based on a search. The search defines the subset of data that the panel displays. For example, you can configure a bar chart, pie chart, or table to visualize the data and analyze it.  

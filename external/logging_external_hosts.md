@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2017-07-19"
 # Configuring external log hosts
 {: #thirdparty_logging}
 
-{{site.data.keyword.Bluemix_notm}} keeps a limited amount of log information in memory. When information is logged, the old information is replaced by the newer information. To keep all the log information, you can save your Cloud Foundry application logs to an external log host, such as a third-party log management service or other host.
+The {{site.data.keyword.Bluemix_notm}} keeps a limited amount of log information in memory. When information is logged, the old information is replaced by the newer information. To keep all the log information, you can save your Cloud Foundry application logs to an external log host, such as a third-party log management service or other host.
 {:shortdesc}
 
 To stream logs from your CF app and the system to an external log host, complete the following steps:

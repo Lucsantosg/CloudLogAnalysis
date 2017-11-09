@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-08-01"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -41,7 +41,7 @@ To resolve this problem, complete the following steps:
 
 1. Check the *Time Picker* that is set in the Discover page and increase the time period. 
 
-    **Note**: By default, in {{site.data.keyword.Bluemix_notm}}, the *Time Picker* is set to show data for the last 15 minutes.
+    **Note**: By default, in the {{site.data.keyword.Bluemix_notm}}, the *Time Picker* is set to show data for the last 15 minutes.
 
     For more information on how to set the *Time Picker*, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
        

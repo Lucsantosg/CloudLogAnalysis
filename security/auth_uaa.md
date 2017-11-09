@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-08-25"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -14,19 +14,19 @@ lastupdated: "2017-08-25"
 {:pre: .pre}
 
 
-# Authenticating by using the Bluemix UAA model
+# Authenticating by using the UAA method
 {: #auth_uaa}
 
-Use the {{site.data.keyword.Bluemix}} UAA model to get an authentication token that you can use to access logs that are stored in the {{site.data.keyword.loganalysisshort}} service for a space in a {{site.data.keyword.Bluemix_notm}}. You can obtain the authentication token by using the {{site.data.keyword.Bluemix_notm}} CLI or by using the `Login` REST API.
+Use the UAA method to get an authentication token that you can use to manage logs that are stored in a space. You can obtain the authentication token by using the {{site.data.keyword.Bluemix_notm}} CLI or by using the `Login` REST API.
 {:shortdesc}
 
-To access logs by using a UAA authentication token, you need the following information:
+To manage logs by using a UAA authentication token, you need the following information:
 
 * A UAA token to access the {{site.data.keyword.loganalysisshort}} service by using the RESTful APIs.
 * The GUID of the space.
 
 		
-## Getting the UAA token by using the Bluemix CLI
+## Getting the UAA token by using the {{site.data.keyword.Bluemix_notm}} CLI
 {: #uaa_cli}
 
 
@@ -34,41 +34,18 @@ To get the authorization token, complete the following steps:
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/services/CloudLogAnalysis/qa/cli_qa.html#cli_qa).
+   For more information, see [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
    
    If the CLI is installed, continue with the next step.
     
-2. Log in to a {{site.data.keyword.Bluemix_notm}} region, organization, and space. Run the command:
+2. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
+
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+	
+3. Run the `bx cf oauth-token` command to get the {{site.data.keyword.Bluemix_notm}} UAA token.
 
     ```
-    cf login -a Endpoint
-    ```
-    {: codeblock}
-	
-	Where *Endpoint* is the URL to log in to {{site.data.keyword.Bluemix_notm}}. This URL is different per region.
-	
-	<table>
-	    <caption>List of endpoints to access {{site.data.keyword.Bluemix_notm}}</caption>
-		<tr>
-		  <th>Region</th>
-		  <th>URL</th>
-		</tr>
-		<tr>
-		  <td>US South</td>
-		  <td>api.ng.bluemix.net</td>
-		</tr>
-		<tr>
-		  <td>United Kingdom</td>
-		  <td>api.eu-gb.bluemix.net</td>
-		</tr>
-	</table>
-
-    Follow the instructions. Enter your {{site.data.keyword.Bluemix_notm}} credentials, select an organization and a space.
-	
-3. Run the `cf oauth-token` command to get the {{site.data.keyword.Bluemix_notm}} UAA token.
-
-    ```
-	cf oauth-token
+	bx cf oauth-token
 	```
 	{: codeblock}
 	
@@ -95,31 +72,16 @@ To get the authorization token, complete the following steps:
 6. Run the following command to get the UAA token to work with the {{site.data.keyword.loganalysisshort}} service:
  
     ```
-	curl -k -X GET  --header "X-Auth-Token: ${TOKEN}"  --header "X-Auth-Project-Id: ${SPACE}"  LOGGING_ENDPOINT
+	curl -k -X GET  --header "X-Auth-Token: ${TOKEN}"  --header "X-Auth-Project-Id: ${SPACE}"  LOGGING_ENDPOINT/token
     ```
     {: codeblock}	
 	
 	where
 	* SPACE is the GUID of the space where the service is running.
 	* TOKEN is the {{site.data.keyword.Bluemix_notm}} UAA token that you get in a previous step without the bearer prefix.
-	* LOGGING_ENDPOINT is the logging endpoint for the {{site.data.keyword.Bluemix_notm}} region where the organization and space are available. The LOGGING_ENDPOINT is different per region.
+	* LOGGING_ENDPOINT is the {{site.data.keyword.loganalysisshort}} endpoint for the {{site.data.keyword.Bluemix_notm}} region where the organization and space are available. The LOGGING_ENDPOINT is different per region. To see the URLs for the different endpoints, see [Endpoints](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
 	
-	<table>
-	    <caption>LOGGING_ENDPOINT values by region</caption>
-		<tr>
-		  <th>Region</th>
-		  <th>LOGGING_ENDPOINT</th>
-		</tr>
-		<tr>
-		  <td>US South</td>
-		  <td>https://logging.ng.bluemix.net/token</td>
-		</tr>
-		<tr>
-		  <td>United Kingdom</td>
-		  <td>https://logging.eu-gb.bluemix.net/token</td>
-		</tr>
-	</table>
-
+	
 	
 ## Getting the UAA token by using the API
 {: #uaa_api}
@@ -137,23 +99,7 @@ where
 * PASSWORD is the password of the user ID used to log in to {{site.data.keyword.Bluemix_notm}}.
 * SPACE_NAME is the name of the space where logs are collected.
 * ORG_NAME is the organization name in {{site.data.keyword.Bluemix_notm}} where the space is hosted.
-* LOGGING_ENDPOINT is the logging endpoint for the {{site.data.keyword.Bluemix_notm}} region where the organization and space are available. The LOGGING_ENDPOINT is different per region.
-	
-	<table>
-	    <caption>LOGGING_ENDPOINT values by region</caption>
-		<tr>
-		  <th>Region</th>
-		  <th>LOGGING_ENDPOINT</th>
-		</tr>
-		<tr>
-		  <td>US South</td>
-		  <td>https://logging.ng.bluemix.net/login</td>
-		</tr>
-		<tr>
-		  <td>United Kingdom</td>
-		  <td>https://logging.eu-gb.bluemix.net/login</td>
-		</tr>
-	</table>
+* LOGGING_ENDPOINT is the logging endpoint for the {{site.data.keyword.Bluemix_notm}} region where the organization and space are available. The LOGGING_ENDPOINT is different per region.To see the URLs for the different endpoints, see [Endpoints](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
 
 The output is a JSON document that contains the UAA token. Get the value for the token from the field **access-token**. 
 

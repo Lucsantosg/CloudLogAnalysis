@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2017
 
-lastupdated: "2017-05-22"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -20,9 +20,8 @@ lastupdated: "2017-05-22"
 You can launch Kibana from the {{site.data.keyword.Bluemix}} UI or directly from a web browser.
 {:shortdesc}
 
-Launch Kibana from {{site.data.keyword.Bluemix_notm}} to view and analyze data in context to the resource from which you launch Kibana. For example, you can launch to your specific CF app logs in Kibana, in context to that specific App.
-    
-Launch Kibana from a direct browser link if you want to see aggregated log data from services within a provided {{site.data.keyword.Bluemix_notm}} space. The query that is used to filter the data that is displayed in the dashboard retrieves log entries for a space in the {{site.data.keyword.Bluemix_notm}} organization. The log information that Kibana displays includes records for  all resources that are deployed within the space of the {{site.data.keyword.Bluemix_notm}} organization that you are logged in. 
+Launch Kibana from the {{site.data.keyword.Bluemix_notm}} to view and analyze data in context to the resource from which you launch Kibana. For example, you can launch to your specific CF app logs in Kibana, in context to that specific App.
+    {{site.data.keyword.Bluemix_notm}} space. The query that is used to filter the data that is displayed in the dashboard retrieves log entries for a space in the organization. The log information that Kibana displays includes records for all resources that are deployed within the space of the organization that you are logged in. 
 
 The following table lists the resources and the supported navigation method to launch Kibana:
 
@@ -44,7 +43,7 @@ The following table lists the resources and the supported navigation method to l
     <td>Yes</td>
   <tr>  
   <tr>
-    <td>Container deployed in a {{site.data.keyword.Bluemix_notm}}-managed Cloud infrastructure</td>
+    <td>Container deployed in an {{site.data.keyword.Bluemix_notm}}-managed infrastructure</td>
     <td>Yes</td>
     <td>Yes</td>
   <tr>  
@@ -60,12 +59,12 @@ The query that is used to filter the data that is displayed in Kibana retrieves 
 
 To see the logs of a Cloud Foundry application or Docker container in Kibana, complete the following steps:
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}, and then click the app name or container from the {{site.data.keyword.Bluemix_notm}} dashboard. 
+1. Log in to the {{site.data.keyword.Bluemix_notm}}, and then click the app name or container from the {{site.data.keyword.Bluemix_notm}} dashboard. 
     
 2. Open the log tab in the {{site.data.keyword.Bluemix_notm}} UI.
 
     * For CF apps, click **Logs** in the navigation bar. 
-    * For containers that are deployed in the {{site.data.keyword.Bluemix_notm}}-managed Cloud infrastructure, select **Monitoring and logs** in the navigation bar and then click the **Logging** tab. 
+    * For containers that are deployed in the {{site.data.keyword.Bluemix_notm}}-managed infrastructure, select **Monitoring and logs** in the navigation bar and then click the **Logging** tab. 
     
         The logs tab opens.  
 

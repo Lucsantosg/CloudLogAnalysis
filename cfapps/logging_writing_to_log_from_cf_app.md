@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2017-07-19"
 In {{site.data.keyword.Bluemix}}, to persist log data for a Cloud Foundry app and its runtime, you must write your logs to STDOUT and STDERR. 
 {:shortdesc}
 
-In {{site.data.keyword.Bluemix_notm}}, STDOUT and STDERR log records are collected automatically:
+In the {{site.data.keyword.Bluemix_notm}}, STDOUT and STDERR log records are collected automatically:
 
 * STDOUT (standard output) provides general information.  
 * STDERR (standard error) provides information that includes error messages and other diagnostic warnings. 
@@ -36,7 +36,7 @@ For a **Liberty Cloud Foundry app**, the default console.log for the liberty ser
 
 For more information about Liberty for Java™ applications, see [Liberty Profile: Logging and Trace ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://www-01.ibm.com/support/knowledgecenter/was_beta_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_logging.html){: new_window}.
 
-For a **Node.js Cloud Foundry app**, you can use the built in console logging module to configure logging for the runtime in {{site.data.keyword.Bluemix}}. You can put messages on both the stdout and stderr:
+For a **Node.js Cloud Foundry app**, you can use the built in console logging module to configure logging for the runtime in the {{site.data.keyword.Bluemix}}. You can put messages on both the stdout and stderr:
 
 * console.log('message') will send the msg to the STDOUT stream
 * console.error('error_message') will send the error to the STDERR stream

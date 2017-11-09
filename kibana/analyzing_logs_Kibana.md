@@ -3,10 +3,9 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -14,10 +13,10 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# Advanced log analysis with Kibana
+# Viewing and analyzing logs
 {:#analyzing_logs_Kibana}
 
-In {{site.data.keyword.Bluemix}}, you can use Kibana 5.1, an open source analytics and visualization platform, to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. Use Kibana to perform advanced analytical tasks.
+You can use Kibana 5.1, an open source analytics and visualization platform, to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. Use Kibana to perform advanced analytical tasks.
 {:shortdesc}
 
 Kibana is a browser-based interface where you can analyze data interactively and customize dashboards that you can then use to analyze log data and perform advance management tasks. For more information, see [Kibana User Guide ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
@@ -51,15 +50,15 @@ You can launch Kibana in any of the following ways:
 
 * From the {{site.data.keyword.loganalysisshort}} service dashboard
 
-    You can launch Kibana so the data that you see aggregates logs from services within a provided {{site.data.keyword.Bluemix_notm}} space.
+    You can launch Kibana so the data that you see aggregates logs from services within a provided space.
 	
 	For more information, see [Navigating to Kibana from the dashboard of the Log Analysis service](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_log_analysis).
 
-* From {{site.data.keyword.Bluemix_notm}}
+* From the {{site.data.keyword.Bluemix_notm}}
 
     You can launch to your specific CF app logs in Kibana, within the context of that specific App. For more information, see [Navigating to Kibana from the dashboard of a CF app](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
     
-    You can launch to your specific Docker container logs in Kibana, within the context of that specific container. This feature applies only to containers that are deployed in the {{site.data.keyword.Bluemix_notm}}-managed Cloud infrastructure. For more information, see [Navigating to Kibana from the dashboard of a container](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
+    You can launch to your specific Docker container logs in Kibana, within the context of that specific container. This feature applies only to containers that are deployed in the {{site.data.keyword.Bluemix_notm}}-managed infrastructure. For more information, see [Navigating to Kibana from the dashboard of a container](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
     
     For CF apps, the query that is used to filter the data that is available for analysis in Kibana retrieves log entries for the Cloud Foundry application. The log information that Kibana displays by default is all related to a single Cloud Foundry application and all its instances. 
     
@@ -69,7 +68,7 @@ You can launch Kibana in any of the following ways:
 
 * From a direct browser link
 
-    You may want to launch Kibana so the data that you see aggregates logs from services within a provided {{site.data.keyword.Bluemix_notm}} space.
+    You may want to launch Kibana so the data that you see aggregates logs from services within a provided space.
     
     The query that is used to filter the data that is displayed in the dashboard retrieves log entries for a space in the 
     {{site.data.keyword.Bluemix_notm}} organization. The log information that Kibana displays includes records for 
@@ -125,4 +124,41 @@ The following Kibana features are not supported:
 
 * Sharing a search.
 * Creating new index patterns. 
+
+
+## URLs to launch Kibana
+{: #urls_kibana}
+
+The following table lists the URLs to launch Kibana, and the versions of Kibana per region:
+
+<table>
+    <caption>URLs to launch Kibana</caption>
+    <tr>
+      <th>Region</th>
+      <th>URL</th>
+      <th>Kibana version</th>
+    </tr>
+	<tr>
+      <td>Frankfurt</td>
+	  <td>[https://logging.eu-de.bluemix.net](https://logging.eu-de.bluemix.net)</td>
+	  <td>Kibana 4</td>
+    </tr>
+	<tr>
+      <td>Sydney</td>
+	  <td>[https://logmet.au-syd.bluemix.net](https://logmet.au-syd.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+	<tr>
+      <td>United Kingdom</td>
+	  <td>[https://logmet.eu-gb.bluemix.net](https://logmet.eu-gb.bluemix.net)</td>
+	  <td>Kibana 4, Kibana 3</td>
+    </tr>
+    <tr>
+      <td>US South</td>
+      <td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+</table>
+
+
 

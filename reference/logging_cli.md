@@ -4,7 +4,7 @@ copyright:
 
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -14,15 +14,15 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# IBM Cloud Log Analysis CLI
+# IBM Cloud Log Analysis CLI (CF plugin)
 {: #logging_cli}
 
 The {{site.data.keyword.loganalysislong}} CLI is a plug-in to manage the logs for cloud resources running in a space of a {{site.data.keyword.Bluemix}} organization.
 {: shortdesc}
 
 **Prerequisites**
-* Before running the logging commands, log in to {{site.data.keyword.Bluemix_notm}} with the `cf login` command to generate a {{site.data.keyword.Bluemix_short}}
- access token and authenticate your session.
+* Before running the logging commands, log in to the {{site.data.keyword.Bluemix_notm}} with the `bx login` command to generate a {{site.data.keyword.Bluemix_short}}
+ access token and authenticate your session. For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 To find out about how to use the {{site.data.keyword.loganalysisshort}} CLI, see [Managing logs](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov).
 
@@ -33,59 +33,59 @@ To find out about how to use the {{site.data.keyword.loganalysisshort}} CLI, see
     <th>When to use it</th>
   </tr>
   <tr>
-    <td>[cf logging](#base)</td>
+    <td>[bx cf logging](#base)</td>
     <td>Use this command to get information about the CLI, such as version or the list of commands.</td>
   </tr>
   <tr>
-    <td>[cf logging auth](#auth)</td>
+    <td>[bx cf logging auth](#auth)</td>
     <td>Use this command to get the logging token that you can use to send logs to the {{site.data.keyword.loganalysisshort}} service.</td>
   </tr>
   <tr>
-    <td>[cf logging delete](#delete)</td>
+    <td>[bx cf logging delete](#delete)</td>
     <td>Use this command to delete logs that are stored in Log Collection.</td>
   </tr>
   <tr>
-    <td>[cf logging download (Beta)](#download)</td>
+    <td>[bx cf logging download (Beta)](#download)</td>
     <td>Use this command to download logs from Log Collection to a local file, or pipe logs to another program such an Elastic Stack. </td>
   </tr>
   <tr>
-    <td>[cf logging help](#help)</td>
+    <td>[bx cf logging help](#help)</td>
     <td>Use this command to get help on how to use the CLI, and a  list of all of the commands.</td>
   </tr>
   <tr>
-    <td>[cf logging option](#option)</td>
-    <td>Use this command to view or set the retention period for logs that are available in a {{site.data.keyword.Bluemix_notm}} space or account.</td>
+    <td>[bx cf logging option](#option)</td>
+    <td>Use this command to view or set the retention period for logs that are available in a space or account.</td>
   </tr>
   <tr>
-    <td>[cf logging session create (Beta)](#session_create)</td>
+    <td>[bx cf logging session create (Beta)](#session_create)</td>
     <td>Use this command to create a new session.</td>
   <tr>
   <tr>
-    <td>[cf logging session delete (Beta)](#session_delete)</td>
+    <td>[bx cf logging session delete (Beta)](#session_delete)</td>
     <td>Use this command to delete a session.</td>
   <tr>  
   <tr>
-    <td>[cf logging session list (Beta)](#session_list)</td>
+    <td>[bx cf logging session list (Beta)](#session_list)</td>
     <td>Use this command to list active sessions and their IDs.</td>
   <tr>  
   <tr>
-    <td>[cf logging session show (Beta)](#session_show)</td>
+    <td>[bx cf logging session show (Beta)](#session_show)</td>
     <td>Use this command to show the status of a single session.</td>
   <tr>  
   <tr>
-    <td>[cf logging status](#status)</td>
-    <td>Use this command to get information about the logs that are collected in a {{site.data.keyword.Bluemix_notm}} space or account.</td>
+    <td>[bx cf logging status](#status)</td>
+    <td>Use this command to get information about the logs that are collected in a space or account.</td>
   </tr>
   </table>
 
 
-## cf logging
+## bx cf logging
 {: #base}
 
 Provides information about the version of the CLI and how to use the CLI.
 
 ```
-cf logging [parameters]
+bx cf logging [parameters]
 ```
 {: codeblock}
 
@@ -105,19 +105,19 @@ cf logging [parameters]
 To get the list of commands, run the following command:
 
 ```
-cf logging --help
+bx cf logging --help
 ```
 {: codeblock}
 
 To get the version of the CLI, run the following command:
 
 ```
-cf logging --version
+bx cf logging --version
 ```
 {: codeblock}
 
 
-## cf logging auth
+## bx cf logging auth
 {: #auth}
 
 Returns a logging token that you can use to send logs to the {{site.data.keyword.loganalysisshort}} service. 
@@ -125,7 +125,7 @@ Returns a logging token that you can use to send logs to the {{site.data.keyword
 **Note:** The token does not expire.
 
 ```
-cf logging auth
+bx cf logging auth
 ```
 {: codeblock}
 
@@ -145,13 +145,13 @@ cf logging auth
   </dd>
 </dl>
 
-## cf logging delete
+## bx cf logging delete
 {: #delete}
 
 Deletes logs that are stored in Log Collection.
 
 ```
-cf logging delete [parameters]
+bx cf logging delete [parameters]
 ```
 {: codeblock}
 
@@ -179,21 +179,21 @@ cf logging delete [parameters]
 
 To delete the logs of type *linux_syslog* for 25 May 2017, run the following command:
 ```
-cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: codeblock}
 
 
 
-## cf logging download (Beta)
+## bx cf logging download (Beta)
 {: #download}
 
 Downloads logs from Log Collection to a local file or pipes logs to another program such an Elastic Stack. 
 
-**Note:** To download files, you need to create a session first. A session defines which logs to download based on date range, log type, and account type. You download logs within the context of a session. For more information, see [cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
+**Note:** To download files, you need to create a session first. A session defines which logs to download based on date range, log type, and account type. You download logs within the context of a session. For more information, see [bx cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
 
 ```
-cf logging download [parameters] [arguments]
+bx cf logging download [parameters] [arguments]
 ```
 {: codeblock}
 
@@ -208,7 +208,7 @@ cf logging download [parameters] [arguments]
 
 <dl>
 <dt>session_ID</dt>
-<dd>Set to the session ID value that you get when you run the command `cf logging session create`. This value indicates which session to use when downloading logs. <br>**Note:** The `cf logging session create` command provides the parameters that control which logs are downloaded. </dd>
+<dd>Set to the session ID value that you get when you run the command `bx cf logging session create`. This value indicates which session to use when downloading logs. <br>**Note:** The `bx cf logging session create` command provides the parameters that control which logs are downloaded. </dd>
 </dl>
 
 **Note:** After the download completes, running the same command again will refuse to do anything. To download the same data again, you must use a different file or a different session.
@@ -218,14 +218,14 @@ cf logging download [parameters] [arguments]
 In a Linux system, to download logs into a file called mylogs.gz, run the following command:
 
 ```
-cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 To download logs into your own Elastic Stack, run the following command:
 
 ```
-cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+bx cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -246,13 +246,13 @@ output {
 {: screen}
 
 
-## cf logging help
+## bx cf logging help
 {: #help}
 
 Provides information on how to use a command.
 
 ```
-cf logging help [command]
+bx cf logging help [command]
 ```
 {: codeblock}
 
@@ -270,15 +270,15 @@ cf logging help [command]
 To get help on how to run the command to view the status of logs, run the following command:
 
 ```
-cf logging help status
+bx cf logging help status
 ```
 {: codeblock}
 
 
-## cf logging option
+## bx cf logging option
 {: #option}
 
-Displays or changes the retention period for logs that are available in a {{site.data.keyword.Bluemix_notm}} space or account. 
+Displays or changes the retention period for logs that are available in a space or account. 
 
 * The period is set in number of days.
 * The default value is **-1**. 
@@ -286,7 +286,7 @@ Displays or changes the retention period for logs that are available in a {{site
 **Note:** By default, all the logs are stored. You must delete them manually by using the **delete** command. Set a retention policy to delete logs automatically.
 
 ```
-cf logging option [parameters]
+bx cf logging option [parameters]
 ```
 {: codeblock}
 
@@ -297,7 +297,7 @@ cf logging option [parameters]
 <dd>(Optional) Sets the number of retention days. <br> The default value is *-1* days.</dd>
 
 <dt>--at-account-level, -a </dt>
-  <dd>(Optional) Sets the scope to account level. <br>If this parameter is not specified, the default value is set to *-1* for the current space, that is the space where you logged in by using the command `cf login`.
+  <dd>(Optional) Sets the scope to account level. <br>If this parameter is not specified, the default value is set to *-1* for the current space, that is the space where you logged in by using the command `bx cf login`.
   </dd>
 </dl>
 
@@ -306,7 +306,7 @@ cf logging option [parameters]
 To see the default current retention period for the space where you are logged in, run the following command:
 
 ```
-cf logging option
+bx cf logging option
 ```
 {: codeblock}
 
@@ -316,7 +316,7 @@ The output is:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        -1 |
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        -1 |
 +--------------------------------------+-----------+
 ```
 {: screen}
@@ -325,7 +325,7 @@ The output is:
 To change the retention period to 25 days for the space where you are logged in, run the following command:
 
 ```
-cf logging option -r 25
+bx cf logging option -r 25
 ```
 {: codeblock}
 
@@ -335,13 +335,13 @@ The output is:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        25 |
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        25 |
 +--------------------------------------+-----------+
 ```
 {: screen}
 
 
-## cf logging session create (Beta)
+## bx cf logging session create (Beta)
 {: #session_create}
 
 Creates a new session.
@@ -349,7 +349,7 @@ Creates a new session.
 **Note:** You can have up to 30 concurrent sessions in a space. The session is created for a user. Sessions cannot be shared between users in a space.
 
 ```
-cf logging session create [parameters]
+bx cf logging session create [parameters]
 ```
 {: codeblock}
 
@@ -369,7 +369,7 @@ cf logging session create [parameters]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Optional) Sets the scope to account level. <br>If this parameter is not specified, the default value is set to the current space only, that is, the space where you logged in by using the command `cf login`.
+  <dd>(Optional) Sets the scope to account level. <br>If this parameter is not specified, the default value is set to the current space only, that is, the space where you logged in by using the command `bx cf login`.
   </dd>
 </dl>
 
@@ -404,18 +404,18 @@ cf logging session create [parameters]
 To create a session that includes logs between 20 May 2017 and May 26 2017 for a log type of *log*, run the following command:
 
 ```
-cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
+bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 ```
 {: screen}
 
 
-## cf logging session delete (Beta)
+## bx cf logging session delete (Beta)
 {: #session_delete}
 
 Deletes a session, specified by session id.
 
 ```
-cf logging session delete [arguments]
+bx cf logging session delete [arguments]
 ```
 {: codeblock}
 
@@ -423,7 +423,7 @@ cf logging session delete [arguments]
 
 <dl>
 <dt>session ID</dt>
-<dd>ID of the session that you want to delete. <br>You can use the command `cf logging session list` to get all the active session IDs.</dd>
+<dd>ID of the session that you want to delete. <br>You can use the command `bx cf logging session list` to get all the active session IDs.</dd>
 </dl>
 
 **Example**
@@ -431,19 +431,19 @@ cf logging session delete [arguments]
 To delete a session with session ID *cI6hvAa0KR_tyhjxZZz9Uw==*, run the following command:
 
 ```
-cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
+bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## cf logging session list (Beta)
+## bx cf logging session list (Beta)
 {: #session_list}
 
 Lists the active sessions and their IDs.
 
 ```
-cf logging session list 
+bx cf logging session list 
 ```
 {: codeblock}
 
@@ -467,13 +467,13 @@ cf logging session list
 </dl>
  
 
-## cf logging session show (Beta)
+## bx cf logging session show (Beta)
 {: #session_show}
 
 Shows the status of a single session.
 
 ```
-cf logging session show [arguments]
+bx cf logging session show [arguments]
 ```
 {: codeblock}
 
@@ -514,18 +514,18 @@ cf logging session show [arguments]
 To show details of a session with session ID *cI6hvAa0KR_tyhjxZZz9Uw==*, run the following command:
 
 ```
-cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
+bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
-## cf logging status
+## bx cf logging status
 {: #status}
 
-Returns information about the logs that are collected in a {{site.data.keyword.Bluemix_notm}} space or account.
+Returns information about the logs that are collected in a space or account.
 
 ```
-cf logging status [parameters]
+bx cf logging status [parameters]
 ```
 {: codeblock}
 
@@ -545,7 +545,7 @@ cf logging status [parameters]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Optional) Sets the scope to account level. <br> **Note:** Set this value to get account information. <br>If this parameter is not specified, the default value is set to the current space only, that is, the space where you logged in by using the command `cf login`.
+  <dd>(Optional) Sets the scope to account level. <br> **Note:** Set this value to get account information. <br>If this parameter is not specified, the default value is set to the current space only, that is, the space where you logged in by using the command `bx cf login`.
   </dd>
   
   <dt>--list-type-detail, -l</dt>
@@ -553,6 +553,6 @@ cf logging status [parameters]
   </dd>
 </dl>
 
-**Note:** The `cf logging status` command reports only the last 2 weeks of logs that are stored in Log Collection when no start and end dates are specified.
+**Note:** The `bx cf logging status` command reports only the last 2 weeks of logs that are stored in Log Collection when no start and end dates are specified.
 
 

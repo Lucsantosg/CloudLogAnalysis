@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -25,7 +25,7 @@ You can provision the {{site.data.keyword.loganalysisshort}} service from {{site
 ## Provisioning from the UI
 {: #ui}
 
-Complete the following steps to provision an instance of the {{site.data.keyword.loganalysisshort}} service in {{site.data.keyword.Bluemix_notm}}:
+Complete the following steps to provision an instance of the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.Bluemix_notm}}:
 
 1. Log in to your {{site.data.keyword.Bluemix_notm}} account.
 
@@ -50,27 +50,22 @@ Complete the following steps to provision an instance of the {{site.data.keyword
 ## Provisioning from the CLI
 {: #cli}
 
-Complete the following steps to provision an instance of the {{site.data.keyword.loganalysisshort}} service in {{site.data.keyword.Bluemix_notm}} through the command line:
+Complete the following steps to provision an instance of the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.Bluemix_notm}} through the command line:
 
-1. Install the Cloud Foundry (CF) CLI. If the CF CLI is installed, continue with the next step.
+1. [Pre-requisite] Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Installing the cf CLI ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window}. 
+   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   
+   If the CLI is installed, continue with the next step.
     
-2. Log in to a {{site.data.keyword.Bluemix_notm}} region, organization, and space. 
+2. Log in to the region, organization, and space in the {{site.data.keyword.Bluemix_notm}} where you want to provision the service. 
 
-    For example, to log in to the US South region, run the following command:
-
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
-
-    Follow the instructions. Enter your {{site.data.keyword.Bluemix_notm}} credentials, select an organization and a space.
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Run the `cf create-service` command to provision an instance.
+3. Run the `bx cf create-service` command to provision an instance.
 
     ```
-	cf create-service service_name service_plan service_instance_name
+	bx cf create-service service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -82,17 +77,17 @@ Complete the following steps to provision an instance of the {{site.data.keyword
 	
 	For more information about the cf command, see [cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service).
 
-	For example, to create an instance of the {{site.data.keyword.loganalysisshort}} service with a free plan, run the following command:
+	For example, to create an instance of the {{site.data.keyword.loganalysisshort}} service with the Lite plan, run the following command:
 	
 	```
-	cf create-service ibmLogAnalysis lite my_logging_svc
+	bx cf create-service ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. Verify that the service is created successfully. Run the following command:
 
     ```	
-	cf services
+	bx cf services
 	```
 	{: codeblock}
 	
@@ -103,7 +98,7 @@ Complete the following steps to provision an instance of the {{site.data.keyword
     OK
     
     name                           service                  plan                   bound apps              last operation
-    my_logging_svc                ibmLogAnalysis               lite                                        create succeeded
+    my_logging_svc                ibmLogAnalysis           standard                                        create succeeded
 	```
 	{: screen}
 

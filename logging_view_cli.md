@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -18,20 +18,20 @@ lastupdated: "2017-07-19"
 # Analyzing logs from the CLI
 {: #analyzing_logs_cli}
 
-In {{site.data.keyword.Bluemix}}, you can view, filter, and analyze logs through the command line interface. Use the command line to manage logs programmatically. 
+In the {{site.data.keyword.Bluemix}}, you can view, filter, and analyze logs through the command line interface. Use the command line to manage logs programmatically. 
 {:shortdesc}
 
 To analyze Cloud Foundry (CF) application logs, use the following command: `cf logs`
-For more information, see [Analyzing CF app logs from the CLI](logging_view_cli.html#analyzing_cf_logs_cli).
+For more information, see [Analyzing CF app logs from the CLI](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_cf_logs_cli).
 
 To analyze Docker container logs, use the following command: `cf ic logs`
-For more information, see [Analyzing Docker container logs from the CLI](logging_view_cli.html#analyzing_container_logs_cli). This feature applies only to containers that are deployed in the {{site.data.keyword.Bluemix_notm}}-managed Cloud infrastructure.
+For more information, see [Analyzing Docker container logs from the CLI](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_container_logs_cli). This feature applies only to containers that are deployed in the {{site.data.keyword.Bluemix_notm}}-managed infrastructure.
 
 
 ## Analyzing CF app logs from the CLI
 {: #analyzing_cf_logs_cli}
 
-Use the **cf logs** command to display logs from a Cloud Foundry app and from the system components that interact with it when you deploy the app in {{site.data.keyword.Bluemix_notm}}. The **cf logs** command displays the STDOUT and STDERR log streams of a Cloud Foundry application.
+Use the **cf logs** command to display logs from a Cloud Foundry app and from the system components that interact with it when you deploy the app in the {{site.data.keyword.Bluemix_notm}}. The **cf logs** command displays the STDOUT and STDERR log streams of a Cloud Foundry application.
 
 To view logs that you are interested in or exclude the content that you don't want to view, you can use the **cf logs** command with filtering options such as **cut** and **grep** in the cf command line interface:
 
@@ -46,7 +46,7 @@ To view logs that you are interested in or exclude the content that you don't wa
 
 To see all the logs available for a Cloud Foundry app, complete the following steps:
 
-1. Open a terminal and log in to {{site.data.keyword.Bluemix}}.
+1. Open a terminal and log in to the {{site.data.keyword.Bluemix_notm}}.
 
 2. From the command line, run the following command to display all the logs:
 
@@ -58,7 +58,7 @@ To see all the logs available for a Cloud Foundry app, complete the following st
 
 To see the most recent logs that are available for a Cloud Foundry app, complete the following steps:
 
-1. Open a terminal and log in to {{site.data.keyword.Bluemix}}.
+1. Open a terminal and log in to the {{site.data.keyword.Bluemix_notm}}.
 
 2. From the command line, run the following command to display all the logs:
 
@@ -73,7 +73,7 @@ logs appname --recent</samp> in another command line window to see the logs in r
 
 To view a portion of the logs that are available for a Cloud Foundry app within a time range, complete the following steps:
 
-1. Open a terminal and log in to {{site.data.keyword.Bluemix}}.
+1. Open a terminal and log in to {{site.data.keyword.Bluemix_notm}}.
 
 2. From the command line, run the following command to display all the logs:
 
@@ -124,12 +124,12 @@ To view this log, enter the following command: `cf files appname logs/staging_ta
 
 **Note:** For information about how to enable application logging, see [Debugging runtime errors](/docs/debug/index.html#debugging-runtime-errors).
 
-## Analyzing Docker container logs from the CLI
+## Analyzing Docker container logs from the CLI (Deprecated)
 {: #analyzing_container_logs_cli}
 
-**Note:** This feature applies only to containers that are deployed in the {{site.data.keyword.Bluemix_notm}}-managed Cloud infrastructure.
+**Note:** This feature applies only to containers that are deployed in the {{site.data.keyword.Bluemix_notm}}-managed infrastructure.
 
-Use the `cf ic logs` command to display logs from a container in {{site.data.keyword.Bluemix_notm}}. For example, you can use the logs to analyze why a container has stopped or for reviewing the container output. 
+Use the `bx cf ic logs` command to display logs from a container in the {{site.data.keyword.Bluemix_notm}}. For example, you can use the logs to analyze why a container has stopped or for reviewing the container output. 
 
 To see application errors for the app that runs in a container through the `cf ic logs` command, the application must write its logs to the standard output (STDOUT) and standard error (STDERR) output streams. If you design your application to write to these standard output streams, you can view the logs via the command line even if the container shuts down or crashes.
 

@@ -8,13 +8,19 @@ IBM Cloud Log Analysis
     index.md
     
     {: .topicgroup}
-    About logging
+    About Log Analysis
         log_analysis_ov.md
-        security_ov.md
-        cfapps/logging_cf_apps.md
-        containers/logging_containers_ov.md
-        vm/logging_vm_ov.md
+        manage_logs.md
+        log_ingestion.md
         kibana/analyzing_logs_Kibana.md
+        security_ov.md
+
+    {: .topicgroup}
+    Logging for cloud resources
+        cfapps/logging_cf_apps.md
+        containers/containers_kubernetes.md
+        containers/containers_bluemix.md
+        vm/logging_vm_ov.md
 
     {: .topicgroup}
     What's new
@@ -54,7 +60,6 @@ IBM Cloud Log Analysis
         how-to/manage-logs/configuring_retention_policy.md
         how-to/manage-logs/discarding_logs.md
         how-to/manage-logs/downloading_logs.md
-        how-to/manage-logs/viewing_log_information.md
 
     {: .topicgroup}
     Sending logs
@@ -74,6 +79,7 @@ IBM Cloud Log Analysis
     {: .topicgroup}
     Containers
         containers/logging_containers_other_logs.md
+        containers/containers_spaceid.md
 
     {: .topicgroup}
     Log analysis (Kibana 4) Deprecated
@@ -97,7 +103,7 @@ IBM Cloud Log Analysis
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    reference/logging_cli.md    
+    reference/logging_cli.md  
 
     [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
     {: .navgroup-end}     

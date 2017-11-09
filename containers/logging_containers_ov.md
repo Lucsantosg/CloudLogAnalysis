@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-09-19"
+lastupdated: "2017-07-19"
 
 ---
 
@@ -182,33 +182,6 @@ You can view the latest logs for a container that is deployed in the {{site.data
 To analyze container log data, use Kibana to perform advanced analytical tasks. You can use Kibana, an open source analytics and visualization platform, to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. For more information, see [Analyzing logs in Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
 
 
-## Retrieving the space ID for a cluster
-{: #logging_containers_ov_spaceid}
-
-A cluster is deployed to a {{site.data.keyword.Bluemix_notm}} account, but cluster logs are associated with a {{site.data.keyword.Bluemix_notm}} space within that account. When you create queries for the cluster logs, you might need the space ID.
-
-To find the space ID for a cluster, run the `bx cs cluster-get` command and locate the space ID in the `Log Space` field.
-
-```
-bx cs cluster-get cluster-name
-```
-{: pre}
-
-Output example:
-
-```
-Name:			  cluster-name
-ID:			    c213f81296db4c68b84e212c19135a99
-State:			 normal
-Created:		   2017-08-22T18:18:59+0000
-Datacenter:		dal10
-Master URL:		https://169.46.7.242:21210
-Ingress subdomain: cluster-name.us-south.containers.mybluemix.net
-Ingress secret:    cluster-name
-Workers:		   5
-Log Space:		 fa277ff8-8a73-324b-9b75-0f11d54a3ae2
-```
-{: screen}
 
 
 ## Tutorial: Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster

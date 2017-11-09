@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -14,10 +14,10 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# Analyzing logs in the Bluemix UI
+# Analyzing logs in the {{site.data.keyword.Bluemix_notm}} UI
 {: #analyzing_logs_bmx_ui}
 
-In {{site.data.keyword.Bluemix}}, you can view, filter, and analyze logs through the log tab that is available for each Cloud Foundry app or Docker container that runs in the {{site.data.keyword.IBM_notm}}-managed infrastructure.
+In the {{site.data.keyword.Bluemix}}, you can view, filter, and analyze logs through the log tab that is available for each Cloud Foundry app or Docker container that runs in the {{site.data.keyword.Bluemix_notm}}-managed infrastructure.
 {:shortdesc}
 
 ##  Navigating to the logs of a Cloud Foundry app
@@ -39,10 +39,10 @@ By default, the logs that are available for analysis from the {{site.data.keywor
 
 
 
-##  Navigating to the logs of a Docker container that is managed in Bluemix
+##  Navigating to the logs of a Docker container that is managed in the {{site.data.keyword.Bluemix_notm}}
 {: #launch_logs_tab_bmx_ui_containers}
 
-To see the deployment or runtime logs of a Docker container that is deployed in the {{site.data.keyword.IBM_notm}}-managed Cloud infrastructure, complete the following steps:
+To see the deployment or runtime logs of a Docker container that is deployed in the {{site.data.keyword.IBM_notm}}-managed infrastructure, complete the following steps:
 
 1. From the Apps dashboard, click the single container or container group. 
     

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-07-19"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -12,38 +12,35 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Sending Data by using the Multi-Tenant Logstash Forwarder
+# Sending on-premises data to a space in the IBM Cloud
 {: #send_data_mt}
 
 To send log data into the {{site.data.keyword.loganalysisshort}} service, you can configure a Multi-Tenant Logstash Forwarder (mt-logstash-forwarder). 
 {: shortdesc}
 
-To send log data into Log Collection, complete the following steps:
+Complete the following steps to send log data to a space in the {{site.data.keyword.Bluemix_notm}}:
+
+## Prereqs
+{: #prereqs}
+
+* An {{site.data.keyword.IBM_notm}}ID to log in to {{site.data.keyword.Bluemix_notm}}.
+* A user ID that has permissions to work in a space with the {{site.data.keyword.loganalysisshort}} service. For more information, see [Security](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
+* The {{site.data.keyword.loganalysisshort}} CLI installed in your local environment.
+
 
 ## Step 1: Get the logging token
 {: #get_logging_auth_token}
 
-To send data to the {{site.data.keyword.loganalysisshort}} service, you need:
+Complete the following steps from a terminal session where the {{site.data.keyword.loganalysisshort}} CLI is installed:
 
-* An {{site.data.keyword.IBM_notm}}ID: This ID is required to log in to {{site.data.keyword.Bluemix_notm}}.
-* A space in a {{site.data.keyword.Bluemix_notm}} organization: This space is where you plan to send and analyze logs.
-* A logging token to send data. 
+1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-Complete the following steps:
-
-1. Log in to a {{site.data.keyword.Bluemix_notm}} region, organization, and space. 
-
-    For example, to log in to the US South region, run the following command:
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Run the `cf logging auth` command. 
+2. Run the `bx cf logging auth` command. 
 
     ```
-    cf logging auth
+    bx cf logging auth
     ```
     {: codeblock}
 
@@ -56,13 +53,13 @@ Complete the following steps:
     For example,
 
     ```
-    cf logging auth
+    bx cf logging auth
     +-----------------+--------------------------------------+
     |      NAME       |                VALUE                 |
     +-----------------+--------------------------------------+
     | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_bKsdfTz                         |
-    | Organization Id | 98450123-6f1c-9999-96a3-0210fjyuwplt |
+    | Logging Token   | oT98_abcdefz                         |
+    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
     | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
     +-----------------+--------------------------------------+
     ```
@@ -228,7 +225,7 @@ Complete the following steps to configure mt-logstash-forwarder in the environme
        LSF_INSTANCE_ID="myhelloapp"
        LSF_TARGET="ingest.logging.ng.bluemix.net:9091"
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
-       LSF_PASSWORD="oT98_bKsdfTz"
+       LSF_PASSWORD="oT98_abcdefz"
        LSF_GROUP_ID="Group1"
        ```
        {: screen}
@@ -240,14 +237,6 @@ Complete the following steps to configure mt-logstash-forwarder in the environme
        ```
        {: codeblock}
                 
-       **Tip:** To restart the mt-logstash-forwarder service, run the following command:
-    
-       ```
-       service mt-logstash-forwarder restart
-       ```
-       {: codeblock}
-        
-        
 By default, the forwarder only watches syslog. Your logs are available in Kibana for analysis.
         
 

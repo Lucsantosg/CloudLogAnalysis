@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-07-28"
+lastupdated: "2017-11-09"
 
 ---
 
@@ -31,26 +31,21 @@ Use `cf logging status` command with the options **-s** to set the start day and
 
 Complete the following steps to get information about logs:
 
-1. Log in to a {{site.data.keyword.Bluemix_notm}} region, organization, and space. 
+1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For example, to log in to the US South region, run the following command:
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Run the *status* command.
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
     For example,
     
     ```
-    $ cf logging status
+    $ bx cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -73,19 +68,14 @@ To obtain information about a type of log over a period of time, use the `cf log
 
 Complete the following steps to get information about a type of log over a period of time:
 
-1. Log in to a {{site.data.keyword.Bluemix_notm}} region, organization, and space. 
+1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For example, to log in to the US South region, run the following command:
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Run the *status* command.
 
     ```
-    $ cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    bx cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -100,7 +90,7 @@ Complete the following steps to get information about a type of log over a perio
     For example,
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -120,19 +110,14 @@ To obtain information about logs over a period of time across the {{site.data.ke
 
 Complete the following steps to get account information about logs:
 
-1. Log in to a {{site.data.keyword.Bluemix_notm}} region, organization, and space. 
+1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For example, to log in to the US South region, run the following command:
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Run the *status* command.
 
     ```
-    $ cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    bx cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -149,7 +134,7 @@ Complete the following steps to get account information about logs:
     For example,
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
