@@ -31,9 +31,9 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
 
 2. Install the {{site.data.keyword.loganalysisshort}} CF plugin.
 
-    * For Linux, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Linux](/docs/services/cloud-activity-tracker/cli/config_at_cli.html#install_cli_linux).
-    * For Windows, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Windows](/docs/services/cloud-activity-tracker/cli/config_at_cli.html#install_cli_windows).
-    * For Mac OS X, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Mac OS X ](/docs/services/cloud-activity-tracker/cli/config_at_cli.html#install_cli_mac).
+    * For Linux, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux).
+    * For Windows, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Windows](/docs/services/CloudLogAnalysis/cli/config_at_cli.html#install_cli_windows).
+    * For Mac OS X, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Mac OS X ](/docs/services/CloudLogAnalysis/cli/config_at_cli.html#install_cli_mac).
  
 3. Verify the installation of the CLI plugin.
   
