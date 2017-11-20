@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -26,6 +26,7 @@ This feature does not apply to users that use the logging service with Docker co
 The Elastic version 5.1 is available in the following region:
 
 * US South
+* Germany
 
 
 ## What's new
@@ -35,7 +36,7 @@ The Elastic version 5.1 is available in the following region:
 
     In Elastic 1.7, the same URL was shared to display and monitor logs and metrics. With the upgrade to Elastic 5.1, you have separate URLS to view logs and metrics. For more information, see [logging URLs](#logging).
     
-2. Support for Kibana 5.1 in the US South region.
+2. Support for Kibana 5.1 in the US South region and in Germany.
 
     You can launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI, or directly from the new logging URL. For more information, see [Navigating to the Kibana dashboard](/docs/services/CloudLogAnalysis/kibana/launch.html#launch).
     
@@ -131,12 +132,12 @@ The following table lists URLs for the Frankfurt region:
   <tr>
      <td>Ingestion URL for logs</td>
 	 <td>ingest.logging.eu-de.bluemix.net</td>
-	 <td>Not available yet</td>
+	 <td>ingest-eu-fra.logging.bluemix.net</td>
   </tr>
   <tr>
      <td>Kibana URL to analyze logs</td>
 	 <td>[https://logging.eu-de.bluemix.net](https://logging.eu-de.bluemix.net)</td>
-	 <td>Not available yet</td>
+	 <td>https://logging.eu-fra.bluemix.net</td>
   </tr>
 </table>
 

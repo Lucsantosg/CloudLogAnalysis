@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -110,13 +110,25 @@ You can view the latest logs for a container that is deployed in the {{site.data
 
 * View logs through the {{site.data.keyword.Bluemix_notm}} UI to monitor the latest activity of the container.
     
-    You can view, filter, and analyze logs through the **Monitoring and Logs** tab that is available for each container. For more information, see [Analyzing logs from the {{site.data.keyword.Bluemix_notm}} dashboard](/docs/services/CloudLogAnalysis/logging_view_dashboard.html#analyzing_logs_bmx_ui).
+    You can view, filter, and analyze logs through the **Monitoring and Logs** tab that is available for each container. 
+	
+	To see the deployment or runtime logs of a Docker container that is deployed in the {{site.data.keyword.IBM_notm}}-managed infrastructure, complete the following steps:
+
+    1. From the Apps dashboard, click the single container or container group. 
     
-    
+    2. From the app details page, click **Monitoring and Logs**.
+
+    3. Select the **Logging** tab. From the **Logging** tab, you can view the recent logs for your container or tail logs in real time. 
+	
 * View logs by using the {{site.data.keyword.containershort}} CLI. Use commands to manage logs programmatically.
     
-    You can view, filter, and analyze logs through the command line interface by using the **cf ic logs** command. For more information, see [Analyzing logs from the command line interface](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_logs_cli).
+    You can view, filter, and analyze logs through the command line interface by using the **cf ic logs** command. 
+	
+	Use the `bx cf ic logs` command to display logs from a container in the {{site.data.keyword.Bluemix_notm}}. For example, you can use the logs to analyze why a container has stopped or for reviewing the container output. 
+	
+	To see application errors for the app that runs in a container through the `cf ic logs` command, the application must write its logs to the standard output (STDOUT) and standard error (STDERR) output streams. If you design your application to write to these standard output streams, you can view the logs via the command line even if the container shuts down or crashes.
 
+    For more information about the `cf ic logs` command, see [cf ic logs command](/docs/containers/container_cli_reference_cfic.html#container_cli_reference_cfic__logs).
 
 
 

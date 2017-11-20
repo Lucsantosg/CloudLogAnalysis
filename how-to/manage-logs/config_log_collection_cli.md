@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-20"
 
 ---
 
@@ -12,15 +12,15 @@ lastupdated: "2017-11-09"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Configuring the Log collection CLI
+# Configuring the Log Analysis CLI (CF plugin)
 {: #config_log_collection_cli}
 
-The {{site.data.keyword.loganalysisshort}} service includes a command line interface (CLI) that you can use to manage your logs in the cloud. The CLI is a Cloud Foundry (CF) plugin. You can use commands to view the status of the log, to download logs, and to configure the log retention policy. The CLI offers different types of help: general help to learn about the CLI and supported commands, command help to learn how to use a command, or subcommand help to learn how to use a subcommands for a command.
+The {{site.data.keyword.loganalysisshort}} service includes a command line interface (CLI) that you can use to manage your logs in the cloud. You can use the Cloud Foundry (CF) plugin to view the status of the log, to download logs, and to configure the log retention policy. The CLI offers different types of help: general help to learn about the CLI and supported commands, command help to learn how to use a command, or subcommand help to learn how to use a subcommands for a command.
 {:shortdesc}
 
 
 
-## Installing the Log Collection CLI (CF plugin)
+## Installing the Log Collection CF plugin
 {: #install_cli}
 
 To install the {{site.data.keyword.loganalysisshort}} CLI, complete the following steps:

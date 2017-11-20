@@ -15,7 +15,7 @@ lastupdated: "2017-11-09"
 {:pre: .pre}
 
 
-# Collecting non-default log data from a container (DEPRECATED)
+# Collecting non-default log data from a container (Deprecated)
 {: #logging_containers_collect_data}
 
 To capture data from non-default log locations inside a container that is deployed in the {{site.data.keyword.Bluemix_notm}}-managed infrastructure, set the environment variable **LOG_LOCATIONS** when you create a container. 

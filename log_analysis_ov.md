@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -88,6 +88,37 @@ The {{site.data.keyword.loganalysisfull_notm}} service is available in the follo
 * Germany
 * US South
 * Sydney
+
+## Data locality
+{: #data_location}
+
+The following table lists the location of logs per region:
+
+<table>
+  <caption>Location of logs per region</caption>
+  <tr>
+    <th>Region</th>
+	<th>Log Search logs</th>
+	<th>Log Collection logs</th>
+  </tr>
+  <tr>
+    <td>Germany</td>
+	<td>Hosted in Germany</td>
+	<td>Hosted in Germany</td>
+  </tr>
+  <tr>
+    <td>US South</td>
+	<td>Hosted in US South</td>
+	<td>Hosted in US South</td>
+  </tr>
+  <tr>
+    <td>Sydney</td>
+	<td>Hosted in Sydney</td>
+	<td>Hosted in US South (*)</td>
+  </tr>
+</table>
+
+(*) For Sydney, Log Collection logs are hosted in US South currently. Data locality of Log Collection logs in Sydney is in plan.
 
 ## Service plans
 {: #plans}

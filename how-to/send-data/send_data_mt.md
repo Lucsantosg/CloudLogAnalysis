@@ -202,7 +202,7 @@ Complete the following steps to configure mt-logstash-forwarder in the environme
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>Target URL. To get the lits of ingestion URLs, see [Ingestion URLs](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_ingestion_urls). For example, set the value to **https://ingest.logging.ng.bluemix.net:9091** to send logs in the US South region. </td>
+            <td>Target URL. To get the lits of ingestion URLs, see [Ingestion URLs](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). For example, set the value to **https://ingest.logging.ng.bluemix.net:9091** to send logs in the US South region. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>

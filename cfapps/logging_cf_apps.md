@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -70,7 +70,7 @@ You can choose any of the following methods to analyze the logs of your Cloud Fo
 
 * Analyze the log in the {{site.data.keyword.Bluemix_notm}} UI to view the latest actvity of the application.
     
-    In the {{site.data.keyword.Bluemix_notm}}, you can view, filter, and analyze logs through the **Log** tab that is available for each Cloud Foundry application. For more information, see [Analyzing CF app logs from the {{site.data.keyword.Bluemix_notm}} UI](/docs/services/CloudLogAnalysis/logging_view_dashboard.html#analyzing_logs_bmx_ui).
+    In the {{site.data.keyword.Bluemix_notm}}, you can view, filter, and analyze logs through the **Log** tab that is available for each Cloud Foundry application. For more information, see [Analyzing CF app logs from the {{site.data.keyword.Bluemix_notm}} UI](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#launch_logs_cloud_ui_cf).
     
 * Analyze logs in Kibana to perform advanced analytical tasks.
     
@@ -80,7 +80,7 @@ You can choose any of the following methods to analyze the logs of your Cloud Fo
 
 * Analyze logs through the CLI to use commands to manage logs programmatically.
     
-    In the {{site.data.keyword.Bluemix_notm}}, you can view, filter, and analyze logs through the command line interface by using the **cf logs** command. For more information, see [Analyzing Cloud Foundry app logs from the command line interface](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_logs_cli).
+    In the {{site.data.keyword.Bluemix_notm}}, you can view, filter, and analyze logs through the command line interface by using the **cf logs** command. For more information, see [Analyzing Cloud Foundry app logs from the command line interface](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#analyzing_logs_cli).
 
 
 ## Log sources for CF apps deployed on Diego
@@ -122,4 +122,21 @@ The following figure shows the different components (log sources) in a Cloud Fou
 
 ![Log sources in a DEA architecture.](images/cf_apps_dea_F1.png "Components (log sources) in a Cloud Foundry architecture that is based on the Droplet Execution Agent (DEA).")
 
+
+
+## Log format for CF app logs viewed through the {{site.data.keyword.Bluemix_notm}} UI
+{: #log_format_cf}
+
+Logs for {{site.data.keyword.Bluemix_notm}} CF apps are displayed in a fixed format, similar to the following pattern:
+
+<code><var class="keyword varname">Component</var>/<var class="keyword varname">instanceID</var>/<var class="keyword varname">message</var>/<var class="keyword varname">timestamp</var></code>
+
+Each log entry contains the following fields:
+
+| Field | Description |
+|-------|-------------|
+| Time stamp | The time of the log statement. The timestamp is defined up to the millisecond. |
+| Component | The component that produces the log. For the list of the different components, see [Log sources for CF apps](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#logging_bluemix_cf_apps_log_sources). <br> Each component type is followed by a slash and a digit that indicates the application instance. 0 is the digit allocated to the first instance, 1 is the digit allocated to the second, and so on. |
+| Message | The message that is issued by the component. The message varies depending on the context. |
+{: caption="Table 1. CF app log entry fields" caption-side="top"}
 

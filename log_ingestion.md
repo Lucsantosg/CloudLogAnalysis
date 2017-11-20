@@ -46,11 +46,11 @@ The following table lists the URLs that you must use to send logs into the {{sit
     </tr>
   <tr>
     <td>Germany</td>
-	<td>ingest-eu-fra.logging.bluemix.net</td>
+	<td>ingest-eu-fra.logging.bluemix.net:9091</td>
   </tr>
   <tr>
     <td>Sydney</td>
-	<td>ingest-au-syd.logging.bluemix.net</td>
+	<td>ingest-au-syd.logging.bluemix.net:9091</td>
   </tr>
   <tr>
     <td>United Kingdom</td>

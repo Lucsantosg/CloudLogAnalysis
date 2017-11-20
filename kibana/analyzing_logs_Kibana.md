@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2017-11-09"
 {:screen: .screen}
 {:pre: .pre}
 
-# Viewing and analyzing logs
+# Viewing and analyzing logs (Kibana)
 {:#analyzing_logs_Kibana}
 
 You can use Kibana 5.1, an open source analytics and visualization platform, to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. Use Kibana to perform advanced analytical tasks.
@@ -140,18 +140,18 @@ The following table lists the URLs to launch Kibana, and the versions of Kibana 
     </tr>
 	<tr>
       <td>Frankfurt</td>
-	  <td>[https://logging.eu-de.bluemix.net](https://logging.eu-de.bluemix.net)</td>
-	  <td>Kibana 4</td>
+	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.nett)</td>
+	  <td>Kibana 5.1</td>
     </tr>
 	<tr>
       <td>Sydney</td>
-	  <td>[https://logmet.au-syd.bluemix.net](https://logmet.au-syd.bluemix.net)</td>
+	  <td>[https://logging.au-syd.bluemix.net](https://logging.au-syd.bluemix.net)</td>
 	  <td>Kibana 5.1</td>
     </tr>
 	<tr>
       <td>United Kingdom</td>
 	  <td>[https://logmet.eu-gb.bluemix.net](https://logmet.eu-gb.bluemix.net)</td>
-	  <td>Kibana 4, Kibana 3</td>
+	  <td>Kibana 4, Kibana 3 (Deprecated)</td>
     </tr>
     <tr>
       <td>US South</td>
@@ -159,6 +159,7 @@ The following table lists the URLs to launch Kibana, and the versions of Kibana 
 	  <td>Kibana 5.1</td>
     </tr>
 </table>
+
 
 
 

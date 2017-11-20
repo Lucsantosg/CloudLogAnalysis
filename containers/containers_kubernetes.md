@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-17"
 
 ---
 
@@ -14,15 +14,23 @@ lastupdated: "2017-11-09"
 {:pre: .pre}
 
 
-# Logging for a container that runs in a Kubernetes cluster
+# Logging for resources in a Kubernetes cluster
 {: #containers_kubernetes}
 
-You can view, filter, and analyze logs for Docker containers that run in Kubernetes clusters in the {{site.data.keyword.Bluemix_notm}}. Logging for these containers is automatically enabled when you deploy the container.
+You can view, filter, and analyze logs for Docker containers that run in Kubernetes clusters in the {{site.data.keyword.Bluemix_notm}}. 
 {:shortdesc}
 
-Container logs are monitored and forwarded from outside of the container by using crawlers. The data is sent by the crawlers to a multi-tenant Elasticsearch in {{site.data.keyword.Bluemix_notm}}.
+**Note:** Logs are collected and available for analysis through the {{site.data.keyword.loganalysisshort}} service for containers running in standard clusters. For more information about the features supported by a standard cluster, see [Planning clusters and apps](/docs/containers/cs_planning.html#cs_planning_cluster_type).
 
-The following figure shows a high level view of logging for the {{site.data.keyword.containershort}}:
+By default, information that a container process prints to stdout (standard output) and stderr (standard error) is collected automatically by the {site.data.keyword.containershort}} and forwarded to the {{site.data.keyword.loganalysisshort}} service. 
+
+* Sending information to stdout and stderr is the standard Docker convention for exposing the information of a container.
+* Container logs are monitored and forwarded from outside of the container by using crawlers. 
+* The data is sent by the crawlers to a multi-tenant Elasticsearch in the {{site.data.keyword.Bluemix_notm}}. 
+
+In addition, you can configure your cluster to forward other application logs, worker node logs, the Kubernetes system component logs, and the Ingress controller logs to the {{site.data.keyword.loganalysisshort}} service. 
+
+The following figure shows a high level view of logging in the {{site.data.keyword.Bluemix_notm}} for the {{site.data.keyword.containershort}}:
 
 ![High level component overview for containers deployed in a Kubernetes cluster](images/containers_kube.gif "High level component overview for containers deployed in a Kubernetes cluster")
 
@@ -38,23 +46,232 @@ In the {{site.data.keyword.Bluemix_notm}}, when you deploy applications in a Kub
 
 Before you create a cluster, either through the [{{site.data.keyword.Bluemix_notm}} UI](/docs/containers/cs_cluster.html#cs_cluster_ui) or through the [command line](/docs/containers/cs_cluster.html#cs_cluster_cli), you must log into a specific {{site.data.keyword.Bluemix_notm}} region, account, organization, and space. The space where you are logged in is the space where logging data for the cluster and its resources is collected.
 
-By default, information that any container process prints to stdout (standard output) and stderr (standard error) is collected. Sending information to stdout and stderr is the standard Docker convention for exposing the information of a container. 
-
-If you forward the log data of an app that runs in a container to the Docker log collector in JSON format, you can search and analyze log data in Kibana by using JSON fields. For more information, see [Configuring custom fields as Kibana search fields](logging_containers_ov.html#send_data_in_json).
-
 **Note:** When you work with a Kubernetes cluster, the namespaces *ibm-system* and *kube-system* are reserved. Do not create, delete, modify, or change permissions of resources that are available in these namespaces. Logs for these namespaces are for {{site.data.keyword.IBM_notm}} use.
 
 
-## Analyzing container logs
+## Analyzing logs
 {: #logging_containers_ov_methods}
 
-To analyze container log data, use Kibana to perform advanced analytical tasks. You can use Kibana, an open source analytics and visualization platform, to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. For more information, see [Analyzing logs in Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+To analyze log data, use Kibana to perform advanced analytical tasks. 
+
+* You can launch Kibana directly from a web browser. For more information, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
+* You can launch Kibana from the [{{site.data.keyword.Bluemix_notm}} UI within the context of a cluster. For more information, see [Navigating to Kibana from the dashboard of a container that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube).
+
+If you forward the log data of an app that runs in a container to the Docker log collector in JSON format, you can search and analyze log data in Kibana by using JSON fields. For more information, see [Configuring custom fields as Kibana search fields](logging_containers_ov.html#send_data_in_json).
+
+Use Kibana, an open source analytics and visualization platform, to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. For more information, see [Analyzing logs in Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+
+
+## Collecting additional application and cluster logs
+{: #collect_logs}
+
+By default, information that a container process prints to stdout (standard output) and stderr (standard error) is collected automatically by the {{site.data.keyword.containershort}} and forwarded to the {{site.data.keyword.loganalysisshort}} service. 
+
+In addition, you can configure your cluster to forward other application logs, worker node logs, the Kubernetes system component logs, and the Ingress controller logs to the {{site.data.keyword.loganalysisshort}} service. 
+
+<table>
+  <caption>Log sources for a Kuberenetes cluster</caption>
+  <tr>
+    <th>Log source</th>
+	<th>Decsription</th>
+	<th>Log Paths</th>
+  </tr>
+  <tr>
+    <td>Application</td>
+	<td>Logs for your own application that runs in a Kubernetes cluster.</td>
+	<td>*/var/log/apps/**/*.log* </br>*/var/log/apps/**/*.err*</td>
+  </tr>
+  <tr>
+    <td>Worker</td>
+	<td>Logs for virtual machine worker nodes within a Kubernetes cluster. </td>
+	<td>*/var/log/syslog* </br>*/var/log/auth.log*</td>
+  </tr>
+  <tr>
+    <td>Kubernetes system component</td>
+	<td>Logs for the Kubernetes system component.</td>
+	<td>*/var/log/kubelet.log* </br>*/var/log/kube-proxy.log*</td>
+  </tr>
+  <tr>
+    <td>Ingress controller</td>
+	<td>Logs for an Ingress controller that manages network traffic coming into a Kubernetes cluster.</td>
+	<td>*/var/log/alb/ids/*.log* </br>*/var/log/alb/ids/*.err* </br>*/var/log/alb/customerlogs/*.log* </br>*/var/log/alb/customerlogs/*.err*</td>
+  </tr>
+</table>
+
+For information about how to configure your cluster to forward log files to the {{site.data.keyword.loganalysisshort}} service, see the section [Configuring log forwarding for applications, worker nodes, the Kubernetes system component, and the Ingress controller](/docs/containers/cs_cluster.html#cs_logging).
+
+## Configuring network traffic for custom firewall configurations in the {{site.data.keyword.Bluemix_notm}}
+{: #ports}
+
+When you have an additional firewall set up, or you have customized the firewall settings in your {{site.data.keyword.Bluemix_notm}} infrastructure (SoftLayer), you need to allow outgoing network traffic from the worker node to the {{site.data.keyword.loganalysisshort}} service. 
+
+You must open TCP port 443 and TCP port 9091 from each worker to the {{site.data.keyword.loganalysisshort}} service for the following IP addresses in your customized firewall:
+
+<table>
+  <tr>
+    <th>Region</th>
+    <th>Ingestion URL</th>
+	<th>Public IP addresses</th>
+  </tr>
+  <tr>
+    <td>Germany</td>
+	<td>ingest-eu-fra.logging.bluemix.net</td>
+	<td>158.177.88.43 <br>159.122.87.107</td>
+  </tr>
+  <tr>
+    <td>United Kingdom</td>
+	<td>ingest.logging.eu-gb.bluemix.net</td>
+	<td>169.50.115.113</td>
+  </tr>
+  <tr>
+    <td>US South</td>
+	<td>ingest.logging.ng.bluemix.net</td>
+	<td>169.48.79.236 <br>169.46.186.113</td>
+  </tr>
+  <tr>
+    <td>Sydney</td>
+	<td>ingest-au-syd.logging.bluemix.net</td>
+	<td>130.198.76.125 <br>168.1.209.20</td>
+  </tr>
+</table>
+
+
+
+## Searching logs
+{: #log_search}
+
+By default, you can use Kibana to search up to 500 MB of logs per day in the {{site.data.keyword.Bluemix_notm}}. 
+
+To search for larger logs, you can use the {{site.data.keyword.loganalysisshort}} service. The service provides multiple plans. Each plan has different log search capabilities, for example, the *Log Collection* plan allows you to search up to 1 GB of data per day. For more information about the plans that are available, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+
+When you search your logs, consider the following fields that are available in Kibana:
+
+Fields that are common to any log entry:
+
+<table>
+  <caption>List of common fields</caption>
+  <tr>
+    <th>Field name</th>
+	<th>Description</th>
+	<th>Value</th>
+  </tr>
+  <tr>
+    <td>ibm-containers.region_str</td>
+	<td>Region where the cluster is available</td>
+	<td>For example, `us-south` is the value for a cluster that is available in the US South region.</td>
+  </tr>
+  <tr>
+    <td>ibm-containers.account_id_str</td>
+	<td>Account ID</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>ibm-containers.cluster_id_str</td>
+	<td>Cluster ID</td>
+	<td></td>
+  </tr>
+</table>
+
+Fields that might be useful when analyzing application logs:
+
+<table>
+  <caption>List of fields for applications</caption>
+  <tr>
+    <th>Field name</th>
+	<th>Description</th>
+	<th>Value</th>
+  </tr>
+  <tr>
+    <td>kubernetes.container_name_str</td>
+	<td>Name of the container</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>kubernetes.namespace_name_str</td>
+	<td>Namespace name where the application is running in the cluster</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>stream_str</td>
+	<td>Type of log</td>
+	<td>*stdout* </br>*stderr*</td>
+  </tr>
+</table>
+
+Fields that might be useful when analyzing worker logs:
+
+<table>
+  <caption>List of fields that are relevant to workers</caption>
+  <tr>
+    <th>Field name</th>
+	<th>Description</th>
+	<th>Value</th>
+  </tr>
+  
+  <tr>
+    <td>filename_str</td>
+	<td>Path and name of the file</td>
+	<td>*/var/log/syslog*  </br>*/var/log/auth.log*</td>
+  </tr>
+  <tr>
+    <td>tag_str</td>
+	<td>Type of log</td>
+	<td>*logfiles.worker.var.log.syslog* </br>*logfiles.worker.var.log.auth.log*</td>
+  </tr>
+  <tr>
+    <td>worker_str</td>
+	<td>Worker name</td>
+	<td>For example, *w1*</td>
+  </tr>
+</table>
+
+Fields that might be useful when analyzing Kubernetes system component logs:
+
+<table>
+  <caption>List of fields that are relevant to the Kubernetes system component</caption>
+  <tr>
+    <th>Field name</th>
+	<th>Description</th>
+	<th>Value</th>
+  </tr>
+  <tr>
+    <td>tag_str</td>
+	<td>Type of log</td>
+	<td>*logfiles.kubernetes.var.log.kubelet.log* </br>*logfiles.kubernetes.var.log.kube-proxy.log*</td>
+  </tr>
+  <tr>
+    <td>filename_str</td>
+	<td>Path and name of the file</td>
+	<td>*/var/log/kubelet.log* </br>*/var/log/kube-proxy.log*</td>
+  </tr>
+ </table>
+
+Fields that might be useful when analyzing Ingress controller logs:
+ 
+<table>
+  <caption>List of fields that are relevant to the Ingress controller</caption>
+  <tr>
+    <th>Field name</th>
+	<th>Description</th>
+	<th>Value</th>
+  </tr>
+ <tr>
+    <td>tag_str</td>
+	<td>Type of log</td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>filename_str</td>
+	<td>Path and name of the file</td>
+	<td>*/var/log/alb/ids/*.log* </br>*/var/log/alb/ids/*.err* </br>*/var/log/alb/customerlogs/*.log* </br>*/var/log/alb/customerlogs/*.err*</td>
+  </tr>
+</table>
 
 
 ## Sending logs so you can use the fields in a message as Kibana search fields
 {: #send_data_in_json}
 
-By default, logging is automatically enabled for containers. Every entry in the Docker log file is displayed in Kibana in the field `message`. If you need to filter and analyze your data in Kibana by using a specific field that is part of the container log entry, configure your application to send valid JSON formatted output. Log the message in JSON format to stdout (standard output) and stderr (standard error).
+By default, logging is automatically enabled for containers. Every entry in the Docker log file is displayed in Kibana in the field `message`. If you need to filter and analyze your data in Kibana by using a specific field that is part of the container log entry, configure your application to send valid JSON formatted output. For example, log the message in JSON format to stdout (standard output) and stderr (standard error).
 
 Each field that is available in the message is parsed to the type of field that matches is value. For example, each field in the following JSON message:
     
@@ -80,14 +297,25 @@ is available as a field that you can use for filtering and searches:
 
 By default, the {{site.data.keyword.Bluemix_notm}} stores log data for up to 3 days:   
 
-* A maximum of 500MB per space of data is stored per day. Any logs beyond that 500 MB cap are discarded. Cap allotments reset each 
-day at 12:30 AM UTC.
-* Up to 1.5 GB of data is searchable for a maximum of 3 days. Log data rolls over (First In, First Out) after either 1.5 GB of data is reached or after 3 days.
+    * A maximum of 500MB per space of data is stored per day. Any logs beyond that 500 MB cap are discarded. Cap allotments reset each day at 12:30 AM UTC.
+    * Up to 1.5 GB of data is searchable for a maximum of 3 days. Log data rolls over (First In, First Out) after either 1.5 GB of data is reached or after 3 days.
 
 The {{site.data.keyword.loganalysisshort}} service provides additional plans that allow you to store logs in Log Collection for as long as you require. For more information about the price of each plan, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-* You can configure a log retention policy that you can use to define the number of days that you want to keep logs in Log Collection. For more information, see [Log Retention policy](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
-* You can delete logs manually by using the Log Collection CLI or the API. 
+    * You can configure a log retention policy that you can use to define the number of days that you want to keep logs in Log Collection. For more information, see [Log Retention policy](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+    * You can delete logs manually by using the Log Collection CLI or the Log Collection API. 
+
+
+## Viewing logs
+{: #logging_containers_ov_methods_view_kube}
+
+To view the latest logs, choose any of the following methods by using any of the following methods:
+
+* View logs through the Kubernetes UI. For each pod, you can select it and access its logs. For more information, see [Web UI Dashboard ![(External link icon)](../../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/){: new_window}.
+
+* View logs by using the Kubernetes CLI command [kubectl logs ![(External link icon)](../../../icons/launch-glyph.svg "External link icon")](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window}. 
+
+To view long-term logs, you can use Kibana. Check the [service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans) for information about data retention period policies.
 
 
 ## Retrieving the space ID for a cluster
@@ -98,28 +326,6 @@ When a cluster is created in an account, the logs are associated with a space wi
 To find the space ID for a cluster, run the `bx cs cluster-get` command and locate the space ID in the **Log Space** field. 
 
 For more information, see [Retrieving the space ID for a cluster](/docs/services/CloudLogAnalysis/containers/containers_spaceid.html#containers_spaceid).
-
-
-## Searching logs
-{: #log_search}
-
-By default, you can use Kibana to search up to 500 MB of logs per day in the {{site.data.keyword.Bluemix_notm}}. 
-
-{{site.data.keyword.loganalysisshort}} service provides multiple plans. Each plan has different log search capabilities, for example, the *Log Collection* plan allows you to search up to 1 GB of data per day. For more information about the plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
-
-
-## Viewing container logs for a container that runs in a Kubernetes cluster
-{: #logging_containers_ov_methods_view_kube}
-
-You can view the latest logs for a container in a Kubernetes pod by using any of the following methods:
-
-* View logs through the Kubernetes UI. For each pod, you can select it and access its logs. For more information, see [Web UI Dashboard ![(External link icon)](../../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/){: new_window}.
-
-* View logs by using the Kubernetes CLI command [kubectl logs ![(External link icon)](../../../icons/launch-glyph.svg "External link icon")](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window}. 
-
-To view long-term logs, you can use Kibana. Check the [service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans) for information about data retention period policies.
-
-
 
 
 ## Tutorial: Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster

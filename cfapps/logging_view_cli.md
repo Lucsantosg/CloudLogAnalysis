@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-15"
 
 ---
 
@@ -15,17 +15,14 @@ lastupdated: "2017-11-09"
 {:pre: .pre}
 
 
-# Analyzing logs from the CLI
+# Analyzing CF logs from the CLI
 {: #analyzing_logs_cli}
 
-In the {{site.data.keyword.Bluemix}}, you can view, filter, and analyze logs through the command line interface. Use the command line to manage logs programmatically. 
+In the {{site.data.keyword.Bluemix}}, you can view, filter, and analyze logs through the command line interface. 
 {:shortdesc}
 
 To analyze Cloud Foundry (CF) application logs, use the following command: `cf logs`
 For more information, see [Analyzing CF app logs from the CLI](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_cf_logs_cli).
-
-To analyze Docker container logs, use the following command: `cf ic logs`
-For more information, see [Analyzing Docker container logs from the CLI](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_container_logs_cli). This feature applies only to containers that are deployed in the {{site.data.keyword.Bluemix_notm}}-managed infrastructure.
 
 
 ## Analyzing CF app logs from the CLI
@@ -124,15 +121,5 @@ To view this log, enter the following command: `cf files appname logs/staging_ta
 
 **Note:** For information about how to enable application logging, see [Debugging runtime errors](/docs/debug/index.html#debugging-runtime-errors).
 
-## Analyzing Docker container logs from the CLI (Deprecated)
-{: #analyzing_container_logs_cli}
-
-**Note:** This feature applies only to containers that are deployed in the {{site.data.keyword.Bluemix_notm}}-managed infrastructure.
-
-Use the `bx cf ic logs` command to display logs from a container in the {{site.data.keyword.Bluemix_notm}}. For example, you can use the logs to analyze why a container has stopped or for reviewing the container output. 
-
-To see application errors for the app that runs in a container through the `cf ic logs` command, the application must write its logs to the standard output (STDOUT) and standard error (STDERR) output streams. If you design your application to write to these standard output streams, you can view the logs via the command line even if the container shuts down or crashes.
-
-For more information about the `cf ic logs` command, see [cf ic logs command](/docs/containers/container_cli_reference_cfic.html#container_cli_reference_cfic__logs).
 
 

@@ -32,7 +32,7 @@ Open a terminal session from where you can manage the Kubernetes cluster and dep
 ## Step 1: Deploy an app in a Kubernetes cluster
 {: #step1}
 
-1. [Create a Kubernetes cluster](/docs/containers/cs_cluster.html#cs_cluster_ui).
+1. [Create a Kubernetes standard cluster](/docs/containers/cs_cluster.html#cs_cluster_ui).
 
 2. Set up the cluster context in a Linux terminal. After the context is set, you can manage the Kubernetes cluster and deploy the application in the Kubernetes cluster.
 

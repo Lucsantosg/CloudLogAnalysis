@@ -39,12 +39,9 @@ IBM Cloud Log Analysis
     {: .navgroup id="howto"}
     how-to/provision.md
     plan/change_plan.md
-	
-    {: .topicgroup}
-	Analyzing logs
-        logging_view_dashboard.md
-        logging_view_cli.md
-    
+    how-to/manage-logs/config_log_collection_cli.md
+    how-to/manage-logs/config_log_collection_cli_cloud.md
+
     {: .topicgroup}
     Advanced log analysis (Kibana)
         kibana/analize_logs_interactively.md
@@ -53,13 +50,20 @@ IBM Cloud Log Analysis
         kibana/define_search.md
         kibana/filter_logs.md
         kibana/launch.md
-		
+
     {: .topicgroup}
-    Managing logs in Log Collection
-        how-to/manage-logs/config_log_collection_cli.md
+    Managing logs (IBM Cloud plugin)
+        how-to/manage-logs/configuring_retention_policy_cloud.md
+        how-to/manage-logs/deleting_logs_cloud.md
+        how-to/manage-logs/downloading_logs_cloud.md
+        how-to/manage-logs/viewing_log_information_cloud.md
+
+    {: .topicgroup}
+    Managing logs (CF plugin)
         how-to/manage-logs/configuring_retention_policy.md
-        how-to/manage-logs/discarding_logs.md
+        how-to/manage-logs/deleting_logs.md
         how-to/manage-logs/downloading_logs.md
+        how-to/manage-logs/viewing_log_information.md
 
     {: .topicgroup}
     Sending logs
@@ -73,13 +77,15 @@ IBM Cloud Log Analysis
 
     {: .topicgroup}
     CF apps
+        cfapps/launch_logs_cloud_ui_cf.md
         cfapps/logging_writing_to_log_from_cf_app.md
+        cfapps/logging_view_cli.md
         external/logging_external_hosts.md
 
     {: .topicgroup}
     Containers
-        containers/logging_containers_other_logs.md
         containers/containers_spaceid.md
+        containers/logging_containers_other_logs.md
 
     {: .topicgroup}
     Log analysis (Kibana 4) Deprecated
@@ -104,6 +110,7 @@ IBM Cloud Log Analysis
 
     {: .navgroup id="reference"}
     reference/logging_cli.md  
+    reference/log_analysis_cli_cloud.md  
 
     [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
     {: .navgroup-end}     
