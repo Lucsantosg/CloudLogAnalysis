@@ -52,13 +52,6 @@ IBM Cloud Log Analysis
         kibana/launch.md
 
     {: .topicgroup}
-    Managing logs (IBM Cloud plugin)
-        how-to/manage-logs/configuring_retention_policy_cloud.md
-        how-to/manage-logs/deleting_logs_cloud.md
-        how-to/manage-logs/downloading_logs_cloud.md
-        how-to/manage-logs/viewing_log_information_cloud.md
-
-    {: .topicgroup}
     Managing logs (CF plugin)
         how-to/manage-logs/configuring_retention_policy.md
         how-to/manage-logs/deleting_logs.md
