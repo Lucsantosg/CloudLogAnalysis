@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-22"
 
 ---
 
@@ -15,14 +15,14 @@ lastupdated: "2017-11-09"
 {:pre: .pre}
 
 
-# Authenticating by using the IAM method
+# Getting the IAM token
 {: #auth_iam}
 
-Use the IAM method to get an authentication token that you can use to manage logs that are stored in the {{site.data.keyword.loganalysisshort}} service. The token has an expiration time. 
+To manage the logs that are available in the account domain by using the {{site.data.keyword.loganalysisshort}} API, you must use an authentication token. Use the {{{site.data.keyword.Bluemix_notm}} CLI to get the IAM token. The token has an expiration time. 
 {:shortdesc}
 
 
-## Getting the IAM token by using the {{site.data.keyword.Bluemix_notm}} CLI 
+## Getting the IAM token
 {: #iam_token_cli}
 
 To get the authorization token by using the {{site.data.keyword.Bluemix_notm}} CLI, complete the following steps:

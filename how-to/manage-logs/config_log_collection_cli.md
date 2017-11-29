@@ -20,7 +20,7 @@ The {{site.data.keyword.loganalysisshort}} service includes a command line inter
 
 
 
-## Installing the Log Collection CF plugin
+## Installing the Log Analysis CF plugin
 {: #install_cli}
 
 To install the {{site.data.keyword.loganalysisshort}} CLI, complete the following steps:
@@ -32,8 +32,8 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
 2. Install the {{site.data.keyword.loganalysisshort}} CF plugin.
 
     * For Linux, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux).
-    * For Windows, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Windows](/docs/services/CloudLogAnalysis/cli/config_at_cli.html#install_cli_windows).
-    * For Mac OS X, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Mac OS X ](/docs/services/CloudLogAnalysis/cli/config_at_cli.html#install_cli_mac).
+    * For Windows, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_at_cli.html#install_cli_windows).
+    * For Mac OS X, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Mac OS X ](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_at_cli.html#install_cli_mac).
  
 3. Verify the installation of the CLI plugin.
   
@@ -59,7 +59,7 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
  
 
 
-## Installing the Log Collection CLI on Linux
+## Installing the Log Analysis CLI on Linux
 {: #install_cli_linux}
 
 Complete the following steps to install the Log Collection CF plugin on Linux:
@@ -135,7 +135,7 @@ Complete the following steps to install the Log Collection CF plugin on Linux:
     {: screen}
 
 
-## Installing the Log Collection CLI on Windows
+## Installing the Log Analysis CLI on Windows
 {: #install_cli_windows}
 
 Complete the following steps to install the Log Collection CF plugin on Windows:
@@ -180,7 +180,7 @@ Complete the following steps to install the Log Collection CF plugin on Windows:
     {: screen}
 	
 
-## Installing the Log Collection CLI on Mac OS X
+## Installing the Log Analysis CLI on Mac OS X
 {: #install_cli_mac}
 
 Complete the following steps to install the Log Collection CF plugin on Mac OS X:
@@ -225,7 +225,7 @@ Complete the following steps to install the Log Collection CF plugin on Mac OS X
     {: screen}
 	
 	
-## Uninstalling the Log Collection CLI
+## Uninstalling the Log Analysis CLI
 {: #uninstall_cli}
 
 To uninstall the logging CLI, delete the plugin.

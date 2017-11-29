@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-29"
 
 ---
 
@@ -23,7 +23,7 @@ In the {{site.data.keyword.Bluemix}}, you can assign one or more roles to users.
 
 
 
-## Granting a user permission to view account logs by using the {{site.data.keyword.Bluemix_notm}} UI
+## Assign an IAM policy to a user through the {{site.data.keyword.Bluemix_notm}} UI
 {: #grant_permissions_ui_account}
 
 To grant a user permissions to view and manage account logs, you must add a policy for that user that describes the actions that this user can do with the {{site.data.keyword.loganalysisshort}} service in the account. Only account owners can assign individual policies to users.
@@ -76,67 +76,7 @@ In {{site.data.keyword.Bluemix_notm}}, complete the following steps to grant a u
 	
 The policy that you configure is applicable to the selected regions. 
 
-
-
-## Granting a user permission to work with space logs by using the {{site.data.keyword.Bluemix_notm}} UI
-{: #grant_permissions_ui_space}
-
-To grant a user permissions to view and manage space logs, you must assign the user a Cloud Foundry role that describes the actions that this user can do with the {{site.data.keyword.loganalysisshort}} service in a space. 
-
-In the {{site.data.keyword.Bluemix_notm}}, complete the following steps to grant a user permissions to work with the {{site.data.keyword.loganalysisshort}} service:
-
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
-
-    Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
-	
-	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
-
-2. From the menu bar, click **Manage > Account > Users**. 
-
-    The *Users* window displays a list of users with their email addresses for the currently selected account.
-	
-3. If the user is a member of the account, select the user name from the list, or click **Manage user** from the *Actions* menu.
-
-    If the user is not a member of the account, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
-
-4. Click **Assign organization**.
-
-5. Enter information about the policy. The following table lists the fields that are required or optional to define a policy: 
-
-    <table>
-	  <caption>List of fields to configure a CF policy.</caption>
-	  <tr>
-	    <th>Field</th>
-		<th>Value</th>
-	  </tr>
-	  <tr>
-	    <td>Organization</td>
-		<td>Choose an organization from the list.</td>
-	  </tr>
-	  <tr>
-	    <td>Organization Roles</td>
-		<td>Select **No organization role**. However, if the user has an organizational role, choose an organization role from the list. <br>Valid values are: **Billing manager**, **Auditor**, **Manager**</td>
-	  </tr>
-	  <tr>
-	    <td>Region</td>
-		<td>Choose a region from the list. <br>Valid values are: **All current regions**, **US South**, **United Kingdom**</td>
-	  </tr>
-	  <tr>
-	    <td>Space</td>
-		<td>By default, **All current spaces** is predefined when the *Region* field is set to **All current regions**. To grant permission to an individual space, choose a specific region, and then choose a space from the list.</td>
-	  </tr>
-	  <tr>
-	    <td>Space Roles</td>
-		<td>Choose a space role from the list. <br>Valid values are: **Manager**, **Auditor**, **Developer**, and **No space role**. For more information, see [Bluemix UAA roles](/docs/services/CloudLogAnalysis/security_ov.html#bmx_roles).</td>
-	  </tr>
-	</table>
-	
-6. Click **Assign policy**.
-	
-The policy that you configure is applicable to the selected regions. 
-
-
-## Granting a user permissions to view account logs by using the command line
+## Assign an IAM policy to a user by using the command line
 {: #grant_permissions_commandline}
 
 To grant a user permissions to view and manage account logs, you must grant the user an IAM role. For more information about IAM roles and what tasks are enabled by role to work with the {{site.data.keyword.loganalysisshort}} service, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
@@ -275,5 +215,65 @@ Complete the following steps to grant a user access to view account logs by usin
 
 	
 After you grant permissions to a user, the user can log in to the {{site.data.keyword.Bluemix_notm}}, and see account level logs.
+
+
+
+## Granting a user permissions to view space logs by using the {{site.data.keyword.Bluemix_notm}} UI
+{: #grant_permissions_ui_space}
+
+To grant a user permissions to view logs in a space, you must assign the user a Cloud Foundry role that describes the actions that this user can do with the {{site.data.keyword.loganalysisshort}} service in the space. 
+
+Complete the following steps to grant a user permissions to work with the {{site.data.keyword.loganalysisshort}} service:
+
+1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
+
+    Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+	
+	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+
+2. From the menu bar, click **Manage > Account > Users**. 
+
+    The *Users* window displays a list of users with their email addresses for the currently selected account.
+	
+3. If the user is a member of the account, select the user name from the list, or click **Manage user** from the *Actions* menu.
+
+    If the user is not a member of the account, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
+
+4. Click **Assign organization**.
+
+5. Enter information about the policy. The following table lists the fields that are required or optional to define a policy: 
+
+    <table>
+	  <caption>List of fields to configure a CF policy.</caption>
+	  <tr>
+	    <th>Field</th>
+		<th>Value</th>
+	  </tr>
+	  <tr>
+	    <td>Organization</td>
+		<td>Choose an organization from the list.</td>
+	  </tr>
+	  <tr>
+	    <td>Organization Roles</td>
+		<td>Select **No organization role**. However, if the user has an organizational role, choose an organization role from the list. <br>Valid values are: **Billing manager**, **Auditor**, **Manager**</td>
+	  </tr>
+	  <tr>
+	    <td>Region</td>
+		<td>Choose a region from the list. <br>Valid values are: **All current regions**, **US South**, **United Kingdom**</td>
+	  </tr>
+	  <tr>
+	    <td>Space</td>
+		<td>By default, **All current spaces** is predefined when the *Region* field is set to **All current regions**. To grant permission to an individual space, choose a specific region, and then choose a space from the list.</td>
+	  </tr>
+	  <tr>
+	    <td>Space Roles</td>
+		<td>Choose a space role from the list. <br>Valid values are: **Manager**, **Auditor**, **Developer**, and **No space role**. For more information, see [Bluemix UAA roles](/docs/services/CloudLogAnalysis/security_ov.html#bmx_roles).</td>
+	  </tr>
+	</table>
+	
+6. Click **Assign policy**.
+	
+The policy that you configure is applicable to the selected regions. 
+
 
 

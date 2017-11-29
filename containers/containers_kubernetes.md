@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-11-17"
+lastupdated: "2017-11-29"
 
 ---
 
@@ -17,49 +17,113 @@ lastupdated: "2017-11-17"
 # Logging for resources in a Kubernetes cluster
 {: #containers_kubernetes}
 
-You can view, filter, and analyze logs for Docker containers that run in Kubernetes clusters in the {{site.data.keyword.Bluemix_notm}}. 
+You can view, filter, and analyze logs for containers that run in Kubernetes clusters in the {{site.data.keyword.Bluemix_notm}}. 
 {:shortdesc}
 
-**Note:** Logs are collected and available for analysis through the {{site.data.keyword.loganalysisshort}} service for containers running in standard clusters. For more information about the features supported by a standard cluster, see [Planning clusters and apps](/docs/containers/cs_planning.html#cs_planning_cluster_type).
-
-By default, information that a container process prints to stdout (standard output) and stderr (standard error) is collected automatically by the {site.data.keyword.containershort}} and forwarded to the {{site.data.keyword.loganalysisshort}} service. 
+By default, information that a container process prints to stdout (standard output) and stderr (standard error) is collected automatically by the {{site.data.keyword.containershort}} and forwarded to the {{site.data.keyword.loganalysisshort}} service. 
 
 * Sending information to stdout and stderr is the standard Docker convention for exposing the information of a container.
 * Container logs are monitored and forwarded from outside of the container by using crawlers. 
 * The data is sent by the crawlers to a multi-tenant Elasticsearch in the {{site.data.keyword.Bluemix_notm}}. 
 
-In addition, you can configure your cluster to forward other application logs, worker node logs, the Kubernetes system component logs, and the Ingress controller logs to the {{site.data.keyword.loganalysisshort}} service. 
+In addition, you can configure your cluster to forward other application logs, worker node logs, the Kubernetes system component logs, and the Ingress controller logs to the {{site.data.keyword.loganalysisshort}} service. For more information, see [Collecting additional application and cluster logs](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#collect_logs).
 
-The following figure shows a high level view of logging in the {{site.data.keyword.Bluemix_notm}} for the {{site.data.keyword.containershort}}:
+## About logging in Public
+{: #public}
 
-![High level component overview for containers deployed in a Kubernetes cluster](images/containers_kube.gif "High level component overview for containers deployed in a Kubernetes cluster")
+In the {{site.data.keyword.Bluemix_notm}}, you can use the {{site.data.keyword.loganalysisshort}} service to store and analyze container logs and Kubernetes cluster logs that are collected automatically by the {{site.data.keyword.containershort}} in Public.
 
-In the {{site.data.keyword.Bluemix_notm}}, when you deploy applications in a Kubernetes cluster, consider the following information:
+You can have 1 or more Kubernetes clusters in an account. Logs are collected automatically by the {{site.data.keyword.containershort}} as soon as the cluster is provisioned. To have those logs available for analysis in the {{site.data.keyword.loganalysisshort}} service, you must configure your cluster to forward cluster logs into {{site.data.keyword.loganalysisshort}}. 
 
-* In the {{site.data.keyword.Bluemix_notm}} account, you can have 1 or more organizations. 
-* Each organization can have 1 or more spaces. 
-* You can have 1 or more Kubernetes clusters in an organization. 
-* A Kubernetes cluster is agnostic of spaces. However, the log data of a cluster and its resources is associated with a space.
-* Collection of logs is enabled automatically when you create a Kubernetes cluster. **Note:** The account owner must have *Developer* and *Manager* Cloud Foundry roles for the space that is associated with the cluster.
-* Log data is collected for an application as soon as the pod is deployed.
-* To analyze log data for a cluster, you must access the Kibana dashboards for the Cloud Public region where the cluster is created. 
+* Clusters that are available in the US South region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the US South region.
+* Clusters that are available in the US East region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the US South region.
+* Clusters that are available in the German region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the German region.
+* Clusters that are available in the Sydney region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the Sydney region.
+* Clusters that are available in the United Kingdom region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the German region.
 
-Before you create a cluster, either through the [{{site.data.keyword.Bluemix_notm}} UI](/docs/containers/cs_cluster.html#cs_cluster_ui) or through the [command line](/docs/containers/cs_cluster.html#cs_cluster_cli), you must log into a specific {{site.data.keyword.Bluemix_notm}} region, account, organization, and space. The space where you are logged in is the space where logging data for the cluster and its resources is collected.
+Application logs are collected as soon as the pod is deployed. Information that a container process prints to stdout (standard output) and stderr (standard error) is collected automatically by the {{site.data.keyword.containershort}} and forwarded to the {{site.data.keyword.loganalysisshort}} service. You can also send additional application log files by configuring the cluster to forward additional application logs to the {{site.data.keyword.loganalysisshort}} service.
+
+If you create a cluster at the account level, logs are available through the account domain view in Kibana. If you create a cluster that is associated to a space, logs are available through the space domain view in Kibana.
+
+To analyze log data for a cluster, 
+
+* You must launch Kibana in the Public region where the {{site.data.keyword.loganalysisshort}} instance that you use to view logs is provisioned. 
+* Your user ID must have permissions to view logs. To see logs in the account domain, a user needs an IAM policy for the {{site.data.keyword.loganalysisshort}} service. The user needs  **Viewer** permissions. To see logs in the space domain, the user needs a CF role. For more information, see [Roles that are required by a user to view logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
+
+To manage log data that is in long-term storage (Log Collection), you user ID must have an IAM policy to work with the {{site.data.keyword.loganalysisshort}} service. Your user ID must have **Administrator** permissions or **Editor** permissions.  For more information, see [Roles that are required by a user to manage logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
 
 **Note:** When you work with a Kubernetes cluster, the namespaces *ibm-system* and *kube-system* are reserved. Do not create, delete, modify, or change permissions of resources that are available in these namespaces. Logs for these namespaces are for {{site.data.keyword.IBM_notm}} use.
 
+### High level view of logging for a cluster that is created at the account level
+{: #acc}
 
-## Analyzing logs
-{: #logging_containers_ov_methods}
+The following figure shows a high level view of logging in Public for the {{site.data.keyword.containershort}} when the cluster is created at the account level:
 
-To analyze log data, use Kibana to perform advanced analytical tasks. 
+![High level component overview for containers deployed in a Kubernetes cluster](images/containers_kube.png "High level component overview for containers deployed in a Kubernetes cluster")
 
-* You can launch Kibana directly from a web browser. For more information, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
-* You can launch Kibana from the [{{site.data.keyword.Bluemix_notm}} UI within the context of a cluster. For more information, see [Navigating to Kibana from the dashboard of a container that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube).
+Collection of logs is enabled automatically when you create a cluster. Logs that are collected by the {{site.data.keyword.containershort}} and forwarded to the {{site.data.keyword.loganalysisshort}} service are stored in the account domain. 
 
-If you forward the log data of an app that runs in a container to the Docker log collector in JSON format, you can search and analyze log data in Kibana by using JSON fields. For more information, see [Configuring custom fields as Kibana search fields](logging_containers_ov.html#send_data_in_json).
+**NOTE:** Currently, the account domain has a limit quota of 500MB per day, and you cannot send those logs to Log Collection for long term storage.
 
-Use Kibana, an open source analytics and visualization platform, to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. For more information, see [Analyzing logs in Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+
+
+### High level view of logging for a cluster that is associated to a space
+{: #space}
+
+The following figure shows a high level view of logging in Public for the {{site.data.keyword.containershort}} when the cluster is associated with a space:
+
+![High level component overview for containers deployed in a Kubernetes cluster](images/containers_kube_1.png "High level component overview for containers deployed in a Kubernetes cluster")
+
+In an {{site.data.keyword.Bluemix_notm}} account, you can have 1 or more organizations. Each organization can have 1 or more spaces. You can have 1 or more Kubernetes clusters in an account. 
+
+* A Kubernetes cluster is an account resource that is agnostic of spaces. However, when you create the cluster within the context of a space, the log data of the cluster and its resources is associated with a Cloud Foundry space.
+
+   To create a cluster within the context of a space, you must create the cluster from a session that has set the target organization and space.
+   
+   Before you create a cluster, either through the [{{site.data.keyword.Bluemix_notm}} UI](/docs/containers/cs_cluster.html#cs_cluster_ui) or through the [command line](/docs/containers/cs_cluster.html#cs_cluster_cli), you must log into a specific region, account, organization, and space. The space where you are logged in is the space where logging data for the cluster and its resources is collected.
+   
+* For logs to be forwarded to the {{site.data.keyword.loganalysisshort}} service from the {site.data.keyword.containershort}}:
+
+    * The account owner must have *Developer* and *Manager* Cloud Foundry roles for the space that is associated with the cluster.
+	* The Kubernetes cluster must be a standard cluster. For more information about the features supported by a standard cluster, see [Planning clusters and apps](/docs/containers/cs_planning.html#cs_planning_cluster_type).
+
+Collection of logs is enabled automatically when you create a cluster. Logs that are collected by the {{site.data.keyword.containershort}} and forwarded to the {{site.data.keyword.loganalysisshort}} service are stored in the space domain that is associated with the Kubernetes cluster. 
+
+
+
+## About logging in Dedicated
+{: #dedicated}
+
+In the {{site.data.keyword.Bluemix_notm}}, you can use the {{site.data.keyword.loganalysisshort}} service in Public to store and analyze container logs and Kubernetes cluster logs that are collected automatically by the {{site.data.keyword.containershort}} in Dedicated.
+
+You can have 1 or more Kubernetes clusters in an account. Logs are collected automatically by the {{site.data.keyword.containershort}} as soon as the cluster is provisioned, and forwarded to the {{site.data.keyword.loganalysisshort}} service. To have those logs available for analysis in the {{site.data.keyword.loganalysisshort}} service, you must configure your cluster to forward cluster logs into {{site.data.keyword.loganalysisshort}}. 
+
+* Clusters that are available in the US South region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the US South region.
+* Clusters that are available in the US East region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the US South region.
+* Clusters that are available in the German region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the German region.
+* Clusters that are available in the Sydney region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the Sydney region.
+* Clusters that are available in the United Kingdom region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the German region.
+
+**Note:** 
+
+* Logs are forwarded to the account domain in the same Public region where the Dedicated {{site.data.keyword.containershort}} is running.
+* Currently, the account domain has a limit quota of 500MB per day, and you cannot send those logs to Log Collection for long term storage.
+
+Log data is collected for an application as soon as the pod is deployed. Information that a container process prints to stdout (standard output) and stderr (standard error) is collected automatically by the {{site.data.keyword.containershort}} and forwarded to the {{site.data.keyword.loganalysisshort}} service. You can also enable the cluster to send additonal application logs to the {{site.data.keyword.loganalysisshort}} service.
+
+Logs are available through the account domain view in Kibana. 
+
+To analyze log data for a cluster, 
+
+* You must launch Kibana for the Cloud Public region where the {{site.data.keyword.loganalysisshort}} instance is provisioned. 
+* You user ID must have an IAM policy to work with the {{site.data.keyword.loganalysisshort}} service. You need to have **Viewer** permissions to see logs in the account domain.  
+
+To manage log data that is in long-term storage (Log Collection), you user ID must have an IAM policy to work with the {{site.data.keyword.loganalysisshort}} service. You need to have **Administrator** permissions or **Editor** permissions.  
+
+The following figure shows a high level view of logging in Dedicated for the {{site.data.keyword.containershort}}:
+
+![High level component overview for containers deployed in a Kubernetes cluster](images/containers_kube_dedicated.png "High level component overview for containers deployed in a Kubernetes cluster")
+
 
 
 ## Collecting additional application and cluster logs
@@ -73,7 +137,7 @@ In addition, you can configure your cluster to forward other application logs, w
   <caption>Log sources for a Kuberenetes cluster</caption>
   <tr>
     <th>Log source</th>
-	<th>Decsription</th>
+	<th>Description</th>
 	<th>Log Paths</th>
   </tr>
   <tr>
@@ -98,7 +162,7 @@ In addition, you can configure your cluster to forward other application logs, w
   </tr>
 </table>
 
-For information about how to configure your cluster to forward log files to the {{site.data.keyword.loganalysisshort}} service, see the section [Configuring log forwarding for applications, worker nodes, the Kubernetes system component, and the Ingress controller](/docs/containers/cs_cluster.html#cs_logging).
+For information about how to configure your cluster to forward log files to the {{site.data.keyword.loganalysisshort}} service, see the section [Enabling automatic collection of cluster logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
 
 ## Configuring network traffic for custom firewall configurations in the {{site.data.keyword.Bluemix_notm}}
 {: #ports}
@@ -297,25 +361,31 @@ is available as a field that you can use for filtering and searches:
 
 By default, the {{site.data.keyword.Bluemix_notm}} stores log data for up to 3 days:   
 
-    * A maximum of 500MB per space of data is stored per day. Any logs beyond that 500 MB cap are discarded. Cap allotments reset each day at 12:30 AM UTC.
-    * Up to 1.5 GB of data is searchable for a maximum of 3 days. Log data rolls over (First In, First Out) after either 1.5 GB of data is reached or after 3 days.
+* A maximum of 500MB per space of data is stored per day. Any logs beyond that 500 MB cap are discarded. Cap allotments reset each day at 12:30 AM UTC.
+* Up to 1.5 GB of data is searchable for a maximum of 3 days. Log data rolls over (First In, First Out) after either 1.5 GB of data is reached or after 3 days.
 
 The {{site.data.keyword.loganalysisshort}} service provides additional plans that allow you to store logs in Log Collection for as long as you require. For more information about the price of each plan, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-    * You can configure a log retention policy that you can use to define the number of days that you want to keep logs in Log Collection. For more information, see [Log Retention policy](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
-    * You can delete logs manually by using the Log Collection CLI or the Log Collection API. 
+* You can configure a log retention policy that you can use to define the number of days that you want to keep logs in Log Collection. For more information, see [Log Retention policy](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* You can delete logs manually by using the Log Collection CLI or the Log Collection API. 
+
+By default, logs are stored and available for analysis through the account domain. **NOTE:** Currently, the account domain has a limit quota of 500MB per day, and you cannot send those logs to Log Collection for long term storage. To save logs in Log Collection, you must forward logs to a space. The way to forward the logs to a space is by creating a cluster with an associated space.
 
 
-## Viewing logs
-{: #logging_containers_ov_methods_view_kube}
+## Viewing and analyzing logs
+{: #logging_containers_ov_methods}
 
-To view the latest logs, choose any of the following methods by using any of the following methods:
+To analyze log data, use Kibana to perform advanced analytical tasks. Kibana is an open source analytics and visualization platform, that you can use to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. For more information, see [Analyzing logs in Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
 
-* View logs through the Kubernetes UI. For each pod, you can select it and access its logs. For more information, see [Web UI Dashboard ![(External link icon)](../../../icons/launch-glyph.svg "External link icon")](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/){: new_window}.
+* You can launch Kibana directly from a web browser. For more information, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
+* You can launch Kibana from the [{{site.data.keyword.Bluemix_notm}} UI within the context of a cluster. For more information, see [Navigating to Kibana from the dashboard of a container that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube).
 
-* View logs by using the Kubernetes CLI command [kubectl logs ![(External link icon)](../../../icons/launch-glyph.svg "External link icon")](https://kubernetes-v1-4.github.io/docs/user-guide/kubectl/kubectl_logs/){: new_window}. 
+If you forward the log data of an app that runs in a container to the Docker log collector in JSON format, you can search and analyze log data in Kibana by using JSON fields. For more information, see [Configuring custom fields as Kibana search fields](logging_containers_ov.html#send_data_in_json).
 
-To view long-term logs, you can use Kibana. Check the [service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans) for information about data retention period policies.
+To view logs in Kibana, consider the following information:
+
+* In Public, to see logs in a space domain, the user must have the **developer** role in the space that is associated with the cluster.
+* In Dedicated, to see logs in the account domain, the user must have an IAM policy to work with the {{site.data.keyword.loganalysisshort}} service. The minimum role that allows viewing log entries is **Viewer**.
 
 
 ## Retrieving the space ID for a cluster
