@@ -39,7 +39,6 @@ IBM Cloud Log Analysis
     {: .navgroup id="howto"}
     how-to/provision.md
     plan/change_plan.md
-    how-to/quota.md
     how-to/manage-logs/config_log_collection_cli.md
     how-to/manage-logs/config_log_collection_cli_cloud.md
 
