@@ -3,7 +3,7 @@
 copyright:
   years: 2017
 
-lastupdated: "2017-11-09"
+lastupdated: "2017-11-29"
 
 ---
 
@@ -18,13 +18,16 @@ lastupdated: "2017-11-09"
 # Security
 {: #security_ov}
 
-To control the {{site.data.keyword.loganalysisshort}} actions that a user is allowed to perform, you can assign one or more roles to a user. To authenticate a user to work with logs, you need a UAA token or an IAM token.
+To control the {{site.data.keyword.loganalysisshort}} actions that a user is allowed to perform, you can assign one or more roles to a user. 
 {:shortdesc}
+
+To work with the {{site.data.keyword.loganalysisshort}} service API, you need to use a UAA token or an IAM token. To send logs into the {{site.data.keyword.loganalysisshort}} service, you need a logging token.
+
 
 ## Authentication models
 {: #auth}
 
-To manage logs through the CLI or the API, you need an authentication token.
+To work with the {{site.data.keyword.loganalysisshort}} service through the CLI or the API, you need an authentication token.
 
 The {{site.data.keyword.loganalysisshort}} service supports the following authentication models:
 
@@ -197,20 +200,37 @@ The following table lists the relationship between the API, a service action, an
   </tr>
 </table>
 
-## Getting a security token
+## Getting an authentication token to manage logs by using the API
 {: #get_token}
 
-Use the {{site.data.keyword.Bluemix_notm}} CLI or the `Login` REST API, to get the authentication token that you need to work with logs that are available in a {{site.data.keyword.Bluemix_notm}} space or in a {{site.data.keyword.Bluemix_notm}} organization. For more information, see [Getting the UAA token by using the {{site.data.keyword.Bluemix_notm}} CLI](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_cli) and [Getting the UAA token by using the API](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_api).
+To manage logs by using the {{site.data.keyword.loganalysisshort}} API, you must use an authentication token. 
 
-Use the {{site.data.keyword.Bluemix_notm}} CLI to get the IAM authentication token that you need to work with account logs in {{site.data.keyword.Bluemix_notm}}. For more information, see [Getting the IAM token by using the Bluemix CLI](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
+**Working with logs that are available in the space domain**
+
+* Use the {{site.data.keyword.loganalysisshort}} CLI to get the UAA token. 
+* The token has an expiration time. 
+
+For more information, see [Getting the UAA token](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa).
+
+**Working with logs that are available in the account domain**
+
+* Use the {{{site.data.keyword.Bluemix_notm}} CLI to get the IAM token. 
+* The token has an expiration time. 
+
+For more information, see [Getting the IAM token](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam).
 
 
-## Granting permissions to work with logs
-{: #grant_permissions}
+## Getting the logging token to send logs into Log Analysis
+{: #get_logging_token}
 
-In the {{site.data.keyword.Bluemix_notm}}, you can assign one or more roles to users. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service. 
+To send logs into the {{site.data.keyword.loganalysisshort}} service, you need a logging token. 
 
-* [You can grant a user permissions to view account logs by using the {{site.data.keyword.Bluemix_notm}} UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
-* [You can grant a user permissions to work with space logs by using the {{site.data.keyword.Bluemix_notm}} UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
-* [You can grant a user permissions to view account logs by using the command line](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_commandline).
+To send logs to a space domain, choose any of the following methods:
+
+* [Getting the logging token to send logs to a space by using the {{site.data.keyword.Bluemix_notm}} command bx service ](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
+* [Getting the logging token to send logs to a space by using the Log Analysis CLI (CF plugin)](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cf_plugin)
+* [Getting the logging token to send logs to a space by using the Log Analysis API](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
+
+To send logs to the account domain, see [Getting the logging token to send logs to the account domain by using the Log Analysis API](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_acc_token_api).
+
 
