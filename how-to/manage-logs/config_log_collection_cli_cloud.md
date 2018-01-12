@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-22"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
 
@@ -12,15 +13,60 @@ lastupdated: "2017-11-22"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Configuring the Log Analysis CLI ({{site.data.keyword.Bluemix_notm}} plugin)
+# Configuring the {{site.data.keyword.loganalysisshort}} CLI ({{site.data.keyword.Bluemix_notm}} plugin)
 {: #config_log_collection_cli}
 
-The {{site.data.keyword.loganalysisshort}} service includes a command line interface (CLI) that you can use to manage your logs in the cloud. You can use the {{site.data.keyword.Bluemix_notm}} plugin to view the status of the log, to download logs, and to configure the log retention policy. The CLI offers different types of help: general help to learn about the CLI and supported commands, command help to learn how to use a command, or subcommand help to learn how to use a subcommands for a command.
+The {{site.data.keyword.loganalysisshort}} service includes a command line interface (CLI) that you can use to manage logs in the cloud. You can use the {{site.data.keyword.Bluemix_notm}} plugin to view the status of the log, to download logs, and to configure the log retention policy. The CLI offers different types of help: general help to learn about the CLI and supported commands, command help to learn how to use a command, or subcommand help to learn how to use a subcommands for a command.
 {:shortdesc}
 
 
+## Installing the {{site.data.keyword.loganalysisshort}} plugin from the {{site.data.keyword.Bluemix_notm}} repo
+{: #install_cli_repo}
 
-## Installing the Log Analysis plugin
+To install the {{site.data.keyword.loganalysisshort}} CLI, complete the following steps:
+
+1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
+
+   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   
+2. Find out the name of the plugin in the repo. Run the following command:
+
+    ```
+    bx plugin repo-plugins
+    ```
+    {: codeblock}
+    
+    The name of the plugin is **logging-cli**.
+
+3. Install the {{site.data.keyword.loganalysisshort}} plugin. Run the following command:
+
+    ```
+    bx plugin install logging-cli -r Bluemix
+    ```
+    {: codeblock}
+ 
+4. Verify the {{site.data.keyword.loganalysisshort}} plugin is installed.
+  
+    For example, run the following command to see the list of plugins that are installed:
+    
+    ```
+    bx plugin list
+    ```
+    {: codeblock}
+    
+    The output looks as follows:
+   
+    ```
+    bx plugin list
+    Listing installed plug-ins...
+
+    Plugin Name          Version   
+    logging-cli          0.1.1   
+    ```
+    {: screen}
+
+
+## Installing the {{site.data.keyword.loganalysisshort}} plugin from a file
 {: #install_cli}
 
 To install the {{site.data.keyword.loganalysisshort}} CLI, complete the following steps:
@@ -57,7 +103,7 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
  
 
 
-## Installing the Log Analysis plugin on Linux
+## Installing the Log Analysis plugin on Linux from a file
 {: #install_cli_linux}
 
 Complete the following steps to install the Log Collection plugin on Linux:
@@ -80,12 +126,12 @@ Complete the following steps to install the Log Collection plugin on Linux:
 
 
 
-## Installing the Log Analysis plugin on Windows
+## Installing the Log Analysis plugin on Windows from a file
 {: #install_cli_windows}
 
 Complete the following steps to install the Log Collection plugin on Windows:
 
-1. Download the latest release of the {{site.data.keyword.loganalysisshort}} service CLI plugin (IBM-Logging) from [the {{site.data.keyword.Bluemix_notm}} CLI page](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
+1. Download the latest release of the {{site.data.keyword.loganalysisshort}} service CLI plugin (IBM-Logging) from [the {{site.data.keyword.Bluemix_notm}} CLI page](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins). 
 	
 	1. Select the platform value: **win64**. 
 	2. Click **Save file**.  
@@ -99,12 +145,12 @@ Complete the following steps to install the Log Collection plugin on Windows:
 
 	
 
-## Installing the Log Analysis plugin on Mac OS X
+## Installing the Log Analysis plugin on Mac OS X from a file
 {: #install_cli_mac}
 
 Complete the following steps to install the Log Collection plugin on Mac OS X:
 
-1. Download the latest release of the {{site.data.keyword.loganalysisshort}} service CLI plugin (IBM-Logging) from [the {{site.data.keyword.Bluemix_notm}} CLI page](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
+1. Download the latest release of the {{site.data.keyword.loganalysisshort}} service CLI plugin (IBM-Logging) from [the {{site.data.keyword.Bluemix_notm}} CLI page](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins). 
 	
 	1. Select the platform value: **osx**. 
 	2. Click **Save file**.  
@@ -155,6 +201,45 @@ Complete the following steps to uninstall the {{site.data.keyword.loganalysissho
     ```
     {: codeblock}
   
+
+## Updating the Log Analysis CLI from the repo
+{: #uninstall_cli}
+
+To update the logging CLI, run the *bx plugin update* command.
+{:shortdesc}
+
+Complete the following steps to update the {{site.data.keyword.loganalysisshort}} service CLI:
+
+1. Update the {{site.data.keyword.loganalysisshort}} plugin. Run the following command:
+
+    ```
+    bx plugin update logging-cli -r Bluemix
+    ```
+    {: codeblock}
+ 
+2. Verify the installation of the CLI plugin.
+  
+    For example, verify the version of the plugin. Run the following command:
+    
+    ```
+    bx plugin list
+    ```
+    {: codeblock}
+    
+    The output looks as follows:
+   
+    ```
+    bx plugin list
+    Listing installed plug-ins...
+
+    Plugin Name          Version   
+    logging-cli          0.1.1   
+    ```
+    {: screen}
+
+
+
+
 
 ## Getting general help
 {: #general_cli_help}

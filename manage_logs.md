@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-11-29"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -115,7 +115,7 @@ To learn how to install the CLI, see [Installing the logging CLI](/docs/services
 
 To check the version of the CLI, run the command [bx cf logging](/docs/services/CloudLogAnalysis/reference/logging_cli.html#base) with the parameter * -version*.
 
-To get help on how to run commands, see [Getting command line help to run commands](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#cli_help).
+To get help on how to run commands, see [Getting command line help to run commands](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#command_cli_help).
 
 ## Installing the {{site.data.keyword.loganalysisshort_notm}} CLI ({{site.data.keyword.Bluemix_notm}} plugin)
 {: #install_cli}
@@ -155,3 +155,55 @@ The following table lists the logging URLs per region:
       <td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
     </tr>
 </table>
+
+## Roles that are required by a user to manage logs
+{: #roles}
+
+In the {{site.data.keyword.Bluemix_notm}}, you can assign one or more roles to users. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service. 
+
+The following tables list the roles that a user must have to manage logs:
+
+<table>
+  <caption>Permissions required by an **account owner** to manage logs</caption>
+  <tr>
+	<th>IAM role</th>
+	<th>Actions</th>
+  </tr>
+  <tr>
+    <td>*Administrator*</td>
+    <td>Check the status of logs </br>Download logs </br>Delete logs </br>Change the log retention policy </br>Manage sessions </td>
+</table>
+
+<table>
+  <caption>Permissions required by an **auditor** to manage logs</caption>
+  <tr>
+	<th>IAM role</th>
+	<th>Actions</th>
+  </tr>
+  <tr>
+    <td>*Viewer*</td>
+    <td>Get information about logs hosted in Log Collection. </br>Get information about the log retention policy that is configured. </td>
+</table>
+
+<table>
+  <caption>Permissions required by an **admin** to manage logs</caption>
+  <tr>
+	<th>IAM role</th>
+	<th>Actions</th>
+  </tr>
+  <tr>
+    <td>*Administrator*</td>
+    <td>Check the status of logs </br>Download logs </br>Delete logs </br>Change the log retention policy </br>Manage sessions </td>
+</table>
+
+<table>
+  <caption>Permissions required by a **developer** to manage logs.</caption>
+  <tr>
+	<th>IAM role</th>
+	<th>Actions</th>
+  </tr>
+  <tr>
+    <td>*Editor*</td>
+    <td>Check the status of logs </br>Download logs </br>Delete logs </br>Change the log retention policy </br>Manage sessions</td>
+</table>
+

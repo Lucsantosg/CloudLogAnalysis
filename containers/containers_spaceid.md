@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-11-09"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -17,32 +17,56 @@ lastupdated: "2017-11-09"
 # Retrieving the space ID for a cluster
 {: #containers_spaceid}
 
-When a cluster is created in an {{site.data.keyword.Bluemix_notm}} account, the logs are associated with a space within that account. When you create queries to view cluster logs, you need the space ID.
-{:shortdesc}
+You can create a cluster in an {{site.data.keyword.Bluemix_notm}} account within the context of a Cloud Foundry organization and space. {:shortdesc}
 
-To find the space ID for a cluster, run the folloing command:
+For existing clusters, container logs, that is stdout and stderr logs, were automatically forwarded to the space domain associated with this space. 
+
+**Note:** New clusters or existing clusters that you created at account level do not have a space associated to it. Logs are not forwarded to a space domain. You must define the logging configuration of the cluster. For more information, see [Enabling automatic collection of cluster logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
+
+
+To find the space ID that is associated with a cluster, run the following command:
 
 ```
-bx cs cluster-get cluster-name
+bx cs cluster-get ClusterName --json
 ```
 {: codeblock}
 
-where **cluster-name** is the name of the cluster.
+where **ClusterName** is the name of the cluster.
 
-The space ID is the value indicated for the **Log Space** field.
 
 For example, the output of running the command is the following:
 
 ```
-Name:			    cluster-name
-ID:			        c213f81296db4c68b84e212c19135a99
-State:			    normal
-Created:		    2017-08-22T18:18:59+0000
-Datacenter:		    dal10
-Master URL:		    https://169.46.7.242:21210
-Ingress subdomain:  cluster-name.us-south.containers.mybluemix.net
-Ingress secret:     cluster-name
-Workers:		    5
-Log Space:		    fa277ff8-8a73-324b-9b75-0f11d54a3ae2
+{
+    "id": "c213f81296db4c68b84e212c19135a99",
+    "name": "MyDemoCluster",
+    "region": "us-south",
+    "dataCenter": "hou02",
+    "location": "us-south-hou02",
+    "serverURL": "https://xxx.xx.xx.xx:xxxxx",
+    "state": "normal",
+    "createdDate": "2017-09-26T09:00:59+0000",
+    "modifiedDate": "2017-11-29T05:30:41+0000",
+    "workerCount": 5,
+    "isPaid": true,
+    "masterKubeVersion": "1.7.4_1504",
+    "targetVersion": "1.7.4_1504",
+    "ingressHostname": "",
+    "ingressSecretName": "",
+    "logOrg": "5eab56t3-dty7-4utc-adaa-3aa5gn7r4g41",
+    "logOrgName": "MyOrg",
+    "logSpace": "fa277ff8-8a73-324b-9b75-0f11d54a3ae2",
+    "logSpaceName": "MySpace",
+    "addons": null,
+    "vlans": null
+}
 ```
 {: screen}
+
+The space ID is the value indicated for the **logSpace** field.
+The space name is the value indicated for the **logSpaceName** field.
+The organization ID is the value indicated for the **logOrg** field.
+The organization name is the value indicated for the **logOrgName** field.
+
+
+

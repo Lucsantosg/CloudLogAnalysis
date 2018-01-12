@@ -1,10 +1,9 @@
 ---
 
 copyright:
+  years: 2017, 2018
 
-  years: 2017
-
-lastupdated: "2017-11-09"
+lastupdated: "2018-01-10"
 
 ---
 

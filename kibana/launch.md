@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-11-15"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -103,7 +103,7 @@ Complete the following steps to launch Kibana from a browser:
 	    ```
 	    [logstash-Space_ID-]YYYY.MM.DD 
 	    ```
-        {screen}
+        {: screen}
 	
 	    where *Space_ID* is the GUID of the space where you want to view and analyze log data. 
 	
@@ -131,9 +131,9 @@ To see the logs of a Cloud Foundry application in Kibana, complete the following
     For CF apps, click **Logs** in the navigation bar. 
     The logs tab opens.  
 
-4. Click **Advanced view**. The Kibana dashboard opens.
+4. Click **View in Kibana**. The Kibana dashboard opens.
 
-    By default, the **Discover** page loads with the default index pattern selected and a time filter set to the last 30 seconds. The search query is set to match all entries for the your CF app.
+    By default, the **Discover** page loads with the default index pattern selected and a time filter set to the last 15 minutes. The search query is set to match all entries for the CF app.
 
     If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 

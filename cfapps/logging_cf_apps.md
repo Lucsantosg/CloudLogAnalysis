@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-11-15"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -140,3 +140,8 @@ Each log entry contains the following fields:
 | Message | The message that is issued by the component. The message varies depending on the context. |
 {: caption="Table 1. CF app log entry fields" caption-side="top"}
 
+
+## Tutorial: Analyze logs in Kibana for a Cloud Foundry app
+{: #tutorial}  
+
+To learn how to use Kibana to analyze the logs for a Cloud Foundry app, see [Analyze logs in Kibana for a Cloud Foundry app](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).

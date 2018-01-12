@@ -1,11 +1,11 @@
 ---
 
 copyright:
-  years: 2016, 2017
-lastupdated: "2017-02-02"
+  years: 2015, 2018
+
+lastupdated: "2018-01-10"
 
 ---
-
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen:.screen}

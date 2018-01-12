@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-11-15"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -124,6 +124,127 @@ The following Kibana features are not supported:
 
 * Sharing a search.
 * Creating new index patterns. 
+
+
+## Roles that are required by a user to view logs
+{: #roles}
+
+In the {{site.data.keyword.Bluemix_notm}}, you can assign one or more roles to users. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service. 
+
+The following tables list the roles that a user must have to view logs:
+
+<table>
+  <caption>Permissions required by an **account owner** to see logs</caption>
+  <tr>
+    <th>Action</th>
+	<th>CF space roles</th>
+	<th>CF organization roles</th>
+	<th>IAM roles</th>
+  </tr>
+  <tr>
+    <td>View logs in a space domain</td>
+	<td>*Manager* </br>*Developer* </br>*Auditor*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>View logs in the account domain</td>
+	<td></td>
+	<td></td>
+	<td>*Administrator*</td>
+  </tr>
+  <tr>
+    <td>View logs in an organization domain</td>
+	<td></td>
+	<td>*Manager* </br>*Billing manager*  </br>*Auditor*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Permissions required by an **auditor** to see logs</caption>
+  <tr>
+    <th>Action</th>
+	<th>CF space roles</th>
+	<th>CF organization roles</th>
+	<th>IAM roles</th>
+  </tr>
+  <tr>
+    <td>View logs in a space domain</td>
+	<td>*Auditor*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>View logs in the account domain</td>
+	<td></td>
+	<td></td>
+	<td>*Viewer*</td>
+  </tr>
+  <tr>
+    <td>View logs in an organization domain</td>
+	<td></td>
+	<td>*Auditor*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Permissions required by an **admin** to see logs</caption>
+  <tr>
+    <th>Action</th>
+	<th>CF space roles</th>
+	<th>CF organization roles</th>
+	<th>IAM roles</th>
+  </tr>
+  <tr>
+    <td>View logs in a space domain</td>
+	<td>*Developer*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>View logs in the account domain</td>
+	<td></td>
+	<td></td>
+	<td>*Viewer*</td>
+  </tr>
+  <tr>
+    <td>View logs in an organization domain</td>
+	<td></td>
+	<td>*Manager*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Permissions required by a **developer** to see logs</caption>
+  <tr>
+    <th>Action</th>
+	<th>CF space roles</th>
+	<th>CF organization roles</th>
+	<th>IAM roles</th>
+  </tr>
+  <tr>
+    <td>View logs in a space domain</td>
+	<td>*Developer*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>View logs in the account domain</td>
+	<td></td>
+	<td></td>
+	<td>*Viewer*</td>
+  </tr>
+  <tr>
+    <td>View logs in an organization domain</td>
+	<td></td>
+	<td>*Auditor*</td>
+	<td></td>
+  </tr>
+</table>
+
 
 
 ## URLs to launch Kibana

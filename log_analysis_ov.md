@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-11-15"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -30,14 +30,12 @@ You can use the logging capabilities in the {{site.data.keyword.Bluemix_notm}} t
 
 The {{site.data.keyword.loganalysisfull}} service provides log collection and log search services for the {{site.data.keyword.Bluemix_notm}} platform, automatically collecting application and {{site.data.keyword.Bluemix_notm}} services’ data from select {{site.data.keyword.Bluemix_notm}} services.
 
-The following figure shows a high level view of the {{site.data.keyword.loganalysisshort}} service components: 
+The following figure shows a high level view of the {{site.data.keyword.loganalysisshort}} service: 
 
 ![Overview image of the {{site.data.keyword.loganalysisshort}} service](images/loganalisys_F1.gif "Overview image of the {{site.data.keyword.loganalysisshort}} service")
 
 
-To collect and search logs of cloud resources, you must provision an instance of the {{site.data.keyword.loganalysisshort}} service in the same space where those cloud resources are running.
-
-Logs are collected and stored in Log Search by default. When you select a service plan that includes extended search and collection capabilities, logs are also collected and stored in the Log Collection component. Log data that is stored in Log Collection is encrypted.
+To collect and search logs of cloud resources that run in a space, you must provision an instance of the {{site.data.keyword.loganalysisshort}} service in the same space where those cloud resources are running. Logs are collected and stored in Log Search by default. When you select a service plan that includes extended search and collection capabilities, logs are also collected and stored in the Log Collection component. Log data that is stored in Log Collection is encrypted.
 
 By default, the {{site.data.keyword.Bluemix_notm}} stores log data for up to 3 days in Log Search:   
 
@@ -55,6 +53,7 @@ You can use Kibana 5.1 for advanced log search analysis tasks:
 To access logs that are older than 3 days, you can use the Log Collection CLI or the Log Collection API to download logs locally or you can pipe logs to other applications or 3rs party cloud services. 
 
 You can delete logs automatically by setting a retention policy or manually by using the {{site.data.keyword.loganalysisshort}} CLI.
+
 
 ## Why use the Log Analysis service
 {: #value}
@@ -124,6 +123,8 @@ The following table lists the location of logs per region:
 {: #plans}
 
 The {{site.data.keyword.loganalysisshort}} service provides multiple plans. Each plan has different log collection and log search capabilities. 
+
+**NOTE:** The features that are included in a service plan are enabled only in the space where you provision the {{site.data.keyword.loganalysisshort}} service with that plan.
 
 You can change a plan through the {{site.data.keyword.Bluemix_notm}} UI or through the command line. You can upgrade or reduce your plan at any time. For more information about service plan upgrades, see [Changing the plan](/docs/services/CloudLogAnalysis/plan/change_plan.html#change_plan). 
 

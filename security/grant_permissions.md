@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-11-29"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -44,33 +45,36 @@ In {{site.data.keyword.Bluemix_notm}}, complete the following steps to grant a u
 
     If the user is not a member of the account, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
 
-4. Click **Assign service policies**.
+4. In the **Access policies** section, click **Assign service policies**, then select **Assign access to resources**..
 
-5. Enter information about the policy. The following table lists the fields that are required or optional to define a policy: 
+    The *Assign resource access to user** window opens.
+
+5. Enter information about the policy. The following table lists the fields that are required to define a policy: 
 
     <table>
 	  <caption>List of fields to configure an IAM policy.</caption>
 	  <tr>
 	    <th>Field</th>
 		<th>Value</th>
-		<th>Status</th>
 	  </tr>
 	  <tr>
-	    <td>Service</td>
-		<td>IBM Cloud Log Analysis</td>
-		<td>Required</td>
+	    <td>Services</td>
+		<td>*IBM Cloud Log Analysis*</td>
+	  </tr>	  
+	  <tr>
+	    <td>Regions</td>
+		<td>You can specify the regions where the user is going to be granted access to work with logs. Select one or more regions individually, or select **All current regions** to grant access to all regions.</td>
+	  </tr>
+	  <tr>
+	    <td>Service instance</td>
+		<td>Select *All service instances*.</td>
 	  </tr>
 	  <tr>
 	    <td>Roles</td>
-		<td>Select one or more IAM roles. <br>Valid roles are: *administrator*, *operator*, *editor*, and *viewer*. <br>For more information about the actions that are allowed per role, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).</td>
-		<td>Required</td>
+		<td>Select one or more IAM roles. <br>Valid roles are: *administrator*, *operator*, *editor*, and *viewer*. <br>For more information about the actions that are allowed per role, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+		</td>
 	  </tr>
-	  <tr>
-	    <td>Regions</td>
-		<td>You can specify the regions where the user is going to be granted access to work with logs. Select **Specify optional service context**. Then, add one or more regions individually, or select **All current regions** to grant access to all regions.</td>
-		<td>Optional</td>
-	  </tr>
-	</table>
+     </table>
 	
 6. Click **Assign policy**.
 	
@@ -239,41 +243,16 @@ Complete the following steps to grant a user permissions to work with the {{site
 
     If the user is not a member of the account, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
 
-4. Click **Assign organization**.
+4. Select **Cloud Foundry access**, then select the organization.
 
-5. Enter information about the policy. The following table lists the fields that are required or optional to define a policy: 
+    The list of spaces available in that organization are listed.
 
-    <table>
-	  <caption>List of fields to configure a CF policy.</caption>
-	  <tr>
-	    <th>Field</th>
-		<th>Value</th>
-	  </tr>
-	  <tr>
-	    <td>Organization</td>
-		<td>Choose an organization from the list.</td>
-	  </tr>
-	  <tr>
-	    <td>Organization Roles</td>
-		<td>Select **No organization role**. However, if the user has an organizational role, choose an organization role from the list. <br>Valid values are: **Billing manager**, **Auditor**, **Manager**</td>
-	  </tr>
-	  <tr>
-	    <td>Region</td>
-		<td>Choose a region from the list. <br>Valid values are: **All current regions**, **US South**, **United Kingdom**</td>
-	  </tr>
-	  <tr>
-	    <td>Space</td>
-		<td>By default, **All current spaces** is predefined when the *Region* field is set to **All current regions**. To grant permission to an individual space, choose a specific region, and then choose a space from the list.</td>
-	  </tr>
-	  <tr>
-	    <td>Space Roles</td>
-		<td>Choose a space role from the list. <br>Valid values are: **Manager**, **Auditor**, **Developer**, and **No space role**. For more information, see [Bluemix UAA roles](/docs/services/CloudLogAnalysis/security_ov.html#bmx_roles).</td>
-	  </tr>
-	</table>
+5. Choose one space. Then, from the menu action, select **Edit space role**.
+
+6. Select 1 or more space roles. Valid roles are: *Manager*, *Developer*, and *Auditor*
 	
-6. Click **Assign policy**.
-	
-The policy that you configure is applicable to the selected regions. 
+7. Click **Save role**.
+
 
 
 

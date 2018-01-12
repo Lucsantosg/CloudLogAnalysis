@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-20"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
 
@@ -15,10 +16,12 @@ lastupdated: "2017-11-20"
 # Configuring the log retention policy
 {: #configuring_retention_policy}
 
-Use the command **bx logging option-show** to view the retention policy that defines the maximum number of days that logs are kept in Log Collection. By default, the retention policy is disabled, and logs are kept indefinitely. After the retention period has expired, logs are deleted automatically. Use the command **bx logging option-update** to change the retention policy.
+By default, the retention policy is disabled, and logs are kept indefinitely. Use the command **bx logging option-update** to change the retention policy.
 {:shortdesc}
 
-You can have different retention policies defined in the account. You can have a global account policy and individual space policies. The retention policy that you set at the account level sets the maximum number of days that you can keep logs. If you set a space retention policy for a period of time that is longer than the account level period, the policy that is applied is the last policy that you configure for that space. 
+You can use the command **bx logging option-show** to view the retention policy that defines the maximum number of days that logs are kept in Log Collection. 
+
+When you set a retention policy, after the retention period has expired, logs are deleted automatically.
 
 
 ## Disabling the log retention policy for an account
@@ -98,7 +101,7 @@ To get the retention period that is set for an account, complete the following s
 
     For more information, see [How do I get the GUID of an account](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).
     
-3. Get the the retention period. Run the command:
+3. Get the retention period. Run the command:
 
     ```
     bx logging option-show -r account -i AccountID
@@ -125,7 +128,7 @@ To get the retention period that is set for a space, complete the following step
 
     For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Get the the retention period. Run the command:
+2. Get the retention period. Run the command:
 
     ```
     bx logging option-show

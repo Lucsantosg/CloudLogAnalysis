@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-20"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
 
@@ -32,8 +33,8 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
 2. Install the {{site.data.keyword.loganalysisshort}} CF plugin.
 
     * For Linux, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux).
-    * For Windows, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_at_cli.html#install_cli_windows).
-    * For Mac OS X, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Mac OS X ](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_at_cli.html#install_cli_mac).
+    * For Windows, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows).
+    * For Mac OS X, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Mac OS X ](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac).
  
 3. Verify the installation of the CLI plugin.
   
@@ -317,7 +318,7 @@ A command can have subcommands. To get help on subcommands, complete the followi
 
     For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Get the list of supported comnmands and identify the one that you need. Run the command:
+2. Get the list of supported commands and identify the one that you need. Run the command:
 
     ```
     bx cf logging help 

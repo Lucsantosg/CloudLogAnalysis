@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-11-29"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -232,5 +232,21 @@ To send logs to a space domain, choose any of the following methods:
 * [Getting the logging token to send logs to a space by using the Log Analysis API](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
 
 To send logs to the account domain, see [Getting the logging token to send logs to the account domain by using the Log Analysis API](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_acc_token_api).
+
+
+
+## Granting permissions to a user to work with logs
+{: #grant_permissions}
+
+For a user to be able to manage logs, or to view logs, the user must be granted permissions in the {{site.data.keyword.Bluemix_notm}} to work with the {{site.data.keyword.loganalysisshort}} service.
+
+* For information about permissions required to manage logs, see [Roles that are required by a user to manage logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+* For information about permissions required to view logs, see [Roles that are required by a user to view logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
+
+For more information on how to grant permissions, see:
+
+* [Assign an IAM policy to a user through the {{site.data.keyword.Bluemix_notm}} UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions).
+* [Assign an IAM policy to a user by using the command line](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_commandline).
+* [Granting a user permissions to view space logs by using the {{site.data.keyword.Bluemix_notm}} UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
 
 

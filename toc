@@ -10,6 +10,7 @@ IBM Cloud Log Analysis
     {: .topicgroup}
     About Log Analysis
         log_analysis_ov.md
+        log_analysis_component_ov
         manage_logs.md
         log_ingestion.md
         kibana/analyzing_logs_Kibana.md
@@ -28,7 +29,8 @@ IBM Cloud Log Analysis
     
     {: .topicgroup}
     Tutorials
-        containers/tutorials/kibana_tutorial_1.md
+        tutorials/container_logs.md
+        [Analyze logs in Kibana for a CF app](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)
 
     {: .topicgroup}
     Related links
@@ -38,7 +40,8 @@ IBM Cloud Log Analysis
     
     {: .navgroup id="howto"}
     how-to/provision.md
-    plan/change_plan.md
+    how-to/change_plan.md
+    how-to/quota.md
     how-to/manage-logs/config_log_collection_cli.md
     how-to/manage-logs/config_log_collection_cli_cloud.md
 

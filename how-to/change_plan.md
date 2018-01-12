@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-11-09"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -24,15 +26,20 @@ You can change your {{site.data.keyword.loganalysisshort}} service plan through 
 
 To change your service plan in the {{site.data.keyword.Bluemix_notm}} UI, complete the following steps:
 
-1. Log in to {{site.data.keyword.Bluemix_notm}}, and then click the {{site.data.keyword.loganalysisshort}} service from the {{site.data.keyword.Bluemix_notm}} *Dashboard*. 
+1. Log in to the {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}. 
+
+2. Select the region, organization, and space where the {{site.data.keyword.loganalysisshort}} service is available.  
+
+3. Click the {{site.data.keyword.loganalysisshort}} service instance from the {{site.data.keyword.Bluemix_notm}} *Dashboard*. 
     
-2. Select the **Plan** tab in the {{site.data.keyword.loganalysisshort}} dashboard.
+4. Select the **Plan** tab in the {{site.data.keyword.loganalysisshort}} dashboard.
 
     Information about your current plan is displayed.
 	
-3. Select a new plan to either upgrade or reduce your plan. 
+5. Select a new plan to either upgrade or reduce your plan. 
 
-4. Click **Save**.
+6. Click **Save**.
+
 
 
 
