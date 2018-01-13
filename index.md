@@ -205,11 +205,11 @@ For more information on how to launch Kibana in other regions, see [Navigating t
 
 Generate logs. Try any of the following tutorials:
 
-* [Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs){:new_window} 
+* [Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs) 
 
     This tutorial demonstrates the steps that are required to get the following end to end scenario working: Provision a cluster, configure the cluster to send logs to the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.Bluemix_notm}}, deploy an app in the cluster, and use Kibana to view and filter container logs for that cluster.     
     
-* [Analyze logs in Kibana for a Cloud Foundry app](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs){:new_window}                                                                                                            
+* [Analyze logs in Kibana for a Cloud Foundry app](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)                                                                                                           
 
     This tutorial demonstrates the steps that are required to get the following end to end scenario working: Deploy aa Python Cloud Foundry application, generate different types of logs, and use Kibana to view, search, and analyze CF logs.
    
