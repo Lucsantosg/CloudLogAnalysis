@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-01-31"
 
 ---
 
@@ -46,19 +46,19 @@ The following table lists the URLs that you must use to send logs into the {{sit
     </tr>
   <tr>
     <td>Germany</td>
-	<td>ingest-eu-fra.logging.bluemix.net:9091</td>
+	  <td>ingest-eu-fra.logging.bluemix.net:9091</td>
   </tr>
   <tr>
     <td>Sydney</td>
-	<td>ingest-au-syd.logging.bluemix.net:9091</td>
+	  <td>ingest-au-syd.logging.bluemix.net:9091</td>
   </tr>
   <tr>
     <td>United Kingdom</td>
-	<td>logs.eu-gb.opvis.bluemix.net:9091</td>
+	  <td>ingest.logging.eu-gb.bluemix.net:9091</td>
   </tr>
   <tr>
     <td>US South</td>
-	<td>ingest.logging.ng.bluemix.net:9091</td>
+	  <td>ingest.logging.ng.bluemix.net:9091</td>
   </tr>
 </table>
 

@@ -3,15 +3,18 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-12"
+lastupdated: "2018-02-01"
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Logging for resources in a Kubernetes cluster
@@ -96,10 +99,11 @@ Consider the following information:
 * To view application and cluster logs through the {{site.data.keyword.loganalysisshort}} service, you must define one or more logging configurations in a cluster. Each configuration entry defines what log information is forwarded to the {{site.data.keyword.loganalysisshort}} service. For example, stdout and stderr log data is collected as soon as the pod is deployed. To forward these logs, you must define a logging configuration for a log source of type *container*.
 * When you define a logging configuration, you decide whether to send logs to the account domain or to a space domain. **Note:** Currently, the account domain has a limit search quota of 500MB per day, and you cannot store logs in Log Collection for long term storage. To be able to search larger logs, and to store logs in Log Collection, send your logs to a space domain.
 * When you define a logging configuration to send logs to the account domain, logs are forwarded to the account domain in the same Public region where the Dedicated {{site.data.keyword.containershort}} is running.
-    Clusters that are available in the US South region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the US South region.
-    Clusters that are available in the US East region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the US South region.
-    Clusters that are available in the German region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the German region.
-    Clusters that are available in the Sydney region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the Sydney region.
+
+    Clusters that are available in the US South region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the US South region.</br>
+    Clusters that are available in the US East region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the US South region. </br>
+    Clusters that are available in the German region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the German region. </br>
+    Clusters that are available in the Sydney region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the Sydney region. </br>
     Clusters that are available in the United Kingdom region, send logs to the {{site.data.keyword.loganalysisshort}} service that is available in the German region.
 
 
@@ -137,12 +141,12 @@ You can configure your cluster to forward logs to the {{site.data.keyword.logana
   <tr>
     <td>Application</td>
 	<td>Logs for your own application that runs in a Kubernetes cluster.</td>
-	<td>*/var/log/apps/**/*.log* </br>*/var/log/apps/**/*.err*</td>
+	<td>`/var/log/apps/**/*.log`  </br>`/var/log/apps/**/*.err`</br>**NOTE:** On a pod, logs can be written in `/var/logs/apps/` or in any subdirectory under `/var/logs/apps/`. On the worker, you must mount `/var/log/apps/` to the directory in the pod where your app is writing logs in the pod.</td>
   </tr>
   <tr>
     <td>Worker</td>
 	<td>Logs for virtual machine worker nodes within a Kubernetes cluster. </td>
-	<td>*/var/log/syslog* </br>*/var/log/auth.log*</td>
+	<td>`/var/log/syslog` </br>`/var/log/auth.log`</td>
   </tr>
   <tr>
     <td>Kubernetes system component</td>
@@ -152,21 +156,64 @@ You can configure your cluster to forward logs to the {{site.data.keyword.logana
   <tr>
     <td>Ingress controller</td>
 	<td>Logs for an Ingress controller that manages network traffic coming into a Kubernetes cluster.</td>
-	<td>*/var/log/alb/ids/*.log* </br>*/var/log/alb/ids/*.err* </br>*/var/log/alb/customerlogs/*.log* </br>*/var/log/alb/customerlogs/*.err*</td>
+	<td>`/var/log/alb/ids/*.log` </br>`/var/log/alb/ids/*.err` </br>`/var/log/alb/customerlogs/*.log` </br>`/var/log/alb/customerlogs/*.err`</td>
   </tr>
 </table>
 
+
+## Considerations forwarding application logs
+{: #forward_app_logs}
+
+To enable log forwarding of application logs, you must define a cluster logging configuration with **Log source** set to **application**.
+
+Review the following aspects of application log forwarding:
+
+* You can forward logs that are available in a specific directory on the host node. You can do this by mounting a host path volume in your containers with a mount path. This mount path serves as the directory on your containers where application logs are sent. The predefined host path directory, `/var/log/apps`, is automatically created when you create the volume mount.
+
+    For example, see samples of a deployment descriptor volumeMounts section ad volumes section:
+
+    ```
+    volumeMounts:
+            - mountPath: /var/app
+              name: application-log
+    volumes:
+        - name: application-log
+          hostPath:
+            path: /var/log/apps
+
+    ```
+    {: codeblock}
+
+* Logs are read recursively from the `/var/log/apps` path. You can put application logs in subdirectories of the `/var/log/apps` path.
+    
+* Only application log files with **.log** or **.err** file extensions are forwarded.
+
+* When you enable log forwarding for the first time, application logs are tailed instead of being read from head. 
+
+    The contents of any logs already present before application logging was enabled are not read. The logs are read from the point that logging was enabled. However, after the first time that log forwarding is enabled, logs are always picked up from where they last left off.
+
+* When you mount the */var/log/apps* host path volume in multiple containers, all the containers write to the same directory on the host (worker). If your containers write to the same file name, the containers will write to the exact same file on the host and they will be overwritten. 
+
+    **NOTE:** When all containers write to the same file name, do not enable log forwarding of logs with Log Source set to *application* to forward application logs for ReplicaSets greater than 1. Instead, you can write logs from the application to STDOUT and STDERR, which are picked up as container logs. To forward application logs written to STDOUT and STDERR, enable log forwarding with Log source set to *container*.
+
+
+
+## Considerations forwarding logs to a logs domain
+{: #forward_logs_domain}
+
+You can configure your cluster to forward log files to the {{site.data.keyword.loganalysisshort}} service. 
+
+Logs can be forwarded to the account domain or to a space domain.
+
+Consider the following information when deciding whether to forward logs to a space domain or to the account domain:
+
+* When you send logs to the account domain, the search quota is 500MB per day, and you cannot store logs in Log Collection for long term storage.
+* When you send logs to a space domain, you can choose a {{site.data.keyword.loganalysisshort}} service plan that defines the search quota per day, and a you can store logs in Log Collection for long term storage.
 
 
 
 ## Forwarding application and cluster logs
 {: #forward_logs}
-
-You can configure your cluster to forward log files to the {{site.data.keyword.loganalysisshort}} service. Logs can be forwarded to the account domain or to a space domain.
-
-Consider the following information when deciding whether to forward logs to a space domain or to the account domain:
-* When you send logs to the account domain, the search quota is 500MB per day, and you cannot store logs in Log Collection for long term storage.
-* When you send logs to a space domain, you can choose a {{site.data.keyword.loganalysisshort}} service plan that defines the search quota per day, and a you can store logs in Log Collection for long term storage.
 
 To configure your cluster to forward logs to the {{site.data.keyword.loganalysisshort}} service, you must complete the following steps:
 
@@ -178,10 +225,10 @@ To configure your cluster to forward logs to the {{site.data.keyword.loganalysis
 
 3. Create your logging configurations for the cluster. You can choose which cluster logs you forward to the Log Analysis service.
 
-    To enable automatic log collection and forwarding of stdout and stderr, see [Enabling automatic log collection and forwarding of container logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers).
-    To enable automatic log collection and forwarding of application logs, see [Enabling automatic log collection and forwarding of application logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#apps).
-    To enable automatic log collection and forwarding of worker logs, see [Enabling automatic log collection and forwarding of worker logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#workers).
-    To enable automatic log collection and forwarding of the Kubernetes system component logs, see [Enabling automatic log collection and forwarding of the Kubernetes system component logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#system).
+    To enable automatic log collection and forwarding of stdout and stderr, see [Enabling automatic log collection and forwarding of container logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers). </br>
+    To enable automatic log collection and forwarding of application logs, see [Enabling automatic log collection and forwarding of application logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#apps). </br>
+    To enable automatic log collection and forwarding of worker logs, see [Enabling automatic log collection and forwarding of worker logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#workers). </br>
+    To enable automatic log collection and forwarding of the Kubernetes system component logs, see [Enabling automatic log collection and forwarding of the Kubernetes system component logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#system). </br>
     To enable automatic log collection and forwarding of the Kubernetes ingress controller logs, see [Enabling automatic log collection and forwarding of the Kubernetes ingress controller logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#controller).
     
 4. When you forward logs to a space, you must also grant Cloud Foundry (CF) permissions to the {{site.data.keyword.containershort}} key owner in the organization and space. The key owner needs *orgManager* role for the organization, and *SpaceManager* and *Developer* for the space.
@@ -265,7 +312,7 @@ Fields that are common to any log entry:
   </tr>
 </table>
 
-Fields that might be useful when analyzing application logs:
+Fields that might be useful when analyzing container stdout and stderr logs:
 
 <table>
   <caption>List of fields for applications</caption>
@@ -419,19 +466,8 @@ To view logs in Kibana, consider the following information:
 * To see logs in the account domain, the user must have an IAM policy to work with the {{site.data.keyword.loganalysisshort}} service. The minimum role that allows viewing log entries is **Viewer**.
 
 
-## Retrieving the space ID for a cluster
-{: #logging_containers_ov_spaceid}
-
-You can create a cluster at the account level or within the context of an organization and space. 
-
-To find the space ID that is associated with a cluster, run the `bx cs cluster-get` command and locate the space ID in the **logSpace** field and the space name in the **logSpaceName**. 
-
-For more information, see [Retrieving the space ID for a cluster](/docs/services/CloudLogAnalysis/containers/containers_spaceid.html#containers_spaceid).
-
 
 ## Tutorial: Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster
 {: #tutorial1}
 
-To learn how to use Kibana to analyze the logs of a container that is deployed in a Kubernetes cluster, see [Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs).xs
-
-
+To learn how to use Kibana to analyze the logs of a container that is deployed in a Kubernetes cluster, see [Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs).

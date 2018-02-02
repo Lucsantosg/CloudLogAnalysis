@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-01-31"
 
 ---
 
@@ -19,6 +19,31 @@ lastupdated: "2018-01-10"
 
 Get a logging token to send logs into the {{site.data.keyword.loganalysisshort}} service. 
 {:shortdesc}
+
+
+## Getting the logging token to send logs to a space by using the {{site.data.keyword.loganalysisshort}} CLI 
+{: #logging_token_la_cloud_cli}
+
+To get the logging token that you can use to send logs to the {{site.data.keyword.loganalysisshort}} service, complete the following steps:
+
+1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
+
+   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   
+   If the CLI is installed, continue with the next step.
+    
+2. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
+
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+	
+3. Run the following command:
+
+    ```
+	bx logging token-get
+	```
+	{: codeblock}
+
+The output returns the logging token.
 
 
 ## Getting the logging token to send logs to a space by using the {{site.data.keyword.Bluemix_notm}} CLI 

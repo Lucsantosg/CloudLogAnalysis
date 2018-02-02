@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-01-31"
 
 ---
 
@@ -35,7 +35,7 @@ To manage logs, consider the following information:
 The {{site.data.keyword.loganalysisshort}} service offers two CLIs that you can use to manage logs:
 
 * A {{site.data.keyword.loganalysisshort}} {{site.data.keyword.Bluemix_notm}} plugin. For more information on the CLI, see [{{site.data.keyword.loganalysisshort}} CLI ({{site.data.keyword.Bluemix_notm}} plugin)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli).
-* A {{site.data.keyword.loganalysisshort}} CF plugin. For more information on the CLI, see [Configuring the Log Analysis CLI (CF plugin)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#logging_cli).
+* A {{site.data.keyword.loganalysisshort}} CF plugin (Deprecated). For more information on the CLI, see [Configuring the Log Analysis CLI (CF plugin)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#logging_cli).
 
 
 ## Configuring a log retention policy
@@ -148,7 +148,7 @@ The following table lists the logging URLs per region:
     </tr>
 	<tr>
       <td>United Kingdom</td>
-	  <td>[https://logmet.eu-gb.bluemix.net](https://logmet.eu-gb.bluemix.net)</td>
+	  <td>[https://logging.eu-gb.bluemix.net](https://logging.eu-gb.bluemix.net)</td>
     </tr>
     <tr>
       <td>US South</td>

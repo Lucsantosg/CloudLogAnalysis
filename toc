@@ -42,8 +42,8 @@ IBM Cloud Log Analysis
     how-to/provision.md
     how-to/change_plan.md
     how-to/quota.md
-    how-to/manage-logs/config_log_collection_cli.md
     how-to/manage-logs/config_log_collection_cli_cloud.md
+    how-to/manage-logs/config_log_collection_cli.md
 
     {: .topicgroup}
     Advanced log analysis (Kibana)
@@ -89,6 +89,7 @@ IBM Cloud Log Analysis
     {: .topicgroup}
     Containers
         containers/containers_kube_other_logs.md
+        containers/containers_key_owner.md
         containers/containers_spaceid.md
         containers/logging_containers_other_logs.md
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-01-16"
 
 ---
 
@@ -18,11 +18,6 @@ lastupdated: "2018-01-10"
 {: #containers_spaceid}
 
 You can create a cluster in an {{site.data.keyword.Bluemix_notm}} account within the context of a Cloud Foundry organization and space. {:shortdesc}
-
-For existing clusters, container logs, that is stdout and stderr logs, were automatically forwarded to the space domain associated with this space. 
-
-**Note:** New clusters or existing clusters that you created at account level do not have a space associated to it. Logs are not forwarded to a space domain. You must define the logging configuration of the cluster. For more information, see [Enabling automatic collection of cluster logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
-
 
 To find the space ID that is associated with a cluster, run the following command:
 
@@ -67,6 +62,8 @@ The space ID is the value indicated for the **logSpace** field.
 The space name is the value indicated for the **logSpaceName** field.
 The organization ID is the value indicated for the **logOrg** field.
 The organization name is the value indicated for the **logOrgName** field.
+
+If these fields are empty, then, there is no CF organization and space associated to that cluster.
 
 
 

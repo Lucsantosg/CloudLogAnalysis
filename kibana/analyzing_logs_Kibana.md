@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-01-31"
 
 ---
 
@@ -271,8 +271,8 @@ The following table lists the URLs to launch Kibana, and the versions of Kibana 
     </tr>
 	<tr>
       <td>United Kingdom</td>
-	  <td>[https://logmet.eu-gb.bluemix.net](https://logmet.eu-gb.bluemix.net)</td>
-	  <td>Kibana 4, Kibana 3 (Deprecated)</td>
+	  <td>[https://logging.eu-gb.bluemix.net](https://logging.eu-gb.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
     </tr>
     <tr>
       <td>US South</td>

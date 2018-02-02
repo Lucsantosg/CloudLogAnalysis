@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-02-01"
 
 ---
 
@@ -26,7 +26,7 @@ The {{site.data.keyword.Bluemix_notm}} logging capabilities are integrated in th
 * You can search up to 500 MB of logs per day. 
 * Logs for the last 3 days are stored in Log Search, a component of the {{site.data.keyword.loganalysisshort}} service.
 
-You can use the logging capabilities in the {{site.data.keyword.Bluemix_notm}} to understand the behavior of the cloud platform and the resources that are running in it. No special instrumentation is required to collect the standard out and the standard err logs. For example, you can use logs to provide an audit trail for an application, detect problems in your service, identify vulnerabilities, troubleshoot your app deployments and runtime behaviour, detect problems in the infrastructure where your app is running, trace your app across components in the cloud platform, and detect patterns that you can use to preempt actions that could affect your service SLA.
+You can use the logging capabilities in the {{site.data.keyword.Bluemix_notm}} to understand the behavior of the cloud platform and the resources that are running in it. No special instrumentation is required to collect the standard out and the standard err logs. For example, you can use logs to provide an audit trail for an application, detect problems in your service, identify vulnerabilities, troubleshoot your app deployments and runtime behavior, detect problems in the infrastructure where your app is running, trace your app across components in the cloud platform, and detect patterns that you can use to preempt actions that could affect your service SLA.
 
 The {{site.data.keyword.loganalysisfull}} service provides log collection and log search services for the {{site.data.keyword.Bluemix_notm}} platform, automatically collecting application and {{site.data.keyword.Bluemix_notm}} services’ data from select {{site.data.keyword.Bluemix_notm}} services.
 
@@ -85,6 +85,7 @@ You can delete logs automatically by setting a retention policy or manually by u
 The {{site.data.keyword.loganalysisfull_notm}} service is available in the following regions:
 
 * Germany
+* United Kingdom
 * US South
 * Sydney
 
@@ -102,18 +103,23 @@ The following table lists the location of logs per region:
   </tr>
   <tr>
     <td>Germany</td>
-	<td>Hosted in Germany</td>
-	<td>Hosted in Germany</td>
+	  <td>Hosted in Germany</td>
+	  <td>Hosted in Germany</td>
+  </tr>
+  <tr>
+    <td>United Kingdom</td>
+	  <td>Hosted in United Kingdom</td>
+	  <td>Hosted in United Kingdom</td>
   </tr>
   <tr>
     <td>US South</td>
-	<td>Hosted in US South</td>
-	<td>Hosted in US South</td>
+	  <td>Hosted in US South</td>
+	  <td>Hosted in US South</td>
   </tr>
   <tr>
     <td>Sydney</td>
-	<td>Hosted in Sydney</td>
-	<td>Hosted in US South (*)</td>
+	  <td>Hosted in Sydney</td>
+	  <td>Hosted in US South (*)</td>
   </tr>
 </table>
 

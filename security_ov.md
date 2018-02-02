@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-01-31"
 
 ---
 
@@ -118,19 +118,19 @@ The following table lists the privileges of each of teh IAM roles to work with t
   </tr>
   <tr>
     <td>Administrator</td>
-	<td>Delete logs. <br>View information about the logs in a space or at account level. <br>Download logs to a local file or pipe logs to another program such an Elastic stack. <br>Displays the retention period for logs that are available in a space or account. <br>Updates the retention period for logs that are available in a space or account. <br>Lists the active sessions and their IDs. <br>Create a session that you can use to download logs. <br>Delete a session, specified by session ID. <br>Shows the status of a single session. </td>
-  </tr>
-  <tr>
-    <td>Operator</td>
-	<td></td>
+	  <td>View information about the logs in a space or at account level. <br>Download logs to a local file or pipe logs to another program such an Elastic stack. <br>Displays the retention period for logs that are available in a space or account. <br>Updates the retention period for logs that are available in a space or account. <br>Lists the active sessions and their IDs. <br>Create a session that you can use to download logs. <br>Delete a session, specified by session ID. <br>Shows the status of a single session. <br>Delete logs. </td>
   </tr>
   <tr>
     <td>Editor</td>
-	<td>Delete logs. <br>View information about the logs in a space or at account level. <br>Download logs to a local file or pipe logs to another program such an Elastic stack. <br>Displays the retention period for logs that are available in a space or account. <br>Updates the retention period for logs that are available in a space or account. <br>Lists the active sessions and their IDs. <br>Create a session that you can use to download logs. <br>Delete a session, specified by session ID. <br>Shows the status of a single session. </td>
+	  <td>View information about the logs in a space or at account level. <br>Download logs to a local file or pipe logs to another program such an Elastic stack. <br>Displays the retention period for logs that are available in a space or account. <br>Updates the retention period for logs that are available in a space or account. <br>Lists the active sessions and their IDs. <br>Create a session that you can use to download logs. <br>Delete a session, specified by session ID. <br>Shows the status of a single session. <br>Delete logs.  </td>
+  </tr>
+  <tr>
+    <td>Operator</td>
+	  <td>View information about the logs in a space or at account level. <br>Displays the retention period for logs that are available in a space or account. <br>Lists the active sessions and their IDs. <br>Shows the status of a single session. <br>Download logs to a local file or pipe logs to another program such an Elastic stack.  <br>Create a session that you can use to download logs. <br>Delete a session, specified by session ID. </td>
   </tr>
   <tr>
     <td>Viewer</td>
-	<td>View information about the logs in a space or at account level. <br>Displays the retention period for logs that are available in a space or account. <br>Lists the active sessions and their IDs. <br>Shows the status of a single session. </td>
+	  <td>View information about the logs in a space or at account level. <br>Displays the retention period for logs that are available in a space or account. <br>Lists the active sessions and their IDs. <br>Shows the status of a single session. </td>
   </tr>
 </table>
 

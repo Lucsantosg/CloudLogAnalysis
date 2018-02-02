@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-01-31"
 
 ---
 
@@ -26,8 +26,10 @@ This feature does not apply to users that use the logging service with Docker co
 
 The Elastic version 5.1 is available in the following region:
 
+* United Kingdom
 * US South
 * Germany
+* Sydney
 
 
 ## What's new
@@ -37,15 +39,15 @@ The Elastic version 5.1 is available in the following region:
 
     In Elastic 1.7, the same URL was shared to display and monitor logs and metrics. With the upgrade to Elastic 5.1, you have separate URLS to view logs and metrics. For more information, see [logging URLs](#logging).
     
-2. Support for Kibana 5.1 in the US South region and in Germany.
+2. Support for Kibana 5.1.
 
     You can launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI, or directly from the new logging URL. For more information, see [Navigating to the Kibana dashboard](/docs/services/CloudLogAnalysis/kibana/launch.html#launch).
     
-    Kibana 3 and Kibana 4 are deprecated in the US South region. You can launch Kibana 3 or Kibana 4 through the following URL: [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net). 
+    Kibana 3 and Kibana 4 are deprecated.
 	
-	**Note:** There are different URLs per region. Access to Kibana 3 and Kibana 4 dashboards is currently available for you to compare and migrate your dashboards to Kibana 5.1 ones. 
+	**Note:** There are different URLs per region. Access to Kibana 4 dashboards is currently available in the United Kingdom for you to compare and migrate your dashboards to Kibana 5.1 ones. 
     
-    If you have Kibana dashboards that are built on the Elastic 1.7 stack, you must migrate them to the Elastic 5.1 environment.
+    You must migrate your dashboards to the Elastic 5.1 environment.
     
     For more information about Kibana 5.1, see [Kibana User Guide ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
     
@@ -86,17 +88,17 @@ The following table lists URLs for the US South region:
     <tr>
       <th>Type</th>
       <th>Elastic 1.7 </th>
-	  <th>Elastic 5.1 </th>
+	    <th>Elastic 5.1 </th>
     </tr>
   <tr>
     <td>Ingestion URL for logs</td>
     <td>logs.opvis.bluemix.net:9091</td>
-	<td>ingest.logging.ng.bluemix.net:9091</td>
+  	<td>ingest.logging.ng.bluemix.net:9091</td>
   </tr>
    <tr>
     <td>Kibana URL to analyze logs</td>
     <td>[https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net)</td>
-	<td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
+	  <td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
   </tr>
 </table>
 
@@ -107,17 +109,17 @@ The following table lists URLs for the United Kingdom region:
   <tr>
      <th>Type</th>
       <th>Elastic 1.7 </th>
-	  <th>Elastic 5.1 </th>
+	    <th>Elastic 5.1 </th>
   </tr>
   <tr>
      <td>Ingestion URL for logs</td>
-	 <td>logs.eu-gb.opvis.bluemix.net:9091</td>
-	 <td>Not available yet</td>
+	   <td>logs.eu-gb.opvis.bluemix.net:9091</td>
+	   <td>ingest.logging.eu-gb.bluemix.net:9091</td>
   </tr>
   <tr>
      <td>Kibana URL to analyze logs</td>
 	 <td>[https://logmet.eu-gb.bluemix.net](https://logmet.eu-gb.bluemix.net)</td>
-	 <td>Not available yet</td>
+	 <td>[https://logging.eu-gb.bluemix.net](https://logging.eu-gb.bluemix.net)</td>
   </tr>
 </table>
 
@@ -128,7 +130,7 @@ The following table lists URLs for the Frankfurt region:
   <tr>
      <th>Type</th>
       <th>Elastic 2.3 </th>
-	  <th>Elastic 5.1 </th>
+	    <th>Elastic 5.1 </th>
   </tr>
   <tr>
      <td>Ingestion URL for logs</td>
@@ -138,7 +140,7 @@ The following table lists URLs for the Frankfurt region:
   <tr>
      <td>Kibana URL to analyze logs</td>
 	 <td>[https://logging.eu-de.bluemix.net](https://logging.eu-de.bluemix.net)</td>
-	 <td>https://logging.eu-fra.bluemix.net</td>
+	 <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.net)</td>
   </tr>
 </table>
 
