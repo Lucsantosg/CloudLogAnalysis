@@ -227,8 +227,8 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 
 
 
-## Step 4: Grant your user permissions to see logs in a space domain
-{: #step4}
+## Step 3: Grant your user permissions to see logs in a space domain
+{: #step3}
 
 To grant a user permissions to view logs in a space, you must assign that user a Cloud Foundry role that describes the actions that this user can do with the {{site.data.keyword.loganalysisshort}} service in the space. 
 
@@ -265,8 +265,8 @@ Complete the following steps to grant a user permissions to work with the {{site
 7. Click **Save role**.
 
 
-## Step 5: Grant the {{site.data.keyword.containershort_notm}} key owner permissions
-{: #step5}
+## Step 4: Grant the {{site.data.keyword.containershort_notm}} key owner permissions
+{: #step4}
 
 
 When you forward logs to a space, you must also grant Cloud Foundry (CF) permissions to the {{site.data.keyword.containershort}} key owner in the organization and space. The key owner needs *orgManager* role for the organization, and *SpaceManager* and *Developer* for the space. 
@@ -307,8 +307,8 @@ Complete the following steps:
 
 	
 
-## Step 6: Deploy a sample app in the Kubernetes cluster to generate content in stdout
-{: #step6}
+## Step 5: Deploy a sample app in the Kubernetes cluster to generate content in stdout
+{: #step5}
 
 Deploy and run a sample app in the Kubernetes cluster. Complete the steps in the following tutorial to deploy the sample app: [Lesson 1: Deploying single instance apps to Kubernetes clusters](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1).
 
@@ -334,8 +334,8 @@ In this sample app, when you test your app in a browser, the app writes to stdou
 
 
 
-## Step 7: View log data in Kibana
-{: #step7}
+## Step 6: View log data in Kibana
+{: #step6}
 
 Complete the following steps:
 
@@ -427,8 +427,8 @@ Complete the following steps:
 For more information about other search fields that are relevant to Kubernetes clusters, see [Searching logs](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#log_search).
 
 
-## Step 8: Filter data by Kubernetes cluster name in Kibana
-{: #step8}
+## Step 7: Filter data by Kubernetes cluster name in Kibana
+{: #step7}
     
 In the table that is displayed in the *Discovery* page, you can see all the entries that are available for analysis. The entries that are listed correspond to the search query that is displayed in the *Search* bar. Use an asterisk (*) to display all entries within the period of time that is configured for the page.
     
