@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -26,7 +27,7 @@ lastupdated: "2017-07-19"
 
     对于 Cloud Foundry (CF) 应用程序，请参阅[通过 CF 应用程序的仪表板启动 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app)。
 
-	对于在 {{site.data.keyword.IBM_notm}} 管理的云基础架构中运行的容器，请参阅[通过容器的仪表板启动 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers)。
+	对于在 {{site.data.keyword.Bluemix_notm}} 管理的基础架构中运行的容器，请参阅[通过容器的仪表板启动 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers)。
     
     对于所有云资源（例如，在 Kubernetes 集群中运行的容器），请参阅[通过浏览器启动 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)。 
 	
@@ -34,9 +35,9 @@ lastupdated: "2017-07-19"
 
 2. 查看“发现”页面，以确定它显示的数据子集。有关更多信息，请参阅[确定在 Kibana 的“发现”页面中显示的数据](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)。然后，修改缺省查询以过滤条目。
 
-    **注：**使用 Lucene 查询语言来定义定制查询。有关更多信息，请参阅 [Apache Lucene - Query Parser Syntax ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html "外部链接图标"){: new_window}
+    **注：**使用 Lucene 查询语言来定义定制查询。有关更多信息，请参阅 [Apache Lucene - Query Parser Syntax ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}
     
-    如果 Kibana 是通过 {{site.data.keyword.Bluemix_notm}} 启动的，要修改查询并定义多个搜索条件，可以使用逻辑项 **AND** 和 **OR**。这些运算符必须为大写。    
+    如果 Kibana 是通过 {{site.data.keyword.Bluemix_notm}} UI 启动的，要修改查询并定义多个搜索条件，可以使用逻辑项 **AND** 和 **OR**。这些运算符必须为大写。    
     
     * 要搜索关键字或关键字的一部分，请输入词语并后跟星号通配符 (*)；例如，`Java*`。 
     * 要搜索特定短语，请输入该短语并用双引号 (" ") 括起；例如，`"Java/1.8.0"`。
@@ -126,12 +127,22 @@ lastupdated: "2017-07-19"
 ## 保存搜索 
 {: #save_search}
 
-保存搜索时，将保存搜索查询字符串和当前所选的索引模式。
+请考虑以下有关在 Kibana 中保存定制搜索的信息：
+
+* 保存搜索时，将保存搜索查询字符串和当前所选的索引模式。
+* 当您在*发现*页面中打开搜索并进行修改时，您可以选择使用相同的名称来保存搜索，也可以使用不同的名称来保存修改的定制搜索。缺省情况下，所提供的搜索名称是对应于您最初打开的定制搜索的名称。
+
+    * 要使用相同的名称保存修改的定制搜索，请单击**保存**。请注意，这会覆盖原始定制搜索。 
+	
+	* 要使用不同的名称保存修改的定制搜索，请在**保存搜索**字段中输入新名称，然后单击**保存**。 
+
 
 要保存“发现”页面中的当前搜索，请完成以下步骤：
 
 1. 在“发现”页面的工具栏中，单击**保存搜索**按钮 ![保存搜索](images/save_search_icon.jpg "保存搜索")。
 
 2. 输入搜索的名称。
+
+    **注：**当您单击**保存**时，不会对覆盖发出警告，因此如果您指定现有的名称，保存将会替换该版本而没有任何提示信息。
 
 3. 单击**保存**。 

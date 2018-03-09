@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
 
@@ -15,13 +16,12 @@ lastupdated: "2017-07-19"
 # Configuration de la règle de conservation des journaux
 {: #configuring_retention_policy}
 
-Utilisez la commande **cf logging option** pour afficher et configurer la règle de conservation qui définit le nombre maximal de jours pendant lesquels les journaux sont
-conservés dans Collecte des journaux. Par défaut, les journaux sont conservés pendant 30 jours. Une fois que la durée de conservation a expiré, les journaux sont supprimés automatiquement. Par
-défaut, la règle de conservation est désactivée.
+Utilisez la commande **cf logging option** pour afficher et configurer la règle de conservation qui définit le nombre maximal de jours pendant lequel les journaux sont
+conservés dans Collecte des journaux. Par défaut, la règle de conservation est désactivée et les journaux sont conservés indéfiniment. Une fois que la durée de conservation a expiré, les journaux sont supprimés automatiquement. 
 {:shortdesc}
 
-Vous pouvez définir différentes règles de conservation dans le compte, notamment une règle de compte globale et des règles d'espace individuelles. La règle de conservation que vous avez
-définie au niveau du compte définit le nombre de jours pendant lesquels vous pouvez conserver les journaux. Si vous définissez la règle de conservation d'un espace sur une durée supérieure à la
+Vous pouvez définir différentes règles de conservation sur le compte, notamment une règle de compte globale et des règles d'espace individuelles. La règle de conservation que vous avez
+définie au niveau du compte définit le nombre de jours pendant lequel vous pouvez conserver les journaux. Si vous définissez la règle de conservation d'un espace sur une durée supérieure à la
 durée du niveau de compte, la règle appliquée est la dernière règle configurée pour cet espace. 
 
 
@@ -30,28 +30,23 @@ durée du niveau de compte, la règle appliquée est la dernière règle configu
 
 Effectuez les étapes suivantes pour désactiver une règle de conservation :
 
-1. Connectez-vous à l'espace, à l'organisation et à la région {{site.data.keyword.Bluemix_notm}} où vous souhaitez définir une règle de conservation des journaux. 
+1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
 
-    Par exemple, pour vous connecter à la région du sud des États-Unis, exécutez la commande suivante :
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Définissez la durée de conservation sur **-1** pour la désactiver. Exécutez la commande suivante :
+2. Définissez la valeur **-1** pour désactiver la durée de conservation. Exécutez la commande suivante :
 
     ```
-    cf logging option -r -1
+    bx cf logging option -r -1
     ```
     {: codeblock}
     
 **Exemple**
     
-Par exemple, pour désactiver la durée de conservation d'un espace avec l'ID *d35da1e3-b345-475f-8502-cfgh436902a3*, exécutez la commande suivante :
+Par exemple, pour désactiver la durée de conservation d'un espace dont l'ID est *d35da1e3-b345-475f-8502-cfgh436902a3*, exécutez la commande suivante :
 
 ```
-cf logging option -r -1
+bx cf logging option -r -1
 ```
 {: codeblock}
 
@@ -71,21 +66,16 @@ La sortie est :
 ## Vérification de la règle de conservation des journaux d'un espace
 {: #check_retention_policy_space}
 
-Pour obtenir la durée de conservation définie pour un espace {{site.data.keyword.Bluemix_notm}}, procédez comme suit :
+Afin d'obtenir la durée de conservation définie pour un espace, procédez comme suit :
 
-1. Connectez-vous à l'espace, à l'organisation et à la région {{site.data.keyword.Bluemix_notm}} où vous souhaitez définir une règle de conservation des journaux. 
+1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
 
-    Par exemple, pour vous connecter à la région du sud des États-Unis, exécutez la commande suivante :
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Obtenez la durée de conservation. Exécutez la commande suivante :
 
     ```
-    cf logging option
+    bx cf logging option
     ```
     {: codeblock}
 
@@ -104,21 +94,16 @@ Pour obtenir la durée de conservation définie pour un espace {{site.data.keywo
 ## Vérification de la règle de conservation des journaux de tous les espaces d'un compte
 {: #check_retention_policy_account}
 
-Pour obtenir la durée de conservation définie pour chaque espace {{site.data.keyword.Bluemix_notm}} d'un compte, procédez comme suit :
+Afin d'obtenir la durée de conservation définie pour chaque espace sur un compte, procédez comme suit :
 
-1. Connectez-vous à l'espace, à l'organisation et à la région {{site.data.keyword.Bluemix_notm}} où vous souhaitez définir une règle de conservation des journaux. 
+1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
 
-    Par exemple, pour vous connecter à la région du sud des États-Unis, exécutez la commande suivante :
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Obtenez la durée de conservation de chaque espace du compte. Exécutez la commande suivante :
 
     ```
-    cf logging option -a
+    bx cf logging option -a
     ```
     {: codeblock}
 
@@ -136,28 +121,23 @@ Pour obtenir la durée de conservation définie pour chaque espace {{site.data.k
     {: screen}
     
 
-## Définition de la règle de conservation des journaux d'un niveau de compte
+## Définition de la règle de conservation des journaux au niveau du compte
 {: #set_retention_policy_space}
 
-Pour afficher la durée de conservation d'un compte {{site.data.keyword.Bluemix_notm}}, procédez comme suit :
+Afin d'afficher la durée de conservation pour un compte, procédez comme suit :
 
-1. Connectez-vous à l'espace, à l'organisation et à la région {{site.data.keyword.Bluemix_notm}} où vous souhaitez définir une règle de conservation des journaux. 
+1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
 
-    Par exemple, pour vous connecter à la région du sud des États-Unis, exécutez la commande suivante :
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Définissez la durée de conservation. Exécutez la commande suivante :
 
     ```
-    cf logging option -r *Number_of_days* - a
+    bx cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
-    où *Number_of_days* est un nombre entier qui définit le nombre de jours pendant lesquels vous souhaitez conserver les journaux. 
+    où *Number_of_days* est un nombre entier qui définit le nombre de jours pendant lequel vous souhaitez conserver les journaux. 
     
     
 **Exemple**
@@ -165,7 +145,7 @@ Pour afficher la durée de conservation d'un compte {{site.data.keyword.Bluemix_
 Par exemple, pour conserver un type de journal spécifique dans votre compte pendant seulement 15 jours, exécutez la commande suivante :
 
 ```
-cf logging option -r 15 -a
+bx cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -185,25 +165,20 @@ La sortie affiche une entrée pour chaque espace du compte, y compris des inform
 ## Définition de la règle de conservation des journaux pour un espace
 {: #set_retention_policy_account}
 
-Pour afficher la durée de conservation d'un espace {{site.data.keyword.Bluemix_notm}}, procédez comme suit :
+Afin d'afficher la durée de conservation pour un espace, procédez comme suit :
 
-1. Connectez-vous à l'espace, à l'organisation et à la région {{site.data.keyword.Bluemix_notm}} où vous souhaitez définir une règle de conservation des journaux. 
+1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
 
-    Par exemple, pour vous connecter à la région du sud des États-Unis, exécutez la commande suivante :
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Définissez la durée de conservation. Exécutez la commande suivante :
 
     ```
-    cf logging option -r *Number_of_days*
+    bx cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
-    où *Number_of_days* est un nombre entier qui définit le nombre de jours pendant lesquels vous souhaitez conserver les journaux.
+    où *Number_of_days* est un nombre entier qui définit le nombre de jours pendant lequel vous souhaitez conserver les journaux.
     
     
 **Exemple**
@@ -211,7 +186,7 @@ Pour afficher la durée de conservation d'un espace {{site.data.keyword.Bluemix_
 Par exemple, pour conserver les journaux disponibles dans un espace pendant un an, exécutez la commande suivante :
 
 ```
-cf logging option -r 365
+bx cf logging option -r 365
 ```
 {: codeblock}
 

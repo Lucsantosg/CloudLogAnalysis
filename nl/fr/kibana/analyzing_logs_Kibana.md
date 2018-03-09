@@ -1,12 +1,11 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-02-01"
 
 ---
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -14,16 +13,15 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# Analyse de journal avancée avec Kibana
+# Affichage et analyse des journaux (Kibana)
 {:#analyzing_logs_Kibana}
 
-Dans {{site.data.keyword.Bluemix}}, vous pouvez utiliser Kibana 5.1, une plateforme d'analyse et de visualisation open source, pour contrôler, rechercher, analyser et visualiser
-vos données à l'aide de graphiques de différents types, par exemple des diagrammes et des tableaux. Utilisez Kibana pour effectuer des tâches analytiques avancées.
+Vous pouvez utiliser la plateforme de visualisation et d'analyse open source Kibana 5.1 pour surveiller, rechercher, analyser et afficher des données dans différents graphiques, par exemple dans des diagrammes et des tableaux. Utilisez Kibana pour effectuer des tâches analytiques avancées.
 {:shortdesc}
 
-Kibana est une interface basée navigateur dans laquelle vous pouvez analyser de manière interactive vos données et personnaliser des tableaux de bord que vous pourrez ensuite utiliser pour analyser les données de journal et effectuer des tâches de gestion avancées. Pour plus d'informations, voir le document [Kibana User Guide ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
+Kibana est une interface basée navigateur dans laquelle vous pouvez analyser de manière interactive vos données et personnaliser des tableaux de bord que vous pourrez ensuite utiliser pour analyser les données de journal et effectuer des tâches de gestion avancées. Pour plus d'informations, voir le manuel [Kibana User Guide ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
-Les données qu'affiche une page Kibana sont circonscrites pas une recherche. Le jeu de données par défaut est défini par le canevas d'index préconfiguré. Pour filtrer les informations, vous pouvez ajouter de nouvelles requêtes de recherche et appliquer des filtres au jeu de données par défaut. Vous pouvez ensuite sauvegarder la recherche pour une réutilisation future. 
+Les données qu'affiche une page Kibana sont circonscrites par une recherche. Le jeu de données par défaut est défini par le canevas d'index préconfiguré. Pour filtrer les informations, vous pouvez ajouter de nouvelles requêtes de recherche et appliquer des filtres au jeu de données par défaut. Vous pouvez ensuite sauvegarder la recherche pour une réutilisation future. 
 
 Kibana inclut différentes pages que vous pouvez utiliser pour analyser vos journaux :
 
@@ -53,25 +51,27 @@ Vous pouvez lancer Kibana en procédant de l'une des manières suivantes :
 
 * Depuis le tableau de bord du service {{site.data.keyword.loganalysisshort}}
 
-    Vous pouvez lancer Kibana de manière à ce que les données que vous voyez ajoutent les journaux des services au sein d'un espace {{site.data.keyword.Bluemix_notm}} fourni.
+    Vous pouvez lancer Kibana pour que les données affichées agrègent les journaux des services dans un espace spécifique.
 	
 	Pour plus d'informations, voir [Accès à Kibana à partir du tableau de bord du service Log Analysis. ](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_log_analysis)
 
 * Depuis {{site.data.keyword.Bluemix_notm}}
 
-    Vous pouvez lancer Kibana sur vos journaux d'application CF spécifiques et dans le contexte de cette application App. Pour plus d'informations, voir [Accès à Kibana depuis le tableau de bord ou une application CF](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
+    Vous pouvez ouvrir vos journaux d'application CF spécifiques dans Kibana,
+dans le contexte de cette application spécifique. Pour plus d'informations, voir [Accès à Kibana depuis le tableau de bord ou une application CF](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
     
-    Vous pouvez lancer Kibana sur vos journaux de conteneur Docker spécifiques et dans le contexte de ce conteneur. Cette fonctionnalité ne s'applique qu'aux conteneurs déployés dans l'infrastructure de cloud gérée par {{site.data.keyword.Bluemix_notm}}. Pour plus d'informations, voir [Accès à Kibana depuis le tableau de bord d'un conteneur](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
+    Vous pouvez ouvrir vos journaux de conteneur Docker spécifiques dans Kibana,
+dans le contexte de ce conteneur spécifique. Cette fonction s'applique uniquement aux conteneurs qui sont déployés dans l'infrastructure gérée par {{site.data.keyword.Bluemix_notm}}. Pour plus d'informations, voir [Accès à Kibana depuis le tableau de bord d'un conteneur](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
     
-    Pour les applications CF, la requête utilisée pour filtrer les données disponibles pour analyse dans Kibana extrait les entrées de journal de l'application Cloud Foundry. Les informations de journal affichées par défaut par Kibana ne concernent qu'une application Cloud Foundry unique et toutes ses instances. 
+    Pour les applications CF, la requête utilisée pour filtrer les données disponibles pour l'analyse dans Kibana extrait les entrées de journal de l'application Cloud Foundry. Les informations de journal affichées par défaut par Kibana ne concernent qu'une application Cloud Foundry unique et toutes ses instances. 
     
-    Pour les conteneurs, la requête utilisée pour filtrer des données disponibles pour analyse dans Kibana extrait les entrées de journal pour toutes les instances du conteneur. Les informations de journal affichées par défaut par Kibana ne concernent qu'un conteneur unique, ou un groupe de conteneurs, et toutes ses instances. 
+    Pour les conteneurs, la requête utilisée pour filtrer des données disponibles pour l'analyse dans Kibana extrait les entrées de journal pour toutes les instances du conteneur. Les informations de journal affichées par défaut par Kibana ne concernent qu'un conteneur unique, ou un groupe de conteneurs, et toutes ses instances. 
     
     
 
 * A partir d'un lien de navigateur direct
 
-    Vous souhaiterez peut-être lancer Kibana en agrégeant les journaux de services opérant au sein de l'espace {{site.data.keyword.Bluemix_notm}} désigné.
+    Vous pouvez lancer Kibana pour que les données affichées agrègent les journaux des services dans un espace spécifique.
     
     La requête utilisée pour filtrer les données affichées dans le tableau de bord extrait des entrées de journal pour un espace dans l'organisation {{site.data.keyword.Bluemix_notm}}. Les informations de journal affichées par Kibana incluent des enregistrements sur toutes les ressources déployées dans l'espace de l'organisation {{site.data.keyword.Bluemix_notm}} à laquelle vous êtes connecté. 
     
@@ -82,14 +82,14 @@ Vous pouvez lancer Kibana en procédant de l'une des manières suivantes :
 ## Analyse des données de manière interactive
 {: #analyze_discover}
 
-Sur la page Discover, vous pouvez définir de nouvelles requêtes de recherche et appliquer des filtres par requête. Les données de journal sont affichées via un tableau et un histogramme. Vous pouvez utiliser ces visualisations pour analyser les données de manière interactive. Pour plus d'informations, voir [Analyses des données en mode interactif dans Kibana](analize_logs_interactively.html#analize_logs_interactively).
+Dans la page Discover, vous pouvez définir de nouvelles requêtes de recherche et appliquer des filtres par requête. Les données de journal sont affichées via un tableau et un histogramme. Vous pouvez utiliser ces visualisations pour analyser les données de manière interactive. Pour plus d'informations, voir [Analyses des données en mode interactif dans Kibana](analize_logs_interactively.html#analize_logs_interactively).
 
 Vous pouvez configurer des filtres depuis les zones du journal, par exemple message_type (type de message) et instance_ID (ID d'instance), et définir une période de temps. Vous pouvez activer ou désactiver dynamiquement ces filtres. Le tableau et l'histogramme afficheront les entrées  de journal correspondant à la requête et aux critères de filtrage activés. Pour plus d'informations, voir [Filtrage des journaux dans Kibana](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
 
 ## Analyse des données via une visualisation
 {: #analyze_visualize}
     
-Sur la page Visualize, vous pouvez définir de nouvelles requêtes de recherche et visualisations. Vous pouvez également ouvrir les visualisations sauvegardées ou sauvegarder une
+Dans la page Visualize, vous pouvez définir de nouvelles requêtes de recherche et visualisations. Vous pouvez également ouvrir les visualisations sauvegardées ou sauvegarder une
 visualisation.
 
 Pour analyser les données, vous pouvez créer des visualisations basées sur une recherche existante ou une nouvelle recherche. Kibana inclut différents types de visualisations (comme un tableau, des tendances et un histogramme) que vous pouvez utiliser pour analyser les informations. L'objectif de chaque visualisation varie. Certaines sont organisées en lignes qui affichent les résultats d'une ou de plusieurs requêtes. D'autres affichent des documents ou des informations personnalisées. Les données dans une visualisation peuvent être fixes ou changer si une requête de recherche est modifiée. Vous pouvez incorporer la visualisation dans une page Web ou la partager. 
@@ -99,13 +99,190 @@ Pour plus d'informations, voir [Analyse des journaux à l'aide de visualisations
 ## Analyse des données dans un tableau de bord
 {: #analyze_dashboard}
 
-Sur la page Dashboard, vous pouvez personnaliser, sauvegarder et partager simultanément plusieurs visualisations et recherches. 
+Dans la page Dashboard, vous pouvez personnaliser, sauvegarder et partager simultanément plusieurs visualisations et recherches. 
 
 Vous pouvez ajouter, retirer et réorganiser des visualisations dans le tableau de bord. Pour plus d'informations, voir [Analyse des journaux dans Kibana via un tableau de bord](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#analize_logs_dashboard).
     
 Après avoir personnalisé un tableau de bord Kibana, vous pouvez analyser les données par le biais de ses visualisations et le sauvegarder pour une réutilisation future. Pour plus d'informations, voir [Sauvegarde d'un tableau de bord Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save).
 
-Dans Kibana, vous pouvez également utiliser la page **Management** pour configurer Kibana et pour sauvegarder, supprimer, exporter et importer des recherches,
-des visualisations et des tableaux de bord.
+## Personnalisation de Kibana
+{: #analyze_management}
+
+Vous pouvez également configurer et gérer les ressources Kibana depuis la page **Gestion**. 
+
+Vous pouvez effectuer les tâches suivantes :
+
+* Sauvegarder, supprimer, exporter et importer des recherches. 
+* Sauvegarder, supprimer, exporter et importer des visualisations.
+* Sauvegarder, supprimer, exporter et importer des tableaux de bord.
+* [Actualiser la liste des zones.](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields)
+
+## Limitations
+{: #limitations}
+
+Dans Kibana, vous pouvez partager une visualisation ou un tableau de bord uniquement avec des membres de la même organisation ou du même compte.
+
+Les fonctions Kibana suivantes ne sont pas prises en charge :
+
+* Partage d'une recherche.
+* Création de canevas d'index. 
+
+
+## Rôles requis par un utilisateur pour afficher les journaux
+{: #roles}
+
+Dans {{site.data.keyword.Bluemix_notm}}, vous pouvez affecter un ou plusieurs rôles à des utilisateurs. Ces rôles définissent quelles tâches sont activées pour que cet utilisateur utilise le service {{site.data.keyword.loganalysisshort}}. 
+
+Les tableaux suivants répertorient les rôles qu'un utilisateur doit avoir pour pouvoir afficher les journaux :
+
+<table>
+  <caption>Droits requis par un **propriétaire de compte** pour afficher les journaux</caption>
+  <tr>
+    <th>Action</th>
+	<th>Rôles d'espace CF</th>
+	<th>Rôles d'organisation CF</th>
+	<th>Rôles IAM</th>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans un domaine d'espace</td>
+	<td>*Responsable* </br>*Développeur* </br>*Auditeur*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans le domaine de compte</td>
+	<td></td>
+	<td></td>
+	<td>*Administrateur*</td>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans un domaine d'organisation</td>
+	<td></td>
+	<td>*Responsable* </br>*Responsable de la facturation*  </br>*Auditeur*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Droits requis par un **auditeur** pour afficher les journaux</caption>
+  <tr>
+    <th>Action</th>
+	<th>Rôles d'espace CF</th>
+	<th>Rôles d'organisation CF</th>
+	<th>Rôles IAM</th>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans un domaine d'espace</td>
+	<td>*Auditeur*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans le domaine de compte</td>
+	<td></td>
+	<td></td>
+	<td>*Afficheur*</td>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans un domaine d'organisation</td>
+	<td></td>
+	<td>*Auditeur*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Droits requis par un **administrateur** pour afficher les journaux</caption>
+  <tr>
+    <th>Action</th>
+	<th>Rôles d'espace CF</th>
+	<th>Rôles d'organisation CF</th>
+	<th>Rôles IAM</th>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans un domaine d'espace</td>
+	<td>*Développeur*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans le domaine de compte</td>
+	<td></td>
+	<td></td>
+	<td>*Afficheur*</td>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans un domaine d'organisation</td>
+	<td></td>
+	<td>*Responsable*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Droits requis par un **développeurs** pour afficher les journaux.</caption>
+  <tr>
+    <th>Action</th>
+	<th>Rôles d'espace CF</th>
+	<th>Rôles d'organisation CF</th>
+	<th>Rôles IAM</th>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans un domaine d'espace</td>
+	<td>*Développeur*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans le domaine de compte</td>
+	<td></td>
+	<td></td>
+	<td>*Afficheur*</td>
+  </tr>
+  <tr>
+    <td>Afficher les journaux dans un domaine d'organisation</td>
+	<td></td>
+	<td>*Auditeur*</td>
+	<td></td>
+  </tr>
+</table>
+
+
+
+## URL d'ouverture de Kibana
+{: #urls_kibana}
+
+Le tableau suivant répertorie les URL permettant d'ouvrir Kibana ainsi que les versions de Kibana par région :
+
+<table>
+    <caption>URL d'ouverture de Kibana</caption>
+    <tr>
+      <th>Région</th>
+      <th>URL</th>
+      <th>Version Kibana</th>
+    </tr>
+	<tr>
+      <td>Francfort</td>
+	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.nett)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+	<tr>
+      <td>Sydney</td>
+	  <td>[https://logging.au-syd.bluemix.net](https://logging.au-syd.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+	<tr>
+      <td>Royaume-Uni</td>
+	  <td>[https://logging.eu-gb.bluemix.net](https://logging.eu-gb.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+    <tr>
+      <td>Sud des Etats-Unis</td>
+      <td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+</table>
+
+
 
 

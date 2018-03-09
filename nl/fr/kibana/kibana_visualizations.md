@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -22,7 +23,7 @@ Utilisez la page *Visualize* dans Kibana pour créer des visualisations (par exe
 
 Vous pouvez utiliser une visualisation individuellement pour analyser vos journaux. 
 
-* Vous pouvez créer une visualisation depuis une recherche que vous avez définie et sauvegardée depuis la page *Discover* ou depuis une nouvelle requête que vous définissez sur la page *Visualize*. La recherche définit le sous-ensemble de données qu'affiche une visualisation.
+* Vous pouvez créer une visualisation depuis une recherche que vous avez définie et sauvegardée depuis la page *Discover* ou depuis une nouvelle requête que vous définissez dans la page *Visualize*. La recherche définit le sous-ensemble de données qu'affiche une visualisation.
 
 * Le type de visualisation que vous sélectionnez détermine comment sont affichées les données pour leur analyse.
 
@@ -39,11 +40,11 @@ Le tableau suivant répertorie différents types de visualisation :
 | Vertical bar chart | Affiche des données à base chronologique et non chronologique. Permet de regrouper des données. |
 {: caption="Tableau 1. Types de visualisation" caption-side="top"}
 
-Sur la page Visualize, vous pouvez effectuer n'importe laquelle des tâches suivantes :
+Dans la page Visualize, vous pouvez effectuer n'importe laquelle des tâches suivantes :
 
 | Tâche | Informations sur la tâche |
 |------|------------------|
-| [Créer une nouvelle visualisation](kibana_visualizations.html#create) | Vous pouvez créer une visualisation depuis une recherche que vous avez définie et sauvegardée depuis la page *Discover* ou depuis une nouvelle requête que vous définissez sur la page *Visualize*. |
+| [Créer une nouvelle visualisation](kibana_visualizations.html#create) | Vous pouvez créer une visualisation depuis une recherche que vous avez définie et sauvegardée depuis la page *Discover* ou depuis une nouvelle requête que vous définissez dans la page *Visualize*. |
 | [Supprimer une visualisation](kibana_visualizations.html#delete) | Vous pouvez supprimer les visualisations superflues. |
 | [Exporter une visualisation](kibana_visualizations.html#export) | Vous pouvez exporter une visualisation sous forme de fichier JSON.  |
 | [Importer une visualisation](kibana_visualizations.html#import) | Vous pouvez importer une visualisation depuis un fichier JSON.  |
@@ -75,17 +76,17 @@ Pour créer une visualisation depuis la page Visualize, procédez comme suit :
 
         Pour plus d'informations, voir [Filtrage de journaux en définissant des requêtes personnalisées](define_search.html#define_search).
 
-Pour plus d'informations sur Kibana, reportez-vous au manuel [Kibana User Guide ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
+Pour plus d'informations sur Kibana, reportez-vous au manuel [Kibana User Guide ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 
 ## Suppression d'une visualisation
 {: #delete}
 
-Pour supprimer une visualisation, effectuez les étapes suivantes sur la page **Management** :
+Pour supprimer une visualisation, effectuez les étapes suivantes dans la page **Management** :
 
-1. Sur la page **Management**, sélectionnez l'onglet **Advanced Objects**.
+1. Dans la page **Management**, sélectionnez **Saved Objects**.
 
-2. Dans l'onglet **Visualizations**, sélectionnez les visualisations que vous désirez supprimer.
+2. Dans l'onglet **Visualizations**, sélectionnez les visualisations à supprimer.
 
 3. Cliquez sur **Delete**.
 
@@ -93,11 +94,11 @@ Pour supprimer une visualisation, effectuez les étapes suivantes sur la page **
 ## Exportation d'une visualisation
 {: #export}
 
-Pour exporter une visualisation en tant que fichier JSON, effectuez les étapes suivantes sur la page **Management** :
+Pour exporter une visualisation en tant que fichier JSON, effectuez les étapes suivantes dans la page **Management** :
 
-1. Sur la page **Management**, sélectionnez l'onglet **Advanced Objects**.
+1. Dans la page **Management**, sélectionnez **Saved Objects**.
 
-2. Dans l'onglet **Visualizations**, sélectionnez la visualisation que vous désirez exporter.
+2. Dans l'onglet **Visualizations**, sélectionnez la visualisation à exporter.
 
 3. Cliquez sur **Export**.
 
@@ -106,9 +107,9 @@ Pour exporter une visualisation en tant que fichier JSON, effectuez les étapes 
 ## Importation d'une visualisation
 {: #import}
 
-Pour importer une visualisation en tant que fichier JSON, effectuez les étapes suivantes sur la page **Management** :
+Pour importer une visualisation en tant que fichier JSON, effectuez les étapes suivantes dans la page **Management** :
 
-1. Sur la page **Management**, sélectionnez l'onglet **Advanced Objects**.
+1. Dans la page **Management**, sélectionnez **Saved Objects**.
 
 2. Dans l'onglet **Visualizations**, sélectionnez **Import**.
 
@@ -125,13 +126,13 @@ Pour charger une visualisation sauvegardée, procédez comme suit :
 
 1. Dans la barre d'outils de la page Visualize, cliquez sur **Open**.
 
-2. Sélectionnez la visualisation que vous désirez charger. 
+2. Sélectionnez la visualisation à charger. 
 
 
 ## Sauvegarde d'une visualisation
 {: #save}
 
-Pour sauvegarder une visualisation sur la page Visualize, procédez comme suit :
+Pour sauvegarder une visualisation dans la page Visualize, procédez comme suit :
 
 1. Dans la barre d'outils de la page Visualize, cliquez sur **Save**.
 

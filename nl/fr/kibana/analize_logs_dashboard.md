@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -14,25 +14,25 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# Analyses des journaux dans Kibana via un tableau de bord
+# Analyse des journaux dans Kibana via un tableau de bord
 {:#analize_logs_dashboard}
 
 Utilisez la page *Dashboard* dans Kibana pour afficher des collections de visualisations regroupées en tableaux de bord. Utilisez les tableaux de bord pour analyser les données des journaux et comparer les résultats.
 {:shortdesc}
 
-Dans {{site.data.keyword.Bluemix}}, vous pouvez définit et personnaliser différents types de tableaux de bord pour visualiser et analyser les données. Le tableau suivant, par exemple, recense divers tableaux de bord courants :
+Dans {{site.data.keyword.Bluemix}}, vous pouvez définir et personnaliser différents types de tableau de bord pour afficher et analyser les données. Le tableau suivant, par exemple, recense divers tableaux de bord courants :
 
 | Type de tableau de bord | Description |
 |-------------------|-------------|
 | Tableau de bord d'application cf unique | Ce tableau de bord affiche des informations sur une application Cloud Foundry unique. |
 | Tableau de bord de conteneur unique  | Ce tableau de bord affiche des informations sur un conteneur unique.  |
 | Tableau de bord de groupe de conteneurs  | Ce tableau de bord affiche des informations sur un groupe de conteneurs spécifique.  |
-| Tableau de bord multi-applications cf | Ce tableau de bord affiche des informations sur toutes les applications Cloud Foundry déployées dans le même espace {{site.data.keyword.Bluemix_notm}}.  | 
-| Tableau de bord multi-conteneurs | Ce tableau de bord affiche des informations sur tous les conteneurs déployés dans le même espace {{site.data.keyword.Bluemix_notm}}.  |
-| Tableau de bord d'espace | Ce tableau de bord affiche les données de consignation au journal disponibles dans un espace {{site.data.keyword.Bluemix_notm}}.  | 
+| Tableau de bord multi-applications cf | Ce tableau de bord affiche des informations sur toutes les applications Cloud Foundry déployées dans le même espace.  | 
+| Tableau de bord multi-conteneurs | Ce tableau de bord affiche des informations sur tous les conteneurs déployés dans le même espace.  |
+| Tableau de bord d'espace | Ce tableau de bord affiche les données de journalisation qui sont disponibles dans un espace.  | 
 {: caption="Tableau 1. Exemples de types de tableau de bord" caption-side="top"}
 
-Pour visualiser les données dans un tableau de bord, vous devez configurer des panneaux. Kibana inclut différentes visualisations (telles que tableau, tendances et histogramme) que vous pouvez utiliser pour analyser les informations. Une visualisation est ajoutée à un tableau de bord sous forme de panneau. Vous pouvez ajouter, retirer et réorganiser des panneaux dans le tableau de bord. L'objectif de chaque panneau est différent. Certains panneaux sont organisés en lignes qui fournissent les résultats d'une ou de plusieurs requêtes. D'autres panneaux affichent des documents ou des informations personnalisées. Chaque panneau est basé sur une recherche. Le recherche définit le sous-ensemble de données qu'affiche le panneau. Par exemple, vous pouvez configurer un graphique à barres, un graphique circulaire ou un tableau pour visualiser les données et les analyser.  
+Pour afficher les données dans un tableau de bord, vous devez configurer des panneaux. Kibana inclut différentes visualisations (telles que tableau, tendances et histogramme) que vous pouvez utiliser pour analyser les informations. Une visualisation est ajoutée à un tableau de bord sous forme de panneau. Vous pouvez ajouter, retirer et réorganiser des panneaux dans le tableau de bord. L'objectif de chaque panneau est différent. Certains panneaux sont organisés en lignes qui fournissent les résultats d'une ou de plusieurs requêtes. D'autres panneaux affichent des documents ou des informations personnalisées. Chaque panneau est basé sur une recherche. La recherche définit le sous-ensemble de données qu'affiche le panneau. Par exemple, vous pouvez configurer un graphique à barres, un graphique circulaire ou un tableau pour afficher les données et les analyser.  
 
 Le tableau suivant répertorie différentes tâches que vous pouvez effectuer depuis la page Dashboard :
 
@@ -47,13 +47,13 @@ Le tableau suivant répertorie différentes tâches que vous pouvez effectuer de
 | [Sauvegarder un tableau de bord](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | Vous pouvez sauvegarder un tableau de bord pour le réutiliser plus tard. |
 {: caption="Tableau 2. Tâches de gestion de tableaux de bord" caption-side="top"}
 
-Pour plus d'informations sur Kibana, reportez-vous au manuel [Kibana User Guide ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
+Pour plus d'informations sur Kibana, reportez-vous au manuel [Kibana User Guide ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 
 ## Ajout d'une nouvelle recherche ou visualisation
 {: #add_visualization}
 
-Pour ajouter une virtualisation ou une recherche existante, procédez comme suit :
+Pour ajouter une visualisation ou une recherche existante, procédez comme suit :
 
 1. Dans la barre d'outils de la page Dashboard, cliquez sur **Add**. 
 
@@ -61,15 +61,15 @@ Pour ajouter une virtualisation ou une recherche existante, procédez comme suit
 
 2. Sélectionnez l'onglet **Visualizations** pour ajouter une visualisation ou l'onglet **Searches** pour ajouter une recherche.
 
-3. Cliquez sur la recherche ou la visualisation que vous désirez ajouter.
+3. Cliquez sur la recherche ou la visualisation à ajouter.
 
-    Un panneau pour la recherche ou la visualisation concernée est ajouté au tableau de bord.
+    Un panneau pour cette recherche ou visualisation est ajouté au tableau de bord.
 
 	
-## Création d'un nouveau tableau de bord Kibana
+## Création d'un tableau de bord Kibana
 {: #new}
 
-Pour créer un nouveau tableau de bord, procédez comme suit :
+Pour créer un tableau de bord, procédez comme suit :
 
 1. Dans la barre d'outils de la page Dashboard, cliquez sur **Add**. 
 
@@ -77,7 +77,7 @@ Pour créer un nouveau tableau de bord, procédez comme suit :
 
     Lorsque vous ajoutez une recherche ou une visualisation, un panneau est ajouté au tableau de bord.
 
-3. Faites glisser un panneau et déposez-le à l'emplacement où vous désirez le positionner sur le tableau de bord.
+3. Faites glisser un panneau et déposez-le à l'emplacement de votre choix dans le tableau de bord.
  
 4. Sauvegardez le tableau de bord pour une réutilisation ultérieure. Pour plus d'informations, voir [Sauvegarde d'un tableau de bord Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save).
 
@@ -85,22 +85,22 @@ Pour créer un nouveau tableau de bord, procédez comme suit :
 ## Suppression d'un tableau de bord Kibana
 {: #delete}
 
-Pour supprimer un tableau de bord, procédez comme suit sur la page **Management** :
+Pour supprimer un tableau de bord, procédez comme suit dans la page **Management** :
 
-1. Sur la page **Management**, sélectionnez l'onglet **Advanced Objects**.
+1. Dans la page **Management**, sélectionnez **Saved Objects**.
 
-2. Dans l'onglet **Dashboards**, sélectionnez le tableau de bord que vous souhaitez supprimer.
+2. Dans l'onglet **Dashboards**, sélectionnez le tableau de bord à supprimer.
 
 3. Cliquez sur **Delete**.
 
 ## Exportation d'un tableau de bord Kibana
 {: #export}
 
-Pour exporter un tableau de bord en tant que fichier JSON, procédez comme suit sur la page **Management** :
+Pour exporter un tableau de bord en tant que fichier JSON, procédez comme suit dans la page **Management** :
 
-1. Sur la page **Management**, sélectionnez l'onglet **Advanced Objects**.
+1. Dans la page **Management**, sélectionnez **Saved Objects**.
 
-2. Dans l'onglet **Dashboard**, sélectionnez le tableau de bord que vous désirez exporter.
+2. Dans l'onglet **Dashboard**, sélectionnez le tableau de bord à exporter.
 
 3. Cliquez sur **Export**.
 
@@ -109,9 +109,9 @@ Pour exporter un tableau de bord en tant que fichier JSON, procédez comme suit 
 ## Importation d'un tableau de bord Kibana
 {: #import}
 
-Pour importer un tableau de bord en tant que fichier JSON, procédez comme suit sur la page **Management** :
+Pour importer un tableau de bord en tant que fichier JSON, procédez comme suit dans la page **Management** :
 
-1. Sur la page **Management**, sélectionnez l'onglet **Advanced Objects**.
+1. Dans la page **Management**, sélectionnez **Saved Objects**.
 
 2. Dans l'onglet **Dashboard**, sélectionnez **Import**.
 
@@ -139,7 +139,7 @@ Procédez comme suit pour sauvegarder un tableau de bord Kibana après l'avoir p
 
 2. Entrez un nom pour le tableau de bord.
 
-    **Remarque :** le nom ne doit pas contenir d'espaces. 
+    **Remarque :** le nom ne doit pas contenir d'espace.
 
 3. Cliquez sur **Save**.
 

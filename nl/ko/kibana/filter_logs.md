@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -42,11 +43,11 @@ lastupdated: "2017-07-19"
 ## *필드 목록*에 나열되지 않은 값에 대한 필터 추가
 {:#add_filter_out_value}
 
-*필드 목록*에 표시되지 않은 값에 대한 필터를 추가하려면 조회를 통해 그 값을 포함하는 레코드를 검색하십시오. 그리고 검색 페이지에서 사용 가능한 표 항목에서 필터를 추가하십시오.  
+*필드 목록*에 표시되지 않은 값에 대한 필터를 추가하려면 조회를 통해 해당 값을 포함하는 레코드를 검색하십시오. 그리고 검색 페이지에서 사용 가능한 표 항목에서 필터를 추가하십시오.  
 
 *필드 목록* 섹션에 표시된 목록에서 사용할 수 없는 값에 대한 필터를 추가하려면 다음 단계를 완료하십시오. 
 
-1. Kibana 검색 페이지에 어떤 데이터의 서브세트가 표시되는지 보십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
+1. Kibana 검색 페이지에서 표시하는 데이터의 서브세트를 확인하십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
 
 2. 검색 페이지에서 특정 필드 값을 검색하려면 조회를 수정하십시오.
 
@@ -55,7 +56,7 @@ lastupdated: "2017-07-19"
     
     표에서 조회와 일치하는 레코드를 볼 수 있습니다. 
     
- 3. 하나의 레코드를 펼치고 돋보기 단추 ![포함 모드의 돋보기 단추](images/include_field_icon.jpg "포함의 돋보기 단추")를 선택하여 필터를 추가하십시오.
+ 3. 하나의 레코드를 펼치고 돋보기 단추 ![포함 모드의 돋보기 단추](images/include_field_icon.jpg "포함 모드의 돋보기 단추")를 선택하여 필터를 추가하십시오.
      
 4. 필터가 추가되었는지 확인하십시오.
 
@@ -69,17 +70,17 @@ lastupdated: "2017-07-19"
 
 특정 필드 값이 포함된 항목을 검색하려면 다음 단계를 완료하십시오.
 
-1. Kibana 검색 페이지에 어떤 데이터의 서브세트가 표시되는지 보십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
+1. Kibana 검색 페이지에서 표시하는 데이터의 서브세트를 확인하십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
 
 2. *필드 목록*에서 필터를 정의하려는 필드를 식별해서 그 필드를 클릭하십시오. 
 
-    최대 5개의 값이 필드에 표시됩니다. 각각의 값에는 두 개의 돋보기 단추가 있습니다. 
+    최대 5개의 값이 필드에 표시됩니다. 각 값에는 두 개의 돋보기 단추가 있습니다. 
     
     값을 볼 수 없는 경우, [필드 목록에 나열되지 않은 값에 대한 필터 추가](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#add_filter_out_value)를 참조하십시오.
 
-3. 필드 값이 있는 항목을 검색하는 필터를 추가하려면 그 값에 대한 더하기 부호가 있는 돋보기 ![포함 모드의 돋보기](images/include_field_icon.jpg "포함의 돋보기 단추")를 선택하십시오.
+3. 필드 값이 있는 항목을 검색하는 필터를 추가하려면 해당 값에 대한 더하기 부호가 있는 돋보기 ![포함 모드의 돋보기 단추](images/include_field_icon.jpg "포함 모드의 돋보기 단추")를 선택하십시오.
 
-    그 필드 값이 포함되지 않은 항목을 검색하는 필터를 추가하려면 그 값에 대한 빼기 부호가 있는 돋보기 ![제외 모드의 돋보기](images/exclude_field_icon.jpg "제외 모드의 돋보기 단추")를 선택하십시오.
+    해당 필드 값이 포함되지 않은 항목을 검색하는 필터를 추가하려면 값에 대한 빼기 부호가 있는 돋보기 ![제외 모드의 돋보기 단추](images/exclude_field_icon.jpg "제외 모드의 돋보기 단추")를 선택하십시오.
 
 4. Kibana의 필터로 작업하려면 다음 옵션 중에서 선택하십시오. 
 
@@ -120,44 +121,44 @@ lastupdated: "2017-07-19"
     </table>
 
 	
-## 소스로 CF 앱 로그 필터링
+## 소스별 CF 앱 로그 필터링
 {:#filter_logs_by_source}
 
 특정 로그 소스가 포함된 항목을 검색하려면 다음 단계를 완료하십시오.
 
-1. Kibana 검색 페이지에 어떤 데이터의 서브세트가 표시되는지 보십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
+1. Kibana 검색 페이지에서 표시하는 데이터의 서브세트를 확인하십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
 
 2. *필드 목록*에서 **source_id** 필드를 선택하십시오.
 
-3. 특정 source_id가 포함된 항목을 검색하는 필터를 추가하려면 그 값에 대한 돋보기 단추 ![포함 모드의 돋보기 단추](images/include_field_icon.jpg "포함의 돋보기 단추")를 선택하십시오.
+3. 특정 source_id가 포함된 항목을 검색하는 필터를 추가하려면 해당 값에 대한 돋보기 단추 ![포함 모드의 돋보기 단추](images/include_field_icon.jpg "포함 모드의 돋보기 단추")를 선택하십시오.
 
     CF 앱에 사용 가능한 로그 소스의 목록에 대해서는 [CF 앱에 대한 로그 소스](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#logging_bluemix_cf_apps_log_sources)를 참조하십시오.
 
-    특정 source_id가 포함되지 않은 항목을 검색하는 필터를 추가하려면 그 값에 대한 돋보기 단추 ![제외 모드의 돋보기 단추](images/exclude_field_icon.jpg "제외 모드의 돋보기 단추")를 선택하십시오.
+    특정 source_id가 포함되지 않은 항목을 검색하는 필터를 추가하려면 값에 대한 돋보기 단추 ![제외 모드의 돋보기 단추](images/exclude_field_icon.jpg "제외 모드의 돋보기 단추")를 선택하십시오.
     
 
 
-## 로그 유형으로 로그 필터링
+## 로그 유형별 로그 필터링
 {:#filter_logs_by_log_type}
 
 특정 로그 유형이 포함된 항목을 검색하려면 다음 단계를 완료하십시오.
 
-1. Kibana 검색 페이지에 어떤 데이터의 서브세트가 표시되는지 보십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
+1. Kibana 검색 페이지에서 표시하는 데이터의 서브세트를 확인하십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
 
 2. *필드 목록*에서 **유형** 필드를 선택하십시오.
 
-3. 특정 로그 유형을 검색하는 필터를 추가하려면 분석하고 싶은 로그의 유형에 대한 돋보기 단추 ![포함 모드의 돋보기 단추](images/include_field_icon.jpg "포함의 돋보기 단추")를 선택하십시오.
+3. 특정 로그 유형을 검색하는 필터를 추가하려면 분석하고 싶은 로그의 유형에 대한 돋보기 단추 ![포함 모드의 돋보기 단추](images/include_field_icon.jpg "포함 모드의 돋보기 단추")를 선택하십시오.
 
-    특정 로그 유형이 포함되지 않은 항목을 검색하는 필터를 추가하려면 그 값에 대한 돋보기 단추 ![제외 모드의 돋보기 단추](images/exclude_field_icon.jpg "제외 모드의 돋보기 단추")를 선택하십시오.
+    특정 로그 유형이 포함되지 않은 항목을 검색하는 필터를 추가하려면 값에 대한 돋보기 단추 ![제외 모드의 돋보기 단추](images/exclude_field_icon.jpg "제외 모드의 돋보기 단추")를 선택하십시오.
 
 
 
-## 인스턴스 ID로 로그 필터링
+## 인스턴스 ID별 로그 필터링
 {:#filter_logs_by_instance_id}
 
 Kibana 대시보드에서 인스턴스 ID별로 로그를 보고 필터링하려면 다음 단계를 완료하십시오.
 
-1. Kibana 검색 페이지에 어떤 데이터의 서브세트가 표시되는지 보십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
+1. Kibana 검색 페이지에서 표시하는 데이터의 서브세트를 확인하십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
 
 2. *필드 목록*에서 특정 인스턴스 ID를 검색하려면 다음 필드 중 하나를 선택하십시오. 
 
@@ -165,26 +166,26 @@ Kibana 대시보드에서 인스턴스 ID별로 로그를 보고 필터링하려
     * **instance**: 이 필드에는 컨테이너 그룹에 대한 모든 인스턴스의 여러 가지 GUID가 나열됩니다. 
 	* **docker.container_id_str**: 이 필드에는 Kubernetes 인프라에 배치된 컨테이너에 대한 여러 가지 컨테이너 ID가 나열됩니다.
    
-3. 특정 로그 유형을 검색하는 필터를 추가하려면 분석하고 싶은 로그의 유형에 대한 돋보기 단추 ![포함 모드의 돋보기 단추](images/include_field_icon.jpg "포함의 돋보기 단추")를 선택하십시오.
+3. 특정 로그 유형을 검색하는 필터를 추가하려면 분석하고 싶은 로그의 유형에 대한 돋보기 단추 ![포함 모드의 돋보기 단추](images/include_field_icon.jpg "포함 모드의 돋보기 단추")를 선택하십시오.
 
-    특정 인스턴스 ID가 포함되지 않은 항목을 검색하는 필터를 추가하려면 그 값에 대한 돋보기 단추 ![제외 모드의 돋보기 단추](images/exclude_field_icon.jpg "제외 모드의 돋보기 단추")를 선택하십시오.
+    특정 인스턴스 ID가 포함되지 않은 항목을 검색하는 필터를 추가하려면 값에 대한 돋보기 단추 ![제외 모드의 돋보기 단추](images/exclude_field_icon.jpg "제외 모드의 돋보기 단추")를 선택하십시오.
 
 
 
-## 메시지 유형으로 CF 앱 로그 필터링
+## 메시지 유형별 CF 앱 로그 필터링
 {:#filter_cf_logs_by_msg_type}
 
 특정 메시지 유형이 포함된 항목을 검색하려면 다음 단계를 완료하십시오.
 
-1. Kibana 검색 페이지에 어떤 데이터의 서브세트가 표시되는지 보십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
+1. Kibana 검색 페이지에서 표시하는 데이터의 서브세트를 확인하십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
 
 2. *필드 목록*에서 **message_type** 필드를 선택하십시오.
 
     사용 가능한 필드 유형이 표시됩니다. 
 
-3. 특정 *message_type*이 포함된 항목을 검색하는 필터를 추가하려면 그 값에 대한 돋보기 단추 ![포함 모드의 돋보기 단추](images/include_field_icon.jpg "포함의 돋보기 단추")를 선택하십시오.
+3. 특정 *message_type*이 포함된 항목을 검색하는 필터를 추가하려면 해당 값에 대한 돋보기 단추 ![포함 모드의 돋보기 단추](images/include_field_icon.jpg "포함 모드의 돋보기 단추")를 선택하십시오.
 
-    특정 *message_type*이 포함되지 않은 항목을 검색하는 필터를 추가하려면 그 값에 대한 돋보기 단추 ![제외 모드의 돋보기 단추](images/exclude_field_icon.jpg "제외 모드의 돋보기 단추")를 선택하십시오.
+    특정 *message_type*이 포함되지 않은 항목을 검색하는 필터를 추가하려면 값에 대한 돋보기 단추 ![제외 모드의 돋보기 단추](images/exclude_field_icon.jpg "제외 모드의 돋보기 단추")를 선택하십시오.
     
  
 	
@@ -200,7 +201,7 @@ Elasticsearch가 문자열 필드의 값을 분석할 때 단어 경계에서 �
     
 필드 값에 특정 텍스트가 포함된 항목을 검색하려면 다음 단계를 완료하십시오.
 
-1. Kibana 검색 페이지에 어떤 데이터의 서브세트가 표시되는지 보십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
+1. Kibana 검색 페이지에서 표시하는 데이터의 서브세트를 확인하십시오. 자세한 정보는 [Kibana 검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
 
 2. 기본적으로 ElasticSearch에서 분석되는 필드를 식별하십시오.
 
@@ -219,7 +220,7 @@ Elasticsearch가 문자열 필드의 값을 분석할 때 단어 경계에서 �
     
 **예**
 
-{{site.data.keyword.Bluemix}} UI에서 Cloud Foundry(CF) 애플리케이션에 대해 Kibana를 실행하고, 메시지 ID *CWWKT0016I:*가 포함된 특정 메시지를 검색하려는 경우, 자유 텍스트를 포함하도록 검색을 수정하십시오.
+{{site.data.keyword.Bluemix}} UI에서 CF(Cloud Foundry) 애플리케이션에 대해 Kibana를 실행하고, 메시지 ID *CWWKT0016I:*가 포함된 특정 메시지를 검색하려는 경우, 자유 텍스트를 포함하도록 검색을 수정하십시오.
     
 1. 로드된 검색 조회 및 검색 페이지에 표시되는 데이터를 확인하십시오.
        
@@ -238,7 +239,7 @@ Elasticsearch가 문자열 필드의 값을 분석할 때 단어 경계에서 �
 ## 시간 필터 설정
 {: #set_time_filter}
 
-*시간 선택도구*를 구성하여 기간 내에서 {{site.data.keyword.Bluemix_notm}} 로그를 보고 필터링하십시오.
+*시간 선택도구*를 구성하여 기간 내의 로그를 보고 필터링하십시오. 
 
 검색 페이지에서 *시간 선택도구*를 구성할 수 있습니다. 기본적으로 최근 15분으로 설정됩니다. 
 

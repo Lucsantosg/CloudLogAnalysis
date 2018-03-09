@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -12,37 +14,35 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Daten mit dem Multi-Tenant Logstash Forwarder senden
+# Lokale Daten an einen Bereich in IBM Cloud senden
 {: #send_data_mt}
 
-Zum Senden von Protokolldaten an den {{site.data.keyword.loganalysisshort}}-Service können Sie einen Multi-Tenant Logstash Forwarder (mt-logstash-forwarder) konfigurieren. {:shortdesc}
+Zum Senden von Protokolldaten an den {{site.data.keyword.loganalysisshort}}-Service können Sie einen Multi-Tenant Logstash Forwarder (mt-logstash-forwarder) konfigurieren. 
+{: shortdesc}
 
-Um Protokolldaten an 'Log Collection' zu senden, führen Sie die folgenden Schritte aus:
+Führen Sie die folgenden Schritte aus, um Protokolldaten an einen Bereich in {{site.data.keyword.Bluemix_notm}} zu senden:
 
-## Schritt 1: Fordern Sie das Protokollierungstoken an.
+## Voraussetzungen
+{: #prereqs}
+
+* Eine {{site.data.keyword.IBM_notm}} ID für die Anmeldung bei {{site.data.keyword.Bluemix_notm}}.
+* Eine Benutzer-ID, die über Berechtigungen zum Arbeiten in einem Bereich mit dem {{site.data.keyword.loganalysisshort}}-Service verfügt. Weitere Informationen finden Sie unter [Sicherheit](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
+* Die in Ihrer lokalen Umgebung installierte {{site.data.keyword.loganalysisshort}}-Befehlszeilenschnittstelle.
+
+
+## Schritt 1: Protokollierungstoken anfordern
 {: #get_logging_auth_token}
 
-Zum Senden von Daten an den {{site.data.keyword.loganalysisshort}}-Service benötigen Sie Folgendes:
+Führen Sie in der Terminalsitzung, in der die {{site.data.keyword.loganalysisshort}}-Befehlszeilenschnittstelle installiert ist, die folgenden Schritte aus:
 
-* Eine {{site.data.keyword.IBM_notm}}ID: Diese ID ist für die Protokollierung in {{site.data.keyword.Bluemix_notm}} erforderlich.
-* Einen Bereich in einer {{site.data.keyword.Bluemix_notm}}-Organisation: Dies ist der Bereich, an den Sie Protokolle für die Analyse senden wollen.
-* Ein Protokollierungstoken zum Senden von Daten. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
-Führen Sie die folgenden Schritte aus:
-
-1. Melden Sie sich unter {{site.data.keyword.Bluemix_notm}} an einer Region, einer Organisation und einem Bereich an. 
-
-    Führen Sie zum Beispiel den folgenden Befehl aus, um sich an der Region 'USA (Süden)' anzumelden: 
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Führen Sie den Befehl `cf logging auth` aus. 
+2. Führen Sie den Befehl `bx cf logging auth` aus. 
 
     ```
-    cf logging auth
+    bx cf logging auth
     ```
     {: codeblock}
 
@@ -55,13 +55,13 @@ Führen Sie die folgenden Schritte aus:
     Beispiel:
 
     ```
-    cf logging auth
+    bx cf logging auth
     +-----------------+--------------------------------------+
     |      NAME       |                VALUE                 |
     +-----------------+--------------------------------------+
     | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_bKsdfTz                         |
-    | Organization Id | 98450123-6f1c-9999-96a3-0210fjyuwplt |
+    | Logging Token   | oT98_abcdefz                         |
+    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
     | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
     +-----------------+--------------------------------------+
     ```
@@ -204,7 +204,7 @@ Führen Sie die folgenden Schritte aus, um den Multi-Tenant Logstash Forwarder (
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>Ziel-URL. Legen Sie den folgenden Wert fest: **https://ingest.logging.ng.bluemix.net:9091**. </td>
+            <td>Ziel-URL. Informationen zum Abrufen der Liste der URLs zum Einpflegen finden Sie unter [URLs für das Einpflegen](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Legen Sie den Wert beispielsweise auf **https://ingest.logging.ng.bluemix.net:9091** fest, um Protokolle an die Region 'USA (Süden)' zu senden. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>
@@ -223,11 +223,11 @@ Führen Sie die folgenden Schritte aus, um den Multi-Tenant Logstash Forwarder (
        Beispiel: Suchen Sie in der folgenden Beispieldatei nach einem Bereich mit der ID *7d576e3b-170b-4fc2-a6c6-b7166fd57912* in der Region 'Vereinigtes Königreich':
         
        ```
-       # more mt-lsf-config.sh
+       # more mt-lsf-config.sh 
        LSF_INSTANCE_ID="myhelloapp"
        LSF_TARGET="ingest.logging.ng.bluemix.net:9091"
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
-       LSF_PASSWORD="oT98_bKsdfTz"
+       LSF_PASSWORD="oT98_abcdefz"
        LSF_GROUP_ID="Group1"
        ```
        {: screen}
@@ -238,26 +238,11 @@ Führen Sie die folgenden Schritte aus, um den Multi-Tenant Logstash Forwarder (
        service mt-logstash-forwarder start
        ```
        {: codeblock}
-        
-       Aktivieren Sie für den Multi-Tenant Logstash Forwarder die Funktionalität zum automatischen Starten nach einem Ausfall oder Neustart. 
-        
-       ```
-       service mt-logstash-forwarder enable
-       ```
-       {: codeblock}
-        
-       **Tipp:** Um den Service 'mt-logstash forwarder' erneut zu starten, führen Sie den folgenden Befehl aus:
-    
-       ```
-       service mt-logstash-forwarder restart
-       ```
-       {: codeblock}
-        
-        
+                
 Standardmäßig beobachtet der Forwarder nur das Syslog. Ihre Protokolle stehen in Kibana für die Analyse zur Verfügung.
         
 
-## Schritt 3: Geben Sie weitere Protokolldateien an.
+## Schritt 3: Weitere Protokolldateien angeben
 {: #add_logs}
 
 Standardmäßig wird nur die Datei /var/log/syslog vom Forwarder überwacht. Sie können weitere Konfigurationsdateien zum Verzeichnis `/etc/mt-logstash-forwarder/conf.d/syslog.conf/` hinzufügen, damit der Forwarder auch diese überwachen kann. 
@@ -299,7 +284,7 @@ Wenn Sie Standardausgabe (stdout) oder Standardfehler (stderr) aus einer Hello-A
     
 2. Bearbeiten Sie die Konfigurationsdatei *myapp.conf*.
 
-    Um das JSON-Parsing zu aktivieren, stellen Sie 'is_json' in der Konfigurationsdatei auf 'true' ein.
+    Um beim Einpflegen eines Protokolls eine Suche anhand eines JSON-Feldes in Kibana durchführen zu können, aktivieren Sie das JSON-Parsing. Legen Sie `is_json` in der Konfigurationsdatei für bestimmte Dateipfade auf 'true' fest. Für Protokolldateien, die auf diese Weise konfiguriert werden, sollten die Protokollzeilen als mit Rücklauf voneinander getrennte JSON-Blöcke formatiert werden. Der Multi-Tenant Logstash Forwarder (mt-logstash-forwarder) verarbeitet alle diese JSON-Felder dann als einzelne, mit Kibana durchsuchbare Felder. JSON-Feldnamen enthalten ein Suffix, das auf dem entsprechenden Typ basiert.
     
     ```
     {

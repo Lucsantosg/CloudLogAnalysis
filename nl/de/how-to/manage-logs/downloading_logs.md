@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -20,22 +22,19 @@ Sie können Protokolle in eine lokale Datei herunterladen oder Daten über eine 
 
 Führen Sie die folgenden Schritte aus, um Protokolldaten aus einem {{site.data.keyword.Bluemix_notm}}-Bereich in eine lokale Datei herunterzuladen:
 
-Bevor Sie beginnen, melden Sie sich unter {{site.data.keyword.Bluemix_notm}} an einer Region, einer Organisation und einem Bereich an. 
+## Schritt 1: Anmeldung bei IBM Cloud
 
-Führen Sie zum Beispiel den folgenden Befehl aus, um sich an der Region 'USA (Süden)' anzumelden: 
-	
-```
-cf login -a https://api.ng.bluemix.net
-```
-{: codeblock}
+Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
-## Schritt 1: Verfügbare Protokolle ermitteln
-{: #step1}
+Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-1. Verwenden Sie den Befehl `cf logging status`, um zu ermitteln, welche Protokolle für die letzten beiden Wochen zur Verfügung stehen. Führen Sie den folgenden Befehl aus:
+## Schritt 2: Verfügbare Protokolle ermitteln
+{: #step2}
+
+1. Verwenden Sie den Befehl `bx cf logging status`, um zu ermitteln, welche Protokolle für die letzten beiden Wochen zur Verfügung stehen. Führen Sie den folgenden Befehl aus:
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
@@ -55,8 +54,8 @@ cf login -a https://api.ng.bluemix.net
     **Hinweis:** Der {{site.data.keyword.loganalysisshort}}-Service ist ein globaler Service, der die koordinierte Weltzeit (UTC) verwendet. Tage sind als UTC-Tage definiert. Um Protokolle für einen bestimmten Tag in Ortszeit anzufordern, müssen Sie möglicherweise mehrere UTC-Tage herunterladen.
 
 
-## Schritt 2: Sitzung erstellen
-{: #step2}
+## Schritt 3: Sitzung erstellen
+{: #step3}
 
 Eine Sitzung ist erforderlich, um den Umfang der Protokolldaten zu definieren, die für einen Download verfügbar sind, und um den Status des Downloads zu behalten. 
 
@@ -68,7 +67,7 @@ Verwenden Sie den Befehl [cf logging session create](/docs/services/CloudLogAnal
 Um eine Sitzung zu erstellen, die verwendet wird, um Protokolle des Typs *log* herunterzuladen, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging session create -t log
+bx cf logging session create -t log
 ```
 {: codeblock}
 
@@ -82,7 +81,7 @@ Die Sitzung gibt die folgenden Informationen zurück:
 Beispiel:
 
 ```
-$ cf logging session create -t log     
+$ bx cf logging session create -t log     
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -104,13 +103,13 @@ $ cf logging session create -t log
 
 **Tipp:** Um die Liste aktiver Sitzungen anzuzeigen, führen Sie den Befehl [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list) aus.
 
-## Schritt 3: Protokolldaten in eine Datei herunterladen
-{: #step3}
+## Schritt 4: Protokolldaten in eine Datei herunterladen
+{: #step4}
 
 Führen Sie den folgenden Befehl aus, um die Protokolle herunterzuladen, die durch die Sitzungsparameter angegeben sind:
 
 ```
-cf logging download -o Protokolldateiname Sitzungs-ID
+bx cf logging download -o Protokolldateiname Sitzungs-ID
 ```
 {: codeblock}
 
@@ -122,7 +121,7 @@ Dabei gilt:
 Beispiel:
 
 ```
-cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -135,14 +134,15 @@ Der Fortschrittsanzeiger zeigt den jeweils aktuellen Downloadstatus auf einer Sk
 * Das komprimierte JSON-Format eignet sich für das Einpflegen per Elasticsearch oder Logstash. Wenn -o nicht angegeben wird, werden die Daten in die Standardausgabe gestreamt, sodass Sie sie direkt in Ihren eigenen ELK-Stack umleiten können.
 * Sie können die Daten auch mit einem Programm verarbeiten, das JSON-Parsing ermöglicht. 
 
-## Schritt 4: Sitzung löschen
+## Schritt 5: Sitzung löschen
+{: #step5}
 
 Wenn der Download abgeschlossen ist, müssen Sie die Sitzung mit dem Befehl [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete) löschen. 
 
 Führen Sie den folgenden Befehl aus, um eine Sitzung zu löschen:
 
 ```
-cf logging session delete Sitzungs-ID
+bx cf logging session delete Sitzungs-ID
 ```
 {: codeblock}
 
@@ -151,7 +151,7 @@ Dabei ist 'Sitzungs-ID' die GUID der Sitzung, die Sie im vorherigen Schritt erst
 Beispiel:
 
 ```
-cf logging session delete -jshdjsunelsssr4566722==
+bx cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

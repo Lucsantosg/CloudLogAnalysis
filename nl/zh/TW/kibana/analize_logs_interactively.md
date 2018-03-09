@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -17,7 +18,7 @@ lastupdated: "2017-07-19"
 # 在 Kibana 中以互動方式分析日誌
 {:#analize_logs_interactively}
 
-您可以在「探索」頁面中，以互動方式檢視及分析 {{site.data.keyword.Bluemix}} 日誌。您可以定義搜尋查詢，使用 Lucene 查詢語言來過濾該資料。您可以為每一個搜尋查詢套用過濾器，以精簡可用於分析的項目。您可以儲存搜尋，以供日後重複使用。
+在「探索」頁面中，您可以透過互動方式檢視及分析日誌。您可以定義搜尋查詢，使用 Lucene 查詢語言來過濾該資料。您可以為每一個搜尋查詢套用過濾器，以精簡可用於分析的項目。您可以儲存搜尋，以供日後重複使用。
 {:shortdesc}
 
 在 {{site.data.keyword.Bluemix_notm}} 中，當您從 {{site.data.keyword.Bluemix_notm}} 使用者介面啟動 Kibana 時，「探索」頁面中顯示的資料集依預設會配置為只顯示您用來啟動 Kibana 的 Cloud Foundry (CF) 應用程式或容器的項目。如需進一步瞭解如何查看「探索」頁面顯示哪部分的資料，請參閱[識別所顯示的資料](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)。
@@ -45,7 +46,7 @@ lastupdated: "2017-07-19"
 |------|-------------|
 | [新增欄位直欄](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_add_fields_to_table) | 新增欄位，以查看分析所需的特定資料，而非完整訊息。|
 | [自動重新整理資料](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_refresh_interval) | 以最新的項目來重新整理表格中顯示的資料。依預設，重新整理功能為**關閉**。|
-| [依索引欄位的值來排列項目](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_sort_by_table) | 將項目重新排序，以方便分析。|
+| [依已編製索引欄位的值來排序項目](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_sort_by_table) | 將項目重新排序，以方便分析。|
 | [重新排列欄位直欄](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_rearrange_fields_in_table) | 將表格中的欄位位置移到您想要的位置。|
 | [移除欄位直欄](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_remove_fields_from_table) | 若視圖中有不需要分析的欄位，可以將它移除。|
 | [檢視項目](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_entry_in_table) | 將表格中的項目展開，以查看依欄位剖析或剖析成 JSON 的項目詳細資料。|
@@ -69,18 +70,18 @@ lastupdated: "2017-07-19"
     
 * 自訂*時間選取器* 來選取時間型資料。您可以為查詢定義絕對時間範圍、相對時間範圍，或從一組預先定義的值中選擇。如需相關資訊，請參閱[設定時間過濾器](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)。
 
-配置搜尋來定義您要分析的部分資料之後，可以將其儲存，以供稍後重複使用。
+配置搜尋來定義您要分析的部分資料之後，可以將其儲存，以供之後重複使用。如需相關資訊，請參閱[儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)。
 
 您可以使用在「探索」頁面中定義的搜尋來執行下列任何作業：
 
 | 作業 | 說明 |
 |------|-------------|
-| [儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | 儲存搜尋，以供稍後重複使用。|
 | [刪除搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | 刪除不再需要的搜尋。|
 | [匯出搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | 匯出搜尋以進行共用。|
+| [匯入搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | 匯入搜尋。|
 | [重新載入搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | 上傳現有的搜尋，以重新分析資料集。|
 | [重新整理搜尋的資料](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | 針對透過搜尋而顯示的資料，配置自動重新整理。|
-| [匯入搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | 匯入搜尋。|
+| [儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | 儲存搜尋，以供之後重複使用。|
 {: caption="表 3. 使用搜尋的作業" caption-side="top"}
 
 
@@ -139,13 +140,13 @@ lastupdated: "2017-07-19"
 ## 識別探索頁面中顯示的資料
 {:#identify_data}
 
-當您使用 Kibana 來分析 {{site.data.keyword.Bluemix_notm}} 日誌時，您可以看到的資料，取決於您啟動 Kibana 的方式、所配置的索引型樣，以及您可能已套用的自訂查詢和過濾器。
+當您使用 Kibana 來分析 {{site.data.keyword.Bluemix_notm}} 日誌時，您可以看到的資料取決於您啟動 Kibana 的方式、所配置的索引型樣，以及您可能已套用的自訂查詢和過濾器。
 
 請考量下列資訊，以識別「探索」頁面的表格及直方圖中可用的資料：
 
 1. 在**管理**頁面中，檢查索引型樣。
 
-    索引型樣可定義搜尋查詢，在 Kibana 頁面中顯示項目時，依預設會套用此搜尋查詢。依預設，索引型樣會預先配置，並設定至 {{site.data.keyword.Bluemix_notm}} 空間中可用的所有資料。例如，
+    索引型樣可定義搜尋查詢，在 Kibana 頁面中顯示項目時，依預設會套用此搜尋查詢。依預設，會預先配置索引型樣，並將其設為空間中可用的所有資料。例如，
 
     * 如果您是從 {{site.data.keyword.Bluemix_notm}} 使用者介面啟動 Kibana，亦即，從像是 Cloud Foundry (CF) 應用程式或容器等特定資源的使用者介面頁面中的*日誌* 區段啟動，則套用的索引型樣會包括空間中可用的所有項目。
     
@@ -172,7 +173,7 @@ lastupdated: "2017-07-19"
     您可以定義欄位過濾器，以根據欄位值來切換項目。例如，如果已啟用欄位過濾器，您可以看到的項目，對應於該欄位值相符的項目。
     
 
-## 依索引欄位的值來排列項目 
+## 依已編製索引欄位的值來排序項目 
 {: #discover_sort_by_table}
 
 您只能針對已編製索引的欄位，來排序表格中的項目。
@@ -183,9 +184,9 @@ lastupdated: "2017-07-19"
 
 2. 若要識別已編製索引的欄位，請針對**已編製索引**搜尋欄位選取**是**。
 
-    即會顯示索引欄位清單。
+    即會顯示已編製索引的欄位清單。
  
-若要依索引欄位的值來排序表格中的項目，請完成下列步驟： 
+若要依已編製索引的欄位值來排序表格中的項目，請完成下列步驟： 
 
 1. 將滑鼠移至表格中要作為資料排序依據的欄位名稱上方。即會顯示不同的動作按鈕。
 2. 針對要用來作為資料排序依據的欄位，按一下其排序按鈕。再按一次欄位排序圖示，可反向排序。

@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -21,9 +21,9 @@ lastupdated: "2017-07-19"
 Sie können Kibana über den {{site.data.keyword.loganalysisshort}}-Service, über die {{site.data.keyword.Bluemix}}-Benutzerschnittstelle oder direkt über einen Web-Browser starten.
 {:shortdesc}
 
-Für CF-Apps und Docker-Container, die in einer {{site.data.keyword.Bluemix_notm}}-verwalteten Cloudinfrastruktur bereitgestellt sind, können Sie Kibana über {{site.data.keyword.Bluemix_notm}} starten, um Daten im Kontext der Ressource anzuzeigen und zu analysieren, von der Sie Kibana starten. Sie können Ihre spezifischen CF-App-Protokolle in Kibana im Kontext dieser spezifischen App starten.
+Für CF-Apps und Docker-Container können Sie Kibana über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle starten, um Daten im Kontext der Ressource anzuzeigen und zu analysieren, von der Sie Kibana starten. Sie können Ihre spezifischen CF-App-Protokolle in Kibana im Kontext dieser spezifischen App starten.
     
-Bei allen Cloudressourcen - wie z. B. Docker-Container, die in einer Kubernetes-Infrastruktur bereitgestellt sind - können Sie Kibana über einen direkten Browser-Link oder vom Dashboard des {{site.data.keyword.loganalysisshort}}-Service starten, um zusammengefasste Protokolldaten von Services in einem zur Verfügung gestellten {{site.data.keyword.Bluemix_notm}}-Bereich anzuzeigen. Die Abfrage, durch die die im Dashboard angezeigten Daten gefiltert werden, ruft Protokolleinträge für einen Bereich in der {{site.data.keyword.Bluemix_notm}}-Organisation ab. Die Protokollinformationen, die in Kibana angezeigt werden, umfassen Einträge für alle Ressourcen, die innerhalb des Bereichs der {{site.data.keyword.Bluemix_notm}}-Organisation bereitgestellt sind, an der Sie angemeldet sind. 
+Bei allen Cloudressourcen - wie z. B. Docker-Container, die in einer Kubernetes-Infrastruktur bereitgestellt sind - können Sie Kibana über einen direkten Browser-Link oder vom Dashboard des {{site.data.keyword.loganalysisshort}}-Service starten, um zusammengefasste Protokolldaten von Services in einem zur Verfügung gestellten Bereich anzuzeigen. Die Abfrage, durch die die im Dashboard angezeigten Daten gefiltert werden, ruft Protokolleinträge für einen Bereich in der Organisation ab. Die Protokollinformationen, die in Kibana angezeigt werden, umfassen Einträge für alle Ressourcen, die innerhalb des Bereichs der Organisation bereitgestellt sind, an der Sie angemeldet sind. 
 
 Die folgende Tabelle listet einige Cloudressourcen und die unterstützten Navigationsmethoden zum Starten von Kibana auf:
 
@@ -44,26 +44,26 @@ Die folgende Tabelle listet einige Cloudressourcen und die unterstützten Naviga
   <tr>
     <td>Container in Kubernetes-Cluster</td>
 	<td>Ja</td>
-    <td>Nein</td>
+    <td>Ja</td>
     <td>Ja</td>
   </tr>  
   <tr>
-    <td>Container in einer {{site.data.keyword.Bluemix_notm}}-verwalteten Cloudinfrastruktur</td>
+    <td>Container in einer {{site.data.keyword.Bluemix_notm}}-verwalteten Infrastruktur (veraltet)</td>
 	<td>Ja</td>
     <td>Ja</td>
     <td>Ja</td>
   </tr>  
 </table>
 
-Weitere Informationen zu Kibana finden Sie in der Veröffentlichung [Kibana User Guide ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Symbol für externen Link"){: new_window}.
+Weitere Informationen zu Kibana finden Sie in der Veröffentlichung [Kibana User Guide ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
     
 
 ##  Vom Dashboard des Log Analysis-Service zu Kibana navigieren
 {: #launch_Kibana_from_log_analysis}
 
-Die Abfrage, durch die die in Kibana angezeigten Daten gefiltert werden, ruft Protokolleinträge für den Bereich in der {{site.data.keyword.Bluemix_notm}}-Organisation ab. 
+Mit der Abfrage, durch die die in Kibana angezeigten Daten gefiltert werden, werden Protokolleinträge für den Bereich in der Organisation abgerufen. 
 	
-Die Protokollinformationen, die in Kibana angezeigt werden, umfassen Einträge für alle Ressourcen, die innerhalb des Bereichs der {{site.data.keyword.Bluemix_notm}}-Organisation bereitgestellt sind, an der Sie angemeldet sind.
+Die Protokollinformationen, die in Kibana angezeigt werden, umfassen Einträge für alle Ressourcen, die innerhalb des Bereichs der Organisation bereitgestellt sind, an der Sie angemeldet sind.
 
 Führen Sie die folgenden Schritte aus, um Kibana von dem Dashboard des {{site.data.keyword.loganalysisshort}}-Service zu starten:
 
@@ -82,31 +82,19 @@ Wenn auf der Seite 'Discover' nicht alle Protokolleinträge angezeigt werden, pa
 ##  Von einem Web-Browser zu Kibana navigieren
 {: #launch_Kibana_from_browser}
 
-Die Abfrage, durch die die in Kibana angezeigten Daten gefiltert werden, ruft Protokolleinträge für den Bereich in der {{site.data.keyword.Bluemix_notm}}-Organisation ab. 
+Die Abfrage, durch die die in Kibana angezeigten Daten gefiltert werden, ruft Protokolleinträge für den Bereich in der Organisation ab. 
 	
-Die Protokollinformationen, die in Kibana angezeigt werden, umfassen Einträge für alle Ressourcen, die innerhalb des Bereichs der {{site.data.keyword.Bluemix_notm}}-Organisation bereitgestellt sind, an der Sie angemeldet sind.
+Die Protokollinformationen, die in Kibana angezeigt werden, umfassen Einträge für alle Ressourcen, die innerhalb des Bereichs der Organisation bereitgestellt sind, an der Sie angemeldet sind.
 
 Führen Sie die folgenden Schritte aus, um Kibana von einem Browser zu starten:
 
-1. Öffnen Sie einen Web-Browser und starten Sie Kibana. Melden Sie sich anschließend an der Kibana-Benutzerschnittstelle an. 
+1. Öffnen Sie einen Web-Browser und starten Sie Kibana. Melden Sie sich anschließend an der Kibana-Benutzerschnittstelle an.
+
+    Eine Liste der URLs nach Region finden Sie unter [URLs zum Starten von Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana).
     
-    Beispiel: Die folgende Tabelle zeigt die URL, die Sie verwenden müssen, um Kibana in der Region 'USA (Süden)' zu starten:
-      
-    <table>
-          <caption>Tabelle 1. URLs zum Starten von Kibana pro Region</caption>
-           <tr>
-            <th>Region</th>
-            <th>URL</th>
-          </tr>
-          <tr>
-            <td>USA (Süden)</td>
-            <td>https://logging.ng.bluemix.net/ </td>
-          </tr>
-    </table>
+    Die Seite 'Discover' in Kibana wird geöffnet.
 	
-	Die Seite 'Discover' in Kibana wird geöffnet.
-	
-2. Wählen Sie das Indexmuster für den {{site.data.keyword.Bluemix_notm}}-Bereich aus, in dem Sie Protokolldaten anzeigen und analysieren wollen.
+2. Wählen Sie das Indexmuster für den Bereich aus, in dem Sie Protokolldaten anzeigen und analysieren wollen.
 
     1. Klicken Sie auf **default-index**.
 	
@@ -115,9 +103,9 @@ Führen Sie die folgenden Schritte aus, um Kibana von einem Browser zu starten:
 	    ```
 	    [logstash-Bereichs-ID-]JJJJ.MM.TT 
 	    ```
-        {screen}
+        {: screen}
 	
-	    Dabei ist *Bereichs-ID* die GUID des {{site.data.keyword.Bluemix_notm}}-Bereichs, in dem Sie Protokolldaten anzeigen und analysieren wollen. 
+	    Dabei ist *Bereichs-ID* die GUID des Bereichs, in dem Sie Protokolldaten anzeigen und analysieren wollen. 
 	
 Wenn auf der Seite 'Discover' nicht alle Protokolleinträge angezeigt werden, passen Sie das Zeitauswahlfeld an. Weitere Informationen finden Sie unter [Zeitfilter festlegen](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 
@@ -130,24 +118,55 @@ Die Abfrage, durch die die in Kibana angezeigten Daten gefiltert werden, ruft Pr
 
 Führen Sie die folgenden Schritte aus, um die Protokolle einer Cloud Foundry-Anwendung in Kibana anzuzeigen:
 
-1. Melden Sie sich bei {{site.data.keyword.Bluemix_notm}} an und klicken Sie dann im {{site.data.keyword.Bluemix_notm}}-Dashboard auf den App-Namen oder Container. 
+1. Melden Sie sich an Ihrem {{site.data.keyword.Bluemix_notm}}-Konto an.
+
+    Das {{site.data.keyword.Bluemix_notm}}-Dashboard finden Sie unter [http://bluemix.net ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://bluemix.net){:new_window}.
     
-2. Öffnen Sie die Registerkarte 'Protokoll' in der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle.
+	Nach der Anmeldung mit Ihrer Benutzer-ID und Ihrem Kennwort wird die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle geöffnet.
+
+2. Klicken Sie im {{site.data.keyword.Bluemix_notm}}-Dashboard auf den App-Namen oder Container. 
+    
+3. Öffnen Sie die Registerkarte 'Protokoll' in der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle.
 
     Klicken Sie für CF-Apps in der Navigationsleiste auf **Protokolle**. 
     Die Registerkarte 'Protokolle' wird geöffnet.  
 
-3. Klicken Sie auf **Erweiterte Ansicht**. Das Kibana-Dashboard wird geöffnet.
+4. Klicken Sie auf die Option zur Anzeige in Kibana. Das Kibana-Dashboard wird geöffnet.
 
-    Standardmäßig ist beim Laden der Seite **Discover** das Standardindexmuster ausgewählt und ein Zeitfilter auf die letzten 30 Sekunden eingestellt. Die Suchabfrage wird so eingestellt, dass sie allen Einträgen für Ihre CF-App entspricht.
+    Standardmäßig ist beim Laden der Seite **Discover** das Standardindexmuster ausgewählt und ein Zeitfilter auf die letzten 15 Minuten eingestellt. Die Suchabfrage wird so eingestellt, dass sie allen Einträgen für der CF-App entspricht.
 
     Wenn auf der Seite 'Discover' nicht alle Protokolleinträge angezeigt werden, passen Sie das Zeitauswahlfeld an. Weitere Informationen finden Sie unter [Zeitfilter festlegen](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 
+	
+	
+##  Vom Dashboard eines in einem Kubernetes-Cluster bereitgestellten Containers zu Kibana navigieren
+{: #launch_Kibana_for_containers_kube}
 
-##  Vom Dashboard eines Containers zu Kibana navigieren
+Die Abfrage, mit der die in Kibana angezeigten Daten gefiltert werden, ruft Protokolleinträge für den Cluster ab, von dem Sie Kibana starten.
+
+Führen Sie die folgenden Schritte aus, um die Protokolle eines Containers in Kibana anzuzeigen:
+
+1. Melden Sie sich an Ihrem {{site.data.keyword.Bluemix_notm}}-Konto an.
+
+    Das {{site.data.keyword.Bluemix_notm}}-Dashboard finden Sie unter [http://bluemix.net ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://bluemix.net){:new_window}.
+    
+	Nach der Anmeldung mit Ihrer Benutzer-ID und Ihrem Kennwort wird die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle geöffnet.
+
+2. Wählen Sie im Menü die Option **Dashboard** aus.
+
+3. Wählen Sie im Abschnitt *Cluster* den Cluster aus.
+
+4. Wählen Sie im Abschnitt *Übersicht* die Option **Protokolle anzeigen** aus.
+
+    Kibana wird geöffnet.
+
+
+
+
+##  Vom Dashboard eines in der von {{site.data.keyword.Bluemix_notm}} verwalteten Infrastruktur bereitgestellten Containers zu Kibana navigieren (veraltet)
 {: #launch_Kibana_for_containers}
 
-Diese Methode gilt nur für Container, die in der {{site.data.keyword.Bluemix_notm}}-verwalteten Cloudinfrastruktur bereitgestellt werden.
+Diese Methode gilt nur für Container, die in der {{site.data.keyword.Bluemix_notm}}-verwalteten Infrastruktur bereitgestellt werden.
 
 Die Abfrage, durch die die in Kibana angezeigten Daten gefiltert werden, ruft Protokolleinträge für den Container ab, von dem Sie Kibana starten.
 
@@ -157,7 +176,7 @@ Führen Sie die folgenden Schritte aus, um die Protokolle eines Docker-Container
     
 2. Öffnen Sie die Registerkarte 'Protokoll' in der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle.
 
-    Wählen Sie für alle in der {{site.data.keyword.IBM_notm}}-verwalteten Cloudinfrastruktur bereitgestellten Container die Option **Überwachung und Protokolle** in der Navigationsleiste aus und klicken Sie anschließend auf die Registerkarte **Protokollierung**. 
+    Wählen Sie für alle in der von {{site.data.keyword.IBM_notm}} verwalteten Infrastruktur bereitgestellten Container die Option **Überwachung und Protokolle** in der Navigationsleiste aus und klicken Sie anschließend auf die Registerkarte **Protokollierung**. 
     
     Die Registerkarte 'Protokolle' wird geöffnet.  
 

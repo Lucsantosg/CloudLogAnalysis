@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -29,7 +30,7 @@ lastupdated: "2017-07-19"
 
 1. {{site.data.keyword.Bluemix_notm}} 계정에 로그인하십시오. 
 
-    [http://bluemix.net![외부 링크 아이콘](../../../icons/launch-glyph.svg "외부 링크 아이콘")](http://bluemix.net "외부 링크 아이콘"){:new_window}에서 {{site.data.keyword.Bluemix_notm}} 대시보드를 찾을 수 있습니다.
+    [http://bluemix.net![외부 링크 아이콘](../../../icons/launch-glyph.svg "외부 링크 아이콘")](http://bluemix.net){:new_window}에서 {{site.data.keyword.Bluemix_notm}} 대시보드를 찾을 수 있습니다.
     
 	사용자 ID 및 비밀번호를 사용하여 로그인하면 {{site.data.keyword.Bluemix_notm}} UI가 열립니다. 
 
@@ -50,31 +51,26 @@ lastupdated: "2017-07-19"
 ## CLI에서의 프로비저닝
 {: #cli}
 
-명령행을 통해 {{site.data.keyword.Bluemix_notm}}에서 {{site.data.keyword.loganalysisshort}} 서비스의 인스턴스를 프로비저닝하려면 다음 단계를 완료하십시오. 
+{{site.data.keyword.Bluemix_notm}}에서 {{site.data.keyword.loganalysisshort}} 서비스의 인스턴스를 프로비저닝하려면 다음 단계를 완료하십시오. 
 
-1. Cloud Foundry(CF) CLI를 설치하십시오. CF CLI가 설치되면 다음 단계로 계속 진행하십시오. 
+1. [전제조건] {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오. 
 
-   자세한 정보는 [CF CLI 설치![외부 링크 아이콘](../../../icons/launch-glyph.svg "외부 링크 아이콘")](http://docs.cloudfoundry.org/cf-cli/install-go-cli.html "외부 링크 아이콘"){: new_window}을 설치하십시오. 
+   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오. 
+   
+   CLI가 설치되면 다음 단계로 계속 진행하십시오. 
     
-2. {{site.data.keyword.Bluemix_notm}} 지역, 조직 및 영역에 로그인하십시오.  
+2. 서비스를 프로비저닝하려는 {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오.  
 
-    예를 들어, 미국 남부 지역에 로그인하려면 다음 명령을 실행하십시오.
-
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
-
-    지시사항을 따르십시오. {{site.data.keyword.Bluemix_notm}} 신임 정보를 입력한 후 조직 및 영역을 선택하십시오. 
+    자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 	
-3. `cf create-service` 명령을 실행하여 인스턴스를 프로비저닝하십시오. 
+3. `bx cf create-service` 명령을 실행하여 인스턴스를 프로비저닝하십시오. 
 
     ```
-	cf create-service service_name service_plan service_instance_name
+	bx cf create-service service_name service_plan service_instance_name
 	```
 	{: codeblock}
-
-    여기서,
+	
+	여기서,
 	
 	* service_name은 서비스 이름(즉, **ibmLogAnalysis**)입니다.
 	* service_plan은 서비스 플랜 이름입니다. 플랜 목록의 경우 [서비스 플랜](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)을 참조하십시오.
@@ -82,17 +78,17 @@ lastupdated: "2017-07-19"
 	
 	cf 명령에 대한 자세한 정보는 [cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service)를 참조하십시오.
 
-	예를 들어, 무료 사용제를 통해 {{site.data.keyword.loganalysisshort}} 서비스의 인스턴스를 작성하려면 다음 명령을 실행하십시오.
+	예를 들어, 라이트 플랜으로 {{site.data.keyword.loganalysisshort}} 서비스의 인스턴스를 작성하려면 다음 명령을 실행하십시오.
 	
 	```
-	cf create-service ibmLogAnalysis lite my_logging_svc
+	bx cf create-service ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. 서비스가 작성되었는지 확인하십시오. 다음 명령을 실행하십시오.
 
     ```	
-	cf services
+	bx cf services
 	```
 	{: codeblock}
 	
@@ -101,9 +97,10 @@ lastupdated: "2017-07-19"
 	```
     Getting services in org MyOrg / space MySpace as xxx@yyy.com...
     OK
+
     
     name                           service                  plan                   bound apps              last operation
-    my_logging_svc                ibmLogAnalysis               lite                                        create succeeded
+    my_logging_svc                ibmLogAnalysis           standard                                        create succeeded
 	```
 	{: screen}
 

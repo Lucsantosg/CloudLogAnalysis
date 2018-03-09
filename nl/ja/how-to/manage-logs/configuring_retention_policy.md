@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
 
@@ -15,10 +16,10 @@ lastupdated: "2017-07-19"
 # ログ保存ポリシーの構成
 {: #configuring_retention_policy}
 
-Log Collection 内でログが保持される最大日数を定義する保存ポリシーを表示および構成するには、コマンド **cf logging option** を使用します。デフォルトでは、ログは 30 日間保存されます。保存期間を過ぎると、ログは自動的に削除されます。デフォルトでは、保存ポリシーは無効にされます。
+Log Collection 内でログが保持される最大日数を定義する保存ポリシーを表示および構成するには、コマンド **cf logging option** を使用します。 デフォルトでは、保存ポリシーは無効にされ、ログは無期限に保持されます。 保存期間を過ぎると、ログは自動的に削除されます。 
 {:shortdesc}
 
-複数の保存ポリシーをアカウントに定義できます。1 つのグローバル・アカウント・ポリシーと、個々のスペース・ポリシーを保有することができます。アカウント・レベルで設定する保存ポリシーは、ログを保持できる最大日数を設定します。アカウント・レベルの期間よりも長い期間のスペース保存ポリシーを設定した場合、そのスペースに構成した最新のポリシーが、適用されるポリシーになります。 
+複数の保存ポリシーをアカウントに定義できます。 1 つのグローバル・アカウント・ポリシーと、個々のスペース・ポリシーを保有することができます。 アカウント・レベルで設定する保存ポリシーは、ログを保持できる最大日数を設定します。 アカウント・レベルの期間よりも長い期間のスペース保存ポリシーを設定した場合、そのスペースに構成した最新のポリシーが、適用されるポリシーになります。 
 
 
 ## スペースのログ保存ポリシーの無効化
@@ -26,28 +27,23 @@ Log Collection 内でログが保持される最大日数を定義する保存�
 
 保存ポリシーを無効化するには、以下のステップを実行します。
 
-1. ログ保存ポリシーを設定したい、{{site.data.keyword.Bluemix_notm}} 地域、組織、およびスペースにログインします。 
+1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    例えば、米国南部地域にログインするには、以下のコマンドを実行します。
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
-2. 保存期間を無効にするため、保存期間を **-1** に設定します。コマンドを実行します。
+2. 保存期間を無効にするため、保存期間を **-1** に設定します。 コマンドを実行します。
 
     ```
-    cf logging option -r -1
+    bx cf logging option -r -1
     ```
     {: codeblock}
     
 **例**
     
-例えば、ID *d35da1e3-b345-475f-8502-cfgh436902a3* のスペースの保存期間を無効にするには、以下のコマンドを実行します。
+例えば、ID *d35da1e3-b345-475f-8502-cfgh436902a3* のスペースの保存期間を無効にするには、次のコマンドを実行します。
 
 ```
-cf logging option -r -1
+bx cf logging option -r -1
 ```
 {: codeblock}
 
@@ -67,21 +63,16 @@ cf logging option -r -1
 ## スペースのログ保存ポリシーの確認
 {: #check_retention_policy_space}
 
-{{site.data.keyword.Bluemix_notm}} スペースに設定されている保存期間を取得するには、以下のステップを実行します。
+スペースに設定されている保存期間を取得するには、以下のステップを実行します。
 
-1. ログ保存ポリシーを設定したい、{{site.data.keyword.Bluemix_notm}} 地域、組織、およびスペースにログインします。 
+1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    例えば、米国南部地域にログインするには、以下のコマンドを実行します。
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
-2. 保存期間を取得します。コマンドを実行します。
+2. 保存期間を取得します。 コマンドを実行します。
 
     ```
-    cf logging option
+    bx cf logging option
     ```
     {: codeblock}
 
@@ -100,21 +91,16 @@ cf logging option -r -1
 ## アカウントのすべてのスペースのログ保存ポリシーの確認
 {: #check_retention_policy_account}
 
-アカウントの各 {{site.data.keyword.Bluemix_notm}} スペースに設定されている保存期間を取得するには、以下のステップを実行します。
+アカウントの各スペースに設定されている保存期間を取得するには、以下のステップを実行します。
 
-1. ログ保存ポリシーを設定したい、{{site.data.keyword.Bluemix_notm}} 地域、組織、およびスペースにログインします。 
+1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    例えば、米国南部地域にログインするには、以下のコマンドを実行します。
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
-2. アカウントの各スペースの保存期間を取得します。コマンドを実行します。
+2. アカウントの各スペースの保存期間を取得します。 コマンドを実行します。
 
     ```
-    cf logging option -a
+    bx cf logging option -a
     ```
     {: codeblock}
 
@@ -135,21 +121,16 @@ cf logging option -r -1
 ## アカウント・レベルのログ保存ポリシーの設定
 {: #set_retention_policy_space}
 
-{{site.data.keyword.Bluemix_notm}} アカウントの保存期間を表示するには、以下のステップを実行します。
+アカウントの保存期間を表示するには、以下のステップを実行します。
 
-1. ログ保存ポリシーを設定したい、{{site.data.keyword.Bluemix_notm}} 地域、組織、およびスペースにログインします。 
+1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    例えば、米国南部地域にログインするには、以下のコマンドを実行します。
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
-2. 保存期間を設定します。コマンドを実行します。
+2. 保存期間を設定します。 コマンドを実行します。
 
     ```
-    cf logging option -r *Number_of_days* - a
+    bx cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
@@ -161,7 +142,7 @@ cf logging option -r -1
 例えば、アカウントのすべてのタイプのログを 15 日間だけ保持するには、次のコマンドを実行します。
 
 ```
-cf logging option -r 15 -a
+bx cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -181,21 +162,16 @@ cf logging option -r 15 -a
 ## スペースのログ保存ポリシーの設定
 {: #set_retention_policy_account}
 
-{{site.data.keyword.Bluemix_notm}} スペースの保存期間を表示するには、以下のステップを実行します。
+スペースの保存期間を表示するには、以下のステップを実行します。
 
-1. ログ保存ポリシーを設定したい、{{site.data.keyword.Bluemix_notm}} 地域、組織、およびスペースにログインします。 
+1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    例えば、米国南部地域にログインするには、以下のコマンドを実行します。
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
-2. 保存期間を設定します。コマンドを実行します。
+2. 保存期間を設定します。 コマンドを実行します。
 
     ```
-    cf logging option -r *Number_of_days*
+    bx cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
@@ -207,7 +183,7 @@ cf logging option -r 15 -a
 例えば、スペースで使用可能なログを 1 年間保持するには、次のコマンドを実行します。
 
 ```
-cf logging option -r 365
+bx cf logging option -r 365
 ```
 {: codeblock}
 

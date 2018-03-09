@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -17,12 +18,12 @@ lastupdated: "2017-07-19"
 # Protokolle in Kibana interaktiv analysieren
 {:#analize_logs_interactively}
 
-Auf der Seite "Discover" können Sie Ihre {{site.data.keyword.Bluemix}}-Protokolle interaktiv anzeigen und analysieren. Sie können Suchabfragen in der Abfragesprache Lucene definieren, um die Daten zu filtern. Für jede Suchabfrage können Sie Filter anwenden, um die Einträge einzugrenzen, die für die Analyse verfügbar sind. Sie können eine Suche zur späteren Verwendung speichern.
+Auf der Seite 'Discover' können Sie Ihre Protokolle interaktiv anzeigen und analysieren. Sie können Suchabfragen in der Abfragesprache Lucene definieren, um die Daten zu filtern. Für jede Suchabfrage können Sie Filter anwenden, um die Einträge einzugrenzen, die für die Analyse verfügbar sind. Sie können eine Suche zur späteren Verwendung speichern.
 {:shortdesc}
 
 In {{site.data.keyword.Bluemix_notm}} ist die Gruppe von Daten, die auf der Seite 'Discover' angezeigt wird, wenn Sie Kibana in der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle starten, standardmäßig so konfiguriert, dass nur die Einträge für die Cloud Foundry-Anwendung (CF-Anwendung) oder den Cloud Foundry-Container angezeigt werden, aus der bzw. dem heraus Kibana gestartet wird. Weitere Informationen dazu, wie Sie ermitteln, welches Subset Ihrer Daten auf der Seite 'Discover' angezeigt wird, finden Sie unter [Angezeigte Daten ermitteln](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 
-In der folgenden Tabelle wird die Standardabfrage für jede Ressource beim Starten von Kibana aus {{site.data.keyword.Bluemix_notm}} angegeben:
+In der folgenden Tabelle wird die Standardabfrage für jede Ressource beim Starten von Kibana über {{site.data.keyword.Bluemix_notm}} angegeben:
 
 | Ressource | Standard-Kibana-Suchabfrage |
 |---------------|---------------|
@@ -69,18 +70,18 @@ Zum Definieren einer neuen Suche verwenden Sie die Standardsuchabfrage als Ausga
     
 * Passen Sie das Zeitauswahlfeld (*Timer Picker*) für zeitbasierte Daten an. Sie können einen absoluten Zeitbereich oder einen relativen Zeitbereich für eine Abfrage angeben oder Sie können einen Zeitbereich aus einer Reihe vordefinierter Werte auswählen. Weitere Informationen finden Sie unter [Zeitfilter festlegen](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 
-Wenn Sie die Suche, die das Datensubset definiert, das Sie analysieren wollen, konfiguriert haben, können Sie sie zur späteren Wiederverwendung speichern.
+Wenn Sie die Suche, die das Datensubset definiert, das Sie analysieren wollen, konfiguriert haben, können Sie sie zur späteren Wiederverwendung speichern. Weitere Informationen finden Sie unter [Suche speichern](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search).
 
 Sie können eine der folgenden Tasks für Suchen ausführen, die Sie auf der Seite 'Discover' definieren:
 
 | Task | Beschreibung |
 |------|-------------|
-| [Suche speichern](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Sie können eine Suche zur späteren Verwendung speichern.  |
 | [Suche löschen](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | Sie können eine Suche löschen, wenn sie nicht mehr benötigt wird. |
 | [Suche exportieren](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | Sie können eine Suche zur gemeinsamen Nutzung exportieren.  |
+| [Suche importieren](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Sie können eine Suche importieren.  |
 | [Suche neu laden](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | Sie können eine vorhandene Suche hochladen, um eine Gruppe von Daten erneut zu analysieren. |
 | [Daten einer Suche aktualisieren](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | Sie können eine automatische Aktualisierung der Daten, die durch die Suche angezeigt wird, konfigurieren.  |
-| [Suche importieren](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Sie können eine Suche importieren.  |
+| [Suche speichern](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Sie können eine Suche zur späteren Verwendung speichern.  |
 {: caption="Tabelle 3. Tasks für die Arbeit mit Suchen" caption-side="top"}
 
 
@@ -139,13 +140,13 @@ Sie können das Aktualisierungsintervall anhalten, indem Sie auf die Pauseschalt
 ## Auf der Seite 'Discover' angezeigte Daten ermitteln
 {:#identify_data}
 
-Bei der Analyse von {{site.data.keyword.Bluemix_notm}}-Protokollen in Kibana hängen die angezeigten Daten von der Art und Weise, wie Sie Kibana starten, vom konfigurierten Indexmuster (Index Pattern) und von angepassten Abfragen und Filtern ab, die Sie angewendet haben.
+Bei der Analyse der {{site.data.keyword.Bluemix_notm}}-Protokollen in Kibana hängen die angezeigten Daten von der Art und Weise, wie Sie Kibana starten, vom konfigurierten Indexmuster (Index Pattern) und von angepassten Abfragen und Filtern ab, die Sie angewendet haben.
 
 Berücksichtigen Sie die folgenden Informationen, um die Daten zu ermitteln, die in der Tabelle und im Histogramm der Seite 'Discover' verfügbar sind:
 
 1. Prüfen Sie das Indexmuster auf der Seite **Management**.
 
-    Das Indexmuster (Index Pattern) definiert die Suchabfrage, die standardmäßig angewendet wird, um Einträge auf Ihren Kibana-Seiten anzuzeigen. Das Indexmuster ist standardmäßig vorkonfiguriert und so eingestellt, dass alle Daten, die in einem {{site.data.keyword.Bluemix_notm}}-Bereich verfügbar sind, erfasst werden. Beispiel:
+    Das Indexmuster (Index Pattern) definiert die Suchabfrage, die standardmäßig angewendet wird, um Einträge auf Ihren Kibana-Seiten anzuzeigen. Das Indexmuster ist standardmäßig vorkonfiguriert und so eingestellt, dass alle Daten, die in einem Bereich verfügbar sind, erfasst werden. Beispiel:
 
     * Wenn Sie Kibana von der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle aus starten (d. h. vom Abschnitt *Protokoll* der Benutzerschnittstellenseiten einer bestimmten Ressource, wie z. B. einer Cloud Foundry-Anwendung (CF-Anwendung) oder eines Containers), schließt das Indexmuster, das angewendet wird, alle Einträge ein, die in dem Bereich verfügbar sind.
     
@@ -187,7 +188,7 @@ Um zu ermitteln, welche Felder indexiert sind, führen Sie die folgenden Schritt
  
 Führen Sie die folgenden Schritte aus, um die Einträge in der Tabelle nach den Werten eines indexierten Felds zu sortieren: 
 
-1. Bewegen Sie den Mauscursor über den Namen des Felds in der Tabelle, nach dem Sie die Daten sortieren wollen. Die verschiedenen Aktionsschaltflächen werden angezeigt. 
+1. Bewegen Sie den Mauscursor über den Namen des Felds in der Tabelle, nach dem Sie die Daten sortieren wollen. Die verschiedenen Aktionsschaltflächen werden angezeigt.
 2. Klicken Sie auf die Sortierschaltfläche für das Feld, nach dem Sie die Daten sortieren wollen. Klicken Sie ein zweites Mal auf das Sortiersymbol für das Feld, wenn Sie die Sortierreihenfolge umkehren wollen.
 
 **Hinweis:** Wenn Sie nach einem Zeitfeld sortieren, werden die Einträge standardmäßig in umgekehrt chronologischer Reihenfolge angezeigt. Die neuesten Einträge werden zuerst angezeigt.
@@ -238,9 +239,9 @@ Wählen Sie dann eine der folgenden Optionen aus, um die Daten anzuzeigen:
 Auf der Seite 'Discover' können Sie Statistiken für jedes Feld in der Feldliste *Fields* und im *Histogramm* anzeigen. 
 
 In der Feldliste werden die folgenden Informationen angezeigt:
-* Die Anzahl der Einträge in der Tabelle, die ein bestimmtes Feld enthalten. 
-* Die jeweils 5 höchsten Werte. 
-* Der Prozentsatz der Einträge, die die einzelnen Werte enthalten. 
+* Die Anzahl der Einträge in der Tabelle, die ein bestimmtes Feld enthalten.
+* Die jeweils 5 höchsten Werte.
+* Der Prozentsatz der Einträge, die die einzelnen Werte enthalten.
 
 Im Histogramm werden die folgenden Informationen angezeigt:
 * Anzahl der Einträge in einem Zeitbereich.

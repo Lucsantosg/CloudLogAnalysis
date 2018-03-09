@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -29,26 +31,23 @@ lastupdated: "2017-07-19"
 * `cf logging status -s 2017-05-03` 提供從 2017 年 5 月 3 日到現行日期的資訊。
 * `cf logging status -s 2017-05-03 -e 2017-05-08` 提供 2017 年 5 月 3 日與 2017 年 5 月 8 日之間的資訊。 
 
-1. 登入 {{site.data.keyword.Bluemix_notm}} 地區、組織及空間。 
+請完成下列步驟，以取得日誌的相關資訊：
 
-    例如，若要登入「美國南部」地區，請執行下列指令：
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
+
+    如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
 2. 執行 *status* 指令。
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
     例如，
     
     ```
-    $ cf logging status
+    $ bx cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -69,19 +68,16 @@ lastupdated: "2017-07-19"
 * `cf logging status -s 2017-05-03 -t syslog` 提供類型為 *syslog* 之日誌從 2017 年 5 月 3 日到現行日期的相關資訊。
 * `cf logging status -s 2017-05-03 -e 2017-05-08 -t syslog` 提供類型為 *syslog* 之日誌在 2017 年 5 月 3 日與 2017 年 5 月 8 日之間的相關資訊。 
 
-1. 登入 {{site.data.keyword.Bluemix_notm}} 地區、組織及空間。 
+請完成下列步驟，以取得一段時間內某類型日誌的相關資訊：
 
-    例如，若要登入「美國南部」地區，請執行下列指令：
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
+
+    如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
 2. 執行 *status* 指令。
 
     ```
-    $ cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    bx cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -96,7 +92,7 @@ lastupdated: "2017-07-19"
     例如，
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -114,19 +110,16 @@ lastupdated: "2017-07-19"
 
 若要取得 {{site.data.keyword.Bluemix_notm}} 帳戶一段時間內的日誌相關資訊，請使用 `cf logging status` 指令與 **-a** 選項搭配。您也可以指定 **-t** 選項來指定日誌類型、指定 **-s** 選項來設定開始日期，以及指定 **-e** 選項來設定結束日期。 
 
-1. 登入 {{site.data.keyword.Bluemix_notm}} 地區、組織及空間。 
+請完成下列步驟，以取得日誌的相關帳戶資訊：
 
-    例如，若要登入「美國南部」地區，請執行下列指令：
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
+
+    如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
 2. 執行 *status* 指令。
 
     ```
-    $ cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    bx cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -143,7 +136,7 @@ lastupdated: "2017-07-19"
     例如，
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+

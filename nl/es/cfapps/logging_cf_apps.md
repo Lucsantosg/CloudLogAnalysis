@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -14,10 +14,10 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# Registro para apps de Cloud Foundry en Bluemix
+# Registro para apps de Cloud Foundry en {{site.data.keyword.Bluemix_notm}}
 {: #logging_bluemix_cf_apps}
 
-En {{site.data.keyword.Bluemix}}, puede ver, filtrar y analizar registros de Cloud Foundry (CF) mediante el panel de control de {{site.data.keyword.Bluemix_notm}}, Kibana y la interfaz de línea de mandatos. Además, puede dirigir los registros a una herramienta externa de gestión de registros. 
+En {{site.data.keyword.Bluemix_notm}}, puede ver, filtrar y analizar registros de Cloud Foundry (CF) mediante el panel de control de {{site.data.keyword.Bluemix_notm}}, Kibana y la interfaz de línea de mandatos. Además, puede dirigir los registros a una herramienta externa de gestión de registros. 
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} registra los datos de registro que genera la plataforma Cloud Foundry y las aplicaciones de Cloud Foundry. En los registros puede ver los errores, avisos y mensajes informativos que se generan para la app. 
@@ -35,23 +35,24 @@ El registro de apps de Cloud Foundry se habilita automáticamente cuando se util
 ## Ingestión de registros
 {: #log_ingestion}
 
-El servicio {{site.data.keyword.loganalysisshort}} ofrece diversos planes. Cada plan define si el usuario puede o no enviar registros al componente de recopilación de registros. Todos los planes, excepto el plan *Lite*, incluyen la posibilidad de enviar registros a la recopilación de registros. Para obtener más información sobre los planes, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
-
 Puede enviar registros a {{site.data.keyword.loganalysisshort}} mediante el reenviador de Logstash multiarrendatario. Para obtener más información, consulte el apartado sobre [Envío de datos de registro mediante el reenviador de Logstash multiarrendatario (mt-logstash-forwarder).](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
 
+El servicio {{site.data.keyword.loganalysisshort}} ofrece diversos planes. Todos los planes, excepto el plan *Lite*, incluyen la posibilidad de enviar registros a la recopilación de registros. Para obtener más información sobre los planes, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 ## Recopilación de registros
 {: #log_collection}
 
-De forma predeterminada, {{site.data.keyword.Bluemix_notm}} almacena los datos de registro en la base de búsqueda de registro durante un máximo de 3 días:   
+De forma predeterminada, el servicio {{site.data.keyword.loganalysisshort}} almacena los datos de registro en la base de búsqueda de registro durante un máximo de 3 días:   
 
 * Se almacena un máximo de 500 MB por espacio de datos al día. Cualquier registro que supere dicha capacidad de 500 MB se descartará. Las asignaciones de capacidades se restablecen todos los días a las 12:30 AM UTC.
 * Se pueden buscar hasta 1,5 GB de datos para un máximo de 3 días. Los datos de registro se renuevan (Primero en entrar, primero en salir) una vez que se ha alcanzado 1,5 GB de datos o después de 3 días.
 
-El servicio {{site.data.keyword.loganalysisshort}} proporciona planes adicionales que le permiten almacenar registros en la recopilación de registros tanto tiempo como desee. Para obtener más información sobre el precio de cada plan, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+El servicio {{site.data.keyword.loganalysisshort}} proporciona planes adicionales que le permiten almacenar registros en la recopilación de registros tanto tiempo como desee. 
 
-Puede configurar una política de retención de registros que puede utilizar para definir el número de días que desea conservar los registros en la recopilación de registros. Para obtener más información, consulte [Política de retención de registros](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* Puede configurar una política de retención de registros para definir el número de días que desea conservar los registros en la recopilación de registros. Para obtener más información, consulte [Política de retención de registros](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* Puede suprimir los registros manualmente utilizando la línea de mandatos o la API.
 
+Para obtener más información sobre el precio de cada plan, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 ## Búsqueda de registros
 {: #log_search}
@@ -66,9 +67,9 @@ El servicio {{site.data.keyword.loganalysisshort}} proporciona varios planes. Ca
 
 Puede elegir cualquiera de los siguientes métodos para analizar los registros de la aplicación de Cloud Foundry:
 
-* Analizar el registro en {{site.data.keyword.Bluemix_notm}} para ver la actividad más reciente de la aplicación.
+* Analizar el registro en la IU de {{site.data.keyword.Bluemix_notm}} para ver la actividad más reciente de la aplicación.
     
-    En {{site.data.keyword.Bluemix_notm}}, puede ver, filtrar y analizar registros desde el separador **Registro** disponible para cada aplicación de Cloud Foundry. Para obtener más información, consulte [Análisis de registros de apps de CF desde el panel de control de Bluemix](/docs/services/CloudLogAnalysis/logging_view_dashboard.html#analyzing_logs_bmx_ui).
+    En {{site.data.keyword.Bluemix_notm}}, puede ver, filtrar y analizar registros desde el separador **Registro** disponible para cada aplicación de Cloud Foundry. Para obtener más información, consulte [Análisis de registros de apps de CF desde la UI de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#launch_logs_cloud_ui_cf).
     
 * Analizar registros en Kibana para realizar tareas avanzadas de análisis.
     
@@ -78,7 +79,7 @@ Puede elegir cualquiera de los siguientes métodos para analizar los registros d
 
 * Analizar registros mediante la CLI para utilizar mandatos a fin de gestionar registros mediante programación.
     
-    En {{site.data.keyword.Bluemix_notm}}, puede ver, filtrar y analizar registros mediante la interfaz de línea de mandatos con el mandato **cf logs**. Para obtener más información, consulte [Análisis de registros de apps de Cloud Foundry desde la interfaz de línea de mandatos](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_logs_cli).
+    En {{site.data.keyword.Bluemix_notm}}, puede ver, filtrar y analizar registros mediante la interfaz de línea de mandatos con el mandato **cf logs**. Para obtener más información, consulte [Análisis de registros de apps de Cloud Foundry desde la interfaz de línea de mandatos](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#analyzing_logs_cli).
 
 
 ## Orígenes de registros para apps de CF en Diego
@@ -121,3 +122,25 @@ En la figura siguiente se muestran los distintos componentes (orígenes de regis
 ![Orígenes de registro de una arquitectura DEA.](images/cf_apps_dea_F1.png "Componentes (orígenes de registro) de una arquitectura Cloud Foundry basada en Droplet Execution Agent (DEA).")
 
 
+
+## Formato de registro de los registros de apps de CF visualizados desde la UI de {{site.data.keyword.Bluemix_notm}}
+{: #log_format_cf}
+
+Los registros de las apps CF de {{site.data.keyword.Bluemix_notm}} se muestran en un formato fijo, parecido al siguiente patrón:
+
+<code><var class="keyword varname">Componente</var>/<var class="keyword varname">IDinstancia</var>/<var class="keyword varname">mensaje</var>/<var class="keyword varname">indicación fecha y hora</var></code>
+
+Cada entrada de registro contiene los siguientes campos:
+
+| Campo | Descripción |
+|-------|-------------|
+| Indicación de fecha y hora | La hora de la sentencia de registro. La indicación de fecha y hora se define hasta en milisegundos. |
+| Componente | El componente que genera el registro. Para ver la lista de los distintos componentes, consulte [Orígenes de registro para apps de CF](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#logging_bluemix_cf_apps_log_sources). <br> Cada tipo de componente va seguido de una barra inclinada y un dígito que indica la instancia de la aplicación. 0 es el dígito asignado a la primera instancia, 1 es el dígito asignado a la segunda, y así sucesivamente. |
+| Mensaje | Mensaje emitido por el componente. El mensaje varía en función del contexto. |
+{: caption="Tabla 1. Campos de entrada de registro de app de CF" caption-side="top"}
+
+
+## Guía de aprendizaje: Análisis de registros en Kibana para una app de Cloud Foundry
+{: #tutorial}  
+
+Para aprender a utilizar Kibana para analizar los registros para una app de Cloud Foundry, consulte [Análisis de registros en Kibana para una app de Cloud Foundry](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).

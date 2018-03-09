@@ -1,10 +1,9 @@
 ---
 
 copyright:
+  years: 2017, 2018
 
-  years: 2017
-
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -14,7 +13,7 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Interface de ligne de commande IBM Cloud Log Analysis
+# Interface de ligne de commande d'IBM Cloud Log Analysis (plug-in CF)
 {: #logging_cli}
 
 L'interface de ligne de commande {{site.data.keyword.loganalysislong}} est un plug-in qui permet de gérer les journaux des ressources de cloud s'exécutant dans un espace d'une
@@ -22,8 +21,8 @@ organisation {{site.data.keyword.Bluemix}}.
 {: shortdesc}
 
 **Prérequis**
-* Avant d'exécuter les commandes de journalisation, connectez-vous à {{site.data.keyword.Bluemix_notm}} avec la commande `cf login`
-pour générer un jeton d'accès {{site.data.keyword.Bluemix_short}} et authentifier votre session.
+* Avant d'exécuter les commandes de journalisation, connectez-vous à {{site.data.keyword.Bluemix_notm}} avec la commande `bx login` pour générer un jeton d'accès {{site.data.keyword.Bluemix_short}}
+et authentifier votre session. Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 Pour savoir comment utiliser l'interface de ligne de commande {{site.data.keyword.loganalysisshort}},
 voir [Gestion des journaux](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov).
@@ -35,59 +34,61 @@ voir [Gestion des journaux](/docs/services/CloudLogAnalysis/log_analysis_ov.html
     <th>Quant l'utiliser</th>
   </tr>
   <tr>
-    <td>[cf logging](#base)</td>
+    <td>[bx cf logging](#base)</td>
     <td>Utilisez cette commande pour obtenir des informations sur l'interface de ligne de commande, comme la version ou la liste des commandes.</td>
   </tr>
   <tr>
-    <td>[cf logging auth](#auth)</td>
+    <td>[bx cf logging auth](#auth)</td>
     <td>Utilisez cette commande pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer des journaux au service {{site.data.keyword.loganalysisshort}}.</td>
   </tr>
   <tr>
-    <td>[cf logging delete](#delete)</td>
+    <td>[bx cf logging delete](#delete)</td>
     <td>Utilisez cette commande pour supprimer des journaux stockés dans la collecte des journaux.</td>
   </tr>
   <tr>
-    <td>[cf logging download (Beta)](#download)</td>
-    <td>Utilisez cette commande pour télécharger des journaux de la collecte des journaux vers un fichier local ou pour diriger des journaux vers un autre programme comme une pile ELK. </td>
+    <td>[bx cf logging download (bêta)](#download)</td>
+    <td>Utilisez cette commande pour télécharger des journaux depuis le composant Log Collection dans un fichier local ou pour diriger les journaux vers un autre programme tel qu'Elastic Stack. </td>
   </tr>
   <tr>
-    <td>[cf logging help](#help)</td>
-    <td>Utilisez cette commande pour obtenir de l'aide au sujet de l'utilisation de l'interface de ligne de commande ainsi qu'une liste de toutes les commandes.</td>
+    <td>[    bx cf logging help
+    ](#help)</td>
+    <td>Utilisez cette commande pour obtenir de l'aide au sujet de l'utilisation de l'interface de ligne de commande ainsi que la liste de toutes les commandes.</td>
   </tr>
   <tr>
-    <td>[cf logging option](#option)</td>
-    <td>Utilisez cette commande pour afficher ou définir la durée de conservation des journaux disponibles dans un compte ou un espace {{site.data.keyword.Bluemix_notm}}.</td>
+    <td>[    bx cf logging option
+    ](#option)</td>
+    <td>Utilisez cette commande pour afficher ou définir la durée de conservation des journaux qui sont disponibles dans un espace ou sur un compte.</td>
   </tr>
   <tr>
-    <td>[cf logging session create (Beta)](#session_create)</td>
+    <td>[bx cf logging session create (bêta)](#session_create)</td>
     <td>Utilisez cette commande pour créer une nouvelle session.</td>
   <tr>
   <tr>
-    <td>[cf logging session delete (Beta)](#session_delete)</td>
+    <td>[bx cf logging session delete (bêta)](#session_delete)</td>
     <td>Utilisez cette commande pour supprimer une session.</td>
   <tr>  
   <tr>
-    <td>[cf logging session list (Beta)](#session_list)</td>
-    <td>Utilisez cette commande pour afficher une liste des sessions actives et de leurs ID.</td>
+    <td>[bx cf logging session list (bêta)](#session_list)</td>
+    <td>Utilisez cette commande pour afficher la liste des sessions actives et leurs ID.</td>
   <tr>  
   <tr>
-    <td>[cf logging session show (Beta)](#session_show)</td>
-    <td>Utilisez cette commande pour afficher l'état d'une session unique.</td>
+    <td>[bx cf logging session show (bêta)](#session_show)</td>
+    <td>Utilisez cette commande pour afficher le statut d'une session unique.</td>
   <tr>  
   <tr>
-    <td>[cf logging status](#status)</td>
-    <td>Utilisez cette commande pour obtenir des informations sur les journaux collectés dans un compte ou un espace {{site.data.keyword.Bluemix_notm}}.</td>
+    <td>[bx cf logging status](#status)</td>
+    <td>Utilisez cette commande pour obtenir des informations sur les journaux qui sont collectés dans un espace ou sur un compte.</td>
   </tr>
   </table>
 
 
-## cf logging
+## bx cf logging
 {: #base}
 
 Fournit des informations sur la version de l'interface de ligne de commande et sur son mode d'utilisation.
 
 ```
-cf logging [parameters]
+bx cf logging [parameters]
 ```
 {: codeblock}
 
@@ -107,19 +108,19 @@ cf logging [parameters]
 Pour obtenir la liste des commandes, exécutez la commande suivante :
 
 ```
-cf logging --help
+bx cf logging --help
 ```
 {: codeblock}
 
 Pour obtenir la version de l'interface de ligne de commande, exécutez la commande suivante :
 
 ```
-cf logging --version
+bx cf logging --version
 ```
 {: codeblock}
 
 
-## cf logging auth
+## bx cf logging auth
 {: #auth}
 
 Renvoie un jeton de journalisation que vous pouvez utiliser pour envoyer des journaux au service {{site.data.keyword.loganalysisshort}}. 
@@ -127,33 +128,33 @@ Renvoie un jeton de journalisation que vous pouvez utiliser pour envoyer des jou
 **Remarque :** le jeton n'expire pas.
 
 ```
-cf logging auth
+bx cf logging auth
 ```
 {: codeblock}
 
 **renvoie**
 
 <dl>
-  <dt>Jeton de journalisation</dt>
+  <dt>Un jeton de journalisation</dt>
   <dd>Par exemple, `jec8BmipiEZc`.
   </dd>
   
-  <dt>ID d'organisation</dt>
+  <dt>L'ID d'organisation</dt>
   <dd>Identificateur global unique de l'organisation {{site.data.keyword.Bluemix_notm}} où vous êtes connecté.
   </dd>
   
-  <dt>ID espace</dt>
+  <dt>L'ID d'espace</dt>
   <dd>Identificateur global unique de l'espace dans l'organisation où vous êtes connecté.
   </dd>
 </dl>
 
-## cf logging delete
+## bx cf logging delete
 {: #delete}
 
-Supprime les journaux stockés dans la collecte de journaux.
+Supprime les journaux stockés dans Log Collection.
 
 ```
-cf logging delete [parameters]
+bx cf logging delete [parameters]
 ```
 {: codeblock}
 
@@ -161,22 +162,22 @@ cf logging delete [parameters]
 
 <dl>
   <dt>--start value, -s value</dt>
-  <dd>(Facultatif) Définit la date de début en UTC (Universal Coordinated Time) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut est définie sur
-les deux semaines précédentes.
+  <dd>(Facultatif) Définit la date de début en temps universel coordonné (TUC) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut correspond aux
+deux semaines précédant la date du jour.
   </dd>
   
   <dt>--end value, -e value</dt>
-  <dd>(Facultatif) Définit la date de fin en UTC (Universal Coordinated Time) : *AAAA-MM-JJ* <br>Le format UTC de la date est **AAAA-MM-JJ**,
-par exemple `2006-01-02`. <br>La valeur par défaut est définie sur la date en cours.
+  <dd>(Facultatif) Définit la date de fin en temps universel coordonné (TUC) : *AAAA-MM-JJ*. <br>Le format TUC de la date est **AAAA-MM-JJ**,
+par exemple `2006-01-02`. <br>La valeur par défaut est la date en cours.
   </dd>
   
   <dt>--type value, -t value</dt>
-  <dd>(Facultatif) Définit le type de journal. <br>Par exemple, *syslog* est un type de journal. <br>La valeur par défaut est définie sur **\***. <br>Vous
-pouvez spécifier plusieurs types de journaux en séparant chaque type par une virgule, par exemple **log_type_1,log_type_2,log_type_3*.
+  <dd>(Facultatif) Définit le type de journal. <br>Par exemple, *syslog* est un type de journal. <br>La valeur par défaut est **\***. <br>Vous
+pouvez spécifier plusieurs types de journaux en les séparant par une virgule, par exemple **log_type_1,log_type_2,log_type_3*.
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Facultatif) Définit l'étendue des informations de journal fournies au niveau de compte. <br>Si ce paramètre n'est pas spécifié, la valeur par défaut est définie pour fournir des
+  <dd>(Facultatif) Définit l'étendue des informations de journal fournies au niveau du compte. <br>Si ce paramètre n'est pas spécifié, la valeur par défaut est définie pour fournir des
 informations de journal sur l'espace en cours uniquement.
   </dd>
 </dl>
@@ -185,22 +186,22 @@ informations de journal sur l'espace en cours uniquement.
 
 Pour supprimer les journaux du type *linux_syslog* pour le 25 mai 2017, exécutez la commande suivante :
 ```
-cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: codeblock}
 
 
 
-## cf logging download (Beta)
+## bx cf logging download (bêta)
 {: #download}
 
-Télécharge les journaux de Log Collection vers un fichier local ou dirige les journaux vers un autre programme, tel qu'une pile Elastic. 
+Télécharge les journaux de Log Collection vers un fichier local ou dirige les journaux vers un autre programme, tel qu'Elastic Stack. 
 
-**Remarque :** Pour télécharger les fichiers, vous devez d'abord créer une session. Une session définit quels journaux doivent être téléchargés en fonction de la plage
-de dates, du type de journal et du type de compte. Les journaux sont téléchargés dans le contexte d'une session. Pour plus d'informations, voir [cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
+**Remarque :** pour télécharger les fichiers, vous devez d'abord créer une session. Une session définit quels journaux doivent être téléchargés en fonction de la plage
+de dates, du type de journal et du type de compte. Les journaux sont téléchargés dans le contexte d'une session. Pour plus d'informations, voir [bx cf logging session create (bêta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
 
 ```
-cf logging download [parameters] [arguments]
+bx cf logging download [parameters] [arguments]
 ```
 {: codeblock}
 
@@ -208,17 +209,15 @@ cf logging download [parameters] [arguments]
 
 <dl>
 <dt>--output value, -o value</dt>
-<dd>(Facultatif) Définit le chemin et le nom du fichier de sortie local où les journaux sont téléchargés. <br>La valeur par défaut est un trait d'union (-). <br>Définissez ce
-paramètre sur la valeur par défaut pour que les journaux soient générés dans la sortie standard.</dd>
+<dd>(Facultatif) Définit le chemin et le nom du fichier de sortie local où les journaux sont téléchargés. <br>La valeur par défaut est un trait d'union (-). <br>Pour ce paramètre, définissez la valeur par défaut pour que les journaux soient générés dans la sortie standard.</dd>
 </dl>
 
 **Arguments**
 
 <dl>
 <dt>session_ID</dt>
-<dd>Défini sur la valeur de l'ID de session que vous obtenez lorsque vous exécutez la commande `cf logging session create`. Cette valeur indique quelle session utiliser lors du
-téléchargement des journaux. <br>**Remarque :** la commande `cf logging session create` fournit les paramètres qui contrôlent quels journaux sont
-téléchargés. </dd>
+<dd>Associez cet argument à la valeur d'ID de session que vous obtenez lorsque vous exécutez la commande `bx cf logging session create`. Cette valeur indique quelle session utiliser lors du
+téléchargement des journaux. <br>**Remarque :** la commande `bx cf logging session create` fournit les paramètres qui contrôlent quels sont les journaux qui sont téléchargés. </dd>
 </dl>
 
 **Remarque :** si vous exécutez à nouveau la même commande une fois que le téléchargement est terminé, cela n'aura aucun effet. Pour télécharger à nouveau les mêmes
@@ -226,17 +225,17 @@ données, vous devez utiliser un fichier différent ou une session différente.
 
 **Exemples**
 
-Pour télécharger les journaux dans un fichier appelé mylogs.gz, exécutez la commande suivante :
+Sur un système Linux, pour télécharger les journaux dans un fichier appelé mylogs.gz, exécutez la commande suivante :
 
 ```
-cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
-Pour télécharger des journaux dans votre pile Elastic, exécutez la commande suivante :
+Pour télécharger des journaux dans Elastic Stack, exécutez la commande suivante :
 
 ```
-cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+bx cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -257,13 +256,13 @@ output {
 {: screen}
 
 
-## cf logging help
+## bx cf logging help
 {: #help}
 
 Fournit des informations sur le mode d'utilisation d'une commande.
 
 ```
-cf logging help [parameters]
+bx cf logging help [command]
 ```
 {: codeblock}
 
@@ -278,26 +277,26 @@ cf logging help [parameters]
 
 **Exemples**
 
-Pour obtenir de l'aide sur la façon dont vous pouvez exécuter la commande pour afficher l'état des journaux, exécutez la commande suivante :
+Pour obtenir de l'aide sur la façon dont vous pouvez exécuter la commande pour afficher le statut des journaux, exécutez la commande suivante :
 
 ```
-cf logging help status
+bx cf logging help status
 ```
 {: codeblock}
 
 
-## cf logging option
+## bx cf logging option
 {: #option}
 
-Affiche ou change la durée de conservation des journaux disponibles dans un compte ou un espace {{site.data.keyword.Bluemix_notm}}. 
+Affiche ou change la durée de conservation pour les journaux qui sont disponibles dans un espace ou sur un compte. 
 
 * La durée est définie en nombre de jours.
 * La valeur par défaut est **-1**. 
 
-**Remarque :** par défaut, tous les journaux sont stockés. Vous devez les supprimer manuellement à l'aide de la commande **delete**. Définissez une règle de conservation pour supprimer les journaux automatiquement. 
+**Remarque :** par défaut, tous les journaux sont stockés. Vous devez les supprimer manuellement à l'aide de la commande **delete**. Définissez une règle de conservation pour supprimer les journaux automatiquement.
 
 ```
-cf logging option [parameters]
+bx cf logging option [parameters]
 ```
 {: codeblock}
 
@@ -305,39 +304,19 @@ cf logging option [parameters]
 
 <dl>
 <dt>--retention value, -r value</dt>
-<dd>(Facultatif) Définit le nombre de jours de conservation. <br> La valeur par défaut est de 30 jours.</dd>
+<dd>(Facultatif) Définit le nombre de jours de conservation. <br> La valeur par défaut est *-1* jour.</dd>
 
 <dt>--at-account-level, -a </dt>
-  <dd>(Facultatif) Définit l'étendue du niveau de compte. <br>**Remarque :** Définissez cette valeur pour obtenir des informations relatives à un compte. <br>Si ce paramètre
-n'est pas spécifié, la valeur par défaut est *30* pour l'espace en cours, c'est-à-dire l'espace auquel vous vous êtes connecté à l'aide de la commande `cf login`.
+  <dd>(Facultatif) Définit le niveau de compte comme portée. <br>Si ce paramètre n'est pas spécifié, la valeur par défaut est *-1* pour l'espace en cours, c'est-à-dire l'espace auquel vous vous êtes connecté avec la commande `bx cf login`.
   </dd>
 </dl>
 
 **Exemples**
 
-Pour afficher la durée de conservation en cours pour l'espace où vous êtes connecté, exécutez la commande suivante :
+Afin d'afficher la durée de conservation en cours par défaut pour l'espace auquel vous êtes connecté, exécutez la commande suivante :
 
 ```
-cf logging option
-```
-{: codeblock}
-
-La sortie est :
-
-```
-+--------------------------------------+-----------+
-|               SPACEID                | RETENTION |
-+--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        30 |
-+--------------------------------------+-----------+
-```
-{: screen}
-
-
-Pour modifier la durée de conservation à 25 jours pour l'espace où vous êtes connecté, exécutez la commande suivante :
-
-```
-cf logging option -r 25
+bx cf logging option
 ```
 {: codeblock}
 
@@ -347,22 +326,41 @@ La sortie est :
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        25 |
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        -1 |
 +--------------------------------------+-----------+
 ```
 {: screen}
 
 
-## cf logging session create (Beta)
+Pour modifier la durée de conservation à 25 jours pour l'espace auquel vous êtes connecté, exécutez la commande suivante :
+
+```
+bx cf logging option -r 25
+```
+{: codeblock}
+
+La sortie est :
+
+```
++--------------------------------------+-----------+
+|               SPACEID                | RETENTION |
++--------------------------------------+-----------+
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        25 |
++--------------------------------------+-----------+
+```
+{: screen}
+
+
+## bx cf logging session create (bêta)
 {: #session_create}
 
-Crée une nouvelle session.
+Crée une session.
 
 **Remarque :** vous pouvez avoir jusqu'à 30 sessions simultanées dans un espace. La session est créée pour un utilisateur. Les sessions ne peuvent pas être partagées
 entre les utilisateurs dans un espace.
 
 ```
-cf logging session create [parameters]
+bx cf logging session create [parameters]
 ```
 {: codeblock}
 
@@ -370,21 +368,21 @@ cf logging session create [parameters]
 
 <dl>
   <dt>--start value, -s value</dt>
-  <dd>(Facultatif) Définit la date de début en UTC (Universal Coordinated Time) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut correspond aux
+  <dd>(Facultatif) Définit la date de début en temps universel coordonné (TUC) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut correspond aux
 deux semaines précédant la date du jour.
   </dd>
   
   <dt>--end value, -e value</dt>
-  <dd>(Facultatif)  Définit la date de fin en UTC (Universal Coordinated Time) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut est définie sur la
+  <dd>(Facultatif) Définit la date de fin en temps universel coordonné (TUC) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut est la
 date en cours.
   </dd>
   
   <dt>--type value, -t value</dt>
-  <dd>(Facultatif) Définit le type de journal. <br>Par exemple, *syslog* est un type de journal. <br>La valeur par défaut est un astérisque (*). <br>Vous pouvez spécifier plusieurs types de journaux en séparant chacun d'eux par une virgule, par exemple *log_type_1,log_type_2,log_type_3*. </dd>
+  <dd>(Facultatif) Définit le type de journal. <br>Par exemple, *syslog* est un type de journal. <br>La valeur par défaut est un astérisque (*). <br>Vous pouvez spécifier plusieurs types de journaux en séparant chacun d'eux par une virgule, par exemple *log_type_1,log_type_2,log_type_3*.
+  </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Facultatif) Définit l'étendue du niveau de compte. <br>**Remarque :** Définissez cette valeur pour obtenir des informations relatives à un compte. <br>Si ce paramètre
-n'est pas spécifié, la valeur par défaut est uniquement définie sur l'espace en cours, à savoir l'espace sur lequel vous vous êtes connecté à l'aide de la commande `cf login`.
+  <dd>(Facultatif) Définit le niveau de compte comme portée. <br>Si ce paramètre n'est pas spécifié, la valeur par défaut est l'espace en cours uniquement, c'est-à-dire l'espace auquel vous vous êtes connecté avec la commande `bx cf login`.
   </dd>
 </dl>
 
@@ -398,13 +396,13 @@ n'est pas spécifié, la valeur par défaut est uniquement définie sur l'espace
 <dd>Horodatage correspondant à la date et à l'heure de création de la session.</dd>
 
 <dt>Date-Range</dt>
-<dd>Indique les dates utilisées pour filtrer les journaux. Les journaux identifiés à l'intérieur de la plage de dates peuvent être gérés via la session.</dd>
+<dd>Indique les dates utilisées pour filtrer les journaux. Les journaux identifiés dans cette plage de dates peuvent être gérés via la session.</dd>
 
 <dt>ID</dt>
 <dd>ID de session.</dd>
 
 <dt>Space</dt>
-<dd>ID de l'espace où la session est active.</dd>
+<dd>ID de l'espace dans lequel la session est active.</dd>
 
 <dt>Type-Account</dt>
 <dd>Types de journaux qui sont téléchargés via la session.</dd>
@@ -419,18 +417,18 @@ n'est pas spécifié, la valeur par défaut est uniquement définie sur l'espace
 Pour créer une session incluant les journaux compris entre le 20 mai 2017 et le 26 mai 2017 pour un type de journal *log*, exécutez la commande suivante :
 
 ```
-cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
+bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 ```
 {: screen}
 
 
-## cf logging session delete (Beta)
+## bx cf logging session delete (bêta)
 {: #session_delete}
 
 Supprime une session, spécifiée par l'ID de session.
 
 ```
-cf logging session delete [arguments]
+bx cf logging session delete [arguments]
 ```
 {: codeblock}
 
@@ -438,27 +436,27 @@ cf logging session delete [arguments]
 
 <dl>
 <dt>session ID</dt>
-<dd>ID de la session que vous souhaitez supprimer. <br>Vous pouvez utiliser la commande `cf logging session list` pour obtenir tous les ID des sessions actives.</dd>
+<dd>ID de la session à supprimer. <br>Vous pouvez utiliser la commande `bx cf logging session list` pour obtenir tous les ID de session active.</dd>
 </dl>
 
 **Exemple**
 
-Pour supprimer une session avec l'ID de session *cI6hvAa0KR_tyhjxZZz9Uw==*, exécutez la commande suivante :
+Pour supprimer une session dont l'ID de session est *cI6hvAa0KR_tyhjxZZz9Uw==*, exécutez la commande suivante :
 
 ```
-cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
+bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## cf logging session list (Beta)
+## bx cf logging session list (bêta)
 {: #session_list}
 
-Affiche une liste des sessions actives et de leurs ID.
+Affiche la liste des sessions actives et leurs ID.
 
 ```
-cf logging session list 
+bx cf logging session list 
 ```
 {: codeblock}
 
@@ -469,7 +467,7 @@ cf logging session list
 <dd>ID de session.</dd>
 
 <dt>SPACE</dt>
-<dd>ID de l'espace où la session est active.</dd>
+<dd>ID de l'espace dans lequel la session est active.</dd>
 
 <dt>USERNAME</dt>
 <dd>ID {{site.data.keyword.IBM_notm}} de l'utilisateur qui a créé la session.</dd>
@@ -482,13 +480,13 @@ cf logging session list
 </dl>
  
 
-## cf logging session show (Beta)
+## bx cf logging session show (bêta)
 {: #session_show}
 
-Affiche l'état d'une session unique.
+Affiche le statut d'une session unique.
 
 ```
-cf logging session show [arguments]
+bx cf logging session show [arguments]
 ```
 {: codeblock}
 
@@ -509,13 +507,13 @@ cf logging session show [arguments]
 <dd>Horodatage correspondant à la date et à l'heure de création de la session.</dd>
 
 <dt>Date-Range</dt>
-<dd>Indique les dates utilisées pour filtrer les journaux. Les journaux identifiés à l'intérieur de la plage de dates peuvent être gérés via la session.</dd>
+<dd>Indique les dates utilisées pour filtrer les journaux. Les journaux identifiés dans la plage de dates peuvent être gérés via la session.</dd>
 
 <dt>ID</dt>
 <dd>ID de session.</dd>
 
 <dt>Space</dt>
-<dd>ID de l'espace où la session est active.</dd>
+<dd>ID de l'espace dans lequel la session est active.</dd>
 
 <dt>Type-Account</dt>
 <dd>Types de journaux qui sont téléchargés via la session.</dd>
@@ -526,21 +524,21 @@ cf logging session show [arguments]
 
 **Exemple**
 
-Pour afficher les détails d'une session avec l'ID de session *cI6hvAa0KR_tyhjxZZz9Uw==*, exécutez la commande suivante :
+Pour afficher les détails d'une session dont l'ID est *cI6hvAa0KR_tyhjxZZz9Uw==*, exécutez la commande suivante :
 
 ```
-cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
+bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
-## cf logging status
+## bx cf logging status
 {: #status}
 
-Renvoie des informations sur les journaux qui sont collectés dans un compte ou dans un espace {{site.data.keyword.Bluemix_notm}}.
+Renvoie des informations sur les journaux qui sont collectés dans un espace ou sur un compte.
 
 ```
-cf logging status [parameters]
+bx cf logging status [parameters]
 ```
 {: codeblock}
 
@@ -548,21 +546,21 @@ cf logging status [parameters]
 
 <dl>
   <dt>--start value, -s value</dt>
-  <dd>(Facultatif) Définit la date de début en UTC (Universal Coordinated Time) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut correspond aux
+  <dd>(Facultatif) Définit la date de début en temps universel coordonné (TUC) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut correspond aux
 deux semaines précédant la date du jour.
   </dd>
   
   <dt>--end value, -e value</dt>
-  <dd>(Facultatif)  Définit la date de fin en UTC (Universal Coordinated Time) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut est définie sur la
+  <dd>(Facultatif) Définit la date de fin en temps universel coordonné (TUC) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut est la
 date en cours.
   </dd>
   
   <dt>--type value, -t value</dt>
-  <dd>(Facultatif) Définit le type de journal. <br>Par exemple, *syslog* est un type de journal. <br>La valeur par défaut est un astérisque (*). <br>Vous pouvez spécifier plusieurs types de journaux en séparant chacun d'eux par une virgule, par exemple *log_type_1,log_type_2,log_type_3*. </dd>
+  <dd>(Facultatif) Définit le type de journal. <br>Par exemple, *syslog* est un type de journal. <br>La valeur par défaut est un astérisque (*). <br>Vous pouvez spécifier plusieurs types de journaux en séparant chacun d'eux par une virgule, par exemple *log_type_1,log_type_2,log_type_3*.
+  </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Facultatif) Définit l'étendue du niveau de compte. <br> **Remarque :** Définissez cette valeur pour obtenir des informations relatives à un compte. <br>Si ce paramètre
-n'est pas spécifié, la valeur par défaut est uniquement définie sur l'espace en cours, à savoir l'espace sur lequel vous vous êtes connecté à l'aide de la commande `cf login`.
+  <dd>(Facultatif) Définit le niveau de compte comme portée. <br> **Remarque :** définissez cette valeur pour obtenir des informations relatives à un compte. <br>Si ce paramètre n'est pas spécifié, la valeur par défaut est l'espace en cours uniquement, c'est-à-dire l'espace auquel vous vous êtes connecté avec la commande `bx cf login`.
   </dd>
   
   <dt>--list-type-detail, -l</dt>
@@ -570,7 +568,6 @@ n'est pas spécifié, la valeur par défaut est uniquement définie sur l'espace
   </dd>
 </dl>
 
-**Remarque :** la commande `cf logging status` génère uniquement un rapport sur les deux dernières semaines de journaux stockés dans la collecte de
-journaux si aucune date de début et de fin n'est spécifiée.
+**Remarque :** la commande `bx cf logging status` ne renvoie des informations que pour les deux dernières semaines de journaux qui sont stockés dans Log Collection lorsque les dates de début et de fin ne sont pas spécifiées.
 
 

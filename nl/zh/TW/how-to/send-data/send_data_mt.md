@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -12,38 +14,35 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# 使用多方承租戶 Logstash 轉遞程式傳送資料
+# 將內部部署資料傳送至 IBM Cloud 中的空間
 {: #send_data_mt}
 
 若要將日誌資料傳送至 {{site.data.keyword.loganalysisshort}} 服務，您可以配置「多方承租戶 Logstash 轉遞程式 (mt-logstash-forwarder)」。
-{:shortdesc}
+{: shortdesc}
 
-若要將日誌資料傳送至「日誌收集」，請完成下列步驟：
+請完成下列步驟，以在 {{site.data.keyword.Bluemix_notm}} 中將日誌資料傳送至空間：
+
+## 必要條件
+{: #prereqs}
+
+* 用來登入 {{site.data.keyword.Bluemix_notm}} 的 {{site.data.keyword.IBM_notm}} ID。
+* 有權使用 {{site.data.keyword.loganalysisshort}} 服務處理空間的使用者 ID。如需相關資訊，請參閱[安全](/docs/services/CloudLogAnalysis/security_ov.html#security_ov)。
+* 本端環境中已安裝的 {{site.data.keyword.loganalysisshort}} CLI。
+
 
 ## 步驟 1：取得記載記號
 {: #get_logging_auth_token}
 
-若要將資料傳送至 {{site.data.keyword.loganalysisshort}} 服務，您需要：
+請從已安裝 {{site.data.keyword.loganalysisshort}} CLI 的終端機階段作業中，完成下列步驟：
 
-* {{site.data.keyword.IBM_notm}} ID：需要有此 ID，才能登入 {{site.data.keyword.Bluemix_notm}}。
-* {{site.data.keyword.Bluemix_notm}} 組織中的空間：此空間是您計劃傳送及分析日誌的位置。
-* 要傳送資料的記載記號。 
+1. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
 
-請完成下列步驟：
-
-1. 登入 {{site.data.keyword.Bluemix_notm}} 地區、組織及空間。 
-
-    例如，若要登入「美國南部」地區，請執行下列指令：
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 執行 `cf logging auth` 指令。 
+2. 執行 `bx cf logging auth` 指令。 
 
     ```
-    cf logging auth
+    bx cf logging auth
     ```
     {: codeblock}
 
@@ -56,13 +55,13 @@ lastupdated: "2017-07-19"
     例如，
 
     ```
-    cf logging auth
+    bx cf logging auth
     +-----------------+--------------------------------------+
     |      NAME       |                VALUE                 |
     +-----------------+--------------------------------------+
     | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_bKsdfTz                         |
-    | Organization Id | 98450123-6f1c-9999-96a3-0210fjyuwplt |
+    | Logging Token   | oT98_abcdefz                         |
+    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
     | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
     +-----------------+--------------------------------------+
     ```
@@ -182,7 +181,7 @@ lastupdated: "2017-07-19"
         ```
         {: codeblock}
         
-    2. 建立您環境的 mt-logstash-forwarder 配置檔。此檔案包括的變數可用來配置 mt logstash 轉遞程式，以將轉遞程式指向 {{site.data.keyword.loganalysisshort}} 服務。
+    2. 建立您環境的 mt-logstash-forwarder 配置檔。此檔案包括的變數可用來配置 mt-logstash-forwarder，以將轉遞程式指向 {{site.data.keyword.loganalysisshort}} 服務。
     
        編輯檔案 `/etc/mt-logstash-forwarder/mt-lsf-config.sh`。例如，您可以使用 vi 編輯器：
                
@@ -201,11 +200,11 @@ lastupdated: "2017-07-19"
           </tr>
           <tr>
             <td>LSF_INSTANCE_ID</td>
-            <td>例如，VM 的 ID。*MyTestVM*。</td>
+            <td>VM 的 ID。例如，*MyTestVM*。</td>
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>目標 URL。請將值設為 **https://ingest.logging.ng.bluemix.net:9091**。</td>
+            <td>目標 URL。若要取得汲取 URL 清單，請參閱[汲取 URL](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。例如，將值設為 **https://ingest.logging.ng.bluemix.net:9091**，以傳送美國南部地區中的日誌。</td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>
@@ -217,7 +216,7 @@ lastupdated: "2017-07-19"
           </tr>
           <tr>
             <td>LSF_GROUP_ID</td>
-            <td>將值設為您可定義以分組相關日誌的自訂標籤。</td>
+            <td>將此值設為您可定義以分組相關日誌的自訂標籤。</td>
           </tr>
        </table>
         
@@ -228,7 +227,7 @@ lastupdated: "2017-07-19"
        LSF_INSTANCE_ID="myhelloapp"
        LSF_TARGET="ingest.logging.ng.bluemix.net:9091"
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
-       LSF_PASSWORD="oT98_bKsdfTz"
+       LSF_PASSWORD="oT98_abcdefz"
        LSF_GROUP_ID="Group1"
        ```
        {: screen}
@@ -239,23 +238,8 @@ lastupdated: "2017-07-19"
        service mt-logstash-forwarder start
        ```
        {: codeblock}
-        
-       啟用 mt-logstash-forwarder，以在當機或重新開機之後自動啟動。 
-        
-       ```
-       service mt-logstash-forwarder enable
-       ```
-       {: codeblock}
-        
-       **提示：**若要重新啟動 mt-logstash-forwarder 服務，請執行下列指令：
-    
-       ```
-       service mt-logstash-forwarder restart
-       ```
-       {: codeblock}
-        
-        
-依預設，轉遞程式只會監看 syslog。Kibana 中可使用您的日誌來進行分析。
+                
+依預設，轉遞程式只會監看 syslog。在 Kibana 中，可以使用您的日誌來進行分析。
         
 
 ## 步驟 3：指定其他日誌檔
@@ -300,7 +284,7 @@ lastupdated: "2017-07-19"
     
 2. 編輯配置檔 *myapp.conf*。
 
-    若要啟用 JSON 剖析，請將配置檔中的 is_json 設為 true。
+    若要能夠在汲取日誌時於 Kibana 中依 JSON 欄位搜尋，請啟用 JSON 剖析。將配置檔中特定檔案路徑的 `is_json` 設為 true。對於透過此方式配置的日誌檔，日誌行應該格式化為 JSON 區塊（以換行字元區隔）。mt-logstash-forwarder 接著會使用所有這些 JSON 欄位作為個別 Kibana 可搜尋欄位。JSON 欄位名稱包括根據類型的字尾。
     
     ```
     {

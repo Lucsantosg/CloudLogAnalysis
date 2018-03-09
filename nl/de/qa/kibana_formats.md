@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -35,8 +36,8 @@ Sie können Kibana so konfigurieren, dass auf der Seite *Discover* die folgenden
 | \_id | Die eindeutige ID für Ihr Protokolldokument. |
 | \_index | Der Index für Ihren Protokolleintrag. |
 | \_type | Der Typ des Protokolls, z. B. *syslog*. |
-| app_name | Der Name Ihrer {{site.data.keyword.Bluemix_notm}}-Anwendung. |
-| application_id | Die eindeutige ID Ihrer {{site.data.keyword.Bluemix_notm}}-Anwendung. |
+| app_name | Der Name der Anwendung. |
+| application_id | Die eindeutige ID der Anwendung. |
 | host | Der Name Ihrer Anwendung, von der die Protokolldaten stammen. |
 | instance_id | Die Instanz-ID Ihrer Anwendungsinstanz, von der die Protokolldaten stammen. |
 | loglevel | Die Wertigkeit des protokollierten Ereignisses. |
@@ -52,7 +53,7 @@ Sie können Kibana so konfigurieren, dass auf der Seite *Discover* die folgenden
 
 
 
-## Kibana-Protokollformat für Docker-Container, die in einer Bluemix-verwalteten Infrastruktur bereitgestellt werden
+## Kibana-Protokollformat für Docker-Container, die in einer von IBM verwalteten Infrastruktur bereitgestellt werden (veraltet)
 {: #kibana_log_format_containers}
 
 Sie können Kibana so konfigurieren, dass auf der Seite *Discover* die folgenden Felder für jeden Protokolleintrag angezeigt werden:

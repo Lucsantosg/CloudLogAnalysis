@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -31,7 +31,7 @@ lastupdated: "2017-07-19"
 
 **消息说明** 
 
-达到为 Lite 服务套餐分配的“日志搜索”存储量配额时，会收到标识为 *BXNLG020001W* 的消息。Lite 套餐是一种补充性服务套餐，您在 {{site.data.keyword.Bluemix_notm}} 空间中供应 {{site.data.keyword.loganalysisshort}} 服务时，缺省情况下会设置此套餐。您当前为“日志搜索”存储器分配的每日存储量是 500 MB，数据在“日志搜索”存储器中保留 3 天，在此期间可以在 Kibana 中对其进行搜索。
+达到为 Lite 服务套餐分配的“日志搜索”存储量配额时，会收到标识为 *BXNLG020001W* 的消息。Lite 套餐是一种补充性服务套餐，您在空间中供应 {{site.data.keyword.loganalysisshort}} 服务时，缺省情况下会设置此套餐。您当前为“日志搜索”存储器分配的每日存储量是 500 MB，数据在“日志搜索”存储器中保留 3 天，在此期间可以在 Kibana 中对其进行搜索。
 
 **恢复**
 
@@ -50,7 +50,7 @@ XXX 表示当前套餐可搜索数据的大小。
 
 **消息说明** 
 
-您已达到分配给 {{site.data.keyword.loganalysisfull}} 实例 {Instance GUID} 的 {{site.data.keyword.Bluemix_notm}} 空间 {Space GUID} 的每日配额。您当前为“日志搜索”存储器分配的每日存储量是 500 MB、2 GB、5 GB 或 10 GB，数据会保留 3 天，在此期间可以在 Kibana 中对其进行搜索。这不会影响“日志收集”存储器中的日志保留时间策略。
+您已达到分配给 {{site.data.keyword.loganalysisfull}} 实例 {Instance GUID} 的空间 {Space GUID} 的每日配额。您当前为“日志搜索”存储器分配的每日存储量是 500 MB、2 GB、5 GB 或 10 GB，数据会保留 3 天，在此期间可以在 Kibana 中对其进行搜索。这不会影响“日志收集”存储器中的日志保留时间策略。
 
 **恢复**
 

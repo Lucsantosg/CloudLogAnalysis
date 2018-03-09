@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -15,27 +17,24 @@ lastupdated: "2017-07-19"
 # ログのダウンロード
 {: #downloading_logs}
 
-ログをローカル・ファイルにダウンロードしたり、データを別のプログラムにパイプしたりできます。ログのダウンロードは、1 つのセッションのコンテキスト内で行います。どのログがダウンロードされるのかをセッションが指定します。ログのダウンロードが中断された場合、セッションは中断した箇所からのダウンロードの再開を可能にします。ダウンロードが完了した後、セッションを削除する必要があります。
+ログをローカル・ファイルにダウンロードしたり、データを別のプログラムにパイプしたりできます。 ログのダウンロードは、1 つのセッションのコンテキスト内で行います。 どのログがダウンロードされるのかをセッションが指定します。 ログのダウンロードが中断された場合、セッションは中断した箇所からのダウンロードの再開を可能にします。 ダウンロードが完了した後、セッションを削除する必要があります。
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} スペースで使用可能なログ・データをローカル・ファイルにダウンロードするには、以下のステップを実行します。
 
-始める前に、{{site.data.keyword.Bluemix_notm}} 地域、組織、およびスペースにログインします。 
+## ステップ 1: IBM Cloud にログインする
 
-例えば、米国南部地域にログインするには、以下のコマンドを実行します。
-	
-```
-cf login -a https://api.ng.bluemix.net
-```
-{: codeblock}
+{{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-## ステップ 1: 使用可能なログを識別する
-{: #step1}
+詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 
-1. `cf logging status` コマンドを使用して、最近 2 週間の使用可能なログを表示します。次のコマンドを実行します。
+## ステップ 2: 使用可能なログを識別する
+{: #step2}
+
+1. `bx cf logging status` コマンドを使用して、最近 2 週間の使用可能なログを表示します。 次のコマンドを実行します。
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
@@ -52,37 +51,37 @@ cf login -a https://api.ng.bluemix.net
     ```
     {: screen}
 
-    **注:** {{site.data.keyword.loganalysisshort}} サービスは、協定世界時 (UTC) を使用するグローバル・サービスです。日付は UTC 日付で定義されます。特定の現地時間の 1 日のログを取得するために、複数の UTC 日のダウンロードが必要になることがあります。
+    **注:** {{site.data.keyword.loganalysisshort}} サービスは、協定世界時 (UTC) を使用するグローバル・サービスです。 日付は UTC 日付で定義されます。 特定の現地時間の 1 日のログを取得するために、複数の UTC 日のダウンロードが必要になることがあります。
 
 
-## ステップ 2: セッションを作成する
-{: #step2}
+## ステップ 3: セッションを作成する
+{: #step3}
 
 ダウンロードに使用可能なログ・データのスコープを定義するため、および、ダウンロードの状況を保持するために、セッションが必要です。 
 
-セッションを作成するには、コマンド [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) を使用します。オプションで、セッションを作成するときに、ログの開始日、終了日、およびタイプを指定することができます。  
+セッションを作成するには、コマンド [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) を使用します。 オプションで、セッションを作成するときに、ログの開始日、終了日、およびタイプを指定することができます。  
 
 * 開始日および終了日を指定すると、セッションはそれらの日付の間 (開始日と終了日を含む) のログへのアクセスを提供します。 
-* ログのタイプ (**-t**) を指定すると、セッションは特定タイプのログへのアクセスを提供します。これは、ログのうち興味のある小さなサブセットのみにセッションのスコープを限定できるため、大量のログを管理する場合に重要な機能です。
+* ログのタイプ (**-t**) を指定すると、セッションは特定タイプのログへのアクセスを提供します。 これは、ログのうち興味のある小さなサブセットのみにセッションのスコープを限定できるため、大量のログを管理する場合に重要な機能です。
 
-タイプが *log* のログをダウンロードするために使用されるセッションを作成するには、以下のコマンドを実行します。
+タイプが *log* のログをダウンロードするために使用されるセッションを作成するには、次のコマンドを実行します。
 
 ```
-cf logging session create -t log
+bx cf logging session create -t log
 ```
 {: codeblock}
 
 セッションは、以下の情報を返します。
 
-* ダウンロードされる日付範囲。デフォルトは、現在の UTC 日付です。
-* ダウンロードされるログ・タイプ。デフォルトでは、セッション作成時に指定した期間の使用可能なすべてのログ・タイプが含まれます。 
-* アカウント全体を含めるのか、現行スペースのみを含めるのかに関する情報。デフォルトでは、ログインしたスペースのログが取得されます。
+* ダウンロードされる日付範囲。 デフォルトは、現在の UTC 日付です。
+* ダウンロードされるログ・タイプ。 デフォルトでは、セッション作成時に指定した期間の使用可能なすべてのログ・タイプが含まれます。 
+* アカウント全体を含めるのか、現行スペースのみを含めるのかに関する情報。 デフォルトでは、ログインしたスペースのログが取得されます。
 * ログのダウンロードに必要なセッション ID。
 
 以下に例を示します。
 
 ```
-$ cf logging session create -t log     
+$ bx cf logging session create -t log     
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -104,25 +103,25 @@ $ cf logging session create -t log
 
 **ヒント:** アクティブ・セッションのリストを表示するには、コマンド [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list) を実行します。
 
-## ステップ 3: ログ・データをファイルにダウンロードする
-{: #step3}
+## ステップ 4: ログ・データをファイルにダウンロードする
+{: #step4}
 
 セッション・パラメーターで指定されたログをダウンロードするには、次のコマンドを実行します。
 
 ```
-cf logging download -o Log_File_Name Session_ID
+bx cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
 各部分の説明:
 
 * Log_File_Name は、出力ファイルの名前です。
-* Session_ID は、セッションの GUID です。この値は前のステップで取得します。
+* Session_ID は、セッションの GUID です。 この値は前のステップで取得します。
 
 以下に例を示します。
 
 ```
-cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -131,18 +130,19 @@ cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
 
 **注:** 
 
-* ダウンロードされたデータのフォーマットは、圧縮 JSON です。.gz ファイルを unzip してから開くと、データは JSON フォーマットで表示されます。 
-* 圧縮 JSON は、ElasticSearch または Logstash による取り込みに適しています。-o が指定されていない場合、データは stdout にストリームされるので、それを直接 ELK スタックにパイプすることができます。
+* ダウンロードされたデータのフォーマットは、圧縮 JSON です。 .gz ファイルを unzip してから開くと、データは JSON フォーマットで表示されます。 
+* 圧縮 JSON は、ElasticSearch または Logstash による取り込みに適しています。 -o が指定されていない場合、データは stdout にストリームされるので、それを直接 ELK スタックにパイプすることができます。
 * JSON を構文解析できる任意のプログラムでデータを処理することもできます。 
 
-## ステップ 4: セッションを削除する
+## ステップ 5: セッションを削除する
+{: #step5}
 
 ダウンロードが完了した後、[cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete) コマンドを使用してセッションを削除する必要があります。 
 
 セッションを削除するには、次のコマンドを実行します。
 
 ```
-cf logging session delete Session_ID
+bx cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -151,7 +151,7 @@ cf logging session delete Session_ID
 以下に例を示します。
 
 ```
-cf logging session delete -jshdjsunelsssr4566722==
+bx cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

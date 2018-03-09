@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -14,15 +14,15 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# Protokollierung für Cloud Foundry-Apps in Bluemix
+# Protokollierung für Cloud Foundry-Apps in {{site.data.keyword.Bluemix_notm}}
 {: #logging_bluemix_cf_apps}
 
-In {{site.data.keyword.Bluemix}} können Sie Cloud Foundry-Protokolle (CF-Protokolle) über das {{site.data.keyword.Bluemix_notm}}-Dashboard, in Kibana und über die Befehlszeilenschnittstelle (CLI) anzeigen, filtern und analysieren. Darüber hinaus können Sie Protokolleinträge durch Streaming an ein externes Protokoll-Management-Tool übertragen. 
+In {site.data.keyword.Bluemix}} können Sie Cloud Foundry-Protokolle (CF-Protokolle) über das {{site.data.keyword.Bluemix_notm}}-Dashboard, in Kibana und über die Befehlszeilenschnittstelle (CLI) anzeigen, filtern und analysieren. Darüber hinaus können Sie Protokolleinträge durch Streaming an ein externes Protokoll-Management-Tool übertragen. 
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} zeichnet Protokolldaten auf, die von der Cloud Foundry-Plattform und von Cloud Foundry-Anwendungen generiert werden. Die Protokolle enthalten Fehler-, Warn- und Informationsnachrichten, die für Ihre App erzeugt wurden. 
 
-Wenn Sie Ihre Apps in einer als Service bereitgestellten Cloudplattform (Platform-as-a-service, PaaS) wie Cloud Foundry in {{site.data.keyword.Bluemix_notm}} ausführen, können Sie nicht über SSH oder FTP auf die Protokolle in der Infrastruktur zugreifen, in der Ihre Apps ausgeführt werden. Die Plattform wird durch den Cloud-Provider gesteuert. Cloud Foundry-Apps, die in {{site.data.keyword.Bluemix_notm}} ausgeführt werden, verwenden die Komponente "Loggrerator", um Protokolleinträge aus der Cloud Foundry-Infrastruktur heraus weiterzuleiten. Loggregator erfasst automatisch STDOUT- und STDERR-Daten. Sie können diese Protokolle über das {{site.data.keyword.Bluemix_notm}}-Dashboard, über Kibana und über die Befehlszeilenschnittstelle visualisieren und analysieren.
+Wenn Sie Ihre Apps in einer als Service bereitgestellten Cloudplattform (Platform-as-a-service, PaaS) wie Cloud Foundry in {{site.data.keyword.Bluemix_notm}} ausführen, können Sie nicht über SSH oder FTP auf die Protokolle in der Infrastruktur zugreifen, in der Ihre Apps ausgeführt werden. Die Plattform wird durch den Cloud-Provider gesteuert. Cloud Foundry-Apps, die in {{site.data.keyword.Bluemix_notm}} ausgeführt werden, verwenden die Komponente 'Loggrerator', um Protokolleinträge aus der Cloud Foundry-Infrastruktur heraus weiterzuleiten. Loggregator erfasst automatisch STDOUT- und STDERR-Daten. Sie können diese Protokolle über das {{site.data.keyword.Bluemix_notm}}-Dashboard, über Kibana und über die Befehlszeilenschnittstelle visualisieren und analysieren.
 
 Die folgende Abbildung zeigt eine Übersicht über die Protokollierung von Cloud Foundry-Apps in {{site.data.keyword.Bluemix_notm}}:
 
@@ -35,23 +35,24 @@ Die Protokollierung von Cloud Foundry-Apps ist automatisch aktiviert, wenn Sie d
 ## Einpflegen von Protokollen (Log Ingestion)
 {: #log_ingestion}
 
-Der {{site.data.keyword.loganalysisshort}}-Service bietet verschiedene Pläne. Jeder Plan definiert, ob Sie Protokolle an 'Log Collection' senden können. Alle Pläne - mit Ausnahme des *Lite*-Plans - beinhalten die Möglichkeit, Protokolle an 'Log Collection' zu senden. Weitere Informationen zu den Plänen finden Sie unter [Servicepläne](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
-
 Sie können Protokolle über den Multi-Tenant Logstash Forwarder an {{site.data.keyword.loganalysisshort}} senden. Weitere Informationen finden Sie unter [Protokolldaten mit Multi-Tenant Logstash Forwarder (mt-logstash-forwarder) senden](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
 
+Der {{site.data.keyword.loganalysisshort}}-Service bietet verschiedene Pläne. Alle Pläne - mit Ausnahme des *Lite*-Plans - beinhalten die Möglichkeit, Protokolle an 'Log Collection' zu senden. Weitere Informationen zu den Plänen finden Sie unter [Servicepläne](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 ## Erfassen von Protokollen (Log Collection)
 {: #log_collection}
 
-Standardmäßig speichert {{site.data.keyword.Bluemix_notm}} Protokolldaten für bis zu drei Tage in 'Log Search':   
+Standardmäßig speichert der {{site.data.keyword.loganalysisshort}}-Service Protokolldaten für bis zu drei Tage in 'Log Search':   
 
 * Maximal werden 500 MB pro Datenbereich und Tag gespeichert. Alle Protokolle oberhalb der Kapazitätsgrenze von 500 MB werden nicht berücksichtigt. Die Kapazitätsgrenze wird täglich um 12:30 AM (UTC) zurückgesetzt.
 * Bis zu 1,5 GB Daten können für einen Zeitraum von maximal 3 Tagen durchsucht werden. Das Rollover der Protokolldaten (First In, First Out) erfolgt bei 1,5 GB an Daten oder nach drei Tagen.
 
-Der {{site.data.keyword.loganalysisshort}}-Service bietet zusätzliche Pläne, mit denen Sie Protokolle so lange wie erforderlich in 'Log Collection' speichern können. Weitere Informationen zu den Preisen der einzelnen Pläne finden Sie unter [Servicepläne](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+Der {{site.data.keyword.loganalysisshort}}-Service bietet zusätzliche Pläne, mit denen Sie Protokolle in 'Log Collection' so lange wie erforderlich speichern können. 
 
-Sie können eine Protokollaufbewahrungsrichtlinie konfigurieren, die die Anzahl Tage definiert, für die Protokolle in 'Log Collection' aufbewahrt werden. Weitere Informationen finden Sie unter [Protokollaufbewahrungsrichtlinie](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* Sie können eine Protokollaufbewahrungsrichtlinie konfigurieren, die die Anzahl Tage definiert, für die Protokolle in 'Log Collection' aufbewahrt werden. Weitere Informationen finden Sie unter [Protokollaufbewahrungsrichtlinie](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* Sie können die API oder die Befehlszeilenschnittstelle verwenden, um Protokolle manuell zu löschen.
 
+Weitere Informationen zu den Preisen der einzelnen Pläne finden Sie unter [Servicepläne](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 ## Durchsuchen von Protokollen (Log Search)
 {: #log_search}
@@ -66,9 +67,9 @@ Der {{site.data.keyword.loganalysisshort}}-Service bietet mehrere Pläne. Für j
 
 Die folgenden Methoden stehen für die Analyse der Protokolle Ihrer Cloud Foundry-Anwendung zur Auswahl:
 
-* Analysieren Sie die Protokolldatei in {{site.data.keyword.Bluemix_notm}}, um die neueste Aktivität der Anwendung anzuzeigen.
+* Analysieren Sie die Protokolldatei in der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle, um die neueste Aktivität der Anwendung anzuzeigen.
     
-    In {{site.data.keyword.Bluemix_notm}} können Sie Protokolle über die Registerkarte **Protokolle** anzeigen, filtern und analysieren, die für jede Cloud Foundry-Anwendung verfügbar ist. Weitere Informationen finden Sie unter [CF-App-Protokolle über das Bluemix-Dashboard analysieren](/docs/services/CloudLogAnalysis/logging_view_dashboard.html#analyzing_logs_bmx_ui).
+    In {{site.data.keyword.Bluemix_notm}} können Sie Protokolle über die Registerkarte **Protokolle** anzeigen, filtern und analysieren, die für jede Cloud Foundry-Anwendung verfügbar ist. Weitere Informationen finden Sie unter [CF-App-Protokolle über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle analysieren](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#launch_logs_cloud_ui_cf).
     
 * Analysieren Sie Protokolle in Kibana, um erweiterte Analysetasks auszuführen.
     
@@ -78,7 +79,7 @@ Die folgenden Methoden stehen für die Analyse der Protokolle Ihrer Cloud Foundr
 
 * Analysieren Sie Protokolle über die Befehlszeilenschnittstelle mit Befehlen zur programmgesteuerten Protokollverwaltung.
     
-    In {{site.data.keyword.Bluemix_notm}} können Sie Protokolle über die Befehlszeilenschnittstelle (CLI) mithilfe des Befehls **cf logs** anzeigen, filtern und analysieren. Weitere Informationen finden Sie unter [Cloud Foundry-App-Protokolle über die Befehlszeilenschnittstelle analysieren](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_logs_cli).
+    In {{site.data.keyword.Bluemix_notm}} können Sie Protokolle über die Befehlszeilenschnittstelle (CLI) mithilfe des Befehls **cf logs** anzeigen, filtern und analysieren. Weitere Informationen finden Sie unter [Cloud Foundry-App-Protokolle über die Befehlszeilenschnittstelle analysieren](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#analyzing_logs_cli).
 
 
 ## Protokollquellen für CF-Apps, die auf Diego bereitgestellt sind
@@ -121,3 +122,25 @@ Die folgende Abbildung zeigt die verschiedenen Komponenten (Protokollquellen) in
 ![Protokollquellen in einer DEA-Architektur.](images/cf_apps_dea_F1.png "Komponenten (Protokollquellen) in einer Cloud Foundry-Architektur, die auf dem Droplet Execution Agent (DEA) basiert.")
 
 
+
+## Über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle angezeigtes Protokollformat für CF-App-Protokolle
+{: #log_format_cf}
+
+Die Protokolle für CF-Apps in {{site.data.keyword.Bluemix_notm}} werden in einem festen Format angezeigt, ähnlich dem folgenden Muster:
+
+<code><var class="keyword varname">Komponente</var>/<var class="keyword varname">Instanz-ID</var>/<var class="keyword varname">Nachricht</var>/<var class="keyword varname">Zeitmarke</var></code>
+
+Jeder Protokolleintrag enthält die folgenden Felder:
+
+| Feld | Beschreibung |
+|-------|-------------|
+| Zeitmarke | Die Zeit der Protokollanweisung. Die Zeitmarke wird millisekundengenau definiert. |
+| Komponente | Die Komponente, die das Protokoll erstellt. Eine Liste der verschiedenen Komponenten finden Sie unter [Protokollquellen für CF-Apps](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#logging_bluemix_cf_apps_log_sources). <br> Auf jeden Komponententyp folgt ein Schrägstrich und eine Ziffer, die die Anwendungsinstanz angibt. Die Ziffer 0 ist der ersten Instanz zugeordnet, die Ziffer 1 der zweiten Instanz usw. |
+| Nachricht | Die Nachricht, die von der Komponente ausgegeben wird. Die Nachricht variiert abhängig vom Kontext. |
+{: caption="Tabelle 1. CF-App-Protokolleintragsfelder" caption-side="top"}
+
+
+## Lernprogramm: Protokolle in Kibana für eine Cloud Foundry-App analysieren
+{: #tutorial}  
+
+Informationen zur Verwendung von Kibana für die Analyse der Protokolle für eine Cloud Foundry-App finden Sie unter [Protokolle in Kibana für eine Cloud Foundry-App analysieren](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).

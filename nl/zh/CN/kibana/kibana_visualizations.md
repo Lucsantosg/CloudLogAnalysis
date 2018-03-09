@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -76,7 +77,7 @@ lastupdated: "2017-07-19"
 
         有关更多信息，请参阅[通过定义定制查询来过滤日志](define_search.html#define_search)。
 
-有关 Kibana 的更多信息，请参阅 [Kibana User Guide ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](https://www.elastic.co/guide/en/kibana/5.1/index.html "外部链接图标"){: new_window}。
+有关 Kibana 的更多信息，请参阅 [Kibana User Guide ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}。
 
 
 ## 删除可视化项
@@ -84,7 +85,7 @@ lastupdated: "2017-07-19"
 
 要删除可视化项，请在**管理**页面中完成以下步骤：
 
-1. 在**管理**页面中，选择**高级对象**选项卡。
+1. 在**管理**页面中，选择**保存的对象**。
 
 2. 在**可视化项**选项卡中，选择要删除的可视化项。
 
@@ -96,7 +97,7 @@ lastupdated: "2017-07-19"
 
 要将可视化项导出为 JSON 文件，请在**管理**页面中完成以下步骤：
 
-1. 在**管理**页面中，选择**高级对象**选项卡。
+1. 在**管理**页面中，选择**保存的对象**。
 
 2. 在**可视化项**选项卡中，选择要导出的可视化项。
 
@@ -109,7 +110,7 @@ lastupdated: "2017-07-19"
 
 要将可视化项作为 JSON 文件导入，请在**管理**页面中完成以下步骤：
 
-1. 在**管理**页面中，选择**高级对象**选项卡。
+1. 在**管理**页面中，选择**保存的对象**。
 
 2. 在**可视化项**选项卡中，选择**导入**。
 

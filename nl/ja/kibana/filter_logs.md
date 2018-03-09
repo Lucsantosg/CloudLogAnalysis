@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -20,34 +21,33 @@ lastupdated: "2017-07-19"
 「Discover」ページでは、検索照会を作成し、フィルターを適用して、分析で表示される情報を制約できます。
 {:shortdesc}
 
-* 「Discover」ページの検索バーで 1 つ以上の検索照会を定義できます。検索照会により、ログ項目のサブセットを定義します。検索照会の定義には、Lucene 照会言語を使用します。 
+* 「Discover」ページの検索バーで 1 つ以上の検索照会を定義できます。 検索照会により、ログ項目のサブセットを定義します。 検索照会の定義には、Lucene 照会言語を使用します。 
 
-* *フィールド・リスト* または表の項目からフィルターを追加できます。フィルターは、情報の包含または除外によって、データ選択を詳細化します。フィルターの有効化または無効化、フィルター・アクションの反転、フィルターのオンまたはオフへの切り替え、フィルターの完全削除を行うことができます。 
+* *フィールド・リスト* または表の項目からフィルターを追加できます。 フィルターは、情報の包含または除外によって、データ選択を詳細化します。 フィルターの有効化または無効化、フィルター・アクションの反転、フィルターのオンまたはオフへの切り替え、フィルターの完全削除を行うことができます。 
 
-新規検索を定義した後に、これを保存し、「Discover」ページで後に分析を行ったり、カスタム・ダッシュボードで使用できる視覚化を作成するために再使用できます。詳しくは、『[検索の保存](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)』を参照してください。
+新規検索を定義した後に、これを保存し、「Discover」ページで後に分析を行ったり、カスタム・ダッシュボードで使用できる視覚化を作成するために再使用できます。 詳しくは、『[検索の保存](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)』を参照してください。
 
-新規検索を実行すると、ヒストグラム、表、およびフィールド・リストが自動的に更新され、検索結果が表示されます。どのようなデータが表示されているのかを判別するには、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
+新規検索を実行すると、ヒストグラム、表、およびフィールド・リストが自動的に更新され、検索結果が表示されます。 どのようなデータが表示されているのかを判別するには、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
 
 以下のリストに、ログ内のデータをフィルタリングする方法を示すシナリオの概要を示します。
 
-* ログをフィルタリングするカスタム検索を作成できます。詳しくは、『[カスタム検索照会の定義によるログのフィルタリング](/docs/services/CloudLogAnalysis/kibana/define_search.html#define_search)』を参照してください。
+* ログをフィルタリングするカスタム検索を作成できます。 詳しくは、『[カスタム検索照会の定義によるログのフィルタリング](/docs/services/CloudLogAnalysis/kibana/define_search.html#define_search)』を参照してください。
 
-* フィールドの値に特定のテキストが含まれている項目をログで検索できます。詳しくは、『[フィールド値に特定のテキストが含まれたログのフィルタリング](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs_spec_text)』を参照してください。
+* フィールドの値に特定のテキストが含まれている項目をログで検索できます。 詳しくは、『[フィールド値に特定のテキストが含まれたログのフィルタリング](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs_spec_text)』を参照してください。
  
-* ログで特定のフィールド値を検索したり、特定のフィールド値が含まれた項目をログから除外したりすることができます。詳しくは、『[特定のフィールド値が含まれたログのフィルタリング](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs_spec_field)』を参照してください。
+* ログで特定のフィールド値を検索したり、特定のフィールド値が含まれた項目をログから除外したりすることができます。 詳しくは、『[特定のフィールド値が含まれたログのフィルタリング](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs_spec_field)』を参照してください。
  
-* 特定の期間内の項目を表示するようにログをフィルタリングできます。詳しくは、『[時間フィルターの設定](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)』を参照してください。
+* 特定の期間内の項目を表示するようにログをフィルタリングできます。 詳しくは、『[時間フィルターの設定](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)』を参照してください。
      
 
 ## *フィールド・リスト* でリストされない値のフィルターの追加
 {:#add_filter_out_value}
 
-*フィールド・リスト* に表示されていない値のフィルターを追加するには、照会を介してその値が含まれているレコードを検索します。その後、「Discover」ページで使用可能な表項目からフィルターを追加します。
- 
+*フィールド・リスト* に表示されていない値のフィルターを追加するには、照会を介してその値が含まれているレコードを検索します。 その後、「Discover」ページで使用可能な表項目からフィルターを追加します。 
 
 *フィールド・リスト*・セクションに表示されるリストで使用可能でない値のフィルターを追加するには、以下のステップを実行します。
 
-1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
+1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。 詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
 
 2. 「Discover」ページで、特定のフィールド値を検索するように照会を変更します。
 
@@ -66,16 +66,15 @@ lastupdated: "2017-07-19"
 ## 特定のフィールド値が含まれたログのフィルタリング
 {:#filter_logs_spec_field}
 
-特定のフィールド値が含まれた項目を検索できます。
- 
+特定のフィールド値が含まれた項目を検索できます。 
 
 特定のフィールド値が含まれた項目を検索するには、以下のステップを実行します。
 
-1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
+1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。 詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
 
 2. *フィールド・リスト* で、フィルターを定義するフィールドを識別してクリックします。
 
-    フィールドに対して最大で 5 つの値が表示されます。各値には、2 つの拡大鏡ボタンがあります。 
+    フィールドに対して最大で 5 つの値が表示されます。 各値には、2 つの拡大鏡ボタンがあります。 
     
     値を表示できない場合は、『[フィールド・リストでリストされない値のフィルターの追加](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#add_filter_out_value)』を参照してください。
 
@@ -96,7 +95,7 @@ lastupdated: "2017-07-19"
         <tr>
           <td align="left">有効化</td>
           <td align="left">このオプションは、フィルターを有効にする場合に選択します。</td>
-          <td align="left">フィルターを追加すると、そのフィルターは自動的に有効になります。<br> フィルターが無効になっている場合、有効にするにはそのフィルターをクリックします。</td>
+          <td align="left">フィルターを追加すると、そのフィルターは自動的に有効になります。 <br> フィルターが無効になっている場合、有効にするにはそのフィルターをクリックします。</td>
         </tr>
         <tr>
           <td align="left">無効化</td>
@@ -111,7 +110,7 @@ lastupdated: "2017-07-19"
         <tr>
           <td align="left">Toggle</td>
           <td align="left">このオプションは、フィルターを切り替える場合に選択します。</td>
-          <td align="left">デフォルトでは、フィルターに一致する項目が表示されます。一致しない項目を表示するには、フィルターを切り替えます。</td>
+          <td align="left">デフォルトでは、フィルターに一致する項目が表示されます。 一致しない項目を表示するには、フィルターを切り替えます。</td>
         </tr>
         <tr>
           <td align="left">削除</td>
@@ -127,7 +126,7 @@ lastupdated: "2017-07-19"
 
 特定のログ・ソースが含まれた項目を検索するには、以下のステップを実行します。
 
-1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
+1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。 詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
 
 2. *フィールド・リスト* で、**source_id** フィールドを選択します。
 
@@ -144,7 +143,7 @@ lastupdated: "2017-07-19"
 
 特定のログ・タイプが含まれた項目を検索するには、以下のステップを実行します。
 
-1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
+1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。 詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
 
 2. *フィールド・リスト* で、**type** フィールドを選択します。
 
@@ -159,7 +158,7 @@ lastupdated: "2017-07-19"
 
 Kibana ダッシュボードでインスタンス ID によってログを表示およびフィルタリングするには、以下のステップを実行します。
 
-1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
+1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。 詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
 
 2. *フィールド・リスト* で、特定のインスタンス ID を検索する以下のいずれかのフィールドを選択します。
 
@@ -178,7 +177,7 @@ Kibana ダッシュボードでインスタンス ID によってログを表示
 
 特定のメッセージ・タイプが含まれた項目を検索するには、以下のステップを実行します。
 
-1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
+1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。 詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
 
 2. *フィールド・リスト* で、**message_type** フィールドを選択します。
 
@@ -194,8 +193,7 @@ Kibana ダッシュボードでインスタンス ID によってログを表示
 ## フィールド値に特定のテキストが含まれたログのフィルタリング
 {:#filter_logs_spec_text}
 
-フィールドの値に特定のテキストが含まれている項目を表示および検索します。
- 
+フィールドの値に特定のテキストが含まれている項目を表示および検索します。 
 
 **注:** Elasticsearch アナライザーによって分析されるストリング・フィールドのフリー・テキスト検索のみを実行できます。 
     
@@ -203,13 +201,13 @@ Elasticsearch では、ストリング・フィールドの値を分析する際
     
 フィールド値に特定のテキストが含まれた項目を検索するには、以下のステップを実行します。
 
-1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
+1. Kibana の「Discover」ページを見て、表示されているデータのサブセットを確認します。 詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。
 
 2. デフォルトで ElasticSearch で分析されるフィールドを指定します。
 
-    ログ・データの検索およびフィルタリングで使用可能な分析されるフィールドの完全なリストを表示するには、[フィールドのリストを再ロードします](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields)。その後、「Discover」ページで使用可能な*フィールド・リスト* で、以下のステップを実行します。
+    ログ・データの検索およびフィルタリングで使用可能な分析されるフィールドの完全なリストを表示するには、[フィールドのリストを再ロードします](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields)。 その後、「Discover」ページで使用可能な*フィールド・リスト* で、以下のステップを実行します。
     
-    1. 構成アイコン ![構成アイコン](images/configure_icon.jpg "構成アイコン") をクリックします。フィールドをフィルタリングできる**「Selected fields」**セクションが表示されます。
+    1. 構成アイコン ![構成アイコン](images/configure_icon.jpg "構成アイコン") をクリックします。 フィールドをフィルタリングできる**「Selected fields」**セクションが表示されます。
 
     2. 分析されるフィールドを指定するには、検索フィールド**「Analyzed」**で**「Yes」**を選択します。
 
@@ -230,8 +228,7 @@ Elasticsearch では、ストリング・フィールドの値を分析する際
     
     例えば、ID *f52f6016-3aab-4b5c-aa2e-5493747cb978* の CF アプリの場合は、検索バーに次のテキストを入力します。
 
-	`<pre class="pre">application_id:f52f6016-3aab-4b5c-aa2e-5493747cb978 AND message:"CWWKT0016I:" 
-	</pre>`
+	`<pre class="pre">application_id:f52f6016-3aab-4b5c-aa2e-5493747cb978 AND message:"CWWKT0016I:" </pre>`
         
           
 テキスト *CWWKT0016I* が *message* フィールドの値に含まれている CF アプリの項目が表で表示されます。
@@ -242,10 +239,9 @@ Elasticsearch では、ストリング・フィールドの値を分析する際
 ## 時間フィルターの設定
 {: #set_time_filter}
 
-*時間ピッカー* を構成して、特定の期間内の {{site.data.keyword.Bluemix_notm}} ログを表示およびフィルタリングします。
+*時間ピッカー* を構成して、特定の期間内のログを表示およびフィルタリングします。
 
-
-「Discover」ページで*時間ピッカー* を構成できます。デフォルトでは、過去 15 分間に設定されています。 
+「Discover」ページで*時間ピッカー* を構成できます。 デフォルトでは、過去 15 分間に設定されています。 
 
 特定の時間が含まれた項目を検索するには、以下のステップを実行します。
 
@@ -257,7 +253,7 @@ Elasticsearch では、ストリング・フィールドの値を分析する際
     
     * Quick: これは事前定義の時間間隔であり、ごく一般的に使用される相対時間間隔と絶対時間間隔の両方が含まれています (例えば、*Today* や *This Month*)。 
        
-    * Relative: これは、開始日時と終了日時を指定できる時間間隔です。時間単位で表すことができます。
+    * Relative: これは、開始日時と終了日時を指定できる時間間隔です。 時間単位で表すことができます。
     
     * Absolute: これは、開始日から終了日までの時間間隔です。
     

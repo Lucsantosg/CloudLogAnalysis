@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -25,74 +26,69 @@ Vous pouvez mettre à disposition le service {{site.data.keyword.loganalysisshor
 ## Mise à disposition à partir de l'interface utilisateur
 {: #ui}
 
-Pour mettre à disposition une instance du service {{site.data.keyword.loganalysisshort}} dans {{site.data.keyword.Bluemix_notm}} :
+Procédez comme suit pour mettre à disposition une instance du service {{site.data.keyword.loganalysisshort}} dans {{site.data.keyword.Bluemix_notm}} :
 
 1. Connectez-vous à votre compte {{site.data.keyword.Bluemix_notm}}.
 
-    Le tableau de bord {{site.data.keyword.Bluemix_notm}} se trouve à l'adresse suivante : [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}.
+    Le tableau de bord {{site.data.keyword.Bluemix_notm}} se trouve à l'adresse suivante : [http://bluemix.net ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window}.
     
-	Après que vous vous êtes connecté avec votre ID utilisateur et votre mot de passe, l'interface utilisateur {{site.data.keyword.Bluemix_notm}} s'ouvre. 
+	Une fois que vous êtes connecté avec votre ID utilisateur et votre mot de passe, l'interface utilisateur {{site.data.keyword.Bluemix_notm}} s'ouvre.
 
-2. Cliquez sur **Catalog**. La liste des services disponibles sur {{site.data.keyword.Bluemix_notm}} s'ouvre. 
+2. Cliquez sur **Catalogue**. La liste des services disponibles dans {{site.data.keyword.Bluemix_notm}} s'affiche.
 
-3. Sélectionnez la catégorie **DevOps** pour filtrer la liste de services affichée. 
+3. Sélectionnez la catégorie **DevOps** pour filtrer la liste de services affichée.
 
-4. Cliquez sur la mosaïque **Log Analysis**. 
+4. Cliquez sur la vignette **Log Analysis**.
 
-5. Sélectionnez un plan de service. Par défaut, le plan **Lite** est défini. 
+5. Sélectionnez un plan de service. Par défaut, le plan **Lite** est défini.
 
     Pour plus d'informations sur les plans de service, voir [Plans de service](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 	
-6. Cliquez sur **Create** pour mettre à disposition le service {{site.data.keyword.loganalysisshort}} dans l'espace {{site.data.keyword.Bluemix_notm}} auquel vous êtes connecté. 
+6. Cliquez sur **Créer** pour mettre à disposition le service {{site.data.keyword.loganalysisshort}} dans l'espace {{site.data.keyword.Bluemix_notm}} auquel vous êtes connecté.
   
  
 
 ## Mise à disposition à partir de l'interface de ligne de commande
 {: #cli}
 
-Procédez comme suit pour mettre à disposition une instance du service {{site.data.keyword.loganalysisshort}} dans {{site.data.keyword.Bluemix_notm}} via la ligne de commande : 
+Procédez comme suit pour mettre à disposition une instance du service {{site.data.keyword.loganalysisshort}} dans {{site.data.keyword.Bluemix_notm}} via la ligne de commande :
 
-1. Installez l'interface de ligne de commande Cloud Foundry (CF). Si l'interface de ligne de commande CF est installée, passez à l'étape suivante.
+1. [Prérequis] Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
 
-   Pour plus d'informations, voir [Installation de l'interface de ligne de commande cf ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://docs.cloudfoundry.org/cf-cli/install-go-cli.html){: new_window}. 
+   Pour plus d'informations, voir [Installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)
+   
+   Si l'interface de ligne de commande est installée, passez à l'étape suivante.
     
-2. Connectez-vous à un espace, une organisation ou une région {{site.data.keyword.Bluemix_notm}}.  
+2. Connectez-vous à la région, l'organisation et l'espace dans l'environnement {{site.data.keyword.Bluemix_notm}} dans lequel mettre le service à disposition. 
 
-    Par exemple, pour vous connecter à la région du sud des États-Unis, exécutez la commande suivante :
-
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
-
-    Suivez les instructions. Entrez vos données d'identification {{site.data.keyword.Bluemix_notm}} et sélectionnez une organisation et un espace.
+    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Exécutez la commande `cf create-service` pour mettre à disposition une instance. 
+3. Exécutez la commande `bx cf create-service` pour mettre à disposition une instance.
 
     ```
-	cf create-service service_name service_plan service_instance_name
+	bx cf create-service service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
 	Où
 	
-	* service_name est le nom du service, en l'occurrence, **ibmLogAnalysis**.
-	* service_plan est le nom du plan de service. Pour obtenir une liste de plans, voir [Plans de service](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+	* service_name est le nom du service, en l'occurrence **ibmLogAnalysis**.
+	* service_plan est le nom du plan de service. Pour la liste des plans, voir [Plans de service](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 	* service_instance_name est le nom que vous souhaitez utiliser pour la nouvelle instance de service que vous créez.
 	
 	Pour plus d'informations sur la commande cf, voir [cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service).
 
-	Par exemple, pour créer une instance du service {{site.data.keyword.loganalysisshort}} avec un plan gratuit, exécutez la commande suivante :
+	Par exemple, pour créer une instance du service {{site.data.keyword.loganalysisshort}} avec le plan Lite, exécutez la commande suivante :
 	
 	```
-	cf create-service ibmLogAnalysis lite my_logging_svc
+	bx cf create-service ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
-4. Vérifiez que le service a bel et bien été créé. Exécutez la commande suivante :
+4. Vérifiez que le service a été créé. Exécutez la commande suivante :
 
     ```	
-	cf services
+	bx cf services
 	```
 	{: codeblock}
 	
@@ -103,7 +99,7 @@ Procédez comme suit pour mettre à disposition une instance du service {{site.d
     OK
     
     name                           service                  plan                   bound apps              last operation
-    my_logging_svc                ibmLogAnalysis               lite                                        create succeeded
+    my_logging_svc                ibmLogAnalysis           standard                                        create succeeded
 	```
 	{: screen}
 

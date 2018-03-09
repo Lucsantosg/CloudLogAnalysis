@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -26,7 +27,7 @@ Complete las siguientes tareas para definir una búsqueda personalizada:
 
     Para las apps Cloud Foundry (CF), consulte [inicio de Kibana desde el panel de control de una app CF](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
 
-	Para contenedores que se ejecutan la arquitectura de nube gestionada por {{site.data.keyword.IBM_notm}}, consulte [inicio de Kibana desde el panel de control de un contenedor](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
+	Para contenedores que se ejecutan en la infraestructura gestionada por {{site.data.keyword.Bluemix_notm}}, consulte [inicio de Kibana desde el panel de control de un contenedor](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
     
     Para todos los recursos de nube, por ejemplo los contenedores que se ejecutan en un clúster Kubernetes, consulte [inicio de Kibana desde el navegador](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser). 
 	
@@ -34,9 +35,9 @@ Complete las siguientes tareas para definir una búsqueda personalizada:
 
 2. Examine la página Descubrir para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data). A continuación, modifique la consulta predeterminada para filtrar las entradas.
 
-    **Nota:** Utilice el lenguaje de consulta de Lucene para definir la consulta personalizada. Para obtener más información, consulte [Apache Lucene - Sintaxis del analizador de consultas ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html "Icono de enlace externo"){: new_window}
+    **Nota:** Utilice el lenguaje de consulta de Lucene para definir la consulta personalizada. Para obtener más información, consulte [Apache Lucene - Sintaxis del analizador de consultas ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}
     
-    Cuando Kibana se inicia desde {{site.data.keyword.Bluemix_notm}}, para modificar la consulta y definir varios criterios de búsqueda puede utilizar los términos lógicos **AND** y **OR**. Estos operadores deben estar en mayúsculas.    
+    Cuando Kibana se inicia desde la IU de {{site.data.keyword.Bluemix_notm}}, para modificar la consulta y definir varios criterios de búsqueda puede utilizar los términos lógicos **AND** y **OR**. Estos operadores deben estar en mayúsculas.    
     
     * Para buscar una palabra clave, o parte de una palabra clave, escriba una palabra seguida de un asterisco (*), que es un comodín; por ejemplo, `Java*`. 
     * Para buscar una determinada frase, escriba la frase entre comillas dobles (" "); por ejemplo, `"Java/1.8.0"`.
@@ -126,12 +127,22 @@ Para iniciar una nueva búsqueda, pulse el botón **Nueva búsqueda** ![Nueva b�
 ## Cómo guardar una búsqueda 
 {: #save_search}
 
-Cuando se guarda una búsqueda, se guardan la serie de consulta de la búsqueda y el patrón de índice seleccionado actualmente.
+Tenga en cuenta la siguiente información sobre cómo guardar búsquedas personalizadas en Kibana:
+
+* Cuando se guarda una búsqueda, se guardan la serie de consulta de la búsqueda y el patrón de índice seleccionado actualmente.
+* Cuando abre una búsqueda en la página *Descubrir* y la modifica, puede elegir entre guardarla con el mismo nombre o guardar la búsqueda personalizada modificada con otro nombre. De forma predeterminada, el nombre de búsqueda que se proporciona es el que corresponde a la búsqueda personalizada que haya abierto inicialmente.
+
+    * Para guardar la búsqueda personalizada modificada con el mismo nombre, pulse **Guardar**. Tenga en cuenta que la búsqueda personalizada original se sobrescribe. 
+	
+	* Para guardar la búsqueda personalizada modificada con otro nombre, escriba un nombre nuevo en el campo **Guardar búsqueda** y, a continuación, pulse **Guardar**. 
+
 
 Siga los pasos siguientes para guardar la búsqueda actual en la página Descubrir:
 
 1. En la barra de herramientas de la página Descubrir, pulse el botón **Guardar búsqueda** ![Guardar búsqueda](images/save_search_icon.jpg "Guardar búsqueda").
 
 2. Escriba un nombre para la búsqueda.
+
+    **Nota:** Cuando pulse **Guardar**, no hay aviso acerca de la sobregrabación, por lo que, si especifica un nombre existente, se sustituirá dicha versión sin ninguna indicación. 
 
 3. Pulse **Guardar**. 

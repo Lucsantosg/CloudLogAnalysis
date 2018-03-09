@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -35,8 +36,8 @@ lastupdated: "2017-07-19"
 | \_id | O ID exclusivo para seu documento de log. |
 | \_index | O índice para sua entrada de log. |
 | \_type | O tipo de log; por exemplo, *syslog*. |
-| app_name | O nome de seu aplicativo {{site.data.keyword.Bluemix_notm}}. |
-| application_id | O ID exclusivo de seu aplicativo {{site.data.keyword.Bluemix_notm}}. |
+| app_name | O nome do aplicativo. |
+| application_id | O ID exclusivo de seu aplicativo. |
 | host | O nome de seu aplicativo que produziu os dados do log. |
 | instance_id | O ID da instância de sua instância do aplicativo que produziu os dados do log. |
 | loglevel | A severidade do evento registrado. |
@@ -52,7 +53,7 @@ lastupdated: "2017-07-19"
 
 
 
-## Formato de log do Kibana para contêineres do Docker que são implementados em uma infraestrutura gerenciada pelo Bluemix
+## Formato de log do Kibana para contêineres do Docker que são implementados em uma infraestrutura gerenciada pela IBM (descontinuado)
 {: #kibana_log_format_containers}
 
 É possível configurar o Kibana para exibição, na página *Descobrir*, dos seguintes campos para cada entrada de log:

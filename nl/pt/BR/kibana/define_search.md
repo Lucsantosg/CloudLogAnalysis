@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -28,7 +29,7 @@ Conclua as tarefas a seguir para definir uma procura customizada:
 
     Para apps Cloud Foundry (CF), veja [ativar o Kibana por meio do painel de um app CF](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
 
-	Para contêineres executados na infraestrutura em nuvem gerenciada pelo {{site.data.keyword.IBM_notm}}, veja [ativar o Kibana por meio do painel de um contêiner](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
+	Para contêineres que são executados na infraestrutura gerenciada pelo {{site.data.keyword.Bluemix_notm}}, veja [ativar o Kibana no painel de um contêiner](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
     
     Para todos os recursos em nuvem, por exemplo, contêineres executados em um cluster do Kubernetes, veja [ativar o Kibana por meio do navegador](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser). 
 	
@@ -39,11 +40,9 @@ recursos do {{site.data.keyword.Bluemix_notm}} nesse espaço.
 filtrar entradas.
 
     **Nota:** use a linguagem de consulta Lucene para definir sua consulta
-customizada. Para obter mais informações, veja [Apache Lucene - Sintaxe do analisador sintático de consulta ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html "Ícone de link externo"){: new_window}
+customizada. Para obter mais informações, veja [Apache Lucene - Sintaxe do analisador sintático de consulta ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}
     
-    Quando o Kibana é ativado por meio do {{site.data.keyword.Bluemix_notm}}, para modificar a
-consulta e definir múltiplos critérios de procura, é possível usar os termos lógicos **AND**
-e **OR**. Esses operadores devem estar em maiúsculas.    
+    Quando o Kibana é ativado na UI do {{site.data.keyword.Bluemix_notm}}, para modificar a consulta e definir múltiplos critérios de procura, é possível usar os termos lógicos **AND** e **OR**. Esses operadores devem estar em maiúsculas.    
     
     * Para procurar uma palavra-chave ou parte de uma palavra-chave, insira uma palavra seguida de um asterisco (*), que é um curinga; por exemplo, `Java*`. 
     * Para procurar uma frase específica, insira essa frase entre aspas duplas (" "); por exemplo, `"Java/1.8.0"`.
@@ -142,13 +141,23 @@ Para iniciar uma nova procura, clique no botão **Nova procura** ![Nova procura]
 ## Salvando uma Procura 
 {: #save_search}
 
-Ao salvar uma procura, a sequência de consultas de procura e o padrão de
+Considere as informações a seguir sobre como salvar procuras customizadas no Kibana:
+
+* Ao salvar uma procura, a sequência de consultas de procura e o padrão de
 índice selecionado atualmente são salvos.
+* Ao abrir uma procura na página *Descobrir* e modificá-la, é possível escolher salvá-la com o mesmo nome ou salvar a procura customizada modificada com um nome diferente. Por padrão, o nome da procura fornecido é aquele que corresponde à procura customizada que você abriu inicialmente.
+
+    * Para salvar a procura customizada modificada com o mesmo nome, clique em **Salvar**. Observe que a procura customizada original é sobrescrita. 
+	
+	* Para salvar a procura customizada modificada com um nome diferente, insira um novo nome no campo **Salvar procura** e, em seguida, clique em **Salvar**. 
+
 
 Conclua as etapas a seguir para salvar uma procura atual na página Descobrir:
 
 1. Na barra de ferramentas da página Descobrir, clique no botão **Salvar procura** ![Salvar procura](images/save_search_icon.jpg "Salvar procura").
 
 2. Digite um nome para a procura.
+
+    **Nota:** ao clicar em **Salvar**, não há nenhum aviso sobre sobrescrever, portanto, se você especifica um nome existente, o salvamento substitui essa versão sem nenhuma indicação.
 
 3. Clique em **Salvar**. 

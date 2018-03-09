@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -241,7 +242,7 @@ Elasticsearch 分析字符串字段的值时，会根据 Unicode Consortium 定�
 ## 设置时间过滤器
 {: #set_time_filter}
 
-通过配置*时间选取器*，查看和过滤某个时间段内的 {{site.data.keyword.Bluemix_notm}} 日志。
+通过配置*时间选取器*，查看和过滤某个时间段内的日志。
 
 
 可以在“发现”页面中配置*时间选取器*。缺省情况下，时间选取器设置为最近 15 分钟。 

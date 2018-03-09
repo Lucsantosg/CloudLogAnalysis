@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -29,7 +30,7 @@ Siga estos pasos para suministrar una instancia del servicio {{site.data.keyword
 
 1. Inicie una sesión en su cuenta de {{site.data.keyword.Bluemix_notm}}.
 
-    El panel de control de {{site.data.keyword.Bluemix_notm}} se puede encontrar en: [http://bluemix.net ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://bluemix.net "Icono de enlace externo"){:new_window}.
+    El panel de control de {{site.data.keyword.Bluemix_notm}} se puede encontrar en: [http://bluemix.net ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://bluemix.net){:new_window}.
     
 	Cuando inicia sesión con su ID de usuario y su contraseña, se abre la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}.
 
@@ -39,7 +40,7 @@ Siga estos pasos para suministrar una instancia del servicio {{site.data.keyword
 
 4. Pulse el mosaico **Análisis de registros**.
 
-5. Seleccione un plan de servicio. De forma predeterminada, se establece el plan **Lite**. 
+5. Seleccione un plan de servicio. De forma predeterminada, se establece el plan **Lite**.
 
     Para obtener más información sobre los planes de servicio, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 	
@@ -52,25 +53,20 @@ Siga estos pasos para suministrar una instancia del servicio {{site.data.keyword
 
 Siga estos pasos para suministrar una instancia del servicio {{site.data.keyword.loganalysisshort}} en {{site.data.keyword.Bluemix_notm}} mediante la línea de mandatos:
 
-1. Instale la CLI de Cloud Foundry (CF). Si la CLI de CF está instalada, continúe con el paso siguiente.
+1. [Requisito previo] Instale la CLI de {{site.data.keyword.Bluemix_notm}}.
 
-   Para obtener más información, consulte [Instalación de la CLI de cf ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://docs.cloudfoundry.org/cf-cli/install-go-cli.html "Icono de enlace externo"){: new_window}. 
+   Para obtener más información, consulte [Instalación de la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   
+   Si la CLI está instalada, continúe en el paso siguiente.
     
-2. Inicie la sesión en una región, organización y espacio de {{site.data.keyword.Bluemix_notm}}. 
+2. Inicie la sesión en la región, organización o espacio en {{site.data.keyword.Bluemix_notm}} donde desea establecer una política de retención de registros. 
 
-    Por ejemplo, para iniciar sesión en la región EE. UU. sur, ejecute el siguiente mandato:
-
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
-
-    Siga las instrucciones. Indique sus credenciales de {{site.data.keyword.Bluemix_notm}}, seleccione una organización y un espacio.
+    Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Ejecute el mandato `cf create-service` para suministrar una instancia.
+3. Ejecute el mandato `bx cf create-service` para suministrar una instancia.
 
     ```
-	cf create-service service_name service_plan service_instance_name
+	bx cf create-service service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -78,20 +74,21 @@ Siga estos pasos para suministrar una instancia del servicio {{site.data.keyword
 	
 	* service_name es el nombre del servicio, que es **ibmLogAnalysis**.
 	* service_plan es el nombre del plan de servicio. Para ver una lista de planes, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
-	* service_instance_name es el nombre que desea utilizar para la nueva instancia de servicio que cree. 	
+	* service_instance_name es el nombre que desea utilizar para la nueva instancia de servicio que cree.
+	
 	Para obtener más información sobre el mandato cf, consulte [cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service).
 
-	Por ejemplo, para crear una instancia del servicio {{site.data.keyword.loganalysisshort}} con un plan gratuito, ejecute el siguiente mandato:
+	Por ejemplo, para crear una instancia del servicio {{site.data.keyword.loganalysisshort}} con el plan Lite, ejecute este mandato:
 	
 	```
-	cf create-service ibmLogAnalysis lite my_logging_svc
+	bx cf create-service ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. Verifique que el servicio se ha creado correctamente. Ejecute el mandato siguiente:
 
     ```	
-	cf services
+	bx cf services
 	```
 	{: codeblock}
 	
@@ -100,9 +97,10 @@ Siga estos pasos para suministrar una instancia del servicio {{site.data.keyword
 	```
     Getting services in org MyOrg / space MySpace as xxx@yyy.com...
     OK
+
     
     name                           service                  plan                   bound apps              last operation
-    my_logging_svc                ibmLogAnalysis               lite                                        create succeeded
+    my_logging_svc                ibmLogAnalysis           standard                                        create succeeded
 	```
 	{: screen}
 

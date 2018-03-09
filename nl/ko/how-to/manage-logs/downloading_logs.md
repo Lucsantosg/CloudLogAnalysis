@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -20,22 +22,19 @@ lastupdated: "2017-07-19"
 
 {{site.data.keyword.Bluemix_notm}} 영역에서 사용 가능한 로그 데이터를 로컬 파일에 다운로드하려면 다음 단계를 완료하십시오. 
 
-시작하기 전에 {{site.data.keyword.Bluemix_notm}} 지역, 조직 및 영역에 로그인하십시오.  
+## 1단계: IBM Cloud에 로그인
 
-예를 들어, 미국 남부 지역에 로그인하려면 다음 명령을 실행하십시오.
-	
-```
-cf login -a https://api.ng.bluemix.net
-```
-{: codeblock}
+{{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
-## 1단계: 어떤 로그가 사용 가능한지 식별
-{: #step1}
+자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 
-1. `cf logging status` 명령을 사용하여 최근 2주 동안 어떤 로그가 사용 가능한지 확인하십시오. 다음 명령을 실행하십시오.
+## 2단계: 사용 가능한 로그 식별
+{: #step2}
+
+1. `bx cf logging status` 명령을 사용하여 최근 2주 동안 사용 가능한 로그를 확인하십시오. 다음 명령을 실행하십시오.
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
@@ -55,8 +54,8 @@ cf login -a https://api.ng.bluemix.net
     **참고:** {{site.data.keyword.loganalysisshort}} 서비스는 협정 세계시(UTC)를 사용하는 글로벌 서비스입니다. 일은 UTC 일로 정의됩니다. 특정 로컬 시간 일에 대한 로그를 가져오기 위해 여러 개의 UTC 일을 다운로드해야 할 수 있습니다.
 
 
-## 2단계: 세션 작성
-{: #step2}
+## 3단계: 세션 작성
+{: #step3}
 
 세션은 다운로드의 상태를 유지하고, 다운로드할 수 있는 로그 데이터의 범위를 정의하기 위해 필요합니다. 
 
@@ -68,7 +67,7 @@ cf login -a https://api.ng.bluemix.net
 *log* 유형의 로그를 다운로드하는 데 사용되는 세션을 작성하려면 다음 명령을 실행하십시오. 
 
 ```
-cf logging session create -t log
+bx cf logging session create -t log
 ```
 {: codeblock}
 
@@ -82,7 +81,7 @@ cf logging session create -t log
 예: 
 
 ```
-$ cf logging session create -t log     
+$ bx cf logging session create -t log
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -104,13 +103,13 @@ $ cf logging session create -t log
 
 **팁:** 활성 세션의 목록을 보려면 [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list) 명령을 실행하십시오.
 
-## 3단계: 파일에 로그 데이터 다운로드
-{: #step3}
+## 4단계: 파일에 로그 데이터 다운로드
+{: #step4}
 
 세션 매개변수에 의해 지정된 로그를 다운로드하려면 다음 명령을 실행하십시오.
 
 ```
-cf logging download -o Log_File_Name Session_ID
+bx cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -122,12 +121,12 @@ cf logging download -o Log_File_Name Session_ID
 예: 
 
 ```
-cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
 
-로그가 다운로드되면서 진행 표시기가 0에서 100% 로 이동합니다.
+로그가 다운로드되면서 진행 표시기가 0에서 100%로 이동합니다.
 
 **참고:** 
 
@@ -135,14 +134,15 @@ cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
 * 압축된 JSON은 ElasticSearch 또는 Logstash에서 수집하기에 적합합니다. -o가 제공되지 않는 경우, 데이터는 사용자의 ELK 스택으로 직접 보낼 수 있도록 stdout로 스트림됩니다.
 * JSON을 구문 분석할 수 있는 모든 프로그램으로 데이터를 처리할 수도 있습니다. 
 
-## 4단계: 세션 삭제
+## 5단계: 세션 삭제
+{: #step5}
 
 다운로드가 완료된 후에 [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete) 명령을 사용하여 세션을 삭제해야 합니다. 
 
 세션을 삭제하려면 다음 명령을 실행하십시오.
 
 ```
-cf logging session delete Session_ID
+bx cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -151,7 +151,7 @@ cf logging session delete Session_ID
 예: 
 
 ```
-cf logging session delete -jshdjsunelsssr4566722==
+bx cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-14"
+  years: 2017, 2018
+lastupdated: "2018-01-10"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2017-07-14"
 ## 日誌汲取
 {: #log_ingestion}
 
-{{site.data.keyword.loganalysisshort}} 服務提供不同的方案。每一個方案都會定義您是否可以將日誌傳送至「日誌收集」。所有方案（不含*精簡* 方案）都可以將日誌傳送至「日誌收集」。如需方案的相關資訊，請參閱[服務方案](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
+{{site.data.keyword.loganalysisshort}} 服務提供不同的方案。所有方案（不含*精簡* 方案）都可以將日誌傳送至「日誌收集」。如需方案的相關資訊，請參閱[服務方案](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
 
 您可以使用 mt-logstash-forwarder，將日誌傳送至 {{site.data.keyword.loganalysisshort}}。如需相關資訊，請參閱[使用多方承租戶 Logstash 轉遞程式 (mt-logstash-forwarder) 傳送日誌資料](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt)。
 
@@ -37,7 +37,8 @@ lastupdated: "2017-07-14"
 
 {{site.data.keyword.loganalysisshort}} 服務提供其他方案，讓您依所需將日誌儲存在「日誌收集」。如需每一個方案價格的相關資訊，請參閱[服務方案](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
 
-您可以配置日誌保留原則，用來定義您要將日誌保留在「日誌收集」中的天數。如需相關資訊，請參閱[日誌保留原則](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies)。
+* 您可以配置日誌保留原則，用來定義您要將日誌保留在「日誌收集」中的天數。如需相關資訊，請參閱[日誌保留原則](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies)。
+* 您可以使用「日誌收集 CLI」或「日誌收集 API」，手動刪除日誌。
 
 
 ## 日誌搜尋

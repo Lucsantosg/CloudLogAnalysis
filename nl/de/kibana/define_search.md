@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -26,7 +27,7 @@ Führen Sie folgende Schritte aus, um eine angepasste Suche zu definieren:
 
     Weitere Informationen zu CF-Apps (CF = Cloud Foundry) finden Sie unter [Kibana über das Dashboard einer CF-App starten](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
 
-	Weitere Informationen zu Containern, die in der von {{site.data.keyword.IBM_notm}} verwalteten Cloudinfrastruktur ausgeführt werden, finden Sie unter [Kibana über das Dashboard eines Containers starten](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
+	Weitere Informationen zu Containern, die in der von {{site.data.keyword.Bluemix_notm}} verwalteten Infrastruktur ausgeführt werden, finden Sie unter [Kibana über das Dashboard eines Containers starten](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
     
     Weitere Informationen zu allen Cloudressourcen (z. B. Container, die in einem Kubernetes-Cluster ausgeführt werden), finden Sie unter [Kibana über den Browser starten](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser). 
 	
@@ -34,17 +35,17 @@ Führen Sie folgende Schritte aus, um eine angepasste Suche zu definieren:
 
 2. Prüfen Sie auf der Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Auf der Seite 'Discover' angezeigte Daten ermitteln](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data). Ändern Sie anschließend die Standardabfrage zum Filtern der Einträge.
 
-    **Hinweis** Verwenden Sie die Abfragesprache Lucene zum Definieren Ihrer angepassten Abfrage. Weitere Informationen finden Sie unter [Apache Lucene - Query Parser Syntax![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html "Symbol für externen Link"){: new_window}.
+    **Hinweis** Verwenden Sie die Abfragesprache Lucene zum Definieren Ihrer angepassten Abfrage. Weitere Informationen finden Sie unter [Apache Lucene - Query Parser Syntax![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}.
     
-    Wenn Kibana über {{site.data.keyword.Bluemix_notm}} gestartet wird, können Sie die logischen Operatoren **AND** und **OR** verwenden, um die Abfrage zu ändern und um verschiedene Suchkriterien zu definieren. Diese Operatoren müssen in Großbuchstaben geschrieben werden.    
+    Wenn Kibana über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle gestartet wird, können Sie die logischen Operatoren **AND** und **OR** verwenden, um die Abfrage zu ändern und um verschiedene Suchkriterien zu definieren. Diese Operatoren müssen in Großbuchstaben geschrieben werden.    
     
-    * Um nach einem Schlüsselwort bzw. einem Teil eines Schlüsselworts zu suchen, geben Sie ein Wort ein, gefolgt von einem Stern (*), der als Platzhalterzeichen dient; Beispiel: `Java*`.  
-    * Um nach einem bestimmten Ausdruck zu suchen, geben Sie den Ausdruck in doppelten Anführungszeichen ein (" "); Beispiel: `"Java/1.8.0"`. 
+    * Um nach einem Schlüsselwort bzw. einem Teil eines Schlüsselworts zu suchen, geben Sie ein Wort ein, gefolgt von einem Stern (*), der als Platzhalterzeichen dient; Beispiel: `Java*`. 
+    * Um nach einem bestimmten Ausdruck zu suchen, geben Sie den Ausdruck in doppelten Anführungszeichen ein (" "); Beispiel: `"Java/1.8.0"`.
     * Um komplexere Suchen zu erstellen, können Sie die logischen Operatoren AND und OR verwenden; `"Java/1.8.0" OR "Java/1.7.0"`.
     * Um in einem bestimmten Feld nach einem Wert zu suchen, geben Sie Ihre Suche in folgendem Format ein: *Protokollfeldname:Suchbegriff*; z. B. `instance_id:"1"`.
     * Um nach einem Wertebereich für ein bestimmtes Protokollfeld zu suchen, geben Sie Ihre Suche in folgendem Format ein: *Protokollfeldname:[Anfang_des_Bereichs TO Ende_des_Bereichs]*; z. B. `instance_id:["1" TO "2"]`.
 
-     Beispiel: Für eine CF-App können Sie die Abfrage `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]` erstellen, die nur die Einträge für die Instanzen *0* und *1* auflistet.  
+     Beispiel: Für eine CF-App können Sie die Abfrage `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]` erstellen, die nur die Einträge für die Instanzen *0* und *1* auflistet. 
 
 3. Speichern Sie die Abfrage, sodass Sie sie später wiederverwenden können. Weitere Informationen finden Sie unter [Suche speichern](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search). 
 
@@ -126,7 +127,15 @@ Um eine neue Suche zu starten, klicken Sie auf die Schaltfläche **New Search** 
 ## Suche speichern 
 {: #save_search}
 
-Wenn Sie eine Suche speichern, werden die Suchabfragezeichenfolge und das zu diesem Zeitpunkt ausgewählte Indexmuster gespeichert.
+Beachten Sie die die folgenden Informationen zum Speichern angepasster Suchen in Kibana:
+
+* Wenn Sie eine Suche speichern, werden die Suchabfragezeichenfolge und das zu diesem Zeitpunkt ausgewählte Indexmuster gespeichert.
+* Wenn Sie auf der Seite *Discover* eine Suche öffnen und ändern, können Sie sie entweder unter demselben Namen oder die geänderte angepasste Suche unter einem anderen Namen speichern. Standardmäßig ist der angegebene Name der Name, der der angepassten Suche entspricht, die Sie ursprünglich geöffnet haben.
+
+    * Um die angepasste Suche unter demselben Namen zu speichern, klicken Sie auf **Save**. Beachten Sie, dass die ursprüngliche angepasste Suche überschrieben wird. 
+	
+	* Um die angepasste Suche unter einem anderen Namen zu speichern, geben Sie einen neuen Namen im Feld **Save Search** ein und klicken Sie dann auf **Save**. 
+
 
 Führen Sie die folgenden Schritte aus, um die aktuelle Suche auf der Seite 'Discover' zu speichern:
 
@@ -134,4 +143,6 @@ Führen Sie die folgenden Schritte aus, um die aktuelle Suche auf der Seite 'Dis
 
 2. Geben Sie einen Namen für die Suche ein.
 
-3. Klicken Sie auf **Save**.  
+    **Hinweis:** Wenn Sie auf **Save** klicken, wird keine Warnung zum Überschreiben angezeigt, d. h., wenn Sie einen vorhandenen Namen angeben, wird beim Speichern diese Version ohne einen entsprechenden Hinweis ersetzt.
+
+3. Klicken Sie auf **Save**. 

@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -272,8 +273,7 @@ no campo *mensagem*.
 ## Configurando um filtro de tempo
 {: #set_time_filter}
 
-Visualize e filtre logs do {{site.data.keyword.Bluemix_notm}} dentro de um período de tempo
-configurando o *Selecionador de tempo*.
+Visualize e filtre logs dentro de um período configurando o *Selecionador de horário*.
 
 É possível configurar o *Selecionador de tempo* na página Descobrir. Por padrão, ele é
 configurado para os últimos 15 minutos. 

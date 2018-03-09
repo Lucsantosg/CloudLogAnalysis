@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -75,7 +76,7 @@ Complete los siguientes pasos para crear una visualización desde la página Vis
 
         Para obtener más información, consulte [Filtrado de registros mediante la definición de consultas personalizadas](define_search.html#define_search).
 
-Para obtener más información sobre Kibana, consulte la [Guía del usuario de Kibana ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Icono de enlace externo"){: new_window}.
+Para obtener más información sobre Kibana, consulte la [Guía del usuario de Kibana ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 
 ## Supresión de una visualización
@@ -83,7 +84,7 @@ Para obtener más información sobre Kibana, consulte la [Guía del usuario de K
 
 Para suprimir una visualización, siga los pasos siguientes en la página **Gestión**:
 
-1. En la página **Gestión**, seleccione el separador **Objetos avanzados**.
+1. En la página **Gestión**, seleccione **Objetos guardados**.
 
 2. En el separador **Visualizaciones**, seleccione las visualizaciones que desea suprimir.
 
@@ -95,7 +96,7 @@ Para suprimir una visualización, siga los pasos siguientes en la página **Gest
 
 Para exportar una visualización como archivo JSON, siga los pasos siguientes en la página **Gestión**:
 
-1. En la página **Gestión**, seleccione el separador **Objetos avanzados**.
+1. En la página **Gestión**, seleccione **Objetos guardados**.
 
 2. En el separador **Visualizaciones**, seleccione la visualización que desea exportar.
 
@@ -108,7 +109,7 @@ Para exportar una visualización como archivo JSON, siga los pasos siguientes en
 
 Para importar una visualización como archivo JSON, siga los pasos siguientes en la página **Gestión**:
 
-1. En la página **Gestión**, seleccione el separador **Objetos avanzados**.
+1. En la página **Gestión**, seleccione **Objetos guardados**.
 
 2. En el separador **Visualizaciones**, seleccione **Importar**.
 

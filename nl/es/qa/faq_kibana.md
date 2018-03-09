@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -22,9 +23,12 @@ A continuación encontrará las respuestas a preguntas comunes sobre cómo utili
 
 * [¿Qué puedo hacer si no veo datos en la página Descubrir en Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_discover_kibana)
 * [¿Qué puedo hacer si recibo una excepción de autenticación?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_dashboard_kibana)
-* [¿Cómo inicio Kibana 3?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
+* [Cómo se inicia Kibana 3 o Kibana 4](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
 * [¿Por qué veo el símbolo ? en campos de la página Descubrir de Kibana? ](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
 * [Recibo un error 403 cuando intento cambiar el patrón de índice predeterminado](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
+* [El URL abreviado no funciona](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
+* [¿Puedo buscar registros de mi cuenta en Bluemix?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
+
 
 ## ¿Qué puedo hacer si no veo datos en la página Descubrir en Kibana
 {: #logging_qa_no_data_discover_kibana}
@@ -74,20 +78,20 @@ Para solucionar este problema, siga estos pasos:
 
     Si comparte el Panel de control, no suprima visualizaciones ya que esto afectaría a otros miembros del equipo que utilicen el mismo panel de control.
 
-## ¿Cómo inicio Kibana 3?
+## ¿Cómo inicio Kibana 3 o Kibana 4?
 {: #logging_qa_kibana3}
 
 **Nota:** Kibana 3 está en desuso.
 
-Kibana 3 se puede iniciar desde un navegador.
+Kibana 3 o Kibana 4 se pueden iniciar desde un navegador.
 
-Complete el siguiente paso para iniciar Kibana 3 desde un navegador:
+Complete el siguiente paso para iniciar Kibana desde un navegador:
 
 1. Abra [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net) para iniciar una sesión en la interfaz de usuario de Kibana.
     
 2. Seleccione la versión de Kibana que desea utilizar para analizar los registros.
     * Seleccione el separador **Kibana 4** para trabajar con Kibana 4. Se abrirá la página Descubrir. Para obtener más información, consulte [Análisis interactivo de registros en Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_kibana_analize_logs_interactively.html#kibana_analize_logs_interactively).
-    * Seleccione el separador **Kibana 3** para trabajar con Kibana 3. Se abrirá el panel de control de Kibana predeterminado. Para obtener información sobre cómo utilizar Kibana 3 para analizar registros, consulte [Análisis de registros en Kibana 3 (en desuso)](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3). Para obtener más información sobre cómo personalizar un panel de control de Kibana 3, consulte [este artículo del blog ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/ "Icono de enlace externo"){: new_window}.
+    * Seleccione el separador **Kibana 3** para trabajar con Kibana 3. Se abrirá el panel de control de Kibana predeterminado. Para obtener información sobre cómo utilizar Kibana 3 para analizar registros, consulte [Análisis de registros en Kibana 3 (en desuso)](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3). Para obtener más información sobre cómo personalizar un panel de control de Kibana 3, consulte [este artículo del blog ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/){: new_window}.
      
 
 ## ¿Por qué veo el símbolo ? en campos de la página Descubrir en Kibana?
@@ -103,4 +107,20 @@ El patrón de índice predeterminado no se puede cambiar.
 
 Si intenta definir un patrón de índice diferente como nuevo predeterminado, recibirá el error siguiente: `Config: Error 403 Prohibido`
 
+## El URL abreviado no funciona
+{: #short_url}
+
+No se da soporte a la compartición de una búsqueda, una visualización o un panel de control. Por lo tanto, el URL abreviado correspondiente a un objeto Kibana que desea compartir tampoco funciona.  
+
+## ¿Puedo buscar registros de mi cuenta en Bluemix?
+{: #acc_logs_1}
+
+Como propietario de una cuenta, puede buscar y analizar los registros de su cuenta. 
+
+Siga estos pasos para obtener para ver los registros de su cuenta:
+
+
+1. [Inicie Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) Por ejemplo, para la región EE.UU. Sur, utilice el URL https://logging.ng.bluemix.net
+
+2. Seleccione la opción **Ver registros de la cuenta NombreCuenta** para ver los registros de la cuenta. *NombreCuenta* es el nombre de la cuenta. 
 

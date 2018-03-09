@@ -1,10 +1,9 @@
 ---
 
 copyright:
+  years: 2017, 2018
 
-  years: 2017
-
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -14,14 +13,15 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# IBM Cloud Log Analysis - Befehlszeilenschnittstelle
+# IBM Cloud Log Analysis-Befehlszeilenschnittstelle (CF-Plug-in)
 {: #logging_cli}
 
 Die Befehlszeilenschnittstelle von {{site.data.keyword.loganalysislong}} ist ein Plug-in zur Verwaltung der Protokolle für Cloudressourcen, die in einem Bereich einer {{site.data.keyword.Bluemix}}-Organisation ausgeführt werden.
 {: shortdesc}
 
 **Voraussetzungen**
-* Bevor Sie die Protokollierungsbefehle ausführen, müssen Sie sich bei {{site.data.keyword.Bluemix_notm}} mit dem Befehl `cf login` anmelden, um ein {{site.data.keyword.Bluemix_short}}-Zugriffstoken zu generieren und um Ihre Sitzung zu authentifizieren.
+* Bevor Sie die Protokollierungsbefehle ausführen, müssen Sie sich bei {{site.data.keyword.Bluemix_notm}} mit dem Befehl `bx login` anmelden, um ein {{site.data.keyword.Bluemix_short}}-Zugriffstoken
+ zu generieren und um Ihre Sitzung zu authentifizieren. Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 Informationen zur Verwendung der Befehlszeilenschnittstelle von {{site.data.keyword.loganalysisshort}} finden Sie unter [Protokolle verwalten](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov).
 
@@ -32,59 +32,59 @@ Informationen zur Verwendung der Befehlszeilenschnittstelle von {{site.data.keyw
     <th>Verwendungszweck</th>
   </tr>
   <tr>
-    <td>[cf logging](#base)</td>
+    <td>[bx cf logging](#base)</td>
     <td>Mit diesem Befehl können Informationen über die Befehlszeilenschnittstelle (CLI) - wie z. B. die Version oder die Liste der Befehle - abgerufen werden.</td>
   </tr>
   <tr>
-    <td>[cf logging auth](#auth)</td>
+    <td>[bx cf logging auth](#auth)</td>
     <td>Verwenden Sie diesen Befehl, um das Protokollierungstoken anzufordern, mit dem Sie Protokolle an den {{site.data.keyword.loganalysisshort}}-Service senden können.</td>
   </tr>
   <tr>
-    <td>[cf logging delete](#delete)</td>
+    <td>[bx cf logging delete](#delete)</td>
     <td>Mit diesem Befehl können Sie Protokolle löschen, die in 'Log Collection' gespeichert sind.</td>
   </tr>
   <tr>
-    <td>[cf logging download (Beta)](#download)</td>
-    <td>Verwenden Sie diesen Befehl, um Protokolle aus 'Log Collection' in eine lokale Datei herunterzuladen oder um Protokolle an ein anderes Programm (wie z. B. ELK-Stack) umzuleiten. </td>
+    <td>[bx cf logging download (Beta)](#download)</td>
+    <td>Verwenden Sie diesen Befehl, um Protokolle aus 'Log Collection' in eine lokale Datei herunterzuladen oder um Protokolle an ein anderes Programm (wie z. B. Elastic Stack) umzuleiten. </td>
   </tr>
   <tr>
-    <td>[cf logging help](#help)</td>
+    <td>[bx cf logging help](#help)</td>
     <td>Mit diesem Befehl können Sie Hilfeinformationen zur Verwendung der Befehlszeilenschnittstelle und eine Liste aller Befehle abrufen.</td>
   </tr>
   <tr>
-    <td>[cf logging option](#option)</td>
-    <td>Verwenden Sie diesen Befehl zum Anzeigen oder Festlegen des Aufbewahrungszeitraums für Protokolle, die in einem {{site.data.keyword.Bluemix_notm}}-Bereich oder -Konto verfügbar sind.</td>
+    <td>[bx cf logging option](#option)</td>
+    <td>Verwenden Sie diesen Befehl zum Anzeigen oder Festlegen des Aufbewahrungszeitraums für Protokolle, die in einem Bereich oder Konto verfügbar sind.</td>
   </tr>
   <tr>
-    <td>[cf logging session create (Beta)](#session_create)</td>
+    <td>[bx cf logging session create (Beta)](#session_create)</td>
     <td>Mit diesem Befehl können Sie eine neue Sitzung erstellen.</td>
   <tr>
   <tr>
-    <td>[cf logging session delete (Beta)](#session_delete)</td>
+    <td>[bx cf logging session delete (Beta)](#session_delete)</td>
     <td>Mit diesem Befehl können Sie eine Sitzung löschen.</td>
   <tr>  
   <tr>
-    <td>[cf logging session list (Beta)](#session_list)</td>
+    <td>[bx cf logging session list (Beta)](#session_list)</td>
     <td>Verwenden Sie diesen Befehl, um die aktiven Sitzungen und die zugehörigen IDs aufzulisten.</td>
   <tr>  
   <tr>
-    <td>[cf logging session show (Beta)](#session_show)</td>
+    <td>[bx cf logging session show (Beta)](#session_show)</td>
     <td>Verwenden Sie diesen Befehl, um den Status einer einzelnen Sitzung anzuzeigen.</td>
   <tr>  
   <tr>
-    <td>[cf logging status](#status)</td>
-    <td>Verwenden Sie diesen Befehl, um Informationen zu den Protokollen abzurufen, die in einem {{site.data.keyword.Bluemix_notm}}-Bereich oder -Konto erfasst werden.</td>
+    <td>[bx cf logging status](#status)</td>
+    <td>Verwenden Sie diesen Befehl, um Informationen zu den Protokollen abzurufen, die in einem Bereich oder Konto erfasst werden.</td>
   </tr>
   </table>
 
 
-## cf logging
+## bx cf logging
 {: #base}
 
 Dieser Befehl stellt Informationen zur Version und Verwendungsweise der Befehlszeilenschnittstelle bereit.
 
 ```
-cf logging [parameters]
+bx cf logging [Parameter]
 ```
 {: codeblock}
 
@@ -104,19 +104,19 @@ cf logging [parameters]
 Um die Liste der Befehle abzurufen, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging --help
+bx cf logging --help
 ```
 {: codeblock}
 
 Um die Version der Befehlszeilenschnittstelle abzurufen, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging --version
+bx cf logging --version
 ```
 {: codeblock}
 
 
-## cf logging auth
+## bx cf logging auth
 {: #auth}
 
 Dieser Befehl gibt das Protokollierungstoken zurück, mit dem Sie Protokolle an den {{site.data.keyword.loganalysisshort}}-Service senden können. 
@@ -124,7 +124,7 @@ Dieser Befehl gibt das Protokollierungstoken zurück, mit dem Sie Protokolle an 
 **Hinweis:** Das Token ist unbegrenzt gültig.
 
 ```
-cf logging auth
+bx cf logging auth
 ```
 {: codeblock}
 
@@ -144,13 +144,13 @@ cf logging auth
   </dd>
 </dl>
 
-## cf logging delete
+## bx cf logging delete
 {: #delete}
 
 Mit diesem Befehl können Sie Protokolle löschen, die in 'Log Collection' gespeichert sind.
 
 ```
-cf logging delete [Parameter]
+bx cf logging delete [Parameter]
 ```
 {: codeblock}
 
@@ -158,7 +158,7 @@ cf logging delete [Parameter]
 
 <dl>
   <dt>--start Wert, -s Wert</dt>
-  <dd>(Optional) Legt das Startdatum in koordinierter Weltzeit (UTC) fest: *JJJJ-MM-TT*, z. B. `2006-01-02`. <br>Der Standardwert ist auf 'vor zwei Wochen' festgelegt.
+  <dd>(Optional) Legt das Startdatum in koordinierter Weltzeit (UTC) fest: *JJJJ-MM-TT*, z. B `2006-01-02`. <br>Der Standardwert ist auf 'vor zwei Wochen' festgelegt.
   </dd>
   
   <dt>--end Wert, -e Wert</dt>
@@ -176,23 +176,23 @@ cf logging delete [Parameter]
 
 **Beispiel**
 
-Führen Sie den folgenden Befehl aus, um die Protokolle des Typs *linux_syslog* für den 25. Mai 2017 zu löschen: 
+Führen Sie den folgenden Befehl aus, um die Protokolle des Typs *linux_syslog* für den 25. Mai 2017 zu löschen:
 ```
-cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: codeblock}
 
 
 
-## cf logging download (Beta)
+## bx cf logging download (Beta)
 {: #download}
 
-Mit diesem Befehl können Sie Protokolle aus 'Log Collection' in eine lokale Datei herunterladen oder Protokolle an ein anderes Programm (zum Beispiel Elastic Stack) umleiten.  
+Mit diesem Befehl können Sie Protokolle aus 'Log Collection' in eine lokale Datei herunterladen oder Protokolle an ein anderes Programm (zum Beispiel Elastic Stack) umleiten. 
 
-**Hinweis:** Um Dateien herunterladen zu können, müssen Sie zuerst eine Sitzung erstellen. Eine Sitzung definiert die herunterzuladenden Protokolle abhängig vom Datumsbereich, vom Protokolltyp und vom Kontotyp. Sie laden Protokolle im Kontext einer Sitzung herunter. Weitere Informationen finden Sie unter [cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create). 
+**Hinweis:** Um Dateien herunterladen zu können, müssen Sie zuerst eine Sitzung erstellen. Eine Sitzung definiert die herunterzuladenden Protokolle abhängig vom Datumsbereich, vom Protokolltyp und vom Kontotyp. Sie laden Protokolle im Kontext einer Sitzung herunter. Weitere Informationen finden Sie unter [bx cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
 
 ```
-cf logging download [Parameter] [Argumente]
+bx cf logging download [Parameter] [Argumente]
 ```
 {: codeblock}
 
@@ -207,24 +207,24 @@ cf logging download [Parameter] [Argumente]
 
 <dl>
 <dt>session_ID</dt>
-<dd>Geben Sie hierfür den Wert der Sitzungs-ID an, den Sie erhalten, wenn Sie den Befehl `cf logging session create` ausführen. Dieser Wert gibt an, welche Sitzung beim Herunterladen der Protokolle verwendet werden soll. <br>**Hinweis:** Der Befehl `cf logging session create` enthält die Parameter, die steuern, welche Protokolle heruntergeladen werden. </dd>
+<dd>Geben Sie hierfür den Wert der Sitzungs-ID an, den Sie erhalten, wenn Sie den Befehl `bx cf logging session create` ausführen. Dieser Wert gibt an, welche Sitzung beim Herunterladen der Protokolle verwendet werden soll. <br>**Hinweis:** Der Befehl `bx cf logging session create` enthält die Parameter, die steuern, welche Protokolle heruntergeladen werden. </dd>
 </dl>
 
 **Hinweis:** Wenn der Download abgeschlossen ist, hat ein nochmaliges Ausführen desselben Befehls keinerlei Auswirkung. Um dieselben Daten erneut herunterzuladen, müssen Sie eine andere Datei oder eine andere Sitzung verwenden.
 
 **Beispiele**
 
-Um Protokolle in eine Datei mit dem Namen mylogs.gz herunterzuladen, führen Sie den folgenden Befehl aus:
+Um unter Linux Protokolle in eine Datei mit dem Namen 'mylogs.gz' herunterzuladen, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
-Führen Sie den folgenden Befehl aus, um Protokolle in eine eigene Elastic Stack-Instanz herunterzuladen: 
+Führen Sie den folgenden Befehl aus, um Protokolle in eine eigene Elastic Stack-Instanz herunterzuladen:
 
 ```
-cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+bx cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -245,13 +245,13 @@ output {
 {: screen}
 
 
-## cf logging help
+## bx cf logging help
 {: #help}
 
 Dieser Befehl bietet Hinweise zur Verwendung eines Befehls.
 
 ```
-cf logging help [Parameter]
+bx cf logging help [Befehl]
 ```
 {: codeblock}
 
@@ -269,23 +269,23 @@ cf logging help [Parameter]
 Um Hilfeinformationen zu dem Befehl abzurufen, mit dem Sie den Status von Protokollen anzeigen können, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging help status
+bx cf logging help status
 ```
 {: codeblock}
 
 
-## cf logging option
+## bx cf logging option
 {: #option}
 
-Mit diesem Befehl können Sie den Aufbewahrungszeitraum für Protokolle anzeigen oder ändern, die in einem {{site.data.keyword.Bluemix_notm}}-Bereich oder -Konto verfügbar sind. 
+Mit diesem Befehl können Sie den Aufbewahrungszeitraum für Protokolle anzeigen oder ändern, die in einem Bereich oder Konto verfügbar sind. 
 
 * Der Zeitraum wird als eine Anzahl von Tagen festgelegt.
-* Der Standardwert ist **-1**.  
+* Der Standardwert ist **-1**. 
 
-**Hinweis:** Standardmäßig werden alle Protokolle gespeichert. Sie müssen sie manuell mit dem Befehl **delete** löschen. Definieren Sie eine Aufbewahrungsrichtlinie zum automatischen Löschen der Protokolle. 
+**Hinweis:** Standardmäßig werden alle Protokolle gespeichert. Sie müssen sie manuell mit dem Befehl **delete** löschen. Definieren Sie eine Aufbewahrungsrichtlinie zum automatischen Löschen der Protokolle.
 
 ```
-cf logging option [Parameter]
+bx cf logging option [Parameter]
 ```
 {: codeblock}
 
@@ -293,18 +293,19 @@ cf logging option [Parameter]
 
 <dl>
 <dt>--retention Wert, -r Wert</dt>
-<dd>(Optional) Legt die Aufbewahrungsdauer (Anzahl Tage) fest. <br> Der Standardwert ist 30 Tage.</dd>
+<dd>(Optional) Legt die Aufbewahrungsdauer (Anzahl Tage) fest. <br> Der Standardwert ist *-1* Tage.</dd>
 
 <dt>--at-account-level, -a </dt>
-  <dd>(Optional) Legt den Geltungsbereich auf Kontoebene fest. <br>**Hinweis:** Legen Sie diesen Wert fest, um Kontoinformationen abzurufen. <br>Erfolgt keine Angabe für diesen Parameter, wird der Standardwert für den aktuellen Bereich auf *-1* festgelegt. Dabei handelt es sich um den Bereich, an dem Sie sich mit dem Befehl `cf login` angemeldet haben. </dd>
+  <dd>(Optional) Legt den Geltungsbereich auf Kontoebene fest. <br>Erfolgt keine Angabe für diesen Parameter, wird der Standardwert für den aktuellen Bereich auf *-1* festgelegt. Dabei handelt es sich um den Bereich, an dem Sie sich mit dem Befehl `bx cf login` angemeldet haben.
+  </dd>
 </dl>
 
 **Beispiele**
 
-Um den aktuellen Aufbewahrungszeitraum für den Bereich anzuzeigen, bei dem Sie angemeldet sind, führen Sie den folgenden Befehl aus:
+Um den aktuellen Standardaufbewahrungszeitraum für den Bereich anzuzeigen, bei dem Sie angemeldet sind, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging option
+bx cf logging option
 ```
 {: codeblock}
 
@@ -314,7 +315,7 @@ Die Ausgabe sieht wie folgt aus:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        30 |
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        -1 |
 +--------------------------------------+-----------+
 ```
 {: screen}
@@ -323,7 +324,7 @@ Die Ausgabe sieht wie folgt aus:
 Um den Aufbewahrungszeitraum für den Bereich, bei dem Sie angemeldet sind, in 25 Tage zu ändern, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging option -r 25
+bx cf logging option -r 25
 ```
 {: codeblock}
 
@@ -333,13 +334,13 @@ Die Ausgabe sieht wie folgt aus:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        25 |
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        25 |
 +--------------------------------------+-----------+
 ```
 {: screen}
 
 
-## cf logging session create (Beta)
+## bx cf logging session create (Beta)
 {: #session_create}
 
 Mit diesem Befehl können Sie eine neue Sitzung erstellen.
@@ -347,7 +348,7 @@ Mit diesem Befehl können Sie eine neue Sitzung erstellen.
 **Hinweis:** Sie können bis zu 30 Sitzungen in einem Bereich gleichzeitig ausführen. Die Sitzung wird für einen Benutzer erstellt. Sitzungen können nicht von verschiedenen Benutzern in einem Bereich gemeinsam genutzt werden.
 
 ```
-cf logging session create [Parameter]
+bx cf logging session create [Parameter]
 ```
 {: codeblock}
 
@@ -355,7 +356,7 @@ cf logging session create [Parameter]
 
 <dl>
   <dt>--start Wert, -s Wert</dt>
-  <dd>(Optional) Legt das Startdatum in koordinierter Weltzeit (UTC) fest: *JJJJ-MM-TT*, z. B. `2006-01-02`. <br>Der Standardwert ist auf 'vor zwei Wochen' festgelegt.
+  <dd>(Optional) Legt das Startdatum in koordinierter Weltzeit (UTC) fest: *JJJJ-MM-TT*, z. B `2006-01-02`. <br>Der Standardwert ist auf 'vor zwei Wochen' festgelegt.
   </dd>
   
   <dt>--end Wert, -e Wert</dt>
@@ -367,7 +368,7 @@ cf logging session create [Parameter]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Optional) Legt den Geltungsbereich auf Kontoebene fest. <br>**Hinweis:** Legen Sie diesen Wert fest, um Kontoinformationen abzurufen. <br>Erfolgt keine Angabe für diesen Parameter, wird der Standardwert nur auf den aktuellen Bereich gesetzt. Dabei handelt es sich um den Bereich, bei dem Sie sich mit dem Befehl `cf login` angemeldet haben.
+  <dd>(Optional) Legt den Geltungsbereich auf Kontoebene fest. <br>Erfolgt keine Angabe für diesen Parameter, wird der Standardwert nur auf den aktuellen Bereich gesetzt. Dabei handelt es sich um den Bereich, bei dem Sie sich mit dem Befehl `bx cf login` angemeldet haben.
   </dd>
 </dl>
 
@@ -384,7 +385,7 @@ cf logging session create [Parameter]
 <dd>Gibt den Datumsbereich (Tage) an, der verwendet wird, um Protokolle zu filtern. Die Protokolle, die in diesem Datumsbereich ermittelt werden, können über die Sitzung verwaltet werden.</dd>
 
 <dt>ID</dt>
-<dd>Sitzungs-ID. </dd>
+<dd>Sitzungs-ID.</dd>
 
 <dt>Space</dt>
 <dd>ID des Bereichs, für den die Sitzung aktiv ist.</dd>
@@ -399,21 +400,21 @@ cf logging session create [Parameter]
 
 **Beispiel**
 
-Führen Sie den folgenden Befehl aus, um eine Sitzung zu erstellen, in der Protokolle vom 20. Mai 2017 bis zum 26. Mai 2017 für den Protokolltyp *log* enthalten sind. 
+Führen Sie den folgenden Befehl aus, um eine Sitzung zu erstellen, in der Protokolle vom 20. Mai 2017 bis zum 26. Mai 2017 für den Protokolltyp *log* enthalten sind.
 
 ```
-cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
+bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 ```
 {: screen}
 
 
-## cf logging session delete (Beta)
+## bx cf logging session delete (Beta)
 {: #session_delete}
 
 Löscht eine Sitzung, die durch die Sitzungs-ID angegeben ist.
 
 ```
-cf logging session delete [Argumente]
+bx cf logging session delete [Argumente]
 ```
 {: codeblock}
 
@@ -421,7 +422,7 @@ cf logging session delete [Argumente]
 
 <dl>
 <dt>session ID</dt>
-<dd>ID der Sitzung, die Sie löschen wollen. <br>Mit dem Befehl `cf logging session list` können Sie alle aktiven Sitzungs-IDs abrufen.</dd>
+<dd>ID der Sitzung, die Sie löschen wollen. <br>Mit dem Befehl `bx cf logging session list` können Sie alle aktiven Sitzungs-IDs abrufen.</dd>
 </dl>
 
 **Beispiel**
@@ -429,19 +430,19 @@ cf logging session delete [Argumente]
 Um eine Sitzung mit der Sitzungs-ID *cI6hvAa0KR_tyhjxZZz9Uw==* zu löschen, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
+bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## cf logging session list (Beta)
+## bx cf logging session list (Beta)
 {: #session_list}
 
 Listet die aktiven Sitzungen und ihre IDs auf.
 
 ```
-cf logging session list 
+bx cf logging session list 
 ```
 {: codeblock}
 
@@ -449,7 +450,7 @@ cf logging session list
 
 <dl>
 <dt>ID</dt>
-<dd>Sitzungs-ID. </dd>
+<dd>Sitzungs-ID.</dd>
 
 <dt>SPACE</dt>
 <dd>ID des Bereichs, für den die Sitzung aktiv ist.</dd>
@@ -458,20 +459,20 @@ cf logging session list
 <dd>{{site.data.keyword.IBM_notm}} ID des Benutzers, der die Sitzung erstellt hat.</dd>
 
 <dt>CREATE-TIME</dt>
-<dd>Zeitmarke des Zeitpunkts (Datum und Uhrzeit), als die Sitzung erstellt wurde. </dd>
+<dd>Zeitmarke des Zeitpunkts (Datum und Uhrzeit), als die Sitzung erstellt wurde.</dd>
 
 <dt>ACCESS-TIME</dt>
-<dd>Zeitmarke, die angibt, wann die Sitzung zum letzten Mal verwendet wurde. </dd>
+<dd>Zeitmarke, die angibt, wann die Sitzung zum letzten Mal verwendet wurde.</dd>
 </dl>
  
 
-## cf logging session show (Beta)
+## bx cf logging session show (Beta)
 {: #session_show}
 
 Zeigt den Status einer einzelnen Sitzung.
 
 ```
-cf logging session show [Argumente]
+bx cf logging session show [Argumente]
 ```
 {: codeblock}
 
@@ -495,7 +496,7 @@ cf logging session show [Argumente]
 <dd>Gibt den Datumsbereich (Tage) an, der verwendet wird, um Protokolle zu filtern. Die Protokolle, die in diesem Datumsbereich ermittelt werden, können über die Sitzung verwaltet werden.</dd>
 
 <dt>ID</dt>
-<dd>Sitzungs-ID. </dd>
+<dd>Sitzungs-ID.</dd>
 
 <dt>Space</dt>
 <dd>ID des Bereichs, für den die Sitzung aktiv ist.</dd>
@@ -512,18 +513,18 @@ cf logging session show [Argumente]
 Um Details zu einer Sitzung mit der Sitzungs-ID *cI6hvAa0KR_tyhjxZZz9Uw==* anzuzeigen, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
+bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
-## cf logging status
+## bx cf logging status
 {: #status}
 
-Verwenden Sie diesen Befehl, um Informationen zu den Protokollen abzurufen, die in einem {{site.data.keyword.Bluemix_notm}}-Bereich oder -Konto erfasst werden.
+Verwenden Sie diesen Befehl, um Informationen zu den Protokollen abzurufen, die in einem Bereich oder Konto erfasst werden.
 
 ```
-cf logging status [Parameter]
+bx cf logging status [Parameter]
 ```
 {: codeblock}
 
@@ -531,7 +532,7 @@ cf logging status [Parameter]
 
 <dl>
   <dt>--start Wert, -s Wert</dt>
-  <dd>(Optional) Legt das Startdatum in koordinierter Weltzeit (UTC) fest: *JJJJ-MM-TT*, z. B. `2006-01-02`. <br>Der Standardwert ist auf 'vor zwei Wochen' festgelegt.
+  <dd>(Optional) Legt das Startdatum in koordinierter Weltzeit (UTC) fest: *JJJJ-MM-TT*, z. B `2006-01-02`. <br>Der Standardwert ist auf 'vor zwei Wochen' festgelegt.
   </dd>
   
   <dt>--end Wert, -e Wert</dt>
@@ -543,7 +544,7 @@ cf logging status [Parameter]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Optional) Legt den Geltungsbereich auf Kontoebene fest. <br> **Hinweis:** Legen Sie diesen Wert fest, um Kontoinformationen abzurufen. <br>Erfolgt keine Angabe für diesen Parameter, wird der Standardwert nur auf den aktuellen Bereich gesetzt. Dabei handelt es sich um den Bereich, bei dem Sie sich mit dem Befehl `cf login` angemeldet haben.
+  <dd>(Optional) Legt den Geltungsbereich auf Kontoebene fest. <br> **Hinweis:** Legen Sie diesen Wert fest, um Kontoinformationen abzurufen. <br>Erfolgt keine Angabe für diesen Parameter, wird der Standardwert nur auf den aktuellen Bereich gesetzt. Dabei handelt es sich um den Bereich, bei dem Sie sich mit dem Befehl `bx cf login` angemeldet haben.
   </dd>
   
   <dt>--list-type-detail, -l</dt>
@@ -551,6 +552,6 @@ cf logging status [Parameter]
   </dd>
 </dl>
 
-**Hinweis:** Der Befehl `cf logging status` meldet nur die Protokolle der letzten beiden Wochen, die in 'Log Collection' gespeichert sind, wenn kein Start- und Enddatum angegeben ist.
+**Hinweis:** Der Befehl `bx cf logging status` meldet nur die Protokolle der letzten beiden Wochen, die in 'Log Collection' gespeichert sind, wenn kein Start- und Enddatum angegeben ist.
 
 

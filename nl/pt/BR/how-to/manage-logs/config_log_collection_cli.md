@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-31"
 
 ---
 
@@ -12,75 +13,63 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Configurando a CLI de coleta de log
+# Configurando a CLI do Log Analysis (plug-in CF) Descontinuado
 {: #config_log_collection_cli}
 
-O serviço {{site.data.keyword.loganalysisshort}} inclui uma interface da linha de comandos (CLI) que pode ser usada para gerenciar os logs na nuvem. A CLI é um plug-in Cloud Foundry (CF). É possível usar comandos para visualizar o status do log, fazer download de logs e configurar a política de retenção de log. A CLI oferece diferentes tipos de ajuda: ajuda geral para aprender sobre a CLI e os comandos suportados, ajuda de comando para aprender como usar um comando ou ajuda de subcomando para aprender como usar um subcomando para um comando.
+O serviço {{site.data.keyword.loganalysisshort}} inclui uma interface da linha de comandos (CLI) que pode ser usada para gerenciar os logs na nuvem. É possível usar o plug-in Cloud Foundry (CF) para visualizar o status do log, fazer download de logs e configurar a política de retenção de log. A CLI oferece diferentes tipos de ajuda: ajuda geral para aprender sobre a CLI e os comandos suportados, ajuda de comando para aprender como usar um comando ou ajuda de subcomando para aprender como usar um subcomando para um comando.
 {:shortdesc}
 
 
-## Instalando a CLI de Coleta de Log
+
+## Instalando o plug-in do CF do Log Analysis
 {: #install_cli}
 
-Para instalar a CLI de Coleção de logs, conclua as etapas a seguir:
+Para instalar a CLI do {{site.data.keyword.loganalysisshort}}, conclua as etapas a seguir:
 
-1. Verifique se o CF CLI está disponível no sistema. 
+1. Instale a CLI do {{site.data.keyword.Bluemix_notm}}.
 
-    Para obter mais informações, veja [Pré-requisito](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#pre_req).
+   Para obter mais informações, veja [Instalando a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
 
-2. Instale o plug-in CF da Coleção de logs:
+2. Instale o plug-in CF do {{site.data.keyword.loganalysisshort}}.
 
-    * Para Linux, veja [Instalando a CLI de Coleção de logs no Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux).
-    * Para Windows, veja [Instalando a CLI de Coleção de logs no Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows).
-    * Para Mac OS X, veja [Instalando a CLI de Coleção de logs no Mac OS X](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac).
+    * Para Linux, veja [Instalando a CLI do {{site.data.keyword.loganalysisshort}} no Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux).
+    * Para Windows, veja [Instalando a CLI do {{site.data.keyword.loganalysisshort}} no Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows).
+    * Para Mac OS X, veja [Instalando a CLI do {{site.data.keyword.loganalysisshort}} no Mac OS X](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac).
+ 
+3. Verifique a instalação do plug-in da CLI.
+  
+    Por exemplo, verifique a versão do plug-in. Execute o comando a seguir:
+    
+    ```
+    bx cf plugins
+    ```
+    {: codeblock}
+    
+    A saída é semelhante ao seguinte:
+   
+    ```
+    Chamando 'cf plugins'...
+
+    Listing Installed Plugins...
+    OK
+
+    Plugin Name           Version   Command Name   Command Help
+    IBM-Logging           1.0.2     logging        IBM Logging plug-in
+    ```
+    {: screen}
  
 
-## Pré-requisito
-{: #pre_req}
 
-A CLI de Coleção de logs é um plug-in CF. Antes de instalá-la, considere os cenários a seguir:
-
-* Você está instalando o CF CLI pela primeira vez:
-
-     Instale o plug-in CF. Para obter mais informações, veja [Instalando o cf CLI ![Ícone de link externo](../../../../icons/launch-glyph.svg "Ícone de link externo")](http://docs.cloudfoundry.org/cf-cli/install-go-cli.html "Ícone de link externo"){: new_window}. 
-
-* Você tem o pacote CLI do {{site.data.keyword.Bluemix_notm}} instalado:
-
-    O CF CLI vem empacotado no pacote CLI do {{site.data.keyword.Bluemix_notm}}.
-
-* A CLI do {{site.data.keyword.Bluemix_notm}} será necessária para gerenciar outros recursos em nuvem:  
-
-    Instale o pacote CLI do {{site.data.keyword.Bluemix_notm}}, veja [Instalando a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/index.html#install_bluemix_cli).
-
-Em seguida, verifique se o plug-in CF está disponível. Execute o comando a seguir em uma sessão do sistema:
-    
-```
-cf -v
-```
-{: codeblock}
-    
-A saída é semelhante ao seguinte:
-    
-```
-Cf version 6.25.0+787326d.2017-02-28
-```
-{: screen}
-
-**Nota:** não é possível combinar comandos da CLI do {{site.data.keyword.Bluemix_notm}}, isto é, comandos `bx`, nem os comandos do CF CLI, isto é, comandos `cf`.
-
-
-
-	
-## Instalando a CLI de Coleção de logs no Linux
+## Instalando a CLI do Log Analysis no Linux
 {: #install_cli_linux}
 
 Conclua as etapas a seguir para instalar o plug-in CF da Coleção de logs no Linux:
 
 1. Instale o plug-in da CLI da Coleção de logs.
 
-    1. Faça download da liberação mais recente do plug-in da CLI do serviço {{site.data.keyword.loganalysisshort}} (IBM-Logging) da [página CLI do Bluemix](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
+    1. Faça download da liberação mais recente do plug-in da CLI do serviço {{site.data.keyword.loganalysisshort}} (IBM-Logging) na [página da CLI do {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
 	
-		Selecione o valor de plataforma: **linux64**.
+		Selecione o valor de plataforma: **linux64**. 
 		Clique em **Salvar arquivo**. 
     
     2. Descompacte o plug-in.
@@ -106,13 +95,13 @@ Conclua as etapas a seguir para instalar o plug-in CF da Coleção de logs no Li
         Por exemplo, para tornar o arquivo `logging-cli-linux64` executável, execute o comando a seguir:
         
         ```
-        Cf install-plugin -f log-cli-linux64
+        bx cf install-plugin -f logging-cli-linux64
         ```
         {: codeblock}
 
 2. Configure a variável de ambiente **LANG**.
 
-    Configure *LANG* para o valor padrão: *en_US.UTF-8* se o código de idioma do sistema não for suportado por CF. Para obter informações sobre códigos de idioma CF suportados, veja [Introdução à CLI do cf ![Ícone de link externo](../../../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.cloudfoundry.org/cf-cli/getting-started.html "Ícone de link externo"){: new_window}
+    Configure *LANG* para o valor padrão *en_US.UTF-8* se o seu código de idioma do sistema não for suportado pelo CF. Para obter informações sobre códigos de idioma CF suportados, veja [Introdução à CLI do cf ![Ícone de link externo](../../../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.cloudfoundry.org/cf-cli/getting-started.html){: new_window}
 	
 	Por exemplo, em um sistema Ubuntu, edite o arquivo *~/.bashrc* e insira as linhas a seguir:
     
@@ -135,24 +124,24 @@ Conclua as etapas a seguir para instalar o plug-in CF da Coleção de logs no Li
     Por exemplo, verifique a versão do plug-in. Execute o comando a seguir:
     
     ```
-    Cf criação -- version
+    bx cf logging --version
     ```
     {: codeblock}
     
     A saída é semelhante ao seguinte:
    
     ```
-    Log cf version 0.3.5
+    cf logging version 1.0.2
     ```
     {: screen}
 
 
-## Instalando a CLI de Coleção de logs no Windows
+## Instalando a CLI do Log Analysis no Windows
 {: #install_cli_windows}
 
-Conclua as etapas a seguir para instalar o plug-in CF da Coleção de logs no Windows:
+Conclua as etapas a seguir para instalar o plug-in do CF Log Analysis no Windows:
 
-1. Faça download da liberação mais recente do plug-in da CLI do serviço {{site.data.keyword.loganalysisshort}} (IBM-Logging) da [página CLI do Bluemix](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
+1. Faça download da liberação mais recente do plug-in da CLI do serviço {{site.data.keyword.loganalysisshort}} (IBM-Logging) na [página da CLI do {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
 	
 	1. Selecione o valor de plataforma: **win64**. 
 	2. Clique em **Salvar arquivo**.  
@@ -160,7 +149,7 @@ Conclua as etapas a seguir para instalar o plug-in CF da Coleção de logs no Wi
 2. Execute o comando **cf install-plugin** para instalar o plug-in Coleção de logs no Windows. 
 
     ```
-	cf install-plugin PluginName
+	bx cf install-plugin PluginName
 	```
 	{: codeblock}
 	
@@ -169,43 +158,43 @@ Conclua as etapas a seguir para instalar o plug-in CF da Coleção de logs no Wi
     Por exemplo, para instalar o plug-in *logging-cli-win64_v1.0.1.exe*, execute o comando a seguir de uma janela do terminal:
 	
 	```
-	cf install-plugin logging-cli-win64_v1.0.1.exe
+	bx cf install-plugin logging-cli-win64_v1.0.1.exe
 	```
 	{: codeblock}
 	
     Quando o plug-in estiver instalado, você receberá a mensagem a seguir: `Plug-in IBM-Logging 1.0.1 instalado com sucesso.`
 
 3. Verifique a instalação do plug-in da CLI de criação de log.
-
+  
     Por exemplo, verifique a versão do plug-in. Execute o comando a seguir:
     
     ```
-    Cf criação -- version
+    bx cf logging --version
     ```
     {: codeblock}
     
     A saída é semelhante ao seguinte:
    
     ```
-    cf logging version 1.0.1
+    bx cf logging version 1.0.1
     ```
-    {
+    {: screen}
 	
 
-## Instalando a CLI de Coleção de logs no Mac OS X
+## Instalando a CLI do Log Analysis no Mac OS X
 {: #install_cli_mac}
 
-Conclua as etapas a seguir para instalar o plug-in CF da Coleção de logs no Mac OS X:
+Conclua as etapas a seguir para instalar o plug-in do CF Coleção de logs no Mac OS X:
 
-1. Faça download da liberação mais recente do plug-in da CLI do serviço {{site.data.keyword.loganalysisshort}} (IBM-Logging) da [página CLI do Bluemix](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins).
+1. Faça download da liberação mais recente do plug-in da CLI do serviço {{site.data.keyword.loganalysisshort}} (IBM-Logging) na [página da CLI do {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
 	
-	1. Selecione o valor de plataforma: **osx**.
-	2. Clique em **Salvar arquivo**.
-
-2. Execute o comando **cf install-plugin** para instalar o plug-in Coleção de logs no Mac OS X.
+	1. Selecione o valor de plataforma: **osx**. 
+	2. Clique em **Salvar arquivo**.  
+    
+2. Execute o comando **cf install-plugin** para instalar o plug-in Coleção de logs no Mac OS X. 
 
     ```
-	cf install-plugin PluginName
+	bx cf install-plugin PluginName
 	```
 	{: codeblock}
 	
@@ -214,30 +203,30 @@ Conclua as etapas a seguir para instalar o plug-in CF da Coleção de logs no Ma
     Por exemplo, para instalar o plug-in *logging-cli-darwin_v1.0.1*, execute o comando a seguir de um terminal:
 	
 	```
-	cf install-plugin logging-cli-darwin_v1.0.1
+	bx cf install-plugin logging-cli-darwin_v1.0.1
 	```
 	{: codeblock}
 	
     Quando o plug-in estiver instalado, você receberá a mensagem a seguir: `Plug-in IBM-Logging 1.0.1 instalado com sucesso.`
 
 3. Verifique a instalação do plug-in da CLI de criação de log.
-
+  
     Por exemplo, verifique a versão do plug-in. Execute o comando a seguir:
     
     ```
-    Cf criação -- version
+    bx cf logging --version
     ```
     {: codeblock}
     
     A saída é semelhante ao seguinte:
    
     ```
-    cf logging version 1.0.1
+    bx cf logging version 1.0.1
     ```
-    {
+    {: screen}
 	
 	
-## Desinstalando a CLI de Coleção de logs
+## Desinstalando a CLI do Log Analysis
 {: #uninstall_cli}
 
 Para desinstalar a CLI de criação de log, exclua o plug-in.
@@ -246,11 +235,11 @@ Para desinstalar a CLI de criação de log, exclua o plug-in.
 Conclua as etapas a seguir para desinstalar a CLI do serviço {{site.data.keyword.loganalysisshort}}:
 
 1. Verifique a versão do plug-in da CLI de criação de log que está instalada.
-
+  
     Por exemplo, verifique a versão do plug-in. Execute o comando a seguir:
     
     ```
-    cf plugins
+    bx cf plugins
     ```
     {: codeblock}
     
@@ -263,14 +252,14 @@ Conclua as etapas a seguir para desinstalar a CLI do serviço {{site.data.keywor
     Plugin Name   Version   Command Name   Command Help
     IBM-Logging   1.0.1     logging        IBM Logging plug-in
     ```
-    {
+    {: screen}
     
 2. Se o plug-in estiver instalado, execute o `cf uninstall-plugin` para desinstalar o plug-in da CLI de criação de log.
 
     Execute o comando a seguir:
-
+        
     ```
-    Cf uninstall-plugin IBM-Logging
+    bx cf uninstall-plugin IBM-Logging
     ```
     {: codeblock}
   
@@ -280,19 +269,14 @@ Conclua as etapas a seguir para desinstalar a CLI do serviço {{site.data.keywor
 
 Para obter informações gerais sobre a CLI e quais comandos são suportados, conclua as etapas a seguir:
 
-1. Efetue login na região, na organização e no espaço do {{site.data.keyword.Bluemix_notm}}.
+1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
-    Por exemplo, para efetuar login na região sul dos EUA, execute o comando a seguir:
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Liste informações sobre os comandos suportados e a CLI. Execute o comando a seguir:
+2. Liste as informações sobre os comandos suportados e a CLI. Execute o comando a seguir:
 
     ```
-    cf logging help 
+    bx cf logging help 
     ```
     {: codeblock}
     
@@ -303,30 +287,25 @@ Para obter informações gerais sobre a CLI e quais comandos são suportados, co
 
 Para obter ajuda sobre como usar um comando, conclua as etapas a seguir:
 
-1. Efetue login em uma região, uma organização e um espaço do {{site.data.keyword.Bluemix_notm}}. 
+1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
-    Por exemplo, para efetuar login na região sul dos EUA, execute o comando a seguir:
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Obtenha a lista de comandos suportados e identifique aquele que você precisa. Execute o comando:
 
     ```
-    cf logging help 
+    bx cf logging help 
     ```
     {: codeblock}
 
-3. Obter ajuda sobre o comando. Execute o comando a seguir:
+3. Obtenha ajuda sobre o comando. Execute o comando a seguir:
 
     ```
-    cf logging help *Command*
+    bx cf logging help *Command*
     ```
     {: codeblock}
     
-    em que *Command* é o nome de um comando da CLI, por exemplo, *status*.
+    em que *Command* é o nome de um comando da CLI, por exemplo *status*.
 
 
 
@@ -335,26 +314,21 @@ Para obter ajuda sobre como usar um comando, conclua as etapas a seguir:
 
 Um comando pode ter subcomandos. Para obter ajuda sobre subcomandos, conclua as etapas a seguir:
 
-1. Efetue login em uma região, uma organização e um espaço do {{site.data.keyword.Bluemix_notm}}. 
+1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
-    Por exemplo, para efetuar login na região sul dos EUA, execute o comando a seguir:
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Obtenha a lista de comandos suportados e identifique aquele que você precisa. Execute o comando:
 
     ```
-    cf logging help 
+    bx cf logging help 
     ```
     {: codeblock}
 
 3. Obtenha ajuda sobre o comando e identifique os subcomandos suportados. Execute o comando a seguir:
 
     ```
-    cf logging help *Command*
+    bx cf logging help *Command*
     ```
     {: codeblock}
     
@@ -363,11 +337,11 @@ Um comando pode ter subcomandos. Para obter ajuda sobre subcomandos, conclua as 
 4. Obtenha ajuda sobre o comando e identifique os subcomandos suportados. Execute o comando a seguir:
 
     ```
-    Cf de log *Command * ajuda *Subcommand
+    bx cf logging *Command* help *Subcommand*
     ```
     {: codeblock}
     
-    em que 
+    Em que 
     
     * *Command* é o nome de um comando da CLI, por exemplo, *status*.
     * *Subcommand* é o nome de um subcomando suportado, por exemplo, para o comando *session*, um subcomando válido é *list*.

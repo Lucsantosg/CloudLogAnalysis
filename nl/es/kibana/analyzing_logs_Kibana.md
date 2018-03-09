@@ -1,12 +1,11 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-02-01"
 
 ---
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -14,13 +13,13 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# Análisis avanzado de registros con Kibana
+# Visualización y análisis de registros (Kibana)
 {:#analyzing_logs_Kibana}
 
-En {{site.data.keyword.Bluemix}}, puede utilizar Kibana 5.1, una plataforma de visualización y análisis de código abierto, para supervisar, buscar, analizar y visualizar datos en diversos gráficos, como diagramas y tablas. Utilice Kibana para realizar tareas avanzadas de análisis.
+Puede utilizar Kibana 5.1, una plataforma de visualización y análisis de código abierto, para supervisar, buscar, analizar y visualizar datos en diversos gráficos, como diagramas y tablas. Utilice Kibana para realizar tareas avanzadas de análisis.
 {:shortdesc}
 
-Kibana es una interfaz basada en navegador con la que puede analizar datos de forma interactiva y personalizar paneles de control que luego puede utilizar para analizar datos de registro y realizar tareas avanzadas de gestión. Para obtener más información, consulte la [Guía del usuario de Kibana ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Icono de enlace externo"){: new_window}.
+Kibana es una interfaz basada en navegador con la que puede analizar datos de forma interactiva y personalizar paneles de control que luego puede utilizar para analizar datos de registro y realizar tareas avanzadas de gestión. Para obtener más información, consulte la [Guía del usuario de Kibana ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 Los datos que muestran una página de Kibana están restringidos por una búsqueda. El conjunto de datos predeterminado se define mediante un patrón de índice preconfigurado. Para filtrar la información, puede añadir nuevas consultas de búsqueda y aplicar filtros al conjunto de datos predeterminado. Luego puede guardar la búsqueda para reutilizarla en el futuro. 
 
@@ -51,7 +50,7 @@ Puede iniciar Kibana de cualquiera de estas formas:
 
 * Desde el panel de control del servicio {{site.data.keyword.loganalysisshort}}
 
-    Puede iniciar Kibana para que los datos que ve agreguen registros de servicios de un espacio de {{site.data.keyword.Bluemix_notm}} especificado.
+    Puede iniciar Kibana para que los datos que ve agreguen registros de servicios de un espacio especificado.
 	
 	Para obtener más información, consulte [Navegación a Kibana desde el panel de control del servicio Análisis de registros](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_log_analysis).
 
@@ -59,7 +58,7 @@ Puede iniciar Kibana de cualquiera de estas formas:
 
     Puede iniciar los registros específicos de la app CF en Kibana, dentro del contexto de la app específica. Para obtener más información, consulte [Navegación a Kibana desde el panel de control de una app CF](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
     
-    Puede iniciar registros de un contenedor Docker específico en Kibana, dentro del contexto de dicho contenedor en concreto. Esta característica únicamente se aplica a contenedores desplegados en la infraestructura de nube gestionada de {{site.data.keyword.Bluemix_notm}}. Para obtener más información, consulte [Navegación a Kibana desde el panel de control de un contenedor](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
+    Puede iniciar registros de un contenedor Docker específico en Kibana, dentro del contexto de dicho contenedor en concreto. Esta característica únicamente se aplica a contenedores desplegados en la infraestructura gestionada por {{site.data.keyword.Bluemix_notm}}. Para obtener más información, consulte [Navegación a Kibana desde el panel de control de un contenedor](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
     
     Para las apps CF, la consulta que se utiliza para filtrar los datos disponibles para análisis en Kibana recupera las entradas de registro de la aplicación Cloud Foundry. La información de registro que muestra Kibana de forma predeterminada está relacionada con una sola aplicación Cloud Foundry y todas sus instancias. 
     
@@ -69,7 +68,7 @@ Puede iniciar Kibana de cualquiera de estas formas:
 
 * Desde un enlace directo del navegador
 
-    Puede iniciar Kibana para que los datos que ve agreguen registros de servicios de un espacio de {{site.data.keyword.Bluemix_notm}} especificado.
+    Puede iniciar Kibana para que los datos que ve agreguen registros de servicios de un espacio especificado.
     
     La consulta que se utiliza para filtrar los datos que aparecen en el panel de control recupera las entradas de registro correspondientes a un espacio de la organización {{site.data.keyword.Bluemix_notm}}. La información de registro que muestra Kibana incluye registros correspondientes a todos los recursos desplegados dentro del espacio de la organización {{site.data.keyword.Bluemix_notm}} en la que ha iniciado la sesión. 
     
@@ -102,6 +101,185 @@ Puede añadir, eliminar y cambiar la disposición de las visualizaciones del pan
     
 Después de personalizar un panel de control de Kibana, puede analizar los datos a través de sus visualizaciones y guardarlos para volverlos a utilizar en el futuro. Para obtener más información, consulte [Cómo guardar un panel de control de Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save).
 
-En Kibana, también hay una página **Gestión** que puede utilizar para configurar Kibana y para guardar, suprimir, exportar e importar búsquedas, visualizaciones y paneles de control.
+## Personalización de Kibana
+{: #analyze_management}
+
+También puede configurar y gestionar recursos de Kibana desde la página **Gestión**. 
+
+Puede realizar cualquiera de estas tareas:
+        
+
+* Guardar, suprimir, exportar e importar búsquedas. 
+* Guardar, suprimir, exportar e importar visualizaciones.
+* Guardar, suprimir, exportar e importar paneles de control.
+* [Renovar la lista de campos.](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields)
+
+## Limitaciones
+{: #limitations}
+
+En Kibana, solo puede compartir una visualización o un panel de control con miembros de la misma organización o cuenta.
+
+No se da soporte a las siguientes características de Kibana:
+
+* Compartición de una búsqueda.
+* Creación de nuevos patrones de índice. 
+
+
+## Roles que necesita un usuario para ver registros
+{: #roles}
+
+En {{site.data.keyword.Bluemix_notm}}, puede asignar uno o varios roles a los usuarios. Estos roles definen qué tareas están habilitadas para dicho usuario para trabajar con el servicio de {{site.data.keyword.loganalysisshort}}. 
+
+Las tablas siguientes muestran los roles que debe tener un usuario para ver registros:
+
+<table>
+  <caption>Permisos que necesita un **propietario de cuenta** para ver registros</caption>
+  <tr>
+    <th>Acción</th>
+	<th>Roles de espacio de CF</th>
+	<th>Roles de organización de CF</th>
+	<th>Roles de IAM</th>
+  </tr>
+  <tr>
+    <td>Ver registros en un dominio del espacio</td>
+	<td>*Gestor* </br>*Desarrollador* </br>*Auditor*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Ver registros en el dominio de la cuenta</td>
+	<td></td>
+	<td></td>
+	<td>*Administrador*</td>
+  </tr>
+  <tr>
+    <td>Ver registros en un dominio de la organización</td>
+	<td></td>
+	<td>*Gestor* </br>*Gestor de facturación*  </br>*Auditor*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Permisos que necesita un **auditor** para ver registros</caption>
+  <tr>
+    <th>Acción</th>
+	<th>Roles de espacio de CF</th>
+	<th>Roles de organización de CF</th>
+	<th>Roles de IAM</th>
+  </tr>
+  <tr>
+    <td>Ver registros en un dominio del espacio</td>
+	<td>*Auditor*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Ver registros en el dominio de la cuenta</td>
+	<td></td>
+	<td></td>
+	<td>*Visor*</td>
+  </tr>
+  <tr>
+    <td>Ver registros en un dominio de la organización</td>
+	<td></td>
+	<td>*Auditor*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Permisos que necesita un **administrador** para ver registros</caption>
+  <tr>
+    <th>Acción</th>
+	<th>Roles de espacio de CF</th>
+	<th>Roles de organización de CF</th>
+	<th>Roles de IAM</th>
+  </tr>
+  <tr>
+    <td>Ver registros en un dominio del espacio</td>
+	<td>*Desarrollador*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Ver registros en el dominio de la cuenta</td>
+	<td></td>
+	<td></td>
+	<td>*Visor*</td>
+  </tr>
+  <tr>
+    <td>Ver registros en un dominio de la organización</td>
+	<td></td>
+	<td>*Gestor*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Permisos que necesita un **desarrollador** para ver registros</caption>
+  <tr>
+    <th>Acción</th>
+	<th>Roles de espacio de CF</th>
+	<th>Roles de organización de CF</th>
+	<th>Roles de IAM</th>
+  </tr>
+  <tr>
+    <td>Ver registros en un dominio del espacio</td>
+	<td>*Desarrollador*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Ver registros en el dominio de la cuenta</td>
+	<td></td>
+	<td></td>
+	<td>*Visor*</td>
+  </tr>
+  <tr>
+    <td>Ver registros en un dominio de la organización</td>
+	<td></td>
+	<td>*Auditor*</td>
+	<td></td>
+  </tr>
+</table>
+
+
+
+## URL para lanzar Kibana
+{: #urls_kibana}
+
+En la tabla siguiente se muestran los URL para iniciar Kibana y las versiones de Kibana por región:
+
+<table>
+    <caption>URL para lanzar Kibana</caption>
+    <tr>
+      <th>Región</th>
+      <th>URL</th>
+      <th>Versión de Kibana</th>
+    </tr>
+	<tr>
+      <td>Frankfurt</td>
+	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.nett)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+	<tr>
+      <td>Sídney</td>
+	  <td>[https://logging.au-syd.bluemix.net](https://logging.au-syd.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+	<tr>
+      <td>Reino Unido</td>
+	  <td>[https://logging.eu-gb.bluemix.net](https://logging.eu-gb.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+    <tr>
+      <td>EE.UU. sur</td>
+      <td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+</table>
+
+
 
 

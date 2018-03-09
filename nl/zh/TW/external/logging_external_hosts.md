@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2017-07-19"
 # 配置外部日誌主機
 {: #thirdparty_logging}
 
-{{site.data.keyword.Bluemix_notm}} 在記憶體中保留了有限的日誌資訊量。在記載資訊時，舊資訊會取代為較新的資訊。若要保留所有日誌資訊，您可以將 Cloud Foundry 應用程式日誌儲存到外部日誌主機（例如協力廠商日誌管理服務或其他主機）。
+{{site.data.keyword.Bluemix_notm}} 在記憶體中會保留有限的日誌資訊量。在記載資訊時，舊資訊會取代為較新的資訊。若要保留所有日誌資訊，您可以將 Cloud Foundry 應用程式日誌儲存到外部日誌主機（例如協力廠商日誌管理服務或其他主機）。
 {:shortdesc}
 
 若要將日誌從您的 CF 應用程式及系統串流到外部日誌主機，請完成下列步驟：
@@ -29,7 +29,7 @@ lastupdated: "2017-07-19"
 
   2. 建立使用者提供的服務實例。
 
-	 使用 `cf create-user-provided-service` 指令（或 `cups`，這是此指令的簡短版本），以建立使用者提供的服務實例：
+	 使用 `cf create-user-provided-service` 指令（或 `cups`，這是這個指令的簡短版本），以建立使用者提供的服務實例：
 	 
 	 ```
 	 cf create-user-provided-service <service_name> -l <logging_endpoint>
@@ -57,7 +57,7 @@ lastupdated: "2017-07-19"
      <tr>
      <td>syslog 主機</td>
      <td>`cf cups my-logs -l syslog://HOST:PORT`</td>
-	 <td>例如，若要啟用記載至 Papertrail 的功能，請鍵入 `cf cups my-logs -l syslog://<papertrail-url>`。請將 `<papertrail-url>` 取代為來自 Papertrail 的記載端點的 URL。</td>
+	 <td>例如，若要啟用記載至 Papertrail 的功能，請鍵入 `cf cups my-logs -l syslog://<papertrail-url>`。請將 `<papertrail-url>` 取代為來自 Papertrail 的記載端點 URL。</td>
      </tr>
 	 <tr>
      <td>syslog-tls 主機</td>

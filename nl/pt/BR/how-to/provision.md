@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -29,7 +30,7 @@ Conclua as etapas a seguir para provisionar uma instância do serviço {{site.da
 
 1. Efetue login em sua conta do {{site.data.keyword.Bluemix_notm}}.
 
-    O painel do {{site.data.keyword.Bluemix_notm}} pode ser localizado em: [http://bluemix.net ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](http://bluemix.net "Ícone de link externo"){:new_window}.
+    O painel do {{site.data.keyword.Bluemix_notm}} pode ser localizado em: [http://bluemix.net ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](http://bluemix.net){:new_window}.
     
 	Depois de efetuar login com seu ID de usuário e senha, a UI do {{site.data.keyword.Bluemix_notm}} é aberta.
 
@@ -52,25 +53,20 @@ Conclua as etapas a seguir para provisionar uma instância do serviço {{site.da
 
 Conclua as etapas a seguir para provisionar uma instância do serviço {{site.data.keyword.loganalysisshort}} no {{site.data.keyword.Bluemix_notm}} por meio da linha de comandos:
 
-1. Instale a CLI do Cloud Foundry (CF). Se o CF CLI estiver instalado, continue com a próxima etapa.
+1. [Pré-requisito] Instale a CLI do {{site.data.keyword.Bluemix_notm}}.
 
-   Para obter mais informações, veja [Instalando o cf CLI ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](http://docs.cloudfoundry.org/cf-cli/install-go-cli.html "Ícone de link externo"){: new_window}. 
+   Para obter mais informações, veja [Instalando a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   
+   Se a CLI estiver instalada, continue com a próxima etapa.
     
-2. Efetue login em uma região, uma organização e um espaço do {{site.data.keyword.Bluemix_notm}}. 
+2. Efetue login na região, organização e espaço no {{site.data.keyword.Bluemix_notm}} em que você deseja provisionar o serviço. 
 
-    Por exemplo, para efetuar login na região sul dos EUA, execute o comando a seguir:
-
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
-
-    Siga as instruções. Insira suas credenciais do {{site.data.keyword.Bluemix_notm}}, selecione uma organização e um espaço.
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Execute o comando `cf create-service` para provisionar uma instância.
+3. Execute o comando `bx cf create-service` para provisionar uma instância.
 
     ```
-	cf create-service service_name service_plan service_instance_name
+	bx cf create-service service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -82,17 +78,17 @@ Conclua as etapas a seguir para provisionar uma instância do serviço {{site.da
 	
 	Para obter mais informações sobre o comando cf, veja [cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service).
 
-	Por exemplo, para criar uma instância do serviço {{site.data.keyword.loganalysisshort}} com um plano grátis, execute o comando a seguir:
+	Por exemplo, para criar uma instância do serviço {{site.data.keyword.loganalysisshort}} com o plano Lite, execute o comando a seguir:
 	
 	```
-	cf create-service ibmLogAnalysis lite my_logging_svc
+	bx cf create-service ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. Verifique se o serviço foi criado com sucesso. Execute o comando a seguir:
 
     ```	
-	cf services
+	bx cf services
 	```
 	{: codeblock}
 	
@@ -103,9 +99,9 @@ Conclua as etapas a seguir para provisionar uma instância do serviço {{site.da
     OK
     
     name                           service                  plan                   bound apps              last operation
-    my_logging_svc                ibmLogAnalysis               lite                                        create succeeded
+    my_logging_svc                ibmLogAnalysis           standard                                        create succeeded
 	```
-	{
+	{: screen}
 
 	
 

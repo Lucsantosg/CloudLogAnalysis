@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
 
@@ -15,7 +16,7 @@ lastupdated: "2017-07-19"
 # 配置日志保留时间策略
 {: #configuring_retention_policy}
 
-使用 **cf logging option** 命令可查看和配置保留时间策略，此策略用于定义日志在“日志收集”中保留的最长天数。缺省情况下，日志会保留 30 天。在保留期到期后，会自动删除日志。缺省情况下，保留时间策略已禁用。
+使用 **cf logging option** 命令可查看和配置保留时间策略，此策略用于定义日志在“日志收集”中保留的最长天数。缺省情况下，会禁用保留时间策略，且日志会无限期保留。在保留期到期后，会自动删除日志。
 {:shortdesc}
 
 您可在帐户中定义不同的保留时间策略。您可以有一个全局帐户策略和单独的空间策略。在帐户级别设置的保留时间策略用于设置可以保留日志的最长天数。如果设置空间保留时间策略时使用的时间段长于帐户级别的时间段，那么应用的策略是为该空间配置的最后一个策略。 
@@ -26,19 +27,14 @@ lastupdated: "2017-07-19"
 
 要禁用保留时间策略，请完成以下步骤：
 
-1. 登录到要设置日志保留时间策略的 {{site.data.keyword.Bluemix_notm}} 区域、组织和空间。 
+1. 登录到 {{site.data.keyword.Bluemix_notm}} 中的区域、组织和空间。 
 
-    例如，要登录到美国南部区域，请运行以下命令：
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
 2. 将保留期设置为 **-1** 以禁用保留期。运行以下命令：
 
     ```
-    cf logging option -r -1
+    bx cf logging option -r -1
     ```
     {: codeblock}
     
@@ -47,7 +43,7 @@ lastupdated: "2017-07-19"
 例如，要禁用标识为 *d35da1e3-b345-475f-8502-cfgh436902a3* 的空间的保留期，请运行以下命令：
 
 ```
-cf logging option -r -1
+bx cf logging option -r -1
 ```
 {: codeblock}
 
@@ -67,21 +63,16 @@ cf logging option -r -1
 ## 检查空间的日志保留时间策略
 {: #check_retention_policy_space}
 
-要获取为 {{site.data.keyword.Bluemix_notm}} 空间设置的保留期，请完成以下步骤：
+要获取为空间设置的保留期，请完成以下步骤：
 
-1. 登录到要设置日志保留时间策略的 {{site.data.keyword.Bluemix_notm}} 区域、组织和空间。 
+1. 登录到 {{site.data.keyword.Bluemix_notm}} 中的区域、组织和空间。 
 
-    例如，要登录到美国南部区域，请运行以下命令：
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
 2. 获取保留期。运行以下命令：
 
     ```
-    cf logging option
+    bx cf logging option
     ```
     {: codeblock}
 
@@ -100,21 +91,16 @@ cf logging option -r -1
 ## 检查帐户中所有空间的日志保留时间策略
 {: #check_retention_policy_account}
 
-要获取为帐户中每个 {{site.data.keyword.Bluemix_notm}} 空间设置的保留期，请完成以下步骤：
+要获取为帐户中每个空间设置的保留期，请完成以下步骤：
 
-1. 登录到要设置日志保留时间策略的 {{site.data.keyword.Bluemix_notm}} 区域、组织和空间。 
+1. 登录到 {{site.data.keyword.Bluemix_notm}} 中的区域、组织和空间。 
 
-    例如，要登录到美国南部区域，请运行以下命令：
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
 2. 获取帐户中每个空间的保留期。运行以下命令：
 
     ```
-    cf logging option -a
+    bx cf logging option -a
     ```
     {: codeblock}
 
@@ -135,21 +121,16 @@ cf logging option -r -1
 ## 设置帐户级别的日志保留时间策略
 {: #set_retention_policy_space}
 
-要查看 {{site.data.keyword.Bluemix_notm}} 帐户的保留期，请完成以下步骤：
+要查看帐户的保留期，请完成以下步骤：
 
-1. 登录到要设置日志保留时间策略的 {{site.data.keyword.Bluemix_notm}} 区域、组织和空间。 
+1. 登录到 {{site.data.keyword.Bluemix_notm}} 中的区域、组织和空间。 
 
-    例如，要登录到美国南部区域，请运行以下命令：
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
 2. 设置保留期。运行以下命令：
 
     ```
-    cf logging option -r *Number_of_days* - a
+    bx cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
@@ -161,7 +142,7 @@ cf logging option -r -1
 例如，要使帐户中任何类型的日志仅保留 15 天，请运行以下命令：
 
 ```
-cf logging option -r 15 -a
+bx cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -181,21 +162,16 @@ cf logging option -r 15 -a
 ## 设置空间的日志保留时间策略
 {: #set_retention_policy_account}
 
-要查看 {{site.data.keyword.Bluemix_notm}} 空间的保留期，请完成以下步骤：
+要查看空间的保留期，请完成以下步骤：
 
-1. 登录到要设置日志保留时间策略的 {{site.data.keyword.Bluemix_notm}} 区域、组织和空间。 
+1. 登录到 {{site.data.keyword.Bluemix_notm}} 中的区域、组织和空间。 
 
-    例如，要登录到美国南部区域，请运行以下命令：
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
 2. 设置保留期。运行以下命令：
 
     ```
-    cf logging option -r *Number_of_days*
+    bx cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
@@ -207,7 +183,7 @@ cf logging option -r 15 -a
 例如，要使空间中可用的日志保留 1 年，请运行以下命令：
 
 ```
-cf logging option -r 365
+bx cf logging option -r 365
 ```
 {: codeblock}
 

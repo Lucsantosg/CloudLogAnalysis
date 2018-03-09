@@ -7,22 +7,30 @@ IBM Cloud Log Analysis
     {: .navgroup id="learn"}
     index.md
     
-    
     {: .topicgroup}
-    关于日志记录
+    关于 Log Analysis
         log_analysis_ov.md
-        cfapps/logging_cf_apps.md
-        containers/logging_containers_ov.md
-        vm/logging_vm_ov.md
+        log_analysis_component_ov
+        manage_logs.md
+        log_ingestion.md
         kibana/analyzing_logs_Kibana.md
-        
+        security_ov.md
+
+    {: .topicgroup}
+    云资源的日志记录
+        cfapps/logging_cf_apps.md
+        containers/containers_kubernetes.md
+        containers/containers_bluemix.md
+        vm/logging_vm_ov.md
+
     {: .topicgroup}
     新增功能
         migration/es17_to_es51.md
     
     {: .topicgroup}
     教程
-        containers/tutorials/kibana_tutorial_1.md
+        tutorials/container_logs.md
+        [在 Kibana 中分析 CF 应用程序的日志](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)
 
     {: .topicgroup}
     相关链接
@@ -31,9 +39,12 @@ IBM Cloud Log Analysis
     {: .navgroup-end}
     
     {: .navgroup id="howto"}
-    logging_view_dashboard.md
-    logging_view_cli.md
-    
+    how-to/provision.md
+    how-to/change_plan.md
+    how-to/quota.md
+    how-to/manage-logs/config_log_collection_cli_cloud.md
+    how-to/manage-logs/config_log_collection_cli.md
+
     {: .topicgroup}
     高级日志分析 (Kibana)
         kibana/analize_logs_interactively.md
@@ -43,32 +54,71 @@ IBM Cloud Log Analysis
         kibana/filter_logs.md
         kibana/launch.md
 
-    plan/change_plan.md
-    how-to/provision.md
+    {: .topicgroup}
+    管理日志（IBM Cloud 插件）
+        how-to/manage-logs/configuring_retention_policy_cloud.md
+        how-to/manage-logs/deleting_logs_cloud.md
+        how-to/manage-logs/downloading_logs_cloud.md
+        how-to/manage-logs/viewing_log_information_cloud.md
+
+    {: .topicgroup}
+    管理日志（CF 插件）
+        how-to/manage-logs/configuring_retention_policy.md
+        how-to/manage-logs/deleting_logs.md
+        how-to/manage-logs/downloading_logs.md
+        how-to/manage-logs/viewing_log_information.md
+
+    {: .topicgroup}
+    发送日志
+        how-to/send-data/send_data_mt.md
+
+    {: .topicgroup}
+    安全性
+        security/auth_uaa.md
+        security/auth_iam.md
+        security/logging_token.md
+        security/grant_permissions.md
 
     {: .topicgroup}
     CF 应用程序
+        cfapps/launch_logs_cloud_ui_cf.md
         cfapps/logging_writing_to_log_from_cf_app.md
+        cfapps/logging_view_cli.md
         external/logging_external_hosts.md
 
     {: .topicgroup}
-    Docker 容器
+    容器
+        containers/containers_kube_other_logs.md
+        containers/containers_key_owner.md
+        containers/containers_spaceid.md
         containers/logging_containers_other_logs.md
 
     {: .topicgroup}
-    日志收集
-        how-to/manage-logs/config_log_collection_cli.md
-        how-to/manage-logs/configuring_retention_policy.md
-        how-to/manage-logs/discarding_logs.md
-        how-to/manage-logs/downloading_logs.md
-        how-to/manage-logs/viewing_log_information.md
-        how-to/send-data/send_data_mt.md
-    {: .navgroup-end}
-    
-    {: .navgroup id="reference"}
-    reference/logging_cli.md    
+    日志分析 (Kibana 4) 已弃用
+        kibana4/logging_kibana_analize_logs_interactively.md
+        kibana4/logging_kibana_visualizations.md
+        kibana4/logging_kibana_analize_logs_dashboard.md
+        kibana4/k4_define_search.md
+        kibana4/k4_filter_logs.md
+        kibana4/k4_launch.md
 
-    [日志收集 API](https://console.stage1.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
+    {: .topicgroup}
+    日志分析 (Kibana 3) 已弃用
+        kibana3/logging_kibana_query.md
+        kibana3/logging_kibana_filter_by_component.md
+        kibana3/logging_kibana_filter_by_time_period.md
+        kibana3/logging_kibana_filter_by_instance_id.md
+        kibana3/logging_kibana_filter_by_known_application_id.md
+        kibana3/logging_kibana_filter_by_message_type.md
+        kibana3/logging_kibana_tables_graphs.md
+        kibana3/logging_kibana_export_share_dashboard.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    reference/logging_cli.md  
+    reference/log_analysis_cli_cloud.md  
+
+    [日志收集 API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
     {: .navgroup-end}     
     
     {: .navgroup id="help"}
@@ -82,6 +132,7 @@ IBM Cloud Log Analysis
     常见问题
         qa/faq_kibana.md
         qa/kibana_formats.md
+        qa/cli_qa.md
 
     {: .navgroup-end}
     

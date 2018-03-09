@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -22,9 +23,12 @@ Im Folgenden finden Sie Antworten auf häufig gestellte Fragen zur Verwendung de
 
 * [Was kann ich tun, wenn auf der Seite 'Discover' in Kibana keine Daten angezeigt werden?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_discover_kibana)
 * [Was kann ich tun, wenn ich eine Ausnahmebedingung bei der Authentifizierung erhalte?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_dashboard_kibana)
-* [Wie kann ich Kibana 3 starten?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
+* [Wie kann ich Kibana 3 oder Kibana 4 starten?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
 * [Warum werden Fragezeichensymbole (?) für Felder auf der Kibana-Seite 'Discover' angezeigt?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
 * [Wenn ich versuche, das Standardindexmuster zu ändern, wird Fehler 403 angezeigt.](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
+* [Kurz-URL funktioniert nicht](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
+* [Kann ich meine Kontoprotokolle in Bluemix durchsuchen?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
+
 
 ## Was kann ich tun, wenn auf der Seite 'Discover' in Kibana keine Daten angezeigt werden?
 {: #logging_qa_no_data_discover_kibana}
@@ -32,7 +36,7 @@ Im Folgenden finden Sie Antworten auf häufig gestellte Fragen zur Verwendung de
 Es können folgende Situationen entstehen, in denen keine Daten in Kibana angezeigt werden:
 
 1. Beim Starten von Kibana werden keine Daten auf der Seite 'Discover' angezeigt. Sie erhalten die folgende Nachricht: **No results found.**. 
-2. Sie arbeiten mit der Seite 'Discover' in Kibana. Nach kurzer Zeit erhalten Sie die Nachricht **No results found**, wenn Sie versuchen, eine Task in Kibana auszuführen. 
+2. Sie arbeiten mit der Seite 'Discover' in Kibana. Nach kurzer Zeit erhalten Sie die Nachricht **No results found**, wenn Sie versuchen, eine Task in Kibana auszuführen.
 
 Um das Problem zu beheben, führen Sie die folgenden Schritte aus:
 
@@ -75,33 +79,48 @@ Um das Problem zu beheben, führen Sie die folgenden Schritte aus:
 
     Wenn Sie das Dashboard gemeinsam nutzen, löschen Sie die Visualisierungen nicht, da sich dies auf andere Teammitglieder auswirkt, die dasselbe Dashboard verwenden.
 
-## Wie kann ich Kibana 3 starten?
+## Wie kann ich Kibana 3 oder Kibana 4 starten?
 {: #logging_qa_kibana3}
 
 **Hinweis:** Kibana 3 ist veraltet.
 
-Sie können Kibana 3 über einen Browser starten.
+Sie können Kibana 3 oder Kibana 4 über einen Browser starten.
 
-Führen Sie den folgenden Schritt aus, um Kibana 3 über einen Browser zu starten:
+Führen Sie den folgenden Schritt aus, um Kibana über einen Browser zu starten:
 
-1. Öffnen Sie die Seite [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net), um sich an der Kibana-Benutzerschnittstelle anzumelden. 
+1. Öffnen Sie die Seite [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net), um sich an der Kibana-Benutzerschnittstelle anzumelden.
     
 2. Wählen Sie die Version von Kibana aus, die Sie verwenden möchten, um Ihre Protokolle zu analysieren.
     * Wählen Sie die Registerkarte **Kibana 4** aus, um mit Kibana 4 zu arbeiten. Die Seite 'Discover' wird geöffnet. Weitere Informationen finden Sie unter [Protokolle in Kibana interaktiv analysieren](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_kibana_analize_logs_interactively.html#kibana_analize_logs_interactively).
-    * Wählen Sie die Registerkarte **Kibana 3** aus, um mit Kibana 3 zu arbeiten. Das Standard-Kibana-Dashboard wird geöffnet. Weitere Informationen zur Verwendung von Kibana 3 für die Analyse Ihrer Protokolle finden Sie unter [Protokolle in Kibana 3 analysieren (Veraltet)](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3). Weitere Informationen zum Anpassen eines Kibana 3-Dashboards finden Sie in [diesem Blogbeitrag ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/ "Symbol für externen Link"){: new_window}.
+    * Wählen Sie die Registerkarte **Kibana 3** aus, um mit Kibana 3 zu arbeiten. Das Standard-Kibana-Dashboard wird geöffnet. Weitere Informationen zur Verwendung von Kibana 3 für die Analyse Ihrer Protokolle finden Sie unter [Protokolle in Kibana 3 analysieren (Veraltet)](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3). Weitere Informationen zum Anpassen eines Kibana 3-Dashboards finden Sie in [diesem Blogbeitrag ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/){: new_window}.
      
 
 ## Warum werden Fragezeichensymbole (?) für Felder auf der Kibana-Seite 'Discover' angezeigt?
 {: #logging_qa_kibana_question}
 
-Wenn Sie die Seite 'Discover' in Kibana öffnen, werden möglicherweise Fragezeichen (`?`) für Felder im Abschnitt für verfügbare Felder anstelle des Zeichens `t` angezeigt. Wenn Sie die Feldliste erneut laden, wird der Typ der Felder analysiert und die Zeichen `?` werden durch das Zeichen `t` ersetzt. Weitere Informationen finden Sie unter [Feldliste neu laden](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields). 
+Wenn Sie die Seite 'Discover' in Kibana öffnen, werden möglicherweise Fragezeichen (`?`) für Felder im Abschnitt für verfügbare Felder anstelle des Zeichens `t` angezeigt. Wenn Sie die Feldliste erneut laden, wird der Typ der Felder analysiert und die Zeichen `?` werden durch das Zeichen `t` ersetzt. Weitere Informationen finden Sie unter [Feldliste neu laden](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields).
 
 
-## Wenn ich versuche, das Standardindexmuster zu ändern, wird Fehler 403 angezeigt. 
+## Wenn ich versuche, das Standardindexmuster zu ändern, wird Fehler 403 angezeigt.
 {: #error_403}
 
-Das Standardindexmuster kann nicht geändert werden.  
+Das Standardindexmuster kann nicht geändert werden. 
 
 Wenn Sie versuchen ein neues Indexmuster als neuen Standard festzulegen, wird der folgende Fehler angezeigt: `Config: Error 403 Forbidden`
 
+## Kurz-URL funktioniert nicht
+{: #short_url}
+
+Die gemeinsame Nutzung von Suchen, Visualisierungen oder Dashboards wird nicht unterstützt. Daher funktionieren Kurz-URLs für Kibana-Objekte, die Sie freigeben möchten, auch nicht. 
+
+## Kann ich meine Kontoprotokolle in Bluemix durchsuchen?
+{: #acc_logs_1}
+
+Als Kontoeigner können Sie Ihre Kontoprotokolle durchsuchen und analysieren.
+
+Führen Sie die folgenden Schritte aus, um die Kontoprotokolle anzuzeigen:
+
+1. [Starten Sie Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) Verwenden Sie beispielsweise für die Region 'USA (Süden)' die URL 'https://logging.ng.bluemix.net'.
+
+2. Wählen Sie die Option **View AccountName account Logs** aus, um die Kontoprotokolle anzuzeigen. *AccountName* ist der Name des Kontos.
 

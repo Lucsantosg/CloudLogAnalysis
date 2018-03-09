@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -15,23 +16,23 @@ lastupdated: "2017-07-19"
 {:pre: .pre}
 
 
-# 컨테이너에서 기본이 아닌 로그 데이터 수집
-{: #logging_containers_collect_data}
+# 컨테이너에서 기본이 아닌 로그 데이터 수집(더 이상 사용되지 않음)
+{: #logging_containers_other_logs}
 
-{{site.data.keyword.Bluemix_notm}} 관리 클라우드 인프라에 배치된 컨테이너 내부의 기본이 아닌 로그 위치에서 데이터를 캡처하려면 컨테이너를 작성할 때 환경 변수 **LOG_LOCATIONS**을 설정하십시오.
+{{site.data.keyword.Bluemix_notm}} 관리 인프라에 배치된 컨테이너 내부의 기본이 아닌 로그 위치에서 데이터를 캡처하려면 컨테이너를 작성할 때 환경 변수 **LOG_LOCATIONS**를 설정하십시오.
 {:shortdesc}
 
 * 컨테이너를 작성할 때 로그 파일에 대한 경로와 함께 **LOG_LOCATIONS** 환경 변수를 추가하십시오. 
 * 쉼표로 구분하여 여러 개의 로그 파일을 추가할 수 있습니다. 
 
-## Bluemix 콘솔을 통해 기본이 아닌 로그 데이터 수집
+## IBM Cloud 콘솔을 통해 기본이 아닌 로그 데이터 수집
 {: #logging_containers_collect_data_ui}
 
 콘솔을 통해 기본이 아닌 데이터를 수집하려면 다음 단계를 완료하십시오.
 
 1. 카탈로그에서 **컨테이너**를 선택하고 이미지를 선택하십시오. 
 
-    표시되는 이미지의 목록에는 {{site.data.keyword.IBM}}에서 제공되는 이미지와 개인용 {{site.data.keyword.Bluemix_notm}} 레지스트리에 저장된 이미지가 포함됩니다. 
+    표시되는 이미지의 목록에는 {{site.data.keyword.IBM_notm}}에서 제공되는 이미지와 개인용 {{site.data.keyword.Bluemix_notm}} 레지스트리에 저장된 이미지가 포함됩니다. 
 
 2. 컨테이너를 정의하십시오. 유형을 선택하고, 컨테이너의 이름을 입력하고, 그 크기를 선택하고, IP 주소 세부사항 및 포트와 같은 기타 속성을 정의하십시오. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} UI를 통해 단일 컨테이너 작성 및 배치](/docs/containers/container_single_ui.html#gui)를 참조하십시오. 
 
@@ -65,38 +66,11 @@ lastupdated: "2017-07-19"
 
 CLI를 통해 기본이 아닌 로그 데이터를 수집하려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.containershort}} CLI를 사용하도록 터미널을 설정하십시오. 자세한 정보는 [IBM Bluemix Container Service CLI 설정](/docs/containers/container_cli_cfic_install.html)을 참조하십시오.
+1. {{site.data.keyword.containershort}} CLI를 사용하도록 터미널을 설정하십시오. 자세한 정보는 [{{site.data.keyword.containershort}} CLI 설정](/docs/containers/container_cli_cfic_install.html)을 참조하십시오. 
 
-2. `cf login` 명령을 사용하여 Cloud Foundry CLI에 로그인하십시오. 프롬프트가 표시되면 {{site.data.keyword.Bluemix_notm}} ID, 비밀번호, 조직 및 영역을 입력하십시오.  
+2. `bx login` 명령을 사용하여 Cloud Foundry CLI에 로그인하십시오. 프롬프트가 표시되면 {{site.data.keyword.IBM_notm}} ID, 비밀번호, 조직 및 영역을 입력하십시오.  
 
-    기본적으로 미국 남부 지역 또는 마지막으로 로그인한 지역에 로그인됩니다.  
-    
-    {{site.data.keyword.Bluemix_notm}}의 특정 지역에 로그인하기 위해 **–a** 옵션을 포함시킬 수 있습니다. 그 예로 지역별 명령이 다음 표에 나열되어 있습니다. 
-
-    <table>
-      <caption>표 2. 지역별 명령</caption>
-      <tbody>
-        <tr>
-          <th align="center">지역</th>
-          <th align="center">명령</th>
-        </tr>
-        <tr>
-          <td align="left">미국 남부</td>
-          <td align="left"> cf login -a api.ng.bluemix.net</td>
-        </tr>
-        <tr>
-          <td align="left">영국</td>
-          <td align="left">cf login -a api.eu-gb.bluemix.net</td>
-        </tr>
-	 <tr>
-          <td align="left">프랑크푸르트</td>
-          <td align="left">cf login -a api.eu-de.bluemix.net</td>
-        </tr>
-       </tbody>
-    </table>
-    
-
-3. `cf ic login` 명령을 사용하여 {{site.data.keyword.containershort}}에 로그인하십시오. 
+3. `bx cf ic login` 명령을 사용하여 {{site.data.keyword.containershort}}에 로그인하십시오. 
 
 4. 이미지에서 단일 컨테이너를 작성하십시오. 기본이 아닌 로그 위치를 포함하려면 LOG_LOCATIONS 환경 변수를 포함하십시오.   
 

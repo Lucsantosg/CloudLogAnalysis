@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -18,8 +18,7 @@ lastupdated: "2017-07-19"
 # Configurando hosts de logs externos
 {: #thirdparty_logging}
 
-O {{site.data.keyword.Bluemix_notm}} mantém
-uma quantia limitada de informação de log na memória. Quando as informações são
+O {{site.data.keyword.Bluemix_notm}} mantém uma quantia limitada de informação de log na memória. Quando as informações são
 registradas, as informações antigas são substituídas pelas informações mais novas. Para manter todas as
 informações de log, é possível salvar seus logs do aplicativo Cloud Foundry em um host de log externo, como um
 serviço de gerenciamento de log de terceiro ou outro host.

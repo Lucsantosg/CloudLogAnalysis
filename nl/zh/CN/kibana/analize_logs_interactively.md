@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -17,7 +18,7 @@ lastupdated: "2017-07-19"
 # 在 Kibana 中以交互方式分析日志
 {:#analize_logs_interactively}
 
-在“发现”页面中，可以通过交互方式查看和分析 {{site.data.keyword.Bluemix}} 日志。可以使用 Lucene 查询语言来定义搜索查询以过滤这些数据。对于每个搜索查询，可以应用过滤器来优化可供分析的条目。可以保存搜索以供未来复用。
+在“发现”页面中，可以通过交互方式查看和分析日志。可以使用 Lucene 查询语言来定义搜索查询以过滤这些数据。对于每个搜索查询，可以应用过滤器来优化可供分析的条目。可以保存搜索以供未来复用。
 {:shortdesc}
 
 在 {{site.data.keyword.Bluemix_notm}} 中，缺省情况下，通过 {{site.data.keyword.Bluemix_notm}} UI 启动 Kibana 时在“发现”页面中显示的数据集配置为仅显示从中启动 Kibana 的 Cloud Foundry (CF) 应用程序或容器的条目。有关如何查看“发现”页面显示的数据子集的更多信息，请参阅[确定显示的数据](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)。
@@ -70,19 +71,19 @@ lastupdated: "2017-07-19"
     
 * 为基于时间的数据定制*时间选取器*。可以定义查询的绝对时间范围或相对时间范围，也可以从一组预定义的值中进行选择。有关更多信息，请参阅[设置时间过滤器](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)。
 
-配置了用于定义要分析的数据子集的搜索后，可以将其保存以供日后复用。
+配置了用于定义要分析的数据子集的搜索后，可以将其保存以供日后复用。有关更多信息，请参阅[保存搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)。
 
 可以使用在“发现”页面中定义的搜索来执行以下任一任务：
 
 | 任务| 描述
 |
 |------|-------------|
-| [保存搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)| 保存搜索以供日后复用。|
 | [删除搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)| 删除不再需要的搜索。|
 | [导出搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search)| 导出搜索以进行共享。|
+| [导入搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search)| 导入搜索。|
 | [重新装入搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)| 上传现有搜索以重新分析一组数据。|
 | [刷新搜索的数据](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search)| 针对通过搜索显示的数据配置自动刷新。|
-| [导入搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search)| 导入搜索。|
+| [保存搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)| 保存搜索以供日后复用。|
 {: caption="表 3. 使用搜索的任务" caption-side="top"}
 
 
@@ -147,7 +148,7 @@ lastupdated: "2017-07-19"
 
 1. 在**管理**页面中检查索引模式。
 
-    索引模式定义缺省情况下应用以在 Kibana 页面中显示条目的搜索查询。缺省情况下，索引模式已预配置，并设置为 {{site.data.keyword.Bluemix_notm}} 空间中可用的所有数据。例如：
+    索引模式定义缺省情况下应用以在 Kibana 页面中显示条目的搜索查询。缺省情况下，索引模式已预配置，并设置为空间中可用的所有数据。例如：
 
     * 如果是通过 {{site.data.keyword.Bluemix_notm}} UI 启动 Kibana，即通过特定资源（如 Cloud Foundry (CF) 应用程序或容器）的 UI 页面的*日志*部分启动 Kibana，那么应用的索引模式会包含空间中可用的所有条目。
     

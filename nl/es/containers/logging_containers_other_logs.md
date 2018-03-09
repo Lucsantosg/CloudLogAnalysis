@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -15,23 +16,23 @@ lastupdated: "2017-07-19"
 {:pre: .pre}
 
 
-# Recopilación de datos de registro no predeterminado desde un contenedor
-{: #logging_containers_collect_data}
+# Recopilación de datos de registro no predeterminado desde un contenedor (en desuso)
+{: #logging_containers_other_logs}
 
-Para capturar de ubicaciones de registro que no sean la predeterminada dentro de un contenedor desplegado en la infraestructura de nube gestionada de {{site.data.keyword.Bluemix_notm}}, establezca la variable de entorno **LOG_LOCATIONS** cuando cree un contenedor. 
+Para capturar de ubicaciones de registro que no sean la predeterminada dentro de un contenedor desplegado en la infraestructura gestionada de {{site.data.keyword.Bluemix_notm}}, establezca la variable de entorno **LOG_LOCATIONS** cuando cree un contenedor.
 {:shortdesc}
 
 * Añada la variable de entorno de **LOG_LOCATIONS** con una vía de acceso al archivo de registro cuando cree el contenedor. 
 * Puede añadir varios archivos de registro separándolos con comas. 
 
-## Recopilación de datos de registro no predeterminado mediante la consola de Bluemix
+## Recopilación de datos de registro no predeterminado mediante la consola de IBM Cloud
 {: #logging_containers_collect_data_ui}
 
 Siga los pasos siguientes para recopilar datos de registro no predeterminado mediante la consola:
 
 1. Desde el catálogo, seleccione **Contenedores** y elija una imagen. 
 
-    La lista de imágenes que se muestra incluye imágenes proporcionadas por {{site.data.keyword.IBM}} e imágenes almacenadas en su registro privado de {{site.data.keyword.Bluemix_notm}}. 
+    La lista de imágenes que se muestra incluye imágenes proporcionadas por {{site.data.keyword.IBM_notm}} e imágenes almacenadas en su registro privado de {{site.data.keyword.Bluemix_notm}}. 
 
 2. Defina un contenedor. Elija el tipo, escriba un nombre para el contenedor, seleccione su tamaño y defina otros atributos, como detalles de la dirección IP y puertos. Para obtener más información, consulte [Crear y desplegar un único contenedor mediante la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}](/docs/containers/container_single_ui.html#gui). 
 
@@ -65,38 +66,11 @@ Se abre el panel de control del contenedor. Compruebe que el estado del contened
 
 Siga los pasos siguientes para recopilar datos de registro no predeterminado mediante la CLI:
 
-1. Configure un terminal para que utilice la CLI de {{site.data.keyword.containershort}}. Para obtener más información, consulte [Configuración de la CLI del servicio IBM Bluemix Container](/docs/containers/container_cli_cfic_install.html).
+1. Configure un terminal para que utilice la CLI de {{site.data.keyword.containershort}}. Para obtener más información, consulte [Configuración de la CLI de {{site.data.keyword.containershort}}](/docs/containers/container_cli_cfic_install.html).
 
-2. Inicie una sesión en la CLI de Cloud Foundry con el siguiente mandato: `cf login`. Escriba el ID, la contraseña, la organización, el espacio de {{site.data.keyword.Bluemix_notm}} cuando se le solicite. 
+2. Inicie una sesión en la CLI de Cloud Foundry con el siguiente mandato: `bx login`. Escriba el ID, la contraseña, la organización, el espacio de {{site.data.keyword.IBM_notm}} cuando se le solicite. 
 
-    De forma predeterminada, la sesión se inicia en la región del sur de Estados Unidos o en la última región en la que se ha iniciado una sesión. 
-    
-    Puede incluir la opción **–a** para iniciar la sesión en una región específica en {{site.data.keyword.Bluemix_notm}}. Por ejemplo, en la siguiente tabla se muestran los mandatos por región:
-
-    <table>
-      <caption>Tabla 2. Mandatos por región</caption>
-      <tbody>
-        <tr>
-          <th align="center">Región</th>
-          <th align="center">Mandato</th>
-        </tr>
-        <tr>
-          <td align="left">EE.UU. sur</td>
-          <td align="left"> cf login -a api.ng.bluemix.net</td>
-        </tr>
-        <tr>
-          <td align="left">Reino Unido</td>
-          <td align="left">cf login -a api.eu-gb.bluemix.net</td>
-        </tr>
-	 <tr>
-          <td align="left">Frankfurt</td>
-          <td align="left">cf login -a api.eu-de.bluemix.net</td>
-        </tr>
-       </tbody>
-    </table>
-    
-
-3. Inicie la sesión en {{site.data.keyword.containershort}} con el siguiente mandato: `cf ic login`
+3. Inicie la sesión en {{site.data.keyword.containershort}} con el siguiente mandato: `bx cf ic login`
 
 4. Crear un único contenedor a partir de una imagen. Incluya la variable de entorno LOG_LOCATIONS para incluir las ubicaciones de registros no predeterminados.  
 

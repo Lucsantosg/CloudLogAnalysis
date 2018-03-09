@@ -1,12 +1,11 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-02-01"
 
 ---
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -14,13 +13,13 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# 使用 Kibana 进行高级日志分析
+# 查看和分析日志 (Kibana)
 {:#analyzing_logs_Kibana}
 
-在 {{site.data.keyword.Bluemix}} 中，可以使用 Kibana 5.1（一种开放式源代码分析和可视化平台）通过各种图形（例如，图表和表）来对数据进行监视、搜索、分析和可视化。使用 Kibana 可执行高级分析任务。
+可以使用 Kibana 5.1（一种开放式源代码分析和可视化平台）通过各种图形（例如，图表和表）来对数据进行监视、搜索、分析和可视化表示。使用 Kibana 可执行高级分析任务。
 {:shortdesc}
 
-Kibana 是一种基于浏览器的界面，在其中可以通过交互方式分析数据以及定制仪表板，随后可使用这些仪表板来分析日志数据并执行高级管理任务。有关更多信息，请参阅 [Kibana User Guide ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](https://www.elastic.co/guide/en/kibana/5.1/index.html "外部链接图标"){: new_window}。
+Kibana 是一种基于浏览器的界面，在其中可以通过交互方式分析数据以及定制仪表板，随后可使用这些仪表板来分析日志数据并执行高级管理任务。有关更多信息，请参阅 [Kibana User Guide ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}。
 
 Kibana 页面显示的数据受搜索约束。缺省数据集由预配置的索引模式进行定义。要过滤信息，可以添加新的搜索查询，并将过滤器应用于缺省数据集。然后，可以保存搜索以供未来复用。 
 
@@ -52,15 +51,15 @@ Kibana 包含可用于分析日志的不同页面：
 
 * 通过 {{site.data.keyword.loganalysisshort}} 服务仪表板
 
-    您可以启动 Kibana，以便您看到的数据从所提供 {{site.data.keyword.Bluemix_notm}} 空间内的服务聚集日志。
+    您可以启动 Kibana，以便您看到的数据从所提供空间内的服务聚集日志。
 	
 	有关更多信息，请参阅[通过 Log Analysis 服务的仪表板浏览至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_log_analysis)。
 
-* 通过 {{site.data.keyword.Bluemix_notm}}
+* 从 {{site.data.keyword.Bluemix_notm}}
 
     可以在特定 CF 应用程序的上下文中，使用 Kibana 显示该 CF 应用程序的日志。有关更多信息，请参阅[通过 CF 应用程序的仪表板浏览至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app)。
     
-    可以在特定 Docker 容器的上下文中，使用 Kibana 显示该 Docker 容器的日志。此功能仅适用于在 {{site.data.keyword.Bluemix_notm}} 管理的云基础架构中部署的容器。有关更多信息，请参阅[通过容器的仪表板浏览至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers)。
+    可以在特定 Docker 容器的上下文中，使用 Kibana 显示该 Docker 容器的日志。此功能仅适用于在 {{site.data.keyword.Bluemix_notm}} 管理的基础架构中部署的容器。有关更多信息，请参阅[通过容器的仪表板浏览至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers)。
     
     对于 CF 应用程序，用于过滤可在 Kibana 中进行分析的数据的查询会检索 Cloud Foundry 应用程序的日志条目。Kibana 缺省显示的日志信息全部与单个 Cloud Foundry 应用程序及其所有实例相关联。 
     
@@ -68,9 +67,9 @@ Kibana 包含可用于分析日志的不同页面：
     
     
 
-* 通过直接浏览器链接
+* 通过浏览器链接直接打开
 
-    您可能希望启动 Kibana，以便您看到的数据从所提供 {{site.data.keyword.Bluemix_notm}} 空间内的服务聚集日志。
+    您可能希望启动 Kibana，以便您看到的数据从所提供空间内的服务聚集日志。
     
     用于过滤仪表板中所显示数据的查询会检索 {{site.data.keyword.Bluemix_notm}} 组织中空间的日志条目。Kibana 显示的日志信息包括在您登录到的 {{site.data.keyword.Bluemix_notm}} 组织空间内部署的所有资源的记录。 
     
@@ -103,6 +102,185 @@ Kibana 包含可用于分析日志的不同页面：
     
 定制 Kibana 仪表板后，可以通过其可视化项对数据进行分析，然后保存以供未来复用。有关更多信息，请参阅[保存 Kibana 仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save)。
 
-在 Kibana 中还有**管理**页面，可用于配置 Kibana，以及保存、删除、导出和导入搜索、可视化项和仪表板。
+## 定制 Kibana
+{: #analyze_management}
+
+您还可以通过**管理**页面来配置和管理 Kibana 资源。 
+
+您可以完成以下任务之一：
+
+* 保存、删除、导出和导入搜索。 
+* 保存、删除、导出和导入可视化。
+* 保存、删除、导出和导入仪表板。
+* [刷新字段列表。](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields)
+
+## 限制
+{: #limitations}
+
+在 Kibana 中，您仅可以与相同组织或帐户的成员共享可视化或仪表板。
+
+不支持以下 Kibana 功能：
+
+* 共享搜索。
+* 创建新索引模式。 
+
+
+## 用户查看日志所需的角色
+{: #roles}
+
+在 {{site.data.keyword.Bluemix_notm}} 中，您可以将一个或多个角色分配给用户。这些角色可定义要启用什么任务以便该用户能够使用 {{site.data.keyword.loganalysisshort}} 服务。
+ 
+
+下表列出用户查看日志时必须具有的角色：
+
+<table>
+  <caption>**帐户所有者**查看日志所需的许可权</caption>
+  <tr>
+    <th>操作</th>
+	<th>CF 空间角色</th>
+	<th>CF 组织角色</th>
+	<th>IAM 角色</th>
+  </tr>
+  <tr>
+    <td>查看空间域中的日志</td>
+	<td>*管理员* </br>*开发者* </br>*审计员*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>查看帐户域中的日志</td>
+	<td></td>
+	<td></td>
+	<td>*管理员*</td>
+  </tr>
+  <tr>
+    <td>查看组织域中的日志</td>
+	<td></td>
+	<td>*管理员* </br>*记帐管理员*  </br>*审计员*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>**审计员**查看日志所需的许可权</caption>
+  <tr>
+    <th>操作</th>
+	<th>CF 空间角色</th>
+	<th>CF 组织角色</th>
+	<th>IAM 角色</th>
+  </tr>
+  <tr>
+    <td>查看空间域中的日志</td>
+	<td>*审计员*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>查看帐户域中的日志</td>
+	<td></td>
+	<td></td>
+	<td>*查看者*</td>
+  </tr>
+  <tr>
+    <td>查看组织域中的日志</td>
+	<td></td>
+	<td>*审计员*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>**管理员**查看日志所需的许可权</caption>
+  <tr>
+    <th>操作</th>
+	<th>CF 空间角色</th>
+	<th>CF 组织角色</th>
+	<th>IAM 角色</th>
+  </tr>
+  <tr>
+    <td>查看空间域中的日志</td>
+	<td>*开发者*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>查看帐户域中的日志</td>
+	<td></td>
+	<td></td>
+	<td>*查看者*</td>
+  </tr>
+  <tr>
+    <td>查看组织域中的日志</td>
+	<td></td>
+	<td>*管理员*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>**开发者**查看日志所需的许可权</caption>
+  <tr>
+    <th>操作</th>
+	<th>CF 空间角色</th>
+	<th>CF 组织角色</th>
+	<th>IAM 角色</th>
+  </tr>
+  <tr>
+    <td>查看空间域中的日志</td>
+	<td>*开发者*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>查看帐户域中的日志</td>
+	<td></td>
+	<td></td>
+	<td>*查看者*</td>
+  </tr>
+  <tr>
+    <td>查看组织域中的日志</td>
+	<td></td>
+	<td>*审计员*</td>
+	<td></td>
+  </tr>
+</table>
+
+
+
+## 用于启动 Kibana 的 URL
+{: #urls_kibana}
+
+下表列出用于启动 Kibana 的 URL 以及每个区域的 Kibana 版本：
+
+<table>
+    <caption>用于启动 Kibana 的 URL</caption>
+    <tr>
+      <th>区域</th>
+      <th>URL</th>
+      <th>Kibana 版本</th>
+    </tr>
+	<tr>
+      <td>法兰克福</td>
+	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.nett)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+	<tr>
+      <td>悉尼</td>
+	  <td>[https://logging.au-syd.bluemix.net](https://logging.au-syd.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+	<tr>
+      <td>英国</td>
+	  <td>[https://logging.eu-gb.bluemix.net](https://logging.eu-gb.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+    <tr>
+      <td>美国南部</td>
+      <td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+</table>
+
+
 
 

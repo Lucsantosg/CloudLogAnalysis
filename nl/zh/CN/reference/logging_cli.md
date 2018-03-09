@@ -1,10 +1,9 @@
 ---
 
 copyright:
+  years: 2017, 2018
 
-  years: 2017
-
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -14,14 +13,14 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# IBM Cloud Log Analysis CLI
+# IBM Cloud Log Analysis CLI（CF 插件）
 {: #logging_cli}
 
 {{site.data.keyword.loganalysislong}} CLI 是一个插件，用于管理在 {{site.data.keyword.Bluemix}} 组织内空间中运行的云资源的日志。
 {: shortdesc}
 
 **先决条件**
-* 运行 logging 命令之前，请先使用 `cf login` 命令登录到 {{site.data.keyword.Bluemix_notm}}，以生成 {{site.data.keyword.Bluemix_short}} 访问令牌并对会话进行认证。
+* 运行 logging 命令之前，请先使用 `bx login` 命令登录到 {{site.data.keyword.Bluemix_notm}}，以生成 {{site.data.keyword.Bluemix_short}} 访问令牌并对会话进行认证。有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
 要了解如何使用 {{site.data.keyword.loganalysisshort}} CLI，请参阅[管理日志](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)。
 
@@ -32,59 +31,59 @@ lastupdated: "2017-07-19"
     <th>何时使用</th>
   </tr>
   <tr>
-    <td>[cf logging](#base)</td>
+    <td>[bx cf logging](#base)</td>
     <td>使用此命令可获取有关 CLI 的信息，例如版本或命令列表。</td>
   </tr>
   <tr>
-    <td>[cf logging auth](#auth)</td>
+    <td>[bx cf logging auth](#auth)</td>
     <td>使用此命令可获取日志记录令牌，此令牌可用于将日志发送到 {{site.data.keyword.loganalysisshort}} 服务。</td>
   </tr>
   <tr>
-    <td>[cf logging delete](#delete)</td>
+    <td>[bx cf logging delete](#delete)</td>
     <td>使用此命令可删除存储在“日志收集”中的日志。</td>
   </tr>
   <tr>
-    <td>[cf logging download (Beta)](#download)</td>
-    <td>使用此命令可将“日志收集”中的日志下载到本地文件，或者通过管道将日志传递到其他程序，例如 ELK 堆栈。</td>
+    <td>[bx cf logging download (Beta)](#download)</td>
+    <td>使用此命令可将“日志收集”中的日志下载到本地文件，或者通过管道将日志传递到其他程序，例如 Elastic 堆栈。</td>
   </tr>
   <tr>
-    <td>[cf logging help](#help)</td>
+    <td>[bx cf logging help](#help)</td>
     <td>使用此命令可获取有关如何使用 CLI 的帮助以及所有命令的列表。</td>
   </tr>
   <tr>
-    <td>[cf logging option](#option)</td>
-    <td>使用此命令可查看或设置 {{site.data.keyword.Bluemix_notm}} 空间或帐户中可用的日志的保留期。</td>
+    <td>[bx cf logging option](#option)</td>
+    <td>使用此命令可查看或设置空间或帐户中可用的日志的保留期。</td>
   </tr>
   <tr>
-    <td>[cf logging session create (Beta)](#session_create)</td>
+    <td>[bx cf logging session create (Beta)](#session_create)</td>
     <td>使用此命令可创建新会话。</td>
   <tr>
   <tr>
-    <td>[cf logging session delete (Beta)](#session_delete)</td>
+    <td>[bx cf logging session delete (Beta)](#session_delete)</td>
     <td>使用此命令可删除会话。</td>
   <tr>  
   <tr>
-    <td>[cf logging session list (Beta)](#session_list)</td>
+    <td>[bx cf logging session list (Beta)](#session_list)</td>
     <td>使用此命令可列出活动会话及其标识。</td>
   <tr>  
   <tr>
-    <td>[cf logging session show (Beta)](#session_show)</td>
+    <td>[bx cf logging session show (Beta)](#session_show)</td>
     <td>使用此命令可显示单个会话的状态。</td>
   <tr>  
   <tr>
-    <td>[cf logging status](#status)</td>
-    <td>使用此命令可获取有关在 {{site.data.keyword.Bluemix_notm}} 空间或帐户中收集的日志的信息。</td>
+    <td>[bx cf logging status](#status)</td>
+    <td>使用此命令可获取有关在空间或帐户中收集的日志的信息。</td>
   </tr>
   </table>
 
 
-## cf logging
+## bx cf logging
 {: #base}
 
 提供有关 CLI 版本以及如何使用 CLI 的信息。
 
 ```
-cf logging [parameters]
+bx cf logging [parameters]
 ```
 {: codeblock}
 
@@ -104,19 +103,19 @@ cf logging [parameters]
 要获取命令的列表，请运行以下命令：
 
 ```
-cf logging --help
+bx cf logging --help
 ```
 {: codeblock}
 
 要获取 CLI 的版本，请运行以下命令：
 
 ```
-cf logging --version
+bx cf logging --version
 ```
 {: codeblock}
 
 
-## cf logging auth
+## bx cf logging auth
 {: #auth}
 
 获取日志记录令牌，此令牌可用于将日志发送到 {{site.data.keyword.loganalysisshort}} 服务。 
@@ -124,7 +123,7 @@ cf logging --version
 **注：**此令牌不会到期。
 
 ```
-cf logging auth
+bx cf logging auth
 ```
 {: codeblock}
 
@@ -141,13 +140,13 @@ cf logging auth
   <dd>您所登录到的组织内空间的 GUID。</dd>
 </dl>
 
-## cf logging delete
+## bx cf logging delete
 {: #delete}
 
 删除存储在“日志收集”中的日志。
 
 ```
-cf logging delete [parameters]
+bx cf logging delete [parameters]
 ```
 {: codeblock}
 
@@ -171,21 +170,21 @@ cf logging delete [parameters]
 
 要删除 2017 年 5 月 25 日类型为 *linux_syslog* 的日志，请运行以下命令：
 ```
-cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: codeblock}
 
 
 
-## cf logging download (Beta)
+## bx cf logging download (Beta)
 {: #download}
 
 将“日志收集”中的日志下载到本地文件，或者通过管道将日志传递到其他程序，例如 Elastic 堆栈。 
 
-**注**：要下载文件，需要首先创建会话。会话会根据日期范围、日志类型和帐户类型来定义要下载的日志。您将在会话上下文中下载日志。有关更多信息，请参阅 [cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create)。
+**注**：要下载文件，需要首先创建会话。会话会根据日期范围、日志类型和帐户类型来定义要下载的日志。您将在会话上下文中下载日志。有关更多信息，请参阅 [bx cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create)。
 
 ```
-cf logging download [parameters] [arguments]
+bx cf logging download [parameters] [arguments]
 ```
 {: codeblock}
 
@@ -200,24 +199,24 @@ cf logging download [parameters] [arguments]
 
 <dl>
 <dt>session_ID</dt>
-<dd>设置为运行 `cf logging session create` 命令时获得的会话标识值。此值指示下载日志时要使用的会话。<br>**注**：`cf logging session create` 命令提供用于控制下载哪些日志的参数。</dd>
+<dd>设置为运行 `bx cf logging session create` 命令时获得的会话标识值。此值指示下载日志时要使用的会话。<br>**注**：`bx cf logging session create` 命令提供用于控制下载哪些日志的参数。</dd>
 </dl>
 
 **注**：下载完成后，再次运行相同的命令将拒绝执行任何操作。要重新下载相同的数据，必须使用其他文件或其他会话。
 
 **示例**
 
-要将日志下载到名为 mylogs.gz 的文件中，请运行以下命令：
+在 Linux 系统中，要将日志下载到名为 mylogs.gz 的文件中，请运行以下命令：
 
 ```
-cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 要将日志下载到自己的 Elastic 堆栈，请运行以下命令：
 
 ```
-cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+bx cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -238,13 +237,13 @@ output {
 {: screen}
 
 
-## cf logging help
+## bx cf logging help
 {: #help}
 
 提供有关如何使用命令的信息。
 
 ```
-cf logging help [parameters]
+bx cf logging help [command]
 ```
 {: codeblock}
 
@@ -262,15 +261,15 @@ cf logging help [parameters]
 要获取有关如何运行命令来查看日志状态的帮助，请运行以下命令：
 
 ```
-cf logging help status
+bx cf logging help status
 ```
 {: codeblock}
 
 
-## cf logging option
+## bx cf logging option
 {: #option}
 
-显示或更改 {{site.data.keyword.Bluemix_notm}} 空间或帐户中可用的日志的保留期。 
+显示或更改空间或帐户中可用的日志的保留期。 
 
 * 保留期以天数为单位进行设置。
 * 缺省值为 **-1**。 
@@ -278,7 +277,7 @@ cf logging help status
 **注：**缺省情况下，将存储所有日志。日志必须使用 **delete** 命令手动删除。设置保留时间策略可自动删除日志。
 
 ```
-cf logging option [parameters]
+bx cf logging option [parameters]
 ```
 {: codeblock}
 
@@ -286,18 +285,18 @@ cf logging option [parameters]
 
 <dl>
 <dt>--retention value, -r value</dt>
-<dd>（可选）设置保留天数。<br> 缺省值为 30 天。</dd>
+<dd>（可选）设置保留天数。<br> 缺省值为 *-1* 天。</dd>
 
 <dt>--at-account-level, -a </dt>
-  <dd>（可选）将作用域设置为帐户级别。<br>**注**：设置此值可获取帐户信息。<br>如果未指定此参数，那么对于当前空间（即，使用 `cf login` 命令登录到的空间），缺省值会设置为 *-1*。</dd>
+  <dd>（可选）将作用域设置为帐户级别。<br>如果未指定此参数，那么对于当前空间（即，使用 `bx cf login` 命令登录到的空间），缺省值会设置为 *-1*。</dd>
 </dl>
 
 **示例**
 
-要查看所登录到的空间的当前保留期，请运行以下命令：
+要查看所登录到的空间的缺省当前保留期，请运行以下命令：
 
 ```
-cf logging option
+bx cf logging option
 ```
 {: codeblock}
 
@@ -307,7 +306,7 @@ cf logging option
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        30 |
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        -1 |
 +--------------------------------------+-----------+
 ```
 {: screen}
@@ -316,7 +315,7 @@ cf logging option
 要将所登录到的空间的保留期更改为 25 天，请运行以下命令：
 
 ```
-cf logging option -r 25
+bx cf logging option -r 25
 ```
 {: codeblock}
 
@@ -326,13 +325,13 @@ cf logging option -r 25
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        25 |
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        25 |
 +--------------------------------------+-----------+
 ```
 {: screen}
 
 
-## cf logging session create (Beta)
+## bx cf logging session create (Beta)
 {: #session_create}
 
 创建新的会话。
@@ -340,7 +339,7 @@ cf logging option -r 25
 **注**：一个空间中最多可以有 30 个并发会话。会话是为用户创建的。因此，空间中的不同用户之间不能共享会话。
 
 ```
-cf logging session create [parameters]
+bx cf logging session create [parameters]
 ```
 {: codeblock}
 
@@ -357,7 +356,7 @@ cf logging session create [parameters]
   <dd>（可选）设置日志类型。<br>例如，*syslog* 是一种日志类型。<br>缺省值设置为星号 (*)。<br>可以指定多种日志类型并使用逗号分隔各个类型，例如 *log_type_1,log_type_2,log_type_3*。</dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>（可选）将作用域设置为帐户级别。<br>**注**：设置此值可获取帐户信息。<br>如果未指定此参数，那么仅会对当前空间（即，使用 `cf login` 命令登录到的空间）设置缺省值。</dd>
+  <dd>（可选）将作用域设置为帐户级别。<br>如果未指定此参数，那么仅会对当前空间（即，使用 `bx cf login` 命令登录到的空间）设置缺省值。</dd>
 </dl>
 
 **返回值**
@@ -391,18 +390,18 @@ cf logging session create [parameters]
 要创建会话以包含 2017 年 5 月 20 日到 2017 年 5 月 26 日之间日志类型为 *log* 的日志，请运行以下命令：
 
 ```
-cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
+bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 ```
 {: screen}
 
 
-## cf logging session delete (Beta)
+## bx cf logging session delete (Beta)
 {: #session_delete}
 
 删除会话标识指定的会话。
 
 ```
-cf logging session delete [arguments]
+bx cf logging session delete [arguments]
 ```
 {: codeblock}
 
@@ -410,7 +409,7 @@ cf logging session delete [arguments]
 
 <dl>
 <dt>session ID</dt>
-<dd>要删除的会话的标识。<br>可以使用 `cf logging session list` 命令来获取所有活动会话标识。</dd>
+<dd>要删除的会话的标识。<br>可以使用 `bx cf logging session list` 命令来获取所有活动会话标识。</dd>
 </dl>
 
 **示例**
@@ -418,19 +417,19 @@ cf logging session delete [arguments]
 要删除会话标识为 *cI6hvAa0KR_tyhjxZZz9Uw==* 的会话，请运行以下命令：
 
 ```
-cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
+bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## cf logging session list (Beta)
+## bx cf logging session list (Beta)
 {: #session_list}
 
 列出活动会话及其标识。
 
 ```
-cf logging session list 
+bx cf logging session list 
 ```
 {: codeblock}
 
@@ -454,13 +453,13 @@ cf logging session list
 </dl>
  
 
-## cf logging session show (Beta)
+## bx cf logging session show (Beta)
 {: #session_show}
 
 显示单个会话的状态。
 
 ```
-cf logging session show [arguments]
+bx cf logging session show [arguments]
 ```
 {: codeblock}
 
@@ -501,18 +500,18 @@ cf logging session show [arguments]
 要显示会话标识为 *cI6hvAa0KR_tyhjxZZz9Uw==* 的会话的详细信息，请运行以下命令：
 
 ```
-cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
+bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
-## cf logging status
+## bx cf logging status
 {: #status}
 
-返回有关在 {{site.data.keyword.Bluemix_notm}} 空间或帐户中收集的日志的信息。
+返回有关在空间或帐户中收集的日志的信息。
 
 ```
-cf logging status [parameters]
+bx cf logging status [parameters]
 ```
 {: codeblock}
 
@@ -529,12 +528,12 @@ cf logging status [parameters]
   <dd>（可选）设置日志类型。<br>例如，*syslog* 是一种日志类型。<br>缺省值设置为星号 (*)。<br>可以指定多种日志类型并使用逗号分隔各个类型，例如 *log_type_1,log_type_2,log_type_3*。</dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>（可选）将作用域设置为帐户级别。<br> **注**：设置此值可获取帐户信息。<br>如果未指定此参数，那么仅会对当前空间（即，使用 `cf login` 命令登录到的空间）设置缺省值。</dd>
+  <dd>（可选）将作用域设置为帐户级别。<br> **注**：设置此值可获取帐户信息。<br>如果未指定此参数，那么仅会对当前空间（即，使用 `bx cf login` 命令登录到的空间）设置缺省值。</dd>
   
   <dt>--list-type-detail, -l</dt>
   <dd>（可选）设置此参数可列出每天各日志类型的小计。</dd>
 </dl>
 
-**注**：如果未指定开始日期和结束日期，`cf logging status` 命令将仅报告存储在“日志收集”中的最近 2 周的日志。
+**注**：如果未指定开始日期和结束日期，`bx cf logging status` 命令将仅报告存储在“日志收集”中的最近 2 周的日志。
 
 

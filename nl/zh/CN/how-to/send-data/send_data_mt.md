@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -12,38 +14,35 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# 使用多租户 Logstash 转发器发送数据
+# 将内部部署数据发送到 IBM Cloud 中的空间
 {: #send_data_mt}
 
 要将数据发送到 {{site.data.keyword.loganalysisshort}} 服务中，可以配置多租户 Logstash 转发器 (mt-logstash-forwarder)。
-{:shortdesc}
+{: shortdesc}
 
-要将日志数据发送到“日志收集”中，请完成以下步骤：
+要将日志数据发送到 {{site.data.keyword.Bluemix_notm}} 中的空间，请完成以下步骤：
+
+## 先决条件
+{: #prereqs}
+
+* 用于登录到 {{site.data.keyword.Bluemix_notm}} 的 {{site.data.keyword.IBM_notm}} 标识。
+* 该用户标识具有在空间中使用 {{site.data.keyword.loganalysisshort}} 服务的许可权。有关更多信息，请参阅[安全性](/docs/services/CloudLogAnalysis/security_ov.html#security_ov)。
+* 本地环境中已安装 {{site.data.keyword.loganalysisshort}} CLI。
+
 
 ## 步骤 1：获取日志记录令牌
 {: #get_logging_auth_token}
 
-要将数据发送到 {{site.data.keyword.loganalysisshort}} 服务，您需要：
+请通过安装了 {{site.data.keyword.loganalysisshort}} CLI 的终端会话，完成以下步骤：
 
-* {{site.data.keyword.IBM_notm}} 标识：登录到 {{site.data.keyword.Bluemix_notm}} 时需要此标识。
-* {{site.data.keyword.Bluemix_notm}} 组织中的空间：这是您计划将日志发送到其中并在其中分析日志的空间。
-* 用于发送数据的日志记录令牌。 
+1. 登录到 {{site.data.keyword.Bluemix_notm}} 中的区域、组织和空间。 
 
-请完成以下步骤：
-
-1. 登录到 {{site.data.keyword.Bluemix_notm}} 区域、组织和空间。 
-
-    例如，要登录到美国南部区域，请运行以下命令：
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 运行 `cf logging auth` 命令。 
+2. 运行 `bx cf logging auth` 命令。 
 
     ```
-    cf logging auth
+    bx cf logging auth
     ```
     {: codeblock}
 
@@ -56,13 +55,13 @@ lastupdated: "2017-07-19"
     例如：
 
     ```
-    cf logging auth
+    bx cf logging auth
     +-----------------+--------------------------------------+
     |      NAME       |                VALUE                 |
     +-----------------+--------------------------------------+
     | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_bKsdfTz                         |
-    | Organization Id | 98450123-6f1c-9999-96a3-0210fjyuwplt |
+    | Logging Token   | oT98_abcdefz                         |
+    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
     | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
     +-----------------+--------------------------------------+
     ```
@@ -205,7 +204,7 @@ lastupdated: "2017-07-19"
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>目标 URL。将此值设置为 **https://ingest.logging.ng.bluemix.net:9091**。</td>
+            <td>目标 URL。要取得数据获取 URL 的列表，请参阅[数据获取 URL](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。例如，将此值设置为 **https://ingest.logging.ng.bluemix.net:9091**，以发送美国南部区域的日志。</td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>
@@ -228,7 +227,7 @@ lastupdated: "2017-07-19"
        LSF_INSTANCE_ID="myhelloapp"
        LSF_TARGET="ingest.logging.ng.bluemix.net:9091"
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
-       LSF_PASSWORD="oT98_bKsdfTz"
+       LSF_PASSWORD="oT98_abcdefz"
        LSF_GROUP_ID="Group1"
        ```
        {: screen}
@@ -239,22 +238,7 @@ lastupdated: "2017-07-19"
        service mt-logstash-forwarder start
        ```
        {: codeblock}
-        
-       支持 mt-logstash-forwarder 在崩溃或重新引导后自动启动。 
-        
-       ```
-       service mt-logstash-forwarder enable
-       ```
-       {: codeblock}
-        
-       **提示**：要重新启动 mt-logstash-forwarder 服务，请运行以下命令：
-    
-       ```
-       service mt-logstash-forwarder restart
-       ```
-       {: codeblock}
-        
-        
+                
 缺省情况下，转发器仅监视 syslog。您的日志可供在 Kibana 中进行分析。
         
 
@@ -300,7 +284,9 @@ lastupdated: "2017-07-19"
     
 2. 编辑 *myapp.conf* 配置文件。
 
-    要启用 JSON 解析，请将配置文件中的 is_json 设置为 true。
+    为了能够在摄入日志时通过 Kibana 中的 JSON 字段进行搜索，请启用 JSON 解析。在配置文件中，针对特定文件路径，将 `is_json` 设置为 true。对于通过此方式配置的日志文件，日志行的格式应该设置为 JSON 块，各块之间以回车符分隔。然后，mt-logstash-forwarder 会将所有这些 JSON 字段用作各个 Kibana 可搜索字段。JSON 字段名称包含基于类型的后缀。
+
+    
     
     ```
     {

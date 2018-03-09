@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -20,22 +22,19 @@ lastupdated: "2017-07-19"
 
 要将 {{site.data.keyword.Bluemix_notm}} 空间中可用的日志数据下载到本地文件中，请完成以下步骤：
 
-开始之前，请登录到 {{site.data.keyword.Bluemix_notm}} 区域、组织和空间。 
+## 步骤 1：登录到 IBM Cloud
 
-例如，要登录到美国南部区域，请运行以下命令：
-	
-```
-cf login -a https://api.ng.bluemix.net
-```
-{: codeblock}
+登录到 {{site.data.keyword.Bluemix_notm}} 中的区域、组织和空间。 
 
-## 步骤 1：确定可用的日志
-{: #step1}
+有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
-1. 使用 `cf logging status` 命令可查看最近 2 周可用的日志。运行以下命令：
+## 步骤 2：确定可用的日志
+{: #step2}
+
+1. 使用 `bx cf logging status` 命令可查看最近 2 周可用的日志。运行以下命令：
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
@@ -55,8 +54,8 @@ cf login -a https://api.ng.bluemix.net
     **注**：{{site.data.keyword.loganalysisshort}} 服务是一种全球服务，使用全球标准时间 (UTC）。日期定义为 UTC 日期。要获取特定本地时间日期的日志，可能需要下载多个 UTC 日期。
 
 
-## 步骤 2：创建会话
-{: #step2}
+## 步骤 3：创建会话
+{: #step3}
 
 要定义可供下载的日志数据的作用域，并保持下载的状态，会话是必需的。 
 
@@ -68,7 +67,7 @@ cf login -a https://api.ng.bluemix.net
 要创建会话以用于下载类型为 *log* 的日志，请运行以下命令：
 
 ```
-cf logging session create -t log
+bx cf logging session create -t log
 ```
 {: codeblock}
 
@@ -82,7 +81,7 @@ cf logging session create -t log
 例如：
 
 ```
-$ cf logging session create -t log     
+$ bx cf logging session create -t log     
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -104,13 +103,13 @@ $ cf logging session create -t log
 
 **提示**：要查看活动会话的列表，请运行 [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list) 命令。
 
-## 步骤 3：将日志数据下载到文件
-{: #step3}
+## 步骤 4：将日志数据下载到文件
+{: #step4}
 
 要下载会话参数指定的日志，请运行以下命令：
 
 ```
-cf logging download -o Log_File_Name Session_ID
+bx cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -122,7 +121,7 @@ cf logging download -o Log_File_Name Session_ID
 例如：
 
 ```
-cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -135,14 +134,15 @@ cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
 * 压缩的 JSON 适合由 ElasticSearch 或 Logstash 获取。如果未提供 -o，那么数据将流式传输到 stdout，以便您可以将其通过管道传递到自己的 ELK 堆栈中。
 * 还可以使用能解析 JSON 的任何程序来处理这些数据。 
 
-## 步骤 4：删除会话
+## 步骤 5：删除会话
+{: #step5}
 
 下载完成后，必须使用 [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete) 命令来删除会话。 
 
 运行以下命令来删除会话：
 
 ```
-cf logging session delete Session_ID
+bx cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -151,7 +151,7 @@ cf logging session delete Session_ID
 例如：
 
 ```
-cf logging session delete -jshdjsunelsssr4566722==
+bx cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

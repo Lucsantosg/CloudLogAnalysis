@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
 
@@ -15,7 +16,7 @@ lastupdated: "2017-07-19"
 # Protokollaufbewahrungsrichtlinie konfigurieren
 {: #configuring_retention_policy}
 
-Mit dem Befehl **cf logging option** wird die Aufbewahrungsrichtlinie angezeigt und konfiguriert, die die Dauer (in Tagen) angibt, für die die Protokolle in 'Log Collection' aufbewahrt werden. Standardmäßig werden Protokolle 30 Tage lang aufbewahrt. Wenn der Aufbewahrungszeitraum abgelaufen ist, werden die Protokolle automatisch gelöscht. Standardmäßig ist die Aufbewahrungsrichtlinie inaktiviert.
+Mit dem Befehl **cf logging option** wird die Aufbewahrungsrichtlinie angezeigt und konfiguriert, die die Dauer (in Tagen) angibt, für die die Protokolle in 'Log Collection' aufbewahrt werden. Standardmäßig ist die Aufbewahrungsrichtlinie inaktiviert und die Protokolle werden unbegrenzt lange aufbewahrt. Wenn der Aufbewahrungszeitraum abgelaufen ist, werden die Protokolle automatisch gelöscht. 
 {:shortdesc}
 
 In einem Konto können verschiedene Aufbewahrungsrichtlinien definiert sein. Sie können eine globale Kontenrichtlinie und einzelne Bereichsrichtlinien haben. Die Aufbewahrungsrichtlinie, die Sie auf Kontoebene festlegen, legt die maximale Anzahl von Tagen fest, für die Protokolle aufbewahrt werden. Wenn Sie eine Bereichsaufbewahrungsrichtlinie für einen bestimmten Zeitraum festlegen, der länger als der Zeitraum auf Kontoebene ist, wird die Richtlinie angewendet, die Sie als letzte für diesen Bereich konfiguriert haben. 
@@ -26,19 +27,14 @@ In einem Konto können verschiedene Aufbewahrungsrichtlinien definiert sein. Sie
 
 Führen Sie die folgenden Schritte aus, um eine Aufbewahrungsrichtlinie zu inaktivieren:
 
-1. Melden Sie sich unter {{site.data.keyword.Bluemix_notm}} an der Region, der Organisation und dem Bereich an, für die/den Sie eine Protokollaufbewahrungsrichtlinie festlegen wollen. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
-    Führen Sie zum Beispiel den folgenden Befehl aus, um sich an der Region 'USA (Süden)' anzumelden: 
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Legen Sie den Aufbewahrungszeitraum auf **-1** fest, um den Aufbewahrungszeitraum zu inaktivieren. Führen Sie den folgenden Befehl aus:
 
     ```
-    cf logging option -r -1
+    bx cf logging option -r -1
     ```
     {: codeblock}
     
@@ -47,7 +43,7 @@ Führen Sie die folgenden Schritte aus, um eine Aufbewahrungsrichtlinie zu inakt
 Um beispielsweise den Aufbewahrungszeitraum für einen Bereich mit der ID *d35da1e3-b345-475f-8502-cfgh436902a3* zu inaktivieren, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging option -r -1
+bx cf logging option -r -1
 ```
 {: codeblock}
 
@@ -67,21 +63,16 @@ Die Ausgabe sieht wie folgt aus:
 ## Protokollaufbewahrungsrichtlinie für einen Bereich überprüfen
 {: #check_retention_policy_space}
 
-Um die Aufbewahrungsdauer abzurufen, die für einen {{site.data.keyword.Bluemix_notm}}-Bereich festgelegt ist, führen Sie die folgenden Schritte aus:
+Um die Aufbewahrungsdauer abzurufen, die für einen Bereich festgelegt ist, führen Sie die folgenden Schritte aus:
 
-1. Melden Sie sich unter {{site.data.keyword.Bluemix_notm}} an der Region, der Organisation und dem Bereich an, für die/den Sie eine Protokollaufbewahrungsrichtlinie festlegen wollen. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
-    Führen Sie zum Beispiel den folgenden Befehl aus, um sich an der Region 'USA (Süden)' anzumelden: 
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Rufen Sie den Aufbewahrungszeitraum ab. Führen Sie den folgenden Befehl aus:
 
     ```
-    cf logging option
+    bx cf logging option
     ```
     {: codeblock}
 
@@ -100,21 +91,16 @@ Um die Aufbewahrungsdauer abzurufen, die für einen {{site.data.keyword.Bluemix_
 ## Protokollaufbewahrungsrichtlinie für alle Bereiche in einem Konto überprüfen
 {: #check_retention_policy_account}
 
-Um die Aufbewahrungsdauer abzurufen, die für jeden {{site.data.keyword.Bluemix_notm}}-Bereich in einem Konto festgelegt ist, führen Sie die folgenden Schritte aus:
+Um die Aufbewahrungsdauer abzurufen, die für jeden Bereich in einem Konto festgelegt ist, führen Sie die folgenden Schritte aus:
 
-1. Melden Sie sich unter {{site.data.keyword.Bluemix_notm}} an der Region, der Organisation und dem Bereich an, für die/den Sie eine Protokollaufbewahrungsrichtlinie festlegen wollen. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
-    Führen Sie zum Beispiel den folgenden Befehl aus, um sich an der Region 'USA (Süden)' anzumelden: 
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Rufen Sie den Aufbewahrungszeitraum für jeden Bereich in dem Konto ab. Führen Sie den folgenden Befehl aus:
 
     ```
-    cf logging option -a
+    bx cf logging option -a
     ```
     {: codeblock}
 
@@ -135,21 +121,16 @@ Um die Aufbewahrungsdauer abzurufen, die für jeden {{site.data.keyword.Bluemix_
 ## Protokollaufbewahrungsrichtlinie auf Kontoebene festlegen
 {: #set_retention_policy_space}
 
-Um die Aufbewahrungsdauer für ein {{site.data.keyword.Bluemix_notm}}-Konto anzuzeigen, führen Sie die folgenden Schritte aus:
+Um die Aufbewahrungsdauer für ein Konto anzuzeigen, führen Sie die folgenden Schritte aus:
 
-1. Melden Sie sich unter {{site.data.keyword.Bluemix_notm}} an der Region, der Organisation und dem Bereich an, für die/den Sie eine Protokollaufbewahrungsrichtlinie festlegen wollen. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
-    Führen Sie zum Beispiel den folgenden Befehl aus, um sich an der Region 'USA (Süden)' anzumelden: 
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Legen Sie den Aufbewahrungszeitraum fest. Führen Sie den folgenden Befehl aus:
 
     ```
-    cf logging option -r *Anzahl_von_Tagen* - a
+    bx cf logging option -r *Anzahl_von_Tagen* - a
     ```
     {: codeblock}
     
@@ -161,7 +142,7 @@ Um die Aufbewahrungsdauer für ein {{site.data.keyword.Bluemix_notm}}-Konto anzu
 Beispiel: Wenn alle Protokolltypen nur für 15 Tage in Ihrem Konto verbleiben sollen, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging option -r 15 -a
+bx cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -181,21 +162,16 @@ Die Ausgabe enthält einen Eintrag für jeden Bereich des Kontos, einschließlic
 ## Protokollaufbewahrungsrichtlinie für einen Bereich festlegen
 {: #set_retention_policy_account}
 
-Um die Aufbewahrungsdauer für einen {{site.data.keyword.Bluemix_notm}}-Bereich anzuzeigen, führen Sie die folgenden Schritte aus:
+Um die Aufbewahrungsdauer für einen Bereich anzuzeigen, führen Sie die folgenden Schritte aus:
 
-1. Melden Sie sich unter {{site.data.keyword.Bluemix_notm}} an der Region, der Organisation und dem Bereich an, für die/den Sie eine Protokollaufbewahrungsrichtlinie festlegen wollen. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
-    Führen Sie zum Beispiel den folgenden Befehl aus, um sich an der Region 'USA (Süden)' anzumelden: 
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Legen Sie den Aufbewahrungszeitraum fest. Führen Sie den folgenden Befehl aus:
 
     ```
-    cf logging option -r *Anzahl_von_Tagen*
+    bx cf logging option -r *Anzahl_von_Tagen*
     ```
     {: codeblock}
     
@@ -207,7 +183,7 @@ Um die Aufbewahrungsdauer für einen {{site.data.keyword.Bluemix_notm}}-Bereich 
 Beispiel: Wenn Protokolle für ein ganzes Jahr in einem Bereich verbleiben sollen, führen Sie den folgenden Befehl aus:
 
 ```
-cf logging option -r 365
+bx cf logging option -r 365
 ```
 {: codeblock}
 

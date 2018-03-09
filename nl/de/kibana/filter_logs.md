@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -28,7 +29,7 @@ Wenn Sie eine neue Suche definiert haben, können Sie sie speichern, um sie für
 
 Wenn Sie eine neue Suche ausführen, werden das Histogramm, die Tabelle und die Feldliste automatisch aktualisiert, sodass sie die Suchergebnisse anzeigen. Informationen darüber, welche Daten angezeigt werden, finden Sie unter [Auf der Seite 'Discover' angezeigte Daten ermitteln](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 
-Die Szenarios in der folgenden Liste veranschaulichen, wie Sie Daten in Ihren Protokollen filtern: 
+Die Szenarios in der folgenden Liste veranschaulichen, wie Sie Daten in Ihren Protokollen filtern:
 
 * Sie können angepasste Suchen zum Filtern Ihrer Protokolle erstellen. Weitere Informationen finden Sie unter [Protokolle durch Definieren angepasster Abfragen filtern](/docs/services/CloudLogAnalysis/kibana/define_search.html#define_search).
 
@@ -77,9 +78,9 @@ Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen 
     
     Wenn Sie den Wert nicht finden, gehen Sie entsprechend den Anweisungen unter [Filter für einen Wert hinzufügen, der nicht in der Feldliste enthalten ist](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#add_filter_out_value) vor.
 
-3. Zum Hinzufügen eines Filters, der nach Einträgen in einem Feldwert sucht, wählen Sie für diesen Wert die Lupenschaltfläche mit dem Pluszeichen ![Lupenschaltfläche im Einschlussmodus](images/include_field_icon.jpg "Lupenschaltfläche im Einschlussmodus") aus. 
+3. Zum Hinzufügen eines Filters, der nach Einträgen in einem Feldwert sucht, wählen Sie für diesen Wert die Lupenschaltfläche mit dem Pluszeichen ![Lupenschaltfläche im Einschlussmodus](images/include_field_icon.jpg "Lupenschaltfläche im Einschlussmodus") aus.
 
-    Um einen Filter hinzuzufügen, der nach Einträgen sucht, die diesen Feldwert nicht enthalten, wählen Sie für den Wert die Lupenschaltfläche mit dem Minuszeichen ![Lupenschaltfläche im Ausschlussmodus](images/exclude_field_icon.jpg "Lupenschaltfläche im Ausschlussmodus") aus. 
+    Um einen Filter hinzuzufügen, der nach Einträgen sucht, die diesen Feldwert nicht enthalten, wählen Sie für den Wert die Lupenschaltfläche mit dem Minuszeichen ![Lupenschaltfläche im Ausschlussmodus](images/exclude_field_icon.jpg "Lupenschaltfläche im Ausschlussmodus") aus.
 
 4. Wählen Sie eine der folgenden Optionen aus, um in Kibana mit Filtern zu arbeiten:
 
@@ -94,7 +95,7 @@ Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen 
         <tr>
           <td align="left">Enable</td>
           <td align="left">Wählen Sie diese Option aus, um einen Filter zu aktivieren.</td>
-          <td align="left">Wenn Sie einen Filter hinzufügen, wird er automatisch aktiviert. <br> Wenn ein Filter inaktiviert ist, klicken Sie ihn an, um ihn zu aktivieren. </td>
+          <td align="left">Wenn Sie einen Filter hinzufügen, wird er automatisch aktiviert. <br> Wenn ein Filter inaktiviert ist, klicken Sie ihn an, um ihn zu aktivieren.</td>
         </tr>
         <tr>
           <td align="left">Disable</td>
@@ -194,7 +195,7 @@ Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen 
 
 Sie können Einträge anzeigen und suchen, die einen bestimmten Text im Wert eines Felds enthalten. 
 
-**Hinweis:** Eine freie Textsuche können Sie nur für Zeichenfolgefelder ausführen, die von Elasticsearch Analyzer analysiert werden.  
+**Hinweis:** Eine freie Textsuche können Sie nur für Zeichenfolgefelder ausführen, die von Elasticsearch Analyzer analysiert werden. 
     
 Wenn Elasticsearch den Wert einer Zeichenfolgefelds analysiert, teilt es den Text an den Wortgrenzen (wie vom Unicode Consortium definiert), entfernt Interpunktionszeichen und wandelt alle Wörter in Kleinschreibung um.
     
@@ -223,7 +224,7 @@ Wenn Sie Kibana für eine Cloud Foundry-Anwendung über die {{site.data.keyword.
     
 1. Überprüfen Sie die geladene Suchabfrage und die angezeigten Daten auf der Seite 'Discover'.
        
-2. Um nach der Nachrichten-ID *CWWKT0016I* zu suchen, ändern Sie die Suchabfrage in der **Suchleiste** und drücken Sie die **Eingabetaste**. 
+2. Um nach der Nachrichten-ID *CWWKT0016I* zu suchen, ändern Sie die Suchabfrage in der **Suchleiste** und drücken Sie die **Eingabetaste**.
     
     Geben Sie beispielsweise den folgenden Text in der Suchleiste für eine CF-App mit der ID *f52f6016-3aab-4b5c-aa2e-5493747cb978* ein:
 
@@ -238,13 +239,13 @@ Die Tabelle enthält Einträge für Ihre CF-App für die Fälle, in denen der Te
 ## Zeitfilter festlegen
 {: #set_time_filter}
 
-Sie können {{site.data.keyword.Bluemix_notm}}-Protokolle für einen bestimmten Zeitraum anzeigen und filtern, indem Sie die Funktion *Time Picker* konfigurieren.
+Sie können Protokolle für einen bestimmten Zeitraum anzeigen und filtern, indem Sie die Funktion *Time Picker* konfigurieren.
 
 Sie können die Funktion *Time Picker* auf der Seite 'Discover' konfigurieren. Standardmäßig ist die Funktion auf die letzten 15 Minuten eingestellt. 
 
 Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die eine bestimmte Zeitangabe enthalten:
 
-1. Klicken Sie in der Menüleiste der Seite 'Discover' auf das Zeitauswahlfeld (Time Picker) ![Time Picker](images/time_picker_icon.jpg "Time Picker"). 
+1. Klicken Sie in der Menüleiste der Seite 'Discover' auf das Zeitauswahlfeld (Time Picker) ![Time Picker](images/time_picker_icon.jpg "Time Picker").
 
 2. Richten Sie das Zeitintervall ein. 
 

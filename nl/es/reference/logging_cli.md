@@ -1,10 +1,9 @@
 ---
 
 copyright:
+  years: 2017, 2018
 
-  years: 2017
-
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -14,14 +13,14 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# CLI de IBM Cloud Log Analysis
+# CLI de IBM Cloud Log Analysis (plugin CF)
 {: #logging_cli}
 
 La CLI de {{site.data.keyword.loganalysislong}} es un plugin para gestionar los registros correspondientes a los recursos de nube que se ejecutan en un espacio de una organización de {{site.data.keyword.Bluemix}}.
 {: shortdesc}
 
 **Requisitos previos**
-* Antes de ejecutar mandatos de registro, inicie una sesión en {{site.data.keyword.Bluemix_notm}} con el mandato `cf login` para generar una señal de acceso de {{site.data.keyword.Bluemix_short}} y autenticar la sesión.
+* Antes de ejecutar mandatos de registro, inicie una sesión en {{site.data.keyword.Bluemix_notm}} con el mandato `bx login` para generar una señal de acceso de {{site.data.keyword.Bluemix_short}} y autenticar la sesión. Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 Para obtener información sobre la utilización de la interfaz de línea de mandatos de {{site.data.keyword.loganalysisshort}}, consulte [Gestión de registros](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov).
 
@@ -32,59 +31,59 @@ Para obtener información sobre la utilización de la interfaz de línea de mand
     <th>Cuándo utilizarlo</th>
   </tr>
   <tr>
-    <td>[cf logging](#base)</td>
+    <td>[bx cf logging](#base)</td>
     <td>Utilice este mandato para obtener información sobre la CLI, como por ejemplo la versión o la lista de mandatos.</td>
   </tr>
   <tr>
-    <td>[cf logging auth](#auth)</td>
+    <td>[bx cf logging auth](#auth)</td>
     <td>Utilice este mandato para obtener la señal de registro que puede utilizar para enviar registros al servicio {{site.data.keyword.loganalysisshort}}.</td>
   </tr>
   <tr>
-    <td>[cf logging delete](#delete)</td>
+    <td>[bx cf logging delete](#delete)</td>
     <td>Utilice este mandato para suprimir los registros almacenados en el componente de recopilación de registros.</td>
   </tr>
   <tr>
-    <td>[cf logging download (Beta)](#download)</td>
-    <td>Utilice este mandato para descargar de la recopilación de registros en un archivo local, o para direccionar los registros a otro programa, como por ejemplo una pila ELK. </td>
+    <td>[bx cf logging download (Beta)](#download)</td>
+    <td>Utilice este mandato para descargar de la recopilación de registros en un archivo local, o para direccionar los registros a otro programa, como por ejemplo Elastic Stack. </td>
   </tr>
   <tr>
-    <td>[cf logging help](#help)</td>
+    <td>[bx cf logging help](#help)</td>
     <td>Utilice este mandato para obtener ayuda sobre cómo utilizar la CLI y una lista de todos los mandatos.</td>
   </tr>
   <tr>
-    <td>[cf logging option](#option)</td>
-    <td>Utilice este mandato para ver o definir el periodo de retención para los registros que están disponibles en un espacio o una cuenta de {{site.data.keyword.Bluemix_notm}}.</td>
+    <td>[bx cf logging option](#option)</td>
+    <td>Utilice este mandato para ver o definir el periodo de retención para los registros que están disponibles en un espacio o una cuenta.</td>
   </tr>
   <tr>
-    <td>[cf logging session create (Beta)](#session_create)</td>
+    <td>[bx cf logging session create (Beta)](#session_create)</td>
     <td>Utilice este mandato para crear una nueva sesión.</td>
   <tr>
   <tr>
-    <td>[cf logging session delete (Beta)](#session_delete)</td>
+    <td>[bx cf logging session delete (Beta)](#session_delete)</td>
     <td>Utilice este mandato para suprimir una sesión.</td>
   <tr>  
   <tr>
-    <td>[cf logging session list (Beta)](#session_list)</td>
+    <td>[bx cf logging session list (Beta)](#session_list)</td>
     <td>Utilice este mandato para obtener una lista de las sesiones activas y sus ID.</td>
   <tr>  
   <tr>
-    <td>[cf logging session show (Beta)](#session_show)</td>
+    <td>[bx cf logging session show (Beta)](#session_show)</td>
     <td>Utilice este mandato para ver el estado de una sesión individual.</td>
   <tr>  
   <tr>
-    <td>[cf logging status](#status)</td>
-    <td>Utilice este mandato para obtener información sobre los registros que se han recopilado en un espacio o cuenta de {{site.data.keyword.Bluemix_notm}}.</td>
+    <td>[bx cf logging status](#status)</td>
+    <td>Utilice este mandato para obtener información sobre los registros que se han recopilado en un espacio o cuenta.</td>
   </tr>
   </table>
 
 
-## cf logging
+## bx cf logging
 {: #base}
 
 Proporciona información sobre la versión de la CLI y sobre cómo utilizar la CLI.
 
 ```
-cf logging [parámetros]
+bx cf logging [parámetros]
 ```
 {: codeblock}
 
@@ -104,19 +103,20 @@ cf logging [parámetros]
 Para obtener la lista de mandatos, ejecute el mandato siguiente:
 
 ```
-cf logging --help
+bx cf logging --help
 ```
 {: codeblock}
 
 Para obtener la versión de la CLI, ejecute el mandato siguiente:
 
 ```
-cf logging --version
-```
+    bx cf logging --version
+ ```
 {: codeblock}
 
 
-## cf logging auth
+##     bx cf logging auth
+ 
 {: #auth}
 
 Devuelve una señal de registro que puede utilizar para enviar registros al servicio {{site.data.keyword.loganalysisshort}}. 
@@ -124,8 +124,8 @@ Devuelve una señal de registro que puede utilizar para enviar registros al serv
 **Nota:** La señal no caduca.
 
 ```
-cf logging auth
-```
+    bx cf logging auth
+ ```
 {: codeblock}
 
 **Devuelve**
@@ -144,13 +144,13 @@ cf logging auth
   </dd>
 </dl>
 
-## cf logging delete
+## bx cf logging delete
 {: #delete}
 
 Suprime los registros almacenados en el componente de recopilación de registros.
 
 ```
-cf logging delete [parámetros]
+bx cf logging delete [parámetros]
 ```
 {: codeblock}
 
@@ -178,21 +178,21 @@ cf logging delete [parámetros]
 
 Para suprimir los registros de tipo *linux_syslog* del 25 de mayo de 2017, ejecute el mandato siguiente:
 ```
-cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
-```
+bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	```
 {: codeblock}
 
 
 
-## cf logging download (Beta)
+## bx cf logging download (Beta)
 {: #download}
 
 Descarga los registros del componente de recopilación de registros en un archivo local o direcciona los registros a otro programa, como por ejemplo Elastic Stack. 
 
-**Nota:** Para descargar archivos, primero tiene que crear una sesión. Una sesión define los registros que se van a descargar en función de rango de fechas, tipo de registro y tipo de cuenta. Los registros se descargan dentro del contexto de una sesión. Para obtener más información, consulte [cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
+**Nota:** Para descargar archivos, primero tiene que crear una sesión. Una sesión define los registros que se van a descargar en función de rango de fechas, tipo de registro y tipo de cuenta. Los registros se descargan dentro del contexto de una sesión. Para obtener más información, consulte [bx cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
 
 ```
-cf logging download [parámetros] [argumentos]
+bx cf logging download [parámetros] [argumentos]
 ```
 {: codeblock}
 
@@ -207,24 +207,24 @@ cf logging download [parámetros] [argumentos]
 
 <dl>
 <dt>ID_sesión</dt>
-<dd>Establezca el valor de ID de sesión que se obtiene cuando se ejecuta el mandato `cf logging session create`. Este valor indica la sesión que se utilizará para descargar los registros. <br>**Nota:** El mandato `cf logging session create` proporciona los parámetros que controlan los registros que se descargan. </dd>
+<dd>Establezca el valor de ID de sesión que se obtiene cuando se ejecuta el mandato `bx cf logging session create`. Este valor indica la sesión que se utilizará para descargar los registros. <br>**Nota:** El mandato `bx cf logging session create` proporciona los parámetros que controlan los registros que se descargan. </dd>
 </dl>
 
 **Nota:** Una vez finalizada la descarga, si se intenta ejecutar el mismo mandato de nuevo, este no hará nada. Para volver a descargar los mismos datos, debe utilizar otro archivo u otra sesión.
 
 **Ejemplos**
 
-Para descargar registros en un archivo denominado mylogs.gz, ejecute el mandato siguiente:
+En un sistema Linux, para descargar registros en un archivo denominado mylogs.gz, ejecute el mandato siguiente:
 
 ```
-cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 Para descargar registros en su propia plataforma Elastic Stack, ejecute el mandato siguiente:
 
 ```
-cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+bx cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -245,13 +245,14 @@ output {
 {: screen}
 
 
-## cf logging help
+##     bx cf logging help
+ 
 {: #help}
 
 Proporciona información sobre cómo utilizar un mandato.
 
 ```
-cf logging help [parámetros]
+bx cf logging help [mandato]
 ```
 {: codeblock}
 
@@ -269,15 +270,16 @@ cf logging help [parámetros]
 Para obtener ayuda sobre cómo ejecutar el mandato para ver el estado de los registros, ejecute el mandato siguiente:
 
 ```
-cf logging help status
+bx cf logging help status
 ```
 {: codeblock}
 
 
-## cf logging option
+##     bx cf logging option
+ 
 {: #option}
 
-Muestra o cambia el periodo de retención para los registros que están disponibles en un espacio o una cuenta de {{site.data.keyword.Bluemix_notm}}. 
+Muestra o cambia el periodo de retención para los registros que están disponibles en un espacio o una cuenta. 
 
 * El periodo se establece en número de días.
 * El valor predeterminado es **-1**. 
@@ -285,7 +287,7 @@ Muestra o cambia el periodo de retención para los registros que están disponib
 **Nota:** de forma predeterminada, se almacenan todos los registros. Debe suprimirlos manualmente mediante el mandato **delete**. Defina una política de retención para suprimir registros automáticamente.
 
 ```
-cf logging option [parámetros]
+bx cf logging option [parámetros]
 ```
 {: codeblock}
 
@@ -293,20 +295,20 @@ cf logging option [parámetros]
 
 <dl>
 <dt>--retention valor, -r valor</dt>
-<dd>(Opcional) Define el número de días de retención. <br> El valor predeterminado es 30 días.</dd>
+<dd>(Opcional) Define el número de días de retención. <br> El valor predeterminado es *-1* días.</dd>
 
 <dt>--at-account-level, -a </dt>
-  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br>**Nota:** Defina este valor para obtener información sobre la cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en *-1* para el espacio actual, que es el espacio donde ha iniciado la sesión mediante el mandato `cf login`.
-  </dd>
+  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en *-1* para el espacio actual, que es el espacio donde ha iniciado la sesión mediante el mandato `bx cf login`.
+ </dd>
 </dl>
 
 **Ejemplos**
 
-Para ver el periodo de retención actual para el espacio en el que ha iniciado la sesión, ejecute el mandato siguiente:
+Para ver el periodo de retención actual predeterminado para el espacio en el que ha iniciado la sesión, ejecute el mandato siguiente:
 
 ```
-cf logging option
-```
+    bx cf logging option
+ ```
 {: codeblock}
 
 La salida es:
@@ -315,7 +317,7 @@ La salida es:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        30 |
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        -1 |
 +--------------------------------------+-----------+
 ```
 {: screen}
@@ -324,7 +326,7 @@ La salida es:
 Para cambiar el periodo de retención por 25 días para el espacio en el que ha iniciado la sesión, ejecute el mandato siguiente:
 
 ```
-cf logging option -r 25
+bx cf logging option -r 25
 ```
 {: codeblock}
 
@@ -334,13 +336,13 @@ La salida es:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        25 |
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        25 |
 +--------------------------------------+-----------+
 ```
 {: screen}
 
 
-## cf logging session create (Beta)
+## bx cf logging session create (Beta)
 {: #session_create}
 
 Crea una nueva sesión.
@@ -348,7 +350,7 @@ Crea una nueva sesión.
 **Nota:** Puede tener un máximo de 30 sesiones simultáneas en un espacio. La sesión se crea para un usuario. Las sesiones no se pueden compartir entre usuarios de un espacio.
 
 ```
-cf logging session create [parámetros]
+bx cf logging session create [parámetros]
 ```
 {: codeblock}
 
@@ -368,8 +370,8 @@ cf logging session create [parámetros]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br>**Nota:** Defina este valor para obtener información sobre la cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en solo el espacio actual, es decir, el espacio donde ha iniciado la sesión mediante el mandato `cf login`.
-  </dd>
+  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en solo el espacio actual, es decir, el espacio donde ha iniciado la sesión mediante el mandato `bx cf login`.
+ </dd>
 </dl>
 
 **Valores que se devuelven**
@@ -403,18 +405,18 @@ cf logging session create [parámetros]
 Para crear una sesión que incluya los registros comprendidos entre el 20 de mayo de 2017 y el 26 de mayo de 2017 para el tipo de registro *log*, ejecute el mandato siguiente:
 
 ```
-cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
+bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 ```
 {: screen}
 
 
-## cf logging session delete (Beta)
+## bx cf logging session delete (Beta)
 {: #session_delete}
 
 Suprime una sesión, especificada por ID de sesión.
 
 ```
-cf logging session delete [argumentos]
+bx cf logging session delete [argumentos]
 ```
 {: codeblock}
 
@@ -423,7 +425,7 @@ cf logging session delete [argumentos]
 <dl>
 <dt>ID de
 sesión</dt>
-<dd>ID de la sesión que desea suprimir. <br>Puede utilizar el mandato `cf logging session list` para obtener todos los ID de sesiones activas.</dd>
+<dd>ID de la sesión que desea suprimir. <br>Puede utilizar el mandato `bx cf logging session list` para obtener todos los ID de sesiones activas.</dd>
 </dl>
 
 **Ejemplo**
@@ -431,19 +433,19 @@ sesión</dt>
 Para suprimir una sesión con el ID de sesión *cI6hvAa0KR_tyhjxZZz9Uw==*, ejecute el mandato siguiente:
 
 ```
-cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
+bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## cf logging session list (Beta)
+## bx cf logging session list (Beta)
 {: #session_list}
 
 Muestra una lista de las sesiones activas y sus ID.
 
 ```
-cf logging session list 
+bx cf logging session list
 ```
 {: codeblock}
 
@@ -467,13 +469,13 @@ cf logging session list
 </dl>
  
 
-## cf logging session show (Beta)
+## bx cf logging session show (Beta)
 {: #session_show}
 
 Muestra el estado de una sesión individual.
 
 ```
-cf logging session show [argumentos]
+bx cf logging session show [argumentos]
 ```
 {: codeblock}
 
@@ -514,18 +516,19 @@ cf logging session show [argumentos]
 Para mostrar los detalles de una sesión con el ID de sesión *cI6hvAa0KR_tyhjxZZz9Uw==*, ejecute el mandato siguiente:
 
 ```
-cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
+bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
-## cf logging status
+##     bx cf logging status
+ 
 {: #status}
 
-Devuelve información sobre los registros que se han recopilado en un espacio o cuenta de {{site.data.keyword.Bluemix_notm}}.
+Devuelve información sobre los registros que se han recopilado en un espacio o cuenta.
 
 ```
-cf logging status [parámetros]
+bx cf logging status [argumentos]
 ```
 {: codeblock}
 
@@ -545,14 +548,14 @@ cf logging status [parámetros]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br> **Nota:** Defina este valor para obtener información sobre la cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en solo el espacio actual, es decir, el espacio donde ha iniciado la sesión mediante el mandato `cf login`.
-  </dd>
+  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br> **Nota:** Defina este valor para obtener información sobre la cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en solo el espacio actual, es decir, el espacio donde ha iniciado la sesión mediante el mandato `bx cf login`.
+ </dd>
   
   <dt>--list-type-detail, -l</dt>
   <dd>(Opcional) Defina este parámetro para obtener una lista del subtotal de tipos de registro para cada día.
   </dd>
 </dl>
 
-**Nota:** El mandato `cf logging status` solo muestra las 2 últimas semanas de registros que se han almacenado en el componente de recopilación de registros cuando no se especifican fechas inicial y final.
+**Nota:** El mandato `bx cf logging status` solo muestra las 2 últimas semanas de registros que se han almacenado en el componente de recopilación de registros cuando no se especifican fechas inicial y final.
 
 

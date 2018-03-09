@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -29,26 +31,23 @@ Verwenden Sie den Befehl `cf logging status` mit der Option **-s**, um den Start
 * `cf logging status -s 2017-05-03` stellt Informationen vom 3. Mai 2017 bis zum aktuellen Datum bereit.
 * `cf logging status -s 2017-05-03 -e 2017-05-08` stellt Informationen für den Zeitraum vom 3. Mai 2017 bis zum 8. Mai 2017 bereit. 
 
-1. Melden Sie sich unter {{site.data.keyword.Bluemix_notm}} an einer Region, einer Organisation und einem Bereich an. 
+Führen Sie die folgenden Schritte aus, um Informationen zu Protokollen abzurufen:
 
-    Führen Sie zum Beispiel den folgenden Befehl aus, um sich an der Region 'USA (Süden)' anzumelden: 
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+
+    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Führen Sie den Befehl *status* aus.
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
     Beispiel:
     
     ```
-    $ cf logging status
+    $ bx cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -69,19 +68,16 @@ Um Informationen zu einem Protokolltyp über eine bestimmten Zeitraum zu erhalte
 * `cf logging status -s 2017-05-03 -t syslog` stellt Informationen zu Protokollen des Typs *syslog* vom 3. Mai 2017 bis zum aktuellen Datum bereit.
 * `cf logging status -s 2017-05-03 -e 2017-05-08 -t syslog` stellt Informationen zu Protokollen des Typs *syslog* für den Zeitraum vom 3. Mai 2017 bis zum 8. Mai 2017 bereit. 
 
-1. Melden Sie sich unter {{site.data.keyword.Bluemix_notm}} an einer Region, einer Organisation und einem Bereich an. 
+Führen Sie die folgenden Schritte aus, um Informationen zu einem Protokolltyp über einen Zeitraum abzurufen:
 
-    Führen Sie zum Beispiel den folgenden Befehl aus, um sich an der Region 'USA (Süden)' anzumelden: 
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+
+    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Führen Sie den Befehl *status* aus.
 
     ```
-    $ cf logging status -s JJJJ-MM-TT -e JJJJ-MM-TT -t *Log_Type*
+    bx cf logging status -s JJJJ-MM-TT -e JJJJ-MM-TT -t *Protokolltyp*
     ```
     {: codeblock}
     
@@ -96,7 +92,7 @@ Um Informationen zu einem Protokolltyp über eine bestimmten Zeitraum zu erhalte
     Beispiel:
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -114,19 +110,16 @@ Um Informationen zu einem Protokolltyp über eine bestimmten Zeitraum zu erhalte
 
 Um Informationen zu Protokollen über einen bestimmten Zeitraum für das gesamte {{site.data.keyword.Bluemix_notm}}-Konto abzurufen, verwenden Sie den Befehl `cf logging status` mit der Option **-a**. Sie können außerdem die Optionen **-t** für den Protokolltyp, **-s** für das Startdatum und **-e** für das Enddatum festlegen. 
 
-1. Melden Sie sich unter {{site.data.keyword.Bluemix_notm}} an einer Region, einer Organisation und einem Bereich an. 
+Führen Sie die folgenden Schritte aus, um Kontoinformationen zu Protokollen abzurufen:
 
-    Führen Sie zum Beispiel den folgenden Befehl aus, um sich an der Region 'USA (Süden)' anzumelden: 
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+
+    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Führen Sie den Befehl *status* aus.
 
     ```
-    $ cf logging status -a -s JJJJ-MM-TT -e JJJJ-MM-TT -t *Protokolltyp*
+    bx cf logging status -a -s JJJJ-MM-TT -e JJJJ-MM-TT -t *Protokolltyp*
     ```
     {: codeblock}
     
@@ -143,7 +136,7 @@ Um Informationen zu Protokollen über einen bestimmten Zeitraum für das gesamte
     Beispiel:
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+

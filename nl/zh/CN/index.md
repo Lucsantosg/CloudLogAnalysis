@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-31"
 
 ---
 
@@ -15,182 +16,210 @@ lastupdated: "2017-07-19"
 # 入门教程
 {: #getting-started-with-cla}
 
-本入门教程将引导您逐步完成使用 {{site.data.keyword.loganalysislong}} 服务执行高级分析任务的步骤。了解如何针对在 Kubernetes 集群中部署的应用程序搜索并分析容器日志。
+使用本教程了解如何开始使用 {{site.data.keyword.Bluemix}} 中的 {{site.data.keyword.loganalysislong}} 服务。
 {:shortdesc}
+
+## 目标
+{: #objectives}
+
+* 在页面中供应 {{site.data.keyword.loganalysislong}} 服务。
+* 设置命令行以管理日志。
+* 设置许可权以供用户查看空间中的日志。
+* 启动 Kibana（可用于查看日志的开放式源代码工具）。
+
 
 ## 开始之前
 {: #prereqs}
 
-创建 [{{site.data.keyword.Bluemix_notm}} 帐户](https://console.bluemix.net/registration/)。您的用户标识必须是 {{site.data.keyword.Bluemix_notm}} 帐户的成员或所有者，并具有创建 Kubernetes 集群、将应用程序部署至集群，以及查询 {{site.data.keyword.Bluemix_notm}} 中的日志以在 Kibana 中进行高级分析的许可权。
+必须具有作为 {{site.data.keyword.Bluemix_notm}} 帐户的成员或所有者的用户标识。要获取 {{site.data.keyword.Bluemix_notm}} 用户标识，请转至[注册 ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](https://console.bluemix.net/registration/){:new_window}
 
-打开终端会话，您可以在其中通过命令行来管理 Kubernetes 集群和部署应用程序。此教程的示例供 Ubuntu Linux 系统使用。
-
-在本地环境中[安装 CLI 插件](/docs/containers/cs_cli_install.html#cs_cli_install_steps)，以从命令行管理 {{site.data.keyword.containershort}}。 
+本教程提供在美国南部区域供应和使用 {{site.data.keyword.loganalysisshort}} 服务的指示信息。
 
 
-
-## 步骤 1：在 Kubernetes 集群中部署应用程序
+## 步骤 1：供应 {{site.data.keyword.loganalysisshort}} 服务
 {: #step1}
 
-1. [创建 Kubernetes 集群](/docs/containers/cs_cluster.html#cs_cluster_ui)。
+**注：**将在 Cloud Foundry (CF) 空间中供应 {{site.data.keyword.loganalysisshort}} 服务的实例。每个空间仅需一个服务实例。无法在帐户级别供应 {{site.data.keyword.loganalysisshort}} 服务。 
 
-2. 在 Linux 终端中[设置集群上下文](/docs/containers/cs_cli_install.html#cs_cli_configure)。设置上下文后，您可以管理 Kubernetes 集群并在 Kubernetes 集群中部署应用程序。
+要在 {{site.data.keyword.Bluemix_notm}} 中供应 {{site.data.keyword.loganalysisshort}} 服务的实例，请完成以下步骤：
 
-3. 在 Kubernetes 集群中部署并运行样本应用程序。[完成第 1 课的步骤](/docs/containers/cs_tutorials.html#cs_apps_tutorial)。
+1. 登录到 {{site.data.keyword.Bluemix_notm}}：[http://bluemix.net ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window}。  
 
-    该应用程序是 Hello World Node.js 应用程序：
+2. 选择要供应 {{site.data.keyword.loganalysisshort}} 服务的区域、组织和空间。  
 
-    ```
-var express = require('express')
-var app = express()
+3. 单击**目录**。这将打开 {{site.data.keyword.Bluemix_notm}} 上可用的服务的列表。
 
-app.get('/', function(req, res) {
-  res.send('Hello world! Your app is up and running in a cluster!\n')
-})
-    app.listen(8080, function() {
-  console.log('Sample app is listening on port 8080.')
-})
-    ```
-	{: codeblock}
+4. 选择 **DevOps** 类别以过滤显示的服务列表。
 
-    部署应用程序时，会针对应用程序发送到 stdout（标准输出）和 stderr（标准错误）的任何日志条目，自动启用日志收集。 
+5. 单击 **Log Analysis** 磁贴。
 
-    在此样本应用程序中，当您在浏览器中测试应用程序时，应用程序会将以下消息写入 stdout：`Sample app is listening on port 8080.`
+6. 选择服务套餐。缺省情况下，已设置 **Lite** 套餐。
 
-## 步骤 2：导航至 Kibana 仪表板
+
+    有关服务套餐的更多信息，请参阅[服务套餐](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
+	
+7. 单击**创建**以在您登录到的 {{site.data.keyword.Bluemix_notm}} 空间中供应 {{site.data.keyword.loganalysisshort}} 服务。
+
+
+
+
+## 步骤 2：[可选] 更改 {{site.data.keyword.loganalysisshort}} 服务的服务套餐
 {: #step2}
 
-要分析集群的日志数据，您必须在创建集群的云公共区域中访问 Kibana。 
+如果需要更多搜索配额和/或长期存储日志，可以通过 {{site.data.keyword.Bluemix_notm}} UI 或通过运行 `bx cf update-service` 命令来更改 {{site.data.keyword.loganalysisshort}} 服务实例套餐，以启用这些功能。 
 
-例如，要在美国南部区域中启动 Kibana，请导航至以下 URL：
+您可以随时升级或降级服务套餐。
+
+有关更多信息，请参阅 [{{site.data.keyword.loganalysisshort}} 服务套餐](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
+
+**注：**将套餐更改为付费套餐需要付费。
+
+要在 {{site.data.keyword.Bluemix_notm}} UI 中更改服务套餐，请完成以下步骤：
+
+1. 登录到 {{site.data.keyword.Bluemix_notm}}：[http://bluemix.net ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window}。  
+
+2. 选择 {{site.data.keyword.loganalysisshort}} 服务可用的区域、组织和空间。  
+
+3. 在 {{site.data.keyword.Bluemix_notm}} *仪表板*中单击 {{site.data.keyword.loganalysisshort}} 服务实例。 
+    
+4. 在 {{site.data.keyword.loganalysisshort}} 仪表板中选择**套餐**选项卡。
+
+    这将显示有关当前套餐的信息。
+	
+5. 选择新套餐以升级或降级现有套餐。 
+
+6. 单击**保存**。
+
+
+
+## 步骤 3：设置本地环境以使用 {{site.data.keyword.loganalysisshort}} 服务
+{: #step3}
+
+
+{{site.data.keyword.loganalysisshort}} 服务包含可用于管理存储在“日志收集”（长期存储组件）中的日志的命令行界面 (CLI)。 
+
+可以使用 {{site.data.keyword.loganalysisshort}} {{site.data.keyword.Bluemix_notm}} 插件来查看日志的状态、下载日志以及配置日志保留时间策略。 
+
+该 CLI 提供了以下不同类型的帮助：了解 CLI 和受支持命令的一般帮助、了解如何使用命令的命令帮助，以及了解如何使用某个命令的子命令的子命令帮助。
+
+
+要从 {{site.data.keyword.Bluemix_notm}} 存储库安装 {{site.data.keyword.loganalysisshort}} CLI，请完成以下步骤：
+
+1. 安装 {{site.data.keyword.Bluemix_notm}} CLI。
+
+   有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+
+2. 安装 {{site.data.keyword.loganalysisshort}} 插件。运行以下命令：
+
+    ```
+    bx plugin install logging-cli -r Bluemix
+    ```
+    {: codeblock}
+ 
+3. 验证是否已安装 {{site.data.keyword.loganalysisshort}} 插件。
+  
+    例如，运行以下命令以查看安装的插件列表：
+    
+    ```
+    bx plugin list
+    ```
+    {: codeblock}
+    
+    输出如下所示：
+   
+    ```
+    bx plugin list
+    Listing installed plug-ins...
+
+    Plugin Name          Version   
+    logging-cli          0.1.1   
+    ```
+    {: screen}
+
+
+
+
+## 步骤 4：设置许可权以供用户查看日志
+{: #step4}
+
+要控制允许用户执行的 {{site.data.keyword.loganalysisshort}} 操作，您可以向用户分配角色和策略。 
+
+在 {{site.data.keyword.Bluemix_notm}} 中有两种类型的安全许可权，控制在用户使用 {{site.data.keyword.loganalysisshort}} 服务时可以执行的操作：
+
+* Cloud Foundry (CF) 角色：向用户授予 CF 角色，以定义用户查看空间中的日志的许可权。
+* IAM 角色：向用户授予 IAM 策略，以定义用户查看帐户域中的日志的许可权，以及用户管理“日志收集”中所存储日志的许可权。 
+
+
+完成以下步骤以授予用户查看空间中的日志的许可权：
+
+1. 登录到 {{site.data.keyword.Bluemix_notm}} 控制台。
+
+    打开 Web 浏览器并启动 {{site.data.keyword.Bluemix_notm}} 仪表板：[http://bluemix.net ![外部链接图标](../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window}
+	
+	使用用户标识和密码登录后，{{site.data.keyword.Bluemix_notm}} UI 将打开。
+
+2. 从菜单栏，单击**管理 > 帐户 > 用户**。 
+
+    *用户*窗口显示用户列表，其中包含目前所选帐户的电子邮件地址。
+	
+3. 如果用户是帐户的成员，请从列表中选择用户名，或者从*操作*菜单中单击**管理用户**。
+
+    如果用户不是帐户的成员，请参阅[邀请用户](/docs/iam/iamuserinv.html#iamuserinv)。
+
+4. 选择 **Cloud Foundry 访问权**，然后选择组织。
+
+    将列出该组织中可用的空间列表。
+
+5. 选择已供应 {{site.data.keyword.loganalysisshort}} 服务的空间。然后，从菜单操作中，选择**编辑空间角色**。
+
+6. 选择*审计员*。 
+
+    您可以选择 1 个或多个空间角色。以下所有角色均允许用户查看日志：*管理员*、*开发者*和*审计员*
+	
+7. 单击**保存角色**。
+
+
+有关更多信息，请参阅[授予许可权](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)。
+
+
+
+## 步骤 5：启动 Kibana
+{: #step5}
+
+要查看和分析日志数据，您必须在日志数据可用的云公共区域中访问 Kibana。 
+
+
+要在美国南部区域中启动 Kibana，请打开 Web 浏览器并输入以下 URL：
 
 ```
 https://logging.ng.bluemix.net/
 ```
 {: codeblock}
 
-    
-    
-## 步骤 3：在 Kibana 中分析日志数据
-{: #step3}
 
-1. 在**发现**页面中，查看显示的事件。 
+有关如何在其他区域中启动 Kibana 的更多信息，请参阅[通过 Web 浏览器导航至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)。
 
-    样本 Hello-World 应用程序将生成一个事件。
-    
-    在“可用字段”部分中，您可以查看可用于定义新查询或过滤页面上所显示表中列出的条目的字段列表。
-    
-    下表列出可用于定义新搜索查询的常用字段。该表还包括对应于样本应用程序所生成事件的样本值：
-    
-     <table>
-              <caption>表 2. 容器日志的常用字段</caption>
-               <tr>
-                <th align="center">字段</th>
-                <th align="center">描述</th>
-                <th align="center">示例</th>
-              </tr>
-              <tr>
-                <td>*docker.container_id_str*</td>
-                <td> 此字段的值对应于在 Kubernetes 集群 Pod 中运行应用程序的容器的 GUID。</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>*ibm-containers.region_str*</td>
-                <td>此字段的值对应于收集日志条目的 {{site.data.keyword.Bluemix_notm}} 区域。</td>
-                <td>us-south</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.container_name_str*</td>
-                <td>此字段的值为容器的名称。</td>
-                <td>hello-world-deployment</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.host*</td>
-                <td>此字段的值为可用于从因特网访问应用程序的公共 IP。</td>
-                <td>169.47.218.231</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.labels.label_name*</td>
-                <td>标签字段是可选的。您可以有 0 个或多个标签。每个标签以前缀 `kubernetes.labels.` 开头，后接 *label_name*。</td>
-                <td>在样本应用程序中，您可以看到 2 个标签：<br>* *kubernetes.labels.pod-template-hash_str* = 3355293961<br>* *kubernetes.labels.run_str* =	hello-world-deployment</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.namespace_name_str*</td>
-                <td>此字段的值为 Pod 运行所在的 Kubernetes 名称空间。</td>
-                <td>缺省值</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.pod_id_str*</td>
-                <td>此字段的值对应于运行容器的 Pod 的 GUID。</td>
-                <td>d695f346-xxxx-xxxx-xxxx-aab0b50f7315</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.pod_name_str*</td>
-                <td>此字段的值为 Pod 名称。</td>
-                <td>hello-world-deployment-3xxxxxxx1-xxxxx8</td>
-              </tr>
-              <tr>
-                <td>*message*</td>
-                <td>这是应用程序所记录的完整消息。</td>
-                <td>Sample app is listening on port 8080.</td>
-              </tr>
-        </table>
-    
-2. 过滤**发现**页面中的数据。  
-
-    在表中，您可以查看可用于分析的所有条目。所列出的条目对应于在搜索栏中显示的搜索查询。星号 (*) 字符用于显示为页面所配置的一段时间内的所有条目。 
-    
-    例如，要按 Kubernetes 名称空间过滤数据，请修改搜索栏查询。根据定制字段 *kubernetes.namespace_name_str* 添加过滤器：
-    
-    1. 在*可用字段*部分中，选择 *kubernetes.namespace_name_str* 字段。此时将显示该字段的可用值子集。    
-    
-    2. 选择值 **default**。这是您在上一步部署样本应用程序的名称空间。
-    
-        在您选择值后，搜索栏中会添加一个过滤器，而该表将仅显示与您刚刚所选条件匹配的条目。     
-    
-    您可以选择过滤器的编辑符号，以修改要搜索的名称空间名称。   
-    
-    以下查询将显示：
-    
-    ```
-	{
-    "query": {
-          "match": {
-            "kubernetes.namespace_name_str": {
-              "query": "default",
-              "type": "phrase"
-            }
-          }
-        }
-    }
-    ```
-	{: codeblock}
-    
-    要在不同的名称空间（如 *mynamespace1*）中搜索条目，请修改查询：
-    
-    ```
-	{
-    "query": {
-          "match": {
-            "kubernetes.namespace_name_str": {
-              "query": "mynamespace1",
-              "type": "phrase"
-            }
-          }
-        }
-    }
-    ```
-	{: codeblock}
-    
-    如果您看不到任何数据，请尝试更改时间过滤器。有关更多信息，请参阅[设置时间过滤器](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)。
+**注：**启动 Kibana 时，如果收到指示 *bearer token not valid* 的消息，请检查空间中的许可权。此消息指示您的用户标识不具有查看日志的许可权。
     
 
-有关更多信息，请参阅[在 Kibana 中过滤日志](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs)。
-
-
-## 后续步骤
+## 后续步骤 
 {: #next_steps}
 
-接下来，构建 Kibana 仪表板。有关更多信息，请参阅[在 Kibana 中通过仪表板分析日志](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#analize_logs_dashboard)。
-                                                                                                                      
+生成日志。尝试使用以下任意教程：
+
+* [在 Kibana 中分析 Kubernetes 集群中部署的应用程序的日志](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs){:new_window} 
+
+    本教程演示了要使以下端到端场景可运作所需的步骤：供应集群、配置集群以将日志发送到 {{site.data.keyword.Bluemix_notm}} 中的 {{site.data.keyword.loganalysisshort}} 服务、部署集群中的应用程序以及使用 Kibana 查看和过滤该集群的容器日志。     
+    
+* [在 Kibana 中分析 Cloud Foundry 应用程序的日志](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs){:new_window}                                                                                                            
+
+    本教程演示了要使以下端到端场景可运作所需的步骤：部署 Python Cloud Foundry 应用程序、生成不同类型的日志以及使用 Kibana 查看、搜索和分析 CF 日志。
+   
+
+
+
+
+
+
+
 

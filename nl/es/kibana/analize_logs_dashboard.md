@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -27,9 +27,9 @@ En {{site.data.keyword.Bluemix}} hay diferentes tipos de paneles de control que 
 | Panel de control Single-cf-app | Es un panel de control que muestra información correspondiente a una sola aplicación Cloud Foundry. |
 | Panel de control Contenedor único  | Es un panel de control que muestra información correspondiente a un solo contenedor.  |
 | Panel de control Grupo de contenedores  | Es un panel de control que muestra información correspondiente a un determinado grupo de contenedores.  |
-| Panel de control Multi-cf-app | Es un panel de control que muestra información correspondiente a todas las aplicaciones Cloud Foundry desplegadas en el mismo espacio de {{site.data.keyword.Bluemix_notm}}.  | 
-| Panel de control multicontenedor | Es un panel de control que muestra información correspondiente a todos los contenedores desplegados en el mismo espacio de {{site.data.keyword.Bluemix_notm}}.  |
-| Panel de control Espacio | Este es un panel de control que muestra datos de registro disponibles en un espacio de {{site.data.keyword.Bluemix_notm}}.  | 
+| Panel de control Multi-cf-app | Es un panel de control que muestra información correspondiente a todas las aplicaciones Cloud Foundry desplegadas en el mismo espacio.  | 
+| Panel de control multicontenedor | Es un panel de control que muestra información correspondiente a todos los contenedores desplegados en el mismo espacio.  |
+| Panel de control Espacio | Este es un panel de control que muestra datos de registro disponibles en un espacio.  | 
 {: caption="Tabla 1. Ejemplos de tipos de paneles de control" caption-side="top"}
 
 Para visualizar los datos de un panel de control, puede configurar paneles. Kibana incluye distintas visualizaciones, como tabla, tendencias e histograma, que puede utilizar para analizar la información. Una visualización se añade como un panel a un panel de control. Puede añadir, eliminar y cambiar la disposición de los paneles del panel de control. El objetivo de cada panel varía. Algunos paneles se organizan en filas que proporcionan los resultados de una o varias consultas. Otros paneles muestran documentos o información personalizada. Cada panel se basa en una búsqueda. La búsqueda define el subconjunto de datos que muestra el panel. Por ejemplo, puede configurar un diagrama de barras, un diagrama circular o una tabla para visualizar los datos y analizarlos.  
@@ -47,7 +47,7 @@ En la tabla siguiente se muestran las diferentes tareas que puede llevar a cabo 
 | [Guardar un panel de control](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | Puede guardar un panel de control para reutilizarlo en el futuro. |
 {: caption="Tabla 2. Tareas para trabajar con paneles de control" caption-side="top"}
 
-Para obtener más información sobre Kibana, consulte la [Guía del usuario de Kibana ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Icono de enlace externo"){: new_window}.
+Para obtener más información sobre Kibana, consulte la [Guía del usuario de Kibana ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 
 ## Adición de una nueva búsqueda o visualización
@@ -87,7 +87,7 @@ Siga los siguientes pasos para crear un nuevo panel de control:
 
 Para suprimir un panel de control, siga los pasos siguientes en la página **Gestión**:
 
-1. En la página **Gestión**, seleccione el separador **Objetos avanzados**.
+1. En la página **Gestión**, seleccione **Objetos guardados**.
 
 2. En el separador **Paneles de control**, seleccione el panel de control que desea suprimir.
 
@@ -98,7 +98,7 @@ Para suprimir un panel de control, siga los pasos siguientes en la página **Ges
 
 Para exportar un panel de control como archivo JSON, siga los pasos siguientes en la página **Gestión**:
 
-1. En la página **Gestión**, seleccione el separador **Objetos avanzados**.
+1. En la página **Gestión**, seleccione **Objetos guardados**.
 
 2. En el separador **Panel de control**, seleccione el panel de control que desea exportar.
 
@@ -111,7 +111,7 @@ Para exportar un panel de control como archivo JSON, siga los pasos siguientes e
 
 Para importar un panel de control como archivo JSON, siga los pasos siguientes en la página **Gestión**:
 
-1. En la página **Gestión**, seleccione el separador **Objetos avanzados**.
+1. En la página **Gestión**, seleccione **Objetos guardados**.
 
 2. En el separador **Panel de control**, seleccione **Importar**.
 

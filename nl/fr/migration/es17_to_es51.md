@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-31"
 
 ---
 
@@ -12,45 +13,44 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Remarques sur la migration après la mise à niveau de la pile ELK à la version 5.1 
+# Remarques sur la migration après la mise à niveau d'Elastic Stack vers la version 5.1 
 {: #es17_to_es51}
 
-Dans {{site.data.keyword.Bluemix}}, la pile ElasticSearch (ELK) est mise à niveau de la version 1.7 à la version 2.3. Les nouvelles fonctions, les URL pour l'ingestion des journaux
-et les nouveaux URL pour l'analyse des journaux dans Kibana sont disponibles. Pour plus d'informations, voir
-[ElasticSearch 5.1 ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/elasticsearch/reference/5.1/index.html).
+Dans {{site.data.keyword.Bluemix}}, la pile ElasticSearch (ELK) est mise à niveau de la version 1.7 vers la version 5.1. De nouvelles fonctions, de nouvelles URL pour ingérer les journaux et de nouvelles URL pour analyser les journaux dans Kibana sont disponibles. Pour plus d'informations, voir
+[ElasticSearch 5.1 ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](https://www.elastic.co/guide/en/elasticsearch/reference/5.1/index.html).
 {:shortdesc}
 
-Cette fonction ne s'applique pas aux utilisateurs qui utilisent le service de journalisation avec des conteneurs Docker déployés dans un cluster Kubernetes. Ces conteneurs utilisent
-déjà la pile ELK de version 2.3.
+Cette fonction ne s'applique pas aux utilisateurs qui utilisent le service de journalisation avec des conteneurs Docker déployés dans un cluster Kubernetes. 
 
 ## Régions
 {: #regions}
 
-La pile ELK de version 5.1 est disponible dans la région suivante :
+Elastic version 5.1 est disponible dans la région suivante :
 
-* Sud des États-Unis
+* Royaume-Uni
+* Sud des Etats-Unis
+* Allemagne
+* Sydney
 
 
 ## Nouveautés
 {: #features}
 
-1. URL permettant de travailler avec les journaux et les métriques.
+1. URL permettant d'utiliser des journaux et des mesures.
 
-    Dans ELK 1.7, le même URL a été partagé pour afficher et contrôler des journaux et des métriques. Avec la mise à niveau à ELK 5.1, les journaux et les métriques sont affichés via des
-URL distinctes. Pour plus d'informations, voir [URL de journalisation](#logging).
+    Dans Elastic 1.7, la même URL était partagée pour afficher et surveiller des journaux et des mesures. Avec la mise à niveau vers Elastic 5.1, vous disposez d'URL distinctes pour l'affichage des journaux et des mesures. Pour plus d'informations, voir [URL de journalisation](#logging).
     
-2. Prise en charge de Kibana 5.1. 
+2. Prise en charge pour Kibana 5.1.
 
-    Vous pouvez lancer Kibana à partir de l'interface utilisateur {{site.data.keyword.Bluemix_notm}} ou directement à partir de la nouvelle URL de journalisation. Pour plus
-d'informations, voir [Analyse des journaux avec Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+    Vous pouvez lancer Kibana à partir de l'interface utilisateur {{site.data.keyword.Bluemix_notm}} ou directement à partir de la nouvelle URL de journalisation. Pour plus d'informations, voir [Accès au tableau de bord Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch).
     
-    Kibana 3 est obsolète. Vous pouvez lancer Kibana 3 via l'[URL de journalisation d'ELK 1.7](#logging). Il existe différents URL pour chaque région. **Remarque
-:** vous pouvez actuellement accéder aux tableaux de bord de Kibana 3 afin de pouvoir comparer vos tableaux de bord Kibana 3 à Kibana 5.1 et les faire migrer. 
+    Kibana 3 et Kibana 4 ont été dépréciés. 
+	
+	**Remarque :** les URL sont différentes selon les régions. L'accès aux tableaux de bord Kibana 4 est actuellement disponible au Royaume-Uni pour que vous puissiez comparer vos tableaux de bord avec ceux de Kibana 5.1 et les migrer.  
     
-    Si vos tableaux de bord Kibana reposent sur la pile ELK 1.7, vous devez les faire migrer vers l'environnement ELK 5.1.
+    Vous devez migrer vos tableaux de bord dans l'environnement Elastic 5.1. 
     
-    Pour plus d'informations sur Kibana 5.1, voir le [Guide d'utilisation de
-Kibana![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
+    Pour plus d'informations sur Kibana 5.1, voir le manuel [Kibana User Guide ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
     
 3. Suffixes basés sur le type ajoutés aux zones personnalisées.
 
@@ -78,29 +78,73 @@ Kibana![External link icon](../../../icons/launch-glyph.svg "External link icon"
 bord Kibana3.
 
 
-## Journalisation 
+## URL de journalisation
 {: #logging}
 
-Différentes URL sont utilisées pour envoyer des journaux dans {{site.data.keyword.Bluemix_notm}} et pour analyser les données dans Kibana.
+Différentes URL sont utilisées pour envoyer des journaux dans {{site.data.keyword.Bluemix_notm}} et pour analyser des données dans Kibana.
 
-Le tableau suivant indique la nouvelle URL que vous devez utiliser pour la région Sud des Etats-Unis :
+Le tableau suivant répertorie les URL pour la région Sud des Etats-Unis :
 
 <table>
-  <caption>Adresses URL pour la région Sud des Etats-Unis</caption>
+  <caption>Tableau 1. URL pour la région Sud des Etats-Unis</caption>
     <tr>
       <th>Type</th>
-      <th>ELK 1.7 </th>
-	  <th>ELK 5.1 </th>
+      <th>Elastic 1.7 </th>
+	    <th>Elastic 5.1 </th>
     </tr>
   <tr>
     <td>URL d'ingestion pour les journaux</td>
     <td>logs.opvis.bluemix.net:9091</td>
-	<td>ingest.logging.ng.bluemix.net:9091</td>
+  	<td>ingest.logging.ng.bluemix.net:9091</td>
   </tr>
    <tr>
     <td>URL de Kibana pour l'analyse des journaux</td>
-    <td>https://logmet.ng.bluemix.net</td>
-	<td>https://logging.ng.bluemix.net</td>
+    <td>[https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net)</td>
+	  <td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
   </tr>
 </table>
+
+Le tableau suivant répertorie les URL pour la région Royaume-Uni :
+
+<table>
+  <caption>Tableau 2. URL pour la région Royaume-Uni</caption>
+  <tr>
+     <th>Type</th>
+      <th>Elastic 1.7 </th>
+	    <th>Elastic 5.1 </th>
+  </tr>
+  <tr>
+     <td>URL d'ingestion pour les journaux</td>
+	   <td>logs.eu-gb.opvis.bluemix.net:9091</td>
+	   <td>ingest.logging.eu-gb.bluemix.net:9091</td>
+  </tr>
+  <tr>
+     <td>URL de Kibana pour l'analyse des journaux</td>
+	 <td>[https://logmet.eu-gb.bluemix.net](https://logmet.eu-gb.bluemix.net)</td>
+	 <td>[https://logging.eu-gb.bluemix.net](https://logging.eu-gb.bluemix.net)</td>
+  </tr>
+</table>
+
+Le tableau suivant répertorie les URL pour la région Francfort :
+
+<table>
+  <caption>Tableau 3. URL pour la région Francfort</caption>
+  <tr>
+     <th>Type</th>
+      <th>Elastic 2.3 </th>
+	    <th>Elastic 5.1 </th>
+  </tr>
+  <tr>
+     <td>URL d'ingestion pour les journaux</td>
+	 <td>ingest.logging.eu-de.bluemix.net</td>
+	 <td>ingest-eu-fra.logging.bluemix.net</td>
+  </tr>
+  <tr>
+     <td>URL de Kibana pour l'analyse des journaux</td>
+	 <td>[https://logging.eu-de.bluemix.net](https://logging.eu-de.bluemix.net)</td>
+	 <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.net)</td>
+  </tr>
+</table>
+
+
 

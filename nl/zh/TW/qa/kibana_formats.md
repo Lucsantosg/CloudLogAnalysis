@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -36,8 +37,8 @@ lastupdated: "2017-07-19"
 | \_id | 日誌文件的唯一 ID。|
 | \_index | 日誌項目的索引。|
 | \_type | 日誌類型；例如 *syslog*。|
-| app_name| {{site.data.keyword.Bluemix_notm}} 應用程式的名稱。|
-| application_id | {{site.data.keyword.Bluemix_notm}} 應用程式的唯一 ID。|
+| app_name| 應用程式的名稱。|
+| application_id | 應用程式的唯一 ID。|
 | host | 產生日誌資料之應用程式的名稱。|
 | instance_id | 產生日誌資料之應用程式實例的實例 ID。|
 | loglevel | 所記載事件的嚴重性。|
@@ -53,7 +54,7 @@ lastupdated: "2017-07-19"
 
 
 
-## 部署在 Bluemix 所管理基礎架構中之 Docker 容器的 Kibana 日誌格式
+## IBM 所管理基礎架構中所部署 Docker 容器的 Kibana 日誌格式（已淘汰）
 {: #kibana_log_format_containers}
 
 您可以配置 Kibana，以在*探索* 頁面顯示每一個日誌項目的下列欄位：

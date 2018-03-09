@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -20,26 +22,23 @@ lastupdated: "2017-07-19"
 
 請完成下列步驟，以將 {{site.data.keyword.Bluemix_notm}} 空間中可用的日誌資料下載至本端檔案：
 
-開始之前，請登入 {{site.data.keyword.Bluemix_notm}} 地區、組織及空間。 
+## 步驟 1：登入 IBM Cloud
 
-例如，若要登入「美國南部」地區，請執行下列指令：
-	
-```
-cf login -a https://api.ng.bluemix.net
-```
-{: codeblock}
+登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
 
-## 步驟 1：識別可用的日誌
-{: #step1}
+如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
-1. 使用 `cf logging status` 指令，以查看過去 2 週的可用日誌。執行下列指令：
+## 步驟 2：識別可用的日誌
+{: #step2}
+
+1. 使用 `bx cf logging status` 指令，以查看過去 2 週的可用日誌。執行下列指令：
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
-    例如，此指令的執行輸出如下：
+    例如，這個指令的執行輸出如下：
     
     ```
     +------------+--------+-------+--------------------+------------+
@@ -55,12 +54,12 @@ cf login -a https://api.ng.bluemix.net
     **附註：**{{site.data.keyword.loganalysisshort}} 服務是一項廣域服務，其使用「世界標準時間 (UTC)」。日定義為「世界標準時間」日。若要取得特定當地時間日期的日誌，您可能需要下載多個「世界標準時間」日。
 
 
-## 步驟 2：建立階段作業
-{: #step2}
+## 步驟 3：建立階段作業
+{: #step3}
 
 需要有階段作業，才能定義可供下載的日誌資料範圍，以及保持下載的狀態。 
 
-請使用指令 [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) 來建立階段作業。您可以選擇性地指定建立階段作業的開始日期、結束日期及日誌類型：  
+請使用指令 [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) 來建立階段作業。您可以選擇指定建立階段作業的開始日期、結束日期及日誌類型：  
 
 * 當您指定開始日期及結束日期時，階段作業可讓您存取這兩個日期（含）之間的日誌。 
 * 當您指定日誌類型 (**-t**) 時，階段作業可讓您存取特定類型的日誌。當您管理大規模的日誌時，這是重要特性，因為您可以將階段作業的範圍設定為僅感興趣的小部分日誌。
@@ -68,7 +67,7 @@ cf login -a https://api.ng.bluemix.net
 若要建立用來下載日誌類型為 *log* 的階段作業，請執行下列指令：
 
 ```
-cf logging session create -t log
+bx cf logging session create -t log
 ```
 {: codeblock}
 
@@ -82,7 +81,7 @@ cf logging session create -t log
 例如，
 
 ```
-$ cf logging session create -t log     
+$ bx cf logging session create -t log     
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -102,15 +101,15 @@ $ cf logging session create -t log
 ```
 {: screen}
 
-**提示：**若要查看作用中階段作業清單，請執行此指令 [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list)。
+**提示：**若要查看作用中階段作業清單，請執行這個指令 [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list)。
 
-## 步驟 3：將日誌資料下載至檔案
-{: #step3}
+## 步驟 4：將日誌資料下載至檔案
+{: #step4}
 
 若要下載階段作業參數所指定的日誌，請執行下列指令：
 
 ```
-cf logging download -o Log_File_Name Session_ID
+bx cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -122,7 +121,7 @@ cf logging download -o Log_File_Name Session_ID
 例如，
 
 ```
-cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -135,14 +134,15 @@ cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
 * 壓縮的 JSON 適用於 ElasticSearch 或 Logstash 的汲取。如果未給定 -o，則資料將會串流至 stdout，讓您直接透過管道將它傳送至您自己的 ELK Stack。
 * 您也可以使用任何可剖析 JSON 的程式來處理資料。 
 
-## 步驟 4：刪除階段作業
+## 步驟 5：刪除階段作業
+{: #step5}
 
 下載完成之後，您必須使用 [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete) 指令來刪除階段作業。 
 
 執行下列指令，以刪除階段作業：
 
 ```
-cf logging session delete Session_ID
+bx cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -151,7 +151,7 @@ cf logging session delete Session_ID
 例如，
 
 ```
-cf logging session delete -jshdjsunelsssr4566722==
+bx cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

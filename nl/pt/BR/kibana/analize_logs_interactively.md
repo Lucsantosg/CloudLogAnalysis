@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -17,22 +18,17 @@ lastupdated: "2017-07-19"
 # Analisando logs interativamente no Kibana
 {:#analize_logs_interactively}
 
-Na página Descobrir, é possível visualizar e analisar seus logs do
-{{site.data.keyword.Bluemix}}. É possível definir consultas de procura para filtrar estes dados usando a linguagem de
+Na página Descobrir, é possível visualizar e analisar seus logs interativamente. É possível definir consultas de procura para filtrar estes dados usando a linguagem de
 consulta Lucene. Para cada consulta de procura, é possível aplicar filtros para refinar as entradas que
 estão disponíveis para análise. É possível salvar uma procura para reutilização futura.
 {:shortdesc}
 
-No {{site.data.keyword.Bluemix_notm}}, por padrão, o conjunto de dados que é exibido na
-página Descobrir ao ativar o Kibana por meio da IU do {{site.data.keyword.Bluemix_notm}} é
-configurado para mostrar somente as entradas para o aplicativo ou contêiner Cloud Foundry (CF) no
-qual o Kibana é ativado. Para obter mais informações sobre como ver qual subconjunto de seus dados a
+No {{site.data.keyword.Bluemix_notm}}, por padrão, o conjunto de dados que é exibido na página Descobrir ao ativar o Kibana da UI do {{site.data.keyword.Bluemix_notm}} é configurado para mostrar somente as entradas para o aplicativo Cloud Foundry (CF) ou contêiner por meio qual você ativa o Kibana. Para obter mais informações sobre como ver qual subconjunto de seus dados a
 página Descobrir exibe, consulte
 [Identificando os dados que são
 exibidos](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 
-A tabela a seguir mostra a consulta padrão por recurso ao ativar o Kibana no
-{{site.data.keyword.Bluemix_notm}}:
+A tabela a seguir mostra a consulta padrão por recurso ao ativar o Kibana no {{site.data.keyword.Bluemix_notm}}:
 
 | Recursos | Consulta de procura padrão do Kibana |
 |---------------|---------------|
@@ -42,8 +38,7 @@ A tabela a seguir mostra a consulta padrão por recurso ao ativar o Kibana no
 {: caption="Tabela 1. Procuras de consulta padrão" caption-side="top"}
 
 **Nota:** 
-* Toda vez que você ativa o Kibana na IU do {{site.data.keyword.Bluemix_notm}}, os dados que
-podem ser vistos correspondem à consulta que é predefinida por padrão e são baseados no padrão de índice.
+* Toda vez que você ativa o Kibana na UI do {{site.data.keyword.Bluemix_notm}}, os dados que podem ser vistos correspondem à consulta predefinida por padrão e são baseados no padrão de índice.
 * Um máximo de 500 entradas, que correspondem às entradas mais recentes, é exibido na página
 Descobrir. Para mudar esse valor, é possível modificar o campo *discover:sampleSize* na seção **Opções avançadas** que está disponível na página **Gerenciamento**.
 
@@ -101,24 +96,25 @@ intervalo de tempo absoluto para uma consulta, um relativo ou escolher por meio 
 predefinidos. Para obter mais informações, consulte [Configurando um filtro de tempo](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 
 Depois de configurar a procura que define o subconjunto de dados que deseja analisar, é possível
-salvá-la para reutilização posterior.
+salvá-la para reutilização posterior. Para obter mais
+informações, consulte [Salvando uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search).
 
 É possível executar qualquer uma das tarefas a seguir com procuras que você define na página
 Descobrir:
 
 | Tarefa | Descrição |
 |------|-------------|
-| [Salvar uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Salve a procura
-para reutilização posterior.  |
 | [Excluir uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | Exclua uma
 procura quando ela não for mais necessária. |
 | [Exportar uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | Exporte uma
 procura para compartilhá-la.  |
+| [Importar uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Importe uma
+procura.  |
 | [Recarregar uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | Faça
 upload de uma procura existente para analisar um conjunto de dados novamente. |
 | [Atualizar os dados de uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | Configure atualização automática dos dados que são exibidos por meio da procura.  |
-| [Importar uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Importe uma
-procura.  |
+| [Salvar uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Salve a procura
+para reutilização posterior.  |
 {: caption="Tabela 3. Tarefas para trabalhar com procuras" caption-side="top"}
 
 
@@ -139,8 +135,7 @@ continuar visualizando as entradas mais recentes, deve-se configurar um interval
 
 A tabela que está disponível para analisar dados na página Descobrir inclui os seguintes campos por
 padrão:
-* **time:** esse campo indica quando a entrada foi capturada e registrada no
-{{site.data.keyword.Bluemix_notm}}.
+* **time:** esse campo indica quando a entrada foi capturada e registrada no {{site.data.keyword.Bluemix_notm}}.
 * **_source:** esse campo inclui os dados originais da entrada.
 
 É possível incluir uma coluna de campo na tabela escolhendo qualquer uma das opções a seguir:
@@ -166,9 +161,7 @@ de cada entrada.
 ## Atualizando os dados automaticamente
 {: #discover_view_refresh_interval}
 
-Por padrão, no {{site.data.keyword.Bluemix_notm}}, o período de *Atualização
-automática* é configurado como **OFF** e os dados que podem ser vistos no Kibana
-correspondem aos últimos 15 minutos desde que você ativou o Kibana. Os 15 minutos correspondem ao filtro de
+Por padrão, no {{site.data.keyword.Bluemix_notm}}, o período de *Atualização automática* é configurado para **OFF** e os dados que podem ser vistos no Kibana correspondem aos últimos 15 minutos desde que você ativou o Kibana. Os 15 minutos correspondem ao filtro de
 tempo que é pré-configurado. É possível mudá-lo configurando um período de tempo diferente. Para obter mais informações, consulte [Configurando um filtro de tempo](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 
 Conclua as etapas a seguir para configurar um período de *Atualização automática*:
@@ -187,9 +180,7 @@ Conclua as etapas a seguir para configurar um período de *Atualização automá
 ## Identificando os dados que são exibidos na página Descobrir
 {:#identify_data}
 
-Ao usar o Kibana para analisar logs do {{site.data.keyword.Bluemix_notm}}, os dados que podem
-ser vistos dependem de como você ativa o Kibana, do padrão de índice que é configurado e da consulta
-e dos filtros customizados que possam ter sido aplicados.
+Ao usar o Kibana para analisar os logs do {{site.data.keyword.Bluemix_notm}}, os dados que podem ser vistos dependem de como o Kibana é ativado, o padrão de índice configurado e a consulta customizada e filtros que você possa ter aplicado.
 
 Considere as seguintes informações para identificar os dados que estão disponíveis na tabela e
 no histograma da página Descobrir:
@@ -197,8 +188,7 @@ no histograma da página Descobrir:
 1. Verifique o padrão de índice na página **Gerenciamento**.
 
     O padrão de índice define a consulta de procura que é aplicada por padrão para mostrar entradas em
-suas páginas do Kibana. Por padrão, o padrão de índice é pré-configurado e definido para todos os dados que
-estiverem disponíveis em um espaço do {{site.data.keyword.Bluemix_notm}}. Por
+suas páginas do Kibana. Por padrão, o padrão de índice é pré-configurado e configurado para todos os dados que estão disponíveis em um espaço. Por
 exemplo,
 
     * Se você ativar o Kibana na IU do {{site.data.keyword.Bluemix_notm}}, ou seja, na seção

@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -20,23 +22,20 @@ Puede descargar registros en un archivo local o dirigir los datos a otro program
 
 Siga estos pasos para descargar datos de registro disponibles en un espacio de {{site.data.keyword.Bluemix_notm}} en un archivo local:
 
-Antes de empezar, inicie la sesión en una región, organización y espacio de {{site.data.keyword.Bluemix_notm}}. 
+## Paso 1: Iniciar sesión en IBM Cloud
 
-Por ejemplo, para iniciar sesión en la región EE. UU. sur, ejecute el siguiente mandato:
-	
-```
-cf login -a https://api.ng.bluemix.net
-```
-{: codeblock}
+Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
-## Paso 1: Identificar los registros disponibles
-{: #step1}
+Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-1. Utilice el mandato `cf logging status` para ver qué registros están disponibles durante las 2 últimas semanas. Ejecute el mandato siguiente:
+## Paso 2: Identificar los registros disponibles
+{: #step2}
+
+1. Utilice el mandato `bx cf logging status` para ver qué registros están disponibles durante las 2 últimas semanas. Ejecute el mandato siguiente:
 
     ```
-    $ cf logging status
-    ```
+    bx cf logging status
+ ```
     {: codeblock}
     
     Por ejemplo, el resultado de ejecutar este mandato es:
@@ -55,8 +54,8 @@ cf login -a https://api.ng.bluemix.net
     **Nota:** El servicio {{site.data.keyword.loganalysisshort}} es un servicio global que utiliza la Hora universal coordinada (UTC). Los días se definen como días UTC. Para obtener los registros correspondientes a un día y hora local específicos, puede que tenga que descargar varios días UTC.
 
 
-## Paso 2: Crear una sesión
-{: #step2}
+## Paso 3: Crear una sesión
+{: #step3}
 
 Se necesita una sesión para definir el ámbito de datos de registro que están disponibles para una descarga y para mantener el estado de la descarga. 
 
@@ -68,7 +67,7 @@ Utilice el mandato [cf logging session create](/docs/services/CloudLogAnalysis/r
 Para crear una sesión que se utilice para descargar los registros de tipo *log*, ejecute el mandato siguiente:
 
 ```
-cf logging session create -t log
+bx cf logging session create -t log
 ```
 {: codeblock}
 
@@ -82,7 +81,7 @@ La sesión devuelve la siguiente información:
 Por ejemplo,
 
 ```
-$ cf logging session create -t log
+$ bx cf logging session create -t log
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -104,13 +103,13 @@ $ cf logging session create -t log
 
 **Consejo:** Para ver la lista de sesiones activas, ejecute el mandato [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list).
 
-## Paso 3: Descargar los datos de registro en un archivo
-{: #step3}
+## Paso 4: Descargar los datos de registro en un archivo
+{: #step4}
 
 Para descargar los registros especificados por los parámetros de sesión, ejecute el mandato siguiente:
 
 ```
-cf logging download -o Log_File_Name Session_ID
+bx cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -122,7 +121,7 @@ donde
 Por ejemplo,
 
 ```
-cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -135,14 +134,15 @@ El indicador de progreso pasa de 0 a 100% a medida que se descargan los registro
 * El archivo JSON comprimido resulta adecuado para ingestión por parte de ElasticSearch o Logstash. Si no se especifica -o, los datos se direccionarán a la salida estándar, stdout, para que los pueda dirigir directamente a su propia pila ELK.
 * También puede procesar los datos con cualquier programa que pueda analizar JSON. 
 
-## Paso 4: Suprimir la sesión
+## Paso 5: Suprimir la sesión
+{: #step5}
 
 Una vez finalizada la descarga, debe suprimir la sesión mediante el mandato [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete). 
 
 Ejecute el siguiente mandato para suprimir una sesión:
 
 ```
-cf logging session delete Session_ID
+bx cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -151,7 +151,7 @@ Donde Session_ID es el GUID de la sesión que ha creado en un paso anterior.
 Por ejemplo,
 
 ```
-cf logging session delete -jshdjsunelsssr4566722==
+bx cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

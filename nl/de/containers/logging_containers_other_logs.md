@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -15,23 +16,23 @@ lastupdated: "2017-07-19"
 {:pre: .pre}
 
 
-# Vom Standard abweichende Protokolldaten aus einem Container erfassen
-{: #logging_containers_collect_data}
+# Vom Standard abweichende Protokolldaten aus einem Container erfassen (veraltet)
+{: #logging_containers_other_logs}
 
-Zur Erfassung von Daten aus vom Standard abweichenden Protokollpositionen innerhalb eines Containers, der in der {{site.data.keyword.Bluemix_notm}}-verwalteten Cloudinfrastruktur bereitgestellt wird, setzen Sie die Umgebungsvariable auf **LOG_LOCATIONS**, wenn Sie einen Container erstellen. 
+Zur Erfassung von Daten aus vom Standard abweichenden Protokollpositionen innerhalb eines Containers, der in der {{site.data.keyword.Bluemix_notm}}-verwalteten Infrastruktur bereitgestellt wird, setzen Sie die Umgebungsvariable auf **LOG_LOCATIONS**, wenn Sie einen Container erstellen. 
 {:shortdesc}
 
 * Fügen Sie die Umgebungsvariable **LOG_LOCATIONS** mit einem Pfad zur Protokolldatei hinzu, wenn Sie den Container erstellen. 
 * Sie können mehrere Protokolldateien hinzufügen, indem Sie sie durch Kommas getrennt angeben. 
 
-## Vom Standard abweichende Protokolldaten über die Bluemix-Konsole erfassen
+## Vom Standard abweichende Protokolldaten über die IBM Cloud-Konsole erfassen
 {: #logging_containers_collect_data_ui}
 
 Führen Sie die folgenden Schritte aus, um vom Standard abweichende Daten über die Konsole zu erfassen:
 
 1. Wählen Sie im Katalog die Option **Container** und dann ein Image aus. 
 
-    Die angezeigte Imageliste enthält Images, die von {{site.data.keyword.IBM}} zur Verfügung gestellt werden, und Images, die in Ihrer privaten {{site.data.keyword.Bluemix_notm}}-Registry gespeichert sind. 
+    Die angezeigte Imageliste enthält Images, die von {{site.data.keyword.IBM_notm}} zur Verfügung gestellt werden, und Images, die in Ihrer privaten {{site.data.keyword.Bluemix_notm}}-Registry gespeichert sind. 
 
 2. Definieren Sie Ihren Container. Wählen Sie den Typ aus, geben Sie einen Namen für den Container ein, wählen Sie die Größe aus und definieren Sie weitere Attributdetails wie IP-Adresse und Ports. Weitere Informationen finden Sie unter [Einzelnen Container über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle erstellen und bereitstellen](/docs/containers/container_single_ui.html#gui). 
 
@@ -65,38 +66,11 @@ Das Container-Dashboard wird geöffnet. Überprüfen Sie, ob der Status des Cont
 
 Führen Sie die folgenden Schritte aus, um vom Standard abweichende Protokolldaten über die Befehlszeilenschnittstelle (CLI) zu erfassen:
 
-1. Richten Sie ein Terminal zur Verwendung der {{site.data.keyword.containershort}}-Befehlszeilenschnittstelle ein. Weitere Informationen finden Sie unter [IBM Bluemix Container Service-Befehlszeilenschnittstelle einrichten](/docs/containers/container_cli_cfic_install.html).
+1. Richten Sie ein Terminal zur Verwendung der {{site.data.keyword.containershort}}-Befehlszeilenschnittstelle ein. Weitere Informationen finden Sie unter [{{site.data.keyword.containershort}}-Benutzerschnittstelle einrichten](/docs/containers/container_cli_cfic_install.html).
 
-2. Melden Sie sich bei der Cloud Foundry-Befehlszeilenschnittstelle mit dem folgenden Befehl an: `cf login`. Geben Sie bei entsprechender Aufforderung Ihre {{site.data.keyword.Bluemix_notm}}-ID und das zugehörige Kennwort, Ihre Organisation und den Bereich ein. 
+2. Melden Sie sich bei der Cloud Foundry-Befehlszeilenschnittstelle mit dem folgenden Befehl an: `bx login`. Geben Sie bei entsprechender Aufforderung Ihre {{site.data.keyword.IBM_notm}}-ID und das zugehörige Kennwort, Ihre Organisation und den Bereich ein. 
 
-    Sie werden standardmäßig an der Region 'USA (Süden)' oder an der Region angemeldet, bei der Sie sich zuletzt angemeldet hatten. 
-    
-    Mit der Option **-a** können Sie sich bei einer bestimmten Region in {{site.data.keyword.Bluemix_notm}} anmelden. Beispiel: In der folgenden Tabelle werden die Befehle für jede Region aufgeführt:
-
-    <table>
-      <caption>Tabelle 2. Befehle nach Region</caption>
-      <tbody>
-        <tr>
-          <th align="center">Region</th>
-          <th align="center">Befehl</th>
-        </tr>
-        <tr>
-          <td align="left">USA (Süden)</td>
-          <td align="left"> cf login -a api.ng.bluemix.net</td>
-        </tr>
-        <tr>
-          <td align="left">Vereinigtes Königreich</td>
-          <td align="left">cf login -a api.eu-gb.bluemix.net</td>
-        </tr>
-	 <tr>
-          <td align="left">Frankfurt</td>
-          <td align="left">cf login -a api.eu-de.bluemix.net</td>
-        </tr>
-       </tbody>
-    </table>
-    
-
-3. Melden Sie sich beim {{site.data.keyword.containershort}} mit dem folgenden Befehl an: `cf ic login`
+3. Melden Sie sich beim {{site.data.keyword.containershort}} mit dem folgenden Befehl an: `bx cf ic login`
 
 4. Erstellen Sie einen einzelnen Container aus einem Image. Schließen Sie die Umgebungsvariable LOG_LOCATIONS ein, um vom Standard abweichende Protokollpositionen anzugeben.  
 

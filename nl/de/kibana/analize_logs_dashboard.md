@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -27,9 +27,9 @@ In {{site.data.keyword.Bluemix}} gibt es verschiedene Arten von Dashboards, die 
 | Dashboard für einzelne CF-App | Dieses Dashboard zeigt Informationen zu einer einzelnen Cloud Foundry-Anwendung an. |
 | Dashboard für einzelnen Container  | Dieses Dashboard zeigt Informationen zu einem einzelnen Container an.  |
 | Dashboard für Containergruppe  | Dieses Dashboard zeigt Informationen für eine bestimmte Containergruppe an.  |
-| Dashboard für mehrere CF-Apps | Dieses Dashboard zeigt Informationen zu allen Cloud Foundry-Anwendungen an, die in demselben {{site.data.keyword.Bluemix_notm}}-Bereich bereitgestellt werden.  | 
-| Dashboard für mehrere Container | Dieses Dashboard zeigt Informationen zu allen Containern an, die in demselben {{site.data.keyword.Bluemix_notm}}-Bereich bereitgestellt werden.  |
-| Dashboard für einen Bereich | Dieses Dashboard zeigt Protokollierungsdaten an, die in einem {{site.data.keyword.Bluemix_notm}}-Bereich zur Verfügung stehen.  | 
+| Dashboard für mehrere CF-Apps | Dieses Dashboard zeigt Informationen zu allen Cloud Foundry-Anwendungen an, die in demselben Bereich bereitgestellt werden.  | 
+| Dashboard für mehrere Container | Dieses Dashboard zeigt Informationen zu allen Containern an, die in demselben Bereich bereitgestellt werden.  |
+| Dashboard für einen Bereich | Dieses Dashboard zeigt Protokollierungsdaten an, die in einem Bereich zur Verfügung stehen.  | 
 {: caption="Tabelle 1. Beispiele für Dashboardtypen" caption-side="top"}
 
 Konfigurieren Sie die Fensterbereiche, um die Daten in einem Dashboard zu visualisieren. Kibana enthält verschiedene Visualisierungen, wie zum Beispiel Tabellen, Trends und Histogramme, die Sie zur Analyse der Informationen verwenden können. Eine Visualisierung wird einem Dashboard als Fensterbereich hinzugefügt. Sie können Fensterbereiche im Dashboard hinzufügen, entfernen und neu anordnen. Der Zweck jedes Fensterbereichs variiert. Einige Fensterbereiche zeigen zeilenweise die Ergebnisse einer oder mehrerer Abfragen. Andere Fensterbereiche enthalten Dokumente oder angepasste Informationen. Jeder Fensterbereich basiert auf einer Suche. Die Suche definiert das Subset von Daten, die in dem Fensterbereich angezeigt werden. Sie können beispielsweise ein Balkendiagramm, ein Kreisdiagramm oder eine Tabelle konfigurieren, um die Daten zu visualisieren und zu analysieren.  
@@ -47,7 +47,7 @@ In der folgenden Tabelle sind die verschiedenen Tasks aufgeführt, die Sie auf d
 | [Dashboard speichern](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | Sie können ein Dashboard zur späteren Verwendung speichern. |
 {: caption="Tabelle 2. Tasks für die Arbeit mit Dashboards" caption-side="top"}
 
-Weitere Informationen zu Kibana finden Sie in der Veröffentlichung [Kibana User Guide ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Symbol für externen Link"){: new_window}.
+Weitere Informationen zu Kibana finden Sie in der Veröffentlichung [Kibana User Guide ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 
 ## Neue Suche oder Visualisierung hinzufügen
@@ -87,7 +87,7 @@ Führen Sie die folgenden Schritte aus, um ein neues Dashboard zu erstellen:
 
 Führen Sie die folgenden Schritte auf der Seite **Management** aus, um ein Dashboard zu löschen:
 
-1. Wählen Sie auf der Seite **Management** die Registerkarte **Advanced Objects** aus.
+1. Wählen Sie auf der Seite **Management** die Option **Saved Objects** aus.
 
 2. Wählen Sie in der Registerkarte **Dashboards** das Dashboard aus, das Sie löschen wollen.
 
@@ -98,7 +98,7 @@ Führen Sie die folgenden Schritte auf der Seite **Management** aus, um ein Dash
 
 Führen Sie die folgenden Schritte auf der Seite **Management** aus, um ein Dashboard als JSON-Datei zu exportieren:
 
-1. Wählen Sie auf der Seite **Management** die Registerkarte **Advanced Objects** aus.
+1. Wählen Sie auf der Seite **Management** die Option **Saved Objects** aus.
 
 2. Wählen Sie in der Registerkarte **Dashboard** das Dashboard aus, das Sie exportieren wollen.
 
@@ -111,7 +111,7 @@ Führen Sie die folgenden Schritte auf der Seite **Management** aus, um ein Dash
 
 Führen Sie die folgenden Schritte auf der Seite **Management** aus, um ein Dashboard als JSON-Datei zu importieren:
 
-1. Wählen Sie auf der Seite **Management** die Registerkarte **Advanced Objects** aus.
+1. Wählen Sie auf der Seite **Management** die Option **Saved Objects** aus.
 
 2. Wählen Sie in der Registerkarte **Dashboard** die Option **Import** aus.
 
@@ -139,7 +139,7 @@ Führen Sie die folgenden Schritte aus, um ein Kibana-Dashboard zu speichern, na
 
 2. Geben Sie einen Namen für das Dashboard ein.
 
-    **Hinweis:** Der Name darf keine Leerzeichen enthalten. 
+    **Hinweis:** Der Name darf keine Leerzeichen enthalten.
 
 3. Klicken Sie auf **Save**.
 

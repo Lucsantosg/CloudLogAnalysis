@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -35,17 +35,17 @@ Für eine **Liberty Cloud Foundry-App** wird das Standardkonsolenprotokoll (cons
 * Die Konfiguration "consoleLogLevel" legt die Filterebene des Konsolenprotokollhandlers fest. Wenn Sie "consoleLogLevel" auf den Wert INFO setzen, konfigurieren Sie dadurch, dass alle Nachrichten der Protokollstufen INFO, AUDIT, WARNING und ERROR in die Datei "console.log" geschrieben werden. **Hinweis:** Protokolleinträge der Stufen FINE, FINER und FINEST werden nur in die Datei "trace.log" geschrieben.
 
 Weitere Informationen zu Liberty for Java™-Anwendungen finden Sie unter
-[Liberty Profile: Protokollierung und Trace ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://www-01.ibm.com/support/knowledgecenter/was_beta_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_logging.html "Symbol für externen Link"){: new_window}.
+[Liberty Profile: Protokollierung und Trace ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://www-01.ibm.com/support/knowledgecenter/was_beta_liberty/com.ibm.websphere.wlp.nd.multiplatform.doc/ae/rwlp_logging.html){: new_window}.
 
 Für eine **Node.js-Cloud Foundry-App** können Sie das Protokollierungsmodul "Built in Console" zur Konfiguration der Protokollierung für die Laufzeit in {{site.data.keyword.Bluemix}} verwenden. Sie können Nachrichten an die Standardausgabe (STDOUT) und die Standardfehlerausgabe (STDERR) leiten:
 
 * console.log ('message') sendet die Nachricht an den STDOUT-Datenstrom.
 * console.error ('error_message') sendet die Fehlernachricht an den STDERR-Datenstrom.
 
-Weitere Informationen zu Node.js-Anwendungen finden Sie unter [Protokollierung in Node.js![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://docs.nodejitsu.com/articles/intermediate/how-to-log "Symbol für externen Link"){: new_window}.
+Weitere Informationen zu Node.js-Anwendungen finden Sie unter [Protokollierung in Node.js![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://docs.nodejitsu.com/articles/intermediate/how-to-log){: new_window}.
 
 
-Weitere Informationen zu **Ruby on Rails-Anwendungen** finden Sie unter [The Logger ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://guides.rubyonrails.org/debugging_rails_applications.html#the-logger "Symbol für externen Link"){: new_window}.
+Weitere Informationen zu **Ruby on Rails-Anwendungen** finden Sie unter [The Logger ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://guides.rubyonrails.org/debugging_rails_applications.html#the-logger){: new_window}.
 
 In der folgenden Tabelle wird die Zuordnung zwischen den Protokollen einiger Anwendungslaufzeiten und den Protokollen, die automatisch von Loggregator erfasst werden, dargestellt:
 

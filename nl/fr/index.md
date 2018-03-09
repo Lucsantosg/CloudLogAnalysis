@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-31"
 
 ---
 
@@ -12,194 +13,211 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Tutoriel Initiation
+# Tutoriel d'initiation
 {: #getting-started-with-cla}
 
-Dans ce didacticiel d'initiation, nous vous guidons à travers les étapes nécessaires pour exécuter des tâches analytiques avancées à l'aide du service
-{{site.data.keyword.loganalysislong}}. Découvrez comment rechercher et analyser des journaux de conteneurs pour une application déployée dans un cluster Kubernetes.
+Suivez ce tutoriel pour commencer à utiliser le service {{site.data.keyword.loganalysislong}} dans {{site.data.keyword.Bluemix}}.
 {:shortdesc}
+
+## Objectifs
+{: #objectives}
+
+* Mettre à disposition le service {{site.data.keyword.loganalysislong}} dans un espace. 
+* Configurer la ligne de commande pour gérer les journaux. 
+* Définir les droits d'un utilisateur de sorte qu'il puisse afficher les journaux dans un espace. 
+* Lancer Kibana, l'outil open source que vous pouvez utiliser pour afficher les journaux. 
+
 
 ## Avant de commencer
 {: #prereqs}
 
-Créez un compte [{{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/registration/). Votre ID d'utilisateur doit être membre ou propriétaire d'un
-compte {{site.data.keyword.Bluemix_notm}} autorisé à créer des clusters Kubernetes, à déployer des applications dans des clusters et à interroger des journaux dans
-{{site.data.keyword.Bluemix_notm}} pour une analyse avancée dans Kibana.
+Vous devez disposer d'un ID utilisateur membre ou propriétaire d'un compte {{site.data.keyword.Bluemix_notm}}. Pour obtenir un ID utilisateur {{site.data.keyword.Bluemix_notm}}, accédez à : [Page d'inscription ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](https://console.bluemix.net/registration/){:new_window}
 
-Ouvrez une session de terminal à partir de laquelle vous pouvez gérer le cluster Kubernetes et déployer des applications à partir de la ligne de commande. Les exemples de ce tutoriel se réfèrent à un système Ubuntu Linux.
-
-[Installez les plug-ins d'interface CLI](/docs/containers/cs_cli_install.html#cs_cli_install_steps) dans votre environnement local pour gérer le service {{site.data.keyword.containershort}} depuis la ligne de commande.  
+Ce tutoriel fournit des instructions de mise à disposition et d'utilisation du service {{site.data.keyword.loganalysisshort}} dans la région Sud des Etats-Unis. 
 
 
-
-## Etape 1 : déployez une application dans un cluster Kubernetes
+## Etape 1 : Mise à disposition du service {{site.data.keyword.loganalysisshort}} 
 {: #step1}
 
-1. [Créez un cluster Kubernetes](/docs/containers/cs_cluster.html#cs_cluster_ui).
+**Remarque :** vous mettez à disposition une instance du service {{site.data.keyword.loganalysisshort}} dans un espace Cloud Foundry (CF). Une seule instance du service par espace est nécessaire. Vous ne pouvez pas mettre à disposition le service {{site.data.keyword.loganalysisshort}} au niveau du compte.  
 
-2. [Configurez le contexte de cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) dans un terminal Linux. Une fois le contexte défini, vous pouvez gérer le cluster Kubernetes et déployer l'application dans ce cluster.
+Procédez comme suit pour mettre à disposition une instance du service {{site.data.keyword.loganalysisshort}} dans {{site.data.keyword.Bluemix_notm}} :
 
-3. Déployez et exécutez un exemple d'application dans le cluster Kubernetes. [Exécutez les tâches de la leçon 1](/docs/containers/cs_tutorials.html#cs_apps_tutorial).
+1. Connectez-vous à {{site.data.keyword.Bluemix_notm}} : [http://bluemix.net ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window}.  
 
-    L'application est une application Hello World Node.js :
+2. Sélectionnez la région, l'organisation et l'espace où mettre à disposition le service {{site.data.keyword.loganalysisshort}}.   
 
-    ```
-    var express = require('express')
-var app = express()
+3. Cliquez sur **Catalogue**. La liste des services disponibles dans {{site.data.keyword.Bluemix_notm}} s'affiche.
 
-    app.get('/', function(req, res) {
-      res.send('Hello world! Your app is up and running in a cluster!\n')
-    })
-    app.listen(8080, function() {
-      console.log('Sample app is listening on port 8080.')
-    })
-    ```
-	{: codeblock}
+4. Sélectionnez la catégorie **DevOps** pour filtrer la liste de services affichée.
 
-    Lorsque l'application est déployée, le collecte de journaux est automatiquement activée pour les entrées de journal envoyées par l'application vers les flux stdout (sortie standard) et stderr (erreur standard). 
+5. Cliquez sur la vignette **Log Analysis**.
 
-    Dans cet exemple d'application, lorsque vous testez votre application dans un navigateur, l'application écrit le message suivant dans stdout: `Sample app is listening on port
-8080.`
+6. Sélectionnez un plan de service. Par défaut, le plan **Lite** est défini.
 
-## Etape 2 : accédez au tableau de bord Kibana
+    Pour plus d'informations sur les plans de service, voir [Plans de service](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+	
+7. Cliquez sur **Créer** pour mettre à disposition le service {{site.data.keyword.loganalysisshort}} dans l'espace {{site.data.keyword.Bluemix_notm}} auquel vous êtes connecté.
+
+
+
+
+## Etape 2 : [Facultatif] Changement du plan de service pour le service {{site.data.keyword.loganalysisshort}} 
 {: #step2}
 
-Pour analyser les données de journal pour un cluster, vous devez accéder à Kibana dans la région cloud Public où le cluster a été créé. 
+Si vous avez besoin d'un quota de recherche plus élevé et/ou d'un stockage à long terme des journaux, vous pouvez changer le plan de votre instance de service {{site.data.keyword.loganalysisshort}} depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}} ou en exécutant la commande `bx cf update-service` pour activer ces fonctions.  
 
-Par exemple, pour lancer Kibana dans la région du sud des États-Unis, accédez à l'URL suivante :
+Vous pouvez passer à un plan de niveau inférieur ou supérieur à tout moment. 
+
+Pour plus d'informations, voir [Plans de service {{site.data.keyword.loganalysisshort}}](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+
+**REMARQUE :** le passage à un plan payant a un coût. 
+
+Pour changer le plan de service depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}}, procédez comme suit : 
+
+1. Connectez-vous à {{site.data.keyword.Bluemix_notm}} : [http://bluemix.net ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window}.  
+
+2. Sélectionnez la région, l'organisation et l'espace où le service {{site.data.keyword.loganalysisshort}} est disponible.   
+
+3. Cliquez sur l'instance de service {{site.data.keyword.loganalysisshort}} dans le *tableau de bord* {{site.data.keyword.Bluemix_notm}}.  
+    
+4. Sélectionnez l'onglet **Plan** dans le tableau de bord {{site.data.keyword.loganalysisshort}}.
+
+    Des informations sur le plan en cours s'affichent.
+	
+5. Sélectionnez un nouveau plan de niveau supérieur ou inférieur. 
+
+6. Cliquez sur **Sauvegarder**.
+
+
+
+## Etape 3 : Configuration de votre environnement local en vue de l'utilisation du service {{site.data.keyword.loganalysisshort}} 
+{: #step3}
+
+
+Le service {{site.data.keyword.loganalysisshort}} inclut une interface de ligne de commande que vous pouvez utiliser pour gérer les journaux qui sont stockés dans Log Collection (le composant de stockage à long terme).  
+
+Vous pouvez utiliser le plug-in {{site.data.keyword.loganalysisshort}} {{site.data.keyword.Bluemix_notm}} pour afficher le statut du journal, télécharger des journaux et configurer la règle de conservation des journaux. 
+
+L'interface de ligne de commande propose différents types d'aide : une aide générale concernant l'interface de ligne de commande et les commandes prises en charge, une aide relative aux commandes pour savoir comment utiliser une commande, et une aide relative aux sous-commandes pour savoir comment utiliser une sous-commande d'une commande. 
+
+Pour installer l'interface de ligne de commande {{site.data.keyword.loganalysisshort}} depuis le référentiel {{site.data.keyword.Bluemix_notm}}, procédez comme suit : 
+
+1. Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}. 
+
+   Pour plus d'informations, voir [Installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)
+
+2. Installez le plug-in {{site.data.keyword.loganalysisshort}}. Exécutez la commande suivante :
+
+    ```
+    bx plugin install logging-cli -r Bluemix
+    ```
+    {: codeblock}
+ 
+3. Vérifiez que le plug-in {{site.data.keyword.loganalysisshort}} est installé. 
+  
+    Par exemple, exécutez la commande suivante pour afficher la liste des plug-in qui sont installés : 
+    
+    ```
+    bx plugin list
+    ```
+    {: codeblock}
+    
+    La sortie est similaire à la suivante :
+   
+    ```
+    bx plugin list
+    Listing installed plug-ins...
+
+    Plugin Name          Version   
+    logging-cli          0.1.1   
+    ```
+    {: screen}
+
+
+
+
+## Etape 4 : Définition des droits d'un utilisateur pour l'affichage des journaux 
+{: #step4}
+
+Pour contrôler les actions {{site.data.keyword.loganalysisshort}} qu'un utilisateur peut effectuer, vous pouvez affecter des rôles et des règles à un utilisateur.  
+
+Dans {{site.data.keyword.Bluemix_notm}}, il existe deux types de droits de sécurité qui contrôlent les actions que les utilisateurs peuvent effectuer lorsqu'ils utilisent le service {{site.data.keyword.loganalysisshort}} : 
+
+* Les rôles Cloud Foundry (CF) : vous attribuez un rôle CF à un utilisateur pour définir les droits dont cet utilisateur dispose pour afficher les journaux dans un espace. 
+* Les rôles IAM : vous affectez une règle IAM à un utilisateur pour définir les droits dont cet utilisateur dispose pour afficher les journaux dans le domaine de compte et pour gérer les journaux qui sont stockés dans Log Collection.  
+
+
+Procédez comme suit pour accorder à un utilisateur des droits permettant d'afficher les journaux dans un espace : 
+
+1. Connectez vous à la console {{site.data.keyword.Bluemix_notm}}.
+
+    Ouvrez un navigateur Web et lancez le tableau de bord {{site.data.keyword.Bluemix_notm}} : [http://bluemix.net ![Icône de lien externe](../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window}
+	
+	Une fois que vous êtes connecté avec votre ID utilisateur et votre mot de passe, l'interface utilisateur {{site.data.keyword.Bluemix_notm}} s'ouvre.
+
+2. Dans la barre de menus, cliquez sur **Gérer > Compte > Utilisateurs**. 
+
+    La fenêtre *Utilisateurs* affiche une liste d'utilisateurs avec leur adresse électronique et leur statut sur le compte actuellement sélectionné.
+	
+3. Si l'utilisateur est membre du compte, sélectionnez le nom de l'utilisateur dans la liste ou cliquez sur **Gérer un utilisateur** dans le menu *Actions*.
+
+    Si l'utilisateur n'est pas membre du compte, voir [Invitation d'utilisateurs](/docs/iam/iamuserinv.html#iamuserinv).
+
+4. Sélectionnez **Accès Cloud Foundry**, puis sélectionnez l'organisation. 
+
+    La liste des espaces disponibles dans cette organisation est affichée. 
+
+5. Choisissez l'espace dans lequel vous avez mis à disposition le service {{site.data.keyword.loganalysisshort}}. Ensuite, dans le menu d'actions, sélectionnez **Editer un rôle d'espace**.
+
+6. Sélectionnez *Auditeur*. 
+
+    Vous pouvez sélectionner un ou plusieurs rôles d'espace. Les rôles suivants autorisent tous un utilisateur à afficher les journaux : *Responsable*, *Développeur* et *Auditeur*. 
+	
+7. Cliquez sur **Sauvegarder le rôle**.
+
+
+Pour plus d'informations, voir [Octroi de droits](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
+
+
+
+## Etape 5 : Lancement de Kibana 
+{: #step5}
+
+Pour afficher et analyser les données de journal, vous devez accéder à Kibana dans la région de cloud publique dans laquelle les données de journal sont disponibles.  
+
+
+Pour lancer Kibana dans la région Sud des Etats-Unis, ouvrez un navigateur Web et entrez l'URL suivante : 
 
 ```
 https://logging.ng.bluemix.net/ 
 ```
 {: codeblock}
 
-    
-    
-## Etape 3 : Analyse des données de journal dans Kibana
-{: #step3}
 
-1. Sur la page **Discover**, examinez les événements qui sont affichés. 
+Pour plus d'informations sur le lancement de Kibana dans d'autres régions, voir [Accès à Kibana depuis un navigateur Web](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 
-    L'exemple d'application Hello-World génère un seul événement.
-    
-    La section Available fields affiche une liste des zones que vous pouvez utiliser pour définir des nouvelles requêtes ou pour filtrer les entrées répertoriées dans le tableau affiché
-sur la page.
-    
-    Le tableau suivant répertorie les zones communes que vous pouvez utiliser pour définir de nouvelles requêtes de recherche. Il comprend également des exemples de valeurs correspondant à l'événement généré par l'exemple d'application :
-    
-     <table>
-              <caption>Tableau 2. Zones communes aux journaux de conteneurs </caption>
-               <tr>
-                <th align="center">Zone</th>
-                <th align="center">Description</th>
-                <th align="center">Exemple</th>
-              </tr>
-              <tr>
-                <td>*docker.container_id_str*</td>
-                <td> La valeur de cette zone correspond à l'identificateur global unique du conteneur qui exécute l'application dans une nacelle du cluster Kubernetes.</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>*ibm-containers.region_str*</td>
-                <td>La valeur de cette zone correspond à la région {{site.data.keyword.Bluemix_notm}} où l'entrée de journal est collectée.</td>
-                <td>us-south</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.container_name_str*</td>
-                <td>La valeur de cette zone indique le nom du conteneur.</td>
-                <td>hello-world-deployment</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.host*</td>
-                <td>La valeur de cette zone indique l'adresse IP publique disponible pour accès à l'application depuis Internet. </td>
-                <td>169.47.218.231</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.labels.label_name*</td>
-                <td>Les zones de libellé sont facultatives. Vous pouvez ne pas les utiliser ou en utiliser plusieurs. Chaque libellé débute par le préfixe `kubernetes.labels.`, suivi du *label_name* (nom du libellé). </td>
-                <td>Dans l'exemple d'application, vous pouvez observer 2 libellés : <br>* *kubernetes.labels.pod-template-hash_str* = 3355293961 <br>* *kubernetes.labels.run_str* =	hello-world-deployment  </td>
-              </tr>
-              <tr>
-                <td>*kubernetes.namespace_name_str*</td>
-                <td>La valeur de cette zone indique l'espace de nom Kubernetes sous lequel la nacelle s'exécute. </td>
-                <td>défaut</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.pod_id_str*</td>
-                <td>La valeur de cette zone correspond à l'identificateur global unique de la nacelle dans laquelle le conteneur s'exécute. </td>
-                <td>d695f346-xxxx-xxxx-xxxx-aab0b50f7315</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.pod_name_str*</td>
-                <td>La valeur de cette zone indique le nom de la capsule.</td>
-                <td>hello-world-deployment-3xxxxxxx1-xxxxx8</td>
-              </tr>
-              <tr>
-                <td>*message*</td>
-                <td>Message complet consigné par l'application.</td>
-                <td>L'exemple d'application est à l'écoute sur le port 8080.</td>
-              </tr>
-        </table>
-    
-2. Filtrez les données sur la page **Discover**.  
-
-    Dans le tableau, vous pouvez observer toutes les entrées disponibles pour une analyse. Les entrées répertoriées correspondent à la requête de recherche affichée dans la barre de
-recherche. L'astérisque (*) est utilisé pour afficher toutes les entrées comprises dans la période qui est configurée pour la page.
-
-     
-    
-    Par exemple, pour filtrer les données par espace de nom Kubernetes, modifiez la requête de la barre de recherche. Ajoutez un filtre basé sur la zone personnalisée *kubernetes.namespace_name_str*:
-    
-    1. Dans la section *Zones disponibles*, sélectionnez la zone *kubernetes.namespace_name_str*. Un sous-ensemble des valeurs disponibles pour la zone est affiché.    
-    
-    2. Sélectionnez la valeur **default**. Il s'agit de l'espace de nom où vous avez déployé dans une étape antérieure l'exemple d'application.
-    
-        Après avoir sélectionné la valeur, un filtre est ajouté à la barre de recherche et le tableau affiche uniquement les entrées qui correspondent aux critères que vous venez de
-sélectionner.     
-    
-    Vous pouvez sélectionner le symbole d'édition du filtre pour modifier le nom de l'espace de nom à rechercher.   
-    
-    La requête suivante est affichée :
-    
-    ```
-	{
-    "query": {
-          "match": {
-            "kubernetes.namespace_name_str": {
-              "query": "default",
-              "type": "phrase"
-            }
-          }
-        }
-    }
-    ```
-	{: codeblock}
-    
-    Pour rechercher des entrées dans un espace de nom différent (par exemple, *mynamespace1*), modifiez comme suit la requête :
-    
-    ```
-	{
-    "query": {
-          "match": {
-            "kubernetes.namespace_name_str": {
-              "query": "mynamespace1",
-              "type": "phrase"
-            }
-          }
-        }
-    }
-    ```
-	{: codeblock}
-    
-    Si vous ne voyez pas de données, essayez de changer le filtre temporel. Pour plus d'informations, voir [Définition d'un filtre temporel](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+**Remarque :** lorsque vous lancez Kibana, si un message signale que le *jeton bearer n'est pas valide*, vérifiez vos droits dans l'espace. Ce message indique que votre ID utilisateur ne dispose pas des droits permettant d'afficher les journaux. 
     
 
-Pour plus d'informations, voir [Filtrage des journaux dans Kibana](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
-
-
-## Etapes suivantes
+## Etapes suivantes 
 {: #next_steps}
 
-Ensuite, créez des tableaux de bord Kibana. Pour plus d'informations, voir [Analyse des journaux dans Kibana via un tableau de bord](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#analize_logs_dashboard).
-                                                                                                                      
+Générez des journaux. Suivez l'un des tutoriels suivants : 
+
+* [Analyse dans Kibana des journaux d'une application déployée dans un cluster Kubernetes](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs){:new_window} 
+
+    Ce tutoriel présente les étapes à suivre pour le scénario de bout en bout suivant : mettre à disposition un cluster, configurer le cluster pour l'envoi de journaux au service {{site.data.keyword.loganalysisshort}} dans {{site.data.keyword.Bluemix_notm}}, déployer une application dans le cluster, et utiliser Kibana afin d'afficher et de filtrer les journaux de conteneur pour ce cluster.      
+    
+* [Analyse des journaux dans Kibana pour une application Cloud Foundry](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs){:new_window}                                                                                                            
+
+    Ce tutoriel présente les étapes à suivre pour le scénario de bout en bout suivant : déployer une application Cloud Foundry Python, générer différents types de journal, et utiliser Kibana pour afficher, rechercher et analyser des journaux CF. 
+   
+
+
+
+
+
+
+
 

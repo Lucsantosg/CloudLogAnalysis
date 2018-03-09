@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -14,10 +14,10 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# 在 Bluemix 中对 Cloud Foundry 应用程序进行日志记录
+# 在 {{site.data.keyword.Bluemix_notm}} 中对 Cloud Foundry 应用程序进行日志记录
 {: #logging_bluemix_cf_apps}
 
-在 {{site.data.keyword.Bluemix}} 中，可以通过 {{site.data.keyword.Bluemix_notm}} 仪表板、Kibana 以及命令行界面来查看、过滤和分析 Cloud Foundry (CF) 日志。此外，还可以将日志记录传送到外部日志管理工具。
+在 {site.data.keyword.Bluemix}} 中，可以通过 {{site.data.keyword.Bluemix_notm}} 仪表板、Kibana 以及命令行界面来查看、过滤和分析 Cloud Foundry (CF) 日志。此外，还可以将日志记录传送到外部日志管理工具。
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} 会记录由 Cloud Foundry 平台和 Cloud Foundry 应用程序生成的日志数据。在日志中，可以查看为应用程序生成的错误、警告和参考消息。 
@@ -35,23 +35,24 @@ lastupdated: "2017-07-19"
 ## 日志获取
 {: #log_ingestion}
 
-{{site.data.keyword.loganalysisshort}} 服务提供了不同的套餐。每种套餐都定义了您是否能将日志发送到“日志收集”中。所有套餐（*Lite* 套餐除外）都包含将日志发送到“日志收集”的功能。有关套餐的更多信息，请参阅[服务套餐](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
-
 可以使用多租户 Logstash 转发器将日志发送到 {{site.data.keyword.loganalysisshort}}。有关更多信息，请参阅[使用多租户 Logstash 转发器 (mt-logstash-forwarder) 发送日志数据](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt)。
 
+{{site.data.keyword.loganalysisshort}} 服务提供了不同的套餐。所有套餐（*轻量*套餐除外）都包含将日志发送到“日志收集”的功能。有关套餐的更多信息，请参阅[服务套餐](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
 
 ## 日志收集
 {: #log_collection}
 
-缺省情况下，{{site.data.keyword.Bluemix_notm}} 会在“日志搜索”中存储最长 3 天的日志数据：   
+缺省情况下，{{site.data.keyword.loganalysisshort}} 服务会在“日志搜索”中存储最长 3 天的日志数据：   
 
 * 每天每个空间最多存储 500 MB 数据。超过 500 MB 上限的任何日志都会被废弃。每天凌晨 12:30 UTC 会重置分配的上限。
 * 可搜索最长 3 天最多 1.5 GB 的数据。日志数据达到 1.5 GB 或超过 3 天后，会对数据进行滚动式覆盖（先进先出）。
 
-{{site.data.keyword.loganalysisshort}} 服务提供了其他套餐，允许您根据自己的需要，将日志在“日志收集”中存储任意长的时间。有关每个套餐价格的更多信息，请参阅[服务套餐](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
+{{site.data.keyword.loganalysisshort}} 服务提供了其他套餐，允许您根据自己的需要，将日志在“日志收集”中存储任意长的时间。 
 
-可以配置日志保留时间策略，可用于定义您希望日志在“日志收集”中保留的天数。有关更多信息，请参阅[日志保留时间策略](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies)。
+* 可以配置日志保留时间策略，以定义希望日志在“日志收集”中保留的天数。有关更多信息，请参阅[日志保留时间策略](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies)。
+* 您可以使用命令行或 API 手动删除日志。
 
+有关每个套餐价格的更多信息，请参阅[服务套餐](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
 
 ## 日志搜索
 {: #log_search}
@@ -66,19 +67,19 @@ lastupdated: "2017-07-19"
 
 可以选择以下任一方法来分析 Cloud Foundry 应用程序的日志：
 
-* 在 {{site.data.keyword.Bluemix_notm}} 中分析日志以查看应用程序的最新活动。
+* 在 {{site.data.keyword.Bluemix_notm}} UI 中分析日志以查看应用程序的最新活动。
     
-    在 {{site.data.keyword.Bluemix_notm}} 中，可以通过可用于每个 Cloud Foundry 应用程序的**日志**选项卡来查看、过滤和分析日志。有关更多信息，请参阅[通过 Bluemix 仪表板分析 CF 应用程序日志](/docs/services/CloudLogAnalysis/logging_view_dashboard.html#analyzing_logs_bmx_ui)。
+    在 {{site.data.keyword.Bluemix_notm}} 中，可以通过可用于每个 Cloud Foundry 应用程序的**日志**选项卡来查看、过滤和分析日志。有关更多信息，请参阅[通过 {{site.data.keyword.Bluemix_notm}} UI 分析 CF 应用程序日志](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#launch_logs_cloud_ui_cf)。
     
 * 在 Kibana 中分析日志以执行高级分析任务。
     
-    在 {{site.data.keyword.Bluemix_notm}} 中，可以使用 Kibana（一种开放式源代码分析和可视化平台）通过各种图形（例如，图表和表）来对数据进行监视、搜索、分析和可视化。有关更多信息，请参阅[在 Kibana 中分析日志](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)。
+    在 {{site.data.keyword.Bluemix_notm}} 中，可以使用 Kibana（一种开放式源代码分析和可视化平台）通过各种图形（例如，图表和表）来对数据进行监视、搜索、分析和可视化表示。有关更多信息，请参阅[在 Kibana 中分析日志](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)。
 	
 	**提示**：要启动 Kibana，请参阅[通过 CF 应用程序的仪表板导航至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app)。
 
 * 通过 CLI 分析日志，使用命令以编程方式管理日志。
     
-    在 {{site.data.keyword.Bluemix_notm}} 中，可以通过命令行界面使用 **cf logs** 命令来查看、过滤和分析日志。有关更多信息，请参阅[通过命令行界面分析 Cloud Foundry 应用程序日志](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_logs_cli)。
+    在 {{site.data.keyword.Bluemix_notm}} 中，可以通过命令行界面使用 **cf logs** 命令来查看、过滤和分析日志。有关更多信息，请参阅[通过命令行界面分析 Cloud Foundry 应用程序日志](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#analyzing_logs_cli)。
 
 
 ## 在 Diego 上部署的 CF 应用程序的日志源
@@ -123,3 +124,26 @@ lastupdated: "2017-07-19"
 ![DEA 体系结构中的日志源。](images/cf_apps_dea_F1.png "基于 Droplet Execution Agent (DEA) 的 Cloud Foundry 体系结构中的组件（日志源）。")
 
 
+
+## 通过 {{site.data.keyword.Bluemix_notm}} UI 查看的 CF 应用程序日志的日志格式
+{: #log_format_cf}
+
+{{site.data.keyword.Bluemix_notm}} CF 应用程序的日志以固定格式显示，类似于以下模式：
+
+<code><var class="keyword varname">Component</var>/<var class="keyword varname">instanceID</var>/<var class="keyword varname">message</var>/<var class="keyword varname">timestamp</var></code>
+
+每个日志条目都包含以下字段：
+
+| 字段| 描述
+|
+|-------|-------------|
+| 时间戳记| 日志语句的时间。时间戳记定义为精确到毫秒。|
+| 组件| 用于生成日志的组件。有关不同组件的列表，请参阅 [CF 应用程序的日志源](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#logging_bluemix_cf_apps_log_sources)。<br> 每个组件类型后跟一个斜杠和一个数字，数字指示应用程序实例。0 表示分配给第一个实例的数字，1 表示分配给第二个实例的数字，依此类推。|
+| 消息| 组件发出的消息。消息根据上下文而变化。|
+{: caption="表 1. CF 应用程序日志条目字段" caption-side="top"}
+
+
+## 教程：在 Kibana 中分析 Cloud Foundry 应用程序的日志
+{: #tutorial}  
+
+要了解如何使用 Kibana 来分析 Cloud Foundry 应用程序的日志，请参阅[在 Kibana 中分析 Cloud Foundry 应用程序的日志](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)。

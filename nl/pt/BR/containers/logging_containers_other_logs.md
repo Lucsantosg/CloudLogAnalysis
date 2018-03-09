@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -15,23 +16,23 @@ lastupdated: "2017-07-19"
 {:pre: .pre}
 
 
-# Coletando dados do log não padrão de um contêiner
-{: #logging_containers_collect_data}
+# Coletando dados do log não padrão de um contêiner (descontinuado)
+{: #logging_containers_other_logs}
 
-Para capturar dados de locais de log não padrão dentro de um contêiner que é implementado na infraestrutura em nuvem gerenciada pelo {{site.data.keyword.Bluemix_notm}}, configure a variável de ambiente **LOG_LOCATIONS** ao criar um contêiner. 
+Para capturar dados de locais de log não padrão dentro de um contêiner implementado na infraestrutura gerenciada pelo {{site.data.keyword.Bluemix_notm}}, configure a variável de ambiente **LOG_LOCATIONS** ao criar o contêiner. 
 {:shortdesc}
 
 * Inclua a variável de ambiente **LOG_LOCATIONS** com um caminho para o arquivo de log quando criar o contêiner. 
 * É possível incluir múltiplos arquivos de log separando-os com vírgulas. 
 
-## Coletando dados do log não padrão por meio do console do Bluemix
+## Coletando dados do log não padrão por meio do console do IBM Cloud
 {: #logging_containers_collect_data_ui}
 
 Conclua as etapas a seguir para coletar dados não padrão por meio do console:
 
 1. No catálogo, selecione **Contêineres** e escolha uma imagem. 
 
-    A lista de imagens que são exibidas inclui imagens que são fornecidas pela {{site.data.keyword.IBM}} e imagens que estão armazenadas em seu registro privado do {{site.data.keyword.Bluemix_notm}}. 
+    A lista de imagens que são exibidas inclui imagens que são fornecidas pela {{site.data.keyword.IBM_notm}} e imagens que estão armazenadas em seu registro privado do {{site.data.keyword.Bluemix_notm}}. 
 
 2. Defina seu contêiner. Escolha o tipo, insira um nome para o contêiner, selecione seu tamanho e defina outros atributos, como detalhes e portas de endereço IP. Para obter mais informações, veja [Criar e implementar um contêiner único por meio da UI do {{site.data.keyword.Bluemix_notm}}](/docs/containers/container_single_ui.html#gui). 
 
@@ -65,38 +66,11 @@ O painel do contêiner é aberto. Verifique se o status do contêiner é *Execut
 
 Conclua as etapas a seguir para coletar dados do log não padrão por meio da CLI:
 
-1. Configure um terminal para usar a CLI do {{site.data.keyword.containershort}}. Para obter mais informações, consulte [Configurando a CLI do IBM Bluemix Container Service](/docs/containers/container_cli_cfic_install.html).
+1. Configure um terminal para usar a CLI do {{site.data.keyword.containershort}}. Para obter mais informações, veja [Configurando a CLI do {{site.data.keyword.containershort}}](/docs/containers/container_cli_cfic_install.html).
 
-2. Efetue login na CLI do Cloud Foundry usando o comando a seguir: `cf login`. Insira seu ID, sua senha, sua organização e seu espaço do {{site.data.keyword.Bluemix_notm}} quando forem solicitados. 
+2. Efetue login na CLI do Cloud Foundry usando o comando a seguir: `bx login`. Insira seu ID, sua senha, sua organização e seu espaço do {{site.data.keyword.IBM_notm}} quando forem solicitados. 
 
-    Por padrão, você é conectado à região sul dos EUA ou à última região na qual efetuou login. 
-    
-    É possível incluir a opção **-a** para efetuar login em uma região específica no {{site.data.keyword.Bluemix_notm}}. Por exemplo, a tabela a seguir lista os comandos por região:
-
-    <table>
-      <caption>Tabela 2. Comandos por região</caption>
-      <tbody>
-        <tr>
-          <th align="center">Region</th>
-          <th align="center"></th>
-        </tr>
-        <tr>
-          <td align="left">Sul dos Estados Unidos</td>
-          <td align="left"> cf login -a api.ng.bluemix.net</td>
-        </tr>
-        <tr>
-          <td align="left"></td>
-          <td align="left">cf login -a api.eu-gb.bluemix.net</td>
-        </tr>
-	 <tr>
-          <td align="left">Frankfurt</td>
-          <td align="left">cf login -a api.eu-de.bluemix.net</td>
-        </tr>
-       </tbody>
-    </table>
-    
-
-3. Efetue login no {{site.data.keyword.containershort}} usando o comando a seguir: `cf ic login`
+3. Efetue login no {{site.data.keyword.containershort}} usando o comando a seguir: `bx cf ic login`
 
 4. Crie um contêiner único por meio de uma imagem. Inclua a variável de ambiente LOG_LOCATIONS para incluir locais de log não padrão.  
 

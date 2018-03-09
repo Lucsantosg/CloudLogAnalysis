@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -20,16 +20,16 @@ lastupdated: "2017-07-19"
 使用 Kibana 中的*儀表板* 頁面，來顯示分組成各儀表板的視覺效果集合。使用儀表板來分析您的日誌資料並比較結果。
 {:shortdesc}
 
-{{site.data.keyword.Bluemix}} 中有不同類型的儀表板，您可以定義及自訂，以視覺化及分析資料。例如，下表列出一些常見的儀表板類型：
+在 {{site.data.keyword.Bluemix}} 中有不同類型的儀表板，您可以定義與自訂以視覺化及分析資料。例如，下表列出一些常見的儀表板類型：
 
 | 儀表板類型 | 說明 |
 |-------------------|-------------|
-| Single-cf-app 儀表板 | 此儀表板會顯示單一 Cloud Foundry 應用程式的資訊。|
+| 單一 CF 應用程式儀表板| 此儀表板會顯示單一 Cloud Foundry 應用程式的資訊。|
 | 單一容器儀表板 | 此儀表板會顯示單一容器的資訊。|
 | 容器群組儀表板 | 此儀表板會顯示特定容器群組的資訊。|
-| Multi-cf-app 儀表板 | 此儀表板會顯示部署在相同 {{site.data.keyword.Bluemix_notm}} 空間中的所有 Cloud Foundry 應用程式的資訊。| 
-| Multi-container 儀表板 | 此儀表板會顯示部署在相同 {{site.data.keyword.Bluemix_notm}} 空間中的所有容器的資訊。|
-| 空間儀表板 | 此儀表板會顯示 {{site.data.keyword.Bluemix_notm}} 空間中可用的記載資料。| 
+| 多重 CF 應用程式儀表板| 此儀表板會顯示部署在相同空間中的所有 Cloud Foundry 應用程式的資訊。| 
+| 多重容器儀表板| 此儀表板會顯示部署在相同空間中的所有容器的資訊。|
+| 空間儀表板 | 此儀表板會顯示空間中可用的記載資料。| 
 {: caption="表 1. 儀表板類型範例" caption-side="top"}
 
 若要將儀表板中的資料視覺化，您可以配置畫面。Kibana 包括可用來分析資訊的各種視覺效果，例如表格、趨勢及直方圖。視覺效果會以畫面形式新增至儀表板。您可以新增、移除及重新排列儀表板中的畫面。每一個畫面的目標都不同。部分畫面會組織成數列，以提供一個以上查詢的結果。其他畫面則會顯示文件或自訂資訊。每一個畫面都以搜尋為基礎。搜尋會定義畫面顯示的部分資料。例如，您可以配置長條圖、圓餅圖或表格，以將資料視覺化，並進行分析。  
@@ -44,10 +44,10 @@ lastupdated: "2017-07-19"
 | [匯出儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) | 您可以將儀表板匯出成 JSON 檔案。|
 | [匯入儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) | 您可以將儀表板匯入成 JSON 檔案。|
 | [載入儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) | 您可以上傳儀表板，以更新其資料、予以修改或分析資料。|
-| [儲存儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | 您可以儲存儀表板，以供稍後重複使用。|
+| [儲存儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | 您可以儲存儀表板，以供之後重複使用。|
 {: caption="表 2. 使用儀表板的作業" caption-side="top"}
 
-如需 Kibana 的相關資訊，請參閱 [Kibana User Guide ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.elastic.co/guide/en/kibana/5.1/index.html "外部鏈結圖示"){: new_window}。
+如需 Kibana 的相關資訊，請參閱 [Kibana User Guide ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}。
 
 
 ## 新增搜尋或視覺效果
@@ -87,7 +87,7 @@ lastupdated: "2017-07-19"
 
 若要刪除儀表板，請在**管理**頁面中完成下列步驟：
 
-1. 在**管理**頁面中，選取**進階物件**標籤。
+1. 在**管理**頁面中，選取**已儲存的物件**。
 
 2. 在**儀表板**標籤中，選取您要刪除的儀表板。
 
@@ -98,7 +98,7 @@ lastupdated: "2017-07-19"
 
 若要將儀表板匯出成 JSON 檔案，請在**管理**頁面中完成下列步驟：
 
-1. 在**管理**頁面中，選取**進階物件**標籤。
+1. 在**管理**頁面中，選取**已儲存的物件**。
 
 2. 在**儀表板**標籤中，選取您要匯出的儀表板。
 
@@ -111,7 +111,7 @@ lastupdated: "2017-07-19"
 
 若要將儀表板匯入成 JSON 檔案，請在**管理**頁面中完成下列步驟：
 
-1. 在**管理**頁面中，選取**進階物件**標籤。
+1. 在**管理**頁面中，選取**已儲存的物件**。
 
 2. 在**儀表板**標籤中，選取**匯入**。
 

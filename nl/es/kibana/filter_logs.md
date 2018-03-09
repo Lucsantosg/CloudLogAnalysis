@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -238,7 +239,7 @@ La tabla muestra las entradas de la app CF en las que el texto *CWWKT0016I* form
 ## Establecimiento de un filtro de tiempo
 {: #set_time_filter}
 
-Vea y filtre registros de {{site.data.keyword.Bluemix_notm}} comprendidos en un periodo de tiempo configurando el *Selector de tiempo*.
+Vea y filtre los registros comprendidos en un periodo de tiempo configurando el *Selector de tiempo*.
 
 Puede configurar el *Selector de tiempo* en la página Descubrir. De forma predeterminada, está establecido en los últimos 15 minutos. 
 

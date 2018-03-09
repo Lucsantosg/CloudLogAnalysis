@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -26,7 +27,7 @@ lastupdated: "2017-07-19"
 
     針對 Cloud Foundry (CF) 應用程式，請參閱[從 CF 應用程式的儀表板啟動 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app)。
 
-	針對在 {{site.data.keyword.IBM_notm}} 所管理雲端基礎架構中執行的容器，請參閱[從容器的儀表板啟動 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers)。
+	針對在 {{site.data.keyword.Bluemix_notm}} 所管理基礎架構中執行的容器，請參閱[從容器的儀表板啟動 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers)。
     
     針對所有雲端資源（例如，在 Kubernetes 叢集中執行的容器），請參閱[從瀏覽器啟動 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)。 
 	
@@ -34,9 +35,9 @@ lastupdated: "2017-07-19"
 
 2. 在「探索」頁面中，查看它顯示哪部分的資料。如需相關資訊，請參閱[識別 Kibana 探索頁面中顯示的資料](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)。然後，修改預設查詢來過濾項目。
 
-    **附註：**請使用 Lucene 查詢語言來定義自訂查詢。如需相關資訊，請參閱 [Apache Lucene - 查詢剖析器語法 ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html "外部鏈結圖示"){: new_window}
+    **附註：**請使用 Lucene 查詢語言來定義自訂查詢。如需相關資訊，請參閱 [Apache Lucene - 查詢剖析器語法 ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}
     
-    從 {{site.data.keyword.Bluemix_notm}} 啟動 Kibana 時，若要修改查詢及定義多個搜尋準則，您可以使用邏輯術語 **AND** 及 **OR**。這些運算子必須大寫。    
+    從 {{site.data.keyword.Bluemix_notm}} 使用者介面啟動 Kibana 時，若要修改查詢以及定義多個搜尋準則，您可以使用邏輯術語 **AND** 及 **OR**。這些運算子必須大寫。    
     
     * 若要搜尋關鍵字或部分關鍵字，請輸入一個單字，後面接著萬用字元星號 (*)，例如 `Java*`。 
     * 若要搜尋特定詞組，請用雙引號 (" ") 輸入該詞組，例如 `"Java/1.8.0"`。
@@ -46,7 +47,7 @@ lastupdated: "2017-07-19"
 
      例如，若為 CF 應用程式，您可以建立查詢 `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]`，此查詢只列出實例 *0* 及 *1* 的項目。 
 
-3. 儲存查詢，以供稍後重複使用。如需相關資訊，請參閱[儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)。 
+3. 儲存查詢，以供之後重複使用。如需相關資訊，請參閱[儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)。 
 
 **附註：**如果您需要刪除查詢，請參閱[刪除搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)。
 
@@ -126,12 +127,22 @@ lastupdated: "2017-07-19"
 ## 儲存搜尋 
 {: #save_search}
 
-當您儲存搜尋時，會儲存搜尋查詢字串及目前選取的索引型樣。
+請考量下列有關在 Kibana 中儲存自訂搜尋的資訊：
+
+* 當您儲存搜尋時，會儲存搜尋查詢字串及目前選取的索引型樣。
+* 當您在*探索* 頁面中開啟並修改搜尋時，可以選擇使用相同的名稱來儲存它，也可以使用不同的名稱來儲存修改過的自訂搜尋。依預設，所提供的搜尋名稱就是對應於您一開始所開啟之自訂搜尋的名稱。
+
+    * 若要使用相同的名稱來儲存修改過的自訂搜尋，請按一下**儲存**。請注意，會改寫原始自訂搜尋。 
+	
+	* 若要使用不同的名稱來儲存修改過的自訂搜尋，請在**儲存搜尋**欄位中輸入新名稱，然後按一下**儲存**。 
+
 
 請完成下列步驟，以在「探索」頁面中儲存目前的搜尋：
 
 1. 在「探索」頁面的工具列中，按一下**儲存搜尋**按鈕 ![儲存搜尋](images/save_search_icon.jpg "儲存搜尋")。
 
 2. 輸入搜尋的名稱。
+
+    **附註：**當您按一下**儲存**時，不會有改寫的警告，因此，如果您指定現有名稱，則儲存會取代該版本，而沒有任何指示。
 
 3. 按一下**儲存**。 

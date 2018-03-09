@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -31,7 +31,7 @@ Ha alcanzado la cuota diaria asignada al espacio de Bluemix {GUID del espacio} p
 
 **Explicación del mensaje** 
 
-Puede recibir un mensaje con el ID *BXNLG020001W* cuando alcanza la cuota de almacenamiento de búsqueda de registros asignada al plan de servicio Lite. El plan Lite es un plan de servicio complementario que se establece de forma predeterminada cuando se suministra el servicio {{site.data.keyword.loganalysisshort}} en un espacio de {{site.data.keyword.Bluemix_notm}}. Su asignación diaria actual es de 500 MB para el almacenamiento de búsqueda de registros, que se retienen en el almacenamiento de recopilación de registros durante un periodo de 3 días, durante los cuales se pueden buscar en Kibana.
+Puede recibir un mensaje con el ID *BXNLG020001W* cuando alcanza la cuota de almacenamiento de búsqueda de registros asignada al plan de servicio Lite. El plan Lite es un plan de servicio complementario que se establece de forma predeterminada cuando se suministra el servicio {{site.data.keyword.loganalysisshort}} en un espacio. Su asignación diaria actual es de 500 MB para el almacenamiento de búsqueda de registros, que se retienen en el almacenamiento de recopilación de registros durante un periodo de 3 días, durante los cuales se pueden buscar en Kibana.
 
 **Recuperación**
 
@@ -50,7 +50,7 @@ XXX representa el tamaño de los datos que se pueden buscar en su plan actual.
 
 **Explicación del mensaje** 
 
-Ha alcanzado la cuota diaria asignada al espacio de {{site.data.keyword.Bluemix_notm}} {GUID del espacio} para la instancia de {{site.data.keyword.loganalysisfull}} {GUID de la instancia}.  Su asignación diaria actual es de 500 MB, 2 GB, 5 GB o 10 GB para el almacenamiento de búsqueda de registros, que se retienen durante un periodo de 3 días, durante los cuales se pueden buscar en Kibana. Esto no afecta a la política de retención de registros en el almacenamiento de recopilación de registros.
+Ha alcanzado la cuota diaria asignada al espacio {GUID del espacio} para la instancia de {{site.data.keyword.loganalysisfull}} {GUID de la instancia}.  Su asignación diaria actual es de 500 MB, 2 GB, 5 GB o 10 GB para el almacenamiento de búsqueda de registros, que se retienen durante un periodo de 3 días, durante los cuales se pueden buscar en Kibana. Esto no afecta a la política de retención de registros en el almacenamiento de recopilación de registros.
 
 **Recuperación**
 

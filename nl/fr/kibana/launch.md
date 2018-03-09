@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -22,13 +22,10 @@ Vous pouvez lancer Kibana à partir du service {{site.data.keyword.loganalysissh
 navigateur Web.
 {:shortdesc}
 
-Pour les applications CF et les conteneurs Docker qui sont déployés dans une infrastructure cloud gérée par {{site.data.keyword.Bluemix_notm}}, vous pouvez lancer Kibana
-depuis {{site.data.keyword.Bluemix_notm}} pour afficher et analyser des données en contexte sur la ressource à partir de laquelle vous lancez Kibana. Par exemple, vous pouvez lancer
-dans votre application CF spécifique des journaux dans Kibana, et ce dans le contexte de cette application spécifique.
+Pour les applications CF et les conteneurs Docker, vous pouvez lancer Kibana depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}} pour afficher et analyser des données dans le contexte de la ressource à partir de laquelle vous lancez Kibana. Par
+exemple, vous pouvez ouvrir vos journaux d'application CK spécifiques dans Kibana, dans le contexte de cette application spécifique.
     
-Pour les ressources de cloud comme un conteneur Docker qui sont déployées dans une infrastructure Kubernetes, vous pouvez lancer Kibana depuis un lien de navigateur direct ou depuis le
-tableau de bord du service {{site.data.keyword.loganalysisshort}} pour afficher les données de journal ajoutés depuis les services dans un espace
-{{site.data.keyword.Bluemix_notm}} fourni. La requête utilisée pour filtrer les données affichées dans le tableau de bord extrait des entrées de journal pour un espace dans l'organisation {{site.data.keyword.Bluemix_notm}}. Les informations de journal affichées par Kibana incluent des enregistrements pour toutes les ressources déployées dans l'espace de l'organisation {{site.data.keyword.Bluemix_notm}} à laquelle vous êtes connecté. 
+Pour toute ressource de cloud telle qu'un conteneur Docker qui est déployée dans une infrastructure Kubernetes, vous pouvez lancer Kibana directement depuis un lien de navigateur direct ou à partir du tableau de bord du service {{site.data.keyword.loganalysisshort}} pour afficher des données de journal agrégées depuis les services d'un espace donné. La requête utilisée pour filtrer les données affichées dans le tableau de bord extrait les entrées de journal pour un espace dans l'organisation. Les informations de journal que Kibana affiche incluent les enregistrements de toutes les ressources qui sont déployées dans l'espace de l'organisation à laquelle vous êtes connecté. 
 
 Le tableau suivant recense certaines ressources de cloud et les méthodes de navigation prises en charge pour lancer Kibana :
 
@@ -49,31 +46,30 @@ Le tableau suivant recense certaines ressources de cloud et les méthodes de nav
   <tr>
     <td>Conteneur déployé dans un cluster Kubernetes</td>
 	<td>Oui</td>
-    <td>Non</td>
+    <td>Oui</td>
     <td>Oui</td>
   </tr>  
   <tr>
-    <td>Conteneur déployé dans une infrastructure de cloud gérée par {{site.data.keyword.Bluemix_notm}}</td>
+    <td>Conteneur déployé dans une infrastructure gérée par {{site.data.keyword.Bluemix_notm}} (déprécié)</td>
 	<td>Oui</td>
     <td>Oui</td>
     <td>Oui</td>
   </tr>  
 </table>
 
-Pour plus d'informations sur Kibana, reportez-vous au manuel [Kibana User Guide ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
+Pour plus d'informations sur Kibana, reportez-vous au manuel [Kibana User Guide ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
     
 
 ##  Accès à Kibana depuis le tableau de bord du service Log Analysis
 {: #launch_Kibana_from_log_analysis}
 
-La requête qui est utilisée pour filtrer les données qui sont affichées dans Kibana extrait les entrées de journal pour cet espace dans l'organisation {{site.data.keyword.Bluemix_notm}}. 
+La requête utilisée pour filtrer les données affichées dans Kibana extrait les entrées de journal pour cet espace dans l'organisation. 
 	
-Les informations de journal affichées par Kibana incluent des enregistrements pour toutes les ressources déployées dans l'espace de l'organisation {{site.data.keyword.Bluemix_notm}} à laquelle vous êtes connecté.
+Les informations de journal que Kibana affiche incluent les enregistrements de toutes les ressources qui sont déployées dans l'espace de l'organisation à laquelle vous êtes connecté.
 
-Effectuez les étapes suivantes pour lancer Kibana depuis le tableau de bord du service {{site.data.keyword.loganalysisshort}} :
+Procédez comme suit pour lancer Kibana depuis le tableau de bord du service {{site.data.keyword.loganalysisshort}} :
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}} puis cliquez sur le service {{site.data.keyword.loganalysisshort}} depuis le tableau de bord
-{{site.data.keyword.Bluemix_notm}}. 
+1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}, puis cliquez sur le service {{site.data.keyword.loganalysisshort}} dans le tableau de bord {{site.data.keyword.Bluemix_notm}}. 
     
 2. Sélectionnez l'onglet **Managed** dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}}.
 
@@ -88,32 +84,19 @@ Si la page Discover n'affiche aucune entrée de journal, ajustez le sélecteur d
 ##  Accès à Kibana depuis un navigateur Web
 {: #launch_Kibana_from_browser}
 
-La requête qui est utilisée pour filtrer les données qui sont affichées dans Kibana extrait les entrées de journal pour cet espace dans l'organisation
-{{site.data.keyword.Bluemix_notm}}. 
+La requête utilisée pour filtrer les données affichées dans Kibana extrait les entrées de journal pour cet espace dans l'organisation. 
 	
-Les informations de journal affichées par Kibana incluent des enregistrements pour toutes les ressources déployées dans l'espace de l'organisation {{site.data.keyword.Bluemix_notm}} à laquelle vous êtes connecté.
+Les informations de journal que Kibana affiche incluent les enregistrements de toutes les ressources qui sont déployées dans l'espace de l'organisation à laquelle vous êtes connecté.
 
 Pour lancer Kibana depuis un navigateur, procédez comme suit :
 
-1. Ouvrez un navigateur Web et lancez Kibana. Ensuite, connectez-vous à l'interface utilisateur Kibana. 
+1. Ouvrez un navigateur Web et lancez Kibana. Ensuite, connectez-vous à l'interface utilisateur Kibana.
+
+    Pour afficher la liste des URL par région, voir [URL d'ouverture de Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana).
     
-    Par exemple, le tableau suivant indique l'URL que vous devez utiliser pour lancer Kibana dans la région Sud des Etats-Unis :
-      
-    <table>
-          <caption>Tableau 1. URL permettant de lancer Kibana par région</caption>
-           <tr>
-            <th>Région</th>
-            <th>URL</th>
-          </tr>
-          <tr>
-            <td>Sud des États-Unis</td>
-            <td>https://logging.ng.bluemix.net/ </td>
-          </tr>
-    </table>
+    La page Discover s'ouvre dans Kibana.
 	
-	La page Discover s'ouvre dans Kibana.
-	
-2. Sélectionnez le canevas d'index pour l'espace {{site.data.keyword.Bluemix_notm}} depuis lequel vous souhaitez afficher et analyser les données de journal.
+2. Sélectionnez le canevas d'index pour l'espace à partir duquel vous voulez afficher et analyser les données de journal.
 
     1. Cliquez sur **default-index**.
 	
@@ -122,9 +105,9 @@ Pour lancer Kibana depuis un navigateur, procédez comme suit :
 	    ```
 	    [logstash-Space_ID-]YYYY.MM.DD 
 	    ```
-        {screen}
+        {: screen}
 	
-	    où *Space_ID* est l'identificateur global de l'espace {{site.data.keyword.Bluemix_notm}} où vous souhaitez afficher et analyser les données de journal. 
+	    où *Space_ID* est l'identificateur global unique de l'espace dans lequel vous voulez afficher et analyser les données de journal. 
 	
 Si la page Discover n'affiche aucune entrée de journal, ajustez le sélecteur de période. Pour plus d'informations, voir [Définition d'un filtre temporel](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 
@@ -136,26 +119,57 @@ Si la page Discover n'affiche aucune entrée de journal, ajustez le sélecteur d
 La requête qui est utilisée pour filtrer les données qui s'affichent dans Kibana récupère les entrées de journal pour l'application CF {{site.data.keyword.Bluemix_notm}} depuis
 l'endroit où vous lancez Kibana.
 
-Pour visualiser les journaux d'une application Cloud Foundry dans Kibana, procédez comme suit :
+Pour afficher les journaux d'une application Cloud Foundry dans Kibana, procédez comme suit :
 
-1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}, puis cliquez sur le nom de l'application ou du conteneur dans le tableau de bord {{site.data.keyword.Bluemix_notm}}. 
+1. Connectez-vous à votre compte {{site.data.keyword.Bluemix_notm}}.
+
+    Le tableau de bord {{site.data.keyword.Bluemix_notm}} se trouve à l'adresse suivante : [http://bluemix.net ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window}.
     
-2. Ouvrez l'onglet des journaux dans l'interface utilisateur de {{site.data.keyword.Bluemix_notm}}.
+	Une fois que vous êtes connecté avec votre ID utilisateur et votre mot de passe, l'interface utilisateur {{site.data.keyword.Bluemix_notm}} s'ouvre.
+
+2. Cliquez sur le nom de l'application ou sur le conteneur dans le tableau de bord {{site.data.keyword.Bluemix_notm}}. 
+    
+3. Ouvrez l'onglet des journaux dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}}.
 
     Pour les applications CF, cliquez sur **Journaux** dans la barre de navigation. 
     L'onglet des journaux s'affiche.  
 
-3. Cliquez sur **Advanced view**. Le tableau de bord Kibana s'ouvre.
+4. Cliquez sur **Afficher dans Kibana**. Le tableau de bord Kibana s'ouvre.
 
-    Par défaut, la page **Discover** est chargée avec le canevas d'index par défaut et un filtre temporel est défini sur les 30 dernières secondes. La requête de recherche est définie pour porter sur toutes les entrées de votre application CF.
+    Par défaut, la page **Discover** se charge avec le canevas d'index par défaut sélectionné et un filtre temporel défini sur les 15 dernières minutes. La requête de recherche permet de rechercher toutes les entrées pour l'application CF.
 
     Si la page Discover n'affiche aucune entrée de journal, ajustez le sélecteur de période. Pour plus d'informations, voir [Définition d'un filtre temporel](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 
+	
+	
+##  Accès à Kibana depuis le tableau de bord d'un conteneur qui est déployé dans un cluster Kubernetes
+{: #launch_Kibana_for_containers_kube}
 
-##  Accès à Kibana depuis le tableau de bord d'un conteneur
+La requête utilisée pour filtrer les données affichées dans Kibana extrait les entrées de journal pour le cluster depuis lequel vous lancez Kibana.
+
+Pour afficher les journaux d'un conteneur dans Kibana, procédez comme suit :
+
+1. Connectez-vous à votre compte {{site.data.keyword.Bluemix_notm}}.
+
+    Le tableau de bord {{site.data.keyword.Bluemix_notm}} se trouve à l'adresse suivante : [http://bluemix.net ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window}.
+    
+	Une fois que vous êtes connecté avec votre ID utilisateur et votre mot de passe, l'interface utilisateur {{site.data.keyword.Bluemix_notm}} s'ouvre.
+
+2. Dans le menu, sélectionnez **Tableau de bord**.
+
+3. Dans la section *Clusters*, sélectionnez le cluster.
+
+4. Dans la section *Vue d'ensemble*, sélectionnez **Afficher les journaux**.
+
+    Kibana s'ouvre.
+
+
+
+
+##  Accès à Kibana depuis le tableau de bord d'un conteneur qui est déployé dans l'infrastructure gérée par {{site.data.keyword.Bluemix_notm}} (déprécié)
 {: #launch_Kibana_for_containers}
 
-Cette méthode s'applique uniquement aux conteneurs qui sont déployés dans l'infrastructure de cloud gérée par {{site.data.keyword.Bluemix_notm}}.
+Cette méthode s'applique uniquement aux conteneurs qui sont déployés dans l'infrastructure gérée par {{site.data.keyword.Bluemix_notm}}.
 
 La requête qui est utilisée pour filtrer les données qui sont affichées dans Kibana extrait les entrées de journal pour le conteneur depuis lequel vous lancez Kibana.
 
@@ -163,10 +177,9 @@ Pour afficher les journaux d'un conteneur Docker dans Kibana, procédez comme su
 
 1. Connectez-vous à {{site.data.keyword.Bluemix_notm}}, puis cliquez sur le conteneur depuis le tableau de bord {{site.data.keyword.Bluemix_notm}}. 
     
-2. Ouvrez l'onglet des journaux dans l'interface utilisateur de {{site.data.keyword.Bluemix_notm}}.
+2. Ouvrez l'onglet des journaux dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}}.
 
-    Pour les conteneurs qui sont déployés dans l'infrastructure de cloud gérée par {{site.data.keyword.IBM_notm}}, sélectionnez **Monitoring and logs** dans la
-barre de navigation puis cliquez sur l'onglet **Logging**. 
+    Pour les conteneurs qui sont déployés dans l'infrastructure gérée par {{site.data.keyword.IBM_notm}}, sélectionnez **Surveillance et journaux** dans la barre de navigation, puis cliquez sur l'onglet **Journalisation**. 
     
     L'onglet des journaux s'affiche.  
 

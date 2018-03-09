@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -12,37 +14,35 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Enviando dados usando o Multi-Tenant Logstash Forwarder
+# Enviando dados no local para um espaço no IBM Cloud
 {: #send_data_mt}
 
-Para enviar dados de log para o serviço {{site.data.keyword.loganalysisshort}}, é possível configurar um Multi-Tenant Logstash Forwarder (mt-logstash-forwarder). {:shortdesc}
+Para enviar dados de log para o serviço {{site.data.keyword.loganalysisshort}}, é possível configurar um Multi-Tenant Logstash Forwarder (mt-logstash-forwarder). 
+{: shortdesc}
 
-Para enviar dados de log para a Coleção de logs, conclua as etapas a seguir:
+Conclua as etapas a seguir para enviar dados do log para um espaço no {{site.data.keyword.Bluemix_notm}}:
+
+## Pré-requisitos
+{: #prereqs}
+
+* Um {{site.data.keyword.IBM_notm}}id para efetuar login no {{site.data.keyword.Bluemix_notm}}.
+* Um ID do usuário que tenha permissões para trabalhar em um espaço com o serviço {{site.data.keyword.loganalysisshort}}. Para obter mais informações, veja [Segurança](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
+* A CLI do {{site.data.keyword.loganalysisshort}} instalada em seu ambiente local.
+
 
 ## Etapa 1: Obter o token de criação
 {: #get_logging_auth_token}
 
-Para enviar dados para o serviço {{site.data.keyword.loganalysisshort}}, é necessário:
+Conclua as etapas a seguir de uma sessão de terminal na qual a CLI do {{site.data.keyword.loganalysisshort}} está instalada:
 
-* Um ID {{site.data.keyword.IBM_notm}}: esse ID é necessário para efetuar login no {{site.data.keyword.Bluemix_notm}}.
-* Um espaço em uma organização do {{site.data.keyword.Bluemix_notm}}: esse espaço é onde você planeja enviar e analisar logs.
-* Um token de criação para enviar dados. 
+1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
-Execute as seguintes etapas:
-
-1. Efetue login em uma região, uma organização e um espaço do {{site.data.keyword.Bluemix_notm}}. 
-
-    Por exemplo, para efetuar login na região sul dos EUA, execute o comando a seguir:
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Execute o `cf log auth` comando. 
+2. Execute o comando `bx cf logging auth`. 
 
     ```
-    cf logging auth
+    bx cf logging auth
     ```
     {: codeblock}
 
@@ -56,13 +56,13 @@ Execute as seguintes etapas:
 exemplo,
 
     ```
-    cf logging auth
+    bx cf logging auth
     +-----------------+--------------------------------------+
     |      NAME       |                VALUE                 |
     +-----------------+--------------------------------------+
     | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_bKsdfTz                         |
-    | Organization Id | 98450123-6f1c-9999-96a3-0210fjyuwplt |
+    | Logging Token   | oT98_abcdefz                         |
+    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
     | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
     +-----------------+--------------------------------------+
     ```
@@ -85,7 +85,7 @@ Conclua as etapas a seguir para configurar o mt-logstash-forwarder no ambiente d
     
 2.	Instale o pacote do Network Time Protocol (NTP) para sincronizar o horário dos logs. 
 
-    Por exemplo, para um sistema Ubunutu, veja se `timedatectl status` mostra *Network time on: yes*. Em caso positivo, o sistema Ubuntu já está configurado para usar ntp e será possível ignorar esta etapa.
+    Por exemplo, para um sistema Ubunutu, verifique se `timedatectl status` mostra *Network time on: yes*. Em caso positivo, o sistema Ubuntu já está configurado para usar ntp e será possível ignorar esta etapa.
     
     ```
     # timedatectl status
@@ -205,7 +205,7 @@ Conclua as etapas a seguir para configurar o mt-logstash-forwarder no ambiente d
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>URL de Destino. Configure o valor como **https://ingest.logging.ng.bluemix.net:9091**.</td>
+            <td>URL de Destino. Para obter as listas de URLs de ingestão, veja [URLs de ingestão](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Por exemplo, configure o valor para **https://ingest.logging.ng.bluemix.net:9091** para enviar logs na região Sul dos EUA. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>
@@ -228,7 +228,7 @@ Conclua as etapas a seguir para configurar o mt-logstash-forwarder no ambiente d
        LSF_INSTANCE_ID="myhelloapp"
        LSF_TARGET="ingest.logging.ng.bluemix.net:9091"
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
-       LSF_PASSWORD="oT98_bKsdfTz"
+       LSF_PASSWORD="oT98_abcdefz"
        LSF_GROUP_ID="Group1"
        ```
        {: screen}
@@ -239,22 +239,7 @@ Conclua as etapas a seguir para configurar o mt-logstash-forwarder no ambiente d
        Serviço mt-logstash-forwarder start
        ```
        {: codeblock}
-        
-       Ative o mt-logstash-forwarder para iniciar automaticamente após um travamento ou uma reinicialização. 
-        
-       ```
-       Service mt-logstash-forwarder enable
-       ```
-       {: codeblock}
-        
-       **Dica:** para reiniciar o serviço mt-logstash-forwarder, execute o comando a seguir:
-    
-       ```
-       Serviço mt-logstash-forwarder restart
-       ```
-       {: codeblock}
-        
-        
+                
 Por padrão, o encaminhador só observa o syslog. Seus logs ficam disponíveis no Kibana para análise.
         
 
@@ -300,7 +285,7 @@ Para incluir o stdout ou stderr por meio de um app hello, redirecione stdout ou 
     
 2. Edite o arquivo de configuração *<filepath>myapp.conf*.
 
-    Para ativar a análise sintática de JSON, configure is_json como true no arquivo de configuração.
+    Para ser possível procurar por um campo JSON no Kibana ao alimentar um log, ative a análise sintática de JSON. Configure `is_json` como true no arquivo de configuração para caminhos de arquivo específicos. Para arquivos de log configurados dessa maneira, as linhas do log devem ser formatadas como blocos JSON, separadas por retornos de linha. O mt-logstash-forwarder consumirá então todos esses campos JSON como campos individuais que podem ser procurados por Kibana. Os nomes dos campos JSON incluem um sufixo que se baseia no tipo.
     
     ```
     {

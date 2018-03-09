@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -18,14 +18,14 @@ lastupdated: "2017-07-19"
 # 外部ログ・ホストの構成
 {: #thirdparty_logging}
 
-{{site.data.keyword.Bluemix_notm}} は、限られた量のログ情報をメモリー内に保持します。情報がログに記録されると、古い情報が新しい情報に置き換えられます。すべてのログ情報を保持するには、外部ログ・ホスト (例えば、サード・パーティーのログ管理サービスまたはその他のホスト) に Cloud Foundry アプリケーション・ログを保存することができます。
+{{site.data.keyword.Bluemix_notm}} は、限られた量のログ情報をメモリー内に保持します。 情報がログに記録されると、古い情報が新しい情報に置き換えられます。 すべてのログ情報を保持するには、外部ログ・ホスト (例えば、サード・パーティーのログ管理サービスまたはその他のホスト) に Cloud Foundry アプリケーション・ログを保存することができます。
 {:shortdesc}
 
-CF アプリおよびシステムから外部ログ・ホストにログをストリーミングするには、以下の手順を実行します。
+CF アプリおよびシステムから外部ログ・ホストにログをストリーミングするには、以下のステップを実行します。
 
   1. ロギング・エンドポイントを決定します。
 
-	 Papertrail、Splunk、または Sumologic など、サード・パーティーのログ集約機能にログを送信できます。また、syslog ホスト、TLS (Transport Layer Security) で暗号化された syslog ホスト、または HTTPS POST エンドポイントにログを送信することもできます。ロギング・エンドポイントを取得する方法は、ログ・ホストによって異なります。
+	 Papertrail、Splunk、または Sumologic など、サード・パーティーのログ集約機能にログを送信できます。 また、syslog ホスト、TLS (Transport Layer Security) で暗号化された syslog ホスト、または HTTPS POST エンドポイントにログを送信することもできます。 ロギング・エンドポイントを取得する方法は、ログ・ホストによって異なります。
 
   2. ユーザー提供のサービス・インスタンスを作成します。
 
@@ -42,7 +42,7 @@ CF アプリおよびシステムから外部ログ・ホストにログをス�
 
 	 &lt;logging_endpoint&gt;
 
-	 {{site.data.keyword.Bluemix_notm}} がログを送信する先のロギング・エンドポイント。次の表を参照して、*logging_endpoint* を適切な値で置き換えてください。
+	 {{site.data.keyword.Bluemix_notm}} がログを送信する先のロギング・エンドポイント。 次の表を参照して、*logging_endpoint* を適切な値で置き換えてください。
 
 	 <table>
 	 <caption>表 1. ロギング・エンドポイントの値</caption>
@@ -57,12 +57,12 @@ CF アプリおよびシステムから外部ログ・ホストにログをス�
      <tr>
      <td>syslog ホスト</td>
      <td>`cf cups my-logs -l syslog://HOST:PORT`</td>
-	 <td>例えば、Papertrail へのロギングを有効にするには、`cf cups my-logs -l syslog://<papertrail-url>` と入力します。`<papertrail-url>` を、Papertrail からのロギング・エンドポイントの URL に置き換えてください。</td>
+	 <td>例えば、Papertrail へのロギングを有効にするには、`cf cups my-logs -l syslog://<papertrail-url>` と入力します。 `<papertrail-url>` を、Papertrail からのロギング・エンドポイントの URL に置き換えてください。</td>
      </tr>
 	 <tr>
      <td>syslog-tls ホスト</td>
      <td>`cf cups my-logs -l syslog-tls://HOST:PORT`</td>
-	 <td>証明書は認証局によって信頼されている必要があります。自己署名証明書を使用しないでください。</td>
+	 <td>証明書は認証局によって信頼されている必要があります。 自己署名証明書を使用しないでください。</td>
      </tr>
 	 <tr>
      <td>HTTPS POST</td>
@@ -81,7 +81,7 @@ CF アプリおよびシステムから外部ログ・ホストにログをス�
 	 {: codeblock}
 	 
 	 &lt;appname&gt;
-	 
+
 	 アプリの名前。
 
 	 &lt;service_name&gt;

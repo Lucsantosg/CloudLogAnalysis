@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -17,7 +18,7 @@ lastupdated: "2017-07-19"
 # Análisis interactivo de registros en Kibana
 {:#analize_logs_interactively}
 
-En la página Descubrir, puede ver y analizar los registros de {{site.data.keyword.Bluemix}} de forma interactiva. Puede definir consultas de búsqueda para filtrar los datos utilizando el lenguaje de consulta Lucene. Para cada consulta de búsqueda, puede aplicar filtros para precisar las entradas que están disponibles para el análisis. Puede guardar una búsqueda para su reutilización en el futuro.
+En la página Descubrir, puede ver y analizar los registros de forma interactiva. Puede definir consultas de búsqueda para filtrar los datos utilizando el lenguaje de consulta Lucene. Para cada consulta de búsqueda, puede aplicar filtros para precisar las entradas que están disponibles para el análisis. Puede guardar una búsqueda para su reutilización en el futuro.
 {:shortdesc}
 
 En {{site.data.keyword.Bluemix_notm}}, de forma predeterminada el conjunto de datos que se muestra en la página Descubrir cuando se inicia Kibana desde la IU de {{site.data.keyword.Bluemix_notm}} está configurado de modo que solo muestre las entradas de la aplicación Cloud Foundry (CF) o contenedor desde el que se ha iniciado Kibana. Para obtener más información sobre cómo ver el subconjunto de datos que muestra la página Descubrir, consulte [Identificación de los datos que se muestran](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
@@ -69,18 +70,18 @@ Para definir una nueva búsqueda, utilice la consulta de búsqueda predeterminad
     
 * Personalizar el *Selector de tiempo* para datos basados en tiempo. Puede definir un rango de tiempo absoluto para una consulta, o uno relativo, o bien elegir entre un conjunto de valores predefinidos. Para obtener más información, consulte [Establecimiento de un filtro de tiempo](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 
-Después de configurar la búsqueda que define el subconjunto de datos que desea analizar, puede guardarla para volverla a utilizar posteriormente.
+Después de configurar la búsqueda que define el subconjunto de datos que desea analizar, puede guardarla para volverla a utilizar posteriormente. Para obtener más información, consulte [Cómo guardar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search).
 
 Puede realizar cualquiera de las siguientes tareas con búsquedas que defina en la página Descubrir:
 
 | Tarea | Descripción |
 |------|-------------|
-| [Guardar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Guardar la búsqueda para volverla a utilizar posteriormente.  |
 | [Suprimir una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | Suprimir una búsqueda cuando ya no se necesite. |
 | [Exportar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | Exportar una búsqueda para compartirla.  |
+| [Importar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Importar una búsqueda.  |
 | [Volver a cargar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | Cargar una búsqueda existente para analizar un conjunto de datos. |
 | [Renovar los datos de una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | Configurar la renovación automática de los datos que se visualizan en la búsqueda.  |
-| [Importar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Importar una búsqueda.  |
+| [Guardar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Guardar la búsqueda para volverla a utilizar posteriormente.  |
 {: caption="Tabla 3. Tareas para trabajar con búsquedas" caption-side="top"}
 
 
@@ -145,7 +146,7 @@ Tenga en cuenta la información siguiente para identificar los datos que están 
 
 1. Consulte el patrón de índice en la página **Gestión**.
 
-    El patrón de índice define la consulta de búsqueda que se aplica de forma predeterminada para mostrar las entradas en las páginas de Kibana. De forma predeterminada, el patrón de índice está preconfigurado y establecido en todos los datos que están disponibles en un espacio de {{site.data.keyword.Bluemix_notm}}. Por ejemplo,
+    El patrón de índice define la consulta de búsqueda que se aplica de forma predeterminada para mostrar las entradas en las páginas de Kibana. De forma predeterminada, el patrón de índice está preconfigurado y establecido en todos los datos que están disponibles en un espacio. Por ejemplo,
 
     * Si inicia Kibana desde la IU de {{site.data.keyword.Bluemix_notm}}, es decir, desde la sección *Registro* de las páginas de la IU de un recurso específico como una aplicación o contenedor Cloud Foundry (CF), el patrón de índice que se aplica incluye todas las entradas que están disponibles en el espacio.
     

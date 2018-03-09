@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -15,23 +16,23 @@ lastupdated: "2017-07-19"
 {:pre: .pre}
 
 
-# 收集容器中的非預設日誌資料
-{: #logging_containers_collect_data}
+# 收集容器中的非預設日誌資料（已淘汰）
+{: #logging_containers_other_logs}
 
-若要從 {{site.data.keyword.Bluemix_notm}} 所管理雲端基礎架構中部署之容器內的非預設日誌位置擷取資料，請在建立容器時設定環境變數 **LOG_LOCATIONS**。
+若要從 {{site.data.keyword.Bluemix_notm}} 所管理基礎架構中所部署容器內的非預設日誌位置擷取資料，請在建立容器時設定環境變數 **LOG_LOCATIONS**。
 {:shortdesc}
 
 * 在建立容器時，請新增 **LOG_LOCATIONS** 環境變數，並包含日誌檔的路徑。 
 * 您可以新增多個日誌檔，以逗點將其隔開。 
 
-## 透過 Bluemix 主控台收集非預設日誌資料
+## 透過 IBM Cloud 主控台收集非預設日誌資料
 {: #logging_containers_collect_data_ui}
 
 請完成下列步驟，以透過主控台收集非預設資料：
 
 1. 從型錄中，選取**容器**，然後選擇映像檔。 
 
-    所顯示的映像檔清單包括 {{site.data.keyword.IBM}} 所提供的映像檔，以及儲存在專用 {{site.data.keyword.Bluemix_notm}} 登錄中的映像檔。 
+    所顯示的映像檔清單包括 {{site.data.keyword.IBM_notm}} 所提供的映像檔，以及儲存在專用 {{site.data.keyword.Bluemix_notm}} 登錄中的映像檔。 
 
 2. 定義您的容器。選擇類型、輸入容器的名稱、選取其大小，然後定義 IP 位址詳細資料和埠等其他屬性。如需相關資訊，請參閱[透過 {{site.data.keyword.Bluemix_notm}} 使用者介面來建立及部署單一容器](/docs/containers/container_single_ui.html#gui)。 
 
@@ -65,38 +66,11 @@ lastupdated: "2017-07-19"
 
 請完成下列步驟，以透過 CLI 收集非預設日誌資料：
 
-1. 設定終端機來使用 {{site.data.keyword.containershort}} CLI。如需相關資訊，請參閱[設定 IBM Bluemix Container Service CLI](/docs/containers/container_cli_cfic_install.html)。
+1. 設定終端機來使用 {{site.data.keyword.containershort}} CLI。如需相關資訊，請參閱[設定 {{site.data.keyword.containershort}} CLI](/docs/containers/container_cli_cfic_install.html)。
 
-2. 使用下列指令來登入 Cloud Foundry CLI：`cf login`。依照系統提示，輸入您的 {{site.data.keyword.Bluemix_notm}} ID、密碼、組織及空間。 
+2. 使用下列指令來登入 Cloud Foundry CLI：`bx login`。依照系統提示，輸入您的 {{site.data.keyword.IBM_notm}} ID、密碼、組織及空間。 
 
-    依預設，您會登入美國南部地區，或是您前次登入的地區。 
-    
-    您可以包含 **-a** 選項，以登入 {{site.data.keyword.Bluemix_notm}} 中的特定地區。例如，下表列出每個地區的指令：
-
-    <table>
-      <caption>表 2. 每個地區的指令</caption>
-      <tbody>
-        <tr>
-          <th align="center">地區</th>
-          <th align="center">指令</th>
-        </tr>
-        <tr>
-          <td align="left">美國南部</td>
-          <td align="left"> cf login -a api.ng.bluemix.net</td>
-        </tr>
-        <tr>
-          <td align="left">英國</td>
-          <td align="left">cf login -a api.eu-gb.bluemix.net</td>
-        </tr>
-	 <tr>
-          <td align="left">法蘭克福</td>
-          <td align="left">cf login -a api.eu-de.bluemix.net</td>
-        </tr>
-       </tbody>
-    </table>
-    
-
-3. 使用下列指令來登入 {{site.data.keyword.containershort}}：`cf ic login`
+3. 使用下列指令來登入 {{site.data.keyword.containershort}}：`bx cf ic login`
 
 4. 從映像檔建立單一容器。包含 LOG_LOCATIONS 環境變數，以包含非預設日誌位置。  
 

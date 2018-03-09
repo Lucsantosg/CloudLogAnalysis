@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-31"
 
 ---
 
@@ -12,20 +13,23 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Consideraciones sobre la migración después de la actualización de la pila ELK a la versión 5.1 
+# Consideraciones sobre la migración después de la actualización de Elastic Stack a la versión 5.1 
 {: #es17_to_es51}
 
-En {{site.data.keyword.Bluemix}}, la pila ElasticSearch (ELK) se actualiza de la versión 1.7 a la versión 2.3. Dispone de nuevas características, URLS para ingerir registros y nuevos URL para analizar registros en Kibana. Para obtener más información, consulte [ElasticSearch 5.1 ![icono de enlace externo](../../../icons/launch-glyph.svg "icono de enlace externo")](https://www.elastic.co/guide/en/elasticsearch/reference/5.1/index.html "icono de enlace externo").
+En {{site.data.keyword.Bluemix}}, la pila ElasticSearch (ELK) se actualiza de la versión 1.7 a la versión 5.1. Dispone de nuevas características, nuevos URL para ingerir registros y nuevos URL para analizar registros en Kibana. Para obtener más información, consulte [ElasticSearch 5.1 ![icono de enlace externo](../../../icons/launch-glyph.svg "icono de enlace externo")](https://www.elastic.co/guide/en/elasticsearch/reference/5.1/index.html).
 {:shortdesc}
 
-Esta característica no se aplica a los usuarios que utilizan el servicio de registro con contenedores Docker desplegados en un clúster Kubernetes. Estos contenedores que ya utilizan la pila ELK versión 2.3.
+Esta característica no se aplica a los usuarios que utilizan el servicio de registro con contenedores Docker desplegados en un clúster Kubernetes. 
 
 ## Regiones
 {: #regions}
 
-La pila ELK versión 5.1 está disponible en la siguiente región:
+Elastic versión 5.1 está disponible en la siguiente región:
 
+* Reino Unido
 * EE.UU. sur
+* Alemania
+* Sídney
 
 
 ## Novedades
@@ -33,17 +37,19 @@ La pila ELK versión 5.1 está disponible en la siguiente región:
 
 1. Distintos URL para trabajar con registros y métricas.
 
-    En ELK 1.7, se compartía el mismo URL para mostrar y supervisar registros y métricas. Con la actualización a ELK 5.1, tiene distintos URLS a ver registros y métricas. Para obtener más información, consulte [URL de registro](#logging).
+    En Elastic 1.7, se compartía el mismo URL para mostrar y supervisar registros y métricas. Con la actualización a Elastic 5.1, tiene distintos URLS a ver registros y métricas. Para obtener más información, consulte [URL de registro](#logging).
     
-2. Soporte de Kibana 5.1. 
+2. Soporte para Kibana 5.1.
 
-    Puede iniciar Kibana desde la interfaz de usuario de {{site.data.keyword.Bluemix_notm}} o directamente desde el nuevo URL de registro. Para obtener más información, consulte [Análisis de registros con Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+    Puede iniciar Kibana desde la interfaz de usuario de {{site.data.keyword.Bluemix_notm}} o directamente desde el nuevo URL de registro. Para obtener más información, consulte [Navegación al panel de control de Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch).
     
-    Kibana 3 está en desuso. Puede iniciar Kibana 3 mediante el [URL de registro de ELK 1.7](#logging). Hay distintos URL por región. **Nota:** Dispone de acceso a los paneles de control de Kibana 3 para poder comparar y migrar sus paneles de control de Kibana 3 a los de Kibana 5.1. 
+    Kibana 3 y Kibana 4 están en desuso.
+	
+	**Nota:** Hay distintos URL por región. El acceso a los paneles de control de Kibana 4 está disponible actualmente en el Reino Unido para que compare y migre los paneles de control a los de Kibana 5.1. 
     
-    Si tiene paneles de control de Kibana creados en la pila ELK 1.7, debe migrarlos al entorno ELK 5.1.
+    Debe migrar sus paneles de control al entorno de Elastic 5.1.
     
-    Para obtener más información sobre Kibana 5.1, consulte la [Guía del usuario de Kibana ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Icono de enlace externo"){: new_window}.
+    Para obtener más información sobre Kibana 5.1, consulte la [Guía del usuario de Kibana ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
     
 3. Adición de sufijos basados en tipo a campos personalizados.
 
@@ -70,29 +76,73 @@ La pila ELK versión 5.1 está disponible en la siguiente región:
     **Nota:** esta característica solo está disponible en Elastic 5.1. Esta característica no está disponible en Elastic 1.7 para evitar la ruptura de los paneles de control de Kibana3.
 
 
-## Registro 
+## URL de registro
 {: #logging}
 
 Se utilizan distintos URL para enviar registros a {{site.data.keyword.Bluemix_notm}} y para analizar datos en Kibana.
 
-En la tabla siguiente se muestra el nuevo URL de la región EE. UU. sur:
+En la tabla siguiente se muestran los URL correspondientes a la región EE.UU. Sur:
 
 <table>
-  <caption>URL para la región EE. UU. sur</caption>
+  <caption>Tabla 1. URL correspondientes a la región EE.UU. Sur</caption>
     <tr>
       <th>Tipo</th>
-      <th>ELK 1.7 </th>
-	  <th>ELK 5.1 </th>
+      <th>Elastic 1.7 </th>
+	    <th>Elastic 5.1 </th>
     </tr>
   <tr>
     <td>URL de ingestión para registros</td>
     <td>logs.opvis.bluemix.net:9091</td>
-	<td>ingest.logging.ng.bluemix.net:9091</td>
+  	<td>ingest.logging.ng.bluemix.net:9091</td>
   </tr>
    <tr>
     <td>URL de Kibana para analizar registros</td>
-    <td>https://logmet.ng.bluemix.net</td>
-	<td>https://logging.ng.bluemix.net</td>
+    <td>[https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net)</td>
+	  <td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
   </tr>
 </table>
+
+En la tabla siguiente se muestran los URL correspondientes a la región Reino Unido: 
+
+<table>
+  <caption>Tabla 2. URL correspondientes a la región Reino Unido</caption>
+  <tr>
+     <th>Tipo</th>
+      <th>Elastic 1.7 </th>
+	    <th>Elastic 5.1 </th>
+  </tr>
+  <tr>
+     <td>URL de ingestión para registros</td>
+	   <td>logs.eu-gb.opvis.bluemix.net:9091</td>
+	   <td>ingest.logging.eu-gb.bluemix.net:9091</td>
+  </tr>
+  <tr>
+     <td>URL de Kibana para analizar registros</td>
+	 <td>[https://logmet.eu-gb.bluemix.net](https://logmet.eu-gb.bluemix.net)</td>
+	 <td>[https://logging.eu-gb.bluemix.net](https://logging.eu-gb.bluemix.net)</td>
+  </tr>
+</table>
+
+En la tabla siguiente se muestran los URL correspondientes a la región Frankfurt: 
+
+<table>
+  <caption>Tabla 3. URL correspondientes a la región Frankfurt</caption>
+  <tr>
+     <th>Tipo</th>
+      <th>Elastic 2.3 </th>
+	    <th>Elastic 5.1 </th>
+  </tr>
+  <tr>
+     <td>URL de ingestión para registros</td>
+	 <td>ingest.logging.eu-de.bluemix.net</td>
+	 <td>ingest-eu-fra.logging.bluemix.net</td>
+  </tr>
+  <tr>
+     <td>URL de Kibana para analizar registros</td>
+	 <td>[https://logging.eu-de.bluemix.net](https://logging.eu-de.bluemix.net)</td>
+	 <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.net)</td>
+  </tr>
+</table>
+
+
 

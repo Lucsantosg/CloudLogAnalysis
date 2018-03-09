@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -29,7 +30,7 @@ lastupdated: "2017-07-19"
 
 1. 登录到 {{site.data.keyword.Bluemix_notm}} 帐户。
 
-    {{site.data.keyword.Bluemix_notm}}“仪表板”位于：[http://bluemix.net![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net "外部链接图标"){:new_window}。
+    {{site.data.keyword.Bluemix_notm}}“仪表板”位于：[http://bluemix.net![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window}。
     
 	使用用户标识和密码登录后，{{site.data.keyword.Bluemix_notm}} UI 将打开。
 
@@ -53,25 +54,20 @@ lastupdated: "2017-07-19"
 
 要通过命令行在 {{site.data.keyword.Bluemix_notm}} 中供应 {{site.data.keyword.loganalysisshort}} 服务的实例，请完成以下步骤：
 
-1. 安装 Cloud Foundry (CF) CLI。如果 CF CLI 已安装，请继续执行下一步。
+1. [先决条件] 安装 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   有关更多信息，请参阅[安装 CF CLI ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://docs.cloudfoundry.org/cf-cli/install-go-cli.html "外部链接图标"){: new_window}。 
+   有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   
+   如果 CLI 已安装，请继续执行下一步。
     
-2. 登录到 {{site.data.keyword.Bluemix_notm}} 区域、组织和空间。 
+2. 登录到 {{site.data.keyword.Bluemix_notm}} 中要供应服务的区域、组织和空间。 
 
-    例如，要登录到美国南部区域，请运行以下命令：
-
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
-
-    遵循指示信息进行操作。输入您的 {{site.data.keyword.Bluemix_notm}} 凭证，然后选择组织和空间。
+    有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-3. 运行 `cf create-service` 命令以供应实例。
+3. 运行 `bx cf create-service` 命令以供应实例。
 
     ```
-	cf create-service service_name service_plan service_instance_name
+	bx cf create-service service_name service_plan service_instance_name
 	```
 	{: codeblock}
     
@@ -82,17 +78,17 @@ lastupdated: "2017-07-19"
 	* service_instance_name 是要用于所创建的新服务实例的名称。
 	有关 cf 命令的更多信息，请参阅 [cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service)。
 
-	例如，要使用免费套餐创建 {{site.data.keyword.loganalysisshort}} 服务的实例，请运行以下命令：
+	例如，要使用 Lite 套餐创建 {{site.data.keyword.loganalysisshort}} 服务的实例，请运行以下命令：
 	
 	```
-	cf create-service ibmLogAnalysis lite my_logging_svc
+	bx cf create-service ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
-	
-4. 验证服务是否已成功创建。运行以下命令：
+    
+    4. 验证服务是否已成功创建。运行以下命令：
 
     ```	
-	cf services
+	bx cf services
 	```
 	{: codeblock}
     
@@ -101,9 +97,10 @@ lastupdated: "2017-07-19"
 	```
     Getting services in org MyOrg / space MySpace as xxx@yyy.com...
     OK
+
     
     name                           service                  plan                   bound apps              last operation
-    my_logging_svc                ibmLogAnalysis               lite                                        create succeeded
+    my_logging_svc                ibmLogAnalysis           standard                                        create succeeded
 	```
 	    {: screen}
 	

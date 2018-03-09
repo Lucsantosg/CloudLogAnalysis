@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -35,10 +36,10 @@ lastupdated: "2017-07-19"
 | \_id | 로그 문서에 대한 고유 ID입니다.|
 | \_index | 로그 항목에 대한 색인입니다.|
 | \_type | 로그의 유형입니다(예: *syslog*). |
-| app_name | {{site.data.keyword.Bluemix_notm}} 애플리케이션의 이름입니다. |
-| application_id| {{site.data.keyword.Bluemix_notm}} 애플리케이션의 고유 ID입니다. |
+| app_name | 애플리케이션의 이름입니다. |
+| application_id| 애플리케이션의 고유 ID입니다. |
 | host | 로그 데이터를 생성한 애플리케이션의 이름입니다.|
-| instance_id | 로그 데이터를 생성한 애플리케이션의 인스턴스 ID입니다.|
+| instance_id | 로그 데이터를 생성한 애플리케이션 인스턴스의 인스턴스 ID입니다.|
 | loglevel | 로그된 이벤트의 심각도입니다. |
 | message | 컴포넌트에서 발행하는 메시지입니다. <br> 메시지는 컨텍스트에 따라 달라집니다.|
 | message_type | 로그 메시지가 기록되는 스트림입니다. <br> * **OUT** - stdout 스트림을 참조합니다. <br> * **ERR** - stderr 스트림을 참조합니다. |
@@ -52,7 +53,7 @@ lastupdated: "2017-07-19"
 
 
 
-## Bluemix 관리 인프라에 배치된 Docker 컨테이너에 대한 Kibana 로그 형식
+## IBM 관리 인프라에 배치된 Docker 컨테이너에 대한 Kibana 로그 형식(더 이상 사용되지 않음)
 {: #kibana_log_format_containers}
 
 *검색* 페이지에서 각 로그 항목에 다음과 같은 필드를 표시하도록 Kibana를 구성할 수 있습니다. 
@@ -95,8 +96,8 @@ lastupdated: "2017-07-19"
 | ibm-containers.account_str | {{site.data.keyword.Bluemix_notm}} 계정의 GUID입니다.|  |
 | ibm-containers.cluster_id_str | Kubernetes 클러스터의 GUID입니다.|  |
 | ibm-containers.cluster_type_str |  | {{site.data.keyword.IBM_notm}} 내부 사용에 예약된 값입니다. |
-| ibm-containers.region_str | {{site.data.keyword.Bluemix_notm}}에저 지역입니다. |  |
-| kubernetes.container_name_str | 애플리케이션이 배치된 컨테이너의 이름입니다.|  |
+| ibm-containers.region_str | {{site.data.keyword.Bluemix_notm}}의 지역입니다. |  |
+| kubernetes.container_name_str | 앱이 배치된 컨테이너의 이름입니다.|  |
 | kubernetes.host | 컨테이너가 실행 중인 작업자의 공용 IP 주소입니다.|  |
 | kubernetes.labels.*example_label_name*\_str | 포드와 같은 Kubernetes 오브젝트에 첨부하는 키-값 쌍입니다. | Kubernetes 오브젝트에 첨부하는 각 레이블은 Kibana에 표시되는 로그 항목에서 필드로 나열됩니다. <br> 0 이상의 레이블이 있습니다. |
 | kubernetes.namespace_name_str | 컨테이너가 배치된 Kubernetes 네임스페이스입니다. |  |

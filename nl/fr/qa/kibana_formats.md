@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -17,7 +18,7 @@ lastupdated: "2017-07-19"
 # Formats de journal Kibana
 {: #kibana_formats}
 
-Vous pouvez configurer Kibana pour afficher sur la page *Discover* différentes zones pour chaque entrée de journal.
+Vous pouvez configurer Kibana pour afficher dans la page *Discover* différentes zones pour chaque entrée de journal.
 {:shortdesc}
 
 
@@ -25,7 +26,7 @@ Vous pouvez configurer Kibana pour afficher sur la page *Discover* différentes 
 ## Format de journal Kibana pour les applications Cloud Foundry
 {: #kibana_log_format_cf}
 
-Vous pouvez configurer Kibana pour afficher sur la page *Discover* les zones suivantes pour chaque entrée de journal :
+Vous pouvez configurer Kibana pour afficher dans la page *Discover* les zones suivantes pour chaque entrée de journal :
 
 | Zone | Description |
 |-------|-------------|
@@ -35,13 +36,13 @@ Vous pouvez configurer Kibana pour afficher sur la page *Discover* les zones sui
 | \_id | ID unique de votre document de journal. |
 | \_index | Index de votre entrée de journal. |
 | \_type | Type de journal, par exemple, *syslog*. |
-| app_name | Nom de votre application {{site.data.keyword.Bluemix_notm}}. |
-| application_id | ID unique de votre application {{site.data.keyword.Bluemix_notm}}. |
+| app_name | Nom de votre application. |
+| application_id | ID unique de votre application. |
 | hôte | Nom de l'application ayant produit les données de journal. |
 | instance_id | ID d'instance de l'instance d'application ayant produit les données de journal. |
 | loglevel | Niveau de gravité de l'événement consigné. |
 | message | Message émis par le composant. <br> Il varie selon le contexte. |
-| message_type | Flux dans lequel le message de journal est écrit. <br> * **OUT** fait référence au flux stdout <br> * **ERR** fait référence au flux stderr. |
+| message_type | Flux dans lequel le message de journal est écrit. <br> * **OUT** fait référence au flux de sortie standard (stdout) <br> * **ERR** fait référence au flux d'erreur standard (stderr). |
 | org_id | ID unique de votre organisation {{site.data.keyword.Bluemix_notm}}. |
 | org_name | Nom de l'organisation {{site.data.keyword.Bluemix_notm}} dans laquelle votre application est constituée en préproduction. |
 | origin | Composant ayant généré l'événement. |
@@ -55,10 +56,10 @@ appels d'API qui requièrent une modification de l'état de votre application. <
 
 
 
-## Formats de journal Kibana pour les conteneurs Docker déployés dans une infrastructure gérée par Bluemix
+## Format de journal Kibana pour les conteneurs Docker déployés dans une infrastructure gérée par IBM (déprécié)
 {: #kibana_log_format_containers}
 
-Vous pouvez configurer Kibana pour afficher sur la page *Discover* les zones suivantes pour chaque entrée de journal :
+Vous pouvez configurer Kibana pour afficher dans la page *Discover* les zones suivantes pour chaque entrée de journal :
 
 | Zone | Description |
 |-------|-------------|
@@ -82,7 +83,7 @@ Vous pouvez configurer Kibana pour afficher sur la page *Discover* les zones sui
 ## Format de journal Kibana pour les conteneurs Docker déployés dans un cluster Kubernetes
 {: #kibana_log_format_containers_kubernetes}
 
-Vous pouvez configurer Kibana pour afficher sur la page *Discover* les zones suivantes pour chaque entrée de journal. Des zones sont définies par {{site.data.keyword.IBM}} et incluent vos données de message. 
+Vous pouvez configurer Kibana pour afficher dans la page *Discover* les zones suivantes pour chaque entrée de journal. Des zones sont définies par {{site.data.keyword.IBM}} et incluent vos données de message. 
 
 | Zone | Description | Autres informations |
 |-------|-------------|---------------------------|
@@ -94,17 +95,17 @@ Vous pouvez configurer Kibana pour afficher sur la page *Discover* les zones sui
 | \_score |  |  |
 | \_type | Type de journal. Par exemple, *logs*. | |
 | crn_str | Informations sur la source du journal. | Par défaut, cette zone est définie par {{site.data.keyword.IBM_notm}}. <br> **Remarque **: si vous envoyez le message sous un format JSON valide et que l'une des zones est nommée `crn`, la valeur de la zone est remplacée par celle définie dans le message.  |  
-| docker.container_id_str | Identificateur global unique du conteneur s'exécutant dans une nacelle. | |
+| docker.container_id_str | Identificateur global unique du conteneur s'exécutant dans un pod. | |
 | ibm-containers.account_str | Identificateur global unique du compte {{site.data.keyword.Bluemix_notm}}.  |  |
 | ibm-containers.cluster_id_str | Identificateur global unique du cluster Kubernetes.  |  |
 | ibm-containers.cluster_type_str |  | Valeur réservée pour utilisation interne {{site.data.keyword.IBM_notm}}. |
 | ibm-containers.region_str | Région dans {{site.data.keyword.Bluemix_notm}}.  |  |
 | kubernetes.container_name_str | Nom du conteneur dans lequel une application est déployée.  |  |
 | kubernetes.host | Adresse IP publique de l'agent sur lequel le conteneur s'exécute. |  |
-| kubernetes.labels.*exemple_nom_libellé*\_str | Paire clé-valeur associée à un objet Kubernetes tel qu'une nacelle. | Chaque libellé associé à un objet Kubernetes est répertoriée sous forme de zone dans l'entrée de journal affichée dans Kibana. <br> Vous pouvez ne pas les utiliser ou en utiliser plusieurs. |
+| kubernetes.labels.*exemple_nom_libellé*\_str | Paire clé-valeur associée à un objet Kubernetes tel qu'un pod. | Chaque libellé associé à un objet Kubernetes est répertoriée sous forme de zone dans l'entrée de journal affichée dans Kibana. <br> Vous pouvez ne pas les utiliser ou en utiliser plusieurs. |
 | kubernetes.namespace_name_str | Espace de nom Kubernetes où le conteneur est déployé. |  |
-| kubernetes.pod_id_str | Identificateur global unique de la nacelle où le conteneur est déployé. |  |
-| kubernetes.pod_name_str | Nom de la nacelle. |  |
+| kubernetes.pod_id_str | Identificateur global unique du pod où le conteneur est déployé. |  |
+| kubernetes.pod_name_str | Nom du pod. |  |
 | message | Message complet. | Si vous envoyez un message avec un format JSON valide, chaque zone est analysée individuellement et affichée dans Kibana.  |
 | stream_str |  | Valeur réservée pour utilisation interne {{site.data.keyword.IBM_notm}}. |
 |tag_str |  | Valeur réservée pour utilisation interne {{site.data.keyword.IBM_notm}}. |
@@ -114,7 +115,7 @@ Vous pouvez configurer Kibana pour afficher sur la page *Discover* les zones sui
 ## Format de journal Kibana pour Message Hub
 {: #kibana_log_format_messagehub}
 
-Vous pouvez configurer Kibana pour afficher sur la page *Discover* les zones suivantes pour chaque entrée de journal :
+Vous pouvez configurer Kibana pour afficher dans la page *Discover* les zones suivantes pour chaque entrée de journal :
 
 | Zone | Description |
 |-------|-------------|

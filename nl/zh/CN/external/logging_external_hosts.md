@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -81,12 +81,12 @@ lastupdated: "2017-07-19"
 	 {: codeblock}
 	 
 	 &lt;appname&gt;
-	 
+
 	 应用程序的名称。
 
 	 &lt;service_name&gt;
 
 	 用户提供的服务实例的名称。
 
-  4. 重新编译打包应用程序。键入 `cf restage appname` 以使更改生效。
+  4. 重新编译打包应用程序。输入 `cf restage appname` 以使更改生效。
 

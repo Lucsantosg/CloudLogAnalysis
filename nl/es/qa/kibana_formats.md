@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -35,8 +36,8 @@ Puede configurar Kibana para que muestre los campos siguientes para cada entrada
 | \_id | El ID exclusivo del documento de registro. |
 | \_index | El índice de la entrada de registro. |
 | \_type | El tipo de registro; por ejemplo, *syslog*. |
-| nombre_app | El nombre de la aplicación de {{site.data.keyword.Bluemix_notm}}. |
-| application_id | El ID exclusivo de la aplicación de {{site.data.keyword.Bluemix_notm}}. |
+| nombre_app | El nombre de la aplicación. |
+| application_id | El ID exclusivo de la aplicación. |
 | host | El nombre de la aplicación que ha generado los datos del registro. |
 | instance_id | El ID de instancia de la instancia de aplicación que ha generado los datos de registro. |
 | loglevel | La gravedad del suceso registrado. |
@@ -52,7 +53,7 @@ Puede configurar Kibana para que muestre los campos siguientes para cada entrada
 
 
 
-## Formato de registro de Kibana para contenedores Docker desplegados en una infraestructura gestionada de Bluemix
+## Formato de registro de Kibana para contenedores Docker desplegados en una infraestructura gestionada por IBM (en desuso)
 {: #kibana_log_format_containers}
 
 Puede configurar Kibana para que muestre los campos siguientes para cada entrada de registro en la página *Descubrir*:

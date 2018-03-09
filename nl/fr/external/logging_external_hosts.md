@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -33,15 +33,15 @@ Pour acheminer vos journaux d'application CF et vos journaux système vers un h�
 service fournie par l'utilisateur :
 	 
 	 ```
-	 cf create-user-provided-service <nom_service> -l <noeud_final_journalisation>
+	 cf create-user-provided-service <service_name> -l <logging_endpoint>
 	 ```
 	 {: codeblock}
 	 
-	 &lt;nom_service&gt;
+	 &lt;service_name&gt;
 
 	 Nom de l'instance de service fournie par l'utilisateur.
 
-	 &lt;noeud_final_journalisation&gt;
+	 &lt;logging_endpoint&gt;
 
 	 Noeud final de journalisation auquel {{site.data.keyword.Bluemix_notm}} envoie des journaux. Reportez-vous au tableau suivant pour remplacer *noeud_final_journalisation* par la valeur appropriée :
 
@@ -57,18 +57,18 @@ service fournie par l'utilisateur :
      <tbody>
      <tr>
      <td>hôte syslog</td>
-     <td>`cf cups my-logs -l syslog://HOTE:PORT`</td>
+     <td>`cf cups my-logs -l syslog://HOST:PORT`</td>
 	 <td>Par exemple, pour activer la journalisation dans Papertrail, entrez `cf cups my-logs -l syslog://<papertrail-url>`. Remplacez `<papertrail-url>` par l'URL
 de votre noeud final de journalisation depuis Papertrail.</td>
      </tr>
 	 <tr>
      <td>hôte syslog-tls</td>
-     <td>`cf cups my-logs -l syslog-tls://HOTE:PORT`</td>
+     <td>`cf cups my-logs -l syslog-tls://HOST:PORT`</td>
 	 <td>Le certificat doit être considéré comme digne de confiance par une autorité de certification. N'utilisez pas de certificat autosigné.</td>
      </tr>
 	 <tr>
      <td>HTTPS POST</td>
-     <td>`cf cups my-logs -l https://HOTE:PORT`</td>
+     <td>`cf cups my-logs -l https://HOST:PORT`</td>
 	 <td>Ce noeud final doit se trouver sur l'Internet public et {{site.data.keyword.Bluemix_notm}} doit pouvoir y accéder.</td>
      </tr>
      </tbody>
@@ -78,17 +78,17 @@ de votre noeud final de journalisation depuis Papertrail.</td>
 	 Utilisez la commande suivante pour lier l'instance de service à votre application :
 
 	 ```
-	 cf bind-service <nom_app> <nom_service>
+	 cf bind-service <appname> <service_name>
 	 ```
 	 {: codeblock}
 	 
-	 &lt;nom_app&gt;
+	 &lt;appname&gt;
 
 	 Nom de votre application.
 
-	 &lt;nom_service&gt;
+	 &lt;service_name&gt;
 
 	 Nom de l'instance de service fournie par l'utilisateur.
 
-  4. Reconstituez l'application. Entrez `cf restage nom_app` pour que les modifications soient appliquées.
+  4. Reconstituez l'application en préproduction. Entrez `cf restage appname` pour que les modifications soient appliquées.
 

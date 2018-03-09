@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -17,7 +18,7 @@ lastupdated: "2017-07-19"
 # カスタム検索照会の定義
 {:#define_search}
 
-「Discover」ページの検索バーで、Lucene 照会言語を使用して検索照会を定義および保存できます。検索ごとに、フィルターを適用して、分析で使用可能な項目を詳細化できます。
+「Discover」ページの検索バーで、Lucene 照会言語を使用して検索照会を定義および保存できます。 検索ごとに、フィルターを適用して、分析で使用可能な項目を詳細化できます。
 {:shortdesc}
 
 カスタム検索を定義するには、以下のタスクを実行します。
@@ -26,17 +27,17 @@ lastupdated: "2017-07-19"
 
     Cloud Foundry (CF) アプリの場合、『[CF アプリのダッシュボードからの Kibana の起動](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app)』を参照してください。
 
-	{{site.data.keyword.IBM_notm}} が管理するクラウド・インフラストラクチャーで実行しているコンテナーの場合、『[コンテナーのダッシュボードからの Kibana の起動](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers)』を参照してください。
+	{{site.data.keyword.Bluemix_notm}} が管理するインフラストラクチャーで実行しているコンテナーの場合、『[コンテナーのダッシュボードからの Kibana の起動](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers)』を参照してください。
     
     すべてのクラウド・リソース (例えば、Kubernetes クラスターで実行しているコンテナーなど) の場合、『[ブラウザーからの Kibana の起動](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)』を参照してください。 
 	
-	Kibana にアクセスすると、デフォルト検索が適用されます。照会しているリソースのインスタンスのリストに関するログを確認できます。そのスペース内の {{site.data.keyword.Bluemix_notm}} リソースのすべてまたは任意のものについて、ログをフィルタリングできます。
+	Kibana にアクセスすると、デフォルト検索が適用されます。 照会しているリソースのインスタンスのリストに関するログを確認できます。 そのスペース内の {{site.data.keyword.Bluemix_notm}} リソースのすべてまたは任意のものについて、ログをフィルタリングできます。
 
-2. 「Discover」ページを見て、表示されているデータのサブセットを確認します。詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。次に、項目をフィルタリングするためのデフォルト照会を変更します。
+2. 「Discover」ページを見て、表示されているデータのサブセットを確認します。 詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)』を参照してください。 次に、項目をフィルタリングするためのデフォルト照会を変更します。
 
-    **注:** カスタム照会の定義には、Lucene 照会言語を使用します。詳しくは、『[Apache Lucene - Query Parser Syntax  ![外部リンク・アイコン](../../../icons/launch-glyph.svg "外部リンク・アイコン")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html "外部リンク・アイコン"){: new_window}』を参照してください。
+    **注:** カスタム照会の定義には、Lucene 照会言語を使用します。 詳しくは、『[Apache Lucene - Query Parser Syntax  ![外部リンク・アイコン](../../../icons/launch-glyph.svg "外部リンク・アイコン")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}』を参照してください。
     
-    Kibana が {{site.data.keyword.Bluemix_notm}} から起動された場合、照会の変更および複数の検索基準の定義のために、論理項 **AND** および **OR** を使用できます。これらの演算子は、大文字でなければなりません。    
+    Kibana が {{site.data.keyword.Bluemix_notm}} UI から起動された場合、照会の変更および複数の検索基準の定義のために、論理項 **AND** および **OR** を使用できます。 これらの演算子は、大文字でなければなりません。    
     
     * キーワードまたはその一部を検索するには、語の後にアスタリスク (*) (ワイルドカード) を付けて入力します。例えば、`Java*` などです。 
     * 特定の句を検索するには、その句を二重引用符 (" ") で囲んで入力します。例えば、`"Java/1.8.0"` などです。
@@ -46,7 +47,7 @@ lastupdated: "2017-07-19"
 
      例えば、CF アプリの場合、インスタンス *0* および *1* の項目のみがリストされる照会 `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]` を作成できます。 
 
-3. 照会を保存して、後から再使用できるようにします。詳しくは、『[検索の保存](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)』を参照してください。 
+3. 照会を保存して、後から再使用できるようにします。 詳しくは、『[検索の保存](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)』を参照してください。 
 
 **注:** 照会を削除する必要がある場合は、『[検索の削除](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)』を参照してください。
 
@@ -96,7 +97,7 @@ lastupdated: "2017-07-19"
 
 検索のコンテンツを手動で最新表示するために、検索バーで使用可能な拡大鏡をクリックできます。 
 
-「Discover」ページで表示されるデータを自動的に最新表示する場合は、最新表示間隔を構成できます。最新表示間隔の現行値は、「Discover」ページのメニュー・バーに表示されます。デフォルトでは、自動最新表示は **OFF** に設定されます。
+「Discover」ページで表示されるデータを自動的に最新表示する場合は、最新表示間隔を構成できます。 最新表示間隔の現行値は、「Discover」ページのメニュー・バーに表示されます。 デフォルトでは、自動最新表示は **OFF** に設定されます。
 
 最新表示間隔を設定するには、以下のステップを実行します。
 
@@ -126,12 +127,22 @@ lastupdated: "2017-07-19"
 ## 検索の保存 
 {: #save_search}
 
-検索を保存すると、検索照会ストリングおよび現在選択されている索引パターンが保存されます。
+Kibana でのカスタム検索の保存に関する以下の情報を考慮してください。
+
+* 検索を保存すると、検索照会ストリングおよび現在選択されている索引パターンが保存されます。
+* *「Discover」*ページで検索を開いて変更する際、同じ名前で保存することを選択するか、または、変更後のカスタム検索を別の名前で保存することができます。 デフォルトでは、提供される検索名は、最初に開いたカスタム検索に対応する名前です。
+
+    * 変更後のカスタム検索を同じ名前で保存するには、**「Save」**をクリックします。 元のカスタム検索が上書きされることに注意してください。 
+	
+	* 変更後のカスタム検索を別の名前で保存するには、**「Save Search」**フィールドに新しい名前を入力し、**「Save」**をクリックします。 
+
 
 「Discovery」ページで現在の検索を保存するには、以下のステップを実行します。
 
 1. 「Discover」ページのツールバーにある**「Save Search」**ボタン ![検索の保存](images/save_search_icon.jpg "検索の保存") をクリックします。
 
 2. 検索の名前を入力します。
+
+    **注:** **「Save」**をクリックするときに、上書きについての警告は表示されません。したがって、既存の名前を指定して保存すると、何も示されずにそのバージョンが置換されます。
 
 3. **「保存」**をクリックします。 

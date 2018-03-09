@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -76,7 +77,7 @@ Conclua as etapas a seguir para criar uma visualização na página Visualizar:
         Para obter mais informações, consulte
 [Filtrando logs definindo consultas customizadas](define_search.html#define_search).
 
-Para obter mais informações sobre Kibana, veja o [Guia do Usuário do Kibana ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Ícone de link externo"){: new_window}.
+Para obter mais informações sobre Kibana, veja o [Guia do Usuário do Kibana ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 
 ## Excluindo uma visualização
@@ -84,7 +85,7 @@ Para obter mais informações sobre Kibana, veja o [Guia do Usuário do Kibana !
 
 Para excluir uma visualização, conclua as etapas a seguir na página **Gerenciamento**:
 
-1. Na página **Gerenciamento**, selecione a guia **Objetos avançados**.
+1. Na página **Gerenciamento**, selecione **Objetos salvos**.
 
 2. Na guia **Visualizações**, selecione as visualizações que deseja excluir.
 
@@ -96,7 +97,7 @@ Para excluir uma visualização, conclua as etapas a seguir na página **Gerenci
 
 Para exportar uma visualização como um arquivo JSON, conclua as etapas a seguir na página **Gerenciamento**:
 
-1. Na página **Gerenciamento**, selecione a guia **Objetos avançados**.
+1. Na página **Gerenciamento**, selecione **Objetos salvos**.
 
 2. Na guia **Visualizações**, selecione a visualização que deseja exportar.
 
@@ -109,7 +110,7 @@ Para exportar uma visualização como um arquivo JSON, conclua as etapas a segui
 
 Para importar uma visualização como um arquivo JSON, conclua as etapas a seguir na página **Gerenciamento**:
 
-1. Na página **Gerenciamento**, selecione a guia **Objetos avançados**.
+1. Na página **Gerenciamento**, selecione **Objetos salvos**.
 
 2. Na guia **Visualizações**, selecione **Importar**.
 

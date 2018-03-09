@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -15,23 +16,23 @@ lastupdated: "2017-07-19"
 {:pre: .pre}
 
 
-# 从容器收集非缺省日志数据
-{: #logging_containers_collect_data}
+# 从容器收集非缺省日志数据（已弃用）
+{: #logging_containers_other_logs}
 
-要从在 {{site.data.keyword.Bluemix_notm}} 管理的云基础架构中部署的容器内的非缺省日志位置捕获数据，请在创建容器时设置 **LOG_LOCATIONS** 环境变量。
+要从在 {{site.data.keyword.Bluemix_notm}} 管理的基础架构中部署的容器内的非缺省日志位置捕获数据，请在创建容器时设置 **LOG_LOCATIONS** 环境变量。
 {:shortdesc}
 
 * 创建容器时，添加带有日志文件路径的 **LOG_LOCATIONS** 环境变量。 
 * 可以添加多个日志文件，各文件之间用逗号分隔。 
 
-## 通过 Bluemix 控制台收集非缺省日志数据
+## 通过 IBM Cloud 控制台收集非缺省日志数据
 {: #logging_containers_collect_data_ui}
 
 要通过控制台收集非缺省数据，请完成以下步骤：
 
 1. 在目录中，选择**容器**，然后选择映像。 
 
-    显示的映像列表包括 {{site.data.keyword.IBM}} 提供的映像，以及存储在专用 {{site.data.keyword.Bluemix_notm}} 注册表中的映像。 
+    显示的映像列表包括 {{site.data.keyword.IBM_notm}} 提供的映像，以及存储在专用 {{site.data.keyword.Bluemix_notm}} 注册表中的映像。 
 
 2. 定义容器。选择类型，输入容器名称，选择容器大小，然后定义其他属性，例如 IP 地址详细信息和端口。有关更多信息，请参阅[通过 {{site.data.keyword.Bluemix_notm}} UI 创建和部署单个容器](/docs/containers/container_single_ui.html#gui)。 
 
@@ -65,38 +66,11 @@ lastupdated: "2017-07-19"
 
 要通过 CLI 收集非缺省日志数据，请完成以下步骤：
 
-1. 设置终端以使用 {{site.data.keyword.containershort}} CLI。有关更多信息，请参阅[设置 IBM Bluemix Container Service CLI](/docs/containers/container_cli_cfic_install.html)。
+1. 设置终端以使用 {{site.data.keyword.containershort}} CLI。有关更多信息，请参阅[设置 {{site.data.keyword.containershort}} CLI](/docs/containers/container_cli_cfic_install.html)。
 
-2. 通过使用以下命令登录到 Cloud Foundry CLI：`cf login`。收到提示时，请输入 {{site.data.keyword.Bluemix_notm}} 标识、密码、组织和空间。 
+2. 通过使用以下命令登录到 Cloud Foundry CLI：`bx login`。收到提示时，请输入 {{site.data.keyword.IBM_notm}} 标识、密码、组织和空间。 
 
-    缺省情况下，您会登录到美国南部区域或上次登录的区域。 
-    
-    可以包含 **–a** 选项以登录到 {{site.data.keyword.Bluemix_notm}} 中的特定区域。例如，下表列出了每个区域的命令：
-
-    <table>
-      <caption>表 2. 每个区域的命令</caption>
-      <tbody>
-        <tr>
-          <th align="center">区域</th>
-          <th align="center">命令</th>
-        </tr>
-        <tr>
-          <td align="left">美国南部</td>
-          <td align="left"> cf login -a api.ng.bluemix.net</td>
-        </tr>
-        <tr>
-          <td align="left">英国</td>
-          <td align="left">cf login -a api.eu-gb.bluemix.net</td>
-        </tr>
-	 <tr>
-          <td align="left">法兰克福</td>
-          <td align="left">cf login -a api.eu-de.bluemix.net</td>
-        </tr>
-       </tbody>
-    </table>
-    
-
-3. 通过使用以下命令登录到 {{site.data.keyword.containershort}}：`cf ic login`。
+3. 通过使用以下命令登录到 {{site.data.keyword.containershort}}：`bx cf ic login`
 
 4. 基于映像创建单个容器。包含 LOG_LOCATIONS 环境变量以包含非缺省日志位置。  
 

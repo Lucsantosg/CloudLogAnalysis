@@ -1,12 +1,11 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-02-01"
 
 ---
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -14,13 +13,13 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# Análise de log avançada com o Kibana
+# Visualizando e analisando logs (Kibana)
 {:#analyzing_logs_Kibana}
 
-No {{site.data.keyword.Bluemix}}, é possível usar o Kibana 5.1, uma plataforma de software livre para análise e visualização, para monitorar, procurar, analisar e visualizar seus dados em uma variedade de gráficos, por exemplo, diagramas e tabelas. Use o Kibana para executar tarefas analíticas avançadas.
+É possível usar o Kibana 5.1 Use o Kibana para executar tarefas analíticas avançadas.
 {:shortdesc}
 
-O Kibana é uma interface baseada em navegador na qual é possível analisar dados interativamente e customizar painéis que podem ser usados para analisar dados do log e executar tarefas de gerenciamento avançado. Para obter mais informações, veja [Guia do Usuário do Kibana ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Ícone de link externo"){: new_window}.
+O Kibana é uma interface baseada em navegador na qual é possível analisar dados interativamente e customizar painéis que podem ser usados para analisar dados do log e executar tarefas de gerenciamento avançado. Para obter mais informações, veja [Guia do Usuário do Kibana ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 Os dados que a página do Kibana exibe são restritos por uma procura. O conjunto de dados padrão é definido pelo padrão de índice pré-configurado. Para filtrar as informações, é possível incluir novas consultas de procura e aplicar filtros no conjunto de dados padrão. Em seguida, é possível salvar a procura para reutilização futura. 
 
@@ -51,7 +50,7 @@ Por exemplo, é desse modo que o Kibana pode ser usado para mostrar informaçõe
 
 * No {{site.data.keyword.loganalysisshort}} painel de serviço
 
-    É possível ativar o Kibana para que os dados que você vê agreguem logs de serviços em um espaço fornecido do {{site.data.keyword.Bluemix_notm}}.
+    É possível ativar o Kibana para que os dados que você vê agreguem logs de serviços em um espaço fornecido.
 	
 	Para obter mais informações, veja [Navegando para o Kibana por meio do painel do serviço Log Analysis](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_log_analysis).
 
@@ -59,7 +58,7 @@ Por exemplo, é desse modo que o Kibana pode ser usado para mostrar informaçõe
 
     É possível ativar seus logs específicos do app CF no Kibana dentro do contexto desse App específico. Para obter mais informações, veja [Navegando para o Kibana por meio do painel de um app CF](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
     
-    É possível ativar seus logs específicos do contêiner do Docker dentro do contexto desse contêiner específico. Esse recurso se aplica somente aos contêineres que são implementados na infraestrutura em Nuvem gerenciada pelo {{site.data.keyword.Bluemix_notm}}. Para obter mais informações, veja [Navegando para o Kibana por meio do painel de um contêiner](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
+    É possível ativar seus logs específicos do contêiner do Docker dentro do contexto desse contêiner específico. Esse recurso se aplica somente aos contêineres que são implementados na infraestrutura gerenciada pelo {{site.data.keyword.Bluemix_notm}}. Para obter mais informações, veja [Navegando para o Kibana por meio do painel de um contêiner](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
     
     Para apps CF, a consulta que é usada para filtrar os dados que estão disponíveis para análise no Kibana recupera entradas de log para o aplicativo Cloud Foundry. As informações de log que o Kibana exibe estão todas relacionadas a um único aplicativo Cloud Foundry e a todas as suas instâncias. 
     
@@ -69,7 +68,7 @@ Por exemplo, é desse modo que o Kibana pode ser usado para mostrar informaçõe
 
 * Em um link direto do navegador
 
-    Talvez você deseja ativar o Kibana para que os dados que são exibidos agreguem logs de serviços em um espaço fornecido do {{site.data.keyword.Bluemix_notm}}.
+    Você pode desejar ativar o Kibana para que os dados vistos agreguem logs de serviços em um espaço fornecido.
     
     A consulta que é usada para filtrar os dados que são exibidos no painel recupera entradas de log para um espaço na organização do
     {{site.data.keyword.Bluemix_notm}}. As informações de log que o Kibana exibe incluem registros para todos os recursos que estiverem implementados no espaço da organização do {{site.data.keyword.Bluemix_notm}} na qual você estiver com login efetuado. 
@@ -103,6 +102,184 @@ Na página Painel, é possível customizar, salvar e compartilhar múltiplas vis
     
 Depois de customizar um painel do Kibana, é possível analisar os dados por meio de suas visualizações e salvá-los para reutilização futura. Para obter mais informações, veja [Salvando um painel do Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save).
 
-No Kibana, também há uma página **Gerenciamento** que pode ser usada para configurar o Kibana e para salvar, excluir, exportar e importar procuras, visualizações e painéis.
+## Customizar o Kibana
+{: #analyze_management}
+
+Também é possível configurar e gerenciar recursos do Kibana na página **Gerenciamento**. 
+
+É possível concluir uma das tarefas a seguir:
+
+* Salvar, excluir, exportar e importar procuras. 
+* Salvar, excluir, exportar e importar visualizações.
+* Salvar, excluir, exportar e importar painéis.
+* [Atualizar a lista de campos.](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields)
+
+## Limitações
+{: #limitations}
+
+No Kibana, é possível compartilhar uma Visualização ou um Painel somente com membros da mesma organização ou conta.
+
+Os recursos do Kibana a seguir não são suportados:
+
+* Compartilhando uma procura.
+* Criando novos padrões de índice. 
+
+
+## Funções que são requeridas por um usuário para visualizar logs
+{: #roles}
+
+No {{site.data.keyword.Bluemix_notm}}, é possível designar uma ou mais funções para os usuários. Essas funções definem quais tarefas estão ativadas para esse usuário para trabalhar com o serviço {{site.data.keyword.loganalysisshort}}. 
+
+As tabelas a seguir listam as funções que um usuário deve ter para visualizar logs:
+
+<table>
+  <caption>Permissões requeridas por um **proprietário da conta** para ver logs</caption>
+  <tr>
+    <th>Ação</th>
+	<th>Funções de espaço do CF</th>
+	<th>Funções de organização do CF</th>
+	<th>Funções IAM</th>
+  </tr>
+  <tr>
+    <td>Visualizar logs em um domínio de espaço</td>
+	<td>*Funcionamento* </br>*Desenvolvedor * </br>*Auditor*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Visualizar logs no domínio de contas</td>
+	<td></td>
+	<td></td>
+	<td>*Administrador*</td>
+  </tr>
+  <tr>
+    <td>Visualizar logs em um domínio da organização</td>
+	<td></td>
+	<td>*Funcionamento* </br>*Gerenciador de faturamento *  </br>*Auditor*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Permissões requeridas por um **auditor** para ver logs</caption>
+  <tr>
+    <th>Ação</th>
+	<th>Funções de espaço do CF</th>
+	<th>Funções de organização do CF</th>
+	<th>Funções IAM</th>
+  </tr>
+  <tr>
+    <td>Visualizar logs em um domínio de espaço</td>
+	<td>*Auditor*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Visualizar logs no domínio de contas</td>
+	<td></td>
+	<td></td>
+	<td>*Viewer*</td>
+  </tr>
+  <tr>
+    <td>Visualizar logs em um domínio da organização</td>
+	<td></td>
+	<td>*Auditor*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Permissões requeridas por um **administrador** para ver logs</caption>
+  <tr>
+    <th>Ação</th>
+	<th>Funções de espaço do CF</th>
+	<th>Funções de organização do CF</th>
+	<th>Funções IAM</th>
+  </tr>
+  <tr>
+    <td>Visualizar logs em um domínio de espaço</td>
+	<td>*Desenvolvedor *</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Visualizar logs no domínio de contas</td>
+	<td></td>
+	<td></td>
+	<td>*Viewer*</td>
+  </tr>
+  <tr>
+    <td>Visualizar logs em um domínio da organização</td>
+	<td></td>
+	<td>*Funcionamento*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Permissões requeridas por um **desenvolvedor** para ver logs</caption>
+  <tr>
+    <th>Ação</th>
+	<th>Funções de espaço do CF</th>
+	<th>Funções de organização do CF</th>
+	<th>Funções IAM</th>
+  </tr>
+  <tr>
+    <td>Visualizar logs em um domínio de espaço</td>
+	<td>*Desenvolvedor *</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Visualizar logs no domínio de contas</td>
+	<td></td>
+	<td></td>
+	<td>*Visualizador*</td>
+  </tr>
+  <tr>
+    <td>Visualizar logs em um domínio da organização</td>
+	<td></td>
+	<td>*Auditor*</td>
+	<td></td>
+  </tr>
+</table>
+
+
+
+## URLs para ativar o Kibana
+{: #urls_kibana}
+
+A tabela a seguir lista as URLs para ativar o Kibana e as versões do Kibana por região:
+
+<table>
+    <caption>URLs para ativar o Kibana</caption>
+    <tr>
+      <th>Region</th>
+      <th>URL</th>
+      <th>Versão do Kibana</th>
+    </tr>
+	<tr>
+      <td>Frankfurt</td>
+	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.nett)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+	<tr>
+      <td>Sydney</td>
+	  <td>[https://logging.au-syd.bluemix.net](https://logging.au-syd.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+	<tr>
+      <td></td>
+	  <td>[https://logging.eu-gb.bluemix.net](https://logging.eu-gb.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+    <tr>
+      <td>Sul dos Estados Unidos</td>
+      <td>[Https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+</table>
+
+
 
 

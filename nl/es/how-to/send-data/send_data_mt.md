@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -12,39 +14,36 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Envío de datos mediante el reenviador de Logstash multiarrendatario
+# Envío de datos locales a un espacio de IBM Cloud
 {: #send_data_mt}
 
-Para enviar datos de registro al servicio {{site.data.keyword.loganalysisshort}}, puede configurar un reenviador de Logstash multiarrendatario (mt-logstash-forwarder). {:shortdesc}
+Para enviar datos de registro al servicio {{site.data.keyword.loganalysisshort}}, puede configurar un reenviador de Logstash multiarrendatario (mt-logstash-forwarder). 
+{: shortdesc}
 
-Para enviar datos de registro al componente de recopilación de registros, siga
-los pasos siguientes:
+Siga los pasos siguientes para enviar datos de registro a un espacio de {{site.data.keyword.Bluemix_notm}}:
+
+## Requisitos previos
+{: #prereqs}
+
+* Un ID de {{site.data.keyword.IBM_notm}} para iniciar una sesión en {{site.data.keyword.Bluemix_notm}}. 
+* Un ID de usuario que tenga permisos para trabajar en un espacio con el servicio {{site.data.keyword.loganalysisshort}}. Para obtener más información, consulte [Seguridad](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
+* La CLI de {{site.data.keyword.loganalysisshort}} instalada en el entorno local.
+
 
 ## Paso 1: Obtenga la señal de registro
 {: #get_logging_auth_token}
 
-Para enviar datos al servicio {{site.data.keyword.loganalysisshort}}, necesita:
+Siga los pasos siguientes desde una sesión de terminal donde esté instalada la CLI de {{site.data.keyword.loganalysisshort}}: 
 
-* Un ID de {{site.data.keyword.IBM_notm}}: se necesita para iniciar una sesión en {{site.data.keyword.Bluemix_notm}}.
-* Un espacio en una organización de {{site.data.keyword.Bluemix_notm}}: es el espacio en el que va a enviar y analiza registros.
-* Una señal de registro para enviar datos. 
+1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
-Siga estos pasos:
-
-1. Inicie la sesión en una región, organización y espacio de {{site.data.keyword.Bluemix_notm}}. 
-
-    Por ejemplo, para iniciar sesión en la región EE. UU. sur, ejecute el siguiente mandato:
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Ejecute el mandato `cf logging auth`. 
+2. Ejecute el mandato `bx cf logging auth`. 
 
     ```
-    cf logging auth
-    ```
+    bx cf logging auth
+ ```
     {: codeblock}
 
     El mandato devuelve la siguiente información:
@@ -56,16 +55,16 @@ Siga estos pasos:
     Por ejemplo,
 
     ```
-    cf logging auth
+    bx cf logging auth
     +-----------------+--------------------------------------+
     |      NAME       |                VALUE                 |
     +-----------------+--------------------------------------+
     | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_bKsdfTz                         |
-    | Organization Id | 98450123-6f1c-9999-96a3-0210fjyuwplt |
+    | Logging Token   | oT98_abcdefz                         |
+    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
     | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
     +-----------------+--------------------------------------+
-    ```
+ ```
     {: screen}
 
 Para obtener más información, consulte [cf logging auth](/docs/services/CloudLogAnalysis/reference/logging_cli.html#auth).
@@ -205,7 +204,7 @@ Siga los pasos siguientes para configurar mt-logstash-forwarder en el entorno en
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>URL de destino. Establezca el valor en **https://ingest.logging.ng.bluemix.net:9091**.</td>
+            <td>URL de destino. Para obtener la lista de los URL de ingestión, consulte [URL de ingestión](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Por ejemplo, establezca el valor en **https://ingest.logging.ng.bluemix.net:9091** para enviar los registros a la región EE.UU. Sur. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>
@@ -224,13 +223,13 @@ Siga los pasos siguientes para configurar mt-logstash-forwarder en el entorno en
        Por ejemplo, observe el siguiente archivo de ejemplo correspondiente a un espacio con el ID *7d576e3b-170b-4fc2-a6c6-b7166fd57912* en la región Reino Unido:
         
        ```
-       # more mt-lsf-config.sh 
+       # more mt-lsf-config.sh
        LSF_INSTANCE_ID="myhelloapp"
        LSF_TARGET="ingest.logging.ng.bluemix.net:9091"
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
-       LSF_PASSWORD="oT98_bKsdfTz"
+       LSF_PASSWORD="oT98_abcdefz"
        LSF_GROUP_ID="Group1"
-       ```
+ ```
        {: screen}
         
     3. Inicie mt-logstash-forwarder. 
@@ -239,22 +238,7 @@ Siga los pasos siguientes para configurar mt-logstash-forwarder en el entorno en
        service mt-logstash-forwarder start
        ```
        {: codeblock}
-        
-       Habilite mt-logstash-forwarder para iniciarse automáticamente después de un bloqueo o rearranque. 
-        
-       ```
-       service mt-logstash-forwarder enable
-       ```
-       {: codeblock}
-        
-       **Sugerencia** Para reiniciar el servicio mt-logstash-forwarder, ejecute el siguiente mandato:
-    
-       ```
-       service mt-logstash-forwarder restart
-       ```
-       {: codeblock}
-        
-        
+                
 De forma predeterminada, el reenviador solo consulta syslog. Los registros están disponibles en Kibana para que se analicen.
         
 
@@ -300,7 +284,7 @@ Para incluir stdout o stderr de una app hello, redirija stdout o stderr a un arc
     
 2. Edite el archivo de configuración *myapp.conf*.
 
-    Para habilitar el análisis de JSON, establezca is_json en true en el archivo de configuración.
+    Para poder buscar por un campo JSON en Kibana cuando ingiere un registro, habilite el análisis de JSON. Establezca `is_json` en true en el archivo de configuración para las vías de acceso a un archivo específico. Para archivos de registro que se han configurado de esta manera, las líneas del registro deben estar formateadas como bloques de JSON, separados por retornos de carro. El mt-logstash-forwarder consumirá todos estos campos JSON como campos individuales en los que se pueden realizar búsquedas de Kibana. Los nombres del campo JSON incluyen un sufijo que se basa en tipo.
     
     ```
     {

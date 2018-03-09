@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -22,7 +23,7 @@ Auf der Seite *Visualize* in Kibana können Sie Visualisierungen wie Diagramme u
 
 Sie können eine Visualisierung individuell verwenden, um Ihre Protokolle zu analysieren. 
 
-* Sie können Visualisierungen aus einer Suche erstellen, die Sie auf der Seite *Discover* definieren und speichern, oder aus einer neuen Abfrage, die Sie auf der Seite *Visualize* definieren. Die Suche definiert das Subset von Daten, die durch die Visualisierung angezeigt werden. 
+* Sie können Visualisierungen aus einer Suche erstellen, die Sie auf der Seite *Discover* definieren und speichern, oder aus einer neuen Abfrage, die Sie auf der Seite *Visualize* definieren. Die Suche definiert das Subset von Daten, die durch die Visualisierung angezeigt werden.
 
 * Der Typ der Visualisierung, die Sie auswählen, bestimmt, wie die Daten für die Analyse angezeigt werden.
 
@@ -75,7 +76,7 @@ Führen Sie die folgenden Schritte aus, um eine Visualisierung über die Seite '
 
         Weitere Informationen finden Sie unter [Protokolle durch Definieren angepasster Abfragen filtern](define_search.html#define_search).
 
-Weitere Informationen zu Kibana finden Sie in der Veröffentlichung [Kibana User Guide ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Symbol für externen Link"){: new_window}.
+Weitere Informationen zu Kibana finden Sie in der Veröffentlichung [Kibana User Guide ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 
 ## Visualisierung löschen
@@ -83,7 +84,7 @@ Weitere Informationen zu Kibana finden Sie in der Veröffentlichung [Kibana User
 
 Führen Sie die folgenden Schritte auf der Seite **Management** aus, um eine Visualisierung zu löschen:
 
-1. Wählen Sie auf der Seite **Management** die Registerkarte **Advanced Objects** aus.
+1. Wählen Sie auf der Seite **Management** die Option **Saved Objects** aus.
 
 2. Wählen Sie in der Registerkarte **Visualizations** die Visualisierung aus, die Sie löschen wollen.
 
@@ -95,7 +96,7 @@ Führen Sie die folgenden Schritte auf der Seite **Management** aus, um eine Vis
 
 Führen Sie die folgenden Schritte auf der Seite **Management** aus, um eine Visualisierung als JSON-Datei zu exportieren:
 
-1. Wählen Sie auf der Seite **Management** die Registerkarte **Advanced Objects** aus.
+1. Wählen Sie auf der Seite **Management** die Option **Saved Objects** aus.
 
 2. Wählen Sie in der Registerkarte **Visualizations** die Visualisierung aus, die Sie exportieren wollen.
 
@@ -108,7 +109,7 @@ Führen Sie die folgenden Schritte auf der Seite **Management** aus, um eine Vis
 
 Führen Sie die folgenden Schritte auf der Seite **Management** aus, um eine Visualisierung als JSON-Datei zu importieren:
 
-1. Wählen Sie auf der Seite **Management** die Registerkarte **Advanced Objects** aus.
+1. Wählen Sie auf der Seite **Management** die Option **Saved Objects** aus.
 
 2. Wählen Sie in der Registerkarte **Visualizations** die Option **Import** aus.
 

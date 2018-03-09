@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -29,26 +31,23 @@ lastupdated: "2017-07-19"
 * `cf logging status -s 2017-05-03` - 2017년 5월 3일부터 현재 날짜까지의 정보를 제공합니다.
 * `cf logging status -s 2017-05-03 -e 2017-05-08` - 2017년 5월 3일과 2017년 5월 8일 사이의 정보를 제공합니다. 
 
-1. {{site.data.keyword.Bluemix_notm}} 지역, 조직 및 영역에 로그인하십시오.  
+로그에 대한 정보를 가져오려면 다음 단계를 완료하십시오. 
 
-    예를 들어, 미국 남부 지역에 로그인하려면 다음 명령을 실행하십시오.
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
+
+    자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
     
 2. *status* 명령을 실행하십시오. 
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
     예: 
     
     ```
-    $ cf logging status
+    $ bx cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -69,19 +68,16 @@ lastupdated: "2017-07-19"
 * `cf logging status -s 2017-05-03 -t syslog` - 2017년 5월 3일부터 현재 날짜까지의 *syslog* 유형의 로그에 대한 정보를 제공합니다. 
 * `cf logging status -s 2017-05-03 -e 2017-05-08 -t syslog` - 2017년 5월 3일과 2017년 5월 8일 사이의 *syslog* 유형의 로그에 대한 정보를 제공합니다. 
 
-1. {{site.data.keyword.Bluemix_notm}} 지역, 조직 및 영역에 로그인하십시오.  
+일정 기간 동안의 로그 유형에 대한 정보를 가져오려면 다음 단계를 완료하십시오. 
 
-    예를 들어, 미국 남부 지역에 로그인하려면 다음 명령을 실행하십시오.
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
+
+    자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
     
 2. *status* 명령을 실행하십시오. 
 
     ```
-    $ cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    bx cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -96,7 +92,7 @@ lastupdated: "2017-07-19"
     예: 
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -114,19 +110,16 @@ lastupdated: "2017-07-19"
 
 {{site.data.keyword.Bluemix_notm}} 계정에서 일정 기간 동안의 로그에 대한 정보를 얻으려면 `cf logging status` 명령을 **-a** 옵션과 함께 사용하십시오. 또한, 로그의 유형을 지정하기 위해 **-t** 옵션을 지정하고, **-s**로 시작일을 설정하고, **-e**로 종료 날짜를 설정할 수 있습니다. 
 
-1. {{site.data.keyword.Bluemix_notm}} 지역, 조직 및 영역에 로그인하십시오.  
+로그에 대한 계정 정보를 가져오려면 다음 단계를 완료하십시오. 
 
-    예를 들어, 미국 남부 지역에 로그인하려면 다음 명령을 실행하십시오.
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
+
+    자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
     
 2. *status* 명령을 실행하십시오. 
 
     ```
-    $ cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    bx cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -143,7 +136,7 @@ lastupdated: "2017-07-19"
     예: 
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+

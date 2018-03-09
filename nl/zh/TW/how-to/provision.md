@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -29,7 +30,7 @@ lastupdated: "2017-07-19"
 
 1. 登入 {{site.data.keyword.Bluemix_notm}} 帳戶。
 
-    {{site.data.keyword.Bluemix_notm}} 儀表板可以在下列網站找到：[http://bluemix.net ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](http://bluemix.net "外部鏈結圖示"){:new_window}。
+    {{site.data.keyword.Bluemix_notm}} 儀表板可以在下列網址找到：[http://bluemix.net ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](http://bluemix.net){:new_window}。
     
 	使用您的使用者 ID 和密碼登入之後，{{site.data.keyword.Bluemix_notm}} 使用者介面隨即開啟。
 
@@ -52,25 +53,20 @@ lastupdated: "2017-07-19"
 
 請完成下列步驟，以透過指令行在 {{site.data.keyword.Bluemix_notm}} 中佈建 {{site.data.keyword.loganalysisshort}} 服務的實例：
 
-1. 安裝 Cloud Foundry (CF) CLI。如果已安裝 CF CLI，請繼續進行下一步。
+1. [必要條件] 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   如需相關資訊，請參閱[安裝 cf CLI ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](http://docs.cloudfoundry.org/cf-cli/install-go-cli.html "外部鏈結圖示"){: new_window}。 
+   如需相關資訊，請參閱[安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   
+   如果已安裝 CLI，請繼續進行下一步。
     
-2. 登入 {{site.data.keyword.Bluemix_notm}} 地區、組織及空間。 
+2. 登入 {{site.data.keyword.Bluemix_notm}} 中您要佈建服務的地區、組織及空間。 
 
-    例如，若要登入「美國南部」地區，請執行下列指令：
-
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
-
-    請遵循指示。輸入您的 {{site.data.keyword.Bluemix_notm}} 認證，選取組織及空間。
+    如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-3. 執行 `cf create-service` 指令以佈建實例。
+3. 執行 `bx cf create-service` 指令以佈建實例。
 
 	```
-	cf create-service service_name service_plan service_instance_name
+	bx cf create-service service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -82,17 +78,17 @@ lastupdated: "2017-07-19"
 	
 	如需 cf 指令的相關資訊，請參閱 [cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service)。
 
-	例如，若要使用免費方案建立 {{site.data.keyword.loganalysisshort}} 服務的實例，請執行下列指令：
+	例如，若要使用精簡方案建立 {{site.data.keyword.loganalysisshort}} 服務的實例，請執行下列指令：
 	
 	```
-	cf create-service ibmLogAnalysis lite my_logging_svc
+	bx cf create-service ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. 驗證已順利建立服務。執行下列指令：
 
 	```	
-	cf services
+	bx cf services
 	```
 	{: codeblock}
 	
@@ -103,7 +99,7 @@ lastupdated: "2017-07-19"
     OK
     
     name                           service                  plan                   bound apps              last operation
-    my_logging_svc                ibmLogAnalysis               lite                                        create succeeded
+    my_logging_svc                ibmLogAnalysis           standard                                        create succeeded
 	```
 	{: screen}
 

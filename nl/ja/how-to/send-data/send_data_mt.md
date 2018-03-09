@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -12,38 +14,35 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# マルチテナント Logstash Forwarder を使用したデータ送信
+# IBM Cloud のスペースへのオンプレミス・データの送信
 {: #send_data_mt}
 
-{{site.data.keyword.loganalysisshort}} サービスにログ・データを送信するために、マルチテナント Logstash Forwarder (mt-logstash-forwarder) を構成することができます。
-{:shortdesc}
+{{site.data.keyword.loganalysisshort}} サービスにログ・データを送信するために、マルチテナント Logstash Forwarder (mt-logstash-forwarder) を構成することができます。 
+{: shortdesc}
 
-ログ・データを Log Collection に送信するには、以下のステップを実行します。
+{{site.data.keyword.Bluemix_notm}} 内のスペースにログ・データを送信するには、以下のステップを実行します。
+
+## 前提条件
+{: #prereqs}
+
+* {{site.data.keyword.Bluemix_notm}} にログインするための {{site.data.keyword.IBM_notm}}ID。
+* スペース内で {{site.data.keyword.loganalysisshort}} サービスと連携するための許可のあるユーザー ID。 詳しくは、『[セキュリティー](/docs/services/CloudLogAnalysis/security_ov.html#security_ov)』を参照してください。
+* ローカル環境にインストールされた {{site.data.keyword.loganalysisshort}} CLI。
+
 
 ## ステップ 1: ロギング・トークンを取得する
 {: #get_logging_auth_token}
 
-{{site.data.keyword.loganalysisshort}} サービスにデータを送信するには、以下が必要です。
+{{site.data.keyword.loganalysisshort}} CLI がインストールされた端末セッションから以下のステップを実行します。
 
-* {{site.data.keyword.IBM_notm}}ID: {{site.data.keyword.Bluemix_notm}} にログインするために、この ID が必要です。
-* {{site.data.keyword.Bluemix_notm}} 組織内のスペース: このスペースは、ログの送信と分析を行うことを計画している場所です。
-* データを送信するためのロギング・トークン。 
+1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-以下のステップを実行します。
-
-1. {{site.data.keyword.Bluemix_notm}} 地域、組織、およびスペースにログインします。 
-
-    例えば、米国南部地域にログインするには、以下のコマンドを実行します。
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
-2. `cf logging auth` コマンドを実行します。 
+2. `bx cf logging auth` コマンドを実行します。 
 
     ```
-    cf logging auth
+    bx cf logging auth
     ```
     {: codeblock}
 
@@ -56,13 +55,13 @@ lastupdated: "2017-07-19"
     以下に例を示します。
 
     ```
-    cf logging auth
+    bx cf logging auth
     +-----------------+--------------------------------------+
     |      NAME       |                VALUE                 |
     +-----------------+--------------------------------------+
     | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_bKsdfTz                         |
-    | Organization Id | 98450123-6f1c-9999-96a3-0210fjyuwplt |
+    | Logging Token   | oT98_abcdefz                         |
+    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
     | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
     +-----------------+--------------------------------------+
     ```
@@ -85,7 +84,7 @@ lastupdated: "2017-07-19"
     
 2.	ログの時刻を同期するため、Network Time Protocol (NTP) パッケージをインストールします。 
 
-    例えば、Ubuntu システムの場合、`timedatectl status` で *Network time on: yes* と表示されるかどうかをチェックします。表示される場合、ご使用の Ubuntu システムは ntp を使用するように既に構成済みであり、このステップはスキップしてもかまいません。
+    例えば、Ubuntu システムの場合、`timedatectl status` で *Network time on: yes* と表示されるかどうかをチェックします。 表示される場合、ご使用の Ubuntu システムは ntp を使用するように既に構成済みであり、このステップはスキップしてもかまいません。
     
     ```
     # timedatectl status
@@ -166,7 +165,7 @@ lastupdated: "2017-07-19"
         ```
         {: screen}
 
-3. システムのパッケージ・マネージャー内に {{site.data.keyword.loganalysisshort}} サービス用のリポジトリーを追加します。次のコマンドを実行します。
+3. システムのパッケージ・マネージャー内に {{site.data.keyword.loganalysisshort}} サービス用のリポジトリーを追加します。 次のコマンドを実行します。
 
     ```
     wget -O - https://downloads.opvis.bluemix.net/client/IBM_Logmet_repo_install.sh | bash
@@ -178,13 +177,13 @@ lastupdated: "2017-07-19"
     1. 以下のコマンドを実行して、mt-logstash-forwarder をインストールします。
     
         ```
-        apt-get install mt-logstash-forwarder
+        apt-get install mt-logstash-forwarder 
         ```
         {: codeblock}
         
-    2. ご使用の環境に応じて mt-logstash-forwarder 構成ファイルを作成します。このファイルに含まれる変数が、{{site.data.keyword.loganalysisshort}} サービスをポイントするように mt logstash forwarder を構成するために使用されます。
+    2. ご使用の環境に応じて mt-logstash-forwarder 構成ファイルを作成します。 このファイルに含まれる変数が、{{site.data.keyword.loganalysisshort}} サービスをポイントするように mt logstash forwarder を構成するために使用されます。
     
-       ファイル `/etc/mt-logstash-forwarder/mt-lsf-config.sh` を編集します。例えば、次のように vi エディターを使用できます。
+       ファイル `/etc/mt-logstash-forwarder/mt-lsf-config.sh` を編集します。 例えば、次のように vi エディターを使用できます。
                
        ```
        vi /etc/mt-logstash-forwarder/mt-lsf-config.sh
@@ -194,26 +193,26 @@ lastupdated: "2017-07-19"
        forwarder が {{site.data.keyword.loganalysisshort}} サービスをポイントするようにするため、**mt-lsf-config.sh** ファイルに以下の変数を追加します。 
          
        <table>
-          <caption>表 1. VM 内の forwarder が {{site.data.keyword.loganalysisshort}} サービスをポイントするために必要な変数のリスト</caption>
+          <caption>表 1. VM 内の forwarder が {{site.data.keyword.loganalysisshort}} サービスをポイントするために必要な変数のリスト </caption>
           <tr>
             <th>変数名</th>
             <th>説明</th>
           </tr>
           <tr>
             <td>LSF_INSTANCE_ID</td>
-            <td>VM の ID (例: *MyTestVM*)。</td>
+            <td>VM の ID (例: *MyTestVM*)。 </td>
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>ターゲット URL。値を **https://ingest.logging.ng.bluemix.net:9091** に設定してください。</td>
+            <td>ターゲット URL。 取り込み URL のリストを取得するには、『[取り込み URL](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)』を参照してください。 例えば、米国南部地域のログを送信するには、値を **https://ingest.logging.ng.bluemix.net:9091** に設定します。 </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>
-            <td>{{site.data.keyword.Bluemix_notm}} に送信するログを {{site.data.keyword.loganalysisshort}} サービスが収集する準備ができている場所のスペース ID。<br>ステップ 1 で取得した値を使用してください。</td>
+            <td>{{site.data.keyword.Bluemix_notm}} に送信するログを {{site.data.keyword.loganalysisshort}} サービスが収集する準備ができている場所のスペース ID。 <br>ステップ 1 で取得した値を使用してください。</td>
           </tr>
           <tr>
             <td>LSF_PASSWORD</td>
-            <td>ロギング・トークン。<br>ステップ 1 で取得した値を使用してください。</td>
+            <td>ロギング・トークン。 <br>ステップ 1 で取得した値を使用してください。</td>
           </tr>
           <tr>
             <td>LSF_GROUP_ID</td>
@@ -224,11 +223,11 @@ lastupdated: "2017-07-19"
        例えば、以下のサンプル・ファイルは、英国地域の ID *7d576e3b-170b-4fc2-a6c6-b7166fd57912* のスペース用のファイルです。
         
        ```
-       # more mt-lsf-config.sh
+       # more mt-lsf-config.sh 
        LSF_INSTANCE_ID="myhelloapp"
        LSF_TARGET="ingest.logging.ng.bluemix.net:9091"
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
-       LSF_PASSWORD="oT98_bKsdfTz"
+       LSF_PASSWORD="oT98_abcdefz"
        LSF_GROUP_ID="Group1"
        ```
        {: screen}
@@ -239,29 +238,14 @@ lastupdated: "2017-07-19"
        service mt-logstash-forwarder start
        ```
        {: codeblock}
-        
-       mt-logstash-forwarder がクラッシュやリブートの後に自動的に開始できるようにします。 
-        
-       ```
-       service mt-logstash-forwarder enable
-       ```
-       {: codeblock}
-        
-       **ヒント:** mt-logstash-forwarder サービスを再始動するには、以下のコマンドを実行します。
-    
-       ```
-       service mt-logstash-forwarder restart
-       ```
-       {: codeblock}
-        
-        
-デフォルトでは、forwarder は syslog のみを監視します。ログは Kibana での分析に使用可能です。
+                
+デフォルトでは、forwarder は syslog のみを監視します。 ログは Kibana での分析に使用可能です。
         
 
 ## ステップ 3: さらにログ・ファイルを指定する
 {: #add_logs}
 
-デフォルトでは、/var/log/syslog ファイルのみが forwarder によってモニターされます。別の構成ファイルも forwarder によってモニターされるように、それらをディレクトリー `/etc/mt-logstash-forwarder/conf.d/syslog.conf/` に追加できます。 
+デフォルトでは、/var/log/syslog ファイルのみが forwarder によってモニターされます。 別の構成ファイルも forwarder によってモニターされるように、それらをディレクトリー `/etc/mt-logstash-forwarder/conf.d/syslog.conf/` に追加できます。 
 
 ご使用の環境で実行されるアプリの構成ファイルを追加するには、以下のステップを実行します。
 
@@ -276,11 +260,11 @@ lastupdated: "2017-07-19"
     ```
     {: codeblock}
         
-2.	テキスト・エディターを使用して *myapp.conf* ファイルを編集し、モニターしたいアプリケーション・ログを含むように更新します。各アプリ・ログのログ・タイプを含めてください。使用されない例は削除してください。
+2.	テキスト・エディターを使用して *myapp.conf* ファイルを編集し、モニターしたいアプリケーション・ログを含むように更新します。 各アプリ・ログのログ・タイプを含めてください。 使用されない例は削除してください。
 
 3.	mt-logstash-forwarder を再始動します。 
 
-     mt-logstash-forwarder サービスを再始動します。次のコマンドを実行します。
+     mt-logstash-forwarder サービスを再始動します。 次のコマンドを実行します。
     
     ```
     service mt-logstash-forwarder restart
@@ -289,7 +273,7 @@ lastupdated: "2017-07-19"
 
 **例**
 
-hello アプリからの stdout または stderr を含めるため、stdout または stderr をログ・ファイルにリダイレクトします。このアプリの forwarder 構成ファイルを作成します。その後、mt-logstash-forwarder を再始動します。
+hello アプリからの stdout または stderr を含めるため、stdout または stderr をログ・ファイルにリダイレクトします。 このアプリの forwarder 構成ファイルを作成します。 その後、mt-logstash-forwarder を再始動します。
 
 1.	`/etc/mt-logstash-forwarder/conf.d/syslog.conf` ファイルをコピーします。 
 
@@ -300,7 +284,7 @@ hello アプリからの stdout または stderr を含めるため、stdout ま
     
 2. 構成ファイル *myapp.conf* を編集します。
 
-    JSON 構文解析を有効にするため、conf ファイル内で is_json を true に設定します。
+    ログを取り込む際、Kibana で JSON フィールドによって検索できるようにするには、JSON 構文解析を有効にします。 特定のファイル・パスについて、構成ファイルで `is_json` を true に設定します。 このように構成されたログ・ファイルの場合、ログ行は、復帰改行文字によって分離された、JSON ブロックとしてフォーマットされます。 それにより、mt-logstash-forwarder は、それらのすべての JSON フィールドを個別の Kibana 検索可能フィールドとして取り込みます。 JSON フィールド名には、タイプに基づいた接尾部が含まれます。
     
     ```
     {

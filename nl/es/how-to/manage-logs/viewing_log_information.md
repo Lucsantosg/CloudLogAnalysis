@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -29,26 +31,24 @@ Utilice el mandato `cf logging status` con las opciones **-s** para definir la f
 * `cf logging status -s 2017-05-03` ofrece información comprendida entre el 3 de mayo de 2017 y el día de hoy.
 * `cf logging status -s 2017-05-03 -e 2017-05-08` ofrece información comprendida entre el 3 de mayo de 2017 y el 8 de mayo de 2017. 
 
-1. Inicie la sesión en una región, organización y espacio de {{site.data.keyword.Bluemix_notm}}. 
+Siga estos pasos para obtener para obtener información sobre los registros:
 
-    Por ejemplo, para iniciar sesión en la región EE. UU. sur, ejecute el siguiente mandato:
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+
+1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
+
+    Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Ejecute el mandato *status*.
 
     ```
-    $ cf logging status
-    ```
+    bx cf logging status
+ ```
     {: codeblock}
     
     Por ejemplo,
     
     ```
-    $ cf logging status
+    $ bx cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -56,7 +56,7 @@ Utilice el mandato `cf logging status` con las opciones **-s** para definir la f
     +------------+--------+-------+--------------------+------------+
     | 2017-05-25 |   1224 | 76115 | linux_syslog,log   |    All     |
     +------------+--------+-------+--------------------+------------+
-    ```
+ ```
     {: screen}
 
 
@@ -69,20 +69,17 @@ Para obtener información sobre un tipo de registro durante un periodo de tiempo
 * `cf logging status -s 2017-05-03 -t syslog` proporciona información sobre los registros de tipo *syslog* comprendido entre el 3 de mayo de 2017 y el día de hoy.
 * `cf logging status -s 2017-05-03 -e 2017-05-08 -t syslog` proporciona información sobre los registros de tipo *syslog* entre el 3 de mayo de 2017 y el 8 de mayo de 2017. 
 
-1. Inicie la sesión en una región, organización y espacio de {{site.data.keyword.Bluemix_notm}}. 
+Siga estos pasos para obtener información sobre un tipo de registro durante un periodo de tiempo:
 
-    Por ejemplo, para iniciar sesión en la región EE. UU. sur, ejecute el siguiente mandato:
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
+
+    Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Ejecute el mandato *status*.
 
     ```
-    $ cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
-    ```
+    bx cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+ ```
     {: codeblock}
     
     donde
@@ -96,7 +93,7 @@ Para obtener información sobre un tipo de registro durante un periodo de tiempo
     Por ejemplo,
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -104,7 +101,7 @@ Para obtener información sobre un tipo de registro durante un periodo de tiempo
     +------------+--------+-------+--------------------+------------+
     | 2017-05-25 |   1224 | 76115 |        log         |    All     |
     +------------+--------+-------+--------------------+------------+
-    ```
+ ```
     {: screen}
 
 
@@ -114,20 +111,18 @@ Para obtener información sobre un tipo de registro durante un periodo de tiempo
 
 Para obtener información sobre los registros durante un periodo de tiempo de la cuenta de {{site.data.keyword.Bluemix_notm}}, utilice el mandato `cf logging status` con la opción **-a**. También puede especificar las opciones **-t** para especificar el tipo de registro, **-s** para definir la fecha inicial y **-e** para definir la fecha final. 
 
-1. Inicie la sesión en una región, organización y espacio de {{site.data.keyword.Bluemix_notm}}. 
+Siga estos pasos para obtener para obtener información de la cuenta sobre los registros:
 
-    Por ejemplo, para iniciar sesión en la región EE. UU. sur, ejecute el siguiente mandato:
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+
+1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
+
+    Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Ejecute el mandato *status*.
 
     ```
-    $ cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
-    ```
+    bx cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+ ```
     {: codeblock}
     
     donde
@@ -143,7 +138,7 @@ Para obtener información sobre los registros durante un periodo de tiempo de la
     Por ejemplo,
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -151,7 +146,7 @@ Para obtener información sobre los registros durante un periodo de tiempo de la
     +------------+--------+-------+--------------------+------------+
     | 2017-05-25 |   1224 | 76115 |        log         |    All     |
     +------------+--------+-------+--------------------+------------+
-    ```
+ ```
     {: screen}
 
 

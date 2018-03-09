@@ -1,8 +1,9 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
 
@@ -15,7 +16,7 @@ lastupdated: "2017-07-19"
 # Configurando a política de retenção de log
 {: #configuring_retention_policy}
 
-Use o comando **cf logging option** para visualizar e configurar a política de retenção que define o número máximo de dias que os logs são mantidos na Coleção de logs. Por padrão, os logs são mantidos por 30 dias. Após a expiração do período de retenção, os logs são excluídos automaticamente. Por padrão, a política de retenção fica desativada.
+Use o comando **cf logging option** para visualizar e configurar a política de retenção que define o número máximo de dias que os logs são mantidos na Coleção de logs. Por padrão, a política de retenção é desativada e os logs são mantidos indefinidamente. Após a expiração do período de retenção, os logs são excluídos automaticamente. 
 {:shortdesc}
 
 É possível ter políticas de retenção diferentes definidas na conta. É possível ter uma política de conta global e políticas de espaço individuais. A política de retenção configurada no nível de conta define o número máximo de dias durante os quais é possível manter os logs. Se você configurar uma política de retenção de espaço para um período de tempo superior ao período de nível de conta, a política aplicada será a última política configurada para esse espaço. 
@@ -26,19 +27,14 @@ Use o comando **cf logging option** para visualizar e configurar a política de 
 
 Conclua as etapas a seguir para desativar uma política de retenção:
 
-1. Efetue login na região, na organização e no espaço do {{site.data.keyword.Bluemix_notm}} no qual você deseja configurar uma política de retenção de log. 
+1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
-    Por exemplo, para efetuar login na região sul dos EUA, execute o comando a seguir:
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Configure o período de retenção como **-1** para desativar o período de retenção. Execute o comando:
 
     ```
-    Cf log opção -r -1
+    bx cf logging option -r -1
     ```
     {: codeblock}
     
@@ -47,7 +43,7 @@ Conclua as etapas a seguir para desativar uma política de retenção:
 Por exemplo, para desativar o período de retenção de um espaço com o ID *d35da1e3-b345-475f-8502-cfgh436902a3*, execute o comando a seguir:
 
 ```
-Cf log opção -r -1
+bx cf logging option -r -1
 ```
 {: codeblock}
 
@@ -67,21 +63,16 @@ A saída é:
 ## Verificando a política de retenção de log de um espaço
 {: #check_retention_policy_space}
 
-Para obter o período de retenção configurado para um espaço do {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir:
+Para obter o período de retenção que é configurado para um espaço, conclua as etapas a seguir:
 
-1. Efetue login na região, na organização e no espaço do {{site.data.keyword.Bluemix_notm}} no qual você deseja configurar uma política de retenção de log. 
+1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
-    Por exemplo, para efetuar login na região sul dos EUA, execute o comando a seguir:
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Sai o período de retenção. Execute o comando:
 
     ```
-    cf logging option
+    bx cf logging option
     ```
     {: codeblock}
 
@@ -100,21 +91,16 @@ Para obter o período de retenção configurado para um espaço do {{site.data.k
 ## Verificando a política de retenção de log de todos os espaços em uma conta
 {: #check_retention_policy_account}
 
-Para obter o período de retenção configurado para cada espaço do {{site.data.keyword.Bluemix_notm}} em uma conta, conclua as etapas a seguir:
+Para obter o período de retenção que é configurado para cada espaço em uma conta, conclua as etapas a seguir:
 
-1. Efetue login na região, na organização e no espaço do {{site.data.keyword.Bluemix_notm}} no qual você deseja configurar uma política de retenção de log. 
+1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
-    Por exemplo, para efetuar login na região sul dos EUA, execute o comando a seguir:
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Obtenha o período de retenção de cada espaço na conta. Execute o comando:
 
     ```
-    Cf criação de opção -a
+    bx cf logging option -a
     ```
     {: codeblock}
 
@@ -135,21 +121,16 @@ Para obter o período de retenção configurado para cada espaço do {{site.data
 ## Configurando uma política de retenção de log no nível de conta
 {: #set_retention_policy_space}
 
-Para ver o período de retenção de uma conta do {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir:
+Para ver o período de retenção para uma conta, conclua as etapas a seguir:
 
-1. Efetue login na região, na organização e no espaço do {{site.data.keyword.Bluemix_notm}} no qual você deseja configurar uma política de retenção de log. 
+1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
-    Por exemplo, para efetuar login na região sul dos EUA, execute o comando a seguir:
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Configure o período de retenção. Execute o comando:
 
     ```
-    cf logging option -r *Number_of_days* - a
+    bx cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
@@ -161,7 +142,7 @@ Para ver o período de retenção de uma conta do {{site.data.keyword.Bluemix_no
 Por exemplo, para manter qualquer tipo de log em sua conta por 15 dias apenas, execute o comando a seguir:
 
 ```
-Cf log opção -r 15 -a
+bx cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -181,21 +162,16 @@ A saída lista uma entrada de cada espaço na conta, incluindo informações sob
 ## Configurando a política de retenção de log de um espaço
 {: #set_retention_policy_account}
 
-Para ver o período de retenção de um espaço do {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir:
+Para ver o período de retenção para um espaço, conclua as etapas a seguir:
 
-1. Efetue login na região, na organização e no espaço do {{site.data.keyword.Bluemix_notm}} no qual você deseja configurar uma política de retenção de log. 
+1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
-    Por exemplo, para efetuar login na região sul dos EUA, execute o comando a seguir:
-	
-	```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Configure o período de retenção. Execute o comando:
 
     ```
-    Cf log opção -r *Number_of_days *
+    bx cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
@@ -207,7 +183,7 @@ Para ver o período de retenção de um espaço do {{site.data.keyword.Bluemix_n
 Por exemplo, para manter os logs disponíveis em um espaço por um ano, execute o comando a seguir:
 
 ```
-Cf log opção -r 365
+bx cf logging option -r 365
 ```
 {: codeblock}
 

@@ -1,10 +1,9 @@
 ---
 
 copyright:
+  years: 2017, 2018
 
-  years: 2017
-
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -14,78 +13,78 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# IBM Cloud Log Analysis CLI
+# CLI do IBM Cloud Log Analysis (plug-in do CF)
 {: #logging_cli}
 
 A CLI do {{site.data.keyword.loganalysislong}} é um plug-in para gerenciar os logs para recursos em nuvem em execução em um espaço de uma organização do {{site.data.keyword.Bluemix}}.
 {: shortdesc}
 
 **Pré-requisitos**
-* Antes de executar os comandos de criação de log, efetue login no {{site.data.keyword.Bluemix_notm}} com o comando `cf login` para gerar um token de acesso do {{site.data.keyword.Bluemix_short}}
-e autenticar sua sessão.
+* Antes de executar os comandos de criação de log, efetue login no {{site.data.keyword.Bluemix_notm}} com o comando `bx login` para gerar um token de acesso do
+{{site.data.keyword.Bluemix_short}} e autenticar sua sessão. Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 Para descobrir sobre como usar a CLI do {{site.data.keyword.loganalysisshort}}, veja [Gerenciando logs](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov).
 
 <table>
-  <caption>Comandos para gerenciar logs</caption>
+  <caption>Comandos para gerenciar os logs</caption>
   <tr>
     <th></th>
     <th>Quando utilizá-lo</th>
   </tr>
   <tr>
-    <td>[cf log](#base)</td>
+    <td>[bx cf logging](#base)</td>
     <td>Use esse comando para obter informações sobre a CLI, como versão ou a lista de comandos.</td>
   </tr>
   <tr>
-    <td>[cf log auth](#auth)</td>
+    <td>[bx cf logging auth](#auth)</td>
     <td>Use esse comando para obter o token de criação de log que pode ser usado para enviar logs para o serviço {{site.data.keyword.loganalysisshort}}.</td>
   </tr>
   <tr>
-    <td>[cf log delete](#delete)</td>
+    <td>[bx cf logging delete](#delete)</td>
     <td>Use esse comando para excluir logs armazenados na Coleção de logs.</td>
   </tr>
   <tr>
-    <td>[Cf criação de download (Beta)](#download)</td>
-    <td>Use esse comando para fazer download de logs da Coleção de logs em um arquivo local ou para canalizar logs em outro programa, como um ELK Stack. </td>
+    <td>[bx cf logging download (Beta)](#download)</td>
+    <td>Use este comando para fazer download de logs da Coleção de logs para um arquivo local ou canalizar os logs para outro programa, como Elastic Stack. </td>
   </tr>
   <tr>
-    <td>[cf logging help](#help)</td>
+    <td>[bx cf logging help](#help)</td>
     <td>Use esse comando para obter ajuda sobre como usar a CLI, além de uma lista de todos os comandos.</td>
   </tr>
   <tr>
-    <td>[cf criação de opção](#option)</td>
-    <td>Use esse comando para visualizar ou configurar o período de retenção para logs que estão disponíveis em um espaço ou uma conta do {{site.data.keyword.Bluemix_notm}}.</td>
+    <td>[bx cf logging option](#option)</td>
+    <td>Use esse comando para visualizar ou configurar o período de retenção para logs que estão disponíveis em um espaço ou conta.</td>
   </tr>
   <tr>
-    <td>[Cf create session log (Beta)](#session_create)</td>
+    <td>[bx cf logging session create (Beta)](#session_create)</td>
     <td>Use esse comando para criar uma nova sessão.</td>
   <tr>
   <tr>
-    <td>[Cf delete de sessão de log (Beta)](#session_delete)</td>
+    <td>[bx cf logging session delete (Beta)](#session_delete)</td>
     <td>Use esse comando para excluir uma sessão.</td>
   <tr>  
   <tr>
-    <td>[Cf criação de lista de sessão (Beta)](#session_list)</td>
+    <td>[bx cf logging session list (Beta)](#session_list)</td>
     <td>Use esse comando para listar sessões ativas e seus IDs.</td>
   <tr>  
   <tr>
-    <td>[Cf de log mostram sessão (Beta)](#session_show)</td>
+    <td>[bx cf logging session show (Beta)](#session_show)</td>
     <td>Use esse comando para mostrar o status de uma única sessão.</td>
   <tr>  
   <tr>
-    <td>[cf status de criação de log](#status)</td>
-    <td>Use esse comando para obter informações sobre os logs coletados em um espaço ou uma conta do {{site.data.keyword.Bluemix_notm}}.</td>
+    <td>[bx cf logging status](#status)</td>
+    <td>Use esse comando para obter informações sobre os logs que são coletados em um espaço ou conta.</td>
   </tr>
   </table>
 
 
-## Cf de log
+## bx cf logging
 {: #base}
 
 Fornece informações sobre a versão da CLI e como usar a CLI.
 
 ```
-Cf log [ parâmetros ]
+bx cf logging [parameters]
 ```
 {: codeblock}
 
@@ -105,19 +104,19 @@ Cf log [ parâmetros ]
 Para obter a lista de comandos, execute o comando a seguir:
 
 ```
-Log cf --help
+bx cf logging --help
 ```
 {: codeblock}
 
 Para obter a versão da CLI, execute o comando a seguir:
 
 ```
-Cf criação -- version
+bx cf logging --version
 ```
 {: codeblock}
 
 
-## cf logging auth
+## bx cf logging auth
 {: #auth}
 
 Retorna um token de criação de log que pode ser usado para enviar logs para o serviço {{site.data.keyword.loganalysisshort}}. 
@@ -125,7 +124,7 @@ Retorna um token de criação de log que pode ser usado para enviar logs para o 
 **Nota:** O token não expire.
 
 ```
-cf logging auth
+bx cf logging auth
 ```
 {: codeblock}
 
@@ -145,13 +144,13 @@ cf logging auth
   </dd>
 </dl>
 
-## Cf delete registro
+## bx cf logging delete
 {: #delete}
 
 Exclui logs armazenados na Coleção de logs.
 
 ```
-Cf delete registro [ parâmetros ]
+bx cf logging delete [parameters]
 ```
 {: codeblock}
 
@@ -159,11 +158,11 @@ Cf delete registro [ parâmetros ]
 
 <dl>
   <dt>--start value, -s value</dt>
-  <dd>(Opcional) Configura a data de início em Universal Coordinated Time (UTC): *AAAA-MM-DD*, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como 2 semanas atrás.
+  <dd>(Opcional) Configura a data de início em Hora Universal Coordenada (UTC): *AAAA-MM-DD*, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como 2 semanas atrás.
   </dd>
   
   <dt>--end value, -e value</dt>
-  <dd>(Opcional) Configura a data de encerramento em Universal Coordinated Time (UTC): *AAAA-MM-DD* <br>O formato UTC da data é **AAAA-MM-DD**, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como a data atual.
+  <dd>(Opcional) Configura a data de encerramento na Hora Universal Coordenada (UTC): *AAAA-MM-DD* <br>O formato UTC da data é **AAAA-MM-DD**, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como a data atual.
   </dd>
   
   <dt>--type value, -t value</dt>
@@ -179,21 +178,21 @@ Cf delete registro [ parâmetros ]
 
 Para excluir os logs do tipo *linux_syslog* em 25 de maio de 2017, execute o comando a seguir:
 ```
-cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: codeblock}
 
 
 
-## Cf criação de download (Beta)
+## bx cf logging download (Beta)
 {: #download}
 
 Faz download de logs da Coleção de logs em um arquivo local ou canaliza logs para outro programa, como um Elastic Stack. 
 
-**Nota:** para fazer download de arquivos, será necessário criar uma sessão primeiro. Uma sessão define de quais logs fazer download com base no intervalo de data, no tipo de log e no tipo de conta. O download de logs é feito dentro do contexto de uma sessão. Para obter mais informações, veja [cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
+**Nota:** para fazer download de arquivos, será necessário criar uma sessão primeiro. Uma sessão define de quais logs fazer download com base no intervalo de data, no tipo de log e no tipo de conta. O download de logs é feito dentro do contexto de uma sessão. Para obter mais informações, veja [bx cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
 
 ```
-Cf efetuar download [ parâmetros ] [ arguments ]
+bx cf logging download [parameters] [arguments]
 ```
 {: codeblock}
 
@@ -208,24 +207,24 @@ Cf efetuar download [ parâmetros ] [ arguments ]
 
 <dl>
 <dt>Session_ID</dt>
-<dd>Configure como o valor do ID de sessão obtido ao executar o comando `cf logging session create`. Esse valor indica qual sessão usar ao fazer download de logs. <br>**Nota:** o comando `cf logging session create` fornece os parâmetros que controlam quais logs são transferidos por download. </dd>
+<dd>Configure o valor do ID de sessão que você obtém quando executa o comando `bx cf logging session create`. Esse valor indica qual sessão usar ao fazer download de logs. <br>**Nota:** o comando `bx cf logging session create` fornece os parâmetros que controlam quais logs são transferidos por download. </dd>
 </dl>
 
 **Nota:** após a conclusão do download, a execução do mesmo comando novamente recusará a realização de qualquer coisa. Para fazer download dos mesmos dados novamente, deve-se usar um arquivo diferente ou uma sessão diferente.
 
 **Exemplos**
 
-Para fazer download de logs em um arquivo chamado mylogs.gz, execute o comando a seguir:
+Em um sistema Linux, para fazer download de logs em um arquivo chamado mylogs.gz, execute o comando a seguir:
 
 ```
-Cf efetuar download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg ==
+bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 Para fazer download de logs em seu próprio Elastic Stack, execute o comando a seguir:
 
 ```
-cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+bx cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -245,13 +244,13 @@ input {
 {: screen}
 
 
-## cf logging help
+## bx cf logging help
 {: #help}
 
 Fornece informações sobre como usar um comando.
 
 ```
-Cf criação de ajuda [ parâmetros ]
+bx cf logging help [command]
 ```
 {: codeblock}
 
@@ -269,15 +268,15 @@ Cf criação de ajuda [ parâmetros ]
 Para obter ajuda sobre como executar o comando para visualizar o status de logs, execute o comando a seguir:
 
 ```
-Cf status de log ajuda
+bx cf logging help status
 ```
 {: codeblock}
 
 
-## cf logging option
+## bx cf logging option
 {: #option}
 
-Exibe ou muda o período de retenção de logs que estão disponíveis em um espaço ou uma conta do {{site.data.keyword.Bluemix_notm}}. 
+Exibe ou muda o período de retenção para logs que estão disponíveis em um espaço ou conta. 
 
 * O período é configurado em número de dias.
 * O valor padrão é **-1**. 
@@ -285,7 +284,7 @@ Exibe ou muda o período de retenção de logs que estão disponíveis em um esp
 **Nota:** por padrão, todos os logs são armazenados. Deve-se excluí-los manualmente usando o comando **delete**. Configure uma política de retenção para excluir os logs automaticamente.
 
 ```
-Cf criação de opção [ parâmetros ]
+bx cf logging option [parameters]
 ```
 {: codeblock}
 
@@ -293,19 +292,19 @@ Cf criação de opção [ parâmetros ]
 
 <dl>
 <dt>--retention value, -r value</dt>
-<dd>(Opcional) Configura o número de dias de retenção. <br> O valor padrão é 30 dias.</dd>
+<dd>(Opcional) Configura o número de dias de retenção. <br> O valor padrão é *-1* dias.</dd>
 
 <dt>--at-account-level, -a </dt>
-  <dd>(Opcional) Configura o escopo como nível de conta. <br>**Nota:** configure esse valor para obter dados da conta. <br>Se esse parâmetro não for especificado, o valor padrão será configurado como *-1* para o espaço atual, que é o espaço no qual você efetuou login usando o comando `cf login`.
+  <dd>(Opcional) Configura o escopo como nível de conta. <br>Se esse parâmetro não for especificado, o valor padrão será configurado como *-1* para o espaço atual, ou seja, o espaço no qual você efetuou login usando o comando `bx cf login`.
   </dd>
 </dl>
 
 **Exemplos**
 
-Para ver o período de retenção atual do espaço ao qual você está conectado, execute o comando a seguir:
+Para ver o período de retenção atual padrão para o espaço no qual você efetuou login, execute o comando a seguir:
 
 ```
-cf logging option
+bx cf logging option
 ```
 {: codeblock}
 
@@ -315,7 +314,7 @@ A saída é:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        30 |
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        -1 |
 +--------------------------------------+-----------+
 ```
 {: screen}
@@ -324,7 +323,7 @@ A saída é:
 Para mudar o período de retenção para 25 dias do espaço ao qual você está conectado, execute o comando a seguir:
 
 ```
-Cf log opção -r 25
+bx cf logging option -r 25
 ```
 {: codeblock}
 
@@ -334,13 +333,13 @@ A saída é:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-cfgh436902a3 |        25 |
+| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        25 |
 +--------------------------------------+-----------+
 ```
 {: screen}
 
 
-## Cf create session log (Beta)
+## bx cf logging session create (Beta)
 {: #session_create}
 
 Cria uma nova sessão.
@@ -348,7 +347,7 @@ Cria uma nova sessão.
 **Nota:** é possível ter até 30 sessões simultâneas em um espaço. A sessão é criada para um usuário. As sessões não podem ser compartilhadas entre usuários em um espaço.
 
 ```
-Cf create session log [ parâmetros ]
+bx cf logging session create [parameters]
 ```
 {: codeblock}
 
@@ -356,11 +355,11 @@ Cf create session log [ parâmetros ]
 
 <dl>
   <dt>--start value, -s value</dt>
-  <dd>(Opcional) Configura a data de início em Universal Coordinated Time (UTC): *AAAA-MM-DD*, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como 2 semanas atrás.
+  <dd>(Opcional) Configura a data de início em Hora Universal Coordenada (UTC): *AAAA-MM-DD*, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como 2 semanas atrás.
   </dd>
   
   <dt>--end value, -e value</dt>
-  <dd>(Opcional) Configura a data de encerramento em Universal Coordinated Time (UTC): *AAAA-MM-DD*, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como a data atual.
+  <dd>(Opcional) Configura a data de encerramento em Hora Universal Coordenada (UTC): *AAAA-MM-DD*, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como a data atual.
   </dd>
   
   <dt>--type value, -t value</dt>
@@ -368,7 +367,7 @@ Cf create session log [ parâmetros ]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Opcional) Configura o escopo como nível de conta. <br>**Nota:** configure esse valor para obter dados da conta. <br>Se esse parâmetro não estiver especificado, o valor padrão será configurado somente com o espaço atual, isto é, o espaço em que você efetuou login usando o comando `cf login`.
+  <dd>(Opcional) Configura o escopo como nível de conta. <br>Se esse parâmetro não for especificado, o valor padrão será configurado somente para o espaço atual, ou seja, o espaço no qual você efetuou login usando o comando `bx cf login`.
   </dd>
 </dl>
 
@@ -403,18 +402,18 @@ Cf create session log [ parâmetros ]
 Para criar uma sessão que inclua logs entre 20 e 26 de maio de 2017 para um tipo de log de *log*, execute o comando a seguir:
 
 ```
-cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
+bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 ```
 {: screen}
 
 
-## Cf delete de sessão de log (Beta)
+## bx cf logging session delete (Beta)
 {: #session_delete}
 
 Exclui uma sessão, especificada pelo ID de sessão.
 
 ```
-Cf delete sessão de log [ arguments ]
+bx cf logging session delete [arguments]
 ```
 {: codeblock}
 
@@ -423,7 +422,7 @@ Cf delete sessão de log [ arguments ]
 <dl>
 <dt>ID de
 sessão</dt>
-<dd>ID da sessão que você deseja excluir. <br>É possível usar o comando `cf logging session list` para obter todos os IDs de sessão ativos.</dd>
+<dd>ID da sessão que você deseja excluir. <br>É possível usar o comando `bx cf logging session list` para obter todos os IDs de sessão ativa.</dd>
 </dl>
 
 **Exemplo**
@@ -431,19 +430,19 @@ sessão</dt>
 Para excluir uma sessão com o ID de sessão *cI6hvAa0KR_tyhjxZZz9Uw==*, execute o comando a seguir:
 
 ```
-Cf criação de sessão delete cI6hvAa0KR_tyhjxZZz9Uw ==
+bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## Cf criação de lista de sessão (Beta)
+## bx cf logging session list (Beta)
 {: #session_list}
 
 Lista as sessões ativas e seus IDs.
 
 ```
-Cf criação de lista de sessão 
+bx cf logging session list 
 ```
 {: codeblock}
 
@@ -467,13 +466,13 @@ Cf criação de lista de sessão
 </dl>
  
 
-## Cf de log mostram sessão (Beta)
+## bx cf logging session show (Beta)
 {: #session_show}
 
 Mostra o status de uma sessão única.
 
 ```
-Cf de log mostram sessão [ arguments ]
+bx cf logging session show [arguments]
 ```
 {: codeblock}
 
@@ -514,18 +513,18 @@ Cf de log mostram sessão [ arguments ]
 Para mostrar detalhes de uma sessão com ID de sessão *cI6hvAa0KR_tyhjxZZz9Uw==*, execute o comando a seguir:
 
 ```
-cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
+bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
-## Cf status de log
+## bx cf logging status
 {: #status}
 
-Retorna informações sobre os logs coletados em um espaço ou uma conta do {{site.data.keyword.Bluemix_notm}}.
+Retorna informações sobre os logs que são coletados em um espaço ou conta.
 
 ```
-Cf status de log [ parâmetros ]
+bx cf logging status [parameters]
 ```
 {: codeblock}
 
@@ -533,11 +532,11 @@ Cf status de log [ parâmetros ]
 
 <dl>
   <dt>--start value, -s value</dt>
-  <dd>(Opcional) Configura a data de início em Universal Coordinated Time (UTC): *AAAA-MM-DD*, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como 2 semanas atrás.
+  <dd>(Opcional) Configura a data de início em Hora Universal Coordenada (UTC): *AAAA-MM-DD*, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como 2 semanas atrás.
   </dd>
   
   <dt>--end value, -e value</dt>
-  <dd>(Opcional) Configura a data de encerramento em Universal Coordinated Time (UTC): *AAAA-MM-DD*, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como a data atual.
+  <dd>(Opcional) Configura a data de encerramento em Hora Universal Coordenada (UTC): *AAAA-MM-DD*, por exemplo, `2006-01-02`. <br>O valor padrão é configurado como a data atual.
   </dd>
   
   <dt>--type value, -t value</dt>
@@ -545,7 +544,7 @@ Cf status de log [ parâmetros ]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Opcional) Configura o escopo como nível de conta. <br> **Nota:** configure esse valor para obter dados da conta. <br>Se esse parâmetro não estiver especificado, o valor padrão será configurado somente com o espaço atual, isto é, o espaço em que você efetuou login usando o comando `cf login`.
+  <dd>(Opcional) Configura o escopo como nível de conta. <br> **Nota:** configure esse valor para obter dados da conta. <br>Se esse parâmetro não for especificado, o valor padrão será configurado somente para o espaço atual, ou seja, o espaço no qual você efetuou login usando o comando `bx cf login`.
   </dd>
   
   <dt>-- list-type-detalhes, -l</dt>
@@ -553,6 +552,6 @@ Cf status de log [ parâmetros ]
   </dd>
 </dl>
 
-**Nota:** o comando `cf logging status` relata apenas as duas últimas semanas de logs armazenados na Coleção de logs quando as datas de início e de encerramento não são especificadas.
+**Nota:** o comando `bx cf logging status` relata somente as últimas 2 semanas de logs que são armazenados na Coleção de logs quando as datas de início e de encerramento não são especificadas.
 
 

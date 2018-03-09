@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -26,30 +28,27 @@ pour les journaux qui sont stockés dans Log Collection.
 
 Utilisez la commande `cf logging status` avec les options **-s** pour définir la date de début et **-e** pour définir la date de fin. Par exemple :
 
-* `cf logging status` fournit des informations sur les deux dernières semaines.
-* `cf logging status -s 2017-05-03` fournit des informations du 3 mai 2017 à la date en cours.
-* `cf logging status -s 2017-05-03 -e 2017-05-08` fournit des informations sur la période comprise entre le 3 mai 2017 et le 8 mai 2017. 
+* `cf logging status` fournit des informations pour les deux dernières semaines.
+* `cf logging status -s 2017-05-03` fournit des informations pour la période du 3 mai 2017 à la date en cours.
+* `cf logging status -s 2017-05-03 -e 2017-05-08` fournit des informations pour la période comprise entre le 3 mai 2017 et le 8 mai 2017. 
 
-1. Connectez-vous à un espace, une organisation ou une région {{site.data.keyword.Bluemix_notm}}.  
+Procédez comme suit pour obtenir des informations sur les journaux :
 
-    Par exemple, pour vous connecter à la région du sud des États-Unis, exécutez la commande suivante :
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
+
+    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Exécutez la commande *status*.
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
-    Par exemple
+    Exemple
     
     ```
-    $ cf logging status
+    $ bx cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -61,44 +60,41 @@ Utilisez la commande `cf logging status` avec les options **-s** pour définir l
     {: screen}
 
 
-## Obtention d'informations sur un type de journal durant une période définie
+## Obtention d'informations sur un type de journal pour une période donnée
 {: #viewing_logs_by_log_type}
 
-Pour obtenir des informations sur un type de journal durant une période définie, utilisez la commande `cf logging status` avec les options **-t** pour
-spécifier le type de journal, **-s** pour définir la date de début et **-e** pour définir la date de fin. Par exemple
+Pour obtenir des informations sur un type de journal pour une période donnée, utilisez la commande `cf logging status` avec les options **-t** pour
+spécifier le type de journal, **-s** pour définir la date de début et **-e** pour définir la date de fin. Exemple
 
-* `cf logging status -t syslog` fournit des informations sur les journaux de type *syslog* durant les deux dernières semaines.
-* `cf logging status -s 2017-05-03 -t syslog` fournit des informations sur les journaux de type *syslog* du 3 mai 2017 à la date en cours.
-* `cf logging status -s 2017-05-03 -e 2017-05-08 -t syslog` fournit des informations sur les journaux de type *syslog* du 3 mai 2017 au 8 mai 2017. 
+* `cf logging status -t syslog` fournit des informations sur les journaux de type *syslog* pour les deux dernières semaines.
+* `cf logging status -s 2017-05-03 -t syslog` fournit des informations sur les journaux de type *syslog* pour la période du 3 mai 2017 à la date en cours.
+* `cf logging status -s 2017-05-03 -e 2017-05-08 -t syslog` fournit des informations sur les journaux de type *syslog* pour la période comprise entre le 3 mai 2017 et le 8 mai 2017. 
 
-1. Connectez-vous à un espace, une organisation ou une région {{site.data.keyword.Bluemix_notm}}.  
+Procédez comme suit pour obtenir des informations sur un type de journal pour une période donnée :
 
-    Par exemple, pour vous connecter à la région du sud des États-Unis, exécutez la commande suivante :
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
+
+    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Exécutez la commande *status*.
 
     ```
-    $ cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    bx cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
     où
     
-    * *-s* est utilisé pour définir la date de début en UTC (Universal Coordinated Time) : *AAAA-MM-JJ*
-    * *-e* est utilisé pour définir la date de fin en UTC (Universal Coordinated Time) : *AAAA-MM-JJ*
+    * *-s* est utilisé pour définir la date de début en temps universel coordonné (TUC) : *AAAA-MM-JJ*
+    * *-e* est utilisé pour définir la date de fin en temps universel coordonné (TUC) : *AAAA-MM-JJ*
     * *-t* est utilisé pour définir le type de journal.
     
-    Vous pouvez spécifier plusieurs types de journaux en séparant chaque type par une virgule, par exemple **log_type_1,log_type_2,log_type_3**. 
+    Vous pouvez spécifier plusieurs types de journaux en les séparant par une virgule, par exemple **log_type_1,log_type_2,log_type_3**. 
     
-    Par exemple
+    Exemple
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -118,36 +114,33 @@ Pour obtenir des informations sur les journaux durant une période définie pour
 status` avec l'option **-a**. Vous pouvez également spécifier les options **-t** pour spécifier le type de journal, **-s**
 pour définir la date de début et **-e** pour définir la date de fin. 
 
-1. Connectez-vous à un espace, une organisation ou une région {{site.data.keyword.Bluemix_notm}}.  
+Procédez comme suit pour obtenir des informations de compte sur les journaux :
 
-    Par exemple, pour vous connecter à la région du sud des États-Unis, exécutez la commande suivante :
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
+
+    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Exécutez la commande *status*.
 
     ```
-    $ cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    bx cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
     où
     
     * *-a* est utilisé pour spécifier les informations sur le niveau de compte
-    * *-s* est utilisé pour définir la date de début en UTC (Universal Coordinated Time) : *AAAA-MM-JJ*
-    * *-e* est utilisé pour définir la date de fin en UTC (Universal Coordinated Time) : *AAAA-MM-JJ*
+    * *-s* est utilisé pour définir la date de début en temps universel coordonné (TUC) : *AAAA-MM-JJ*
+    * *-e* est utilisé pour définir la date de fin en temps universel coordonné (TUC) : *AAAA-MM-JJ*
     * *-t* est utilisé pour définir le type de journal.
     
 
-    Vous pouvez spécifier plusieurs types de journaux en séparant chaque type par une virgule, par exemple **log_type_1,log_type_2,log_type_3**. 
+    Vous pouvez spécifier plusieurs types de journaux en les séparant par une virgule, par exemple **log_type_1,log_type_2,log_type_3**. 
  
-    Par exemple
+    Exemple
     
     ```
-    $ cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
+    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
