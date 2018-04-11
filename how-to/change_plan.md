@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -52,26 +52,28 @@ To change your service plan in Bluemix through the CLI, complete the following s
 
     For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Run the `bx cf services` command to chech your current plan, and to get the {{site.data.keyword.loganalysisshort}} service name from the list of services that is available in the space. 
+2. Run the `bx service list` command to chech your current plan, and to get the {{site.data.keyword.loganalysisshort}} service name from the list of services that is available in the space. 
 
     The value of the field **name** is the one that you must use to change the plan. 
 
     For example,
 	
 	```
-	$ bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
+	$ bx  bx service list
+    Invoking 'cf services'...
+
+    Getting services in org lopezdsr_org / space dev as lopezdsr@uk.ibm.com...
     OK
-    
-    name              service          plan      bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   premium                create succeeded
+
+    name                           service                  plan             bound apps            last operation
+    Log Analysis-m2                ibmLogAnalysis           premium                                update succeeded
     ```
 	{: screen}
     
-3. Upgrade or reduce your plan. Run the `bx cf update-service` command.
+3. Upgrade or reduce your plan. Run the `bx service update` command.
     
 	```
-	bx cf update-service service_name [-p new_plan]
+	bx service update service_name [-p new_plan]
 	```
 	{: codeblock}
 	
@@ -113,23 +115,18 @@ To change your service plan in Bluemix through the CLI, complete the following s
 	For example, to reduce your plan to the *Lite* plan, run the following command:
 	
 	```
-	bx cf update-service "Log Analysis-a4" -p standard
-    Updating service instance Log Analysis-a4 as xxx@yyy.com...
+	bx service update "Log Analysis-m2" -p standard
+    Updating service instance Log Analysis-m2 as xxx@yyy.com...
     OK
 	```
 	{: screen}
 
-4. Verify the new plan is changed. Run the `cf services` command.
+4. Verify the new plan is changed. Run the `bx service list` command.
 
-    ```
-	bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
-    OK
-
-    name              service          plan       bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   standard                update succeeded
+  ```
+	bx service list
 	```
-	{: screen}
+	{: codeblock}
 
 
 

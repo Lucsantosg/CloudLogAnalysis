@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-12"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Configuring the {{site.data.keyword.loganalysisshort}} CLI ({{site.data.keyword.Bluemix_notm}} plugin)
+# Configuring the {{site.data.keyword.loganalysisshort}} CLI
 {: #config_log_collection_cli}
 
 The {{site.data.keyword.loganalysisshort}} service includes a command line interface (CLI) that you can use to manage logs in the cloud. You can use the {{site.data.keyword.Bluemix_notm}} plugin to view the status of the log, to download logs, and to configure the log retention policy. The CLI offers different types of help: general help to learn about the CLI and supported commands, command help to learn how to use a command, or subcommand help to learn how to use a subcommands for a command.

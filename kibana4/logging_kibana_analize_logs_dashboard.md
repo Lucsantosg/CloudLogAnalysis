@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2018-01-10"
 Use the *Dashboard* page in Kibana to display collections of visualizations that are grouped in dashboards. Use the dashboards to analyze your log data and compare results.
 {:shortdesc}
 
-In {{site.data.keyword.Bluemix}}, there are different types of dashboards that you can define and customize to visualize and analyze the data. For example, the following table lists some common dashboard types:
+In {{site.data.keyword.Bluemix_notm}}, there are different types of dashboards that you can define and customize to visualize and analyze the data. For example, the following table lists some common dashboard types:
 
 | Type of dashboard | Description |
 |-------------------|-------------|
@@ -37,14 +37,14 @@ The following table lists different tasks that you can perform in the Dashboard 
 
 | Task | More information |
 |------|------------------|
-| [Create a new dashboard](logging_kibana_analize_logs_dashboard.html#K4_dashboard_new) | You can create multiple dashboards. Each dashboard can be designed to include different searches, visualizations, and a different subset of log data.  |
-| [Save a dashboard](logging_kibana_analize_logs_dashboard.html#k4_dashboard_save) | You can save a dashboard for later reuse. |
-| [Load a dashboard](logging_kibana_analize_logs_dashboard.html#k4_dashboard_reload) | You can upload a dashboard to either update its data, modify it, or analyze the data. |
-| [Delete a dashboard](logging_kibana_analize_logs_dashboard.html#k4_dashboard_delete) | Delete dashboards that are not required. |
-| [Export a dashboard](logging_kibana_analize_logs_dashboard.html#k4_dashboard_export) | You can export a dashboard as a JSON file. |
-| [Import a dashboard](logging_kibana_analize_logs_dashboard.html#k4_dashboard_import) | You can import a dashboard as a JSON file. |
-| [Share a dashboard](logging_kibana_analize_logs_dashboard.html#k4_dashboard_share) | You can share a dashboard through your HTML source or through the Kibana dashboard. |
-| [Add a visualization](logging_kibana_analize_logs_dashboard.html#k4_dashboard_add_visualization) | You can add an existing visualization or search to a dashboard.|
+| [Create a new dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#K4_dashboard_new) | You can create multiple dashboards. Each dashboard can be designed to include different searches, visualizations, and a different subset of log data.  |
+| [Save a dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_save) | You can save a dashboard for later reuse. |
+| [Load a dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_reload) | You can upload a dashboard to either update its data, modify it, or analyze the data. |
+| [Delete a dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_delete) | Delete dashboards that are not required. |
+| [Export a dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_export) | You can export a dashboard as a JSON file. |
+| [Import a dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_import) | You can import a dashboard as a JSON file. |
+| [Share a dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_share) | You can share a dashboard through your HTML source or through the Kibana dashboard. |
+| [Add a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_add_visualization) | You can add an existing visualization or search to a dashboard.|
 {: caption="Table 2. Tasks to work with dashboards" caption-side="top"}
 
 For more information about Kibana, see the [Kibana User Guide ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/kibana/4.1/index.html){: new_window}.
@@ -71,13 +71,13 @@ Complete the following steps to create a new dashboard:
 
 1. In the toolbar of the Dashboard page, click the **New dashboard** button ![New dashboard](images/k4_dash_new_icon.jpg "New dashboard").
 
-2. Add one or more searches and visualizations. For more information, see [Adding a new search or visualization](logging_kibana_analize_logs_dashboard.html#K4_dashboard_add_visualization).
+2. Add one or more searches and visualizations. For more information, see [Adding a new search or visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create).
 
     When you add a search or a visualization, a panel is added in the dashboard.
 
 3. Drag a panel and drop in the part of the dashboard where you want to position it.
  
-4. Save the dashboard for future reuse. For more information, see [Saving a Kibana dashboard](logging_kibana_analize_logs_dashboard.html#k4_dashboard_save).
+4. Save the dashboard for future reuse. 
 
 ## Deleting a Kibana dashboard
 {: #k4_dashboard_delete}

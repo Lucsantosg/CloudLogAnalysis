@@ -21,10 +21,9 @@ lastupdated: "2018-01-10"
 
 Here are the answers to common questions about using {{site.data.keyword.Bluemix}} logging capabilities. {:shortdesc}
 
-* [What can I do if I cannot see data in the Discover page in Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_discover_kibana)
-* [What can I do if I get an authentication exception](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_dashboard_kibana)
-* [How do I launch Kibana 3 or Kibana 4](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
-* [Why do I see the symbol ? by fields in the Kibana Discover page](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
+* [What can I do if I cannot see data in the Discover page in Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_discover_kibana)
+* [What can I do if I get an authentication exception](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_dashboard_kibana)
+* [Why do I see the symbol ? by fields in the Kibana Discover page](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_kibana_question)
 * [I get a 403 error when I try to change the default index pattern](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
 * [Short URL does not work](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
 * [Can I search my account logs in Bluemix?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
@@ -79,21 +78,7 @@ To resolve this problem, complete the following steps:
 
     If you share the Dashboard, do not delete visualizations since that will affect other team members that use the same dashboard.
 
-## How do I launch Kibana 3 or Kibana 4
-{: #logging_qa_kibana3}
 
-**Note:** Kibana 3 is deprecated.
-
-You can launch Kibana 3 or Kibana 4 from a browser.
-
-Complete the following step to launch Kibana from a browser:
-
-1. Open [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net) to log in to the Kibana user interface.
-    
-2. Select the version of Kibana that you want to use to analyze your logs.
-    * Select the **Kibana 4** tab to work with Kibana 4. The Discovery page opens. For more information, see [Analyzing logs interactively in Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_kibana_analize_logs_interactively.html#kibana_analize_logs_interactively).
-    * Select the **Kibana 3** tab to work with Kibana 3. The default Kibana dashboard opens. For information about using Kibana 3 to analyze your logs, see [Analyzing logs in Kibana 3 (Deprecated)](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3). For more information about customizing a Kibana 3 dashboard, see [this blog post ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/){: new_window}.
-     
 
 ## Why do I see the symbol ? by fields in the Kibana Discover page
 {: #logging_qa_kibana_question}
@@ -120,7 +105,7 @@ As an account owner, you can search and analyze your account logs.
 
 Complete the following steps to see your account logs:
 
-1. [Launch Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) For example for the US South region, use the URL https://logging.ng.bluemix.net,
+1. [Launch Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) For example for the US South region, use the URL `https://logging.ng.bluemix.net`,
 
 2. Select the option **View AccountName account Logs** to display the account logs. *AccountName* is the name of the account.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Logging for Virtual Machines
+# Virtual Machines
 {: #logging_vm_ov}
 
 Logging capabilities are not enabled automatically for virtual machines (VMs). However, you can configure your VM to send logs into Log Collection. To collect and send log data from a VM into the {{site.data.keyword.loganalysisshort}} service, you must configure a Multi-Tenant Logstash Forwarder (mt-logstash-forwarder). Then, you can view, filter, and analyze logs in Kibana.
@@ -38,7 +38,7 @@ day at 12:30 AM UTC.
 
 The {{site.data.keyword.loganalysisshort}} service provides additional plans that allow you to store logs in Log Collection for as long as you require. For more information about the price of each plan, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-* You can configure a log retention policy that you can use to define the number of days that you want to keep logs in Log Collection. For more information, see [Log Retention policy](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* You can configure a log retention policy that you can use to define the number of days that you want to keep logs in Log Collection. For more information, see [Log Retention policy](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
 * You can delete logs manually by using the Log Collection CLI or the API.
 
 

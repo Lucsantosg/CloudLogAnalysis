@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -41,13 +41,13 @@ In the Visualize page, you can perform any of the following tasks:
 
 | Task | More information |
 |------|------------------|
-| [Create a new visualization](logging_kibana_visualizations.html#logging_k4_visualizations_create) | You can create visualizations from a search that you define and save in the *Discover* page or from a new query that you define in the *Visualize* page. |
-| [Save a visualization](logging_kibana_visualizations.html#logging_kibana_visualizations_save) | You can save visualizations for later reuse. |
-| [Load a visualization](logging_kibana_visualizations.html#logging_kibana_visualizations_reload) | You can upload a visualization to either update its data, mofify it, analyze the data. |
-| [Delete a visualization](logging_kibana_visualizations.html#logging_kibana_visualizations_delete) | Delete visualizations that are not required. |
-| [Export a visualization](logging_kibana_visualizations.html#logging_kibana_visualizations_export) | You can export a visualization as a JSON file.  |
-| [Import a visualization](logging_kibana_visualizations.html#logging_kibana_visualizations_import) | You can import a visualization as a JSON file.  |
-| [Share a visualization](logging_kibana_visualizations.html#logging_kibana_visualizations_share) | You can share a visualization through your HTML source or through the Kibana dashboard.  |
+| [Create a new visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create) | You can create visualizations from a search that you define and save in the *Discover* page or from a new query that you define in the *Visualize* page. |
+| [Save a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_save) | You can save visualizations for later reuse. |
+| [Load a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_reload) | You can upload a visualization to either update its data, mofify it, analyze the data. |
+| [Delete a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_delete) | Delete visualizations that are not required. |
+| [Export a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_export) | You can export a visualization as a JSON file.  |
+| [Import a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_import) | You can import a visualization as a JSON file.  |
+| [Share a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_share) | You can share a visualization through your HTML source or through the Kibana dashboard.  |
 {: caption="Table 2. Tasks to work with visualizations" caption-side="top"}
 
 
@@ -76,8 +76,6 @@ Complete the following steps to create a visualization from the Visualize page:
 	**Note**: Any changes that you make to a saved search are automatically reflected in the visualization. To disable automatic updates that you make to the query that is linked to this visualization, double click the message *This visualization is linked to a saved search: your_search_name* 
 
     * If you select **From a new search**, define a new query. The query is used to define the subset of data that is retrieved and used by  the visualization.
-
-        For more information, see [Filtering logs by defining custom queries](k4_filter_queries.html#k4_filter_queries).
 
 6. In the visualization builder, select a metric aggregations for the Y axis.
 

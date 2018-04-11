@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -21,8 +21,8 @@ lastupdated: "2018-01-10"
 In the {{site.data.keyword.Bluemix}}, you can view, filter, and analyze logs through the command line interface. 
 {:shortdesc}
 
-To analyze Cloud Foundry (CF) application logs, use the following command: `cf logs`
-For more information, see [Analyzing CF app logs from the CLI](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_cf_logs_cli).
+To analyze Cloud Foundry (CF) application logs, use the following command: `bx cf logs`
+For more information, see [cf logs](/docs/cli/reference/cfcommands/index.html#cf_logs).
 
 
 ## Analyzing CF app logs from the CLI
@@ -47,7 +47,7 @@ To see all the logs available for a Cloud Foundry app, complete the following st
 
 2. From the command line, run the following command to display all the logs:
 
-   <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var></code></pre>
+   <pre class="pre screen"><code> bx cf logs <var class="keyword varname">appname</var></code></pre>
    
    
 ### Viewing the latest log entries for a Cloud Foundry app
@@ -59,7 +59,7 @@ To see the most recent logs that are available for a Cloud Foundry app, complete
 
 2. From the command line, run the following command to display all the logs:
 
-     <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var> --recent</code></pre>
+     <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent</code></pre>
 
 <div class="note tip"><span class="tiptitle">Tip:</span> When you run the <span class="keyword cmdname">cf push</span> or <span class="keyword cmdname">cf start</span> command in one command line window, you can enter <samp class="ph codeph">cf
 logs appname --recent</samp> in another command line window to see the logs in real time. </div>
@@ -74,7 +74,7 @@ To view a portion of the logs that are available for a Cloud Foundry app within 
 
 2. From the command line, run the following command to display all the logs:
 
-    <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
+    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
     
     For more information about the **cut** option, enter **cut --help**.
 
@@ -88,12 +88,12 @@ To display log entries that contain certain keywords for a Cloud Foundry app, co
 
 2. From the command line, run the following command to display all the logs:
 
-    <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
+    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
     
 
 For example, to display log entries that contain the keyword **APP**, you can use the follow command:
 
-<pre class="pre screen"><code>cf logs appname --recent | grep '\[App'</code></pre>
+<pre class="pre screen"><code>bx cf logs appname --recent | grep '\[App'</code></pre>
 
 For more information about the **grep** option, type **grep --help**.
 
@@ -101,7 +101,7 @@ For more information about the **grep** option, type **grep --help**.
 ### Cloud Foundry application logs
 {: #cf_app_logs_cli}
 
-The following logs are available for a Cloud Foundry application after you deploy it in {{site.data.keyword.Bluemix}}:
+The following logs are available for a Cloud Foundry application after you deploy it in {{site.data.keyword.Bluemix_notm}}:
 
 **buildpack.log**
 
@@ -116,7 +116,7 @@ To view this log, enter the following command: `cf files appname app/.buildpack-
 
 This log file records messages after the major steps of the staging task. You can use this log to troubleshoot staging problems.
 
-To view this log, enter the following command: `cf files appname logs/staging_task.log`
+To view this log, enter the following command: `bx cf files appname logs/staging_task.log`
 
 
 **Note:** For information about how to enable application logging, see [Debugging runtime errors](/docs/debug/index.html#debugging-runtime-errors).

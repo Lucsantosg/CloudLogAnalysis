@@ -3,16 +3,19 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-12"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster
@@ -40,7 +43,7 @@ This tutorial walks through the steps that are required to get the following end
 
     Your user ID for the {{site.data.keyword.Bluemix_notm}} must have the following policies assigned:
     
-    * An IAM policy for the {{site.data.keyword.containershort}} with *operator* or *administrator* permissions.
+    * An IAM policy for the {{site.data.keyword.containershort}} with *editor*, *operator* or *administrator* permissions.
     * A CF role for the space where the {{site.data.keyword.loganalysisshort}} service is provisioned with *developer* permissions.
     
     For more information, see [Assign an IAM policy to a user through the IBM Cloud UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account) and [Granting a user permissions to view space logs by using the IBM Cloud UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
@@ -75,8 +78,7 @@ Complete the following steps:
 
 1. Create a standard Kubernetes cluster.
 
-   * [Create a Kubernetes standard cluster through the UI](/docs/containers/cs_cluster.html#cs_cluster_ui).
-   * [Create a Kubernetes standard cluster by using the CLI](/docs/containers/cs_cluster.html#cs_cluster_cli).
+   For more information, see [Creating clusters](/docs/containers/cs_tutorials.html#cs_cluster_tutorial).
 
 2. Set up the cluster context in a terminal. After the context is set, you can manage the Kubernetes cluster and deploy the application in the Kubernetes cluster.
 
@@ -268,8 +270,10 @@ Complete the following steps to grant a user permissions to work with the {{site
 ## Step 4: Grant the {{site.data.keyword.containershort_notm}} key owner permissions
 {: #step4}
 
+For cluster logs to be forwarded to a space, the {{site.data.keyword.containershort_notm}} key owner must have the following permissions:
 
-When you forward logs to a space, you must also grant Cloud Foundry (CF) permissions to the {{site.data.keyword.containershort}} key owner in the organization and space. The key owner needs *orgManager* role for the organization, and *SpaceManager* and *Developer* for the space. 
+* IAM policy for the {{site.data.keyword.loganalysisshort}} service with *Administrator* permissions.
+* Cloud Foundry (CF) permissions in the organization and space where logs are to be forwarded. The container key owner needs *orgManager* role for the organization, and *SpaceManager* and *Developer* for the space.
 
 Complete the following steps:
 
@@ -289,23 +293,28 @@ Complete the following steps:
     From the menu bar, click **Manage > Account > Users**.  The *Users* window displays a list of users with their email addresses for the currently selected account.
 	
     Select the ID of the user, and verify that the user has the *orgManager* role for the organization, and *SpaceManager* and *Developer* for the space.
- 
-3. If the user does not have the correct permissions, complete the following steps:
 
-    1. Grant the user the following permissions: *orgManager* role for the organization, and *SpaceManager* and *Developer* for the space. For more information, see [Granting a user permissions to view space logs by using the IBM Cloud UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
+    If the user does not have the correct permissions, grant the user the following permissions: *orgManager* role for the organization, and *SpaceManager* and *Developer* for the space. For more information, see [Granting a user permissions to view space logs by using the IBM Cloud UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
     
-    2. Refresh the logging configuration. Run the following command:
-    
-        ```
-        bx cs logging-config-refresh ClusterName
-        ```
-        {: codeblock}
-        
-        where *ClusterName* is the name of the cluster.
+3. Verify that the user that is identified as the {{site.data.keyword.containershort}} key owner has an IAM policy for the {{site.data.keyword.loganalysisshort}} service with *Administrator* permissions.
 
-
-
+    From the menu bar, click **Manage > Account > Users**.  The *Users* window displays a list of users with their email addresses for the currently selected account.
 	
+    Select the ID of the user, and verify that the user has the IAM policy set. 
+
+    If the user does not have tge IAM policy, see [Assign an IAM policy to a user through the IBM Cloud UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
+
+4. Refresh the logging configuration. Run the following command:
+    
+    ```
+    bx cs logging-config-refresh ClusterName
+    ```
+    {: codeblock}
+        
+    where *ClusterName* is the name of the cluster.
+	
+
+
 
 ## Step 5: Deploy a sample app in the Kubernetes cluster to generate content in stdout
 {: #step5}
@@ -354,7 +363,7 @@ Complete the following steps:
 	
     Kibana opens.
     
-    **NOTE:** Verify that you launch Kibana in the region where you are forwarding your cluster logs. For information on the URLs per region, see [Logging endpoints](docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana).
+    **NOTE:** Verify that you launch Kibana in the region where you are forwarding your cluster logs. For information on the URLs per region, see [Logging endpoints](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana).
     	
 2. To view log data that is available in the space domain, complete the following steps:
 

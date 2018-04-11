@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -20,7 +20,6 @@ You can launch Kibana from the {{site.data.keyword.Bluemix}} UI or directly from
 {:shortdesc}
 
 Launch Kibana from the {{site.data.keyword.Bluemix_notm}} to view and analyze data in context to the resource from which you launch Kibana. For example, you can launch to your specific CF app logs in Kibana, in context to that specific App.
-    {{site.data.keyword.Bluemix_notm}} space. The query that is used to filter the data that is displayed in the dashboard retrieves log entries for a space in the organization. The log information that Kibana displays includes records for all resources that are deployed within the space of the organization that you are logged in. 
 
 The following table lists the resources and the supported navigation method to launch Kibana:
 
@@ -38,11 +37,6 @@ The following table lists the resources and the supported navigation method to l
   <tr>  
   <tr>
     <td>Container deployed in a Kubernetes cluster</td>
-    <td>No</td>
-    <td>Yes</td>
-  <tr>  
-  <tr>
-    <td>Container deployed in an {{site.data.keyword.Bluemix_notm}}-managed infrastructure</td>
     <td>Yes</td>
     <td>Yes</td>
   <tr>  
@@ -71,7 +65,7 @@ To see the logs of a Cloud Foundry application or Docker container in Kibana, co
 
     By default, the **Discover** page loads with the default index pattern selected and a time filter set to the last 30 seconds. The search query is set to match all entries for the your CF app or Docker container.
 
-    If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](logging_kibana_set_time_filter.html#set_time_filter).
+    If the Discover page does not show any log entries, adjust the time picker. 
 
 
 ##  Navigating to the Kibana dashboard from a web browser
@@ -101,6 +95,5 @@ Complete the following step to launch Kibana from a browser:
           </tr>
         </table>
 
-    If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](logging_kibana_set_time_filter.html#set_time_filter).
-
+    If the Discover page does not show any log entries, adjust the time picker. 
 

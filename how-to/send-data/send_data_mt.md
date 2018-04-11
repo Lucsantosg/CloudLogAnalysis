@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -25,9 +25,10 @@ Complete the following steps to send log data to a space in the {{site.data.keyw
 ## Prereqs
 {: #prereqs}
 
-* An {{site.data.keyword.IBM_notm}}ID to log in to {{site.data.keyword.Bluemix_notm}}.
+* An {{site.data.keyword.Bluemix_notm}} ID to log in to {{site.data.keyword.Bluemix_notm}}.
 * A user ID that has permissions to work in a space with the {{site.data.keyword.loganalysisshort}} service. For more information, see [Security](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
 * The {{site.data.keyword.loganalysisshort}} CLI installed in your local environment.
+* The {{site.data.keyword.loganalysisshort}} service provisioned in a space in your account with a plan that allows logs ingestion.
 
 
 ## Step 1: Get the logging token
@@ -204,7 +205,7 @@ Complete the following steps to configure mt-logstash-forwarder in the environme
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>Target URL. To get the lits of ingestion URLs, see [Ingestion URLs](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). For example, set the value to **https://ingest.logging.ng.bluemix.net:9091** to send logs in the US South region. </td>
+            <td>Target URL. To get the lits of ingestion URLs, see [Ingestion URLs](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). For example, set the value to **ingest.logging.ng.bluemix.net:9091** to send logs in the US South region. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>

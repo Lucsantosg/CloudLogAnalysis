@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -30,7 +30,7 @@ Here are the answers to common questions about using the {{site.data.keyword.Blu
 ## How do I login in to the IBM Cloud?
 {: #login}
 
-Run the following command to log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}:
+Run the following command to log in to a region in the {{site.data.keyword.Bluemix_notm}} where the {{site.data.keyword.loganalysisshort}} service is available:
 
 ```
 bx login -a Endpoint
@@ -72,7 +72,7 @@ bx login -a https://api.ng.bluemix.net
 
 Follow the instructions. 
 
-Then, set the organization and space. Run the following command:
+You can also set an organization and a space. Run the following command:
 
 ```
 bx target -o OrgName -s SpaceName
@@ -98,7 +98,7 @@ See [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/refer
 	
 Complete the following steps to get the GUID of an account:
 	
-1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
+1. Log in to a region in the {{site.data.keyword.Bluemix_notm}}. 
 
     For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	

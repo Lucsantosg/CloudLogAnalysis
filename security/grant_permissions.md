@@ -3,11 +3,9 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
-
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -22,14 +20,15 @@ lastupdated: "2018-01-10"
 In the {{site.data.keyword.Bluemix}}, you can assign one or more roles to users. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service. 
 {:shortdesc}
 
+**Note:** 
 
+* To grant a user permissions to manage logs or view account logs, you must have permissions to assign policies to other users in the account, or you must be the account owner. If you are not the account owner, you must have an IAM policy with editor, operator, or administrator role.
+* To grant a user permissions to view logs in a space, you must have permissions in the organization and space to assign the user a Cloud Foundry role that describes the actions that this user can do with the {{site.data.keyword.loganalysisshort}} service in that space. 
 
 ## Assign an IAM policy to a user through the {{site.data.keyword.Bluemix_notm}} UI
 {: #grant_permissions_ui_account}
 
-To grant a user permissions to view and manage account logs, you must add a policy for that user that describes the actions that this user can do with the {{site.data.keyword.loganalysisshort}} service in the account. Only account owners can assign individual policies to users.
-
-In {{site.data.keyword.Bluemix_notm}}, complete the following steps to grant a user permissions to work with the {{site.data.keyword.loganalysisshort}} service:
+Complete the following steps to grant a user permissions to work with the {{site.data.keyword.loganalysisshort}} service:
 
 1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
 
@@ -45,7 +44,7 @@ In {{site.data.keyword.Bluemix_notm}}, complete the following steps to grant a u
 
     If the user is not a member of the account, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
 
-4. In the **Access policies** section, click **Assign service policies**, then select **Assign access to resources**..
+4. In the **Access policies** section, click **Assign access**, then select **Assign access to resources**.
 
     The *Assign resource access to user** window opens.
 
@@ -76,149 +75,51 @@ In {{site.data.keyword.Bluemix_notm}}, complete the following steps to grant a u
 	  </tr>
      </table>
 	
-6. Click **Assign policy**.
+6. Click **Assign**.
 	
 The policy that you configure is applicable to the selected regions. 
+
 
 ## Assign an IAM policy to a user by using the command line
 {: #grant_permissions_commandline}
 
-To grant a user permissions to view and manage account logs, you must grant the user an IAM role. For more information about IAM roles and what tasks are enabled by role to work with the {{site.data.keyword.loganalysisshort}} service, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
-
-This operation can be performed only by the account owner.
-
 Complete the following steps to grant a user access to view account logs by using the command line:
 
-1. Get the account ID. 
+1. From a terminal, log in to the {{site.data.keyword.Bluemix_notm}} account. 
 
-    Run the following command to get the account ID:
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+
+2. Check that the user is a member of the account. Run the following command to get the list of users in the account:
 
     ```
-	bx iam accounts
+	bx account users
 	```
     {: codeblock}	
 
-	A list of accounts with their GUIDs is displayed.
-	
-	Export the account ID of the account where you plan to grant permissions to a user to a shell variable such as `$acct_id`, for example:
-	
-	```
-	export acct_id="1234567891234567812341234123412"
-	```
-	{: screen}
+	A list of users with their GUIDs is displayed.
 
-2. Get the {{site.data.keyword.Bluemix_notm}} ID of the user to whom you want to grant permissions.
+3. If the user is not a member of the account, contact the account owner and request an invite of the user to the account. For more information, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
 
-    1. Display the users that are associated with the account. Run the following command:
-	
-	    ```
-		bx iam account-users
-		```
-		{: codeblock}
+    **Tip:** The command to invite a user to an account is the following: `bx iam account-user-invite USER_EMAIL`
 		
-	2. Get the GUID of the user. **Note:** This step must be completed by the user to whom you plan to grant permissions.
-	
-	    For example, request the user to run the following commands to get his user ID:
-		
-		Get the IAM token. For more information, see [Getting the IAM token by using the {{site.data.keyword.Bluemix_notm}} CLI](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
+4. Assign a policy to the user. Run the following command:
 
-        Get the data from the IAM token that is between the first 2 dots in the IAM token. Export the data to a shell variable such as `$user_data`. 
-		
-		```
-	    export user_data="xxxxxxxxxxxxxxxxxxxxxxxxxxx"
-	    ```
-	    {: screen}
-		
-		Run the following command, for example, to get the user ID. This command uses jq in this sample to decode the information into JSON formatted text:
-		
-		```
-		echo $user_data | base64 -d | jq
-		```
-		{: codeblock}
-		
-		The output of running this command is the following:
-		
-		```
-		$ echo $user_data | base64 -d | jq
-        {
-        "iam_id": "IBMid-xxxxxxxxxx",
-        "id": "IBMid-xxxxxxxxxx",
-        "realmid": "IBMid",
-        ......
-		}
-        ```
-	    {: screen}
-		
-		Send the user ID to the account owner.
-		
-	3. Export the user ID to a shell variable such as `$user_ibm_id`.
-	
-		```
-		export user_ibm_id="IBMid-xxxxxxxxxx"
-		```
-		{: codeblock}
-
-3. Invite the user to the account if it is not already a member. For more information, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
-
-    For example, run the following command to invite user xxx@yyy.com to the account zzz@ggg.com:
-	
-	```
-	bx iam account-user-invite xxx@yyy.com zzz@ggg.com OrgAuditor dev SpaceDeveloper
-	```
-	{: codeblock}
-		
-4. Create a policy file name. 
-
-    For example, use the following template to grant view permissions in the US South region:
-	
-	```
-	{
-		"roles" : [
-			{
-				"id": "crn:v1:bluemix:public:iam::::role:Editor" 
-			}
-		],
-		"resources": [
-			{
-				"serviceName": "ibmcloud-log-analysis",
-				"region": "us-south"
-			}
-		]
-	}
-	```
-	{: codeblock}
-	
-	Name the policy file: `policy.json`
-	
-5. Get the IAM token for your user ID.
-
-    For more information, see [Getting the IAM token by using the {{site.data.keyword.Bluemix_notm}} CLI](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
-
-    Export the IAM token to a shell variable such as `$iam_token`, for example:
-	
-	```
-	export iam_token="xxxxxxxxxxxxxxxxxxxxx"
-	```
-	{: screen}
-	
-6. Grant the user permissions to work with the {{site.data.keyword.loganalysisshort}} service. 
-
-   Run the following cURL command to grant permissions in the US South region:
-	
     ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.ng.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
-	```
-	{: codeblock}
-	
-	Run the following cURL command to grant permissions in the United Kingdom region:
-	
-    ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.eu-gb.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
+    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
 
-	
-After you grant permissions to a user, the user can log in to the {{site.data.keyword.Bluemix_notm}}, and see account level logs.
+	where
+    * USER_NAME is the {{site.data.keyword.Bluemix_notm}} ID of the user.
+	* ROLE is an IAM role. Valid values are: *administrator*, *operator*, *editor*, and *viewer*
+
+5. Verify that the policy is assigned to the user. Run the following command to list all the policies assigned to a user:
+
+    ```
+    bx iam user-policies USER_NAME
+	```
+	{: codeblock}
+
 
 
 

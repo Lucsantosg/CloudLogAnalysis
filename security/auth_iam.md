@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -25,7 +25,7 @@ To manage the logs that are available in the account domain by using the {{site.
 ## Getting the IAM token
 {: #iam_token_cli}
 
-To get the authorization token by using the {{site.data.keyword.Bluemix_notm}} CLI, complete the following steps:
+To get the authorization token by using the {{site.data.keyword.Bluemix_notm}} CLI, complete the following steps from a terminal:
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
@@ -33,7 +33,7 @@ To get the authorization token by using the {{site.data.keyword.Bluemix_notm}} C
    
    If the CLI is installed, continue with the next step.
     
-2. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
+2. Log in to a region in the {{site.data.keyword.Bluemix_notm}}. 
 
     For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	

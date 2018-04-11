@@ -3,15 +3,19 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Enabling automatic collection of cluster logs
@@ -20,12 +24,15 @@ lastupdated: "2018-01-10"
 To be able to view and analyse cluster logs in the {{site.data.keyword.loganalysisshort}} service, you must configure your cluster to forward those logs to the {{site.data.keyword.loganalysisshort}} service. 
 {:shortdesc}
 
-## Step 1: Check permissions
+## Step 1: Check permissions for your user ID
 {: step1}
 
-Only users with an IAM policy for the {{site.data.keyword.containershort}} with permissions to manage clusters can enable this feature. Any of the following roles is required: *Administrator*, *Operator*
+Your user ID must have the following permissions so you can add a logging configuration to the cluster:
 
-To check that your user ID has an IAM policy assigned to manage clusters, complete the following steps:
+* IAM policy for the {{site.data.keyword.containershort}} with **Viewer** permissions.
+* IAM policy for the cluster instance with **Administrator** or **Operator** permissions.
+
+To check that your user ID has these IAM policies, complete the following steps:
 
 **Note:** Only the account owner or users with permissions to assign policies can perform this step.
 
@@ -35,7 +42,7 @@ To check that your user ID has an IAM policy assigned to manage clusters, comple
 
 2. From the menu bar, click **Manage > Account > Users**.  The *Users* window displays a list of users with their email addresses for the currently selected account.
 	
-3. Select the userID, and verify that the user ID has a policy with *viewer* permissions for the {{site.data.keyword.containershort}}.
+3. Select the userID, and verify that the user ID has both policies.
 
 
 
@@ -90,7 +97,24 @@ You can choose which cluster logs you forward to the {{site.data.keyword.loganal
 ## Step 4: Set permissions for the {{site.data.keyword.containershort_notm}} key owner
 {: #step4}
 
-When you forward logs to a space, you must also grant Cloud Foundry (CF) permissions to the {{site.data.keyword.containershort}} key owner in the organization and space. The key owner needs *orgManager* role for the organization, and *SpaceManager* and *Developer* for the space.
+
+The {{site.data.keyword.containershort}} key owner needs the following AIM policies:
+
+* IAM policy for the {{site.data.keyword.containershort}} with **Administartor** role.
+* IAM policy for the {{site.data.keyword.loganalysisshort}} service with **Administrator** role.
+
+Complete the following steps: 
+
+1. Log in to the {{site.data.keyword.Bluemix_notm}} console. Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+	
+	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+
+2. From the menu bar, click **Manage > Account > Users**.  The *Users* window displays a list of users with their email addresses for the currently selected account.
+	
+3. Select the userID for the {{site.data.keyword.containershort_notm}} key owner, and verify that the user ID has both policies.
+
+
+When you forward logs to a space domain, you must also grant Cloud Foundry (CF) permissions to the {{site.data.keyword.containershort}} key owner in the organization and space. The key owner needs *orgManager* role for the organization, and *SpaceManager* or *Developer* for the space.
 
 Complete the following steps:
 
@@ -109,7 +133,7 @@ Complete the following steps:
 
     From the menu bar, click **Manage > Account > Users**.  The *Users* window displays a list of users with their email addresses for the currently selected account.
 	
-    Select the ID of the user, and verify that the user has the *orgManager* role for the organization, and *SpaceManager* and *Developer* for the space.
+    Select the ID of the user, and verify that the user has the *orgManager* role for the organization, and *SpaceManager* or *Developer* for the space.
  
 3. If the user does not have the correct permissions, complete the following steps:
 
@@ -168,7 +192,7 @@ bx cs logging-config-create MyCluster --logsource container --type ibm --namespa
 Run the following command to send */var/log/apps/**/.log* and */var/log/apps/*/.err* log files to the {{site.data.keyword.loganalysisshort}} service:
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -178,19 +202,20 @@ where
 * *EndPoint* is the URL to the logging service in the region where the {{site.data.keyword.loganalysisshort}} service is provisioned. For a list of endpoints, see [Endpoints](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls).
 * *OrgName* is the name of the organization where the space is available.
 * *SpaceName* is the name of the space where the {{site.data.keyword.loganalysisshort}} service is provisioned.
-
+* *app-containers* is an optional parameter that you can set to define a list of containers that you want to watch. These containers are the only ones from where logs will be forwarded into {{site.data.keyword.loganalysisshort}}. You can set one or more containers by separting them with commas.
+* *app-paths* define the paths inside containers that you want to watch. You can set one or more paths separating them with commas. Wildcards such as '/var/log/*.log' are accepted. 
 
 For example, to create a logging configuration that forwards application logs to a space domain in the German region, run the following command:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 For example, to create a logging configuration that forwards application logs to the account domain in the German region, run the following command:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 

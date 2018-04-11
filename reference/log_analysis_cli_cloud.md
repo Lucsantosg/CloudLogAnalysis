@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-09"
 
 ---
 
@@ -43,6 +43,10 @@ To find out about how to use the {{site.data.keyword.loganalysisshort}} CLI, see
     <td>Use this command to download logs from Log Collection to a local file, or pipe logs to another program such an Elastic Stack. </td>
   </tr>
   <tr>
+    <td>[bx logging log-show](#status)</td>
+    <td>Use this command to get information about the logs that are collected in a space, organization, or account.</td>
+  </tr>
+  <tr>
     <td>[bx logging help](#help)</td>
     <td>Use this command to get help on how to use the CLI, and a  list of all of the commands.</td>
   </tr>
@@ -53,6 +57,10 @@ To find out about how to use the {{site.data.keyword.loganalysisshort}} CLI, see
   <tr>
     <td>[bx logging option-update](#optionupdate)</td>
     <td>Use this command to set the retention period for logs that are available in a space, organization, or account.</td>
+  </tr>
+  <tr>
+    <td>[bx logging quota-usage-show](#quotausage)</td>
+    <td>Use this command to get the quota usage information for a space, organization, or account. You can also get the quota history information.</td>
   </tr>
   <tr>
     <td>[bx logging session-create](#session_create)</td>
@@ -71,8 +79,8 @@ To find out about how to use the {{site.data.keyword.loganalysisshort}} CLI, see
     <td>Use this command to show the status of a single session.</td>
   <tr>  
   <tr>
-    <td>[bx logging log-show](#status)</td>
-    <td>Use this command to get information about the logs that are collected in a space, organization, or account.</td>
+    <td>[bx logging token-get](#tokenget)</td>
+    <td>Use this command to get the logging token to send log data into the {{site.data.keyword.loganalysisshort}} service.</td>
   </tr>
 </table>
 
@@ -99,15 +107,18 @@ USAGE:
    bx logging command [arguments...] [command options]
 
 COMMANDS:
-   log-delete       Delete log
-   log-download     Download a log
-   log-show         Show the count, size, and type of logs per day
-   session-create   Create a session
-   session-delete   Delete session
-   sessions         List sessions info
-   session-show     Show a session info
-   option-show      Show the log retention
-   option-update    Show the log options
+COMMANDS:
+   log-delete         Delete log
+   log-download       Download a log
+   log-show           Show the count, size, and type of logs per day
+   session-create     Create a session
+   session-delete     Delete session
+   sessions           List sessions info
+   session-show       Show a session info
+   option-show        Show the log retention
+   option-update      Show the log options
+   token-get          Get a logging token for sending logs
+   quota-usage-show   Show quota usage info
    help             
    
 Enter 'bx logging help [command]' for more information about a command.
@@ -131,11 +142,11 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(Optional) sets the type of resource. Valid values are: *space*, *account*, and *org*
+  <dd>(Optional) Sets the type of resource. Valid values are: *space*, *account*, and *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Optional) Set this field to the ID of the space, the organization, or the account for which you want to get information. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
+  <dd>(Optional) Set this field to the ID of a space, an organization, or an account. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -178,11 +189,11 @@ Downloads logs from Log Collection to a local file or pipes logs to another prog
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(Optional) sets the type of resource. Valid values are: *space*, *account*, and *org*
+  <dd>(Optional) Sets the type of resource. Valid values are: *space*, *account*, and *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Optional) Set this field to the ID of the space, the organization, or the account for which you want to get information. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
+  <dd>(Optional) Set this field to the ID of a space, an organization, or an account. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
   </dd>
  
   <dt>-o, --output OUTPUT</dt>
@@ -294,11 +305,11 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(Optional) sets the type of resource. Valid values are: *space*, *account*, and *org*
+  <dd>(Optional) Sets the type of resource. Valid values are: *space*, *account*, and *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Optional) Set this field to the ID of the space, the organization, or the account for which you want to get information. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
+  <dd>(Optional) Set this field to the ID of a space, an organization, or an account. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
   </dd>
 
 </dl>
@@ -354,6 +365,56 @@ bx logging option-update -e 25
 {: screen}
 
 
+## bx logging quota-usage-show
+{: #quotausage}
+
+Informs about the quota usage of a space, organization, or account. You can also use it to get the history usage.
+
+* The period is set in number of days.
+* The default value is **-1**. 
+
+```
+bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+```
+{: codeblock}
+
+**Parameters**
+
+<dl>
+  <dt>-r,--resource-type RESOURCE_TYPE</dt>
+  <dd>(Optional) Sets the type of resource. Valid values are: *space*, *account*, and *org*
+  </dd>
+  
+   <dt>-i,--resource-id RESOURCE_ID</dt>
+  <dd>(Optional) Set this field to the ID of a space, an organization, or an account. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
+  </dd>
+  
+  <dt>-s,--history</dt>
+  <dd>(Optional) Set this parameter to get the historical information about quota usage.</dd>
+
+</dl>
+
+**Example**
+
+To get the historical quota usage for a space domain, run the following command:
+
+```
+bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Date         Allotmant   Usage   
+2018.02.28   524288000   80405926   
+2018.03.06   524288000   18955540   
+2018.03.05   524288000   47262944   
+2018.03.08   524288000   18311338   
+2018.03.01   524288000   82416831   
+2018.03.03   524288000   75045462   
+2018.03.07   524288000   17386278   
+2018.03.02   524288000   104316444   
+2018.03.04   524288000   73125223   
+```
+{: screen}
 
 ## bx logging session-create
 {: #session_create}
@@ -371,11 +432,11 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(Optional) sets the type of resource. Valid values are: *space*, *account*, and *org*
+  <dd>(Optional) Sets the type of resource. Valid values are: *space*, *account*, and *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Optional) Set this field to the ID of the space, the organization, or the account for which you want to get information. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
+  <dd>(Optional) Set this field to the ID of a space, an organization, or an account. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -450,11 +511,11 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(Optional) sets the type of resource. Valid values are: *space*, *account*, and *org*
+  <dd>(Optional) Sets the type of resource. Valid values are: *space*, *account*, and *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Optional) Set this field to the ID of the space, the organization, or the account for which you want to get information. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
+  <dd>(Optional) Set this field to the ID of a space, an organization, or an account. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
   </dd>
  
 </dl>
@@ -492,10 +553,10 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 <dl>
 
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-      <dd>(Optional) sets the type of resource. Valid values are: *space*, *account*, and *org* </dd>
+      <dd>(Optional) Sets the type of resource. Valid values are: *space*, *account*, and *org* </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>(Optional) Set this field to the ID of the space, the organization, or the account for which you want to get information. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in.  </dd>
+      <dd>(Optional)Set this field to the ID of a space, an organization, or an account. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in.  </dd>
 </dl>
 
 **Return values**
@@ -542,10 +603,10 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
 
 <dl>
    <dt>-r,--resource-type RESOURCE_TYPE</dt>
-      <dd>(Optional) sets the type of resource. Valid values are: *space*, *account*, and *org* </dd>
+      <dd>(Optional) Sets the type of resource. Valid values are: *space*, *account*, and *org* </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>(Optional) Set this field to the ID of the space, the organization, or the account for which you want to get information. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in.  </dd>
+      <dd>(Optional) Set this field to the ID of a space, an organization, or an account. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in.  </dd>
 </dl>
 
 **Arguments**
@@ -561,6 +622,41 @@ To show details of a session with session ID *cI6hvAa0KR_tyhjxZZz9Uw==*, run the
 
 ```
 bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+```
+{: screen}
+
+## bx logging token-get
+{: #tokenget}
+
+Returns the logging token that is required to send log data into {{site.data.keyword.loganalysisshort}}.
+
+```
+bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+```
+{: codeblock}
+
+**Parameters**
+
+<dl>
+  <dt>-r,--resource-type RESOURCE_TYPE</dt>
+  <dd>(Optional) Sets the type of resource where you plan to send log data. Valid values are: *space*, *account*, and *org*
+  </dd>
+  
+   <dt>-i,--resource-id RESOURCE_ID</dt>
+  <dd>(Optional) Set this field to the ID of a space, an organization, or an account. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
+  </dd>
+</dl>
+
+
+**Example**
+
+```
+bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Tenant Id                              Logging Token   
+js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx   
 ```
 {: screen}
 
@@ -583,11 +679,11 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(Optional) sets the type of resource. Valid values are: *space*, *account*, and *org*
+  <dd>(Optional) Sets the type of resource. Valid values are: *space*, *account*, and *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Optional) Set this field to the ID of the space, the organization, or the account for which you want to get information. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
+  <dd>(Optional) Set this field to the ID of a space, an organization, or an account. <br>By default, if you do not specify this parameter, the command uses the ID of the resource where you are logged in. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>

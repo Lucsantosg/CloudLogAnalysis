@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-01-10"
 In the the Discover page, you can view and analyze your {{site.data.keyword.Bluemix}} logs interactively. You can define search queries to filter that data by using the Lucene query language. For each search query, you can apply filters to refine the entries that are available for analysis. You can save a search for future reuse.
 {:shortdesc}
 
-In the {{site.data.keyword.Bluemix_notm}}, by default, the set of data that is displayed in the Discover page when you launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI is configured to only show the entries for the Cloud Foundry (CF) application or container from which you launch Kibana. For more information on how to see what subset of your data the Discover page displays, see [Identifying the data that is displayed](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+In the {{site.data.keyword.Bluemix_notm}}, by default, the set of data that is displayed in the Discover page when you launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI is configured to only show the entries for the Cloud Foundry (CF) application or container from which you launch Kibana. 
 
 The following table shows the default query per resource when you launch Kibana from the {{site.data.keyword.Bluemix_notm}}:
 
@@ -41,12 +41,12 @@ You can perform any of the following tasks to customize the table in the Discove
 
 | Task | Description | 
 |------|-------------|
-| [Add a field column](logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | Add fields to see specific data that is required for analysis instead of the full message. |
-| [Rearrange a field column](logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | Move the position of a field in the table to the position where you want it. |
-| [View an entry](logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | Expand an entry in the table to see the details of the entry parsed by field or as JSON. |
-| [Remove a field column](logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | Remove a field when it is not required in the view for analysis. |
-| [Order entries by value of an indexed field](logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | Reorder the entries for easier analysis. |
-| [Automatically refresh the data](logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | Refresh the data displayed in the table with the latest entries. By default, refresh is **OFF**. |
+| [Add a field column](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | Add fields to see specific data that is required for analysis instead of the full message. |
+| [Rearrange a field column](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | Move the position of a field in the table to the position where you want it. |
+| [View an entry](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | Expand an entry in the table to see the details of the entry parsed by field or as JSON. |
+| [Remove a field column](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | Remove a field when it is not required in the view for analysis. |
+| [Order entries by value of an indexed field](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | Reorder the entries for easier analysis. |
+| [Automatically refresh the data](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | Refresh the data displayed in the table with the latest entries. By default, refresh is **OFF**. |
 {: caption="Table 2. Tasks to customize a table" caption-side="top"}
 
 <br>
@@ -55,17 +55,17 @@ The following figure shows a sample of a table in the Discover page:
 
 ![Discover page in Kibana](images/k4_discover_page.jpg "Discover page in Kibana")
 
-You can define other searches. For more information, see [Filtering logs by defining custom searches](k4_filter_queries.html#k4_filter_queries). When you define a new search, the data that is displayed in the histogram and the table is automatically updated.
+You can define other searches. When you define a new search, the data that is displayed in the histogram and the table is automatically updated.
 
 To define a new search, use the default search query as your starting point, and then refine the search by performing the following tasks:
 
-* Apply field filters to refine the set of data that you can see. You can toggle each filter, pin it to the page, enable or disable it as needed, and configure it to include or exclude the value. For more information, see [Filtering logs in Kibana](logging_kibana_filtering_logs.html#kibana_filtering_logs).
+* Apply field filters to refine the set of data that you can see. You can toggle each filter, pin it to the page, enable or disable it as needed, and configure it to include or exclude the value. 
 
-    **Tip:** If you cannot find a field in the *Fields list* that you expect to see, or some of the magnifying glasses by the listed fields are disabled in the Discover page, reload the list of fields by refreshing the index pattern in the Settings page. For more information, see [Reloading the Field List](logging_kibana_analize_logs_interactively.html#kibana_discover_view_reload_fields).
+    **Tip:** If you cannot find a field in the *Fields list* that you expect to see, or some of the magnifying glasses by the listed fields are disabled in the Discover page, reload the list of fields by refreshing the index pattern in the Settings page. 
 
     For example, if your CF app has multiple instances, you might want to analyze data for a specific instance. You can define a field filter for the specific intance ID value that you want to analyze. 
     
-* Customize the *Time Picker* for time-based data. You can define an absolute time range for a query, a relative one, or choose from a set of pre-defined values. For more information, see [Setting a time filter](logging_kibana_set_time_filter.html#set_time_filter).
+* Customize the *Time Picker* for time-based data. You can define an absolute time range for a query, a relative one, or choose from a set of pre-defined values. 
 
 After you have configured the search that defines the data subset that you want to analyze, you can save it for later reuse.
 
@@ -73,12 +73,12 @@ You can perform any of the following tasks with searches that you define in the 
 
 | Task | Description |
 |------|-------------|
-| [Save a search](logging_kibana_filtering_logs.html#k4_save_search) | Save the search for later reuse.  |
-| [Delete a search](logging_kibana_filtering_logs.html#k4_delete_search) | Delete a search when is no longer needed. |
-| [Export a search](logging_kibana_filtering_logs.html#k4_export_search) | Export a search to share it.  |
-| [Reload a search](logging_kibana_filtering_logs.html#k4_reload_search)  | Upload an existing search to analyze a set of data again. |
-| [Refresh the data of a search](logging_kibana_filtering_logs.html#k4_refresh_search) | Configure automatic refresh of the data that is displayed through the search.  |
-| [Import a search](logging_kibana_filtering_logs.html#k4_import_search) | Import a search.  |
+| Save a search | Save the search for later reuse.  |
+| Delete a search | Delete a search when is no longer needed. |
+| Export a search | Export a search to share it.  |
+| Reload a search  | Upload an existing search to analyze a set of data again. |
+| Refresh the data of a search | Configure automatic refresh of the data that is displayed through the search.  |
+| Import a search | Import a search.  |
 {: caption="Table 3. Tasks to work with searches" caption-side="top"}
 
 <br>
@@ -87,7 +87,7 @@ You can also look at statistics in the Discover page:
 * You can see stats per field. 
 * You can see stats in the histogram per the `@timestamp` that you have configured.
 
-For more information, see [Viewing Field Data Statistics](logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats).
+For more information, see [Viewing Field Data Statistics](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats).
 
 **Note:** The data that is shown in the table and the histogram is static. To keep viewing the latest entries, you must set a refresh interval. 
 
@@ -130,7 +130,7 @@ For example, if you add the *application_id* field to the table, the table chang
 ## Automatically refreshing the data
 {: #kibana_discover_view_refresh_interval}
 
-By default, in the {{site.data.keyword.Bluemix_notm}}, the *Auto refresh* period is set to **OFF** and the data that you can see in Kibana corresponds to the last 15 minutes since you launched Kibana. The 15 minutes correspond to the time filter that is pre-configured. You can change it by setting a different time period. For more information, see [Setting a time filter](logging_kibana_set_time_filter.html#set_time_filter).
+By default, in the {{site.data.keyword.Bluemix_notm}}, the *Auto refresh* period is set to **OFF** and the data that you can see in Kibana corresponds to the last 15 minutes since you launched Kibana. The 15 minutes correspond to the time filter that is pre-configured. You can change it by setting a different time period. 
 
 Complete the following steps to set an *Auto refresh* period:
 
@@ -147,7 +147,7 @@ You can pause the refresh interval by clicking the pause button ![Pause button](
 
 
 ## Identifying the data that is displayed in the Discover page
-{:#k4_identify_data}
+{: #k4_identify_data}
 
 When you use Kibana to analyze the {{site.data.keyword.Bluemix_notm}} logs, the data that you can see depends on how you launch Kibana, the index pattern that is configured, and the custom query and filters that you might have applied.
 

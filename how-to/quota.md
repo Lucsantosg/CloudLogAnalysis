@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-09"
 
 ---
 
@@ -21,8 +21,112 @@ lastupdated: "2018-01-10"
 To get the quota and current daily usage of a logs domain of the {{site.data.keyword.loganalysisshort}} service, you can run a cURL command. 
 {:shortdesc}
 
+## Calculating the search quota and daily usage by using the CLI
+{: #quota_cli}
 
-## Calculating the search quota and daily usage of an account
+Complete the following steps:
+
+1. Log in to the {{site.data.keyword.Bluemix_notm}}.
+
+    For example, to log in to US South, run the command:
+
+    ```
+    bx login -a api.ng.bluemix.net
+    ```
+    {: codeblock}
+
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+
+2. Run the `bx logging quota-usage-show` cli command. 
+
+    ```
+    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+    ```
+    {: codeblock}
+
+    where 
+
+    * Valid RESOURCE_TYPE values are the following: space, account
+    * RESOURCE_ID is the GUID of the account or space for which you want to get the quota usage.
+
+
+For example, to show the quota usage of an account, run the following command:
+
+```
+ bx logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
+Showing quota usage for resource: 475693845023932019c6567c9c8de6dece ...
+OK
+
+Daily Allotmant   Current Usage   
+524288000         0   
+```
+{: screen}
+
+To show the quota usage of a space, run the following command:
+
+```
+bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
+Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Daily Allotmant   Current Usage   
+524288000         6774014   
+```
+{: screen}
+
+
+## Obtaining the search quota history by using the CLI
+{: #quota_history_cli}
+
+
+Complete the following steps:
+
+1. Log in to the {{site.data.keyword.Bluemix_notm}}.
+
+    For example, to log in to US South, run the command:
+
+    ```
+    bx login -a api.ng.bluemix.net
+    ```
+    {: codeblock}
+
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+
+2. Run the `bx logging quota-usage-show` cli command with the paramater `-s`. 
+
+    ```
+    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+    ```
+    {: codeblock}
+
+    where 
+
+    * Valid RESOURCE_TYPE values are the following: space, account
+    * RESOURCE_ID is the GUID of the account or space for which you want to get the quota usage.
+
+For example,
+
+```
+bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Date         Allotmant   Usage   
+2018.02.28   524288000   80405926   
+2018.03.06   524288000   18955540   
+2018.03.05   524288000   47262944   
+2018.03.08   524288000   18311338   
+2018.03.01   524288000   82416831   
+2018.03.03   524288000   75045462   
+2018.03.07   524288000   17386278   
+2018.03.02   524288000   104316444   
+2018.03.04   524288000   73125223   
+```
+{: screen}
+
+
+
+## Calculating the search quota and daily usage of an account by using the API
 {: #account}
 
 Complete the following steps:
@@ -95,7 +199,7 @@ Complete the following steps:
     {: screen}
 
 	
-## Calculating the search quota and daily usage of a space
+## Calculating the search quota and daily usage of a space by using the API
 {: #space}
 
 Complete the following steps:

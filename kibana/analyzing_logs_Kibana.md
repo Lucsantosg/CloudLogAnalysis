@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-02-01"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -261,7 +261,7 @@ The following table lists the URLs to launch Kibana, and the versions of Kibana 
     </tr>
 	<tr>
       <td>Frankfurt</td>
-	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.nett)</td>
+	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.net)</td>
 	  <td>Kibana 5.1</td>
     </tr>
 	<tr>

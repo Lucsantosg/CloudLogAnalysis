@@ -10,22 +10,16 @@ IBM Cloud Log Analysis
     {: .topicgroup}
     About Log Analysis
         log_analysis_ov.md
-        log_analysis_component_ov
         manage_logs.md
         log_ingestion.md
         kibana/analyzing_logs_Kibana.md
         security_ov.md
 
     {: .topicgroup}
-    Logging for cloud resources
+    Logging cloud resources
         cfapps/logging_cf_apps.md
         containers/containers_kubernetes.md
-        containers/containers_bluemix.md
         vm/logging_vm_ov.md
-
-    {: .topicgroup}
-    What's new
-        migration/es17_to_es51.md
     
     {: .topicgroup}
     Tutorials
@@ -43,7 +37,6 @@ IBM Cloud Log Analysis
     how-to/change_plan.md
     how-to/quota.md
     how-to/manage-logs/config_log_collection_cli_cloud.md
-    how-to/manage-logs/config_log_collection_cli.md
 
     {: .topicgroup}
     Advanced log analysis (Kibana)
@@ -55,18 +48,11 @@ IBM Cloud Log Analysis
         kibana/launch.md
 
     {: .topicgroup}
-    Managing logs (IBM Cloud plugin)
+    Managing logs
         how-to/manage-logs/configuring_retention_policy_cloud.md
         how-to/manage-logs/deleting_logs_cloud.md
         how-to/manage-logs/downloading_logs_cloud.md
         how-to/manage-logs/viewing_log_information_cloud.md
-
-    {: .topicgroup}
-    Managing logs (CF plugin)
-        how-to/manage-logs/configuring_retention_policy.md
-        how-to/manage-logs/deleting_logs.md
-        how-to/manage-logs/downloading_logs.md
-        how-to/manage-logs/viewing_log_information.md
 
     {: .topicgroup}
     Sending logs
@@ -84,41 +70,20 @@ IBM Cloud Log Analysis
         cfapps/launch_logs_cloud_ui_cf.md
         cfapps/logging_writing_to_log_from_cf_app.md
         cfapps/logging_view_cli.md
-        external/logging_external_hosts.md
+        cfapps/logging_external_hosts.md
 
     {: .topicgroup}
     Containers
         containers/containers_kube_other_logs.md
         containers/containers_key_owner.md
         containers/containers_spaceid.md
-        containers/logging_containers_other_logs.md
-
-    {: .topicgroup}
-    Log analysis (Kibana 4) Deprecated
-        kibana4/logging_kibana_analize_logs_interactively.md
-        kibana4/logging_kibana_visualizations.md
-        kibana4/logging_kibana_analize_logs_dashboard.md
-        kibana4/k4_define_search.md
-        kibana4/k4_filter_logs.md
-        kibana4/k4_launch.md
-
-    {: .topicgroup}
-    Log analysis (Kibana 3) Deprecated
-        kibana3/logging_kibana_query.md
-        kibana3/logging_kibana_filter_by_component.md
-        kibana3/logging_kibana_filter_by_time_period.md
-        kibana3/logging_kibana_filter_by_instance_id.md
-        kibana3/logging_kibana_filter_by_known_application_id.md
-        kibana3/logging_kibana_filter_by_message_type.md
-        kibana3/logging_kibana_tables_graphs.md
-        kibana3/logging_kibana_export_share_dashboard.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    reference/logging_cli.md  
+    reference/kibana_formats.md
     reference/log_analysis_cli_cloud.md  
 
-    [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
+    [Log Analysis API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
     {: .navgroup-end}     
     
     {: .navgroup id="help"}
@@ -131,8 +96,24 @@ IBM Cloud Log Analysis
     {: .topicgroup}
     FAQ
         qa/faq_kibana.md
-        qa/kibana_formats.md
         qa/cli_qa.md
 
+    {: .topicgroup}
+    Managing logs (CF plugin) Deprecated
+        reference/logging_cli.md  
+        how-to/manage-logs/config_log_collection_cli.md
+        how-to/manage-logs/configuring_retention_policy.md
+        how-to/manage-logs/deleting_logs.md
+        how-to/manage-logs/downloading_logs.md
+        how-to/manage-logs/viewing_log_information.md
+
+    {: .topicgroup}
+    Log analysis (Kibana 4) Deprecated
+        kibana4/logging_kibana_analize_logs_interactively.md
+        kibana4/logging_kibana_visualizations.md
+        kibana4/logging_kibana_analize_logs_dashboard.md
+        kibana4/k4_define_search.md
+        kibana4/k4_filter_logs.md
+        kibana4/k4_launch.md
     {: .navgroup-end}
     

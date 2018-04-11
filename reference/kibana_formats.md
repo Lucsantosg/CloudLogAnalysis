@@ -3,11 +3,9 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
-
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -52,30 +50,6 @@ You can configure Kibana to display in the *Discover* page the following fields 
 {: caption="Table 1. Fields for CF apps" caption-side="top"}
 
 
-
-## Kibana log format for Docker containers that are deployed in an IBM-managed infrastructure (Deprecated)
-{: #kibana_log_format_containers}
-
-You can configure Kibana to display in the *Discover* page the following fields for each log entry:
-
-| Field | Description |
-|-------|-------------|
-| @timestamp | `yyyy-MM-ddTHH:mm:ss:SS-0500`  <br> The time of the logged event. <br> The timestamp is defined up to the millisecond. |
-| @version | Version of the event. |
-| ALCH_TENANT_ID | ID of the {{site.data.keyword.Bluemix_notm}} space. |
-| \_id | The unique id for your log document. |
-| \_index | The index for your log entry. |
-| \_type | The type of log; for example, *logs*. |
-| group_id | Group ID <br> * For a single container, the value is **0000**. <br> * For a container group, the value is the GUID of the group.  |
-| host | Host name where the container runs. |
-| instance | GUID of the instance for a single container. List of instance IDs for a container group.|
-| log | Short message. |
-| message | Full message. |
-| path | Path and log name where the log is located inside the container. |
-| stream | Specifies the type of log: stdout, stderr |
-| time | The date and time of the event when it happened. The timestamp is defined up to the millisecond.|
-| timestamp | The date and time of the logged event. The timestamp is defined up to the millisecond. |
-{: caption="Table 2. Fields for Docker containers" caption-side="top"}
 
 ## Kibana log format for Docker containers that are deployed in a Kubernetes cluster
 {: #kibana_log_format_containers_kubernetes}
@@ -150,3 +124,6 @@ ALCH_TENANT_ID:
 &#95;index:
     logstash-2017.03.08
 ```
+{: screen}
+
+

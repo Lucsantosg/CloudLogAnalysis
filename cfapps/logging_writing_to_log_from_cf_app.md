@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -41,7 +41,7 @@ For a **Node.js Cloud Foundry app**, you can use the built in console logging mo
 * console.log('message') will send the msg to the STDOUT stream
 * console.error('error_message') will send the error to the STDERR stream
 
-For more information about Node.js applications, see [How to log in node.js ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://docs.nodejitsu.com/articles/intermediate/how-to-log){: new_window}.
+For more information about Node.js applications, see [How to log in node.js ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://docs.nodejitsu.com/articles/intermediate/how-to-log/){: new_window}.
 
 
 For more information about **Ruby on Rails applications**, see [The Logger ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://guides.rubyonrails.org/debugging_rails_applications.html#the-logger){: new_window}.

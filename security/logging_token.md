@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -80,7 +80,7 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
     OK
 
     name              service          plan       bound apps   last operation
-    Log Analysis-vg   ibmLogAnalysis   standard                create succeeded
+    Log Analysis-vg   ibmloganalysis   standard                create succeeded
     ```
 	{: screen}
 	
@@ -133,33 +133,7 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
 	```
 	{: screen}
 
-## Getting the logging token to send logs to a space by using the Log Analysis CLI (CF plugin)
-{: #logging_token_cf_plugin}
 
-To get the logging token that you can use to send logs to the {{site.data.keyword.loganalysisshort}} service, complete the following steps:
-
-1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
-
-   For more information, see [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
-   
-   If the CLI is installed, continue with the next step.
-    
-2. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
-
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
-	
-3. Get the GUID for the space for which you have obtained an authentication token.
-
-   For more information, see [How do I get the GUID of a space](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid).  
-   
-4. Get the logging token. Run the following command:
-
-    ```
-    bx cf logging auth
-    ```
-    {: codeblock}
-
-The command returns the *Logging Token* and the *Space ID* that you need to send logs into the space with that ID.	
 	
 ## Getting the logging token to send logs to a space by using the Log Analysis API
 {: #logging_token_api}
@@ -220,56 +194,3 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
 	
     The command returns the logging token that you must use to send logs to that space.
 	
-## Getting the logging token to send logs to the account domain by using the Log Analysis API
-{: #logging_acc_token_api}
-
-
-To get the logging token that you can use to send logs to the {{site.data.keyword.loganalysisshort}} service, complete the following steps:
-
-1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
-
-   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
-   
-   If the CLI is installed, continue with the next step.
-    
-2. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
-
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
-	
-3. Get the [IAM token](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
-
-    The output returns the IAM token.
-
-4. Get the GUID for the account.
-
-   For more information, see [How do I get the GUID of an account](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).  
-	
-5. Export the following variables: TOKEN and AccountID.
-
-    * *TOKEN* is the oauth token that you got in the previous step excluding Bearer.
-	
-	* *AccountID* is the GUID of the account that you got in the previous step. 
-		
-	For example,
-	
-	```
-	export TOKEN="eyJhbGciOiJI....cGFzc3dvcmQiLCJjZiIsInVhYSIsIm9wZW5pZCJdfQ.JaoaVudG4jqjeXz6q3JQL_SJJfoIFvY8m-rGlxryWS8"
-	export AccountID="667fb8953456fg41095"
-	```
-	{: screen}
-	
-6. Get the logging token. Run the following command:
- 
-    ```
-	curl -k -X GET  --header "X-Auth-User-Token:iam ${TOKEN}"  --header "X-Auth-Project-Id: a-${AccountID}" -k  LOGGING_ENDPOINT/token
-    ```
-    {: codeblock}	
-	
-	where
-	* AccountID is the GUID of the space where the service is running.
-	* TOKEN is the IAM token that you get in a previous step without the bearer prefix.
-	* LOGGING_ENDPOINT is the {{site.data.keyword.loganalysisshort}} endpoint for the {{site.data.keyword.Bluemix_notm}} region where the organization and space are available. The LOGGING_ENDPOINT is different per region. To see the URLs for the different endpoints, see [Endpoints](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
-	
-    The command returns the logging token that you must use to send logs to the account domain.
-	
-
