@@ -32,7 +32,7 @@ The {{site.data.keyword.loganalysisfull}} service provides log collection and lo
 
 The following figure shows a high level view of the {{site.data.keyword.loganalysisshort}} service: 
 
-![Overview image of the {{site.data.keyword.loganalysisshort}} service](loganalysis_F1.png "Overview image of the {{site.data.keyword.loganalysisshort}} service")
+![Overview image of the {{site.data.keyword.loganalysisshort}} service](images/loganalysis_F1.png "Overview image of the {{site.data.keyword.loganalysisshort}} service")
 
 
 To collect and search logs of cloud resources that run in a space, you must provision an instance of the {{site.data.keyword.loganalysisshort}} service in the same space where those cloud resources are running. Logs are collected and stored in Log Search by default. When you select a service plan that includes extended search and collection capabilities, logs are also collected and stored in the Log Collection component. Log data that is stored in Log Collection is encrypted.
