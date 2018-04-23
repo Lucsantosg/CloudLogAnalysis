@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -203,7 +203,7 @@ Complete the following steps to uninstall the {{site.data.keyword.loganalysissho
   
 
 ## Updating the Log Analysis CLI from the repo
-{: #uninstall_cli}
+{: #update_cli}
 
 To update the logging CLI, run the *bx plugin update* command.
 {:shortdesc}

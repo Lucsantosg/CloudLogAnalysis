@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -149,7 +149,7 @@ Complete the following steps to get account information about logs:
 
 
 ## Obtaining information about logs at org level
-{: #viewing_logs_account}
+{: #viewing_logs_org}
 
 To obtain information about logs that are available at the organization level over a period of time, use the `bx logging log-show` command with the option **-r org** and **-i** to set the ID of the organization. You can also specify the options **-t** to specify the type of log, **-s** to set the start day, and **-e** to set the end date. 
 

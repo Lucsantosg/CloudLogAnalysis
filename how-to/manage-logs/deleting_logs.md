@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -26,7 +26,7 @@ Use the [bx cf logging delete](/docs/services/CloudLogAnalysis/reference/logging
 
 
 ## Deleting logs for a specific period of time
-{: #time_range}
+{: #fix_period}
 
 Complete the following steps:
 
@@ -76,7 +76,7 @@ Complete the following steps:
 
 	
 ## Deleting logs by log type for a specific period of time 
-{: #time_range}
+{: #log_type}
 
 Complete the following steps:
 
@@ -128,7 +128,7 @@ Complete the following steps:
 		
 	
 ## Deleting account logs by log type for a specific period of time 
-{: #time_range}
+{: #acc_log_type}
 
 Complete the following steps:
 

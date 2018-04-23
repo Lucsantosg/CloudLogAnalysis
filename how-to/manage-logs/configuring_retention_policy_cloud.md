@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,7 +25,7 @@ When you set a retention policy, after the retention period has expired, logs ar
 
 
 ## Disabling the log retention policy for an account
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_acc}
 
 When you disable the retention policy, all logs are kept. 
 
@@ -89,7 +89,7 @@ bx logging option-update -e -1
 
 
 ## Checking the log retention policy for an account
-{: #check_retention_policy_space}
+{: #check_retention_policy_acc}
 
 To get the retention period that is set for an account, complete the following steps:
 
@@ -149,7 +149,7 @@ To get the retention period that is set for a space, complete the following step
 
 
 ## Setting an account level log retention policy
-{: #set_retention_policy_space}
+{: #set_retention_policy_acc}
 
 Complete the following steps:
 
@@ -183,7 +183,7 @@ bx logging option-update -r account -i AccountID -e 15
 
 
 ## Setting the log retention policy for a space
-{: #set_retention_policy_account}
+{: #set_retention_policy_space}
 
 To see the retention period for a space, complete the following steps:
 

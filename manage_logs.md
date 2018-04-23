@@ -65,21 +65,12 @@ Logs that are stored in Log Search are deleted after 3 days.
 
 Logs that are stored in Log Collection are kept until you either configure a retention policy or delete them manually. 
 
-* You can configure a log retention policy to define the number of days that you want to keep logs in Log Collection. For more information, see:
+* You can configure a log retention policy to define the number of days that you want to keep logs in Log Collection. For more information, see [Viewing and configuring the log retention policy by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
 
-    [Viewing and configuring the log retention policy by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
-	
-	[Viewing and configuring the log retention policy by using the CF plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy.html#configuring_retention_policy).
+* You can use the [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} or the [Log Collection CLI](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} to delete logs manually from Log Collection. 
 
-    You can disable the policy by setting its value to *-1*. 
-
-* You can use the [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} or the [Log Collection CLI](/docs/services/CloudLogAnalysis/reference/logging_cli.html#logging_cli){: new_window} to delete logs manually from Log Collection. 
-
-* You can use the CLI. For more information about deleting logs manually through the CLI, see:
-
-    [bx logging log-delete by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+* You can use the CLI. For more information about deleting logs manually through the CLI, see [bx logging log-delete by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
     
-	[bx cf logging delete by using the CF plugin](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete).
 
 
 ## Downloading logs
@@ -108,14 +99,6 @@ For example, to keep cost under control, you might want to monitor the size of t
 You can view information about logs that are stored in a space domain, an organization domain, or an account domain.
 
 
-## Installing the {{site.data.keyword.loganalysisshort_notm}} CLI (CF plugin)
-{: #install_cli}
-
-To learn how to install the CLI, see [Installing the logging CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#config_log_collection_cli).
-
-To check the version of the CLI, run the command [bx cf logging](/docs/services/CloudLogAnalysis/reference/logging_cli.html#base) with the parameter * -version*.
-
-To get help on how to run commands, see [Getting command line help to run commands](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#command_cli_help).
 
 ## Installing the {{site.data.keyword.loganalysisshort_notm}} CLI ({{site.data.keyword.Bluemix_notm}} plugin)
 {: #install_cli}

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -75,7 +75,7 @@ Complete the following steps to delete all the logs that are stored in a space d
 
 	
 ## Deleting logs by log type for a specific period of time 
-{: #time_range}
+{: #log_type}
 
 Complete the following steps to delete logs by log type that are stored in a space domain for a specific period of time:
 
@@ -126,7 +126,7 @@ Complete the following steps to delete logs by log type that are stored in a spa
 		
 	
 ## Deleting account logs by log type for a specific period of time 
-{: #time_range}
+{: #time_range_acc}
 
 Complete the following steps:
 

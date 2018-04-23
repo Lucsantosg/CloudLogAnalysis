@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -40,35 +40,28 @@ Complete the following steps from a terminal session where the {{site.data.keywo
 
     For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Run the `bx cf logging auth` command. 
+2. Run the `bx logging token-get` command. 
 
     ```
-    bx cf logging auth
+    bx logging token-get
     ```
     {: codeblock}
 
-    The command returns the following information:
-    
-    * The logging token.
-    * The organization ID: This is the GUID of the {{site.data.keyword.Bluemix_notm}} organization where you are logged in. 
-    * The space ID: GUID of the space within the organization where you are logged in. 
+    The command returns the logging token.
     
     For example,
 
     ```
-    bx cf logging auth
-    +-----------------+--------------------------------------+
-    |      NAME       |                VALUE                 |
-    +-----------------+--------------------------------------+
-    | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_abcdefz                         |
-    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
-    | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
-    +-----------------+--------------------------------------+
+    bx logging token-get
+    Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
+    OK
+
+    Tenant Id                              Logging Token   
+    93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf   oT98_abcdefz   
     ```
     {: screen}
 
-For more information, see [cf logging auth](/docs/services/CloudLogAnalysis/reference/logging_cli.html#auth).
+    where *Tenant Id* is the GUID of the space where you plan to send logs.
 
 
 ## Step 2: Configure the mt-logstash-forwarder

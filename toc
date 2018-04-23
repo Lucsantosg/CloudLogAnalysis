@@ -14,6 +14,7 @@ IBM Cloud Log Analysis
         log_ingestion.md
         kibana/analyzing_logs_Kibana.md
         security_ov.md
+        compliance.md
 
     {: .topicgroup}
     Logging cloud resources

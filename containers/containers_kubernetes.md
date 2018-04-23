@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-14"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -378,7 +378,7 @@ is available as a field that you can use for filtering and searches:
 
 
 ## Security
-{: #config_forward_logs}
+{: #security}
 
 
 To forward cluster logs into {{site.data.keyword.loganalysisshort}}, you must grant {{site.data.keyword.Bluemix_notm}} permissions to the {{site.data.keyword.containershort}} key owner and to the user ID that is configuring the logging cluster configurations.
