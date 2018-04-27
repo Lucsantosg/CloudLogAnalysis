@@ -52,7 +52,7 @@ To change your service plan in Bluemix through the CLI, complete the following s
 
     For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Run the `bx service list` command to chech your current plan, and to get the {{site.data.keyword.loganalysisshort}} service name from the list of services that is available in the space. 
+2. Run the `bx service list` command to check your current plan, and to get the {{site.data.keyword.loganalysisshort}} service name from the list of services that is available in the space. 
 
     The value of the field **name** is the one that you must use to change the plan. 
 
@@ -62,7 +62,7 @@ To change your service plan in Bluemix through the CLI, complete the following s
 	$ bx  bx service list
     Invoking 'cf services'...
 
-    Getting services in org lopezdsr_org / space dev as lopezdsr@uk.ibm.com...
+    Getting services in org MyOrg / space dev as xxx@ibm.com...
     OK
 
     name                           service                  plan             bound apps            last operation
@@ -79,7 +79,7 @@ To change your service plan in Bluemix through the CLI, complete the following s
 	
 	where 
 	
-	* *service_name* is the name of your service. You can run the `bx cf services` command to get the value.
+	* *service_name* is the name of your service. You can run the `bx service list` command to get the value.
 	* *new_plan* is the name of the plan.
 	
 	The following table lists the different plans and their supported values:
@@ -116,7 +116,7 @@ To change your service plan in Bluemix through the CLI, complete the following s
 	
 	```
 	bx service update "Log Analysis-m2" -p standard
-    Updating service instance Log Analysis-m2 as xxx@yyy.com...
+    Updating service instance Log Analysis-m2 as xxx@ibm.com...
     OK
 	```
 	{: screen}
