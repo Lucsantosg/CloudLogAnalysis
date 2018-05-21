@@ -30,7 +30,7 @@ The following figure shows a high level view of logging for Cloud Foundry apps i
  
 Logging of Cloud Foundry apps is automatically enabled when you use the Cloud Foundry infrastructure to run your apps on the {{site.data.keyword.Bluemix_notm}}. To view Cloud Foundry runtime logs, you must write your logs to STDOUT and STDERR. For more information, see [Runtime application logging through CF apps](/docs/services/CloudLogAnalysis/cfapps/logging_writing_to_log_from_cf_app.html#logging_writing_to_log_from_cf_app).
 
-The {{site.data.keyword.Bluemix_notm}} keeps a limited amount of log information. When information is logged, the old information is replaced by the newer information. If you have to comply with organizational or industry policies that require you to keep part or all the log information for audit or other purposes, you can stream your logs to an external log host, such as a third-party log management service or other host. For more information, see [Configuring external log hosts](/docs/services/CloudLogAnalysis/cfapps/logging_external_hosts.html#thirdparty_logging).
+The {{site.data.keyword.Bluemix_notm}} keeps a limited amount of log information. When information is logged, the old information is replaced by the newer information. If you have to comply with organizational or industry policies that require you to keep part or all the log information for audit or other purposes, you can stream your logs to an external log host, such as a third-party log management service or other host. For more information, see [Configuring external log hosts](/docs/services/CloudLogAnalysis/external/logging_external_hosts.html#thirdparty_logging).
 
 ## Log ingestion
 {: #log_ingestion}

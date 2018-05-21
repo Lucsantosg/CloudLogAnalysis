@@ -71,7 +71,7 @@ IBM Cloud Log Analysis
         cfapps/launch_logs_cloud_ui_cf.md
         cfapps/logging_writing_to_log_from_cf_app.md
         cfapps/logging_view_cli.md
-        cfapps/logging_external_hosts.md
+        external/logging_external_hosts.md
 
     {: .topicgroup}
     Containers
@@ -81,7 +81,7 @@ IBM Cloud Log Analysis
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    reference/kibana_formats.md
+    qa/kibana_formats.md
     reference/log_analysis_cli_cloud.md  
 
     [Log Analysis API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)

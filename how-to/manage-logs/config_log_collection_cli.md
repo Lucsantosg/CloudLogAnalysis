@@ -111,7 +111,7 @@ Complete the following steps to install the Log Collection CF plugin on Linux:
     ```
     {: codeblock}
     
-    Open a new terminal window and run the following command to verify that the variables LANG and LOGGING_ENDPOINT are set:
+    Open a new terminal window and run the following command to verify that the variable LANG is set:
     
     ```
     $echo LANG

@@ -155,7 +155,14 @@ Complete the following steps to install the Log Collection plugin on Mac OS X:
 	1. Select the platform value: **osx**. 
 	2. Click **Save file**.  
     
-2. Install the plugin. Run the following command:
+2. Change the permissions of the file. Run the following command:
+
+    ```
+    chmod u+x logging-cli-darwin-amd64-0.1.1
+    ```
+     {: codeblock}
+
+3. Install the plugin. Run the following command:
         
     ```
     bx plugin install -f logging-cli-darwin-amd64-0.1.1

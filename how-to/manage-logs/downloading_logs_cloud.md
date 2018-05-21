@@ -20,6 +20,9 @@ lastupdated: "2018-01-10"
 You can download logs to a local file or pipe data into another program. You download of logs within the context of a session. A session specifies which logs will be downloaded. If the download of the logs is interrupted, the session enables resuming the download from where it left off. After the download is completed, you must delete the session.
 {:shortdesc}
 
+To complete the steps, you must install the {{site.data.keyword.loganalysisshort}} CLI. For more information, see [Configuring the {{site.data.keyword.loganalysisshort}} CLI](https://console.bluemix.net/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli_).
+
+
 Complete the following steps to download log data that is available in a space into a local file:
 
 ## Step 1: Log in to the {{site.data.keyword.Bluemix_notm}}
@@ -61,7 +64,7 @@ For more information, see [How do I log in to the {{site.data.keyword.Bluemix_no
 
 A session is required to define the scope of log data that is available for a download, and to keep the status of the download. 
 
-Use the command [cf logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) to create a session. Optionally, you can specify start date, end date, and types of logs when you create a session:  
+Use the command [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) to create a session. Optionally, you can specify start date, end date, and types of logs when you create a session:  
 
 * When you specify the start date and the end date, the session provides access to logs between those inclusive dates. 
 * When you specify the type of log (**-t**), the session provides access to a particular type of log. This is an important feature when you manage logs at scale, because you can scope a session to only a small subset of logs that you are interested in.
@@ -128,7 +131,7 @@ The progress indicator moves from 0 to 100% as the logs download.
 ## Step 5: Delete the session
 {: #step5}
 
-After the download is complete, you must delete the session by using the [cf logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) command. 
+After the download is complete, you must delete the session by using the [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) command. 
 
 Run the following command to delete a session:
 

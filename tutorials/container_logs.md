@@ -110,7 +110,7 @@ Complete the following steps:
 
 
 ## Step 2: Configure your cluster to forward logs automatically to the {{site.data.keyword.loganalysisshort}} service
-{: #step3}
+{: #step2}
 
 When the app is deployed, logs are collected automatically by the {{site.data.keyword.containershort}}. However, logs are not automatically forwarded to the {{site.data.keyword.loganalysisshort}} service. You must create 1 or more logging configurations in your cluster that define:
 
@@ -146,7 +146,7 @@ To see the list of log sources for which you can define a logging configuration,
 
 
 ### Configure your cluster to forward stderr and stdout logs to the {{site.data.keyword.loganalysisshort}} service
-{: #containerlogs}
+{: #containerstd}
 
 
 Complete the following steps to send stdout and stderr logs to a space domain, where the organization name is *MyOrg* and the space name is *dev* in the US South region:
