@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-06-08"
 
 ---
 
@@ -82,7 +82,6 @@ For more information, see:
 
 * [Downloading logs by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs_cloud.html#downloading_logs).
 * [Downloading logs by using the CF plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs).
-
 
 
 

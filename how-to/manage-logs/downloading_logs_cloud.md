@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-06-08"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-01-10"
 # Downloading logs
 {: #downloading_logs}
 
-You can download logs to a local file or pipe data into another program. You download of logs within the context of a session. A session specifies which logs will be downloaded. If the download of the logs is interrupted, the session enables resuming the download from where it left off. After the download is completed, you must delete the session.
+You can download logs to a local file or pipe data into another program. You download logs within the context of a session. A session specifies which logs will be downloaded. If the download of the logs is interrupted, the session enables resuming the download from where it left off. After the download is completed, you must delete the session.
 {:shortdesc}
 
 To complete the steps, you must install the {{site.data.keyword.loganalysisshort}} CLI. For more information, see [Configuring the {{site.data.keyword.loganalysisshort}} CLI](https://console.bluemix.net/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli_).
@@ -68,6 +68,8 @@ Use the command [bx logging session-create](/docs/services/CloudLogAnalysis/refe
 
 * When you specify the start date and the end date, the session provides access to logs between those inclusive dates. 
 * When you specify the type of log (**-t**), the session provides access to a particular type of log. This is an important feature when you manage logs at scale, because you can scope a session to only a small subset of logs that you are interested in.
+
+**Note:** For each session, you can download logs for up to 15 days.
 
 To create a session that is used to download all the logs that are available for the last 2 weeks, run the following command:
 

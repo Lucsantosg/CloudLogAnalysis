@@ -64,6 +64,8 @@ Use the command [cf logging session create](/docs/services/CloudLogAnalysis/refe
 * When you specify the start date and the end date, the session provides access to logs between those inclusive dates. 
 * When you specify the type of log (**-t**), the session provides access to a particular type of log. This is an important feature when you manage logs at scale, because you can scope a session to only a small subset of logs that you are interested in.
 
+**Note:** For each session, you can download logs for up to 15 days.
+
 To create a session that is used to download logs of type *log*, run the following command:
 
 ```

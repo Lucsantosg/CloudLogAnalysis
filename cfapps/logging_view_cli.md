@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-06-08"
 
 ---
 
@@ -118,8 +118,6 @@ This log file records messages after the major steps of the staging task. You ca
 
 To view this log, enter the following command: `bx cf files appname logs/staging_task.log`
 
-
-**Note:** For information about how to enable application logging, see [Debugging runtime errors](/docs/debug/index.html#debugging-runtime-errors).
 
 
 
