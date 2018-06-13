@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-06-14"
 
 ---
 
@@ -14,11 +14,13 @@ lastupdated: "2018-04-10"
 {:pre: .pre}
 
 
-# Granting permissions
+# Granting permissions to manage logs and view account logs
 {: #grant_permissions}
 
-In the {{site.data.keyword.Bluemix}}, you can assign one or more roles to users. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service. 
+In the {{site.data.keyword.Bluemix}}, you can assign a user one or more IAM roles. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service.  
 {:shortdesc}
+
+For example, you can grant a user the **operator** role to allow him to manage logs. If you just want a user to view account logs, then you can grant the user the **viewer** role. For more information, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
 
 **Note:** 
 
