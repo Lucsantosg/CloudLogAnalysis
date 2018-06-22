@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -64,47 +64,48 @@ lastupdated: "2018-01-10"
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-3. 运行 `bx cf create-service` 命令以供应实例。
+3. 运行 `bx service create` 命令以供应实例。
 
     ```
-	bx cf create-service service_name service_plan service_instance_name
+	bx service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
-    
-    其中
 	
-	* service_name 是服务的名称，即 **ibmLogAnalysis**。
+	其中
+	
+	* * service_name 是服务的名称，即 **ibmLogAnalysis**。
 	* service_plan 是服务套餐名称。有关套餐的列表，请参阅[服务套餐](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
 	* service_instance_name 是要用于所创建的新服务实例的名称。
-	有关 cf 命令的更多信息，请参阅 [cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service)。
 
-	例如，要使用 Lite 套餐创建 {{site.data.keyword.loganalysisshort}} 服务的实例，请运行以下命令：
+	例如，要使用轻量套餐创建 {{site.data.keyword.loganalysisshort}} 服务的实例，请运行以下命令：
 	
 	```
-	bx cf create-service ibmLogAnalysis standard my_logging_svc
+	bx service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
-    
-    4. 验证服务是否已成功创建。运行以下命令：
+	
+4. 验证服务是否已成功创建。运行以下命令：
 
     ```	
-	bx cf services
+	bx service list
 	```
 	{: codeblock}
-    
-    运行此命令的输出如下所示：
+	
+	运行此命令的输出如下所示：
+	
+	
 	
 	```
-    Getting services in org MyOrg / space MySpace as xxx@yyy.com...
+        Getting services in org MyOrg / space MySpace as xxx@yyy.com...
     OK
 
     
     name                           service                  plan                   bound apps              last operation
     my_logging_svc                ibmLogAnalysis           standard                                        create succeeded
 	```
-	    {: screen}
+	{: screen}
+
 	
-    
 
 
 

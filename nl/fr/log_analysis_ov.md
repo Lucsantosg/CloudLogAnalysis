@@ -34,7 +34,7 @@ Vous pouvez utiliser les fonctions de journalisation dans {{site.data.keyword.Bl
 
 Le diagramme suivant présente une vue d'ensemble du service {{site.data.keyword.loganalysisshort}} : 
 
-![Vue d'ensemble du service {{site.data.keyword.loganalysisshort}}](images/loganalisys_F1.gif "Vue d'ensemble du service {{site.data.keyword.loganalysisshort}}")
+![vue d'ensemble du service {{site.data.keyword.loganalysisshort}}](images/loganalysis_F1.png "Vue d'ensemble du service {{site.data.keyword.loganalysisshort}}")
 
 
 Pour collecter les journaux des ressources de cloud qui s'exécutent dans un espace et y effectuer des recherches, vous devez mettre à disposition une instance du service {{site.data.keyword.loganalysisshort}} dans l'espace dans lequel ces ressources de cloud s'exécutent. Les journaux sont collectés et stockés par défaut dans Log Search. Lorsque vous sélectionnez un plan de service incluant des fonctions de recherche et de collecte étendues, les

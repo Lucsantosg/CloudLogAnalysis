@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -59,14 +59,14 @@ Siga estos pasos para suministrar una instancia del servicio {{site.data.keyword
    
    Si la CLI está instalada, continúe en el paso siguiente.
     
-2. Inicie la sesión en la región, organización o espacio en {{site.data.keyword.Bluemix_notm}} donde desea establecer una política de retención de registros. 
+2. Inicie la sesión en la región, organización o espacio en {{site.data.keyword.Bluemix_notm}} donde desea suministrar el servicio. 
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Ejecute el mandato `bx cf create-service` para suministrar una instancia.
+3. Ejecute el mandato `bx service create` para suministrar una instancia.
 
     ```
-	bx cf create-service service_name service_plan service_instance_name
+	bx service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -75,20 +75,18 @@ Siga estos pasos para suministrar una instancia del servicio {{site.data.keyword
 	* service_name es el nombre del servicio, que es **ibmLogAnalysis**.
 	* service_plan es el nombre del plan de servicio. Para ver una lista de planes, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 	* service_instance_name es el nombre que desea utilizar para la nueva instancia de servicio que cree.
-	
-	Para obtener más información sobre el mandato cf, consulte [cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service).
 
 	Por ejemplo, para crear una instancia del servicio {{site.data.keyword.loganalysisshort}} con el plan Lite, ejecute este mandato:
 	
 	```
-	bx cf create-service ibmLogAnalysis standard my_logging_svc
+	bx service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. Verifique que el servicio se ha creado correctamente. Ejecute el mandato siguiente:
 
     ```	
-	bx cf services
+	bx service list
 	```
 	{: codeblock}
 	
@@ -97,7 +95,6 @@ Siga estos pasos para suministrar una instancia del servicio {{site.data.keyword
 	```
     Getting services in org MyOrg / space MySpace as xxx@yyy.com...
     OK
-
     
     name                           service                  plan                   bound apps              last operation
     my_logging_svc                ibmLogAnalysis           standard                                        create succeeded

@@ -17,7 +17,8 @@ lastupdated: "2018-01-16"
 # Recuperando o ID de espaço para um cluster
 {: #containers_spaceid}
 
-É possível criar um cluster em uma conta do {{site.data.keyword.Bluemix_notm}} no contexto de uma organização e um espaço do Cloud Foundry. {:shortdesc}
+É possível criar um cluster em uma conta do {{site.data.keyword.Bluemix_notm}} no contexto de uma organização e um espaço do Cloud Foundry. 
+{:shortdesc}
 
 Para localizar o ID do espaço que está associado a um cluster, execute o comando a seguir:
 

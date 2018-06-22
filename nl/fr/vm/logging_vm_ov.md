@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Journalisation des machines virtuelles
+# Machines virtuelles
 {: #logging_vm_ov}
 
 Les fonctions de journalisation ne sont pas activées automatiquement pour les machines virtuelles. Cependant, vous pouvez configurer votre machine virtuelle pour envoyer des journaux à Log Collection. Pour collecter et envoyer des données de journal d'une machine virtuelle au service {{site.data.keyword.loganalysisshort}}, vous devez configurer un
@@ -43,7 +43,7 @@ limite de 1,5 Go de données est atteinte ou au bout de 3 jours.
 Le service {{site.data.keyword.loganalysisshort}} fournit des plans additionnels qui vous permettent de stocker des journaux dans Log Collection aussi longtemps que vous
 en avez besoin. Pour obtenir plus d'informations sur le tarif de chaque plan, voir [Plans de service](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-* Vous pouvez configurer une règle de conservation des journaux que vous pouvez utiliser pour définir le nombre de jours pendant lequel vous souhaitez conserver les journaux dans Log Collection. Pour plus d'informations, voir [Règle de conservation des journaux](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* Vous pouvez configurer une règle de conservation des journaux que vous pouvez utiliser pour définir le nombre de jours pendant lequel vous souhaitez conserver les journaux dans Log Collection. Pour plus d'informations, voir [Règle de conservation des journaux](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
 * Vous pouvez supprimer les journaux manuellement via l'interface de ligne de commande de Log Collection ou l'API.
 
 

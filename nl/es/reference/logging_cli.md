@@ -110,13 +110,12 @@ bx cf logging --help
 Para obtener la versión de la CLI, ejecute el mandato siguiente:
 
 ```
-    bx cf logging --version
- ```
+bx cf logging --version
+```
 {: codeblock}
 
 
-##     bx cf logging auth
- 
+## bx cf logging auth
 {: #auth}
 
 Devuelve una señal de registro que puede utilizar para enviar registros al servicio {{site.data.keyword.loganalysisshort}}. 
@@ -124,8 +123,8 @@ Devuelve una señal de registro que puede utilizar para enviar registros al serv
 **Nota:** La señal no caduca.
 
 ```
-    bx cf logging auth
- ```
+bx cf logging auth
+```
 {: codeblock}
 
 **Devuelve**
@@ -179,7 +178,7 @@ bx cf logging delete [parámetros]
 Para suprimir los registros de tipo *linux_syslog* del 25 de mayo de 2017, ejecute el mandato siguiente:
 ```
 bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
-	```
+```
 {: codeblock}
 
 
@@ -245,8 +244,7 @@ output {
 {: screen}
 
 
-##     bx cf logging help
- 
+## bx cf logging help
 {: #help}
 
 Proporciona información sobre cómo utilizar un mandato.
@@ -275,8 +273,7 @@ bx cf logging help status
 {: codeblock}
 
 
-##     bx cf logging option
- 
+## bx cf logging option
 {: #option}
 
 Muestra o cambia el periodo de retención para los registros que están disponibles en un espacio o una cuenta. 
@@ -299,7 +296,7 @@ bx cf logging option [parámetros]
 
 <dt>--at-account-level, -a </dt>
   <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en *-1* para el espacio actual, que es el espacio donde ha iniciado la sesión mediante el mandato `bx cf login`.
- </dd>
+  </dd>
 </dl>
 
 **Ejemplos**
@@ -307,8 +304,8 @@ bx cf logging option [parámetros]
 Para ver el periodo de retención actual predeterminado para el espacio en el que ha iniciado la sesión, ejecute el mandato siguiente:
 
 ```
-    bx cf logging option
- ```
+bx cf logging option
+```
 {: codeblock}
 
 La salida es:
@@ -371,7 +368,7 @@ bx cf logging session create [parámetros]
   
   <dt>--at-account-level, -a </dt>
   <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en solo el espacio actual, es decir, el espacio donde ha iniciado la sesión mediante el mandato `bx cf login`.
- </dd>
+  </dd>
 </dl>
 
 **Valores que se devuelven**
@@ -445,7 +442,7 @@ bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 Muestra una lista de las sesiones activas y sus ID.
 
 ```
-bx cf logging session list
+bx cf logging session list 
 ```
 {: codeblock}
 
@@ -521,8 +518,7 @@ bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 {: screen}
 
 
-##     bx cf logging status
- 
+## bx cf logging status
 {: #status}
 
 Devuelve información sobre los registros que se han recopilado en un espacio o cuenta.
@@ -549,7 +545,7 @@ bx cf logging status [argumentos]
   
   <dt>--at-account-level, -a </dt>
   <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br> **Nota:** Defina este valor para obtener información sobre la cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en solo el espacio actual, es decir, el espacio donde ha iniciado la sesión mediante el mandato `bx cf login`.
- </dd>
+  </dd>
   
   <dt>--list-type-detail, -l</dt>
   <dd>(Opcional) Defina este parámetro para obtener una lista del subtotal de tipos de registro para cada día.

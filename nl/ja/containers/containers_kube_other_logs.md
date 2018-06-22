@@ -3,15 +3,19 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # クラスター・ログの自動収集の有効化
@@ -20,12 +24,15 @@ lastupdated: "2018-01-10"
 {{site.data.keyword.loganalysisshort}} サービスでクラスター・ログを表示および分析できるためには、ログを {{site.data.keyword.loganalysisshort}} サービスに転送するようにクラスターを構成する必要があります。 
 {:shortdesc}
 
-## ステップ 1: 許可を確認する
+## ステップ 1: ユーザー ID の許可を確認する
 {: step1}
 
-クラスターを管理する許可が設定された {{site.data.keyword.containershort}} の IAM ポリシーを持つユーザーのみが、この機能を有効にすることができます。 *管理者*、*オペレーター* のいずれかの役割が必要です。
+クラスターにロギング構成を追加できるようにするには、ユーザー ID に以下の許可がなければなりません。
 
-ユーザー ID に、クラスターを管理するために割り当てられた IAM ポリシーがあることを確認するには、以下のステップを実行します。
+* **ビューアー**許可が設定された、{{site.data.keyword.containershort}} 用の IAM ポリシー。
+* **管理者**または**オペレーター**の許可が設定された、クラスター・インスタンス用の IAM ポリシー。
+
+ユーザー ID にこれらの IAM ポリシーがあることを確認するには、以下のステップを実行します。
 
 **注:** アカウント所有者、または、ポリシーを割り当てる許可を持つユーザーのみが、このステップを実行できます。
 
@@ -35,7 +42,7 @@ lastupdated: "2018-01-10"
 
 2. メニュー・バーから、**「管理」>「アカウント」>「ユーザー」**をクリックします。  「*ユーザー*」ウィンドウに、現在選択されているアカウントにおけるユーザーのリストが、E メール・アドレスと共に表示されます。
 	
-3. ユーザー ID を選択し、そのユーザー ID に {{site.data.keyword.containershort}} の*ビューアー* 許可を持つポリシーがあることを確認します。
+3. ユーザー ID を選択し、そのユーザー ID に両方のポリシーがあることを検証します。
 
 
 
@@ -90,11 +97,28 @@ lastupdated: "2018-01-10"
 ## ステップ 4: {{site.data.keyword.containershort_notm}} キー所有者の許可を設定する
 {: #step4}
 
-ログをスペースに転送する場合、組織およびスペースの {{site.data.keyword.containershort}} キー所有者にも Cloud Foundry (CF) 許可を付与する必要があります。キー所有者には、組織の *orgManager* 役割と、スペースの *SpaceManager* と*開発者* の役割が必要です。
+
+{{site.data.keyword.containershort}} キー所有者には、以下の IAM ポリシーが必要です。
+
+* **管理者**役割が設定された、{{site.data.keyword.containershort}} 用の IAM ポリシー。
+* **管理者**役割が設定された、{{site.data.keyword.loganalysisshort}} サービス用の IAM ポリシー。
+
+以下のステップを実行します。 
+
+1. {{site.data.keyword.Bluemix_notm}} コンソールにログインします。 Web ブラウザーを開き、{{site.data.keyword.Bluemix_notm}} ダッシュボード: [http://bluemix.net ![外部リンク・アイコン](../../../icons/launch-glyph.svg "外部リンク・アイコン")](http://bluemix.net){:new_window} を起動します。
+	
+	ユーザー ID とパスワードを使用してログインすると、{{site.data.keyword.Bluemix_notm}} UI が開きます。
+
+2. メニュー・バーから、**「管理」>「アカウント」>「ユーザー」**をクリックします。  「*ユーザー*」ウィンドウに、現在選択されているアカウントにおけるユーザーのリストが、E メール・アドレスと共に表示されます。
+	
+3. {{site.data.keyword.containershort_notm}} キー所有者のユーザー ID を選択し、そのユーザー ID に両方のポリシーがあることを検証します。
+
+
+ログをスペース・ドメインに転送する場合、組織およびスペース内で {{site.data.keyword.containershort}} キー所有者に Cloud Foundry (CF) 許可を付与する必要もあります。キー所有者には、組織の *orgManager* 役割と、スペースの *SpaceManager* または*開発者* の役割が必要です。
 
 以下のステップを実行します。
 
-1. {{site.data.keyword.containershort}} キー所有者であるアカウントのユーザーを識別します。端末から次のコマンドを実行します。
+1. {{site.data.keyword.containershort}} キー所有者であるアカウントのユーザーを識別します。 端末から次のコマンドを実行します。
 
     ```
     bx cs api-key-info ClusterName
@@ -109,13 +133,13 @@ lastupdated: "2018-01-10"
 
     メニュー・バーから、**「管理」>「アカウント」>「ユーザー」**をクリックします。  「*ユーザー*」ウィンドウに、現在選択されているアカウントにおけるユーザーのリストが、E メール・アドレスと共に表示されます。
 	
-    ユーザーの ID を選択し、ユーザーに組織の *orgManager* 役割とスペースの *SpaceManager* および*開発者* の役割があることを確認します。
+    ユーザーの ID を選択し、ユーザーに組織の *orgManager* 役割と、スペースの *SpaceManager* または*開発者* の役割があることを検証します。
  
 3. ユーザーに適切な許可がない場合は、以下のステップを実行します。
 
-    1. ユーザーに次の許可を付与します。組織の *orgManager* 役割。スペースの *SpaceManager* および*開発者* の役割。詳しくは、[IBM Cloud UI を使用して、スペース・ログを表示する許可をユーザーに付与する](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)を参照してください。
+    1. ユーザーに次の許可を付与します。組織の *orgManager* 役割。スペースの *SpaceManager* および*開発者* の役割。 詳しくは、[IBM Cloud UI を使用して、スペース・ログを表示する許可をユーザーに付与する](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)を参照してください。
     
-    2. ロギング構成を更新します。次のコマンドを実行します。
+    2. ロギング構成を更新します。 次のコマンドを実行します。
     
         ```
         bx cs logging-config-refresh ClusterName
@@ -141,7 +165,7 @@ bx cs logging-config-create ClusterName --logsource container --namespace '*' --
 各部分の説明: 
 
 * *ClusterName* はクラスターの名前です。
-* *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
+* *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。 エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
 * *OrgName* は、スペースがある組織の名前です。
 * *SpaceName* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされたスペースの名前です。
 
@@ -168,29 +192,30 @@ bx cs logging-config-create MyCluster --logsource container --type ibm --namespa
 */var/log/apps/**/.log* および */var/log/apps/*/.err* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
 各部分の説明: 
 
 * *ClusterName* はクラスターの名前です。
-* *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
+* *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。 エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
 * *OrgName* は、スペースがある組織の名前です。
 * *SpaceName* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされたスペースの名前です。
-
+* *app-containers* はオプション・パラメーターであり、これを設定して、監視したいコンテナーのリストを定義できます。それらのコンテナーのみから、ログが {{site.data.keyword.loganalysisshort}} に転送されます。1 つ以上のコンテナーをコンマで区切って設定できます。
+* *app-paths* は、監視したい、コンテナー内部のパスを定義します。1 つ以上のパスをコンマで区切って設定できます。「/var/log/*.log」のようなワイルドカードを使用できます。 
 
 例えば、アプリケーション・ログをドイツ地域のスペース・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 例えば、アプリケーション・ログをドイツ地域のアカウント・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -210,7 +235,7 @@ bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname
 各部分の説明: 
 
 * *ClusterName* はクラスターの名前です。
-* *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
+* *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。 エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
 * *OrgName* は、スペースがある組織の名前です。
 * *SpaceName* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされたスペースの名前です。
 
@@ -245,7 +270,7 @@ bx cs logging-config-create ClusterName --logsource kubernetes --type ibm --host
 各部分の説明: 
 
 * *ClusterName* はクラスターの名前です。
-* *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
+* *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。 エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
 * *OrgName* は、スペースがある組織の名前です。
 * *SpaceName* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされたスペースの名前です。
 
@@ -280,7 +305,7 @@ bx cs logging-config-create ClusterName --logsource ingress --type ibm --hostnam
 各部分の説明: 
 
 * *ClusterName* はクラスターの名前です。
-* *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
+* *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。 エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
 * *OrgName* は、スペースがある組織の名前です。
 * *SpaceName* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされたスペースの名前です。
 

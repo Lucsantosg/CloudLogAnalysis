@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -14,10 +14,10 @@ lastupdated: "2018-01-10"
 {:screen: .screen}
 {:pre: .pre}
 
-# Registro para apps de Cloud Foundry en {{site.data.keyword.Bluemix_notm}}
-{: #logging_bluemix_cf_apps}
+# Apps de Cloud Foundry
+{: #logging_cf_apps}
 
-En {{site.data.keyword.Bluemix_notm}}, puede ver, filtrar y analizar registros de Cloud Foundry (CF) mediante el panel de control de {{site.data.keyword.Bluemix_notm}}, Kibana y la interfaz de línea de mandatos. Además, puede dirigir los registros a una herramienta externa de gestión de registros. 
+En {{site.data.keyword.Bluemix}}, puede ver, filtrar y analizar registros de Cloud Foundry (CF) mediante el panel de control de {{site.data.keyword.Bluemix_notm}}, Kibana y la interfaz de línea de mandatos. Además, puede dirigir los registros a una herramienta externa de gestión de registros. 
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} registra los datos de registro que genera la plataforma Cloud Foundry y las aplicaciones de Cloud Foundry. En los registros puede ver los errores, avisos y mensajes informativos que se generan para la app. 
@@ -49,7 +49,7 @@ De forma predeterminada, el servicio {{site.data.keyword.loganalysisshort}} alma
 
 El servicio {{site.data.keyword.loganalysisshort}} proporciona planes adicionales que le permiten almacenar registros en la recopilación de registros tanto tiempo como desee. 
 
-* Puede configurar una política de retención de registros para definir el número de días que desea conservar los registros en la recopilación de registros. Para obtener más información, consulte [Política de retención de registros](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* Puede configurar una política de retención de registros para definir el número de días que desea conservar los registros en la recopilación de registros. Para obtener más información, consulte [Política de retención de registros](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
 * Puede suprimir los registros manualmente utilizando la línea de mandatos o la API.
 
 Para obtener más información sobre el precio de cada plan, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
@@ -69,11 +69,11 @@ Puede elegir cualquiera de los siguientes métodos para analizar los registros d
 
 * Analizar el registro en la IU de {{site.data.keyword.Bluemix_notm}} para ver la actividad más reciente de la aplicación.
     
-    En {{site.data.keyword.Bluemix_notm}}, puede ver, filtrar y analizar registros desde el separador **Registro** disponible para cada aplicación de Cloud Foundry. Para obtener más información, consulte [Análisis de registros de apps de CF desde la UI de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#launch_logs_cloud_ui_cf).
+    En {{site.data.keyword.Bluemix_notm}}, puede ver, filtrar y analizar registros desde el separador **Registro** disponible para cada aplicación de Cloud Foundry. Para obtener más información, consulte [Análisis de registros de la app CF mediante el panel de control de la app CF](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_ui).
     
 * Analizar registros en Kibana para realizar tareas avanzadas de análisis.
     
-    En {{site.data.keyword.Bluemix_notm}}, puede utilizar Kibana, una plataforma de visualización y análisis de código abierto, para supervisar, buscar, analizar y visualizar datos en diversos gráficos, como diagramas y tablas. Para obtener más información, consulte [Análisis de registros en Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+    En {{site.data.keyword.Bluemix_notm}}, puede utilizar Kibana, una plataforma de visualización y análisis de código abierto, para supervisar, buscar, analizar y visualizar datos en diversos gráficos, como diagramas y tablas. Para obtener más información, consulte [Análisis de registros de la app CF mediante la IU de {{site.data.keyword.loganalysisshort}}](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_la).
 	
 	**Consejo:** Para iniciar kibana, consulte [Navegación a Kibana desde el panel de control de una app CF](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
 
@@ -143,4 +143,4 @@ Cada entrada de registro contiene los siguientes campos:
 ## Guía de aprendizaje: Análisis de registros en Kibana para una app de Cloud Foundry
 {: #tutorial}  
 
-Para aprender a utilizar Kibana para analizar los registros para una app de Cloud Foundry, consulte [Análisis de registros en Kibana para una app de Cloud Foundry](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).
+Para aprender a utilizar Kibana para analizar los registros para una app de Cloud Foundry, consulte [Análisis de registros en Kibana para una app de Cloud Foundry](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).

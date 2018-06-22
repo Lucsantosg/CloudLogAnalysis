@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Configuración de la CLI de {{site.data.keyword.loganalysisshort}} (plugin de {{site.data.keyword.Bluemix_notm}})
+# Configuración de la CLI de {{site.data.keyword.loganalysisshort}}
 {: #config_log_collection_cli}
 
 El servicio {{site.data.keyword.loganalysisshort}} incluye una interfaz de línea de mandatos (CLI) que puede utilizar para gestionar registros en la nube. Puede utilizar el plugin de {{site.data.keyword.Bluemix_notm}} para ver el estado del registro, para descargar registros y para configurar la política de retención de registros. La CLI ofrece distintos tipos de ayuda: ayuda general para obtener información sobre la CLI y los mandatos soportados, ayuda sobre mandatos para ver cómo se utiliza un mandato o ayuda sobre submandatos para aprender a utilizar un submandato de un mandato.
@@ -39,7 +39,7 @@ siga estos pasos:
     
     El nombre del plugin es **logging-cli**.
 
-3. Instale el plugin de {{site.data.keyword.loganalysisshort}}.Ejecute el mandato siguiente:
+3. Instale el plugin de {{site.data.keyword.loganalysisshort}}. Ejecute el mandato siguiente:
 
     ```
     bx plugin install logging-cli -r Bluemix
@@ -52,7 +52,7 @@ siga estos pasos:
     
     ```
     bx plugin list
- ```
+    ```
     {: codeblock}
     
     La salida tiene el aspecto siguiente:
@@ -62,8 +62,8 @@ siga estos pasos:
     Listing installed plug-ins...
 
     Plugin Name          Version
-    logging-cli          0.1.1
- ```
+    logging-cli          0.1.1   
+    ```
     {: screen}
 
 
@@ -89,7 +89,7 @@ siga estos pasos:
     
     ```
     bx plugin list
- ```
+    ```
     {: codeblock}
     
     La salida tiene el aspecto siguiente:
@@ -99,8 +99,8 @@ siga estos pasos:
     Listing installed plug-ins...
 
     Plugin Name          Version
-    logging-cli          0.1.1
- ```
+    logging-cli          0.1.1   
+    ```
     {: screen}
  
 
@@ -118,11 +118,11 @@ Siga estos pasos para instalar el plugin de recopilación de registros en Linux:
 	
 	* Pulse **Guardar archivo**. 
     
-2. Instale el plugin.Ejecute el mandato siguiente:
+2. Instale el plugin. Ejecute el mandato siguiente:
         
     ```
     bx plugin install -f logging-cli-linux-amd64-0.1.1
- ```
+    ```
     {: codeblock}
 
 
@@ -138,11 +138,11 @@ Siga estos pasos para instalar el plugin de recopilación de registros en Window
 	1. Seleccione el valor de plataforma: **win64**. 
 	2. Pulse **Guardar archivo**.  
     
-2. Instale el plugin.Ejecute el mandato siguiente:
+2. Instale el plugin. Ejecute el mandato siguiente:
         
     ```
     bx plugin install -f logging-cli-windows-amd64-0.1.1.exe
- ```
+    ```
     {: codeblock}
 
 	
@@ -157,11 +157,18 @@ Siga estos pasos para instalar el plugin de recopilación de registros en Mac OS
 	1. Seleccione el valor de plataforma: **osx**. 
 	2. Pulse **Guardar archivo**.  
     
-2. Instale el plugin.Ejecute el mandato siguiente:
+2. Cambie los permisos del archivo. Ejecute el mandato siguiente:
+
+    ```
+    chmod u+x logging-cli-darwin-amd64-0.1.1
+    ```
+     {: codeblock}
+
+3. Instale el plugin. Ejecute el mandato siguiente:
         
     ```
     bx plugin install -f logging-cli-darwin-amd64-0.1.1
- ```
+    ```
     {: codeblock}
 
 	
@@ -180,7 +187,7 @@ Siga estos pasos para desinstalar la CLI del servicio {{site.data.keyword.logana
     
     ```
     bx plugin list
- ```
+    ```
     {: codeblock}
     
     La salida tiene el aspecto siguiente:
@@ -190,8 +197,8 @@ Siga estos pasos para desinstalar la CLI del servicio {{site.data.keyword.logana
     Listing installed plug-ins...
 
     Plugin Name          Version
-    logging-cli          0.1.1
- ```
+    logging-cli          0.1.1   
+    ```
     {: screen}
     
 2. Si el plugin está instalado, ejecute `bx plugin uninstall` para desinstalar el plugin de la CLI de registro.
@@ -200,12 +207,12 @@ Siga estos pasos para desinstalar la CLI del servicio {{site.data.keyword.logana
         
     ```
     bx plugin uninstall logging-cli
- ```
+    ```
     {: codeblock}
   
 
 ## Actualización de la CLI de Log Analysis desde el repositorio
-{: #uninstall_cli}
+{: #update_cli}
 
 Para actualizar la CLI de registro, ejecute el mandato *bx plugin update*.
 {:shortdesc}
@@ -225,7 +232,7 @@ Siga estos pasos para actualizar la CLI de servicio de {{site.data.keyword.logan
     
     ```
     bx plugin list
- ```
+    ```
     {: codeblock}
     
     La salida tiene el aspecto siguiente:
@@ -235,8 +242,8 @@ Siga estos pasos para actualizar la CLI de servicio de {{site.data.keyword.logan
     Listing installed plug-ins...
 
     Plugin Name          Version
-    logging-cli          0.1.1
- ```
+    logging-cli          0.1.1   
+    ```
     {: screen}
 
 
@@ -255,8 +262,8 @@ Para obtener información general sobre la CLI y los mandatos soportados, siga l
 2. Obtenga información sobre los mandatos soportados y sobre la CLI. Ejecute el mandato siguiente:
 
     ```
-    bx logging help
- ```
+    bx logging help 
+    ```
     {: codeblock}
     
     
@@ -273,15 +280,15 @@ Para obtener ayuda sobre cómo utilizar un mandato, siga los pasos siguientes:
 2. Obtenga la lista de mandatos soportados e identifique el que necesita. Ejecute el mandato:
 
     ```
-    bx logging help
- ```
+    bx logging help 
+    ```
     {: codeblock}
 
 3. Obtenga ayuda sobre el mandato. Ejecute el mandato siguiente:
 
     ```
     bx logging help *Mandato*
- ```
+    ```
     {: codeblock}
     
     donde *Mandato* es el nombre de un mandato de la CLI, como por ejemplo *status*.
@@ -300,15 +307,15 @@ Un mandato puede tener submandatos. Para obtener ayuda sobre los submandatos, si
 2. Obtenga la lista de mandatos soportados e identifique el que necesita. Ejecute el mandato:
 
     ```
-    bx logging help
- ```
+    bx logging help 
+    ```
     {: codeblock}
 
 3. Obtenga ayuda sobre el mandato e identifique los submandatos soportados. Ejecute el mandato siguiente:
 
     ```
     bx logging help *Mandato*
- ```
+    ```
     {: codeblock}
     
     donde *Mandato* es el nombre de un mandato de la CLI, como por ejemplo *session*.
@@ -317,7 +324,7 @@ Un mandato puede tener submandatos. Para obtener ayuda sobre los submandatos, si
 
     ```
     bx logging *Mandato* help *Submandato*
- ```
+    ```
     {: codeblock}
     
     donde 
@@ -329,7 +336,7 @@ Un mandato puede tener submandatos. Para obtener ayuda sobre los submandatos, si
 ## Mostrar los detalles del plugin
 {: #show}
   
-Utilice el mandato 'bx plugin show logging-cli' para ver los detalles del plugin.  
+Utilice el mandato 'bx plugin show logging-cli' para ver los detalles del plugin. 
 
 ```
 bx plugin show logging-cli
@@ -340,6 +347,7 @@ La salida tiene el aspecto siguiente:
    
 ```
 bx plugin show logging-cli
+                                  
 Plugin                         logging-cli
 Version                        0.1.1
 Minimal CLI version required   0.5.0
@@ -352,7 +360,7 @@ Commands
                                logging sessions         List sessions info
                                logging session-show     Show a session info
                                logging option-show      Show the log retention
-                               logging option-update    Show the log options
- ```
+                               logging option-update    Show the log options    
+```
 {: screen}
 

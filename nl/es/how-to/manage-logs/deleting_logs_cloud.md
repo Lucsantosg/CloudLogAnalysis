@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -74,8 +74,8 @@ Siga estos pasos para suprimir todos los registros almacenados en un dominio del
 	{: screen}
 
 	
-## Supresión de registros por tipo de registro correspondientes a un determinado periodo de tiempo
-{: #time_range}
+## Supresión de registros por tipo de registro correspondiente a un determinado periodo de tiempo
+{: #log_type}
 
 Siga los pasos siguientes para suprimir registros por tipo de registro almacenados en un dominio del espacio correspondientes a un determinado periodo de tiempo:
 
@@ -126,9 +126,9 @@ Siga los pasos siguientes para suprimir registros por tipo de registro almacenad
 		
 	
 ## Supresión de registros de la cuenta por tipo de registro correspondientes a un determinado periodo de tiempo
-{: #time_range}
+{: #time_range_acc}
 
-Siga estos pasos:
+Siga los siguientes pasos:
 
 1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 

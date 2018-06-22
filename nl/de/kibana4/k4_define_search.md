@@ -30,11 +30,11 @@ Führen Sie folgende Schritte aus, um eine angepasste Suche zu definieren:
 
     2. Greifen Sie auf Kibana zu. Klicken Sie dazu auf **Erweiterte Ansicht** ![Link für erweiterte Ansicht](images/logging_advanced_view.jpg "Link für erweiterte Ansicht"). Das Kibana-Dashboard wird angezeigt.
     
-    Für Container, die in einem Kubernetes-Cluster ausgeführt werden, [starten Sie Kibana über den Browser](k4_launch.html#launch_Kibana_from_browser). 
+    Für Container, die in einem Kubernetes-Cluster ausgeführt werden, [starten Sie Kibana über den Browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser). 
     
     Wenn Sie auf Kibana zugreifen, wird die Standardsuche angewendet. Sie können die Protokolle für die Instanzenliste der Ressource anzeigen, für die Sie Kibana gestartet haben. Sie können die Protokolle für eine oder alle der {{site.data.keyword.Bluemix_notm}}-Ressourcen in diesem Bereich filtern.
 
-2. Prüfen Sie auf der Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Auf der Seite 'Discover' angezeigte Daten ermitteln](logging_kibana_analize_logs_interactively.html#k4_identify_data). Ändern Sie anschließend die Standardabfrage zum Filtern der Einträge.
+2. Prüfen Sie auf der Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). Ändern Sie anschließend die Standardabfrage zum Filtern der Einträge.
 
     **Hinweis** Verwenden Sie die Abfragesprache Lucene zum Definieren Ihrer angepassten Abfrage. Weitere Informationen finden Sie unter [Apache Lucene - Query Parser Syntax![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}.
     
@@ -48,9 +48,8 @@ Führen Sie folgende Schritte aus, um eine angepasste Suche zu definieren:
 
      Beispiel: Für eine CF-App können Sie die Abfrage `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]` erstellen, die nur die Einträge für die Instanzen *0* und *1* auflistet. 
 
-3. Speichern Sie die Abfrage, sodass Sie sie später wiederverwenden können. Weitere Informationen finden Sie unter [Suche speichern](logging_kibana_filtering_logs.html#k4_save_search). 
+3. Speichern Sie die Abfrage, sodass Sie sie später wiederverwenden können. 
 
-**Hinweis:** Wenn Sie eine Abfrage löschen müssen, finden Sie weitere Informationen hierzu unter [Suche löschen](logging_kibana_filtering_logs.html#k4_delete_search).
 
 
 

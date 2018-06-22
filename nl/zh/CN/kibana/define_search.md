@@ -35,7 +35,7 @@ lastupdated: "2018-01-10"
 
 2. 查看“发现”页面，以确定它显示的数据子集。有关更多信息，请参阅[确定在 Kibana 的“发现”页面中显示的数据](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)。然后，修改缺省查询以过滤条目。
 
-    **注：**使用 Lucene 查询语言来定义定制查询。有关更多信息，请参阅 [Apache Lucene - Query Parser Syntax ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}
+    **注**：使用 Lucene 查询语言来定义定制查询。有关更多信息，请参阅 [Apache Lucene - Query Parser Syntax ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}
     
     如果 Kibana 是通过 {{site.data.keyword.Bluemix_notm}} UI 启动的，要修改查询并定义多个搜索条件，可以使用逻辑项 **AND** 和 **OR**。这些运算符必须为大写。    
     
@@ -49,7 +49,7 @@ lastupdated: "2018-01-10"
 
 3. 保存查询，以便将来可以复用。有关更多信息，请参阅[保存搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)。 
 
-**注：**如果需要删除查询，请参阅[删除搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)。
+**注**：如果需要删除查询，请参阅[删除搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)。
 
 
 
@@ -143,6 +143,6 @@ lastupdated: "2018-01-10"
 
 2. 输入搜索的名称。
 
-    **注：**当您单击**保存**时，不会对覆盖发出警告，因此如果您指定现有的名称，保存将会替换该版本而没有任何提示信息。
+    **注**：单击**保存**时，不会对覆盖发出警告，因此如果您指定现有的名称，保存将会替换该版本而没有任何提示信息。
 
 3. 单击**保存**。 

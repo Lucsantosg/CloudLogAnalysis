@@ -17,7 +17,8 @@ lastupdated: "2018-01-16"
 # Bereichs-ID für einen Cluster abrufen
 {: #containers_spaceid}
 
-Sie können einen Cluster in einem {{site.data.keyword.Bluemix_notm}}-Konto im Kontext einer Organisation und eines Bereichs von Cloud Foundry erstellen. {:shortdesc}
+Sie können einen Cluster in einem {{site.data.keyword.Bluemix_notm}}-Konto im Kontext einer Organisation und eines Bereichs von Cloud Foundry erstellen. 
+{:shortdesc}
 
 Führen Sie den folgenden Befehl aus, um nach der Bereichs-ID zu suchen, die einem Cluster zugeordnet ist:
 

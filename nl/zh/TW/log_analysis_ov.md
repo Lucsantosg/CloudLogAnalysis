@@ -32,7 +32,7 @@ lastupdated: "2018-02-01"
 
 下圖顯示 {{site.data.keyword.loganalysisshort}} 服務的高階視圖： 
 
-![{{site.data.keyword.loganalysisshort}} 服務的概觀影像](images/loganalisys_F1.gif "{{site.data.keyword.loganalysisshort}} 服務的概觀影像")
+![{{site.data.keyword.loganalysisshort}} 服務的概觀影像](images/loganalysis_F1.png "{{site.data.keyword.loganalysisshort}} 服務的概觀影像")
 
 
 若要收集及搜尋空間中所執行雲端資源的日誌，您必須在這些雲端資源執行所在的相同空間中佈建 {{site.data.keyword.loganalysisshort}} 服務實例。依預設，會收集日誌，並將其儲存在「日誌搜尋」中。當您選取包括擴充搜尋及收集功能的服務方案時，也會收集日誌，並將其儲存在「日誌收集」元件中。「日誌收集」中儲存的日誌資料會進行加密。

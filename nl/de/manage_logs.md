@@ -65,21 +65,12 @@ Protokolle, die in 'Log Search' gespeichert sind, werden nach drei Tagen gelösc
 
 Protokolle, die in 'Log Collection' gespeichert sind, werden so lange aufbewahrt, bis Sie entweder eine Aufbewahrungsrichtlinie konfigurieren oder sie manuell löschen. 
 
-* Sie können eine Protokollaufbewahrungsrichtlinie konfigurieren, die die Anzahl Tage definiert, für die Protokolle in 'Log Collection' aufbewahrt werden. Weitere Informationen finden Sie in den folgenden Abschnitten:
+* Sie können eine Protokollaufbewahrungsrichtlinie konfigurieren, die die Anzahl Tage definiert, für die Protokolle in 'Log Collection' aufbewahrt werden. Weitere Informationen finden Sie in [Protokollaufbewahrungsrichtlinie mithilfe des {{site.data.keyword.Bluemix_notm}}-Plug-ins anzeigen und konfigurieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
 
-    [Protokollaufbewahrungsrichtlinie mithilfe des {{site.data.keyword.Bluemix_notm}}-Plug-ins anzeigen und konfigurieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
-	
-	[Protokollaufbewahrungsrichtlinie mithilfe des CF-Plug-ins anzeigen und konfigurieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy.html#configuring_retention_policy).
+* Sie können die ['Log Collection'-API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} oder die ['Log Collection'-Befehlszeilenschnittstelle](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} verwenden, um Protokolle manuell aus 'Log Collection' zu löschen. 
 
-    Sie können die Richtlinie inaktivieren, indem Sie ihren Wert auf *-1* einstellen. 
-
-* Sie können die ['Log Collection'-API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} oder die ['Log Collection'-Befehlszeilenschnittstelle](/docs/services/CloudLogAnalysis/reference/logging_cli.html#logging_cli){: new_window} verwenden, um Protokolle manuell aus 'Log Collection' zu löschen. 
-
-* Sie können die Befehlszeilenschnittstelle verwenden. Weitere Informationen zum manuellen Löschen von Protokollen über die Befehlszeilenschnittstelle finden Sie in den folgenden Abschnitten:
-
-    [Befehl 'bx logging log-delete' mithilfe des {{site.data.keyword.Bluemix_notm}}-Plug-ins verwenden](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+* Sie können die Befehlszeilenschnittstelle verwenden. Weitere Informationen zum manuellen Löschen von Protokollen über die Befehlszeilenschnittstelle finden Sie in [bx logging log-delete durch Nutzung des {{site.data.keyword.Bluemix_notm}}-Plug-ins](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
     
-	[Befehl 'bx cf logging-delete' mithilfe des CF-Plug-ins verwenden](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete).
 
 
 ## Protokolle herunterladen
@@ -108,14 +99,6 @@ Zur Kostenkontrolle können Sie unter anderem die Größe der Protokolle Ihrer A
 Sie können Informationen zu Protokollen anzeigen, die in einer Bereichsdomäne, einer Organisationsdomäne oder ein Kontodomäne gespeichert sind.
 
 
-## {{site.data.keyword.loganalysisshort_notm}}-Befehlszeilenschnittstelle (CF-Plug-in) installieren
-{: #install_cli}
-
-Informationen zur Installation der Befehlszeilenschnittstelle (CLI) finden Sie unter [Befehlszeilenschnittstelle für Protokollierung installieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#config_log_collection_cli).
-
-Um die Version der Befehlszeilenschnittstelle zu prüfen, führen Sie den Befehl [bx cf logging](/docs/services/CloudLogAnalysis/reference/logging_cli.html#base) mit dem Parameter * -version* aus.
-
-Hilfeinformationen zur Befehlsausführung finden Sie unter [Befehlszeilenhilfe für die Befehlsausführung abrufen](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#command_cli_help).
 
 ## {{site.data.keyword.loganalysisshort_notm}}-Befehlszeilenschnittstelle ({{site.data.keyword.Bluemix_notm}}-Plug-in) installieren
 {: #install_cli}

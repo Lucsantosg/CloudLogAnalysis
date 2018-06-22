@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -26,7 +26,7 @@ Mit dem Befehl [bx cf logging delete](/docs/services/CloudLogAnalysis/reference/
 
 
 ## Protokolle für einen bestimmten Zeitraum löschen
-{: #time_range}
+{: #fix_period}
 
 Führen Sie die folgenden Schritte aus:
 
@@ -76,7 +76,7 @@ Führen Sie die folgenden Schritte aus:
 
 	
 ## Protokolle nach Protokolltyp für einen bestimmten Zeitraum löschen
-{: #time_range}
+{: #log_type}
 
 Führen Sie die folgenden Schritte aus:
 
@@ -128,7 +128,7 @@ Führen Sie die folgenden Schritte aus:
 		
 	
 ## Kontoprotokolle nach Protokolltyp für einen bestimmten Zeitraum löschen
-{: #time_range}
+{: #acc_log_type}
 
 Führen Sie die folgenden Schritte aus:
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2018-01-10"
 Auf der Seite *Dashboard* in Kibana können Sie Visualisierungen anzeigen, die in den Dashboards gruppiert werden. Verwenden Sie die Dashboards, um Ihre Protokolldaten zu analysieren und die Ergebnisse zu vergleichen.
 {:shortdesc}
 
-In {{site.data.keyword.Bluemix}} gibt es verschiedene Arten von Dashboards, die Sie definieren und anpassen können, um die Daten zu visualisieren und zu analysieren. In der folgenden Tabelle sind verschiedene Arten von Dashboards aufgelistet:
+In {{site.data.keyword.Bluemix_notm}} gibt es verschiedene Arten von Dashboards, die Sie definieren und anpassen können, um die Daten zu visualisieren und zu analysieren. In der folgenden Tabelle sind verschiedene Arten von Dashboards aufgelistet:
 
 | Art des Dashboards | Beschreibung |
 |-------------------|-------------|
@@ -37,14 +37,14 @@ In der folgenden Tabelle sind die verschiedenen Tasks aufgeführt, die Sie auf d
 
 | Task | Weitere Informationen |
 |------|------------------|
-| [Neues Dashboard erstellen](logging_kibana_analize_logs_dashboard.html#K4_dashboard_new) | Sie können mehrere Dashboards erstellen. Jedes Dashboard kann so gestaltet werden, dass es verschiedene Suchen und Visualisierungen oder unterschiedliche Protokolldaten enthält.  |
-| [Dashboard speichern](logging_kibana_analize_logs_dashboard.html#k4_dashboard_save) | Sie können ein Dashboard zur späteren Verwendung speichern. |
-| [Dashboard laden](logging_kibana_analize_logs_dashboard.html#k4_dashboard_reload) | Sie können ein Dashboard hochladen, um seine Daten zu aktualisieren, um Änderungen vorzunehmen oder um die Daten zu analysieren. |
-| [Dashboard löschen](logging_kibana_analize_logs_dashboard.html#k4_dashboard_delete) | Nicht benötigte Dashboards können gelöscht werden. |
-| [Dashboard exportieren](logging_kibana_analize_logs_dashboard.html#k4_dashboard_export) | Sie können ein Dashboard als JSON-Datei exportieren. |
-| [Dashboard importieren](logging_kibana_analize_logs_dashboard.html#k4_dashboard_import) | Sie können ein Dashboard als JSON-Datei importieren. |
-| [Dashboard freigeben](logging_kibana_analize_logs_dashboard.html#k4_dashboard_share) | Sie können ein Dashboard über Ihre HTML-Quelle oder das Kibana-Dashboard freigeben. |
-| [Visualisierung hinzufügen](logging_kibana_analize_logs_dashboard.html#k4_dashboard_add_visualization) | Sie können eine vorhandene Visualisierung oder Suche zu einem Dashboard hinzufügen.|
+| [Neues Dashboard erstellen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#K4_dashboard_new) | Sie können mehrere Dashboards erstellen. Jedes Dashboard kann so gestaltet werden, dass es verschiedene Suchen und Visualisierungen oder unterschiedliche Protokolldaten enthält.  |
+| [Dashboard speichern](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_save) | Sie können ein Dashboard zur späteren Verwendung speichern. |
+| [Dashboard laden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_reload) | Sie können ein Dashboard hochladen, um seine Daten zu aktualisieren, um Änderungen vorzunehmen oder um die Daten zu analysieren. |
+| [Dashboard löschen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_delete) | Nicht benötigte Dashboards können gelöscht werden. |
+| [Dashboard exportieren](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_export) | Sie können ein Dashboard als JSON-Datei exportieren. |
+| [Dashboard importieren](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_import) | Sie können ein Dashboard als JSON-Datei importieren. |
+| [Dashboard freigeben](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_share) | Sie können ein Dashboard über Ihre HTML-Quelle oder das Kibana-Dashboard freigeben. |
+| [Visualisierung hinzufügen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_add_visualization) | Sie können eine vorhandene Visualisierung oder Suche zu einem Dashboard hinzufügen.|
 {: caption="Tabelle 2. Tasks für die Arbeit mit Dashboards" caption-side="top"}
 
 Weitere Informationen zu Kibana finden Sie in der Veröffentlichung [Kibana User Guide ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.elastic.co/guide/en/kibana/4.1/index.html){: new_window}.
@@ -71,13 +71,13 @@ Führen Sie die folgenden Schritte aus, um ein neues Dashboard zu erstellen:
 
 1. Klicken Sie in der Symbolleiste der Seite 'Dashboard' auf die Schaltfläche **New dashboard** ![New dashboard](images/k4_dash_new_icon.jpg "New dashboard").
 
-2. Fügen Sie eine oder mehr Suchen und Visualisierungen hinzu. Weitere Informationen finden Sie unter [Neue Suche oder Visualisierung hinzufügen](logging_kibana_analize_logs_dashboard.html#K4_dashboard_add_visualization).
+2. Fügen Sie eine oder mehr Suchen und Visualisierungen hinzu. Weitere Informationen finden Sie unter [Neue Suche oder Visualisierung hinzufügen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create).
 
     Wenn Sie eine Suche oder eine Visualisierung hinzufügen, wird ein Fensterbereich im Dashboard hinzugefügt.
 
 3. Ziehen Sie einen Fensterbereich und legen Sie ihn in dem Teil des Dashboards ab, in dem Sie ihn positionieren wollen.
  
-4. Speichern Sie das Dashboard zur späteren Wiederverwendung. Weitere Informationen finden Sie unter [Kibana-Dashboard speichern](logging_kibana_analize_logs_dashboard.html#k4_dashboard_save).
+4. Speichern Sie das Dashboard zur späteren Wiederverwendung. 
 
 ## Kibana-Dashboard löschen
 {: #k4_dashboard_delete}

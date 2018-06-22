@@ -20,6 +20,9 @@ lastupdated: "2018-01-10"
 可以将日志下载到本地文件或通过管道将数据传递到其他程序。您将在会话的上下文中下载日志。会话指定将下载哪些日志。如果日志下载中断，会话支持从其中断的地方恢复下载。下载完成后，必须删除会话。
 {:shortdesc}
 
+要完成这些步骤，请安装 {{site.data.keyword.loganalysisshort}} CLI。有关更多信息，请参阅[配置 {{site.data.keyword.loganalysisshort}} CLI](https://console.bluemix.net/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli_)。
+
+
 要将空间中可用的日志数据下载到本地文件中，请完成以下步骤：
 
 ## 步骤 1：登录到 {{site.data.keyword.Bluemix_notm}}
@@ -35,17 +38,19 @@ lastupdated: "2018-01-10"
 1. 使用 `bx logging log-show` 命令可查看最近 2 周可用的日志。运行以下命令：
 
     ```
-    bx logging log-show
+        bx logging log-show
     ```
     {: codeblock}
     
     例如，运行此命令的输出为：
     
     ```
-    bx logging log-show 
+        bx logging log-show 
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types   
+    
+
+    Date         Size       Count   Searchable          Types   
     2017-11-16   794008   706     All          syslog, default   
 	2017-11-17   794008   706     All          default   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
@@ -61,7 +66,7 @@ lastupdated: "2018-01-10"
 
 要定义可供下载的日志数据的作用域，并保持下载的状态，会话是必需的。 
 
-使用 [cf logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) 命令以创建会话。（可选）创建会话时，可以指定开始日期、结束日期和日志类型：  
+使用 [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) 命令以创建会话。（可选）创建会话时，可以指定开始日期、结束日期和日志类型：  
 
 * 指定开始日期和结束日期时，会话会提供对这两个日期之间（含这两个日期）的日志的访问权。 
 * 指定日志类型 (**-t**) 时，会话会提供对特定类型日志的访问权。在管理大量日志时，这是非常重要的功能，因为可以将会话的作用域仅限为您关注的一小部分日志。
@@ -128,7 +133,7 @@ bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
 ## 步骤 5：删除会话
 {: #step5}
 
-下载完成后，必须使用 [cf logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 命令来删除会话。 
+下载完成后，必须使用 [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 命令来删除会话。 
 
 运行以下命令来删除会话：
 

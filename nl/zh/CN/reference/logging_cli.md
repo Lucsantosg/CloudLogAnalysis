@@ -120,7 +120,7 @@ bx cf logging --version
 
 获取日志记录令牌，此令牌可用于将日志发送到 {{site.data.keyword.loganalysisshort}} 服务。 
 
-**注：**此令牌不会到期。
+**注**：此令牌不会到期。
 
 ```
 bx cf logging auth
@@ -274,7 +274,7 @@ bx cf logging help status
 * 保留期以天数为单位进行设置。
 * 缺省值为 **-1**。 
 
-**注：**缺省情况下，将存储所有日志。日志必须使用 **delete** 命令手动删除。设置保留时间策略可自动删除日志。
+**注**：缺省情况下，将存储所有日志。日志必须使用 **delete** 命令手动删除。设置保留时间策略可自动删除日志。
 
 ```
 bx cf logging option [parameters]

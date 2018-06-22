@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -20,7 +20,6 @@ Sie können Kibana über die {{site.data.keyword.Bluemix}}-Benutzerschnittstelle
 {:shortdesc}
 
 Sie können Kibana über {{site.data.keyword.Bluemix_notm}} starten, um Daten im Kontext der Ressource anzuzeigen und zu analysieren, von der Sie Kibana starten. Sie können Ihre spezifischen CF-App-Protokolle in Kibana im Kontext dieser spezifischen App starten.
-    {{site.data.keyword.Bluemix_notm}}-Bereich. Die Abfrage, durch die die im Dashboard angezeigten Daten gefiltert werden, ruft Protokolleinträge für einen Bereich in der Organisation ab. Die Protokollinformationen, die in Kibana angezeigt werden, umfassen Einträge für alle Ressourcen, die innerhalb des Bereichs der Organisation bereitgestellt sind, an der Sie angemeldet sind. 
 
 In der folgenden Tabelle sind die Ressourcen und die unterstützten Navigationsmethoden zum Starten von Kibana aufgeführt:
 
@@ -38,11 +37,6 @@ In der folgenden Tabelle sind die Ressourcen und die unterstützten Navigationsm
   <tr>  
   <tr>
     <td>Container in Kubernetes-Cluster</td>
-    <td>Nein</td>
-    <td>Ja</td>
-  <tr>  
-  <tr>
-    <td>Container in einer {{site.data.keyword.Bluemix_notm}}-verwalteten Infrastruktur</td>
     <td>Ja</td>
     <td>Ja</td>
   <tr>  
@@ -71,7 +65,7 @@ Führen Sie die folgenden Schritte aus, um die Protokolle einer Cloud Foundry-An
 
     Standardmäßig ist beim Laden der Seite **Discover** das Standardindexmuster ausgewählt und ein Zeitfilter auf die letzten 30 Sekunden eingestellt. Die Suchabfrage wird so eingestellt, dass sie allen Einträgen für die CF-App oder den Docker-Container entspricht.
 
-    Wenn auf der Seite 'Discover' nicht alle Protokolleinträge angezeigt werden, passen Sie das Zeitauswahlfeld an. Weitere Informationen finden Sie unter [Zeitfilter festlegen](logging_kibana_set_time_filter.html#set_time_filter).
+    Wenn auf der Seite 'Discover' nicht alle Protokolleinträge angezeigt werden, passen Sie das Zeitauswahlfeld an. 
 
 
 ##  Navigation zum Kibana-Dashboard von einem Web-Browser
@@ -101,6 +95,5 @@ Führen Sie den folgenden Schritt aus, um Kibana über einen Browser zu starten:
           </tr>
         </table>
 
-    Wenn auf der Seite 'Discover' nicht alle Protokolleinträge angezeigt werden, passen Sie das Zeitauswahlfeld an. Weitere Informationen finden Sie unter [Zeitfilter festlegen](logging_kibana_set_time_filter.html#set_time_filter).
-
+    Wenn auf der Seite 'Discover' nicht alle Protokolleinträge angezeigt werden, passen Sie das Zeitauswahlfeld an. 
 

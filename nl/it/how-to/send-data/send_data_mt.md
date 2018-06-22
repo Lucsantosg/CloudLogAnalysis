@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-04-19"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -12,62 +14,54 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Invio dei dati utilizzando il logstash forwarder a più tenant
+# Invio di dati in loco a un spazio in IBM Cloud
 {: #send_data_mt}
 
-Per inviare i dati di log nel servizio {{site.data.keyword.loganalysisshort}}, puoi configurare un Logstash Forwarder a più tenant (mt-logstash-forwarder). {:shortdesc}
+Per inviare i dati di log nel servizio {{site.data.keyword.loganalysisshort}}, puoi configurare un Logstash Forwarder a più tenant (mt-logstash-forwarder). 
+{: shortdesc}
 
-Per inviare i dati di log nella raccolta dei log, completa la seguente procedura:
+Completa la seguente procedura per inviare i dati di log a uno spazio in {{site.data.keyword.Bluemix_notm}}:
+
+## Prerequisiti
+{: #prereqs}
+
+* Un ID {{site.data.keyword.Bluemix_notm}} per accedere a {{site.data.keyword.Bluemix_notm}}.
+* Un ID utente che dispone delle autorizzazioni per lavorare in uno spazio con il servizio {{site.data.keyword.loganalysisshort}}. Per ulteriori informazioni, vedi [Sicurezza](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
+* La CLI {{site.data.keyword.loganalysisshort}} installata nel tuo ambiente locale.
+* Il servizio {{site.data.keyword.loganalysisshort}} di cui è stato eseguito il provisioning in uno spazio nel tuo account con un piano che consente l'inserimento dei log.
+
 
 ## Fase 1: Ottieni il token di registrazione
 {: #get_logging_auth_token}
 
-Per inviare i dati al servizio {{site.data.keyword.loganalysisshort}}, hai bisogno di:
+Completa la seguente procedura da una sessione terminale in cui è installata la CLI {{site.data.keyword.loganalysisshort}}:
 
-* Un ID {{site.data.keyword.IBM_notm}}: questo ID è obbligatorio per accedere a {{site.data.keyword.Bluemix_notm}}.
-* Uno spazio in un'organizzazione {{site.data.keyword.Bluemix_notm}}: questo spazio è dove pianifichi di inviare e analizzare i log.
-* Un token di registrazione per inviare i dati. 
+1. Accedi a una regione, un'organizzazione e uno spazio in {{site.data.keyword.Bluemix_notm}}. 
 
-Completa la seguente procedura:
-
-1. Accedi a una regione, organizzazione e spazio {{site.data.keyword.Bluemix_notm}}. 
-
-    Ad esempio, per accedere alla regione Stati Uniti Sud, esegui questo comando:
-	
-    ```
-    cf login -a https://api.ng.bluemix.net
-    ```
-    {: codeblock}
+    Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Esegui il comando `cf logging auth`. 
+2. Esegui il comando `bx logging token-get`. 
 
     ```
-    cf logging auth
+    bx logging token-get
     ```
     {: codeblock}
 
-    Il comando restituisce le informazioni seguenti:
-    
-    * Il token di registrazione.
-    * L'ID dell'organizzazione: questo è il GUID dell'organizzazione {{site.data.keyword.Bluemix_notm}} per cui hai eseguito l'accesso. 
-    * L'ID dello spazio: il GUID dello spazio all'interno dell'organizzazione per cui hai eseguito l'accesso. 
+    Il comando restituisce il token di registrazione.
     
     Ad esempio,
 
     ```
-    cf logging auth
-    +-----------------+--------------------------------------+
-    |      NAME       |                VALUE                 |
-    +-----------------+--------------------------------------+
-    | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_bKsdfTz                         |
-    | Organization Id | 98450123-6f1c-9999-96a3-0210fjyuwplt |
-    | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
-    +-----------------+--------------------------------------+
+    bx logging token-get
+    Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
+    OK
+
+    Tenant Id                              Logging Token   
+    93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf   oT98_abcdefz   
     ```
     {: screen}
 
-Per maggiori informazioni, vedi [cf logging auth](/docs/services/CloudLogAnalysis/reference/logging_cli.html#auth).
+    dove *Tenant Id* è il GUID dello spazio a cui vuoi inviare i log.
 
 
 ## Fase 2: Configura mt-logstash-forwarder
@@ -84,7 +78,7 @@ Completa la seguente procedura per configurare mt-logstash-forwarder nell'ambien
     
 2.	Installa il pacchetto NTP (Network Time Protocol) per sincronizzare l'ora dei log. 
 
-    Ad esempio, per un sistema Ubuntu, verifica che `timedatectl status` visualizzi *Network time on: yes*. Se lo visualizza, il tuo sistema Ubuntu è già configurato ad utilizzare ntp e puoi saltare questo passo.
+    Ad esempio, per un sistema Ubuntu, controlla se `timedatectl status` mostra *Network time on: yes*. Se lo visualizza, il tuo sistema Ubuntu è già configurato ad utilizzare ntp e puoi saltare questo passo.
     
     ```
     # timedatectl status
@@ -204,7 +198,7 @@ Completa la seguente procedura per configurare mt-logstash-forwarder nell'ambien
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>URL di destinazione. Imposta il valore su **https://ingest.logging.ng.bluemix.net:9091**.</td>
+            <td>URL di destinazione. Per ottenere l'elenco di URL di inserimento, vedi [URL di inserimento](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Ad esempio, imposta il valore su **ingest.logging.ng.bluemix.net:9091** per inviare i log nella regione Stati Uniti Sud. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>
@@ -227,7 +221,7 @@ Completa la seguente procedura per configurare mt-logstash-forwarder nell'ambien
        LSF_INSTANCE_ID="myhelloapp"
        LSF_TARGET="ingest.logging.ng.bluemix.net:9091"
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
-       LSF_PASSWORD="oT98_bKsdfTz"
+       LSF_PASSWORD="oT98_abcdefz"
        LSF_GROUP_ID="Group1"
        ```
        {: screen}
@@ -238,22 +232,7 @@ Completa la seguente procedura per configurare mt-logstash-forwarder nell'ambien
        service mt-logstash-forwarder start
        ```
        {: codeblock}
-        
-       Abilita mt-logstash-forwarder all'avvio automatico dopo un arresto anomalo o un riavvio. 
-        
-       ```
-       service mt-logstash-forwarder enable
-       ```
-       {: codeblock}
-        
-       **Suggerimento:** per riavviare il servizio mt-logstash-forwarder, esegui il seguente comando:
-    
-       ```
-       service mt-logstash-forwarder restart
-       ```
-       {: codeblock}
-        
-        
+                
 Per impostazione predefinita, il forwarder controlla solo il syslog. I tuoi log sono disponibili in Kibana per l'analisi.
         
 
@@ -299,7 +278,7 @@ Per includere stdout o stderr da un'applicazione hello, reindirizza stdout o std
     
 2. Modifica il file di configurazione *myapp.conf*.
 
-    Per abilitare l'analisi JSON, imposta is_json su true nel file di configurazione.
+    Per poter eseguire una ricerca in base a un campo JSON in Kibana quando inserisci un log, abilita l'analisi JSON. Imposta `is_json` su true nel file di configurazione per specifici percorsi file. Per i file di log configurati in questo modo, le righe di log devono essere formattate come blocchi JSON, separati da ritorni a capo. mt-logstash-forwarder utilizzerà quindi tutti questi campi JSON come singoli campi ricercabili da Kibana. I nomi campo JSON includono un suffisso basato sul tipo.
     
     ```
     {

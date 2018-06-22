@@ -3,11 +3,9 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
-
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -19,40 +17,41 @@ lastupdated: "2018-01-10"
 # 권한 부여
 {: #grant_permissions}
 
-{{site.data.keyword.Bluemix}}에서 사용자에게 하나 이상의 역할을 지정할 수 있습니다. 이러한 역할은 사용자가 {{site.data.keyword.loganalysisshort}} 서비스를 사용하여 수행할 수 있는 태스크를 정의합니다.
+{{site.data.keyword.Bluemix}}에서 사용자에게 하나 이상의 역할을 지정할 수 있습니다. 이러한 역할은 사용자가 {{site.data.keyword.loganalysisshort}} 서비스를 사용하여 수행할 수 있는 태스크를 정의합니다. 
 {:shortdesc}
 
+**참고:** 
 
+* 사용자에게 로그를 관리하고 계정 로그를 볼 수 있는 권한을 부여하려면 사용자는 계정의 다른 사용자에게 정책을 지정할 수 있는 권한이 있어야 하거나 계정 소유자여야 합니다. 계정 소유자가 아닌 경우 편집자, 운영자 또는 관리자 역할이 있는 IAM 정책이 있어야 합니다. 
+* 사용자에게 영역의 로그를 볼 수 있는 권한을 부여하려면 해당 사용자에게 이 사용자가 영역에서 {{site.data.keyword.loganalysisshort}} 서비스에 대해 수행할 수 있는 조치를 설명하는 Cloud Foundry 역할을 사용자에게 지정하기 위한 조직 및 영역의 권한이 있어야 합니다.  
 
 ## {{site.data.keyword.Bluemix_notm}} UI를 통해 사용자에게 IAM 정책 지정
 {: #grant_permissions_ui_account}
 
-계정 로그를 보고 관리하는 권한을 사용자에게 부여하려면 이 사용자가 계정에서 {{site.data.keyword.loganalysisshort}} 서비스를 사용하여 수행할 수 있는 조치를 설명하는 해당 사용자에 대한 정책을 추가해야 합니다. 계정 소유자만 사용자에게 개별 정책을 지정할 수 있습니다.
+{{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행할 권한을 사용자에게 부여하려면 다음 단계를 완료하십시오.
 
-{{site.data.keyword.Bluemix_notm}}에서 {{site.data.keyword.loganalysisshort}} 서비스로 작업할 수 있는 권한을 사용자에게 부여하려면 다음 단계를 완료하십시오. 
+1. {{site.data.keyword.Bluemix_notm}} 콘솔에 로그인하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}} 콘솔에 로그인하십시오. 
-
-    웹 브라우저를 열고 {{site.data.keyword.Bluemix_notm}} 대시보드를 실행하십시오. [http://bluemix.net ![외부 링크 아이콘](../../../icons/launch-glyph.svg "외부 링크 아이콘")](http://bluemix.net){:new_window} 
+    웹 브라우저를 열고 {{site.data.keyword.Bluemix_notm}} 대시보드를 실행하십시오. [http://bluemix.net ![외부 링크 아이콘](../../../icons/launch-glyph.svg "외부 링크 아이콘")](http://bluemix.net){:new_window}
 	
-	사용자 ID 및 비밀번호를 사용하여 로그인하면 {{site.data.keyword.Bluemix_notm}} UI가 열립니다. 
+	사용자 ID 및 비밀번호를 사용하여 로그인하면 {{site.data.keyword.Bluemix_notm}} UI가 열립니다.
 
-2. 메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오.  
+2. 메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오. 
 
-    *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다. 
+    *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다.
 	
-3. 사용자가 계정의 구성원인 경우 목록에서 사용자 이름을 선택하거나 *조치* 메뉴에서 **사용자 관리**를 클릭하십시오. 
+3. 사용자가 계정의 구성원인 경우 목록에서 사용자 이름을 선택하거나 *조치* 메뉴에서 **사용자 관리**를 클릭하십시오.
 
-    사용자가 계정의 구성원이 아닌 경우 [사용자 초대](/docs/iam/iamuserinv.html#iamuserinv)를 참조하십시오. 
+    사용자가 계정의 구성원이 아닌 경우 [사용자 초대](/docs/iam/iamuserinv.html#iamuserinv)를 참조하십시오.
 
-4. **액세스 정책** 섹션에서 **서비스 정책 지정**을 클릭한 후 **리소스에 대한 액세스 권한 지정**을 선택하십시오.
+4. **액세스 정책** 섹션에서 **액세스 지정**을 클릭한 후 **리소스에 대한 액세스 권한 지정**을 선택하십시오.
 
     *사용자에 리소스 액세스 권한 지정** 창이 열립니다.
 
-5. 정책에 대한 정보를 입력하십시오. 다음 표는 정책을 정의하는 데 필요한 필드를 나열합니다.  
+5. 정책에 대한 정보를 입력하십시오. 다음 표는 정책을 정의하는 데 필요한 필드를 나열합니다. 
 
     <table>
-	  <caption>IAM 정책을 구성하는 필드 목록입니다. </caption>
+	  <caption>IAM 정책을 구성하는 필드 목록입니다.</caption>
 	  <tr>
 	    <th>필드</th>
 		<th>값</th>
@@ -76,156 +75,58 @@ lastupdated: "2018-01-10"
 	  </tr>
      </table>
 	
-6. **정책 지정**을 클릭하십시오. 
+6. **지정**을 클릭하십시오.
 	
 구성하는 정책을 선택한 지역에 적용할 수 있습니다. 
+
 
 ## 명령행을 사용하여 사용자에게 IAM 정책 지정
 {: #grant_permissions_commandline}
 
-계정 로그를 보고 관리하는 권한을 사용자에게 부여하려면 사용자에게 IAM 역할을 부여해야 합니다. IAM 역할 및 역할에 따라 {{site.data.keyword.loganalysisshort}} 서비스로 수행할 수 있는 작업에 대한 자세한 정보는 [IAM 역할](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles)을 참조하십시오. 
+명령행을 통해 계정 로그를 볼 수 있는 액세스 권한을 사용자에게 부여하려면 다음 단계를 완료하십시오.
 
-이 조작은 계정 소유자만 수행할 수 있습니다.
+1. 터미널에서 {{site.data.keyword.Bluemix_notm}} 계정에 로그인하십시오.  
 
-명령행을 통해 계정 로그를 볼 수 있는 액세스 권한을 사용자에게 부여하려면 다음 단계를 완료하십시오. 
+    자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 
-1. 계정 ID를 가져오십시오.  
-
-    다음 명령을 실행하여 계정 ID를 가져오십시오. 
+2. 사용자가 계정의 구성원인지 확인하십시오. 다음 명령을 실행하여 계정의 사용자 목록을 가져오십시오. 
 
     ```
-	bx iam accounts
+	bx account users
 	```
     {: codeblock}	
 
-	해당 GUID가 포함된 계정 목록이 표시됩니다.
+	해당 GUID가 포함된 사용자 목록이 표시됩니다.
 	
-	사용자에게 권한을 부여하려는 계정의 계정 ID를 `$acct_id`와 같은 쉘 변수로 내보내십시오. 예를 들어 다음과 같습니다.
-	
-	```
-	export acct_id="1234567891234567812341234123412"
-	```
-	{: screen}
+3. 사용자가 계정의 구성원이 아닌 경우 계정 소유자에게 문의하여 계정에 대한 사용자의 초대를 요청하십시오. 자세한 정보는 [사용자 초대](/docs/iam/iamuserinv.html#iamuserinv)를 참조하십시오.
 
-2. 권한을 부여하려는 사용자의 {{site.data.keyword.Bluemix_notm}} ID를 가져오십시오.
-
-    1. 계정과 연관된 사용자를 표시하십시오. 다음 명령을 실행하십시오.
+    **팁:** 계정에 사용자를 초대하기 위한 명령은 `bx iam account-user-invite USER_EMAIL`입니다.
+		
+4. 정책을 사용자에게 지정하십시오. 다음 명령을 실행하십시오.
 
     ```
-		bx iam account-users
-		```
-		{: codeblock}
-		
-	2. 사용자의 GUID를 가져오십시오. **참고:** 이 단계는 권한을 부여할 대상 사용자가 완료해야 합니다.
-	
-	    예를 들어 사용자 ID를 가져오려면 해당 사용자가 다음 명령을 실행하도록 요청하십시오.
-		
-		IAM 토큰을 가져오십시오. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI를 사용하여 IAM 토큰 가져오기](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli)를 참조하십시오.
-
-        IAM 토큰의 처음 두 개의 점 사이에 있는 IAM 토큰에서 데이터를 가져오십시오. 데이터를 `$user_data`와 같은 쉘 변수로 내보내십시오.
-		
-		```
-	    export user_data="xxxxxxxxxxxxxxxxxxxxxxxxxxx"
-	    ```
-	    {: screen}
-		
-		예를 들어 사용자 ID를 가져오려면 다음 명령을 실행하십시오. 이 명령은 해당 샘플에서 jq를 사용하여 정보를 JSON 형식화된 텍스트로 디코딩합니다.
-		
-		```
-		echo $user_data | base64 -d | jq
-		```
-		{: codeblock}
-		
-		이 명령을 실행하면 출력은 다음과 같습니다.
-		
-		```
-		$ echo $user_data | base64 -d | jq
-        {
-        "iam_id": "IBMid-xxxxxxxxxx",
-        "id": "IBMid-xxxxxxxxxx",
-        "realmid": "IBMid",
-        ......
-		}
-        ```
-	    {: screen}
-		
-		계정 소유자에게 사용자 ID를 보내십시오.
-		
-	3. 사용자 ID를 `$user_ibm_id`와 같은 쉘 변수로 내보내십시오. 
-	
-		```
-		export user_ibm_id="IBMid-xxxxxxxxxx"
-		```
-		{: codeblock}
-
-3. 사용자가 아직 구성원이 아닌 경우 사용자를 계정에 초대하십시오. 자세한 정보는 [사용자 초대](/docs/iam/iamuserinv.html#iamuserinv)를 참조하십시오. 
-
-    예를 들어 다음 명령을 실행하여 사용자 xxx@yyy.com을 계정 zzz@ggg.com으로 초대하십시오. 
-	
-	```
-	bx iam account-user-invite xxx@yyy.com zzz@ggg.com OrgAuditor dev SpaceDeveloper
+    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
-		
-4. 정책 파일 이름을 작성하십시오.  
 
-    예를 들어 다음 템플리트를 사용하여 US 남부 지역의 보기 권한을 부여하십시오.
-	
-	```
-	{
-		"roles" : [
-			{
-				"id": "crn:v1:bluemix:public:iam::::role:Editor" 
-			}
-		],
-		"resources": [
-			{
-				"serviceName": "ibmcloud-log-analysis",
-				"region": "us-south"
-			}
-		]
-	}
-	```
-	{: codeblock}
-	
-	정책 파일 이름을 지정하십시오. `policy.json`
-	
-5. 사용자 ID의 IAM 토큰을 가져오십시오. 
+	여기서
+    * USER_NAME은 사용자의 {{site.data.keyword.Bluemix_notm}} ID입니다.
+	* ROLE은 IAM 역할입니다. 올바른 값은 *administrator*, *operator*, *editor*, and *viewer*입니다.
 
-    자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI를 사용하여 IAM 토큰 가져오기](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli)를 참조하십시오.
+5. 정책이 사용자에게 지정되었는지 확인하십시오. 사용자에게 지정된 모든 정책을 나열하려면 다음 명령을 실행하십시오.
 
-    IAM 토큰을 `$iam_token`과 같은 쉘 변수로 내보내십시오. 예를 들어 다음과 같습니다. 
-	
-	```
-	export iam_token="xxxxxxxxxxxxxxxxxxxxx"
-	```
-	{: screen}
-	
-6. {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업 권한을 사용자에게 부여하십시오.  
-
-   다음 cURL 명령을 사용하여 US 남부 지역의 권한을 부여하십시오. 
-	
     ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.ng.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
-	```
-	{: codeblock}
-	
-	다음 cURL 명령을 사용하여 영국 지역의 권한을 부여하십시오.
-	
-    ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.eu-gb.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
+    bx iam user-policies USER_NAME
 	```
 	{: codeblock}
 
-	
-사용자에게 권한을 부여하면 사용자가 {{site.data.keyword.Bluemix_notm}}에 로그인하여 계정 레벨 로그를 볼 수 있습니다.
 
 
 
 ## {{site.data.keyword.Bluemix_notm}} UI를 사용하여 사용자에게 영역 로그를 볼 수 있는 권한 부여
 {: #grant_permissions_ui_space}
 
-사용자에게 영역 로그를 볼 수 있는 권한을 부여하려면 해당 사용자가 영역에서 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행할 수 있는 조치를 설명하는 Cloud Foundry 역할을 지정해야 합니다.
+사용자에게 영역 로그를 볼 수 있는 권한을 부여하려면 해당 사용자가 영역에서 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행할 수 있는 조치를 설명하는 Cloud Foundry 역할을 지정해야 합니다. 
 
 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행할 권한을 사용자에게 부여하려면 다음 단계를 완료하십시오.
 
@@ -235,7 +136,7 @@ lastupdated: "2018-01-10"
 	
 	사용자 ID 및 비밀번호를 사용하여 로그인하면 {{site.data.keyword.Bluemix_notm}} UI가 열립니다.
 
-2. 메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오.
+2. 메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오. 
 
     *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다.
 	

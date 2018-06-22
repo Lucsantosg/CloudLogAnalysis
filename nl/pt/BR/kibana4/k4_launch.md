@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -20,7 +20,6 @@ lastupdated: "2018-01-10"
 {:shortdesc}
 
 Ative o Kibana no {{site.data.keyword.Bluemix_notm}} para visualizar e analisar dados no contexto para o recurso no qual você ativa o Kibana. Por exemplo, é possível ativar seus logs específicos do app CF no Kibana dentro do contexto para esse App específico.
-    Espaço do {{site.data.keyword.Bluemix_notm}}. A consulta que é usada para filtrar os dados exibidos no painel recupera entradas de log para um espaço na organização. A informação de log que o Kibana exibe inclui registros para todos os recursos que são implementados dentro do espaço da organização no qual você efetuou login. 
 
 A tabela a seguir lista os recursos e o método de navegação suportado para ativar o Kibana:
 
@@ -38,11 +37,6 @@ A tabela a seguir lista os recursos e o método de navegação suportado para at
   <tr>  
   <tr>
     <td>Contêiner implementado em um cluster Kubernetes</td>
-    <td>Não</td>
-    <td>Sim</td>
-  <tr>  
-  <tr>
-    <td>Contêiner implementado em uma infraestrutura gerenciada pelo {{site.data.keyword.Bluemix_notm}}</td>
     <td>Sim</td>
     <td>Sim</td>
   <tr>  
@@ -71,7 +65,7 @@ Para ver os logs de um aplicativo Cloud Foundry ou contêiner do Docker no Kiban
 
     Por padrão, a página **Descobrir** é carregada com o modelo de índice padrão selecionado e com um filtro de tempo configurado para os últimos 30 segundos. A consulta de procura é configurada para corresponder todas as entradas para o seu app CF ou contêiner do Docker.
 
-    Se a página Descobrir não mostrar nenhuma entrada de log, ajuste o selecionador de tempo. Para obter mais informações, consulte [Configurando um filtro de tempo](logging_kibana_set_time_filter.html#set_time_filter).
+    Se a página Descobrir não mostrar nenhuma entrada de log, ajuste o selecionador de tempo. 
 
 
 ##  Navegando para o painel do Kibana por meio de um navegador da web
@@ -101,6 +95,5 @@ Conclua a etapa a seguir para ativar o Kibana por meio de um navegador:
           </tr>
         </table>
 
-    Se a página Descobrir não mostrar nenhuma entrada de log, ajuste o selecionador de tempo. Para obter mais informações, consulte [Configurando um filtro de tempo](logging_kibana_set_time_filter.html#set_time_filter).
-
+    Se a página Descobrir não mostrar nenhuma entrada de log, ajuste o selecionador de tempo. 
 

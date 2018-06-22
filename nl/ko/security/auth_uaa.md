@@ -18,7 +18,7 @@ lastupdated: "2018-01-10"
 # UAA 토큰 가져오기
 {: #auth_uaa}
 
-{{site.data.keyword.loganalysisshort}} API를 사용하여 로그를 관리하려면 인증 토큰을 사용해야 합니다. {{site.data.keyword.loganalysisshort}} CLI를 사용하여 UAA 토큰을 가져오십시오. 토큰에는 만료 시간이 있습니다.
+{{site.data.keyword.loganalysisshort}} API를 사용하여 로그를 관리하려면 인증 토큰을 사용해야 합니다. {{site.data.keyword.loganalysisshort}} CLI를 사용하여 UAA 토큰을 가져오십시오. 토큰에는 만료 시간이 있습니다. 
 {:shortdesc}
 
 		
@@ -26,19 +26,19 @@ lastupdated: "2018-01-10"
 {: #uaa_cli}
 
 
-인증 토큰을 가져오려면 다음 단계를 완료하십시오. 
+인증 토큰을 가져오려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오. 
+1. {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오.
 
    자세한 정보는 [{{site.data.keyword.Bluemix}} CLI 다운로드 및 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오.
    
-   CLI가 설치되면 다음 단계로 계속 진행하십시오. 
+   CLI가 설치되면 다음 단계로 계속 진행하십시오.
     
 2. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 	
-3. `bx cf oauth-token` 명령을 실행하여 {{site.data.keyword.Bluemix_notm}} UAA 토큰을 가져오십시오. 
+3. `bx cf oauth-token` 명령을 실행하여 {{site.data.keyword.Bluemix_notm}} UAA 토큰을 가져오십시오.
 
     ```
 	bx cf oauth-token

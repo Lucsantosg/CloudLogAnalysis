@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -52,32 +52,34 @@ Um Ihren Serviceplan in Bluemix über die Befehlszeilenschnittstelle zu ändern,
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Führen Sie den Befehl `bx cf services` aus, um Ihren aktuellen Plan zu prüfen und um den {{site.data.keyword.loganalysisshort}}-Servicenamen aus der Liste der Services anzufordern, die in dem Bereich verfügbar sind. 
+2. Führen Sie den Befehl `bx service list` aus, um Ihren aktuellen Plan zu prüfen und um den {{site.data.keyword.loganalysisshort}}-Servicenamen aus der Liste der Services anzufordern, die in dem Bereich verfügbar sind. 
 
     Der Wert für das Feld **name** ist der Name, den Sie verwenden müssen, um den Plan zu ändern. 
 
     Beispiel:
 	
 	```
-	$ bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
+	$ bx  bx service list
+    Invoking 'cf services'...
+
+    Getting services in org MyOrg / space dev as xxx@ibm.com...
     OK
-    
-    name              service          plan      bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   premium                create succeeded
+
+    name                           service                  plan             bound apps            last operation
+    Log Analysis-m2                ibmLogAnalysis           premium                                update succeeded
     ```
 	{: screen}
     
-3. Aktualisieren oder reduzieren Sie Ihren Plan. Führen Sie den Befehl `bx cf update-service` aus.
+3. Aktualisieren oder reduzieren Sie Ihren Plan. Führen Sie den Befehl `bx service update` aus.
     
 	```
-	bx cf update-service Servicename [-p neuer_Plan]
+	bx service update service_name [-p new_plan]
 	```
 	{: codeblock}
 	
 	Dabei gilt: 
 	
-	* *Servicename* ist der Name Ihres Service. Sie können den Befehl `bx cf services` ausführen, um den Wert abzurufen.
+	* *Servicename* ist der Name Ihres Service. Sie können den Befehl `bx service list` ausführen, um den Wert abzurufen.
 	* *neuer_Plan* ist der Name des Plans.
 	
 	In der folgenden Tabelle werden die verschiedenen Pläne und die unterstützten Werte aufgeführt:
@@ -113,23 +115,18 @@ Um Ihren Serviceplan in Bluemix über die Befehlszeilenschnittstelle zu ändern,
 	Beispiel: Um Ihren Plan auf den *Lite*-Plan zu reduzieren, führen Sie den folgenden Befehl aus:
 	
 	```
-	bx cf update-service "Log Analysis-a4" -p standard
-    Updating service instance Log Analysis-a4 as xxx@yyy.com...
+	bx service update "Log Analysis-m2" -p standard
+    Updating service instance Log Analysis-m2 as xxx@ibm.com...
     OK
 	```
 	{: screen}
 
-4. Überprüfen Sie, ob der neue Plan geändert ist. Führen Sie den Befehl `cf services` aus.
+4. Überprüfen Sie, ob der neue Plan geändert ist. Führen Sie den Befehl `bx service list` aus.
 
-    ```
-	bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
-    OK
-
-    name              service          plan       bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   standard                update succeeded
+  ```
+	bx service list
 	```
-	{: screen}
+	{: codeblock}
 
 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -21,8 +21,8 @@ Pour copier une recherche, une visualisation ou un tableau de bord depuis un esp
 
 | Tâche | Description |
 |------|-------------|
-| [Copier une recherche](k4_reuse_resource.html#k4_reuse_search) | Copie d'une recherche d'un espace vers un autre. |
-| [Copier une visualisation](k4_reuse_resource.html#k4_reuse_visualization) | Copie d'une visualisation d'un espace vers un autre |
+| [Copie d'une recherche](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search) | Copie d'une recherche d'un espace vers un autre. |
+| [Copie d'une visualisation](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_visualization) | Copie d'une visualisation d'un espace vers un autre |
 
 Prenez en compte les scénarios suivants dans {{site.data.keyword.Bluemix_notm}} pour la réutilisation de recherches, de visualisations ou de tableaux de bord : 
 
@@ -47,9 +47,9 @@ Procédez comme suit pour copier une recherche entre des espaces dans {{site.dat
 
 1. Lancez Kibana pour l'espace dans lequel la recherche à copier est disponible. 
 
-    * Lancez Kibana depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}} : le fichier de recherche JSON que vous pouvez exporter inclut les zones suivantes : *space ID* et *application ID* pour les applications Cloud Foundry (CF) ou *instance ID* pour les conteneurs. Pour plus d'informations, voir [Accès au tableau de bord Kibana depuis le tableau de bord {{site.data.keyword.Bluemix_notm}}](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix).
+    * Lancez Kibana depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}} : le fichier de recherche JSON que vous pouvez exporter inclut les zones suivantes : *space ID* et *application ID* pour les applications Cloud Foundry (CF) ou *instance ID* pour les conteneurs. Pour plus d'informations, voir [Accès au tableau de bord Kibana depuis le tableau de bord {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Lancez Kibana depuis un navigateur : le fichier de recherche JSON que vous pouvez exporter inclut la zone *ID d'espace*. Pour plus d'informations, voir [Accès au tableau de bord Kibana depuis un navigateur](logging_analyzing_logs_Kibana.html#launch_Kibana_from_browser).
+    * Lancez Kibana depuis un navigateur : le fichier de recherche JSON que vous pouvez exporter inclut la zone *ID d'espace*. Pour plus d'informations, voir [Accès au tableau de bord Kibana depuis un navigateur](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
 
 2. Dans la page *Paramètres*, sélectionnez **Objects**, puis l'onglet **Searches**. Ensuite, sélectionnez une recherche et copiez les informations suivantes :
 
@@ -85,7 +85,7 @@ Procédez comme suit pour copier une recherche entre des espaces dans {{site.dat
     
 5. Lancez Kibana pour l'espace {{site.data.keyword.Bluemix_notm}} dans lequel importer la recherche, puis procurez-vous les informations suivantes :
 
-    Depuis l'[interface utilisateur Bluemix](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix) :
+    Depuis l'[interface utilisateur Bluemix](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix) :
     
     <table>
       <tbody>
@@ -187,11 +187,11 @@ Procédez comme suit pour copier vers un autre espace une visualisation à utili
 
 1. Lancez Kibana pour l'espace dans lequel la visualisation à copier est disponible. 
 
-    * Lancez Kibana depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}} : le fichier de recherche JSON que vous pouvez exporter inclut les zones suivantes : *space ID* et *application ID* pour les applications Cloud Foundry (CF) ou *instance ID* pour les conteneurs. Pour plus d'informations, voir [Accès au tableau de bord Kibana depuis le tableau de bord {{site.data.keyword.Bluemix_notm}}](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix).
+    * Lancez Kibana depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}} : le fichier de recherche JSON que vous pouvez exporter inclut les zones suivantes : *space ID* et *application ID* pour les applications Cloud Foundry (CF) ou *instance ID* pour les conteneurs. Pour plus d'informations, voir [Accès au tableau de bord Kibana depuis le tableau de bord {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Lancez Kibana depuis un navigateur : le fichier de recherche JSON que vous pouvez exporter inclut la zone *ID d'espace*. Pour plus d'informations, voir [Accès au tableau de bord Kibana depuis un navigateur](logging_analyzing_logs_Kibana.html#launch_Kibana_from_browser).
+    * Lancez Kibana depuis un navigateur : le fichier de recherche JSON que vous pouvez exporter inclut la zone *ID d'espace*. Pour plus d'informations, voir [Accès au tableau de bord Kibana depuis un navigateur](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
     
-2. Copiez la recherche qui est associée à la visualisation d'un espace vers un autre. Pour plus d'informations, voir [Copie d'une recherche d'un espace Bluemix vers un autre](k4_reuse_resource.html#k4_reuse_search).
+2. Copiez la recherche qui est associée à la visualisation d'un espace vers un autre. Pour plus d'informations, voir [Copie d'une recherche d'un espace Bluemix vers un autre](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search).
 
     Une visualisation utilise une recherche pour filtrer les données qui s'affichent. Il se peut qu'une visualisation soit liée à une recherche, dans ce cas, toutes les mises à jour que vous apportez à cette recherche sont mises à jour automatiquement, ou qu'elle ne soit pas liée à une recherche, dans ce cas, les seules données disponibles pour l'analyse sont celles qui sont affichées au moment où la visualisation est créée.
 

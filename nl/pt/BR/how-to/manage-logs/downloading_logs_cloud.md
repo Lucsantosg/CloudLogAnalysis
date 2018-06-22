@@ -20,6 +20,9 @@ lastupdated: "2018-01-10"
 É possível fazer download de logs em um arquivo local ou canalizar dados em outro programa. É possível fazer download de logs dentro do contexto de uma sessão. Uma sessão especifica quais logs serão transferidos por download. Se o download dos logs é interrompido, a sessão permite continuar o download de onde parou. Após a conclusão do download, deve-se excluir a sessão.
 {:shortdesc}
 
+Para concluir as etapas, deve-se instalar a CLI do {{site.data.keyword.loganalysisshort}}. Para obter mais informações, veja [Configurando a CLI do {{site.data.keyword.loganalysisshort}}](https://console.bluemix.net/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli_).
+
+
 Conclua as etapas a seguir para fazer download de dados do log que estão disponíveis em um espaço em um arquivo local:
 
 ## Etapa 1: efetuar login no {{site.data.keyword.Bluemix_notm}}
@@ -45,7 +48,7 @@ Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.B
     bx logging log-show 
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types   
+    Tipos pesquisáveis de contagem de tamanho de data   
     2017-11-16   794008   706     All          syslog, default   
 	2017-11-17   794008   706     All          default   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
@@ -61,7 +64,7 @@ Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.B
 
 É necessária uma sessão para definir o escopo de dados do log que estão disponíveis para um download e para manter o status do download. 
 
-Use o comando [cf logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) para criar uma sessão. Opcionalmente, é possível especificar a data de início, a data de encerramento e os tipos de logs quando você cria uma sessão:  
+Use o comando [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) para criar uma sessão. Opcionalmente, é possível especificar a data de início, a data de encerramento e os tipos de logs quando você cria uma sessão:  
 
 * Quando você especificar a data de início e a data de encerramento, a sessão fornecerá acesso aos logs entre essas datas inclusivas. 
 * Quando você especificar o tipo de log (**-t**), a sessão fornecerá acesso a um tipo específico de log. Esse é um recurso importante ao gerenciar logs em escala, porque é possível definir o escopo de uma sessão para apenas um pequeno subconjunto de logs nos quais você estiver interessado.
@@ -128,7 +131,7 @@ O indicador de progresso move-se de 0 para 100% conforme o download dos logs é 
 ## Etapa 5: excluir a sessão
 {: #step5}
 
-Após a conclusão do download, deve-se excluir a sessão usando o comando [cf logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete). 
+Após a conclusão do download, deve-se excluir a sessão usando o comando [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete). 
 
 Execute o comando a seguir para excluir uma sessão:
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,7 +25,7 @@ lastupdated: "2018-01-10"
 
 
 ## アカウントのログ保存ポリシーの無効化
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_acc}
 
 保存ポリシーを無効にすると、すべてのログが保持されます。 
 
@@ -89,7 +89,7 @@ bx logging option-update -e -1
 
 
 ## アカウントのログ保存ポリシーの確認
-{: #check_retention_policy_space}
+{: #check_retention_policy_acc}
 
 アカウントに設定されている保存期間を取得するには、以下のステップを実行します。
 
@@ -149,7 +149,7 @@ bx logging option-update -e -1
 
 
 ## アカウント・レベルのログ保存ポリシーの設定
-{: #set_retention_policy_space}
+{: #set_retention_policy_acc}
 
 以下のステップを実行します。
 
@@ -183,7 +183,7 @@ bx logging option-update -r account -i AccountID -e 15
 
 
 ## スペースのログ保存ポリシーの設定
-{: #set_retention_policy_account}
+{: #set_retention_policy_space}
 
 スペースの保存期間を表示するには、以下のステップを実行します。
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-09"
 
 ---
 
@@ -21,8 +21,102 @@ lastupdated: "2018-01-10"
 Para obter a cota e uso diário atual de um domínio de logs do serviço {{site.data.keyword.loganalysisshort}}, é possível executar um comando cURL. 
 {:shortdesc}
 
+## Calculando a cota de procura e o uso diário usando a CLI
+{: #quota_cli}
 
-## Calculando a cota de procura e o uso diário de uma conta
+Conclua as etapas a seguir:
+
+1. Efetue login na {{site.data.keyword.Bluemix_notm}}.
+
+    Por exemplo, para efetuar login no Sul dos EUA, execute o comando:
+
+    ```
+    bx login -a api.ng.bluemix.net
+    ```
+    {: codeblock}
+
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+
+2. Execute o comando da CLI `bx logging quota-usage-show`. 
+
+    ```
+    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
+    ```
+    {: codeblock}
+
+    Em que 
+
+    * Os valores RESOURCE_TYPE válidos são os seguintes: space, account
+    * RESOURCE_ID é o GUID da conta ou do espaço para o qual você deseja obter o uso de cotas.
+
+
+Por exemplo, para mostrar o uso de cota de uma conta, execute o comando a seguir:
+
+```
+ bx logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
+Showing quota usage for resource: 475693845023932019c6567c9c8de6dece ...
+OK
+
+Daily Allotmant   Current Usage   
+524288000         0   
+```
+{: screen}
+
+Para mostrar o uso de cota de um espaço, execute o comando a seguir:
+
+```
+bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
+Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Daily Allotmant   Current Usage   
+524288000         6774014   
+```
+{: screen}
+
+
+## Obtendo o histórico de cota de procura usando a CLI
+{: #quota_history_cli}
+
+
+Conclua as etapas a seguir:
+
+1. Efetue login na {{site.data.keyword.Bluemix_notm}}.
+
+    Por exemplo, para efetuar login no Sul dos EUA, execute o comando:
+
+    ```
+    bx login -a api.ng.bluemix.net
+    ```
+    {: codeblock}
+
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+
+2. Execute o comando da CLI `bx logging quota-usage-show` com o parâmetro `-s`. 
+
+    ```
+    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID] [-s,--history]
+    ```
+    {: codeblock}
+
+    Em que 
+
+    * Os valores RESOURCE_TYPE válidos são os seguintes: space, account
+    * RESOURCE_ID é o GUID da conta ou do espaço para o qual você deseja obter o uso de cotas.
+
+Por exemplo,
+
+```
+bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744...
+OK
+
+Date Allotmant Usage 2018.02.28 524288000 80405926 2018.03.06 524288000 18955540 2018.03.05 524288000 47262944 2018.03.08 524288000 18311338 2018.03.01 524288000 82416831 2018.03.03 524288000 75045462 2018.03.07 524288000 17386278 2018.03.02 524288000 104316444 2018.03.04 524288000 73125223   
+```
+{: screen}
+
+
+
+## Calculando a cota de procura e o uso diário de uma conta usando a API
 {: #account}
 
 Conclua as etapas a seguir:
@@ -47,7 +141,7 @@ Conclua as etapas a seguir:
 	```
 	{: screen}
 
-3. Obtenha o token do UAA. 
+3. Obtenha o token UAA. 
 
     Para obter mais informações, veja [Obtendo o token do UAA](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa).
 
@@ -93,12 +187,12 @@ Conclua as etapas a seguir:
     {: screen}
 
 	
-## Calculando a cota de procura e o uso diário de um espaço
+## Calculando a cota de procura e o uso diário de um espaço usando a API
 {: #space}
 
 Conclua as etapas a seguir:
 
-1. Efetue login no {{site.data.keyword.Bluemix_notm}}. 
+1. Efetue login na {{site.data.keyword.Bluemix_notm}}. 
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
@@ -113,7 +207,7 @@ Conclua as etapas a seguir:
 	```
 	{: screen}
 
-3. Obtenha o token do UAA. 
+3. Obtenha o token UAA. 
 
     Para obter mais informações, veja [Obtendo o token do UAA](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa).
 

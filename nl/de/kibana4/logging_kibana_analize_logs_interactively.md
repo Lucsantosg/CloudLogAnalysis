@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-01-10"
 Auf der Seite "Discover" können Sie Ihre {{site.data.keyword.Bluemix}}-Protokolle interaktiv anzeigen und analysieren. Sie können Suchabfragen in der Abfragesprache Lucene definieren, um die Daten zu filtern. Für jede Suchabfrage können Sie Filter anwenden, um die Einträge einzugrenzen, die für die Analyse verfügbar sind. Sie können eine Suche zur späteren Verwendung speichern.
 {:shortdesc}
 
-In {{site.data.keyword.Bluemix_notm}} ist die Gruppe von Daten, die auf der Seite 'Discover' angezeigt wird, wenn Sie Kibana in der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle starten, standardmäßig so konfiguriert, dass nur die Einträge für die Cloud Foundry-Anwendung (CF-Anwendung) oder den Cloud Foundry-Container angezeigt werden, aus der bzw. dem heraus Kibana gestartet wird. Weitere Informationen dazu, wie Sie ermitteln, welches Subset Ihrer Daten auf der Seite 'Discover' angezeigt wird, finden Sie unter [Angezeigte Daten ermitteln](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+In {{site.data.keyword.Bluemix_notm}} ist die Gruppe von Daten, die auf der Seite 'Discover' angezeigt wird, wenn Sie Kibana in der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle starten, standardmäßig so konfiguriert, dass nur die Einträge für die Cloud Foundry-Anwendung (CF-Anwendung) oder den Cloud Foundry-Container angezeigt werden, aus der bzw. dem heraus Kibana gestartet wird. 
 
 In der folgenden Tabelle ist die Standardabfrage für jede Ressource beim Starten von Kibana über {{site.data.keyword.Bluemix_notm}} angegeben:
 
@@ -41,12 +41,12 @@ Zur Anpassung der Tabelle auf der Seite 'Discover' können Sie beliebige der fol
 
 | Task | Beschreibung | 
 |------|-------------|
-| [Feldspalte hinzufügen](logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | Sie können Felder hinzufügen, um anstelle der vollständigen Nachricht bestimmte Daten anzuzeigen, die für die Analyse erforderlich sind. |
-| [Feldspalte neu anordnen](logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | Verschieben Sie die Position eines Felds in der Tabelle auf der Position, an der Sie es wollen. |
-| [Eintrag anzeigen](logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | Sie können einen Eintrag in der Tabelle erweitern, um die Details des Eintrags nach Feld geparst oder als JSON-Daten anzuzeigen. |
-| [Feldspalte entfernen](logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | Sie können ein Feld entfernen, wenn es in der Ansicht für die Analyse nicht erforderlich ist. |
-| [Einträge nach Wert eines indexierten Felds anordnen](logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | Sie können die Einträge zur einfacheren Analyse neu sortieren. |
-| [Datenansicht automatisch aktualisieren](logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | Sie können die Daten, die in der Tabelle angezeigt werden, mit den neuesten Einträgen aktualisieren. Standardmäßig ist die Aktualisierung inaktiviert (**OFF**). |
+| [Feldspalte hinzufügen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | Sie können Felder hinzufügen, um anstelle der vollständigen Nachricht bestimmte Daten anzuzeigen, die für die Analyse erforderlich sind. |
+| [Feldspalte neu anordnen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | Verschieben Sie die Position eines Felds in der Tabelle auf der Position, an der Sie es wollen. |
+| [Eintrag anzeigen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | Sie können einen Eintrag in der Tabelle erweitern, um die Details des Eintrags nach Feld geparst oder als JSON-Daten anzuzeigen. |
+| [Feldspalte entfernen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | Sie können ein Feld entfernen, wenn es in der Ansicht für die Analyse nicht erforderlich ist. |
+| [Einträge nach Wert eines indexierten Felds anordnen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | Sie können die Einträge zur einfacheren Analyse neu sortieren. |
+| [Datenansicht automatisch aktualisieren](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | Sie können die Daten, die in der Tabelle angezeigt werden, mit den neuesten Einträgen aktualisieren. Standardmäßig ist die Aktualisierung inaktiviert (**OFF**). |
 {: caption="Tabelle 2. Tasks für die Anpassung einer Tabelle" caption-side="top"}
 
 <br>
@@ -55,17 +55,17 @@ Die folgende Abbildung zeigt ein Beispiel für eine Tabelle auf der Seite 'Disco
 
 ![Seite 'Discover' in Kibana](images/k4_discover_page.jpg "Seite 'Discover' in Kibana")
 
-Sie können weitere Suchen definieren. Weitere Informationen finden Sie unter [Protokolle durch Definieren angepasster Suchen filtern](k4_filter_queries.html#k4_filter_queries). Wenn Sie eine neue Suche definieren, werden die Daten, die im Histogramm und in der Tabelle angezeigt werden, automatisch aktualisiert.
+Sie können weitere Suchen definieren. Wenn Sie eine neue Suche definieren, werden die Daten, die im Histogramm und in der Tabelle angezeigt werden, automatisch aktualisiert.
 
 Zum Definieren einer neuen Suche verwenden Sie die Standardsuchabfrage als Ausgangspunkt und grenzen die Suche dann durch folgende Aktionen ein:
 
-* Wenden Sie Feldfilter an, um die Gruppe von Daten einzugrenzen, die angezeigt wird. Sie können jeden Filter umschalten, auf der Seite fixieren, nach Bedarf aktivieren oder inaktivieren und so konfigurieren, dass der Wert eingeschlossen oder ausgeschlossen wird. Weitere Informationen finden Sie unter [Protokolle in Kibana filtern](logging_kibana_filtering_logs.html#kibana_filtering_logs).
+* Wenden Sie Feldfilter an, um die Gruppe von Daten einzugrenzen, die angezeigt wird. Sie können jeden Filter umschalten, auf der Seite fixieren, nach Bedarf aktivieren oder inaktivieren und so konfigurieren, dass der Wert eingeschlossen oder ausgeschlossen wird. 
 
-    **Tipp:** Wenn Sie ein Feld nicht in der *Feldliste* finden können, das Sie erwarten, oder wenn einige der Lupensymbole neben den aufgelisteten Feldern auf der Seite 'Discover' inaktiviert sind, laden Sie die Feldliste erneut, indem Sie das Indexmuster auf der Seite 'Settings' aktualisieren. Weitere Informationen finden Sie unter [Feldliste erneut laden](logging_kibana_analize_logs_interactively.html#kibana_discover_view_reload_fields).
+    **Tipp:** Wenn Sie ein Feld nicht in der *Feldliste* finden können, das Sie erwarten, oder wenn einige der Lupensymbole neben den aufgelisteten Feldern auf der Seite 'Discover' inaktiviert sind, laden Sie die Feldliste erneut, indem Sie das Indexmuster auf der Seite 'Settings' aktualisieren.  
 
     Wenn Ihre CF-App zum Beispiel viele Instanzen hat, möchten Sie möglicherweise die Daten für eine bestimmte Instanz analysieren. Sie können einen Feldfilter für den bestimmten Instanz-ID-Wert definieren, den Sie analysieren wollen. 
     
-* Passen Sie das Zeitauswahlfeld (*Timer Picker*) für zeitbasierte Daten an. Sie können einen absoluten Zeitbereich oder einen relativen Zeitbereich für eine Abfrage angeben oder Sie können einen Zeitbereich aus einer Reihe vordefinierter Werte auswählen. Weitere Informationen finden Sie unter [Zeitfilter festlegen](logging_kibana_set_time_filter.html#set_time_filter).
+* Passen Sie das Zeitauswahlfeld (*Timer Picker*) für zeitbasierte Daten an. Sie können einen absoluten Zeitbereich oder einen relativen Zeitbereich für eine Abfrage angeben oder Sie können einen Zeitbereich aus einer Reihe vordefinierter Werte auswählen. 
 
 Wenn Sie die Suche, die das Datensubset definiert, das Sie analysieren wollen, konfiguriert haben, können Sie sie zur späteren Wiederverwendung speichern.
 
@@ -73,12 +73,12 @@ Sie können eine der folgenden Tasks für Suchen ausführen, die Sie auf der Sei
 
 | Task | Beschreibung |
 |------|-------------|
-| [Suche speichern](logging_kibana_filtering_logs.html#k4_save_search) | Sie können eine Suche zur späteren Verwendung speichern.  |
-| [Suche löschen](logging_kibana_filtering_logs.html#k4_delete_search) | Sie können eine Suche löschen, wenn sie nicht mehr benötigt wird. |
-| [Suche exportieren](logging_kibana_filtering_logs.html#k4_export_search) | Sie können eine Suche zur gemeinsamen Nutzung exportieren.  |
-| [Suche neu laden](logging_kibana_filtering_logs.html#k4_reload_search)  | Sie können eine vorhandene Suche hochladen, um eine Gruppe von Daten erneut zu analysieren. |
-| [Daten einer Suche aktualisieren](logging_kibana_filtering_logs.html#k4_refresh_search) | Sie können eine automatische Aktualisierung der Daten, die durch die Suche angezeigt wird, konfigurieren.  |
-| [Suche importieren](logging_kibana_filtering_logs.html#k4_import_search) | Sie können eine Suche importieren.  |
+| Eine Suche speichern | Sie können eine Suche zur späteren Verwendung speichern.  |
+| Eine Suche löschen | Sie können eine Suche löschen, wenn sie nicht mehr benötigt wird. |
+| Eine Suche exportieren | Sie können eine Suche zur gemeinsamen Nutzung exportieren.  |
+| Eine Suche neu laden | Sie können eine vorhandene Suche hochladen, um eine Gruppe von Daten erneut zu analysieren. |
+| Die Daten einer Suche aktualisieren | Sie können eine automatische Aktualisierung der Daten, die durch die Suche angezeigt wird, konfigurieren.  |
+| Eine Suche importieren | Sie können eine Suche importieren.  |
 {: caption="Tabelle 3. Tasks für die Arbeit mit Suchen" caption-side="top"}
 
 <br>
@@ -87,7 +87,7 @@ Sie können auch Statistikdaten auf der Seite 'Discover' ansehen:
 * Sie können Statistiken pro Feld anzeigen. 
 * Sie können Statistiken im Histogramm pro konfigurierter Zeitmarke (`@timestamp`) anzeigen.
 
-Weitere Informationen finden Sie unter [Statistiken zu Felddaten anzeigen](logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats).
+Weitere Informationen finden Sie unter [Statistiken zu Felddaten anzeigen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats).
 
 **Hinweis:** Die Daten, die in der Tabelle und im Histogramm angezeigt werden, sind statisch. Wenn Sie immer wieder die neuesten Einträge anzeigen wollen, müssen Sie ein Aktualisierungsintervall festlegen. 
 
@@ -130,7 +130,7 @@ Wenn Sie beispielsweise das Feld *application_id* zur Tabelle hinzufügen, sieht
 ## Datenansicht automatisch aktualisieren
 {: #kibana_discover_view_refresh_interval}
 
-In {{site.data.keyword.Bluemix_notm}} ist das Zeitintervall für automatisches Aktualisieren (*Auto-refresh*) standardmäßig inaktiviert (**OFF**) und die Daten, die in Kibana angezeigt werden, entsprechen den letzten 15 Minuten seit dem Start von Kibana. Die 15 Minuten entsprechen dem Zeitfilter, der vorkonfiguriert ist. Sie können diesen Zeitfilter ändern, indem Sie ein anderes Zeitintervall festlegen. Weitere Informationen finden Sie unter [Zeitfilter festlegen](logging_kibana_set_time_filter.html#set_time_filter).
+In {{site.data.keyword.Bluemix_notm}} ist das Zeitintervall für automatisches Aktualisieren (*Auto-refresh*) standardmäßig inaktiviert (**OFF**) und die Daten, die in Kibana angezeigt werden, entsprechen den letzten 15 Minuten seit dem Start von Kibana. Die 15 Minuten entsprechen dem Zeitfilter, der vorkonfiguriert ist. Sie können diesen Zeitfilter ändern, indem Sie ein anderes Zeitintervall festlegen. 
 
 Führen Sie die folgenden Schritte aus, um ein Zeitintervall für automatisches Aktualisieren (*Auto-refresh*) festzulegen:
 
@@ -147,7 +147,7 @@ Sie können das Aktualisierungsintervall anhalten, indem Sie auf die Pauseschalt
 
 
 ## Auf der Seite 'Discover' angezeigte Daten ermitteln
-{:#k4_identify_data}
+{: #k4_identify_data}
 
 Bei der Analyse der {{site.data.keyword.Bluemix_notm}}-Protokolle in Kibana hängen die angezeigten Daten von der Art und Weise, wie Sie Kibana starten, vom konfigurierten Indexmuster (Index Pattern) und von angepassten Abfragen und Filtern ab, die Sie angewendet haben.
 

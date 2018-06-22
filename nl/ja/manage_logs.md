@@ -65,21 +65,12 @@ Log Search に保管されたログは、3 日後に削除されます。
 
 Log Collection に保管されたログは、保存ポリシーを構成するか手動で削除するまで保持されます。 
 
-* ログ保存ポリシーを構成して、Log Collection 内でログを保持する日数を定義できます。 詳しくは、以下を参照してください。
+* ログ保存ポリシーを構成して、Log Collection 内でログを保持する日数を定義できます。 詳しくは、『[{{site.data.keyword.Bluemix_notm}} プラグインを使用したログ保存ポリシーの表示および構成](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy)』を参照してください。
 
-    [{{site.data.keyword.Bluemix_notm}} プラグインを使用したログ保存ポリシーの表示および構成](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy)
-	
-	[CF プラグインを使用したログ保存ポリシーの表示および構成](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy.html#configuring_retention_policy)
+* [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} または [Log Collection CLI](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} を使用して、Log Collection からログを手動で削除できます。 
 
-    ポリシーの値を *-1* に設定することによって、ポリシーを無効にすることができます。 
-
-* [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} または [Log Collection CLI](/docs/services/CloudLogAnalysis/reference/logging_cli.html#logging_cli){: new_window} を使用して、Log Collection からログを手動で削除できます。 
-
-* CLI を使用できます。 CLI を使用してログを手動で削除することについて詳しくは、以下を参照してください。
-
-    [{{site.data.keyword.Bluemix_notm}} プラグインを使用した bx logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)
+* CLI を使用できます。 CLI を使用してログを手動で削除することについて詳しくは、『[{{site.data.keyword.Bluemix_notm}} プラグインを使用した bx logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)』を参照してください。
     
-	[CF プラグインを使用した bx cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete)
 
 
 ## ログのダウンロード
@@ -108,14 +99,6 @@ Log Collection に保管されたログは、保存ポリシーを構成する�
 スペース・ドメイン、組織ドメイン、またはアカウント・ドメインに保管されたログに関する情報を表示できます。
 
 
-## {{site.data.keyword.loganalysisshort_notm}} CLI のインストール (CF プラグイン)
-{: #install_cli}
-
-CLI のインストール方法について詳しくは、『[ロギング CLI のインストール](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#config_log_collection_cli)』を参照してください。
-
-CLI のバージョンを確認するには、パラメーター「-version」を付けて [bx cf logging](/docs/services/CloudLogAnalysis/reference/logging_cli.html#base) コマンドを実行します。
-
-コマンドの実行方法についてのヘルプを利用するには、『[コマンドの実行に関するコマンド・ライン・ヘルプの利用](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#command_cli_help)』を参照してください。
 
 ## {{site.data.keyword.loganalysisshort_notm}} CLI のインストール ({{site.data.keyword.Bluemix_notm}} プラグイン)
 {: #install_cli}

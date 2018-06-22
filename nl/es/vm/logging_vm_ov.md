@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Registro para máquinas virtuales
+# Máquinas virtuales
 {: #logging_vm_ov}
 
 Las funciones de registro no se habilitan automáticamente para las máquinas virtuales (VM). Sin embargo, puede configurar la VM para que envíe registros al componente de recopilación de registros. Para recopilar y enviar datos de registro desde una VM al servicio {{site.data.keyword.loganalysisshort}}, debe configurar un reenviador de Logstash multiarrendatario. Luego podrá ver, filtrar y analizar registros en Kibana.
@@ -37,8 +37,8 @@ De forma predeterminada, {{site.data.keyword.Bluemix_notm}} almacena los datos d
 
 El servicio {{site.data.keyword.loganalysisshort}} proporciona planes adicionales que le permiten almacenar registros en la recopilación de registros tanto tiempo como desee. Para obtener más información sobre el precio de cada plan, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-* Puede configurar una política de retención de registros que puede utilizar para definir el número de días que desea conservar los registros en la recopilación de registros. Para obtener más información, consulte [Política de retención de registros](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
-* Puede suprimir los registros manualmente utilizando la CLI o la API de recopilación de registros. 
+* Puede configurar una política de retención de registros que puede utilizar para definir el número de días que desea conservar los registros en la recopilación de registros. Para obtener más información, consulte [Política de retención de registros](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
+* Puede suprimir los registros manualmente utilizando la CLI o la API de recopilación de registros.
 
 
 ## Búsqueda de registros

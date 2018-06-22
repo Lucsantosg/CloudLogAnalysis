@@ -40,7 +40,7 @@ lastupdated: "2018-01-10"
 	
 3. 執行 `bx cf oauth-token` 指令來取得 {{site.data.keyword.Bluemix_notm}} UAA 記號。
 
-	```
+    ```
 	bx cf oauth-token
 	```
 	{: codeblock}

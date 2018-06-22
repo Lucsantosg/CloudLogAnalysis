@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -41,7 +41,7 @@ Pour une **application Cloud Foundry Node.js**, vous pouvez utiliser le module d
 * console.log('message') envoie le message dans le flux de sortie standard
 * console.error('error_message') envoie l'erreur dans le flux d'erreur standard
 
-Pour plus d'informations sur les applications Node.js, voir [How to log in node.js ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://docs.nodejitsu.com/articles/intermediate/how-to-log){: new_window}.
+Pour plus d'informations sur les applications Node.js, voir [How to log in node.js ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](https://docs.nodejitsu.com/articles/intermediate/how-to-log/){: new_window}.
 
 
 Pour plus d'informations sur les **applications Ruby on Rails**, voir [The Logger ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://guides.rubyonrails.org/debugging_rails_applications.html#the-logger){: new_window}.

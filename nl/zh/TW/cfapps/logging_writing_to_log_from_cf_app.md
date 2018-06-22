@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -41,17 +41,17 @@ lastupdated: "2018-01-10"
 * console.log('message') 會將訊息傳送至 STDOUT 串流
 * console.error('error_message') 會將錯誤傳送至 STDERR 串流
 
-如需 Node.js 應用程式的相關資訊，請參閱 [How to log in node.js ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](http://docs.nodejitsu.com/articles/intermediate/how-to-log){: new_window}。
+如需 Node.js 應用程式的相關資訊，請參閱 [How to log in node.js ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](https://docs.nodejitsu.com/articles/intermediate/how-to-log/){: new_window}。
 
 
 如需 **Ruby on Rails 應用程式**的相關資訊，請參閱 [The Logger ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](http://guides.rubyonrails.org/debugging_rails_applications.html#the-logger){: new_window}。
 
 下表列出部分應用程式運行環境日誌與日誌聚集器自動拾取之日誌的對映：
 
-| **運行環境** |    **STDOUT**     | **STDERR** |
+|**運行環境** |**STDOUT**     |**STDERR** |
 |-----------------|-------------------|-------------------|
-| Liberty | system.out | system.err |
-| Node.js | console.log、console.info | console.error、console.warn |
-| Ruby | stdout| stderr |
+|Liberty |system.out |system.err |
+|Node.js |console.log、console.info |console.error、console.warn |
+|Ruby |stdout|stderr |
 {: caption="表 1. 部分應用程式運行環境日誌與日誌聚集器自動拾取的日誌之間的對映" caption-side="top"}
 

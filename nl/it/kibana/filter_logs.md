@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -28,7 +29,7 @@ Dopo aver definito una nuova ricerca, salvala in modo da poterla riutilizzare pe
 
 Quando esegui una nuova ricerca, l'istogramma, la tabella e l'elenco dei campi vengono automaticamente aggiornati per visualizzare i risultati della ricerca. Per scoprire quali dati vengono visualizzati, vedi [Identificazione dei dati visualizzati nella pagina Rileva](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 
-Il seguente elenco delinea gli scenari che mostrano come filtrare i dati nei tuoi log:
+Il seguente elenco presenta gli scenari che mostrano come filtrare i dati nei tuoi log:
 
 * Puoi creare delle ricerche personalizzate per filtrare i tuoi log. Per ulteriori informazioni, vedi [Filtro dei log definendo query personalizzate](/docs/services/CloudLogAnalysis/kibana/define_search.html#define_search).
 
@@ -55,7 +56,7 @@ Completa la seguente procedura per aggiungere un filtro al valore che non è dis
     
     Nella tabella, puoi visualizzare tutti i record che corrispondono alla tua query. 
     
- 3. Espandi un record e seleziona il pulsante della lente di ingrandimento ![Pulsante della lente di ingrandimento nella modalità inclusiva](images/include_field_icon.jpg "Pulsante della lente di ingrandimento nella modalità inclusiva") per aggiungere un filtro.
+ 3. Espandi un record e seleziona il pulsante di lente di ingrandimento ![Pulsante di lente di ingrandimento nella modalità inclusiva](images/include_field_icon.jpg "Pulsante di lente di ingrandimento nella modalità inclusiva") per aggiungere un filtro.
      
 4. Controlla che il filtro sia stato aggiunto.
 
@@ -65,13 +66,13 @@ Completa la seguente procedura per aggiungere un filtro al valore che non è dis
 ## Filtro dei tuoi log per un valore del campo specifico
 {:#filter_logs_spec_field}
 
-Puoi ricercare le voci che includono un valore del campo specifico. 
+Puoi cercare le voci che includono un valore del campo specifico. 
 
-Completa la seguente procedura per ricercare le voci che includono un valore del campo specifico:
+Completa la seguente procedura per cercare le voci che includono un valore del campo specifico:
 
 1. Guarda nella pagina Rileva Kibana per visualizzare quale sottorete dei tuoi dati viene visualizzata. Per ulteriori informazioni, vedi [Identificazione dei dati visualizzati nella tua pagina Rileva Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 
-2. Nell'*Elenco campo*, identifica il campo per cui desideri definire un filtro e fai clic su di esso.
+2. Nell'*Elenco campi*, identifica il campo per cui desideri definire un filtro e fai clic su di esso.
 
     Per il campo viene visualizzato un massimo di 5 valori. Ogni valore ha due pulsanti della lente di ingrandimento. 
     
@@ -79,7 +80,7 @@ Completa la seguente procedura per ricercare le voci che includono un valore del
 
 3. Per aggiungere un filtro che cerca le voci con un valore di campo, scegli la lente di ingrandimento con un segno più ![Lente di ingrandimento in modalità inclusiva](images/include_field_icon.jpg "Pulsante di lente di ingrandimento in modalità inclusiva") per tale valore.
 
-    Per aggiungere un filtro che cerca le voci che non includono il valore di campo, scegli la lente di ingrandimento con un segno meno![Lente di ingrandimento in modalità esclusiva](images/exclude_field_icon.jpg "Pulsante di lente di ingrandimento in modalità esclusiva") per il valore.
+    Per aggiungere un filtro che cerca le voci che non includono il valore di camp, scegli la lente di ingrandimento con un segno meno![Lente di ingrandimento in modalità esclusiva](images/exclude_field_icon.jpg "Pulsante di lente di ingrandimento in modalità esclusiva") per il valore.
 
 4. Scegli una delle seguenti opzioni per utilizzare i filtri in Kibana:
 
@@ -123,32 +124,32 @@ Completa la seguente procedura per ricercare le voci che includono un valore del
 ## Filtro dei tuoi log dell'applicazione CF per origine
 {:#filter_logs_by_source}
 
-Completa la seguente procedura per ricercare le voci che includono un'origine del log specifica:
+Completa la seguente procedura per cercare le voci che includono un'origine del log specifica:
 
 1. Guarda nella pagina Rileva Kibana per visualizzare quale sottorete dei tuoi dati viene visualizzata. Per ulteriori informazioni, vedi [Identificazione dei dati visualizzati nella tua pagina Rileva Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 
-2. Nell'*Elenco campo*, seleziona il campo **ID_origine**.
+2. Nell'*Elenco campi*, seleziona il campo **source_id**.
 
-3. Per aggiungere un filtro che ricerca le voci che includono un ID_origine specifico, scegli il pulsante di ingrandimento ![Pulsante della lente di ingrandimento nella modalità inclusiva](images/include_field_icon.jpg "Pulsante della lente di ingrandimento nella modalità inclusiva") per tale valore.
+3. Per aggiungere un filtro che ricerca le voci che includono un source_id specifico, scegli il pulsante di lente di ingrandimento ![Pulsante di lente di ingrandimento nella modalità inclusiva](images/include_field_icon.jpg "Pulsante di lente di ingrandimento nella modalità inclusiva") per tale valore.
 
     Per un elenco delle origini del log disponibili per le applicazioni CF, vedi [Origini log per le applicazioni CF](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#logging_bluemix_cf_apps_log_sources).
 
-    Per aggiungere un filtro che ricerca le voci che non includono un ID_origine specifico, scegli il pulsante di ingrandimento ![Pulsante della lente di ingrandimento nella modalità esclusiva](images/exclude_field_icon.jpg "Pulsante della lente di ingrandimento nella modalità esclusiva") per il valore.
+    Per aggiungere un filtro che ricerca le voci che non includono un source_id specifico, scegli il pulsante di lente di ingrandimento ![Pulsante di lente di ingrandimento nella modalità esclusiva](images/exclude_field_icon.jpg "Pulsante di lente di ingrandimento nella modalità esclusiva") per il valore.
     
 
 
 ## Filtro dei tuoi log per tipo di log
 {:#filter_logs_by_log_type}
 
-Completa la seguente procedura per ricercare le voci che includono un tipo di log specifico:
+Completa la seguente procedura per cercare le voci che includono un tipo di log specifico:
 
 1. Guarda nella pagina Rileva Kibana per visualizzare quale sottorete dei tuoi dati viene visualizzata. Per ulteriori informazioni, vedi [Identificazione dei dati visualizzati nella tua pagina Rileva Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 
-2. Nell'*Elenco campo*, seleziona il campo **tipo**.
+2. Nell'*Elenco campi*, seleziona il campo **tipo**.
 
-3. Per aggiungere un filtro che esegue la ricerca per un tipo di log specifico, scegli il pulsante di ingrandimento ![Pulsante della lente di ingrandimento nella modalità inclusiva](images/include_field_icon.jpg "Pulsante della lente di ingrandimento nella modalità inclusiva") per il tipo di log che desideri analizzare.
+3. Per aggiungere un filtro che cerca uno specifico tipo di log, scegli il pulsante di lente di ingrandimento ![Pulsante di lente di ingrandimento nella modalità inclusiva](images/include_field_icon.jpg "Pulsante di lente di ingrandimento nella modalità inclusiva") per il tipo di log che desideri analizzare.
 
-    Per aggiungere un filtro che ricerca le voci che non includono un tipo di log specifico, scegli il pulsante di ingrandimento ![Pulsante della lente di ingrandimento nella modalità esclusiva](images/exclude_field_icon.jpg "Pulsante della lente di ingrandimento nella modalità esclusiva") per il valore.
+    Per aggiungere un filtro che ricerca le voci che non includono un tipo di log specifico, scegli il pulsante di lente di ingrandimento ![Pulsante di lente di ingrandimento nella modalità esclusiva](images/exclude_field_icon.jpg "Pulsante di lente di ingrandimento nella modalità esclusiva") per il valore.
 
 
 
@@ -159,32 +160,32 @@ Completa le seguenti attività per visualizzare e filtrare i tuoi log per ID ist
 
 1. Guarda nella pagina Rileva Kibana per visualizzare quale sottorete dei tuoi dati viene visualizzata. Per ulteriori informazioni, vedi [Identificazione dei dati visualizzati nella tua pagina Rileva Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 
-2. Nell'*Elenco campo*, seleziona uno dei seguenti campi per la ricerca per un ID istanza specifico:
+2. Nell'*Elenco campi*, seleziona uno dei seguenti campi per la ricerca per un ID istanza specifico:
 
     * **ID_istanza**: questo campo elenca i vari ID istanza disponibili nel log per un'applicazione Cloud Foundry. 
     * **istanza**: questo campo elenca i vari GUID di tutte le istanze per un gruppo di contenitori. 
 	* **docker.container_id_str**: questo campo elenca i diversi ID del contenitore distribuiti in un'infrastruttura Kubernetes.
    
-3. Per aggiungere un filtro che esegue la ricerca per un tipo di log specifico, scegli il pulsante di ingrandimento ![Pulsante della lente di ingrandimento nella modalità inclusiva](images/include_field_icon.jpg "Pulsante della lente di ingrandimento nella modalità inclusiva") per il tipo di log che desideri analizzare.
+3. Per aggiungere un filtro che cerca uno specifico tipo di log, scegli il pulsante di lente di ingrandimento ![Pulsante di lente di ingrandimento nella modalità inclusiva](images/include_field_icon.jpg "Pulsante di lente di ingrandimento nella modalità inclusiva") per il tipo di log che desideri analizzare.
 
-    Per aggiungere un filtro che ricerca le voci che non includono un ID istanza specifico, scegli il pulsante di ingrandimento ![Pulsante della lente di ingrandimento nella modalità esclusiva](images/exclude_field_icon.jpg "Pulsante della lente di ingrandimento nella modalità esclusiva") per il valore.
+    Per aggiungere un filtro che ricerca le voci che non includono un ID istanza specifico, scegli il pulsante di lente di ingrandimento ![Pulsante di lente di ingrandimento nella modalità esclusiva](images/exclude_field_icon.jpg "Pulsante di lente di ingrandimento nella modalità esclusiva") per il valore.
 
 
 
-## Filtro dei tuoi log dell'applicazione CF per tipo di messaggio
+## Filtro dei tuoi log dell'applicazione CF in base al tipo di messaggio
 {:#filter_cf_logs_by_msg_type}
 
-Completa la seguente procedura per ricercare le voci che includono un tipo di messaggio specifico:
+Completa la seguente procedura per cercare le voci che includono un tipo di messaggio specifico:
 
 1. Guarda nella pagina Rileva Kibana per visualizzare quale sottorete dei tuoi dati viene visualizzata. Per ulteriori informazioni, vedi [Identificazione dei dati visualizzati nella tua pagina Rileva Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 
-2. Nell'*Elenco campo*, seleziona il campo **tipo_messaggio**.
+2. Nell'*Elenco campi*, seleziona il campo **message_type**.
 
     Vengono visualizzati i tipi di campo disponibili. 
 
-3. Per aggiungere un filtro che ricerca le voci che includono un *tipo_messaggio* specifico, scegli il pulsante di ingrandimento ![Pulsante della lente di ingrandimento nella modalità inclusiva](images/include_field_icon.jpg "Pulsante della lente di ingrandimento nella modalità inclusiva") per tale valore.
+3. Per aggiungere un filtro che ricerca le voci che includono un *message_type* specifico, scegli il pulsante di lente di ingrandimento ![Pulsante di lente di ingrandimento nella modalità inclusiva](images/include_field_icon.jpg "Pulsante di lente di ingrandimento nella modalità inclusiva") per tale valore.
 
-    Per aggiungere un filtro che ricerca le voci che non includono un *tipo_messaggio* specifico, scegli il pulsante di ingrandimento ![Pulsante della lente di ingrandimento nella modalità esclusiva](images/exclude_field_icon.jpg "Pulsante della lente di ingrandimento nella modalità esclusiva") per il valore.
+    Per aggiungere un filtro che ricerca le voci che non includono un *message_type* specifico, scegli il pulsante di lente di ingrandimento ![Pulsante di lente di ingrandimento nella modalità esclusiva](images/exclude_field_icon.jpg "Pulsante di lente di ingrandimento nella modalità esclusiva") per il valore.
     
  
 	
@@ -194,11 +195,11 @@ Completa la seguente procedura per ricercare le voci che includono un tipo di me
 
 Visualizza e ricerca le voci che includono un testo specifico nel valore di un campo. 
 
-**Nota:** puoi solo eseguire una ricerca di testo libero dei campi stringa che vengono analizzati dal programma di analisi Elasticsearch.  
+**Nota:** puoi solo eseguire una ricerca di testo libero dei campi stringa che vengono analizzati dal programma di analisi Elasticsearch. 
     
 Quando Elasticsearch analizza il valore di un campo stringa, suddivide il testo in confini di parola, come definito dal Unicode Consortium, rimuove la punteggiatura e i caratteri minuscoli da tutte le parole.
     
-Completa la seguente procedura per ricercare le voci che includono testo specifico in un valore del campo:
+Completa la seguente procedura per cercare le voci che includono testo specifico in un valore del campo:
 
 1. Guarda nella pagina Rileva Kibana per visualizzare quale sottorete dei tuoi dati viene visualizzata. Per ulteriori informazioni, vedi [Identificazione dei dati visualizzati nella tua pagina Rileva Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 
@@ -206,7 +207,7 @@ Completa la seguente procedura per ricercare le voci che includono testo specifi
 
     Per visualizzare l'elenco completo dei campi analizzati disponibili per la ricerca e il filtro dei dati di log, [ricarica l'elenco dei campi](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields). Quindi, nell'*Elenco campi* disponibile nella pagina Rileva, completa la seguente procedura:
     
-    1. Fai clic sull'icona di configurazione ![Icona di configurazione](images/configure_icon.jpg "Icona di configurazione"). Viene visualizzata la sezione **Campi selezionati**, quando puoi eseguire il filtro dei campi.
+    1. Fai clic sull'icona di configurazione ![Icona di configurazione](images/configure_icon.jpg "Icona di configurazione"). Viene visualizzata la sezione **Campi selezionati** in cui puoi filtrare i campi.
 
     2. Per identificare i campi che vengono analizzati, seleziona **Sì** per il campo di ricerca **Analizzato**.
 
@@ -214,18 +215,18 @@ Completa la seguente procedura per ricercare le voci che includono testo specifi
     
     3. Controlla se il campo in cui desideri eseguire la ricerca del testo libero sia un campo che viene analizzato da ElasticSearch per impostazione predefinita.
     
-3. Se il campo viene analizzato, modifica la query per ricercare le voci nei log che includono tale testo libero come parte di un valore di un campo.
+3. Se il campo viene analizzato, modifica la query per cercare le voci nei log che includono tale testo libero come parte di un valore di un campo.
 
     
 **Esempio**
 
-Se avvii Kibana per un'applicazione Cloud Foundry (CF) dalla IU {{site.data.keyword.Bluemix}} e desideri ricercare un messaggio specifico che include l'ID messaggio *CWWKT0016I:*, modifica la ricerca in modo che includa del testo libero.
+Se avvii Kibana per un'applicazione CF (Cloud Foundry) dalla IU {{site.data.keyword.Bluemix}} e desideri ricercare un messaggio specifico che include l'ID messaggio *CWWKT0016I:*, modifica la ricerca in modo che includa del testo libero.
     
 1. Controlla la query di ricerca caricata e i dati visualizzati nella pagina Rileva.
        
 2. Per ricercare l'ID messaggio *CWWKT0016I*, modifica la query di ricerca nella **Barra di ricerca** e fai clic su **Invio**.
     
-    Ad esempio, immetti i lseguente testo nella barra di ricerca di un'applicazione CF con ID *f52f6016-3aab-4b5c-aa2e-5493747cb978*:
+    Ad esempio, immetti il seguente testo nella barra di ricerca di un'applicazione CF con ID *f52f6016-3aab-4b5c-aa2e-5493747cb978*:
 
 	`<pre class="pre">application_id:f52f6016-3aab-4b5c-aa2e-5493747cb978 AND message:"CWWKT0016I:" </pre>`
         
@@ -238,11 +239,11 @@ La tabella mostra le voci per la tua applicazione CF in cui il testo *CWWKT0016I
 ## Configurazione di un filtro temporale
 {: #set_time_filter}
 
-Visualizza e filtra i log {{site.data.keyword.Bluemix_notm}} in un periodo di tempo configurando il *Selezionatore di tempo*.
+Visualizza e filtra i log in un periodo di tempo configurando il *Selezionatore di tempo*.
 
 Puoi configurare il *Selezionatore di tempo* nella pagina Rileva. Per impostazione predefinita, è impostato sugli ultimi 15 minuti. 
 
-Completa la seguente procedura per ricercare le voci che includono un'ora specifica:
+Completa la seguente procedura per cercare le voci che includono un tempo specifico:
 
 1. Nella barra del menu della pagina Rileva, fai clic sul selezionatore di tempo ![Selezionatore di tempo](images/time_picker_icon.jpg "Selezionatore di tempo").
 

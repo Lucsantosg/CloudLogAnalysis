@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -19,13 +19,13 @@ lastupdated: "2018-01-10"
 Par défaut, la règle de conservation est désactivée et les journaux sont conservés indéfiniment. Utilisez la commande **bx logging option-update** pour changer la règle de conservation.
 {:shortdesc}
 
-Vous pouvez utiliser la commande **bx logging option-show** pour afficher la règle de conservation qui définit le nombre maximal de jours pendant lequel les journaux sont conservés dans le composant Log Collection.  
+Vous pouvez utiliser la commande **bx logging option-show** pour afficher la règle de conservation qui définit le nombre maximal de jours pendant lequel les journaux sont conservés dans le composant Log Collection. 
 
-Lorsque vous définissez une règle de conservation, une fois que la durée de conservation est arrivée à expiration, les journaux sont supprimés automatiquement. 
+Lorsque vous définissez une règle de conservation, une fois que la durée de conservation est arrivée à expiration, les journaux sont supprimés automatiquement.
 
 
 ## Désactivation de la règle de conservation des journaux pour un compte
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_acc}
 
 Lorsque vous désactivez la règle de conservation, tous les journaux sont conservés. 
 
@@ -50,7 +50,7 @@ Procédez comme suit pour désactiver une règle de conservation :
     
 **Exemple**
     
-Par exemple, afin de désactiver la durée de conservation pour un compte dont l'ID est *12345677fgh436902a3*, exécutez la commande suivante :
+Par exemple, afin de désactiver la durée de conservation pour un compte dont l'ID est *12345677fgh436902a3*, exécutez la commande suivante : 
 
 ```
 bx logging option-update -r account -i 12345677fgh436902a3 -e -1
@@ -69,7 +69,7 @@ Procédez comme suit pour désactiver une règle de conservation :
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Définissez la valeur **-1** pour désactiver la durée de conservation. Exécutez la commande suivante :
+2. Pour désactiver la règle de conservation, définissez la valeur **-1**. Exécutez la commande suivante :
 
     ```
     bx logging option-show -e RETENTION_VALUE
@@ -80,7 +80,7 @@ Procédez comme suit pour désactiver une règle de conservation :
     
 **Exemple**
     
-Par exemple, afin de désactiver la durée de conservation pour un espace dont l'ID est *d35da1e3-b345-475f-8502-cfgh436902a3*, exécutez la commande suivante :
+Par exemple, pour désactiver la durée de conservation d'un espace dont l'ID est *d35da1e3-b345-475f-8502-cfgh436902a3*, exécutez la commande suivante :
 
 ```
 bx logging option-update -e -1
@@ -88,10 +88,10 @@ bx logging option-update -e -1
 {: codeblock}
 
 
-## Vérification de la règle de conservation des journaux pour un compte
-{: #check_retention_policy_space}
+## Vérification de la règle de conservation des journaux d'un compte
+{: #check_retention_policy_acc}
 
-Pour obtenir la durée de conservation définie pour un compte, procédez comme suit :
+Afin d'obtenir la durée de conservation définie pour un compte, procédez comme suit :
 
 1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
 
@@ -101,7 +101,7 @@ Pour obtenir la durée de conservation définie pour un compte, procédez comme 
 
     Pour plus d'informations, voir [Comment obtenir l'identificateur global unique d'un compte ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).
     
-3. Obtenez la durée de conservation. Exécutez la commande :
+3. Obtenez la durée de conservation. Exécutez la commande suivante :
 
     ```
     bx logging option-show -r account -i AccountID
@@ -119,7 +119,7 @@ Pour obtenir la durée de conservation définie pour un compte, procédez comme 
 	```
     {: screen}
 	
-## Vérification de la règle de conservation des journaux pour un espace
+## Vérification de la règle de conservation des journaux d'un espace
 {: #check_retention_policy_space}
 
 Afin d'obtenir la durée de conservation définie pour un espace, procédez comme suit :
@@ -148,8 +148,8 @@ Afin d'obtenir la durée de conservation définie pour un espace, procédez comm
     
 
 
-## Définition d'une règle de conservation des journaux au niveau du compte
-{: #set_retention_policy_space}
+## Définition de la règle de conservation des journaux au niveau du compte
+{: #set_retention_policy_acc}
 
 Procédez comme suit :
 
@@ -168,7 +168,7 @@ Procédez comme suit :
     ```
     {: codeblock}
     
-    où *RETENTION_VALUE* est un entier qui définit le nombre de jours pendant lequel conserver les journaux. 
+    où *RETENTION_VALUE* est un nombre entier qui définit le nombre de jours pendant lequel vous souhaitez conserver les journaux. 
     
     
 **Exemple**
@@ -183,7 +183,7 @@ bx logging option-update -r account -i AccountID -e 15
 
 
 ## Définition de la règle de conservation des journaux pour un espace
-{: #set_retention_policy_account}
+{: #set_retention_policy_space}
 
 Afin d'afficher la durée de conservation pour un espace, procédez comme suit :
 
@@ -198,7 +198,7 @@ Afin d'afficher la durée de conservation pour un espace, procédez comme suit :
     ```
     {: codeblock}
     
-    où *RETENTION_VALUE* est un entier qui définit le nombre de jours pendant lequel conserver les journaux.
+    où *RETENTION_VALUE* est un nombre entier qui définit le nombre de jours pendant lequel vous souhaitez conserver les journaux.
     
     
 **Exemple**

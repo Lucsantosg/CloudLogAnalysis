@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -18,15 +18,15 @@ lastupdated: "2018-01-10"
 在“发现”页面中，可以通过交互方式查看和分析 {{site.data.keyword.Bluemix}} 日志。可以使用 Lucene 查询语言来定义搜索查询以过滤这些数据。对于每个搜索查询，可以应用过滤器来优化可供分析的条目。可以保存搜索以供未来复用。
 {:shortdesc}
 
-在 {{site.data.keyword.Bluemix_notm}} 中，缺省情况下，通过 {{site.data.keyword.Bluemix_notm}} UI 启动 Kibana 时在“发现”页面中显示的数据集配置为仅显示从中启动 Kibana 的 Cloud Foundry (CF) 应用程序或容器的条目。有关如何查看“发现”页面显示的数据子集的更多信息，请参阅[确定显示的数据](logging_kibana_analize_logs_interactively.html#k4_identify_data)。
+在 {{site.data.keyword.Bluemix_notm}} 中，缺省情况下，通过 {{site.data.keyword.Bluemix_notm}} UI 启动 Kibana 时在“发现”页面中显示的数据集配置为仅显示从中启动 Kibana 的 Cloud Foundry (CF) 应用程序或容器的条目。 
 
 下表显示了通过 {{site.data.keyword.Bluemix_notm}} 启动 Kibana 时，每种资源的缺省查询：
 
-| 资源| 缺省 Kibana 搜索查询|
+|资源|缺省 Kibana 搜索查询|
 |---------------|---------------|
-| CF 应用程序| `application_id:<app_GUID>`    |
-| 单 Docker 容器| `instance:<instance_GUID>`    |
-| 具有 2 个实例的容器组| `instance:<instance_GUID> OR instance:<instance_GUID>` |
+|CF 应用程序|`application_id:<app_GUID>`    |
+|单 Docker 容器|`instance:<instance_GUID>`    |
+|具有 2 个实例的容器组|`instance:<instance_GUID> OR instance:<instance_GUID>` |
 {: caption="表 1. 缺省查询搜索" caption-side="top"}
 
 **注：** 
@@ -39,15 +39,15 @@ lastupdated: "2018-01-10"
 
 要在“发现”页面中定制表，可以执行以下任一任务：
 
-| 任务| 描述
+|任务|描述
 | 
 |------|-------------|
-| [添加字段列](logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table)| 添加字段以查看分析所需的特定数据，而不查看完整消息。|
-| [重新排列字段列](logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table)| 将表中字段的位置移至所需的位置。|
-| [查看条目](logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table)| 展开表中的条目，以查看按字段解析或解析为 JSON 的条目的详细信息。|
-| [除去字段列](logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table)| 除去视图中分析不需要的字段。|
-| [按已建立索引的字段的值对条目排序](logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table)| 对条目重新排序以更轻松地进行分析。|
-| [自动刷新数据](logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval)| 使用最新的条目刷新表中显示的数据。缺省情况下，刷新为**关闭**。|
+|[添加字段列](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table)|添加字段以查看分析所需的特定数据，而不查看完整消息。|
+|[重新排列字段列](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table)|将表中字段的位置移至所需的位置。|
+|[查看条目](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table)|展开表中的条目，以查看按字段解析或解析为 JSON 的条目的详细信息。|
+|[除去字段列](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table)|除去视图中分析不需要的字段。|
+|[按已建立索引的字段的值对条目排序](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table)|对条目重新排序以更轻松地进行分析。|
+|[自动刷新数据](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval)|使用最新的条目刷新表中显示的数据。缺省情况下，刷新为**关闭**。|
 {: caption="表 2. 定制表的任务" caption-side="top"}
 
 <br>
@@ -56,31 +56,31 @@ lastupdated: "2018-01-10"
 
 ![Kibana 中的“发现”页面](images/k4_discover_page.jpg "Kibana 中的“发现”页面")
 
-可以定义其他搜索。有关更多信息，请参阅[通过定义定制搜索来过滤日志](k4_filter_queries.html#k4_filter_queries)。定义新搜索时，直方图和表中显示的数据会自动更新。
+可以定义其他搜索。定义新搜索时，直方图和表中显示的数据会自动更新。
 
 要定义新搜索，请将缺省搜索查询用作起点，然后通过执行以下任务来优化搜索：
 
-* 应用字段过滤器，以优化可以查看的数据集。可以切换每个过滤器，将过滤器锁定到页面，根据需要启用或禁用过滤器，以及配置过滤器以包含或排除值。有关更多信息，请参阅[在 Kibana 中过滤日志](logging_kibana_filtering_logs.html#kibana_filtering_logs)。
+* 应用字段过滤器，以优化可以查看的数据集。可以切换每个过滤器，将过滤器锁定到页面，根据需要启用或禁用过滤器，以及配置过滤器以包含或排除值。 
 
-    **提示：**如果在*字段列表*中找不到希望查看的字段，或者在“发现”页面中所列出字段旁的某些放大镜处于禁用状态，请通过刷新“设置”页面中的索引模式来重新装入字段列表。有关更多信息，请参阅[重新装入字段列表](logging_kibana_analize_logs_interactively.html#kibana_discover_view_reload_fields)。
+    **提示：**如果在*字段列表*中找不到希望查看的字段，或者在“发现”页面中所列出字段旁的某些放大镜处于禁用状态，请通过刷新“设置”页面中的索引模式来重新装入字段列表。 
 
     例如，如果 CF 应用程序具有多个实例，您可能会希望分析特定实例的数据。您可以针对要分析的特定实例标识值定义字段过滤器。 
     
-* 为基于时间的数据定制*时间选取器*。可以定义查询的绝对时间范围或相对时间范围，也可以从一组预定义的值中进行选择。有关更多信息，请参阅[设置时间过滤器](logging_kibana_set_time_filter.html#set_time_filter)。
+* 为基于时间的数据定制*时间选取器*。可以定义查询的绝对时间范围或相对时间范围，也可以从一组预定义的值中进行选择。 
 
 配置了用于定义要分析的数据子集的搜索后，可以将其保存以供日后复用。
 
 可以使用在“发现”页面中定义的搜索来执行以下任一任务：
 
-| 任务| 描述
+|任务|描述
 |
 |------|-------------|
-| [保存搜索](logging_kibana_filtering_logs.html#k4_save_search)| 保存搜索以供日后复用。|
-| [删除搜索](logging_kibana_filtering_logs.html#k4_delete_search)| 删除不再需要的搜索。|
-| [导出搜索](logging_kibana_filtering_logs.html#k4_export_search)| 导出搜索以进行共享。|
-| [重新装入搜索](logging_kibana_filtering_logs.html#k4_reload_search)| 上传现有搜索以重新分析一组数据。|
-| [刷新搜索的数据](logging_kibana_filtering_logs.html#k4_refresh_search)| 针对通过搜索显示的数据配置自动刷新。|
-| [导入搜索](logging_kibana_filtering_logs.html#k4_import_search)| 导入搜索。|
+|保存搜索|保存搜索以供日后复用。|
+|删除搜索|删除不再需要的搜索。|
+|导出搜索|导出搜索以进行共享。|
+|重新装入搜索|上传现有搜索以重新分析一组数据。|
+|刷新搜索的数据|针对通过搜索显示的数据配置自动刷新。|
+|导入搜索|导入搜索。|
 {: caption="表 3. 使用搜索的任务" caption-side="top"}
 
 <br>
@@ -89,9 +89,9 @@ lastupdated: "2018-01-10"
 * 可以按字段查看统计信息。 
 * 可以按已配置的 `@timestamp` 在直方图中查看统计信息。
 
-有关更多信息，请参阅[查看字段数据统计信息](logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats)。
+有关更多信息，请参阅[查看字段数据统计信息](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats)。
 
-**注：**表和直方图中显示的数据是静态的。要始终查看最新的条目，必须设置刷新时间间隔。 
+**注**：表和直方图中显示的数据是静态的。要始终查看最新的条目，必须设置刷新时间间隔。 
 
 
 ## 向表添加字段列
@@ -122,7 +122,7 @@ lastupdated: "2018-01-10"
     3. 单击**切换表中的列**图标 ![切换表中的列](images/k4_toggle_field_icon.jpg)。
     
 
-**注：**首次向表添加一个字段列时，表中显示的 *_source* 字段列会隐藏。*_source* 字段显示每个日志条目的每个字段的值。向表添加列后，要查看该表中日志条目的其他字段值，请查看每个条目的“表视图”选项卡或 JSON 选项卡。
+**注**：首次向表添加一个字段列时，表中显示的 *_source* 字段列会隐藏。*_source* 字段显示每个日志条目的每个字段的值。向表添加列后，要查看该表中日志条目的其他字段值，请查看每个条目的“表视图”选项卡或 JSON 选项卡。
 
 例如，如果向表添加 *application_id* 字段，那么表会更改为类似于下图：
 
@@ -132,7 +132,7 @@ lastupdated: "2018-01-10"
 ## 自动刷新数据
 {: #kibana_discover_view_refresh_interval}
 
-缺省情况下，在 {{site.data.keyword.Bluemix_notm}} 中，*自动刷新*时间段设置为**关闭**，因此在 Kibana 中可以查看的数据对应于自启动 Kibana 以来最近 15 分钟的数据。15 分钟对应于预配置的时间过滤器。可以通过设置其他时间段来更改此时间。有关更多信息，请参阅[设置时间过滤器](logging_kibana_set_time_filter.html#set_time_filter)。
+缺省情况下，在 {{site.data.keyword.Bluemix_notm}} 中，*自动刷新*时间段设置为**关闭**，因此在 Kibana 中可以查看的数据对应于自启动 Kibana 以来最近 15 分钟的数据。15 分钟对应于预配置的时间过滤器。可以通过设置其他时间段来更改此时间。 
 
 要设置*自动刷新*时间段，请完成以下步骤：
 
@@ -149,7 +149,7 @@ lastupdated: "2018-01-10"
 
 
 ## 确定在“发现”页面中显示的数据
-{:#k4_identify_data}
+{: #k4_identify_data}
 
 使用 Kibana 分析 {{site.data.keyword.Bluemix_notm}} 日志时，可以查看的数据取决于 Kibana 的启动方式、配置的索引模式以及可能已应用的定制查询和过滤器。
 
@@ -209,7 +209,7 @@ lastupdated: "2018-01-10"
 1. 将鼠标悬停在表中要按其对数据排序的字段的名称上。这将显示不同的操作按钮。
 2. 单击要按其对数据排序的字段的“排序”按钮。再次单击字段排序图标可按逆向顺序排序。
 
-**注：**按时间字段排序时，缺省情况下条目按从新到旧的时间顺序排序。最新的条目最先显示。
+**注**：按时间字段排序时，缺省情况下条目按从新到旧的时间顺序排序。最新的条目最先显示。
 
 
 ## 重新排列表中的字段列

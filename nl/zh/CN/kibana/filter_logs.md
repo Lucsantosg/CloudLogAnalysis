@@ -197,7 +197,7 @@ lastupdated: "2018-01-10"
 查看和搜索在字段值中包含特定文本的条目。
  
 
-**注：**只能对 Elasticsearch 分析器分析的字符串字段执行自由文本搜索。 
+**注**：只能对 Elasticsearch 分析器分析的字符串字段执行自由文本搜索。 
     
 Elasticsearch 分析字符串字段的值时，会根据 Unicode Consortium 定义的单词边界来拆分文本，除去标点符号并将所有单词转化成小写。
     

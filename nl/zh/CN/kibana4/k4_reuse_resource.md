@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -19,11 +19,11 @@ lastupdated: "2018-01-10"
 要将搜索、可视化项或仪表板从一个 {{site.data.keyword.Bluemix}} 空间复制到其他空间，请使用 Kibana 中提供的导出和导入功能。您可以在 Kibana 中分别复制资源，也可以导出所有资源。
 {:shortdesc}
 
-| 任务| 描述
+|任务|描述
 |
 |------|-------------|
-| [复制搜索](k4_reuse_resource.html#k4_reuse_search) | 在不同空间之间复制搜索。|
-| [复制可视化](k4_reuse_resource.html#k4_reuse_visualization) | 在不同空间之间复制可视化项|
+|[复制搜索](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search)|在不同空间之间复制搜索。|
+|[复制可视化项](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_visualization)|在不同空间之间复制可视化项|
 
 请考虑 {{site.data.keyword.Bluemix_notm}} 中用于复用搜索、可视化项或仪表板的以下场景： 
 
@@ -48,9 +48,9 @@ lastupdated: "2018-01-10"
 
 1. 启动要复制的搜索在其中可用的 Kibana。 
 
-    * 通过 {{site.data.keyword.Bluemix_notm}} UI 启动 Kibana：可以导出的 JSON 搜索文件包含以下字段：*空间标识*和 Cloud Foundry (CF) 应用程序的*应用程序标识*或容器的*实例标识*。有关更多信息，请参阅[通过 {{site.data.keyword.Bluemix_notm}} 仪表板访问 Kibana 仪表板](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix)。
+    * 通过 {{site.data.keyword.Bluemix_notm}} UI 启动 Kibana：可以导出的 JSON 搜索文件包含以下字段：*空间标识*和 Cloud Foundry (CF) 应用程序的*应用程序标识*或容器的*实例标识*。有关更多信息，请参阅[通过 {{site.data.keyword.Bluemix_notm}} 仪表板访问 Kibana 仪表板](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)。
     
-    * 通过浏览器启动 Kibana：可以导出的 JSON 搜索文件包含*空间标识*字段。有关更多信息，请参阅[通过浏览器访问 Kibana 仪表板](logging_analyzing_logs_Kibana.html#launch_Kibana_from_browser)。
+    * 通过浏览器启动 Kibana：可以导出的 JSON 搜索文件包含*空间标识*字段。有关更多信息，请参阅[通过浏览器访问 Kibana 仪表板](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)。
 
 2. 在*设置*页面中，选择**对象**，然后选择**搜索**选项卡。接着选择一个搜索，并复制以下信息：
 
@@ -86,7 +86,7 @@ lastupdated: "2018-01-10"
     
 5. 启动要将搜索导入其中的 {{site.data.keyword.Bluemix_notm}} 空间的 Kibana，然后获取以下信息：
 
-    在 [Bluemix UI](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix) 中：
+    在 [Bluemix UI](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix) 中：
     
     <table>
       <tbody>
@@ -188,15 +188,15 @@ lastupdated: "2018-01-10"
 
 1. 启动要复制的可视化项在其中可用的空间的 Kibana。 
 
-    * 通过 {{site.data.keyword.Bluemix_notm}} UI 启动 Kibana：可以导出的 JSON 搜索文件包含以下字段：*空间标识*和 Cloud Foundry (CF) 应用程序的*应用程序标识*或容器的*实例标识*。有关更多信息，请参阅[通过 {{site.data.keyword.Bluemix_notm}} 仪表板访问 Kibana 仪表板](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix)。
+    * 通过 {{site.data.keyword.Bluemix_notm}} UI 启动 Kibana：可以导出的 JSON 搜索文件包含以下字段：*空间标识*和 Cloud Foundry (CF) 应用程序的*应用程序标识*或容器的*实例标识*。有关更多信息，请参阅[通过 {{site.data.keyword.Bluemix_notm}} 仪表板访问 Kibana 仪表板](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)。
     
-    * 通过浏览器启动 Kibana：可以导出的 JSON 搜索文件包含*空间标识*字段。有关更多信息，请参阅[通过浏览器访问 Kibana 仪表板](logging_analyzing_logs_Kibana.html#launch_Kibana_from_browser)。
+    * 通过浏览器启动 Kibana：可以导出的 JSON 搜索文件包含*空间标识*字段。有关更多信息，请参阅[通过浏览器访问 Kibana 仪表板](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)。
     
-2. 在不同空间之间复制与可视化项关联的搜索。有关更多信息，请参阅[在不同 Bluemix 空间之间复制搜索](k4_reuse_resource.html#k4_reuse_search)。
+2. 在不同空间之间复制与可视化项关联的搜索。有关更多信息，请参阅[在不同 Bluemix 空间之间复制搜索](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search)。
 
     可视化项使用搜索来过滤其显示的数据。可视化项可链接到搜索，以便对搜索所做的所有更新都会自动更新，也可不链接到搜索，这样可供分析的数据仅为创建可视化项时显示的数据。
 
-    复制可视化项时，不管它是否链接到搜索，都必须同时复制与其关联的搜索。**注：**将可视化项导入到新空间时，新可视化项会链接到新空间中的搜索。
+    复制可视化项时，不管它是否链接到搜索，都必须同时复制与其关联的搜索。**注**：将可视化项导入到新空间时，新可视化项会链接到新空间中的搜索。
     
 3. 在*设置*页面中，选择**对象**，然后选择**可视化项**选项卡。接着选择一个可视化项，并获取以下信息： 
 

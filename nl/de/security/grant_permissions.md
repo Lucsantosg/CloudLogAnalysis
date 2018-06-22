@@ -3,11 +3,9 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
-
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -22,14 +20,15 @@ lastupdated: "2018-01-10"
 In {{site.data.keyword.Bluemix}} können Sie Benutzern eine oder mehrere Rollen zuweisen. Diese Rollen definieren, welche Tasks für diesen Benutzer für die Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service aktiviert sind. 
 {:shortdesc}
 
+**Hinweis:** 
 
+* Um einem Benutzer Berechtigungen zum Verwalten von Protokollen oder zum Anzeigen von Kontoprotokollen zu erteilen, müssen Sie über Berechtigungen zum Zuweisen von Richtlinien für andere Benutzer im Konto verfügen oder Sie müssen der Kontoinhaber sein. Wenn Sie nicht der Kontoinhaber sind, benötigen Sie eine IAM-Richtlinie mit einer Rolle als Editor, Operator oder Administrator. 
+* Um einem Benutzer Berechtigungen zum Anzeigen von Protokollen in einem Bereich zu erteilen, müssen Sie über Berechtigungen in der Organisation und im Bereich verfügen, um dem Benutzer eine Cloud Foundry-Rolle zuzuweisen, die die Aktionen beschreibt, die dieser Benutzer mit dem {{site.data.keyword.loganalysisshort}}-Service in diesem Bereich ausführen kann.  
 
 ## Einem Benutzer über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle eine IAM-Richtlinie zuweisen
 {: #grant_permissions_ui_account}
 
-Um einem Benutzer Berechtigungen für das Anzeigen und Verwalten von Kontoprotokollen zu erteilen, müssen Sie für diesen Benutzer eine Richtlinie hinzufügen, die die Aktionen beschreibt, die der Benutzer im Rahmen des {{site.data.keyword.loganalysisshort}}-Service im Konto durchführen kann. Nur Kontoeigner können Benutzern einzelne Richtlinien zuweisen.
-
-Führen Sie in {{site.data.keyword.Bluemix_notm}} die folgenden Schritte aus, um einem Benutzer Berechtigungen für die Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service zu erteilen:
+Führen Sie die folgenden Schritte aus, um einem Benutzer Berechtigungen für die Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service zu erteilen:
 
 1. Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-Konsole an.
 
@@ -45,7 +44,7 @@ Führen Sie in {{site.data.keyword.Bluemix_notm}} die folgenden Schritte aus, um
 
     Wenn der Benutzer kein Mitglied des Kontos ist, finden Sie unter [Benutzer einladen](/docs/iam/iamuserinv.html#iamuserinv) Informationen zum entsprechenden Vorgehen in diesem Fall.
 
-4. Klicken Sie im Abschnitt **Zugriffsrichtlinien** auf **Servicerichtlinien zuweisen** und wählen Sie anschließend **Zugriff auf Ressourcen zuweisen**.
+4. Klicken Sie im Abschnitt **Zugriffsrichtlinien** auf **Zugriff zuweisen** und wählen Sie anschließend **Zugriff auf Ressourcen zuweisen**.
 
     Das Fenster *Ressourcenzugriff an Benutzer zuweisen** wird geöffnet.
 
@@ -76,149 +75,51 @@ Führen Sie in {{site.data.keyword.Bluemix_notm}} die folgenden Schritte aus, um
 	  </tr>
      </table>
 	
-6. Klicken Sie auf **Richtlinie zuweisen**.
+6. Klicken Sie auf **Zuweisen**.
 	
 Die von Ihnen konfigurierte Richtlinie gilt für die ausgewählten Regionen. 
+
 
 ## Einem Benutzer über die Befehlszeile eine IAM-Richtlinie zuweisen
 {: #grant_permissions_commandline}
 
-Um einem Benutzer Berechtigungen für das Anzeigen und Verwalten von Kontoprotokollen zu erteilen, müssen Sie dem Benutzer eine IAM-Rolle zuordnen. Weitere Informationen zu IAM-Rollen und den jeweils dafür aktivierten Tasks für die Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service finden Sie unter [IAM-Rollen](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
-
-Diese Operation kann nur vom Kontoeigner durchgeführt werden.
-
 Führen Sie die folgenden Schritte aus, um einem Benutzer über die Befehlszeile Zugriff zum Anzeigen von Kontoprotokollen zu erteilen:
 
-1. Rufen Sie die Konto-ID ab. 
+1. Meldne Sie sich über ein Terminal beim {{site.data.keyword.Bluemix_notm}}-Konto an. 
 
-    Führen Sie den folgenden Befehl aus, um die Konto-ID abzurufen:
+    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+
+2. Überprüfen Sie, ob der Benutzer ein Mitglied für das Konto ist. Führen Sie den folgenden Befehl aus, um die Liste der Benutzer im Konto abzurufen: 
 
     ```
-	bx iam accounts
+	bx account users
 	```
     {: codeblock}	
 
-	Es wird eine Liste von Konten mit den jeweiligen GUIDs angezeigt.
-	
-	Exportieren Sie die Konto-ID des Kontos, für das einem Benutzer Berechtigungen erteilt werden sollen, beispielsweise in eine Shellvariable wie '$acct_id':
-	
-	```
-	export acct_id="1234567891234567812341234123412"
-	```
-	{: screen}
+	Es wird eine Liste von Benutzern mit den jeweiligen GUIDs angezeigt.
 
-2. Rufen Sie die {{site.data.keyword.Bluemix_notm}}-ID des Benutzers ab, dem Berechtigungen erteilt werden sollen.
+3. Wenn der Benutzer kein Mitglied des Kontos ist, wenden Sie sich an den Kontoeigner und fordern Sie eine Einladung dieses Benutzers für das Konto an. Weitere Informationen finden Sie in [Benutzer einladen](/docs/iam/iamuserinv.html#iamuserinv).
 
-    1. Zeigen Sie die Benutzer an, die dem Konto zugeordnet sind. Führen Sie dazu den folgenden Befehl aus:
-	
-	    ```
-		bx iam account-users
-		```
-		{: codeblock}
+    **Tipp:** Der Befehl zum Einladen eines Benutzers zum Konto lautet wie folgt: `bx iam account-user-invite USER_EMAIL`
 		
-	2. Rufen Sie die GUID des Benutzers ab. **Hinweis:** Dieser Schritt muss von dem Benutzer ausgeführt werden, dem Berechtigungen erteilt werden sollen.
-	
-	    Fordern Sie den Benutzer beispielsweise zum Ausführen der folgenden Befehle aus, um seine Benutzer-ID abzurufen:
-		
-		Rufen Sie das IAM-Token ab. Weitere Informationen finden Sie unter [IAM-Token über die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle abrufen](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
+4. Weisen Sie dem Benutzer eine Richtlinie zu. Führen Sie den folgenden Befehl aus:
 
-        Rufen Sie die Daten aus dem IAM-Token ab, die sich zwischen den ersten beiden Punkten in dem Token befinden. Exportieren Sie die Daten in eine Shellvariable '$user_data'. 
-		
-		```
-	    export user_data="xxxxxxxxxxxxxxxxxxxxxxxxxxx"
-	    ```
-	    {: screen}
-		
-		Führen Sie zum Abrufen der Benutzer-ID beispielsweise den folgenden Befehl aus. Dieser Befehl verwendet 'jq' in diesem Beispiel, um die Informationen in mit JSON formatierten Text zu entschlüsseln:
-		
-		```
-		echo $user_data | base64 -d | jq
-		```
-		{: codeblock}
-		
-		Die Ausgabe nach dem Ausführen des Befehls sieht folgendermaßen aus:
-		
-		```
-		$ echo $user_data | base64 -d | jq
-        {
-        "iam_id": "IBMid-xxxxxxxxxx",
-        "id": "IBMid-xxxxxxxxxx",
-        "realmid": "IBMid",
-        ......
-		}
-        ```
-	    {: screen}
-		
-		Senden Sie die Benutzer ID an den Kontoeigner.
-		
-	3. Exportieren Sie die Benutzer-ID in eine Shellvariable wie `$user_ibm_id`.
-	
-		```
-		export user_ibm_id="IBMid-xxxxxxxxxx"
-		```
-		{: codeblock}
-
-3. Wenn der Benutzer nicht bereits Mitglied in dem Konto ist, laden Sie ihn ein. Weitere Informationen hierzu finden Sie unter [Benutzer einladen](/docs/iam/iamuserinv.html#iamuserinv).
-
-    Führen Sie beispielsweise den folgenden Befehl aus, um den Benutzer 'xxx@yyy.com' zur Teilnahme am Konto 'zzz@ggg.com' einzuladen:
-	
-	```
-	bx iam account-user-invite xxx@yyy.com zzz@ggg.com OrgAuditor dev SpaceDeveloper
-	```
-	{: codeblock}
-		
-4. Erstellen Sie einen Richtliniendateiname. 
-
-    Verwenden Sie beispielsweise die folgende Vorlage, um Berechtigungen in der Region 'USA (Süden)' zu gewähren:
-	
-	```
-	{
-		"roles" : [
-			{
-				"id": "crn:v1:bluemix:public:iam::::role:Editor" 
-			}
-		],
-		"resources": [
-			{
-				"serviceName": "ibmcloud-log-analysis",
-				"region": "us-south"
-			}
-		]
-	}
-	```
-	{: codeblock}
-	
-	Geben Sie der Richtliniendatei einen Namen: `policy.json`
-	
-5. Rufen Sie das IAM-Token für Ihre Benutzer-ID ab.
-
-    Weitere Informationen finden Sie unter [IAM-Token über die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle abrufen](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
-
-    Exportieren Sie das IAM-Token in eine Shellvariable wie `$iam_token`:
-	
-	```
-	export iam_token="xxxxxxxxxxxxxxxxxxxxx"
-	```
-	{: screen}
-	
-6. Erteilen Sie dem Benutzer Berechtigungen für die Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service. 
-
-   Führen Sie den folgenden cURL-Befehl aus, um Berechtigungen in der Region 'USA (Süden)' zu erteilen:
-	
     ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.ng.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
-	```
-	{: codeblock}
-	
-	Führen Sie den folgenden cURL-Befehl aus, um Berechtigungen in der Region 'Vereinigtes Königreich' zu erteilen:
-	
-    ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.eu-gb.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
+    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
 
-	
-Nachdem Sie einem Benutzer Berechtigungen erteilt haben, kann sich dieser Benutzer bei {{site.data.keyword.Bluemix_notm}} anmelden und die Kontoprotokolle anzeigen.
+	Dabei ist
+    * USER_NAME die {{site.data.keyword.Bluemix_notm}}-ID des Benutzers.
+	* ROLE ist eine IAM-Rolle. Gültige Werte sind: *administrator*, *operator*, *editor* und *viewer*
+
+5. Überprüfen Sie, ob die Richtlinie dem Benutzer zugewiesen wurde. Führen Sie den folgenden Befehl aus, um alle einem Benutzer zugewiesenen Richtlinien aufzulisten:
+
+    ```
+    bx iam user-policies USER_NAME
+	```
+	{: codeblock}
+
 
 
 

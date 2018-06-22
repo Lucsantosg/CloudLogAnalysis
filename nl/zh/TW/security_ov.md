@@ -228,11 +228,8 @@ lastupdated: "2018-01-31"
 若要將日誌傳送至空間網域，請選擇下列任一方法：
 
 * [取得記載記號，以使用 {{site.data.keyword.Bluemix_notm}} 指令 bx service 將日誌傳送至空間](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
-* [取得記載記號，以使用 Log Analysis CLI（CF 外掛程式）將日誌傳送至空間](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cf_plugin)
+* [取得記載記號，以使用 Log Analysis CLI 將日誌傳送至空間](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [取得記載記號，以使用 Log Analysis API 將日誌傳送至空間](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
-
-若要將日誌傳送至帳戶網域，請參閱[取得記載記號，以使用 Log Analysis API 將日誌傳送至帳戶網域](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_acc_token_api)。
-
 
 
 ## 將日誌使用許可權授與使用者

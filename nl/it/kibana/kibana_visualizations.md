@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -61,11 +62,11 @@ Completa la seguente procedura per creare una visualizzazione dalla pagina Visua
 
 2. Scegli un tipo di visualizzazione, ad esempio, *tabella*.
 
-3. Seleziona una visualizzazione salvata precedentemente da **O da una una ricerca salvata** o seleziona un indice dalla sezione **Da una nuova ricerca, seleziona indice**.
+3. Seleziona una visualizzazione salvata precedentemente da **O da una ricerca salvata** o seleziona un indice dalla sezione **Da una nuova ricerca, seleziona indice**.
 
 4. Configura la query.
 
-    * Se selezioni **O da una una ricerca salvata**, seleziona una query di ricerca. La query viene utilizzata per richiamare i dati utilizzati per la visualizzazione. 
+    * Se selezioni **O da una ricerca salvata**, seleziona una query di ricerca. La query viene utilizzata per richiamare i dati utilizzati per la visualizzazione. 
 	
 	    Dopo aver selezionato una ricerca, viene aperto il builder della visualizzazione e vengono caricati i dati per la query selezionata. 
 		
@@ -75,7 +76,7 @@ Completa la seguente procedura per creare una visualizzazione dalla pagina Visua
 
         Per ulteriori informazioni, vedi [Filtro dei log definendo query personalizzate](define_search.html#define_search).
 
-Per ulteriori informazioni sulle applicazioni Kibana, vedi la [ ![Icona link esterno](../../../icons/launch-glyph.svg "Icona link esterno")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Icona link esterno"){: new_window}.
+Per ulteriori informazioni sulle applicazioni Kibana, vedi la [ ![Icona link esterno](../../../icons/launch-glyph.svg "Icona link esterno")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 
 ## Eliminazione di una visualizzazione
@@ -83,7 +84,7 @@ Per ulteriori informazioni sulle applicazioni Kibana, vedi la [ ![Icona link est
 
 Per eliminare una visualizzazione, completa la seguente procedura nella pagina **Gestione**:
 
-1. Nella pagina **Gestione**, seleziona la scheda **Oggetti avanzati**.
+1. Nella pagina **Gestione**, seleziona **Oggetti salvati**.
 
 2. Nella scheda **Visualizzazioni**, seleziona le visualizzazioni che desideri eliminare.
 
@@ -95,7 +96,7 @@ Per eliminare una visualizzazione, completa la seguente procedura nella pagina *
 
 Per esportare una visualizzazione come un file JSON, completa la seguente procedura nella pagina **Gestione**:
 
-1. Nella pagina **Gestione**, seleziona la scheda **Oggetti avanzati**.
+1. Nella pagina **Gestione**, seleziona **Oggetti salvati**.
 
 2. Nella scheda **Visualizzazioni**, seleziona la visualizzazione che desideri esportare.
 
@@ -108,7 +109,7 @@ Per esportare una visualizzazione come un file JSON, completa la seguente proced
 
 Per importare una visualizzazione come un file JSON, completa la seguente procedura nella pagina **Gestione**:
 
-1. Nella pagina **Gestione**, seleziona la scheda **Oggetti avanzati**.
+1. Nella pagina **Gestione**, seleziona **Oggetti salvati**.
 
 2. Nella scheda **Visualizzazioni**, seleziona **Importa**.
 

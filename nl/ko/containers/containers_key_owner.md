@@ -27,10 +27,10 @@ lastupdated: "2018-01-16"
 ```
 {: codeblock}
 
-여기서, **ClusterName**은 클러스터의 이름입니다. 
+여기서, **ClusterName**은 클러스터의 이름입니다.
 
 
-예를 들어 이 명령 실행에 대한 출력은 다음과 같습니다. 
+예를 들어 이 명령 실행에 대한 출력은 다음과 같습니다.
 
 ```
 bx cs api-key-info MyDemoCluster

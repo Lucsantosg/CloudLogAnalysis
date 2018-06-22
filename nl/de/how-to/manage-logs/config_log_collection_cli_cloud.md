@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# {{site.data.keyword.loganalysisshort}}-Befehlszeilenschnittstelle ({{site.data.keyword.Bluemix_notm}}-Plug-in) konfigurieren
+# Die {{site.data.keyword.loganalysisshort}}-Befehlszeilenschnittstelle
 {: #config_log_collection_cli}
 
 Der {{site.data.keyword.loganalysisshort}}-Service beinhaltet eine Befehlszeilenschnittstelle (CLI), die Sie zur Verwaltung von Protokollen in der Cloud verwenden können. Sie können das {{site.data.keyword.Bluemix_notm}}-Plug-in verwenden, um den Status des Protokolls anzuzeigen, um Protokolle herunterzuladen und um die Protokollaufbewahrungsrichtlinie zu konfigurieren. Die Befehlszeilenschnittstelle bietet verschiedene Arten von Hilfe: erweiterte Hilfe zu den CLI- und unterstützten Befehlen sowie Hilfe zur Verwendung von Befehlen und Unterbefehlen.
@@ -155,7 +155,14 @@ Führen Sie die folgenden Schritte aus, um das Log Analysis-Plug-in unter Mac OS
 	1. Wählen Sie den Wert für die Plattform aus: **osx**. 
 	2. Klicken Sie auf die Schaltfläche zum Speichern der Datei (**Save file**).  
     
-2. Installieren Sie das Plug-in. Führen Sie den folgenden Befehl aus:
+2. Ändern Sie die Berechtigungen der Datei. Führen Sie den folgenden Befehl aus:
+
+    ```
+    chmod u+x logging-cli-darwin-amd64-0.1.1
+    ```
+     {: codeblock}
+
+3. Installieren Sie das Plug-in. Führen Sie den folgenden Befehl aus:
         
     ```
     bx plugin install -f logging-cli-darwin-amd64-0.1.1
@@ -203,7 +210,7 @@ Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für d
   
 
 ## Log Analysis-Befehlszeilenschnittstelle über das Repository aktualisieren
-{: #uninstall_cli}
+{: #update_cli}
 
 Zum Aktualisieren der Befehlszeilenschnittstelle für die Protokollierung führen Sie den Befehl *bx plugin update* aus.
 {:shortdesc}

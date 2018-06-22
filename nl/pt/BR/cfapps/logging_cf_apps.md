@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -14,10 +14,10 @@ lastupdated: "2018-01-10"
 {:screen: .screen}
 {:pre: .pre}
 
-# Criação de log para apps Cloud Foundry no {{site.data.keyword.Bluemix_notm}}
-{: #logging_bluemix_cf_apps}
+# Apps do Cloud Foundry
+{: #logging_cf_apps}
 
-No {site.data.keyword.Bluemix}}, é possível visualizar, filtrar e analisar logs do Cloud Foundry (CF) por meio do painel do {{site.data.keyword.Bluemix_notm}}, do Kibana e da interface da linha de comandos. Além disso, é possível transmitir registros de log para uma ferramenta de gerenciamento de log externo. 
+No {{site.data.keyword.Bluemix}}, é possível visualizar, filtrar e analisar logs do Cloud Foundry (CF) por meio do painel do {{site.data.keyword.Bluemix_notm}}, do Kibana e da interface da linha de comandos. Além disso, é possível transmitir registros de log para uma ferramenta de gerenciamento de log externo. 
 {:shortdesc}
 
 O {{site.data.keyword.Bluemix_notm}} registra os dados do log que são gerados pela plataforma Cloud Foundry e por aplicativos Cloud Foundry. Nos logs, é possível visualizar os erros, os avisos e as mensagens informativas produzidas para o app. 
@@ -50,7 +50,7 @@ reconfiguradas diariamente às 0h30 UTC.
 
 O serviço {{site.data.keyword.loganalysisshort}} fornece planos adicionais que permitem armazenar logs na Coleção de logs o tempo que for necessário. 
 
-* É possível configurar uma política de retenção de log para definir o número de dias que você deseja manter os logs na Coleção de logs. Para obter mais informações, veja [Política de retenção de log](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* É possível configurar uma política de retenção de log para definir o número de dias que você deseja manter os logs na Coleção de logs. Para obter mais informações, veja [Política de retenção de log](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
 * É possível excluir logs manualmente usando a linha de comandos ou a API.
 
 Para obter mais informações sobre o preço de cada plano, veja [Planos de serviços](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
@@ -70,11 +70,11 @@ O serviço {{site.data.keyword.loganalysisshort}} fornece múltiplos planos. Cad
 
 * Analise o log na UI do {{site.data.keyword.Bluemix_notm}} para visualizar a atividade mais recente do aplicativo.
     
-    No {{site.data.keyword.Bluemix_notm}}, é possível visualizar, filtrar e analisar logs por meio da guia **Log** que está disponível para cada aplicativo Cloud Foundry. Para obter mais informações, veja [Analisando logs do app CF na UI do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#launch_logs_cloud_ui_cf).
+    No {{site.data.keyword.Bluemix_notm}}, é possível visualizar, filtrar e analisar logs por meio da guia **Log** que está disponível para cada aplicativo Cloud Foundry. Para obter mais informações, veja [Analisando logs do app CF por meio do painel do app CF](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_ui).
     
 * Analise os logs no Kibana para executar tarefas analíticas avançadas.
     
-    No {{site.data.keyword.Bluemix_notm}}, é possível usar o Kibana, uma plataforma de software livre de visualização e analítica, para monitorar, procurar, analisar e visualizar seus dados em uma variedade de gráficos, por exemplo, diagramas e tabelas. Para obter mais informações, veja [Analisando logs no Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+    No {{site.data.keyword.Bluemix_notm}}, é possível usar o Kibana, uma plataforma de software livre de visualização e analítica, para monitorar, procurar, analisar e visualizar seus dados em uma variedade de gráficos, por exemplo, diagramas e tabelas. Para obter mais informações, veja [Analisando logs do app CF por meio da UI do {{site.data.keyword.loganalysisshort}}](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_la).
 	
 	**Dica:** para ativar kibana, veja [Navegando para o Kibana do painel de um app CF](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
 
@@ -145,4 +145,4 @@ Cada entrada de log contém os campos a seguir:
 ## Tutorial: analisar logs no Kibana para um app Cloud Foundry
 {: #tutorial}  
 
-Para aprender a usar o Kibana para analisar os logs para um app Cloud Foundry, veja [Analisar logs no Kibana para um app Cloud Foundry](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).
+Para aprender a usar o Kibana para analisar os logs para um app Cloud Foundry, veja [Analisar logs no Kibana para um app Cloud Foundry](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).

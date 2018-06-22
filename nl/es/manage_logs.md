@@ -17,17 +17,18 @@ lastupdated: "2018-01-31"
 # Gestión de registros
 {: #manage_logs}
 
-Puede utilizar la CLI de {{site.data.keyword.loganalysisshort}} y la API de {{site.data.keyword.loganalysisshort}} para gestionar los registros que se almacenan en la recopilación de registros.{:shortdesc}
+Puede utilizar la CLI de {{site.data.keyword.loganalysisshort}} y la API de {{site.data.keyword.loganalysisshort}} para gestionar los registros que se almacenan en la recopilación de registros.
+{:shortdesc}
 
 Para gestionar registros, tenga en cuenta la siguiente información:
 
-1. El ID de usuario debe tener una política asignada en {{site.data.keyword.Bluemix_notm}} para {{site.data.keyword.loganalysisshort}} con permisos para gestionar registros.  
+1. El ID de usuario debe tener una política asignada en {{site.data.keyword.Bluemix_notm}} para {{site.data.keyword.loganalysisshort}} con permisos para gestionar registros. 
 
     Para ver una lista de los roles de IAM y de las tareas por rol, consulte [Roles de IAM](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles). 
 	
 	Para obtener más información sobre cómo asignar una política, consulte [Asignación de una política de IAM a un usuario mediante la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
 	
-2. Esta característica solo está disponible para los planes de servicio que permiten la retención de registros.  
+2. Esta característica solo está disponible para los planes de servicio que permiten la retención de registros. 
 
     Para obtener más información sobre los planes de servicio, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
@@ -62,23 +63,14 @@ Para obtener más información, consulte:
 
 Los registros que se almacenan en búsqueda de registros se suprimen transcurridos 3 días.
 
-Registros que se almacenan en el componente de recopilación de registro se conservan hasta que el usuario configura una política de retención o hasta que los suprime manualmente. 
+Los registros que se almacenan en el componente de recopilación de registros se conservan hasta que el usuario configura una política de retención o hasta que los suprime manualmente. 
 
-* Puede configurar una política de retención de registros para definir el número de días que desea conservar los registros en la recopilación de registros. Para obtener más información, consulte:
+* Puede configurar una política de retención de registros para definir el número de días que desea conservar los registros en la recopilación de registros. Para obtener más información, consulte [Visualización y configuración de la política de retención de registros mediante el plugin de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
 
-    [Visualización y configuración de la política de retención de registros mediante el plugin de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
-	
-	[Visualización y configuración de la política de retención de registro mediante el plugin de CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy.html#configuring_retention_policy).
+* Puede utilizar la [API de recopilación de registros](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} o la [CLI de recopilación de registros](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} para suprimir registros manualmente del componente de recopilación de registros. 
 
-    Para inhabilitar la política, establezca su valor en *-1*. 
-
-* Puede utilizar la [API de recopilación de registros](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} o la [CLI de recopilación de registros](/docs/services/CloudLogAnalysis/reference/logging_cli.html#logging_cli){: new_window} para suprimir registros manualmente del componente de recopilación de registros.  
-
-* Puede utilizar la CLI. Para obtener más información sobre cómo suprimir registros manualmente mediante la CLI, consulte:
-
-    [bx logging log-delete mediante el plugin de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+* Puede utilizar la CLI. Para obtener más información sobre cómo suprimir registros manualmente mediante la CLI, consulte [bx logging log-delete mediante el plugin de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
     
-	[bx cf logging delete mediante el plugin de CF](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete).
 
 
 ## Descarga de registros
@@ -102,27 +94,18 @@ Para obtener información general sobre sus registros, utilice el mandato `bx lo
 * [Visualización de información de registro mediante el plugin de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
 * [Visualización de información de registro mediante el plugin de CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
 
-Por ejemplo, para mantener el coste bajo control, es posible que desee supervisar el tamaño de los registros de sus apps durante un periodo de tiempo. Por ejemplo, quizás desee saber el tamaño de cada tipo de registro durante una semana para un espacio de {{site.data.keyword.Bluemix_notm}} a fin de identificar si alguna app o servicio está generando más registros de los esperados. Para comprobar el tamaño de sus registros, utilice el mandato `bx logging log-show` o el mandato `cf logging status`. 
+Por ejemplo, para mantener el coste bajo control, es posible que desee supervisar el tamaño de los registros de sus apps durante un periodo de tiempo. Por ejemplo, quizás desee saber el tamaño de cada tipo de registro durante una semana para un espacio de {{site.data.keyword.Bluemix_notm}} a fin de identificar si alguna app o servicio está generando más registros de los esperados. Para comprobar el tamaño de sus registros, utilice el mandato `bx logging log-show` o el mandato `cf logging status`.
 
 Puede ver información sobre los registros almacenados en un dominio del espacio, en un dominio de la organización o en un dominio de la cuenta.
 
 
 
-## Instalación de la CLI de {{site.data.keyword.loganalysisshort_notm}} (plugin de CF)
-{: #install_cli}
-
-Para ver cómo se instala la CLI, consulte [Instalación de la CLI de registro](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#config_log_collection_cli).
-
-Para comprobar la versión de la CLI, ejecute el mandato [bx cf logging](/docs/services/CloudLogAnalysis/reference/logging_cli.html#base) con el parámetro * -version*.
-
-Para obtener ayuda sobre cómo se ejecutan los mandatos, consulte [Obtención de ayuda en línea de mandatos para ejecutar mandatos](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#command_cli_help).
-
-## Instalación de la CLI de {{site.data.keyword.loganalysisshort_notm}} (plugin de {{site.data.keyword.Bluemix_notm}}) 
+## Instalación de la CLI de {{site.data.keyword.loganalysisshort_notm}} (plugin de {{site.data.keyword.Bluemix_notm}})
 {: #install_cli}
 
 Para ver cómo se instala la CLI, consulte [Instalación de la CLI de registro](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
 
-Para comprobar la versión de la CLI, ejecute el mandato `bx plugin list`. 
+Para comprobar la versión de la CLI, ejecute el mandato `bx plugin list`.
 
 Para obtener ayuda sobre cómo se ejecutan los mandatos, consulte [Obtención de ayuda en línea de mandatos para ejecutar mandatos](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#command_cli_help).
 
@@ -171,7 +154,7 @@ Las tablas siguientes muestran los roles que debe tener un usuario para gestiona
   </tr>
   <tr>
     <td>*Administrador*</td>
-    <td>Comprobar el estado de los registros </br>Descargar registros </br>Suprimir registros </br>Cambiar la política de retención de registros </br>Gestionar sesiones</td>
+    <td>Comprobar el estado de los registros </br>Descargar registros </br>Suprimir registros </br>Cambiar la política de retención de registros </br>Gestionar sesiones </td>
 </table>
 
 <table>
@@ -193,7 +176,7 @@ Las tablas siguientes muestran los roles que debe tener un usuario para gestiona
   </tr>
   <tr>
     <td>*Administrador*</td>
-    <td>Comprobar el estado de los registros </br>Descargar registros </br>Suprimir registros </br>Cambiar la política de retención de registros </br>Gestionar sesiones</td>
+    <td>Comprobar el estado de los registros </br>Descargar registros </br>Suprimir registros </br>Cambiar la política de retención de registros </br>Gestionar sesiones </td>
 </table>
 
 <table>

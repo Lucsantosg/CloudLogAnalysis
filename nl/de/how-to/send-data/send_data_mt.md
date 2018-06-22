@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,9 +25,10 @@ Führen Sie die folgenden Schritte aus, um Protokolldaten an einen Bereich in {{
 ## Voraussetzungen
 {: #prereqs}
 
-* Eine {{site.data.keyword.IBM_notm}} ID für die Anmeldung bei {{site.data.keyword.Bluemix_notm}}.
+* Eine {{site.data.keyword.Bluemix_notm}} ID für die Anmeldung bei {{site.data.keyword.Bluemix_notm}}.
 * Eine Benutzer-ID, die über Berechtigungen zum Arbeiten in einem Bereich mit dem {{site.data.keyword.loganalysisshort}}-Service verfügt. Weitere Informationen finden Sie unter [Sicherheit](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
 * Die in Ihrer lokalen Umgebung installierte {{site.data.keyword.loganalysisshort}}-Befehlszeilenschnittstelle.
+* Der {{site.data.keyword.loganalysisshort}}-Service, der in einem Bereich in Ihrem Konto mit einem Plan bereitgestellt wird, der die Protokollaufnahme ermöglicht.
 
 
 ## Schritt 1: Protokollierungstoken anfordern
@@ -39,35 +40,28 @@ Führen Sie in der Terminalsitzung, in der die {{site.data.keyword.loganalysissh
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Führen Sie den Befehl `bx cf logging auth` aus. 
+2. Führen Sie den Befehl `bx logging token-get` aus. 
 
     ```
-    bx cf logging auth
+    bx logging token-get
     ```
     {: codeblock}
 
-    Der Befehl gibt die folgenden Informationen zurück:
-    
-    * Das Protokollierungstoken.
-    * Die Organisations-ID: Dies ist die GUID der {{site.data.keyword.Bluemix_notm}}-Organisation, bei der Sie angemeldet sind. 
-    * Die Bereichs-ID: Die GUID des Bereichs in der Organisation, bei dem Sie angemeldet sind. 
+    Der Befehl gibt das Protokollierungstoken zurück.
     
     Beispiel:
 
     ```
-    bx cf logging auth
-    +-----------------+--------------------------------------+
-    |      NAME       |                VALUE                 |
-    +-----------------+--------------------------------------+
-    | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_abcdefz                         |
-    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
-    | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
-    +-----------------+--------------------------------------+
+    bx logging token-get
+    Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
+    OK
+
+    Tenant Id                              Logging Token   
+    93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf   oT98_abcdefz   
     ```
     {: screen}
 
-Weitere Informationen finden Sie unter [cf logging auth](/docs/services/CloudLogAnalysis/reference/logging_cli.html#auth).
+    Dabei ist *Tenant Id* die GUID des Bereichs, zu dem Protokolle gesendet werden.
 
 
 ## Schritt 2: Multi-Tenant Logstash Forwarder konfigurieren
@@ -204,7 +198,7 @@ Führen Sie die folgenden Schritte aus, um den Multi-Tenant Logstash Forwarder (
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>Ziel-URL. Informationen zum Abrufen der Liste der URLs zum Einpflegen finden Sie unter [URLs für das Einpflegen](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Legen Sie den Wert beispielsweise auf **https://ingest.logging.ng.bluemix.net:9091** fest, um Protokolle an die Region 'USA (Süden)' zu senden. </td>
+            <td>Ziel-URL. Informationen zum Abrufen der Liste der URLs zum Einpflegen finden Sie unter [URLs für das Einpflegen](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Legen Sie den Wert beispielsweise auf **ingest.logging.ng.bluemix.net:9091** fest, um Protokolle an die Region 'USA (Süden)' zu senden. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>

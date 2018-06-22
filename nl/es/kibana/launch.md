@@ -131,7 +131,7 @@ Para ver los registros de una aplicación Cloud Foundry en Kibana, siga los paso
     Para apps CF, pulse **Registros** en la barra de navegación. 
     Se abre el separador Registros.  
 
-4. Pulse **Ver en Kibana**.Se abre el panel de control de Kibana.
+4. Pulse **Ver en Kibana**. Se abre el panel de control de Kibana.
 
     De forma predeterminada, se carga la página **Descubrir** con el patrón de índice predeterminado seleccionado y un filtro de tiempo establecido en los últimos 15 minutos. La consulta de búsqueda está establecida para que coincida con todas las entradas de la app CF.
 
@@ -154,7 +154,7 @@ Para ver los registros de un contenedor en Kibana, siga los pasos siguientes:
 
 2. En el menú, seleccione **Panel de control**.
 
-3. En la sección *Clústeres*, seleccione el clúster. 
+3. En la sección *Clústeres*, seleccione el clúster.
 
 4. En la sección *Visión general*, seleccione **Ver registros**.
 

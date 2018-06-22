@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-02-01"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -107,7 +107,6 @@ Después de personalizar un panel de control de Kibana, puede analizar los datos
 También puede configurar y gestionar recursos de Kibana desde la página **Gestión**. 
 
 Puede realizar cualquiera de estas tareas:
-        
 
 * Guardar, suprimir, exportar e importar búsquedas. 
 * Guardar, suprimir, exportar e importar visualizaciones.
@@ -260,7 +259,7 @@ En la tabla siguiente se muestran los URL para iniciar Kibana y las versiones de
     </tr>
 	<tr>
       <td>Frankfurt</td>
-	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.nett)</td>
+	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.net)</td>
 	  <td>Kibana 5.1</td>
     </tr>
 	<tr>

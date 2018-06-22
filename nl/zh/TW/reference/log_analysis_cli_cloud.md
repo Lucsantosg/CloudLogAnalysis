@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-09"
 
 ---
 
@@ -43,6 +43,10 @@ lastupdated: "2018-01-10"
     <td>使用這個指令，以將日誌從「日誌收集」下載至本端檔案，或透過管道將日誌傳送至另一個程式（例如 Elastic Stack）。</td>
   </tr>
   <tr>
+    <td>[bx logging log-show](#status)</td>
+    <td>使用這個指令，以取得空間、組織或帳戶中所收集日誌的相關資訊。</td>
+  </tr>
+  <tr>
     <td>[bx logging help](#help)</td>
     <td>使用這個指令，以取得如何使用 CLI 的協助以及所有指令的清單。</td>
   </tr>
@@ -53,6 +57,10 @@ lastupdated: "2018-01-10"
   <tr>
     <td>[bx logging option-update](#optionupdate)</td>
     <td>使用這個指令，以設定空間、組織或帳戶中可用日誌的保留期間。</td>
+  </tr>
+  <tr>
+    <td>[bx logging quota-usage-show](#quotausage)</td>
+    <td>使用這個指令，以取得空間、組織或帳戶的配額用量資訊。您也可以取得配額歷程資訊。</td>
   </tr>
   <tr>
     <td>[bx logging session-create](#session_create)</td>
@@ -71,8 +79,8 @@ lastupdated: "2018-01-10"
     <td>使用這個指令，以顯示單一階段作業的狀態。</td>
   <tr>  
   <tr>
-    <td>[bx logging log-show](#status)</td>
-    <td>使用這個指令，以取得空間、組織或帳戶中所收集日誌的相關資訊。</td>
+    <td>[bx logging token-get](#tokenget)</td>
+    <td>使用這個指令，以取得用來將日誌資料傳送至 {{site.data.keyword.loganalysisshort}} 服務的記載記號。</td>
   </tr>
 </table>
 
@@ -99,15 +107,18 @@ USAGE:
    bx logging command [arguments...] [command options]
 
 COMMANDS:
-   log-delete       Delete log
-   log-download     Download a log
-   log-show         Show the count, size, and type of logs per day
-   session-create   Create a session
-   session-delete   Delete session
-   sessions         List sessions info
-   session-show     Show a session info
-   option-show      Show the log retention
-   option-update    Show the log options
+COMMANDS:
+   log-delete         Delete log
+   log-download       Download a log
+   log-show           Show the count, size, and type of logs per day
+   session-create     Create a session
+   session-delete     Delete session
+   sessions           List sessions info
+   session-show       Show a session info
+   option-show        Show the log retention
+   option-update      Show the log options
+   token-get          Get a logging token for sending logs
+   quota-usage-show   Show quota usage info
    help             
    
 Enter 'bx logging help [command]' for more information about a command.
@@ -135,7 +146,7 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>（選用）將此欄位設為要取得其資訊的空間、組織或帳戶 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
+  <dd>（選用）將此欄位設為空間、組織或帳戶的 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -182,7 +193,7 @@ bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>（選用）將此欄位設為要取得其資訊的空間、組織或帳戶 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
+  <dd>（選用）將此欄位設為空間、組織或帳戶的 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
   </dd>
  
   <dt>-o, --output OUTPUT</dt>
@@ -298,7 +309,7 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>（選用）將此欄位設為要取得其資訊的空間、組織或帳戶 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
+  <dd>（選用）將此欄位設為空間、組織或帳戶的 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
   </dd>
 
 </dl>
@@ -354,6 +365,56 @@ bx logging option-update -e 25
 {: screen}
 
 
+## bx logging quota-usage-show
+{: #quotausage}
+
+通知空間、組織或帳戶的配額用量。您也可以用它來取得歷程用量。
+
+* 期間的設定單位是天數。
+* 預設值為 **-1**。 
+
+```
+bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+```
+{: codeblock}
+
+**參數**
+
+<dl>
+  <dt>-r,--resource-type RESOURCE_TYPE</dt>
+  <dd>（選用）設定資源的類型。有效值為：*space*、*account* 及 *org*
+  </dd>
+  
+   <dt>-i,--resource-id RESOURCE_ID</dt>
+  <dd>（選用）將此欄位設為空間、組織或帳戶的 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
+  </dd>
+  
+  <dt>-s,--history</dt>
+  <dd>（選用）設定此參數，以取得配額用量的相關歷程資訊。</dd>
+
+</dl>
+
+**範例**
+
+若要取得空間網域的歷程配額用量，請執行下列指令：
+
+```
+bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Date         Allotmant   Usage   
+2018.02.28   524288000   80405926   
+2018.03.06   524288000   18955540   
+2018.03.05   524288000   47262944   
+2018.03.08   524288000   18311338   
+2018.03.01   524288000   82416831   
+2018.03.03   524288000   75045462   
+2018.03.07   524288000   17386278   
+2018.03.02   524288000   104316444   
+2018.03.04   524288000   73125223   
+```
+{: screen}
 
 ## bx logging session-create
 {: #session_create}
@@ -375,7 +436,7 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>（選用）將此欄位設為要取得其資訊的空間、組織或帳戶 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
+  <dd>（選用）將此欄位設為空間、組織或帳戶的 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -454,7 +515,7 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>（選用）將此欄位設為要取得其資訊的空間、組織或帳戶 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
+  <dd>（選用）將此欄位設為空間、組織或帳戶的 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
   </dd>
  
 </dl>
@@ -496,7 +557,7 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>（選用）將此欄位設為要取得其資訊的空間、組織或帳戶 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
+      <dd>（選用）將此欄位設為空間、組織或帳戶的 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
       </dd>
 </dl>
 
@@ -551,7 +612,7 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>（選用）將此欄位設為要取得其資訊的空間、組織或帳戶 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
+      <dd>（選用）將此欄位設為空間、組織或帳戶的 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
       </dd>
 </dl>
 
@@ -568,6 +629,41 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
 
 ```
 bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+```
+{: screen}
+
+## bx logging token-get
+{: #tokenget}
+
+傳回用來將日誌資料傳送至 {{site.data.keyword.loganalysisshort}} 所需的記載記號。
+
+```
+bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+```
+{: codeblock}
+
+**參數**
+
+<dl>
+  <dt>-r,--resource-type RESOURCE_TYPE</dt>
+  <dd>（選用）設定您計劃傳送日誌資料的資源類型。有效值為：*space*、*account* 及 *org*
+  </dd>
+  
+   <dt>-i,--resource-id RESOURCE_ID</dt>
+  <dd>（選用）將此欄位設為空間、組織或帳戶的 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
+  </dd>
+</dl>
+
+
+**範例**
+
+```
+bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Tenant Id                              Logging Token   
+js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx   
 ```
 {: screen}
 
@@ -594,7 +690,7 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>（選用）將此欄位設為要取得其資訊的空間、組織或帳戶 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
+  <dd>（選用）將此欄位設為空間、組織或帳戶的 ID。<br>依預設，如果您未指定此參數，則指令會使用所登入資源的 ID。
   </dd>
   
   <dt>-s, --start START_DATE</dt>

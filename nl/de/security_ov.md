@@ -228,11 +228,8 @@ Zum Senden von Protokollen an den {{site.data.keyword.loganalysisshort}}-Service
 Wählen Sie eine der folgenden Methoden aus, um Protokolle an eine Bereichsdomäne zu senden:
 
 * [Protokollierungstoken zum Senden von Protokollen an einen Bereich mit dem {{site.data.keyword.Bluemix_notm}}-Befehl 'bx service' abrufen](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
-* [Protokollierungstoken zum Senden von Protokollen an einen Bereich über die Log Analysis-Befehlszeilenschnittstelle (CF-Plug-in) abrufen](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cf_plugin)
+* [Protokollierungstoken zum Senden von Protokollen an einen Bereich über die Log Analysis-Befehlszeilenschnittstelle abrufen](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [Protokollierungstoken zum Senden von Protokollen an einen Bereich über die Log Analysis-API abrufen](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
-
-Informationen zum Senden von Protokollen an die Kontodomäne finden Sie unter [Protokollierungstoken zum Senden von Protokollen an eine Kontodomäne über die Log Analysis-API abrufen](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_acc_token_api).
-
 
 
 ## Benutzern Berechtigungen zum Arbeiten mit Protokollen erteilen
@@ -245,7 +242,7 @@ Damit ein Benutzer Protokolle verwalten oder Protokolle anzeigen kann, müssen i
 
 Weitere Informationen zum Erteilen von Berechtigungen finden Sie in den folgenden Abschnitten:
 
-* [Einem Benutzer über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle eine IAM-Richtliniee zuweisen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions).
+* [Einem Benutzer über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle eine IAM-Richtlinie zuweisen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions).
 * [Einem Benutzer über die Befehlszeile eine IAM-Richtlinie zuweisen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_commandline).
 * [Einem Benutzer über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle Berechtigungen zum Anzeigen von Bereichsprotokollen erteilen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
 

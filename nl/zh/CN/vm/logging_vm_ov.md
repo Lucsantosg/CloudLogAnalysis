@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# 为虚拟机进行日志记录
+# 虚拟机
 {: #logging_vm_ov}
 
 不会自动为虚拟机 (VM) 启用日志记录功能。但是，可以将 VM 配置为将日志发送到“日志收集”中。要从 VM 收集日志数据并将其发送到 {{site.data.keyword.loganalysisshort}} 服务中，您必须配置多租户 Logstash 转发器 (mt-logstash-forwarder)。然后，可以在 Kibana 中查看、过滤和分析日志。
@@ -37,7 +37,7 @@ lastupdated: "2018-01-10"
 
 {{site.data.keyword.loganalysisshort}} 服务提供了其他套餐，允许您根据自己的需要，将日志在“日志收集”中存储任意长的时间。有关每个套餐价格的更多信息，请参阅[服务套餐](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
 
-* 可以配置日志保留时间策略，可用于定义您希望日志在“日志收集”中保留的天数。有关更多信息，请参阅[日志保留时间策略](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies)。
+* 可以配置日志保留时间策略，可用于定义您希望日志在“日志收集”中保留的天数。有关更多信息，请参阅[日志保留时间策略](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy)。
 * 您可以使用日志收集 CLI 或 API 手动删除日志。
 
 

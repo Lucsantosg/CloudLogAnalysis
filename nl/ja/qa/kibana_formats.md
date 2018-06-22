@@ -3,11 +3,9 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
-
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -52,30 +50,6 @@ lastupdated: "2018-01-10"
 {: caption="表 1. CF アプリ用のフィールド" caption-side="top"}
 
 
-
-## IBM が管理するインフラストラクチャーにデプロイされた Docker コンテナーの Kibana ログ・フォーマット (非推奨)
-{: #kibana_log_format_containers}
-
-各ログ項目の以下のフィールドを「*Discover*」ページで表示するように Kibana を構成できます。
-
-| フィールド | 説明 |
-|-------|-------------|
-| @timestamp | `yyyy-MM-ddTHH:mm:ss:SS-0500`  <br> ログに記録されたイベントの時刻。 <br> タイム・スタンプは、ミリ秒単位まで定義されます。 |
-| @version | イベントのバージョン。 |
-| ALCH_TENANT_ID | {{site.data.keyword.Bluemix_notm}} スペースの ID。 |
-| \_id | ログ文書の固有 ID。 |
-| \_index | ログ項目のインデックス。 |
-| \_type | ログのタイプ (例、*logs*)。 |
-| group_id | グループ ID <br> * 単一コンテナーの場合、値は **0000** です。 <br> * コンテナー・グループの場合、値はグループの GUID です。  |
-| ホスト (host) | コンテナーが実行されるホスト名。 |
-| インスタンス (instance) | 単一コンテナーのインスタンスの GUID。 コンテナー・グループのインスタンス ID のリスト。|
-| log | 簡略メッセージ。 |
-| message | 完全なメッセージ。 |
-| path | ログがコンテナー内にある場所のパスとログ名。 |
-| stream | ログのタイプ (stdout、stderr) を指定します。 |
-| time | イベント発生日時。 タイム・スタンプは、ミリ秒単位まで定義されます。|
-| timestamp | ログに記録されたイベントの日時。 タイム・スタンプは、ミリ秒単位まで定義されます。 |
-{: caption="表 2. Docker コンテナー用のフィールド" caption-side="top"}
 
 ## Kubernetes クラスターにデプロイされた Docker コンテナーの Kibana ログ・フォーマット
 {: #kibana_log_format_containers_kubernetes}
@@ -150,3 +124,6 @@ ALCH_TENANT_ID:
 &#95;index:
     logstash-2017.03.08
 ```
+{: screen}
+
+

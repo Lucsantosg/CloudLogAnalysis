@@ -22,10 +22,9 @@ lastupdated: "2018-01-10"
 以下是關於使用 {{site.data.keyword.Bluemix}} 記載功能的常見問題與解答。
 {:shortdesc}
 
-* [如果在 Kibana 的「探索」頁面中看不到資料，我該怎麼辦](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_discover_kibana)
-* [如果發生鑑別異常狀況，我該怎麼辦](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_dashboard_kibana)
-* [如何啟動 Kibana 3 或 Kibana 4](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
-* [為什麼我會在 Kibana「探索」頁面的欄位旁看到 ? 符號](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
+* [如果在 Kibana 的「探索」頁面中看不到資料，我該怎麼辦](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_discover_kibana)
+* [如果發生鑑別異常狀況，我該怎麼辦](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_dashboard_kibana)
+* [為什麼我會在 Kibana「探索」頁面的欄位旁看到 ? 符號](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_kibana_question)
 * [變更預設索引型樣時發生 403 錯誤](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
 * [簡短 URL 沒有作用](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
 * [我可以在 Bluemix 中搜尋我的帳戶日誌嗎？](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
@@ -79,21 +78,7 @@ lastupdated: "2018-01-10"
 
     如果您共用該「儀表板」，請勿刪除視覺效果，因為那樣會影響其他使用相同儀表板的團隊成員。
 
-## 如何啟動 Kibana 3 或 Kibana 4
-{: #logging_qa_kibana3}
 
-**附註：**Kibana 3 已淘汰。
-
-您可以從瀏覽器啟動 Kibana 3 或 Kibana 4。
-
-請完成下列步驟，以從瀏覽器啟動 Kibana：
-
-1. 開啟 [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net) 以登入 Kibana 使用者介面。
-    
-2. 選取您想要用來分析日誌的 Kibana 版本。
-    * 選取 **Kibana 4** 標籤，以使用 Kibana 4。「探索」頁面即會開啟。如需相關資訊，請參閱[在 Kibana 中以互動方式分析日誌](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_kibana_analize_logs_interactively.html#kibana_analize_logs_interactively)。
-    * 選取 **Kibana 3** 標籤，以使用 Kibana 3。預設的 Kibana 儀表板即會開啟。如需使用 Kibana 3 來分析日誌的相關資訊，請參閱[在 Kibana 3 中分析日誌（已淘汰）](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3)。如需自訂 Kibana 3 儀表板的相關資訊，請參閱[此部落格文章 ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/){: new_window}。
-     
 
 ## 為什麼我會在 Kibana「探索」頁面的欄位旁看到 ? 符號
 {: #logging_qa_kibana_question}
@@ -120,7 +105,7 @@ lastupdated: "2018-01-10"
 
 請完成下列步驟，以查看帳戶日誌：
 
-1. [啟動 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)。例如，針對美國南部地區，請使用 URL https://logging.ng.bluemix.net。
+1. [啟動 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)。例如，針對美國南部地區，請使用 URL `https://logging.ng.bluemix.net`。
 
 2. 選取**檢視 AccountName 帳戶日誌**選項，以顯示帳戶日誌。*AccountName* 是帳戶的名稱。
 

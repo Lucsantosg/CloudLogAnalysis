@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -25,7 +25,7 @@ lastupdated: "2018-01-10"
 ## IAM トークンの取得
 {: #iam_token_cli}
 
-{{site.data.keyword.Bluemix_notm}} CLI を使用して許可トークンを取得するには、以下の手順を実行します。
+{{site.data.keyword.Bluemix_notm}} CLI を使用して許可トークンを取得するには、端末から以下のステップを実行します。
 
 1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
 
@@ -33,7 +33,7 @@ lastupdated: "2018-01-10"
    
    CLI がインストールされている場合は、次のステップに進みます。
     
-2. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
+2. {{site.data.keyword.Bluemix_notm}} の地域にログインします。 
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 	

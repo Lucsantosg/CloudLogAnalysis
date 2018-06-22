@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-09"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-01-10"
 {: shortdesc}
 
 **전제조건**
-* 로깅 명령을 실행하기 전에 `bx login` 명령으로 {{site.data.keyword.Bluemix_notm}}에 로그인하여 액세스 토큰을 생성하고 세션을 인증하십시오. 
+* 로깅 명령을 실행하기 전에 `bx login` 명령으로 {{site.data.keyword.Bluemix_notm}}에 로그인하여 액세스 토큰을 생성하고 세션을 인증하십시오.
 
 {{site.data.keyword.loganalysisshort}} CLI 사용 방법에 대해 알아보려면 [로그 관리](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)를 참조하십시오.
 
@@ -32,7 +32,7 @@ lastupdated: "2018-01-10"
   </tr>
   <tr>
     <td>[bx logging](#base)</td>
-    <td>이 명령을 사용하여 CLI에 대한 정보(예: 명령 목록)를 가져옵니다. </td>
+    <td>이 명령을 사용하여 CLI에 대한 정보(예: 명령 목록)를 가져옵니다.</td>
   </tr>
   <tr>
     <td>[bx logging log-delete](#delete)</td>
@@ -41,6 +41,10 @@ lastupdated: "2018-01-10"
   <tr>
     <td>[bx logging log-download](#download)</td>
     <td>이 명령을 사용하여 로그 콜렉션에서 로컬 파일로 로그를 다운로드하거나 다른 프로그램(예: Elastic Stack)으로 로그를 보냅니다. </td>
+  </tr>
+  <tr>
+    <td>[bx logging log-show](#status)</td>
+    <td>이 명령을 사용하여 영역, 조직 또는 계정에서 수집된 로그에 대한 정보를 가져옵니다.</td>
   </tr>
   <tr>
     <td>[bx logging help](#help)</td>
@@ -52,7 +56,11 @@ lastupdated: "2018-01-10"
   </tr>
   <tr>
     <td>[bx logging option-update](#optionupdate)</td>
-    <td>이 명령을 사용하여 영역, 조직 또는 계정에서 사용 가능한 보존 기간을 설정합니다. </td>
+    <td>이 명령을 사용하여 영역, 조직 또는 계정에서 사용 가능한 보존 기간을 설정합니다.</td>
+  </tr>
+  <tr>
+    <td>[bx logging quota-usage-show](#quotausage)</td>
+    <td>이 명령을 사용하여 영역, 조직 또는 계정의 할당량 사용량 정보를 가져옵니다. 또한 할당량 히스토리 정보를 가져올 수도 있습니다. </td>
   </tr>
   <tr>
     <td>[bx logging session-create](#session_create)</td>
@@ -71,8 +79,8 @@ lastupdated: "2018-01-10"
     <td>이 명령을 사용하여 단일 세션의 상태를 표시합니다.</td>
   <tr>  
   <tr>
-    <td>[bx logging log-show](#status)</td>
-    <td>이 명령을 사용하여 영역, 조직 또는 계정에서 수집된 로그에 대한 정보를 가져옵니다.</td>
+    <td>[bx logging token-get](#tokenget)</td>
+    <td>이 명령을 사용하여 {{site.data.keyword.loganalysisshort}} 서비스에 로그 데이터를 전송하기 위한 로깅 토큰을 가져옵니다.</td>
   </tr>
 </table>
 
@@ -80,7 +88,7 @@ lastupdated: "2018-01-10"
 ## bx logging
 {: #base}
 
-CLI에 대한 일반 정보를 제공합니다. 
+CLI에 대한 일반 정보를 제공합니다.
 
 ```
 bx logging 
@@ -99,15 +107,18 @@ bx logging
    bx logging command [arguments...] [command options]
 
 명령:
-   log-delete       로그 삭제
-   log-download     로그 다운로드
-   log-show         일별 로그 수, 크기 및 유형 표시
-   session-create   세션 작성
-   session-delete   세션 삭제
-   sessions         세션 정보 나열
-   session-show     세션 정보 표시
-   option-show      로그 보존 표시
-   option-update    로그 옵션 표시
+명령:
+   log-delete         로그 삭제
+   log-download       로그 다운로드
+   log-show           일별 로그의 수, 크기 및 유형 표시
+   session-create     세션 작성
+   session-delete     세션 삭제
+   sessions           세션 정보 나열
+   session-show       세션 정보 표시
+   option-show        로그 보존 표시
+   option-update      로그 옵션 표시
+   token-get          로그를 전송하기 위해 로깅 토큰 가져오기
+   quota-usage-show   할당량 사용량 정보 보기
    help
 
 명령에 해당 자세한 정보를 보려면 'bx logging help [command]'를 입력하십시오.
@@ -135,7 +146,7 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(선택사항) 이 필드를 정보를 가져오려는 대상 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다.
+  <dd>(선택사항) 이 필드를 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -164,7 +175,7 @@ bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ## bx logging log-download 
 {: #download}
 
-로그 콜렉션에서 로컬 파일로 로그를 다운로드하거나 다른 프로그램(예: Elastic Stack)으로 로그를 보냅니다.  
+로그 콜렉션에서 로컬 파일로 로그를 다운로드하거나 다른 프로그램(예: Elastic Stack)으로 로그를 보냅니다. 
 
 **참고:** 파일을 다운로드하려면 먼저 세션을 작성해야 합니다. 세션은 날짜 범위, 로그 유형 및 계정 유형을 기반으로 어느 로그를 다운로드할 것인지 정의합니다. 세션의 컨텍스트 내에서 로그를 다운로드합니다. 자세한 정보는 [bx logging session create(베타)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create)를 참조하십시오.
 
@@ -182,7 +193,7 @@ bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(선택사항) 이 필드를 정보를 가져오려는 대상 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다.
+  <dd>(선택사항) 이 필드를 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다. 
   </dd>
  
   <dt>-o, --output OUTPUT</dt>
@@ -201,7 +212,7 @@ bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 **예**
 
-Linux 시스템에서 로그를 mylogs.gz라는 파일로 다운로드하려면 다음 명령을 실행하십시오. 
+Linux 시스템에서 로그를 mylogs.gz라는 파일로 다운로드하려면 다음 명령을 실행하십시오.
 
 ```
 bx logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
@@ -278,12 +289,12 @@ bx logging help log-show
 ## bx logging option-show
 {: #optionshow}
 
-영역, 조직 또는 계정에서 사용할 수 있는 로그의 보존 기간을 표시합니다.  
+영역, 조직 또는 계정에서 사용할 수 있는 로그의 보존 기간을 표시합니다. 
 
 * 기간은 일 수로 설정됩니다.
 * 기본값은 **-1**입니다. 
 
-**참고:** 기본적으로 모든 로그가 저장됩니다. **delete** 명령을 사용하여 로그를 수동으로 삭제해야 합니다. 자동으로 로그를 삭제하려면 보존 정책을 설정하십시오. 
+**참고:** 기본적으로 모든 로그가 저장됩니다. **delete** 명령을 사용하여 로그를 수동으로 삭제해야 합니다. 자동으로 로그를 삭제하려면 보존 정책을 설정하십시오.
 
 ```
 bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
@@ -298,7 +309,7 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(선택사항) 이 필드를 정보를 가져오려는 대상 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다.
+  <dd>(선택사항) 이 필드를 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다. 
   </dd>
 
 </dl>
@@ -318,7 +329,7 @@ bx logging option-show
 ## bx logging option-update
 {: #optionupdate}
 
-영역, 조직 또는 계정에서 사용할 수 있는 로그의 보존 기간을 변경합니다.  
+영역, 조직 또는 계정에서 사용할 수 있는 로그의 보존 기간을 변경합니다. 
 
 * 기간은 일 수로 설정됩니다.
 * 기본값은 **-1**입니다. 
@@ -336,7 +347,7 @@ bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RE
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(선택사항) 이 필드를 정보를 가져오려는 대상 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다.
+  <dd>(선택사항) 이 필드를 정보를 가져오려는 대상 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다. 
   </dd>
   
   <dt>-e,--retention RETENTION_VALUE</dt>
@@ -354,6 +365,56 @@ bx logging option-update -e 25
 {: screen}
 
 
+## bx logging quota-usage-show
+{: #quotausage}
+
+영역, 조직 또는 계정의 할당량 사용량에 대한 정보를 제공합니다. 또한 히스토리 사용량을 가져오는 데 할당량 사용량을 사용할 수도 있습니다. 
+
+* 기간은 일 수로 설정됩니다.
+* 기본값은 **-1**입니다. 
+
+```
+bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+```
+{: codeblock}
+
+**매개변수**
+
+<dl>
+  <dt>-r,--resource-type RESOURCE_TYPE</dt>
+  <dd>(선택사항) 리소스 유형을 설정합니다. 올바른 값: *space*, *account* 및 *org*
+  </dd>
+  
+   <dt>-i,--resource-id RESOURCE_ID</dt>
+  <dd>(선택사항) 이 필드를 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다. 
+  </dd>
+  
+  <dt>-s,--history</dt>
+  <dd>(선택사항) 할당량 사용량에 대한 히스토리 정보를 가져오도록 이 매개변수를 설정하십시오. </dd>
+
+</dl>
+
+**예**
+
+영역 도메인에 대한 할당량 사용량을 가져오려면 다음 명령을 실행하십시오. 
+
+```
+bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Date         Allotmant   Usage   
+2018.02.28   524288000   80405926   
+2018.03.06   524288000   18955540   
+2018.03.05   524288000   47262944   
+2018.03.08   524288000   18311338   
+2018.03.01   524288000   82416831   
+2018.03.03   524288000   75045462   
+2018.03.07   524288000   17386278   
+2018.03.02   524288000   104316444   
+2018.03.04   524288000   73125223   
+```
+{: screen}
 
 ## bx logging session-create
 {: #session_create}
@@ -375,7 +436,7 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(선택사항) 이 필드를 정보를 가져오려는 대상 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다.
+  <dd>(선택사항) 이 필드를 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -388,7 +449,7 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
   
   <dt>-t, --type, LOG_TYPE</dt>
   <dd>(선택사항) 로그 유형을 설정합니다. <br>예를 들면, *syslog*는 로그의 유형입니다. <br>기본값은 별표(*)로 설정됩니다. <br>각 유형을 쉼표로 구분하여 여러 개의 로그 유형을 지정할 수 있습니다(예: *log_type_1,log_type_2,log_type_3*).
- </dd>
+  </dd>
 
 </dl>
 
@@ -413,7 +474,7 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
     <dd>로그를 필터링하는 데 사용된 시작 날짜를 표시합니다. </dd>
 
     <dt>종료</dt>
-    <dd>로그를 필터링하는 데 사용된 마지막 날짜를 표시합니다. </dd>
+    <dd>로그를 필터링하는 데 사용된 마지막 날짜를 표시합니다.</dd>
 
     <dt>유형</dt>
     <dd>세션을 통해 다운로드되는 로그 유형입니다.</dd>
@@ -423,7 +484,7 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
 
 **예**
 
-2017년 11월 13일의 로그가 포함된 세션을 작성하려면 다음 명령을 실행하십시오. 
+2017년 11월 13일의 로그가 포함된 세션을 작성하려면 다음 명령을 실행하십시오.
 
 ```
 bx logging session-create -s 2017-11-13 -e 2017-11-13
@@ -454,7 +515,7 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(선택사항) 이 필드를 정보를 가져오려는 대상 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다.
+  <dd>(선택사항) 이 필드를 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다. 
   </dd>
  
 </dl>
@@ -463,7 +524,7 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
 
 <dl>
   <dt>SESSION_ID</dt>
-  <dd>삭제하려는 활성 세션의 ID입니다. </dd>
+  <dd>삭제하려는 활성 세션의 ID입니다.</dd>
 </dl>
 
 **예**
@@ -495,7 +556,7 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
       <dd>(선택사항) 리소스 유형을 설정합니다. 올바른 값: *space*, *account* 및 *org* </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>(선택사항) 이 필드를 정보를 가져오려는 대상 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다. </dd>
+      <dd>(선택사항) 이 필드를 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다.  </dd>
 </dl>
 
 **리턴값**
@@ -522,12 +583,9 @@ Listing sessions of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 ID                                     Space                                  CreateTime                       AccessTime
 1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z
-Listed the sessions of resource xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Listed the sessions of resource xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
 ```
 :{ screen}
-
-
-
 
 
 ## bx logging session-show
@@ -548,7 +606,7 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
       <dd>(선택사항) 리소스 유형을 설정합니다. 올바른 값: *space*, *account* 및 *org* </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>(선택사항) 이 필드를 정보를 가져오려는 대상 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다. </dd>
+      <dd>(선택사항) 이 필드를 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다.  </dd>
 </dl>
 
 **인수**
@@ -567,6 +625,41 @@ bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
+## bx logging token-get
+{: #tokenget}
+
+로그 데이터를 {{site.data.keyword.loganalysisshort}}로 전송하는 데 필요한 로깅 토큰을 리턴합니다.
+
+```
+bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+```
+{: codeblock}
+
+**매개변수**
+
+<dl>
+  <dt>-r,--resource-type RESOURCE_TYPE</dt>
+  <dd>(선택사항) 로그 데이터를 전송할 계획인 리소스 유형을 설정합니다. 올바른 값: *space*, *account* 및 *org*
+  </dd>
+  
+   <dt>-i,--resource-id RESOURCE_ID</dt>
+  <dd>(선택사항) 이 필드를 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다. 
+  </dd>
+</dl>
+
+
+**예**
+
+```
+bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Tenant Id                              Logging Token   
+js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx   
+```
+{: screen}
+
 
 ## bx logging log-show
 {: #status}
@@ -579,7 +672,7 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 {: codeblock}
 
 * 리소스 유형을 지정하지 않으면 명령은 로그인된 리소스의 세부사항을 리턴합니다.
-* 리소스 유형을 지정하면 리소스 ID를 지정해야 합니다. 
+* 리소스 유형을 지정하면 리소스 ID를 지정해야 합니다.
 * 시작 및 종료 날짜를 지정하지 않으면 명령은 로그 콜렉션에 저장된 지난 2주의 로그에 대한 정보만 보고합니다.
 
 **매개변수**
@@ -590,7 +683,7 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(선택사항) 이 필드를 정보를 가져오려는 대상 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다.
+  <dd>(선택사항) 이 필드를 영역, 조직 또는 계정의 ID로 설정합니다. <br>기본적으로 이 매개변수를 지정하지 않으면 명령은 로그인되는 리소스의 ID를 사용합니다. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -603,7 +696,7 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
   
   <dt>-t, --type, LOG_TYPE</dt>
   <dd>(선택사항) 로그 유형을 설정합니다. <br>예를 들면, *syslog*는 로그의 유형입니다. <br>기본값은 별표(*)로 설정됩니다. <br>각 유형을 쉼표로 구분하여 여러 개의 로그 유형을 지정할 수 있습니다(예: *log_type_1,log_type_2,log_type_3*).
- </dd>
+  </dd>
   
   <dt>-l, --list-type-detail</dt>
   <dd>(선택사항) 각 로그 유형을 개별적으로 나열하도록 이 매개변수를 설정하십시오.

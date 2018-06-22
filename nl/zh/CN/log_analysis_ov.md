@@ -32,7 +32,7 @@ lastupdated: "2018-02-01"
 
 下图显示了 {{site.data.keyword.loganalysisshort}} 服务的高级别视图： 
 
-![{{site.data.keyword.loganalysisshort}} 服务的概览图](images/loganalisys_F1.gif "{{site.data.keyword.loganalysisshort}} 服务的概览图")
+![{{site.data.keyword.loganalysisshort}} 服务的概览图](images/loganalysis_F1.png "{{site.data.keyword.loganalysisshort}} 服务的概览图")
 
 
 要收集并搜索在空间中运行云资源的日志，必须在运行这些云资源的空间中供应 {{site.data.keyword.loganalysisshort}} 服务的实例。缺省情况下，会在“日志搜索”中收集并存储日志。选择包含扩展搜索和收集功能的服务套餐时，还会在“日志收集”组件中收集并存储日志。存储在“日志收集”中的日志数据会加密。
@@ -129,7 +129,7 @@ lastupdated: "2018-02-01"
 
 {{site.data.keyword.loganalysisshort}} 服务提供了多种套餐。每种套餐都有不同的日志收集和日志搜索功能。 
 
-**注：**服务套餐中包含的功能仅在您向 {{site.data.keyword.loganalysisshort}} 服务供应该套餐的空间中启用。
+**注**：服务套餐中包含的功能仅在您向 {{site.data.keyword.loganalysisshort}} 服务供应该套餐的空间中启用。
 
 可以通过 {{site.data.keyword.Bluemix_notm}} UI 或通过命令行来更改套餐。您可以随时升级或降级套餐。有关服务套餐升级的更多信息，请参阅[更改套餐](/docs/services/CloudLogAnalysis/how-to/change_plan.html#change_plan)。 
 
@@ -181,5 +181,5 @@ lastupdated: "2018-02-01"
       </tr>
 </table>
 
-**注：**“日志收集”存储器每月成本作为计费周期的平均值进行计算。
+**注**：“日志收集”存储器每月成本作为计费周期的平均值进行计算。
 

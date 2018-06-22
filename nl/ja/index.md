@@ -3,142 +3,66 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-03-09"
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 # 概説のチュートリアル
 {: #getting-started-with-cla}
 
-このチュートリアルを使用して、{{site.data.keyword.Bluemix}} で {{site.data.keyword.loganalysislong}} サービスを使用した作業を開始する方法を学習します。
+このチュートリアルを使用して、{{site.data.keyword.Bluemix}} で {{site.data.keyword.loganalysislong}} サービスを使用した作業を開始する方法を学習します。 
 {:shortdesc}
 
-## 目標
-{: #objectives}
-
-* {{site.data.keyword.loganalysislong}} サービスをスペースにプロビジョンします。
-* ログを管理するには、コマンド・ラインをセットアップします。
-* スペース内のログをユーザーが表示するための許可を設定します。
-* ログを表示するために使用できるオープン・ソース・ツールである Kibana を起動します。
-
+デフォルトでは、{{site.data.keyword.Bluemix_notm}} は、選択されたサービスに対して、統合されたロギング機能を提供します。ログを処理するときに、収集および保存の機能を {{site.data.keyword.loganalysisshort}} サービスを使用して拡張できます。
 
 ## 始める前に
 {: #prereqs}
 
-{{site.data.keyword.Bluemix_notm}} アカウントのメンバーまたは所有者であるユーザー ID が必要です。{{site.data.keyword.Bluemix_notm}} ユーザー ID を取得するには、[「登録」![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/registration/){:new_window} にアクセスしてください。
+{{site.data.keyword.Bluemix_notm}} アカウントのメンバーまたは所有者であるユーザー ID が必要です。 {{site.data.keyword.Bluemix_notm}} ユーザー ID を取得するには、[「登録」![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](https://console.bluemix.net/registration/){:new_window} にアクセスしてください。
 
-このチュートリアルでは、米国南部地域で {{site.data.keyword.loganalysisshort}} サービスをプロビジョンし、このサービスを使用して作業を行う方法を説明します。
-
-
-## ステップ 1: {{site.data.keyword.loganalysisshort}} サービスのプロビジョン
+## ステップ 1: ログを表示したい対象のクラウド・リソースを選択する
 {: #step1}
 
-**注:** Cloud Foundry (CF) スペース内に {{site.data.keyword.loganalysisshort}} サービスのインスタンスをプロビジョンします。スペースごとに 1 つのサービス・インスタンスのみが必要です。アカウント・レベルで {{site.data.keyword.loganalysisshort}} サービスをプロビジョンすることはできません。 
+{{site.data.keyword.Bluemix_notm}} では、CF アプリケーション、{{site.data.keyword.containershort}} で実行されているコンテナー、および選択されたサービスは、自動的にログ・データを収集し、それを {{site.data.keyword.loganalysisshort}} サービスに転送します。
 
-{{site.data.keyword.Bluemix_notm}} で {{site.data.keyword.loganalysisshort}} サービスのインスタンスをプロビジョンするには、以下のステップを実行します。
+以下の表に、各種クラウド・リソースを示します。{{site.data.keyword.loganalysisshort}} サービスの入門として、いずれかのリソースのチュートリアルを実行してください。
 
-1. {{site.data.keyword.Bluemix_notm}} ([http://bluemix.net ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://bluemix.net){:new_window}) にログインします。  
+<table>
+  <caption>{{site.data.keyword.loganalysisshort}} サービス入門チュートリアル</caption>
+  <tr>
+    <th>リソース</th>
+    <th>チュートリアル</th>
+    <th>クラウド環境</th>
+    <th>シナリオ</th>
+  </tr>
+  <tr>
+    <td>{{site.data.keyword.containershort}} で実行されているコンテナー</td>
+    <td>[Kubernetes クラスターにデプロイされたアプリに関する Kibana でのログの分析](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs)</td>
+    <td>Public </br>Dedicated</td>
+    <td>![Kubernetes クラスターにデプロイされたコンテナーのコンポーネント概要図](containers/images/containers_kube_logs.png "Kubernetes クラスターにデプロイされたコンテナーのコンポーネント概要図")</td>
+  </tr>
+  <tr>
+    <td>CF アプリ</td>
+    <td>[Cloud Foundry アプリのログの Kibana での分析](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)</td>
+    <td>Public</td>
+    <td>![{{site.data.keyword.Bluemix_notm}} での CF アプリのロギングの概要図](cfapps/images/cfapps_logs.png "{{site.data.keyword.Bluemix_notm}} での CF アプリのロギングの概要図")</td>
+  </tr>
+</table>
 
-2. {{site.data.keyword.loganalysisshort}} サービスをプロビジョンしたい地域、組織、およびスペースを選択します。  
-
-3. **「カタログ」**をクリックします。 {{site.data.keyword.Bluemix_notm}} で使用可能なサービスのリストが開きます。
-
-4. **「DevOps」**カテゴリーを選択して、表示されたサービスのリストをフィルタリングします。
-
-5. **「Log Analysis」**タイルをクリックします。
-
-6. サービス・プランを選択します。 デフォルトでは、**「ライト」**プランが設定されています。
-
-    サービス・プランについて詳しくは、『[サービス・プラン](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)』を参照してください。
-	
-7. **「作成」**をクリックして、ログインしている {{site.data.keyword.Bluemix_notm}} スペースで {{site.data.keyword.loganalysisshort}} サービスをプロビジョンします。
 
 
 
-
-## ステップ 2: [オプション] {{site.data.keyword.loganalysisshort}} サービスのサービス・プランの変更
+## ステップ 2: ユーザーがログを表示するための許可を設定する
 {: #step2}
-
-さらに多くの検索割り当て量、ログの長期保管、またはその両方が必要な場合、{{site.data.keyword.loganalysisshort}} サービス・インスタンスのプランを {{site.data.keyword.Bluemix_notm}} UI から変更するか、`bx cf update-service` コマンドを実行することで変更して、これらの機能を有効にできます。 
-
-サービス・プランはいつでもアップグレードまたは削減することができます。
-
-詳しくは、『[{{site.data.keyword.loganalysisshort}} サービス・プラン](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)』を参照してください。
-
-**注:** プランを有料プランに変更すると、コストがかかります。
-
-{{site.data.keyword.Bluemix_notm}} UI でサービス・プランを変更するには、以下のステップを実行します。
-
-1. {{site.data.keyword.Bluemix_notm}} ([http://bluemix.net ![外部リンク・アイコン](../../icons/launch-glyph.svg "外部リンク・アイコン")](http://bluemix.net){:new_window}) にログインします。  
-
-2. {{site.data.keyword.loganalysisshort}} サービスを使用可能な地域、組織、およびスペースを選択します。  
-
-3. {{site.data.keyword.Bluemix_notm}} *ダッシュボード*から {{site.data.keyword.loganalysisshort}} サービス・インスタンスをクリックします。 
-    
-4. {{site.data.keyword.loganalysisshort}} ダッシュボードで**「プラン」**タブを選択します。
-
-    現在のプランに関する情報が表示されます。
-	
-5. プランをアップグレードまたは削減するため、新しいプランを選択します。 
-
-6. **「保存」**をクリックします。
-
-
-
-## ステップ 3: {{site.data.keyword.loganalysisshort}} サービスを使用して作業するためのローカル環境のセットアップ
-{: #step3}
-
-
-{{site.data.keyword.loganalysisshort}} サービスには、Log Collection (長期保管コンポーネント) に保管されているログの管理に使用できるコマンド・ライン・インターフェース (CLI) が組み込まれています。 
-
-{{site.data.keyword.loganalysisshort}} {{site.data.keyword.Bluemix_notm}} プラグインを使用して、ログ状況の表示、ログのダウンロード、ログ保存ポリシーの構成を行うことができます。 
-
-この CLI にはいくつかの種類のヘルプがあります。一般ヘルプではこの CLI およびサポートされるコマンドについての情報が、コマンド・ヘルプではコマンドの使用方法が、サブコマンド・ヘルプではコマンドに対するサブコマンドの使用方法が提供されます。
-
-{{site.data.keyword.Bluemix_notm}} リポジトリーから {{site.data.keyword.loganalysisshort}} CLI をインストールするには、以下のステップを実行します。
-
-1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
-
-   詳しくは、『[{{site.data.keyword.Bluemix_notm}} CLI のインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
-
-2. {{site.data.keyword.loganalysisshort}} プラグインをインストールします。次のコマンドを実行します。
-
-    ```
-    bx plugin install logging-cli -r Bluemix
-    ```
-    {: codeblock}
- 
-3. {{site.data.keyword.loganalysisshort}} プラグインがインストールされたことを確認します。
-  
-    例えば、以下のコマンドを実行して、インストール済みのプラグインのリストを表示します。
-    
-    ```
-    bx plugin list
-    ```
-    {: codeblock}
-    
-    出力は以下のようになります。
-   
-    ```
-    bx plugin list
-    Listing installed plug-ins...
-
-    Plugin Name          Version   
-    logging-cli          0.1.1   
-    ```
-    {: screen}
-
-
-
-
-## ステップ 4: ユーザーがログを表示するための許可の設定
-{: #step4}
 
 ユーザーが実行を許可される {{site.data.keyword.loganalysisshort}} アクションを制御するために、ユーザーに役割とポリシーを割り当てることができます。 
 
@@ -168,11 +92,11 @@ lastupdated: "2018-01-31"
 
     その組織で使用可能なスペースのリストが表示されます。
 
-5. {{site.data.keyword.loganalysisshort}} サービスをプロビジョンしたスペースを選択します。次に、メニュー・アクションから**「スペースの役割の編集」**を選択します。
+5. {{site.data.keyword.loganalysisshort}} サービスをプロビジョンしたスペースを選択します。 次に、メニュー・アクションから**「スペースの役割の編集」**を選択します。
 
 6. *監査員* を選択します。 
 
-    1 つ以上のスペースの役割を選択できます。*管理者*、*開発者*、および*監査員* のすべての役割が、ユーザーにログの表示を許可します。
+    1 つ以上のスペースの役割を選択できます。 *管理者*、*開発者*、および*監査員* のすべての役割が、ユーザーにログの表示を許可します。
 	
 7. **「役割の保存」**をクリックします。
 
@@ -180,14 +104,9 @@ lastupdated: "2018-01-31"
 詳しくは、[許可の付与](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)を参照してください。
 
 
+ログ・データを表示および分析するには、ユーザーは、ログ・データがあるクラウド Public 地域で Kibana にアクセスする必要があります。 
 
-## ステップ 5: Kibana の起動
-{: #step5}
-
-ログ・データを表示および分析するには、ログ・データが使用可能な Cloud Public 地域の Kibana にアクセスする必要があります。 
-
-
-米国南部地域の Kibana を起動するには、Web ブラウザーを開き、次の URL を入力します。
+例えば、米国南部地域で Kibana を起動するには、Web ブラウザーを開き、次の URL を入力します。
 
 ```
 https://logging.ng.bluemix.net/ 
@@ -197,22 +116,15 @@ https://logging.ng.bluemix.net/
 
 その他の地域の Kibana を起動する方法について詳しくは、[Web ブラウザーから Kibana へのナビゲート](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)を参照してください。
 
-**注:** Kibana を起動したときに、*「無効なベアラー・トークン」*を示すメッセージが表示された場合、スペース内での許可を確認してください。このメッセージは、そのユーザー ID にログを表示するための許可がないことを示しています。
-    
+**注:** Kibana を起動したときに、*「無効なベアラー・トークン」*を示すメッセージが表示された場合、スペース内での許可を確認してください。 このメッセージは、そのユーザー ID にログを表示するための許可がないことを示しています。
 
 ## 次のステップ 
 {: #next_steps}
 
-ログを生成します。以下のチュートリアルのいずれかを試してください。
-
-* [Kubernetes クラスターにデプロイされたアプリに関する Kibana でのログの分析](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs){:new_window} 
-
-    このチュートリアルでは、クラスターをプロビジョンし、{{site.data.keyword.Bluemix_notm}} の {{site.data.keyword.loganalysisshort}} サービスにログを送信するためにクラスターを構成し、クラスター内にアプリをデプロイし、Kibana を使用してそのクラスターのコンテナー・ログを表示およびフィルタリングするまでのエンドツーエンドのシナリオを機能させるために必要なステップを示しています。     
+ログ・データを表示および分析するために Kibana をカスタマイズします。詳しくは、『[ログの表示と分析](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)』を参照してください。
     
-* [Cloud Foundry アプリのログの Kibana での分析](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs){:new_window}                                                                                                            
 
-    このチュートリアルでは、Python Cloud Foundry アプリケーションをデプロイし、いろいろなタイプのログを生成し、Kibana を使用して CF ログを表示、検索、および分析するまでのエンドツーエンドのシナリオを機能させるために必要なステップを示しています。
-   
+
 
 
 

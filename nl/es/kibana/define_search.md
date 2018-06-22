@@ -143,6 +143,6 @@ Siga los pasos siguientes para guardar la búsqueda actual en la página Descubr
 
 2. Escriba un nombre para la búsqueda.
 
-    **Nota:** Cuando pulse **Guardar**, no hay aviso acerca de la sobregrabación, por lo que, si especifica un nombre existente, se sustituirá dicha versión sin ninguna indicación. 
+    **Nota:** Cuando pulse **Guardar**, no hay aviso acerca de la sobrescritura, por lo que, si especifica un nombre existente, se sustituirá dicha versión sin ninguna indicación.
 
 3. Pulse **Guardar**. 

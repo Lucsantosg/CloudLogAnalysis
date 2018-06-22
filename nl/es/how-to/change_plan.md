@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -52,32 +52,34 @@ Para cambiar el plan de servicio en Bluemix a través de la CLI, siga los pasos 
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Ejecute el mandato `bx cf services` para comprobar su plan actual y para obtener el nombre de servicio de {{site.data.keyword.loganalysisshort}} de la lista de servicios disponibles en el espacio. 
+2. Ejecute el mandato `bx service list` para comprobar su plan actual y para obtener el nombre de servicio de {{site.data.keyword.loganalysisshort}} de la lista de servicios disponibles en el espacio. 
 
     El valor del campo **name** es el que debe utilizar para cambiar el plan. 
 
     Por ejemplo,
 	
 	```
-	$ bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
+	$ bx  bx service list
+    Invoking 'cf services'...
+
+    Getting services in org MyOrg / space dev as xxx@ibm.com...
     OK
 
- name              service          plan      bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   premium                create succeeded
+    name                           service                  plan             bound apps            last operation
+    Log Analysis-m2                ibmLogAnalysis           premium                                update succeeded
     ```
 	{: screen}
     
-3. Actualice o reduzca su plan. Ejecute el mandato `bx cf update-service`.
+3. Actualice o reduzca su plan. Ejecute el mandato `bx service update`. 
     
 	```
-	bx cf update-service service_name [-p new_plan]
+	bx service update service_name [-p new_plan]
 	```
 	{: codeblock}
 	
 	donde 
 	
-	* *service_name* es el nombre del servicio. Puede ejecutar el mandato `bx cf services` para obtener el valor.
+	* *service_name* es el nombre del servicio. Puede ejecutar el mandato `bx service list` para obtener el valor.
 	* *new_plan* es el nombre del plan.
 	
 	En la tabla siguiente encontrará los distintos planes y sus valores admitidos:
@@ -113,23 +115,18 @@ Para cambiar el plan de servicio en Bluemix a través de la CLI, siga los pasos 
 	Por ejemplo, para deducir su plan al plan *Lite*, ejecute el siguiente mandato:
 	
 	```
-	bx cf update-service "Log Analysis-a4" -p standard
-    Updating service instance Log Analysis-a4 as xxx@yyy.com...
+	bx service update "Log Analysis-m2" -p standard
+    Updating service instance Log Analysis-m2 as xxx@ibm.com...
     OK
 	```
 	{: screen}
 
-4. Compruebe que el nuevo plan se haya cambiado. Ejecute el mandato `cf services`.
+4. Compruebe que el nuevo plan se haya cambiado. Ejecute el mandato `bx service list`. 
 
-    ```
-	bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
-    OK
-
-  name              service          plan       bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   standard                update succeeded
+  ```
+	bx service list
 	```
-	{: screen}
+	{: codeblock}
 
 
 

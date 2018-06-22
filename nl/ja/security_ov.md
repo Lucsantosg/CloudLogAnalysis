@@ -228,11 +228,8 @@ lastupdated: "2018-01-31"
 スペース・ドメインにログを送信するには、以下のいずれかの方法を選択してください。
 
 * [{{site.data.keyword.Bluemix_notm}} コマンド bx service を使用して、ログをスペースに送信するためのロギング・トークンを取得する](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
-* [Log Analysis CLI (CF プラグイン) を使用して、ログをスペースに送信するためのロギング・トークンを取得する](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cf_plugin)
+* [Log Analysis CLI を使用して、ログをスペースに送信するためのロギング・トークンを取得する](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [Log Analysis API を使用して、ログをスペースに送信するためのロギング・トークンを取得する](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
-
-ログをアカウント・ドメインに送信するには、『[Log Analysis API を使用して、ログをアカウント・ドメインに送信するためのロギング・トークンを取得する](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_acc_token_api)』を参照してください。
-
 
 
 ## ログを処理するためのユーザーへの許可の付与

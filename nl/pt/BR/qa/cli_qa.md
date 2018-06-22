@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -30,7 +30,7 @@ Aqui estão as respostas para perguntas comuns sobre como usar a CLI do {{site.d
 ## Como efetuar login no IBM Cloud.
 {: #login}
 
-Execute o comando a seguir para efetuar login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}:
+Execute o comando a seguir para efetuar login em uma região no {{site.data.keyword.Bluemix_notm}} em que o serviço {{site.data.keyword.loganalysisshort}} está disponível:
 
 ```
 bx login -a Endpoint
@@ -72,7 +72,7 @@ bx login -a https://api.ng.bluemix.net
 
 Siga as instruções. 
 
-Em seguida, configure a organização e o espaço. Execute o comando a seguir:
+Também é possível configurar uma organização e um espaço. Execute o comando a seguir:
 
 ```
 bx target -o OrgName -s SpaceName
@@ -98,7 +98,7 @@ Veja [Fazer download e instalar a CLI do {{site.data.keyword.Bluemix}}](/docs/cl
 	
 Conclua as etapas a seguir para obter o GUID de uma conta:
 	
-1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
+1. Efetue login em uma região no {{site.data.keyword.Bluemix_notm}}. 
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
@@ -138,7 +138,7 @@ Conclua as etapas a seguir para obter o GUID de uma organização:
     ```
     {: codeblock}
 	
-    em que NAME é o nome da organização do {{site.data.keyword.Bluemix_notm}}.
+    em que NAME é o nome da organização do {{site.data.keyword.Bluemix_notm}}.        
 		
 		
 		

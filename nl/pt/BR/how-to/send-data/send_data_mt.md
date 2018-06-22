@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,9 +25,10 @@ Conclua as etapas a seguir para enviar dados do log para um espaço no {{site.da
 ## Pré-requisitos
 {: #prereqs}
 
-* Um {{site.data.keyword.IBM_notm}}id para efetuar login no {{site.data.keyword.Bluemix_notm}}.
+* Um {{site.data.keyword.Bluemix_notm}} ID para efetuar login no {{site.data.keyword.Bluemix_notm}}.
 * Um ID do usuário que tenha permissões para trabalhar em um espaço com o serviço {{site.data.keyword.loganalysisshort}}. Para obter mais informações, veja [Segurança](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
 * A CLI do {{site.data.keyword.loganalysisshort}} instalada em seu ambiente local.
+* O serviço {{site.data.keyword.loganalysisshort}} provisionado em um espaço em sua conta com um plano que permite a ingestão de logs.
 
 
 ## Etapa 1: Obter o token de criação
@@ -39,36 +40,29 @@ Conclua as etapas a seguir de uma sessão de terminal na qual a CLI do {{site.da
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Execute o comando `bx cf logging auth`. 
+2. Execute o comando `bx logging token-get`. 
 
     ```
-    bx cf logging auth
+    Bx logging token-get
     ```
     {: codeblock}
 
-    O comando retorna as seguintes informações:
-    
-    * A criação de token.
-    * O ID da organização: esse é o GUID da organização do {{site.data.keyword.Bluemix_notm}} à qual você está conectado. 
-    * O ID do espaço: GUID do espaço dentro da organização à qual você está conectado. 
+    O comando retorna o token de criação de log.
     
     Por
 exemplo,
 
     ```
-    bx cf logging auth
-    +-----------------+--------------------------------------+
-    |      NAME       |                VALUE                 |
-    +-----------------+--------------------------------------+
-    | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_abcdefz                         |
-    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
-    | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
-    +-----------------+--------------------------------------+
+    bx logging token-get
+    Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
+    OK
+
+    Tenant Id                              Logging Token   
+    93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf   oT98_abcdefz   
     ```
     {: screen}
 
-Para obter mais informações, veja [cf logging auth](/docs/services/CloudLogAnalysis/reference/logging_cli.html#auth).
+    em que *ID do locatário* é o GUID do espaço no qual você planeja enviar logs.
 
 
 ## Etapa 2: Configurar o mt-logstash-forwarder
@@ -205,7 +199,7 @@ Conclua as etapas a seguir para configurar o mt-logstash-forwarder no ambiente d
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>URL de Destino. Para obter as listas de URLs de ingestão, veja [URLs de ingestão](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Por exemplo, configure o valor para **https://ingest.logging.ng.bluemix.net:9091** para enviar logs na região Sul dos EUA. </td>
+            <td>URL de Destino. Para obter as listas de URLs de ingestão, veja [URLs de ingestão](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Por exemplo, configure o valor como **ingest.logging.ng.bluemix.net:9091** para enviar logs na região sul dos EUA. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>

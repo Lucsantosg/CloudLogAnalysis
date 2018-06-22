@@ -35,7 +35,7 @@ Para obtener más información, consulte [Cómo iniciar la sesión en {{site.dat
 
     ```
     bx cf logging status
- ```
+    ```
     {: codeblock}
     
     Por ejemplo, el resultado de ejecutar este mandato es:

@@ -3,11 +3,9 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
-
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -19,16 +17,19 @@ lastupdated: "2018-01-10"
 # Concesión de permisos
 {: #grant_permissions}
 
-En {{site.data.keyword.Bluemix}}, puede asignar uno o varios roles a los usuarios. Estos roles definen qué tareas están habilitadas para dicho usuario para trabajar con el servicio de {{site.data.keyword.loganalysisshort}}.{:shortdesc}
+En {{site.data.keyword.Bluemix}}, puede asignar uno o varios roles a los usuarios. Estos roles definen qué tareas están habilitadas para dicho usuario para trabajar con el servicio de {{site.data.keyword.loganalysisshort}}. 
+{:shortdesc}
 
+**Nota:** 
 
+* Para otorgar a un usuario permisos para gestionar registros o para ver registros de una cuenta, debe tener permisos para asignar políticas a otros usuarios en la cuenta, o bien debe ser el propietario de la cuenta. Si no es el propietario de la cuenta, debe tener una política de IAM con el rol de editor, operador o administrador.
+* Para otorgar a un usuario permisos para ver registros en un espacio, debe tener permisos en la organización y en el espacio para asignar al
+usuario un rol de Cloud Foundry que describa las acciones que puede realizar este usuario con el servicio {{site.data.keyword.loganalysisshort}} en este espacio. 
 
-## Asignación de una política de IAM a un usuario mediante la interfaz de usuario de {{site.data.keyword.Bluemix_notm}} 
+## Asignación de una política de IAM a un usuario mediante la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}
 {: #grant_permissions_ui_account}
 
-Para otorgar permisos a un usuario para ver y gestionar registros de cuentas, debe añadir una política para dicho usuario que describe las acciones que puede realizar con el servicio de {{site.data.keyword.loganalysisshort}} en la cuenta. Solo los propietarios de cuentas pueden asignar políticas individuales para los usuarios.
-
-En {{site.data.keyword.Bluemix_notm}}, complete los pasos siguientes para otorgar permisos a un usuario para trabajar con el servicio de {{site.data.keyword.loganalysisshort}}:
+Complete los pasos siguientes para otorgar permisos a un usuario para trabajar con el servicio de {{site.data.keyword.loganalysisshort}}:
 
 1. Inicie sesión en la consola de {{site.data.keyword.Bluemix_notm}}.
 
@@ -44,7 +45,7 @@ En {{site.data.keyword.Bluemix_notm}}, complete los pasos siguientes para otorga
 
     Si el usuario no es un miembro de la cuenta, consulte [Invitación a usuarios](/docs/iam/iamuserinv.html#iamuserinv).
 
-4. En la sección **Políticas de acceso**, pulse **Asignar políticas de servicio** y, a continuación, seleccione **Asignar acceso a recursos**..
+4. En la sección **Políticas de acceso**, pulse **Asignar un acceso** y, a continuación, seleccione **Asignar acceso a recursos**.
 
     Se abrirá la ventana *Asignar acceso de recursos al usuario**.
 
@@ -70,172 +71,78 @@ En {{site.data.keyword.Bluemix_notm}}, complete los pasos siguientes para otorga
 	  </tr>
 	  <tr>
 	    <td>Roles</td>
-		<td>Seleccione uno o varios roles de IAM. <br>Los roles válidos son: *administrador*, *operador*, *editor*, y *visor*. <br>Para obtener más información sobre las acciones que están permitidas por rol, consulte [Roles de IAM](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).</td>
+		<td>Seleccione uno o varios roles de IAM. <br>Los roles válidos son: *administrador*, *operador*, *editor*, y *visor*. <br>Para obtener más información sobre las acciones que están permitidas por rol, consulte [Roles de IAM](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+		</td>
 	  </tr>
      </table>
 	
-6. Pulse **Asignar política**.
+6. Pulse **Asignar**.
 	
 La política que configure es aplicable a las regiones seleccionadas. 
+
 
 ## Asignación de una política de IAM a un usuario mediante la línea de mandatos
 {: #grant_permissions_commandline}
 
-Para otorgar permisos a un usuario para ver y gestionar registros de cuentas, debe otorgar al usuario un rol de IAM. Para obtener más información sobre los roles de IAM y sobre las tareas que habilita cada rol para trabajar con el servicio {{site.data.keyword.loganalysisshort}}, consulte [Roles de IAM](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
-
-Esta operación solamente puede realizarla el propietario de cuenta.
-
 Siga los pasos siguientes para otorgar a un usuario acceso para ver registros de cuenta mediante la línea de mandatos:
 
-1. Obtenga el ID de cuenta. 
+1. Desde un terminal, inicie una sesión en la cuenta de {{site.data.keyword.Bluemix_notm}}.  
 
-    Ejecute el mandato siguiente para obtener el ID de cuenta:
+    Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+
+2. Compruebe que el usuario es un miembro de la cuenta. Ejecute el siguiente mandato para obtener la lista de usuarios de la cuenta:
 
     ```
-	bx iam accounts
+	bx account users
 	```
     {: codeblock}	
 
-	Una lista de cuentas en las que se visualiza los GUID.
-	
-	Exporte el ID de la cuenta sobre la que piensa otorgar permisos a un usuario a una variable de shell coo `$acct_id`, por ejemplo: 	
-	```
-	export acct_id="1234567891234567812341234123412"
-	```
-	{: screen}
+	Se muestra una lista de usuarios con sus GUID.
 
-2. Obtenga el ID de {{site.data.keyword.Bluemix_notm}} del usuario al que desea otorgar permisos.
+3. Si el usuario no es miembro de la cuenta, póngase en contacto con el propietario de la cuenta y solicite una invitación a la cuenta para el usuario. Para obtener más información, consulte [Invitación a usuarios](/docs/iam/iamuserinv.html#iamuserinv).
 
-    1. Visualice los usuarios que están asociados con la cuenta. Ejecute el mandato siguiente:
+    **Consejo:** El mandato para invitar a un usuario a una cuenta es el siguiente: `bx iam account-user-invite USER_EMAIL` 		
+4. Asigne una política al usuario. Ejecute el mandato siguiente:
 
     ```
-		bx iam account-users
-		```
-		{: codeblock}
-		
-	2. Obtenga el GUID del usuario. **Nota:** Debe llevar a cabo este paso el usuario al que va a otorgar permisos. 	
-	    Por ejemplo, solicite al usuario que ejecute los mandatos siguientes para obtener su ID de usuario:
-		
-		Obtenga la señal de IAM. Para obtener más información, consulte [Obtención de la señal de IAM mediante la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
-
-        Obtenga los datos de la señal de IAM que se encuentran entre los dos primeros puntos en la señal de IAM. Exporte los datos a una variable de shell como `$user_data`.
-		
-		```
-	    export user_data="xxxxxxxxxxxxxxxxxxxxxxxxxxx"
-	      ```
-	    {: screen}
-		
-		Ejecute el mandato siguiente, por ejemplo, para obtener el ID de usuario. Este mandato utiliza jq en este ejemplo para descodificar la información en texto con formato de JSON:
-		
-		```
-		echo $user_data | base64 -d | jq
-		```
-		{: codeblock}
-		
-		La salida de la ejecución de este mandato es la siguiente:
-		
-		```
-		$ echo $user_data | base64 -d | jq
-        {
- "iam_id": "IBMid-xxxxxxxxxx",
-        "id": "IBMid-xxxxxxxxxx",
-        "realmid": "IBMid",
- ......
-		}
-        ```
-	    {: screen}
-		
-		Envíe el ID de usuario al propietario de la cuenta.
-		
-	3. Exporte el ID de usuario en una variable de shell como `$user_ibm_id`.
-	
-		```
-		export user_ibm_id="IBMid-xxxxxxxxxx"
-		```
-		{: codeblock}
-
-3. Invite el usuario a la cuenta si no es un miembro. Para obtener más información, consulte [Invitación a usuarios](/docs/iam/iamuserinv.html#iamuserinv).
-
-    Por ejemplo, ejecute el mandato siguiente para invitar al usuario xxx@yyy.com a la cuenta zzz@ggg.com:
-	
-	```
-	bx iam account-user-invite xxx@yyy.com zzz@ggg.com OrgAuditor dev SpaceDeveloper
+    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
-		
-4. Cree un nombre de archivo de política. 
 
-    Por ejemplo, utilice la plantilla siguiente para otorgar permisos en la región EE.UU. sur:
-	
-	```
-	{
-		"roles" : [
-			{
-				"id": "crn:v1:bluemix:public:iam::::role:Editor"
-			}
-		],
-		"resources": [
-			{
-				"serviceName": "ibmcloud-log-analysis",
-				"region": "us-south"
-			}
-		]
-	}
-	```
-	{: codeblock}
-	
-	Nombre del archivo de política: `policy.json`
-	
-5. Obtenga la señal de IAM para su ID de usuario.
+	donde
+    * USER_NAME es el ID de {{site.data.keyword.Bluemix_notm}} ID del usuario.
+	* ROLE es un rol de IAM. Los valores válidos son: *administrator*, *operator*, *editor* y *viewer*
 
-    Para obtener más información, consulte [Obtención de la señal de IAM mediante la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
+5. Compruebe que la política se haya asignado al usuario. Ejecute el siguiente mandato para obtener una lista de todas las políticas asignadas a un usuario:
 
-    Exporte la señal de IAM a una variable de shell como, por ejemplo, `$iam_token`:
-	
-	```
-	export iam_token="xxxxxxxxxxxxxxxxxxxxx"
-	```
-	{: screen}
-	
-6. Otorgue los permisos de usuario para trabajar con el servicio de {{site.data.keyword.loganalysisshort}}. 
-
-   Ejecute el siguiente mandato cURL para otorgar permisos en la región EE.UU. sur:
-	
     ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.ng.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
-	```
-	{: codeblock}
-	
-	Ejecute el siguiente mandato cURL para otorgar permisos en la región Reino Unido:
-	
- ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.eu-gb.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
+    bx iam user-policies USER_NAME
 	```
 	{: codeblock}
 
-	
-Después de otorgar permisos a un usuario, el usuario puede iniciar una sesión en {{site.data.keyword.Bluemix_notm}} y ver registros a nivel de cuenta.
+
+
 
 ## Concesión de permisos a un usuario para ver registros del espacio mediante la IU de {{site.data.keyword.Bluemix_notm}}
 {: #grant_permissions_ui_space}
 
-Para otorgar a un usuario permisos para ver los registros de un espacio, debe asignar al usuario un rol de Cloud Foundry que describa las acciones que puede realizar este usuario con el servicio {{site.data.keyword.loganalysisshort}} en el espacio.
+Para otorgar a un usuario permisos para ver los registros de un espacio, debe asignar al usuario un rol de Cloud Foundry que describa las acciones que puede realizar este usuario con el servicio {{site.data.keyword.loganalysisshort}} en el espacio. 
 
 Complete los pasos siguientes para otorgar permisos a un usuario para trabajar con el servicio de {{site.data.keyword.loganalysisshort}}:
 
 1. Inicie la sesión en la consola de {{site.data.keyword.Bluemix_notm}}.
 
-  Abra un navegador web e inicie el panel de control de {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://bluemix.net){:new_window}
+    Abra un navegador web e inicie el panel de control de {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://bluemix.net){:new_window}
 	
 	Cuando inicia sesión con su ID de usuario y su contraseña, se abre la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}.
 
-2. En la barra de menús, pulse **Gestionar > Cuenta > Usuarios**.
+2. En la barra de menús, pulse **Gestionar > Cuenta > Usuarios**. 
 
-  La ventana *Usuarios* muestra una lista de usuarios con las direcciones de correo electrónico para la cuenta seleccionada actualmente.
+    La ventana *Usuarios* muestra una lista de usuarios con las direcciones de correo electrónico para la cuenta seleccionada actualmente.
 	
 3. Si el usuario es un miembro de la cuenta, seleccione el nombre de usuario de la lista, o pulse **Gestionar usuario** del menú *Acciones*.
 
-  Si el usuario no es un miembro de la cuenta, consulte [Invitación a usuario] (/docs/iam/iamuserinv.html#iamuserinv).
+    Si el usuario no es un miembro de la cuenta, consulte [Invitación a usuario] (/docs/iam/iamuserinv.html#iamuserinv).
 
 4. Seleccione **Acceso de Cloud Foundry** y, a continuación, seleccione la organización.
 

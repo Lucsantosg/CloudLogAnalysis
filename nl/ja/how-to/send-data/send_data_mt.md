@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,9 +25,10 @@ lastupdated: "2018-01-10"
 ## 前提条件
 {: #prereqs}
 
-* {{site.data.keyword.Bluemix_notm}} にログインするための {{site.data.keyword.IBM_notm}}ID。
+* {{site.data.keyword.Bluemix_notm}} にログインするための {{site.data.keyword.Bluemix_notm}} ID。
 * スペース内で {{site.data.keyword.loganalysisshort}} サービスと連携するための許可のあるユーザー ID。 詳しくは、『[セキュリティー](/docs/services/CloudLogAnalysis/security_ov.html#security_ov)』を参照してください。
 * ローカル環境にインストールされた {{site.data.keyword.loganalysisshort}} CLI。
+* ログ取り込みを許可するプランを持つアカウント内のスペースにプロビジョンされた {{site.data.keyword.loganalysisshort}} サービス。
 
 
 ## ステップ 1: ロギング・トークンを取得する
@@ -39,35 +40,28 @@ lastupdated: "2018-01-10"
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
-2. `bx cf logging auth` コマンドを実行します。 
+2. `bx logging token-get` コマンドを実行します。 
 
     ```
-    bx cf logging auth
+    bx logging token-get
     ```
     {: codeblock}
 
-    このコマンドは次の情報を返します。
-    
-    * ロギング・トークン。
-    * 組織 ID: これは、ログインした {{site.data.keyword.Bluemix_notm}} 組織の GUID です。 
-    * スペース ID: これは、ログインした組織内のスペースの GUID です。 
+    このコマンドはロギング・トークンを返します。
     
     以下に例を示します。
 
     ```
-    bx cf logging auth
-    +-----------------+--------------------------------------+
-    |      NAME       |                VALUE                 |
-    +-----------------+--------------------------------------+
-    | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_abcdefz                         |
-    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
-    | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
-    +-----------------+--------------------------------------+
+    bx logging token-get
+    Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
+    OK
+
+    Tenant Id                              Logging Token   
+    93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf   oT98_abcdefz   
     ```
     {: screen}
 
-詳しくは、[cf logging auth](/docs/services/CloudLogAnalysis/reference/logging_cli.html#auth) を参照してください。
+    ここで、*Tenant Id* は、ログの送信を予定しているスペースの GUID です。
 
 
 ## ステップ 2: mt-logstash-forwarder を構成する
@@ -204,7 +198,7 @@ lastupdated: "2018-01-10"
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>ターゲット URL。 取り込み URL のリストを取得するには、『[取り込み URL](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)』を参照してください。 例えば、米国南部地域のログを送信するには、値を **https://ingest.logging.ng.bluemix.net:9091** に設定します。 </td>
+            <td>ターゲット URL。 取り込み URL のリストを取得するには、『[取り込み URL](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)』を参照してください。 例えば、米国南部地域のログを送信するには、値を **ingest.logging.ng.bluemix.net:9091** に設定します。</td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>

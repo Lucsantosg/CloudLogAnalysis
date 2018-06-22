@@ -20,6 +20,9 @@ lastupdated: "2018-01-10"
 Sie können Protokolle in eine lokale Datei herunterladen oder Daten über eine Pipe an ein anderes Programm umleiten. Sie laden Protokolle im Kontext einer Sitzung herunter. Eine Sitzung gibt an, welche Protokolle heruntergeladen werden. Wenn der Download der Protokolle unterbrochen wird, ermöglicht die Sitzung die Fortsetzung des Downloads an der Stelle, an der er unterbrochen wurde. Wenn der Download abgeschlossen ist, müssen Sie die Sitzung löschen.
 {:shortdesc}
 
+Um diese Schritte durchführen zu können, müssen Sie die {{site.data.keyword.loganalysisshort}}-Befehlszeilenschnittstelle installieren. Weitere Informationen finden Sie in [Die {{site.data.keyword.loganalysisshort}}-Befehlszeilenschnittstelle konfigurieren](https://console.bluemix.net/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli_).
+
+
 Führen Sie die folgenden Schritte aus, um Protokolldaten aus einem Bereich in eine lokale Datei herunterzuladen:
 
 ## Schritt 1: Anmeldung bei {{site.data.keyword.Bluemix_notm}}
@@ -61,7 +64,7 @@ Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keywo
 
 Eine Sitzung ist erforderlich, um den Umfang der Protokolldaten zu definieren, die für einen Download verfügbar sind, und um den Status des Downloads zu behalten. 
 
-Verwenden Sie den Befehl [cf logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) zum Erstellen einer Sitzung. Optional können Sie das Startdatum, das Enddatum und Protokolltypen angeben, wenn Sie eine Sitzung erstellen:  
+Verwenden Sie den Befehl [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) zum Erstellen einer Sitzung. Optional können Sie das Startdatum, das Enddatum und Protokolltypen angeben, wenn Sie eine Sitzung erstellen:  
 
 * Wenn Sie das Startdatum und das Enddatum angeben, ermöglicht die Sitzung den Zugriff auf die Protokolle für diesen Datumsbereich. 
 * Wenn Sie den Protokolltyp angeben (**-t**), ermöglicht die Sitzung den Zugriff auf einen bestimmten Protokolltyp. Dies ist ein wichtiges Feature, wenn Sie viele Protokolle verwalten müssen, da Sie den Geltungsbereich auf die Protokolle eingrenzen können, die im betreffenden Fall relevant sind.
@@ -128,7 +131,7 @@ Der Fortschrittsanzeiger zeigt den jeweils aktuellen Downloadstatus auf einer Sk
 ## Schritt 5: Sitzung löschen
 {: #step5}
 
-Wenn der Download abgeschlossen ist, müssen Sie die Sitzung mit dem Befehl [cf logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) löschen. 
+Wenn der Download abgeschlossen ist, müssen Sie die Sitzung mit dem Befehl [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) löschen. 
 
 Führen Sie den folgenden Befehl aus, um eine Sitzung zu löschen:
 

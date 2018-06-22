@@ -22,30 +22,30 @@ lastupdated: "2018-01-10"
 
 在 {{site.data.keyword.Bluemix}} 中，可以定义和定制不同类型的仪表板来对数据进行可视化表示和分析。例如，下表列出了一些常用的仪表板类型：
 
-| 仪表板类型| 描述
+|仪表板类型|描述
 |
 |-------------------|-------------|
-| 单 CF 应用程序仪表板| 此仪表板用于显示单个 Cloud Foundry 应用程序的信息。|
-| 单容器仪表板| 此仪表板用于显示单个容器的信息。|
-| 容器组仪表板| 此仪表板用于显示特定容器组的信息。|
-| 多 CF 应用程序仪表板| 此仪表板用于显示同一空间内部署的所有 Cloud Foundry 应用程序的信息。| 
-| 多容器仪表板| 此仪表板用于显示同一空间内部署的所有容器的信息。|
-| 空间仪表板| 此仪表板用于显示空间中可用的日志记录数据。| 
+|单 CF 应用程序仪表板|此仪表板用于显示单个 Cloud Foundry 应用程序的信息。|
+|单容器仪表板|此仪表板用于显示单个容器的信息。|
+|容器组仪表板|此仪表板用于显示特定容器组的信息。|
+|多 CF 应用程序仪表板|此仪表板用于显示同一空间内部署的所有 Cloud Foundry 应用程序的信息。| 
+|多容器仪表板|此仪表板用于显示同一空间内部署的所有容器的信息。|
+|空间仪表板|此仪表板用于显示空间中可用的日志记录数据。| 
 {: caption="表 1. 仪表板类型的样本" caption-side="top"}
 
 要在仪表板中将数据可视化，可以配置面板。Kibana 包含可用于分析信息的不同可视化项，如表、趋势和直方图。将可视化项作为面板添加到仪表板。可以在仪表板中添加、除去和重新排列面板。每个面板的用途各不相同。一些面板组织成行，用于提供一个或多个查询的结果。另一些面板则显示文档或定制信息。每个面板基于一个搜索。搜索用于定义面板显示的数据子集。例如，可以配置条形图、饼图或表来对数据进行可视化表示和分析。  
 
 下表列出了可在“仪表板”页面中执行的不同任务：
 
-| 任务| 更多信息|
+|任务|更多信息|
 |------|------------------|
-| [添加可视化项](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#add_visualization)| 可以向仪表板添加现有可视化项或搜索。|
-| [新建仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#new)| 可以创建多个仪表板。每个仪表板可以设计为包含不同的搜索、可视化项和不同的日志数据子集。|
-| [删除仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete)| 删除不需要的仪表板。|
-| [导出仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export)| 可以将仪表板导出为 JSON 文件。|
-| [导入仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import)| 可以将仪表板作为 JSON 文件导入。|
-| [装入仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload)| 可以上传仪表板以更新其数据，修改仪表板或分析数据。|
-| [保存仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save)| 可以保存仪表板以供日后复用。|
+|[添加可视化项](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#add_visualization)|可以向仪表板添加现有可视化项或搜索。|
+|[新建仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#new)|可以创建多个仪表板。每个仪表板可以设计为包含不同的搜索、可视化项和不同的日志数据子集。|
+|[删除仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete)|删除不需要的仪表板。|
+|[导出仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export)|可以将仪表板导出为 JSON 文件。|
+|[导入仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import)|可以将仪表板作为 JSON 文件导入。|
+|[装入仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload)|可以上传仪表板以更新其数据，修改仪表板或分析数据。|
+|[保存仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save)|可以保存仪表板以供日后复用。|
 {: caption="表 2. 使用仪表板的任务" caption-side="top"}
 
 有关 Kibana 的更多信息，请参阅 [Kibana User Guide ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}。
@@ -140,7 +140,7 @@ lastupdated: "2018-01-10"
 
 2. 输入仪表板的名称。
 
-    **注：**此名称不能包含空格。
+    **注**：此名称不能包含空格。
 
 3. 单击**保存**。
 

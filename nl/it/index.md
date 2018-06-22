@@ -1,196 +1,135 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-03-09"
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 # Esercitazione introduttiva
 {: #getting-started-with-cla}
 
-In questa esercitazione introduttiva, ti guideremo attraverso i passaggi per eseguire attività di analisi avanzate utilizzando il servizio {{site.data.keyword.loganalysislong}}. Impara come eseguire ricerche nei log del contenitore e come analizzarli per un'applicazione distribuita in un cluster Kubernetes.
+Utilizza questa esercitazione per informazioni su come iniziare a lavorare con il servizio {{site.data.keyword.loganalysislong}} in {{site.data.keyword.Bluemix}}. 
 {:shortdesc}
+
+Per impostazione predefinita, {{site.data.keyword.Bluemix_notm}} offre funzionalità di registrazione integrate per servizi selezionati. Puoi utilizzare il servizio {{site.data.keyword.loganalysisshort}} per espandere le tue funzionalità di conservazione e di raccolta quando utilizzi i log.
 
 ## Prima di cominciare
 {: #prereqs}
 
-Crea un account [{{site.data.keyword.Bluemix_notm}}](https://console.bluemix.net/registration/). Il tuo ID utente deve essere un membro o un proprietario di un account {{site.data.keyword.Bluemix_notm}} con le autorizzazioni per creare i cluster Kubernetes, distribuire le applicazioni nei cluster ed eseguire la query dei log in {{site.data.keyword.Bluemix_notm}} per le analisi avanzate in Kibana.
+Devi disporre di un ID utente che sia un membro o un proprietario di un account {{site.data.keyword.Bluemix_notm}}. Per ottenere un ID utente {{site.data.keyword.Bluemix_notm}}, vai a: [Registrazione ![Icona link esterno](../../icons/launch-glyph.svg "Icona link esterno")](https://console.bluemix.net/registration/){:new_window}
 
-Apri una sessione terminale dalla quale poter gestire il cluster Kubernetes e distribuire le applicazioni dalla riga di comando. Gli esempi in questa esercitazione vengono forniti per un sistema Linux Ubuntu.
-
-[Installa i plugin CLI](/docs/containers/cs_cli_install.html#cs_cli_install_steps) nel tuo ambiente locale per gestire {{site.data.keyword.containershort}} dalla riga di comando. 
-
-
-
-## Passo 1: distribuisci un'applicazione in un cluster Kubernetes
+## Passo 1: scegli una risorsa cloud di cui vuoi visualizzare i log
 {: #step1}
 
-1. [Crea un cluster Kubernetes](/docs/containers/cs_cluster.html#cs_cluster_ui).
+In {{site.data.keyword.Bluemix_notm}}, i contenitori, le applicazioni CF in esecuzione in {{site.data.keyword.containershort}} e i servizi selezionati raccolgono i dati di log automaticamente e li inoltrano al servizio {{site.data.keyword.loganalysisshort}}.
 
-2. [Configura il contesto del cluster](/docs/containers/cs_cli_install.html#cs_cli_configure) in un terminale Linux. Dopo che il contesto è stato impostato, puoi gestire il cluster Kubernetes e distribuire l'applicazione nel cluster Kubernetes.
+La seguente tabella elenca le differenti risorse cloud. Completa l'esercitazione di una risorsa per iniziare ad utilizzare il servizio {{site.data.keyword.loganalysisshort}}:
 
-3. Distribuisci ed esegui un'applicazione di esempio nel cluster Kubernetes. [Completa la procedura per la lezione 1](/docs/containers/cs_tutorials.html#cs_apps_tutorial).
+<table>
+  <caption>Esercitazioni per iniziare ad utilizzare il servizio {{site.data.keyword.loganalysisshort}}  </caption>
+  <tr>
+    <th>Risorsa</th>
+    <th>Esercitazione</th>
+    <th>Ambiente cloud</th>
+    <th>Scenario</th>
+  </tr>
+  <tr>
+    <td>Contenitori in esecuzione in {{site.data.keyword.containershort}}</td>
+    <td>[Analizza i log in Kibana per un'applicazione distribuita in un cluster Kubernetes ](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs)</td>
+    <td>Pubblico </br>Dedicato</td>
+    <td>![Panoramica dei componenti di alto livello per i contenitori distribuiti in un cluster Kubernetes](containers/images/containers_kube_logs.png "Panoramica dei componenti di alto livello per i contenitori distribuiti in un cluster Kubernetes")</td>
+  </tr>
+  <tr>
+    <td>Applicazioni CF</td>
+    <td>[Analizza i log in Kibana per un'applicazione Cloud Foundry](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)</td>
+    <td>Pubblico </td>
+    <td>![Visualizzazione di alto livello della registrazione delle applicazioni CF in {{site.data.keyword.Bluemix_notm}}](cfapps/images/cfapps_logs.png "Visualizzazione di alto livello della registrazione delle applicazioni CF in {{site.data.keyword.Bluemix_notm}}")</td>
+  </tr>
+</table>
 
-    L'applicazione è un'applicazione Node.js Hello World:
 
-    ```
-    var express = require('express')
-var app = express()
 
-    app.get('/', function(req, res) {
-      res.send('Hello world! Your app is up and running in a cluster!\n')
-    })
-    app.listen(8080, function() {
-      console.log('Sample app is listening on port 8080.')
-    })
-    ```
-	{: codeblock}
 
-    Quando l'applicazione viene distribuita, la raccolta dei log viene abilitata automaticamente per qualsiasi voce di log che viene inviata dall'applicazione a stdout (output standard) e stderr (errore standard). 
-
-    In questa applicazione di esempio, quando verifichi la tua applicazione in un browser, l'applicazione scrive il seguente messaggio in stdout: `L'applicazione di esempio è in ascolto sulla porta 8080.`
-
-## Fase 2: passa al dashboard Kibana
+## Passo 2: imposta le autorizzazioni per un utente per visualizzare i log
 {: #step2}
 
-Per analizzare i dati di log per un cluster, devi accedere a Kibana nella regione di cloud pubblico dove viene creato il cluster. 
+Per controllare le azioni {{site.data.keyword.loganalysisshort}} che un utente è autorizzato a eseguire, puoi assegnare ruoli e politiche a un utente. 
 
-Ad esempio, per avviare Kibana nella regione Stati Uniti Sud, passa al seguente URL:
+Ci sono due tipi di autorizzazioni di sicurezza in {{site.data.keyword.Bluemix_notm}} che controllano le azioni che gli utenti possono eseguire quando gestiscono il servizio {{site.data.keyword.loganalysisshort}}:
+
+* Ruoli CF (Cloud Foundry): concedi a un utente un ruolo CF per definire le autorizzazioni di cui dispone per visualizzare i log in uno spazio.
+* Ruoli IAM: concedi a un utente una politica IAM per definire le autorizzazione di cui dispone per visualizzare i log nel dominio dell'account e le autorizzazioni di cui dispone per gestire i log memorizzati in Raccolta dei log. 
+
+
+Completa la seguente procedura per concedere a un utente le autorizzazioni a visualizzare i log in uno spazio:
+
+1. Accedi alla console {{site.data.keyword.Bluemix_notm}}.
+
+    Apri un browser web e avvia il dashboard {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Icona di link esterno](../../icons/launch-glyph.svg "Icona di link esterno")](http://bluemix.net){:new_window}
+	
+	Dopo che hai eseguito l'accesso con il tuo ID utente e la tua password, viene aperta la IU {{site.data.keyword.Bluemix_notm}}.
+
+2. Dalla barra dei menu, fai clic su **Gestisci > Account > Utenti**. 
+
+    La finestra *Utenti* visualizza un elenco di utenti con i loro indirizzi email per l'account attualmente selezionato.
+	
+3. Se l'utente è un membro dell'account, seleziona il suo nome dall'elenco o fai clic su **Gestisci utente** dal menu *Azioni*.
+
+    Se l'utente non è un membro dell'account, vedi [Invito di utenti](/docs/iam/iamuserinv.html#iamuserinv).
+
+4. Seleziona **Accesso Cloud Foundry** e seleziona quindi l'organizzazione.
+
+    Viene presentato l'elenco di spazi disponibili in tale organizzazione.
+
+5. Scegli lo spazio in cui hai eseguito il provisioning del servizio {{site.data.keyword.loganalysisshort}}. Quindi, dal menu delle azioni, seleziona **Modifica ruolo spazio**.
+
+6. Seleziona *Revisore*. 
+
+    Puoi selezionare 1 o più ruoli spazio. Tutti i seguenti ruoli consentono a un utente di visualizzare i log: *Gestore*, *Sviluppatore* e *Revisore*
+	
+7. Fai clic su **Salva ruolo**.
+
+
+Per ulteriori informazioni vedi: [Concessione di autorizzazioni](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
+
+
+Un utente deve accedere a Kibana nella regione cloud pubblica in cui sono disponibili i dati di log per visualizzarli e analizzarli. 
+
+Ad esempio, per avviare Kibana nella regione Stati Uniti Sud, apri un browser web e immetti il seguente URL: 
 
 ```
 https://logging.ng.bluemix.net/ 
 ```
 {: codeblock}
 
-    
-    
-## Passo 3: analizza i dati di log in Kibana
-{: #step3}
 
-1. Nella pagina **Rileva**, guarda gli eventi visualizzati. 
+Per ulteriori informazioni su come avviare Kibana in altre regioni, vedi [Passaggio a Kibana da un browser web](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 
-    L'applicazione Hello-World di esempio genera un singolo evento.
-    
-    Nella sezione Campi disponibili, puoi vedere l'elenco di campi che puoi utilizzare per definire nuove query o filtrare le voci elencate nella tabella visualizzata nella pagina.
-    
-    La seguente tabella elenca i campi comuni che puoi usare per definire le nuove query di ricerca. La tabella include anche dei valori di esempio che corrispondono all'evento generato dall'applicazione di esempio:
-    
-     <table>
-              <caption>Tabella 2. Campi comuni per i log del contenitore </caption>
-               <tr>
-                <th align="center">Campo</th>
-                <th align="center">Descrizione</th>
-                <th align="center">Esempio</th>
-              </tr>
-              <tr>
-                <td>*docker.container_id_str *</td>
-                <td> Il valore di questo campo corrisponde al GUID del contenitore che esegue l'applicazione in un pod del cluster Kubernetes.</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>*ibm-containers.region_str *</td>
-                <td>l valore di questo campo corrisponde alla regione {{site.data.keyword.Bluemix_notm}} dove viene raccolta la voce di log.</td>
-                <td>us-south</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.container_name_str *</td>
-                <td>Il valore di questo campo fornisce informazioni sul nome del contenitore.</td>
-                <td>hello-world-deployment</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.host *</td>
-                <td>Il valore di questo campo fornisce informazioni sull'IP pubblico disponibile per accedere all'applicazione da Internet. </td>
-                <td>169.47.218.231</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.labels.label_name*</td>
-                <td>I campi di etichetta sono facoltativi. Puoi avere 0 o più etichette. Ciascuna etichetta inizia con il prefisso `kubernetes.labels.` seguito dal *nome_etichetta*. </td>
-                <td>Nell'applicazione di esempio, puoi vedere 2 etichette: <br>* *kubernetes.labels.pod-template-hash_str* = 3355293961 <br>* *kubernetes.labels.run_str* =	hello-world-deployment  </td>
-              </tr>
-              <tr>
-                <td>*kubernetes.namespace_name_str *</td>
-                <td>Il valore di questo campo indica lo spazio dei nomi Kubernetes dove è in esecuzione il pod. </td>
-                <td>default</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.pod_id_str *</td>
-                <td>Il valore di questo campo corrisponde al GUI del pod dove viene eseguito il contenitore. </td>
-                <td>d695f346-xxxx-xxxx-xxxx-aab0b50f7315</td>
-              </tr>
-              <tr>
-                <td>*kubernetes.pod_name_str *</td>
-                <td>Il valore di questo campo indica il nome del pod.</td>
-                <td>hello-world-deployment-3xxxxxxx1-xxxxx8</td>
-              </tr>
-              <tr>
-                <td>*message *</td>
-                <td>Questo è il messaggio completo registrato dall'applicazione.</td>
-                <td>L'applicazione di esempio è in ascolto sulla porta 8080.</td>
-              </tr>
-        </table>
-    
-2. Filtra i dati nella pagina **Rileva**.  
+**Nota:** quando avvii Kibana, se ricevi un messaggio che indica una condizione di *token di connessione non valido*, controlla le tue autorizzazioni nello spazio. Questo messaggio è un'indicazione che il tuo ID utente non dispone delle autorizzazioni a visualizzare i log.
 
-    Nella tabella, puoi vedere tutte le voci che sono disponibili per l'analisi. Le voci elencate corrispondono alla query di ricerca visualizzata nella barra Ricerca. L'asterisco (*) è il carattere che viene utilizzato per visualizzare tutte le voci nel periodo di tempo configurato per la pagina. 
-    
-    Ad esempio, per filtrare i dati in base allo spazio dei nomi Kubernetes, modifica la query della barra Ricerca. Aggiungi un filtro basato sul campo personalizzato *kubernetes.namespace_name_str*:
-    
-    1. Nella sezione *Campi disponibili*, seleziona il campo *kubernetes.namespace_name_str*. Viene visualizzato un sottoinsieme dei valori disponibili per il campo.    
-    
-    2. Seleziona il valore **default**. Questo è lo spazio dei nomi dove hai distribuito in un passo precedente l'applicazione di esempio.
-    
-        Dopo che hai selezionato il valore, alla Barra di ricerca viene aggiunto un filtro e la tabella visualizza solo le voci che corrispondono ai criteri che hai appena selezionato.     
-    
-    Puoi selezionare il simbolo di modifica del filtro per modificare il nome dello spazio dei nomi che cerchi.   
-    
-    Viene visualizzata la seguente query:
-    
-    ```
-	{
-    "query": {
-          "match": {
-            "kubernetes.namespace_name_str": {
-              "query": "default",
-              "type": "phrase"
-            }
-          }
-        }
-    }
-    ```
-	{: codeblock}
-    
-    Per cercare le voci in uno spazio dei nomi differente come *mynamespace1*, modifica la query:
-    
-    ```
-	{
-    "query": {
-          "match": {
-            "kubernetes.namespace_name_str": {
-              "query": "mynamespace1",
-              "type": "phrase"
-            }
-          }
-        }
-    }
-    ```
-	{: codeblock}
-    
-    Se non riesci a vedere alcun dato, prova a modificare il filtro temporale. Per maggiori informazioni, vedi [Configurazione di un filtro temporale](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
-    
-
-Per maggiori informazioni, vedi [Filtro dei log in Kibana](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
-
-
-## Passi successivi
+## Passi successivi 
 {: #next_steps}
 
-Crea quindi i dashboard Kibana. Per maggiori informazioni, vedi [Analisi dei log in Kibana tramite un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#analize_logs_dashboard).
-                                                                                                                      
+Personalizza Kibana per visualizzare ed analizzare i tuoi dati di log. Per maggiori informazioni, vedi [Visualizzazione e analisi dei log](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)
+    
+
+
+
+
+
+
+
+
+
 

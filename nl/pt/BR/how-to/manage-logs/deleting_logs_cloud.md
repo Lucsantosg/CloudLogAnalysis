@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -47,7 +47,7 @@ Conclua as etapas a seguir para excluir todos os logs que são armazenados em um
     $ bx logging log-show
     Showing log status of resource: 12345678-abcd-4193-aere-378620d6fab5 ...
 
-    Date         Size       Count   Searchable          Types   
+    Tipos pesquisáveis de contagem de tamanho de data   
 	2017-05-24   16         3020    None                default
 	2017-05-25   1224       76115   All                 linux_syslog,log
     2017-05-26   19663113   17639   All                 default,linux_syslog  
@@ -63,8 +63,8 @@ Conclua as etapas a seguir para excluir todos os logs que são armazenados em um
 	
 	Em que
 	
-	* *-s* configura a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
-    * *-e* configura a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
+	* *-s* define a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
+    * *-e* define a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
     	
 	Por exemplo, para excluir os logs para 25 de maio de 2017, execute o comando a seguir:
 	
@@ -74,10 +74,10 @@ Conclua as etapas a seguir para excluir todos os logs que são armazenados em um
 	{: screen}
 
 	
-## Excluindo logs por tipo de log para um período de tempo específico
-{: #time_range}
+## Excluindo logs por tipo de log para um período de tempo específico 
+{: #log_type}
 
-Conclua as etapas a seguir para excluir os log por tipo de log que estão armazenados em um domínio de espaço para um período de tempo específico:
+Conclua as etapas a seguir para excluir os logs pelo tipo de log armazenados em um domínio de espaço por um período de tempo específico:
 
 1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
@@ -103,7 +103,7 @@ Conclua as etapas a seguir para excluir os log por tipo de log que estão armaze
     ```
     {: screen}
 	
-3. Exclua os logs que estão armazenados em um dia específico.
+3. Exclua os logs que são armazenados em um dia específico.
 
     ```
 	bx logging log-delete -s StartDate -e EndDate -t LogType
@@ -112,9 +112,9 @@ Conclua as etapas a seguir para excluir os log por tipo de log que estão armaze
 	
 	Em que
 	
-	* *-s* configura a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
-    * *-e* configura a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
-	* *-t* configura o tipo de log.
+	* *-s* define a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
+    * *-e* define a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
+	* *-t* define o tipo de log.
     	
 	Por exemplo, para excluir os logs do tipo linux_syslog para 25 de maio de 2017, execute o comando a seguir:
 	
@@ -125,8 +125,8 @@ Conclua as etapas a seguir para excluir os log por tipo de log que estão armaze
 
 		
 	
-## Excluindo logs de contas por tipo de log para um período de tempo específico
-{: #time_range}
+## Excluindo logs da conta por tipo de log para um período de tempo específico 
+{: #time_range_acc}
 
 Conclua as etapas a seguir:
 
@@ -138,7 +138,7 @@ Conclua as etapas a seguir:
 
     Para obter mais informações, veja [Como obter o GUID de uma conta](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).
     
-3. Execute o comando a seguir para ver os logs que estão disponíveis na Coleção de logs no nível de conta.
+3. Execute o comando a seguir para ver os logs disponíveis em Coleção de logs no nível de conta.
 
     ```
     bx logging log-show  -r account -i AccountID
@@ -160,7 +160,7 @@ Conclua as etapas a seguir:
     ```
     {: screen}
 	
-4. Exclua os logs que estão armazenados em um dia específico.
+4. Exclua os logs que são armazenados em um dia específico.
 
     ```
 	bx logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
@@ -169,9 +169,9 @@ Conclua as etapas a seguir:
 	
 	Em que
 	
-	* *-s* configura a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
-    * *-e* configura a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
-	* *-t* configura o tipo de log.
+	* *-s* define a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
+    * *-e* define a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
+	* *-t* define o tipo de log.
     	
 	Por exemplo, para excluir os logs do tipo linux_syslog para 25 de maio de 2017 que são armazenados em Coleção de logs no nível de conta, execute o comando a seguir:
 	

@@ -45,12 +45,12 @@ lastupdated: "2018-01-31"
     ```
     {: codeblock}
     
-    輸出如下所示：
+    輸出的外觀如下：
    
     ```
     Invoking 'cf plugins'...
 
-        Listing Installed Plugins...
+    Listing Installed Plugins...
     OK
 
     Plugin Name           Version   Command Name   Command Help
@@ -110,7 +110,7 @@ lastupdated: "2018-01-31"
     ```
     {: codeblock}
     
-    開啟新的終端機視窗，然後執行下列指令來驗證已設定變數 LANG 及 LOGGING_ENDPOINT：
+    開啟新的終端機視窗，然後執行下列指令來驗證已設定變數 LANG：
     
     ```
     $echo LANG
@@ -127,7 +127,7 @@ lastupdated: "2018-01-31"
     ```
     {: codeblock}
     
-    輸出如下所示：
+    輸出的外觀如下：
    
     ```
     cf logging version 1.0.2
@@ -147,7 +147,7 @@ lastupdated: "2018-01-31"
     
 2. 執行 **cf install-plugin** 指令，以在 Windows 上安裝日誌收集外掛程式。 
 
-	```
+    ```
 	bx cf install-plugin PluginName
 	```
 	{: codeblock}
@@ -172,7 +172,7 @@ lastupdated: "2018-01-31"
     ```
     {: codeblock}
     
-    輸出如下所示：
+    輸出的外觀如下：
    
     ```
     bx cf logging version 1.0.1
@@ -192,7 +192,7 @@ lastupdated: "2018-01-31"
     
 2. 執行 **cf install-plugin** 指令，以在 Mac OS X 上安裝日誌收集外掛程式。 
 
-	```
+    ```
 	bx cf install-plugin PluginName
 	```
 	{: codeblock}
@@ -217,7 +217,7 @@ lastupdated: "2018-01-31"
     ```
     {: codeblock}
     
-    輸出如下所示：
+    輸出的外觀如下：
    
     ```
     bx cf logging version 1.0.1
@@ -242,7 +242,7 @@ lastupdated: "2018-01-31"
     ```
     {: codeblock}
     
-    輸出如下所示：
+    輸出的外觀如下：
    
     ```
     Listing Installed Plugins...
@@ -266,16 +266,16 @@ lastupdated: "2018-01-31"
 ## 取得一般說明
 {: #general_cli_help}
 
-若要取得有關 CLI 及所支援指令的一般資訊，請完成下列步驟：
+若要取得 CLI 的一般資訊及支援的指令，請完成下列步驟：
 
 1. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 列出所支援指令及 CLI 的相關資訊。執行下列指令：
+2. 列出支援指令及 CLI 的相關資訊。執行下列指令：
 
     ```
-    bx cf logging help 
+    bx cf logging help
     ```
     {: codeblock}
     
@@ -290,10 +290,10 @@ lastupdated: "2018-01-31"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 取得所支援指令的清單，並識別您需要的指令。執行下列指令：
+2. 取得支援的指令清單，並識別您需要的指令。。執行下列指令：
 
     ```
-    bx cf logging help 
+    bx cf logging help
     ```
     {: codeblock}
 
@@ -317,10 +317,10 @@ lastupdated: "2018-01-31"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 取得所支援指令的清單，並識別您需要的指令。執行下列指令：
+2. 取得支援的指令清單，並識別您需要的指令。。執行下列指令：
 
     ```
-    bx cf logging help 
+    bx cf logging help
     ```
     {: codeblock}
 

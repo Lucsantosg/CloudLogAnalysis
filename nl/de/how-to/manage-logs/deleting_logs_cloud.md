@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -75,7 +75,7 @@ Führen Sie die folgenden Schritte aus, um alle Protokolle zu löschen, die in e
 
 	
 ## Protokolle nach Protokolltyp für einen bestimmten Zeitraum löschen
-{: #time_range}
+{: #log_type}
 
 Führen Sie die folgenden Schritte aus, um Protokolle nach Protokolltyp zu löschen, die in einer Bereichsdomäne für einen bestimmten Zeitraum gespeichert sind:
 
@@ -126,7 +126,7 @@ Führen Sie die folgenden Schritte aus, um Protokolle nach Protokolltyp zu lösc
 		
 	
 ## Kontoprotokolle nach Protokolltyp für einen bestimmten Zeitraum löschen
-{: #time_range}
+{: #time_range_acc}
 
 Führen Sie die folgenden Schritte aus:
 

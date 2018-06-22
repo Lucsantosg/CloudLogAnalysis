@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -21,8 +21,8 @@ Um eine Suche, eine Visualisierung oder ein Dashboard aus einem {{site.data.keyw
 
 | Task | Beschreibung |
 |------|-------------|
-| [Suche kopieren](k4_reuse_resource.html#k4_reuse_search) | Kopieren Sie eine Suche zwischen Bereichen. |
-| [Visualisierung kopieren](k4_reuse_resource.html#k4_reuse_visualization) | Kopieren Sie eine Visualisierung zwischen Bereichen. |
+| [Suche kopieren](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search) | Kopieren Sie eine Suche zwischen Bereichen. |
+| [Visualisierung kopieren](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_visualization) | Kopieren Sie eine Visualisierung zwischen Bereichen. |
 
 Beachten Sie die folgenden Szenarios in {{site.data.keyword.Bluemix_notm}} für die Wiederverwendung von Suchen, Visualisierungen und oder Dashboards: 
 
@@ -32,7 +32,7 @@ Beachten Sie die folgenden Szenarios in {{site.data.keyword.Bluemix_notm}} für 
     
 * Kopieren einer Ressource zwischen Bereichen in verschiedenen Organisationen im selben Konto.
 
-    Sie möchten beispielsweise Visualisierungen von einem Bereich in der Entwicklungsorgansisation in einen Bereich in die Staging-Organisation kopieren.
+    Sie möchten beispielsweise Visualisierungen von einem Bereich in der Entwicklungsorganisation in einen Bereich in die Staging-Organisation kopieren.
 
 * Kopieren einer Ressource zwischen Bereichen, die sich zwar in derselben Organisation, aber in unterschiedlichen öffentlichen Regionen befinden.
 
@@ -47,9 +47,9 @@ Führen Sie die folgenden Schritte aus, um eine Suche zwischen Bereichen in {{si
 
 1. Starten Sie Kibana in dem Bereich, in dem die Suche verfügbar ist, die Sie kopieren möchten. 
 
-    * Kibana über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle starten: Die JSON-Suchdatei, die Sie exportieren können, enthält die folgenden Felder: die *Bereichs-ID* und *Anwendungs-ID* für Cloud Foundry-Anwendungen (CF) oder die *Instanz-ID* für Container. Weitere Informationen finden Sie unter [Vom {{site.data.keyword.Bluemix_notm}}-Dashboard zum Kibana-Dashboard navigieren](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix).
+    * Kibana über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle starten: Die JSON-Suchdatei, die Sie exportieren können, enthält die folgenden Felder: die *Bereichs-ID* und *Anwendungs-ID* für Cloud Foundry-Anwendungen (CF) oder die *Instanz-ID* für Container. Weitere Informationen finden Sie unter [Vom {{site.data.keyword.Bluemix_notm}}-Dashboard zum Kibana-Dashboard navigieren](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Kibana über einen Browser starten: Die JSON-Suchdatei, die Sie exportieren können, enthält das Feld für die *Bereichs-ID*. Weitere Informationen finden Sie unter [Zum Kibana-Dashboard über einen Browser navigieren](logging_analyzing_logs_Kibana.html#launch_Kibana_from_browser).
+    * Kibana über einen Browser starten: Die JSON-Suchdatei, die Sie exportieren können, enthält das Feld für die *Bereichs-ID*. Weitere Informationen finden Sie unter [Zum Kibana-Dashboard über einen Browser navigieren](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
 
 2. Wählen Sie auf der Seite *Settings* die Option **Objects** und anschließend die Registerkarte **Searches** aus. Suchen Sie dann eine Suche aus und kopieren Sie die folgenden Informationen:
 
@@ -85,7 +85,7 @@ Führen Sie die folgenden Schritte aus, um eine Suche zwischen Bereichen in {{si
     
 5. Starten Sie Kibana für den {{site.data.keyword.Bluemix_notm}}-Bereich, in dem Sie die Suche importieren möchten, und rufen Sie anschließend die folgenden Informationen ab:
 
-    Über die [Bluemix-Benutzerschnittstelle](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix):
+    Über die [Bluemix-Benutzerschnittstelle](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix):
     
     <table>
       <tbody>
@@ -187,11 +187,11 @@ Führen Sie die folgenden Schritte aus, um eine Visualisierung, mit der Sie Date
 
 1. Starten Sie Kibana für den Bereich, in dem die Visualisierung, die Sie kopieren möchten, verfügbar ist. 
 
-    * Kibana über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle starten: Die JSON-Suchdatei, die Sie exportieren können, enthält die folgenden Felder: die *Bereichs-ID* und *Anwendungs-ID* für Cloud Foundry-Anwendungen (CF) oder die *Instanz-ID* für Container. Weitere Informationen finden Sie unter [Vom {{site.data.keyword.Bluemix_notm}}-Dashboard zum Kibana-Dashboard navigieren](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix).
+    * Kibana über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle starten: Die JSON-Suchdatei, die Sie exportieren können, enthält die folgenden Felder: die *Bereichs-ID* und *Anwendungs-ID* für Cloud Foundry-Anwendungen (CF) oder die *Instanz-ID* für Container. Weitere Informationen finden Sie unter [Vom {{site.data.keyword.Bluemix_notm}}-Dashboard zum Kibana-Dashboard navigieren](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Kibana über einen Browser starten: Die JSON-Suchdatei, die Sie exportieren können, enthält das Feld für die *Bereichs-ID*. Weitere Informationen finden Sie unter [Zum Kibana-Dashboard über einen Browser navigieren](logging_analyzing_logs_Kibana.html#launch_Kibana_from_browser).
+    * Kibana über einen Browser starten: Die JSON-Suchdatei, die Sie exportieren können, enthält das Feld für die *Bereichs-ID*. Weitere Informationen finden Sie unter [Zum Kibana-Dashboard über einen Browser navigieren](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
     
-2. Kopieren Sie die Suche, die der Visualisierung zugeordnet ist, zwischen den Bereichen. Weitere Informationen finden Sie unter [Suche zwischen Bluemix-Bereichen kopieren](k4_reuse_resource.html#k4_reuse_search).
+2. Kopieren Sie die Suche, die der Visualisierung zugeordnet ist, zwischen den Bereichen. Weitere Informationen finden Sie unter [Suche zwischen Bluemix-Bereichen kopieren](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search).
 
     Eine Visualisierung verwendet eine Suche zum Filtern der angezeigten Daten. Sie kann mit einer Suche verknüpft sein, damit alle Aktualisierungen, die Sie an der Suche vornehmen, automatisch aktualisiert werden. Ist eine Visualisierung nicht mit einer Suche verknüpft, sind die einzigen Daten, die für eine Analyse zur Verfügung stehen, die Daten, die zum Zeitpunkt der Erstellung der Visualisierung angezeigt werden.
 

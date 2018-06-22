@@ -30,11 +30,11 @@ lastupdated: "2018-01-10"
 
     2. 存取 Kibana。按一下**進階視圖** ![「進階視圖」鏈結](images/logging_advanced_view.jpg "「進階視圖」鏈結")。即會顯示 Kibana 儀表板。
     
-    針對在 Kubernetes 叢集中執行的容器，[從瀏覽器啟動 Kibana](k4_launch.html#launch_Kibana_from_browser)。 
+    針對在 Kubernetes 叢集中執行的容器，[從瀏覽器啟動 Kibana](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)。 
     
     當您存取 Kibana 時，會套用預設搜尋。您可以看到您為其啟動 Kibana 之資源實例清單的日誌。您可以針對該空間中的任何或所有 {{site.data.keyword.Bluemix_notm}} 資源過濾日誌。
 
-2. 在「探索」頁面中，查看它顯示哪部分的資料。如需相關資訊，請參閱[識別 Kibana 探索頁面中顯示的資料](logging_kibana_analize_logs_interactively.html#k4_identify_data)。然後，修改預設查詢來過濾項目。
+2. 在「探索」頁面中，查看它顯示哪部分的資料。如需相關資訊，請參閱[識別 Kibana 探索頁面中顯示的資料](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data)。然後，修改預設查詢來過濾項目。
 
     **附註：**請使用 Lucene 查詢語言來定義自訂查詢。如需相關資訊，請參閱 [Apache Lucene - 查詢剖析器語法 ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}
     
@@ -48,9 +48,8 @@ lastupdated: "2018-01-10"
 
      例如，若為 CF 應用程式，您可以建立查詢 `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]`，此查詢只列出實例 *0* 及 *1* 的項目。 
 
-3. 儲存查詢，以供之後重複使用。如需相關資訊，請參閱[儲存搜尋](logging_kibana_filtering_logs.html#k4_save_search)。 
+3. 儲存查詢，以供之後重複使用。 
 
-**附註：**如果您需要刪除查詢，請參閱[刪除搜尋](logging_kibana_filtering_logs.html#k4_delete_search)。
 
 
 

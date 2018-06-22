@@ -90,11 +90,11 @@ bx cf logging [parameters]
 **參數**
 
 <dl>
-<dt>--help、-h</dt>
+<dt>--help, -h</dt>
 <dd>設定這個參數可顯示指令清單，或取得某個指令的說明。
 </dd>
 
-<dt>--version、-v</dt>
+<dt>--version, -v</dt>
 <dd>設定這個參數可列印 CLI 版本。</dd>
 </dl>
 
@@ -156,18 +156,18 @@ bx cf logging delete [parameters]
 **參數**
 
 <dl>
-  <dt>--start value、-s value</dt>
+  <dt>--start value, -s value</dt>
   <dd>（選用）設定「世界標準時間 (UTC)」格式的開始日期：*YYYY-MM-DD*（例如，`2006-01-02`）。<br>預設值設為 2 週以前。
   </dd>
   
-  <dt>--end value、-e value</dt>
+  <dt>--end value, -e value</dt>
   <dd>（選用）設定「世界標準時間 (UTC)」格式的結束日期：*YYYY-MM-DD* <br>UTC 格式的日期為 **YYYY-MM-DD**（例如，`2006-01-02`）。<br>預設值設為現行日期。
   </dd>
   
-  <dt>--type value、-t value</dt>
+  <dt>--type value, -t value</dt>
   <dd>（選用）設定日誌類型。<br>例如，*syslog* 是日誌類型。<br>預設值設為 **\***。<br>您可以指定多種日誌類型，作法是使用逗點來區隔每一種類型，例如 *log_type_1,log_type_2,log_type_3*。</dd>
   
-  <dt>--at-account-level、-a </dt>
+  <dt>--at-account-level, -a </dt>
   <dd>（選用）設定提供給帳戶層次的日誌資訊範圍。<br>如果未指定這個參數，預設值會設為僅提供現行空間的日誌資訊。
   </dd>
 </dl>
@@ -197,7 +197,7 @@ bx cf logging download [parameters] [arguments]
 **參數**
 
 <dl>
-<dt>--output value、-o value</dt>
+<dt>--output value, -o value</dt>
 <dd>（選用）設定已下載日誌的本端輸出檔的路徑及檔名。<br>預設值為連字號 (-)。<br>將這個參數設為預設值，以將日誌輸出至標準輸出。</dd>
 </dl>
 
@@ -290,10 +290,10 @@ bx cf logging option [parameters]
 **參數**
 
 <dl>
-<dt>--retention value、-r value</dt>
+<dt>--retention value, -r value</dt>
 <dd>（選用）設定保留天數。<br> 預設值為 *-1* 天。</dd>
 
-<dt>--at-account-level、-a </dt>
+<dt>--at-account-level, -a </dt>
   <dd>（選用）將範圍設為帳戶層次。<br>如果未指定這個參數，現行空間的預設值會設為 *-1*，而現行空間就是您使用 `bx cf login` 指令所登入的空間。
   </dd>
 </dl>
@@ -353,19 +353,19 @@ bx cf logging session create [parameters]
 **參數**
 
 <dl>
-  <dt>--start value、-s value</dt>
+  <dt>--start value, -s value</dt>
   <dd>（選用）設定「世界標準時間 (UTC)」格式的開始日期：*YYYY-MM-DD*（例如，`2006-01-02`）。<br>預設值設為 2 週以前。
   </dd>
   
-  <dt>--end value、-e value</dt>
+  <dt>--end value, -e value</dt>
   <dd>（選用）設定「世界標準時間 (UTC)」格式的結束日期：*YYYY-MM-DD*（例如，`2006-01-02`）。<br>預設值設為現行日期。
   </dd>
   
-  <dt>--type value、-t value</dt>
+  <dt>--type value, -t value</dt>
   <dd>（選用）設定日誌類型。<br>例如，*syslog* 是日誌類型。<br>預設值設為星號 (*)。<br>您可以指定多種日誌類型，作法是使用逗點來區隔每一種類型，例如，*log_type_1,log_type_2,log_type_3*。
   </dd>
   
-  <dt>--at-account-level、-a </dt>
+  <dt>--at-account-level, -a </dt>
   <dd>（選用）將範圍設為帳戶層次。<br>如果未指定這個參數，預設值會設為僅限現行空間，即您使用 `bx cf login` 指令所登入的空間。
   </dd>
 </dl>
@@ -529,23 +529,23 @@ bx cf logging status [parameters]
 **參數**
 
 <dl>
-  <dt>--start value、-s value</dt>
+  <dt>--start value, -s value</dt>
   <dd>（選用）設定「世界標準時間 (UTC)」格式的開始日期：*YYYY-MM-DD*（例如，`2006-01-02`）。<br>預設值設為 2 週以前。
   </dd>
   
-  <dt>--end value、-e value</dt>
+  <dt>--end value, -e value</dt>
   <dd>（選用）設定「世界標準時間 (UTC)」格式的結束日期：*YYYY-MM-DD*（例如，`2006-01-02`）。<br>預設值設為現行日期。
   </dd>
   
-  <dt>--type value、-t value</dt>
+  <dt>--type value, -t value</dt>
   <dd>（選用）設定日誌類型。<br>例如，*syslog* 是日誌類型。<br>預設值設為星號 (*)。<br>您可以指定多種日誌類型，作法是使用逗點來區隔每一種類型，例如，*log_type_1,log_type_2,log_type_3*。
   </dd>
   
-  <dt>--at-account-level、-a </dt>
+  <dt>--at-account-level, -a </dt>
   <dd>（選用）將範圍設為帳戶層次。<br> **附註：**請設定這個值以取得帳戶資訊。<br>如果未指定這個參數，預設值會設為僅限現行空間，即您使用 `bx cf login` 指令所登入的空間。
   </dd>
   
-  <dt>--list-type-detail、-l</dt>
+  <dt>--list-type-detail, -l</dt>
   <dd>（選用）設定這個參數來列出每天的日誌類型小計。
   </dd>
 </dl>

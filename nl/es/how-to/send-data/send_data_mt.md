@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,49 +25,43 @@ Siga los pasos siguientes para enviar datos de registro a un espacio de {{site.d
 ## Requisitos previos
 {: #prereqs}
 
-* Un ID de {{site.data.keyword.IBM_notm}} para iniciar una sesión en {{site.data.keyword.Bluemix_notm}}. 
+* Un ID de {{site.data.keyword.Bluemix_notm}} para iniciar una sesión en {{site.data.keyword.Bluemix_notm}}.
 * Un ID de usuario que tenga permisos para trabajar en un espacio con el servicio {{site.data.keyword.loganalysisshort}}. Para obtener más información, consulte [Seguridad](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
 * La CLI de {{site.data.keyword.loganalysisshort}} instalada en el entorno local.
+* El servicio {{site.data.keyword.loganalysisshort}} suministrado en un espacio de la cuenta con un plan que permita la ingestión de registros. 
 
 
 ## Paso 1: Obtenga la señal de registro
 {: #get_logging_auth_token}
 
-Siga los pasos siguientes desde una sesión de terminal donde esté instalada la CLI de {{site.data.keyword.loganalysisshort}}: 
+Siga los pasos siguientes desde una sesión de terminal donde esté instalada la CLI de {{site.data.keyword.loganalysisshort}}:
 
 1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Ejecute el mandato `bx cf logging auth`. 
+2. Ejecute el mandato `bx logging token-get`.  
 
     ```
-    bx cf logging auth
- ```
+    bx logging token-get
+    ```
     {: codeblock}
 
-    El mandato devuelve la siguiente información:
-    
-    * La señal de registro.
-    * El ID de organización: es el GUID de la organización de {{site.data.keyword.Bluemix_notm}} en la que ha iniciado la sesión. 
-    * El ID de espacio: GUID del espacio de la organización en el que ha iniciado la sesión. 
+    El mandato devuelve la señal de registro.
     
     Por ejemplo,
 
     ```
-    bx cf logging auth
-    +-----------------+--------------------------------------+
-    |      NAME       |                VALUE                 |
-    +-----------------+--------------------------------------+
-    | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_abcdefz                         |
-    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
-    | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
-    +-----------------+--------------------------------------+
- ```
+    bx logging token-get
+    Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
+    OK
+
+    Tenant Id                              Logging Token
+    93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf   oT98_abcdefz
+    ```
     {: screen}
 
-Para obtener más información, consulte [cf logging auth](/docs/services/CloudLogAnalysis/reference/logging_cli.html#auth).
+    donde *Tenant Id* es el GUID del espacio al que va a enviar los registros. 
 
 
 ## Paso 2: Configure mt-logstash-forwarder
@@ -204,7 +198,7 @@ Siga los pasos siguientes para configurar mt-logstash-forwarder en el entorno en
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>URL de destino. Para obtener la lista de los URL de ingestión, consulte [URL de ingestión](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Por ejemplo, establezca el valor en **https://ingest.logging.ng.bluemix.net:9091** para enviar los registros a la región EE.UU. Sur. </td>
+            <td>URL de destino. Para obtener la lista de los URL de ingestión, consulte [URL de ingestión](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Por ejemplo, establezca el valor en **ingest.logging.ng.bluemix.net:9091** para enviar los registros a la región EE.UU. Sur. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>
@@ -229,7 +223,7 @@ Siga los pasos siguientes para configurar mt-logstash-forwarder en el entorno en
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
        LSF_PASSWORD="oT98_abcdefz"
        LSF_GROUP_ID="Group1"
- ```
+       ```
        {: screen}
         
     3. Inicie mt-logstash-forwarder. 

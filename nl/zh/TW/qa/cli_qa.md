@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -30,7 +30,7 @@ lastupdated: "2018-01-10"
 ## 如何登入 IBM Cloud？
 {: #login}
 
-執行下列指令，以登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間：
+執行下列指令，以登入 {{site.data.keyword.Bluemix_notm}} 中提供 {{site.data.keyword.loganalysisshort}} 服務的地區：
 
 ```
 bx login -a Endpoint
@@ -72,7 +72,7 @@ bx login -a https://api.ng.bluemix.net
 
 請遵循指示。 
 
-然後，設定組織及空間。執行下列指令：
+您也可以設定組織及空間。執行下列指令：
 
 ```
 bx target -o OrgName -s SpaceName
@@ -98,13 +98,13 @@ bx target -o OrgName -s SpaceName
 	
 請完成下列步驟，以取得帳戶的 GUID：
 	
-1. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
+1. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區。 
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
 2. 執行 `bx iam accounts` 指令，以取得帳戶的 GUID。
 
-	```
+    ```
 	bx iam accounts
 	```
 	{: codeblock} 
@@ -134,7 +134,7 @@ bx target -o OrgName -s SpaceName
 2. 執行 `bx iam org` 指令來取得組織 GUID。 
 
     ```
-    bx iam org NAME --guid
+        bx iam org NAME --guid
     ```
     {: codeblock}
 	

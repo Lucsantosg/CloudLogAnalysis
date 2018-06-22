@@ -228,11 +228,8 @@ Para enviar logs para o serviço {{site.data.keyword.loganalysisshort}}, você p
 Para enviar logs para um domínio de espaço, escolha um dos métodos a seguir:
 
 * [Obtendo o token de criação para enviar logs para um espaço usando o comando bx service do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
-* [Obtendo o token de criação para enviar logs para um espaço usando a CLI do Log Analysis (plug-in do CF)](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cf_plugin)
+* [Obtendo o token de criação de log para enviar logs para um espaço usando a CLI do Log Analysis](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [Obtendo o token de criação para enviar logs para um espaço usando a API do Log Analysis](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
-
-Para enviar logs para o domínio de contas, veja [Obtendo o token de criação de log para enviar logs para o domínio de contas usando a API do Log Analysis](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_acc_token_api).
-
 
 
 ## Concedendo permissões para um usuário para trabalhar com logs

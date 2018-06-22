@@ -32,7 +32,7 @@ El servicio de {{site.data.keyword.loganalysisfull}} proporciona los servicios d
 
 En la siguiente figura se muestra una vista de alto nivel del servicio {{site.data.keyword.loganalysisshort}}: 
 
-![Imagen de visión general del servicio {{site.data.keyword.loganalysisshort}}](images/loganalisys_F1.gif "Imagen de visión general del servicio {{site.data.keyword.loganalysisshort}}")
+![Imagen de visión general del servicio {{site.data.keyword.loganalysisshort}}](images/loganalysis_F1.png "Imagen de visión general del servicio {{site.data.keyword.loganalysisshort}}")
 
 
 Para recopilar y buscar registros de los recursos de nube que se ejecutan en un espacio, debe suministrar una instancia del servicio {{site.data.keyword.loganalysisshort}} en el mismo espacio en el que se ejecutan dichos recursos de nube. Los registros se recopilan y se almacenan de forma predeterminada en el componente de búsqueda de registros. Cuando seleccione un plan de servicio que incluya funciones ampliadas de búsqueda y recopilación, los registros también se recopilan y se almacenan en el componente de recopilación de registros. Los datos de registro que se almacenan en la recopilación de registros están cifrados.
@@ -91,7 +91,7 @@ El servicio de {{site.data.keyword.loganalysisfull_notm}} está disponible en la
 ## Datos locales
 {: #data_location}
 
-En la tabla siguiente se muestra la ubicación de los registros por región: 
+En la tabla siguiente se muestra la ubicación de los registros por región:
 
 <table>
   <caption>Ubicación de registros por región</caption>
@@ -122,14 +122,14 @@ En la tabla siguiente se muestra la ubicación de los registros por región:
   </tr>
 </table>
 
-(*) Para Sídney, los registros del componente de recopilación de registros están alojados actualmente en EE.UU. Sur. Está planificado situar los datos de los registros del componente de recopilación de registros en Sídney. 
+(*) Para Sídney, los registros del componente de recopilación de registros están alojados actualmente en EE.UU. Sur. Está planificado situar los datos de los registros del componente de recopilación de registros en Sídney.
 
 ## Planes de servicio
 {: #plans}
 
 El servicio {{site.data.keyword.loganalysisshort}} proporciona varios planes. Cada plan tiene distinta capacidad de recopilación de registros y de búsqueda de registros. 
 
-**NOTA:** Las características incluidas en un plan de servicio solo se habilitan en el espacio en el que se suministra el servicio {{site.data.keyword.loganalysisshort}} con dicho plan. 
+**NOTA:** Las características incluidas en un plan de servicio solo se habilitan en el espacio en el que se suministra el servicio {{site.data.keyword.loganalysisshort}} con dicho plan.
 
 Puede cambiar un plan mediante la interfaz de usuario de {{site.data.keyword.Bluemix_notm}} o a través de la línea de mandatos. Puede actualizar o reducir el plan siempre que lo desee. Para obtener más información sobre actualizaciones del plan de servicio, consulte [Cambio del plan](/docs/services/CloudLogAnalysis/how-to/change_plan.html#change_plan). 
 

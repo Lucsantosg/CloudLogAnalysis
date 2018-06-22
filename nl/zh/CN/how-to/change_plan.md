@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-01-10"
 # 更改套餐
 {: #change_plan}
 
-可以通过 {{site.data.keyword.Bluemix_notm}} UI或通过运行 `bx cf update-service` 命令来更改 {{site.data.keyword.loganalysisshort}} 服务套餐。您可以随时升级或降级套餐。
+可以通过 {{site.data.keyword.Bluemix_notm}} UI 或通过运行 `bx cf update-service` 命令来更改 {{site.data.keyword.loganalysisshort}} 服务套餐。您可以随时升级或降级套餐。
 {:shortdesc}
 
 ## 通过 UI 更改服务套餐
@@ -30,9 +30,9 @@ lastupdated: "2018-01-10"
 
 2. 选择 {{site.data.keyword.loganalysisshort}} 服务可用的区域、组织和空间。  
 
-3. 在 {{site.data.keyword.Bluemix_notm}} *仪表板*中单击 {{site.data.keyword.loganalysisshort}} 服务实例。 
+3. 在 {{site.data.keyword.Bluemix_notm}} *仪表板*中，单击 {{site.data.keyword.loganalysisshort}} 服务实例。 
     
-4. 在 {{site.data.keyword.loganalysisshort}} 仪表板中选择**套餐**选项卡。
+4. 在 {{site.data.keyword.loganalysisshort}} 仪表板中，选择**套餐**选项卡。
 
     这将显示有关当前套餐的信息。
 	
@@ -52,32 +52,34 @@ lastupdated: "2018-01-10"
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-2. 运行 `bx cf services` 命令以检查当前套餐，并从空间中可用的服务的列表中获取 {{site.data.keyword.loganalysisshort}} 服务名称。 
+2. 运行 `bx service list` 命令以检查当前套餐，并从空间中可用的服务的列表中获取 {{site.data.keyword.loganalysisshort}} 服务名称。 
 
     **name** 字段的值是必须用于更改套餐的名称。 
 
     例如：
 	
 	```
-	$ bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
+	$ bx  bx service list
+    Invoking 'cf services'...
+
+    Getting services in org MyOrg / space dev as xxx@ibm.com...
     OK
-    
-    name              service          plan      bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   premium                create succeeded
+
+    name                           service                  plan             bound apps            last operation
+    Log Analysis-m2                ibmLogAnalysis           premium                                update succeeded
     ```
 	{: screen}
     
-3. 升级或降级套餐。运行 `bx cf update-service` 命令。
+3. 升级或降级套餐。运行 `bx service update` 命令。
     
 	```
-	bx cf update-service service_name [-p new_plan]
+	bx service update service_name [-p new_plan]
 	```
 	{: codeblock}
 	
 	其中 
 	
-	* *service_name* 是服务的名称。可以运行 `bx cf services` 命令来获取此值。
+	* *service_name* 是服务的名称。可以运行 `bx service list` 命令来获取此值。
 	* *new_plan* 是套餐的名称。
 	
 	下表列出了不同的套餐及其支持的值：
@@ -113,24 +115,20 @@ lastupdated: "2018-01-10"
 	例如，要将套餐降级到*轻量*套餐，请运行以下命令：
 	
 	```
-	bx cf update-service "Log Analysis-a4" -p standard
-    Updating service instance Log Analysis-a4 as xxx@yyy.com...
+	bx service update "Log Analysis-m2" -p standard
+    Updating service instance Log Analysis-m2 as xxx@ibm.com...
     OK
 	```
 	{: screen}
 
-4. 验证是否已更改为新套餐。运行 `cf services` 命令。
+4. 验证是否已更改为新套餐。运行 `bx service list` 命令。
 
-    ```
-	bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
-    OK
-
-    name              service          plan       bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   standard                update succeeded
+  ```
+	bx service list
 	```
-	{: screen}
+	    {: codeblock}
 
+    
 
 
 

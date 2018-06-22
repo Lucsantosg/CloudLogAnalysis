@@ -21,10 +21,9 @@ lastupdated: "2018-01-10"
 
 Im Folgenden finden Sie Antworten auf häufig gestellte Fragen zur Verwendung der {{site.data.keyword.Bluemix}}-Protokollfunktionen. {:shortdesc}
 
-* [Was kann ich tun, wenn auf der Seite 'Discover' in Kibana keine Daten angezeigt werden?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_discover_kibana)
-* [Was kann ich tun, wenn ich eine Ausnahmebedingung bei der Authentifizierung erhalte?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_dashboard_kibana)
-* [Wie kann ich Kibana 3 oder Kibana 4 starten?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
-* [Warum werden Fragezeichensymbole (?) für Felder auf der Kibana-Seite 'Discover' angezeigt?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
+* [Was kann ich tun, wenn auf der Seite 'Discover' in Kibana keine Daten angezeigt werden?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_discover_kibana)
+* [Was kann ich tun, wenn ich eine Ausnahmebedingung bei der Authentifizierung erhalte?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_dashboard_kibana)
+* [Warum werden Fragezeichensymbole (?) für Felder auf der Kibana-Seite 'Discover' angezeigt?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_kibana_question)
 * [Wenn ich versuche, das Standardindexmuster zu ändern, wird Fehler 403 angezeigt.](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
 * [Kurz-URL funktioniert nicht](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
 * [Kann ich meine Kontoprotokolle in Bluemix durchsuchen?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
@@ -79,21 +78,7 @@ Um das Problem zu beheben, führen Sie die folgenden Schritte aus:
 
     Wenn Sie das Dashboard gemeinsam nutzen, löschen Sie die Visualisierungen nicht, da sich dies auf andere Teammitglieder auswirkt, die dasselbe Dashboard verwenden.
 
-## Wie kann ich Kibana 3 oder Kibana 4 starten?
-{: #logging_qa_kibana3}
 
-**Hinweis:** Kibana 3 ist veraltet.
-
-Sie können Kibana 3 oder Kibana 4 über einen Browser starten.
-
-Führen Sie den folgenden Schritt aus, um Kibana über einen Browser zu starten:
-
-1. Öffnen Sie die Seite [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net), um sich an der Kibana-Benutzerschnittstelle anzumelden.
-    
-2. Wählen Sie die Version von Kibana aus, die Sie verwenden möchten, um Ihre Protokolle zu analysieren.
-    * Wählen Sie die Registerkarte **Kibana 4** aus, um mit Kibana 4 zu arbeiten. Die Seite 'Discover' wird geöffnet. Weitere Informationen finden Sie unter [Protokolle in Kibana interaktiv analysieren](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_kibana_analize_logs_interactively.html#kibana_analize_logs_interactively).
-    * Wählen Sie die Registerkarte **Kibana 3** aus, um mit Kibana 3 zu arbeiten. Das Standard-Kibana-Dashboard wird geöffnet. Weitere Informationen zur Verwendung von Kibana 3 für die Analyse Ihrer Protokolle finden Sie unter [Protokolle in Kibana 3 analysieren (Veraltet)](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3). Weitere Informationen zum Anpassen eines Kibana 3-Dashboards finden Sie in [diesem Blogbeitrag ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/){: new_window}.
-     
 
 ## Warum werden Fragezeichensymbole (?) für Felder auf der Kibana-Seite 'Discover' angezeigt?
 {: #logging_qa_kibana_question}
@@ -120,7 +105,7 @@ Als Kontoeigner können Sie Ihre Kontoprotokolle durchsuchen und analysieren.
 
 Führen Sie die folgenden Schritte aus, um die Kontoprotokolle anzuzeigen:
 
-1. [Starten Sie Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) Verwenden Sie beispielsweise für die Region 'USA (Süden)' die URL 'https://logging.ng.bluemix.net'.
+1. [Starten Sie Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) Verwenden Sie beispielsweise für die Region 'USA (Süden)' die URL `https://logging.ng.bluemix.net`.
 
 2. Wählen Sie die Option **View AccountName account Logs** aus, um die Kontoprotokolle anzuzeigen. *AccountName* ist der Name des Kontos.
 

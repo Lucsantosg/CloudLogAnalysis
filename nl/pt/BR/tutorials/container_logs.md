@@ -3,16 +3,19 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-12"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Analisar logs no Kibana para um app que é implementado em um cluster do Kubernetes
@@ -40,7 +43,7 @@ Esse tutorial percorre as etapas necessárias para obter o seguinte cenário de 
 
     Seu ID de usuário do {{site.data.keyword.Bluemix_notm}} deve ter as seguintes políticas designadas:
     
-    * Uma política do IAM para o {{site.data.keyword.containershort}} com as permissões de *operador* ou *administrador*.
+    * Uma política do IAM para o {{site.data.keyword.containershort}} com permissões de *editor*, *operador* ou *administrador*.
     * Uma função do CF para o espaço no qual o serviço {{site.data.keyword.loganalysisshort}} é provisionado com permissões de *desenvolvedor*.
     
     Para obter mais informações, veja [Designar uma política do IAM a um usuário por meio da UI do IBM Cloud](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account) e [Concedendo a um usuário permissões para visualizar logs de espaço usando a UI do IBM Cloud](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
@@ -75,8 +78,7 @@ Conclua as etapas a seguir:
 
 1. Crie um cluster padrão do Kubernetes.
 
-   * [Criar um cluster padrão do Kubernetes por meio da UI](/docs/containers/cs_cluster.html#cs_cluster_ui).
-   * [Criar um cluster padrão do Kubernetes usando a CLI](/docs/containers/cs_cluster.html#cs_cluster_cli).
+   Para obter mais informações, consulte [Criando Clusters](/docs/containers/cs_tutorials.html#cs_cluster_tutorial).
 
 2. Configure o contexto do cluster em um terminal. Após o contexto ser configurado, é possível gerenciar o cluster do Kubernetes e implementar o aplicativo no cluster do Kubernetes.
 
@@ -108,7 +110,7 @@ Conclua as etapas a seguir:
 
 
 ## Etapa 2: Configurar seu cluster para encaminhar logs automaticamente para o serviço {{site.data.keyword.loganalysisshort}}
-{: #step3}
+{: #step2}
 
 Quando o app é implementado, os logs são coletados automaticamente pelo {{site.data.keyword.containershort}}. No entanto, os logs não são encaminhados automaticamente para o serviço {{site.data.keyword.loganalysisshort}}. Deve-se criar 1 ou mais configurações de criação de log em seu cluster que definam:
 
@@ -144,7 +146,7 @@ Para ver a lista de origens de log para as quais é possível definir uma config
 
 
 ### Configurar seu cluster para encaminhar logs stderr e stdout para o serviço {{site.data.keyword.loganalysisshort}}
-{: #containerlogs}
+{: #containerstd}
 
 
 Conclua as etapas a seguir para enviar logs stdout e stderr para um domínio de espaço, em que o nome da organização é *MyOrg* e o nome do espaço é *dev* na região sul dos EUA:
@@ -227,8 +229,8 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 
 
 
-## Etapa 4: Conceder ao usuário permissões para ver logs em um domínio de espaço
-{: #step4}
+## Etapa 3: Conceder permissões ao usuário para ver logs em um domínio de espaço
+{: #step3}
 
 Para conceder a um usuário permissões para visualizar logs em um espaço, deve-se designar a esse usuário uma função do Cloud Foundry que descreva as ações que esse usuário pode executar com o serviço {{site.data.keyword.loganalysisshort}} no espaço. 
 
@@ -265,11 +267,13 @@ Conclua as etapas a seguir para conceder a um usuário permissões para trabalha
 7. Clique em **Salvar função**.
 
 
-## Etapa 5: Conceder as permissões do proprietário da chave do {{site.data.keyword.containershort_notm}}
-{: #step5}
+## Etapa 4: Conceder ao {{site.data.keyword.containershort_notm}} permissões de proprietário da chave
+{: #step4}
 
+Para que os logs do cluster sejam encaminhados para um espaço, o proprietário da chave do {{site.data.keyword.containershort_notm}} deve ter as permissões a seguir:
 
-Quando você encaminhar logs para um espaço, deve-se também conceder permissões do Cloud Foundry (CF) para o proprietário da chave do {{site.data.keyword.containershort}} na organização e no espaço. O proprietário da chave precisa da função *orgManager* para a organização e *SpaceManager* e *Developer* para o espaço. 
+* Política do IAM para o serviço {{site.data.keyword.loganalysisshort}} com permissões de *Administrador*.
+* Permissões do Cloud Foundry (CF) na organização e no espaço nos quais os logs devem ser encaminhados. O proprietário da chave do contêiner precisa da função *orgManager* para a organização e *SpaceManager* e *Developer* para o espaço.
 
 Conclua as etapas a seguir:
 
@@ -289,26 +293,31 @@ Conclua as etapas a seguir:
     Na barra de menus, clique em **Gerenciar > Conta > Usuários**.  A janela *Usuários* exibe uma lista de usuários com seus endereços de e-mail para a conta selecionada atualmente.
 	
     Selecione o ID do usuário e verifique se o usuário tem a função *orgManager* para a organização e *SpaceManager* e *Developer* para o espaço.
- 
-3. Se o usuário não tiver as permissões corretas, conclua as etapas a seguir:
 
-    1. Conceda ao usuário as permissões a seguir: função *orgManager* para a organização e *SpaceManager* e *Developer* para o espaço. Para obter mais informações, veja [Concedendo a um usuário permissões para visualizar logs de espaço usando a UI do IBM Cloud](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
+    Se o usuário não tiver as permissões corretas, conceda a ele as permissões a seguir: a função *orgManager* para a organização e *SpaceManager* e *Developer* para o espaço. Para obter mais informações, veja [Concedendo a um usuário permissões para visualizar logs de espaço usando a UI do IBM Cloud](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
     
-    2. Atualize a configuração de criação de log. Execute o comando a seguir:
+3. Verifique se o usuário identificado como o proprietário da chave do {{site.data.keyword.containershort}} tem uma política do IAM para o serviço {{site.data.keyword.loganalysisshort}} com permissões de *Administrador*.
+
+    Na barra de menus, clique em **Gerenciar > Conta > Usuários**.  A janela *Usuários* exibe uma lista de usuários com seus endereços de e-mail para a conta selecionada atualmente.
+	
+    Selecione o ID do usuário e verifique se ele tem o conjunto de políticas do IAM. 
+
+    Se o usuário não tiver a política do IAM, veja [Designar uma política do IAM a um usuário por meio da UI do IBM Cloud](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
+
+4. Atualize a configuração de criação de log. Execute o comando a seguir:
     
-        ```
-        bx cs logging-config-refresh ClusterName
-        ```
-        {: codeblock}
+    ```
+    bx cs logging-config-refresh ClusterName
+    ```
+    {: codeblock}
         
-        em que *ClusterName* é o nome do cluster.
-
-
-
+    em que *ClusterName* é o nome do cluster.
 	
 
-## Etapa 6: Implementar um app de amostra no cluster do Kubernetes para gerar conteúdo no stdout
-{: #step6}
+
+
+## Etapa 5: Implementar um app de amostra no cluster do Kubernetes para gerar conteúdo em stdout
+{: #step5}
 
 Implemente e execute um aplicativo de amostra no cluster do Kubernetes. Conclua as etapas no tutorial a seguir para implementar o app de amostra: [Lição 1: Implementando apps de instância única em clusters do Kubernetes](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1).
 
@@ -334,8 +343,8 @@ Nesse aplicativo de amostra, quando você testa seu app em um navegador, o app g
 
 
 
-## Etapa 7: Visualizar dados do log no Kibana
-{: #step7}
+## Etapa 6: Visualizar dados do log no Kibana
+{: #step6}
 
 Conclua as etapas a seguir:
 
@@ -354,7 +363,7 @@ Conclua as etapas a seguir:
 	
     O Kibana é aberto.
     
-    **NOTA:** verifique se você ativa o Kibana na região na qual está encaminhando os logs do cluster. Para obter informações sobre as URLs por região, veja [Registrando terminais](docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana).
+    **NOTA:** verifique se você ativa o Kibana na região na qual está encaminhando os logs do cluster. Para obter informações sobre as URLs por região, veja [Registrando terminais](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana).
     	
 2. Para visualizar dados do log que estão disponíveis no domínio de espaço, conclua as etapas a seguir:
 
@@ -427,8 +436,8 @@ Conclua as etapas a seguir:
 Para obter mais informações sobre outros campos de procura que sejam relevantes aos clusters do Kubernetes, veja [Procurando logs](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#log_search).
 
 
-## Etapa 8: Filtrar dados por nome do cluster do Kubernetes no Kibana
-{: #step8}
+## Etapa 7: Filtrar dados pelo nome do cluster do Kubernetes no Kibana
+{: #step7}
     
 Na tabela exibida na página *Descoberta*, é possível ver todas as entradas que estão disponíveis para análise. As entradas que estão listados correspondem à consulta de procura que é exibida na barra *Procurar*. Use um asterisco (*) para exibir todas as entradas dentro do período de tempo configurado para a página.
     

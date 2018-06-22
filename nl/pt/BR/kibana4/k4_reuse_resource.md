@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -21,8 +21,8 @@ Para copiar uma procura, uma visualização ou um painel de um espaço do {{site
 
 | Tarefa | Descrição |
 |------|-------------|
-| [Copiar uma procura](k4_reuse_resource.html#k4_reuse_search) | Copie uma procura entre espaços. |
-| [Copiar uma visualização](k4_reuse_resource.html#k4_reuse_visualization) | Copiar uma visualização entre espaços |
+| [Copiar uma procura](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search) | Copie uma procura entre espaços. |
+| [Copiar uma visualização](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_visualization) | Copiar uma visualização entre espaços |
 
 Considere os cenários a seguir no {{site.data.keyword.Bluemix_notm}} para reutilização de procuras, visualizações ou painéis: 
 
@@ -47,9 +47,9 @@ Conclua as etapas a seguir para copiar uma procura entre espaços no {{site.data
 
 1. Ative o Kibana no qual a procura que você deseja copiar está disponível. 
 
-    * Ative o Kibana na UI do {{site.data.keyword.Bluemix_notm}}: o arquivo de procura JSON que pode ser exportado inclui os campos a seguir: *ID do espaço* e *ID do aplicativo* para aplicativos Cloud Foundry (CF) ou *ID da instância* para contêineres. Para obter mais informações, veja [Acessando o painel do Kibana por meio do painel do {{site.data.keyword.Bluemix_notm}}](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix).
+    * Ative o Kibana na UI do {{site.data.keyword.Bluemix_notm}}: o arquivo de procura JSON que pode ser exportado inclui os campos a seguir: *ID do espaço* e *ID do aplicativo* para aplicativos Cloud Foundry (CF) ou *ID da instância* para contêineres. Para obter mais informações, veja [Acessando o painel Kibana usando o painel do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Ative o Kibana por meio de um navegador: o arquivo de procura JSON que é possível exportar inclui o campo *ID do espaço*. Para obter mais informações, veja [Acessando o painel do Kibana por meio de um navegador](logging_analyzing_logs_Kibana.html#launch_Kibana_from_browser).
+    * Ative o Kibana por meio de um navegador: o arquivo de procura JSON que é possível exportar inclui o campo *ID do espaço*. Para obter mais informações, veja [Acessando o painel do Kibana por meio de um navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
 
 2. Na página *Configurações*, selecione **Objetos** e a guia **Procuras**. Em seguida, selecione uma procura e copie as informações a seguir:
 
@@ -85,7 +85,7 @@ Conclua as etapas a seguir para copiar uma procura entre espaços no {{site.data
     
 5. Ative o Kibana para o espaço do {{site.data.keyword.Bluemix_notm}} no qual você deseja importar a procura e, em seguida, obtenha as informações a seguir:
 
-    Na [UI do Bluemix](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix):
+    No [Bluemix UI](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix):
     
     <table>
       <tbody>
@@ -187,11 +187,11 @@ Conclua as etapas a seguir para copiar uma visualização que você usa para ana
 
 1. Ative o Kibana para o espaço no qual a visualização que você deseja copiar está disponível. 
 
-    * Ative o Kibana na UI do {{site.data.keyword.Bluemix_notm}}: o arquivo de procura JSON que pode ser exportado inclui os campos a seguir: *ID do espaço* e *ID do aplicativo* para aplicativos Cloud Foundry (CF) ou *ID da instância* para contêineres. Para obter mais informações, veja [Acessando o painel do Kibana por meio do painel do {{site.data.keyword.Bluemix_notm}}](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix).
+    * Ative o Kibana na UI do {{site.data.keyword.Bluemix_notm}}: o arquivo de procura JSON que pode ser exportado inclui os campos a seguir: *ID do espaço* e *ID do aplicativo* para aplicativos Cloud Foundry (CF) ou *ID da instância* para contêineres. Para obter mais informações, veja [Acessando o painel Kibana usando o painel do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Ative o Kibana por meio de um navegador: o arquivo de procura JSON que é possível exportar inclui o campo *ID do espaço*. Para obter mais informações, veja [Acessando o painel do Kibana por meio de um navegador](logging_analyzing_logs_Kibana.html#launch_Kibana_from_browser).
+    * Ative o Kibana por meio de um navegador: o arquivo de procura JSON que é possível exportar inclui o campo *ID do espaço*. Para obter mais informações, veja [Acessando o painel do Kibana por meio de um navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
     
-2. Copie a procura que está associada à visualização entre espaços. Para obter mais informações, veja [Copiando uma procura entre espaços do Bluemix](k4_reuse_resource.html#k4_reuse_search).
+2. Copie a procura que está associada à visualização entre espaços. Para obter mais informações, veja [Copiando uma procura entre espaços do Bluemix](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search).
 
     Uma visualização usa uma procura para filtrar os dados que ela exibe. Uma visualização pode ser vinculada a uma procura, assim todas as atualizações que você faz na procura são atualizadas automaticamente ou não são vinculadas a uma procura, assim os únicos dados disponíveis para análise são os dados exibidos no momento em que a visualização foi criada.
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -29,7 +29,7 @@ journal ne comporte qu'un seul type d'entrées de journal.
 
 
 ## Suppression de journaux pour une période spécifique
-{: #time_range}
+{: #fix_period}
 
 Procédez comme suit :
 
@@ -67,11 +67,10 @@ Procédez comme suit :
 	
 	où
 	
-	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02.
-    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ.
+	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02. 
+    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ. 
     	
-	Par exemple, pour supprimer les journaux du 25 mai 2017, exécutez la commande
-suivante :
+	Par exemple, pour supprimer les journaux du 25 mai 2017, exécutez la commande suivante :
 	
 	```
 	bx cf logging delete -s 2017-05-25 -e 2017-05-25
@@ -79,8 +78,8 @@ suivante :
 	{: screen}
 
 	
-## Suppression de journaux par type de journal pour une période spécifique :
-{: #time_range}
+## Suppression de journaux par type de journal pour une période spécifique 
+{: #log_type}
 
 Procédez comme suit :
 
@@ -118,9 +117,9 @@ Procédez comme suit :
 	
 	où
 	
-	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02.
-    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ.	
-	* *-t* définit le type de journal.
+	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02. 
+    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ. 
+	* *-t* définit le type de journal. 
     	
 	Par exemple, pour supprimer les journaux du type linux_syslog du 25 mai 2017, entrez la commande suivante :
 	
@@ -131,8 +130,8 @@ Procédez comme suit :
 
 		
 	
-## Suppression de journaux de compte par type de journal pour une période spécifique
-{: #time_range}
+## Suppression de journaux de compte par type de journal pour une période spécifique 
+{: #acc_log_type}
 
 Procédez comme suit :
 
@@ -140,7 +139,7 @@ Procédez comme suit :
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Exécutez la commande *status* afin d'afficher les journaux qui sont disponibles pour Log Collection au niveau du compte.
+2. Exécutez la commande *status* afin d'afficher les journaux qui sont disponibles pour Log Collection au niveau du compte. 
 
     ```
     bx cf logging status  -a
@@ -170,9 +169,9 @@ Procédez comme suit :
 	
 	où
 	
-	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02.
-    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ.	
-	* *-t* définit le type de journal.
+	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02. 
+    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ. 
+	* *-t* définit le type de journal. 
     	
 	Par exemple, afin de supprimer les journaux de type linux_syslog du 25 mai 2017 qui sont stockés dans Log Collection au niveau du compte, exécutez la commande suivante :
 	

@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -21,8 +21,8 @@ lastupdated: "2018-01-10"
 
 | タスク | 説明 |
 |------|-------------|
-| [検索のコピー](k4_reuse_resource.html#k4_reuse_search) | スペース間で検索をコピーします。 |
-| [視覚化のコピー](k4_reuse_resource.html#k4_reuse_visualization) | スペース間で視覚化をコピーします。 |
+| [検索のコピー](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search) | スペース間で検索をコピーします。 |
+| [視覚化のコピー](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_visualization) | スペース間で視覚化をコピーします。 |
 
 検索、視覚化、またはダッシュボードを再使用するには、{{site.data.keyword.Bluemix_notm}} での以下のシナリオを検討してください。 
 
@@ -47,9 +47,9 @@ lastupdated: "2018-01-10"
 
 1. コピーしたい検索を使用できる Kibana を起動します。 
 
-    * {{site.data.keyword.Bluemix_notm}} UI からの Kibana の起動: エクスポートできる JSON 検索ファイルには、*space ID*、および Cloud Foundry (CF) アプリケーションの *application ID* またはコンテナーの *instance ID* フィールドが含まれています。 詳しくは、『[{{site.data.keyword.Bluemix_notm}} ダッシュボードから Kibana ダッシュボードへの移動](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix)』を参照してください。
+    * {{site.data.keyword.Bluemix_notm}} UI からの Kibana の起動: エクスポートできる JSON 検索ファイルには、*space ID*、および Cloud Foundry (CF) アプリケーションの *application ID* またはコンテナーの *instance ID* フィールドが含まれています。 詳しくは、『[{{site.data.keyword.Bluemix_notm}} ダッシュボードから Kibana ダッシュボードへの移動](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)』を参照してください。
     
-    * ブラウザーからの Kibana の起動: エクスポートできる JSON 検索ファイルには、フィールド *space ID* が含まれています。 詳しくは、『[Web ブラウザーから Kibana ダッシュボードへの移動](logging_analyzing_logs_Kibana.html#launch_Kibana_from_browser)』を参照してください。
+    * ブラウザーからの Kibana の起動: エクスポートできる JSON 検索ファイルには、フィールド *space ID* が含まれています。 詳しくは、『[Web ブラウザーから Kibana ダッシュボードへの移動](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)』を参照してください。
 
 2. *「Settings」*ページで、**「Objects」**、**「Searches」**タブを選択します。 次に、検索を選択して以下の情報をコピーします。
 
@@ -85,7 +85,7 @@ lastupdated: "2018-01-10"
     
 5. 検索のインポート先の {{site.data.keyword.Bluemix_notm}} スペースで Kibana を起動し、以下の情報を取得します。
 
-    [Bluemix UI](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix) から:
+    [Bluemix UI](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix) から:
     
     <table>
       <tbody>
@@ -187,11 +187,11 @@ Kibana で検索を使用して、新規スペースのアプリケーション�
 
 1. コピーする視覚化が使用できるスペースで Kibana を起動します。 
 
-    * {{site.data.keyword.Bluemix_notm}} UI からの Kibana の起動: エクスポートできる JSON 検索ファイルには、*space ID*、および Cloud Foundry (CF) アプリケーションの *application ID* またはコンテナーの *instance ID* フィールドが含まれています。 詳しくは、『[{{site.data.keyword.Bluemix_notm}} ダッシュボードから Kibana ダッシュボードへの移動](logging_analyzing_logs_Kibana.html#launch_Kibana_from_bluemix)』を参照してください。
+    * {{site.data.keyword.Bluemix_notm}} UI からの Kibana の起動: エクスポートできる JSON 検索ファイルには、*space ID*、および Cloud Foundry (CF) アプリケーションの *application ID* またはコンテナーの *instance ID* フィールドが含まれています。 詳しくは、『[{{site.data.keyword.Bluemix_notm}} ダッシュボードから Kibana ダッシュボードへの移動](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)』を参照してください。
     
-    * ブラウザーからの Kibana の起動: エクスポートできる JSON 検索ファイルには、フィールド *space ID* が含まれています。 詳しくは、『[Web ブラウザーから Kibana ダッシュボードへの移動](logging_analyzing_logs_Kibana.html#launch_Kibana_from_browser)』を参照してください。
+    * ブラウザーからの Kibana の起動: エクスポートできる JSON 検索ファイルには、フィールド *space ID* が含まれています。 詳しくは、『[Web ブラウザーから Kibana ダッシュボードへの移動](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)』を参照してください。
     
-2. スペース間で視覚化に関連付けられた検索をコピーします。 詳しくは、『[Bluemix スペース間での検索のコピー (Copying a search between Bluemix spaces)](k4_reuse_resource.html#k4_reuse_search)』を参照してください。
+2. スペース間で視覚化に関連付けられた検索をコピーします。 詳しくは、『[Bluemix スペース間での検索のコピー (Copying a search between Bluemix spaces)](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search)』を参照してください。
 
     視覚化は、検索を使用して、表示するデータをフィルター操作します。 視覚化は、検索に対して行うすべての更新が自動的に更新されるように検索にリンクさせることも、分析に使用可能なデータのみが視覚化を作成したときに表示されるデータとなるように、検索にリンクさせないことも可能です。
 

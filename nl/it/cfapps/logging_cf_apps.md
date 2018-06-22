@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -14,15 +14,15 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# Registrazione per le applicazioni Cloud Foundry in Bluemix
-{: #logging_bluemix_cf_apps}
+# Applicazioni Cloud Foundry
+{: #logging_cf_apps}
 
-In {{site.data.keyword.Bluemix}}, puoi visualizzare, filtrare e analizzare i log Cloud Foundry (CF) attraverso il dashboard {{site.data.keyword.Bluemix_notm}}, Kibana e l'interfaccia riga di comando. Inoltre, puoi trasmettere i record dei log a uno strumento di gestione log esterno. 
+In {{site.data.keyword.Bluemix}}, puoi visualizzare, filtrare e analizzare i log CF (Cloud Foundry) tramite il dashboard {{site.data.keyword.Bluemix_notm}}, Kibana e l'interfaccia riga di comando (CLI). Inoltre, puoi trasmettere i record dei log a uno strumento di gestione log esterno. 
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} registra i dati di log generati dalla piattaforma Cloud Foundry e dalle applicazioni Cloud Foundry. Nei log, puoi visualizzare gli errori, le avvertenze e i messaggi informativi che vengono generati per la tua applicazione. 
 
-Quando esegui le tue applicazioni in un PaaS (platform-as-a-service) cloud come Cloud Foundry su {{site.data.keyword.Bluemix_notm}}, non puoi stabilire un tunnel SSH o FTP nell'infrastruttura in cui sono in esecuzione le tue applicazioni per accedere ai log. La piattaforma è controllata dal provider del cloud. Le applicazioni Cloud Foundry in esecuzione su {{site.data.keyword.Bluemix_notm}} utilizzano il componente Loggerator per inoltrare i record di log dall'interno dell'infrastruttura Cloud Foundry. Loggregator raccoglie automaticamente i dati STDOUT e STDERR. Puoi visualizzare e analizzare questi log attraverso il dashboard {{site.data.keyword.Bluemix_notm}}, Kibana e l'interfaccia riga di comando.
+Quando esegui le tue applicazioni in un PaaS (platform-as-a-service) cloud come Cloud Foundry su {{site.data.keyword.Bluemix_notm}}, non puoi eseguire SSH o FTP nell'infrastruttura in cui sono in esecuzione le tue applicazioni per accedere ai log. La piattaforma è controllata dal provider del cloud. Le applicazioni Cloud Foundry in esecuzione su {{site.data.keyword.Bluemix_notm}} utilizzano il componente Loggerator per inoltrare i record di log dall'interno dell'infrastruttura Cloud Foundry. Loggregator raccoglie automaticamente i dati STDOUT e STDERR. Puoi visualizzare e analizzare questi log attraverso il dashboard {{site.data.keyword.Bluemix_notm}}, Kibana e l'interfaccia riga di comando.
 
 La seguente figura mostra una visualizzazione di alto livello della registrazione per {{site.data.keyword.Bluemix_notm}}:
 
@@ -35,24 +35,25 @@ La registrazione delle applicazioni Cloud Foundry viene abilitata automaticament
 ## Inserimento log
 {: #log_ingestion}
 
-Il servizio {{site.data.keyword.loganalysisshort}} offre diversi piani. Ogni piano definisce se è possibile o meno accedere alla raccolta dei log. Tutti i piani, con l'eccezione del piano *Lite*, includono la capacità di inviare log alla raccolta dei log. Per ulteriori informazioni sui piani, vedi [Piani di servizio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
-
 Puoi inviare log in {{site.data.keyword.loganalysisshort}} utilizzando il logstash forwarder a più tenant. Per maggiori informazioni, vedi [Invia dati di log utilizzando un logstash forwarder a più tenant (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
 
+Il servizio {{site.data.keyword.loganalysisshort}} offre diversi piani. Tutti i piani, con l'eccezione del piano *Lite*, includono la capacità di inviare log alla raccolta di log. Per ulteriori informazioni sui piani, vedi [Piani di servizio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 ## Raccolta di log
 {: #log_collection}
 
-Per impostazione predefinita, {{site.data.keyword.Bluemix_notm}} archivia i dati dei log nella ricerca log per 3 giorni:   
+Per impostazione predefinita, il servizio {{site.data.keyword.loganalysisshort}} archivia i dati dei log in Ricerca dei log per un massimo di 3 giorni:   
 
 * Viene archiviato un massimo di 500MB per spazio di dati al giorno. Tutti i log che superano i 500 MB vengono scartati. Le assegnazioni dei limiti vengono
 reimpostate ogni giorno alle ore 12:30 UTC.
 * Sono ricercabili fino a 1,5 GB di dati per una massimo di 3 giorni. Viene eseguito il rollover (la prima voce inserita è la prima a essere eliminata) dei dati di log quando vengono raggiunti i 1,5 GB di dati o vengono superati i 3 giorni.
 
-Il servizio {{site.data.keyword.loganalysisshort}} fornisce ulteriori piani che ti consentono di archiviare i log nella raccolta dei log per quanto tempo desideri. Per ulteriori informazioni sul prezzo di ogni piano, vedi [Piani di servizio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+Il servizio {{site.data.keyword.loganalysisshort}} fornisce ulteriori piani che ti consentono di archiviare i log nella raccolta di log per quanto tempo desideri. 
 
-Puoi configurare una politica di conservazione log che puoi utilizzare per definire il numero di giorni in cui desideri conservare i log nella raccolta dei log. Per maggiori informazioni, vedi [Politica di conservazione log](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* Puoi configurare una politica di conservazione log per definire il numero di giorni in cui desideri conservare i log nella raccolta di log. Per maggiori informazioni, vedi [Politica di conservazione log](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
+* Puoi eliminare i log manualmente utilizzando la riga di comando o la API.
 
+Per ulteriori informazioni sul prezzo di ogni piano, vedi [Piani di servizio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 ## Ricerca log
 {: #log_search}
@@ -67,19 +68,19 @@ Il servizio {{site.data.keyword.loganalysisshort}} fornisce più piani. Ogni pia
 
 Puoi scegliere uno dei seguenti metodi per analizzare i log della tua applicazione Cloud Foundry:
 
-* Analizza il log in {{site.data.keyword.Bluemix_notm}} per visualizzare l'ultima attività dell'applicazione.
+* Analizza il log nella IU {{site.data.keyword.Bluemix_notm}} per visualizzare l'attività più recente dell'applicazione. 
     
-    In {{site.data.keyword.Bluemix_notm}}, puoi visualizzare, filtrare e analizzare i log attraverso la scheda **Log** disponibile per ogni applicazione Cloud Foundry. Per maggiori informazioni, vedi [Analisi dei log dell'applicazione CF dal dashboard Bluemix](/docs/services/CloudLogAnalysis/logging_view_dashboard.html#analyzing_logs_bmx_ui).
+    In {{site.data.keyword.Bluemix_notm}}, puoi visualizzare, filtrare e analizzare i log attraverso la scheda **Log** disponibile per ogni applicazione Cloud Foundry. Per ulteriori informazioni, vedi [Analisi dei log dell'applicazione CF tramite il dashboard dell'applicazione CF](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_ui).
     
 * Analizza i log in Kibana per eseguire attività di analisi avanzate.
     
-    In {{site.data.keyword.Bluemix_notm}}, puoi utilizzare Kibana, una piattaforma di analisi e visualizzazione open source, per monitorare, ricercare, analizzare e visualizzare i tuoi dati in una varietà di grafici, ad esempio, diagrammi e tabelle. Per maggiori informazioni, vedi [Analisi dei log in Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+    In {{site.data.keyword.Bluemix_notm}}, puoi utilizzare Kibana, una piattaforma di analisi e visualizzazione open source, per monitorare, ricercare, analizzare e visualizzare i tuoi dati in una varietà di grafici, ad esempio, diagrammi e tabelle. Per ulteriori informazioni, vedi [Analisi dei log dell'applicazione CF tramite la IU {{site.data.keyword.loganalysisshort}}](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_la).
 	
 	**Suggerimento:** Per avviare Kibana, vedi [Passaggio a Kibana dal dashboard di un'applicazione CF](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
 
 * Analizza i log attraverso la CLI per utilizzare i comandi per la gestione dei log a livello di programmazione.
     
-    In {{site.data.keyword.Bluemix_notm}}, puoi visualizzare, filtrare e analizzare i log attraverso l'interfaccia della riga di comando utilizzando il comando **cf logs**. Per maggiori informazioni, vedi [Analisi dei log dell'applicazione Cloud Foundry dall'interfaccia riga di comando](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_logs_cli).
+    In {{site.data.keyword.Bluemix_notm}}, puoi visualizzare, filtrare e analizzare i log tramite l'interfaccia riga di comando utilizzando il comando **cf logs**. Per maggiori informazioni, vedi [Analisi dei log dell'applicazione Cloud Foundry dall'interfaccia riga di comando](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#analyzing_logs_cli).
 
 
 ## Origini log per le applicazioni CF distribuite a Diego
@@ -122,3 +123,25 @@ La seguente figura illustra i diversi componenti (origini log) in un'architettur
 ![Origini log in un'architettura DEA.](images/cf_apps_dea_F1.png "Componenti (origini log) in un'architettura Cloud Foundry basata su DEA (Droplet Execution Agent).")
 
 
+
+## Formato di log per i log dell'applicazione CF visualizzati tramite la IU {{site.data.keyword.Bluemix_notm}}
+{: #log_format_cf}
+
+I log per le applicazioni CF {{site.data.keyword.Bluemix_notm}} sono visualizzati in un formato fisso, simile al seguente modello:
+
+<code><var class="keyword varname">Componente</var>/<var class="keyword varname">IDistanza</var>/<var class="keyword varname">messaggio</var>/<var class="keyword varname">data/ora</var></code>
+
+Ogni voce di log contiene i seguenti campi:
+
+| Campo | Descrizione |
+|-------|-------------|
+| Data/ora | L'ora dell'istruzione di log. La data e ora è definita fino al millisecondo. |
+| Componente | Il componente che produce il log. Per l'elenco dei diversi componenti, vedi [Origini log per le applicazioni CF](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#logging_bluemix_cf_apps_log_sources). <br> Ogni tipo di componente è seguito da una barra e da un numero che indica l'istanza dell'applicazione. 0 è il numero assegnato alla prima istanza, 1 è il numero assegnato alla seconda e così via. |
+| Messaggio | Il messaggio che viene emesso dal componente. Il messaggio varia a seconda dal contesto. |
+{: caption="Tabella 1. Campi per le voci di log dell'applicazione CF" caption-side="top"}
+
+
+## Esercitazione: Analizza i log in Kibana per un'applicazione Cloud Foundry
+{: #tutorial}  
+
+Per ulteriori informazioni sull'utilizzo di Kibana per analizzare i log per un'applicazione Cloud Foundry, consulta [Analizza i log in Kibana per un'applicazione Cloud Foundry](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).

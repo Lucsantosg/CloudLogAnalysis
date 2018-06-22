@@ -18,7 +18,8 @@ lastupdated: "2018-01-31"
 # Seguridad
 {: #security_ov}
 
-Para controlar las acciones de {{site.data.keyword.loganalysisshort}} que puede realizar un usuario, puede asignar uno o varios roles a un usuario. {:shortdesc}
+Para controlar las acciones de {{site.data.keyword.loganalysisshort}} que puede realizar un usuario, puede asignar uno o varios roles a un usuario. 
+{:shortdesc}
 
 Para trabajar con la API del servicio {{site.data.keyword.loganalysisshort}}, debe utilizar una señal de UAA o una señal de IAM. Para enviar registros al servicio {{site.data.keyword.loganalysisshort}}, necesita una señal de registro.
 
@@ -28,7 +29,7 @@ Para trabajar con la API del servicio {{site.data.keyword.loganalysisshort}}, de
 
 Para trabajar con el servicio {{site.data.keyword.loganalysisshort}} mediante la CLI o la API, necesita una señal de autenticación.
 
-El servicio {{site.data.keyword.loganalysisshort}} da soporte a los siguientes modelos de autenticación: 
+El servicio {{site.data.keyword.loganalysisshort}} da soporte a los siguientes modelos de autenticación:
 
 * [Autenticación de UAA](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa)
 
@@ -36,17 +37,17 @@ El servicio {{site.data.keyword.loganalysisshort}} da soporte a los siguientes m
 	
 * [Autenticación de IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)
 
-    El modelo de autenticación de IAM ofrece funciones de gestión de IU, CLI o API.  
+    El modelo de autenticación de IAM ofrece funciones de gestión de IU, CLI o API. 
 
 **Nota:** Una señal de UAA y una señal de IAM caducan transcurrido un periodo de tiempo. 
 
 ## Roles
 {: #roles}
 
-Hay dos tipos de roles en {{site.data.keyword.Bluemix_notm}} que controlan el acciones que pueden llevar a cabo los usuarios cuando trabajan con el servicio {{site.data.keyword.loganalysisshort}}:
+Hay dos tipos de roles en {{site.data.keyword.Bluemix_notm}} que controlan las acciones que pueden llevar a cabo los usuarios cuando trabajan con el servicio {{site.data.keyword.loganalysisshort}}:
 
-* Roles de Cloud Foundry (CF): El usuario controla las acciones de {{site.data.keyword.loganalysisshort}} que puede realizar un usuario asignando uno o varios roles de CF. Con estos roles, controla los permisos del usuario para ver y gestionar registros en un espacio o una organización. 
-* Roles de IAM: El usuario controla las acciones de {{site.data.keyword.loganalysisshort}} que puede realizar un usuario asignando uno o varios roles de IAM. Con estos roles, controla los permisos del usuario para ver y gestionar registros de cuentas.  
+* Roles de Cloud Foundry (CF): El usuario controla las acciones de {{site.data.keyword.loganalysisshort}} que puede realizar un usuario asignando uno o varios roles de CF. Con estos roles, controla los permisos del usuario para ver y gestionar registros en un espacio o una organización.
+* Roles de IAM: El usuario controla las acciones de {{site.data.keyword.loganalysisshort}} que puede realizar un usuario asignando uno o varios roles de IAM. Con estos roles, controla los permisos del usuario para ver y gestionar registros de cuentas. 
 
 
 En la tabla siguiente se muestra el tipo de roles y el dominio de {{site.data.keyword.Bluemix_notm}} que controlan:
@@ -88,7 +89,7 @@ En la tabla siguiente se muestran los privilegios de cada uno de los roles de CF
   </tr>
   <tr>
     <td>Gestor</td>
-	<td>Organización<br>Space</td>
+	<td>Organización <br>Space</td>
 	<td>Todas las API RESTful</td>
   </tr>
   <tr>
@@ -98,7 +99,7 @@ En la tabla siguiente se muestran los privilegios de cada uno de los roles de CF
   </tr>
   <tr>
     <td>Auditor</td>
-	<td>Organización<br>Space</td>
+	<td>Organización <br>Space</td>
 	<td>Solo las API RESTful que realizan operaciones de solo lectura, como por ejemplo consultar registros.</td>
   </tr>
 </table>
@@ -117,23 +118,23 @@ En la tabla siguiente se muestran los privilegios de cada uno de los roles de IA
   </tr>
   <tr>
     <td>Administrador</td>
-	  <td>Ver información sobre los registros en un espacio o a nivel de cuenta. <br>Descargar los registros en un archivo local o dirigir los registros a otro programa, como Elastic Stack. <br>Muestra el periodo de retención para los registros que están disponibles en un espacio o una cuenta.<br>Actualiza el periodo de retención para los registros que están disponibles en un espacio o una cuenta.<br>Muestra una lista de las sesiones activas y sus ID. <br>Crear una sesión que puede utilizar para descargar los registros. <br>Suprimir una sesión, especificada por ID de sesión.<br>Muestra el estado de una sesión individual. <br>Suprimir registros. </td>
+	  <td>Ver información sobre los registros en un espacio o a nivel de cuenta. <br>Descargar los registros en un archivo local o dirigir los registros a otro programa, como Elastic Stack. <br>Muestra el periodo de retención para los registros que están disponibles en un espacio o una cuenta. <br>Actualiza el periodo de retención para los registros que están disponibles en un espacio o una cuenta. <br>Muestra una lista de las sesiones activas y sus ID. <br>Crear una sesión que puede utilizar para descargar los registros. <br>Suprimir una sesión, especificada por ID de sesión. <br>Muestra el estado de una sesión individual. <br>Suprimir registros. </td>
   </tr>
   <tr>
     <td>Editor</td>
-	  <td>Ver información sobre los registros en un espacio o a nivel de cuenta. <br>Descargar los registros en un archivo local o dirigir los registros a otro programa, como Elastic Stack. <br>Muestra el periodo de retención para los registros que están disponibles en un espacio o una cuenta.<br>Actualiza el periodo de retención para los registros que están disponibles en un espacio o una cuenta.<br>Muestra una lista de las sesiones activas y sus ID. <br>Crear una sesión que puede utilizar para descargar los registros. <br>Suprimir una sesión, especificada por ID de sesión.<br>Muestra el estado de una sesión individual. <br>Suprimir registros. </td>
+	  <td>Ver información sobre los registros en un espacio o a nivel de cuenta. <br>Descargar los registros en un archivo local o dirigir los registros a otro programa, como Elastic Stack. <br>Muestra el periodo de retención para los registros que están disponibles en un espacio o una cuenta. <br>Actualiza el periodo de retención para los registros que están disponibles en un espacio o una cuenta. <br>Muestra una lista de las sesiones activas y sus ID. <br>Crear una sesión que puede utilizar para descargar los registros. <br>Suprimir una sesión, especificada por ID de sesión. <br>Muestra el estado de una sesión individual. <br>Suprimir registros.  </td>
   </tr>
   <tr>
     <td>Operador</td>
-	  <td>Ver información sobre los registros en un espacio o a nivel de cuenta. <br>Muestra el periodo de retención para los registros que están disponibles en un espacio o una cuenta.<br>Muestra una lista de las sesiones activas y sus ID. <br>Muestra el estado de una sesión individual. <br>Descargar los registros en un archivo local o dirigir los registros a otro programa, como Elastic Stack. <br>Crear una sesión que puede utilizar para descargar los registros. <br>Suprimir una sesión, especificada por ID de sesión.</td>
+	  <td>Ver información sobre los registros en un espacio o a nivel de cuenta. <br>Muestra el periodo de retención para los registros que están disponibles en un espacio o una cuenta. <br>Muestra una lista de las sesiones activas y sus ID. <br>Muestra el estado de una sesión individual. <br>Descargar los registros en un archivo local o dirigir los registros a otro programa, como Elastic Stack.  <br>Crear una sesión que puede utilizar para descargar los registros. <br>Suprimir una sesión, especificada por ID de sesión. </td>
   </tr>
   <tr>
     <td>Visor</td>
-	  <td>Ver información sobre los registros en un espacio o a nivel de cuenta. <br>Muestra el periodo de retención para los registros que están disponibles en un espacio o una cuenta.<br>Muestra una lista de las sesiones activas y sus ID. <br>Muestra el estado de una sesión individual. </td>
+	  <td>Ver información sobre los registros en un espacio o a nivel de cuenta. <br>Muestra el periodo de retención para los registros que están disponibles en un espacio o una cuenta. <br>Muestra una lista de las sesiones activas y sus ID. <br>Muestra el estado de una sesión individual. </td>
   </tr>
 </table>
 
-En la tabla siguiente se muestran las relaciones entre la API, una acción de servicio y un rol de IAM que utiliza el servicio {{site.data.keyword.loganalysisshort}} .
+En la tabla siguiente se muestran las relaciones entre la API, una acción de servicio y un rol de IAM que utiliza el servicio {{site.data.keyword.loganalysisshort}}.
 
 <table>
   <caption>Tabla 4. Relación entre la API, una acción de servicio y un rol de IAM. </caption>
@@ -147,19 +148,19 @@ En la tabla siguiente se muestran las relaciones entre la API, una acción de se
     <td>DELETE /v1/logging/logs</td>
     <td>ibmcloud-log-analysis.domain.log_delete</td>
 	<td>Administrador, Editor</td>
-	<td>Suprimir registros. </td>
+	<td>Suprimir registros.</td>
   </tr>
   <tr>
     <td>GET /v1/logging/logs</td>
     <td>ibmcloud-log-analysis.domain.log_read</td>
 	<td>Administrador, Editor, Visor</td>
-	<td>Ver información sobre los registros en un espacio de {{site.data.keyword.Bluemix_notm}} o a nivel de cuenta. </td>
+	<td>Ver información sobre los registros en un espacio de {{site.data.keyword.Bluemix_notm}} o a nivel de cuenta.</td>
   </tr>
   <tr>
     <td>GET /v1/logging/logs/download</td>
     <td>ibmcloud-log-analysis.domain.log_download</td>
 	<td>Administrador, Editor</td>
-	<td>Descargar los registros en un archivo local o dirigir los registros a otro programa, como Elastic Stack. </td>
+	<td>Descargar los registros en un archivo local o dirigir los registros a otro programa, como Elastic Stack.</td>
   </tr>
   <tr>
     <td>GET /v1/logging/logs/retention</td>
@@ -183,7 +184,7 @@ En la tabla siguiente se muestran las relaciones entre la API, una acción de se
     <td>POST /v1/logging/sessions</td>
     <td>ibmcloud-log-analysis.domain.session_write</td>
     <td>Administrador, Editor</td>
-    <td>Crear una sesión que puede utilizar para descargar los registros. </td>
+    <td>Crear una sesión que puede utilizar para descargar los registros.</td>
   </tr>
   <tr>
     <td>DELETE /v1/logging/sessions/{id}</td>
@@ -202,21 +203,19 @@ En la tabla siguiente se muestran las relaciones entre la API, una acción de se
 ## Obtención de una señal de autenticación para gestionar registros mediante la API
 {: #get_token}
 
-Para gestionar registros mediante la API de {{site.data.keyword.loganalysisshort}}, debe utilizar una señal de autenticación.  
+Para gestionar registros mediante la API de {{site.data.keyword.loganalysisshort}}, debe utilizar una señal de autenticación. 
 
 **Cómo trabajar con los registros que están disponibles en el dominio del espacio**
 
-* Utilice la CLI de {{site.data.keyword.loganalysisshort}} para obtener la señal de UAA.  
-* La señal tiene un tiempo de caducidad.
- 
+* Utilice la CLI de {{site.data.keyword.loganalysisshort}} para obtener la señal de UAA. 
+* La señal tiene un tiempo de caducidad. 
 
 Para obtener más información, consulte [Obtención de la señal de UAA](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa).
 
 **Cómo trabajar con los registros que están disponibles en el dominio de la cuenta**
 
-* Utilice la CLI de {{{site.data.keyword.Bluemix_notm}} para obtener la señal de IAM.  
-* La señal tiene un tiempo de caducidad.
- 
+* Utilice la CLI de {{{site.data.keyword.Bluemix_notm}} para obtener la señal de IAM. 
+* La señal tiene un tiempo de caducidad. 
 
 Para obtener más información, consulte [Obtención de la señal de IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam).
 
@@ -229,11 +228,8 @@ Para enviar registros al servicio {{site.data.keyword.loganalysisshort}}, necesi
 Para enviar registros a un dominio del espacio, elija uno de los siguientes métodos:
 
 * [Obtención de la señal de registro para enviar registros a un espacio mediante el mandato de {{site.data.keyword.Bluemix_notm}} bx service ](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
-* [Obtención de la señal de registro para enviar registros a un espacio mediante la CLI de análisis de registros (plugin de CF)](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cf_plugin)
+* [Obtención de la señal de registro para enviar registros a un espacio mediante la CLI de análisis de registro](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [Obtención de la señal de registro para enviar registros a un espacio mediante la API de análisis de registro](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
-
-Para enviar registros a la cuenta del dominio, consulte [Obtención de la señal de registro para enviar registros al  dominio de la cuenta mediante la API de análisis de registros](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_acc_token_api).
-
 
 
 ## Cómo otorgar permisos a un usuario para que trabaje con registros

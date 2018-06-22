@@ -22,29 +22,29 @@ lastupdated: "2018-01-10"
 
 在 {{site.data.keyword.Bluemix}} 中有不同類型的儀表板，您可以定義與自訂以視覺化及分析資料。例如，下表列出一些常見的儀表板類型：
 
-| 儀表板類型 | 說明 |
+|儀表板類型 |說明 |
 |-------------------|-------------|
-| 單一 CF 應用程式儀表板| 此儀表板會顯示單一 Cloud Foundry 應用程式的資訊。|
-| 單一容器儀表板 | 此儀表板會顯示單一容器的資訊。|
-| 容器群組儀表板 | 此儀表板會顯示特定容器群組的資訊。|
-| 多重 CF 應用程式儀表板| 此儀表板會顯示部署在相同空間中的所有 Cloud Foundry 應用程式的資訊。| 
-| 多重容器儀表板| 此儀表板會顯示部署在相同空間中的所有容器的資訊。|
-| 空間儀表板 | 此儀表板會顯示空間中可用的記載資料。| 
+|單一 CF 應用程式儀表板|此儀表板會顯示單一 Cloud Foundry 應用程式的資訊。|
+|單一容器儀表板 |此儀表板會顯示單一容器的資訊。|
+|容器群組儀表板 |此儀表板會顯示特定容器群組的資訊。|
+|多重 CF 應用程式儀表板|此儀表板會顯示部署在相同空間中的所有 Cloud Foundry 應用程式的資訊。| 
+|多重容器儀表板|此儀表板會顯示部署在相同空間中的所有容器的資訊。|
+|空間儀表板 |此儀表板會顯示空間中可用的記載資料。| 
 {: caption="表 1. 儀表板類型範例" caption-side="top"}
 
 若要將儀表板中的資料視覺化，您可以配置畫面。Kibana 包括可用來分析資訊的各種視覺效果，例如表格、趨勢及直方圖。視覺效果會以畫面形式新增至儀表板。您可以新增、移除及重新排列儀表板中的畫面。每一個畫面的目標都不同。部分畫面會組織成數列，以提供一個以上查詢的結果。其他畫面則會顯示文件或自訂資訊。每一個畫面都以搜尋為基礎。搜尋會定義畫面顯示的部分資料。例如，您可以配置長條圖、圓餅圖或表格，以將資料視覺化，並進行分析。  
 
 下表列出您可以在「儀表板」頁面中執行的各種作業：
 
-| 作業 | 相關資訊 |
+|作業 |相關資訊 |
 |------|------------------|
-| [新增視覺效果](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#add_visualization) | 您可以將現有視覺效果或搜尋新增至儀表板。|
-| [建立新的儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#new) | 您可以建立多個儀表板。每一個儀表板都可以設計為包括不同的搜尋、視覺效果，以及不同部分的日誌資料。|
-| [刪除儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) | 刪除不需要的儀表板。|
-| [匯出儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) | 您可以將儀表板匯出成 JSON 檔案。|
-| [匯入儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) | 您可以將儀表板匯入成 JSON 檔案。|
-| [載入儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) | 您可以上傳儀表板，以更新其資料、予以修改或分析資料。|
-| [儲存儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | 您可以儲存儀表板，以供之後重複使用。|
+|[新增視覺效果](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#add_visualization) |您可以將現有視覺效果或搜尋新增至儀表板。|
+|[建立新的儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#new) |您可以建立多個儀表板。每一個儀表板都可以設計為包括不同的搜尋、視覺效果，以及不同部分的日誌資料。|
+|[刪除儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) |刪除不需要的儀表板。|
+|[匯出儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) |您可以將儀表板匯出成 JSON 檔案。|
+|[匯入儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) |您可以將儀表板匯入成 JSON 檔案。|
+|[載入儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) |您可以上傳儀表板，以更新其資料、予以修改或分析資料。|
+|[儲存儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) |您可以儲存儀表板，以供之後重複使用。|
 {: caption="表 2. 使用儀表板的作業" caption-side="top"}
 
 如需 Kibana 的相關資訊，請參閱 [Kibana User Guide ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}。

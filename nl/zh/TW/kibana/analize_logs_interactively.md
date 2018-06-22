@@ -25,11 +25,11 @@ lastupdated: "2018-01-10"
 
 下表顯示當您從 {{site.data.keyword.Bluemix_notm}} 啟動 Kibana 時，各項資源的預設查詢：
 
-| 資源 | 預設 Kibana 搜尋查詢|
+|資源 |預設 Kibana 搜尋查詢|
 |---------------|---------------|
-| CF 應用程式   | `application_id:<app_GUID>`    |
-| 單一 Docker 容器 | `instance:<instance_GUID>`    |
-| 含 2 個實例的容器群組 | `instance:<instance_GUID> OR instance:<instance_GUID>` |
+|CF 應用程式   |`application_id:<app_GUID>`    |
+|單一 Docker 容器 |`instance:<instance_GUID>`    |
+|含 2 個實例的容器群組 |`instance:<instance_GUID> OR instance:<instance_GUID>` |
 {: caption="表 1. 預設查詢搜尋" caption-side="top"}
 
 **附註：** 
@@ -42,14 +42,14 @@ lastupdated: "2018-01-10"
 
 您可以執行下列任何作業來自訂「探索」頁面中的表格：
 
-| 作業 | 說明 | 
+|作業 |說明 | 
 |------|-------------|
-| [新增欄位直欄](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_add_fields_to_table) | 新增欄位，以查看分析所需的特定資料，而非完整訊息。|
-| [自動重新整理資料](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_refresh_interval) | 以最新的項目來重新整理表格中顯示的資料。依預設，重新整理功能為**關閉**。|
-| [依已編製索引欄位的值來排序項目](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_sort_by_table) | 將項目重新排序，以方便分析。|
-| [重新排列欄位直欄](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_rearrange_fields_in_table) | 將表格中的欄位位置移到您想要的位置。|
-| [移除欄位直欄](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_remove_fields_from_table) | 若視圖中有不需要分析的欄位，可以將它移除。|
-| [檢視項目](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_entry_in_table) | 將表格中的項目展開，以查看依欄位剖析或剖析成 JSON 的項目詳細資料。|
+|[新增欄位直欄](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_add_fields_to_table) |新增欄位，以查看分析所需的特定資料，而非完整訊息。|
+|[自動重新整理資料](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_refresh_interval) |以最新的項目來重新整理表格中顯示的資料。依預設，重新整理功能為**關閉**。|
+|[依已編製索引欄位的值來排序項目](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_sort_by_table) |將項目重新排序，以方便分析。|
+|[重新排列欄位直欄](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_rearrange_fields_in_table) |將表格中的欄位位置移到您想要的位置。|
+|[移除欄位直欄](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_remove_fields_from_table) |若視圖中有不需要分析的欄位，可以將它移除。|
+|[檢視項目](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_entry_in_table) |將表格中的項目展開，以查看依欄位剖析或剖析成 JSON 的項目詳細資料。|
 {: caption="表 2. 自訂表格的作業" caption-side="top"}
 
 <br>
@@ -74,14 +74,14 @@ lastupdated: "2018-01-10"
 
 您可以使用在「探索」頁面中定義的搜尋來執行下列任何作業：
 
-| 作業 | 說明 |
+|作業 |說明 |
 |------|-------------|
-| [刪除搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | 刪除不再需要的搜尋。|
-| [匯出搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | 匯出搜尋以進行共用。|
-| [匯入搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | 匯入搜尋。|
-| [重新載入搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | 上傳現有的搜尋，以重新分析資料集。|
-| [重新整理搜尋的資料](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | 針對透過搜尋而顯示的資料，配置自動重新整理。|
-| [儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | 儲存搜尋，以供之後重複使用。|
+|[刪除搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) |刪除不再需要的搜尋。|
+|[匯出搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) |匯出搜尋以進行共用。|
+|[匯入搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) |匯入搜尋。|
+|[重新載入搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  |上傳現有的搜尋，以重新分析資料集。|
+|[重新整理搜尋的資料](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) |針對透過搜尋而顯示的資料，配置自動重新整理。|
+|[儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) |儲存搜尋，以供之後重複使用。|
 {: caption="表 3. 使用搜尋的作業" caption-side="top"}
 
 

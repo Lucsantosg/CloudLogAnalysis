@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -26,7 +26,7 @@ Use o comando [bx cf logging delete](/docs/services/CloudLogAnalysis/reference/l
 
 
 ## Excluindo logs para um período de tempo específico
-{: #time_range}
+{: #fix_period}
 
 Conclua as etapas a seguir:
 
@@ -57,8 +57,8 @@ Conclua as etapas a seguir:
 	
 	Em que
 	
-	* *-s* configura a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
-    * *-e* configura a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
+	* *-s* define a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
+    * *-e* define a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
     	
 	Por exemplo, para excluir os logs para 25 de maio de 2017, execute o comando a seguir:
 	
@@ -68,8 +68,8 @@ Conclua as etapas a seguir:
 	{: screen}
 
 	
-## Excluindo logs por tipo de log para um período de tempo específico
-{: #time_range}
+## Excluindo logs por tipo de log para um período de tempo específico 
+{: #log_type}
 
 Conclua as etapas a seguir:
 
@@ -87,14 +87,7 @@ Conclua as etapas a seguir:
     Por exemplo,
     
     ```
-    $ bx cf logging status
-    +------------+--------+-------+--------------------+------------+
-    |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
-    +------------+--------+-------+--------------------+------------+
-    | 2017-05-24 |    16  | 3020  |        log         |   Nenhuma     |
-    +------------+--------+-------+--------------------+------------+
-    | 2017-05-25 |   1224 | 76115 | linux_syslog,log   |    Todos     |
-    +------------+--------+-------+--------------------+------------+
+    $ bx cf logging status +------------+--------+-------+--------------------+------------+ | DATE | COUNT | SIZE | TYPES | SEARCHABLE | +------------+--------+-------+--------------------+------------+ | 2017-05-24 | 16 | 3020 | log | None | +------------+--------+-------+--------------------+------------+ | 2017-05-25 | 1224 | 76115 | linux_syslog,log | All | +------------+--------+-------+--------------------+------------+
     ```
     {: screen}
 	
@@ -107,9 +100,9 @@ Conclua as etapas a seguir:
 	
 	Em que
 	
-	* *-s* configura a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
-    * *-e* configura a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
- * *-t* configura o tipo de log.
+	* *-s* define a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
+    * *-e* define a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
+	* *-t* define o tipo de log.
     	
 	Por exemplo, para excluir os logs do tipo linux_syslog para 25 de maio de 2017, execute o comando a seguir:
 	
@@ -120,8 +113,8 @@ Conclua as etapas a seguir:
 
 		
 	
-## Excluindo logs de contas por tipo de log para um período de tempo específico
-{: #time_range}
+## Excluindo logs da conta por tipo de log para um período de tempo específico 
+{: #acc_log_type}
 
 Conclua as etapas a seguir:
 
@@ -129,7 +122,7 @@ Conclua as etapas a seguir:
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Execute o comando *status* para ver os logs que estão disponíveis em Coleção de logs no nível de conta.
+2. Execute o comando *status* para ver os logs disponíveis em Coleção de logs no nível de conta.
 
     ```
     bx cf logging status  -a
@@ -143,9 +136,9 @@ Conclua as etapas a seguir:
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
-    | 2017-05-24 |    16  | 3020  |        log         |   Nenhuma     |
+    | 2017-05-24 |    16  | 3020  |        log         |   None     |
     +------------+--------+-------+--------------------+------------+
-    | 2017-05-25 |   1224 | 76115 | linux_syslog,log   |    Todos     |
+    | 2017-05-25 |   1224 | 76115 | linux_syslog,log   |    All     |
     +------------+--------+-------+--------------------+------------+
     ```
     {: screen}
@@ -159,9 +152,9 @@ Conclua as etapas a seguir:
 	
 	Em que
 	
-	* *-s* configura a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
-    * *-e* configura a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
- * *-t* configura o tipo de log.
+	* *-s* define a data de início na Hora Universal Coordenada (UTC): AAAA-MM-DD, por exemplo, 2006-01-02.
+    * *-e* define a data de encerramento na Hora Universal Coordenada (UTC): AAAA-MM-DD
+	* *-t* define o tipo de log.
     	
 	Por exemplo, para excluir os logs do tipo linux_syslog para 25 de maio de 2017 que são armazenados em Coleção de logs no nível de conta, execute o comando a seguir:
 	

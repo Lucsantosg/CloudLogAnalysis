@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -39,17 +39,19 @@ lastupdated: "2018-01-10"
 2. 运行以下命令：
 
     ```
-    bx logging log-show
+        bx logging log-show
     ```
     {: codeblock}
     
     例如：
     
     ```
-    $ bx logging log-show -s 2017-11-17 -e 2017-11-17
+        $ bx logging log-show -s 2017-11-17 -e 2017-11-17
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types   
+    
+
+    Date         Size       Count   Searchable          Types   
     2017-11-17   794008   706     All          default   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
     OK
@@ -90,10 +92,12 @@ lastupdated: "2018-01-10"
     例如：
     
     ```
-    $ bx logging log-show -s 2017-05-24 -e 2017-05-25 -t syslog
+        $ bx logging log-show -s 2017-05-24 -e 2017-05-25 -t syslog
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types   
+    
+
+    Date         Size       Count   Searchable          Types   
     2017-11-17   794008   706     All          syslog   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
     OK
@@ -138,10 +142,12 @@ lastupdated: "2018-01-10"
     例如，要针对帐户 *123456789123456789567c9c8de6dece* 显示 2017 年 11 月 17 日在帐户域存储的日志的信息，请运行以下命令：
     
     ```
-    $ bx logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
+        $ bx logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
 	Showing log status of resource: 123456789123456789567c9c8de6dece ...
 
-    Date         Size      Count   Searchable   Types   
+
+
+    Date         Size       Count   Searchable          Types   
 	2017-11-17   794008    200     All          syslog  
     Logs of resource 123456789123456789567c9c8de6dece is showed
     OK
@@ -150,7 +156,7 @@ lastupdated: "2018-01-10"
 
 
 ## 获取有关组织级别的日志的信息
-{: #viewing_logs_account}
+{: #viewing_logs_org}
 
 要获取有关一段时间内可在组织级别使用的日志的信息，请使用 `bx logging log-show` 命令与选项 **-r org** 和 **-i** 来设置组织的标识。您还可以指定 **-t**（用于指定日志类型）、**-s**（用于设置开始日期）和 **-e** 选项（用于设置结束日期）。 
 
@@ -188,7 +194,7 @@ lastupdated: "2018-01-10"
     $ bx logging log-show -r org -i abcd56789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
 	Showing log status of resource: abcd56789123456789567c9c8de6dece ...
 
-    Date         Size      Count   Searchable   Types   
+    Date         Size       Count   Searchable          Types   
 	2017-11-17   794008    200     All          syslog  
     Logs of resource abcd56789123456789567c9c8de6dece is showed
     OK

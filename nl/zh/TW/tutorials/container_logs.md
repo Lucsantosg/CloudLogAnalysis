@@ -3,16 +3,19 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-12"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # 針對 Kubernetes 叢集中所部署的應用程式，在 Kibana 中分析日誌
@@ -40,7 +43,7 @@ lastupdated: "2018-01-12"
 
     {{site.data.keyword.Bluemix_notm}} 的使用者 ID 必須已指派下列原則：
     
-    * 含 *operator* 或 *administrator* 許可權之 {{site.data.keyword.containershort}} 的 IAM 原則。
+    * {{site.data.keyword.containershort}} 的 IAM 原則與 *editor*、*operator* 或 *administrator* 許可權。
     * 使用 *developer* 許可權佈建 {{site.data.keyword.loganalysisshort}} 服務之空間的 CF 角色。
     
     如需相關資訊，請參閱[透過 IBM Cloud 使用者介面將 IAM 原則指派給使用者](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)及[使用 IBM Cloud 使用者介面將檢視空間日誌許可權授與使用者](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)。
@@ -75,8 +78,7 @@ lastupdated: "2018-01-12"
 
 1. 建立標準 Kubernetes 叢集。
 
-   * [透過使用者介面建立 Kubernetes 標準叢集](/docs/containers/cs_cluster.html#cs_cluster_ui)。
-   * [使用 CLI 建立 Kubernetes 標準叢集](/docs/containers/cs_cluster.html#cs_cluster_cli)。
+   如需相關資訊，請參閱[建立叢集](/docs/containers/cs_tutorials.html#cs_cluster_tutorial)。
 
 2. 在終端機中設定叢集環境定義。設定環境定義之後，您可以管理 Kubernetes 叢集，並在 Kubernetes 叢集中部署應用程式。
 
@@ -108,7 +110,7 @@ lastupdated: "2018-01-12"
 
 
 ## 步驟 2：配置叢集以將日誌自動轉遞至 {{site.data.keyword.loganalysisshort}} 服務
-{: #step3}
+{: #step2}
 
 部署應用程式時，{{site.data.keyword.containershort}} 會自動收集日誌。不過，不會將日誌自動轉遞至 {{site.data.keyword.loganalysisshort}} 服務。您必須在叢集中建立 1 個以上的記載配置，以定義：
 
@@ -144,7 +146,7 @@ ae249c04-a3a9-4c29-a890-22d8da7bd1b2   container    *           ingest.logging.n
 
 
 ### 配置叢集以將 stderr 及 stdout 日誌轉遞至 {{site.data.keyword.loganalysisshort}} 服務
-{: #containerlogs}
+{: #containerstd}
 
 
 完成下列步驟，以將 stdout 及 stderr 日誌傳送至空間網域，其中，組織名稱是 *MyOrg*，而空間名稱是美國南部地區的 *dev*：
@@ -164,7 +166,7 @@ ae249c04-a3a9-4c29-a890-22d8da7bd1b2   container    *           ingest.logging.n
 2. 建立叢集記載配置。執行下列指令，以將 *stdout* 及 *stderr* 日誌檔傳送至 {{site.data.keyword.loganalysisshort}} 服務：
 
     ```
-    bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+        bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -206,7 +208,7 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 2. 建立叢集記載配置。執行下列指令，以將 */var/log/syslog* 及 */var/log/auth.log* 日誌檔傳送至 {{site.data.keyword.loganalysisshort}} 服務：
 
     ```
-    bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+        bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -227,8 +229,8 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 
 
 
-## 步驟 4：將查看空間網域中日誌的許可權授與使用者
-{: #step4}
+## 步驟 3：將查看空間網域中日誌的許可權授與使用者
+{: #step3}
 
 若要將檢視空間中日誌的許可權授與使用者，您必須將 Cloud Foundry 角色指派給該使用者，以說明此使用者可在空間中使用 {{site.data.keyword.loganalysisshort}} 服務所執行的動作。 
 
@@ -265,18 +267,20 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 7. 按一下**儲存角色**。
 
 
-## 步驟 5：授與 {{site.data.keyword.containershort_notm}} 金鑰擁有者許可權
-{: #step5}
+## 步驟 4：授與 {{site.data.keyword.containershort_notm}} 金鑰擁有者許可權
+{: #step4}
 
+對於要轉遞至空間的叢集日誌，{{site.data.keyword.containershort_notm}} 金鑰擁有者必須具有下列許可權：
 
-當您將日誌轉遞至空間時，也必須將 Cloud Foundry (CF) 許可權授與組織及空間中的 {{site.data.keyword.containershort}} 金鑰擁有者。金鑰擁有者需要組織的 *orgManager* 角色，以及空間的 *SpaceManager* 及 *Developer*。 
+* {{site.data.keyword.loganalysisshort}} 服務的 IAM 原則與 *Administrator* 許可權。
+* 要轉遞日誌的組織及空間中的 Cloud Foundry (CF) 許可權。容器金鑰擁有者需要組織的 *orgManager* 角色，以及空間的 *SpaceManager* 及 *Developer*。
 
 請完成下列步驟：
 
 1. 識別帳戶中為 {{site.data.keyword.containershort}} 金鑰擁有者的使用者。從終端機中，執行下列指令：
 
     ```
-    bx cs api-key-info ClusterName
+        bx cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -289,26 +293,31 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
     從功能表列中，按一下**管理 > 帳戶 > 使用者**。*使用者* 視窗會顯示目前所選取帳戶的使用者及其電子郵件位址的清單。
 	
     選取使用者的 ID，並驗證使用者具有組織的 *orgManager* 角色，以及空間的 *SpaceManager* 及 *Developer*。
- 
-3. 如果使用者沒有正確的許可權，請完成下列步驟：
 
-    1. 將下列許可權授與使用者：組織的 *orgManager* 角色，以及空間的 *SpaceManager* 及 *Developer*。如需相關資訊，請參閱[使用 IBM Cloud 使用者介面將檢視空間日誌許可權授與使用者](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)。
+    如果使用者沒有正確的許可權，請將下列許可權授與使用者：組織的 *orgManager* 角色，以及空間的 *SpaceManager* 及 *Developer*。如需相關資訊，請參閱[使用 IBM Cloud 使用者介面將檢視空間日誌許可權授與使用者](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)。
     
-    2. 重新整理記載配置。執行下列指令：
+3. 驗證識別為 {{site.data.keyword.containershort}} 金鑰擁有者的使用者具有 {{site.data.keyword.loganalysisshort}} 服務的 IAM 原則與 *Administrator* 許可權。
+
+    從功能表列中，按一下**管理 > 帳戶 > 使用者**。*使用者* 視窗會顯示目前所選取帳戶的使用者及其電子郵件位址的清單。
+	
+    選取使用者的 ID，並驗證使用者具有 IAM 原則集。 
+
+    如果使用者沒有 IAM 原則，請參閱[透過 IBM Cloud 使用者介面將 IAM 原則指派給使用者](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)。
+
+4. 重新整理記載配置。執行下列指令：
     
+    ```
+            bx cs logging-config-refresh ClusterName
         ```
-        bx cs logging-config-refresh ClusterName
-        ```
-        {: codeblock}
+    {: codeblock}
         
-        其中 *ClusterName* 是叢集的名稱。
-
-
-
+    其中 *ClusterName* 是叢集的名稱。
 	
 
-## 步驟 6：在 Kubernetes 叢集中部署範例應用程式以產生 stdout 中的內容
-{: #step6}
+
+
+## 步驟 5：在 Kubernetes 叢集中部署範例應用程式，以產生 stdout 中的內容
+{: #step5}
 
 在 Kubernetes 叢集中部署及執行範例應用程式。完成下列指導教學中的步驟，以部署範例應用程式：[課程 1：將單一實例應用程式部署至 Kubernetes 叢集](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1)。
 
@@ -334,8 +343,8 @@ app.listen(8080, function() {
 
 
 
-## 步驟 7：在 Kibana 中檢視日誌資料
-{: #step7}
+## 步驟 6：在 Kibana 中檢視日誌資料
+{: #step6}
 
 請完成下列步驟：
 
@@ -354,7 +363,7 @@ app.listen(8080, function() {
 	
     即會開啟 Kibana。
     
-    **附註：**請驗證您在要轉遞叢集日誌的地區中啟動 Kibana。如需每個地區之 URL 的相關資訊，請參閱[記載端點](docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana)。
+    **附註：**請驗證您在要轉遞叢集日誌的地區中啟動 Kibana。如需每個地區之 URL 的相關資訊，請參閱[記載端點](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana)。
     	
 2. 若要檢視空間網域中可用的日誌資料，請完成下列步驟：
 
@@ -427,8 +436,8 @@ app.listen(8080, function() {
 如需 Kubernetes 叢集相關的其他搜尋欄位的相關資訊，請參閱[搜尋日誌](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#log_search)。
 
 
-## 步驟 8：在 Kibana 中依 Kubernetes 叢集名稱過濾資料
-{: #step8}
+## 步驟 7：在 Kibana 中依 Kubernetes 叢集名稱過濾資料
+{: #step7}
     
 在*探索* 頁面所顯示的表格中，您可以看到所有可用於分析的項目。列出的項目對應至*搜尋* 列中所顯示的搜尋查詢。使用星號 (*) 來顯示針對頁面所配置時段內的所有項目。
     

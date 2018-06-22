@@ -35,7 +35,7 @@ Siga los siguientes pasos para inhabilitar una política de retención:
 
     ```
     bx cf logging option -r -1
- ```
+    ```
     {: codeblock}
     
 **Ejemplo**
@@ -43,8 +43,8 @@ Siga los siguientes pasos para inhabilitar una política de retención:
 Por ejemplo, para inhabilitar el periodo de retención para un espacio con el ID *d35da1e3-b345-475f-8502-cfgh436902a3*, ejecute el siguiente mandato:
 
 ```
-    bx cf logging option -r -1
- ```
+bx cf logging option -r -1
+```
 {: codeblock}
 
 La salida es:
@@ -73,7 +73,7 @@ Para obtener el periodo de retención establecido para un espacio, siga los paso
 
     ```
     bx cf logging option
- ```
+    ```
     {: codeblock}
 
     La salida es:
@@ -101,7 +101,7 @@ Para obtener el periodo de retención establecido para cada espacio de una cuent
 
     ```
     bx cf logging option -a
- ```
+    ```
     {: codeblock}
 
     La salida es:
@@ -131,7 +131,7 @@ Para ver el periodo de retención correspondiente a una cuenta, siga los pasos s
 
     ```
     bx cf logging option -r *Número_de_días* - a
- ```
+    ```
     {: codeblock}
     
     donde *Número_de_días* es un entero que define el número de días que desea conservar los registros. 
@@ -172,7 +172,7 @@ Para ver el periodo de retención correspondiente a un espacio, siga los pasos s
 
     ```
     bx cf logging option -r *Número_de_días*
- ```
+    ```
     {: codeblock}
     
     donde *Número_de_días* es un entero que define el número de días que desea conservar los registros.

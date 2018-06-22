@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -41,7 +41,7 @@ Liberty for Java™ アプリケーションについて詳しくは、『[Liber
 * console.log('message') はメッセージを STDOUT ストリームに送信します
 * console.error('error_message') はエラーを STDERR ストリームに送信します
 
-Node.js アプリケーションについて詳しくは、『[How to log in node.js![外部リンク・アイコン](../../../icons/launch-glyph.svg "外部リンク・アイコン")](http://docs.nodejitsu.com/articles/intermediate/how-to-log){: new_window}』を参照してください。
+Node.js アプリケーションについて詳しくは、『[How to log in node.js![外部リンク・アイコン](../../../icons/launch-glyph.svg "外部リンク・アイコン")](https://docs.nodejitsu.com/articles/intermediate/how-to-log/){: new_window}』を参照してください。
 
 
 **Ruby on Rails アプリケーション**について詳しくは、『[The Logger![外部リンク・アイコン](../../../icons/launch-glyph.svg "外部リンク・アイコン")](http://guides.rubyonrails.org/debugging_rails_applications.html#the-logger){: new_window}』を参照してください。

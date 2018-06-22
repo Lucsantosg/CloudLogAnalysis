@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -26,7 +26,7 @@ Log Collection からログを削除するには、[bx cf logging delete](/docs/
 
 
 ## 特定の期間のログの削除
-{: #time_range}
+{: #fix_period}
 
 以下のステップを実行します。
 
@@ -76,7 +76,7 @@ Log Collection からログを削除するには、[bx cf logging delete](/docs/
 
 	
 ## 特定期間のログ・タイプ別のログの削除
-{: #time_range}
+{: #log_type}
 
 以下のステップを実行します。
 
@@ -128,7 +128,7 @@ Log Collection からログを削除するには、[bx cf logging delete](/docs/
 		
 	
 ## 特定期間のログ・タイプ別のアカウント・ログの削除
-{: #time_range}
+{: #acc_log_type}
 
 以下のステップを実行します。
 

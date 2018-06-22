@@ -67,7 +67,7 @@ Kibana 显示的日志信息包括在您登录到的组织空间内部署的所�
 
 要通过 {{site.data.keyword.loganalysisshort}} 服务的仪表板启动 Kibana，请完成以下步骤：
 
-1. 登录到 {{site.data.keyword.Bluemix_notm}}，然后在 {{site.data.keyword.Bluemix_notm}} 仪表板中单击 {{site.data.keyword.loganalysisshort}} 服务。 
+1. 登录到 {{site.data.keyword.Bluemix_notm}}，然后在 {{site.data.keyword.Bluemix_notm}}“仪表板”中单击 {{site.data.keyword.loganalysisshort}} 服务。 
     
 2. 在 {{site.data.keyword.Bluemix_notm}} UI 中选择**受管**选项卡。
 
@@ -171,7 +171,7 @@ Kibana 显示的日志信息包括在您登录到的组织空间内部署的所�
 
 要在 Kibana 中查看 Docker 容器的日志，请完成以下步骤：
 
-1. 登录到 {{site.data.keyword.Bluemix_notm}}，然后在 {{site.data.keyword.Bluemix_notm}} 仪表板中单击该容器。 
+1. 登录到 {{site.data.keyword.Bluemix_notm}}，然后在 {{site.data.keyword.Bluemix_notm}}“仪表板”中单击该容器。 
     
 2. 在 {{site.data.keyword.Bluemix_notm}} UI 中打开“日志”选项卡。
 

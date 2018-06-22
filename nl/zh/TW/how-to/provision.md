@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -63,10 +63,10 @@ lastupdated: "2018-01-10"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-3. 執行 `bx cf create-service` 指令以佈建實例。
+3. 執行 `bx service create` 指令，以佈建實例。
 
-	```
-	bx cf create-service service_name service_plan service_instance_name
+    ```
+	bx service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -75,24 +75,22 @@ lastupdated: "2018-01-10"
 	* service_name 是服務的名稱，亦即 **ibmLogAnalysis**。
 	* service_plan 是服務方案名稱。如需方案的清單，請參閱[服務方案](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
 	* service_instance_name 是您要用於所建立之新服務實例的名稱。
-	
-	如需 cf 指令的相關資訊，請參閱 [cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service)。
 
 	例如，若要使用精簡方案建立 {{site.data.keyword.loganalysisshort}} 服務的實例，請執行下列指令：
 	
 	```
-	bx cf create-service ibmLogAnalysis standard my_logging_svc
+	bx service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. 驗證已順利建立服務。執行下列指令：
 
-	```	
-	bx cf services
+    ```	
+	bx service list
 	```
 	{: codeblock}
 	
-	執行指令的輸出如下所示：
+	執行指令的輸出看起來如下：
 	
 	```
     Getting services in org MyOrg / space MySpace as xxx@yyy.com...

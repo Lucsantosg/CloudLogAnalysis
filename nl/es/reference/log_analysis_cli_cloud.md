@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-09"
 
 ---
 
@@ -43,6 +43,10 @@ Para obtener información sobre la utilización de la interfaz de línea de mand
     <td>Utilice este mandato para descargar de la recopilación de registros en un archivo local, o para direccionar los registros a otro programa, como por ejemplo Elastic Stack. </td>
   </tr>
   <tr>
+    <td>[bx logging log-show](#status)</td>
+    <td>Utilice este mandato para obtener información sobre los registros que se han recopilado en un espacio, organización o cuenta.</td>
+  </tr>
+  <tr>
     <td>[bx logging help](#help)</td>
     <td>Utilice este mandato para obtener ayuda sobre cómo utilizar la CLI y una lista de todos los mandatos.</td>
   </tr>
@@ -53,6 +57,10 @@ Para obtener información sobre la utilización de la interfaz de línea de mand
   <tr>
     <td>[bx logging option-update](#optionupdate)</td>
     <td>Utilice este mandato para establecer el periodo de retención para los registros que están disponibles en un espacio, una organización o una cuenta.</td>
+  </tr>
+  <tr>
+    <td>[bx logging quota-usage-show](#quotausage)</td>
+    <td>Utilice este mandato para obtener la información de uso de cuota para un espacio, una organización o una cuenta. También puede obtener información del historial de la cuota.</td>
   </tr>
   <tr>
     <td>[bx logging session-create
@@ -72,8 +80,8 @@ Para obtener información sobre la utilización de la interfaz de línea de mand
     <td>Utilice este mandato para ver el estado de una sesión individual.</td>
   <tr>  
   <tr>
-    <td>[bx logging log-show](#status)</td>
-    <td>Utilice este mandato para obtener información sobre los registros que se han recopilado en un espacio, organización o cuenta.</td>
+    <td>[bx logging token-get](#tokenget)</td>
+    <td>Utilice este mandato para obtener la señal de registro para enviar datos de registro al servicio {{site.data.keyword.loganalysisshort}}. </td>
   </tr>
 </table>
 
@@ -100,17 +108,20 @@ USAGE:
    bx logging command [argumentos...] [opciones de mandato]
 
 MANDATOS:
-   log-delete       Suprimir registro
-   log-download     Descargar un registro
-   log-show         Mostrar el recuento, tamaño y tipo de registros por día
-   session-create   Crear una sesión
-   session-delete   Suprimir sesión
-   sessions         Mostrar información sobre las sesiones
-   session-show     Mostrar información de una sesión
-   option-show      Mostrar la retención de registros
-   option-update    Mostrar las opciones de registro
-   help             
-   
+
+   log-delete         Suprimir registro
+   log-download       Descargar un registro
+   log-show           Mostrar el recuento, el tamaño y el tipo de registros por día
+   session-create     Crear una sesión
+   session-delete     Suprimir sesión
+   sessions           Mostrar información de sesiones
+   session-show       Mostrar información de una sesión
+   option-show        Mostrar la retención de registros
+   option-update      Mostrar las opciones de registro
+   token-get          Obtener una señal de registro para enviar registros
+   quota-usage-show   Mostrar información de uso de cuota
+   help
+
 Indique 'bx logging help [mandato]' para obtener más información sobre un mandato.
 ```
 {: codeblock}
@@ -136,7 +147,7 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Establezca este campo en el ID del espacio, la organización o la cuenta sobre la que desea obtener información. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
+  <dd>(Opcional) Establezca este campo en el ID del espacio, de una organización o de una cuenta. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -183,7 +194,7 @@ Descarga los registros del componente de recopilación de registros en un archiv
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Establezca este campo en el ID del espacio, la organización o la cuenta sobre la que desea obtener información. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
+  <dd>(Opcional) Establezca este campo en el ID del espacio, de una organización o de una cuenta. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
   </dd>
  
   <dt>-o, --output OUTPUT</dt>
@@ -299,7 +310,7 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Establezca este campo en el ID del espacio, la organización o la cuenta sobre la que desea obtener información. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
+  <dd>(Opcional) Establezca este campo en el ID del espacio, de una organización o de una cuenta. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
   </dd>
 
 </dl>
@@ -355,6 +366,56 @@ bx logging option-update -e 25
 {: screen}
 
 
+## bx logging quota-usage-show
+{: #quotausage}
+
+Informa sobre el uso de la cuota de un espacio, de una organización o de una cuenta. También puede utilizarlo para obtener un historial del uso. 
+
+* El periodo se establece en número de días.
+* El valor predeterminado es **-1**. 
+
+```
+bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+```
+{: codeblock}
+
+**Parámetros**
+
+<dl>
+  <dt>-r,--resource-type RESOURCE_TYPE</dt>
+  <dd>(Opcional) Establece el tipo de recurso. Los valores válidos son *space*, *account* y *org*
+  </dd>
+  
+   <dt>-i,--resource-id RESOURCE_ID</dt>
+  <dd>(Opcional) Establezca este campo en el ID del espacio, de una organización o de una cuenta. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
+  </dd>
+  
+  <dt>-s,--history</dt>
+  <dd>(Opcional) Establezca este parámetro para obtener información histórica sobre el uso de la cuota.</dd>
+
+</dl>
+
+**Ejemplo**
+
+Para obtener un historial del uso de la cuota para un dominio del espacio, ejecute el siguiente mandato: 
+
+```
+bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Date         Allotmant   Usage
+2018.02.28   524288000   80405926
+2018.03.06   524288000   18955540
+2018.03.05   524288000   47262944
+2018.03.08   524288000   18311338
+2018.03.01   524288000   82416831
+2018.03.03   524288000   75045462
+2018.03.07   524288000   17386278
+2018.03.02   524288000   104316444
+2018.03.04   524288000   73125223
+```
+{: screen}
 
 ## bx logging session-create
 {: #session_create}
@@ -376,7 +437,7 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Establezca este campo en el ID del espacio, la organización o la cuenta sobre la que desea obtener información. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
+  <dd>(Opcional) Establezca este campo en el ID del espacio, de una organización o de una cuenta. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -455,7 +516,7 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Establezca este campo en el ID del espacio, la organización o la cuenta sobre la que desea obtener información. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
+  <dd>(Opcional) Establezca este campo en el ID del espacio, de una organización o de una cuenta. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
   </dd>
  
 </dl>
@@ -496,7 +557,7 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
       <dd>(Opcional) Establece el tipo de recurso. Los valores válidos son *space*, *account* y *org* </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>(Opcional) Establezca este campo en el ID del espacio, la organización o la cuenta sobre la que desea obtener información. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión.  </dd>
+      <dd>(Opcional) Establezca este campo en el ID del espacio, de una organización o de una cuenta. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión.  </dd>
 </dl>
 
 **Valores de retorno**
@@ -546,7 +607,7 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
       <dd>(Opcional) Establece el tipo de recurso. Los valores válidos son *space*, *account* y *org* </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>(Opcional) Establezca este campo en el ID del espacio, la organización o la cuenta sobre la que desea obtener información. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión.  </dd>
+      <dd>(Opcional) Establezca este campo en el ID del espacio, de una organización o de una cuenta. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión.  </dd>
 </dl>
 
 **Argumentos**
@@ -562,6 +623,41 @@ Para mostrar los detalles de una sesión con el ID de sesión *cI6hvAa0KR_tyhjxZ
 
 ```
 bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+```
+{: screen}
+
+## bx logging token-get
+{: #tokenget}
+
+Devuelve la señal de registro que se necesita para enviar datos de registro a {{site.data.keyword.loganalysisshort}}.
+
+```
+bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+```
+{: codeblock}
+
+**Parámetros**
+
+<dl>
+  <dt>-r,--resource-type RESOURCE_TYPE</dt>
+  <dd>(Opcional) Establece el tipo de recurso al que va a enviar los datos de registro. Los valores válidos son *space*, *account* y *org*
+  </dd>
+  
+   <dt>-i,--resource-id RESOURCE_ID</dt>
+  <dd>(Opcional) Establezca este campo en el ID del espacio, de una organización o de una cuenta. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
+  </dd>
+</dl>
+
+
+**Ejemplo**
+
+```
+bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Tenant Id                              Logging Token
+js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx
 ```
 {: screen}
 
@@ -588,7 +684,7 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Establezca este campo en el ID del espacio, la organización o la cuenta sobre la que desea obtener información. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
+  <dd>(Opcional) Establezca este campo en el ID del espacio, de una organización o de una cuenta. <br>De forma predeterminada, si no especifica este parámetro, el mandato utiliza el ID del recurso en el que ha iniciado la sesión. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>

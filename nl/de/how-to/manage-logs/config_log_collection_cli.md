@@ -111,7 +111,7 @@ Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' 
     ```
     {: codeblock}
     
-    Öffnen Sie ein neues Terminalfenster und führen Sie den folgenden Befehl aus, um zu überprüfen, ob die Variablen LANG und LOGGING_ENDPOINT festgelegt wurden:
+    Öffnen Sie ein neues Terminalfenster und führen Sie den folgenden Befehl aus, um zu überprüfen, ob die Variable LANG festgelegt wurde:
     
     ```
     $echo LANG

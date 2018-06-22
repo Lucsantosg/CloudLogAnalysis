@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -25,7 +25,7 @@ lastupdated: "2018-01-10"
 ## 取得 IAM 記號
 {: #iam_token_cli}
 
-若要使用 {{site.data.keyword.Bluemix_notm}} CLI 來取得授權記號，請完成下列步驟：
+若要使用 {{site.data.keyword.Bluemix_notm}} CLI 來取得授權記號，請從終端機完成下列步驟：
 
 1. 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
 
@@ -33,13 +33,13 @@ lastupdated: "2018-01-10"
    
    如果已安裝 CLI，請繼續進行下一步。
     
-2. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
+2. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區。 
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
 3. 執行 `bx iam oauth-tokens` 指令來取得 IAM 記號。
 
-	```
+    ```
 	bx iam oauth-tokens
 	```
 	{: codeblock}

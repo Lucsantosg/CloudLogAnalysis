@@ -22,6 +22,9 @@ spécifie les journaux à télécharger. Si le téléchargement des journaux est
 devez supprimer la session.
 {:shortdesc}
 
+Pour exécuter la procédure, vous devez installer l'interface de ligne de commande {{site.data.keyword.loganalysisshort}}. Pour plus d'informations, voir [Configuration de l'interface de ligne de commande {{site.data.keyword.loganalysisshort}}](https://console.bluemix.net/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli_).
+
+
 Procédez comme suit pour télécharger dans un fichier journal les données de journal disponibles dans un espace :
 
 ## Etape 1 : Connexion à {{site.data.keyword.Bluemix_notm}}
@@ -47,7 +50,7 @@ Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Blue
     bx logging log-show 
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types   
+    Date         Size       Count   Searchable          Types   
     2017-11-16   794008   706     All          syslog, default   
 	2017-11-17   794008   706     All          default   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
@@ -64,7 +67,7 @@ en tant que jours TUC. Pour obtenir des journaux pour un jour à heure locale sp
 
 Une session est requise pour définir l'étendue des données de journal disponibles pour un téléchargement et pour conserver le statut du téléchargement. 
 
-Utilisez la commande [cf logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) pour créer une session. Vous pouvez également spécifier une date
+Utilisez la commande [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) pour créer une session. Vous pouvez également spécifier une date
 de début, une date de fin et des types de journaux lorsque vous créez une session :  
 
 * Lorsque vous spécifiez la date de début et la date de fin, la session fournit un accès aux journaux entre ces dates incluses. 
@@ -134,7 +137,7 @@ les diriger directement vers votre propre pile ELK.
 ## Etape 5 : Suppression de la session
 {: #step5}
 
-Une fois que le téléchargement est terminé, vous devez supprimer la session à l'aide de la commande [cf logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete). 
+Une fois que le téléchargement est terminé, vous devez supprimer la session à l'aide de la commande [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete). 
 
 Exécutez la commande suivante pour supprimer une session :
 

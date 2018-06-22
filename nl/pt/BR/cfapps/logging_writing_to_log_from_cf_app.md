@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -41,7 +41,7 @@ Para um **app Cloud Foundry Node.js**, é possível usar o módulo de criação 
 * O console.log('message') enviará a mensagem para o fluxo STDOUT
 * O console.error('error_message') enviará o erro para o fluxo STDERR
 
-Para obter mais informações sobre os aplicativos Node.js, veja [Como registrar no node.js ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](http://docs.nodejitsu.com/articles/intermediate/how-to-log){: new_window}.
+Para obter mais informações sobre os aplicativos Node.js, veja [Como registrar no node.js ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](https://docs.nodejitsu.com/articles/intermediate/how-to-log/){: new_window}.
 
 
 Para obter mais informações sobre os **aplicativos Ruby on Rails**, veja [O Criador de log ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](http://guides.rubyonrails.org/debugging_rails_applications.html#the-logger){: new_window}.

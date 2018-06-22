@@ -3,15 +3,19 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Ativando a coleta automática de logs de cluster
@@ -20,12 +24,15 @@ lastupdated: "2018-01-10"
 Para ser capaz de visualizar e analisar os logs de cluster no serviço {{site.data.keyword.loganalysisshort}}, deve-se configurar seu cluster para encaminhar os logs para o serviço {{site.data.keyword.loganalysisshort}}. 
 {:shortdesc}
 
-## Etapa 1: verificar permissões
+## Etapa 1: Verificar permissões para seu ID do usuário
 {: step1}
 
-Somente usuários com uma política do IAM para o {{site.data.keyword.containershort}} com permissões para gerenciar clusters podem ativar esse recurso. Qualquer uma das funções a seguir é necessária: *Administrador*, *Operador*
+Seu ID do usuário deve ter as permissões a seguir para que você possa incluir uma configuração de criação de log no cluster:
 
-Para verificar se o seu ID do usuário tem uma política do IAM designada para gerenciar clusters, conclua as etapas a seguir:
+* Política IAM para o {{site.data.keyword.containershort}} com permissões de **Visualizador**.
+* Política IAM para a instância de cluster com permissões de **Administrador** ou **Operador**.
+
+Para verificar se o seu ID de usuário tem essas políticas do IAM, conclua as etapas a seguir:
 
 **Nota:** somente o proprietário da conta ou usuários com permissões para designar políticas podem executar esta etapa.
 
@@ -35,7 +42,7 @@ Para verificar se o seu ID do usuário tem uma política do IAM designada para g
 
 2. Na barra de menus, clique em **Gerenciar > Conta > Usuários**.  A janela *Usuários* exibe uma lista de usuários com seus endereços de e-mail para a conta selecionada atualmente.
 	
-3. Selecione o userID e verifique se o ID do usuário tem uma política com permissões de *visualizador* para o {{site.data.keyword.containershort}}.
+3. Selecione o userID e verifique se o ID do usuário tem ambas as políticas.
 
 
 
@@ -90,7 +97,24 @@ Conclua as etapas a seguir:
 ## Etapa 4: Configurar permissões para o proprietário da chave do {{site.data.keyword.containershort_notm}}
 {: #step4}
 
-Quando você encaminhar logs para um espaço, deve-se também conceder permissões do Cloud Foundry (CF) para o proprietário da chave do {{site.data.keyword.containershort}} na organização e no espaço. O proprietário da chave precisa da função *orgManager* para a organização e *SpaceManager* e *Developer* para o espaço.
+
+O proprietário da chave do {{site.data.keyword.containershort}} precisa das políticas do IAM a seguir:
+
+* Política IAM para o {{site.data.keyword.containershort}} com a função de **Administrador**.
+* Política IAM para o serviço {{site.data.keyword.loganalysisshort}} com a função de **Administrador**.
+
+Conclua as etapas a seguir: 
+
+1. Efetue login no console do {{site.data.keyword.Bluemix_notm}}. Abra um navegador da web e ative o painel do {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](http://bluemix.net){:new_window}
+	
+	Depois de efetuar login com seu ID de usuário e senha, a UI do {{site.data.keyword.Bluemix_notm}} é aberta.
+
+2. Na barra de menus, clique em **Gerenciar > Conta > Usuários**.  A janela *Usuários* exibe uma lista de usuários com seus endereços de e-mail para a conta selecionada atualmente.
+	
+3. Selecione o userID para o proprietário da chave do {{site.data.keyword.containershort_notm}} e verifique se o ID do usuário tem ambas as políticas.
+
+
+Quando você encaminha logs para um domínio de espaço, deve-se também conceder permissões do Cloud Foundry (CF) para o proprietário da chave do {{site.data.keyword.containershort}} na organização e no espaço. O proprietário da chave precisa da função *orgManager* para a organização e *SpaceManager* ou *Developer* para o espaço.
 
 Conclua as etapas a seguir:
 
@@ -109,7 +133,7 @@ Conclua as etapas a seguir:
 
     Na barra de menus, clique em **Gerenciar > Conta > Usuários**.  A janela *Usuários* exibe uma lista de usuários com seus endereços de e-mail para a conta selecionada atualmente.
 	
-    Selecione o ID do usuário e verifique se o usuário tem a função *orgManager* para a organização e *SpaceManager* e *Developer* para o espaço.
+    Selecione o ID do usuário e verifique se o usuário tem a função *orgManager* para a organização e *SpaceManager* ou *Developer* para o espaço.
  
 3. Se o usuário não tiver as permissões corretas, conclua as etapas a seguir:
 
@@ -168,7 +192,7 @@ bx cs logging-config-create MyCluster --logsource container --type ibm --namespa
 Execute o comando a seguir para enviar os arquivos de log */var/log/apps/**/.log* e */var/log/apps/*/.err* para o serviço {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -178,19 +202,20 @@ Em que
 * *EndPoint* é a URL para o serviço de criação de log na região na qual o serviço do {{site.data.keyword.loganalysisshort}} é provisionado. Para obter uma lista de terminais, veja [Terminais](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls).
 * *OrgName* é o nome da organização na qual o espaço está disponível.
 * *SpaceName* é o nome do espaço no qual o serviço é provisionado. {{site.data.keyword.loganalysisshort}}
-
+* *app-containers* é um parâmetro opcional que pode ser configurado para definir uma lista de contêineres que você deseja observar. Esses contêineres são os únicos de onde os logs serão encaminhados para o {{site.data.keyword.loganalysisshort}}. É possível configurar um ou mais contêineres separando-os com vírgulas.
+* *app-paths* define os caminhos dentro de contêineres que você deseja observar. É possível configurar um ou mais caminhos separando-os com vírgulas. Os caracteres curinga como '/var/log/* .log' são aceitos. 
 
 Por exemplo, para criar uma configuração de criação de log que encaminhe logs do aplicativo para um domínio de espaço na região alemã, execute o comando a seguir:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 Por exemplo, para criar uma configuração de criação de log que encaminhe logs do aplicativo para o domínio de contas na região alemã, execute o comando a seguir:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 

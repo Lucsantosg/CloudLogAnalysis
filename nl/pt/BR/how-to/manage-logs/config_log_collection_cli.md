@@ -111,7 +111,7 @@ Conclua as etapas a seguir para instalar o plug-in CF da Coleção de logs no Li
     ```
     {: codeblock}
     
-    Abra uma nova janela do terminal e execute o comando a seguir para verificar se as variáveis LANG e LOGGING_ENDPOINT estão configuradas:
+    Abra uma nova janela do terminal e execute o comando a seguir para verificar se a variável LANG está configurada:
     
     ```
     $echo LANG
@@ -162,7 +162,7 @@ Conclua as etapas a seguir para instalar o plug-in do CF Log Analysis no Windows
 	```
 	{: codeblock}
 	
-    Quando o plug-in estiver instalado, você receberá a mensagem a seguir: `Plug-in IBM-Logging 1.0.1 instalado com sucesso.`
+    Quando o plug-in está instalado, você obtém a mensagem a seguir: `Plugin IBM-Logging 1.0.1 successfully installed.`
 
 3. Verifique a instalação do plug-in da CLI de criação de log.
   
@@ -184,14 +184,14 @@ Conclua as etapas a seguir para instalar o plug-in do CF Log Analysis no Windows
 ## Instalando a CLI do Log Analysis no Mac OS X
 {: #install_cli_mac}
 
-Conclua as etapas a seguir para instalar o plug-in do CF Coleção de logs no Mac OS X:
+Conclua as etapas a seguir para instalar o plug-in do CF da Coleção de logs no Mac OS X:
 
 1. Faça download da liberação mais recente do plug-in da CLI do serviço {{site.data.keyword.loganalysisshort}} (IBM-Logging) na [página da CLI do {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
 	
 	1. Selecione o valor de plataforma: **osx**. 
 	2. Clique em **Salvar arquivo**.  
     
-2. Execute o comando **cf install-plugin** para instalar o plug-in Coleção de logs no Mac OS X. 
+2. Execute o comando **cf install-plugin** para install instalar o plug-in da Coleção de logs no Mac OS X. 
 
     ```
 	bx cf install-plugin PluginName
@@ -200,14 +200,14 @@ Conclua as etapas a seguir para instalar o plug-in do CF Coleção de logs no Ma
 	
 	em que *PluginName* é o nome do arquivo que foi transferido por download.
 	
-    Por exemplo, para instalar o plug-in *logging-cli-darwin_v1.0.1*, execute o comando a seguir de um terminal:
+    Por exemplo, para instalar o plug-in *logging-cli-darwin_v1.0.1*, execute o comando a seguir em um terminal:
 	
 	```
 	bx cf install-plugin logging-cli-darwin_v1.0.1
 	```
 	{: codeblock}
 	
-    Quando o plug-in estiver instalado, você receberá a mensagem a seguir: `Plug-in IBM-Logging 1.0.1 instalado com sucesso.`
+    Quando o plug-in está instalado, você obtém a mensagem a seguir: `Plugin IBM-Logging 1.0.1 successfully installed.`
 
 3. Verifique a instalação do plug-in da CLI de criação de log.
   
@@ -226,7 +226,7 @@ Conclua as etapas a seguir para instalar o plug-in do CF Coleção de logs no Ma
     {: screen}
 	
 	
-## Desinstalando a CLI do Log Analysis
+## Desinstalando a CLI de Análise do log
 {: #uninstall_cli}
 
 Para desinstalar a CLI de criação de log, exclua o plug-in.
@@ -273,7 +273,7 @@ Para obter informações gerais sobre a CLI e quais comandos são suportados, co
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Liste as informações sobre os comandos suportados e a CLI. Execute o comando a seguir:
+2. Liste informações sobre os comandos suportados e a CLI. Execute o comando a seguir:
 
     ```
     bx cf logging help 
@@ -298,14 +298,14 @@ Para obter ajuda sobre como usar um comando, conclua as etapas a seguir:
     ```
     {: codeblock}
 
-3. Obtenha ajuda sobre o comando. Execute o comando a seguir:
+3. Obter ajuda sobre o comando. Execute o comando a seguir:
 
     ```
     bx cf logging help *Command*
     ```
     {: codeblock}
     
-    em que *Command* é o nome de um comando da CLI, por exemplo *status*.
+    em que *Command* é o nome de um comando da CLI, por exemplo, *status*.
 
 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-02-01"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -27,7 +27,7 @@ para que ela possa ser vista pelas equipes de desenvolvimento do {{site.data.key
 <!--Insert the appropriate Stack Overflow tag for your service for <service_keyword> in URL and text below:  -->
   * Se você tiver questões técnicas sobre como desenvolver ou implementar um app com o serviço {{site.data.keyword.loganalysisshort}}, poste sua pergunta no [Stack Overflow](http://stackoverflow.com/search?q=log-analysis+ibm-bluemix){:new_window} e identifique-a com "ibm-bluemix" e "log-analysis".
 <!--Insert the appropriate dW Answers tag for your service for <service_keyword> in URL below:  -->
-  * Para perguntas sobre o serviço e instruções de introdução, use o fórum do [{{site.data.keyword.IBM_notm}} developerWorks dW Answers](https://developer.ibm.com/answers/topics/log-analysis/?smartspace=bluemix){:new_window}. Inclua as tags "log-analysis" e "bluemix".
+  * Para perguntas sobre o serviço e instruções de introdução, use o fórum do [{{site.data.keyword.IBM_notm}} developerWorks dW Answers](https://developer.ibm.com/answers/topics/log-analysis/?smartspace=ibm-cloud){:new_window}.
 
 Consulte [Obtendo ajuda](https://www.{DomainName}/docs/support/index.html#getting-help) para obter mais detalhes sobre o
 uso dos fóruns.

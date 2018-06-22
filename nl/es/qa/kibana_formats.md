@@ -3,11 +3,9 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
-
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -52,30 +50,6 @@ Puede configurar Kibana para que muestre los campos siguientes para cada entrada
 {: caption="Tabla 1. Campos para apps de CF" caption-side="top"}
 
 
-
-## Formato de registro de Kibana para contenedores Docker desplegados en una infraestructura gestionada por IBM (en desuso)
-{: #kibana_log_format_containers}
-
-Puede configurar Kibana para que muestre los campos siguientes para cada entrada de registro en la página *Descubrir*:
-
-| Campo | Descripción |
-|-------|-------------|
-| @timestamp | `aaaa-MM-ddTHH:mm:ss:SS-0500`  <br> La hora del suceso registrado. <br> La indicación de fecha y hora se define hasta en milisegundos. |
-| @version | Versión del suceso. |
-| ALCH_TENANT_ID | ID del espacio de {{site.data.keyword.Bluemix_notm}}. |
-| \_id | El ID exclusivo del documento de registro. |
-| \_index | El índice de la entrada de registro. |
-| \_type | El tipo de registro; por ejemplo, *logs*. |
-| group_id | ID de grupo <br> * Para un único contenedor, el valor es **0000**. <br> * Para un grupo de contenedores, el valor es el GUID del grupo.  |
-| host | Nombre del host en el que se ejecuta el contenedor. |
-| instance | GUID de la instancia para un único contenedor. Lista de los ID de instancia para un grupo de contenedores.|
-| log | Mensaje abreviado. |
-| message | Mensaje completo. |
-| vía de acceso | Vía de acceso y nombre de registro en el que se encuentra el registro dentro del contenedor. |
-| stream | Especifica el tipo de registro: stdout, stderr |
-| hora | La fecha y hora en que se ha producido el suceso. La indicación de fecha y hora se define hasta en milisegundos.|
-| timestamp | La fecha y hora del suceso registrado. La indicación de fecha y hora se define hasta en milisegundos. |
-{: caption="Tabla 2. Campos para contenedores Docker" caption-side="top"}
 
 ## Formato de registro de Kibana para contenedores Docker desplegados en un clúster Kubernetes
 {: #kibana_log_format_containers_kubernetes}
@@ -150,3 +124,6 @@ ALCH_TENANT_ID:
 &#95;index:
     logstash-2017.03.08
 ```
+{: screen}
+
+

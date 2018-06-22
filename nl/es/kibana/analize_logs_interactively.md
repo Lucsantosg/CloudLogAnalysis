@@ -180,7 +180,7 @@ Sólo puede clasificar entradas de la tabla para los campos están indexados.
 
 Para ver qué campos están indexados, siga estos pasos:
 
-1. En la página Descubrir, pulse el icono de configuración![icono Configurar](images/configure_icon.jpg "icono de configuración") que está disponible en la sección **Campos disponibles** de la página.
+1. En la página Descubrir, pulse el icono de configuración ![icono Configurar](images/configure_icon.jpg "icono de configuración") que está disponible en la sección **Campos disponibles** de la página.
 
 2. Para identificar los campos que están indexados, seleccione **Sí** en el campo de búsqueda **Indexado**.
 

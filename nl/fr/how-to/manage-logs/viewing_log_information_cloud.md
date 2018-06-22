@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -48,7 +48,7 @@ Procédez comme suit pour obtenir des informations sur les journaux qui sont sto
     $ bx logging log-show -s 2017-11-17 -e 2017-11-17
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types   
+    Date         Size       Count   Searchable          Types   
     2017-11-17   794008   706     All          default   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
     OK
@@ -92,7 +92,7 @@ Procédez comme suit pour obtenir des informations sur un type de journal pour u
     $ bx logging log-show -s 2017-05-24 -e 2017-05-25 -t syslog
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types   
+    Date         Size       Count   Searchable          Types   
     2017-11-17   794008   706     All          syslog   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
     OK
@@ -141,7 +141,7 @@ Procédez comme suit pour obtenir des informations de compte sur les journaux :
     $ bx logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
 	Showing log status of resource: 123456789123456789567c9c8de6dece ...
 
-    Date         Size      Count   Searchable   Types   
+    Date         Size       Count   Searchable          Types   
 	2017-11-17   794008    200     All          syslog  
     Logs of resource 123456789123456789567c9c8de6dece is showed
     OK
@@ -150,7 +150,7 @@ Procédez comme suit pour obtenir des informations de compte sur les journaux :
 
 
 ## Obtention d'informations sur les journaux au niveau de l'organisation
-{: #viewing_logs_account}
+{: #viewing_logs_org}
 
 Pour obtenir des informations sur les journaux qui sont disponibles au niveau de l'organisation pour une période donnée, utilisez la commande `bx logging log-show` avec les options **-r org** et **-i** afin de définir l'ID de l'organisation. Vous pouvez également spécifier les options **-t** pour spécifier le type de journal, **-s**
 pour définir la date de début et **-e** pour définir la date de fin. 
@@ -189,7 +189,7 @@ Procédez comme suit pour obtenir des informations de compte sur les journaux :
     $ bx logging log-show -r org -i abcd56789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
 	Showing log status of resource: abcd56789123456789567c9c8de6dece ...
 
-    Date         Size      Count   Searchable   Types   
+    Date         Size       Count   Searchable          Types   
 	2017-11-17   794008    200     All          syslog  
     Logs of resource abcd56789123456789567c9c8de6dece is showed
     OK

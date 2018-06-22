@@ -1,12 +1,11 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-04-10"
 
 ---
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -35,8 +34,8 @@ Puoi configurare Kibana in modo che visualizzi nella pagina *Ricerca* i seguenti
 | \_id | L'ID univoco per il tuo documento di log. |
 | \_index | L'indice per la voce di log. |
 | \_type | Il tipo di log, ad esempio *syslog*. |
-| app_name | Il nome della tua applicazione {{site.data.keyword.Bluemix_notm}}. |
-| application_id | L'ID univoco della tua applicazione {{site.data.keyword.Bluemix_notm}}. |
+| app_name | Il nome della tua applicazione. |
+| application_id | L'ID univoco della tua applicazione. |
 | host | Il nome della tua applicazione che ha prodotto i dati di log. |
 | instance_id | L'ID dell'istanza della tua applicazione che ha prodotto i dati di log. |
 | loglevel | La severità dell'evento registrato. |
@@ -51,30 +50,6 @@ Puoi configurare Kibana in modo che visualizzi nella pagina *Ricerca* i seguenti
 {: caption="Tabella 1. Campi per le applicazioni CF" caption-side="top"}
 
 
-
-## Formato di log Kibana per i contenitori Docker distribuiti in un'infrastruttura gestita da Bluemix
-{: #kibana_log_format_containers}
-
-Puoi configurare Kibana in modo che visualizzi nella pagina *Ricerca* i seguenti campi per ogni voce di log:
-
-| Campo | Descrizione |
-|-------|-------------|
-| @timestamp | `yyyy-MM-ddTHH:mm:ss:SS-0500`  <br> L'ora dell'evento registrato. <br> La data e ora è definita fino al millisecondo. |
-| @version | La versione dell'evento. |
-| ALCH_TENANT_ID | L'ID dello spazio {{site.data.keyword.Bluemix_notm}}. |
-| \_id | L'ID univoco per il tuo documento di log. |
-| \_index | L'indice per la voce di log. |
-| \_type | Il tipo di log, ad esempio *logs*. |
-| group_id | ID gruppo <br> * Per un singolo contenitore, il valore è **0000**. <br> * Per un gruppo di contenitori, il valore è il GUID del gruppo.  |
-| host | Il nome host in cui il contenitore è in esecuzione. |
-| instance | Il GUID dell'istanza per un singolo contenitore. Elenco di ID istanza per un gruppo di contenitori.|
-| log | Messaggio breve. |
-| message | Messaggio completo. |
-| path | Il percorso e il nome del log in cui il log è ubicato all'interno del contenitore. |
-| stream | Specifica il tipo di log: stdout, stderr |
-| time | La data e l'ora di quando si è verificato l'evento. La data e ora è definita fino al millisecondo.|
-| timestamp | La data e l'ora dell'evento registrato. La data e ora è definita fino al millisecondo. |
-{: caption="Tabella 2. Campi per i contenitori Docker" caption-side="top"}
 
 ## Formato di log Kibana per i contenitori Docker distribuiti in un cluster Kubernetes
 {: #kibana_log_format_containers_kubernetes}
@@ -149,3 +124,6 @@ ALCH_TENANT_ID:
 &#95;index:
     logstash-2017.03.08
 ```
+{: screen}
+
+

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -63,10 +63,10 @@ Procédez comme suit pour mettre à disposition une instance du service {{site.d
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Exécutez la commande `bx cf create-service` pour mettre à disposition une instance.
+3. Exécutez la commande `bx service create` pour mettre à disposition une instance.
 
     ```
-	bx cf create-service service_name service_plan service_instance_name
+	bx service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -75,20 +75,18 @@ Procédez comme suit pour mettre à disposition une instance du service {{site.d
 	* service_name est le nom du service, en l'occurrence **ibmLogAnalysis**.
 	* service_plan est le nom du plan de service. Pour la liste des plans, voir [Plans de service](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 	* service_instance_name est le nom que vous souhaitez utiliser pour la nouvelle instance de service que vous créez.
-	
-	Pour plus d'informations sur la commande cf, voir [cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service).
 
 	Par exemple, pour créer une instance du service {{site.data.keyword.loganalysisshort}} avec le plan Lite, exécutez la commande suivante :
 	
 	```
-	bx cf create-service ibmLogAnalysis standard my_logging_svc
+	bx service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. Vérifiez que le service a été créé. Exécutez la commande suivante :
 
     ```	
-	bx cf services
+	bx service list
 	```
 	{: codeblock}
 	

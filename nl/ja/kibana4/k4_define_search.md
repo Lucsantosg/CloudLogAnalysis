@@ -30,11 +30,11 @@ lastupdated: "2018-01-10"
 
     2. Kibana にアクセスします。 **「詳細ビュー」** ![「詳細ビュー」リンク](images/logging_advanced_view.jpg "「詳細ビュー」リンク") をクリックします。 Kibana ダッシュボードが表示されます。
     
-    Kubernetes クラスター内で実行しているコンテナーの場合、[ブラウザーから Kibana を起動します](k4_launch.html#launch_Kibana_from_browser)。 
+    Kubernetes クラスター内で実行しているコンテナーの場合、[ブラウザーから Kibana を起動します](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)。 
     
     Kibana にアクセスすると、デフォルト検索が適用されます。 Kibana を起動した対象リソースのインスタンスのリストに関するログを確認できます。 そのスペース内の {{site.data.keyword.Bluemix_notm}} リソースのすべてまたは任意のものについて、ログをフィルタリングできます。
 
-2. 「Discover」ページを見て、表示されているデータのサブセットを確認します。 詳しくは、『[「Discover」ページで表示されているデータの識別](logging_kibana_analize_logs_interactively.html#k4_identify_data)』を参照してください。 次に、項目をフィルタリングするためのデフォルト照会を変更します。
+2. 「Discover」ページを見て、表示されているデータのサブセットを確認します。 詳しくは、『[「Discover」ページで表示されているデータの識別](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data)』を参照してください。 次に、項目をフィルタリングするためのデフォルト照会を変更します。
 
     **注:** カスタム照会の定義には、Lucene 照会言語を使用します。 詳しくは、『[Apache Lucene - Query Parser Syntax  ![外部リンク・アイコン](../../../icons/launch-glyph.svg "外部リンク・アイコン")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}』を参照してください。
     
@@ -48,9 +48,8 @@ lastupdated: "2018-01-10"
 
      例えば、CF アプリの場合、照会 `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]` を作成できます。これにより、インスタンス *0* および *1* の項目のみがリストされます。 
 
-3. 照会を保存して、後から再使用できるようにします。 詳しくは、『[検索の保存](logging_kibana_filtering_logs.html#k4_save_search)』を参照してください。 
+3. 照会を保存して、後から再使用できるようにします。  
 
-**注:** 照会を削除する必要がある場合は、『[検索の削除](logging_kibana_filtering_logs.html#k4_delete_search)』を参照してください。
 
 
 

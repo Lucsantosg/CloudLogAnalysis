@@ -14,7 +14,7 @@ lastupdated: "2018-01-16"
 {:pre: .pre}
 
 
-# Extraction du propriétaire de clé pour un cluster 
+# Extraction du propriétaire de clé pour un cluster
 {: #containers_key_owner}
 
 Utilisez la commande *bx cs api-key-info* afin d'obtenir le propriétaire de clé {{site.data.keyword.loganalysisshort}} pour un cluster.
@@ -44,9 +44,9 @@ Joe Blogg      blogg@ibm.com
 L'ID d'espace est la valeur indiquée dans la zone **logSpace**.
 Le nom d'espace est la valeur indiquée dans la zone **logSpaceName**.
 L'ID d'organisation est la valeur indiquée dans la zone **logOrg**.
-Le nom d'organisation est la valeur indiquée dans la zone **logOrgName**. 
+Le nom d'organisation est la valeur indiquée dans la zone **logOrgName**.
 
-Si ces zones sont vides, cela signifie qu'aucun espace ni organisation CF n'est associé à ce cluster. 
+Si ces zones sont vides, cela signifie qu'aucun espace ni organisation CF n'est associé à ce cluster.
 
 
 

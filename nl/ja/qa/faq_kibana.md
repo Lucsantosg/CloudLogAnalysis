@@ -19,13 +19,11 @@ lastupdated: "2018-01-10"
 # Kibana FAQ
 {: #faq_kibana}
 
-ここでは、{{site.data.keyword.Bluemix}} ロギング機能の使用に関するよくある質問に対する回答を示します。
- {:shortdesc}
+ここでは、{{site.data.keyword.Bluemix}} ロギング機能の使用に関するよくある質問に対する回答を示します。 {:shortdesc}
 
-* [Kibana の「Discover」ページでデータを表示できない場合、どうすればよいですか?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_discover_kibana)
-* [認証例外を受け取った場合、どうすればよいですか?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_dashboard_kibana)
-* [Kibana 3 または Kibana 4 を起動するにはどうすればよいですか?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
-* [Kibana の「Discover」ページでフィールドの横に ? 記号が表示されるのはなぜですか?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
+* [Kibana の「Discover」ページでデータを表示できない場合、どうすればよいですか?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_discover_kibana)
+* [認証例外を受け取った場合、どうすればよいですか?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_dashboard_kibana)
+* [Kibana の「Discover」ページでフィールドの横に ? 記号が表示されるのはなぜですか?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_kibana_question)
 * [デフォルトの索引パターンを変更しようとすると 403 エラーが表示されます](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
 * [短縮 URL が機能しません](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
 * [Bluemix でアカウント・ログを検索できますか?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
@@ -80,21 +78,7 @@ Kibana でデータを表示できない場合、以下の異なるシナリオ�
 
     そのダッシュボードを共有している場合、同じダッシュボードを使用している他のチーム・メンバーが影響を受けるため、視覚化を削除しないでください。
 
-## Kibana 3 または Kibana 4 を起動するにはどうすればよいですか?
-{: #logging_qa_kibana3}
 
-**注:** Kibana 3 は非推奨です。
-
-ブラウザーから Kibana 3 または Kibana 4 を起動できます。
-
-以下のステップを実行して、ブラウザーから Kibana を起動します。
-
-1. [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net) を開いて、Kibana ユーザー・インターフェースにログインします。
-    
-2. ログの分析に使用する Kibana のバージョンを選択します。
-    * Kibana 4 で作業する場合は、**「Kibana 4」**タブを選択します。「Discovery」ページが開きます。 詳しくは、『[Kibana でのログの対話式分析](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_kibana_analize_logs_interactively.html#kibana_analize_logs_interactively)』を参照してください。
-    * Kibana 3 を使用して作業する場合は**「Kibana 3」**タブを選択します。 デフォルト Kibana ダッシュボードが開きます。 Kibana 3 を使用したログの分析については、[Kibana 3 でのログの分析 (非推奨)](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3) に関する個所を参照してください。 Kibana 3 ダッシュボードのカスタマイズについて詳しくは、[このブログ投稿![外部リンク・アイコン](../../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/){: new_window}を参照してください。
-     
 
 ## Kibana の「Discover」ページでフィールドの横に ? 記号が表示されるのはなぜですか?
 {: #logging_qa_kibana_question}
@@ -121,7 +105,7 @@ Kibana で「Discover」ページを開くと、「available fields」セクシ�
 
 アカウント・ログを表示するには、以下のステップを実行します。
 
-1. [Kibana を起動します](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)。 例えば、米国南部地域の場合は URL https://logging.ng.bluemix.net を使用します。
+1. [Kibana を起動します](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)。 例えば、米国南部地域の場合は URL `https://logging.ng.bluemix.net` を使用します。
 
 2. アカウント・ログを表示するため、オプション**「View AccountName account Logs」**を選択します。 *AccountName* はアカウントの名前です。
 

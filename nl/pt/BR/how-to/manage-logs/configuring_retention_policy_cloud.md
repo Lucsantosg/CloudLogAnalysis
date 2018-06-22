@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,7 +25,7 @@ Ao configurar uma política de retenção, após a expiração do período de re
 
 
 ## Desativando a política de retenção de log para uma conta
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_acc}
 
 Quando você desativa a política de retenção, todos os logs são mantidos. 
 
@@ -50,7 +50,7 @@ Conclua as etapas a seguir para desativar uma política de retenção:
     
 **Exemplo**
     
-Por exemplo, para desativar o período de retenção para uma conta com ID *12345677fgh436902a3*, execute o comando a seguir:
+Por exemplo, para desativar o período de retenção de uma conta com ID *12345677fgh436902a3*, execute o comando a seguir:
 
 ```
 bx logging option-update -r account -i 12345677fgh436902a3 -e -1
@@ -58,7 +58,7 @@ bx logging option-update -r account -i 12345677fgh436902a3 -e -1
 {: codeblock}
 
 
-## Desativando a política de retenção de log para um espaço
+## Desativando a política de retenção de log de um espaço
 {: #disable_retention_policy_space}
 
 Quando você desativa a política de retenção, todos os logs são mantidos.  
@@ -69,7 +69,7 @@ Conclua as etapas a seguir para desativar uma política de retenção:
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Configure o período de retenção para **-1** para desativar o período de retenção. Execute o comando:
+2. Configure o período de retenção como **-1** para desativar o período de retenção. Execute o comando:
 
     ```
     bx logging option-show -e RETENTION_VALUE
@@ -80,7 +80,7 @@ Conclua as etapas a seguir para desativar uma política de retenção:
     
 **Exemplo**
     
-Por exemplo, para desativar o período de retenção para um espaço com ID *d35da1e3-b345-475f-8502-cfgh436902a3*, execute o comando a seguir:
+Por exemplo, para desativar o período de retenção de um espaço com o ID *d35da1e3-b345-475f-8502-cfgh436902a3*, execute o comando a seguir:
 
 ```
 bx logging option-update -e -1
@@ -88,10 +88,10 @@ bx logging option-update -e -1
 {: codeblock}
 
 
-## Verificando a política de retenção de log para uma conta
-{: #check_retention_policy_space}
+## Verificando a política de retenção de log de uma conta
+{: #check_retention_policy_acc}
 
-Para obter o período de retenção que está configurado para uma conta, conclua as etapas a seguir:
+Para obter o período de retenção configurado para uma conta, conclua as etapas a seguir:
 
 1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
@@ -119,10 +119,10 @@ Para obter o período de retenção que está configurado para uma conta, conclu
 	```
     {: screen}
 	
-## Verificando a política de retenção de log para um espaço
+## Verificando a política de retenção de log de um espaço
 {: #check_retention_policy_space}
 
-Para obter o período de retenção que está configurado para um espaço, conclua as etapas a seguir:
+Para obter o período de retenção que é configurado para um espaço, conclua as etapas a seguir:
 
 1. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
@@ -148,8 +148,8 @@ Para obter o período de retenção que está configurado para um espaço, concl
     
 
 
-## Configurando uma política de retenção de log de nível de conta
-{: #set_retention_policy_space}
+## Configurando uma política de retenção de log no nível de conta
+{: #set_retention_policy_acc}
 
 Conclua as etapas a seguir:
 
@@ -182,8 +182,8 @@ bx logging option-update -r account -i AccountID -e 15
 
 
 
-## Configurando a política de retenção de log para um espaço
-{: #set_retention_policy_account}
+## Configurando a política de retenção de log de um espaço
+{: #set_retention_policy_space}
 
 Para ver o período de retenção para um espaço, conclua as etapas a seguir:
 

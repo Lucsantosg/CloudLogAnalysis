@@ -3,15 +3,19 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Automatische Erfassung von Clusterprotokollen aktivieren
@@ -20,12 +24,15 @@ lastupdated: "2018-01-10"
 Um Clusterprotokolle im {{site.data.keyword.loganalysisshort}}-Service anzeigen und analysieren zu können, müssen Sie den Cluster so konfigurieren, dass diese Protokolle an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet werden. 
 {:shortdesc}
 
-## Schritt 1: Berechtigungen überprüfen
+## Schritt 1: Berechtigungen für Ihre Benutzer-ID überprüfen
 {: step1}
 
-Nur Benutzer mit einer IAM-Richtlinie für den {{site.data.keyword.containershort}} mit Berechtigungen zum Verwalten von Clustern können diese Funktion aktivieren. Dazu ist mindestens eine der folgenden Rollen erforderlich: *Administrator*, *Operator*.
+Ihre Benutzer-ID muss über die folgenden Berechtigungen verfügen, damit Sie dem Cluster eine Protokollierungskonfiguration hinzufügen können:
 
-Führen Sie die folgenden Schritte aus, um zu überprüfen, ob Ihrer Benutzer-ID eine IAM-Richtlinie zum Verwalten von Clustern zugewiesen ist:
+* IAM-Richtlinie für den {{site.data.keyword.containershort}} mit Berechtigungen als **Anzeigeberechtigter**.
+* IAM-Richtlinie für die Cluster-Instanz mit den Berechtigungen als **Administrator** oder **Operator**.
+
+Führen Sie die folgenden Schritte aus, um zu überprüfen, ob Ihre Benutzer-ID über diese IAM-Richtlinien verfügt:
 
 **Hinweis:** Nur der Kontoeigner oder Benutzer mit Berechtigungen zum Zuweisen von Richtlinien können diese Aktion durchführen.
 
@@ -35,7 +42,7 @@ Führen Sie die folgenden Schritte aus, um zu überprüfen, ob Ihrer Benutzer-ID
 
 2. Klicken Sie in der Menüleiste auf **Verwalten > Konto > Benutzer**.  Im Fenster *Benutzer* wird eine Liste mit Benutzern und den entsprechenden E-Mail-Adressen für das aktuell ausgewählte Konto angezeigt.
 	
-3. Wählen Sie die Benutzer-ID aus und stellen Sie sicher, dass diese über eine Richtlinie mit *Anzeigeberechtigter*-Berechtigungen für den {{site.data.keyword.containershort}} verfügt.
+3. Wählen Sie die Benutzer-ID aus und stellen Sie sicher, dass diese über Richtlinien verfügt.
 
 
 
@@ -90,7 +97,24 @@ Sie können festlegen, welche Clusterprotokolle an den {{site.data.keyword.logan
 ## Schritt 4: Berechtigungen für den {{site.data.keyword.containershort_notm}}-Schlüsseleigner einrichten
 {: #step4}
 
-Wenn Sie Protokolle an einen Bereich weiterleiten, müssen Sie auch Cloud Foundry (CF)-Berechtigungen an den {{site.data.keyword.containershort}}-Schlüsseleigner in der Organisation und im Bereich erteilen. Der Schlüsseleigner benötigt die Rolle *Organisationsmanager* für die Organisation sowie die Rollen *Bereichsmanager* und *Entwickler* für den Bereich.
+
+Der {{site.data.keyword.containershort}}-Schlüsseleigner benötigt die folgenden IAM-Richtlinien:
+
+* IAM-Richtlinie für den {{site.data.keyword.containershort}} mit der Rolle als **Administartor**.
+* IAM-Richtlinie für den {{site.data.keyword.loganalysisshort}}-Service mit der Rolle als **Administrator**.
+
+Führen Sie die folgenden Schritte aus: 
+
+1. Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-Konsole an. Öffnen Sie einen Web-Browser und starten Sie das {{site.data.keyword.Bluemix_notm}}-Dashboard: [http://bluemix.net ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://bluemix.net){:new_window}
+	
+	Nach der Anmeldung mit Ihrer Benutzer-ID und Ihrem Kennwort wird die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle geöffnet.
+
+2. Klicken Sie in der Menüleiste auf **Verwalten > Konto > Benutzer**.  Im Fenster *Benutzer* wird eine Liste mit Benutzern und den entsprechenden E-Mail-Adressen für das aktuell ausgewählte Konto angezeigt.
+	
+3. Wählen Sie die Benutzer-ID für den {{site.data.keyword.containershort_notm}}-Schlüsseleigner aus und stellen Sie sicher, dass diese über Richtlinien verfügt.
+
+
+Wenn Sie Protokolle an eine Bereichsdomäne weiterleiten, müssen Sie auch Cloud Foundry (CF)-Berechtigungen an den {{site.data.keyword.containershort}}-Schlüsseleigner in der Organisation und im Bereich erteilen. Der Schlüsseleigner benötigt die Rolle *orgManager* für die Organisation sowie die Rollen *SpaceManager* oder *Developer* für den Bereich.
 
 Führen Sie die folgenden Schritte aus:
 
@@ -109,7 +133,7 @@ Führen Sie die folgenden Schritte aus:
 
     Klicken Sie in der Menüleiste auf **Verwalten > Konto > Benutzer**.  Im Fenster *Benutzer* wird eine Liste mit Benutzern und den entsprechenden E-Mail-Adressen für das aktuell ausgewählte Konto angezeigt.
 	
-    Wählen Sie die ID des Benutzers aus und überprüfen Sie, ob der Benutzer über die Rolle *Organisationsmanager* für die Organisation sowie die Rollen *Bereichsmanager* und *Entwickler* für den Bereich verfügt.
+    Wählen Sie die ID des Benutzers aus und überprüfen Sie, ob der Benutzer über die Rolle *Organisationsmanager* für die Organisation sowie die Rollen *Bereichsmanager* oder *Entwickler* für den Bereich verfügt.
  
 3. Wenn der Benutzer nicht über die richtigen Berechtigungen verfügt, führen Sie die folgenden Schritte aus:
 
@@ -134,7 +158,7 @@ Führen Sie die folgenden Schritte aus:
 Führen Sie den folgenden Befehl aus, um *stdout*- und *stderr*-Protokolldateien an den {{site.data.keyword.loganalysisshort}}-Service zu senden:
 
 ```
-bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
+bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -168,7 +192,7 @@ bx cs logging-config-create MyCluster --logsource container --type ibm --namespa
 Führen Sie die folgenden Befehl aus, um die Protokolldateien */var/log/apps/**/.log* und */var/log/apps/*/.err* an den {{site.data.keyword.loganalysisshort}}-Service zu senden:
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -178,19 +202,20 @@ Dabei gilt:
 * *EndPoint* ist die URL zum Protokollierungsservice in der Region, in der der {{site.data.keyword.loganalysisshort}}-Service bereitgestellt ist. Eine Liste der Endpunkte finden Sie unter [Endpunkte](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls).
 * *OrgName* ist der Name der Organisation, in der der Bereich verfügbar ist.
 * *SpaceName* ist der Name des Bereichs, in dem der {{site.data.keyword.loganalysisshort}}-Service bereitgestellt ist.
-
+* *app-containers* ist ein optionaler Parameter, den Sie festlegen können, um eine Liste von Containern definieren können, die Sie überwachen möchten. Diese Container sind die einzigen, von denen Protokolle an {{site.data.keyword.loganalysisshort}} weitergeleitet werden. Sie können einen oder mehrere Container festlegen, indem Sie sie durch Kommas trennen. 
+* *app-paths* definiert die Pfade in den Container, die Sie überwachen möchten. Sie können einen oder mehrere Pfade angeben und durch Kommas trennen. Platzhalterzeichen, wie '/var/log/*.log', werden akzeptiert. 
 
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die Anwendungsprotokolle an eine Bereichsdomäne in der Region "Deutschland" weiterleitet:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die Anwendungsprotokolle an die Kontodomäne in der Region "Deutschland" weiterleitet:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -203,7 +228,7 @@ bx cs logging-config-create MyCluster --logsource application --type ibm --hostn
 Führen Sie den folgenden Befehl aus, um die Protokolldateien */var/log/syslog* und */var/log/auth.log* an den {{site.data.keyword.loganalysisshort}}-Service zu senden:
 
 ```
-bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
+bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 

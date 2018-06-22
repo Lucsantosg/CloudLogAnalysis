@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-01-10"
 En la página Descubrir, puede ver y analizar los registros de {{site.data.keyword.Bluemix}} de forma interactiva. Puede definir consultas de búsqueda para filtrar los datos utilizando el lenguaje de consulta Lucene. Para cada consulta de búsqueda, puede aplicar filtros para precisar las entradas que están disponibles para el análisis. Puede guardar una búsqueda para su reutilización en el futuro.
 {:shortdesc}
 
-En {{site.data.keyword.Bluemix_notm}}, de forma predeterminada el conjunto de datos que se muestra en la página Descubrir cuando se inicia Kibana desde la IU de {{site.data.keyword.Bluemix_notm}} está configurado de modo que solo muestre las entradas de la aplicación Cloud Foundry (CF) o contenedor desde el que se ha iniciado Kibana. Para obtener más información sobre cómo ver el subconjunto de datos que muestra la página Descubrir, consulte [Identificación de los datos que se muestran](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+En {{site.data.keyword.Bluemix_notm}}, de forma predeterminada el conjunto de datos que se muestra en la página Descubrir cuando se inicia Kibana desde la IU de {{site.data.keyword.Bluemix_notm}} está configurado de modo que solo muestre las entradas de la aplicación Cloud Foundry (CF) o contenedor desde el que se ha iniciado Kibana. 
 
 En la tabla siguiente se muestra la consulta predeterminada por recurso cuando se inicia Kibana desde {{site.data.keyword.Bluemix_notm}}:
 
@@ -41,12 +41,12 @@ Puede realizar cualquiera de las tareas siguientes para personalizar la tabla en
 
 | Tarea | Descripción | 
 |------|-------------|
-| [Añadir una columna de campo](logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | Añadir campos para ver datos específicos que se necesitan para el análisis en lugar de todo el mensaje. |
-| [Reorganizar una columna de campo](logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | Mover la posición de un campo en la tabla a la posición que desee. |
-| [Ver una entrada](logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | Expandir una entrada de la tabla para ver los detalles de la entrada analizados por campo o como JSON. |
-| [Eliminar una columna de campo](logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | Eliminar un campo cuando ya no se necesite en la vista para el análisis. |
-| [Ordenar entradas por valor de un campo indexado](logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | Reordenar las entradas para facilitar su análisis. |
-| [Renovar automáticamente los datos](logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | Renovar los datos que se muestran en la tabla con las últimas entradas. De forma predeterminada, la renovación está **DESACTIVADA**. |
+| [Añadir una columna de campo](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | Añadir campos para ver datos específicos que se necesitan para el análisis en lugar de todo el mensaje. |
+| [Reorganizar una columna de campo](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | Mover la posición de un campo en la tabla a la posición que desee. |
+| [Ver una entrada](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | Expandir una entrada de la tabla para ver los detalles de la entrada analizados por campo o como JSON. |
+| [Eliminar una columna de campo](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | Eliminar un campo cuando ya no se necesite en la vista para el análisis. |
+| [Ordenar entradas por valor de un campo indexado](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | Reordenar las entradas para facilitar su análisis. |
+| [Renovar automáticamente los datos](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | Renovar los datos que se muestran en la tabla con las últimas entradas. De forma predeterminada, la renovación está **DESACTIVADA**. |
 {: caption="Tabla 2. Tareas para personalizar una tabla" caption-side="top"}
 
 <br>
@@ -55,17 +55,17 @@ En la figura siguiente se muestra un ejemplo de una tabla de la página Descubri
 
 ![Página Descubrir en Kibana](images/k4_discover_page.jpg "Página Descubrir en Kibana")
 
-Puede definir otras búsquedas. Para obtener más información, consulte [Filtrado de registros mediante la definición de búsquedas personalizadas](k4_filter_queries.html#k4_filter_queries). Cuando defina una nueva búsqueda, los datos que se muestran en el histograma y en la tabla se actualizan automáticamente.
+Puede definir otras búsquedas. Cuando defina una nueva búsqueda, los datos que se muestran en el histograma y en la tabla se actualizan automáticamente.
 
 Para definir una nueva búsqueda, utilice la consulta de búsqueda predeterminada como punto de partida y luego ajuste la búsqueda realizando las tareas siguientes:
 
-* Aplicar filtros de campo para ajustar el conjunto de datos que puede ver. Puede conmutar cada filtro, fijarlo a la página, habilitarlo o inhabilitarlo según sea necesario y configurarlo para que incluya o excluya el valor. Para obtener más información, consulte [Filtrado de registros en Kibana](logging_kibana_filtering_logs.html#kibana_filtering_logs).
+* Aplicar filtros de campo para ajustar el conjunto de datos que puede ver. Puede conmutar cada filtro, fijarlo a la página, habilitarlo o inhabilitarlo según sea necesario y configurarlo para que incluya o excluya el valor. 
 
-    **Consejo:** Si no encuentra un campo que esperaba ver en la *Lista de campos*, o si alguna de las lupas que aparecen por campos listados está inhabilitada en la página Descubrir, vuelva a cargar la lista de campos renovando el patrón de índice en la página Valores. Para obtener más información, consulte [Cómo volver a cargar la lista de campos](logging_kibana_analize_logs_interactively.html#kibana_discover_view_reload_fields).
+    **Consejo:** Si no encuentra un campo que esperaba ver en la *Lista de campos*, o si alguna de las lupas que aparecen por campos listados está inhabilitada en la página Descubrir, vuelva a cargar la lista de campos renovando el patrón de índice en la página Valores. 
 
     Por ejemplo, si la app CF tiene varias instancias, es posible que desee analizar los datos correspondientes a una instancia específica. Puede definir un filtro de campo para el ID de instancia específico que desea analizar. 
     
-* Personalizar el *Selector de tiempo* para datos basados en tiempo. Puede definir un rango de tiempo absoluto para una consulta, o uno relativo, o bien elegir entre un conjunto de valores predefinidos. Para obtener más información, consulte [Establecimiento de un filtro de tiempo](logging_kibana_set_time_filter.html#set_time_filter).
+* Personalizar el *Selector de tiempo* para datos basados en tiempo. Puede definir un rango de tiempo absoluto para una consulta, o uno relativo, o bien elegir entre un conjunto de valores predefinidos. 
 
 Después de configurar la búsqueda que define el subconjunto de datos que desea analizar, puede guardarla para volverla a utilizar posteriormente.
 
@@ -73,12 +73,12 @@ Puede realizar cualquiera de las siguientes tareas con búsquedas que defina en 
 
 | Tarea | Descripción |
 |------|-------------|
-| [Guardar una búsqueda](logging_kibana_filtering_logs.html#k4_save_search) | Guardar la búsqueda para volverla a utilizar posteriormente.  |
-| [Suprimir una búsqueda](logging_kibana_filtering_logs.html#k4_delete_search) | Suprimir una búsqueda cuando ya no se necesite. |
-| [Exportar una búsqueda](logging_kibana_filtering_logs.html#k4_export_search) | Exportar una búsqueda para compartirla.  |
-| [Volver a cargar una búsqueda](logging_kibana_filtering_logs.html#k4_reload_search)  | Cargar una búsqueda existente para analizar un conjunto de datos. |
-| [Renovar los datos de una búsqueda](logging_kibana_filtering_logs.html#k4_refresh_search) | Configurar la renovación automática de los datos que se visualizan en la búsqueda.  |
-| [Importar una búsqueda](logging_kibana_filtering_logs.html#k4_import_search) | Importar una búsqueda.  |
+| Guardar una búsqueda| Guardar la búsqueda para volverla a utilizar posteriormente.  |
+| Suprimir una búsqueda| Suprimir una búsqueda cuando ya no se necesite. |
+| Exportar una búsqueda| Exportar una búsqueda para compartirla.  |
+| Volver a cargar una búsqueda| Cargar una búsqueda existente para analizar un conjunto de datos. |
+| Renovar los datos de una búsqueda| Configurar la renovación automática de los datos que se visualizan en la búsqueda.  |
+| Importar una búsqueda| Importar una búsqueda.  |
 {: caption="Tabla 3. Tareas para trabajar con búsquedas" caption-side="top"}
 
 <br>
@@ -87,7 +87,7 @@ También puede examinar las estadísticas en la página Descubrir:
 * Puede ver estadísticas por campo. 
 * Puede ver estadísticas en el histograma por el valor `@timestamp` que ha configurado.
 
-Para obtener más información, consulte [Visualización de estadísticas de datos de campo](logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats).
+Para obtener más información, consulte [Visualización de estadísticas de datos de campo](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats).
 
 **Nota:** Los datos que se muestran en la tabla y el histograma son estáticos. Para seguir viendo las últimas entradas, debe definir un intervalo de renovación. 
 
@@ -130,7 +130,7 @@ Por ejemplo, si añade el campo *application_id* a la tabla, la tabla se modific
 ## Renovación automática de los datos
 {: #kibana_discover_view_refresh_interval}
 
-De forma predeterminada, en {{site.data.keyword.Bluemix_notm}} el periodo de *Renovación automática* está **DESACTIVADO** y los datos que puede ver en Kibana corresponden a los últimos 15 minutos desde que se ha iniciado Kibana. Los 15 minutos corresponden al filtro de tiempo preconfigurado. Puede cambiar este valor definiendo otro periodo de tiempo. Para obtener más información, consulte [Establecimiento de un filtro de tiempo](logging_kibana_set_time_filter.html#set_time_filter).
+De forma predeterminada, en {{site.data.keyword.Bluemix_notm}} el periodo de *Renovación automática* está **DESACTIVADO** y los datos que puede ver en Kibana corresponden a los últimos 15 minutos desde que se ha iniciado Kibana. Los 15 minutos corresponden al filtro de tiempo preconfigurado. Puede cambiar este valor definiendo otro periodo de tiempo. 
 
 Siga los pasos siguientes para definir un periodo de *Renovación automática*:
 
@@ -147,7 +147,7 @@ Puede colocar en pausa el intervalo de renovación pulsando el botón de pausa !
 
 
 ## Identificación de los datos que se visualizan en la página Descubrir
-{:#k4_identify_data}
+{: #k4_identify_data}
 
 Cuando se utiliza Kibana para analizar los registros de {{site.data.keyword.Bluemix_notm}}, los datos que puede ver dependen de cómo inicie Kibana, del patrón de índice configurado y de la consulta personalizada y los filtros que haya aplicado.
 
@@ -218,7 +218,7 @@ Puede reorganizar las columnas de campo en la tabla. Mueva el puntero del ratón
 ![Mover campo en la tabla](images/k4_add_field_filter_new_table_look.jpg "Mover campo en la tabla")
 
 
-  ## Cómo volver a cargar la lista de campos
+## Cómo volver a cargar la lista de campos
 {: #kibana_discover_view_reload_fields}
 
 Siga los pasos siguientes para volver a cargar la lista de campos que se visualizan en Kibana:

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-02-01"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -17,32 +17,17 @@ lastupdated: "2018-02-01"
 {:download: .download}
 
 
-# Protokollierung für Ressourcen in einem Kubernetes-Cluster
+# {{site.data.keyword.containershort_notm}}
 {: #containers_kubernetes}
 
-Sie können Protokolle für Ressourcen in einem Kubernetes-Cluster über den {{site.data.keyword.loganalysisshort}}-Service in {{site.data.keyword.Bluemix_notm}} anzeigen, filtern und analysieren.
-{:shortdesc}
-
-Standardmäßig ist das Senden von Protokollen aus einem Cluster an den {{site.data.keyword.loganalysisshort}}-Service nicht automatisch aktiviert. **Hinweis:** Dies ist eine neue Änderung für neue Cluster. Bisher wurden beim Erstellen eines Clusters die Informationen, die ein Containerprozess als 'stdout' (Standardausgabe) und als 'stderr' (Standardfehler) ausgab, automatisch vom {{site.data.keyword.containershort}} erfasst und an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet. Jetzt müssen Sie mindestens eine Protokollierungskonfiguration im Cluster erstellen, damit Protokolle automatisch an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet werden.
-
-Beachten Sie beim Arbeiten mit Clusterprotokollen die folgenden Informationen:
-
-* Das Senden von Informationen an 'stdout' und 'stderr' ist die Standard-Docker-Konvention zur Bereitstellung von Informationen über einen Container.
-* Containerprotokolle werden von außerhalb der Container mithilfe von Crawlern überwacht und weitergeleitet. 
-* Die Daten werden von den Crawlern an eine Multi-Tenant-Elasticsearch-Instanz in {{site.data.keyword.Bluemix_notm}} gesendet. 
-* Sie können Ihren Cluster so konfigurieren, dass 'stdout'- und 'stderr'-Protokolle, andere Anwendungsprotokolle, Workerknotenprotokolle, die Protokolle von Kubernetes-Systemkomponenten und die Protokolle des Ingress-Controllers an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet werden. Weitere Informationen hierzu finden Sie unter [Zusätzliche Anwendungs- und Clusterprotokolle erfassen](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#collect_logs).
-
-## Informationen zur Protokollierung in Public
-{: #public}
-
-In {{site.data.keyword.Bluemix_notm}} können Sie mit dem {{site.data.keyword.loganalysisshort}}-Service Containerprotokolle und Kubernetes-Clusterprotokolle speichern und analysieren, die automatisch vom {{site.data.keyword.containershort}} in Public erfasst werden.
+In {{site.data.keyword.Bluemix_notm}} können Sie mit dem {{site.data.keyword.loganalysisshort}}-Service Containerprotokolle und Kubernetes-Clusterprotokolle speichern und analysieren, die automatisch vom {{site.data.keyword.containershort}} in Public und in Dedicated erfasst werden.{:shortdesc}
 
 In einem Konto können Sie einen oder mehr Kubernetes-Cluster haben. Protokolle werden automatisch vom {{site.data.keyword.containershort}} erfasst, sobald der Cluster bereitgestellt wurde. 
 
 * Anwendungsprotokolle werden erfasst, sobald der Pod bereitgestellt wurde. 
 * Informationen, die ein Containerprozess als 'stdout' (Standardausgabe) und als 'stderr' (Standardfehler) ausgibt, werden automatisch vom {{site.data.keyword.containershort}} erfasst.
 
-Damit diese Protokolle zum Analysieren im {{site.data.keyword.loganalysisshort}}-Service zur Verfügung stehen, müssen Sie den Cluster so konfigurieren, dass Clusterprotokolle an {{site.data.keyword.loganalysisshort}} weitergeleitet werden. Sie können Protokolle an Ihre Kontodomäne oder an eine Bereichsdomäne in Ihrem Konto weiterleiten.
+Damit diese Protokolle zum Analysieren im {{site.data.keyword.loganalysisshort}}-Service zur Verfügung stehen, müssen Sie den Cluster so konfigurieren, dass Protokolle an {{site.data.keyword.loganalysisshort}} weitergeleitet werden. Sie können Protokolle an die {{site.data.keyword.loganalysisshort}}-Kontodomäne oder an eine Bereichsdomäne in Ihrem Konto weiterleiten. Standardmäßig:
 
 * Cluster, die in der Region 'USA (Süden)' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist.
 * Cluster, die in der Region 'USA (Osten)' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist.
@@ -50,35 +35,35 @@ Damit diese Protokolle zum Analysieren im {{site.data.keyword.loganalysisshort}}
 * Cluster, die in der Region 'Sydney' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist.
 * Cluster, die in der Region 'Vereinigtes Königreich' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist.
 
+Für die Entscheidung, ob Protokolle an eine Bereichsdomäne oder an die Kontodomäne weitergeleitet werden, berücksichtigen Sie die folgenden Informationen:
 
-Wenn Sie Protokolldaten in Kibana für einen Cluster analysieren, berücksichtigen Sie die folgenden Informationen:
+* Wenn Sie Protokolle an die Kontodomäne senden, beträgt das Suchkontingent 500 MB pro Tag und es ist zudem nicht möglich, Protokolle zur Langzeitspeicherung in 'Log Collection' abzulegen.
+* Wenn Sie Protokolle an eine Bereichsdomäne senden, können Sie einen {{site.data.keyword.loganalysisshort}}-Serviceplan auswählen, der das tägliche Suchkontingent definiert, und Sie können Protokolle zur Langzeitspeicherung in 'Log Collection' ablegen.
 
-* Sie müssen Kibana in der öffentlichen Region starten, in der die {{site.data.keyword.loganalysisshort}}-Instanz, über die Sie Protokolle anzeigen, bereitgestellt ist. 
-* Ihre Benutzer-ID muss über eine entsprechende Berechtigung zum Anzeigen von Protokollen verfügen. 
+**Hinweis:** Standardmäßig ist das Senden von Protokollen aus einem Cluster an den {{site.data.keyword.loganalysisshort}}-Service nicht automatisch aktiviert. Sie müssen für das Aktivieren der Protokollierung mindestens eine Protokollierungskonfiguration im Cluster erstellen, damit Protokolle automatisch an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet werden. Sie können die Protokollierung über die Befehlszeile aktivieren, indem Sie den Befehl `bx cs logging-config-create` oder das in der {{site.data.keyword.Bluemix_notm}}-Benutzeroberfläche verfügbare Cluster-Dashboard verwenden. Weitere Informationen finden Sie unter [Automatische Erfassung von Clusterprotokollen aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
 
-    Um Protokolle in der Kontodomäne anzeigen zu können, benötigt ein Benutzer eine IAM-Richtlinie für den {{site.data.keyword.loganalysisshort}}-Service. Der Benutzer muss über die Berechtigung **Anzeigeberechtigter** verfügen. 
-    
-    Zum Anzeigen von Protokollen in der Bereichsdomäne muss dem Benutzer eine CF-Rolle zugewiesen sein. Weitere Informationen finden Sie unter [Rollen zum Anzeigen von Protokollen](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
-
-Um Protokolldaten zu verwalten, die sich in einem Langzeitspeicher ('Log Collection') befinden, muss Ihre Benutzer-ID über eine entsprechende IAM-Richtlinie für die Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service verfügen. Die Benutzer-ID benötigt die Berechtigung des **Administrators** oder des **Editors**.  Weitere Informationen finden Sie unter [Rollen für die Verwaltung von Protokollen](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
-
-**Hinweis:** Wenn Sie mit einem Kubernetes-Cluster arbeiten, sind die Namensbereiche *ibm-system* und *kube-system* reserviert. Erstellen, löschen oder ändern Sie keine Berechtigungen für Ressourcen, die in diesen Namensbereiche verfügbar sind. Die Protokolle für diese Namensbereiche sind für die Verwendung durch {{site.data.keyword.IBM_notm}} reserviert.
+Wenn Sie mit einem Kubernetes-Cluster arbeiten, sind die Namensbereiche *ibm-system* und *kube-system* reserviert. Erstellen, löschen oder ändern Sie keine Berechtigungen für Ressourcen, die in diesen Namensbereiche verfügbar sind. Die Protokolle für diese Namensbereiche sind für die Verwendung durch {{site.data.keyword.IBM_notm}} reserviert.
 
 
 
-
-### Übersicht über die Protokollierung für einen Cluster, der Protokolle an die Kontodomäne weiterleitet
-{: #acc}
-
-
-Die folgende Abbildung zeigt eine Übersicht über die Protokollierung in der öffentlichen Region für den {{site.data.keyword.containershort}}, wenn der Cluster Protokolle an die Kontodomäne weiterleitet:
-
-![Komponentenübersicht für in einem Kubernetes-Cluster bereitgestellte Container](images/containers_kube.png "Komponentenübersicht für in einem Kubernetes-Cluster bereitgestellte Container")
-
-
-
-### Übersicht über die Protokollierung für einen Cluster, der Protokolle an eine Bereichsdomäne weiterleitet
+## Protokolle an eine Bereichsdomäne weiterleiten
 {: #space}
+
+Berücksichtigen Sie beim Konfigurieren des Clusters zum Weiterleiten von Clusterprotokollen in {{site.data.keyword.loganalysisshort}} die folgenden Informationen:
+
+* Sie müssen eine Cloud Foundry-Organisation und einen Bereich definieren, an die diese Protokolle weitergeleitet werden. 
+* Die Organisation und der Bereich können in jeder {{site.data.keyword.IBM_notm}} Public Cloud-Region verfügbar sein.
+
+**Hinweis:** Bei Clustern, die auf **{{site.data.keyword.Bluemix_notm}} Dedicated** bereitgestellt werden, ist es nicht möglich, Ihren Cluster so zu konfigurieren, dass Clusterprotokolle an Cloud Foundry-Bereiche weitergeleitet werden, die in Ihrem dedizierten Konto verfügbar sind. 
+
+Wenn Sie Protokolldaten in Kibana für einen Cluster analysieren, der Protokolle an eine Bereichsdomäne weiterleitet, berücksichtigen Sie die folgenden Informationen:
+
+* Sie müssen Kibana in der Public-Region starten, in der die Organisation und der Bereich, die die Clusterprotokolle erfassen, verfügbar sind.
+* Um Ihr Kibana-Suchkontingent zu erhöhen und Protokolle in Log Collection für den Langzeitspeicher zu speichern, müssen Sie den {{site.data.keyword.loganalysisshort}}-Service in dem Bereich bereitstellen, in dem Protokolle mit einem Plan weitergeleitet werden, der Ihren Anforderungen entspricht. 
+* Ihre Benutzer-ID muss über eine entsprechende Berechtigung zum Anzeigen von Protokollen verfügen. Um Protokolle in der Bereichsdomäne anzuzeigen, muss der Benutzer über eine CF-Rolle verfügen. **Auditor** die Rolle der untersten Ebene, mit der Protokolle angezeigt werden dürfen. Weitere Informationen finden Sie unter [Rollen zum Anzeigen von Protokollen](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
+
+Um Clusterprotokolldaten zu verwalten, die im Langzeitspeicher (Log Collection) gespeichert sind, muss Ihre Benutzer-ID über eine IAM-Richtlinie verfügen, damit mit dem {{site.data.keyword.loganalysisshort}}-Service gearbeitet werden kann. Ihre Benutzer-ID muss die Berechtigungen als **Administrator**, **Operator** oder **Editor** besitzen. Weitere Informationen finden Sie unter [Rollen für die Verwaltung von Protokollen](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+
 
 Die folgende Abbildung zeigt eine Übersicht über die Protokollierung in der öffentlichen Region für den {{site.data.keyword.containershort}}, wenn der Cluster Protokolle an eine Bereichsdomäne weiterleitet:
 
@@ -86,37 +71,106 @@ Die folgende Abbildung zeigt eine Übersicht über die Protokollierung in der ö
 
    
 
+## Protokolle an eine Kontodomäne weiterleiten
+{: #acc_public}
+
+Berücksichtigen Sie beim Konfigurieren des Clusters zum Weiterleiten von Clusterprotokollen an die Kontodomäne die folgenden Informationen:
+
+* **Cluster, die auf {{site.data.keyword.Bluemix_notm}} Public** bereitgestellt werden: Protokolle werden an die Kontodomäne in derselben {{site.data.keyword.Bluemix_notm}} Public-Region weitergeleitet, in der der Cluster ausgeführt wird.
+* **Cluster, die auf {{site.data.keyword.Bluemix_notm}} Dedicated** bereitgestellt werden: Protokolle werden an die Kontodomäne in derselben {{site.data.keyword.Bluemix_notm}} Public-Region weitergeleitet, in der der Dedicated-Cluster ausgeführt wird.
+
+Wenn Sie Protokolldaten in Kibana für einen Cluster analysieren, der Protokolle an eine Kontodomäne weiterleitet, berücksichtigen Sie die folgenden Informationen:
+
+* Sie müssen Kibana in der Public-Region starten, in der der Cluster Protokolle an den {{site.data.keyword.loganalysisshort}}-Service sendet. 
+
+    * Cluster, die in der Region 'USA (Süden)' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist.
+    * Cluster, die in der Region 'USA (Osten)' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist.
+    * Cluster, die in der Region "Deutschland" aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist.
+    * Cluster, die in der Region 'Sydney' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist.
+    * Cluster, die in der Region 'Vereinigtes Königreich' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist.
+
+* Ihre Benutzer-ID muss über eine entsprechende Berechtigung zum Anzeigen von Protokollen verfügen. Um Protokolle in der Kontodomäne anzeigen zu können, benötigt ein Benutzer eine IAM-Richtlinie für den {{site.data.keyword.loganalysisshort}}-Service. Der Benutzer muss über die Berechtigung **Anzeigeberechtigter** verfügen. 
 
 
-## Informationen zur Protokollierung in Dedicated
-{: #dedicated}
+Die folgende Abbildung zeigt eine Übersicht über die Protokollierung in der öffentlichen Region für den {{site.data.keyword.containershort}}, wenn der Cluster Protokolle an die Kontodomäne weiterleitet:
 
-In {{site.data.keyword.Bluemix_notm}} können Sie mit dem {{site.data.keyword.loganalysisshort}}-Service in Public Containerprotokolle und Kubernetes-Clusterprotokolle speichern und analysieren, die automatisch vom {{site.data.keyword.containershort}} in Dedicated erfasst werden.
-
-Beachten Sie die folgenden Informationen:
-
-* In einem Konto können Sie einen oder mehr Kubernetes-Cluster haben. Protokolle werden automatisch vom {{site.data.keyword.containershort}} erfasst, sobald ein Cluster bereitgestellt wird. 
-* Zum Anzeigen von Anwendungs- und Clusterprotokollen über den {{site.data.keyword.loganalysisshort}}-Service müssen Sie mindestens eine Protokollierungskonfiguration in einem Cluster definieren. Jeder Konfigurationseintrag definiert, welche Protokollinformationen an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet werden. Zum Beispiel werden 'stdout'- und 'stderr'-Protokolldaten erfasst, sobald der Pod bereitgestellt wird. Damit diese Protokolle weitergeleitet werden, müssen Sie eine Protokollierungskonfiguration für eine Protokollquelle des Typs *Container* definieren.
-* Wenn Sie eine Protokollierungskonfiguration definieren, entscheiden Sie, ob Protokolle an die Kontodomäne oder an eine Bereichsdomäne gesendet werden. **Hinweis:** Aktuell gilt für die Kontodomäne ein Suchkontingent von 500 MB pro Tag und es ist zudem nicht möglich, Protokolle zur Langzeitspeicherung in 'Log Collection' abzulegen. Um nach größeren Protokollen suchen und Protokolle in 'Log Collection' speichern zu können, senden Sie Ihre Protokolle an eine Bereichsdomäne.
-* Wenn Sie definieren, dass eine Protokollierungskonfiguration Protokolle an die Kontodomäne sendet, werden Protokolle an die Kontodomäne in derselben öffentlichen Region weitergeleitet, in der auch der {{site.data.keyword.containershort}} von Dedicated ausgeführt wird.
-
-    Cluster, die in der Region 'USA (Süden)' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist.</br>
-    Cluster, die in der Region 'USA (Osten)' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist. </br>
-    Cluster, die in der Region "Deutschland" aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist. </br>
-    Cluster, die in der Region 'Sydney' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist. </br>
-    Cluster, die in der Region 'Vereinigtes Königreich' aktiv sind, senden Protokolle an den {{site.data.keyword.loganalysisshort}}-Service, der in dieser Region verfügbar ist.
-
-
-Wenn Sie Protokolldaten für einen Cluster in Kibana anzeigen und analysieren, berücksichtigen Sie die folgenden Informationen:
-
-* Sie müssen Kibana in der öffentlichen Cloudregion starten, in der die {{site.data.keyword.loganalysisshort}}-Instanz bereitgestellt ist. 
-* Ihre Benutzer-ID muss für die Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service über eine IAM-Richtlinie verfügen. Sie müssen über die Berechtigungen eines **Prüfers** verfügen, um Protokolle in der Kontodomäne anzuzeigen.  
-
-Um Protokolldaten zu verwalten, die sich in einem Langzeitspeicher ('Log Collection') befinden, muss Ihre Benutzer-ID über eine entsprechende IAM-Richtlinie für die Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service verfügen. Sie benötigen die Berechtigung des **Administrators** oder des **Editors**.  
+![Komponentenübersicht für in einem Kubernetes-Cluster bereitgestellte Container](images/containers_kube.png "Komponentenübersicht für in einem Kubernetes-Cluster bereitgestellte Container")
 
 Die folgende Abbildung zeigt eine Übersicht über die Protokollierung in Dedicated für den {{site.data.keyword.containershort}}:
 
 ![Komponentenübersicht für in einem Kubernetes-Cluster bereitgestellte Container](images/containers_kube_dedicated.png "Komponentenübersicht für in einem Kubernetes-Cluster bereitgestellte Container")
+
+
+
+## Cluster zum Weiterleiten von Protokollen an {{site.data.keyword.loganalysisshort}} weiterleiten
+{: #config_forward_logs}
+
+Sie können festlegen, welche Clusterprotokolle an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet werden sollen. 
+
+Weitere Informationen darüber, wie Sie einen Cluster für die Weiterleitung von Protokolldateien an den {{site.data.keyword.loganalysisshort}}-Service konfigurieren, finden Sie im Abschnitt [Automatische Erfassung von Clusterprotokollen aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
+
+* Informationen zur automatischen Protokollerfassung und Weiterleitung von 'stdout' und 'stderr' finden Sie unter [Automatische Protokollerfassung und Weiterleitung von Containerprotokollen aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers).
+* Informationen zur automatischen Erfassung von Protokollen und Weiterleitung von Anwendungsprotokollen finden Sie unter [Automatische Erfassung von Protokollen und Weiterleitung von Anwendungsprotokollen aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#apps). 
+* Informationen zur automatischen Erfassung von Protokollen und Weiterleitung von Workerprotokollen finden Sie unter [Automatische Erfassung von Protokollen und Weiterleitung von Workerprotokollen aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#workers). 
+* Informationen zur automatischen Erfassung von Protokollen und Weiterleitung von Protokollen von Kubernetes-Systemkomponenten finden Sie unter [Automatische Erfassung von Protokollen und Weiterleitung von Protokollen von Kubernetes-Systemkomponenten aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#system). 
+* Informationen zur automatischen Erfassung von Protokollen und Weiterleitung von Kubernetes-Ingress-Controllerprotokollen finden Sie unter [Automatische Erfassung von Protokollen und Weiterleitung von Kubernetes-Ingress-Controllerprotokollen aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#controller).
+
+
+
+
+
+## Netzverkehr für angepasste Firewallkonfigurationen in {{site.data.keyword.Bluemix_notm}} konfigurieren
+{: #ports}
+
+Wenn Sie zusätzlich eine Firewall eingerichtet haben oder die Firewalleinstellungen in der {{site.data.keyword.Bluemix_notm}} Infrastructure (SoftLayer) angepasst haben, müssen Sie ausgehenden Netzverkehr vom Workerknoten zum {{site.data.keyword.loganalysisshort}}-Service zulassen. 
+
+Sie müssen den TCP-Port 443 und den TCP-Port 9091 von jedem Workerknoten zum {{site.data.keyword.loganalysisshort}}-Service für die folgenden IP-Adressen in der angepassten Firewall öffnen:
+
+<table>
+  <tr>
+    <th>Region</th>
+    <th>Einpflege-URL</th>
+	<th>Öffentliche IP-Adressen</th>
+  </tr>
+  <tr>
+    <td>Deutschland</td>
+	<td>ingest-eu-fra.logging.bluemix.net</td>
+	<td>158.177.88.43 <br>159.122.87.107</td>
+  </tr>
+  <tr>
+    <td>Vereinigtes Königreich</td>
+	<td>ingest.logging.eu-gb.bluemix.net</td>
+	<td>169.50.115.113</td>
+  </tr>
+  <tr>
+    <td>USA (Süden)</td>
+	<td>ingest.logging.ng.bluemix.net</td>
+	<td>169.48.79.236 <br>169.46.186.113</td>
+  </tr>
+  <tr>
+    <td>Sydney</td>
+	<td>ingest-au-syd.logging.bluemix.net</td>
+	<td>130.198.76.125 <br>168.1.209.20</td>
+  </tr>
+</table>
+
+
+## Angepasste Anwendungsprotokolle weiterleiten
+{: #forward_app_logs}
+
+Um die Protokollweiterleitung von angepassten Anwendungsprotokollen in einem Cluster zum {{site.data.keyword.loganalysisshort}}-Service zu aktivieren, müssen Sie eine Protokollierungskonfiguration für den Cluster definieren, bei der **Protokollquelle** auf **Anwendung** festgelegt ist. Sie können diese Konfiguration definieren, indem Sie den Befehl `bx cs logging-config-create` oder die Cluster-Benutzerschnittstelle verwenden.
+
+Wenn Sie den Cluster für die Weiterleitung von angepassten Protokollen konfigurieren, können Sie eine Liste der in Ihrem Cluster ausgeführten Container, von denen Sie angepasste Protokolle weiterleiten möchten, sowie die Pfade in diesen Containern angeben, in denen sich angepasste Dateiprotokolle befinden. 
+
+* Sie müssen den Parameter **app-paths** angeben, um die Liste der Pfade in den Containern festzulegen, die Sie überwachen möchten. Protokolle, die sich in diesen Pfaden befinden, werden an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet. 
+
+    Definieren Sie eine durch Kommas getrennte Liste von Pfaden, die in Ihren Containern verfügbar sind, um diesen Parameter festzulegen. Platzhalterzeichen, wie '/var/log/*.log', werden akzeptiert.
+
+* Sie können auch den Parameter **app-containers** festlegen, um die Liste der Container anzugeben, von denen Protokolle gesammelt und an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet werden sollen. 
+
+    Definieren Sie eine durch Kommas getrennte Liste von Pfaden, um diesen Parameter festzulegen. 
+
+**Tipp:** Sie können mehrere Cluster-Protokollierungskonfigurationen definieren, wobei **Protokollquelle** in einem Cluster auf **Anwendung** festgelegt ist. Wenn Container in einem Cluster unterschiedliche Pfade haben, in denen Protokolle gehostet werden, sollten Sie eine Clusterprotokollierungskonfiguration für jede Gruppe von Containern definieren, deren Protokolle sich im demselben Pfad befinden.  
 
 
 
@@ -160,119 +214,6 @@ Sie können Ihren Cluster so konfigurieren, dass Protokolle an den {{site.data.k
   </tr>
 </table>
 
-
-## Aspekte für die Weiterleitung von Anwendungsprotokollen
-{: #forward_app_logs}
-
-Um die Protokollweiterleitung von Anwendungsprotokollen zu aktivieren, müssen Sie eine Protokollierungskonfiguration für den Cluster definieren, bei der **Protokollquelle** auf **Anwendung** festgelegt ist.
-
-Informieren Sie sich über die folgenden Aspekte der Weiterleitung von Anwendungsprotokollen:
-
-* Sie können Protokolle weiterleiten, die in einem bestimmten Verzeichnis auf dem Hostknoten verfügbar sind. Dies kann durch das Bereitstellen eines Hostpfaddatenträgers in Ihren Containern mit einem Mountpfad erfolgen. Dieser Mountpfad dient als das Verzeichnis in Ihren Containern, an das die Anwendungsprotokolle gesendet werden. Das vordefinierte Hostpfadverzeichnis `/var/log/apps` wird automatisch erstellt, wenn Sie den Datenträgermount erstellen.
-
-    Hier einige Beispiele für einen Abschnitt 'volumeMounts' des Implementierungsdeskriptors und einen Abschnitt 'Datenträger':
-
-    ```
-    volumeMounts:
-            - mountPath: /var/app
-              name: application-log
-    volumes:
-        - name: application-log
-          hostPath:
-            path: /var/log/apps
-
-    ```
-    {: codeblock}
-
-* Die Protokolle werden rekursiv aus dem Pfad `/var/log/apps` gelesen. Sie können Anwendungsprotokolle in Unterverzeichnisse des Pfades `/var/log/apps` einreihen.
-    
-* Nur Anwendungsprotokolldateien mit den Dateierweiterungen **.log** oder **.err** werden weitergeleitet.
-
-* Wenn Sie die Protokollweiterleitung zum ersten Mal aktivieren, werden für die Anwendungsprotokolle 'tail'-Aufrufe durchgeführt, anstatt von oben her gelesen zu werden. 
-
-    Die Inhalte aller Protokolle, die bereits vor Aktivierung der Anwendungsprotokollierung vorhanden waren, werden nicht gelesen. Die Protokolle werden ab dem Punkt gelesen, an dem die Protokollierung aktiviert wurde. Nach der ersten Aktivierung der Protokollweiterleitung jedoch werden die Protokolle immer ab dem Punkt gelesen, an dem sie zuletzt verlassen wurden.
-
-* Wenn Sie den Hostpfaddatenträger */var/log/apps* in mehreren Containern bereitstellen, schreiben alle Container in dasselbe Verzeichnis auf dem Host (Worker). Wenn Ihre Container in denselben Dateinamen schreiben, schreiben sie in genau dieselbe Datei auf dem Host und sie werden überschrieben. 
-
-    **HINWEIS:** Wenn alle Container in denselben Dateinamen schreiben, aktivieren Sie nicht die Weiterleitung von Protokollen, deren 'Protokollquelle' auf *Anwendung* festgelegt ist, um Anwendungsprotokolle für ReplicaSets größer als 1 weiterzuleiten. Stattdessen können Sie Protokolle aus der Anwendung in STDOUT und STDERR schreiben, die als Containerprotokolle aufgenommen werden. Um Anwendungsprotokolle weiterzuleiten, die in STDOUT und STDERR geschrieben wurden, aktivieren Sie die Protokollweiterleitung, wobei 'Protokollquelle' auf *Container* festgelegt ist.
-
-
-
-## Aspekte für die Weiterleitung von Protokollen an eine Protokolldomäne
-{: #forward_logs_domain}
-
-Sie können Ihren Cluster so konfigurieren, dass Protokolldateien an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet werden. 
-
-Protokolle können an die Kontodomäne oder an eine Bereichsdomäne weitergeleitet werden.
-
-Für die Entscheidung, ob Protokolle an eine Bereichsdomäne oder an die Kontodomäne weitergeleitet werden, berücksichtigen Sie die folgenden Informationen:
-
-* Wenn Sie Protokolle an die Kontodomäne senden, beträgt das Suchkontingent 500 MB pro Tag und es ist zudem nicht möglich, Protokolle zur Langzeitspeicherung in 'Log Collection' abzulegen.
-* Wenn Sie Protokolle an eine Bereichsdomäne senden, können Sie einen {{site.data.keyword.loganalysisshort}}-Serviceplan auswählen, der das tägliche Suchkontingent definiert, und Sie können Protokolle zur Langzeitspeicherung in 'Log Collection' ablegen.
-
-
-
-## Anwendungs- und Clusterprotokolle weiterleiten
-{: #forward_logs}
-
-Führen Sie die folgenden Schritte aus, um Ihren Cluster für die Weiterleitung von Protokollen an den {{site.data.keyword.loganalysisshort}}-Service zu konfigurieren:
-
-1. Überprüfen Sie, ob Ihre Benutzer-ID über die Berechtigung zum Hinzufügen einer Protokollierungskonfiguration zum Cluster verfügt. 
-
-    Nur Benutzer mit einer IAM-Richtlinie für den {{site.data.keyword.containershort}} mit Berechtigungen zum Verwalten von Clustern können eine Protokollierungskonfiguration für einen Cluster erstellen, aktualisieren oder löschen. Dazu ist mindestens eine der folgenden Rollen erforderlich: Administrator, Operator.
-
-2. Öffnen Sie ein Terminal und richten Sie den Clusterkontext ein.
-
-3. Erstellen Sie Ihre Protokollierungskonfigurationen für den Cluster. Sie können festlegen, welche Clusterprotokolle an den Log Analysis-Service weitergeleitet werden sollen.
-
-    Informationen zur automatischen Protokollerfassung und Weiterleitung von 'stdout' und 'stderr' finden Sie unter [Automatische Protokollerfassung und Weiterleitung von Containerprotokollen aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers). </br>
-    Informationen zur automatischen Erfassung von Protokollen und Weiterleitung von Anwendungsprotokollen finden Sie unter [Automatische Erfassung von Protokollen und Weiterleitung von Anwendungsprotokollen aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#apps). </br>
-    Informationen zur automatischen Erfassung von Protokollen und Weiterleitung von Workerprotokollen finden Sie unter [Automatische Erfassung von Protokollen und Weiterleitung von Workerprotokollen aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#workers). </br>
-    Informationen zur automatischen Erfassung von Protokollen und Weiterleitung von Protokollen von Kubernetes-Systemkomponenten finden Sie unter [Automatische Erfassung von Protokollen und Weiterleitung von Protokollen von Kubernetes-Systemkomponenten aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#system). </br>
-    Informationen zur automatischen Erfassung von Protokollen und Weiterleitung von Kubernetes-Ingress-Controllerprotokollen finden Sie unter [Automatische Erfassung von Protokollen und Weiterleitung von Kubernetes-Ingress-Controllerprotokollen aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#controller).
-    
-4. Wenn Sie Protokolle an einen Bereich weiterleiten, müssen Sie auch Cloud Foundry (CF)-Berechtigungen an den {{site.data.keyword.containershort}}-Schlüsseleigner in der Organisation und im Bereich erteilen. Der Schlüsseleigner benötigt die Rolle *Organisationsmanager* für die Organisation sowie die Rollen *Bereichsmanager* und *Entwickler* für den Bereich.
-
-Weitere Informationen darüber, wie Sie einen Cluster für die Weiterleitung von Protokolldateien an den {{site.data.keyword.loganalysisshort}}-Service konfigurieren, finden Sie im Abschnitt [Automatische Erfassung von Clusterprotokollen aktivieren](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
-
-
-## Netzverkehr für angepasste Firewallkonfigurationen in {{site.data.keyword.Bluemix_notm}} konfigurieren
-{: #ports}
-
-Wenn Sie zusätzlich eine Firewall eingerichtet haben oder die Firewalleinstellungen in der {{site.data.keyword.Bluemix_notm}} Infrastructure (SoftLayer) angepasst haben, müssen Sie ausgehenden Netzverkehr vom Workerknoten zum {{site.data.keyword.loganalysisshort}}-Service zulassen. 
-
-Sie müssen den TCP-Port 443 und den TCP-Port 9091 von jedem Workerknoten zum {{site.data.keyword.loganalysisshort}}-Service für die folgenden IP-Adressen in der angepassten Firewall öffnen:
-
-<table>
-  <tr>
-    <th>Region</th>
-    <th>Einpflege-URL</th>
-	<th>Öffentliche IP-Adressen</th>
-  </tr>
-  <tr>
-    <td>Deutschland</td>
-	<td>ingest-eu-fra.logging.bluemix.net</td>
-	<td>158.177.88.43 <br>159.122.87.107</td>
-  </tr>
-  <tr>
-    <td>Vereinigtes Königreich</td>
-	<td>ingest.logging.eu-gb.bluemix.net</td>
-	<td>169.50.115.113</td>
-  </tr>
-  <tr>
-    <td>USA (Süden)</td>
-	<td>ingest.logging.ng.bluemix.net</td>
-	<td>169.48.79.236 <br>169.46.186.113</td>
-  </tr>
-  <tr>
-    <td>Sydney</td>
-	<td>ingest-au-syd.logging.bluemix.net</td>
-	<td>130.198.76.125 <br>168.1.209.20</td>
-  </tr>
-</table>
-
-
-
 ## Protokolle durchsuchen
 {: #log_search}
 
@@ -288,27 +229,28 @@ Felder, die einheitlich in Protokolleinträgen verwendet werden:
   <caption>Liste gängiger Felder</caption>
   <tr>
     <th>Feldname</th>
-	<th>Beschreibung</th>
-	<th>Wert</th>
+	  <th>Beschreibung</th>
+	  <th>Wert</th>
   </tr>
   <tr>
     <td>ibm-containers.region_str</td>
-	<td>Region, in der der Cluster verfügbar ist.</td>
-	<td>Beispielsweise ist `us-south` der Wert für einen Cluster, der in der Region 'USA (Süden)' verfügbar ist.</td>
+	  <td>Region, in der der Cluster verfügbar ist.</td>
+	  <td>Beispielsweise ist `us-south` der Wert für einen Cluster, der in der Region 'USA (Süden)' verfügbar ist.</td>
   </tr>
   <tr>
     <td>ibm-containers.account_id_str</td>
-	<td>Konto-ID.</td>
-	<td></td>
+	  <td>Konto-ID.</td>
+	  <td></td>
   </tr>
   <tr>
     <td>ibm-containers.cluster_id_str</td>
-	<td>Cluster-ID.</td>
-	<td></td>
-	<tr>
+	  <td>Cluster-ID.</td>
+	  <td></td>
+	</tr>
+  <tr>
     <td>ibm-containers.cluster_name_str</td>
-	<td>Clustername</td>
-	<td></td>
+	  <td>Clustername</td>
+	  <td></td>
   </tr>
 </table>
 
@@ -432,6 +374,34 @@ ist als Feld verfügbar, das Sie zum Filtern und Suchen verwenden können:
 * `field4` wird als `field4_str` mit dem Typ 'Zeichenfolge' analysiert.
     
 
+
+
+## Sicherheit
+{: #security}
+
+
+Um Clusterprotokolle an {{site.data.keyword.loganalysisshort}} weiterzuleiten, müssen Sie {{site.data.keyword.Bluemix_notm}} Berechtigungen an den {{site.data.keyword.containershort}}-Schlüsseleigner und an die Benutzer-ID gewähren, die die Protokollierung der Clusterkonfigurationen konfiguriert.
+
+Die Benutzer-ID, die die Protokollierung der Clusterkonfigurationen konfiguriert, muss über die folgenden Berechtigungen verfügen: 
+
+* IAM-Richtlinie für den {{site.data.keyword.containershort}} mit Berechtigungen als **Anzeigeberechtigter**.
+* IAM-Richtlinie für die Cluster-Instanz mit den Berechtigungen als **Administrator** oder **Operator**.
+
+Bei einem Cluster, der Protokolle zu einer {{site.data.keyword.loganalysisshort}}-**Bereichsdomäne** weiterleitet, sind die folgenden Berechtigungen für den {{site.data.keyword.containershort}}-Schlüsseleigner erforderlich:
+
+* IAM-Richtlinie für den {{site.data.keyword.containershort}} mit der Rolle als **Administartor**.
+* IAM-Richtlinie für den {{site.data.keyword.loganalysisshort}}-Service mit der Rolle als **Administrator**.
+* Cloud Foundry (CF)-Rolle **orgManager** für die Organisation, in der der Bereich verfügbar ist.
+* Die CF-Rolle **SpaceManager** oder **Developer** für den Bereich, in dem Protokolle vom Cluster weitergeleitet werden.
+
+
+Bei einem Cluster, der Protokolle zur {{site.data.keyword.loganalysisshort}}-**Kontodomäne** weiterleitet, sind die folgenden Berechtigungen für den {{site.data.keyword.containershort}}-Schlüsseleigner erforderlich:
+
+* IAM-Richtlinie für den {{site.data.keyword.containershort}} mit der Rolle als **Administartor**.
+* IAM-Richtlinie für den {{site.data.keyword.loganalysisshort}}-Service mit der Rolle als **Administrator**.
+
+
+
 ## Protokolle in 'Log Collection' speichern
 {: #log_collection}
 
@@ -446,7 +416,7 @@ Der {{site.data.keyword.loganalysisshort}}-Service bietet zusätzliche Pläne, m
 
 Berücksichtigen Sie bei der Verwaltung von Protokollen in 'Log Collection' die folgenden Informationen:
 
-* Sie können eine Protokollaufbewahrungsrichtlinie konfigurieren, die die Anzahl Tage definiert, für die Protokolle in 'Log Collection' aufbewahrt werden. Weitere Informationen finden Sie unter [Protokollaufbewahrungsrichtlinie](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* Sie können eine Protokollaufbewahrungsrichtlinie konfigurieren, die die Anzahl Tage definiert, für die Protokolle in 'Log Collection' aufbewahrt werden. Weitere Informationen finden Sie unter [Protokollaufbewahrungsrichtlinie](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
 * Sie können die API oder die Befehlszeilenschnittstelle von 'Log Collection' verwenden, um Protokolle manuell zu löschen. 
 * Zum Verwalten von Protokollen in 'Log Collection' benötigt der Benutzer eine IAM-Richtlinie mit Berechtigungen für die Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service in {{site.data.keyword.Bluemix_notm}}. Weitere Informationen finden Sie unter [IAM-Rollen](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
 
@@ -458,7 +428,7 @@ Zum Analysieren von Protokolldaten verwenden Sie Kibana, um erweiterte Analyseta
 * Sie können Kibana direkt über einen Web-Browser starten. Weitere Informationen finden Sie unter [Zu Kibana über einen Web-Browser navigieren](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 * Sie können Kibana über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle im Kontext eines Clusters starten. Weitere Informationen finden Sie unter [Vom Dashboard eines in einem Kubernetes-Cluster bereitgestellten Containers zu Kibana navigieren](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube).
 
-Wenn Sie die Protokolldaten einer App, die in einem Container ausgeführt wird, im JSON-Format an den Docker-Protokollcollector weiterleiten, können Sie in Kibana Protokolldaten suchen und analysieren, indem Sie JSON-Felder verwenden. Weitere Informationen finden Sie unter [Angepasste Felder als Kibana-Suchfelder konfigurieren](logging_containers_ov.html#send_data_in_json).
+Wenn Sie die Protokolldaten einer App, die in einem Container ausgeführt wird, im JSON-Format an den Docker-Protokollcollector weiterleiten, können Sie in Kibana Protokolldaten suchen und analysieren, indem Sie JSON-Felder verwenden. Weitere Informationen finden Sie in [Protokolle senden, um die Felder in einer Nachricht als Suchfelder in Kibana verwenden zu können](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json).
 
 Berücksichtigen Sie beim Anzeigen von Protokollen in Kibana die folgenden Informationen:
 

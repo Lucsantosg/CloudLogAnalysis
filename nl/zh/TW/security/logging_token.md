@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -38,7 +38,7 @@ lastupdated: "2018-01-31"
 	
 3. 執行下列指令：
 
-	```
+    ```
 	bx logging token-get
 	```
 	{: codeblock}
@@ -65,7 +65,7 @@ lastupdated: "2018-01-31"
 
     列出服務，以取得空間中的 {{site.data.keyword.loganalysisshort}} 實例名稱：
 	
-	```
+    ```
 	bx service list
 	```
 	{: codeblock}
@@ -76,11 +76,15 @@ lastupdated: "2018-01-31"
 	bx service list
     Invoking 'cf services'...
 
+    
+
     Getting services in org lopezdsr_org / space dev as xxx@yyyy...
     OK
 
+    
+
     name              service          plan       bound apps   last operation
-    Log Analysis-vg   ibmLogAnalysis   standard                create succeeded
+    Log Analysis-vg   ibmloganalysis   standard                create succeeded
     ```
 	{: screen}
 	
@@ -133,33 +137,7 @@ lastupdated: "2018-01-31"
 	```
 	{: screen}
 
-## 取得記載記號，以使用 Log Analysis CLI（CF 外掛程式）將日誌傳送至空間
-{: #logging_token_cf_plugin}
 
-若要取得可用來將日誌傳送至 {{site.data.keyword.loganalysisshort}} 服務的記載記號，請完成下列步驟：
-
-1. 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
-
-   如需相關資訊，請參閱[下載並安裝 {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
-   
-   如果已安裝 CLI，請繼續進行下一步。
-    
-2. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
-
-    如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
-	
-3. 取得您已取得鑑別記號之空間的 GUID。
-
-   如需相關資訊，請參閱[如何取得空間的 GUID](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid)。  
-   
-4. 取得記載記號。執行下列指令：
-
-    ```
-    bx cf logging auth
-    ```
-    {: codeblock}
-
-此指令會傳回必要的*記載記號* 及*空間 ID*，以將日誌傳送至具有該 ID 的空間。	
 	
 ## 取得記載記號，以使用 Log Analysis API 將日誌傳送至空間
 {: #logging_token_api}
@@ -181,7 +159,7 @@ lastupdated: "2018-01-31"
 
     例如，執行 `bx cf oauth-token` 指令來取得 UAA 記號。
 
-	```
+    ```
 	bx cf oauth-token
 	```
 	{: codeblock}
@@ -220,56 +198,3 @@ lastupdated: "2018-01-31"
 	
     此指令會傳回必要的記載記號，以用來將日誌傳送至該空間。
 	
-## 取得記載記號，以使用 Log Analysis API 將日誌傳送至帳戶網域
-{: #logging_acc_token_api}
-
-
-若要取得可用來將日誌傳送至 {{site.data.keyword.loganalysisshort}} 服務的記載記號，請完成下列步驟：
-
-1. 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
-
-   如需相關資訊，請參閱[下載並安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
-   
-   如果已安裝 CLI，請繼續進行下一步。
-    
-2. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
-
-    如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
-	
-3. 取得 [IAM 記號](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli)。
-
-    此輸出會傳回 IAM 記號。
-
-4. 取得帳戶的 GUID。
-
-   如需相關資訊，請參閱[如何取得帳戶的 GUID](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid)。  
-	
-5. 匯出下列變數：TOKEN 及 AccountID。
-
-    * *TOKEN* 是您在前一個步驟中取得的 OAuth 記號，但沒有 Bearer。
-	
-	* *AccountID* 是您在前一個步驟中取得之帳戶的 GUID。 
-		
-	例如，
-	
-	```
-	export TOKEN="eyJhbGciOiJI....cGFzc3dvcmQiLCJjZiIsInVhYSIsIm9wZW5pZCJdfQ.JaoaVudG4jqjeXz6q3JQL_SJJfoIFvY8m-rGlxryWS8"
-	export AccountID="667fb8953456fg41095"
-	```
-	{: screen}
-	
-6. 取得記載記號。執行下列指令：
- 
-    ```
-	curl -k -X GET  --header "X-Auth-User-Token:iam ${TOKEN}"  --header "X-Auth-Project-Id: a-${AccountID}" -k  LOGGING_ENDPOINT/token
-    ```
-    {: codeblock}	
-	
-	其中
-	* AccountID 是服務執行所在空間的 GUID。
-	* TOKEN 是您在前一個步驟中取得的 IAM 記號，但沒有 Bearer 字首。
-	* LOGGING_ENDPOINT 是組織及空間所在 {{site.data.keyword.Bluemix_notm}} 地區的 {{site.data.keyword.loganalysisshort}} 端點。每個地區的 LOGGING_ENDPOINT 都不同。若要查看不同端點的 URL，請參閱[端點](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints)。
-	
-    此指令會傳回必要的記載記號，以用來將日誌傳送至帳戶網域。
-	
-

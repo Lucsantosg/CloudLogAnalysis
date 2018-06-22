@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Configurando a CLI do {{site.data.keyword.loganalysisshort}} (plug-in {{site.data.keyword.Bluemix_notm}})
+# Configurando o {{site.data.keyword.loganalysisshort}} CLI
 {: #config_log_collection_cli}
 
 O serviço {{site.data.keyword.loganalysisshort}} inclui uma interface da linha de comandos (CLI) que pode ser usada para gerenciar logs na nuvem. É possível usar o plug-in {{site.data.keyword.Bluemix_notm}} para visualizar o status do log, fazer download de logs e configurar a política de retenção de log. A CLI oferece diferentes tipos de ajuda: ajuda geral para aprender sobre a CLI e os comandos suportados, ajuda de comando para aprender como usar um comando ou ajuda de subcomando para aprender como usar um subcomando para um comando.
@@ -57,11 +57,10 @@ Para instalar a CLI do {{site.data.keyword.loganalysisshort}}, conclua as etapas
     A saída é semelhante ao seguinte:
    
     ```
-    bx plugin list
-    Listing installed plug-ins...
+    bx plugin list Listing installed plug-ins...
 
-    Plugin Name          Version   
-    logging-cli          0.1.1   
+    Plugin Name Version   
+    logging-cli 0.1.1   
     ```
     {: screen}
 
@@ -93,11 +92,10 @@ Para instalar a CLI do {{site.data.keyword.loganalysisshort}}, conclua as etapas
     A saída é semelhante ao seguinte:
    
     ```
-    bx plugin list
-    Listing installed plug-ins...
+    bx plugin list Listing installed plug-ins...
 
-    Plugin Name          Version   
-    logging-cli          0.1.1   
+    Plugin Name Version   
+    logging-cli 0.1.1   
     ```
     {: screen}
  
@@ -155,7 +153,14 @@ Conclua as etapas a seguir para instalar o plug-in Coleção de logs no Mac OS X
 	1. Selecione o valor de plataforma: **osx**. 
 	2. Clique em **Salvar arquivo**.  
     
-2. Instale o plug-in. Execute o comando a seguir:
+2. Altere as permissões do arquivo. Execute o comando a seguir:
+
+    ```
+    Chmod u + x logging-cli-darwin-amd64-0.1.1
+    ```
+     {: codeblock}
+
+3. Instale o plug-in. Execute o comando a seguir:
         
     ```
     bx plugin install -f logging-cli-darwin-amd64-0.1.1
@@ -184,11 +189,10 @@ Conclua as etapas a seguir para desinstalar a CLI do serviço {{site.data.keywor
     A saída é semelhante ao seguinte:
    
     ```
-    bx plugin list
-    Listing installed plug-ins...
+    bx plugin list Listing installed plug-ins...
 
-    Plugin Name          Version   
-    logging-cli          0.1.1   
+    Plugin Name Version   
+    logging-cli 0.1.1   
     ```
     {: screen}
     
@@ -203,7 +207,7 @@ Conclua as etapas a seguir para desinstalar a CLI do serviço {{site.data.keywor
   
 
 ## Atualizando a CLI do Log Analysis por meio do repositório
-{: #uninstall_cli}
+{: #update_cli}
 
 Para atualizar a CLI de criação de log, execute o comando *bx plugin update*.
 {:shortdesc}
@@ -229,11 +233,10 @@ Conclua as etapas a seguir para atualizar a CLI de serviço do {{site.data.keywo
     A saída é semelhante ao seguinte:
    
     ```
-    bx plugin list
-    Listing installed plug-ins...
+    bx plugin list Listing installed plug-ins...
 
-    Plugin Name          Version   
-    logging-cli          0.1.1   
+    Plugin Name Version   
+    logging-cli 0.1.1   
     ```
     {: screen}
 

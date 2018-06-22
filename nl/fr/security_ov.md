@@ -229,11 +229,8 @@ Pour pouvoir envoyer des journaux au service {{site.data.keyword.loganalysisshor
 Pour envoyer des journaux dans un domaine d'espace, choisissez l'une des méthodes suivantes :
 
 * [Obtention du jeton de journalisation pour envoyer des journaux dans un espace avec la commande {{site.data.keyword.Bluemix_notm}} bx service](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
-* [Obtention du jeton de journalisation pour envoyer des journaux dans un espace via l'interface de ligne de commande Log Analysis (plug-in CF)](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cf_plugin)
+* [Obtention du jeton de journalisation pour envoyer des journaux dans un espace via l'interface de ligne de commande Log Analysis](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [Obtention du jeton de journalisation pour envoyer des journaux dans un espace via l'API Log Analysis](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
-
-Pour envoyer des journaux dans le domaine de compte, voir [Obtention du jeton de journalisation pour envoyer des journaux dans le domaine de compte via l'API Log Analysis](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_acc_token_api).
-
 
 
 ## Octroi de droits à un utilisateur pour l'utilisation des journaux

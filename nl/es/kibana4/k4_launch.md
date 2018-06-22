@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -20,7 +20,6 @@ Inicie Kibana desde la interfaz de usuario de {{site.data.keyword.Bluemix}} o di
 {:shortdesc}
 
 Inicie Kibana desde {{site.data.keyword.Bluemix_notm}} para ver y analizar datos en el contexto del recurso desde el que inicia Kibana. Por ejemplo, puede iniciar los registros específicos de la app CF en Kibana, en el contexto de la app específica.
-    Espacio de {{site.data.keyword.Bluemix_notm}}. La consulta que se utiliza para filtrar los datos que aparecen en el panel de control recupera las entradas de registro correspondientes a un espacio de la organización. La información de registro que muestra Kibana incluye registros correspondientes a todos los recursos desplegados dentro del espacio de la organización en la que ha iniciado la sesión. 
 
 En la siguiente tabla se muestra una lista de los recursos y métodos de navegación soportados para iniciar Kibana:
 
@@ -38,11 +37,6 @@ En la siguiente tabla se muestra una lista de los recursos y métodos de navegac
   <tr>  
   <tr>
     <td>Contenedor desplegado en un clúster Kubernetes</td>
-    <td>No</td>
-    <td>Sí</td>
-  <tr>  
-  <tr>
-    <td>Contenedor desplegado en una infraestructura gestionada por {{site.data.keyword.Bluemix_notm}}</td>
     <td>Sí</td>
     <td>Sí</td>
   <tr>  
@@ -71,7 +65,7 @@ Para ver los registros de una aplicación Cloud Foundry o de un contenedor Docke
 
     De forma predeterminada, se carga la página **Descubrir** con el patrón de índice predeterminado seleccionado y un filtro de tiempo establecido en los últimos 30 segundos. La consulta de búsqueda está establecida para que coincida con todas las entradas de la app CF o el contenedor Docker.
 
-    Si la página Descubrir no muestra ninguna entrada de registro, ajuste el selector de tiempo. Para obtener más información, consulte [Establecimiento de un filtro de tiempo](logging_kibana_set_time_filter.html#set_time_filter).
+    Si la página Descubrir no muestra ninguna entrada de registro, ajuste el selector de tiempo. 
 
 
 ##  Navegación al panel de control de Kibana desde un navegador web
@@ -101,6 +95,5 @@ Complete el siguiente paso para iniciar Kibana desde un navegador:
           </tr>
         </table>
 
-    Si la página Descubrir no muestra ninguna entrada de registro, ajuste el selector de tiempo. Para obtener más información, consulte [Establecimiento de un filtro de tiempo](logging_kibana_set_time_filter.html#set_time_filter).
-
+    Si la página Descubrir no muestra ninguna entrada de registro, ajuste el selector de tiempo. 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -149,7 +149,7 @@ Führen Sie die folgenden Schritte aus, um Kontoinformationen zu Protokollen abz
 
 
 ## Informationen zu Protokollen auf Organisationsebene abrufen
-{: #viewing_logs_account}
+{: #viewing_logs_org}
 
 Um Informationen zu Protokollen abzurufen, die auf der Organisationsebene über einen bestimmten Zeitraum verfügbar sind, verwenden Sie den Befehl `bx logging log-show` mit der Option **-r org** und der Option **-i**, um die ID der Organisation anzugeben. Sie können außerdem die Optionen **-t** für den Protokolltyp, **-s** für das Startdatum und **-e** für das Enddatum festlegen. 
 

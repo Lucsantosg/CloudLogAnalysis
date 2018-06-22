@@ -21,10 +21,9 @@ lastupdated: "2018-01-10"
 
 Ci-après figurent des réponses aux questions fréquentes concernant l'utilisation des fonctions de journalisation de {{site.data.keyword.Bluemix}}. {:shortdesc}
 
-* [Comment procéder si je ne vois pas de données dans la page Discover de Kibana ?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_discover_kibana)
-* [Que faire en cas de renvoi d'une exception d'authentification ?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_dashboard_kibana)
-* [Comment lancer Kibana 3 ou Kibana 4 ?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
-* [Pourquoi le symbole ? s'affiche-t-il en regard de zones dans la page Kibana Discover ?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
+* [Comment procéder si je ne vois pas de données dans la page Discover de Kibana ?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_discover_kibana)
+* [Que faire en cas de renvoi d'une exception d'authentification ?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_dashboard_kibana)
+* [Pourquoi le symbole ? s'affiche-t-il en regard de zones dans la page Kibana Discover ?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_kibana_question)
 * [Une erreur 403 s'affiche lorsque j'essaie de modifier le canevas d'index par défaut](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
 * [L'URL abrégée ne fonctionne pas](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
 * [Puis-je effectuer des recherches dans mes journaux de compte dans Bluemix ?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
@@ -78,21 +77,7 @@ Pour résoudre ce problème, procédez comme suit :
 
     Si vous partagez le tableau de bord, ne supprimez pas de visualisation car cette opération affecterait d'autres membres de l'équipe qui utilisent le même tableau de bord.
 
-## Comment lancer Kibana 3 ou Kibana 4 ?
-{: #logging_qa_kibana3}
 
-**Remarque :** la version Kibana 3 a été dépréciée.
-
-Vous pouvez lancer Kibana 3 ou Kibana 4 depuis un navigateur.
-
-Procédez comme suit pour lancer Kibana depuis un navigateur :
-
-1. Ouvrez [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net) pour vous connecter à l'interface utilisateur Kibana.
-    
-2. Sélectionnez la version Kibana à utiliser pour analyser vos journaux.
-    * Sélectionnez l'onglet **Kibana 4** si vous voulez utiliser cette version. La page Discovery s'ouvre. Pour plus d'informations, voir [Analyse des données en mode interactif dans Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_kibana_analize_logs_interactively.html#kibana_analize_logs_interactively).
-    * Sélectionnez l'onglet **Kibana 3** si vous voulez utiliser cette version. Le tableau de bord Kibana par défaut s'ouvre. Pour plus d'informations sur l'utilisation de Kibana 3 pour analyser vos journaux, voir [Analyse de journaux dans Kibana 3 (déprécié)](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3). Pour plus d'informations sur la personnalisation d'un tableau de bord Kibana 3, voir cet [article de blogue ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/){: new_window}.
-     
 
 ## Pourquoi le symbole ? s'affiche-t-il dans la page Kibana Discover ?
 {: #logging_qa_kibana_question}
@@ -119,7 +104,7 @@ En tant que propriétaire de compte, vous pouvez effectuer des recherches dans v
 
 Procédez comme suit pour afficher vos journaux de compte :
 
-1. [Lancez Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) Par exemple, pour la région Sud des Etats-Unis, utilisez l'URL https://logging.ng.bluemix.net.
+1. [Lancez Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) Par exemple, pour la région Sud des Etats-Unis, utilisez l'URL `https://logging.ng.bluemix.net`,
 
 2. Sélectionnez l'option **View AccountName account Logs** pour afficher les journaux de compte. *AccountName* est le nom du compte.
 

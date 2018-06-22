@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -17,8 +17,30 @@ lastupdated: "2018-01-10"
 # 导航至 Cloud Foundry 应用程序的日志
 {: #launch_logs_cloud_ui_cf}
 
-在 {{site.data.keyword.Bluemix}} 中，可以通过可用于每个 Cloud Foundry 应用程序的日志选项卡来查看、过滤和分析日志。
+在 {{site.data.keyword.Bluemix}} 中，通过可供每个 Cloud Foundry 应用程序使用的“日志”选项卡，或通过 {{site.data.keyword.loganalysisshort}} 服务 UI，可以查看、过滤和分析日志。
 {:shortdesc}
+
+要查看 CF 应用程序日志，请考虑以下信息： 
+
+<table>
+  <caption>有关 {{site.data.keyword.Bluemix_notm}} 中 CF 应用程序的信息</caption>
+  <tr>
+    <th>UI 选项</th>
+    <th>信息</th>
+  </tr>
+  <tr>
+    <td>通过 CF 应用程序 UI 提供的“日志”选项卡</td>
+    <td>供分析使用的日志包含最近 24 小时的数据。</td>
+  </tr>
+  <tr>
+    <td>{{site.data.keyword.loganalysisshort}} 仪表板 (Kibana)</td>
+    <td>供分析使用的日志包含最近 3 天的数据。您还可以指定定制时间段。</td>
+  </tr>
+</table>
+
+
+## 通过 CF 应用程序仪表板导航至 CF 应用程序日志 
+{: #cfapp_ui}
 
 要查看 Cloud Foundry 应用程序的部署或运行时日志，请完成以下步骤：
 
@@ -30,6 +52,20 @@ lastupdated: "2018-01-10"
     
 缺省情况下，{{site.data.keyword.Bluemix_notm}} 控制台中供分析使用的日志包含最近 24 小时的数据。
 
-**提示：**要分析 24 小时前定制时间段内的数据，请参阅[使用 Kibana 进行高级日志分析](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)。 
+
+## 通过 {{site.data.keyword.loganalysisshort}} UI 导航至 CF 应用程序日志 
+{: #cfapp_la}
+
+要查看 Cloud Foundry 应用程序的部署或运行时日志，请完成以下步骤：
+
+1. 在“应用程序”仪表板中，单击 Cloud Foundry 应用程序的名称。 
+    
+2. 在“应用程序详细信息”页面中，单击**日志**。
+    
+3. 单击**在 Kibana 中查看**。
+
+缺省情况下，供分析使用的日志包含最近 15 分钟的数据。
+
+**提示**：要分析定制时间段内的数据，请参阅[使用 Kibana 进行高级日志分析](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)。 
 
 

@@ -17,7 +17,7 @@ lastupdated: "2018-01-16"
 # クラスターのスペース ID の取得
 {: #containers_spaceid}
 
-Cloud Foundry の組織およびスペースのコンテキスト内で {{site.data.keyword.Bluemix_notm}} アカウントのクラスターを作成できます。 
+Cloud Foundry 組織およびスペースのコンテキスト内で {{site.data.keyword.Bluemix_notm}} アカウントにクラスターを作成できます。
 {:shortdesc}
 
 クラスターに関連付けられているスペース ID を見つけるには、以下のコマンドを実行します。

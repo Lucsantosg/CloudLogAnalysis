@@ -32,7 +32,7 @@ Der {{site.data.keyword.loganalysisfull}}-Service stellt Protokollerfassungs- un
 
 Die folgende Abbildung zeigt eine Übersicht über den {{site.data.keyword.loganalysisshort}}-Service: 
 
-![Übersicht über den {{site.data.keyword.loganalysisshort}}-Service](images/loganalisys_F1.gif "Übersicht über den {{site.data.keyword.loganalysisshort}}-Service")
+![Übersicht über den {{site.data.keyword.loganalysisshort}}-Service](images/loganalysis_F1.png "Übersicht über den {{site.data.keyword.loganalysisshort}}-Service")
 
 
 Zum Erfassen und Durchsuchen von Protokollen für Cloudressourcen, die in einem Bereich ausgeführt werden, müssen Sie eine Instanz des {{site.data.keyword.loganalysisshort}}-Service in demselben Bereich einrichten, in dem diese Cloudressourcen ausgeführt werden. Protokolle werden standardmäßig in 'Log Search' erfasst und gespeichert. Wenn Sie einen Serviceplan auswählen, der erweiterte Such- und Erfassungsfunktionen enthält, werden die Protokolle auch in 'Log Collection' erfasst und gespeichert. Die in 'Log Collection' gespeicherten Protokolldaten werden verschlüsselt.

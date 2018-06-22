@@ -3,11 +3,9 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
-
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -22,14 +20,15 @@ lastupdated: "2018-01-10"
 在 {{site.data.keyword.Bluemix}} 中，您可以將一個以上的角色指派給使用者。這些角色定義針對該使用者啟用以使用 {{site.data.keyword.loganalysisshort}} 服務的作業。
 {:shortdesc}
 
+**附註：** 
 
+* 若要將管理日誌或檢視帳戶日誌的許可權授與使用者，您必須有權可將原則指派給帳戶中的其他使用者，或者您必須是帳戶擁有者。如果您不是帳戶擁有者，則必須具有 IAM 原則與編輯器、操作員或管理者角色。
+* 若要將檢視空間中日誌的許可權授與使用者，您必須具有組織及空間的權限來將 Cloud Foundry 角色指派給使用者，以說明此使用者可在該空間中使用 {{site.data.keyword.loganalysisshort}} 服務所執行的動作。 
 
 ## 透過 {{site.data.keyword.Bluemix_notm}} 使用者介面將 IAM 原則指派給使用者
 {: #grant_permissions_ui_account}
 
-若要將檢視及管理帳戶日誌的許可權授與使用者，您必須新增該使用者的原則，以說明此使用者可在帳戶中使用 {{site.data.keyword.loganalysisshort}} 服務所執行的動作。只有帳戶擁有者才能將個別原則指派給使用者。
-
-在 {{site.data.keyword.Bluemix_notm}} 中，完成下列步驟，以將使用 {{site.data.keyword.loganalysisshort}} 服務的許可權授與使用者：
+請完成下列步驟，以將使用 {{site.data.keyword.loganalysisshort}} 服務的許可權授與使用者：
 
 1. 登入 {{site.data.keyword.Bluemix_notm}} 主控台。
 
@@ -45,7 +44,7 @@ lastupdated: "2018-01-10"
 
     如果使用者不是帳戶成員，請參閱[邀請使用者](/docs/iam/iamuserinv.html#iamuserinv)。
 
-4. 在**存取原則**區段中，按一下**指派服務原則**，然後選取**指派資源的存取權**。
+4. 在**存取原則**區段中，按一下**指派存取權**，然後選取**指派資源的存取權**。
 
     即會開啟*將資源存取權指派給使用者* 視窗。
 
@@ -75,149 +74,51 @@ lastupdated: "2018-01-10"
 	  </tr>
      </table>
 	
-6. 按一下**指派原則**。
+6. 按一下**指派**。
 	
 您配置的原則即適用於選取的地區。 
+
 
 ## 使用指令行將 IAM 原則指派給使用者
 {: #grant_permissions_commandline}
 
-若要將檢視及管理帳戶日誌的許可權授與使用者，您必須將 IAM 角色授與使用者。如需 IAM 角色以及透過角色啟用以使用 {{site.data.keyword.loganalysisshort}} 服務之作業的相關資訊，請參閱 [IAM 角色](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles)。
-
-只有帳戶擁有者才能執行此作業。
-
 請完成下列步驟，以使用指令行將檢視帳戶日誌存取權授與使用者：
 
-1. 取得帳戶 ID。 
+1. 從終端機中，登入 {{site.data.keyword.Bluemix_notm}} 帳戶。 
 
-    執行下列指令，以取得帳戶 ID：
+    如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
-	```
-	bx iam accounts
+2. 確認使用者是帳戶成員。執行下列指令，以取得帳戶中的使用者清單：
+
+    ```
+	bx account users
 	```
     {: codeblock}	
 
-	即會顯示帳戶及其 GUID 的清單。
-	
-	將計劃要將許可權授與使用者之帳戶的帳戶 ID 匯出至 Shell 變數（例如 `$acct_id`），例如：
-	
-	```
-	export acct_id="1234567891234567812341234123412"
-	```
-	{: screen}
+	即會顯示使用者及其 GUID 的清單。
 
-2. 取得您要授與許可權之使用者的 {{site.data.keyword.Bluemix_notm}} ID。
+3. 如果使用者不是帳戶成員，請聯絡帳戶擁有者，並提出邀請使用者加入帳戶的要求。如需相關資訊，請參閱[邀請使用者](/docs/iam/iamuserinv.html#iamuserinv)。
 
-    1. 顯示與帳戶相關聯的使用者。執行下列指令：
-	
-		```
-		bx iam account-users
-		```
-		{: codeblock}
+    **提示：**邀請使用者加入帳戶的指令如下：`bx iam account-user-invite USER_EMAIL`
 		
-	2. 取得使用者的 GUID。**附註：**必須由您計劃要授與許可權的使用者完成此步驟。
-	
-	    例如，要求使用者執行下列指令來取得其使用者 ID：
-		
-		取得 IAM 記號。如需相關資訊，請參閱[使用 {{site.data.keyword.Bluemix_notm}} CLI 來取得 IAM 記號](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli)。
+4. 將原則指派給使用者。執行下列指令：
 
-        從 IAM 記號中取得 IAM 記號前 2 個點之間的資料。將資料匯出至 Shell 變數（例如 `$user_data`）。 
-		
-	    ```
-	    export user_data="xxxxxxxxxxxxxxxxxxxxxxxxxxx"
-	    ```
-	    {: screen}
-		
-		例如，執行下列指令以取得使用者 ID。在此範例中，此指令使用 jq 將資訊解碼為 JSON 格式化文字：
-		
-		```
-		echo $user_data | base64 -d | jq
-		```
-		{: codeblock}
-		
-		此指令的執行輸出如下：
-		
-		```
-		$ echo $user_data | base64 -d | jq
-		{
-		"iam_id": "IBMid-xxxxxxxxxx",
-		"id": "IBMid-xxxxxxxxxx",
-		"realmid": "IBMid",
-		......
-		}
-		```
-	    {: screen}
-		
-		將使用者 ID 傳送至帳戶擁有者。
-		
-	3. 將使用者 ID 匯出至 Shell 變數（例如 `$user_ibm_id`）。
-	
-		```
-		export user_ibm_id="IBMid-xxxxxxxxxx"
-		```
-		{: codeblock}
-
-3. 如果使用者還不是成員，請邀請使用者加入帳戶。如需相關資訊，請參閱[邀請使用者](/docs/iam/iamuserinv.html#iamuserinv)。
-
-    例如，執行下列指令，以邀請使用者 xxx@yyy.com 加入帳戶 zzz@ggg.com：
-	
-	```
-	bx iam account-user-invite xxx@yyy.com zzz@ggg.com OrgAuditor dev SpaceDeveloper
-	```
-	{: codeblock}
-		
-4. 建立原則檔案名稱。 
-
-    例如，在美國南部地區中，使用下列範本來授與檢視許可權：
-	
-	```
-	{
-		"roles" : [
-			{
-				"id": "crn:v1:bluemix:public:iam::::role:Editor" 
-			}
-		],
-		"resources": [
-			{
-				"serviceName": "ibmcloud-log-analysis",
-				"region": "us-south"
-			}
-		]
-	}
-	```
-	{: codeblock}
-	
-	將原則檔案命名為：`policy.json`
-	
-5. 取得使用者 ID 的 IAM 記號。
-
-    如需相關資訊，請參閱[使用 {{site.data.keyword.Bluemix_notm}} CLI 來取得 IAM 記號](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli)。
-
-    將 IAM 記號匯出至 Shell 變數（例如 `$iam_token`），例如：
-	
-	```
-	export iam_token="xxxxxxxxxxxxxxxxxxxxx"
-	```
-	{: screen}
-	
-6. 將使用 {{site.data.keyword.loganalysisshort}} 服務的許可權授與使用者。 
-
-   在美國南部地區中，執行下列 cURL 指令來授與許可權：
-	
-	```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.ng.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
-	```
-	{: codeblock}
-	
-	在英國地區中，執行下列 cURL 指令來授與許可權：
-	
-	```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.eu-gb.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
+    ```
+    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
 
-	
-在您將許可權授與使用者之後，使用者即可登入 {{site.data.keyword.Bluemix_notm}}，以及查看帳戶層次日誌。
+	其中
+    * USER_NAME 是使用者的 {{site.data.keyword.Bluemix_notm}} ID。
+	* ROLE 是 IAM 角色。有效值為：*administrator*、*operator*、*editor* 及 *viewer*
+
+5. 驗證已將原則指派給使用者。執行下列指令，以列出已指派給使用者的所有原則：
+
+    ```
+    bx iam user-policies USER_NAME
+	```
+	{: codeblock}
+
 
 
 

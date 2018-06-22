@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,7 +25,7 @@ Wenn Sie eine Aufbewahrungsrichtlinie festlegen, werden die Protokolle nach Abla
 
 
 ## Protokollaufbewahrungsrichtlinie für ein Konto inaktivieren
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_acc}
 
 Wenn Sie die Aufbewahrungsrichtlinie inaktivieren, werden alle Protokolle beibehalten. 
 
@@ -89,7 +89,7 @@ bx logging option-update -e -1
 
 
 ## Protokollaufbewahrungsrichtlinie für ein Konto überprüfen
-{: #check_retention_policy_space}
+{: #check_retention_policy_acc}
 
 Um die für ein Konto angegebene Aufbewahrungsrichtlinie abzurufen, führen Sie die folgenden Schritte aus:
 
@@ -149,7 +149,7 @@ Um die für einen Bereich angegebene Aufbewahrungsrichtlinie abzurufen, führen 
 
 
 ## Protokollaufbewahrungsrichtlinie auf Kontoebene festlegen
-{: #set_retention_policy_space}
+{: #set_retention_policy_acc}
 
 Führen Sie die folgenden Schritte aus:
 
@@ -183,7 +183,7 @@ bx logging option-update -r account -i AccountID -e 15
 
 
 ## Protokollaufbewahrungsrichtlinie für einen Bereich festlegen
-{: #set_retention_policy_account}
+{: #set_retention_policy_space}
 
 Um den Aufbewahrungszeitraum für einen Bereich anzuzeigen, führen Sie die folgenden Schritte aus:
 

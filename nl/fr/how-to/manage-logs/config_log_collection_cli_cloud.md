@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Configuration de l'interface de ligne de commande {{site.data.keyword.loganalysisshort}} (plug-in {{site.data.keyword.Bluemix_notm}}) 
+# Configuration de l'interface de ligne de commande {{site.data.keyword.loganalysisshort}}
 {: #config_log_collection_cli}
 
 Le service {{site.data.keyword.loganalysisshort}} inclut une interface de ligne de commande que vous pouvez utiliser pour gérer les journaux dans le cloud. Vous pouvez utiliser le plug-in {{site.data.keyword.Bluemix_notm}} pour afficher le statut du journal, télécharger des journaux et configurer la règle de conservation des journaux. L'interface de ligne de commande offre différents types d'aides : une aide générale concernant l'interface de ligne de commande et les commandes prises en charge,
@@ -21,7 +21,7 @@ une aide relative aux commandes pour savoir comment utiliser une commande et une
 {:shortdesc}
 
 
-## Installation du plug-in {{site.data.keyword.loganalysisshort}} depuis le référentiel {{site.data.keyword.Bluemix_notm}} 
+## Installation du plug-in {{site.data.keyword.loganalysisshort}} depuis le référentiel {{site.data.keyword.Bluemix_notm}}
 {: #install_cli_repo}
 
 Pour installer l'interface de ligne de commande {{site.data.keyword.loganalysisshort}}, procédez comme suit :
@@ -46,9 +46,9 @@ Pour installer l'interface de ligne de commande {{site.data.keyword.loganalysiss
     ```
     {: codeblock}
  
-4. Vérifiez que le plug-in {{site.data.keyword.loganalysisshort}} est installé. 
+4. Vérifiez que le plug-in {{site.data.keyword.loganalysisshort}} est installé.
   
-    Par exemple, exécutez la commande suivante pour afficher la liste des plug-in qui sont installés : 
+    Par exemple, exécutez la commande suivante pour afficher la liste des plug-in qui sont installés :
     
     ```
     bx plugin list
@@ -67,7 +67,7 @@ Pour installer l'interface de ligne de commande {{site.data.keyword.loganalysiss
     {: screen}
 
 
-## Installation du plug-in {{site.data.keyword.loganalysisshort}} depuis un fichier 
+## Installation du plug-in {{site.data.keyword.loganalysisshort}} depuis un fichier
 {: #install_cli}
 
 Pour installer l'interface de ligne de commande {{site.data.keyword.loganalysisshort}}, procédez comme suit :
@@ -104,7 +104,7 @@ Pour installer l'interface de ligne de commande {{site.data.keyword.loganalysiss
  
 
 
-## Installation du plug-in Log Analysis sous Linux depuis un fichier 
+## Installation du plug-in Log Analysis sous Linux depuis un fichier
 {: #install_cli_linux}
 
 Procédez comme suit pour installer le plug-in Log Collection sous Linux :
@@ -127,7 +127,7 @@ Procédez comme suit pour installer le plug-in Log Collection sous Linux :
 
 
 
-## Installation du plug-in Log Analysis sous Windows depuis un fichier 
+## Installation du plug-in Log Analysis sous Windows depuis un fichier
 {: #install_cli_windows}
 
 Procédez comme suit pour installer le plug-in Log Collection sous Windows :
@@ -146,7 +146,7 @@ Procédez comme suit pour installer le plug-in Log Collection sous Windows :
 
 	
 
-## Installation du plug-in Log Analysis sous Mac OS X depuis un fichier 
+## Installation du plug-in Log Analysis sous Mac OS X depuis un fichier
 {: #install_cli_mac}
 
 Procédez comme suit pour installer le plug-in Log Collection sous Mac OS X :
@@ -156,7 +156,14 @@ Procédez comme suit pour installer le plug-in Log Collection sous Mac OS X :
 	1. Sélectionnez la valeur de plateforme : **osx**. 
 	2. Cliquez sur **Enregistrer**.  
     
-2. Installez le plug-in. Exécutez la commande suivante :
+2. Modifiez les droits du fichier. Exécutez la commande suivante :
+
+    ```
+    chmod u+x logging-cli-darwin-amd64-0.1.1
+    ```
+     {: codeblock}
+
+3. Installez le plug-in. Exécutez la commande suivante :
         
     ```
     bx plugin install -f logging-cli-darwin-amd64-0.1.1
@@ -203,13 +210,13 @@ Procédez comme suit pour désinstaller l'interface de ligne de commande du serv
     {: codeblock}
   
 
-## Mise à jour de l'interface de ligne de commande Log Analysis depuis le référentiel 
-{: #uninstall_cli}
+## Mise à jour de l'interface de ligne de commande Log Analysis depuis le référentiel
+{: #update_cli}
 
 Pour mettre à jour l'interface de ligne de commande de journalisation, exécutez la commande *bx plugin update*.
 {:shortdesc}
 
-Procédez comme suit pour mettre à jour l'interface de ligne de commande du service {{site.data.keyword.loganalysisshort}} : 
+Procédez comme suit pour mettre à jour l'interface de ligne de commande du service {{site.data.keyword.loganalysisshort}} :
 
 1. Mettez à jour le plug-in {{site.data.keyword.loganalysisshort}}. Exécutez la commande suivante :
 

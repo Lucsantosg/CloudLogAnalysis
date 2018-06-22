@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -25,7 +25,7 @@ Pour gérer les journaux qui sont disponibles dans le domaine de compte via l'AP
 ## Obtention du jeton IAM
 {: #iam_token_cli}
 
-Pour obtenir le jeton d'autorisation via l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}, procédez comme suit :
+Pour obtenir le jeton d'autorisation via l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}, procédez comme suit à partir d'un terminal :
 
 1. Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
 
@@ -33,7 +33,7 @@ Pour obtenir le jeton d'autorisation via l'interface de ligne de commande {{site
    
    Si l'interface de ligne de commande est installée, passez à l'étape suivante.
     
-2. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
+2. Connectez-vous à une région dans {{site.data.keyword.Bluemix_notm}}. 
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
@@ -44,9 +44,9 @@ Pour obtenir le jeton d'autorisation via l'interface de ligne de commande {{site
 	```
 	{: codeblock}
 	
-	La sortie renvoie le jeton IAM que vous devez utiliser pour authentifier votre ID utilisateur dans cet espace et dans cette organisation. Vous pouvez exporter le jeton IAM vers une variable de shell telle que `$iam_token`.
+	La sortie renvoie le jeton IAM que vous devez utiliser pour authentifier votre ID utilisateur dans cet espace et dans cette organisation. Vous pouvez exporter le jeton IAM vers une variable de shell telle que `$iam_token`. 
 
 
 
-**Remarque :** lorsque vous utilisez le jeton, retirez *Bearer* de la valeur du jeton que vous avez transmis dans un appel d'API.
+**Remarque :** lorsque vous utilisez le jeton, retirez *Bearer* de la valeur du jeton que vous avez transmis dans un appel d'API. 
 

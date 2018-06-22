@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -18,15 +18,15 @@ lastupdated: "2018-01-10"
 您可以在「探索」頁面中，以互動方式檢視及分析 {{site.data.keyword.Bluemix}} 日誌。您可以定義搜尋查詢，使用 Lucene 查詢語言來過濾該資料。您可以為每一個搜尋查詢套用過濾器，以精簡可用於分析的項目。您可以儲存搜尋，以供日後重複使用。
 {:shortdesc}
 
-在 {{site.data.keyword.Bluemix_notm}} 中，當您從 {{site.data.keyword.Bluemix_notm}} 使用者介面啟動 Kibana 時，「探索」頁面中顯示的資料集依預設會配置為只顯示您用來啟動 Kibana 的 Cloud Foundry (CF) 應用程式或容器的項目。如需進一步瞭解如何查看「探索」頁面顯示哪部分的資料，請參閱[識別所顯示的資料](logging_kibana_analize_logs_interactively.html#k4_identify_data)。
+在 {{site.data.keyword.Bluemix_notm}} 中，當您從 {{site.data.keyword.Bluemix_notm}} 使用者介面啟動 Kibana 時，「探索」頁面中顯示的資料集依預設會配置為只顯示您用來啟動 Kibana 的 Cloud Foundry (CF) 應用程式或容器的項目。 
 
 下表顯示當您從 {{site.data.keyword.Bluemix_notm}} 啟動 Kibana 時，各項資源的預設查詢：
 
-| 資源 | 預設 Kibana 搜尋查詢|
+|資源 |預設 Kibana 搜尋查詢|
 |---------------|---------------|
-| CF 應用程式   | `application_id:<app_GUID>`    |
-| 單一 Docker 容器 | `instance:<instance_GUID>`    |
-| 含 2 個實例的容器群組 | `instance:<instance_GUID> OR instance:<instance_GUID>` |
+|CF 應用程式   |`application_id:<app_GUID>`    |
+|單一 Docker 容器 |`instance:<instance_GUID>`    |
+|含 2 個實例的容器群組 |`instance:<instance_GUID> OR instance:<instance_GUID>` |
 {: caption="表 1. 預設查詢搜尋" caption-side="top"}
 
 **附註：** 
@@ -39,14 +39,14 @@ lastupdated: "2018-01-10"
 
 您可以執行下列任何作業來自訂「探索」頁面中的表格：
 
-| 作業 | 說明 | 
+|作業 |說明 | 
 |------|-------------|
-| [新增欄位直欄](logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | 新增欄位，以查看分析所需的特定資料，而非完整訊息。|
-| [重新排列欄位直欄](logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | 將表格中的欄位位置移到您想要的位置。|
-| [檢視項目](logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | 將表格中的項目展開，以查看依欄位剖析或剖析成 JSON 的項目詳細資料。|
-| [移除欄位直欄](logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | 若視圖中有不需要分析的欄位，可以將它移除。|
-| [依已編製索引欄位的值來排序項目](logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | 將項目重新排序，以方便分析。|
-| [自動重新整理資料](logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | 以最新的項目來重新整理表格中顯示的資料。依預設，重新整理功能為**關閉**。|
+| [新增欄位直欄](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) |新增欄位，以查看分析所需的特定資料，而非完整訊息。|
+| [重新排列欄位直欄](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) |將表格中的欄位位置移到您想要的位置。|
+| [檢視項目](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) |將表格中的項目展開，以查看依欄位剖析或剖析成 JSON 的項目詳細資料。|
+| [移除欄位直欄](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) |若視圖中有不需要分析的欄位，可以將它移除。|
+| [依已編製索引欄位的值來排序項目](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) |將項目重新排序，以方便分析。|
+| [自動重新整理資料](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) |以最新的項目來重新整理表格中顯示的資料。依預設，重新整理功能為**關閉**。|
 {: caption="表 2. 自訂表格的作業" caption-side="top"}
 
 <br>
@@ -55,30 +55,30 @@ lastupdated: "2018-01-10"
 
 ![Kibana 中的「探索」頁面](images/k4_discover_page.jpg "Kibana 中的「探索」頁面")
 
-您可以定義其他搜尋。如需相關資訊，請參閱[透過定義自訂搜尋過濾日誌](k4_filter_queries.html#k4_filter_queries)。當您定義新搜尋時，會自動更新直方圖及表格中顯示的資料。
+您可以定義其他搜尋。當您定義新搜尋時，會自動更新直方圖及表格中顯示的資料。
 
 若要定義新搜尋，請使用預設搜尋查詢作為起始點，然後執行下列作業來精簡搜尋：
 
-* 套用欄位過濾器，以精簡您可以看到的資料集。您可以切換每一個過濾器、將其固定至頁面、依需要予以啟用或停用，以及將它配置為包括值或排除值。如需相關資訊，請參閱[在 Kibana 中過濾日誌](logging_kibana_filtering_logs.html#kibana_filtering_logs)。
+* 套用欄位過濾器，以精簡您可以看到的資料集。您可以切換每一個過濾器、將其固定至頁面、依需要予以啟用或停用，以及將它配置為包括值或排除值。 
 
-    **提示：**如果在*欄位清單* 中找不到您預期會看到的欄位，或是在「探索」頁面中，列出欄位旁的部分放大鏡已停用，請重新整理「設定」頁面中的索引型樣，以重新載入欄位清單。如需相關資訊，請參閱[重新載入欄位清單](logging_kibana_analize_logs_interactively.html#kibana_discover_view_reload_fields)。
+    **提示：**如果在*欄位清單* 中找不到您預期會看到的欄位，或是在「探索」頁面中，列出欄位旁的部分放大鏡已停用，請重新整理「設定」頁面中的索引型樣，以重新載入欄位清單。 
 
     例如，如果 CF 應用程式有多個實例，您可能會想要分析特定實例的資料。您可以針對想要分析的特定實例 ID 值，定義欄位過濾器。 
     
-* 自訂*時間選取器* 來選取時間型資料。您可以為查詢定義絕對時間範圍、相對時間範圍，或從一組預先定義的值中選擇。如需相關資訊，請參閱[設定時間過濾器](logging_kibana_set_time_filter.html#set_time_filter)。
+* 自訂*時間選取器* 來選取時間型資料。您可以為查詢定義絕對時間範圍、相對時間範圍，或從一組預先定義的值中選擇。 
 
 配置搜尋來定義您要分析的部分資料之後，可以將其儲存，以供之後重複使用。
 
 您可以使用在「探索」頁面中定義的搜尋來執行下列任何作業：
 
-| 作業 | 說明 |
+|作業 |說明 |
 |------|-------------|
-| [儲存搜尋](logging_kibana_filtering_logs.html#k4_save_search) | 儲存搜尋，以供之後重複使用。|
-| [刪除搜尋](logging_kibana_filtering_logs.html#k4_delete_search) | 刪除不再需要的搜尋。|
-| [匯出搜尋](logging_kibana_filtering_logs.html#k4_export_search) | 匯出搜尋以進行共用。|
-| [重新載入搜尋](logging_kibana_filtering_logs.html#k4_reload_search)  | 上傳現有的搜尋，以重新分析資料集。|
-| [重新整理搜尋的資料](logging_kibana_filtering_logs.html#k4_refresh_search) | 針對透過搜尋而顯示的資料，配置自動重新整理。|
-| [匯入搜尋](logging_kibana_filtering_logs.html#k4_import_search) | 匯入搜尋。|
+| 儲存搜尋 |儲存搜尋，以供之後重複使用。|
+| 刪除搜尋 |刪除不再需要的搜尋。|
+| 匯出搜尋 |匯出搜尋以進行共用。|
+| 重新載入搜尋  |上傳現有的搜尋，以重新分析資料集。|
+| 重新整理搜尋的資料 |針對透過搜尋而顯示的資料，配置自動重新整理。|
+| 匯入搜尋 |匯入搜尋。|
 {: caption="表 3. 使用搜尋的作業" caption-side="top"}
 
 <br>
@@ -87,7 +87,7 @@ lastupdated: "2018-01-10"
 * 您可以查看每個欄位的統計資料。 
 * 您可以針對所配置的每個 `@timestamp`，以直方圖查看統計資料。
 
-如需相關資訊，請參閱[檢視欄位資料的統計資料](logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats)。
+如需相關資訊，請參閱[檢視欄位資料的統計資料](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats)。
 
 **附註：**表格及直方圖中顯示的資料是靜態資料。若要持續檢視最新項目，您必須設定重新整理間隔。 
 
@@ -130,7 +130,7 @@ lastupdated: "2018-01-10"
 ## 自動重新整理資料
 {: #kibana_discover_view_refresh_interval}
 
-依預設，在 {{site.data.keyword.Bluemix_notm}} 中，*自動重新整理* 週期設為**關閉**，而您可以在 Kibana 中看到的資料，對應於自 Kibana 啟動後的過去 15 分鐘。這 15 分鐘對應於已預先配置的時間過濾器。您可以透過設定不同的時段來進行變更。如需相關資訊，請參閱[設定時間過濾器](logging_kibana_set_time_filter.html#set_time_filter)。
+依預設，在 {{site.data.keyword.Bluemix_notm}} 中，*自動重新整理* 週期設為**關閉**，而您可以在 Kibana 中看到的資料，對應於自 Kibana 啟動後的過去 15 分鐘。這 15 分鐘對應於已預先配置的時間過濾器。您可以透過設定不同的時段來進行變更。 
 
 請完成下列步驟，以設定*自動重新整理* 週期：
 
@@ -147,7 +147,7 @@ lastupdated: "2018-01-10"
 
 
 ## 識別探索頁面中顯示的資料
-{:#k4_identify_data}
+{: #k4_identify_data}
 
 當您使用 Kibana 來分析 {{site.data.keyword.Bluemix_notm}} 日誌時，您可以看到的資料取決於您啟動 Kibana 的方式、所配置的索引型樣，以及您可能已套用的自訂查詢和過濾器。
 

@@ -3,21 +3,24 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-12"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # 在 Kibana 中分析 Kubernetes 集群中部署的应用程序的日志
 {: #container_logs}
-使用本教程以了解如何配置集群以将日志转发到 {{site.data.keyword.Bluemix_notm}} 中的 {{site.data.keyword.loganalysisshort}} 服务。
+使用本教程可了解如何配置集群以将日志转发到 {{site.data.keyword.Bluemix_notm}} 中的 {{site.data.keyword.loganalysisshort}} 服务。
 {:shortdesc}
 
 
@@ -25,12 +28,12 @@ lastupdated: "2018-01-12"
 {: #objectives}
 
 1. 配置集群中的日志记录配置。 
-2. 对部署在 {{site.data.keyword.Bluemix_notm}} 的 Kubernetes 集群中的应用程序进行容器日志的搜索和分析。
+2. 对部署在 {{site.data.keyword.Bluemix_notm}} 的 Kubernetes 集群中的应用程序的容器日志执行搜索和分析。
 
-本教程将引导您完成要使以下端到端场景在 {{site.data.keyword.Bluemix_notm}} 中可运作所需的步骤：供应集群、配置集群以将日志发送到 {{site.data.keyword.Bluemix_notm}} 中的 {{site.data.keyword.loganalysisshort}} 服务、部署集群中的应用程序以及使用 Kibana 查看和过滤该集群的容器日志。
+本教程将引导您完成要使以下端到端场景在 {{site.data.keyword.Bluemix_notm}} 中正常执行所需的步骤：供应集群、配置集群以将日志发送到 {{site.data.keyword.Bluemix_notm}} 中的 {{site.data.keyword.loganalysisshort}} 服务、在集群中部署应用程序以及使用 Kibana 查看和过滤该集群的容器日志。
 
 
-**注：**要完成本教程，必须完成不同步骤中链接的先决条件和教程。
+**注**：要完成本教程，必须完成不同步骤中链接的先决条件和教程。
 
 
 ## 先决条件
@@ -38,10 +41,10 @@ lastupdated: "2018-01-12"
 
 1. 成为 {{site.data.keyword.Bluemix_notm}} 帐户的成员或所有者，并具有创建 Kubernetes 标准集群、将应用程序部署至集群，以及查询 {{site.data.keyword.Bluemix_notm}} 中的日志以在 Kibana 中进行高级分析的许可权。
 
-    您的 {{site.data.keyword.Bluemix_notm}} 用户标识必须已分配以下策略：
+    您的 {{site.data.keyword.Bluemix_notm}} 用户标识必须已分配有以下策略：
     
-    * {{site.data.keyword.containershort}} 的 IAM 策略，且具有*操作员*或*管理员*许可权。
-    * 供应了 {{site.data.keyword.loganalysisshort}} 服务的空间的 CF 角色，且具有*开发者*许可权。
+    * {{site.data.keyword.containershort}} 的 IAM 策略，且具有*编辑者*、*操作员*或*管理员*许可权。
+    * 对供应 {{site.data.keyword.loganalysisshort}} 服务的空间的 CF 角色，且具有*开发者*许可权。
     
     有关更多信息，请参阅[通过 IBM Cloud UI 向用户分配 IAM 策略](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)和[使用 IBM Cloud UI 向用户授予查看空间日志的许可权](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)。
 
@@ -51,7 +54,7 @@ lastupdated: "2018-01-12"
 
     * 安装 {{site.data.keyword.Bluemix_notm}} CLI。有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
     
-    * 安装 {{site.data.keyword.containershort}} CLI，以创建和管理 {{site.data.keyword.containershort}} 中的 Kubernetes 集群，并将容器化应用程序部署到集群中。有关更多信息，请参阅[安装 CS 插件](/docs/containers/cs_cli_install.html#cs_cli_install_steps)。
+    * 安装 {{site.data.keyword.containershort}} CLI，以在 {{site.data.keyword.containershort}} 中创建和管理 Kubernetes 集群，以及将容器化应用程序部署到集群中。有关更多信息，请参阅[安装 CS 插件](/docs/containers/cs_cli_install.html#cs_cli_install_steps)。
     
     * 安装 {{site.data.keyword.loganalysisshort}} CLI。有关更多信息，请参阅[配置 Log Analysis CLI（IBM Cloud 插件）](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)。
     
@@ -61,9 +64,9 @@ lastupdated: "2018-01-12"
     
     在此空间中，将供应 {{site.data.keyword.loganalysisshort}} 服务。
     
-    必须具有此空间的**开发者**许可权，才能供应 {{site.data.keyword.loganalysisshort}} 服务。
+    您必须具有此空间的**开发者**许可权，这样您才能供应 {{site.data.keyword.loganalysisshort}} 服务。
     
-    在教程中，所用组织的名称为 **MyOrg**。
+    在本教程中，所用组织的名称为 **MyOrg**。
 
     
  
@@ -75,8 +78,7 @@ lastupdated: "2018-01-12"
 
 1. 创建标准 Kubernetes 集群。
 
-   * [通过 UI 创建 Kubernetes 标准集群](/docs/containers/cs_cluster.html#cs_cluster_ui)。
-   * [使用 CLI 创建 Kubernetes 标准集群](/docs/containers/cs_cluster.html#cs_cluster_cli)。
+   有关更多信息，请参阅[创建集群](/docs/containers/cs_tutorials.html#cs_cluster_tutorial)。
 
 2. 在终端中设置集群上下文。设置上下文后，您可以管理 Kubernetes 集群并在 Kubernetes 集群中部署应用程序。
 
@@ -108,11 +110,11 @@ lastupdated: "2018-01-12"
 
 
 ## 步骤 2：配置集群以将日志自动转发到 {{site.data.keyword.loganalysisshort}} 服务
-{: #step3}
+{: #step2}
 
-部署应用程序时，{{site.data.keyword.containershort}} 会自动收集日志。但是，日志不会自动转发到 {{site.data.keyword.loganalysisshort}} 服务。您必须在集群中创建 1 个或多个日志记录配置，并定义如下内容：
+部署应用程序时，{{site.data.keyword.containershort}} 会自动收集日志。但是，日志不会自动转发到 {{site.data.keyword.loganalysisshort}} 服务。您必须在集群中创建 1 个或多个日志记录配置，用于定义如下内容：
 
-* 日志将要转发到的位置。可以将日志转发到帐户域或空间域。
+* 日志要转发到的位置。可以将日志转发到帐户域或空间域。
 * 要转发到 {{site.data.keyword.loganalysisshort}} 服务以进行分析的日志。
 
 
@@ -125,7 +127,7 @@ $ bx cs logging-config-get ClusterName
 
 其中，*ClusterName* 是集群的名称。
 
-例如，为集群 *mycluster* 定义的日志记录配置如下所示： 
+例如，为集群 *mycluster* 定义的日志记录配置如下： 
 
 ```
 $ bx cs logging-config-get mycluster
@@ -140,43 +142,43 @@ ae249c04-a3a9-4c29-a890-22d8da7bd1b2   container    *           ingest.logging.n
 ```
 {: screen}
 
-要查看可定义日志记录配置的日志源列表，请参阅[日志源](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#log_sources)。
+要查看可为其定义日志记录配置的日志源的列表，请参阅[日志源](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#log_sources)。
 
 
 ### 配置集群以将 stderr 和 stdout 日志转发到 {{site.data.keyword.loganalysisshort}} 服务
-{: #containerlogs}
+{: #containerstd}
 
 
-完成以下步骤以将 stdout 和 stderr 日志发送到空间域，其组织名称为 *MyOrg* 且空间名称为美国南部区域中的 *dev*：
+完成以下步骤以将 stdout 和 stderr 日志发送到空间域，其中组织名称为 *MyOrg*，空间名称为 *dev*，位于美国南部区域中：
 
 1. 检查用户标识是否具有添加集群配置的许可权。只有具有 {{site.data.keyword.containershort}} 的 IAM 策略且具有管理集群许可权的用户才能启用此功能。需要以下任何角色：*管理员*、*操作员*
 
     要检查用户标识已分配 IAM 策略来管理集群，请完成以下步骤：
     
-    1. 登录到 {{site.data.keyword.Bluemix_notm}} 控制台。打开 Web 浏览器并启动 {{site.data.keyword.Bluemix_notm}} 仪表板：[http://bluemix.net ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window} 使用用户标识和密码登录后，{{site.data.keyword.Bluemix_notm}} UI 将打开。
+    1. 登录到 {{site.data.keyword.Bluemix_notm}} 控制台。打开 Web 浏览器并启动 {{site.data.keyword.Bluemix_notm}}“仪表板”：[http://bluemix.net ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window}。使用用户标识和密码登录后，{{site.data.keyword.Bluemix_notm}} UI 将打开。
 
     2. 从菜单栏，单击**管理 > 帐户 > 用户**。*用户*窗口显示用户列表，其中包含目前所选帐户的电子邮件地址。
 	
-    3. 选择用户标识并验证该用户标识具有 {{site.data.keyword.containershort}} 的策略。
+    3. 选择用户标识并验证该用户标识是否具有 {{site.data.keyword.containershort}} 的策略。
 
-    如果需要许可权，请联系帐户所有者或帐户管理员。只有具有分配策略许可权的帐户所有者或用户才可以执行此步骤。
+    如果需要许可权，请联系帐户所有者或帐户管理员。只有帐户所有者或具有分配策略许可权的用户才能执行此步骤。
 
 2. 创建集群日志记录配置。运行以下命令以将 *stdout* 和 *stderr* 日志文件发送到 {{site.data.keyword.loganalysisshort}} 服务：
 
     ```
-    bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
+        bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
     ```
     {: codeblock}
 
     其中 
 
     * *ClusterName* 是集群的名称。
-    * *EndPoint* 是供应 {{site.data.keyword.loganalysisshort}} 服务的区域中的日志记录服务。有关端点的列表，请参阅[端点](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。
-    * *OrgName* 是空间可用的组织的名称。
+    * *EndPoint* 是供应 {{site.data.keyword.loganalysisshort}} 服务的区域中的日志记录服务的 URL。有关端点的列表，请参阅[端点](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。
+    * *OrgName* 是其中空间可用的组织的名称。
     * *SpaceName* 是供应 {{site.data.keyword.loganalysisshort}} 服务的空间的名称。
 
 
-例如，要创建将 stdout 和 stderr 日志转发到美国南部区域中的 dev 空间的日志记录配置，请运行以下命令：
+例如，要创建日志记录配置，用于将 stdout 和 stderr 日志转发到美国南部区域中的 dev 空间，请运行以下命令：
 
 ```
 bx cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
@@ -189,36 +191,36 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 ### 配置集群以将工作程序日志转发到 {{site.data.keyword.loganalysisshort}} 服务
 {: #workerlogs }
 
-完成以下步骤以将工作程序日志发送到空间域，其组织名称为 *MyOrg* 且空间名称为美国南部区域中的 *dev*：
+完成以下步骤以将工作程序日志发送到空间域，其中组织名称为 *MyOrg*，空间名称为 *dev*，位于美国南部区域中：
 
 1. 检查用户标识是否具有添加集群配置的许可权。只有具有 {{site.data.keyword.containershort}} 的 IAM 策略且具有管理集群许可权的用户才能启用此功能。需要以下任何角色：*管理员*、*操作员*
 
     要检查用户标识已分配 IAM 策略来管理集群，请完成以下步骤：
     
-    1. 登录到 {{site.data.keyword.Bluemix_notm}} 控制台。打开 Web 浏览器并启动 {{site.data.keyword.Bluemix_notm}} 仪表板：[http://bluemix.net ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window} 使用用户标识和密码登录后，{{site.data.keyword.Bluemix_notm}} UI 将打开。
+    1. 登录到 {{site.data.keyword.Bluemix_notm}} 控制台。打开 Web 浏览器并启动 {{site.data.keyword.Bluemix_notm}}“仪表板”：[http://bluemix.net ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window}。使用用户标识和密码登录后，{{site.data.keyword.Bluemix_notm}} UI 将打开。
 
     2. 从菜单栏，单击**管理 > 帐户 > 用户**。*用户*窗口显示用户列表，其中包含目前所选帐户的电子邮件地址。
 	
-    3. 选择用户标识并验证该用户标识具有 {{site.data.keyword.containershort}} 的策略。
+    3. 选择用户标识并验证该用户标识是否具有 {{site.data.keyword.containershort}} 的策略。
 
-    如果需要许可权，请联系帐户所有者或帐户管理员。只有具有分配策略许可权的帐户所有者或用户才可以执行此步骤。
+    如果需要许可权，请联系帐户所有者或帐户管理员。只有帐户所有者或具有分配策略许可权的用户才能执行此步骤。
 
 2. 创建集群日志记录配置。运行以下命令以将 */var/log/syslog* 和 */var/log/auth.log* 日志文件发送到 {{site.data.keyword.loganalysisshort}} 服务：
 
     ```
-    bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
+        bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
     ```
     {: codeblock}
 
     其中 
 
     * *ClusterName* 是集群的名称。
-    * *EndPoint* 是供应 {{site.data.keyword.loganalysisshort}} 服务的区域中的日志记录服务。有关端点的列表，请参阅[端点](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。
-    * *OrgName* 是空间可用的组织的名称。
+    * *EndPoint* 是供应 {{site.data.keyword.loganalysisshort}} 服务的区域中的日志记录服务的 URL。有关端点的列表，请参阅[端点](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。
+    * *OrgName* 是其中空间可用的组织的名称。
     * *SpaceName* 是供应 {{site.data.keyword.loganalysisshort}} 服务的空间的名称。
 
     
-例如，要创建将工作程序日志转发到美国南部区域中的空间域的日志记录配置，请运行以下命令：
+例如，要创建日志记录配置，用于将工作程序日志转发到美国南部区域中的空间域，请运行以下命令：
 
 ```
 bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
@@ -227,18 +229,18 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 
 
 
-## 步骤 4：授予用户查看空间域中的日志的许可权
-{: #step4}
+## 步骤 3：授予用户查看空间域中日志的许可权
+{: #step3}
 
-要授予用户查看空间中的日志的许可权，您必须为该用户分配 Cloud Foundry 角色，该角色描述此用户可以在空间中使用 {{site.data.keyword.loganalysisshort}} 服务执行的操作。 
+要授予用户查看空间中日志的许可权，您必须为该用户分配 Cloud Foundry 角色，该角色描述此用户可以在空间中使用 {{site.data.keyword.loganalysisshort}} 服务执行的操作。 
 
-完成以下步骤以授予用户使用 {{site.data.keyword.loganalysisshort}} 服务的许可权：
+要授予用户使用 {{site.data.keyword.loganalysisshort}} 服务的许可权，请完成以下步骤：
 
 
 
 1. 登录到 {{site.data.keyword.Bluemix_notm}} 控制台。
 
-    打开 Web 浏览器并启动 {{site.data.keyword.Bluemix_notm}} 仪表板：[http://bluemix.net ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window}
+    打开 Web 浏览器并启动 {{site.data.keyword.Bluemix_notm}}“仪表板”：[http://bluemix.net ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window}
 	
 	使用用户标识和密码登录后，{{site.data.keyword.Bluemix_notm}} UI 将打开。
 
@@ -252,7 +254,7 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 
 4. 选择 **Cloud Foundry 访问权**，然后选择组织。
 
-    将列出该组织中可用的空间列表。
+    这将列出该组织中可用空间的列表。
 
 5. 选择空间。然后，从菜单操作中，选择**编辑空间角色**。
 
@@ -267,50 +269,57 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 7. 单击**保存角色**。
 
 
-## 步骤 5：授予 {{site.data.keyword.containershort_notm}} 密钥所有者许可权
-{: #step5}
+## 步骤 4：授予 {{site.data.keyword.containershort_notm}} 密钥所有者许可权
+{: #step4}
 
+要将集群日志转发到空间，{{site.data.keyword.containershort_notm}} 密钥所有者必须具有以下许可权：
 
-将日志转发到空间时，还必须向组织和空间中的 {{site.data.keyword.containershort}} 密钥所有者授予 Cloud Foundry (CF) 许可权。密钥所有者需要组织的 *orgManager* 角色，以及空间的 *SpaceManager* 和 *Developer*。 
+* {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，且具有*管理员*许可权。
+* 要转发其中日志的组织和空间中的 Cloud Foundry (CF) 许可权。容器密钥所有者需要对组织的 *orgManager* 角色以及对空间的 *SpaceManager* 和 *Developer* 角色。
 
 请完成以下步骤：
 
 1. 确定帐户中作为 {{site.data.keyword.containershort}} 密钥所有者的用户。在终端中，运行以下命令：
 
     ```
-    bx cs api-key-info ClusterName
+        bx cs api-key-info ClusterName
     ```
     {: codeblock}
     
     其中，*ClusterName* 是集群的名称。
 
-2. 验证确定为 {{site.data.keyword.containershort}} 密钥所有者的用户具有组织的 *orgManager* 角色，以及空间的 *SpaceManager* 和 *Developer*。
+2. 验证确定为 {{site.data.keyword.containershort}} 密钥所有者的用户是否具有对组织的 *orgManager* 角色，以及对空间的 *SpaceManager* 和 *Developer* 角色。
 
-    登录到 {{site.data.keyword.Bluemix_notm}} 控制台。打开 Web 浏览器并启动 {{site.data.keyword.Bluemix_notm}} 仪表板：[http://bluemix.net ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window} 使用用户标识和密码登录后，{{site.data.keyword.Bluemix_notm}} UI 将打开。
+    登录到 {{site.data.keyword.Bluemix_notm}} 控制台。打开 Web 浏览器并启动 {{site.data.keyword.Bluemix_notm}}“仪表板”：[http://bluemix.net ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window}。使用用户标识和密码登录后，{{site.data.keyword.Bluemix_notm}} UI 将打开。
 
     从菜单栏，单击**管理 > 帐户 > 用户**。*用户*窗口显示用户列表，其中包含目前所选帐户的电子邮件地址。
 	
-    选择用户的标识，并验证用户具有组织的 *orgManager* 角色，以及空间的 *SpaceManager* 和 *Developer*。
- 
-3. 如果用户不具有正确的许可权，请完成以下步骤：
+    选择用户的标识，并验证用户是否具有对组织的 *orgManager* 角色，以及对空间的 *SpaceManager* 和 *Developer* 角色。
 
-    1. 向用户授予以下许可权：组织的 *orgManager* 角色，以及空间的 *SpaceManager* 和 *Developer*。有关更多信息，请参阅[使用 IBM Cloud UI 向用户授予查看空间日志的许可权](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)。
+    如果用户没有正确的许可权，请向用户授予以下许可权：对组织的 *orgManager* 角色，以及对空间的 *SpaceManager* 和 *Developer* 角色。有关更多信息，请参阅[使用 IBM Cloud UI 向用户授予查看空间日志的许可权](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)。
     
-    2. 刷新日志记录配置。运行以下命令：
+3. 验证确定为 {{site.data.keyword.containershort}} 密钥所有者的用户是否具有 {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，且具有*管理员*许可权。
+
+    从菜单栏，单击**管理 > 帐户 > 用户**。*用户*窗口显示用户列表，其中包含目前所选帐户的电子邮件地址。
+	
+    选择用户的标识，并验证用户是否已设置 IAM 策略。 
+
+    如果用户没有设置 IAM 策略，请参阅[通过 IBM Cloud UI 将 IAM 策略分配给用户](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)。
+
+4. 刷新日志记录配置。运行以下命令：
     
+    ```
+            bx cs logging-config-refresh ClusterName
         ```
-        bx cs logging-config-refresh ClusterName
-        ```
-        {: codeblock}
+    {: codeblock}
         
-        其中，*ClusterName* 是集群的名称。
-
-
-
+    其中，*ClusterName* 是集群的名称。
 	
 
-## 步骤 6：在 Kubernetes 集群中部署样本应用程序以生成 stdout 内容
-{: #step6}
+
+
+## 步骤 5：在 Kubernetes 集群中部署样本应用程序以在 stdout 中生成内容
+{: #step5}
 
 在 Kubernetes 集群中部署并运行样本应用程序。完成以下教程中的步骤以部署样本应用程序：[第 1 课：将单实例应用程序部署到 Kubernetes 集群](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1)。
 
@@ -336,8 +345,8 @@ app.listen(8080, function() {
 
 
 
-## 步骤 7：在 Kibana 中查看日志数据
-{: #step7}
+## 步骤 6：在 Kibana 中查看日志数据
+{: #step6}
 
 请完成以下步骤：
 
@@ -356,17 +365,17 @@ app.listen(8080, function() {
 	
     这将打开 Kibana。
     
-    **注：**验证是否在转发集群日志的区域中启动 Kibana。有关每个区域的 URL 相关信息，请参阅[日志记录端点](docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana)。
+    **注**：验证是否是在要转发集群日志的区域中启动的 Kibana。有关每个区域的 URL 的相关信息，请参阅[日志记录端点](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana)。
     	
 2. 要查看空间域中可用的日志数据，请完成以下步骤：
 
-    1. 在 Kibana 中，单击您的用户标识。这将打开设置空间的视图。
+    1. 在 Kibana 中，单击您的用户标识。这将打开可设置空间的视图。
     
-    2. 检查空间可用的帐户。 
+    2. 选择其中空间可用的帐户。 
     
-    3. 选择以下域：**space**
+    3. 选择以下域：**空间**
     
-    4. 选择空间可用的组织 *MyOrg*。
+    4. 选择其中空间可用的组织 *MyOrg*。
     
     5. 选择空间 *dev*。
     
@@ -401,7 +410,7 @@ app.listen(8080, function() {
               </tr>
               <tr>
                 <td>*ibm-containers.cluster_name_str*</td>
-                <td>群集 ID</td>
+                <td>集群标识</td>
                 <td></td>
               </tr>
 			  <tr>
@@ -429,16 +438,16 @@ app.listen(8080, function() {
 有关与 Kubernetes 集群相关的其他搜索字段的更多信息，请参阅[搜索日志](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#log_search)。
 
 
-## 步骤 8：在 Kibana 中按 Kubernetes 集群名称过滤数据
-{: #step8}
+## 步骤 7：在 Kibana 中按 Kubernetes 集群名称过滤数据
+{: #step7}
     
-在*发现*页面显示的表中，您可以查看可用于分析的所有条目。所列出的条目对应于在*搜索*栏中显示的搜索查询。使用星号 (*) 可显示为页面所配置的一段时间内的所有条目。
+在*发现*页面上显示的表中，可以查看可用于分析的所有条目。所列出的条目对应于在*搜索*栏中显示的搜索查询。使用星号 (*) 可显示为页面所配置的一段时间内的所有条目。
     
 例如，要按 Kubernetes 集群名称过滤数据，请修改*搜索*栏查询。根据定制字段 *kubernetes.cluster_name_str* 添加过滤器：
     
-1. 在**可用字段**部分中，选择 *kubernetes.cluster_name_str* 字段。此时将显示该字段的可用值子集。    
+1. 在**可用字段**部分中，选择 *kubernetes.cluster_name_str* 字段。这将显示该字段的可用值子集。    
     
-2. 选择对应于您要分析日志的集群的值。 
+2. 选择对应于要分析其日志的集群的值。 
     
     在您选择值后，*搜索*栏中会添加一个过滤器，而该表将仅显示与您刚刚所选条件匹配的条目。     
    
@@ -463,9 +472,9 @@ app.listen(8080, function() {
 ```
 {: screen}
 
-将集群的名称 (*cluster1*) 替换为您要查看日志数据的集群名称 *mycluster*。
+将集群的名称 (*cluster1*) 替换为要查看其日志数据的集群名称 *mycluster*。
         
-如果您看不到任何数据，请尝试更改时间过滤器。有关更多信息，请参阅[设置时间过滤器](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)。
+如果看不到任何数据，请尝试更改时间过滤器。有关更多信息，请参阅[设置时间过滤器](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)。
 
 有关更多信息，请参阅[在 Kibana 中过滤日志](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs)。
 

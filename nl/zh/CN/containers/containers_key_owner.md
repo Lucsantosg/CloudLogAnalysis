@@ -17,7 +17,7 @@ lastupdated: "2018-01-16"
 # 检索集群的密钥所有者
 {: #containers_key_owner}
 
-使用命令 *bx cs api-key-info* 以获取集群的 {{site.data.keyword.loganalysisshort}} 密钥所有者。
+使用 *bx cs api-key-info* 命令以获取集群的 {{site.data.keyword.loganalysisshort}} 密钥所有者。
 {:shortdesc}
 
 运行以下命令：
@@ -46,7 +46,7 @@ Joe Blogg      blogg@ibm.com
 组织标识是为 **logOrg** 字段指示的值。
 组织名称是为 **logOrgName** 字段指示的值。
 
-如果这些字段为空，那么没有与该集群关联的 CF 组织和空间。
+如果这些字段为空，说明没有与该集群关联的 CF 组织和空间。
 
 
 

@@ -17,7 +17,8 @@ lastupdated: "2018-01-31"
 # Envío de registros desde fuera de {{site.data.keyword.Bluemix_notm}}
 {: #log_ingestion}
 
-Puede enviar registros desde fuera de {{site.data.keyword.IBM_notm}} Cloud al servicio {{site.data.keyword.loganalysisshort}} utilizando el servicio Logstash Forwarder multiarrendatario. {:shortdesc}
+Puede enviar registros desde fuera de {{site.data.keyword.IBM_notm}} Cloud al servicio {{site.data.keyword.loganalysisshort}} utilizando el servicio Logstash Forwarder multiarrendatario. 
+{:shortdesc}
 
 Esta característica solo está disponible para los planes de servicio que permiten la ingestión de registros. Para obtener más información, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
@@ -26,7 +27,7 @@ Para enviar registros desde fuera de {{site.data.keyword.IBM_notm}} Cloud al ser
 * Un ID de {{site.data.keyword.IBM_notm}} para iniciar una sesión en {{site.data.keyword.Bluemix_notm}}. Este ID de usuario debe tener permisos para trabajar con el servicio {{site.data.keyword.loganalysisshort}} en un espacio en {{site.data.keyword.Bluemix_notm}}. El espacio es el dominio de {{site.data.keyword.Bluemix_notm}} donde piensa enviar y analizar los registros.
 * Una señal de registro que se genera mediante la CLI de {{site.data.keyword.loganalysisshort}} y que se utiliza para autenticar el entorno local con el servicio {{site.data.keyword.loganalysisshort}}.  
 
-En el entorno local, debe configurar mt-logstash-forwarder y especificar los archivos de registro que desea enviar al servicio {{site.data.keyword.loganalysisshort}} .
+En el entorno local, debe configurar mt-logstash-forwarder y especificar los archivos de registro que desea enviar al servicio {{site.data.keyword.loganalysisshort}}.
 
 Para obtener más información sobre cómo configurar el entorno local para que envíe registros al servicio {{site.data.keyword.loganalysisshort}}, consulte [Envío de datos locales a un espacio en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
 

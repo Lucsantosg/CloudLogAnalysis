@@ -118,7 +118,7 @@ bx cf logging --version
 ## bx cf logging auth
 {: #auth}
 
-{{site.data.keyword.loganalysisshort}} 서비스에 로그를 전송하기 위해 사용할 수 있는 로깅 토큰을 리턴합니다.  
+{{site.data.keyword.loganalysisshort}} 서비스에 로그를 전송하기 위해 사용할 수 있는 로깅 토큰을 리턴합니다. 
 
 **참고: ** 토큰은 만료되지 않습니다.
 
@@ -186,7 +186,7 @@ bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ## bx cf logging download(베타)
 {: #download}
 
-로그 콜렉션에서 로컬 파일로 로그를 다운로드하거나 다른 프로그램(예: Elastic Stack)으로 로그를 보냅니다.  
+로그 콜렉션에서 로컬 파일로 로그를 다운로드하거나 다른 프로그램(예: Elastic Stack)으로 로그를 보냅니다. 
 
 **참고:** 파일을 다운로드하려면 먼저 세션을 작성해야 합니다. 세션은 날짜 범위, 로그 유형 및 계정 유형을 기반으로 어느 로그를 다운로드할 것인지 정의합니다. 세션의 컨텍스트 내에서 로그를 다운로드합니다. 자세한 정보는 [bx cf logging session create(베타)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create)를 참조하십시오.
 
@@ -213,7 +213,7 @@ bx cf logging download [parameters] [arguments]
 
 **예**
 
-Linux 시스템에서 로그를 mylogs.gz라는 파일로 다운로드하려면 다음 명령을 실행하십시오. 
+Linux 시스템에서 로그를 mylogs.gz라는 파일로 다운로드하려면 다음 명령을 실행하십시오.
 
 ```
 bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
@@ -281,7 +281,7 @@ bx cf logging help status
 * 기간은 일 수로 설정됩니다.
 * 기본값은 **-1**입니다. 
 
-**참고:** 기본적으로 모든 로그가 저장됩니다. **delete** 명령을 사용하여 로그를 수동으로 삭제해야 합니다. 자동으로 로그를 삭제하려면 보존 정책을 설정하십시오. 
+**참고:** 기본적으로 모든 로그가 저장됩니다. **delete** 명령을 사용하여 로그를 수동으로 삭제해야 합니다. 자동으로 로그를 삭제하려면 보존 정책을 설정하십시오.
 
 ```
 bx cf logging option [parameters]
@@ -292,7 +292,7 @@ bx cf logging option [parameters]
 
 <dl>
 <dt>--retention value, -r value</dt>
-<dd>(선택사항) 보존일 수를 설정합니다. <br> 기본값은 *-1*일입니다. </dd>
+<dd>(선택사항) 보존일 수를 설정합니다. <br> 기본값은 *-1*일입니다.</dd>
 
 <dt>--at-account-level, -a </dt>
   <dd>(선택사항) 계정 레벨에 범위를 설정합니다. <br>이 매개변수가 지정되지 않은 경우, 명령 `bx cf login`을 사용하여 로그인한 영역인 현재 영역에 대해 *-1*로 기본값이 설정됩니다.
@@ -308,7 +308,7 @@ bx cf logging option
 ```
 {: codeblock}
 
-출력은 다음과 같습니다. 
+출력은 다음과 같습니다.
 
 ```
 +--------------------------------------+-----------+
@@ -327,7 +327,7 @@ bx cf logging option -r 25
 ```
 {: codeblock}
 
-출력은 다음과 같습니다. 
+출력은 다음과 같습니다.
 
 ```
 +--------------------------------------+-----------+
@@ -364,7 +364,7 @@ bx cf logging session create [parameters]
   
   <dt>--type value, -t value</dt>
   <dd>(선택사항) 로그 유형을 설정합니다. <br>예를 들면, *syslog*는 로그의 유형입니다. <br>기본값은 별표(*)로 설정됩니다. <br>각 유형을 쉼표로 구분하여 여러 개의 로그 유형을 지정할 수 있습니다(예: *log_type_1,log_type_2,log_type_3*).
- </dd>
+  </dd>
   
   <dt>--at-account-level, -a </dt>
   <dd>(선택사항) 계정 레벨에 범위를 설정합니다. <br>이 매개변수가 지정되지 않은 경우, 명령 `bx cf login`을 사용하여 로그인한 영역인 현재 영역에 대해서만 기본값이 설정됩니다.
@@ -399,7 +399,7 @@ bx cf logging session create [parameters]
 
 **예**
 
-*log*의 로그 유형에 대해 2017년 5월 20일과 2017년 5월 26일 사이의 로그가 포함된 세션을 작성하려면 다음 명령을 실행하십시오. 
+*log*의 로그 유형에 대해 2017년 5월 20일과 2017년 5월 26일 사이의 로그가 포함된 세션을 작성하려면 다음 명령을 실행하십시오.
 
 ```
 bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
@@ -540,7 +540,7 @@ bx cf logging status [parameters]
   
   <dt>--type value, -t value</dt>
   <dd>(선택사항) 로그 유형을 설정합니다. <br>예를 들면, *syslog*는 로그의 유형입니다. <br>기본값은 별표(*)로 설정됩니다. <br>각 유형을 쉼표로 구분하여 여러 개의 로그 유형을 지정할 수 있습니다(예: *log_type_1,log_type_2,log_type_3*).
- </dd>
+  </dd>
   
   <dt>--at-account-level, -a </dt>
   <dd>(선택사항) 계정 레벨에 범위를 설정합니다. <br> **참고:** 계정 정보를 가져오려면 이 값을 설정하십시오. <br>이 매개변수가 지정되지 않은 경우, 명령 `bx cf login`을 사용하여 로그인한 영역인 현재 영역에 대해서만 기본값이 설정됩니다.
@@ -551,6 +551,6 @@ bx cf logging status [parameters]
   </dd>
 </dl>
 
-**참고:** `bx cf logging status` 명령은 시작 및 종료 날짜가 지정되지 않은 로그 콜렉션에 저장된 최근 2주의 로그만 보고합니다. 
+**참고:** `bx cf logging status` 명령은 시작 및 종료 날짜가 지정되지 않은 로그 콜렉션에 저장된 최근 2주의 로그만 보고합니다.
 
 

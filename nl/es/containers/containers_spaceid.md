@@ -17,7 +17,8 @@ lastupdated: "2018-01-16"
 # Recuperación del ID de espacio de un clúster
 {: #containers_spaceid}
 
-Puede crear un clúster en una cuenta de {{site.data.keyword.Bluemix_notm}} en el contexto de una organización y de un espacio de Cloud Foundry. {:shortdesc}
+Puede crear un clúster en una cuenta de {{site.data.keyword.Bluemix_notm}} en el contexto de una organización y de un espacio de Cloud Foundry. 
+{:shortdesc}
 
 Para encontrar el ID de espacio asociado con un clúster, ejecute el mandato siguiente:
 
@@ -29,7 +30,7 @@ bx cs cluster-get ClusterName --json
 donde **ClusterName** es el nombre del clúster.
 
 
-Por ejemplo, el resultado de ejecutar el mandato es el siguiente: 
+Por ejemplo, el resultado de ejecutar el mandato es el siguiente:
 
 ```
 {

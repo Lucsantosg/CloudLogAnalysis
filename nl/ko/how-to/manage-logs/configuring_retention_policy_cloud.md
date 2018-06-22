@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,9 +25,9 @@ lastupdated: "2018-01-10"
 
 
 ## 계정에 대한 로그 보존 정책 사용 안함으로 설정
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_acc}
 
-보존 정책을 사용하지 않으면 모든 로그가 보관됩니다.  
+보존 정책을 사용하지 않으면 모든 로그가 보관됩니다. 
 
 보존 정책을 사용하지 않으려면 다음 단계를 완료하십시오.
 
@@ -35,7 +35,7 @@ lastupdated: "2018-01-10"
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 	
-2. 계정 ID를 가져오십시오. 
+2. 계정 ID를 가져오십시오.
 
     자세한 정보는 [계정의 GUID를 가져오는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid)을 참조하십시오.
     
@@ -47,9 +47,9 @@ lastupdated: "2018-01-10"
     {: codeblock}
 	
 	RETENTION_VALUE는 일 수를 정의하는 숫자입니다.
-
+    
 **예**
-
+    
 예를 들어 ID가 *12345677fgh436902a3*인 계정에 대한 보존 기간을 사용 안함으로 설정하려면 다음 명령을 실행하십시오.
 
 ```
@@ -57,17 +57,18 @@ bx logging option-update -r account -i 12345677fgh436902a3 -e -1
 ```
 {: codeblock}
 
-    ## 영역에 대한 로그 보존 정책 사용 안함
+
+## 영역에 대한 로그 보존 정책 사용 안함
 {: #disable_retention_policy_space}
 
-보존 정책을 사용하지 않으면 모든 로그가 보관됩니다.
+보존 정책을 사용하지 않으면 모든 로그가 보관됩니다.  
 
 보존 정책을 사용하지 않으려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오.
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
-
+    
 2. 보존 기간을 **-1**로 설정하여 보존 기간을 사용 안함으로 설정하십시오. 다음 명령을 실행하십시오.
 
     ```
@@ -76,9 +77,9 @@ bx logging option-update -r account -i 12345677fgh436902a3 -e -1
     {: codeblock}
 	
 	RETENTION_VALUE는 일 수를 정의하는 숫자입니다.
-
+    
 **예**
-
+    
 예를 들어 ID가 *d35da1e3-b345-475f-8502-cfgh436902a3*인 영역에 대한 보존 기간을 사용 안함으로 설정하려면 다음 명령을 실행하십시오.
 
 ```
@@ -88,18 +89,18 @@ bx logging option-update -e -1
 
 
 ## 계정에 대한 로그 보존 정책 검사
-{: #check_retention_policy_space}
+{: #check_retention_policy_acc}
 
 계정에 설정된 보존 기간을 가져오려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오.
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 
 2. 계정 ID를 가져오십시오.
 
     자세한 정보는 [계정 GUID를 가져오는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid)을 참조하십시오.
-
+    
 3. 보존 기간을 가져오십시오. 다음 명령을 실행하십시오.
 
     ```
@@ -123,10 +124,10 @@ bx logging option-update -e -1
 
 영역에 설정된 보존 기간을 가져오려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오.
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
-
+    
 2. 보존 기간을 가져오십시오. 다음 명령을 실행하십시오.
 
     ```
@@ -148,18 +149,18 @@ bx logging option-update -e -1
 
 
 ## 계정 레벨 로그 보존 정책 설정
-{: #set_retention_policy_space}
+{: #set_retention_policy_acc}
 
 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오.
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 
 2. 계정 ID를 가져오십시오.
 
     자세한 정보는 [계정 GUID를 가져오는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid)을 참조하십시오.
-
+    
 3. 보존 기간을 설정하십시오. 다음 명령을 실행하십시오.
 
     ```
@@ -167,11 +168,11 @@ bx logging option-update -e -1
     ```
     {: codeblock}
     
-    여기서, *RETENTION_VALUE*는 로그를 보관하려는 일 수를 정의하는 정수입니다.
-
-
+    여기서, *RETENTION_VALUE*는 로그를 보관하려는 일 수를 정의하는 정수입니다. 
+    
+    
 **예**
-
+    
 예를 들어, 계정에서 모든 유형의 로그를 15일 동안만 보존하려면 다음 명령을 실행하십시오.
 
 ```
@@ -182,14 +183,14 @@ bx logging option-update -r account -i AccountID -e 15
 
 
 ## 영역에 대한 로그 보존 정책 설정
-{: #set_retention_policy_account}
+{: #set_retention_policy_space}
 
 영역에 대한 보존 기간을 보려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오.
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
-
+    
 2. 보존 기간을 설정하십시오. 다음 명령을 실행하십시오.
 
     ```
@@ -198,10 +199,10 @@ bx logging option-update -r account -i AccountID -e 15
     {: codeblock}
     
     여기서, *RETENTION_VALUE*는 로그를 보관하려는 일 수를 정의하는 정수입니다.
-
-
+    
+    
 **예**
-
+    
 예를 들어, 1년 동안 영역에서 사용 가능한 로그를 보존하려면 다음 명령을 실행하십시오.
 
 ```

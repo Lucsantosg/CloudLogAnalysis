@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2018-01-10"
 Use a página *Painel* no Kibana para exibir coleções de visualizações que são agrupadas em painéis. Use os painéis para analisar seus dados do log e comparar resultados.
 {:shortdesc}
 
-No {{site.data.keyword.Bluemix}}, há diferentes tipos de painéis que podem ser definidos e customizados para visualizar e analisar os dados. Por exemplo, a tabela a seguir lista alguns tipos comuns de painéis:
+No {{site.data.keyword.Bluemix_notm}}, há diferentes tipos de painéis que podem ser definidos e customizados para visualizar e analisar os dados. Por exemplo, a tabela a seguir lista alguns tipos comuns de painéis:
 
 | Tipo de painel | Descrição |
 |-------------------|-------------|
@@ -37,14 +37,14 @@ A tabela a seguir lista as diferentes tarefas que podem ser executadas na págin
 
 | Tarefa | Informações Adicionais |
 |------|------------------|
-| [Criar um novo painel](logging_kibana_analize_logs_dashboard.html#K4_dashboard_new) | É possível criar múltiplos painéis. Cada painel pode ser projetado para incluir diversas procuras e visualizações e um subconjunto diferente de dados do log.  |
-| [Salvar um painel](logging_kibana_analize_logs_dashboard.html#k4_dashboard_save) | É possível salvar um painel para reutilização posterior. |
-| [Carregar um painel](logging_kibana_analize_logs_dashboard.html#k4_dashboard_reload) | É possível fazer upload de um painel para atualizar, modificar ou analisar seus dados. |
-| [Excluir um painel](logging_kibana_analize_logs_dashboard.html#k4_dashboard_delete) | Exclua painéis que não forem necessários. |
-| [Exportar um painel](logging_kibana_analize_logs_dashboard.html#k4_dashboard_export) | É possível exportar um painel como um arquivo JSON. |
-| [Importar um painel](logging_kibana_analize_logs_dashboard.html#k4_dashboard_import) | É possível importar um painel como um arquivo JSON. |
-| [Compartilhar um painel](logging_kibana_analize_logs_dashboard.html#k4_dashboard_share) | É possível compartilhar um painel por meio de sua origem HTML ou por meio do painel do Kibana. |
-| [Incluir uma visualização](logging_kibana_analize_logs_dashboard.html#k4_dashboard_add_visualization) | É possível incluir uma visualização ou procura existente em um painel.|
+| [Criar um novo painel](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#K4_dashboard_new) | É possível criar múltiplos painéis. Cada painel pode ser projetado para incluir diversas procuras e visualizações e um subconjunto diferente de dados do log.  |
+| [Salvar um painel](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_save) | É possível salvar um painel para reutilização posterior. |
+| [Carregar um painel](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_reload) | É possível fazer upload de um painel para atualizar, modificar ou analisar seus dados. |
+| [Excluir um painel](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_delete) | Exclua painéis que não forem necessários. |
+| [Exportar um painel](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_export) | É possível exportar um painel como um arquivo JSON. |
+| [Importar um painel](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_import) | É possível importar um painel como um arquivo JSON. |
+| [Compartilhar um painel](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_share) | É possível compartilhar um painel por meio de sua origem HTML ou por meio do painel do Kibana. |
+| [Incluir uma visualização](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_add_visualization) | É possível incluir uma visualização ou procura existente em um painel.|
 {: caption="Tabela 2. Tarefas para trabalhar com painéis" caption-side="top"}
 
 Para obter mais informações sobre Kibana, veja o [Guia do Usuário do Kibana ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](https://www.elastic.co/guide/en/kibana/4.1/index.html){: new_window}.
@@ -71,13 +71,13 @@ Conclua as etapas a seguir para criar um novo painel:
 
 1. Na barra de ferramentas da página Painel, clique no botão **Novo painel** ![Novo painel](images/k4_dash_new_icon.jpg "Novo painel").
 
-2. Inclua uma ou mais procuras e visualizações. Para obter mais informações, consulte [Incluindo uma nova procura ou visualização](logging_kibana_analize_logs_dashboard.html#K4_dashboard_add_visualization).
+2. Inclua uma ou mais procuras e visualizações. Para obter mais informações, consulte [Incluindo uma nova procura ou visualização](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create).
 
     Ao incluir uma procura ou visualização, uma tela é incluída no painel.
 
 3. Arraste a tela e solte-a na parte do painel em que deseja posicioná-la.
  
-4. Salve o painel para reutilização futura. Para obter mais informações, veja [Salvando um painel do Kibana](logging_kibana_analize_logs_dashboard.html#k4_dashboard_save).
+4. Salve o painel para reutilização futura. 
 
 ## Excluindo um painel do Kibana
 {: #k4_dashboard_delete}

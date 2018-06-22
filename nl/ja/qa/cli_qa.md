@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -30,7 +30,7 @@ lastupdated: "2018-01-10"
 ## IBM Cloud にログインするにはどうすればよいですか
 {: #login}
 
-{{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインするには、次のコマンドを実行します。
+次のコマンドを実行して、{{site.data.keyword.loganalysisshort}} サービスが使用可能な {{site.data.keyword.Bluemix_notm}} 内の地域にログインします。
 
 ```
 bx login -a Endpoint
@@ -72,7 +72,7 @@ bx login -a https://api.ng.bluemix.net
 
 手順に従います。 
 
-次に、組織およびスペースを設定します。 次のコマンドを実行します。
+組織およびスペースを設定することもできます。次のコマンドを実行します。
 
 ```
 bx target -o OrgName -s SpaceName
@@ -98,7 +98,7 @@ bx target -o OrgName -s SpaceName
 	
 アカウントの GUID を取得するには、以下の手順を実行します。
 	
-1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
+1. {{site.data.keyword.Bluemix_notm}} の地域にログインします。 
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 	

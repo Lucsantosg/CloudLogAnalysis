@@ -64,7 +64,7 @@ bx cs cluster-get ClusterName --json
 组织标识是为 **logOrg** 字段指示的值。
 组织名称是为 **logOrgName** 字段指示的值。
 
-如果这些字段为空，那么没有与该集群关联的 CF 组织和空间。
+如果这些字段为空，说明没有与该集群关联的 CF 组织和空间。
 
 
 

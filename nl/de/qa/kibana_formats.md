@@ -3,11 +3,9 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
-
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -52,30 +50,6 @@ Sie können Kibana so konfigurieren, dass auf der Seite *Discover* die folgenden
 {: caption="Tabelle 1. Felder für CF-Apps" caption-side="top"}
 
 
-
-## Kibana-Protokollformat für Docker-Container, die in einer von IBM verwalteten Infrastruktur bereitgestellt werden (veraltet)
-{: #kibana_log_format_containers}
-
-Sie können Kibana so konfigurieren, dass auf der Seite *Discover* die folgenden Felder für jeden Protokolleintrag angezeigt werden:
-
-| Feld | Beschreibung |
-|-------|-------------|
-| @timestamp | `yyyy-MM-ddTHH:mm:ss:SS-0500`  <br> Die Zeit des protokollierten Ereignisses. <br> Die Zeitmarke wird millisekundengenau definiert. |
-| @version | Die Version des Ereignisses. |
-| ALCH_TENANT_ID | ID des {{site.data.keyword.Bluemix_notm}}-Bereichs. |
-| \_id | Die eindeutige ID für Ihr Protokolldokument. |
-| \_index | Der Index für Ihren Protokolleintrag. |
-| \_type | Der Typ des Protokolls, z. B. *logs*. |
-| group_id | Gruppen-ID <br> * Bei einem einzelnen Container ist der Wert **0000**. <br> * Bei einer Containergruppe ist der Wert die GUID für die Gruppe.  |
-| host | Name des Hosts, auf dem der Container ausgeführt wird. |
-| instance | GUID der Instanz für einen einzelnen Container. Liste von Instanz-IDs für eine Containergruppe.|
-| log | Kurze Nachricht. |
-| message | Vollständige Nachricht. |
-| path | Pfad- und Protokollname, die die Position des Protokolls im Container angeben. |
-| stream | Typ des Protokolls: stdout, stderr |
-| time | Das Datum und die Zeit des Ereignisses bei seinem Auftreten. Die Zeitmarke wird millisekundengenau definiert.|
-| timestamp | Das Datum und die Zeit des protokollierten Ereignisses. Die Zeitmarke wird millisekundengenau definiert. |
-{: caption="Tabelle 2. Felder für Docker-Container" caption-side="top"}
 
 ## Kibana-Protokollformat für Docker-Container, die in einem Kubernetes-Cluster bereitgestellt sind
 {: #kibana_log_format_containers_kubernetes}
@@ -150,3 +124,6 @@ ALCH_TENANT_ID:
 &#95;index:
     logstash-2017.03.08
 ```
+{: screen}
+
+

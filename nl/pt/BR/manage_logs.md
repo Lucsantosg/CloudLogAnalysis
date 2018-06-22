@@ -65,21 +65,12 @@ Os logs armazenados em Procura de log são excluídos após 3 dias.
 
 Os logs armazenados em Coleção de logs são mantidos até você configurar uma política de retenção ou excluí-los manualmente. 
 
-* É possível configurar uma política de retenção de log para definir o número de dias que você deseja manter os logs na Coleção de logs. Para obter mais informações, veja:
+* É possível configurar uma política de retenção de log para definir o número de dias que você deseja manter os logs na Coleção de logs. Para obter mais informações, veja [Visualizando e configurando a política de retenção de log usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
 
-    [Visualizando e configurando a política de retenção de log usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
-	
-	[Visualizando e configurando a política de retenção de log usando o plug-in do CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy.html#configuring_retention_policy).
+* É possível usar a [API de Coleção de logs](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} ou a [CLI de Coleção de logs](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} para excluir logs manualmente da Coleção de logs. 
 
-    É possível desativar a política configurando seu valor como *-1*. 
-
-* É possível usar a [API de Coleção de logs](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} ou a [CLI de Coleção de logs](/docs/services/CloudLogAnalysis/reference/logging_cli.html#logging_cli){: new_window} para excluir logs manualmente da Coleção de logs. 
-
-* É possível usar a CLI. Para obter mais informações sobre como excluir logs manualmente por meio da CLI, veja:
-
-    [bx logging log-delete usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+* É possível usar a CLI. Para obter mais informações sobre como excluir logs manualmente por meio da CLI, veja [bx logging log-delete usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
     
-	[bx cf logging delete usando o plug-in do CF](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete).
 
 
 ## Fazendo download de logs
@@ -108,14 +99,6 @@ Por exemplo, para manter o custo sob controle, você pode desejar monitorar o ta
 É possível visualizar informações sobre os logs que são armazenados em um domínio de espaço, um domínio de organização ou um domínio de contas.
 
 
-## Instalando a CLI do {{site.data.keyword.loganalysisshort_notm}} (plug-in do CF)
-{: #install_cli}
-
-Para saber como instalar a CLI, veja [Instalando a CLI de criação de log](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#config_log_collection_cli).
-
-Para verificar a versão da CLI, execute o comando [bx cf logging](/docs/services/CloudLogAnalysis/reference/logging_cli.html#base) com o parâmetro * -version*.
-
-Para obter ajuda sobre como executar comandos, veja [Obtendo ajuda da linha de comandos para executar comandos](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#command_cli_help).
 
 ## Instalando a CLI do {{site.data.keyword.loganalysisshort_notm}} (plug-in do {{site.data.keyword.Bluemix_notm}})
 {: #install_cli}

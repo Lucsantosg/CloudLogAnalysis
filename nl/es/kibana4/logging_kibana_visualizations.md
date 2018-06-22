@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -41,13 +41,13 @@ En la página Visualizar, puede realizar cualquiera de las siguientes tareas:
 
 | Tarea | Más información |
 |------|------------------|
-| [Crear una nueva visualización](logging_kibana_visualizations.html#logging_k4_visualizations_create) | Puede crear visualizaciones a partir de una búsqueda que defina y guarde en la página *Descubrir* o a partir de una nueva consulta que defina en la página *Visualizar*. |
-| [Guardar una visualización](logging_kibana_visualizations.html#logging_kibana_visualizations_save) | Puede guardar visualizaciones para reutilizarlas en el futuro. |
-| [Cargar una visualización](logging_kibana_visualizations.html#logging_kibana_visualizations_reload) | Puede cargar una visualización para actualizar sus datos, modificarlos o analizar los datos. |
-| [Suprimir una visualización](logging_kibana_visualizations.html#logging_kibana_visualizations_delete) | Suprima las visualizaciones que ya no necesite. |
-| [Exportar una visualización](logging_kibana_visualizations.html#logging_kibana_visualizations_export) | Puede exportar una visualización como archivo JSON.  |
-| [Importar una visualización](logging_kibana_visualizations.html#logging_kibana_visualizations_import) | Puede importar una visualización como archivo JSON.  |
-| [Compartir una visualización](logging_kibana_visualizations.html#logging_kibana_visualizations_share) | Puede compartir una visualización a través de su HTML de origen o a través del panel de control de Kibana.  |
+| [Crear una nueva visualización](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create) | Puede crear visualizaciones a partir de una búsqueda que defina y guarde en la página *Descubrir* o a partir de una nueva consulta que defina en la página *Visualizar*. |
+| [Guardar una visualización](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_save) | Puede guardar visualizaciones para reutilizarlas en el futuro. |
+| [Cargar una visualización](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_reload) | Puede cargar una visualización para actualizar sus datos, modificarlos o analizar los datos. |
+| [Suprimir una visualización](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_delete) | Suprima las visualizaciones que ya no necesite. |
+| [Exportar una visualización](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_export) | Puede exportar una visualización como archivo JSON.  |
+| [Importar una visualización](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_import) | Puede importar una visualización como archivo JSON.  |
+| [Compartir una visualización](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_share) | Puede compartir una visualización a través de su HTML de origen o a través del panel de control de Kibana.  |
 {: caption="Tabla 2. Tareas para trabajar con visualizaciones" caption-side="top"}
 
 
@@ -76,8 +76,6 @@ Complete los siguientes pasos para crear una visualización desde la página Vis
 	**Nota**: los cambios que realice en una búsqueda guardada se reflejan automáticamente en la visualización. Para inhabilitar las actualizaciones automáticas que realice en la consulta que está enlazada a esta visualización, efectúe una doble pulsación en el mensaje *Esta visualización está enlazada a una búsqueda guardada: your_search_name* 
 
     * Si selecciona **Desde una nueva búsqueda**, defina una consulta nueva. La consulta se utiliza para definir el subconjunto de datos que recupera y utiliza la visualización.
-
-        Para obtener más información, consulte [Filtrado de registros mediante la definición de consultas personalizadas](k4_filter_queries.html#k4_filter_queries).
 
 6. En el programa de creación de visualizaciones, seleccione agregaciones de métricas para el eje Y.
 

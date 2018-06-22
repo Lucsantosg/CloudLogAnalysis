@@ -3,11 +3,9 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
-
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -22,14 +20,15 @@ lastupdated: "2018-01-10"
 No {{site.data.keyword.Bluemix}}, é possível designar uma ou mais funções para os usuários. Essas funções definem quais tarefas estão ativadas para esse usuário para trabalhar com o serviço {{site.data.keyword.loganalysisshort}}. 
 {:shortdesc}
 
+**Nota:** 
 
+* Para conceder permissões a um usuário para gerenciar logs ou visualizar logs da conta, deve-se ter permissões para designar políticas a outros usuários na conta ou deve-se ser o proprietário da conta. Caso você não seja o proprietário da conta, deve-se ter uma política do IAM com a função de editor, operador ou administrador.
+* Para conceder permissões a um usuário para visualizar logs em um espaço, deve-se ter permissões na organização e espaço para designar ao usuário uma função do Cloud Foundry que descreva as ações que ele pode executar com o serviço {{site.data.keyword.loganalysisshort}} nesse espaço. 
 
 ## Designar uma política do IAM a um usuário por meio da UI do {{site.data.keyword.Bluemix_notm}}
 {: #grant_permissions_ui_account}
 
-Para conceder a um usuário permissões para visualizar e gerenciar logs de contas, deve-se incluir uma política para esse usuário que descreva as ações que esse usuário pode executar com o serviço {{site.data.keyword.loganalysisshort}} na conta. Somente proprietários da conta podem designar políticas individuais para usuários.
-
-No {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir para conceder a um usuário permissões para trabalhar com o serviço {{site.data.keyword.loganalysisshort}}:
+Conclua as etapas a seguir para conceder a um usuário permissões para trabalhar com o serviço {{site.data.keyword.loganalysisshort}}:
 
 1. Efetue login no console do {{site.data.keyword.Bluemix_notm}}.
 
@@ -45,7 +44,7 @@ No {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir para conceder 
 
     Se o usuário não é um membro da conta, veja [Convidando usuários](/docs/iam/iamuserinv.html#iamuserinv).
 
-4. Na seção **Políticas de acesso**, clique em **Designar políticas de serviço** e, em seguida, selecione **Designar acesso aos recursos**.
+4. Na seção **Políticas de acesso**, clique em **Designar acesso** e, em seguida, selecione **Designar acesso aos recursos**.
 
     A janela *Designar acesso a recursos ao usuário** é aberta.
 
@@ -76,162 +75,64 @@ No {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir para conceder 
 	  </tr>
      </table>
 	
-6. Clique em **Designar política**.
+6. Clique em **Designar**.
 	
 A política que você configura é aplicável às regiões selecionadas. 
+
 
 ## Designar uma política do IAM a um usuário usando a linha de comandos
 {: #grant_permissions_commandline}
 
-Para conceder a um usuário permissões para visualizar e gerenciar logs de contas, deve-se conceder ao usuário uma função do IAM. Para obter mais informações sobre funções do IAM e quais tarefas estão ativadas por função para trabalhar com o serviço {{site.data.keyword.loganalysisshort}}, veja [Funções do IAM](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
-
-Essa operação pode ser executada somente pelo proprietário da conta.
-
 Conclua as etapas a seguir para conceder a um usuário acesso para visualizar logs de contas usando a linha de comandos:
 
-1. Obtenha o ID da conta. 
+1. Em um terminal, efetue login na conta do {{site.data.keyword.Bluemix_notm}}. 
 
-    Execute o comando a seguir para obter o ID da conta:
+    Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+
+2. Verifique se o usuário é um membro da conta. Execute o comando a seguir para obter a lista de usuários na conta:
 
     ```
-	bx iam accounts
+	Usuários de conta bx
 	```
     {: codeblock}	
 
-	Uma lista de contas com seus GUIDs é exibida.
-	
-	Exporte o ID da conta da conta na qual você planeja conceder permissões a um usuário para uma variável shell como `$acct_id`, por exemplo:
-	
-	```
-	export acct_id="1234567891234567812341234123412"
-	```
-	{: screen}
+	Uma lista de usuários com seus GUIDs é exibida.
 
-2. Obtenha o ID do {{site.data.keyword.Bluemix_notm}} do usuário para quem você deseja conceder permissões.
+3. Se o usuário não for um membro da conta, entre em contato com o proprietário da conta e solicite um convite do usuário para a conta. Para obter mais informações, veja [Convidando usuários](/docs/iam/iamuserinv.html#iamuserinv).
 
-    1. Exiba os usuários que estão associados à conta. Execute o comando a seguir:
-	
-	    ```
-		bx iam account-users
-		```
-		{: codeblock}
+    **Dica:** o comando para convidar um usuário para uma conta é o seguinte: `bx iam account-user-invite USER_EMAIL`
 		
-	2. Obtenha o GUID do usuário. **Nota:** essa etapa deve ser concluída pelo usuário para quem você planeja conceder permissões.
-	
-	    Por exemplo, solicite ao usuário para executar os comandos a seguir para obter o ID do usuário:
-		
-		Obtenha o token do IAM. Para obter mais informações, veja [Obtendo o token do IAM usando a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
+4. Designe uma política ao usuário. Execute o comando a seguir:
 
-        Obtenha os dados do token do IAM que estão entre os primeiros 2 pontos no token do IAM. Exporte os dados para uma variável shell como `$user_data`. 
-		
-		```
-	    export user_data="xxxxxxxxxxxxxxxxxxxxxxxxxxx"
-	    ```
-	    {: screen}
-		
-		Execute o comando a seguir, por exemplo, para obter o ID do usuário. Este comando usa jq nessa amostra para decodificar as informações em texto formatado JSON:
-		
-		```
-		echo $user_data | base64 -d | jq
-		```
-		{: codeblock}
-		
-		A saída da execução desse comando é a seguinte:
-		
-		```
-		$ echo $user_data | base64 -d | jq
-        {
-        "iam_id": "IBMid-xxxxxxxxxx",
-        "id": "IBMid-xxxxxxxxxx",
-        "realmid": "IBMid",
-        ......
-		}
-        ```
-	    {: screen}
-		
-		Envie o ID do usuário para o proprietário da conta.
-		
-	3. Exporte o ID do usuário para uma variável shell como `$user_ibm_id`.
-	
-		```
-		export user_ibm_id="IBMid-xxxxxxxxxx"
-		```
-		{: codeblock}
-
-3. Convide o usuário para a conta se ele ainda não for um membro. Para obter mais informações, veja [Convidando usuários](/docs/iam/iamuserinv.html#iamuserinv).
-
-    Por exemplo, execute o comando a seguir para convidar o usuário xxx@yyy.com para a conta zzz@ggg.com:
-	
-	```
-	bx iam account-user-invite xxx@yyy.com zzz@ggg.com OrgAuditor dev SpaceDeveloper
-	```
-	{: codeblock}
-		
-4. Crie um nome do arquivo de políticas. 
-
-    Por exemplo, use o modelo a seguir para conceder permissões de visualização na região Sul dos EUA:
-	
-	```
-	{
-		"roles" : [
-			{
-				"id": "crn:v1:bluemix:public:iam::::role:Editor" 
-			}
-		],
-		"resources": [
-			{
-				"serviceName": "ibmcloud-log-analysis",
-				"region": "us-south"
-			}
-		]
-	}
-	```
-	{: codeblock}
-	
-	Nomeie o arquivo de políticas: `policy.json`
-	
-5. Obtenha o token do IAM para seu ID do usuário.
-
-    Para obter mais informações, veja [Obtendo o token do IAM usando a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
-
-    Exporte o token do IAM para uma variável shell como `$iam_token`, por exemplo:
-	
-	```
-	export iam_token="xxxxxxxxxxxxxxxxxxxxx"
-	```
-	{: screen}
-	
-6. Conceda ao usuário permissões para trabalhar com o serviço {{site.data.keyword.loganalysisshort}}. 
-
-   Execute o comando cURL a seguir para conceder permissões na região Sul dos EUA:
-	
     ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.ng.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
+    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
-	
-	Execute o comando cURL a seguir para conceder permissões na região do Reino Unido:
-	
+
+	Em que
+    * USER_NAME é o ID do {{site.data.keyword.Bluemix_notm}} do usuário.
+	* ROLE é uma função do IAM. Os valores válidos são: *administrator*, *operator*, *editor* e *viewer*
+
+5. Verifique se a política foi designada ao usuário. Execute o comando a seguir para listar todas as políticas designadas a um usuário:
+
     ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.eu-gb.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
+    Bx iam user-policies USER_NAME
 	```
 	{: codeblock}
 
-	
-Depois de conceder permissões a um usuário, o usuário pode efetuar login no {{site.data.keyword.Bluemix_notm}} e ver logs de nível de conta.
 
 
 
-## Concedendo a um usuário permissões para visualizar logs de espaço usando a UI do {{site.data.keyword.Bluemix_notm}}
+## Concedendo permissões a um usuário para visualizar logs de espaço usando a UI do {{site.data.keyword.Bluemix_notm}}
 {: #grant_permissions_ui_space}
 
-Para conceder a um usuário permissões para visualizar logs em um espaço, deve-se designar ao usuário uma função do Cloud Foundry que descreva as ações que esse usuário pode executar com o serviço {{site.data.keyword.loganalysisshort}} no espaço. 
+Para conceder permissões a um usuário para visualizar logs em um espaço, deve-se designar ao usuário uma função do Cloud Foundry que descreva as ações que ele pode executar com o serviço {{site.data.keyword.loganalysisshort}} no espaço. 
 
 Conclua as etapas a seguir para conceder a um usuário permissões para trabalhar com o serviço {{site.data.keyword.loganalysisshort}}:
 
-1. Efetue login no console {{site.data.keyword.Bluemix_notm}}.
+1. Efetue login no console do {{site.data.keyword.Bluemix_notm}}.
 
-    Abra um navegador da web e ative o painel do {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Ícone de link externo](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+    Abra um navegador da web e ative o painel do {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](http://bluemix.net){:new_window}
 	
 	Depois de efetuar login com seu ID de usuário e senha, a UI do {{site.data.keyword.Bluemix_notm}} é aberta.
 
@@ -249,7 +150,7 @@ Conclua as etapas a seguir para conceder a um usuário permissões para trabalha
 
 5. Escolha um espaço. Em seguida, na ação de menu, selecione **Editar função de espaço**.
 
-6. Selecione 1 ou mais funções de espaço. As funções válidas são: *Gerenciador*, *Desenvolvedor* e *Auditor*
+6. Selecione uma ou mais funções de espaço. As funções válidas são: *Gerenciador*, *Desenvolvedor* e *Auditor*
 	
 7. Clique em **Salvar função**.
 

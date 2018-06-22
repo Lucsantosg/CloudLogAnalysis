@@ -20,6 +20,9 @@ lastupdated: "2018-01-10"
 ログをローカル・ファイルにダウンロードしたり、データを別のプログラムにパイプしたりできます。 ログのダウンロードは、1 つのセッションのコンテキスト内で行います。 どのログがダウンロードされるのかをセッションが指定します。 ログのダウンロードが中断された場合、セッションは中断した箇所からのダウンロードの再開を可能にします。 ダウンロードが完了した後、セッションを削除する必要があります。
 {:shortdesc}
 
+以下のステップを実行するには、{{site.data.keyword.loganalysisshort}} CLI をインストールする必要があります。詳しくは、[{{site.data.keyword.loganalysisshort}} CLI の構成](https://console.bluemix.net/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli_)を参照してください。
+
+
 スペースで使用可能なログ・データをローカル・ファイルにダウンロードするには、以下のステップを実行します。
 
 ## ステップ 1: {{site.data.keyword.Bluemix_notm}} にログインする
@@ -61,7 +64,7 @@ lastupdated: "2018-01-10"
 
 ダウンロードに使用可能なログ・データのスコープを定義するため、および、ダウンロードの状況を保持するために、セッションが必要です。 
 
-セッションを作成するには、コマンド [cf logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) を使用します。 オプションで、セッションを作成するときに、ログの開始日、終了日、およびタイプを指定することができます。  
+セッションを作成するには、コマンド [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) を使用します。オプションで、セッションを作成するときに、ログの開始日、終了日、およびタイプを指定することができます。  
 
 * 開始日および終了日を指定すると、セッションはそれらの日付の間 (開始日と終了日を含む) のログへのアクセスを提供します。 
 * ログのタイプ (**-t**) を指定すると、セッションは特定タイプのログへのアクセスを提供します。 これは、ログのうち興味のある小さなサブセットのみにセッションのスコープを限定できるため、大量のログを管理する場合に重要な機能です。
@@ -128,7 +131,7 @@ bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
 ## ステップ 5: セッションを削除する
 {: #step5}
 
-ダウンロードが完了した後、[cf logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) コマンドを使用してセッションを削除する必要があります。 
+ダウンロードが完了した後、[bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) コマンドを使用してセッションを削除する必要があります。 
 
 セッションを削除するには、次のコマンドを実行します。
 

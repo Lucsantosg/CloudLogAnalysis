@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -26,29 +26,29 @@ lastupdated: "2018-01-10"
 
 下表列出了不同的可视化项类型：
 
-| 可视化项类型| 描述
+|可视化项类型|描述
 |
 |-----------------------|-------------|
-| 面积图| 以图形方式显示量化数据。用于比较两组或更多组聚集的数据。|
-| 数据表| 以表格形式显示组合聚集的原始数据。|
-| 折线图| 显示基于时间的数据。用于比较两组或更多组基于时间的聚集数据。|
-| Markdown 窗口小部件| 用于显示文本信息。|
-| 度量值| 用于显示命中计数或数字字段的准确平均值。|
-| 饼图| 用于显示字段的不同值。| 
-| 垂直条形图| 显示基于时间的数据和非基于时间的数据。用于对数据分组。|
+|面积图|以图形方式显示量化数据。用于比较两组或更多组聚集的数据。|
+|数据表|以表格形式显示组合聚集的原始数据。|
+|折线图|显示基于时间的数据。用于比较两组或更多组基于时间的聚集数据。|
+|Markdown 窗口小部件|用于显示文本信息。|
+|度量值|用于显示命中计数或数字字段的准确平均值。|
+|饼图|用于显示字段的不同值。| 
+|垂直条形图|显示基于时间的数据和非基于时间的数据。用于对数据分组。|
 {: caption="表 1. 可视化项类型" caption-side="top"}
 
 在“可视化”页面中，可以执行以下任一任务：
 
-| 任务| 更多信息|
+|任务|更多信息|
 |------|------------------|
-| [新建可视化项](logging_kibana_visualizations.html#logging_k4_visualizations_create)| 通过在*发现*页面中定义并保存的搜索，或通过在*可视化*页面中定义的新查询，可以创建可视化项。|
-| [保存可视化项](logging_kibana_visualizations.html#logging_kibana_visualizations_save)| 可以保存可视化项以供未来复用。|
-| [装入可视化项](logging_kibana_visualizations.html#logging_kibana_visualizations_reload)| 可以上传可视化项以更新其数据，修改可视化项或分析数据。|
-| [删除可视化项](logging_kibana_visualizations.html#logging_kibana_visualizations_delete)| 删除不需要的可视化项。|
-| [导出可视化项](logging_kibana_visualizations.html#logging_kibana_visualizations_export)| 可以将可视化项导出为 JSON 文件。|
-| [导入可视化项](logging_kibana_visualizations.html#logging_kibana_visualizations_import)| 可以将可视化项作为 JSON 文件导入。|
-| [共享可视化项](logging_kibana_visualizations.html#logging_kibana_visualizations_share)| 可以通过 HTML 源或通过 Kibana 仪表板来共享可视化项。|
+|[创建新的可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create)|通过在*发现*页面中定义并保存的搜索，或通过在*可视化*页面中定义的新查询，可以创建可视化项。|
+|[保存可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_save)|可以保存可视化项以供未来复用。|
+|[装入可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_reload)|可以上传可视化项以更新其数据，修改可视化项或分析数据。|
+|[删除可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_delete)|删除不需要的可视化项。|
+|[导出可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_export)|可以将可视化项导出为 JSON 文件。|
+|[导入可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_import)|可以将可视化项作为 JSON 文件导入。|
+|[共享可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_share)|可以通过 HTML 源或通过 Kibana 仪表板来共享可视化项。|
 {: caption="表 2. 使用可视化项的任务" caption-side="top"}
 
 
@@ -77,8 +77,6 @@ lastupdated: "2018-01-10"
 	**注**：对保存的搜索进行的任何更改都会自动反映在可视化项中。要禁用对链接到此可视化项的查询进行的自动更新，请双击消息：*此可视化项已链接到保存的搜索：your_search_name* 
 
     * 如果选择**通过新搜索**，请定义新查询。该查询用于定义由可视化项检索并使用的数据子集。
-
-        有关更多信息，请参阅[通过定义定制查询来过滤日志](k4_filter_queries.html#k4_filter_queries)。
 
 6. 在可视化项构建器中，为 Y 轴选择度量值聚集。
 

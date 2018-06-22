@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-02-01"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -263,7 +263,7 @@ Le tableau suivant répertorie les URL permettant d'ouvrir Kibana ainsi que les 
     </tr>
 	<tr>
       <td>Francfort</td>
-	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.nett)</td>
+	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.net)</td>
 	  <td>Kibana 5.1</td>
     </tr>
 	<tr>

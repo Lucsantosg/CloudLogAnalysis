@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -80,7 +80,7 @@ lastupdated: "2018-01-31"
     OK
 
     name              service          plan       bound apps   last operation
-    Log Analysis-vg   ibmLogAnalysis   standard                create succeeded
+    Log Analysis-vg   ibmloganalysis   standard                create succeeded
     ```
 	{: screen}
 	
@@ -133,33 +133,7 @@ lastupdated: "2018-01-31"
 	```
 	{: screen}
 
-## Log Analysis CLI (CF プラグイン) を使用して、ログをスペースに送信するためのロギング・トークンを取得する
-{: #logging_token_cf_plugin}
 
-{{site.data.keyword.loganalysisshort}} サービスにログを送信するために使用できるロギング・トークンを取得するには、以下のステップを実行します。
-
-1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
-
-   詳しくは、『[{{site.data.keyword.Bluemix}} CLI のダウンロードとインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
-   
-   CLI がインストールされている場合は、次のステップに進みます。
-    
-2. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
-
-    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
-	
-3. 認証トークンを取得した対象のスペースの GUID を取得します。
-
-   詳しくは、『[スペースの GUID の取得方法を教えてください](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid)』を参照してください。  
-   
-4. ロギング・トークンを取得します。 次のコマンドを実行します。
-
-    ```
-    bx cf logging auth
-    ```
-    {: codeblock}
-
-このコマンドは、*ロギング・トークン*と*スペース ID* を返します。この ID のスペースにログを送信するためにこれらが必要です。	
 	
 ## Log Analysis API を使用して、ログをスペースに送信するためのロギング・トークンを取得する
 {: #logging_token_api}
@@ -220,56 +194,3 @@ lastupdated: "2018-01-31"
 	
     このコマンドは、そのスペースにログを送信するめに使用する必要のあるロギング・トークンを返します。
 	
-## Log Analysis API を使用して、ログをアカウント・ドメインに送信するためのロギング・トークンを取得する
-{: #logging_acc_token_api}
-
-
-ログを {{site.data.keyword.loganalysisshort}} サービスに送信するために使用できるロギング・トークンを取得するには、以下のステップを実行します。
-
-1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
-
-   詳しくは、[{{site.data.keyword.Bluemix_notm}} CLI のダウンロードとインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install) を参照してください。
-   
-   CLI がインストールされている場合は、次のステップに進みます。
-    
-2. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
-
-    詳しくは、[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login) を参照してください。
-	
-3. [IAM トークン](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli) を取得します。
-
-    出力で IAM トークンが返されます。
-
-4. アカウントの GUID を取得します。
-
-   詳しくは、[アカウントの GUID の取得方法を教えてください](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid) を参照してください。  
-	
-5. 変数 TOKEN および AccountID をエクスポートします。
-
-    * *TOKEN* は、前のステップで取得した OAuth トークン (Bearer を除く) です。
-	
-	* *AccountID* は、前のステップで取得した、アカウントの GUID です。 
-		
-	以下に例を示します。
-	
-	```
-	export TOKEN="eyJhbGciOiJI....cGFzc3dvcmQiLCJjZiIsInVhYSIsIm9wZW5pZCJdfQ.JaoaVudG4jqjeXz6q3JQL_SJJfoIFvY8m-rGlxryWS8"
-	export AccountID="667fb8953456fg41095"
-	```
-	{: screen}
-	
-6. ロギング・トークンを取得します。 次のコマンドを実行します。
- 
-    ```
-	curl -k -X GET  --header "X-Auth-User-Token:iam ${TOKEN}"  --header "X-Auth-Project-Id: a-${AccountID}" -k  LOGGING_ENDPOINT/token
-    ```
-    {: codeblock}	
-	
-	ここで、
-	* AccountID は、サービスが実行されているスペースの GUID です。
-	* TOKEN は、前のステップで取得した IAM トークンから bearer 接頭部を除外したものです。
-	* LOGGING_ENDPOINT は、組織およびスペースが使用可能な {{site.data.keyword.Bluemix_notm}} 地域の {{site.data.keyword.loganalysisshort}} エンドポイントです。 LOGGING_ENDPOINT は地域ごとに異なります。 異なるエンドポイントの URL を確認するには、[エンドポイント](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints) を参照してください。
-	
-    このコマンドは、ログをアカウント・ドメインに送信するために使用する必要のあるロギング・トークンを返します。
-	
-

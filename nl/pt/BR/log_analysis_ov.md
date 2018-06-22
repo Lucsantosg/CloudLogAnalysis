@@ -32,7 +32,7 @@ O serviço {{site.data.keyword.loganalysisfull}} fornece serviços de coleção 
 
 A figura a seguir mostra uma visualização de alto nível do serviço {{site.data.keyword.loganalysisshort}}: 
 
-![Visão geral da imagem do serviço {{site.data.keyword.loganalysisshort}} ](images/loganalisys_F1.gif "Visão geral da imagem do serviço {{site.data.keyword.loganalysisshort}} ")
+![Imagem de visão geral do serviço {{site.data.keyword.loganalysisshort}}](images/loganalysis_F1.png "Imagem de visão geral do serviço {{site.data.keyword.loganalysisshort}}")
 
 
 Para coletar e procurar logs de recursos em nuvem que são executados em um espaço, deve-se provisionar uma instância do serviço {{site.data.keyword.loganalysisshort}} no mesmo espaço em que esses recursos em nuvem estão em execução. Os logs são coletados e armazenados em Procura de log, por padrão. Ao selecionar um plano de serviço que inclua os recursos de procura e coleta estendidas, os logs também são coletados e armazenados no componente de Coleção de logs. Os dados do log armazenados na Coleção de logs são criptografados.

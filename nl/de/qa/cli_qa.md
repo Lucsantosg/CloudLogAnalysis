@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -30,7 +30,7 @@ Im Folgenden finden Sie Antworten auf häufig gestellte Fragen zur Verwendung de
 ## Wie melde ich mich bei IBM Cloud an?
 {: #login}
 
-Führen Sie den folgenden Befehl aus, um sich bei einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} anzumelden:
+ühren Sie den folgenden Befehl aus, um sich bei einer Region in {{site.data.keyword.Bluemix_notm}} anzumelden, in der der {{site.data.keyword.loganalysisshort}}-Service verfügbar ist:
 
 ```
 bx login -a Endpunkt
@@ -72,7 +72,7 @@ bx login -a https://api.ng.bluemix.net
 
 Gehen Sie gemäß den Anweisungen vor. 
 
-Legen Sie dann die Organisation und den Bereich fest. Führen Sie den folgenden Befehl aus:
+Sie können auch eine Organisation und einen Bereich festlegen. Führen Sie den folgenden Befehl aus:
 
 ```
 bx target -o Organisationsname -s Bereichsname
@@ -98,7 +98,7 @@ Siehe [{{site.data.keyword.Bluemix}}-Befehlszeilenschnittstelle herunterladen un
 	
 Führen Sie die folgenden Schritte aus, um die GUID eines Kontos abzurufen:
 	
-1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+1. Melden sich bei einer Region in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	

@@ -33,7 +33,6 @@ Utilice el mandato `cf logging status` con las opciones **-s** para definir la f
 
 Siga estos pasos para obtener para obtener información sobre los registros:
 
-
 1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
@@ -42,7 +41,7 @@ Siga estos pasos para obtener para obtener información sobre los registros:
 
     ```
     bx cf logging status
- ```
+    ```
     {: codeblock}
     
     Por ejemplo,
@@ -56,7 +55,7 @@ Siga estos pasos para obtener para obtener información sobre los registros:
     +------------+--------+-------+--------------------+------------+
     | 2017-05-25 |   1224 | 76115 | linux_syslog,log   |    All     |
     +------------+--------+-------+--------------------+------------+
- ```
+    ```
     {: screen}
 
 
@@ -79,7 +78,7 @@ Siga estos pasos para obtener información sobre un tipo de registro durante un 
 
     ```
     bx cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
- ```
+    ```
     {: codeblock}
     
     donde
@@ -101,7 +100,7 @@ Siga estos pasos para obtener información sobre un tipo de registro durante un 
     +------------+--------+-------+--------------------+------------+
     | 2017-05-25 |   1224 | 76115 |        log         |    All     |
     +------------+--------+-------+--------------------+------------+
- ```
+    ```
     {: screen}
 
 
@@ -113,7 +112,6 @@ Para obtener información sobre los registros durante un periodo de tiempo de la
 
 Siga estos pasos para obtener para obtener información de la cuenta sobre los registros:
 
-
 1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
@@ -122,7 +120,7 @@ Siga estos pasos para obtener para obtener información de la cuenta sobre los r
 
     ```
     bx cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
- ```
+    ```
     {: codeblock}
     
     donde
@@ -146,7 +144,7 @@ Siga estos pasos para obtener para obtener información de la cuenta sobre los r
     +------------+--------+-------+--------------------+------------+
     | 2017-05-25 |   1224 | 76115 |        log         |    All     |
     +------------+--------+-------+--------------------+------------+
- ```
+    ```
     {: screen}
 
 

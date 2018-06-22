@@ -65,21 +65,12 @@ lastupdated: "2018-01-31"
 
 除非您配置保留原則，或手動予以刪除，否則會保留「日誌收集」中所儲存的日誌。 
 
-* 您可以配置日誌保留原則，以定義您要將日誌保留在「日誌收集」中的天數。如需相關資訊，請參閱：
+* 您可以配置日誌保留原則，以定義您要將日誌保留在「日誌收集」中的天數。如需相關資訊，請參閱[使用 {{site.data.keyword.Bluemix_notm}} 外掛程式檢視及配置日誌保留原則](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy)。
 
-    [使用 {{site.data.keyword.Bluemix_notm}} 外掛程式檢視及配置日誌保留原則](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy)。
-	
-	[使用 CF 外掛程式檢視及配置日誌保留原則](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy.html#configuring_retention_policy)。
+* 您可以使用[日誌收集 API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} 或[日誌收集 CLI](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window}，手動刪除「日誌收集」中的日誌。 
 
-    停用此原則的方式是將其值設為 *-1*。 
-
-* 您可以使用[日誌收集 API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} 或[日誌收集 CLI](/docs/services/CloudLogAnalysis/reference/logging_cli.html#logging_cli){: new_window}，手動刪除「日誌收集」中的日誌。 
-
-* 您可以使用 CLI。如需透過 CLI 手動刪除日誌的相關資訊，請參閱：
-
-    [使用 {{site.data.keyword.Bluemix_notm}} 外掛程式的 bx logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)。
+* 您可以使用 CLI。如需透過 CLI 手動刪除日誌的相關資訊，請參閱[使用 {{site.data.keyword.Bluemix_notm}} 外掛程式來執行 bx logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)。
     
-	[使用 CF 外掛程式的 bx cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete)。
 
 
 ## 下載日誌
@@ -108,14 +99,6 @@ lastupdated: "2018-01-31"
 您可以檢視空間網域、組織網域或帳戶網域中所儲存日誌的相關資訊。
 
 
-## 安裝 {{site.data.keyword.loganalysisshort_notm}} CLI（CF 外掛程式）
-{: #install_cli}
-
-若要瞭解如何安裝 CLI，請參閱[安裝記載 CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#config_log_collection_cli)。
-
-若要檢查 CLI 版本，請執行指令 [bx cf logging](/docs/services/CloudLogAnalysis/reference/logging_cli.html#base) 並搭配參數 * -version*。
-
-若要取得如何執行指令的協助，請參閱[取得執行指令的指令行協助](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#command_cli_help)。
 
 ## 安裝 {{site.data.keyword.loganalysisshort_notm}} CLI（{{site.data.keyword.Bluemix_notm}} 外掛程式）
 {: #install_cli}

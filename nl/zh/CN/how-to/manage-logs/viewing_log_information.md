@@ -40,14 +40,14 @@ lastupdated: "2018-01-10"
 2. 运行 *status* 命令。
 
     ```
-    bx cf logging status
+        bx cf logging status
     ```
     {: codeblock}
     
     例如：
     
     ```
-    $ bx cf logging status
+        $ bx cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -92,7 +92,7 @@ lastupdated: "2018-01-10"
     例如：
     
     ```
-    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log
+        $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -136,7 +136,7 @@ lastupdated: "2018-01-10"
     例如：
     
     ```
-    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
+        $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+

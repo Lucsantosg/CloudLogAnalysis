@@ -30,7 +30,7 @@ Ejecute el mandato siguiente:
 donde **ClusterName** es el nombre del clúster.
 
 
-Por ejemplo, el resultado de ejecutar el mandato es el siguiente: 
+Por ejemplo, el resultado de ejecutar el mandato es el siguiente:
 
 ```
 bx cs api-key-info MyDemoCluster

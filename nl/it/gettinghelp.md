@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-06-30"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -17,16 +17,16 @@ lastupdated: "2017-06-30"
 # Come ottenere aiuto e supporto
 {: #gettinghelp}
 
-In caso di problemi o domande durante l'utilizzo del servizio IBM Cloud Log Analysis in {{site.data.keyword.Bluemix}}, puoi controllare {{site.data.keyword.Bluemix_notm}} o puoi ottenere aiuto ricercando le informazioni o facendo delle domande in un forum. Puoi anche aprire un ticket del supporto.
+Se hai problemi o domande quando usi {{site.data.keyword.loganalysislong}}, puoi ottenere assistenza cercando informazioni o facendo domande tramite un forum. Puoi anche aprire un ticket del supporto.
 {:shortdesc}
 
-* Puoi controllare se {{site.data.keyword.Bluemix_notm}} è disponibile andando alla [pagina sullo stato Bluemix](https://developer.ibm.com/bluemix/support/#status){:new_window}.
+* Puoi controllare se {{site.data.keyword.Bluemix_notm}} è disponibile andando alla [pagina sullo stato di {{site.data.keyword.Bluemix_notm}}](https://developer.ibm.com/bluemix/support/#status){:new_window}.
 
 * Puoi rivedere i forum per controllare se altri utenti hanno riscontrato lo stesso problema. Quando utilizzi il forum per fare delle domande, contrassegna con una tag la tua domanda in modo che sia vista dai team di sviluppo {{site.data.keyword.Bluemix_notm}}.
 <!--Insert the appropriate Stack Overflow tag for your service for <service_keyword> in URL and text below:  -->
   * Se hai domande tecniche sullo sviluppo o la distribuzione di un'applicazione con il servizio {{site.data.keyword.loganalysisshort}}, inserisci la tua domanda nel forum [Stack Overflow](http://stackoverflow.com/search?q=log-analysis+ibm-bluemix){:new_window} e contrassegnala con le tag "ibm-bluemix" e "log-analysis".
 <!--Insert the appropriate dW Answers tag for your service for <service_keyword> in URL below:  -->
-  * Per domande sul servizio e sulle istruzioni per l'utilizzo iniziale, utilizza il forum [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/log-analysis/?smartspace=bluemix){:new_window}. Includi le tag  "log-analysis" e "bluemix".
+  * Per domande sul servizio e istruzioni introduttive, usa il forum [{{site.data.keyword.IBM_notm}} developerWorks dW Answers](https://developer.ibm.com/answers/topics/log-analysis/?smartspace=ibm-cloud){:new_window}.
 
 Consulta [Come ottenere supporto](https://www.{DomainName}/docs/support/index.html#getting-help) per ulteriori dettagli sull'utilizzo dei forum.
 

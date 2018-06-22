@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# 仮想マシンのロギング
+# 仮想マシン
 {: #logging_vm_ov}
 
 ロギング機能は仮想マシン (VM) に対して自動的には有効になりません。 しかし、ログを Log Collection に送信するよう VM を構成できます。 VM からログ・データを収集して {{site.data.keyword.loganalysisshort}} サービスに送信するには、マルチテナント Logstash Forwarder (mt-logstash-forwarder) を構成する必要があります。 そうすると、Kibana でログの表示、フィルタリング、および分析を行うことができます。
@@ -37,7 +37,7 @@ mt-logstash-forwarder を使用することによって、ログを {site.data.k
 
 {{site.data.keyword.loganalysisshort}} サービスには、必要な期間 Log Collection にログを保管できる追加プランがあります。 各プランの料金について詳しくは、『[サービス・プラン](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)』を参照してください。
 
-* Log Collection 内でログを保持する日数を定義するために使用できるログ保存ポリシーを構成できます。 詳しくは、『[ログ保存ポリシー](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies)』を参照してください。
+* Log Collection 内でログを保持する日数を定義するために使用できるログ保存ポリシーを構成できます。 詳しくは、『[ログ保存ポリシー](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy)』を参照してください。
 * Log Collection CLI または API を使用して、ログを手動で削除できます。
 
 

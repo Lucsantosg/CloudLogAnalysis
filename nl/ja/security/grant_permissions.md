@@ -3,11 +3,9 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
-
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -22,14 +20,15 @@ lastupdated: "2018-01-10"
 {{site.data.keyword.Bluemix}} では、ユーザーに 1 つ以上の役割を割り当てることができます。 これらの役割は、{{site.data.keyword.loganalysisshort}} サービスを使用して作業するためにユーザーが使用できるタスクを定義します。 
 {:shortdesc}
 
+**注:** 
 
+* ログの管理またはアカウント・ログの表示を行う許可をユーザーに付与するには、アカウント内の他のユーザーにポリシーを割り当てる許可を持っているか、または、アカウント所有者である必要があります。アカウント所有者でない場合、エディター、オペレーター、または管理者の役割が設定された IAM ポリシーを持っている必要があります。
+* スペース内のログを表示する許可をユーザーに付与するには、そのユーザーがそのスペース内で {{site.data.keyword.loganalysisshort}} サービスを使用して実行できるアクションを記述する Cloud Foundry 役割をそのユーザーに割り当てるための、組織およびスペースでの許可を持っている必要があります。 
 
 ## {{site.data.keyword.Bluemix_notm}} UI を使用してユーザーに IAM ポリシーを割り当てる
 {: #grant_permissions_ui_account}
 
-アカウント・ログを表示および管理する許可をユーザーに付与するには、そのユーザーがアカウント内で {{site.data.keyword.loganalysisshort}} サービスを使用して実行できるアクションを記述するポリシーを追加する必要があります。 アカウント所有者のみが、個々のポリシーをユーザーに割り当てることができます。
-
-{{site.data.keyword.Bluemix_notm}} で、{{site.data.keyword.loganalysisshort}} サービスを使用して作業する許可をユーザーに付与するには、以下のステップを実行します。
+{{site.data.keyword.loganalysisshort}} サービスを使用して作業する許可をユーザーに付与するには、以下のステップを実行します。
 
 1. {{site.data.keyword.Bluemix_notm}} コンソールにログインします。
 
@@ -45,7 +44,7 @@ lastupdated: "2018-01-10"
 
     ユーザーがアカウントのメンバーでない場合、『[ユーザーの招待](/docs/iam/iamuserinv.html#iamuserinv)』を参照してください。
 
-4. **「アクセス・ポリシー」**セクションで、**「サービス・ポリシーの割り当て (Assign service policies)」**をクリックし、次に**「リソースへのアクセス権限の割り当て (Assign access to resources)」**を選択します。
+4. **「アクセス・ポリシー」**セクションで、**「アクセス権限の割り当て」**をクリックし、**「リソースへのアクセス権限の割り当て」**を選択します。
 
     *「ユーザー * へのリソース・アクセス権限の割り当て (Assign resource access to user*)」* ウィンドウが開きます。
 
@@ -76,149 +75,51 @@ lastupdated: "2018-01-10"
 	  </tr>
      </table>
 	
-6. **「ポリシーの割り当て」**をクリックします。
+6. **「割り当て」**をクリックします。
 	
 構成したポリシーは、選択した地域で利用できます。 
+
 
 ## コマンド・ラインを使用してユーザーに IAM ポリシーを割り当てる
 {: #grant_permissions_commandline}
 
-アカウント・ログを表示および管理する許可をユーザーに付与するには、そのユーザーに IAM 役割を付与する必要があります。 IAM 役割と、{{site.data.keyword.loganalysisshort}} サービスで実行できる役割別のタスクについて詳しくは、『[IAM 役割](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles)』を参照してください。
-
-この操作は、アカウントの所有者のみが実行できます。
-
 コマンド・ラインを使用して、アカウント・ログを表示する権限をユーザーに付与するには、以下のステップを実行します。
 
-1. アカウント ID を取得します。 
+1. 端末から、{{site.data.keyword.Bluemix_notm}} アカウントにログインします。 
 
-    以下のコマンドを実行して、アカウント ID を取得します。
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
+
+2. ユーザーがアカウントのメンバーであることを確認します。次のコマンドを実行して、アカウント内のユーザーのリストを取得します。
 
     ```
-	bx iam accounts
+	bx account users
 	```
     {: codeblock}	
 
-	アカウントとその GUID のリストが表示されます。
-	
-	ユーザーに許可を付与しようとしているアカウントのアカウント ID を「$acct_id」などのシェル変数にエクスポートします。以下に例を示します。
-	
-	```
-	export acct_id="1234567891234567812341234123412"
-	```
-	{: screen}
+	ユーザーとその GUID のリストが表示されます。
 
-2. 許可を付与するユーザーの {{site.data.keyword.Bluemix_notm}} ID を取得します。
+3. ユーザーがアカウントのメンバーでない場合、アカウント所有者に連絡して、ユーザーをアカウントに招待するよう依頼します。詳しくは、[ユーザーの招待](/docs/iam/iamuserinv.html#iamuserinv) を参照してください。
 
-    1. アカウントに関連付けられたユーザーを表示します。 次のコマンドを実行します。
-	
-	    ```
-		bx iam account-users
-		```
-		{: codeblock}
+    **ヒント:** アカウントにユーザーを招待するコマンドは、bx iam account-user-invite USER_EMAIL です。
 		
-	2. ユーザーの GUID を取得します。 **注:** このステップは、許可を付与する予定のユーザーによって実行される必要があります。
-	
-	    例えば、ユーザーに自分のユーザー ID を取得するために以下のコマンドを実行するよう依頼します。
-		
-		IAM トークンを取得します。 詳しくは、[{{site.data.keyword.Bluemix_notm}} CLI を使用した IAM トークンの取得](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli) を参照してください。
+4. ユーザーにポリシーを割り当てます。次のコマンドを実行します。
 
-        IAM トークンから、IAM トークンの 1 番目と 2 番目のドットの間にあるデータを取得します。 そのデータを「$user_data」などのシェル変数にエクスポートします。 
-		
-		```
-	    export user_data="xxxxxxxxxxxxxxxxxxxxxxxxxxx"
-	    ```
-	    {: screen}
-		
-		例えば、ユーザー ID を取得する以下のコマンドを実行します。 このコマンドは、このサンプルでは jq を使用して情報を JSON の定形式テキストにデコードします。
-		
-		```
-		echo $user_data | base64 -d | jq
-		```
-		{: codeblock}
-		
-		このコマンド実行の出力は以下のようになります。
-		
-		```
-		$ echo $user_data | base64 -d | jq
-        {
-        "iam_id": "IBMid-xxxxxxxxxx",
-        "id": "IBMid-xxxxxxxxxx",
-        "realmid": "IBMid",
-        ......
-		}
-        ```
-	    {: screen}
-		
-		アカウント所有者にユーザー ID を送信します。
-		
-	3. `$user_ibm_id` のようなシェル変数にユーザー ID をエクスポートします。
-	
-		```
-		export user_ibm_id="IBMid-xxxxxxxxxx"
-		```
-		{: codeblock}
-
-3. ユーザーがアカウントのメンバーではない場合は招待します。 詳しくは、『[ユーザーの招待](/docs/iam/iamuserinv.html#iamuserinv)』を参照してください。
-
-    例えば、以下のコマンドを実行してユーザー xxx@yyy.com をアカウント zzz@ggg.com に招待します。
-	
-	```
-	bx iam account-user-invite xxx@yyy.com zzz@ggg.com OrgAuditor dev SpaceDeveloper
-	```
-	{: codeblock}
-		
-4. ポリシー・ファイル名を作成します。 
-
-    例えば、米国南部地域での表示の許可を付与するには、以下のテンプレートを使用します。
-	
-	```
-	{
-		"roles" : [
-			{
-				"id": "crn:v1:bluemix:public:iam::::role:Editor" 
-			}
-		],
-		"resources": [
-			{
-				"serviceName": "ibmcloud-log-analysis",
-				"region": "us-south"
-			}
-		]
-	}
-	```
-	{: codeblock}
-	
-	ポリシー・ファイルに `policy.json` という名前を付けます。
-	
-5. ご使用のユーザー ID の IAM トークンを取得します。
-
-    詳しくは、『[{{site.data.keyword.Bluemix_notm}}  を使用した IAM トークンの取得](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli)』を参照してください。
-
-    IAM トークンを `$iam_token` などのシェル変数にエクスポートします。以下に例を示します。
-	
-	```
-	export iam_token="xxxxxxxxxxxxxxxxxxxxx"
-	```
-	{: screen}
-	
-6. {{site.data.keyword.loganalysisshort}} サービスで作業する許可をユーザーに付与します。 
-
-   米国南部地域での許可を付与するには、次の cURL コマンドを実行します。
-	
     ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.ng.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
-	```
-	{: codeblock}
-	
-	英国地域での許可を付与するには、次の cURL コマンドを実行します。
-	
-    ```
-	curl -X POST --header "Authorization: $iam_token" --header "Content-Type: application/json" https://iampap.eu-gb.bluemix.net/acms/v1/scopes/a%2F$acct_id/users/$user_ibm_id/policies -d @policy.json
+    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
 
-	
-ユーザーに許可を付与すると、そのユーザーは {{site.data.keyword.Bluemix_notm}} にログインし、アカウント・レベルのログを表示できるようになります。
+	ここで、
+    * USER_NAME は、ユーザーの {{site.data.keyword.Bluemix_notm}} ID です。
+	* ROLE は、IAM 役割です。有効な値は、*administrator*、*operator*、*editor*、および *viewer* です。
+
+5. ポリシーがユーザーに割り当てられたことを検証します。次のコマンドを実行して、ユーザーに割り当てられたすべてのポリシーをリストします。
+
+    ```
+    bx iam user-policies USER_NAME
+	```
+	{: codeblock}
+
 
 
 
@@ -247,9 +148,9 @@ lastupdated: "2018-01-10"
 
     その組織で使用可能なスペースのリストが表示されます。
 
-5. スペースを 1 つ選択します。次に、メニュー・アクションから、**「スペースの役割の編集」**を選択します。
+5. スペースを 1 つ選択します。 次に、メニュー・アクションから、**「スペースの役割の編集」**を選択します。
 
-6. スペースの役割を 1 つ以上選択します。有効な役割は、*管理者*、*開発者*、および*監査員* です。
+6. スペースの役割を 1 つ以上選択します。 有効な役割は、*管理者*、*開発者*、および*監査員* です。
 	
 7. **「役割の保存」**をクリックします。
 

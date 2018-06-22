@@ -18,7 +18,7 @@ lastupdated: "2018-01-10"
 # Obtención de la señal de UAA
 {: #auth_uaa}
 
-Para gestionar registros mediante la API de {{site.data.keyword.loganalysisshort}}, debe utilizar una señal de autenticación. Utilice la CLI de {{site.data.keyword.loganalysisshort}} para obtener la señal de UAA. La señal tiene un tiempo de caducidad.
+Para gestionar registros mediante la API de {{site.data.keyword.loganalysisshort}}, debe utilizar una señal de autenticación. Utilice la CLI de {{site.data.keyword.loganalysisshort}} para obtener la señal de UAA. La señal tiene un tiempo de caducidad. 
 {:shortdesc}
 
 		
@@ -38,7 +38,7 @@ Para obtener la señal de autorización, siga estos pasos:
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Ejecute el mandato `bx cf oauth-token` para obtener la señal de UAA de {{site.data.keyword.Bluemix_notm}}. 
+3. Ejecute el mandato `bx cf oauth-token` para obtener la señal de UAA de {{site.data.keyword.Bluemix_notm}}.
 
     ```
 	bx cf oauth-token

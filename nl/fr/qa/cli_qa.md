@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -30,7 +30,7 @@ Vous trouverez ci-après les réponses aux questions fréquentes concernant l'ut
 ## Comment se connecter à IBM Cloud ?
 {: #login}
 
-Exécutez la commande suivante pour vous connecter à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}} :
+Exécutez la commande suivante pour vous connecter à une région d'{{site.data.keyword.Bluemix_notm}} où le service {{site.data.keyword.loganalysisshort}} est disponible :
 
 ```
 bx login -a Endpoint
@@ -72,7 +72,7 @@ bx login -a https://api.ng.bluemix.net
 
 Suivez les instructions. 
 
-Définissez ensuite l'organisation et l'espace. Exécutez la commande suivante :
+Vous pouvez également définir une organisation et un espace. Exécutez la commande suivante :
 
 ```
 bx target -o OrgName -s SpaceName
@@ -98,7 +98,7 @@ Voir [Téléchargement et installation de l'interface de ligne de commande {{sit
 	
 Procédez comme suit pour obtenir l'identificateur global unique d'un compte :
 	
-1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
+1. Connectez-vous à une région dans {{site.data.keyword.Bluemix_notm}}. 
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
@@ -113,11 +113,11 @@ Procédez comme suit pour obtenir l'identificateur global unique d'un compte :
 	
 	```
 	bx iam accounts
-	Extraction de tous les comptes de xxx@yyy.com...
+	Retrieving all accounts of xxx@yyy.com...
     OK
-    Identificateur global unique du compte   Nom                                Type    Etat     ID utilisateur du propriétaire
-    12345123451234512345123451234512         A Account                          TRIAL   ACTIVE   xxx@yyy.com
-    23456234562345622456234561234561         B Account                          TRIAL   ACTIVE   zzz@yyy.com   
+    Account GUID                       Name                               Type    State    Owner User ID   
+    12345123451234512345123451234512   A Account                          TRIAL   ACTIVE   xxx@yyy.com   
+    23456234562345622456234561234561   B Account                          TRIAL   ACTIVE   zzz@yyy.com   
 	```
 	{: screen}
 
@@ -131,14 +131,14 @@ Procédez comme suit pour obtenir l'identificateur global unique d'une organisat
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Exécutez la commande `bx iam org` pour obtenir l'identificateur global unique d'une organisation. 
+2. Exécutez la commande `bx iam org` pour obtenir l'identificateur global unique de l'organisation.  
 
     ```
     bx iam org NAME --guid
     ```
     {: codeblock}
 	
-    où NAME est le nom de l'organisation {{site.data.keyword.Bluemix_notm}}.
+    où NAME est le nom de l'organisation {{site.data.keyword.Bluemix_notm}}.         
 		
 		
 		
@@ -151,7 +151,7 @@ Procédez comme suit pour obtenir l'identificateur global unique d'un espace :
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Exécutez la commande `bx iam space` pour obtenir l'identificateur global unique d'un espace. 
+2. Exécutez la commande `bx iam space` pour obtenir l'identificateur global unique de l'espace.  
 
     ```
     bx iam space NAME --guid
@@ -160,7 +160,7 @@ Procédez comme suit pour obtenir l'identificateur global unique d'un espace :
 	
     où NAME est le nom d'un espace {{site.data.keyword.Bluemix_notm}}. 
 	
-    Par exemple, pour obtenir l'identificateur global unique de l'espace *dev*, exécutez la commande suivante :
+    Par exemple, pour obtenir l'identificateur global unique de l'espace *dev*, exécutez la commande suivante : 
 	
     ```
     bx iam space dev --guid

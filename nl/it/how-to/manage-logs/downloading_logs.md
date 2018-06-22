@@ -1,10 +1,12 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-07-19"
+  years: 2017, 2018
+
+lastupdated: "2018-01-10"
 
 ---
+
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -12,7 +14,7 @@ lastupdated: "2017-07-19"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Scaricamento dei log
+# Download dei log
 {: #downloading_logs}
 
 Puoi scaricare i log in un file locale o inserire i dati in un altro programma. Scarica i log nel contesto di una sessione. Una sessione specifica quali log saranno scaricati. Se lo scaricamento dei log viene interrotto, la sessione abilita il ripristino dello scaricamento dall'interruzione. Dopo aver completato lo scaricamento, devi eliminare la sessione.
@@ -20,22 +22,19 @@ Puoi scaricare i log in un file locale o inserire i dati in un altro programma. 
 
 Completa la seguente procedura per scaricare i dati del log disponibili in uno spazio {{site.data.keyword.Bluemix_notm}} in un file locale:
 
-Prima di iniziare, accedi a una regione, organizzazione e spazio {{site.data.keyword.Bluemix_notm}}. 
+## Passo 1: accedi a IBM Cloud
 
-Ad esempio, per accedere alla regione Stati Uniti Sud, esegui questo comando:
-	
-```
-cf login -a https://api.ng.bluemix.net
-```
-{: codeblock}
+Accedi a una regione, un'organizzazione e uno spazio in {{site.data.keyword.Bluemix_notm}}. 
 
-## Fase 1: Identifica quali log sono disponibili
-{: #step1}
+Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-1. Utilizza il comando `cf logging status` per visualizzare quali log sono disponibili per le ultime 2 settimane. Esegui il seguente comando:
+## Passo 2: Identifica quali log sono disponibili
+{: #step2}
+
+1. Utilizza il comando `bx cf logging status` per visualizzare quali log sono disponibili per le ultime 2 settimane. Esegui il seguente comando:
 
     ```
-    $ cf logging status
+    bx cf logging status
     ```
     {: codeblock}
     
@@ -52,11 +51,11 @@ cf login -a https://api.ng.bluemix.net
     ```
     {: screen}
 
-    **Nota:** il servizio {{site.data.keyword.loganalysisshort}} è un servizio globale che utilizza l'ora UTC (Coordinated Universal Time). I giorni sono definiti come giorni UTC. Per ottenere i log per un giorno/ora locale specifici, potresti dover scaricare più giorni UTC.
+    **Nota:** il servizio {{site.data.keyword.loganalysisshort}} è un servizio globale che utilizza l'ora Coordinated Universal Time (UTC). I giorni sono definiti come giorni UTC. Per ottenere i log per un giorno/ora locale specifici, potresti dover scaricare più giorni UTC.
 
 
-## Fase 2: Crea una sessione
-{: #step2}
+## Passo 3: crea una sessione
+{: #step3}
 
 Una sessione è obbligatoria per definire l'ambito dei dati di log disponibili per uno scaricamento e per conservare lo stato dello scaricamento. 
 
@@ -68,7 +67,7 @@ Utilizza il comando [cf logging session create](/docs/services/CloudLogAnalysis/
 Per creare una sessione che viene utilizzata per scaricare i log del tipo *log*, esegui il seguente comando:
 
 ```
-cf logging session create -t log
+bx cf logging session create -t log
 ```
 {: codeblock}
 
@@ -82,7 +81,7 @@ La sessione restituisce le seguenti informazioni:
 Ad esempio,
 
 ```
-$ cf logging session create -t log     
+$ bx cf logging session create -t log
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -104,13 +103,13 @@ $ cf logging session create -t log
 
 **Suggerimento:** per visualizzare l'elenco delle sessioni attive, esegui il comando [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list).
 
-## Fase 3: Scarica i dati di log in un file
-{: #step3}
+## Passo 4: scarica i dati di log in un file
+{: #step4}
 
 Per scaricare i log specificati dai parametri della sessione, esegui il seguente comando:
 
 ```
-cf logging download -o Log_File_Name Session_ID
+bx cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -122,7 +121,7 @@ dove
 Ad esempio,
 
 ```
-cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -135,14 +134,15 @@ L'indicatore di avanzamento si muove da 0 a 100% come vengono scaricati i log.
 * Il JSON compresso è adatto all'inserimento per ElasticSearch o Logstash. Se non viene fornito -o, i dati saranno instradati a stdout in modo che puoi inserirli direttamente nel tuo proprio stack ELK.
 * Puoi anche elaborare i dati con qualsiasi programma che possa analizzare JSON. 
 
-## Fase 4: Elimina la sessione
+## Passo 5: elimina la sessione
+{: #step5}
 
 Dopo aver completato lo scaricamento, devi eliminare la sessione utilizzando il comando [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete). 
 
 Esegui il seguente comando per eliminare una sessione:
 
 ```
-cf logging session delete Session_ID
+bx cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -151,7 +151,7 @@ Dove Session_ID è il GUID della sessione che hai creato in un passo precedente.
 Ad esempio,
 
 ```
-cf logging session delete -jshdjsunelsssr4566722==
+bx cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

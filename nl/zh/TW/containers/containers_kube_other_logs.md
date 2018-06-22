@@ -3,15 +3,19 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # 啟用自動收集叢集日誌
@@ -20,12 +24,15 @@ lastupdated: "2018-01-10"
 若要能夠在 {{site.data.keyword.loganalysisshort}} 服務中檢視及分析叢集日誌，您必須配置叢集，以將這些日誌轉遞至 {{site.data.keyword.loganalysisshort}} 服務。
 {:shortdesc}
 
-## 步驟 1：檢查許可權
+## 步驟 1：檢查使用者 ID 的許可權
 {: step1}
 
-只有使用者具有含叢集管理許可權之 {{site.data.keyword.containershort}} 的 IAM 原則時，才能啟用此特性。需要下列任何角色：*管理者*、*操作員*
+您的使用者 ID 必須具有下列許可權，您才能將記載配置新增至叢集：
 
-若要檢查使用者 ID 已指派可管理叢集的 IAM 原則，請完成下列步驟：
+* {{site.data.keyword.containershort}} 的 IAM 原則與 **Viewer** 許可權。
+* 叢集實例的 IAM 原則與 **Administrator** 或 **Operator** 許可權。
+
+若要確認您的使用者 ID 具有這些 IAM 原則，請完成下列步驟：
 
 **附註：**只有帳戶擁有者或具有原則指派許可權的使用者才能執行此步驟。
 
@@ -35,7 +42,7 @@ lastupdated: "2018-01-10"
 
 2. 從功能表列中，按一下**管理 > 帳戶 > 使用者**。*使用者* 視窗會顯示目前所選取帳戶的使用者及其電子郵件位址的清單。
 	
-3. 選取使用者 ID，並驗證使用者 ID 的原則具有 {{site.data.keyword.containershort}} 的*檢視者* 許可權。
+3. 選取使用者 ID，並驗證使用者 ID 具有這兩項原則。
 
 
 
@@ -90,14 +97,31 @@ lastupdated: "2018-01-10"
 ## 步驟 4：設定 {{site.data.keyword.containershort_notm}} 金鑰擁有者的許可權
 {: #step4}
 
-當您將日誌轉遞至空間時，也必須將 Cloud Foundry (CF) 許可權授與組織及空間中的 {{site.data.keyword.containershort}} 金鑰擁有者。金鑰擁有者需要組織的 *orgManager* 角色，以及空間的 *SpaceManager* 及 *Developer*。
+
+{{site.data.keyword.containershort}} 金鑰擁有者需要下列 IAM 原則：
+
+* {{site.data.keyword.containershort}} 的 IAM 原則與 **Administartor** 角色。
+* {{site.data.keyword.loganalysisshort}} 服務的 IAM 原則與 **Administrator** 角色。
+
+請完成下列步驟： 
+
+1. 登入 {{site.data.keyword.Bluemix_notm}} 主控台。開啟 Web 瀏覽器，並啟動 {{site.data.keyword.Bluemix_notm}} 儀表板：[http://bluemix.net ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](http://bluemix.net){:new_window}
+	
+	使用您的使用者 ID 和密碼登入之後，{{site.data.keyword.Bluemix_notm}} 使用者介面隨即開啟。
+
+2. 從功能表列中，按一下**管理 > 帳戶 > 使用者**。*使用者* 視窗會顯示目前所選取帳戶的使用者及其電子郵件位址的清單。
+	
+3. 選取 {{site.data.keyword.containershort_notm}} 金鑰擁有者的使用者 ID，並驗證使用者 ID 具有這兩項原則。
+
+
+當您將日誌轉遞至空間網域時，也必須將 Cloud Foundry (CF) 許可權授與組織及空間中的 {{site.data.keyword.containershort}} 金鑰擁有者。金鑰擁有者需要組織的 *orgManager* 角色，以及空間的 *SpaceManager* 或 *Developer*。
 
 請完成下列步驟：
 
 1. 識別帳戶中為 {{site.data.keyword.containershort}} 金鑰擁有者的使用者。從終端機中，執行下列指令：
 
     ```
-    bx cs api-key-info ClusterName
+        bx cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -109,7 +133,7 @@ lastupdated: "2018-01-10"
 
     從功能表列中，按一下**管理 > 帳戶 > 使用者**。*使用者* 視窗會顯示目前所選取帳戶的使用者及其電子郵件位址的清單。
 	
-    選取使用者的 ID，並驗證使用者具有組織的 *orgManager* 角色，以及空間的 *SpaceManager* 及 *Developer*。
+    選取使用者的 ID，並驗證使用者具有組織的 *orgManager* 角色，以及空間的 *SpaceManager* 或 *Developer*。
  
 3. 如果使用者沒有正確的許可權，請完成下列步驟：
 
@@ -118,7 +142,7 @@ lastupdated: "2018-01-10"
     2. 重新整理記載配置。執行下列指令：
     
         ```
-        bx cs logging-config-refresh ClusterName
+                bx cs logging-config-refresh ClusterName
         ```
         {: codeblock}
         
@@ -168,7 +192,7 @@ bx cs logging-config-create MyCluster --logsource container --type ibm --namespa
 執行下列指令，以將 */var/log/apps/**/.log* 及 */var/log/apps/*/.err* 日誌檔傳送至 {{site.data.keyword.loganalysisshort}} 服務：
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -178,19 +202,20 @@ bx cs logging-config-create ClusterName --logsource application --type ibm --hos
 * *EndPoint* 是 {{site.data.keyword.loganalysisshort}} 服務佈建所在地區中的記載服務 URL。如需端點清單，請參閱[端點](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。
 * *OrgName* 是可使用空間的組織名稱。
 * *SpaceName* 是 {{site.data.keyword.loganalysisshort}} 服務佈建所在空間的名稱。
-
+* *app-containers* 是一個選用參數，您可以設定該參數以定義要監看的容器清單。這些容器是日誌將從中轉遞至 {{site.data.keyword.loganalysisshort}} 的唯一容器。您可以藉由用逗點區隔來設定一個以上的容器。
+* *app-paths* 定義您要監看的容器內的路徑。您可以藉由用逗點區隔來設定一個以上的路徑。接受 '/var/log/*.log' 之類的萬用字元。 
 
 例如，若要建立記載配置以將應用程式日誌轉遞至德國地區的空間網域，請執行下列指令：
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 例如，若要建立記載配置以將應用程式日誌轉遞至德國地區的帳戶網域，請執行下列指令：
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 

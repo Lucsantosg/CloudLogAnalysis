@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -14,10 +14,10 @@ lastupdated: "2018-01-10"
 {:screen: .screen}
 {:pre: .pre}
 
-# {{site.data.keyword.Bluemix_notm}} での Cloud Foundry アプリのロギング
-{: #logging_bluemix_cf_apps}
+# Cloud Foundry アプリ
+{: #logging_cf_apps}
 
-{site.data.keyword.Bluemix}} では、 Cloud Foundry (CF) ログの表示、フィルター操作、および分析を、{{site.data.keyword.Bluemix_notm}} ダッシュボード、Kibana、およびコマンド・ライン・インターフェースを介して行うことができます。 それに加えて、ログ・レコードを外部ログ管理ツールにストリーミングすることもできます。 
+{{site.data.keyword.Bluemix}} では、Cloud Foundry (CF) ログの表示、フィルター操作、および分析を、{{site.data.keyword.Bluemix_notm}} ダッシュボード、Kibana、およびコマンド・ライン・インターフェースを介して行うことができます。それに加えて、ログ・レコードを外部ログ管理ツールにストリーミングすることもできます。 
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} は、Cloud Foundry プラットフォームによって生成されるログ・データ、および Cloud Foundry アプリケーションによって生成されるログ・データを記録します。 ログでは、アプリに対して生成されたエラー、警告、および情報の各メッセージを表示できます。 
@@ -49,7 +49,7 @@ Cloud Foundry アプリのロギングは、Cloud Foundry インフラストラ�
 
 {{site.data.keyword.loganalysisshort}} サービスには、必要な期間 Log Collection にログを保管できる追加プランがあります。 
 
-* ログ保存ポリシーを構成して、Log Collection 内でログを保持する日数を定義できます。 詳しくは、『[ログ保存ポリシー](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies)』を参照してください。
+* ログ保存ポリシーを構成して、Log Collection 内でログを保持する日数を定義できます。 詳しくは、『[ログ保存ポリシー](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy)』を参照してください。
 * コマンド・ラインまたは API を使用して、ログを手動で削除できます。
 
 各プランの料金について詳しくは、『[サービス・プラン](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)』を参照してください。
@@ -67,13 +67,13 @@ Cloud Foundry アプリのロギングは、Cloud Foundry インフラストラ�
 
 Cloud Foundry アプリケーションのログを分析するための方法には以下のものがあり、任意の方法を選択できます。
 
-* {{site.data.keyword.Bluemix_notm}} UI でログを分析して、アプリケーションの最新アクティビティーを表示します。
+* {{site.data.keyword.Bluemix_notm}} UI でログを分析して、アプリケーションの最新アクティビティーを確認します。
     
-    {{site.data.keyword.Bluemix_notm}} では、Cloud Foundry アプリケーションごとにある**「ログ」**タブを使用して、ログの表示、フィルター操作、および分析を行うことができます。 詳しくは、『[{{site.data.keyword.Bluemix_notm}} UI からの CF アプリ・ログの分析](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#launch_logs_cloud_ui_cf)』を参照してください。
+    {{site.data.keyword.Bluemix_notm}} では、Cloud Foundry アプリケーションごとにある**「ログ」**タブを使用して、ログの表示、フィルター操作、および分析を行うことができます。 詳しくは、『[CF アプリ・ダッシュボードを介した CF アプリ・ログの分析](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_ui)』を参照してください。
     
 * Kibana でログを分析して、高機能な分析タスクを実行します。
     
-    {{site.data.keyword.Bluemix_notm}} では、分析および視覚化のためのオープン・ソース・プラットフォームである Kibana を使用して、さまざまなグラフ (図表や表など) でデータのモニター、検索、分析、および視覚化を行うことができます。 詳しくは、『[Kibana でのログの分析](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)』を参照してください。
+    {{site.data.keyword.Bluemix_notm}} では、分析および視覚化のためのオープン・ソース・プラットフォームである Kibana を使用して、さまざまなグラフ (図表や表など) でデータのモニター、検索、分析、および視覚化を行うことができます。 詳しくは、『[{{site.data.keyword.loganalysisshort}} UI を介した CF アプリ・ログの分析](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_la)』を参照してください。
 	
 	**ヒント:** Kibana の起動方法については、『[CF アプリのダッシュボードから Kibana へのナビゲート](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app)』を参照してください。
 
@@ -143,4 +143,4 @@ Droplet Execution Agent (DEA) アーキテクチャーにデプロイされた C
 ## チュートリアル: Cloud Foundry アプリのログの Kibana での分析
 {: #tutorial}  
 
-Kibana を使用して、Cloud Foundry アプリのログを分析する方法を学習するには、[Cloud Foundry アプリのログの Kibana での分析](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)を参照してください。
+Kibana を使用して、Cloud Foundry アプリのログを分析する方法を学習するには、[Cloud Foundry アプリのログの Kibana での分析](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)を参照してください。

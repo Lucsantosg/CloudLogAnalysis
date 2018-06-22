@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -52,32 +52,34 @@ lastupdated: "2018-01-10"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-2. 執行 `bx cf services` 指令來檢查現行方案，以及從空間的可用服務清單中取得 {{site.data.keyword.loganalysisshort}} 服務名稱。 
+2. 執行 `bx service list` 指令來檢查現行方案，以及從空間的可用服務清單中取得 {{site.data.keyword.loganalysisshort}} 服務名稱。 
 
     **name** 欄位的值就是您必須用來變更方案的值。 
 
     例如，
 	
 	```
-	$ bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
+	$ bx  bx service list
+    Invoking 'cf services'...
+
+    Getting services in org MyOrg / space dev as xxx@ibm.com...
     OK
-    
-    name              service          plan      bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   premium                create succeeded
-	```
+
+    name                           service                  plan             bound apps            last operation
+    Log Analysis-m2                ibmLogAnalysis           premium                                update succeeded
+    ```
 	{: screen}
     
-3. 升級或降低您的方案。執行 `bx cf update-service` 指令。
+3. 升級或降低您的方案。執行 `bx service update` 指令。
     
 	```
-	bx cf update-service service_name [-p new_plan]
+	bx service update service_name [-p new_plan]
 	```
 	{: codeblock}
 	
 	其中 
 	
-	* *service_name* 是服務的名稱。您可以執行 `bx cf services` 指令來取得值。
+	* *service_name* 是服務的名稱。您可以執行 `bx service list` 指令來取得值。
 	* *new_plan* 是方案的名稱。
 	
 	下表列出不同的方案及其支援的值：
@@ -113,23 +115,18 @@ lastupdated: "2018-01-10"
 	例如，若要將您的方案降低為*精簡* 方案，請執行下列指令：
 	
 	```
-	bx cf update-service "Log Analysis-a4" -p standard
-    Updating service instance Log Analysis-a4 as xxx@yyy.com...
+	bx service update "Log Analysis-m2" -p standard
+    Updating service instance Log Analysis-m2 as xxx@ibm.com...
     OK
 	```
 	{: screen}
 
-4. 驗證已變更新方案。執行 `cf services` 指令。
+4. 驗證新的方案已變更。執行 `bx service list` 指令。
 
+  ```
+	bx service list
 	```
-	bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
-    OK
-
-    name              service          plan       bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   standard                update succeeded
-	```
-	{: screen}
+	{: codeblock}
 
 
 

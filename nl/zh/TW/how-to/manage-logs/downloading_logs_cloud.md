@@ -20,6 +20,9 @@ lastupdated: "2018-01-10"
 您可以將日誌下載至本端檔案，或透過管道將資料傳送至另一個程式。您可以在階段作業環境定義內下載日誌。階段作業會指定將下載的日誌。如果日誌下載被岔斷，階段作業會從停止處繼續下載。下載完成之後，您必須刪除階段作業。
 {:shortdesc}
 
+若要完成這些步驟，您必須安裝 {{site.data.keyword.loganalysisshort}} CLI。如需相關資訊，請參閱[配置 {{site.data.keyword.loganalysisshort}} CLI](https://console.bluemix.net/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli_)。
+
+
 請完成下列步驟，以將空間中可用的日誌資料下載至本端檔案：
 
 ## 步驟 1：登入 {{site.data.keyword.Bluemix_notm}}
@@ -42,7 +45,7 @@ lastupdated: "2018-01-10"
     例如，此指令的執行輸出如下：
     
     ```
-    bx logging log-show 
+    bx logging log-show
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
     Date         Size     Count   Searchable   Types   
@@ -61,7 +64,7 @@ lastupdated: "2018-01-10"
 
 需要有階段作業，才能定義可供下載的日誌資料範圍，以及保持下載的狀態。 
 
-請使用 [cf logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) 指令來建立階段作業。您可以選擇指定建立階段作業的開始日期、結束日期及日誌類型：  
+使用指令 [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) 來建立階段作業。您可以選擇指定建立階段作業的開始日期、結束日期及日誌類型：  
 
 * 當您指定開始日期及結束日期時，階段作業可讓您存取這兩個日期（含）之間的日誌。 
 * 當您指定日誌類型 (**-t**) 時，階段作業可讓您存取特定類型的日誌。當您管理大規模的日誌時，這是重要特性，因為您可以將階段作業的範圍設定為僅感興趣的小部分日誌。
@@ -128,7 +131,7 @@ bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
 ## 步驟 5：刪除階段作業
 {: #step5}
 
-下載完成之後，您必須使用 [cf logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 指令來刪除階段作業。 
+下載完成之後，您必須使用 [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 指令來刪除階段作業。 
 
 執行下列指令，以刪除階段作業：
 

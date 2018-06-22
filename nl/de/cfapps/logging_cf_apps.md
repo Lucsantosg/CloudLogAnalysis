@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -14,10 +14,10 @@ lastupdated: "2018-01-10"
 {:screen: .screen}
 {:pre: .pre}
 
-# Protokollierung für Cloud Foundry-Apps in {{site.data.keyword.Bluemix_notm}}
-{: #logging_bluemix_cf_apps}
+# Cloud Foundry-Apps
+{: #logging_cf_apps}
 
-In {site.data.keyword.Bluemix}} können Sie Cloud Foundry-Protokolle (CF-Protokolle) über das {{site.data.keyword.Bluemix_notm}}-Dashboard, in Kibana und über die Befehlszeilenschnittstelle (CLI) anzeigen, filtern und analysieren. Darüber hinaus können Sie Protokolleinträge durch Streaming an ein externes Protokoll-Management-Tool übertragen. 
+In {{site.data.keyword.Bluemix}} können Sie Cloud Foundry-Protokolle (CF-Protokolle) über das {{site.data.keyword.Bluemix_notm}}-Dashboard, in Kibana und über die Befehlszeilenschnittstelle (CLI) anzeigen, filtern und analysieren. Darüber hinaus können Sie Protokolleinträge durch Streaming an ein externes Protokoll-Management-Tool übertragen. 
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} zeichnet Protokolldaten auf, die von der Cloud Foundry-Plattform und von Cloud Foundry-Anwendungen generiert werden. Die Protokolle enthalten Fehler-, Warn- und Informationsnachrichten, die für Ihre App erzeugt wurden. 
@@ -49,7 +49,7 @@ Standardmäßig speichert der {{site.data.keyword.loganalysisshort}}-Service Pro
 
 Der {{site.data.keyword.loganalysisshort}}-Service bietet zusätzliche Pläne, mit denen Sie Protokolle in 'Log Collection' so lange wie erforderlich speichern können. 
 
-* Sie können eine Protokollaufbewahrungsrichtlinie konfigurieren, die die Anzahl Tage definiert, für die Protokolle in 'Log Collection' aufbewahrt werden. Weitere Informationen finden Sie unter [Protokollaufbewahrungsrichtlinie](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* Sie können eine Protokollaufbewahrungsrichtlinie konfigurieren, die die Anzahl Tage definiert, für die Protokolle in 'Log Collection' aufbewahrt werden. Weitere Informationen finden Sie unter [Protokollaufbewahrungsrichtlinie](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
 * Sie können die API oder die Befehlszeilenschnittstelle verwenden, um Protokolle manuell zu löschen.
 
 Weitere Informationen zu den Preisen der einzelnen Pläne finden Sie unter [Servicepläne](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
@@ -69,11 +69,11 @@ Die folgenden Methoden stehen für die Analyse der Protokolle Ihrer Cloud Foundr
 
 * Analysieren Sie die Protokolldatei in der {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle, um die neueste Aktivität der Anwendung anzuzeigen.
     
-    In {{site.data.keyword.Bluemix_notm}} können Sie Protokolle über die Registerkarte **Protokolle** anzeigen, filtern und analysieren, die für jede Cloud Foundry-Anwendung verfügbar ist. Weitere Informationen finden Sie unter [CF-App-Protokolle über die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle analysieren](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#launch_logs_cloud_ui_cf).
+    In {{site.data.keyword.Bluemix_notm}} können Sie Protokolle über die Registerkarte **Protokolle** anzeigen, filtern und analysieren, die für jede Cloud Foundry-Anwendung verfügbar ist. Weitere Informationen finden Sie unter [CF-App-Protokolle über das CF-App-Dashboard analysieren](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_ui).
     
 * Analysieren Sie Protokolle in Kibana, um erweiterte Analysetasks auszuführen.
     
-    In {{site.data.keyword.Bluemix_notm}} können Sie Kibana, eine quelloffene Analyse- und Visualisierungsplattform, dazu verwenden, Ihre Daten mit verschiedenen Darstellungsarten (Diagramme, Tabellen usw.) zu überwachen, zu durchsuchen, zu analysieren und zu visualisieren. Weitere Informationen finden Sie unter [Protokolle in Kibana analysieren](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+    In {{site.data.keyword.Bluemix_notm}} können Sie Kibana, eine quelloffene Analyse- und Visualisierungsplattform, dazu verwenden, Ihre Daten mit verschiedenen Darstellungsarten (Diagramme, Tabellen usw.) zu überwachen, zu durchsuchen, zu analysieren und zu visualisieren. Weitere Informationen finden Sie unter [CF-App-Protokolle über die {{site.data.keyword.loganalysisshort}}-Benutzerschnittstelle analysieren](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_la).
 	
 	**Tipp:** Informationen zum Starten von Kibana finden Sie unter [Vom Dashboard einer CF-App zu Kibana navigieren](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
 
@@ -143,4 +143,4 @@ Jeder Protokolleintrag enthält die folgenden Felder:
 ## Lernprogramm: Protokolle in Kibana für eine Cloud Foundry-App analysieren
 {: #tutorial}  
 
-Informationen zur Verwendung von Kibana für die Analyse der Protokolle für eine Cloud Foundry-App finden Sie unter [Protokolle in Kibana für eine Cloud Foundry-App analysieren](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).
+Informationen zur Verwendung von Kibana für die Analyse der Protokolle für eine Cloud Foundry-App finden Sie unter [Protokolle in Kibana für eine Cloud Foundry-App analysieren](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).

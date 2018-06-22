@@ -17,9 +17,10 @@ lastupdated: "2018-01-16"
 # Extraction de l'ID d'espace pour un cluster
 {: #containers_spaceid}
 
-Vous pouvez créer un cluster sur un compte {{site.data.keyword.Bluemix_notm}} dans le contexte d'une organisation et d'un espace Cloud Foundry. {:shortdesc}
+Vous pouvez créer un cluster sur un compte {{site.data.keyword.Bluemix_notm}} dans le contexte d'une organisation et d'un espace Cloud Foundry. 
+{:shortdesc}
 
-Pour identifier l'ID d'espace qui est associé à un cluster, exécutez la commande suivante : 
+Pour identifier l'ID d'espace qui est associé à un cluster, exécutez la commande suivante :
 
 ```
 bx cs cluster-get ClusterName --json
@@ -61,9 +62,9 @@ Par exemple, la sortie de l'exécution de la commande est la suivante :
 L'ID d'espace est la valeur indiquée dans la zone **logSpace**.
 Le nom d'espace est la valeur indiquée dans la zone **logSpaceName**.
 L'ID d'organisation est la valeur indiquée dans la zone **logOrg**.
-Le nom d'organisation est la valeur indiquée dans la zone **logOrgName**. 
+Le nom d'organisation est la valeur indiquée dans la zone **logOrgName**.
 
-Si ces zones sont vides, cela signifie qu'aucun espace ni organisation CF n'est associé à ce cluster. 
+Si ces zones sont vides, cela signifie qu'aucun espace ni organisation CF n'est associé à ce cluster.
 
 
 

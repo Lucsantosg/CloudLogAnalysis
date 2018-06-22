@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,7 +25,7 @@ Si define una política de retención, una vez transcurrido el periodo de retenc
 
 
 ## Inhabilitación de la política de retención de registros para una cuenta
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_acc}
 
 Cuando se inhabilita la política de retención, se conservan todos los registros. 
 
@@ -89,7 +89,7 @@ bx logging option-update -e -1
 
 
 ## Comprobación de la política de retención de registros para una cuenta
-{: #check_retention_policy_space}
+{: #check_retention_policy_acc}
 
 Para obtener el periodo de retención establecido para cada espacio de una cuenta, siga los pasos siguientes:
 
@@ -149,7 +149,7 @@ Para obtener el periodo de retención establecido para un espacio, siga los paso
 
 
 ## Establecimiento de una política de retención de registros a nivel de cuenta
-{: #set_retention_policy_space}
+{: #set_retention_policy_acc}
 
 Siga los pasos siguientes:
 
@@ -183,7 +183,7 @@ bx logging option-update -r account -i AccountID -e 15
 
 
 ## Establecimiento de la política de retención de registros para un espacio
-{: #set_retention_policy_account}
+{: #set_retention_policy_space}
 
 Para ver el periodo de retención correspondiente a un espacio, siga los pasos siguientes:
 

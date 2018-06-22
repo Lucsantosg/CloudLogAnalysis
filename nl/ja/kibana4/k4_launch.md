@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -20,7 +20,6 @@ Kibana は、{{site.data.keyword.Bluemix}} UI から、または Web ブラウ�
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} から Kibana を起動して、Kibana を起動したリソースに応じてデータを表示し、分析します。 例えば、特定の CF アプリのログがその特定のアプリに応じて表示されるように Kibana を起動できます。
-    {{site.data.keyword.Bluemix_notm}} スペース。 ダッシュボードに表示されるデータをフィルター操作するために使用される照会によって、組織内のスペースのログ項目が取り出されます。 Kibana に表示されるログ情報には、ログインしている組織のスペース内にデプロイされているすべてのリソースに関するレコードが含まれます。 
 
 次の表に、リソースと、Kibana を起動するためのサポートされているナビゲーション方法をリストします。
 
@@ -38,11 +37,6 @@ Kibana は、{{site.data.keyword.Bluemix}} UI から、または Web ブラウ�
   <tr>  
   <tr>
     <td>Kubernetes クラスターにデプロイされたコンテナー</td>
-    <td>いいえ</td>
-    <td>はい</td>
-  <tr>  
-  <tr>
-    <td>{{site.data.keyword.Bluemix_notm}} 管理のインフラストラクチャーにデプロイされたコンテナー</td>
     <td>はい</td>
     <td>はい</td>
   <tr>  
@@ -71,7 +65,7 @@ Cloud Foundry アプリケーションまたは Docker コンテナーのログ�
 
     デフォルトでは、**「Discover」**ページは、デフォルトの索引パターンが選択され、時間フィルターが過去 30 秒に設定された状態でロードされます。 検索照会は、CF アプリまたは Docker コンテナーのすべての項目に突き合わせるように設定されます。
 
-    「Discover」ページでログ項目が表示されない場合は、時間ピッカーを調整します。 詳しくは、『[時間フィルターの設定](logging_kibana_set_time_filter.html#set_time_filter)』を参照してください。
+    「Discover」ページでログ項目が表示されない場合は、時間ピッカーを調整します。  
 
 
 ##  Web ブラウザーから Kibana ダッシュボードへのナビゲート
@@ -101,6 +95,5 @@ Kibana に表示されるデータをフィルター操作するために使用�
           </tr>
         </table>
 
-    「Discover」ページでログ項目が表示されない場合は、時間ピッカーを調整します。 詳しくは、『[時間フィルターの設定](logging_kibana_set_time_filter.html#set_time_filter)』を参照してください。
-
+    「Discover」ページでログ項目が表示されない場合は、時間ピッカーを調整します。  
 

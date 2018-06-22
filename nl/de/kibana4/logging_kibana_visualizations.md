@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -41,13 +41,13 @@ Auf der Seite 'Visualize' können Sie eine der folgenden Tasks ausführen:
 
 | Task | Weitere Informationen |
 |------|------------------|
-| [Neue Visualisierung erstellen](logging_kibana_visualizations.html#logging_k4_visualizations_create) | Sie können Visualisierungen aus einer Suche erstellen, die Sie auf der Seite *Discover* definieren und speichern, oder aus einer neuen Abfrage, die Sie auf der Seite *Visualize* definieren. |
-| [Visualisierung speichern](logging_kibana_visualizations.html#logging_kibana_visualizations_save) | Sie können Visualisierungen zur späteren Wiederverwendung speichern. |
-| [Visualisierung laden](logging_kibana_visualizations.html#logging_kibana_visualizations_reload) | Sie können eine Visualisierung hochladen, um ihre Daten zu aktualisieren, um Änderungen vorzunehmen oder um die Daten zu analysieren. |
-| [Visualisierung löschen](logging_kibana_visualizations.html#logging_kibana_visualizations_delete) | Nicht benötigte Visualisierungen können gelöscht werden. |
-| [Visualisierung exportieren](logging_kibana_visualizations.html#logging_kibana_visualizations_export) | Sie können eine Visualisierung als JSON-Datei exportieren.  |
-| [Visualisierung importieren](logging_kibana_visualizations.html#logging_kibana_visualizations_import) | Sie können eine Visualisierung als JSON-Datei importieren.  |
-| [Visualisierung freigeben](logging_kibana_visualizations.html#logging_kibana_visualizations_share) | Sie können eine Visualisierung über Ihre HTML-Quelle oder das Kibana-Dashboard freigeben.  |
+| [Neue Visualisierung erstellen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create) | Sie können Visualisierungen aus einer Suche erstellen, die Sie auf der Seite *Discover* definieren und speichern, oder aus einer neuen Abfrage, die Sie auf der Seite *Visualize* definieren. |
+| [Visualisierung speichern](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_save) | Sie können Visualisierungen zur späteren Wiederverwendung speichern. |
+| [Visualisierung laden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_reload) | Sie können eine Visualisierung hochladen, um ihre Daten zu aktualisieren, um Änderungen vorzunehmen oder um die Daten zu analysieren. |
+| [Visualisierung löschen](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_delete) | Nicht benötigte Visualisierungen können gelöscht werden. |
+| [Visualisierung exportieren](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_export) | Sie können eine Visualisierung als JSON-Datei exportieren.  |
+| [Visualisierung importieren](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_import) | Sie können eine Visualisierung als JSON-Datei importieren.  |
+| [Visualisierung freigeben](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_share) | Sie können eine Visualisierung über Ihre HTML-Quelle oder das Kibana-Dashboard freigeben.  |
 {: caption="Tabelle 2. Tasks für die Arbeit mit Visualisierungen" caption-side="top"}
 
 
@@ -77,11 +77,9 @@ Führen Sie die folgenden Schritte aus, um eine Visualisierung über die Seite '
 
     * Bei Auswahl der Option **From a new search** definieren Sie eine neue Abfrage. Die Abfrage wird verwendet, um das Subset der Daten zu definieren, die von der Visualisierung abgerufen und verwendet werden.
 
-        Weitere Informationen finden Sie unter [Protokolle durch Definieren angepasster Abfragen filtern](k4_filter_queries.html#k4_filter_queries).
-
 6. Wählen Sie im Visualization Builder eine Metrikzusammenfassung für die Y-Achse aus.
 
-7. Wählen Sie im Visualization Builder einen Buckettyp aus. Wählen Sie anschließend eine Bucketzusammenfasssung aus.
+7. Wählen Sie im Visualization Builder einen Buckettyp aus. Wählen Sie anschließend eine Bucketzusammenfassung aus.
   
 8. Fügen Sie Sub-Buckets hinzu, um die Daten aufzugliedern.
 

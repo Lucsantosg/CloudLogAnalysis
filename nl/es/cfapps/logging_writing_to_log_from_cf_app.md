@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -41,7 +41,7 @@ Para una **app de Node.js Cloud Foundry**, puede utilizar el módulo de registro
 * console.log('message') enviará el mensaje a la secuencia STDOUT
 * console.error('error_message') enviará el error a la secuencia STDERR
 
-Para obtener más información sobre aplicaciones Node.js, consulte [Cómo registrar en node.js ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://docs.nodejitsu.com/articles/intermediate/how-to-log){: new_window}.
+Para obtener más información sobre aplicaciones Node.js, consulte [Cómo registrar en node.js ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.nodejitsu.com/articles/intermediate/how-to-log/){: new_window}.
 
 
 Para obtener más información sobre las **aplicaciones Ruby on Rails**, consulte [El registrador ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://guides.rubyonrails.org/debugging_rails_applications.html#the-logger){: new_window}.

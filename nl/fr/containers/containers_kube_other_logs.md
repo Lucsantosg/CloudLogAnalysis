@@ -1,17 +1,21 @@
-﻿---
+---
 
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Activation de la collecte automatique des journaux de cluster
@@ -23,28 +27,27 @@ sorte à transmettre ces journaux au service
 {{site.data.keyword.loganalysisshort}}. 
 {:shortdesc}
 
-## Etape 1 : Vérification des droits
+## Etape 1 : Vérification des droits de votre ID utilisateur
 {: step1}
 
-Seuls les utilisateurs associés à une règle IAM pour
-{{site.data.keyword.containershort}} et disposant des droits permettant de gérer
-les clusters peuvent activer cette fonction. L'un des rôles suivants est requis : *Administrateur*,
-*Opérateur*.
+Votre ID utilisateur doit disposer des droits suivants pour que vous puissiez ajouter une configuration de journalisation au cluster : 
 
-Afin de vérifier que votre ID utilisateur est associé à une règle IAM pour la
-gestion des clusters, procédez comme suit :
+* Règle IAM pour le {{site.data.keyword.containershort}} avec les droits **Afficheur**.
+* Règle IAM pour l'instance de cluster avec les droits **Administrateur** ou **Opérateur**.
+
+Afin de vérifier que votre ID utilisateur dispose de ces règles IAM, procédez comme suit :
 
 **Remarque :** seuls le propriétaire du compte et les
 utilisateurs
 disposant des droits permettant d'affecter des règles peuvent effectuer cette étape.
 
-1. Connectez vous à la console {{site.data.keyword.Bluemix_notm}}. Ouvrez un navigateur Web et lancez le tableau de bord {{site.data.keyword.Bluemix_notm}} : [http://bluemix.net![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window}
+1. Connectez vous à la console {{site.data.keyword.Bluemix_notm}}. Ouvrez un navigateur Web et lancez le tableau de bord {{site.data.keyword.Bluemix_notm}} : [http://bluemix.net ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window}
 	
 	Une fois que vous êtes connecté avec votre ID utilisateur et votre mot de passe, l'interface utilisateur {{site.data.keyword.Bluemix_notm}} s'ouvre.
 
 2. Dans la barre de menus, cliquez sur **Gérer > Compte > Utilisateurs**.  La fenêtre *Utilisateurs* affiche une liste d'utilisateurs avec leur adresse électronique et leur statut sur le compte actuellement sélectionné.
 	
-3. Sélectionnez l'ID utilisateur et vérifiez qu'il est associé à une règle avec des droits d'*afficheur* pour {{site.data.keyword.containershort}}. 
+3. Sélectionnez l'ID utilisateur et vérifiez qu'il dispose des deux règles.
 
 
 
@@ -109,14 +112,31 @@ de la collecte et du transfert automatiques des journaux de contrôleur Ingress 
 
 
 
-## Etape 4 : Définition des droits pour le propriétaire de clé {{site.data.keyword.containershort_notm}} 
+## Etape 4 : Définition des droits pour le propriétaire de clé {{site.data.keyword.containershort_notm}}
 {: #step4}
 
-Lorsque vous transférez des journaux dans un espace, vous devez aussi accorder des droits Cloud Foundry (CF) au propriétaire de clé {{site.data.keyword.containershort}} dans l'organisation et l'espace. Le propriétaire de clé requiert le rôle *orgManager* pour l'organisation et les rôles *SpaceManager* et *Developer* pour l'espace. 
+
+Le propriétaire de la clé {{site.data.keyword.containershort}} a besoin des règles IAM suivantes : 
+
+* Règle IAM pour le {{site.data.keyword.containershort}} avec le rôle **Administrateur**.
+* Règle IAM pour le service {{site.data.keyword.loganalysisshort}} avec le rôle **Administrateur**.
+
+Procédez comme suit : 
+
+1. Connectez vous à la console {{site.data.keyword.Bluemix_notm}}. Ouvrez un navigateur Web et lancez le tableau de bord {{site.data.keyword.Bluemix_notm}} : [http://bluemix.net ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window}
+	
+	Une fois que vous êtes connecté avec votre ID utilisateur et votre mot de passe, l'interface utilisateur {{site.data.keyword.Bluemix_notm}} s'ouvre.
+
+2. Dans la barre de menus, cliquez sur **Gérer > Compte > Utilisateurs**.  La fenêtre *Utilisateurs* affiche une liste d'utilisateurs avec leur adresse électronique et leur statut sur le compte actuellement sélectionné.
+	
+3. Sélectionnez l'ID utilisateur pour le propriétaire de clé {{site.data.keyword.containershort_notm}} et vérifiez qu'il dispose des deux règles.
+
+
+Lorsque vous transférez des journaux vers un domaine d'espace, vous devez aussi accorder des droits Cloud Foundry (CF) au propriétaire de clé {{site.data.keyword.containershort}} dans l'organisation et l'espace. Le propriétaire de clé requiert le rôle *orgManager* pour l'organisation et le rôle *SpaceManager* ou *Developer* pour l'espace. 
 
 Procédez comme suit :
 
-1. Identifiez sur le compte l'utilisateur qui est le propriétaire de clé {{site.data.keyword.containershort}}. Depuis un terminal, exécutez la commande suivante : 
+1. Identifiez sur le compte l'utilisateur qui est le propriétaire de clé {{site.data.keyword.containershort}}. Depuis un terminal, exécutez la commande suivante :
 
     ```
     bx cs api-key-info ClusterName
@@ -125,15 +145,15 @@ Procédez comme suit :
     
     où *ClusterName* est le nom du cluster.
     
-2. Vérifiez que l'utilisateur identifié comme propriétaire de clé {{site.data.keyword.containershort}} possède le rôle *orgManager* pour l'organisation et les rôles *SpaceManager* et *Developer* pour l'espace. 
+2. Vérifiez que l'utilisateur identifié comme propriétaire de clé {{site.data.keyword.containershort}} possède le rôle *orgManager* pour l'organisation et les rôles *SpaceManager* et *Developer* pour l'espace.
 
-    Connectez vous à la console {{site.data.keyword.Bluemix_notm}}. Ouvrez un navigateur Web et lancez le tableau de bord {{site.data.keyword.Bluemix_notm}} : [http://bluemix.net ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window} Une fois que vous êtes connecté avec votre ID utilisateur et votre mot de passe, l'interface utilisateur {{site.data.keyword.Bluemix_notm}} s'ouvre. 
+    Connectez vous à la console {{site.data.keyword.Bluemix_notm}}. Ouvrez un navigateur Web et lancez le tableau de bord {{site.data.keyword.Bluemix_notm}} : [http://bluemix.net ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window} Une fois que vous êtes connecté avec votre ID utilisateur et votre mot de passe, l'interface utilisateur {{site.data.keyword.Bluemix_notm}} s'ouvre.
 
     Dans la barre de menus, cliquez sur **Gérer > Compte > Utilisateurs**.  La fenêtre *Utilisateurs* affiche une liste d'utilisateurs avec leur adresse électronique et leur statut sur le compte actuellement sélectionné.
 	
-    Sélectionnez l'ID de l'utilisateur et vérifiez que l'utilisateur possède le rôle *orgManager* pour l'organisation et les rôles *SpaceManager* et *Developer* pour l'espace. 
+    Sélectionnez l'ID de l'utilisateur et vérifiez que l'utilisateur possède le rôle *orgManager* pour l'organisation et le rôle *SpaceManager* ou *Developer* pour l'espace.
  
-3. Si l'utilisateur ne dispose pas des droits appropriés, procédez comme suit : 
+3. Si l'utilisateur ne dispose pas des droits appropriés, procédez comme suit :
 
     1. Accordez à l'utilisateur les droits suivants : le rôle *orgManager* pour l'organisation et les rôles *SpaceManager* et *Developer* pour l'espace. Pour plus d'informations, voir [Octroi à un utilisateur des droits permettant d'afficher les journaux d'espace dans l'interface utilisateur IBM Cloud](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
     
@@ -153,7 +173,7 @@ Procédez comme suit :
 ## Activation de la collecte et du transfert automatiques des journaux de conteneur 
 {: #containers}
 
-Exécutez la commande suivante pour envoyer les fichiers journaux de sortie standard (*stdout*) et d'erreur standard (*stderr*) au service {{site.data.keyword.loganalysisshort}} : 
+Exécutez la commande suivante pour envoyer les fichiers journaux de sortie standard (*stdout*) et d'erreur standard (*stderr*) au service {{site.data.keyword.loganalysisshort}} :
 
 ```
 bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
@@ -162,20 +182,20 @@ bx cs logging-config-create ClusterName --logsource container --namespace '*' --
 
 où 
 
-* *ClusterName* est le nom du cluster. 
-* *EndPoint* est l'URL du service de journalisation dans la région dans laquelle le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. Pour la liste des noeuds finaux, voir [Noeuds finaux](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). 
-* *OrgName* est le nom de l'organisation dans laquelle l'espace est disponible. 
-* *SpaceName* est le nom de l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. 
+* *ClusterName* est le nom du cluster.
+* *EndPoint* est l'URL du service de journalisation dans la région dans laquelle le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. Pour la liste des noeuds finaux, voir [Noeuds finaux](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls).
+* *OrgName* est le nom de l'organisation dans laquelle l'espace est disponible.
+* *SpaceName* est le nom de l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition.
 
 
-Par exemple, pour créer une configuration de journalisation qui transfère les journaux de sortie standard et d'erreur standard au domaine de compte dans la région Allemagne, exécutez la commande suivante : 
+Par exemple, pour créer une configuration de journalisation qui transfère les journaux de sortie standard et d'erreur standard au domaine de compte dans la région Allemagne, exécutez la commande suivante :
 
 ```
 bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
-Pour créer une configuration de journalisation qui transfère les journaux de sortie standard et d'erreur standard à un domaine d'espace dans la région Allemagne, exécutez la commande suivante : 
+Pour créer une configuration de journalisation qui transfère les journaux de sortie standard et d'erreur standard à un domaine d'espace dans la région Allemagne, exécutez la commande suivante :
 
 ```
 bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
@@ -193,29 +213,30 @@ Exécutez la commande suivante pour envoyer les fichiers journaux
 au service {{site.data.keyword.loganalysisshort}} :
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
 où 
 
-* *ClusterName* est le nom du cluster. 
-* *EndPoint* est l'URL du service de journalisation dans la région dans laquelle le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. Pour la liste des noeuds finaux, voir [Noeuds finaux](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). 
-* *OrgName* est le nom de l'organisation dans laquelle l'espace est disponible. 
-* *SpaceName* est le nom de l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. 
+* *ClusterName* est le nom du cluster.
+* *EndPoint* est l'URL du service de journalisation dans la région dans laquelle le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. Pour la liste des noeuds finaux, voir [Noeuds finaux](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls).
+* *OrgName* est le nom de l'organisation dans laquelle l'espace est disponible.
+* *SpaceName* est le nom de l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition.
+* *app-containers* est un paramètre facultatif que vous pouvez configurer pour définir une liste de conteneurs à surveiller. Ces conteneurs sont les seuls à partir desquels les journaux seront réacheminés vers {{site.data.keyword.loganalysisshort}}. Vous pouvez définir un ou plusieurs conteneurs en les séparant par des virgules.
+* *app-paths* définit les chemins à l'intérieur des conteneurs à surveiller. Vous pouvez définir un ou plusieurs chemins en les séparant par des virgules. Les caractères génériques tels que '/var/log/*.log' sont acceptés.  
 
-
-Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'application à un domaine d'espace dans la région Allemagne, exécutez la commande suivante : 
+Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'application à un domaine d'espace dans la région Allemagne, exécutez la commande suivante :
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
-Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'application à un domaine de compte dans la région Allemagne, exécutez la commande suivante : 
+Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'application à un domaine de compte dans la région Allemagne, exécutez la commande suivante :
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -237,21 +258,21 @@ bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname
 
 où 
 
-* *ClusterName* est le nom du cluster. 
-* *EndPoint* est l'URL du service de journalisation dans la région dans laquelle le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. Pour la liste des noeuds finaux, voir [Noeuds finaux](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). 
-* *OrgName* est le nom de l'organisation dans laquelle l'espace est disponible. 
-* *SpaceName* est le nom de l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. 
+* *ClusterName* est le nom du cluster.
+* *EndPoint* est l'URL du service de journalisation dans la région dans laquelle le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. Pour la liste des noeuds finaux, voir [Noeuds finaux](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls).
+* *OrgName* est le nom de l'organisation dans laquelle l'espace est disponible.
+* *SpaceName* est le nom de l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition.
 
 
 
-Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'agent à un domaine d'espace dans la région Allemagne, exécutez la commande suivante : 
+Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'agent à un domaine d'espace dans la région Allemagne, exécutez la commande suivante :
 
 ```
 bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
-Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'agent à un domaine de compte dans la région Allemagne, exécutez la commande suivante : 
+Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'agent à un domaine de compte dans la région Allemagne, exécutez la commande suivante :
 
 ```
 bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
@@ -275,21 +296,21 @@ bx cs logging-config-create ClusterName --logsource kubernetes --type ibm --host
 
 où 
 
-* *ClusterName* est le nom du cluster. 
-* *EndPoint* est l'URL du service de journalisation dans la région dans laquelle le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. Pour la liste des noeuds finaux, voir [Noeuds finaux](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). 
-* *OrgName* est le nom de l'organisation dans laquelle l'espace est disponible. 
-* *SpaceName* est le nom de l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. 
+* *ClusterName* est le nom du cluster.
+* *EndPoint* est l'URL du service de journalisation dans la région dans laquelle le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. Pour la liste des noeuds finaux, voir [Noeuds finaux](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls).
+* *OrgName* est le nom de l'organisation dans laquelle l'espace est disponible.
+* *SpaceName* est le nom de l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition.
 
 
 
-Par exemple, pour créer une configuration de journalisation qui transfère des journaux de composant système Kubernetes à un domaine d'espace dans la région Allemagne, exécutez la commande suivante : 
+Par exemple, pour créer une configuration de journalisation qui transfère des journaux de composant système Kubernetes à un domaine d'espace dans la région Allemagne, exécutez la commande suivante :
 
 ```
 bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
-Par exemple, pour créer une configuration de journalisation qui transfère des journaux de composant système Kubernetes à un domaine de compte dans la région Allemagne, exécutez la commande suivante : 
+Par exemple, pour créer une configuration de journalisation qui transfère des journaux de composant système Kubernetes à un domaine de compte dans la région Allemagne, exécutez la commande suivante :
 
 ```
 bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
@@ -313,21 +334,21 @@ bx cs logging-config-create ClusterName --logsource ingress --type ibm --hostnam
 
 où 
 
-* *ClusterName* est le nom du cluster. 
-* *EndPoint* est l'URL du service de journalisation dans la région dans laquelle le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. Pour la liste des noeuds finaux, voir [Noeuds finaux](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). 
-* *OrgName* est le nom de l'organisation dans laquelle l'espace est disponible. 
-* *SpaceName* est le nom de l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. 
+* *ClusterName* est le nom du cluster.
+* *EndPoint* est l'URL du service de journalisation dans la région dans laquelle le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. Pour la liste des noeuds finaux, voir [Noeuds finaux](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls).
+* *OrgName* est le nom de l'organisation dans laquelle l'espace est disponible.
+* *SpaceName* est le nom de l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition.
 
 
 
-Par exemple, pour créer une configuration de journalisation qui transfère des journaux de contrôleur Ingress à un domaine d'espace dans la région Allemagne, exécutez la commande suivante : 
+Par exemple, pour créer une configuration de journalisation qui transfère des journaux de contrôleur Ingress à un domaine d'espace dans la région Allemagne, exécutez la commande suivante :
 
 ```
 bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
-Par exemple, pour créer une configuration de journalisation qui transfère des journaux de contrôleur Ingress à un domaine de compte dans la région Allemagne, exécutez la commande suivante : 
+Par exemple, pour créer une configuration de journalisation qui transfère des journaux de contrôleur Ingress à un domaine de compte dans la région Allemagne, exécutez la commande suivante :
 
 ```
 bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  

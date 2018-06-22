@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# {{site.data.keyword.loganalysisshort}} CLI({{site.data.keyword.Bluemix_notm}} 플러그인) 구성
+# {{site.data.keyword.loganalysisshort}} CLI 구성
 {: #config_log_collection_cli}
 
 {{site.data.keyword.loganalysisshort}} 서비스에는 클라우드에서 로그 관리에 사용할 수 있는 명령행 인터페이스(CLI)가 포함됩니다. {{site.data.keyword.Bluemix_notm}} 플러그인을 사용하여 로그 상태를 보고 로그를 다운로드하고 로그 보존 정책을 구성할 수 있습니다. CLI는 여러 유형의 도움말을 제공합니다. CLI 및 지원되는 명령에 대해 알기 위한 일반 도움말, 명령 사용 방법을 알기 위한 명령 도움말 또는 명령의 하위 명령 사용 방법을 알기 위한 하위 명령 도움말이 있습니다.
@@ -23,11 +23,11 @@ lastupdated: "2018-01-10"
 ## {{site.data.keyword.Bluemix_notm}} 저장소에서 {{site.data.keyword.loganalysisshort}} 플러그인 설치
 {: #install_cli_repo}
 
-{{site.data.keyword.loganalysisshort}} CLI를 설치하려면 다음 단계를 완료하십시오. 
+{{site.data.keyword.loganalysisshort}} CLI를 설치하려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오. 
+1. {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오.
 
-   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오. 
+   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오.
    
 2. 저장소에서 플러그인의 이름을 찾으십시오. 다음 명령을 실행하십시오.
 
@@ -69,15 +69,15 @@ lastupdated: "2018-01-10"
 ## 파일에서 {{site.data.keyword.loganalysisshort}} 플러그인 설치
 {: #install_cli}
 
-{{site.data.keyword.loganalysisshort}} CLI를 설치하려면 다음 단계를 완료하십시오. 
+{{site.data.keyword.loganalysisshort}} CLI를 설치하려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오. 
+1. {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오.
 
-   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오. 
+   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오.
 
-2. {{site.data.keyword.loganalysisshort}} 플러그인을 설치하십시오. 
+2. {{site.data.keyword.loganalysisshort}} 플러그인을 설치하십시오.
 
-    * Linux의 경우 [Linux에서 {{site.data.keyword.loganalysisshort}} 플러그인 설치](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#install_cli_linux)를 참조하십시오. 
+    * Linux의 경우 [Linux에서 {{site.data.keyword.loganalysisshort}} 플러그인 설치](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#install_cli_linux)를 참조하십시오.
     * Windows의 경우 [Windows에서 {{site.data.keyword.loganalysisshort}} 플러그인 설치](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#install_cli_windows)를 참조하십시오.
     * Mac OS X의 경우 [Mac OS X에서 {{site.data.keyword.loganalysisshort}} 플러그인 설치](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#install_cli_mac)를 참조하십시오.
  
@@ -106,14 +106,13 @@ lastupdated: "2018-01-10"
 ## 파일에서 Linux에 Log Analysis 플러그인 설치
 {: #install_cli_linux}
 
-Linux에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를 완료하십시오. 
+Linux에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를 완료하십시오.
 
-1. 플러그인을 설치하십시오. 
+1. 플러그인을 설치하십시오.
 
     [{{site.data.keyword.Bluemix_notm}} CLI 페이지](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins)에서 {{site.data.keyword.loganalysisshort}} 서비스 CLI 플러그인(IBM-Logging)의 최신 릴리스를 다운로드하십시오. 
 	
-	* 플랫폼 값 **linux64**를 선택하십시오.
-		 
+	* 플랫폼 값 **linux64**를 선택하십시오. 
 	
 	* **파일 저장**을 클릭하십시오. 
     
@@ -130,11 +129,11 @@ Linux에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를 �
 ## 파일에서 Windows에 Log Analysis 플러그인 설치
 {: #install_cli_windows}
 
-Windows에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를 완료하십시오. 
+Windows에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를 완료하십시오.
 
 1. [{{site.data.keyword.Bluemix_notm}} CLI 페이지](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins)에서 {{site.data.keyword.loganalysisshort}} 서비스 CLI 플러그인(IBM-Logging)의 최신 릴리스를 다운로드하십시오. 
 	
-	1. 플랫폼 값 **win64**를 선택하십시오.	 
+	1. 플랫폼 값 **win64**를 선택하십시오. 
 	2. **파일 저장**을 클릭하십시오.  
     
 2. 플러그인을 설치하십시오. 다음 명령을 실행하십시오.
@@ -149,14 +148,21 @@ Windows에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를 
 ## 파일에서 Mac OS X에 Log Analysis 플러그인 설치
 {: #install_cli_mac}
 
-Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를 완료하십시오. 
+Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를 완료하십시오.
 
 1. [{{site.data.keyword.Bluemix_notm}} CLI 페이지](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins)에서 {{site.data.keyword.loganalysisshort}} 서비스 CLI 플러그인(IBM-Logging)의 최신 릴리스를 다운로드하십시오. 
 	
-	1. 플랫폼 값 **osx**를 선택하십시오.	 
+	1. 플랫폼 값 **osx**를 선택하십시오. 
 	2. **파일 저장**을 클릭하십시오.  
     
-2. 플러그인을 설치하십시오. 다음 명령을 실행하십시오.
+2. 파일의 권한을 변경하십시오. 다음 명령을 실행하십시오.
+
+    ```
+    chmod u+x logging-cli-darwin-amd64-0.1.1
+    ```
+     {: codeblock}
+
+3. 플러그인을 설치하십시오. 다음 명령을 실행하십시오.
         
     ```
     bx plugin install -f logging-cli-darwin-amd64-0.1.1
@@ -171,9 +177,9 @@ Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를
 로깅 CLI를 설치 제거하려면 플러그인을 삭제하십시오.
 {:shortdesc}
 
-{{site.data.keyword.loganalysisshort}} 서비스 CLI를 설치 제거하려면 다음 단계를 완료하십시오. 
+{{site.data.keyword.loganalysisshort}} 서비스 CLI를 설치 제거하려면 다음 단계를 완료하십시오.
 
-1. 설치된 로깅 CLI 플러그인의 버전을 확인하십시오. 
+1. 설치된 로깅 CLI 플러그인의 버전을 확인하십시오.
   
     예를 들면, 플러그인의 버전을 확인하십시오. 다음 명령을 실행하십시오.
     
@@ -193,7 +199,7 @@ Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를
     ```
     {: screen}
     
-2. 플러그인이 설치된 경우 `bx plugin uninstall`을 실행하여 로깅 CLI 플러그인을 설치 제거하십시오. 
+2. 플러그인이 설치된 경우 `bx plugin uninstall`을 실행하여 로깅 CLI 플러그인을 설치 제거하십시오.
 
     다음 명령을 실행하십시오.
         
@@ -204,7 +210,7 @@ Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를
   
 
 ## 저장소에서 Log Analysis CLI 업데이트
-{: #uninstall_cli}
+{: #update_cli}
 
 로깅 CLI를 업데이트하려면 *bx plugin update* 명령을 실행하십시오.
 {:shortdesc}
@@ -245,7 +251,7 @@ Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를
 ## 일반 도움말 가져오기
 {: #general_cli_help}
 
-CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다음 단계를 완료하십시오. 
+CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다음 단계를 완료하십시오.
 
 1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
@@ -328,7 +334,7 @@ CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다
 ## 플러그인의 세부사항 표시
 {: #show}
   
-'bx plugin show logging-cli' 명령을 사용하여 플러그인 세부사항을 표시합니다.  
+'bx plugin show logging-cli' 명령을 사용하여 플러그인 세부사항을 표시합니다. 
 
 ```
 bx plugin show logging-cli

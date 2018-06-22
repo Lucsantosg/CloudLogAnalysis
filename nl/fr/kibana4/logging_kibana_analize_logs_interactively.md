@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-01-10"
 Dans la page Discover, vous pouvez afficher et analyser vos journaux {{site.data.keyword.Bluemix}} de façon interactive. Vous pouvez définir des requêtes de recherche pour filtrer ces données à l'aide du langage d'interrogation Lucene. Pour chaque requête de recherche, vous pouvez appliquer des filtres afin d'affiner les entrées disponibles pour l'analyse. Vous pouvez sauvegarder une recherche pour la réutiliser plus tard.
 {:shortdesc}
 
-Par défaut, dans {{site.data.keyword.Bluemix_notm}}, le jeu de données affiché dans la page Discover lorsque vous lancez Kibana depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}} est configurée pour n'afficher que les entrées de l'application ou du conteneur CF (Cloud Foundry) depuis lequel vous avez lancé Kibana. Pour plus d'informations sur les sous-ensembles de données affichés par la page Discover, voir [Identification des données affichées](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+Par défaut, dans {{site.data.keyword.Bluemix_notm}}, le jeu de données affiché dans la page Discover lorsque vous lancez Kibana depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}} est configurée pour n'afficher que les entrées de l'application ou du conteneur CF (Cloud Foundry) depuis lequel vous avez lancé Kibana. 
 
 Le tableau suivant décrit la requête par défaut par ressource lorsque vous lancez Kibana depuis {{site.data.keyword.Bluemix_notm}} :
 
@@ -41,12 +41,12 @@ Vous pouvez effectuez les tâches suivantes pour personnaliser le tableau de la 
 
 | Tâche | Description | 
 |------|-------------|
-| [Ajouter une colonne de zone](logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | Ajout de zones pour affichage de données spécifiques requises pour l'analyse au lieu du message intégral. |
-| [Réorganiser une colonne de zone](logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | Déplacement de la position d'une zone vers celle voulue. |
-| [Afficher une entrée](logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | Développement d'une entrée du tableau pour afficher ses informations détaillées analysées par zone ou en tant qu'objet JSON. |
-| [Supprimer une colonne de zone](logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | Suppression d'une zone superflue de la vue pour analyse. |
-| [Classer les entrées par valeur d'une zone indexée](logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | Réorganisation des entrées pour faciliter l'analyse. |
-| [Actualiser les données automatiquement](logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | Actualisation des données affichées dans le tableau avec les entrées les plus récentes. Par défaut, l'actualisation est en mode **OFF** (désactivée). |
+| [Ajouter une colonne de zone](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | Ajout de zones pour affichage de données spécifiques requises pour l'analyse au lieu du message intégral. |
+| [Réorganiser une colonne de zone](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | Déplacement de la position d'une zone vers celle voulue. |
+| [Afficher une entrée](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | Développement d'une entrée du tableau pour afficher ses informations détaillées analysées par zone ou en tant qu'objet JSON. |
+| [Supprimer une colonne de zone](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | Suppression d'une zone superflue de la vue pour analyse. |
+| [Classer les entrées par valeur d'une zone indexée](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | Réorganisation des entrées pour faciliter l'analyse. |
+| [Actualiser les données automatiquement](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | Actualisation des données affichées dans le tableau avec les entrées les plus récentes. Par défaut, l'actualisation est en mode **OFF** (désactivée). |
 {: caption="Tableau 2. Tâches de personnalisation d'un tableau" caption-side="top"}
 
 <br>
@@ -55,17 +55,17 @@ La figure suivante illustre un exemple de tableau dans la page Discover :
 
 ![Page Discover dans Kibana](images/k4_discover_page.jpg "Page Discover dans Kibana")
 
-Vous pouvez définir d'autres recherches. Pour plus d'informations, voir [Filtrage des journaux en définissant des recherches personnalisées](k4_filter_queries.html#k4_filter_queries). Lorsque vous définissez une nouvelle recherche, les données affichées dans l'histogramme et le tableau sont automatiquement mises à jour.
+Vous pouvez définir d'autres recherches. Lorsque vous définissez une nouvelle recherche, les données affichées dans l'histogramme et le tableau sont automatiquement mises à jour.
 
 Pour définir une nouvelle recherche, utilisez comme point de départ la requête de recherche par défaut, puis affinez-la comme suit :
 
-* Appliquez des filtres de zone pour épurer l'ensemble de données affichées. Vous pouvez sélectionner/désélectionner chaque filtre, l'épingler à la page, l'activer ou le désactiver en fonction de vos besoins, et le configurer afin d'inclure ou d'exclure la valeur. Pour plus d'informations, voir [Filtrage des journaux dans Kibana](logging_kibana_filtering_logs.html#kibana_filtering_logs).
+* Appliquez des filtres de zone pour épurer l'ensemble de données affichées. Vous pouvez sélectionner/désélectionner chaque filtre, l'épingler à la page, l'activer ou le désactiver en fonction de vos besoins, et le configurer afin d'inclure ou d'exclure la valeur. 
 
-    **Astuce :** si vous ne localisez pas dans la section *Fields list* une zone que vous vous attendiez à rencontrer, ou que des loupes en regard de de zones répertoriées sont désactivées dans la page Discover, rechargez cette liste en actualisant le canevas d'index dans la page Settings. Pour plus d'informations, voir [Rechargement de la liste des zones](logging_kibana_analize_logs_interactively.html#kibana_discover_view_reload_fields).
+    **Astuce :** si vous ne localisez pas dans la section *Fields list* une zone que vous vous attendiez à rencontrer, ou que des loupes en regard de zones répertoriées sont désactivées dans la page Discover, rechargez cette liste en actualisant le canevas d'index dans la page Settings. 
 
     Par exemple, si votre application CF comporte plusieurs instances, vous pouvez décider d'analyser les données d'une instance spécifique. Vous pouvez définir un filtre de zone restreignant les données à celles que vous voulez analyser. 
     
-* Personnalisez la zone *Time Picker* pour des données temporelles. Vous pouvez définir pour une requête une plage de temps absolue, relative, ou la sélectionner depuis un ensemble de valeurs prédéfinies. Pour plus d'informations, voir [Configuration d'un filtre temporel](logging_kibana_set_time_filter.html#set_time_filter).
+* Personnalisez la zone *Time Picker* pour des données temporelles. Vous pouvez définir pour une requête une plage de temps absolue, relative, ou la sélectionner depuis un ensemble de valeurs prédéfinies. 
 
 Après avoir configuré la recherche définissant le sous-ensemble de données à analyser, vous pouvez la sauvegarder pour une utilisation ultérieure.
 
@@ -73,12 +73,12 @@ Vous pouvez effectuer les tâches suivantes avec des recherches que vous avez d�
 
 | Tâche | Description |
 |------|-------------|
-| [Sauvegarder une recherche](logging_kibana_filtering_logs.html#k4_save_search) | Sauvegarde de votre recherche pour une utilisation ultérieure).  |
-| [Supprimer une recherche](logging_kibana_filtering_logs.html#k4_delete_search) | Suppression d'une recherche devenue superflue. |
-| [Exporter une recherche](logging_kibana_filtering_logs.html#k4_export_search) | Exportation d'une recherche pour son partage.  |
-| [Recharger une recherche](logging_kibana_filtering_logs.html#k4_reload_search)  | Téléchargement d'une recherche existante pour nouvelle analyse d'un jeu de données. |
-| [Actualiser les données d'une recherche](logging_kibana_filtering_logs.html#k4_refresh_search) | Configuration d'une actualisation automatique des données affichées au cours de la recherche.  |
-| [Importer une recherche](logging_kibana_filtering_logs.html#k4_import_search) | Importation d'une recherche.  |
+| Sauvegarde d'une recherche | Sauvegarde de votre recherche pour une utilisation ultérieure).  |
+| Suppression d'une recherche | Suppression d'une recherche devenue superflue. |
+| Exportation d'une recherche | Exportation d'une recherche pour son partage.  |
+| Rechargement d'une recherche  | Téléchargement d'une recherche existante pour nouvelle analyse d'un jeu de données. |
+| Actualisation des données d'une recherche | Configuration d'une actualisation automatique des données affichées au cours de la recherche.  |
+| Importation d'une recherche | Importation d'une recherche.  |
 {: caption="Tableau 3. Tâches de gestion de recherches" caption-side="top"}
 
 <br>
@@ -87,7 +87,7 @@ Vous pouvez également examiner des statistiques dans la page Discover :
 * Statistiques par zone. 
 * Statistiques dans l'histogramme selon l'horodatage (`@timestamp`) configuré.
 
-Pour plus d'informations, voir [Affichage des statistiques sur les données de zone](logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats).
+Pour plus d'informations, voir [Affichage des statistiques sur les données de zone](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats).
 
 **Remarque :** les données affichées dans le tableau et l'histogramme sont statiques. Pour pouvoir afficher les plus récentes, vous devez définir un intervalle d'actualisation. 
 
@@ -131,7 +131,7 @@ Par exemple, si vous ajoutez la zone *application_id* à la table, celle-ci est 
 ## Actualisation automatique des données
 {: #kibana_discover_view_refresh_interval}
 
-Par défaut, dans {{site.data.keyword.Bluemix_notm}}, la période d'*actualisation automatique* est **désactivée** et les données visibles dans Kibana correspondent aux 15 dernières minutes après le lancement de Kibana. Ces 15 minutes correspondent au filtre temporel préconfiguré. Vous pouvez le modifier en stipulant une plage de temps différente. Pour plus d'informations, voir [Configuration d'un filtre temporel](logging_kibana_set_time_filter.html#set_time_filter).
+Par défaut, dans {{site.data.keyword.Bluemix_notm}}, la période d'*actualisation automatique* est **désactivée** et les données visibles dans Kibana correspondent aux 15 dernières minutes après le lancement de Kibana. Ces 15 minutes correspondent au filtre temporel préconfiguré. Vous pouvez le modifier en stipulant une plage de temps différente. 
 
 Procédez comme suit pour définir une période d'*actualisation automatique* :
 
@@ -148,7 +148,7 @@ Vous pouvez interrompre l'intervalle d'actualisation en cliquant sur le bouton P
 
 
 ## Identification des données affichées dans la page Discover
-{:#k4_identify_data}
+{: #k4_identify_data}
 
 Lorsque vous utilisez Kibana pour analyser les journaux {{site.data.keyword.Bluemix_notm}}, les données présentées dépendent de la manière dont vous avez lancé Kibana, du canevas d'index configuré, ainsi que de la requête et des filtres personnalisés qui sont appliqués.
 

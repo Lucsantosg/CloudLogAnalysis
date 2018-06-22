@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -149,7 +149,7 @@ lastupdated: "2018-01-10"
 
 
 ## 取得組織層次之日誌的相關資訊
-{: #viewing_logs_account}
+{: #viewing_logs_org}
 
 若要取得組識層次上一段時間內可用日誌的相關資訊，請使用 `bx logging log-show` 指令與 **-r org** 及 **-i** 選項搭配來設定組織的 ID。您也可以指定 **-t** 選項來指定日誌類型、指定 **-s** 選項來設定開始日期，以及指定 **-e** 選項來設定結束日期。 
 

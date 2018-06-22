@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -25,7 +25,7 @@ Zum Verwalten der im Konto verfügbaren Protokolle über die {{site.data.keyword
 ## IAM-Token abrufen
 {: #iam_token_cli}
 
-Führen Sie die folgenden Schritte aus, um das Berechtigungstoken über die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle abzurufen:
+Führen Sie die folgenden Schritte über das Terminal aus, um das Berechtigungstoken über die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle abzurufen:
 
 1. Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle.
 
@@ -33,7 +33,7 @@ Führen Sie die folgenden Schritte aus, um das Berechtigungstoken über die {{si
    
    Fahren Sie mit dem nächsten Schritt fort, wenn die Befehlszeilenschnittstelle bereits installiert ist.
     
-2. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+2. Melden sich bei einer Region in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	

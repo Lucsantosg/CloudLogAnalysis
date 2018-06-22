@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -25,7 +25,7 @@ Para gerenciar os logs que estão disponíveis no domínio de contas usando a AP
 ## Obtendo o token do IAM
 {: #iam_token_cli}
 
-Para obter o token de autorização usando a CLI do {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir:
+Para obter o token de autorização usando a CLI do {{site.data.keyword.Bluemix_notm}}, conclua as etapas a seguir em um terminal:
 
 1. Instale a CLI do {{site.data.keyword.Bluemix_notm}}.
 
@@ -33,7 +33,7 @@ Para obter o token de autorização usando a CLI do {{site.data.keyword.Bluemix_
    
    Se a CLI estiver instalada, continue com a próxima etapa.
     
-2. Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
+2. Efetue login em uma região no {{site.data.keyword.Bluemix_notm}}. 
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
@@ -44,9 +44,9 @@ Para obter o token de autorização usando a CLI do {{site.data.keyword.Bluemix_
 	```
 	{: codeblock}
 	
-	A saída retorna o token IAM que se deve usar para autenticar seu ID do usuário nesse espaço e nessa organização. É possível exportar o token do IAM para uma variável shell como `$iam_token`.
+	A saída retorna o token IAM que se deve usar para autenticar seu ID do usuário nesse espaço e nessa organização. É possível exportar o token do IAM para uma variável shell, como `$iam_token`.
 
 
 
-**Nota:** Ao usar o token, remova *Bearer* do valor do token que você passa em uma chamada API.
+**Nota:** ao usar o token, remova *Bearer* do valor do token que for passado em uma chamada API.
 

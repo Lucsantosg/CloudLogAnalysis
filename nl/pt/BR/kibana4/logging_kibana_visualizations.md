@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -41,13 +41,13 @@ Na página Visualizar, é possível executar qualquer uma das tarefas a seguir:
 
 | Tarefa | Informações Adicionais |
 |------|------------------|
-| [Criar uma nova visualização](logging_kibana_visualizations.html#logging_k4_visualizations_create) | É possível criar visualizações em uma procura que você define e salvar na página *Descobrir* ou em uma nova consulta que você define na página *Visualizar*. |
-| [Salvar uma visualização](logging_kibana_visualizations.html#logging_kibana_visualizations_save) | É possível salvar visualizações para reutilização posterior. |
-| [Carregar uma visualização](logging_kibana_visualizations.html#logging_kibana_visualizations_reload) | É possível fazer upload de uma visualização para atualizar, modificar ou analisar seus dados. |
-| [Excluir uma visualização](logging_kibana_visualizations.html#logging_kibana_visualizations_delete) | Exclua visualizações que não forem necessárias. |
-| [Exportar uma visualização](logging_kibana_visualizations.html#logging_kibana_visualizations_export) | É possível exportar uma visualização como um arquivo JSON.  |
-| [Importar uma visualização](logging_kibana_visualizations.html#logging_kibana_visualizations_import) | É possível importar uma visualização como um arquivo JSON.  |
-| [Compartilhar uma visualização](logging_kibana_visualizations.html#logging_kibana_visualizations_share) | É possível compartilhar uma visualização por meio de sua origem HTML ou por meio do painel do Kibana.  |
+| [Criar uma nova visualização](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create) | É possível criar visualizações em uma procura que você define e salvar na página *Descobrir* ou em uma nova consulta que você define na página *Visualizar*. |
+| [Salvar uma visualização](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_save) | É possível salvar visualizações para reutilização posterior. |
+| [Carregar uma visualização](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_reload) | É possível fazer upload de uma visualização para atualizar, modificar ou analisar seus dados. |
+| [Excluir uma visualização](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_delete) | Exclua visualizações que não forem necessárias. |
+| [Exportar uma visualização](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_export) | É possível exportar uma visualização como um arquivo JSON.  |
+| [Importar uma visualização](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_import) | É possível importar uma visualização como um arquivo JSON.  |
+| [Compartilhar uma visualização](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_share) | É possível compartilhar uma visualização por meio de sua origem HTML ou por meio do painel do Kibana.  |
 {: caption="Tabela 2. Tarefas para trabalhar com visualizações" caption-side="top"}
 
 
@@ -76,9 +76,6 @@ Conclua as etapas a seguir para criar uma visualização na página Visualizar:
 	**Nota**: quaisquer mudanças feitas em uma procura salva são refletidas automaticamente na visualização. Para desativar atualizações automáticas que você faz na consulta que é vinculada a essa visualização, dê um clique duplo na mensagem: *Esta visualização é vinculada a uma procura salva: your_search_name*. 
 
     * Se você selecionar **Em uma nova procura**, defina uma nova consulta. A consulta é usada para definir o subconjunto de dados que é recuperado e usado pela visualização.
-
-        Para obter mais informações, consulte
-[Filtrando logs definindo consultas customizadas](k4_filter_queries.html#k4_filter_queries).
 
 6. No construtor de visualização, selecione uma agregação da métrica para o eixo Y.
 

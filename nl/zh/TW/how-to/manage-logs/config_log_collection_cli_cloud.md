@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# 配置 {{site.data.keyword.loganalysisshort}} CLI（{{site.data.keyword.Bluemix_notm}} 外掛程式）
+# 配置 {{site.data.keyword.loganalysisshort}} CLI
 {: #config_log_collection_cli}
 
 {{site.data.keyword.loganalysisshort}} 服務包括指令行介面 (CLI)，可用來管理雲端中的日誌。您可以使用 {{site.data.keyword.Bluemix_notm}} 外掛程式來檢視日誌的狀態、下載日誌，以及配置日誌保留原則。CLI 提供不同類型的說明：瞭解 CLI 及所支援指令的一般說明、瞭解如何使用指令的指令說明，或瞭解如何使用指令之次指令的次指令說明。
@@ -32,7 +32,7 @@ lastupdated: "2018-01-10"
 2. 在儲存庫中，找出外掛程式的名稱。執行下列指令：
 
     ```
-    bx plugin repo-plugins
+        bx plugin repo-plugins
     ```
     {: codeblock}
     
@@ -41,7 +41,7 @@ lastupdated: "2018-01-10"
 3. 安裝 {{site.data.keyword.loganalysisshort}} 外掛程式。執行下列指令：
 
     ```
-    bx plugin install logging-cli -r Bluemix
+        bx plugin install logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -50,11 +50,11 @@ lastupdated: "2018-01-10"
     例如，執行下列指令，以查看已安裝的外掛程式清單：
     
     ```
-    bx plugin list
+        bx plugin list
     ```
     {: codeblock}
     
-    輸出如下所示：
+    輸出的外觀如下：
    
     ```
     bx plugin list
@@ -86,11 +86,11 @@ lastupdated: "2018-01-10"
     例如，檢查外掛程式的版本。執行下列指令：
     
     ```
-    bx plugin list
+        bx plugin list
     ```
     {: codeblock}
     
-    輸出如下所示：
+    輸出的外觀如下：
    
     ```
     bx plugin list
@@ -119,7 +119,7 @@ lastupdated: "2018-01-10"
 2. 安裝外掛程式。執行下列指令：
         
     ```
-    bx plugin install -f logging-cli-linux-amd64-0.1.1
+        bx plugin install -f logging-cli-linux-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -139,7 +139,7 @@ lastupdated: "2018-01-10"
 2. 安裝外掛程式。執行下列指令：
         
     ```
-    bx plugin install -f logging-cli-windows-amd64-0.1.1.exe
+        bx plugin install -f logging-cli-windows-amd64-0.1.1.exe
     ```
     {: codeblock}
 
@@ -155,10 +155,17 @@ lastupdated: "2018-01-10"
 	1. 選取平台值：**osx**。 
 	2. 按一下**儲存檔案**。  
     
-2. 安裝外掛程式。執行下列指令：
+2. 變更檔案的許可權。執行下列指令：
+
+    ```
+    chmod u+x logging-cli-darwin-amd64-0.1.1
+    ```
+     {: codeblock}
+
+3. 安裝外掛程式。執行下列指令：
         
     ```
-    bx plugin install -f logging-cli-darwin-amd64-0.1.1
+        bx plugin install -f logging-cli-darwin-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -177,11 +184,11 @@ lastupdated: "2018-01-10"
     例如，檢查外掛程式的版本。執行下列指令：
     
     ```
-    bx plugin list
+        bx plugin list
     ```
     {: codeblock}
     
-    輸出如下所示：
+    輸出的外觀如下：
    
     ```
     bx plugin list
@@ -197,13 +204,13 @@ lastupdated: "2018-01-10"
     執行下列指令：
         
     ```
-    bx plugin uninstall logging-cli
+        bx plugin uninstall logging-cli
     ```
     {: codeblock}
   
 
 ## 從儲存庫中更新 Log Analysis CLI
-{: #uninstall_cli}
+{: #update_cli}
 
 若要更新記載 CLI，請執行 *bx plugin update* 指令。
 {:shortdesc}
@@ -213,7 +220,7 @@ lastupdated: "2018-01-10"
 1. 更新 {{site.data.keyword.loganalysisshort}} 外掛程式。執行下列指令：
 
     ```
-    bx plugin update logging-cli -r Bluemix
+        bx plugin update logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -222,11 +229,11 @@ lastupdated: "2018-01-10"
     例如，驗證外掛程式的版本。執行下列指令：
     
     ```
-    bx plugin list
+        bx plugin list
     ```
     {: codeblock}
     
-    輸出如下所示：
+    輸出的外觀如下：
    
     ```
     bx plugin list
@@ -244,16 +251,16 @@ lastupdated: "2018-01-10"
 ## 取得一般說明
 {: #general_cli_help}
 
-若要取得有關 CLI 及所支援指令的一般資訊，請完成下列步驟：
+若要取得 CLI 的一般資訊及支援的指令，請完成下列步驟：
 
 1. 登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 列出所支援指令及 CLI 的相關資訊。執行下列指令：
+2. 列出支援指令及 CLI 的相關資訊。執行下列指令：
 
     ```
-    bx logging help 
+        bx logging help 
     ```
     {: codeblock}
     
@@ -268,10 +275,10 @@ lastupdated: "2018-01-10"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 取得所支援指令的清單，並識別您需要的指令。執行下列指令：
+2. 取得支援的指令清單，並識別您需要的指令。。執行下列指令：
 
     ```
-    bx logging help 
+        bx logging help 
     ```
     {: codeblock}
 
@@ -295,10 +302,10 @@ lastupdated: "2018-01-10"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 取得所支援指令的清單，並識別您需要的指令。執行下列指令：
+2. 取得支援的指令清單，並識別您需要的指令。。執行下列指令：
 
     ```
-    bx logging help 
+        bx logging help 
     ```
     {: codeblock}
 
@@ -334,7 +341,7 @@ bx plugin show logging-cli
 ```
 {: codeblock}
     
-輸出如下所示：
+輸出的外觀如下：
    
 ```
 bx plugin show logging-cli

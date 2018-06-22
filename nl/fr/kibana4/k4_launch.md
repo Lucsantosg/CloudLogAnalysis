@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -21,7 +21,6 @@ Vous pouvez lancer Kibana depuis l'interface utilisateur {{site.data.keyword.Blu
 
 Lancez Kibana depuis {{site.data.keyword.Bluemix_notm}} pour afficher et analyser des données en contexte sur la ressource à partir de laquelle vous lancez Kibana. Par exemple, vous pouvez ouvrir vos journaux d'application CK spécifiques dans Kibana,
 dans le contexte de cette application spécifique.
-    et de l'espace {{site.data.keyword.Bluemix_notm}}. La requête utilisée pour filtrer les données affichées dans le tableau de bord extrait les entrées de journal pour un espace dans l'organisation. Les informations de journal que Kibana affiche incluent les enregistrements de toutes les ressources qui sont déployées dans l'espace de l'organisation à laquelle vous êtes connecté. 
 
 Le tableau suivant recense les ressources et la méthode de navigation prise en charge pour lancer Kibana :
 
@@ -39,11 +38,6 @@ Le tableau suivant recense les ressources et la méthode de navigation prise en 
   <tr>  
   <tr>
     <td>Conteneur déployé dans un cluster Kubernetes</td>
-    <td>Non</td>
-    <td>Oui</td>
-  <tr>  
-  <tr>
-    <td>Conteneur déployé dans une infrastructure gérée par {{site.data.keyword.Bluemix_notm}}</td>
     <td>Oui</td>
     <td>Oui</td>
   <tr>  
@@ -72,7 +66,7 @@ Pour consulter les journaux d'une application Cloud Foundry ou d'un conteneur Do
 
     Par défaut, la page **Discover** est chargée avec le canevas d'index par défaut et un filtre temporel est défini pour les 30 dernières secondes. La requête de recherche est configurée pour rechercher toutes les entrées concernant votre application CF ou votre conteneur Docker.
 
-    Si la page Discover n'affiche aucune entrée de journal, ajustez le sélecteur de période. Pour plus d'informations, voir [Configuration d'un filtre temporel](logging_kibana_set_time_filter.html#set_time_filter).
+    Si la page Discover n'affiche aucune entrée de journal, ajustez le sélecteur de période. 
 
 
 ##  Accès au tableau de bord Kibana depuis un navigateur Web
@@ -102,6 +96,5 @@ Procédez comme suit pour lancer Kibana depuis un navigateur :
           </tr>
         </table>
 
-    Si la page Discover n'affiche aucune entrée de journal, ajustez le sélecteur de période. Pour plus d'informations, voir [Configuration d'un filtre temporel](logging_kibana_set_time_filter.html#set_time_filter).
-
+    Si la page Discover n'affiche aucune entrée de journal, ajustez le sélecteur de période. 
 

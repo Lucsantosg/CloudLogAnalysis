@@ -3,16 +3,19 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-12"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Kubernetes クラスターにデプロイされたアプリに関する Kibana でのログの分析
@@ -40,7 +43,7 @@ lastupdated: "2018-01-12"
 
     {{site.data.keyword.Bluemix_notm}} のユーザー ID に、以下のポリシーが割り当てられている必要があります。
     
-    * *オペレーター* または*管理者* の許可が設定された、{{site.data.keyword.containershort}} 用の IAM ポリシー。
+    * *エディター*、*オペレーター*、または*管理者* の許可が設定された、{{site.data.keyword.containershort}} 用の IAM ポリシー。
     * {{site.data.keyword.loganalysisshort}} サービスがプロビジョンされるスペースの、*開発者* の許可が設定された CF 役割。
     
     詳しくは、[IBM Cloud UI を使用してユーザーに IAM ポリシーを割り当てる](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)および [IBM Cloud UI を使用して、スペース・ログを表示する許可をユーザーに付与する](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)を参照してください。
@@ -49,11 +52,11 @@ lastupdated: "2018-01-12"
 
 3. {{site.data.keyword.containershort}} および {{site.data.keyword.loganalysisshort}} の処理を行うための CLI を Ubuntu システムにインストールします。
 
-    * {{site.data.keyword.Bluemix_notm}} CLI をインストールします。詳しくは、『[{{site.data.keyword.Bluemix_notm}} CLI のインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
+    * {{site.data.keyword.Bluemix_notm}} CLI をインストールします。 詳しくは、『[{{site.data.keyword.Bluemix_notm}} CLI のインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
     
-    * {{site.data.keyword.containershort}} での Kubernetes クラスターの作成と管理、およびクラスターへのコンテナー化アプリのデプロイを行うための {{site.data.keyword.containershort}} CLI をインストールします。詳しくは、[CS プラグインのインストール](/docs/containers/cs_cli_install.html#cs_cli_install_steps)を参照してください。
+    * {{site.data.keyword.containershort}} での Kubernetes クラスターの作成と管理、およびクラスターへのコンテナー化アプリのデプロイを行うための {{site.data.keyword.containershort}} CLI をインストールします。 詳しくは、[CS プラグインのインストール](/docs/containers/cs_cli_install.html#cs_cli_install_steps)を参照してください。
     
-    * {{site.data.keyword.loganalysisshort}} CLI をインストールします。詳しくは、『[Log Analysis CLI の構成 (IBM Cloud プラグイン)](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)』を参照してください。
+    * {{site.data.keyword.loganalysisshort}} CLI をインストールします。 詳しくは、『[Log Analysis CLI の構成 (IBM Cloud プラグイン)](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)』を参照してください。
     
 4. 米国南部地域で、ご使用のアカウント内の **dev** というスペースにアクセスできるようにします。 
 
@@ -75,8 +78,7 @@ lastupdated: "2018-01-12"
 
 1. 標準の Kubernetes クラスターを作成します。
 
-   * [UI から Kubernetes 標準クラスターを作成する](/docs/containers/cs_cluster.html#cs_cluster_ui)。
-   * [CLI を使用して Kubernetes 標準クラスターを作成する](/docs/containers/cs_cluster.html#cs_cluster_cli)。
+   詳しくは、『[クラスターの作成](/docs/containers/cs_tutorials.html#cs_cluster_tutorial)』を参照してください。
 
 2. 端末でクラスター・コンテキストをセットアップします。 コンテキストを設定すると、Kubernetes クラスターを管理し、Kubernetes クラスターにアプリケーションをデプロイできるようになります。
 
@@ -108,15 +110,15 @@ lastupdated: "2018-01-12"
 
 
 ## ステップ 2: ログを自動的に {{site.data.keyword.loganalysisshort}} サービスに転送するためにクラスターを構成する
-{: #step3}
+{: #step2}
 
-アプリがデプロイされると、ログは {{site.data.keyword.containershort}} によって自動的に収集されます。ただし、ログは、自動的には {{site.data.keyword.loganalysisshort}} サービスに転送されません。以下を定義する 1 つ以上のロギング構成をクラスター内に作成する必要があります。
+アプリがデプロイされると、ログは {{site.data.keyword.containershort}} によって自動的に収集されます。 ただし、ログは、自動的には {{site.data.keyword.loganalysisshort}} サービスに転送されません。 以下を定義する 1 つ以上のロギング構成をクラスター内に作成する必要があります。
 
-* ログの転送先。ログは、アカウント・ドメインまたはスペース・ドメインに転送できます。
+* ログの転送先。 ログは、アカウント・ドメインまたはスペース・ドメインに転送できます。
 * 分析のために {{site.data.keyword.loganalysisshort}} サービスに転送されるログの種類。
 
 
-ロギング構成を定義する前に、クラスター内の現行ロギング構成定義を確認してください。次のコマンドを実行します。
+ロギング構成を定義する前に、クラスター内の現行ロギング構成定義を確認してください。 次のコマンドを実行します。
 
 ```
 $ bx cs logging-config-get ClusterName
@@ -144,12 +146,12 @@ ae249c04-a3a9-4c29-a890-22d8da7bd1b2   container    *           ingest.logging.n
 
 
 ### stderr および stdout のログを {{site.data.keyword.loganalysisshort}} サービスに転送するためのクラスターの構成
-{: #containerlogs}
+{: #containerstd}
 
 
 stdout および stderr のログをスペース・ドメインに送信するには、以下のステップを実行します。ここで、送信先は米国南部地域で、組織名は *MyOrg*、スペース名は *dev* です。
 
-1. クラスター構成を追加する許可がユーザー ID にあることを確認します。クラスターを管理する許可が設定された {{site.data.keyword.containershort}} の IAM ポリシーを持つユーザーのみが、この機能を有効にすることができます。 *管理者*、*オペレーター* のいずれかの役割が必要です。
+1. クラスター構成を追加する許可がユーザー ID にあることを確認します。 クラスターを管理する許可が設定された {{site.data.keyword.containershort}} の IAM ポリシーを持つユーザーのみが、この機能を有効にすることができます。 *管理者*、*オペレーター* のいずれかの役割が必要です。
 
     ユーザー ID に、クラスターを管理するために割り当てられた IAM ポリシーがあることを確認するには、以下のステップを実行します。
     
@@ -159,9 +161,9 @@ stdout および stderr のログをスペース・ドメインに送信する�
 	
     3. ユーザー ID を選択し、その ユーザー ID に {{site.data.keyword.containershort}} のポリシーがあることを検証します。
 
-    許可が必要な場合は、アカウント所有者またはアカウント管理者に連絡してください。アカウント所有者、または、ポリシーを割り当てる許可を持つユーザーのみが、このステップを実行できます。
+    許可が必要な場合は、アカウント所有者またはアカウント管理者に連絡してください。 アカウント所有者、または、ポリシーを割り当てる許可を持つユーザーのみが、このステップを実行できます。
 
-2. クラスター・ロギング構成を作成します。*stdout* および *stderr* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
+2. クラスター・ロギング構成を作成します。 *stdout* および *stderr* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
 
     ```
     bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
@@ -171,7 +173,7 @@ stdout および stderr のログをスペース・ドメインに送信する�
     各部分の説明: 
 
     * *ClusterName* はクラスターの名前です。
-    * *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
+    * *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。 エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
     * *OrgName* は、スペースがある組織の名前です。
     * *SpaceName* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされたスペースの名前です。
 
@@ -191,7 +193,7 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 
 ワーカー・ログをスペース・ドメインに送信するには、以下のステップを実行します。ここで、送信先は米国南部地域で、組織名は *MyOrg*、スペース名は *dev* です。
 
-1. クラスター構成を追加する許可がユーザー ID にあることを確認します。クラスターを管理する許可が設定された {{site.data.keyword.containershort}} の IAM ポリシーを持つユーザーのみが、この機能を有効にすることができます。 *管理者*、*オペレーター* のいずれかの役割が必要です。
+1. クラスター構成を追加する許可がユーザー ID にあることを確認します。 クラスターを管理する許可が設定された {{site.data.keyword.containershort}} の IAM ポリシーを持つユーザーのみが、この機能を有効にすることができます。 *管理者*、*オペレーター* のいずれかの役割が必要です。
 
     ユーザー ID に、クラスターを管理するために割り当てられた IAM ポリシーがあることを確認するには、以下のステップを実行します。
     
@@ -201,9 +203,9 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 	
     3. ユーザー ID を選択し、その ユーザー ID に {{site.data.keyword.containershort}} のポリシーがあることを検証します。
 
-    許可が必要な場合は、アカウント所有者またはアカウント管理者に連絡してください。アカウント所有者、または、ポリシーを割り当てる許可を持つユーザーのみが、このステップを実行できます。
+    許可が必要な場合は、アカウント所有者またはアカウント管理者に連絡してください。 アカウント所有者、または、ポリシーを割り当てる許可を持つユーザーのみが、このステップを実行できます。
 
-2. クラスター・ロギング構成を作成します。*/var/log/syslog* および */var/log/auth.log* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
+2. クラスター・ロギング構成を作成します。 */var/log/syslog* および */var/log/auth.log* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
 
     ```
     bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
@@ -213,7 +215,7 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
     各部分の説明: 
 
     * *ClusterName* はクラスターの名前です。
-    * *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
+    * *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。 エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
     * *OrgName* は、スペースがある組織の名前です。
     * *SpaceName* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされたスペースの名前です。
 
@@ -227,8 +229,8 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 
 
 
-## ステップ 4: スペース・ドメイン内のログを表示するための許可をユーザーに付与する
-{: #step4}
+## ステップ 3: スペース・ドメイン内のログを表示するための許可をユーザーに付与する
+{: #step3}
 
 スペース内のログを表示する許可をユーザーに付与するには、そのユーザーがそのスペース内で {{site.data.keyword.loganalysisshort}} サービスを使用して実行できるアクションを記述した Cloud Foundry 役割をそのユーザーに割り当てる必要があります。 
 
@@ -252,7 +254,7 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 
     その組織で使用可能なスペースのリストが表示されます。
 
-5. スペースを選択します。次に、メニュー・アクションから**「スペースの役割の編集」**を選択します。
+5. スペースを選択します。 次に、メニュー・アクションから**「スペースの役割の編集」**を選択します。
 
     米国南部のスペースが見つからない場合は、続行する前にスペースを作成してください。
 
@@ -265,15 +267,17 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 7. **「役割の保存」**をクリックします。
 
 
-## ステップ 5: {{site.data.keyword.containershort_notm}} キー所有者に許可を付与する
-{: #step5}
+## ステップ 4: {{site.data.keyword.containershort_notm}} キー所有者に許可を付与する
+{: #step4}
 
+クラスター・ログがスペースに転送されるためには、{{site.data.keyword.containershort_notm}} キー所有者は以下の許可を持っている必要があります。
 
-ログをスペースに転送する場合、組織およびスペースの {{site.data.keyword.containershort}} キー所有者にも Cloud Foundry (CF) 許可を付与する必要があります。キー所有者には、組織の *orgManager* 役割と、スペースの *SpaceManager* と*開発者* の役割が必要です。 
+* *管理者* 許可が設定された、{{site.data.keyword.loganalysisshort}} サービス用の IAM ポリシー。
+* ログが転送される組織およびスペースでの Cloud Foundry (CF) 許可。コンテナーのキー所有者には、組織の *orgManager* 役割と、スペースの *SpaceManager* および*開発者* の役割が必要です。
 
 以下のステップを実行します。
 
-1. {{site.data.keyword.containershort}} キー所有者であるアカウントのユーザーを識別します。端末から次のコマンドを実行します。
+1. {{site.data.keyword.containershort}} キー所有者であるアカウントのユーザーを識別します。 端末から次のコマンドを実行します。
 
     ```
     bx cs api-key-info ClusterName
@@ -289,26 +293,31 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
     メニュー・バーから、**「管理」>「アカウント」>「ユーザー」**をクリックします。  「*ユーザー*」ウィンドウに、現在選択されているアカウントにおけるユーザーのリストが、E メール・アドレスと共に表示されます。
 	
     ユーザーの ID を選択し、ユーザーに組織の *orgManager* 役割とスペースの *SpaceManager* および*開発者* の役割があることを確認します。
- 
-3. ユーザーに適切な許可がない場合は、以下のステップを実行します。
 
-    1. ユーザーに次の許可を付与します。組織の *orgManager* 役割。スペースの *SpaceManager* および*開発者* の役割。詳しくは、[IBM Cloud UI を使用して、スペース・ログを表示する許可をユーザーに付与する](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)を参照してください。
+    ユーザーに正しい許可がない場合、ユーザーに次の許可を付与します。組織の *orgManager* 役割と、スペースの *SpaceManager* および*開発者* の役割。詳しくは、[IBM Cloud UI を使用して、スペース・ログを表示する許可をユーザーに付与する](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)を参照してください。
     
-    2. ロギング構成を更新します。次のコマンドを実行します。
+3. {{site.data.keyword.containershort}} キー所有者として識別されたユーザーに、*管理者* の許可が設定された、{{site.data.keyword.loganalysisshort}} サービス用 IAM ポリシーがあることを検証します。
+
+    メニュー・バーから、**「管理」>「アカウント」>「ユーザー」**をクリックします。  「*ユーザー*」ウィンドウに、現在選択されているアカウントにおけるユーザーのリストが、E メール・アドレスと共に表示されます。
+	
+    ユーザーの ID を選択し、ユーザーに IAM ポリシーが設定されていることを検証します。 
+
+    ユーザーが IAM ポリシーを持っていない場合、『[IBM Cloud UI を使用してユーザーに IAM ポリシーを割り当てる](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)』を参照してください。
+
+4. ロギング構成を更新します。 次のコマンドを実行します。
     
-        ```
-        bx cs logging-config-refresh ClusterName
-        ```
-        {: codeblock}
+    ```
+    bx cs logging-config-refresh ClusterName
+    ```
+    {: codeblock}
         
-        ここで、*ClusterName* はクラスターの名前です。
-
-
-
+    ここで、*ClusterName* はクラスターの名前です。
 	
 
-## ステップ 6: Kubernetes クラスターにサンプル・アプリをデプロイして、stdout にコンテンツを生成する
-{: #step6}
+
+
+## ステップ 5: Kubernetes クラスターにサンプル・アプリをデプロイして、stdout にコンテンツを生成する
+{: #step5}
 
 Kubernetes クラスター内でサンプル・アプリをデプロイし、実行します。 [レッスン 1: アプリの 1 つのインスタンスを Kubernetes クラスターにデプロイする](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1)のチュートリアルにあるステップを実行して、サンプル・アプリをデプロイします。
 
@@ -334,8 +343,8 @@ app.listen(8080, function() {
 
 
 
-## ステップ 7: Kibana でログ・データを表示する
-{: #step7}
+## ステップ 6: Kibana でログ・データを表示する
+{: #step6}
 
 以下のステップを実行します。
 
@@ -354,11 +363,11 @@ app.listen(8080, function() {
 	
     Kibana が開きます。
     
-    **注:** クラスター・ログを転送する地域で Kibana を起動していることを確認してください。地域ごとの URL については、[ロギング・エンドポイント](docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana)を参照してください。
+    **注:** クラスター・ログを転送する地域で Kibana を起動していることを確認してください。 地域ごとの URL については、[ロギング・エンドポイント](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana)を参照してください。
     	
 2. スペース・ドメイン内で使用可能なログ・データを表示するには、以下のステップを実行します。
 
-    1. Kibana で、自分のユーザー ID をクリックします。スペースを設定するためのビューが開きます。
+    1. Kibana で、自分のユーザー ID をクリックします。 スペースを設定するためのビューが開きます。
     
     2. スペースを使用できるアカウントを選択します。 
     
@@ -427,10 +436,10 @@ app.listen(8080, function() {
 Kubernetes クラスターに関係するその他の検索フィールドについて詳しくは、[ログの検索](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#log_search)を参照してください。
 
 
-## ステップ 8: Kubernetes クラスター名を使用して、Kibana でデータをフィルタリングする
-{: #step8}
+## ステップ 7: Kibana で Kubernetes クラスター名によってデータをフィルタリングする
+{: #step7}
     
-「*Discovery*」ページに表示される表に、分析に使用できるすべてのエントリーが表示されます。リストされる項目は、*「Search」*バーに表示される検索照会に対応します。 ページに対して構成された期間内のすべての項目を表示するには、アスタリスク (*) を使用します。
+「*Discovery*」ページに表示される表に、分析に使用できるすべてのエントリーが表示されます。 リストされる項目は、*「Search」*バーに表示される検索照会に対応します。 ページに対して構成された期間内のすべての項目を表示するには、アスタリスク (*) を使用します。
     
 例えば、Kubernetes クラスター名によってデータをフィルター操作するために、*「Search」*バーの照会を変更するとします。 この場合、次のようにしてカスタム・フィールド *kubernetes.cluster_name_str* に基づくフィルターを追加します。
     
@@ -443,7 +452,7 @@ Kubernetes クラスターに関係するその他の検索フィールドにつ
 
 **注:** 
 
-クラスター名が表示されない場合は、いずれのクラスター名にも対応するフィルターを追加してください。次に、フィルターの編集シンボルを選択します。    
+クラスター名が表示されない場合は、いずれのクラスター名にも対応するフィルターを追加してください。 次に、フィルターの編集シンボルを選択します。    
     
 以下の照会が表示されます。
     

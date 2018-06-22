@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-09"
 
 ---
 
@@ -43,6 +43,10 @@ Para descobrir sobre como usar a CLI do {{site.data.keyword.loganalysisshort}}, 
     <td>Use este comando para fazer download de logs da Coleção de logs para um arquivo local ou canalizar os logs para outro programa, como Elastic Stack. </td>
   </tr>
   <tr>
+    <td>[bx logging log-show](#status)</td>
+    <td>Use esse comando para obter informações sobre os logs que são coletados em um espaço, organização ou conta.</td>
+  </tr>
+  <tr>
     <td>[bx logging help](#help)</td>
     <td>Use esse comando para obter ajuda sobre como usar a CLI, além de uma lista de todos os comandos.</td>
   </tr>
@@ -53,6 +57,10 @@ Para descobrir sobre como usar a CLI do {{site.data.keyword.loganalysisshort}}, 
   <tr>
     <td>[bx logging option-update](#optionupdate)</td>
     <td>Use esse comando para configurar o período de retenção para logs que estão disponíveis em um espaço, organização ou conta.</td>
+  </tr>
+  <tr>
+    <td>[bx logging cota-usage-show](#quotausage)</td>
+    <td>Use esse comando para obter as informações de uso de cota para um espaço, uma organização ou uma conta. Também é possível obter as informações de histórico de cota.</td>
   </tr>
   <tr>
     <td>[bx logging session-create](#session_create)</td>
@@ -71,8 +79,8 @@ Para descobrir sobre como usar a CLI do {{site.data.keyword.loganalysisshort}}, 
     <td>Use esse comando para mostrar o status de uma única sessão.</td>
   <tr>  
   <tr>
-    <td>[bx logging log-show](#status)</td>
-    <td>Use esse comando para obter informações sobre os logs que são coletados em um espaço, organização ou conta.</td>
+    <td>[Bx logging token-get](#tokenget)</td>
+    <td>Use esse comando para obter o token de criação de log para enviar dados do log para o serviço {{site.data.keyword.loganalysisshort}}.</td>
   </tr>
 </table>
 
@@ -98,16 +106,19 @@ NOME:
 USO:
    bx logging command [arguments...] [command options]
 
-COMANDOS:
-   log-delete       Excluir log
-   log-download     Fazer download de um log
-   log-show         Mostrar a contagem, o tamanho e o tipo de logs por dia
-   session-create   Criar uma sessão
-   session-delete   Excluir sessão
-   sessions         Listar informações de sessões
-   session-show     Mostrar informações de sessão
-   option-show      Mostrar a retenção de log
-   option-update    Mostrar as opções de log
+COMMANDS:
+COMMANDS:
+   log-delete         Delete log
+   log-download       Download a log
+   log-show           Show the count, size, and type of logs per day
+   session-create     Create a session
+   session-delete     Delete session
+   sessions           List sessions info
+   session-show       Show a session info
+   option-show        Show the log retention
+   option-update      Show the log options
+   token-get          Get a logging token for sending logs
+   quota-usage-show   Show quota usage info
    help             
    
 Insira 'bx logging help [command]' para obter mais informações sobre um comando.
@@ -135,7 +146,7 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Configure este campo para o ID do espaço, da organização ou da conta para a qual você deseja obter informações. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
+  <dd>(Opcional) Defina esse campo para o ID de um espaço, uma organização ou uma conta. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -182,7 +193,7 @@ Faz download de logs da Coleção de logs em um arquivo local ou canaliza logs p
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Configure este campo para o ID do espaço, da organização ou da conta para a qual você deseja obter informações. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
+  <dd>(Opcional) Defina esse campo para o ID de um espaço, uma organização ou uma conta. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
   </dd>
  
   <dt>-o, --output OUTPUT</dt>
@@ -297,7 +308,7 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Configure este campo para o ID do espaço, da organização ou da conta para a qual você deseja obter informações. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
+  <dd>(Opcional) Defina esse campo para o ID de um espaço, uma organização ou uma conta. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
   </dd>
 
 </dl>
@@ -353,6 +364,46 @@ bx logging option-update -e 25
 {: screen}
 
 
+## Bx logging cota-usage-show
+{: #quotausage}
+
+Informações sobre o uso de cota de um espaço, uma organização ou uma conta. Também é possível utilizá-lo para obter o uso de histórico.
+
+* O período é configurado em número de dias.
+* O valor padrão é **-1**. 
+
+```
+bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+```
+{: codeblock}
+
+**Parameters**
+
+<dl>
+  <dt>-r,--resource-type RESOURCE_TYPE</dt>
+  <dd>(Opcional) Configura o tipo de recurso. Os valores válidos são: *space*, *account* e *org*
+  </dd>
+  
+   <dt>-i,--resource-id RESOURCE_ID</dt>
+  <dd>(Opcional) Defina esse campo para o ID de um espaço, uma organização ou uma conta. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
+  </dd>
+  
+  <dt>-s, -- histórico</dt>
+  <dd>(Opcional) Configure esse parâmetro para obter informações históricas sobre o uso de cota.</dd>
+
+</dl>
+
+**Exemplo**
+
+Para obter o uso de cota histórico para um domínio de espaço, execute o comando a seguir:
+
+```
+bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744...
+OK
+
+Date Allotmant Usage 2018.02.28 524288000 80405926 2018.03.06 524288000 18955540 2018.03.05 524288000 47262944 2018.03.08 524288000 18311338 2018.03.01 524288000 82416831 2018.03.03 524288000 75045462 2018.03.07 524288000 17386278 2018.03.02 524288000 104316444 2018.03.04 524288000 73125223   
+```
+{: screen}
 
 ## bx logging session-create
 {: #session_create}
@@ -374,7 +425,7 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Configure este campo para o ID do espaço, da organização ou da conta para a qual você deseja obter informações. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
+  <dd>(Opcional) Defina esse campo para o ID de um espaço, uma organização ou uma conta. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -453,7 +504,7 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Configure este campo para o ID do espaço, da organização ou da conta para a qual você deseja obter informações. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
+  <dd>(Opcional) Defina esse campo para o ID de um espaço, uma organização ou uma conta. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
   </dd>
  
 </dl>
@@ -494,7 +545,7 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
       <dd>(Opcional) Configura o tipo de recurso. Os valores válidos são: *space*, *account* e *org* </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>(Opcional) Configure este campo para o ID do espaço, da organização ou da conta para a qual você deseja obter informações. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login.  </dd>
+      <dd>(Opcional) Defina esse campo para o ID de um espaço, uma organização ou uma conta. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login.  </dd>
 </dl>
 
 **Valores de retorno**
@@ -544,7 +595,7 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
       <dd>(Opcional) Configura o tipo de recurso. Os valores válidos são: *space*, *account* e *org* </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>(Opcional) Configure este campo para o ID do espaço, da organização ou da conta para a qual você deseja obter informações. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login.  </dd>
+      <dd>(Opcional) Defina esse campo para o ID de um espaço, uma organização ou uma conta. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login.  </dd>
 </dl>
 
 **Argumentos**
@@ -560,6 +611,41 @@ Para mostrar detalhes de uma sessão com ID de sessão *cI6hvAa0KR_tyhjxZZz9Uw==
 
 ```
 bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+```
+{: screen}
+
+## Bx logging token-get
+{: #tokenget}
+
+Retorna o token de criação de log que é necessário para enviar dados de log para o {{site.data.keyword.loganalysisshort}}.
+
+```
+bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+```
+{: codeblock}
+
+**Parameters**
+
+<dl>
+  <dt>-r,--resource-type RESOURCE_TYPE</dt>
+  <dd>(Opcional) Configura o tipo de recurso para o qual você planeja enviar dados de log. Os valores válidos são: *space*, *account* e *org*
+  </dd>
+  
+   <dt>-i,--resource-id RESOURCE_ID</dt>
+  <dd>(Opcional) Defina esse campo para o ID de um espaço, uma organização ou uma conta. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
+  </dd>
+</dl>
+
+
+**Exemplo**
+
+```
+bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Tenant Id                              Logging Token   
+js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx   
 ```
 {: screen}
 
@@ -586,7 +672,7 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(Opcional) Configure este campo para o ID do espaço, da organização ou da conta para a qual você deseja obter informações. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
+  <dd>(Opcional) Defina esse campo para o ID de um espaço, uma organização ou uma conta. <br>Por padrão, se esse parâmetro não for especificado, o comando usará o ID do recurso no qual você efetuou login. 
   </dd>
   
   <dt>-s, --start START_DATE</dt>

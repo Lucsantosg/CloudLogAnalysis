@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -63,10 +63,10 @@ Führen Sie die folgenden Schritte aus, um eine Instanz des {{site.data.keyword.
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Führen Sie den Befehl `bx cf create-service` aus, um eine Instanz bereitzustellen.
+3. Führen Sie den Befehl `bx service create` aus, um eine Instanz bereitzustellen.
 
     ```
-	bx cf create-service service_name service_plan service_instance_name
+	bx service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -75,20 +75,18 @@ Führen Sie die folgenden Schritte aus, um eine Instanz des {{site.data.keyword.
 	* service_name ist der Name des Service, also **ibmLogAnalysis**.
 	* service_plan ist der Name des Serviceplans. Eine Liste der Pläne finden Sie unter [Servicepläne] (/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 	* service_instance_name ist der Name, den Sie für die neue von Ihnen erstellte Serviceinstanz verwenden möchten.
-	
-	Weitere Informationen zum Befehl cf finden Sie unter [cf create-service] (/docs/cli/reference/cfcommands/index.html#cf_create-service).
 
 	Beispiel: Führen Sie zum Erstellen einer Instanz des Service {{site.data.keyword.loganalysisshort}} mit einem Lite-Plan den folgenden Befehl aus:
 	
 	```
-	bx cf create-service ibmLogAnalysis standard my_logging_svc
+	bx service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. Stellen Sie sicher, dass der Service ordnungsgemäß erstellt wurde. Führen Sie den folgenden Befehl aus:
 
     ```	
-	bx cf services
+	bx service list
 	```
 	{: codeblock}
 	

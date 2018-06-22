@@ -25,11 +25,11 @@ lastupdated: "2018-01-10"
 
 下表显示了通过 {{site.data.keyword.Bluemix_notm}} 启动 Kibana 时，每种资源的缺省查询：
 
-| 资源| 缺省 Kibana 搜索查询|
+|资源|缺省 Kibana 搜索查询|
 |---------------|---------------|
-| CF 应用程序| `application_id:<app_GUID>`    |
-| 单 Docker 容器| `instance:<instance_GUID>`    |
-| 具有 2 个实例的容器组| `instance:<instance_GUID> OR instance:<instance_GUID>` |
+|CF 应用程序|`application_id:<app_GUID>`    |
+|单 Docker 容器|`instance:<instance_GUID>`    |
+|具有 2 个实例的容器组|`instance:<instance_GUID> OR instance:<instance_GUID>` |
 {: caption="表 1. 缺省查询搜索" caption-side="top"}
 
 **注：** 
@@ -42,15 +42,15 @@ lastupdated: "2018-01-10"
 
 要在“发现”页面中定制表，可以执行以下任一任务：
 
-| 任务| 描述
+|任务|描述
 | 
 |------|-------------|
-| [添加字段列](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_add_fields_to_table)| 添加字段以查看分析所需的特定数据，而不查看完整消息。|
-| [自动刷新数据](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_refresh_interval)| 使用最新的条目刷新表中显示的数据。缺省情况下，刷新为**关闭**。|
-| [按已建立索引的字段的值对条目排序](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_sort_by_table)| 对条目重新排序以更轻松地进行分析。|
-| [重新排列字段列](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_rearrange_fields_in_table)| 将表中字段的位置移至所需的位置。|
-| [除去字段列](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_remove_fields_from_table)| 除去视图中分析不需要的字段。|
-| [查看条目](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_entry_in_table)| 展开表中的条目，以查看按字段解析或解析为 JSON 的条目的详细信息。|
+|[添加字段列](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_add_fields_to_table)|添加字段以查看分析所需的特定数据，而不查看完整消息。|
+|[自动刷新数据](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_refresh_interval)|使用最新的条目刷新表中显示的数据。缺省情况下，刷新为**关闭**。|
+|[按已建立索引的字段的值对条目排序](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_sort_by_table)|对条目重新排序以更轻松地进行分析。|
+|[重新排列字段列](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_rearrange_fields_in_table)|将表中字段的位置移至所需的位置。|
+|[除去字段列](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_remove_fields_from_table)|除去视图中分析不需要的字段。|
+|[查看条目](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_entry_in_table)|展开表中的条目，以查看按字段解析或解析为 JSON 的条目的详细信息。|
 {: caption="表 2. 定制表的任务" caption-side="top"}
 
 <br>
@@ -75,15 +75,15 @@ lastupdated: "2018-01-10"
 
 可以使用在“发现”页面中定义的搜索来执行以下任一任务：
 
-| 任务| 描述
+|任务|描述
 |
 |------|-------------|
-| [删除搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)| 删除不再需要的搜索。|
-| [导出搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search)| 导出搜索以进行共享。|
-| [导入搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search)| 导入搜索。|
-| [重新装入搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)| 上传现有搜索以重新分析一组数据。|
-| [刷新搜索的数据](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search)| 针对通过搜索显示的数据配置自动刷新。|
-| [保存搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)| 保存搜索以供日后复用。|
+|[删除搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)|删除不再需要的搜索。|
+|[导出搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search)|导出搜索以进行共享。|
+|[导入搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search)|导入搜索。|
+|[重新装入搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)|上传现有搜索以重新分析一组数据。|
+|[刷新搜索的数据](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search)|针对通过搜索显示的数据配置自动刷新。|
+|[保存搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)|保存搜索以供日后复用。|
 {: caption="表 3. 使用搜索的任务" caption-side="top"}
 
 
@@ -93,7 +93,7 @@ lastupdated: "2018-01-10"
 
 有关更多信息，请参阅[查看字段数据统计信息](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_fields_stats)。
 
-**注：**表和直方图中显示的数据是静态的。要始终查看最新的条目，必须设置刷新时间间隔。 
+**注**：表和直方图中显示的数据是静态的。要始终查看最新的条目，必须设置刷新时间间隔。 
 
 
 ## 向表添加字段列
@@ -118,7 +118,7 @@ lastupdated: "2018-01-10"
     3. 单击**切换表中的列**图标 ![切换表中的列](images/toggle_field_icon.jpg "“切换列”图像")。
     
 
-**注：**首次向表添加一个字段列时，表中显示的 *_source* 字段列会隐藏。*_source* 字段显示每个日志条目的每个字段的值。向表添加列后，要查看该表中日志条目的其他字段值，请查看每个条目的“表视图”选项卡或 JSON 选项卡。
+**注**：首次向表添加一个字段列时，表中显示的 *_source* 字段列会隐藏。*_source* 字段显示每个日志条目的每个字段的值。向表添加列后，要查看该表中日志条目的其他字段值，请查看每个条目的“表视图”选项卡或 JSON 选项卡。
 
 
 ## 自动刷新数据
@@ -193,7 +193,7 @@ lastupdated: "2018-01-10"
 1. 将鼠标悬停在表中要按其对数据排序的字段的名称上。这将显示不同的操作按钮。
 2. 单击要按其对数据排序的字段的“排序”按钮。再次单击字段排序图标可按逆向顺序排序。
 
-**注：**按时间字段排序时，缺省情况下条目按从新到旧的时间顺序排序。最新的条目最先显示。
+**注**：按时间字段排序时，缺省情况下条目按从新到旧的时间顺序排序。最新的条目最先显示。
 
 
 ## 重新排列表中的字段列

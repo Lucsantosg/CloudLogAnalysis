@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# 虛擬機器的記載功能
+# 虛擬機器
 {: #logging_vm_ov}
 
 不會自動啟用虛擬機器 (VM) 的記載功能。不過，您可以配置 VM，將日誌傳送至「日誌收集」。若要收集日誌資料，並將其從 VM 傳送至 {{site.data.keyword.loganalysisshort}} 服務，您必須配置「多方承租戶 Logstash 轉遞程式 (mt-logstash-forwarder)」。然後，您就可以在 Kibana 中檢視、過濾及分析日誌。
@@ -37,7 +37,7 @@ lastupdated: "2018-01-10"
 
 {{site.data.keyword.loganalysisshort}} 服務提供其他方案，讓您依所需將日誌儲存在「日誌收集」。如需每一個方案價格的相關資訊，請參閱[服務方案](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
 
-* 您可以配置日誌保留原則，用來定義您要將日誌保留在「日誌收集」中的天數。如需相關資訊，請參閱[日誌保留原則](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies)。
+* 您可以配置日誌保留原則，用來定義您要將日誌保留在「日誌收集」中的天數。如需相關資訊，請參閱[日誌保留原則](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy)。
 * 您可以使用「日誌收集 CLI」或「日誌收集 API」，手動刪除日誌。
 
 

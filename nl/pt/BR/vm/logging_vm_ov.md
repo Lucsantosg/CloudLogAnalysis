@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Log para Máquinas Virtuais
+# Máquinas virtuais
 {: #logging_vm_ov}
 
 Os recursos de criação de log não são ativados automaticamente para máquinas virtuais (VMs). No entanto, é possível configurar sua VM para enviar logs para a Coleção de logs. Para coletar e enviar dados de log de uma VM para o serviço {{site.data.keyword.loganalysisshort}}, deve-se configurar um Multi-Tenant Logstash Forwarder (mt-logstash-forwarder). Em seguida, será possível visualizar, filtrar e analisar logs no Kibana.
@@ -37,7 +37,7 @@ Por padrão, o {{site.data.keyword.Bluemix_notm}} armazena dados do log por até
 
 O serviço {{site.data.keyword.loganalysisshort}} fornece planos adicionais que permitem armazenar logs na Coleção de logs o tempo que for necessário. Para obter mais informações sobre o preço de cada plano, veja [Planos de serviços](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-* É possível configurar uma política de retenção de log que possa ser usada para definir o número de dias que você deseja manter os logs na Coleção de logs. Para obter mais informações, veja [Política de retenção de log](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* É possível configurar uma política de retenção de log que possa ser usada para definir o número de dias que você deseja manter os logs na Coleção de logs. Para obter mais informações, veja [Política de retenção de log](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
 * É possível excluir logs manualmente usando a CLI de Coleção de logs ou a API.
 
 

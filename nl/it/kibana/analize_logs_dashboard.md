@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -20,16 +20,16 @@ lastupdated: "2017-07-19"
 Utilizza la pagina *Dashboard* in Kibana per visualizzare le raccolte di visualizzazioni raggruppate nei dashboard. Utilizza i dashboard per analizzare i tuoi dati di log e confrontare i risultati.
 {:shortdesc}
 
-In {{site.data.keyword.Bluemix}}, esistono diversi tipi di dashboard che puoi definire e personalizzare per visualizzare e analizzare i dati. Ad esempio, la seguente tabella elenca alcuni tipi di dashboard comuni:
+In {{site.data.keyword.Bluemix}}, ci sono diversi tipi di dashboard che puoi definire e personalizzare per visualizzare e analizzare i dati. Ad esempio, la seguente tabella elenca alcuni tipi di dashboard comuni:
 
 | Tipo di dashboard | Descrizione |
 |-------------------|-------------|
-| Dashboard a singola applicazione cf | Questo dashboard mostra le informazioni per una singola applicazione Cloud Foundry. |
-| Dashboard a singolo contenitore  | Questo dashboard mostra le informazioni per un singolo contenitore.  |
-| Dashboard del gruppo di contenitori  | Questo dashboard mostra le informazioni per un gruppo di contenitori specifico.  |
-| Dashboard a più applicazioni cf | Questo dashboard mostra informazioni per tutte le applicazioni Cloud Foundry distribuite nello stesso spazio {{site.data.keyword.Bluemix_notm}}.  | 
-| Dashboard a più contenitori | Questo dashboard mostra informazioni per tutti i contenitori distribuiti nello stesso spazio {{site.data.keyword.Bluemix_notm}}.  |
-| Dashboard spazio | Questo dashboard mostra la registrazione dei dati disponibile in uno spazio {{site.data.keyword.Bluemix_notm}}.  | 
+| Dashboard a singola applicazione cf | Questo è un dashboard che mostra le informazioni per una singola applicazione Cloud Foundry. |
+| Dashboard a singolo contenitore  | Questo è un dashboard che mostra le informazioni per un singolo contenitore.  |
+| Dashboard del gruppo di contenitori  | Questo è un dashboard che mostra le informazioni per un gruppo di contenitori specifico.  |
+| Dashboard a più applicazioni cf | Questo è un dashboard che mostra informazioni per tutte le applicazioni Cloud Foundry distribuite nello stesso spazio.  | 
+| Dashboard a più contenitori | Questo è un dashboard che mostra informazioni per tutti i contenitori distribuiti nello stesso spazio.  |
+| Dashboard spazio | Questo è un dashboard che mostra la registrazione dei dati disponibile in uno spazio.  | 
 {: caption="Tabella 1. Esempi di tipi di dashboard" caption-side="top"}
 
 Per visualizzare i dati in un dashboard, configura i pannelli. Kibana include diverse visualizzazioni, come tabella, tendenze e istogramma, che puoi utilizzare per analizzare le informazioni. Una visualizzazione viene aggiunta come un pannello a un dashboard. Puoi aggiungere, rimuovere e riorganizzare i pannelli nel dashboard. Ogni pannello ha un obiettivo diverso. Alcuni pannelli sono organizzati in righe che forniscono i risultati di una o più query. Altri pannelli visualizzano documenti o informazioni personalizzate. Ogni pannello si basa su una ricerca. La ricerca definisce la sottoserie di dati che visualizza il pannello. Ad esempio, puoi configurare un grafico a barre, un grafico a torta o una tabella per visualizzare i dati e analizzarli.  
@@ -47,7 +47,7 @@ La seguente tabella elenca diverse attività che puoi eseguire nella pagina Dash
 | [Salva un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | Puoi salvare un dashboard per un riutilizzo successivo. |
 {: caption="Tabella 2. Attività per lavorare con i dashboard" caption-side="top"}
 
-Per ulteriori informazioni sulle applicazioni Kibana, vedi la [ ![Icona link esterno](../../../icons/launch-glyph.svg "Icona link esterno")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Icona link esterno"){: new_window}.
+Per ulteriori informazioni sulle applicazioni Kibana, vedi la [ ![Icona link esterno](../../../icons/launch-glyph.svg "Icona link esterno")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 
 ## Aggiunta di una nuova ricerca o visualizzazione
@@ -87,7 +87,7 @@ Per creare un nuovo dashboard completa la seguente procedura:
 
 Per eliminare un dashboard, completa le seguenti istruzioni nella pagina **Gestione**:
 
-1. Nella pagina **Gestione**, seleziona la scheda **Oggetti avanzati**.
+1. Nella pagina **Gestione**, seleziona **Oggetti salvati**.
 
 2. Nella scheda **Dashboard**, seleziona il dashboard che desideri eliminare.
 
@@ -98,7 +98,7 @@ Per eliminare un dashboard, completa le seguenti istruzioni nella pagina **Gesti
 
 Per esportare un dashboard come un file JSON, completa la seguente procedura nella pagina **Gestione**:
 
-1. Nella pagina **Gestione**, seleziona la scheda **Oggetti avanzati**.
+1. Nella pagina **Gestione**, seleziona **Oggetti salvati**.
 
 2. Nella scheda **Dashboard**, seleziona il dashboard che desideri esportare.
 
@@ -111,7 +111,7 @@ Per esportare un dashboard come un file JSON, completa la seguente procedura nel
 
 Per importare un dashboard come un file JSON, completa la seguente procedura nella pagina **Gestione**:
 
-1. Nella pagina **Gestione**, seleziona la scheda **Oggetti avanzati**.
+1. Nella pagina **Gestione**, seleziona **Oggetti salvati**.
 
 2. Nella scheda **Dashboard**, seleziona **Importa**.
 

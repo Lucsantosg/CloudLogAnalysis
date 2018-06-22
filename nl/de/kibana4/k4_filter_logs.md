@@ -22,19 +22,17 @@ Auf der Seite 'Discover' können Sie Suchabfragen erstellen und Filter anwenden,
 
 * Sie können Filter aus der *Feldliste* oder aus den Tabelleneinträgen hinzufügen. Ein Filter verfeinert die Datenauswahl durch Ein- oder Ausschließen von Informationen. Sie können einen Filter aktivieren oder inaktivieren, die Filteraktion umkehren, den Filter ein- und ausschalten oder ihn vollständig entfernen. 
 
-Wenn Sie eine neue Suche definiert haben, können Sie sie speichern, um sie für eine spätere Analyse auf der Seite 'Discover' erneut zu verwenden oder um Visualisierungen zu erstellen, die Sie in angepassten Dashboards einsetzen können. Weitere Informationen finden Sie unter [Suche speichern](logging_kibana_filtering_logs.html#k4_save_search).
+Wenn Sie eine neue Suche definiert haben, können Sie sie speichern, um sie für eine spätere Analyse auf der Seite 'Discover' erneut zu verwenden oder um Visualisierungen zu erstellen, die Sie in angepassten Dashboards einsetzen können. 
 
-Wenn Sie eine neue Suche ausführen, werden das Histogramm, die Tabelle und die Feldliste automatisch aktualisiert, sodass sie die Suchergebnisse anzeigen. Informationen darüber, welche Daten angezeigt werden, finden Sie unter [Auf der Seite 'Discover' angezeigte Daten ermitteln](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+Wenn Sie eine neue Suche ausführen, werden das Histogramm, die Tabelle und die Feldliste automatisch aktualisiert, sodass sie die Suchergebnisse anzeigen. Informationen darüber, welche Daten angezeigt werden, finden Sie unter [Auf der Seite 'Discover' angezeigte Daten ermitteln](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
-Die Szenarios in der folgenden Liste veranschaulichen, wie Sie Daten in Ihren Protokollen filtern:
+Sie können angepasste Suchen zum Filtern Ihrer Protokolle erstellen. Die Szenarios in der folgenden Liste veranschaulichen, wie Sie Daten in Ihren Protokollen filtern:
 
-* Sie können angepasste Suchen zum Filtern Ihrer Protokolle erstellen. Weitere Informationen finden Sie unter [Protokolle durch Definieren angepasster Abfragen filtern](k4_filter_queries.html#k4_filter_queries).
-
-* Sie können Ihr Protokoll nach Einträgen durchsuchen, die einen bestimmten Text in dem Wert eines Felds enthalten. Weitere Informationen finden Sie unter [Protokolle für einen bestimmten Text in einem Feldwert filtern](k4_filter_logs_spec_text.html#k4_filter_logs_spec_text).
+* Sie können Ihr Protokoll nach Einträgen durchsuchen, die einen bestimmten Text in dem Wert eines Felds enthalten. Weitere Informationen finden Sie unter [Protokolle für einen bestimmten Text in einem Feldwert filtern](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_text).
  
-* Sie können Ihr Protokoll nach einem bestimmten Feldwert durchsuchen oder Einträge für einen bestimmten Feldwert aus dem Protokoll ausschließen. Weitere Informationen finden Sie unter [Protokolle für einen bestimmten Feldwert filtern](k4_filter_logs_spec_field.html#k4_filter_logs_spec_field).
+* Sie können Ihr Protokoll nach einem bestimmten Feldwert durchsuchen oder Einträge für einen bestimmten Feldwert aus dem Protokoll ausschließen. Weitere Informationen finden Sie unter [Protokolle für einen bestimmten Feldwert filtern](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field).
  
-* Sie können Ihre Protokolle filtern, um Einträge innerhalb eines bestimmten Zeitraums anzuzeigen. Weitere Informationen finden Sie unter [Zeitfilter festlegen](logging_kibana_set_time_filter.html#set_time_filter).
+* Sie können Ihre Protokolle filtern, um Einträge innerhalb eines bestimmten Zeitraums anzuzeigen. Weitere Informationen finden Sie unter [Zeitfilter festlegen](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter).
      
 
 ## Filter für einen Wert hinzufügen, der nicht in der *Feldliste* enthalten ist
@@ -44,7 +42,7 @@ Um einen Filter für einen Wert hinzuzufügen, der nicht in der *Feldliste* ange
 
 Führen Sie die folgenden Schritte aus, um einen Filter für einen Wert hinzuzufügen, der nicht in der Liste enthalten ist, die im Abschnitt *Feldliste* angezeigt wird:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
 
     Die folgende Abbildung zeigt beispielsweise die Werte von Instanzen für eine CF-App in der *Feldliste*. 
     
@@ -83,13 +81,13 @@ Sie können nach Einträgen suchen, die einen bestimmten Feldwert enthalten.
 
 Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen bestimmten Feldwert enthalten:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
 
 2. Geben Sie in der *Feldliste* das Feld an, für das Sie einen Filter definieren möchten, und klicken Sie darauf.
 
     Für das Feld werden maximal fünf Werte angezeigt. Jeder Wert hat zwei Lupenschaltflächen. 
     
-    Wenn Sie den Wert nicht finden, gehen Sie entsprechend den Anweisungen unter [Filter für einen Wert hinzufügen, der nicht in der Feldliste enthalten ist](k4_add_filter_out_value.html#k4_add_filter_out_value) vor.
+    Wenn Sie den Wert nicht finden, gehen Sie entsprechend den Anweisungen unter [Filter für einen Wert hinzufügen, der nicht in der Feldliste enthalten ist](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_add_filter_out_value) vor.
 
 3. Um einen Filter hinzuzufügen, der nach Einträgen in einem Feldwert sucht, wählen Sie die Lupenschaltfläche ![Lupenschaltfläche im Einschlussmodus](images/k4_include_field_icon.jpg "Lupenschaltfläche im Einschlussmodus") für diesen Wert aus.
 
@@ -142,7 +140,7 @@ Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen 
 
 Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die eine bestimmte Protokollquelle enthalten:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
 
 2. Wählen Sie in der *Feldliste* das Feld **source_id** aus.
 
@@ -150,7 +148,7 @@ Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die eine b
 
 3. Um einen Filter hinzuzufügen, der nach Einträgen mit einer bestimmten Quellen-ID (source_id) sucht, wählen Sie die Lupenschaltfläche ![Lupenschaltfläche im Einschlussmodus](images/k4_include_field_icon.jpg "Lupenschaltfläche im Einschlussmodus") für diesen Wert aus.
 
-    Eine Liste der Protokollquellen, die für CF-Apps zur Verfügung stehen, finden Sie unter [Protokollquellen für CF-Apps](../logging_cf_apps.html#logging_bluemix_cf_apps_log_sources).
+    Eine Liste der Protokollquellen, die für CF-Apps zur Verfügung stehen, finden Sie unter [Protokollquellen für CF-Apps](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#cf_apps_log_sources_diego).
 
     Um beispielsweise einen Filter hinzuzufügen, der Protokolleinträge zum Starten, Stoppen oder Absturz einer CF-Anwendung einschließt, wählen Sie die Lupenschaltfläche ![Lupenschaltfläche im Einschlussmodus](images/k4_include_field_icon.jpg "Lupenschaltfläche im Einschlussmodus") aus, die für den Wert *CELL* im Abschnitt mit der *Feldliste* verfügbar ist. Die folgende Abbildung zeigt den Filter mit dem aktivierten Wert *CELL* für die Quellen-ID (source_id).
     
@@ -168,7 +166,7 @@ Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die eine b
 
 Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen bestimmten Protokolltyp enthalten:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
 
 2. Wählen Sie in der *Feldliste* das Feld **type** aus.
 
@@ -194,7 +192,7 @@ Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen 
 
 Führen Sie die folgenden Schritte aus, um Ihre Protokolle im Kibana-Dashboard nach Instanz-ID anzuzeigen und zu filtern:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
 
 2. Wählen Sie in der *Feldliste* eines der folgenden Felder aus, um nach einer bestimmten Instanz-ID zu suchen:
 
@@ -223,7 +221,7 @@ Führen Sie die folgenden Schritte aus, um Ihre Protokolle im Kibana-Dashboard n
 
 Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen bestimmten Nachrichtentyp enthalten:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
 
 2. Wählen Sie in der *Feldliste* das Feld **message_type** aus.
 
@@ -255,11 +253,11 @@ Wenn Elasticsearch den Wert einer Zeichenfolgefelds analysiert, teilt es den Tex
     
 Führen Sie die folgenden Schritte aus, um nach Einträgen suchen, die bestimmten Text in einem Feldwert enthalten:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
 
 2. Geben Sie die Felder an, die standardmäßig in Elasticsearch analysiert werden.
 
-    Um die vollständige Liste der analysierten Felder anzuzeigen, die für das Suchen und Filtern von Protokolldaten zur Verfügung stehen, [laden Sie die Liste der Felder neu](logging_kibana_analize_logs_interactively.html#kibana_discover_view_reload_fields). Führen Sie anschließend in der *Feldliste* auf der Seite 'Discover' die folgenden Schritte aus:
+    Um die vollständige Liste der analysierten Felder anzuzeigen, die für das Suchen und Filtern von Protokolldaten zur Verfügung stehen, [laden Sie die Liste der Felder neu](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_reload_fields). Führen Sie anschließend in der *Feldliste* auf der Seite 'Discover' die folgenden Schritte aus:
     
     1. Klicken Sie auf das Konfigurationssymbol ![Konfigurationssymbol](images/k4_configure_icon.jpg "Konfigurationssymbol"). Der Abschnitt **Selected Fields**, in dem Sie filtern können, wird angezeigt.
 

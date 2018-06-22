@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -42,7 +42,7 @@ Für eine **Node.js-Cloud Foundry-App** können Sie das Protokollierungsmodul "B
 * console.log ('message') sendet die Nachricht an den STDOUT-Datenstrom.
 * console.error ('error_message') sendet die Fehlernachricht an den STDERR-Datenstrom.
 
-Weitere Informationen zu Node.js-Anwendungen finden Sie unter [Protokollierung in Node.js![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://docs.nodejitsu.com/articles/intermediate/how-to-log){: new_window}.
+Weitere Informationen zu Node.js-Anwendungen finden Sie unter [Protokollierung in Node.js![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](https://docs.nodejitsu.com/articles/intermediate/how-to-log/){: new_window}.
 
 
 Weitere Informationen zu **Ruby on Rails-Anwendungen** finden Sie unter [The Logger ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://guides.rubyonrails.org/debugging_rails_applications.html#the-logger){: new_window}.

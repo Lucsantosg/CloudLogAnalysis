@@ -17,7 +17,8 @@ lastupdated: "2018-01-16"
 # 클러스터에 대한 영역 ID 검색
 {: #containers_spaceid}
 
-Cloud Foundry 조직 및 영역의 컨텍스트 내의 {{site.data.keyword.Bluemix_notm}} 계정에서 클러스터를 작성할 수 있습니다. {:shortdesc}
+Cloud Foundry 조직 및 영역의 컨텍스트 내의 {{site.data.keyword.Bluemix_notm}} 계정에서 클러스터를 작성할 수 있습니다. 
+{:shortdesc}
 
 클러스터와 연관된 영역 ID를 찾으려면 다음 명령을 실행하십시오.
 
@@ -26,10 +27,10 @@ bx cs cluster-get ClusterName --json
 ```
 {: codeblock}
 
-여기서, **ClusterName**은 클러스터의 이름입니다. 
+여기서, **ClusterName**은 클러스터의 이름입니다.
 
 
-예를 들어 이 명령 실행에 대한 출력은 다음과 같습니다. 
+예를 들어 이 명령 실행에 대한 출력은 다음과 같습니다.
 
 ```
 {

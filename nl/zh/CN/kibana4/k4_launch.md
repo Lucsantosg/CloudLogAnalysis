@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -20,7 +20,6 @@ lastupdated: "2018-01-10"
 {:shortdesc}
 
 通过 {{site.data.keyword.Bluemix_notm}} 启动 Kibana 可在从中启动 Kibana 的资源的上下文中查看和分析数据。例如，可以在特定 CF 应用程序的上下文中，使用 Kibana 显示该 CF 应用程序的日志。
-    {{site.data.keyword.Bluemix_notm}} 空间。用于过滤仪表板中所显示数据的查询会检索组织中空间的日志条目。Kibana 显示的日志信息包括在您登录到的组织空间内部署的所有资源的记录。 
 
 下表列出用于启动 Kibana 的资源和受支持导航方法：
 
@@ -38,11 +37,6 @@ lastupdated: "2018-01-10"
   <tr>  
   <tr>
     <td>在 Kubernetes 集群中部署的容器</td>
-    <td>否</td>
-    <td>是</td>
-  <tr>  
-  <tr>
-    <td>在 {{site.data.keyword.Bluemix_notm}} 管理的基础架构中部署的容器</td>
     <td>是</td>
     <td>是</td>
   <tr>  
@@ -58,7 +52,7 @@ lastupdated: "2018-01-10"
 
 要在 Kibana 中查看 Cloud Foundry 应用程序或 Docker 容器的日志，请完成以下步骤：
 
-1. 登录到 {{site.data.keyword.Bluemix_notm}}，然后在 {{site.data.keyword.Bluemix_notm}} 仪表板中单击该应用程序名称或容器。 
+1. 登录到 {{site.data.keyword.Bluemix_notm}}，然后在 {{site.data.keyword.Bluemix_notm}}“仪表板”中单击该应用程序名称或容器。 
     
 2. 在 {{site.data.keyword.Bluemix_notm}} UI 中打开“日志”选项卡。
 
@@ -71,7 +65,7 @@ lastupdated: "2018-01-10"
 
     缺省情况下，**发现**页面会装入所选的缺省索引模式，并将时间过滤器设置为最近 30 秒。搜索查询会设置为与 CF 应用程序或 Docker 容器的所有条目相匹配。
 
-    如果“发现”页面未显示任何日志条目，请调整时间选取器。有关更多信息，请参阅[设置时间过滤器](logging_kibana_set_time_filter.html#set_time_filter)。
+    如果“发现”页面未显示任何日志条目，请调整时间选取器。 
 
 
 ##  通过 Web 浏览器导航至 Kibana 仪表板
@@ -101,6 +95,5 @@ lastupdated: "2018-01-10"
           </tr>
         </table>
 
-    如果“发现”页面未显示任何日志条目，请调整时间选取器。有关更多信息，请参阅[设置时间过滤器](logging_kibana_set_time_filter.html#set_time_filter)。
-
+    如果“发现”页面未显示任何日志条目，请调整时间选取器。 
 

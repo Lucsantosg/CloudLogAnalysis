@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -19,32 +19,32 @@ lastupdated: "2018-01-10"
 使用 Kibana 中的*儀表板* 頁面，來顯示分組成各儀表板的視覺效果集合。使用儀表板來分析您的日誌資料並比較結果。
 {:shortdesc}
 
-{{site.data.keyword.Bluemix}} 中有不同類型的儀表板，您可以定義及自訂，以視覺化及分析資料。例如，下表列出一些常見的儀表板類型：
+{{site.data.keyword.Bluemix_notm}} 中有不同類型的儀表板，您可以定義及自訂，以視覺化及分析資料。例如，下表列出一些常見的儀表板類型：
 
-| 儀表板類型 | 說明 |
+|儀表板類型 |說明 |
 |-------------------|-------------|
-| 單一 CF 應用程式儀表板| 此儀表板會顯示單一 Cloud Foundry 應用程式的資訊。|
-| 單一容器儀表板 | 此儀表板會顯示單一容器的資訊。|
-| 容器群組儀表板 | 此儀表板會顯示特定容器群組的資訊。|
-| 多個 CF 應用程式儀表板| 此儀表板會顯示部署在相同空間中的所有 Cloud Foundry 應用程式的資訊。| 
-| 多個容器儀表板| 此儀表板會顯示部署在相同空間中的所有容器的資訊。|
-| 空間儀表板 | 此儀表板會顯示空間中可用的記載資料。| 
+|單一 CF 應用程式儀表板|此儀表板會顯示單一 Cloud Foundry 應用程式的資訊。|
+|單一容器儀表板 |此儀表板會顯示單一容器的資訊。|
+|容器群組儀表板 |此儀表板會顯示特定容器群組的資訊。|
+|多個 CF 應用程式儀表板|此儀表板會顯示部署在相同空間中的所有 Cloud Foundry 應用程式的資訊。| 
+|多個容器儀表板|此儀表板會顯示部署在相同空間中的所有容器的資訊。|
+|空間儀表板 |此儀表板會顯示空間中可用的記載資料。| 
 {: caption="表 1. 儀表板類型範例" caption-side="top"}
 
 若要將儀表板中的資料視覺化，您可以配置畫面。Kibana 包括可用來分析資訊的各種視覺效果，例如表格、趨勢及直方圖。視覺效果會以畫面形式新增至儀表板。您可以新增、移除及重新排列儀表板中的畫面。每一個畫面的目標都不同。部分畫面會組織成數列，以提供一個以上查詢的結果。其他畫面則會顯示文件或自訂資訊。每一個畫面都以搜尋為基礎。搜尋會定義畫面顯示的部分資料。例如，您可以配置長條圖、圓餅圖或表格，以將資料視覺化，並進行分析。  
 
 下表列出您可以在「儀表板」頁面中執行的各種作業：
 
-| 作業 | 相關資訊 |
+|作業 |相關資訊 |
 |------|------------------|
-| [建立新的儀表板](logging_kibana_analize_logs_dashboard.html#K4_dashboard_new) | 您可以建立多個儀表板。每一個儀表板都可以設計為包括不同的搜尋、視覺效果，以及不同部分的日誌資料。|
-| [儲存儀表板](logging_kibana_analize_logs_dashboard.html#k4_dashboard_save) | 您可以儲存儀表板，以供之後重複使用。|
-| [載入儀表板](logging_kibana_analize_logs_dashboard.html#k4_dashboard_reload) | 您可以上傳儀表板，以更新其資料、予以修改或分析資料。|
-| [刪除儀表板](logging_kibana_analize_logs_dashboard.html#k4_dashboard_delete) | 刪除不需要的儀表板。|
-| [匯出儀表板](logging_kibana_analize_logs_dashboard.html#k4_dashboard_export) | 您可以將儀表板匯出成 JSON 檔案。|
-| [匯入儀表板](logging_kibana_analize_logs_dashboard.html#k4_dashboard_import) | 您可以將儀表板匯入成 JSON 檔案。|
-| [共用儀表板](logging_kibana_analize_logs_dashboard.html#k4_dashboard_share) | 您可以透過 HTML 原始檔或透過 Kibana 儀表板來共用儀表板。|
-| [新增視覺效果](logging_kibana_analize_logs_dashboard.html#k4_dashboard_add_visualization) | 您可以將現有視覺效果或搜尋新增至儀表板。|
+| [建立新的儀表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#K4_dashboard_new) |您可以建立多個儀表板。每一個儀表板都可以設計為包括不同的搜尋、視覺效果，以及不同部分的日誌資料。|
+| [儲存儀表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_save) |您可以儲存儀表板，以供之後重複使用。|
+| [載入儀表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_reload) |您可以上傳儀表板，以更新其資料、予以修改或分析資料。|
+| [刪除儀表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_delete) |刪除不需要的儀表板。|
+| [匯出儀表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_export) |您可以將儀表板匯出成 JSON 檔案。|
+| [匯入儀表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_import) |您可以將儀表板匯入成 JSON 檔案。|
+| [共用儀表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_share) |您可以透過 HTML 原始檔或透過 Kibana 儀表板來共用儀表板。|
+| [新增視覺效果](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_add_visualization) |您可以將現有視覺效果或搜尋新增至儀表板。|
 {: caption="表 2. 使用儀表板的作業" caption-side="top"}
 
 如需 Kibana 的相關資訊，請參閱 [Kibana User Guide ![外部鏈結圖示](../../../icons/launch-glyph.svg "外部鏈結圖示")](https://www.elastic.co/guide/en/kibana/4.1/index.html){: new_window}。
@@ -71,13 +71,13 @@ lastupdated: "2018-01-10"
 
 1. 在「儀表板」頁面的工具列中，按一下**新建儀表板**按鈕 ![新建儀表板](images/k4_dash_new_icon.jpg "新建儀表板")。
 
-2. 新增一個以上的搜尋及視覺效果。如需相關資訊，請參閱[新增搜尋或視覺效果](logging_kibana_analize_logs_dashboard.html#K4_dashboard_add_visualization)。
+2. 新增一個以上的搜尋及視覺效果。如需相關資訊，請參閱[新增搜尋或視覺效果](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create)。
 
     當您新增搜尋或視覺效果時，會在儀表板中新增畫面。
 
 3. 將畫面拖放在您要放置的儀表板部分。
  
-4. 儲存儀表板，以供日後重複使用。如需相關資訊，請參閱[儲存 Kibana 儀表板](logging_kibana_analize_logs_dashboard.html#k4_dashboard_save)。
+4. 儲存儀表板，以供日後重複使用。 
 
 ## 刪除 Kibana 儀表板
 {: #k4_dashboard_delete}

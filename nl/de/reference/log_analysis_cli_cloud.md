@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-09"
 
 ---
 
@@ -43,6 +43,10 @@ Informationen zur Verwendung der Befehlszeilenschnittstelle von {{site.data.keyw
     <td>Verwenden Sie diesen Befehl, um Protokolle aus 'Log Collection' in eine lokale Datei herunterzuladen oder um Protokolle an ein anderes Programm (wie z. B. Elastic Stack) umzuleiten. </td>
   </tr>
   <tr>
+    <td>[bx logging log-show](#status)</td>
+    <td>Verwenden Sie diesen Befehl, um Informationen zu den Protokollen abzurufen, die in einem Bereich, einer Organisation oder einem Konto erfasst werden.</td>
+  </tr>
+  <tr>
     <td>[bx logging help](#help)</td>
     <td>Mit diesem Befehl können Sie Hilfeinformationen zur Verwendung der Befehlszeilenschnittstelle und eine Liste aller Befehle abrufen.</td>
   </tr>
@@ -53,6 +57,10 @@ Informationen zur Verwendung der Befehlszeilenschnittstelle von {{site.data.keyw
   <tr>
     <td>[bx logging option-update](#optionupdate)</td>
     <td>Verwenden Sie diesen Befehl zum Festlegen des Aufbewahrungszeitraums für Protokolle, die in einem Bereich, einer Organisation oder einem Konto verfügbar sind.</td>
+  </tr>
+  <tr>
+    <td>[bx logging quota-usage-show](#quotausage)</td>
+    <td>Verwenden Sie diesen Befehl, um die Informationen zur Kontingentnutzung für einen Bereich, eine Organisation oder ein Konto abzurufen. Sie können auch die Informationen zum Kontingentverlauf abrufen.</td>
   </tr>
   <tr>
     <td>[bx logging session-create](#session_create)</td>
@@ -71,8 +79,8 @@ Informationen zur Verwendung der Befehlszeilenschnittstelle von {{site.data.keyw
     <td>Verwenden Sie diesen Befehl, um den Status einer einzelnen Sitzung anzuzeigen.</td>
   <tr>  
   <tr>
-    <td>[bx logging log-show](#status)</td>
-    <td>Verwenden Sie diesen Befehl, um Informationen zu den Protokollen abzurufen, die in einem Bereich, einer Organisation oder einem Konto erfasst werden.</td>
+    <td>[bx logging token-get](#tokenget)</td>
+    <td>Verwenden Sie diesen Befehl, um das Protokollierungstoken anzufordern, um Protokolldaten an den {{site.data.keyword.loganalysisshort}}-Service zu senden.</td>
   </tr>
 </table>
 
@@ -99,17 +107,20 @@ USAGE:
    bx logging command [Argumente...] [Befehlsoptionen]
 
 COMMANDS:
-   log-delete       Protokoll löschen
-   log-download     Protokoll herunterladen
-   log-show         Anzahl, Größe und Typ der Protokolle pro Tag anzeigen
-   session-create   Sitzung erstellen
-   session-delete   Sitzung löschen
-   sessions         Sitzungsinformationen auflisten
-   session-show     Sitzungsinformationen anzeigen
-   option-show      Protokollspeicherung anzeigen
-   option-update    Protokolloptionen anzeigen
-   help             
-   
+COMMANDS:
+   log-delete         Protokoll löschen
+   log-download       Protokoll herunterladen
+   log-show           Anzahl, Größe und Typ der Protokolle pro Tag anzeigen
+   session-create     Sitzung erstellen
+   session-delete     Sitzung löschen
+   sessions           Sitzungsinformationen auflisten
+   session-show       Sitzungsinformationen anzeigen
+   option-show        Protokollspeicherung anzeigen
+   option-update      Protokolloptionen anzeigen
+   token-get          Protokollierungstoken zum Senden von Protokollen abrufen
+   quota-usage-show   Informationen zur Kontingentnutzung anzeigen
+   help
+
 'bx logging help [Befehl]' für weitere Informationen zu einem Befehl eingeben.
 ```
 {: codeblock}
@@ -135,7 +146,7 @@ bx logging log-delete [-r,--resource-type RESSOURCENTYP] [-i,--resource-id RESSO
   </dd>
   
    <dt>-i,--resource-id RESSOURCEN-ID</dt>
-  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest, für den/die/das Sie Informationen abrufen möchten. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
+  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
   </dd>
   
   <dt>-s, --start STARTDATUM</dt>
@@ -182,7 +193,7 @@ Mit diesem Befehl können Sie Protokolle aus 'Log Collection' in eine lokale Dat
   </dd>
   
    <dt>-i,--resource-id RESSOURCEN-ID</dt>
-  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest, für den/die/das Sie Informationen abrufen möchten. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
+  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
   </dd>
  
   <dt>-o, --output AUSGABE</dt>
@@ -298,7 +309,7 @@ bx logging option-show [-r,--resource-type RESSOURCENTYP] [-i,--resource-id RESS
   </dd>
   
    <dt>-i,--resource-id RESSOURCEN-ID</dt>
-  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest, für den/die/das Sie Informationen abrufen möchten. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
+  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
   </dd>
 
 </dl>
@@ -354,6 +365,56 @@ bx logging option-update -e 25
 {: screen}
 
 
+## bx logging quota-usage-show
+{: #quotausage}
+
+Informiert über die Kontingentnutzung für einen Bereich, eine Organisation oder ein Konto. Damit lassen sich auch Informationen zum Kontingentverlauf abrufen.
+
+* Der Zeitraum wird als eine Anzahl von Tagen festgelegt.
+* Der Standardwert ist **-1**. 
+
+```
+bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+```
+{: codeblock}
+
+**Parameter**
+
+<dl>
+  <dt>-r,--resource-type RESSOURCENTYP</dt>
+  <dd>(Optional) Legt den Ressourcentyp fest. Gültige Werte: *Bereich*, *Konto* und *Organisation*
+  </dd>
+  
+   <dt>-i,--resource-id RESSOURCEN-ID</dt>
+  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
+  </dd>
+  
+  <dt>-s,--history</dt>
+  <dd>(Optional) Legen Sie diesen Parameter fest, um die Historieinformationen zur Kontingentnutzung abzurufen.</dd>
+
+</dl>
+
+**Beispiel**
+
+Um die archivierte Kontingentnutzung für eine Bereichsdomäne anzuzeigen, führen Sie den folgenden Befehl aus:
+
+```
+bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Date         Allotmant   Usage
+2018.02.28   524288000   80405926
+2018.03.06   524288000   18955540
+2018.03.05   524288000   47262944
+2018.03.08   524288000   18311338
+2018.03.01   524288000   82416831
+2018.03.03   524288000   75045462
+2018.03.07   524288000   17386278
+2018.03.02   524288000   104316444
+2018.03.04   524288000   73125223
+```
+{: screen}
 
 ## bx logging session-create
 {: #session_create}
@@ -375,7 +436,7 @@ bx logging session-create [-r,--resource-type RESSOURCENTYP] [-i,--resource-id R
   </dd>
   
    <dt>-i,--resource-id RESSOURCEN-ID</dt>
-  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest, für den/die/das Sie Informationen abrufen möchten. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
+  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
   </dd>
   
   <dt>-s, --start STARTDATUM</dt>
@@ -454,7 +515,7 @@ bx session-delete [-r,--resource-type RESSOURCENTYP] [-i,--resource-id RESSOURCE
   </dd>
   
    <dt>-i,--resource-id RESSOURCEN-ID</dt>
-  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest, für den/die/das Sie Informationen abrufen möchten. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
+  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
   </dd>
  
 </dl>
@@ -495,7 +556,7 @@ bx logging sessions [-r,--resource-type RESSOURCENTYP] [-i,--resource-id RESSOUR
       <dd>(Optional) Legt den Ressourcentyp fest. Gültige Werte: *Bereich*, *Konto* und *Organisation* </dd>
   
    <dt>-i,--resource-id RESSOURCEN-ID</dt>
-      <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest, für den/die/das Sie Informationen abrufen möchten. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind.  </dd>
+      <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind.  </dd>
 </dl>
 
 **Rückgabewerte**
@@ -545,7 +606,7 @@ bx logging session-show [-r,--resource-type RESSOURCENTYP] [-i,--resource-id RES
       <dd>(Optional) Legt den Ressourcentyp fest. Gültige Werte: *Bereich*, *Konto* und *Organisation* </dd>
   
    <dt>-i,--resource-id RESSOURCEN-ID</dt>
-      <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest, für den/die/das Sie Informationen abrufen möchten. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind.  </dd>
+      <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind.  </dd>
 </dl>
 
 **Argumente**
@@ -561,6 +622,41 @@ Um Details zu einer Sitzung mit der Sitzungs-ID *cI6hvAa0KR_tyhjxZZz9Uw==* anzuz
 
 ```
 bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+```
+{: screen}
+
+## bx logging token-get
+{: #tokenget}
+
+Gibt das Protokollierungstoken zurück, das zum Senden von Protokolldaten zu {{site.data.keyword.loganalysisshort}} erforderlich ist.
+
+```
+bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+```
+{: codeblock}
+
+**Parameter**
+
+<dl>
+  <dt>-r,--resource-type RESSOURCENTYP</dt>
+  <dd>(Optional) Legt den Typ der Ressource fest, zu der Protokolldaten gesendet werden. Gültige Werte: *Bereich*, *Konto* und *Organisation*
+  </dd>
+  
+   <dt>-i,--resource-id RESSOURCEN-ID</dt>
+  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
+  </dd>
+</dl>
+
+
+**Beispiel**
+
+```
+bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
+OK
+
+Tenant Id                              Logging Token   
+js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx   
 ```
 {: screen}
 
@@ -587,7 +683,7 @@ bx logging log-show [-r,--resource-type RESSOURCENTYP] [-i,--resource-id RESSOUR
   </dd>
   
    <dt>-i,--resource-id RESSOURCEN-ID</dt>
-  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest, für den/die/das Sie Informationen abrufen möchten. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
+  <dd>(Optional) Legen Sie in diesem Feld die ID des Bereichs, der Organisation oder des Kontos fest. <br>Wenn Sie diesen Parameter nicht angeben, wird im Befehl standardmäßig die ID der Ressource verwendet, bei der Sie angemeldet sind. 
   </dd>
   
   <dt>-s, --start STARTDATUM</dt>

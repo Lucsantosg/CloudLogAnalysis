@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,9 +25,10 @@ Procédez comme suit pour envoyer des données de journal dans un espace dans {{
 ## Configuration requise
 {: #prereqs}
 
-* Un {{site.data.keyword.IBM_notm}}ID pour la connexion à {{site.data.keyword.Bluemix_notm}}.
+* Un {{site.data.keyword.Bluemix_notm}}ID pour la connexion à {{site.data.keyword.Bluemix_notm}}.
 * Un ID utilisateur qui dispose de droits permettant d'utiliser le service {{site.data.keyword.loganalysisshort}} dans un espace. Pour plus d'informations, voir [Sécurité](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
 * L'interface de ligne de commande {{site.data.keyword.loganalysisshort}} installée dans votre environnement local.
+* Le service {{site.data.keyword.loganalysisshort}} mis à disposition dans un espace de votre compte avec un plan autorisant l'ingestion de journaux.
 
 
 ## Etape 1 : Obtention du jeton de journalisation
@@ -39,35 +40,28 @@ Effectuez les étapes suivantes depuis une session de terminal dans laquelle l'i
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Exécutez la commande `bx cf logging auth`. 
+2. Exécutez la commande `bx logging token-get`.  
 
     ```
-    bx cf logging auth
+    bx logging token-get
     ```
     {: codeblock}
 
-    La commande renvoie les informations suivantes :
-    
-    * Le jeton de journalisation.
-    * L'ID d'organisation : il s'agit de l'identificateur global unique de l'organisation {{site.data.keyword.Bluemix_notm}} à laquelle vous êtes connecté. 
-    * L'ID d'espace : il s'agit de l'identificateur global unique de l'espace dans l'organisation à laquelle vous êtes connecté. 
+    La commande renvoie le jeton de journalisation. 
     
     Exemple
 
     ```
-    bx cf logging auth
-    +-----------------+--------------------------------------+
-    |      NAME       |                VALUE                 |
-    +-----------------+--------------------------------------+
-    | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_abcdefz                         |
-    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
-    | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
-    +-----------------+--------------------------------------+
+    bx logging token-get
+    Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
+    OK
+
+    Tenant Id                              Logging Token   
+    93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf   oT98_abcdefz   
     ```
     {: screen}
 
-Pour plus d'informations, voir [cf logging auth](/docs/services/CloudLogAnalysis/reference/logging_cli.html#auth).
+    où *Tenant Id* est l'identificateur global unique de l'espace où vous prévoyez d'envoyer les journaux.
 
 
 ## Etape 2 : Configuration de mt-logstash-forwarder
@@ -204,7 +198,7 @@ Procédez comme suit pour configurer mt-logstash-forwarder dans l'environnement 
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>URL cible. Pour la liste des URL d'ingestion, voir [URL d'ingestion](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Par exemple, définissez la valeur **https://ingest.logging.ng.bluemix.net:9091** pour envoyer des journaux dans la région Sud des Etats-Unis. </td>
+            <td>URL cible. Pour la liste des URL d'ingestion, voir [URL d'ingestion](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Par exemple, définissez la valeur **ingest.logging.ng.bluemix.net:9091** pour envoyer des journaux dans la région Sud des Etats-Unis. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>

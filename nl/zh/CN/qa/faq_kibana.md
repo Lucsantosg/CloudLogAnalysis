@@ -22,10 +22,9 @@ lastupdated: "2018-01-10"
 下面是对有关使用 {{site.data.keyword.Bluemix}} 日志记录功能的常见问题的解答。
 {:shortdesc}
 
-* [如果在 Kibana 的“发现”页面中看不到数据该怎么办](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_discover_kibana)
-* [如果获得认证异常该怎么办](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_dashboard_kibana)
-* [如何启动 Kibana 3 或 Kibana 4](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
-* [为什么在 Kibana 的“发现”页面中会看到字段旁边有符号 ?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
+* [如果在 Kibana 的“发现”页面中看不到数据该怎么办](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_discover_kibana)
+* [如果获得认证异常该怎么办](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_dashboard_kibana)
+* [为什么在 Kibana 的“发现”页面中会看到字段旁边有符号 ?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_kibana_question)
 * [尝试更改缺省索引模式时，收到 403 错误](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
 * [简短 URL 不起作用](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
 * [可以在 Bluemix 中搜索帐户日志吗？](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
@@ -80,21 +79,7 @@ lastupdated: "2018-01-10"
 
     如果共享了仪表板，请勿删除这些可视化项，否则会影响使用同一仪表板的其他团队成员。
 
-## 如何启动 Kibana 3 或 Kibana 4
-{: #logging_qa_kibana3}
 
-**注：**不推荐使用 Kibana 3。
-
-您可以通过浏览器启动 Kibana 3 或 Kibana 4。
-
-要通过浏览器启动 Kibana，请完成以下步骤：
-
-1. 打开 [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net) 以登录到 Kibana 用户界面。
-    
-2. 选择要用于分析日志的 Kibana 版本。
-    * 选择 **Kibana 4** 选项卡以使用 Kibana 4。这将打开“发现”页面。有关更多信息，请参阅[在 Kibana 中以交互方式分析日志](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_kibana_analize_logs_interactively.html#kibana_analize_logs_interactively)。
-    * 选择 **Kibana 3** 选项卡以使用 Kibana 3。这将打开缺省 Kibana 仪表板。有关使用 Kibana 3 来分析日志的信息，请参阅[在 Kibana 3 中分析日志（不推荐）](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3)。有关定制 Kibana 3 仪表板的更多信息，请参阅[此博客帖子 ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/){: new_window}。
-     
 
 ## 为什么在 Kibana 的“发现”页面中会看到字段旁边有符号 ?
 {: #logging_qa_kibana_question}
@@ -119,9 +104,9 @@ lastupdated: "2018-01-10"
 
 作为帐户所有者，可以搜索并分析帐户日志。
 
-请完成以下步骤以查看帐户日志：
+要查看帐户日志，请完成以下步骤：
 
-1. [启动 Kibana。](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)例如，对于美国南部区域，使用 URL https://logging.ng.bluemix.net。
+1. [启动 Kibana。](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)例如，对于美国南部区域，使用 URL `https://logging.ng.bluemix.net`。
 
 2. 选择选项**查看 AccountName 帐户日志**以显示帐户日志。*AccountName* 是帐户的名称。
 

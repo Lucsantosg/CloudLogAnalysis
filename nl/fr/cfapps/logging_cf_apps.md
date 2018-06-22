@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -14,10 +14,10 @@ lastupdated: "2018-01-10"
 {:screen: .screen}
 {:pre: .pre}
 
-# Journalisation pour les applications Cloud Foundry dans {{site.data.keyword.Bluemix_notm}}
-{: #logging_bluemix_cf_apps}
+# Applications Cloud Foundry
+{: #logging_cf_apps}
 
-Dans {site.data.keyword.Bluemix}}, vous pouvez afficher, filtrer et analyser les journaux Cloud Foundry (CF) depuis le tableau de bord {{site.data.keyword.Bluemix_notm}}, Kibana et l'interface de ligne de commande. De plus, vous pouvez compacter des enregistrements de journal dans un outil de gestion de journal externe. 
+Dans {{site.data.keyword.Bluemix}}, vous pouvez afficher, filtrer et analyser les journaux Cloud Foundry (CF) depuis le tableau de bord {{site.data.keyword.Bluemix_notm}}, Kibana et l'interface de ligne de commande. De plus, vous pouvez compacter des enregistrements de journal dans un outil de gestion de journal externe. 
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} enregistre les données de journal générées par la plateforme Cloud Foundry et par les applications Cloud Foundry. Ces journaux comportent les erreurs, les avertissements et les messages d'information qui sont générés pour votre application. 
@@ -54,7 +54,7 @@ limite de 1,5 Go de données est atteinte ou au bout de 3 jours.
 Le service {{site.data.keyword.loganalysisshort}} fournit des plans additionnels qui vous permettent de stocker des journaux dans Log Collection aussi longtemps que vous
 en avez besoin. 
 
-* Vous pouvez configurer une règle de conservation des journaux pour définir le nombre de jours pendant lequel vous souhaitez conserver les journaux dans Log Collection. Pour plus d'informations, voir [Règle de conservation des journaux](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* Vous pouvez configurer une règle de conservation des journaux pour définir le nombre de jours pendant lequel vous souhaitez conserver les journaux dans Log Collection. Pour plus d'informations, voir [Règle de conservation des journaux](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
 * Vous pouvez supprimer les journaux manuellement via l'interface de ligne de commande ou l'API.
 
 Pour obtenir plus d'informations sur le tarif de chaque plan, voir [Plans de service](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
@@ -76,11 +76,11 @@ Vous pouvez choisir l'une des méthodes suivantes pour analyser les journaux de 
 
 * Analyser le journal dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}} pour afficher la dernière activité de l'application.
     
-    Dans {{site.data.keyword.Bluemix_notm}}, vous pouvez afficher, filtrer et analyser des journaux depuis l'onglet **Journal** disponible pour chaque application Cloud Foundry. Pour plus d'informations, voir [Analyse des journaux d'application CF dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#launch_logs_cloud_ui_cf).
+    Dans {{site.data.keyword.Bluemix_notm}}, vous pouvez afficher, filtrer et analyser des journaux depuis l'onglet **Journal** disponible pour chaque application Cloud Foundry. Pour plus d'informations, voir [Analyse des journaux de l'application CF via le tableau de bord de l'application CF](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_ui).
     
 * Analyser les journaux dans Kibana pour effectuer des tâches analytiques avancées.
     
-    Dans {{site.data.keyword.Bluemix_notm}}, vous pouvez utiliser la plateforme de visualisation et d'analyse open source Kibana pour surveiller, rechercher, analyser et afficher des données dans différents graphiques, par exemple des diagrammes et des tableaux. Pour plus d'informations, voir [Analyse des journaux dans Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+    Dans {{site.data.keyword.Bluemix_notm}}, vous pouvez utiliser la plateforme de visualisation et d'analyse open source Kibana pour surveiller, rechercher, analyser et afficher des données dans différents graphiques, par exemple des diagrammes et des tableaux. Pour plus d'informations, voir [Analyse des journaux de l'application CF via l'interface utilisateur {{site.data.keyword.loganalysisshort}}](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_la).
 	
 	**Astuce :** pour lancer Kibana, voir [Accès à Kibana depuis le
 tableau de bord d'une application CF](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
@@ -149,7 +149,7 @@ Chaque entrée de journal comporte les zones suivantes :
 {: caption="Tableau 1. Zones d'entrée de journal d'une application CF" caption-side="top"}
 
 
-## Tutoriel : Analyse des journaux dans Kibana pour une application Cloud Foundry 
+## Tutoriel : Analyse des journaux dans Kibana pour une application Cloud Foundry
 {: #tutorial}  
 
-Pour apprendre à utiliser Kibana afin d'analyser les journaux pour une application Cloud Foundry, voir [Analyse des journaux dans Kibana pour une application Cloud Foundry](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).
+Pour apprendre à utiliser Kibana afin d'analyser les journaux pour une application Cloud Foundry, voir [Analyse des journaux dans Kibana pour une application Cloud Foundry](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs).

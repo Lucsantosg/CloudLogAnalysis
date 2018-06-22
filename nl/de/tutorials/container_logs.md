@@ -3,16 +3,19 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-12"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Protokolle in Kibana für eine App analysieren, die in einem Kubernetes-Cluster bereitgestellt ist
@@ -40,7 +43,7 @@ In diesem Lernprogramm werden die Schritte gezeigt, die erforderlich sind, um da
 
     Ihrer Benutzer-ID für {{site.data.keyword.Bluemix_notm}} müssen die folgenden Richtlinien zugewiesen sein:
     
-    * Eine IAM-Richtlinie für den {{site.data.keyword.containershort}} mit *Operator*- oder *Administrator*-Berechtigungen.
+    * Eine IAM-Richtlinie für den {{site.data.keyword.containershort}} mit den Berechtigungen *editor*, *operator* oder *administrator*.
     * Eine CF-Rolle für den Bereich, in dem der {{site.data.keyword.loganalysisshort}}-Service mit *Entwickler*-Berechtigungen bereitgestellt wird.
     
     Weitere Informationen finden Sie unter [Einem Benutzer eine IAM-Richtlinie über die IBM Cloud-Benutzerschnittstelle zuweisen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account) und [Einem Benutzer Berechtigungen zum Anzeigen von Bereichsprotokollen unter Verwendung der IBM Cloud-Benutzerschnittstelle erteilen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
@@ -75,8 +78,7 @@ Führen Sie die folgenden Schritte aus:
 
 1. Erstellen Sie einen Standard-Kubernetes-Cluster.
 
-   * [Erstellen Sie einen Kubernetes-Standardcluster über die Benutzerschnittstelle](/docs/containers/cs_cluster.html#cs_cluster_ui).
-   * [Erstellen Sie einen Kubernetes-Standardcluster über die CLI](/docs/containers/cs_cluster.html#cs_cluster_cli).
+   Weitere Informationen finden Sie unter [Cluster erstellen](/docs/containers/cs_tutorials.html#cs_cluster_tutorial).
 
 2. Richten Sie den Clusterkontext in einem Terminal ein. Nachdem der Kontext festgelegt ist, können Sie den Kubernetes-Cluster verwalten und die Anwendung im Kubernetes-Cluster bereitstellen.
 
@@ -108,7 +110,7 @@ Führen Sie die folgenden Schritte aus:
 
 
 ## Schritt 2: Ihren Cluster für die automatische Weiterleitung von Protokollen an den {{site.data.keyword.loganalysisshort}}-Service konfigurieren
-{: #step3}
+{: #step2}
 
 Wenn die App bereitgestellt wird, werden Protokolle automatisch vom {{site.data.keyword.containershort}} erfasst. Jedoch werden Protokolle nicht automatisch an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet. Sie müssen mindestens eine Protokollierungskonfiguration in Ihrem Cluster erstellen, die Folgendes definiert:
 
@@ -144,7 +146,7 @@ Informationen zum Anzeigen der Liste von Protokollquellen, für die Sie eine Pro
 
 
 ### Konfigurieren Sie Ihren Cluster so, dass 'stderr'- und 'stdout'-Protokolle an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet werden
-{: #containerlogs}
+{: #containerstd}
 
 
 Führen Sie die folgenden Schritte aus, um 'stdout'- und 'stderr'-Protokolle an eine Bereichsdomäne zu senden, wobei der Name der Organisation *MyOrg* und der Name des Bereichs *dev* in der Region "USA (Süden)" ist:
@@ -227,8 +229,8 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 
 
 
-## Schritt 4: Ihrem Benutzer Berechtigungen erteilen, damit dieser Protokolle in einer Bereichsdomäne anzeigen kann
-{: #step4}
+## Schritt 3: Ihrem Benutzer Berechtigungen erteilen, damit dieser Protokolle in einer Bereichsdomäne anzeigen kann
+{: #step3}
 
 Um einem Benutzer Berechtigungen zum Anzeigen von Protokollen in einem Bereich zu erteilen, müssen Sie diesen Benutzer eine Cloud Foundry-Rolle zuweisen, die die Aktionen beschreibt, die dieser Benutzer mit dem {{site.data.keyword.loganalysisshort}}-Service im Bereich ausführen kann. 
 
@@ -265,11 +267,13 @@ Führen Sie die folgenden Schritte aus, um einem Benutzer Berechtigungen für di
 7. Klicken Sie auf **Rolle speichern**.
 
 
-## Schritt 5: Die {{site.data.keyword.containershort_notm}}-Schlüsseleignerberechtigungen erteilen
-{: #step5}
+## Schritt 4: Die {{site.data.keyword.containershort_notm}}-Schlüsseleignerberechtigungen erteilen
+{: #step4}
 
+Damit Clusterprotokolle an einen Bereich weitergeleitet werden können, muss der {{site.data.keyword.containershort_notm}}-Schlüsseleigner die folgenden Berechtigungen besitzen:
 
-Wenn Sie Protokolle an einen Bereich weiterleiten, müssen Sie auch Cloud Foundry (CF)-Berechtigungen an den {{site.data.keyword.containershort}}-Schlüsseleigner in der Organisation und im Bereich erteilen. Der Schlüsseleigner benötigt die Rolle *Organisationsmanager* für die Organisation sowie die Rollen *Bereichsmanager* und *Entwickler* für den Bereich. 
+* IAM-Richtlinie für den {{site.data.keyword.loganalysisshort}}-Service mit den Berechtigungen als *Administrator*.
+* Cloud Foundry (CF)-Berechtigungen in der Organisation und in dem Bereich, an die die Protokolle weitergeleitet werden. Der Container-Schlüsseleigner benötigt die *orgManager*-Rolle für die Organisation sowie die Rollen *SpaceManager* und *Developer* für den Bereich.
 
 Führen Sie die folgenden Schritte aus:
 
@@ -289,26 +293,31 @@ Führen Sie die folgenden Schritte aus:
     Klicken Sie in der Menüleiste auf **Verwalten > Konto > Benutzer**.  Im Fenster *Benutzer* wird eine Liste mit Benutzern und den entsprechenden E-Mail-Adressen für das aktuell ausgewählte Konto angezeigt.
 	
     Wählen Sie die ID des Benutzers aus und überprüfen Sie, ob der Benutzer über die Rolle *Organisationsmanager* für die Organisation sowie die Rollen *Bereichsmanager* und *Entwickler* für den Bereich verfügt.
- 
-3. Wenn der Benutzer nicht über die richtigen Berechtigungen verfügt, führen Sie die folgenden Schritte aus:
 
-    1. Erteilen Sie dem Benutzer die folgenden Berechtigungen: die Rolle *Organisationsmanager* für die Organisation sowie die Rollen *Bereichsmanager* und *Entwickler* für den Bereich. Weitere Informationen finden Sie unter [Einem Benutzer Berechtigungen zum Anzeigen von Bereichsprotokollen unter Verwendung der IBM Cloud-Benutzerschnittstelle erteilen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
+    Wenn der Benutzer nicht über die richtigen Berechtigungen verfügt, erteilen Sie dem Benutzer die folgenden Berechtigungen: die Rolle *orgManager* für die Organisation sowie die Rollen *SpaceManager* und *Developer* für den Bereich. Weitere Informationen finden Sie unter [Einem Benutzer Berechtigungen zum Anzeigen von Bereichsprotokollen unter Verwendung der IBM Cloud-Benutzerschnittstelle erteilen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
     
-    2. Aktualisieren Sie die Protokollierungskonfiguration. Führen Sie den folgenden Befehl aus:
+3. Überprüfen Sie, ob der als {{site.data.keyword.containershort}}-Schlüsseleigner identifizierte Benutzer über die IAM-Richtlinie für den {{site.data.keyword.loganalysisshort}}-Service mit den Berechtigungen als *Administrator* verfügt. 
+
+    Klicken Sie in der Menüleiste auf **Verwalten > Konto > Benutzer**.  Im Fenster *Benutzer* wird eine Liste mit Benutzern und den entsprechenden E-Mail-Adressen für das aktuell ausgewählte Konto angezeigt.
+	
+    SWählen Sie die ID des Benutzers aus und überprüfen Sie, ob der Benutzer über den IAM-Richtliniensatz verfügt. 
+
+    Wenn der Benutzer nicht über die IAM-Richtlinie verfügt, siehe [Einem Benutzer über die IBM Cloud-Benutzerschnittstelle eine IAM-Richtlinie zuweisen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
+
+4. Aktualisieren Sie die Protokollierungskonfiguration. Führen Sie den folgenden Befehl aus:
     
-        ```
-        bx cs logging-config-refresh ClusterName
-        ```
-        {: codeblock}
+    ```
+    bx cs logging-config-refresh ClusterName
+    ```
+    {: codeblock}
         
-        Dabei ist *Clustername* der Name des Clusters.
-
-
-
+    Dabei ist *Clustername* der Name des Clusters.
 	
 
-## Schritt 6: Eine Beispielapp im Kubernetes-Cluster bereitstellen, um Inhalt in 'stdout' zu generieren
-{: #step6}
+
+
+## Schritt 5: Eine Beispielapp im Kubernetes-Cluster bereitstellen, um Inhalt in 'stdout' zu generieren
+{: #step5}
 
 Stellen Sie eine Beispielapp im Kubernetes-Cluster bereit und führen Sie sie aus. Führen Sie die Schritte des folgenden Lernprogramms aus, um die Beispielapp bereitzustellen: [Lerneinheit 1: Apps für einzelne Instanzen in Kubernetes-Cluster bereitstellen](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1).
 
@@ -334,8 +343,8 @@ In dieser Beispielapp schreibt die App, wenn Sie sie in einem Browser testen, di
 
 
 
-## Schritt 7: Protokolldaten in Kibana anzeigen
-{: #step7}
+## Schritt 6: Protokolldaten in Kibana anzeigen
+{: #step6}
 
 Führen Sie die folgenden Schritte aus:
 
@@ -354,7 +363,7 @@ Führen Sie die folgenden Schritte aus:
 	
     Kibana wird geöffnet.
     
-    **HINWEIS:** Achten Sie darauf, Kibana in der Region zu starten, an die Sie Ihre Clusterprotokolle weiterleiten. Informationen zu den URLs für die einzelnen Regionen finden Sie unter [Protokollierungsendpunkte](docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana).
+    **HINWEIS:** Achten Sie darauf, Kibana in der Region zu starten, an die Sie Ihre Clusterprotokolle weiterleiten. Informationen zu den URLs für die einzelnen Regionen finden Sie unter [Protokollierungsendpunkte](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana).
     	
 2. Führen Sie die folgenden Schritte aus, um Protokolldaten anzuzeigen, die in der Bereichsdomäne verfügbar sind:
 
@@ -427,8 +436,8 @@ Führen Sie die folgenden Schritte aus:
 Weitere Informationen zu anderen Suchfeldern, die für Kubernetes-Cluster relevant sind, finden Sie unter [Protokolle durchsuchen](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#log_search).
 
 
-## Schritt 8: Daten nach Kubernetes-Clusternamen in Kibana filtern
-{: #step8}
+## Schritt 7: Daten nach Kubernetes-Clusternamen in Kibana filtern
+{: #step7}
     
 In der Tabelle, die auf der Seite *Discover* angezeigt wird, können Sie alle Einträge sehen, die für die Analyse zur Verfügung stehen. Die aufgelisteten Einträge entsprechen der Suchabfrage, die in der *Suchleiste* angezeigt wird. Verwenden Sie einen Stern (*), um alle Einträge im Zeitraum anzuzeigen, die für die Seite konfiguriert sind.
     

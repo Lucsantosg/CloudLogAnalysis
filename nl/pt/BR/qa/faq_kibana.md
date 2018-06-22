@@ -16,18 +16,17 @@ lastupdated: "2018-01-10"
 {:pre: .pre}
 
 
-# FAQ do Kibana
+# Perguntas mais frequentes do Kibana
 {: #faq_kibana}
 
 A seguir estão as respostas para perguntas comuns sobre como usar os recursos de criação de log
 do {{site.data.keyword.Bluemix}}. {:shortdesc}
 
 * [O que poderei fazer se eu não conseguir ver
-os dados na página Descobrir no Kibana?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_discover_kibana)
+os dados na página Descobrir no Kibana?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_discover_kibana)
 * [O que poderei fazer se eu receber uma
-exceção de autenticação?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_dashboard_kibana)
-* [Como ativar o Kibana 3 ou Kibana 4](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
-* [Por que eu vejo o símbolo? por campos na página Descobrir do Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
+exceção de autenticação?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_dashboard_kibana)
+* [Por que eu vejo o símbolo? por campos na página Descobrir do Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_kibana_question)
 * [Recebo um erro 403 quando tento mudar o padrão de índice padrão](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
 * [URL curta não funciona](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
 * [Posso procurar meus logs de contas no Bluemix?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
@@ -99,21 +98,7 @@ recebe acesso para ver dados nas visualizações que estiverem causando o proble
     Se você compartilhar o Painel, não exclua as visualizações, já que isso afetará outros membros da
 equipe que usam o mesmo painel.
 
-## Como ativar o Kibana 3 ou Kibana 4
-{: #logging_qa_kibana3}
 
-**Nota**: o Kibana 3 foi descontinuado.
-
-É possível ativar o Kibana 3 ou Kibana 4 em um navegador.
-
-Conclua a etapa a seguir para ativar o Kibana por meio de um navegador:
-
-1. Abra [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net) para efetuar login na interface com o usuário do Kibana.
-    
-2. Selecione a versão do Kibana que deseja usar para analisar seus logs.
-    * Selecione a guia **Kibana 4** para trabalhar com o Kibana 4. A página Descobrir se abre. Para obter mais informações, consulte [Analisando logs interativamente no Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_kibana_analize_logs_interactively.html#kibana_analize_logs_interactively).
-    * Selecione a guia **Kibana 3** para trabalhar com o Kibana 3. O painel do Kibana padrão é aberto. Para obter informações sobre como usar o Kibana 3 para analisar seus logs, consulte [Analisando logs no Kibana 3 (descontinuado)](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3). Para obter mais informações sobre como customizar um painel do Kibana 3, veja [esta postagem do blog ![Ícone de link externo](../../../icons/launch-glyph.svg "Ícone de link externo")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/){: new_window}.
-     
 
 ## Por que eu vejo o símbolo? por campos na página Descobrir do Kibana
 {: #logging_qa_kibana_question}
@@ -140,7 +125,7 @@ Como um proprietário da conta, é possível procurar e analisar seus logs de co
 
 Conclua as etapas a seguir para ver seus logs de contas:
 
-1. [Ative o Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser). Por exemplo, para a região Sul dos EUA, use a URL https://logging.ng.bluemix.net,
+1. [Ative o Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser). Por exemplo para a região Sul dos EUA, use a URL `https://logging.ng.bluemix.net`,
 
 2. Selecione a opção **Visualizar logs da conta AccountName** para exibir os logs da conta. *AccountName* é o nome da conta.
 

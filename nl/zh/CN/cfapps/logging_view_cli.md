@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -21,8 +21,8 @@ lastupdated: "2018-01-10"
 在 {{site.data.keyword.Bluemix}} 中，可以通过命令行界面来查看、过滤和分析日志。
 {:shortdesc}
 
-要分析 Cloud Foundry (CF) 应用程序日志，请使用以下命令：`cf logs`
-有关更多信息，请参阅[通过 CLI 分析 CF 应用程序日志](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_cf_logs_cli)。
+要分析 Cloud Foundry (CF) 应用程序日志，请使用以下命令：`bx cf logs`
+有关更多信息，请参阅 [cf logs](/docs/cli/reference/cfcommands/index.html#cf_logs)。
 
 
 ## 通过 CLI 分析 CF 应用程序日志
@@ -47,7 +47,7 @@ lastupdated: "2018-01-10"
 
 2. 在命令行中，运行以下命令以显示所有日志：
 
-   <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var></code></pre>
+   <pre class="pre screen"><code> bx cf logs <var class="keyword varname">appname</var></code></pre>
    
    
 ### 查看 Cloud Foundry 应用程序的最新日志条目
@@ -59,7 +59,7 @@ lastupdated: "2018-01-10"
 
 2. 在命令行中，运行以下命令以显示所有日志：
 
-     <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var> --recent</code></pre>
+     <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent</code></pre>
 
 <div class="note tip"><span class="tiptitle">提示：</span>在一个命令行窗口中运行 <span class="keyword cmdname">cf push</span> 或 <span class="keyword cmdname">cf start</span> 命令时，可以在另一个命令行窗口中输入 <samp class="ph codeph">cf logs appname --recent</samp> 来实时查看日志。</div>
 
@@ -73,7 +73,7 @@ lastupdated: "2018-01-10"
 
 2. 在命令行中，运行以下命令以显示所有日志：
 
-    <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
+    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
     
     有关 **cut** 选项的更多信息，请输入 **cut --help**。
 
@@ -87,13 +87,12 @@ lastupdated: "2018-01-10"
 
 2. 在命令行中，运行以下命令以显示所有日志：
 
-    <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
+    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
     
 
 例如，要显示包含关键字 **APP** 的日志条目，可以使用以下命令：
 
-<pre class="pre screen"><code>cf logs appname --recent | grep '\[App'
-</code></pre>
+<pre class="pre screen"><code>bx cf logs appname --recent | grep '\[App'</code></pre>
 
 有关 **grep** 选项的更多信息，请输入 **grep --help**。
 
@@ -105,7 +104,7 @@ lastupdated: "2018-01-10"
 ### Cloud Foundry 应用程序日志
 {: #cf_app_logs_cli}
 
-将 Cloud Foundry 应用程序部署到 {{site.data.keyword.Bluemix}} 后，将为该应用程序提供以下日志：
+将 Cloud Foundry 应用程序部署到 {{site.data.keyword.Bluemix_notm}} 后，将为该应用程序提供以下日志：
 
 **buildpack.log**
 
@@ -121,10 +120,10 @@ lastupdated: "2018-01-10"
 
 此日志文件会在编译打包任务的主要步骤之后记录消息。您可以使用此日志来对编译打包问题进行故障诊断。
 
-要查看此日志，请输入以下命令：`cf files appname logs/staging_task.log`
+要查看此日志，请输入以下命令：`bx cf files appname logs/staging_task.log`
 
 
-**注：**有关如何启用应用程序日志记录的信息，请参阅[调试运行时错误](/docs/debug/index.html#debugging-runtime-errors)。
+**注**：有关如何启用应用程序日志记录的信息，请参阅[调试运行时错误](/docs/debug/index.html#debugging-runtime-errors)。
 
 
 

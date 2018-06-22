@@ -190,7 +190,7 @@ Vous ne pouvez trier les entrées de la table que pour les zones qui ont été i
 Pour identifier les zones indexées, procédez comme suit :
 
 1. Dans la page Discover, cliquez sur l'icône de configuration ![Icône Configurer](images/configure_icon.jpg "configure icon") disponible
-dans la section **Available fields**. 
+dans la section **Available fields**.
 
 2. Pour identifier les zones indexées, sélectionnez **Yes** pour la zone de recherche **Indexed**.
 

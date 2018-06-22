@@ -53,9 +53,9 @@ os dados possam ser analisados interativamente.
 |------|-------------|
 | [Incluir uma coluna de campo](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_add_fields_to_table) | Inclua campos para ver os dados específicos que são necessários para análise em vez
 da mensagem completa. |
-| [Atualizar automaticamente os dados](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_refresh_interval) | Atualize os dados exibidos na tabela com as entradas mais recentes. Por
+| [Atualizar os dados automaticamente](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_refresh_interval) | Atualize os dados exibidos na tabela com as entradas mais recentes. Por
 padrão, a atualização é **OFF**. |
-| [Ordenar entradas por valor de um campo indexado](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_sort_by_table) | Reordene as entradas para facilitar a análise. |
+| [Ordenar as entradas por valor de um campo indexado](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_sort_by_table) | Reordene as entradas para facilitar a análise. |
 | [Reorganizar uma coluna de campo](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_rearrange_fields_in_table) | Mova a posição de um campo na tabela para a posição desejada. |
 | [Remover uma coluna de campo](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_remove_fields_from_table) | Remova um campo quando ele não for necessário na visualização para análise. |
 | [Visualizar uma entrada](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_entry_in_table) | Expanda uma entrada na tabela para ver os detalhes da entrada analisada por campo ou como

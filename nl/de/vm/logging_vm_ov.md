@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -12,7 +12,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Protokollierung für virtuelle Maschinen
+# Virtuelle Maschinen
 {: #logging_vm_ov}
 
 Die Protokollfunktionen werden für virtuelle Maschinen (VMs) nicht automatisch aktiviert. Sie können Ihre VM jedoch so konfigurieren, dass sie Protokolle an 'Log Collection' sendet. Zum Erfassen und Senden von Protokolldaten von einer VM an den {{site.data.keyword.loganalysisshort}}-Service müssen Sie einen Multi-Tenant Logstash Forwarder (mt-logstash-forwarder) konfigurieren. Anschließend können Sie Protokolle in Kibana anzeigen, filtern und analysieren.
@@ -37,7 +37,7 @@ Standardmäßig speichert {{site.data.keyword.Bluemix_notm}} Protokolldaten für
 
 Der {{site.data.keyword.loganalysisshort}}-Service bietet zusätzliche Pläne, mit denen Sie Protokolle in 'Log Collection' so lange wie erforderlich speichern können. Weitere Informationen zu den Preisen der einzelnen Pläne finden Sie unter [Servicepläne](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-* Sie können eine Protokollaufbewahrungsrichtlinie konfigurieren, die die Anzahl Tage definiert, für die Protokolle in 'Log Collection' aufbewahrt werden. Weitere Informationen finden Sie unter [Protokollaufbewahrungsrichtlinie](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies).
+* Sie können eine Protokollaufbewahrungsrichtlinie konfigurieren, die die Anzahl Tage definiert, für die Protokolle in 'Log Collection' aufbewahrt werden. Weitere Informationen finden Sie unter [Protokollaufbewahrungsrichtlinie](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
 * Sie können die API oder die Befehlszeilenschnittstelle von 'Log Collection' verwenden, um Protokolle manuell zu löschen.
 
 

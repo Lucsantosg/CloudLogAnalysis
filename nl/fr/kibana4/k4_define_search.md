@@ -30,11 +30,11 @@ Pour définir une recherche personnalisée, procédez comme suit :
 
     2. Accédez à Kibana. Cliquez sur **Vue avancée** ![Lien Vue avancée](images/logging_advanced_view.jpg "Lien Vue avancée"). Le tableau de bord Kibana s'affiche.
     
-    Pour les conteneurs s'exécutant dans un cluster Kubernetes, [lancez Kibana depuis le navigateur](k4_launch.html#launch_Kibana_from_browser). 
+    Pour les conteneurs s'exécutant dans un cluster Kubernetes, [lancez Kibana depuis le navigateur](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser). 
     
     Lorsque vous accédez à Kibana, la recherche par défaut est appliquée. Vous pouvez voir les journaux de la liste d'instances de la ressource pour laquelle vous avez lancé Kibana. Vous pouvez filtrer les journaux pour une ressource {{site.data.keyword.Bluemix_notm}} spécifique ou pour toutes les ressources dans cet espace.
 
-2. Examinez la page Discover pour déterminer le sous-ensemble de données qu'elle affiche. Pour plus d'informations, voir [Identification des données affichées dans votre page Kibana Discover](logging_kibana_analize_logs_interactively.html#k4_identify_data). Modifiez ensuite la recherche par défaut pour filtrer les entrées.
+2. Examinez la page Discover pour déterminer le sous-ensemble de données qu'elle affiche. Pour plus d'informations, voir  [Identification des données affichées dans votre page Kibana Discover](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). Modifiez ensuite la recherche par défaut pour filtrer les entrées.
 
     **Remarque :** utilisez le langage Lucene pour définir votre requête par défaut. Pour plus d'informations, voir [Apache Lucene - Query Parser Syntax  ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}
     
@@ -48,9 +48,8 @@ Pour définir une recherche personnalisée, procédez comme suit :
 
      Par exemple, pour une application CF, vous pouvez créer une requête `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]` qui ne répertorie que des entrées pour les instances *0* et *1*. 
 
-3. Enregistrez la requête pour pouvoir la réutiliser ultérieurement. Pour plus d'informations, voir [Sauvegarde d'une recherche](logging_kibana_filtering_logs.html#k4_save_search). 
+3. Enregistrez la requête pour pouvoir la réutiliser ultérieurement. 
 
-**Remarque :** si vous devez supprimer une requête, voir [Suppression d'une recherche](logging_kibana_filtering_logs.html#k4_delete_search).
 
 
 

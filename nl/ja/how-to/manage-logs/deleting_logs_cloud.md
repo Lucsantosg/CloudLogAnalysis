@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -75,9 +75,9 @@ Log Collection からログを削除するには、[bx logging log-delete](/docs
 
 	
 ## 特定期間のログ・タイプ別のログの削除
-{: #time_range}
+{: #log_type}
 
-特定の期間にスペース・ドメインに保管されたログ・タイプ別のログを削除するには、以下のステップを実行します。
+特定期間にスペース・ドメインに保管されたログ・タイプ別のログを削除するには、以下のステップを実行します。
 
 1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
@@ -126,7 +126,7 @@ Log Collection からログを削除するには、[bx logging log-delete](/docs
 		
 	
 ## 特定期間のログ・タイプ別のアカウント・ログの削除
-{: #time_range}
+{: #time_range_acc}
 
 以下のステップを実行します。
 

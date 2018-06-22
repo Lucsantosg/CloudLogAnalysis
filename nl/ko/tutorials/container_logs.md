@@ -3,16 +3,19 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-12"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Kubernetes 클러스터에 배치된 앱에 대한 Kibana에서 로그 분석
@@ -40,16 +43,16 @@ lastupdated: "2018-01-12"
 
     {{site.data.keyword.Bluemix_notm}} 사용자 ID에 다음 정책이 지정되어 있어야 합니다.
     
-    * *운영자* 또는 *관리자* 권한이 있는 {{site.data.keyword.containershort}}에 대한 IAM 정책
+    * *편집자*, *운영자* 또는 *관리자* 권한이 있는 {{site.data.keyword.containershort}}에 대한 IAM 정책
     * {{site.data.keyword.loganalysisshort}} 서비스가 *개발자* 권한으로 프로비저닝된 영역에 대한 CF 역할
     
     자세한 정보는 [IBM Cloud UI를 통해 사용자에게 IAM 정책 지정](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account) 및 [IBM Cloud UI를 사용하여 사용자에게 영역 로그를 볼 수 있는 권한 부여](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)를 참조하십시오.
 
-2. Kubernetes 클러스터를 관리할 수 있는 터미널 세션이 있고 명령행에서 앱을 배치합니다. 이 튜토리얼에 소개되는 예는 Ubuntu Linux 시스템에 대해 제공됩니다. 
+2. Kubernetes 클러스터를 관리할 수 있는 터미널 세션이 있고 명령행에서 앱을 배치합니다. 이 튜토리얼에 소개되는 예는 Ubuntu Linux 시스템에 대해 제공됩니다.
 
 3. Ubuntu 시스템에서 {{site.data.keyword.containershort}} 및 {{site.data.keyword.loganalysisshort}}에 대해 작업하기 위한 CLI를 설치하십시오.
 
-    * {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오. 
+    * {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오.
     
     * {{site.data.keyword.containershort}}에서 Kubernetes 클러스터를 작성 및 관리하고 컨테이너식 앱을 클러스터에 배치하기 위한 {{site.data.keyword.containershort}} CLI를 설치하십시오. 자세한 정보는 [CS 플러그인 설치](/docs/containers/cs_cli_install.html#cs_cli_install_steps)를 참조하십시오.
     
@@ -75,28 +78,27 @@ lastupdated: "2018-01-12"
 
 1. 표준 Kubernetes 클러스터를 작성하십시오.
 
-   * [UI를 통해 Kubernetes 표준 클러스터 작성](/docs/containers/cs_cluster.html#cs_cluster_ui)
-   * [CLI를 사용하여 Kubernetes 표준 클러스터 작성](/docs/containers/cs_cluster.html#cs_cluster_cli)
+   자세한 정보는 [클러스터 작성](/docs/containers/cs_tutorials.html#cs_cluster_tutorial)을 참조하십시오.
 
 2. 터미널에서 클러스터 컨텍스트를 설정하십시오. 컨텍스트가 설정된 후에 Kubernetes 클러스터를 관리하고, Kubernetes 클러스터에서 애플리케이션을 배치할 수 있습니다.
 
     작성한 클러스터와 연관된 {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 
-	{{site.data.keyword.containershort}} 서비스 플러그인을 초기화하십시오. 
+	{{site.data.keyword.containershort}} 서비스 플러그인을 초기화하십시오.
 
 	```
 	bx cs init
 	```
 	{: codeblock}
 
-    터미널 컨텍스트를 클러스터로 설정하십시오. 
+    터미널 컨텍스트를 클러스터로 설정하십시오.
     
 	```
 	bx cs cluster-config MyCluster
 	```
 	{: codeblock}
 
-    이 명령을 실행하면 출력에서 경로를 구성 파일로 설정하기 위해 터미널에서 실행해야 하는 명령을 제공합니다. 예: 
+    이 명령을 실행하면 출력에서 경로를 구성 파일로 설정하기 위해 터미널에서 실행해야 하는 명령을 제공합니다. 예:
 
 	```
 	export KUBECONFIG=/Users/ibm/.bluemix/plugins/container-service/clusters/MyCluster/kube-config-hou02-MyCluster.yml
@@ -108,7 +110,7 @@ lastupdated: "2018-01-12"
 
 
 ## 2단계: 자동으로 로그를 {{site.data.keyword.loganalysisshort}} 서비스로 전달하도록 클러스터 구성
-{: #step3}
+{: #step2}
 
 앱이 배치될 때 {{site.data.keyword.containershort}}가 자동으로 로그를 수집합니다. 그러나 자동으로 로그가 {{site.data.keyword.loganalysisshort}} 서비스로 전달되지 않습니다. 클러스터에서 다음을 정의하는 하나 이상의 로깅 구성을 작성해야 합니다.
 
@@ -144,18 +146,18 @@ ae249c04-a3a9-4c29-a890-22d8da7bd1b2   container    *           ingest.logging.n
 
 
 ### stderr 및 stdout 로그를 {{site.data.keyword.loganalysisshort}} 서비스에 전달하도록 클러스터 구성
-{: #containerlogs}
+{: #containerstd}
 
 
 stdout 및 stderr 로그를 영역 도메인으로 보내려면 다음 단계를 완료하십시오. 여기서 조직 이름은 *MyOrg*이고 영역 이름은 미국 남부 지역의 *dev*입니다.
 
-1. 사용자 ID에 클러스터 구성 추가 권한이 있는지 확인하십시오. 클러스터 관리 권한이 있는 {{site.data.keyword.containershort}}에 대한 IAM 정책을 가진 사용자만 이 기능을 사용할 수 있습니다. 다음 역할이 필요합니다. *관리자*, *운영자* 
+1. 사용자 ID에 클러스터 구성 추가 권한이 있는지 확인하십시오. 클러스터 관리 권한이 있는 {{site.data.keyword.containershort}}에 대한 IAM 정책을 가진 사용자만 이 기능을 사용할 수 있습니다. 다음 역할이 필요합니다. *관리자*, *운영자*
 
-    사용자 ID에 클러스터 관리를 위해 지정된 IAM 정책이 있는지 확인하려면 다음 단계를 완료하십시오. 
+    사용자 ID에 클러스터 관리를 위해 지정된 IAM 정책이 있는지 확인하려면 다음 단계를 완료하십시오.
     
     1. {{site.data.keyword.Bluemix_notm}} 콘솔에 로그인하십시오. 웹 브라우저를 열고 {{site.data.keyword.Bluemix_notm}} 대시보드([http://bluemix.net ![외부 링크 아이콘](../../../icons/launch-glyph.svg "외부 링크 아이콘")](http://bluemix.net){:new_window})를 실행하십시오. 사용자 ID 및 비밀번호를 사용하여 로그인하면 {{site.data.keyword.Bluemix_notm}} UI가 열립니다.
 
-    2. 메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오. *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다. 
+    2. 메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오.  *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다.
 	
     3. 사용자 ID를 선택하고 해당 사용자 ID에 {{site.data.keyword.containershort}}에 대한 정책이 있는지 확인하십시오.
 
@@ -191,19 +193,19 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 
 작업자 로그를 영역 도메인으로 보내려면 다음 단계를 완료하십시오. 여기서 조직 이름은 *MyOrg*이고 영역 이름은 미국 남부 지역의 *dev*입니다.
 
-1. 사용자 ID에 클러스터 구성 추가 권한이 있는지 확인하십시오. 클러스터 관리 권한이 있는 {{site.data.keyword.containershort}}에 대한 IAM 정책을 가진 사용자만 이 기능을 사용할 수 있습니다. 다음 역할이 필요합니다. *관리자*, *운영자* 
+1. 사용자 ID에 클러스터 구성 추가 권한이 있는지 확인하십시오. 클러스터 관리 권한이 있는 {{site.data.keyword.containershort}}에 대한 IAM 정책을 가진 사용자만 이 기능을 사용할 수 있습니다. 다음 역할이 필요합니다. *관리자*, *운영자*
 
-    사용자 ID에 클러스터 관리를 위해 지정된 IAM 정책이 있는지 확인하려면 다음 단계를 완료하십시오. 
+    사용자 ID에 클러스터 관리를 위해 지정된 IAM 정책이 있는지 확인하려면 다음 단계를 완료하십시오.
     
     1. {{site.data.keyword.Bluemix_notm}} 콘솔에 로그인하십시오. 웹 브라우저를 열고 {{site.data.keyword.Bluemix_notm}} 대시보드([http://bluemix.net ![외부 링크 아이콘](../../../icons/launch-glyph.svg "외부 링크 아이콘")](http://bluemix.net){:new_window})를 실행하십시오. 사용자 ID 및 비밀번호를 사용하여 로그인하면 {{site.data.keyword.Bluemix_notm}} UI가 열립니다.
 
-    2. 메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오. *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다. 
+    2. 메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오.  *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다.
 	
     3. 사용자 ID를 선택하고 해당 사용자 ID에 {{site.data.keyword.containershort}}에 대한 정책이 있는지 확인하십시오.
 
     권한이 필요한 경우 계정 소유자 또는 계정 관리자에게 문의하십시오. 정책 지정 권한이 있는 계정 소유자 또는 사용자만 이 단계를 수행할 수 있습니다.
 
-2. 클러스터 로깅 구성을 작성하십시오. 다음 명령을 실행하여 */var/log/syslog* 및 */var/log/auth.log* 로그 파일을 {{site.data.keyword.loganalysisshort}} 서비스로 보내십시오. 
+2. 클러스터 로깅 구성을 작성하십시오. 다음 명령을 실행하여 */var/log/syslog* 및 */var/log/auth.log* 로그 파일을 {{site.data.keyword.loganalysisshort}} 서비스로 보내십시오.
 
     ```
     bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
@@ -227,28 +229,26 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 
 
 
-## 4단계: 사용자에게 영역 도메인의 로그를 볼 수 있는 권한 부여
-{: #step4}
+## 3단계: 사용자에게 영역 도메인의 로그를 볼 수 있는 권한 부여
+{: #step3}
 
 사용자에게 영역의 로그를 볼 수 있는 권한을 부여하려면 해당 사용자에게 이 사용자가 영역에서 {{site.data.keyword.loganalysisshort}} 서비스에 대해 수행할 수 있는 조치를 설명하는 Cloud Foundry 역할을 지정해야 합니다. 
 
 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행할 권한을 사용자에게 부여하려면 다음 단계를 완료하십시오.
 
+1. {{site.data.keyword.Bluemix_notm}} 콘솔에 로그인하십시오.
 
-
-1. {{site.data.keyword.Bluemix_notm}} 콘솔에 로그인하십시오. 
-
-    웹 브라우저를 열고 {{site.data.keyword.Bluemix_notm}} 대시보드를 실행하십시오. [http://bluemix.net ![외부 링크 아이콘](../../../icons/launch-glyph.svg "외부 링크 아이콘")](http://bluemix.net){:new_window} 
+    웹 브라우저를 열고 {{site.data.keyword.Bluemix_notm}} 대시보드를 실행하십시오. [http://bluemix.net ![외부 링크 아이콘](../../../icons/launch-glyph.svg "외부 링크 아이콘")](http://bluemix.net){:new_window}
 	
-	사용자 ID 및 비밀번호를 사용하여 로그인하면 {{site.data.keyword.Bluemix_notm}} UI가 열립니다. 
+	사용자 ID 및 비밀번호를 사용하여 로그인하면 {{site.data.keyword.Bluemix_notm}} UI가 열립니다.
 
-2. 메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오.  
+2. 메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오. 
 
-    *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다. 
+    *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다.
 	
-3. 사용자가 계정의 구성원인 경우 목록에서 사용자 이름을 선택하거나 *조치* 메뉴에서 **사용자 관리**를 클릭하십시오. 
+3. 사용자가 계정의 구성원인 경우 목록에서 사용자 이름을 선택하거나 *조치* 메뉴에서 **사용자 관리**를 클릭하십시오.
 
-    사용자가 계정의 구성원이 아닌 경우 [사용자 초대](/docs/iam/iamuserinv.html#iamuserinv)를 참조하십시오. 
+    사용자가 계정의 구성원이 아닌 경우 [사용자 초대](/docs/iam/iamuserinv.html#iamuserinv)를 참조하십시오.
 
 4. **Cloud Foundry 액세스**를 선택한 후 조직을 선택하십시오.
 
@@ -267,11 +267,13 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 7. **역할 저장**을 클릭하십시오.
 
 
-## 5단계: {{site.data.keyword.containershort_notm}} 키 소유자 권한 부여
-{: #step5}
+## 4단계: {{site.data.keyword.containershort_notm}} 키 소유자 권한 부여
+{: #step4}
 
+영역으로 전달될 클러스터 로그의 경우 {{site.data.keyword.containershort_notm}} 키 소유자에는 다음 권한이 있어야 합니다. 
 
-로그를 영역으로 전달하는 경우 조직 및 영역의 {{site.data.keyword.containershort}} 키 소유자에게 CF(Cloud Foundry) 권한을 부여해야 합니다. 키 소유자에는 조직에 대한 *orgManager* 역할과 영역에 대한 *SpaceManager* 및 *개발자*가 필요합니다. 
+* *관리자* 권한이 있는 {{site.data.keyword.loganalysisshort}} 서비스에 대한 IAM 정책
+* 로그가 전달될 조직 및 영역의 CF(Cloud Foundry) 권한. 컨테이너 키 소유자에는 조직에 대한 *orgManager* 역할과 영역에 대한 *SpaceManager* 및 *개발자*가 필요합니다.
 
 다음 단계를 완료하십시오.
 
@@ -282,35 +284,40 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
     ```
     {: codeblock}
     
-    여기서, *ClusterName*은 클러스터의 이름입니다. 
+    여기서, *ClusterName*은 클러스터의 이름입니다.
 
 2. {{site.data.keyword.containershort}} 키 소유자로 식별된 사용자에게 조직에 대한 *orgManager* 역할과 영역에 대한 *SpaceManager* 및 *개발자* 역할이 있는지 확인하십시오.
 
     {{site.data.keyword.Bluemix_notm}} 콘솔에 로그인하십시오. 웹 브라우저를 열고 {{site.data.keyword.Bluemix_notm}} 대시보드([http://bluemix.net ![외부 링크 아이콘](../../../icons/launch-glyph.svg "외부 링크 아이콘")](http://bluemix.net){:new_window})를 실행하십시오. 사용자 ID 및 비밀번호를 사용하여 로그인하면 {{site.data.keyword.Bluemix_notm}} UI가 열립니다.
 
-    메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오. *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다. 
+    메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오.  *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다.
 	
     사용자의 ID를 선택하고 사용자에게 조직에 대한 *orgManager* 역할과 영역에 대한 *SpaceManager* 및 *개발자* 역할이 있는지 확인하십시오.
- 
-3. 사용자에게 올바른 권한이 없는 경우 다음 단계를 완료하십시오.
 
-    1. 사용자에게 조직에 대한 *orgManager* 역할과 영역에 대한 *SpaceManager* 및 *개발자* 권한을 부여하십시오. 자세한 정보는 [IBM Cloud UI를 사용하여 사용자에게 영역 로그를 볼 수 있는 권한 부여](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)를 참조하십시오.
+    사용자에게 올바른 권한이 없는 경우 사용자에게 조직에 대한 *orgManager* 역할과 영역에 대한 *SpaceManager* 및 *개발자* 권한을 부여하십시오. 자세한 정보는 [IBM Cloud UI를 사용하여 사용자에게 영역 로그를 볼 수 있는 권한 부여](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)를 참조하십시오.
     
-    2. 로깅 구성을 새로 고치십시오. 다음 명령을 실행하십시오.
+3. {{site.data.keyword.containershort}} 키 소유자로 식별된 사용자에게 *관리자* 권한이 있는 {{site.data.keyword.loganalysisshort}} 서비스에 대한 IAM 정책이 있는지 확인하십시오.
+
+    메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오.  *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다.
+	
+    사용자의 ID를 선택하고 사용자에게 IAM 정책 세트가 있는지 확인하십시오. 
+
+    사용자에게 IAM 정책이 없는 경우 [IBM Cloud UI를 통해 사용자에게 IAM 정책 지정](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)을 참조하십시오.
+
+4. 로깅 구성을 새로 고치십시오. 다음 명령을 실행하십시오.
     
-        ```
+    ```
         bx cs logging-config-refresh ClusterName
-        ```
-        {: codeblock}
+    ```
+    {: codeblock}
         
-        여기서, *ClusterName*은 클러스터의 이름입니다. 
-
-
-
+    여기서, *ClusterName*은 클러스터의 이름입니다.
 	
 
-## 6단계: Kubernetes 클러스터에서 샘플 앱을 배치하여 stdout에 컨텐츠 생성
-{: #step6}
+
+
+## 5단계: Kubernetes 클러스터에서 샘플 앱을 배치하여 stdout에 컨텐츠 생성
+{: #step5}
 
 Kubernetes 클러스터에서 샘플 앱을 배치하고 실행하십시오. [학습 1: Kubernetes 클러스터에 단일 인스턴스 앱 배치](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1) 튜토리얼의 단계를 완료하여 샘플 앱을 배치하십시오.
 
@@ -336,8 +343,8 @@ app.listen(8080, function() {
 
 
 
-## 7단계: Kibana에서 로그 데이터 보기
-{: #step7}
+## 6단계: Kibana에서 로그 데이터 보기
+{: #step6}
 
 다음 단계를 완료하십시오.
 
@@ -347,16 +354,16 @@ app.listen(8080, function() {
 
     클러스터에 대한 로그 데이터를 분석하려면 클러스터가 작성된 클라우드 공용 지역에서 Kibana에 액세스해야 합니다. 
     
-    예를 들어, 미국 남부 지역에서 Kibana를 실행하려면 다음 URL을 입력하십시오. 
+    예를 들어, 미국 남부 지역에서 Kibana를 실행하려면 다음 URL을 입력하십시오.
 	
 	```
-	https://logging.ng.bluemix.net/
+	https://logging.ng.bluemix.net/ 
 	```
 	{: codeblock}
 	
     Kibana가 열립니다.
     
-    **참고:** 클러스터 로그를 전달할 지역에서 Kibana를 실행하는지 확인하십시오. 지역별 URL에 대한 정보는 [로깅 엔드포인트](docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana)를 참조하십시오.
+    **참고:** 클러스터 로그를 전달할 지역에서 Kibana를 실행하는지 확인하십시오. 지역별 URL에 대한 정보는 [로깅 엔드포인트](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana)를 참조하십시오.
     	
 2. 영역 도메인에서 사용 가능한 로그 데이터를 보려면 다음 단계를 완료하십시오.
 
@@ -373,12 +380,12 @@ app.listen(8080, function() {
     
 3. **검색** 페이지에서 표시된 이벤트를 보십시오. 
         
-    *사용 가능한 필드* 섹션에서는 페이지에 표시된 표에 나열된 항목을 필터링하거나 새 조회를 정의하는 데 사용할 수 있는 필드 목록을 볼 수 있습니다. 
+    *사용 가능한 필드* 섹션에서는 페이지에 표시된 표에 나열된 항목을 필터링하거나 새 조회를 정의하는 데 사용할 수 있는 필드 목록을 볼 수 있습니다.
     
     다음 표는 애플리케이션 로그를 분석할 때 새 검색 조회를 정의하는 데 사용할 수 있는 일부 필드를 나열합니다. 표에는 샘플 앱에서 생성된 이벤트에 해당하는 샘플 값이 포함되어 있습니다.
  
     <table>
-              <caption>표 2. 컨테이너 로그를 위한 공통 필드</caption>
+              <caption>표 2. 컨테이너 로그를 위한 공통 필드 </caption>
                <tr>
                 <th align="center">필드</th>
                 <th align="center">설명</th>
@@ -396,7 +403,7 @@ app.listen(8080, function() {
               </tr>
 			  <tr>
                 <td>*ibm-containers.cluster_id_str *</td>
-                <td>클러스터 ID. </td>
+                <td>클러스터 ID.</td>
                 <td></td>
               </tr>
               <tr>
@@ -407,11 +414,11 @@ app.listen(8080, function() {
 			  <tr>
                 <td>*kubernetes.namespace_name_str*</td>
                 <td>네임스페이스 이름</td>
-                <td>*default*는 기본값입니다. </td>
+                <td>*default*는 기본값입니다.</td>
               </tr>
               <tr>
                 <td>*kubernetes.container_name_str*</td>
-                <td>컨테이너 이름. </td>
+                <td>컨테이너 이름.</td>
                 <td>hello-world-deployment</td>
               </tr>
               <tr>
@@ -421,7 +428,7 @@ app.listen(8080, function() {
               </tr>
               <tr>
                 <td>*stream_str *</td>
-                <td>로그 유형. </td>
+                <td>로그 유형.</td>
                 <td>*stdout*, *stderr*</td>
               </tr>
         </table>
@@ -429,18 +436,18 @@ app.listen(8080, function() {
 Kubernetes 클러스터와 관련된 다른 검색 필드에 대한 자세한 정보는 [로그 검색](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#log_search)을 참조하십시오.
 
 
-## 8단계: Kibana에서 Kubernetes 클러스터 이름별로 데이터 필터링
-{: #step8}
+## 7단계: Kibana에서 Kubernetes 클러스터 이름별로 데이터 필터링
+{: #step7}
     
-*검색* 페이지에 표시되는 표에서 분석할 수 있는 모든 항목을 볼 수 있습니다. 나열된 항목은 *검색* 표시줄에 표시된 검색 조회에 해당합니다. 별표(*)를 사용하여 페이지에 구성된 기간 내의 모든 항목을 표시하십시오. 
+*검색* 페이지에 표시되는 표에서 분석할 수 있는 모든 항목을 볼 수 있습니다. 나열된 항목은 *검색* 표시줄에 표시된 검색 조회에 해당합니다. 별표(*)를 사용하여 페이지에 구성된 기간 내의 모든 항목을 표시하십시오.
     
 예를 들어, Kubernetes 클러스터 이름별로 데이터를 필터링하려면 *검색* 표시줄 조회를 수정하십시오. 사용자 정의 필드 *kubernetes.cluster_name_str*을 기반으로 필터를 추가하십시오.
     
-1. **사용 가능한 필드** 섹션에서 *kubernetes.cluster_name_str* 필드를 선택하십시오. 필드에 사용 가능한 값의 서브세트가 표시됩니다.     
+1. **사용 가능한 필드** 섹션에서 *kubernetes.cluster_name_str* 필드를 선택하십시오. 필드에 사용 가능한 값의 서브세트가 표시됩니다.    
     
 2. 로그를 분석할 클러스터에 해당하는 값을 선택하십시오. 
     
-    값을 선택한 후에 필터가 *검색 표시줄*에 추가되고 방금 선택한 기준과 일치하는 항목만 표에 표시됩니다.      
+    값을 선택한 후에 필터가 *검색 표시줄*에 추가되고 방금 선택한 기준과 일치하는 항목만 표에 표시됩니다.     
    
 
 **참고:** 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-01-10"
 # Preguntas frecuentes y respuestas sobre el uso de la CLI de IBM Cloud
 {: #cli_qa}
 
-Aquí encontrará las respuestas a preguntas comunes sobre el uso de la CLI de {{site.data.keyword.Bluemix}} con el servicio {{site.data.keyword.loganalysisshort}}.
+Aquí encontrará las respuestas a preguntas comunes sobre el uso de la CLI de {{site.data.keyword.Bluemix}} con el servicio {{site.data.keyword.loganalysisshort}}. 
 {:shortdesc}
 
 * [¿Cómo iniciar sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)
@@ -30,7 +30,7 @@ Aquí encontrará las respuestas a preguntas comunes sobre el uso de la CLI de {
 ## ¿Cómo iniciar sesión en IBM Cloud?
 {: #login}
 
-Ejecute el siguiente mandato para iniciar una sesión en una región, organización y espacio de {{site.data.keyword.Bluemix_notm}}:
+Ejecute el siguiente mandato para iniciar una sesión en una región de {{site.data.keyword.Bluemix_notm}} en la que esté disponible el servicio {{site.data.keyword.loganalysisshort}}: 
 
 ```
 bx login -a Endpoint
@@ -72,7 +72,7 @@ bx login -a https://api.ng.bluemix.net
 
 Siga las instrucciones. 
 
-A continuación, establezca la organización y el espacio. Ejecute el mandato siguiente:
+También puede establecer una organización y un espacio. Ejecute el mandato siguiente:
 
 ```
 bx target -o OrgName -s SpaceName
@@ -98,7 +98,7 @@ Consulte [Descargar e instalar la CLI de {{site.data.keyword.Bluemix}} CLI](/doc
 	
 Siga estos pasos para obtener el GUID de una cuenta:
 	
-1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
+1. Inicie una sesión en una región de {{site.data.keyword.Bluemix_notm}}. 
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
@@ -117,7 +117,7 @@ Siga estos pasos para obtener el GUID de una cuenta:
     OK
     Account GUID                       Name                               Type    State    Owner User ID
     12345123451234512345123451234512   A Account                          TRIAL   ACTIVE   xxx@yyy.com
-    23456234562345622456234561234561   B Account                          TRIAL   ACTIVE   zzz@yyy.com
+    23456234562345622456234561234561   B Account                          TRIAL   ACTIVE   zzz@yyy.com   
 	```
 	{: screen}
 
@@ -127,15 +127,15 @@ Siga estos pasos para obtener el GUID de una cuenta:
 
 Siga los pasos siguientes para obtener el GUID de una organización:
 	
-1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}.
+1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
-  Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
- 2. Ejecute el mandato `bx iam org` para obtener el GUID de organización.
+2. Ejecute el mandato `bx iam org` para obtener el GUID de organización. 
 
-  ```
+    ```
     bx iam org NAME --guid
- ```
+    ```
     {: codeblock}
 	
     donde NAME es el nombre de la organización de {{site.data.keyword.Bluemix_notm}}.
@@ -147,25 +147,25 @@ Siga los pasos siguientes para obtener el GUID de una organización:
 	
 Siga estos pasos para obtener el GUID de un espacio:
 	
-1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}.
+1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
-  Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+	
+2. Ejecute el mandato `bx iam space` para obtener el GUID del espacio. 
 
- 2. Ejecute el mandato `bx iam space` para obtener el GUID del espacio.
-
-  ```
+    ```
     bx iam space NAME --guid
- ```
+    ```
     {: codeblock}
 	
-    donde NAME es el nombre de un espacio de {{site.data.keyword.Bluemix_notm}}.
+    donde NAME es el nombre de un espacio de {{site.data.keyword.Bluemix_notm}}. 
 	
- Por ejemplo, para obtener el GUID del espacio *dev*, ejecute el mandato siguiente:
+    Por ejemplo, para obtener el GUID del espacio *dev*, ejecute el mandato siguiente:
 	
- ```
+    ```
     bx iam space dev --guid
     e03afff1-3456-4af6-1234-59treg1b0abc
- ```
+    ```
     {: screen}
 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -52,7 +52,7 @@ Para mudar o seu plano de serviço no Bluemix por meio da CLI, conclua as etapas
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Execute o comando `bx cf services` para verificar o plano atual e para obter o nome do serviço do {{site.data.keyword.loganalysisshort}} na lista de serviços disponíveis no espaço. 
+2. Execute o comando `bx service list` para verificar seu plano atual e para obter o nome do serviço {{site.data.keyword.loganalysisshort}} na lista de serviços disponíveis no espaço. 
 
     O valor do campo **nome** é aquele que deve ser usado para mudar o plano. 
 
@@ -60,25 +60,27 @@ Para mudar o seu plano de serviço no Bluemix por meio da CLI, conclua as etapas
 exemplo,
 	
 	```
-	$ bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
+	$ bx  bx service list
+    Invoking 'cf services'...
+
+    Getting services in org MyOrg / space dev as xxx@ibm.com...
     OK
-    
-    name              service          plan      bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   premium                create succeeded
+
+    name                           service                  plan             bound apps            last operation
+    Log Analysis-m2                ibmLogAnalysis           premium                                update succeeded
     ```
 	{: screen}
     
-3. Faça upgrade ou reduzir seu plano. Execute o comando `bx cf update-service`.
+3. Faça upgrade ou reduzir seu plano. Execute o `bx service update` comando.
     
 	```
-	bx cf update-service service_name [-p new_plan]
+	Service_name atualização de serviço bx [-p new_plan ]
 	```
 	{: codeblock}
 	
 	em que 
 	
-	* *service_name* é o nome de seu serviço. É possível executar o comando `bx cf services` para obter o valor.
+	* *service_name* é o nome de seu serviço. É possível executar o comando `bx service list` para obter o valor.
 	* *new_plan* é o nome do plano.
 	
 	A tabela a seguir lista os diferentes planos e seus valores suportados:
@@ -114,23 +116,18 @@ exemplo,
 	Por exemplo, para reduzir o seu plano para o plano *Lite*, execute o comando a seguir:
 	
 	```
-	bx cf update-service "Log Analysis-a4" -p standard
-    Updating service instance Log Analysis-a4 as xxx@yyy.com...
+	bx service update "Log Analysis-m2" -p standard
+    Updating service instance Log Analysis-m2 as xxx@ibm.com...
     OK
 	```
 	{: screen}
 
-4. Verifique se o novo plano é alterado. Execute o `cf services` comando.
+4. Verifique se o novo plano é alterado. Execute o `bx service list` de comandos.
 
-    ```
-	bx cf services
-    Getting services in org MyOrg / space dev as xxx@yyy.com...
-    OK
-
-    name              service          plan       bound apps   last operation
-    Log Analysis-a4   ibmLogAnalysis   standard                update succeeded
+  ```
+	bx service list
 	```
-	{: screen}
+	{: codeblock}
 
 
 

@@ -3,38 +3,46 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-12"
 
 ---
 
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
 
 
 # Habilitación de la recopilación automática de registros de clúster
 {: #containers_kube_other_logs}
 
-Para poder ver y analizar registros del clúster en el servicio {{site.data.keyword.loganalysisshort}}, debe configurar el clúster para que reenvíe estos registros al servicio {{site.data.keyword.loganalysisshort}}. {:shortdesc}
+Para poder ver y analizar registros del clúster en el servicio {{site.data.keyword.loganalysisshort}}, debe configurar el clúster para que reenvíe estos registros al servicio {{site.data.keyword.loganalysisshort}}. 
+{:shortdesc}
 
-## Paso 1: Comprobar los permisos
+## Paso 1: Comprobar los permisos para el ID de usuario
 {: step1}
 
-Solo los usuarios con una política de IAM para {{site.data.keyword.containershort}} con permisos para gestionar clústeres pueden habilitar esta característica. Se necesita uno de los roles siguientes: *Administrador*, *Operador*
+El ID de usuario debe tener los siguientes permisos para poder añadir configuración de registro al clúster: 
 
-Para comprobar que el ID de usuario tiene una política de IAM asignada para gestionar clústeres, siga estos pasos:
+* Política de IAM para el servicio {{site.data.keyword.containershort}} con permisos de **visor**. 
+* Política de IAM para la instancia del clúster con permisos de **administrador** o de **operador**.
+
+Para comprobar que el ID de usuario tiene estas políticas de IAM, siga estos pasos:
 
 **Nota:** Solo el propietario de la cuenta o los usuarios con permisos para asignar políticas pueden realizar este paso.
 
-1. Inicie sesión en la consola de {{site.data.keyword.Bluemix_notm}}.Abra un navegador web y lance el panel de control de {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://bluemix.net){:new_window}
+1. Inicie sesión en la consola de {{site.data.keyword.Bluemix_notm}}. Abra un navegador web y lance el panel de control de {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://bluemix.net){:new_window}
 	
 	Cuando inicia sesión con su ID de usuario y su contraseña, se abre la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}.
 
-2. En la barra de menús, pulse **Gestionar > Cuenta > Usuarios**.La ventana *Usuarios* muestra una lista de usuarios con sus direcciones de correo electrónico para la cuenta seleccionada actualmente.
+2. En la barra de menús, pulse **Gestionar > Cuenta > Usuarios**.  La ventana *Usuarios* muestra una lista de usuarios con sus direcciones de correo electrónico para la cuenta seleccionada actualmente.
 	
-3. Seleccione el ID de usuario y verifique que el ID de usuario tiene una política con permisos de *visor* para {{site.data.keyword.containershort}}.
+3. Seleccione el ID de usuario y verifique que el ID de usuario tenga ambas políticas. 
 
 
 
@@ -89,11 +97,28 @@ Puede elegir los registros del clúster que desea reenviar al servicio {{site.da
 ## Paso 4: Establecer permisos para el propietario de claves de {{site.data.keyword.containershort_notm}}
 {: #step4}
 
-Al reenviar registros a un espacio, también debe otorgar permisos de Cloud Foundry (CF) al propietario de claves de {{site.data.keyword.containershort}} en la organización y el espacio. El propietario de claves necesita el rol *orgManager* para la organización, y *SpaceManager* y *Developer* para el espacio.
+
+El propietario de la clave de {{site.data.keyword.containershort}} necesita las siguientes políticas de IAM: 
+
+* Política de IAM para el servicio {{site.data.keyword.containershort}} con el rol de **administrador**. 
+* Política de IAM para el servicio {{site.data.keyword.loganalysisshort}} con el rol de **administrador**. 
+
+Siga estos pasos: 
+
+1. Inicie sesión en la consola de {{site.data.keyword.Bluemix_notm}}. Abra un navegador web y lance el panel de control de {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://bluemix.net){:new_window}
+	
+	Cuando inicia sesión con su ID de usuario y su contraseña, se abre la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}.
+
+2. En la barra de menús, pulse **Gestionar > Cuenta > Usuarios**.  La ventana *Usuarios* muestra una lista de usuarios con sus direcciones de correo electrónico para la cuenta seleccionada actualmente.
+	
+3. Seleccione el ID de usuario correspondiente al propietario de la clave de {{site.data.keyword.containershort_notm}} y verifique que el ID de usuario tiene ambas políticas.
+
+
+Cuando reenvíe registros a un dominio del espacio, también debe otorgar permisos de Cloud Foundry (CF) al propietario de claves de {{site.data.keyword.containershort}} en la organización y el espacio. El propietario de claves necesita el rol *orgManager* para la organización, y *SpaceManager* o *Developer* para el espacio.
 
 Siga estos pasos:
 
-1. Identifique el usuario en la cuenta que sea la propietaria de claves de {{site.data.keyword.containershort}}. Desde un terminal, ejecute el mandato siguiente:
+1. Identifique el usuario en la cuenta que es el propietario de la clave de {{site.data.keyword.containershort}}. Desde un terminal, ejecute el mandato siguiente:
 
     ```
     bx cs api-key-info ClusterName
@@ -102,13 +127,13 @@ Siga estos pasos:
     
     donde *ClusterName* es el nombre del clúster.
     
-2. Verifique que el usuario que se identifica como el propietario de claves de {{site.data.keyword.containershort}} tenga el rol *orgManager* para la organización, y *SpaceManager* y *Developer* para el espacio.
+2. Verifique que el usuario que se identifica como el propietario de la clave de {{site.data.keyword.containershort}} tenga el rol *orgManager* para la organización, y *SpaceManager* y *Developer* para el espacio.
 
     Inicie sesión en la consola de {{site.data.keyword.Bluemix_notm}}. Abra un navegador web y lance el panel de control de {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://bluemix.net){:new_window} Después de iniciar sesión con su ID de usuario y contraseña, se abrirá la IU de {{site.data.keyword.Bluemix_notm}}.
 
-    En la barra de menús, pulse **Gestionar > Cuenta > Usuarios**.La ventana *Usuarios* muestra una lista de usuarios con sus direcciones de correo electrónico para la cuenta seleccionada actualmente.
+    En la barra de menús, pulse **Gestionar > Cuenta > Usuarios**.  La ventana *Usuarios* muestra una lista de usuarios con sus direcciones de correo electrónico para la cuenta seleccionada actualmente.
 	
-    Seleccione el ID del usuario, y verifique que el usuario tenga el rol *orgManager* para la organización, y *SpaceManager* y *Developer* para el espacio.
+    Seleccione el ID del usuario y verifique que el usuario tenga el rol *orgManager* para la organización, y *SpaceManager* o *Developer* para el espacio.
  
 3. Si el usuario no tiene los permisos correctos, siga estos pasos:
 
@@ -164,10 +189,10 @@ bx cs logging-config-create MyCluster --logsource container --type ibm --namespa
 ## Habilitación de la recopilación automática de registros y del reenvío de registros de aplicación 
 {: #apps}
 
-Ejecute el siguiente mandato para enviar los archivos de registro */var/log/apps/**/.log* y */var/log/apps/*/.err* al servicio {{site.data.keyword.loganalysisshort}}: 
+Ejecute el siguiente mandato para enviar los archivos de registro */var/log/apps/**/.log* y */var/log/apps/*/.err* al servicio {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -177,19 +202,20 @@ donde
 * *EndPoint* es el URL para el servicio de registro en la región donde se suministra el servicio de {{site.data.keyword.loganalysisshort}}. Para obtener una lista de puntos finales, consulte [Puntos finales](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls).
 * *OrgName* es el nombre de la organización donde está disponible el espacio.
 * *SpaceName* es el nombre del espacio donde se suministra el servicio de {{site.data.keyword.loganalysisshort}}.
-
+* *app-containers* es un parámetro opcional que puede establecer para definir una lista de contenedores que desea examinar. Estos contenedores son los únicos desde los que se reenviarán registros a {{site.data.keyword.loganalysisshort}}. Puede establecer uno o varios contenedores separados por comas.
+* *app-paths* define las vías de acceso dentro de los contenedores que desea examinar. Puede establecer una o varias vías de acceso separadas por comas.Se aceptan caracteres comodín como '/var/log/*.log'.  
 
 Por ejemplo, para crear una configuración de registro que reenvíe los registros de aplicaciones a un dominio de espacio en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 Por ejemplo, para crear una configuración de registro que reenvíe los registros de aplicaciones al dominio de la cuenta en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -199,7 +225,7 @@ bx cs logging-config-create MyCluster --logsource application --type ibm --hostn
 {: #workers}
 
 
-Ejecute el siguiente mandato para enviar los archivos de registro */var/log/syslog* y */var/log/auth.log* al servicio {{site.data.keyword.loganalysisshort}}: 
+Ejecute el siguiente mandato para enviar los archivos de registro */var/log/syslog* y */var/log/auth.log* al servicio {{site.data.keyword.loganalysisshort}}:
 
 ```
 bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
@@ -234,7 +260,7 @@ bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname 
 ## Habilitación de la recopilación automática de registros y del reenvío de registros de componentes del sistema Kubernetes
 {: #system}
 
-Ejecute el siguiente mandato para enviar los archivos de registro */var/log/kubelet.log* y */var/log/kube-proxy.log* al servicio {{site.data.keyword.loganalysisshort}}: 
+Ejecute el siguiente mandato para enviar los archivos de registro */var/log/kubelet.log* y */var/log/kube-proxy.log* al servicio {{site.data.keyword.loganalysisshort}}:
 
 ```
 bx cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
@@ -269,7 +295,7 @@ bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostna
 ## Habilitación de la recopilación automática de registros y del reenvío de registros del controlador de Ingress de Kubernetes
 {: #controller}
 
-Ejecute el siguiente mandato para enviar los archivos de registro */var/log/alb/ids/.log*, */var/log/alb/ids/.err*, */var/log/alb/customerlogs/.log* y /var/log/alb/customerlogs/.err* al servicio {{site.data.keyword.loganalysisshort}}: 
+Ejecute el siguiente mandato para enviar los archivos de registro */var/log/alb/ids/.log*, */var/log/alb/ids/.err*, */var/log/alb/customerlogs/.log* y /var/log/alb/customerlogs/.err* al servicio {{site.data.keyword.loganalysisshort}}:
 
 ```
 bx cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s

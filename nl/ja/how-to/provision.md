@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-03-15"
 
 ---
 
@@ -63,10 +63,10 @@ lastupdated: "2018-01-10"
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 	
-3. `bx cf create-service` コマンドを実行して、インスタンスをプロビジョンします。
+3. `bx service create` コマンドを実行して、インスタンスをプロビジョンします。
 
     ```
-	bx cf create-service service_name service_plan service_instance_name
+	bx service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -76,19 +76,17 @@ lastupdated: "2018-01-10"
 	* service_plan はサービス・プラン名です。 プランのリストについては、[サービス・プラン](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans) を参照してください。
 	* service_instance_name は、作成する新規サービス・インスタンスに使用する名前です。
 	
-	cf コマンドについて詳しくは、[cf create-service](/docs/cli/reference/cfcommands/index.html#cf_create-service) を参照してください。
-
 	例えば、ライト・プランで {{site.data.keyword.loganalysisshort}} サービスのインスタンスを作成するには、以下のコマンドを実行します。
 	
 	```
-	bx cf create-service ibmLogAnalysis standard my_logging_svc
+	bx service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. サービスが正常に作成されたことを確認します。 次のコマンドを実行します。
 
     ```	
-	bx cf services
+	bx service list
 	```
 	{: codeblock}
 	

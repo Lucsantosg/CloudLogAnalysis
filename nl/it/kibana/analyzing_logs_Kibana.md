@@ -1,12 +1,11 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-04-10"
 
 ---
-
 
 {:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
@@ -14,13 +13,13 @@ lastupdated: "2017-07-19"
 {:screen: .screen}
 {:pre: .pre}
 
-# Analisi log avanzata con Kibana
+# Visualizzazione e analisi dei log (Kibana)
 {:#analyzing_logs_Kibana}
 
-In {{site.data.keyword.Bluemix}}, puoi utilizzare Kibana 5.1, una piattaforma di analisi e visualizzazione open source, per monitorare, ricercare, analizzare e visualizzare i tuoi dati in una varietà di grafici, ad esempio, diagrammi e tabelle. Utilizza Kibana per eseguire attività di analisi avanzate.
+Puoi utilizzare Kibana 5.1, una piattaforma di analisi e visualizzazione open source, per monitorare, ricercare, analizzare e visualizzare i tuoi dati in una varietà di grafici, ad esempio, diagrammi e tabelle. Utilizza Kibana per eseguire attività di analisi avanzate.
 {:shortdesc}
 
-Kibana è un'interfaccia basata su browser in cui puoi analizzare i dati interattivamente e personalizzare i dashboard che potrai quindi utilizzare per analizzare i dati di log ed eseguire attività di gestione avanzate. Per ulteriori informazioni, vedi la [Kibana User Guide ![Icona link esterno](../../../icons/launch-glyph.svg "Icona link esterno")](https://www.elastic.co/guide/en/kibana/5.1/index.html "Icona link esterno"){: new_window}.
+Kibana è un'interfaccia basata su browser in cui puoi analizzare i dati interattivamente e personalizzare i dashboard che potrai quindi utilizzare per analizzare i dati di log ed eseguire attività di gestione avanzate. Per ulteriori informazioni, vedi la [Kibana User Guide ![Icona link esterno](../../../icons/launch-glyph.svg "Icona link esterno")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 I dati visualizzati da una pagina Kibana sono vincolati da una ricerca. La serie di dati predefinita è definita dal modello di indice preconfigurato. Per filtrare le informazioni, puoi aggiungere nuove query di ricerca e applicare i filtri alla serie di dati predefinita. Puoi quindi salvare la ricerca per riutilizzi futuri. 
 
@@ -33,7 +32,7 @@ Kibana include diverse pagine che puoi utilizzare per analizzare i tuoi log:
 | Dashboard | Utilizza questa pagina per analizzare i tuoi log tramite le raccolte di ricerche e visualizzazioni salvate.  |
 {: caption="Tabella 1. Pagine Kibana" caption-side="top"}
 
-**Nota:** puoi analizzare solo 1 giorno completo alla volta tramite la pagina Visualizza o Dashboard, anche se se puoi andare indietro di 3 giorni. I dati di log sono conservati per 3 giorni per impostazione predefinita. 
+**Nota:** puoi analizzare solo 1 giorno completo alla volta tramite la pagina Visualizza o Dashboard, anche se puoi andare indietro di 3 giorni. I dati di log sono conservati per 3 giorni per impostazione predefinita. 
 
 | Pagina Kibana | Informazioni periodo di tempo |
 |-------------|-------------------------|
@@ -51,7 +50,7 @@ Puoi avviare Kibana in uno dei seguenti modi:
 
 * Dal dashboard del servizio {{site.data.keyword.loganalysisshort}}
 
-    Puoi avviare Kibana in modo che i dati che visualizzi aggreghino i log dai servizi in uno spazio {{site.data.keyword.Bluemix_notm}} fornito.
+    Puoi avviare Kibana in modo che i dati che visualizzi aggreghino i log dai servizi all'interno di uno spazio fornito.
 	
 	Per ulteriori informazioni, vedi [Passaggio a Kibana dal dashboard del servizio Analisi di log](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_log_analysis).
 
@@ -59,7 +58,7 @@ Puoi avviare Kibana in uno dei seguenti modi:
 
     Puoi eseguire l'avvio ai tuoi specifici log dell'applicazione CF nel contesto di tale specifica applicazione. Per ulteriori informazioni, vedi [Passaggio a Kibana dal dashboard di una applicazione CF](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
     
-    Puoi eseguire l'avvio ai tuoi specifici log del contenitore Docker in Kibana nel contesto di tale specifico contenitore. Questa funzione si applica solo ai contenitori distribuiti nell'infrastruttura cloud gestita da {{site.data.keyword.Bluemix_notm}}. Per ulteriori informazioni, vedi [Passaggio a Kibana dal dashboard di un contenitore](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
+    Puoi eseguire l'avvio ai tuoi specifici log del contenitore Docker in Kibana nel contesto di tale specifico contenitore. Questa funzione si applica solo ai contenitori distribuiti nell'infrastruttura gestita da {{site.data.keyword.Bluemix_notm}}. Per ulteriori informazioni, vedi [Passaggio a Kibana dal dashboard di un contenitore](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
     
     Per le applicazioni CF, la query che viene utilizzata per filtrare i dati disponibili per l'analisi in Kibana richiama le voci di log per l'applicazione Cloud Foundry. Le informazioni di log visualizzate da Kibana per impostazione predefinita sono tutte correlate a un'unica applicazione Cloud Foundry e a tutte le sue istanze. 
     
@@ -69,11 +68,11 @@ Puoi avviare Kibana in uno dei seguenti modi:
 
 * Da un link diretto del browser
 
-    Potresti voler avviare Kibana in modo che i dati che visualizzi aggreghino i log dai servizi all'interno di uno spazio {{site.data.keyword.Bluemix_notm}} fornito.
+    Potresti voler avviare Kibana in modo che i dati che visualizzi aggreghino i log dai servizi all'interno di uno spazio fornito.
     
     La query che viene utilizzata per filtrare i dati visualizzati nel dashboard richiama le voci di log per uno spazio nell'organizzazione
 {{site.data.keyword.Bluemix_notm}}. Le informazioni di log visualizzate da Kibana includono i record per
-tutte le risorse che vengono distribuite all'interno dello spazio dell'organizzazione {{site.data.keyword.Bluemix_notm}} a cui sei connesso. 
+tutte le risorse che vengono distribuite all'interno dello spazio dell'organizzazione {{site.data.keyword.Bluemix_notm}} a cui sei collegato. 
     
     Per ulteriori informazioni, vedi [Passaggio al dashboard Kibana da un browser web](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
     
@@ -104,6 +103,184 @@ Puoi aggiungere, rimuovere e riorganizzare le visualizzazioni nel dashboard. Per
     
 Dopo aver personalizzato un dashboard Kibana, puoi analizzare i dati tramite le relative visualizzazioni e salvarli per un utilizzo successivo. Per maggiori informazioni, vedi [Salvataggio di un dashboard Kibana ](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save).
 
-In Kibana, esiste inoltre una pagina **Gestione** che puoi utilizzare per configurare Kibana e per salvare, eliminare, esportare e importare ricerche, visualizzazioni e dashboard.
+## Personalizza Kibana
+{: #analyze_management}
+
+Puoi anche configurare e gestire le risorse Kibana dalla pagina **Gestione**. 
+
+Puoi completare le seguenti attività:
+
+* Salva, elimina, esporta e importa ricerche. 
+* Salva, elimina, esporta e importa visualizzazioni.
+* Salva, elimina, esporta e importa dashboard.
+* [Aggiorna l'elenco campi.](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields)
+
+## Limitazioni
+{: #limitations}
+
+In Kibana, puoi condividere una visualizzazione o un dashboard solo con i membri della stessa organizzazione o dello stesso account.
+
+Le seguenti funzioni Kibana non sono supportate:
+
+* Condivisione di una ricerca.
+* Creazione di nuovi modelli di indice. 
+
+
+## Ruoli di cui un utente ha bisogno per visualizzare i log
+{: #roles}
+
+In {{site.data.keyword.Bluemix_notm}}, puoi assegnare uno o più ruoli agli utenti. Questi ruoli definiscono quali attività sono abilitate per tale utente per lavorare con il servizio {{site.data.keyword.loganalysisshort}}. 
+
+Le seguenti tabelle elencano i ruoli di cui un utente deve disporre per visualizzare i log:
+
+<table>
+  <caption>Autorizzazioni di cui un **proprietario dell'account** ha bisogno per visualizzare i log</caption>
+  <tr>
+    <th>Azione</th>
+	<th>Ruoli spazio CF</th>
+	<th>Ruoli organizzazione CF</th>
+	<th>Ruoli IAM</th>
+  </tr>
+  <tr>
+    <td>Visualizza i log in un dominio dello spazio</td>
+	<td>*Gestore* </br>*Sviluppatore* </br>*Revisore*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Visualizza i log nel dominio dell'account</td>
+	<td></td>
+	<td></td>
+	<td>*Amministratore*</td>
+  </tr>
+  <tr>
+    <td>Visualizza i log in un dominio dell'organizzazione</td>
+	<td></td>
+	<td>*Gestore* </br>*Gestore fatturazione*  </br>*Revisore*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Autorizzazioni di cui un **revisore** ha bisogno per visualizzare i log</caption>
+  <tr>
+    <th>Azione</th>
+	<th>Ruoli spazio CF</th>
+	<th>Ruoli organizzazione CF</th>
+	<th>Ruoli IAM</th>
+  </tr>
+  <tr>
+    <td>Visualizza i log in un dominio dello spazio</td>
+	<td>*Revisore*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Visualizza i log nel dominio dell'account</td>
+	<td></td>
+	<td></td>
+	<td>*Visualizzatore*</td>
+  </tr>
+  <tr>
+    <td>Visualizza i log in un dominio dell'organizzazione</td>
+	<td></td>
+	<td>*Revisore*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Autorizzazioni di cui un **amministratore** ha bisogno per visualizzare i log</caption>
+  <tr>
+    <th>Azione</th>
+	<th>Ruoli spazio CF</th>
+	<th>Ruoli organizzazione CF</th>
+	<th>Ruoli IAM</th>
+  </tr>
+  <tr>
+    <td>Visualizza i log in un dominio dello spazio</td>
+	<td>*Sviluppatore*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Visualizza i log nel dominio dell'account</td>
+	<td></td>
+	<td></td>
+	<td>*Visualizzatore*</td>
+  </tr>
+  <tr>
+    <td>Visualizza i log in un dominio dell'organizzazione</td>
+	<td></td>
+	<td>*Gestore*</td>
+	<td></td>
+  </tr>
+</table>
+
+<table>
+  <caption>Autorizzazioni di cui uno **sviluppatore** ha bisogno per visualizzare i log.</caption>
+  <tr>
+    <th>Azione</th>
+	<th>Ruoli spazio CF</th>
+	<th>Ruoli organizzazione CF</th>
+	<th>Ruoli IAM</th>
+  </tr>
+  <tr>
+    <td>Visualizza i log in un dominio dello spazio</td>
+	<td>*Sviluppatore*</td>
+	<td></td>
+	<td></td>
+  </tr>
+  <tr>
+    <td>Visualizza i log nel dominio dell'account</td>
+	<td></td>
+	<td></td>
+	<td>*Visualizzatore*</td>
+  </tr>
+  <tr>
+    <td>Visualizza i log in un dominio dell'organizzazione</td>
+	<td></td>
+	<td>*Revisore*</td>
+	<td></td>
+  </tr>
+</table>
+
+
+
+## URL per avviare Kibana
+{: #urls_kibana}
+
+La seguente tabella elenca gli URL per avviare Kibana e le versioni di Kibana per ogni regione:
+
+<table>
+    <caption>URL per avviare Kibana</caption>
+    <tr>
+      <th>Regione</th>
+      <th>URL</th>
+      <th>Versione di Kibana</th>
+    </tr>
+	<tr>
+      <td>Francoforte</td>
+	  <td>[https://logging.eu-fra.bluemix.net](https://logging.eu-fra.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+	<tr>
+      <td>Sydney</td>
+	  <td>[https://logging.au-syd.bluemix.net](https://logging.au-syd.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+	<tr>
+      <td>Regno Unito</td>
+	  <td>[https://logging.eu-gb.bluemix.net](https://logging.eu-gb.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+    <tr>
+      <td>Stati Uniti Sud</td>
+      <td>[https://logging.ng.bluemix.net](https://logging.ng.bluemix.net)</td>
+	  <td>Kibana 5.1</td>
+    </tr>
+</table>
+
+
 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -26,28 +26,28 @@ lastupdated: "2018-01-10"
 
 下表列出不同的視覺效果類型：
 
-| 視覺效果類型| 說明 |
+|視覺效果類型|說明 |
 |-----------------------|-------------|
-| 區域圖 | 以圖形方式顯示定量資料。可用來比較兩組以上的聚集資料。|
-| 資料表 | 針對組合的聚集，以表格方式顯示原始資料。|
-| 折線圖 | 顯示時間型資料。可用來比較兩組以上的時間型聚集資料。|
-| Markdown 小組件 | 可用來顯示文字資訊。|
-| 度量值 | 可用來顯示相符數，或是數值欄位的確切平均值。|
-| 圓餅圖 | 可用來顯示欄位的不同值。| 
-| 垂直長條圖 | 顯示時間型資料，以及非時間型資料。可用來將資料分組。|
+|區域圖 |以圖形方式顯示定量資料。可用來比較兩組以上的聚集資料。|
+|資料表 |針對組合的聚集，以表格方式顯示原始資料。|
+|折線圖 |顯示時間型資料。可用來比較兩組以上的時間型聚集資料。|
+|Markdown 小組件 |可用來顯示文字資訊。|
+|度量值 |可用來顯示相符數，或是數值欄位的確切平均值。|
+|圓餅圖 |可用來顯示欄位的不同值。| 
+|垂直長條圖 |顯示時間型資料，以及非時間型資料。可用來將資料分組。|
 {: caption="表 1. 視覺效果類型" caption-side="top"}
 
 在「視覺化」頁面中，您可以執行下列任何作業：
 
-| 作業 | 相關資訊 |
+|作業 |相關資訊 |
 |------|------------------|
-| [建立新的視覺效果](logging_kibana_visualizations.html#logging_k4_visualizations_create) | 您可以從您定義並儲存在*探索* 頁面中的搜尋來建立視覺效果，也可以從您在*視覺化* 頁面中定義的新查詢來建立視覺效果。|
-| [儲存視覺效果](logging_kibana_visualizations.html#logging_kibana_visualizations_save) | 您可以儲存視覺效果，以供之後重複使用。|
-| [載入視覺效果](logging_kibana_visualizations.html#logging_kibana_visualizations_reload) | 您可以上傳視覺效果，以更新其資料、予以修改或分析資料。|
-| [刪除視覺效果](logging_kibana_visualizations.html#logging_kibana_visualizations_delete) | 刪除不需要的視覺效果。|
-| [匯出視覺效果](logging_kibana_visualizations.html#logging_kibana_visualizations_export) | 您可以將視覺效果匯出成 JSON 檔案。|
-| [匯入視覺效果](logging_kibana_visualizations.html#logging_kibana_visualizations_import) | 您可以將視覺效果匯入成 JSON 檔案。|
-| [共用視覺效果](logging_kibana_visualizations.html#logging_kibana_visualizations_share) | 您可以透過 HTML 原始檔或透過 Kibana 儀表板來共用視覺效果。|
+| [建立新的視覺效果](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create) |您可以從您定義並儲存在*探索* 頁面中的搜尋來建立視覺效果，也可以從您在*視覺化* 頁面中定義的新查詢來建立視覺效果。|
+| [儲存視覺效果](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_save) |您可以儲存視覺效果，以供之後重複使用。|
+| [載入視覺效果](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_reload) |您可以上傳視覺效果，以更新其資料、予以修改或分析資料。|
+| [刪除視覺效果](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_delete) |刪除不需要的視覺效果。|
+| [匯出視覺效果](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_export) |您可以將視覺效果匯出成 JSON 檔案。|
+| [匯入視覺效果](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_import) |您可以將視覺效果匯入成 JSON 檔案。|
+| [共用視覺效果](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_share) |您可以透過 HTML 原始檔或透過 Kibana 儀表板來共用視覺效果。|
 {: caption="表 2. 使用視覺效果的作業" caption-side="top"}
 
 
@@ -76,8 +76,6 @@ lastupdated: "2018-01-10"
 	**附註**：您對已儲存的搜尋所做的任何變更，會自動反映在視覺效果中。若要停用您對鏈結至此視覺效果的查詢所進行的自動更新，請按兩下此訊息：*此視覺效果鏈結至已儲存的搜尋：your_search_name*。 
 
     * 如果您選取**從新的搜尋**，請定義新的查詢。此查詢用來定義視覺效果所擷取及使用的部分資料。
-
-        如需相關資訊，請參閱[透過定義自訂查詢過濾日誌](k4_filter_queries.html#k4_filter_queries)。
 
 6. 在視覺效果建置器中，為 Y 軸選取度量值集成。
 

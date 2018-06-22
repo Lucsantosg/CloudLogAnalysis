@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -20,11 +21,13 @@ lastupdated: "2017-07-19"
 
 Queste sono le risposte alle domandi comuni sull'utilizzo delle funzionalità di registrazione {{site.data.keyword.Bluemix}}. {:shortdesc}
 
-* [Cosa posso fare se non posso visualizzare i dati nella pagina Rileva in Kibana ](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_discover_kibana)
-* [Cosa posso fare se ricevo un'eccezione di autenticazione ](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_no_data_dashboard_kibana)
-* [Come avvio Kibana 3 ](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana3)
-* [Perché vedo il simbolo ? accanto ai campi nella pagina Rileva in Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html##logging_qa_kibana_question)
+* [Cosa posso fare se non posso visualizzare i dati nella pagina Rileva in Kibana ](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_discover_kibana)
+* [Cosa posso fare se ricevo un'eccezione di autenticazione ](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_dashboard_kibana)
+* [Perché vedo il simbolo ? accanto ai campi nella pagina Rileva in Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_kibana_question)
 * [Ottengo un errore 403 quando provo a modificare il modello di indice predefinito](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
+* [L'URL breve non funziona](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
+* [Posso cercare nei log del mio account in Bluemix?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
+
 
 ## Cosa posso fare se non posso visualizzare i dati nella pagina Rileva in Kibana
 {: #logging_qa_no_data_discover_kibana}
@@ -34,7 +37,7 @@ Esistono vari scenari per cui potresti non visualizzare i dati in Kibana:
 1. Quando avvii Kibana, potresti non visualizzare alcun dato nella pagine Rileva. Ricevi il seguente messaggio: **Nessun risultato trovato.**. 
 2. Potresti star utilizzando la pagina Rileva in Kibana. Tuttavia, dopo un breve periodo di tempo, ricevi il messaggio: **Nessun risultato trovato.** quando tenti di eseguire un'attività in Kibana.
 
-Per risolvere questo problema, completare i seguenti passi:
+Per risolvere questo problema, completa la seguente procedura:
 
 1. Controlla che il *Selezionatore di tempo* sia configurato nella pagina Rileva e aumenta il periodo di tempo. 
 
@@ -60,7 +63,7 @@ Quando non puoi visualizzare i dati nelle tue visualizzazioni in una pagina Dash
 Considera le seguenti informazioni:
 Puoi configurare una o più visualizzazioni in una pagina Dashboard. Quando la pagina Dashboard effettua una richiesta per raccogliere i dati visualizzati tramite queste visualizzazioni, viene emessa solo una richiesta per tutte le visualizzazioni. Se non disponi delle autorizzazioni per visualizzare i dati per una delle visualizzazioni, l'intera richiesta ha esito negativo.
 
-Per risolvere questo problema, completare i seguenti passi:
+Per risolvere questo problema, completa la seguente procedura:
 
 1. Identifica le visualizzazioni per cui non disponi delle autorizzazioni.
 
@@ -75,26 +78,12 @@ Per risolvere questo problema, completare i seguenti passi:
 
     Se condividi il Dashboard, non eliminare le visualizzazioni finché questo problema impedirà ad altri membri del team di utilizzare lo stesso dashboard.
 
-## Come avvio Kibana 3
-{: #logging_qa_kibana3}
 
-**Nota:** Kibana 3 è obsoleto.
-
-Puoi avviare Kibana 3 da un browser.
-
-Completa il seguente passo per avviare Kibana 3 da un browser:
-
-1. Apri [https://logmet.ng.bluemix.net](https://logmet.ng.bluemix.net) per accedere all'interfaccia utente Kibana.
-    
-2. Seleziona la versione di Kibana che desideri utilizzare per analizzare i tuoi log.
-    * Seleziona **Kibana 4** per lavorare con Kibana 4. Viene aperta la pagina Rileva. Per maggiori informazioni, vedi [Analisi dei log interattiva in Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_kibana_analize_logs_interactively.html#kibana_analize_logs_interactively).
-    * Seleziona la scheda **Kibana 3** per lavorare con Kibana 3. Viene aperto il dashboard Kibana predefinito. Per ulteriori informazioni sull'utilizzo di Kibana per analizzare i tuoi log, vedi [Analisi dei log in Kibana 3 (obsoleto)](docs/monitor_log/kibana3/logging_view_kibana3.html#analyzing_logs_Kibana3). Per ulteriori informazioni sulla personalizzazione di un dashboard Kibana 3, vedi [questo post di blog ![Icona link esterno](../../../icons/launch-glyph.svg "Icona link esterno")](https://www.ibm.com/blogs/bluemix/2015/09/creating-custom-kibana-dashboard-in-bluemix/ "Icona link esterno"){: new_window}.
-     
 
 ## Perché vedo il simbolo ? accanto ai campi nella pagina Rileva in Kibana
 {: #logging_qa_kibana_question}
 
-Quando apri la pagina Rileva in Kibana, potresti vedere un punto interrogativo `?` accanto ai campi elencati nella sezione dei campi disponibili invece del carattere `t`. Quando ricarichi l'elenco di campi, il tipo di campi viene analizzato e il punto interrogativo `?` viene sostituito dal carattere `t`. Per ulteriori informazioni, vedi [Ricaricamento dell'elenco dei campi](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields).
+Quando apri la pagina Rileva in Kibana, potresti vedere un punto interrogativo `?` accanto ai campi elencati nella sezione dei campi disponibili invece del carattere `t`. Quando ricarichi l'elenco di campo, il tipo di campi viene analizzato e il punto interrogativo `?` viene sostituito dal carattere `t`. Per ulteriori informazioni, vedi [Ricaricamento dell'elenco dei campi](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields).
 
 
 ## Ottengo un errore 403 quando provo a modificare il modello di indice predefinito
@@ -102,6 +91,21 @@ Quando apri la pagina Rileva in Kibana, potresti vedere un punto interrogativo `
 
 Non è possibile modificare il modello di indice predefinito. 
 
-Se provi a impostare un modello di indice differente come nuovo valore predefinito, ottieni il seguente errore: `Configurazione: Errore 403 Non consentito`
+Se provi a impostare un modello di indice differenze come nuovo valore predefinito, ottieni il seguente errore: `Configurazione: Errore 403 Non consentito`
 
+## L'URL breve non funziona
+{: #short_url}
+
+La condivisione di una ricerca, di una visualizzazione o di un dashboard non è supportata. Pertanto, non funzioneranno neanche gli URL brevi per un oggetto Kibana che vuoi condividere. 
+
+## Posso cercare nei log del mio account in Bluemix?
+{: #acc_logs_1}
+
+In qualità di proprietario di un account, puoi cercare nei log del tuo account e analizzarli.
+
+Completa la seguente procedura per visualizzare i log del tuo account:
+
+1. [Avvia Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) Ad esempio, per la regione Stati Uniti Sud, utilizza l'URL `https://logging.ng.bluemix.net`,
+
+2. Seleziona l'opzione **Visualizza i log dell'account NomeAccount** per visualizzare i log dell'account. *NomeAccount* è il nome dell'account.
 

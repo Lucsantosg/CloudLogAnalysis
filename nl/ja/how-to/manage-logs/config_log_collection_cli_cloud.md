@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# {{site.data.keyword.loganalysisshort}} CLI の構成 ({{site.data.keyword.Bluemix_notm}} プラグイン)
+# {{site.data.keyword.loganalysisshort}} CLI の構成
 {: #config_log_collection_cli}
 
 {{site.data.keyword.loganalysisshort}} サービスには、クラウドでログを管理するために使用できるコマンド・ライン・インターフェース (CLI) が組み込まれています。 {{site.data.keyword.Bluemix_notm}} プラグインを使用して、ログ状況の表示、ログのダウンロード、ログ保存ポリシーの構成を行うことができます。 この CLI にはいくつかの種類のヘルプがあります。一般ヘルプではこの CLI およびサポートされるコマンドについての情報が、コマンド・ヘルプではコマンドの使用方法が、サブコマンド・ヘルプではコマンドに対するサブコマンドの使用方法が提供されます。
@@ -29,7 +29,7 @@ lastupdated: "2018-01-10"
 
    詳しくは、『[{{site.data.keyword.Bluemix_notm}} CLI のインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
    
-2. リポジトリー内にあるプラグインの名前を検索します。次のコマンドを実行します。
+2. リポジトリー内にあるプラグインの名前を検索します。 次のコマンドを実行します。
 
     ```
     bx plugin repo-plugins
@@ -38,7 +38,7 @@ lastupdated: "2018-01-10"
     
     このプラグインの名前は **logging-cli** です。
 
-3. {{site.data.keyword.loganalysisshort}} プラグインをインストールします。次のコマンドを実行します。
+3. {{site.data.keyword.loganalysisshort}} プラグインをインストールします。 次のコマンドを実行します。
 
     ```
     bx plugin install logging-cli -r Bluemix
@@ -155,7 +155,14 @@ Mac OS X にLog Collection プラグインをインストールするには、�
 	1. プラットフォーム値**「osx」**を選択します。 
 	2. **「ファイルの保存」**をクリックします。  
     
-2. プラグインをインストールします。 次のコマンドを実行します。
+2. ファイルの許可を変更します。次のコマンドを実行します。
+
+    ```
+    chmod u+x logging-cli-darwin-amd64-0.1.1
+    ```
+     {: codeblock}
+
+3. プラグインをインストールします。 次のコマンドを実行します。
         
     ```
     bx plugin install -f logging-cli-darwin-amd64-0.1.1
@@ -203,7 +210,7 @@ Mac OS X にLog Collection プラグインをインストールするには、�
   
 
 ## リポジトリーからの Log Analysis CLI の更新
-{: #uninstall_cli}
+{: #update_cli}
 
 ロギング CLI を更新するには、*bx plugin update* コマンドを実行します。
 {:shortdesc}

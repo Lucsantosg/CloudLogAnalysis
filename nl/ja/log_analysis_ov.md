@@ -32,7 +32,7 @@ lastupdated: "2018-02-01"
 
 以下の図は、{{site.data.keyword.loganalysisshort}} サービスの概要を示しています。 
 
-![{{site.data.keyword.loganalysisshort}} サービスの概要イメージ](images/loganalisys_F1.gif "{{site.data.keyword.loganalysisshort}} サービスの概要イメージ")
+![{{site.data.keyword.loganalysisshort}} サービスの概要図](images/loganalysis_F1.png "{{site.data.keyword.loganalysisshort}} サービスの概要図")
 
 
 あるスペース内で実行しているクラウド・リソースのログを収集および検索するには、それらのクラウド・リソースが稼働している同じスペース内で {{site.data.keyword.loganalysisshort}} サービスをプロビジョンする必要があります。 デフォルトで、ログは Log Search で収集され保管されます。 高度な検索機能および収集機能が含まれるサービス・プランを選択すると、ログは Log Collection コンポーネントでも収集されて保管されます。 Log Collection に保管されるログ・データは暗号化されます。

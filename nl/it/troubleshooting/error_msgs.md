@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -31,7 +31,7 @@ Hai raggiunto la quota giornaliera allocata allo spazio Bluemix (GUID spazio) pe
 
 **Spiegazione del messaggio** 
 
-Puoi ottenere un messaggio con l'ID *BXNLG020001W* quando raggiungi la quota di archiviazione Ricerca dei log allocata per il piano di servizio Lite. Il piano Lite è il piano di servizio gratuito impostato per impostazione predefinita quando esegui il provisioning del servizio {{site.data.keyword.loganalysisshort}} in uno spazio {{site.data.keyword.Bluemix_notm}}. La tua assegnazione giornaliera corrente è 500MB per l'archiviazione Ricerca dei log, che è conservata nell'archiviazione Ricerca dei log per un periodo di 3 giorni, durante il quale può essere cercata in Kibana.
+Puoi ottenere un messaggio con l'ID *BXNLG020001W* quando raggiungi la quota di archiviazione Ricerca dei log allocata per il piano del servizio Lite. Il piano Lite è il piano di servizio gratuito impostato per impostazione predefinita quando esegui il provisioning del servizio {{site.data.keyword.loganalysisshort}} in uno spazio. La tua assegnazione giornaliera corrente è 500MB per l'archiviazione Ricerca dei log, che è conservata nell'archiviazione Ricerca dei log per un periodo di 3 giorni, durante il quale può essere cercata in Kibana.
 
 **Ripristino**
 
@@ -44,13 +44,13 @@ Per eseguire l'upgrade del tuo piano in modo che tu possa archiviare ulteriori d
 
 **Descrizione del messaggio**
 
-Hai raggiunto la quota giornaliera allocata allo spazio Bluemix (GUID spazio) per l'istanza {{site.data.keyword.loganalysisfull}} {GUID istanza}. La tua assegnazione giornaliera corrente è XXX per l'archiviazione Ricerca dei log, che è conservata per un periodo di 3 giorni, durante il quale può essere cercata in Kibana. Questo non influenza la tua politica di conservazione dei log nell'archiviazione Raccolta dei log. Per eseguire l'upgrade del tuo piano in modo da poter archiviare ulteriori dati nell'archiviazione Ricerca dei log al giorno, esegui l'upgrade del piano di servizio {{site.data.keyword.loganalysisshort}} per questo spazio. Per ulteriori informazioni su piani di servizio e su come eseguire l'upgrade del tuo piano, vedi [Piani](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+Hai raggiunto la quota giornaliera allocata allo spazio Bluemix (GUID spazio) per l'istanza {{site.data.keyword.loganalysisfull}} {GUID istanza}.  La tua assegnazione giornaliera corrente è XXX per l'archiviazione Ricerca dei log, che è conservata per un periodo di 3 giorni, durante il quale può essere cercata in Kibana. Questo non influenza la tua politica di conservazione dei log nell'archiviazione Raccolta dei log. Per eseguire l'upgrade del tuo piano in modo da poter archiviare ulteriori dati nell'archiviazione Ricerca dei log al giorno, esegui l'upgrade del piano di servizio {{site.data.keyword.loganalysisshort}} per questo spazio. Per ulteriori informazioni su piani di servizio e su come eseguire l'upgrade del tuo piano, vedi [Piani](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 XXX rappresenta la dimensione dei dati ricercabili per il tuo piano corrente.
 
 **Spiegazione del messaggio** 
 
-Hai raggiunto la quota giornaliera allocata allo spazio {{site.data.keyword.Bluemix_notm}} (GUID spazio) per l'istanza {{site.data.keyword.loganalysisfull}} {GUID istanza}. La tua assegnazione giornaliera corrente è 500MB, 2 GB, 5 GB o 10 GB per l'archiviazione Ricerca dei log, che viene conservata per un periodo di 3 giorni, durante il quale può essere cercata in Kibana. Questo non influenza la tua politica di conservazione dei log nell'archiviazione Raccolta dei log.
+Hai raggiunto la quota giornaliera allocata allo spazio (GUID spazio) per l'istanza {{site.data.keyword.loganalysisfull}} {GUID istanza}.  La tua assegnazione giornaliera corrente è 500MB, 2 GB, 5 GB o 10 GB per l'archiviazione Ricerca dei log, che viene conservata per un periodo di 3 giorni, durante il quale può essere cercata in Kibana. Questo non influenza la tua politica di conservazione dei log nell'archiviazione Raccolta dei log.
 
 **Ripristino**
 

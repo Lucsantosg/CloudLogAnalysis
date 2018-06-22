@@ -67,21 +67,12 @@ Les journaux qui sont stockés dans le composant Log Search sont supprimés au b
 
 Les journaux qui sont stockés dans le composant Log Collection sont conservés jusqu'à ce que vous configuriez une règle de conservation ou que vous les supprimiez manuellement. 
 
-* Vous pouvez configurer une règle de conservation des journaux pour définir le nombre de jours pendant lequel vous souhaitez conserver les journaux dans Log Collection. Pour plus d'informations, voir :
+* Vous pouvez configurer une règle de conservation des journaux pour définir le nombre de jours pendant lequel vous souhaitez conserver les journaux dans Log Collection. Pour plus d'informations, voir [Affichage et configuration de la règle de conservation des journaux avec le plug-in {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
 
-    [Affichage et configuration de la règle de conservation des journaux avec le plug-in {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
-	
-	[Affichage et configuration de la règle de conservation des journaux avec le plug-in CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy.html#configuring_retention_policy).
+* Vous pouvez utiliser l'[API Log Collection](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} ou l'[interface de ligne de commande Log Collection](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} pour supprimer manuellement des journaux depuis le composant Log Collection. 
 
-    Vous pouvez désactiver la règle en définissant la valeur *-1*. 
-
-* Vous pouvez utiliser l'[API Log Collection](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} ou l'[interface de ligne de commande Log Collection](/docs/services/CloudLogAnalysis/reference/logging_cli.html#logging_cli){: new_window} pour supprimer manuellement des journaux depuis le composant Log Collection. 
-
-* Vous pouvez utiliser l'interface de ligne de commande. Pour plus d'informations sur la suppression manuelle des journaux via l'interface de ligne de commande, voir :
-
-    [bx logging log-delete avec le plug-in {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+* Vous pouvez utiliser l'interface de ligne de commande. Pour plus d'informations sur la suppression manuelle des journaux via l'interface de ligne de commande, voir [bx logging log-delete avec le plug-in {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
     
-	[bx cf logging delete avec le plug-in CF](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete).
 
 
 ## Téléchargement des journaux
@@ -112,16 +103,6 @@ type de journal pendant une semaine pour un espace {{site.data.keyword.Bluemix_n
 Vous pouvez afficher des informations sur les journaux qui sont stockés dans un domaine d'espace, un domaine d'organisation ou un domaine de compte.
 
 
-## Installation de l'interface de ligne de commande {{site.data.keyword.loganalysisshort_notm}} (plug-in CF)
-{: #install_cli}
-
-Pour savoir comment installer l'interface de ligne de commande, voir
-[Installation de l'interface de ligne de commande de journalisation](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#config_log_collection_cli).
-
-Pour vérifier la version de l'interface de ligne de commande, exécutez la commande [bx cf logging](/docs/services/CloudLogAnalysis/reference/logging_cli.html#base) avec le paramètre * -version*.
-
-Pour obtenir de l'aide sur l'exécution des commandes, voir [Aide sur
-l'utilisation de la ligne de commande pour exécuter les commandes](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#command_cli_help).
 
 ## Installation de l'interface de ligne de commande {{site.data.keyword.loganalysisshort_notm}} (plug-in {{site.data.keyword.Bluemix_notm}})
 {: #install_cli}

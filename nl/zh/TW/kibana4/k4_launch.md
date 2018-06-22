@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -20,7 +20,6 @@ lastupdated: "2018-01-10"
 {:shortdesc}
 
 從 {{site.data.keyword.Bluemix_notm}} 啟動 Kibana，以根據啟動 Kibana 所用之資源的環境定義來檢視及分析資料。例如，在 Kibana 中，您可以在特定 CF 應用程式的環境定義中，啟動至該特定應用程式的日誌。
-    {{site.data.keyword.Bluemix_notm}} 空間。用來過濾儀表板中所顯示資料的查詢，會擷取組織中空間的日誌項目。Kibana 所顯示的日誌資訊，包括部署在組織中您所登入空間內的所有資源記錄。 
 
 下表列出用來啟動 Kibana 的資源及支援的導覽方法：
 
@@ -38,11 +37,6 @@ lastupdated: "2018-01-10"
   <tr>  
   <tr>
     <td>Kubernetes 叢集中部署的容器</td>
-    <td>否</td>
-    <td>是</td>
-  <tr>  
-  <tr>
-    <td>{{site.data.keyword.Bluemix_notm}} 所管理基礎架構中部署的容器</td>
     <td>是</td>
     <td>是</td>
   <tr>  
@@ -72,7 +66,7 @@ lastupdated: "2018-01-10"
 
     依預設，**探索**頁面會載入，並選取預設索引型樣，且時間過濾器設為過去 30 秒。搜尋查詢設為符合 CF 應用程式或 Docker 容器的所有項目。
 
-    如果「探索」頁面未顯示任何日誌項目，請調整時間選取器。如需相關資訊，請參閱[設定時間過濾器](logging_kibana_set_time_filter.html#set_time_filter)。
+    如果「探索」頁面未顯示任何日誌項目，請調整時間選取器。 
 
 
 ##  從 Web 瀏覽器導覽至 Kibana 儀表板
@@ -102,6 +96,5 @@ lastupdated: "2018-01-10"
           </tr>
         </table>
 
-    如果「探索」頁面未顯示任何日誌項目，請調整時間選取器。如需相關資訊，請參閱[設定時間過濾器](logging_kibana_set_time_filter.html#set_time_filter)。
-
+    如果「探索」頁面未顯示任何日誌項目，請調整時間選取器。 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -18,11 +18,11 @@ lastupdated: "2018-01-10"
 # CLI에서 CF 로그 분석
 {: #analyzing_logs_cli}
 
-{{site.data.keyword.Bluemix}}에서 명령행 인터페이스를 통해 로그를 보고 필터링하고 분석할 수 있습니다.
+{{site.data.keyword.Bluemix}}에서 명령행 인터페이스를 통해 로그를 보고 필터링하고 분석할 수 있습니다. 
 {:shortdesc}
 
-CF(Cloud Foundry) 애플리케이션 로그를 분석하려면 `cf logs` 명령을 사용하십시오.
-자세한 정보는 [CLI에서 CF 앱 로그 분석](/docs/services/CloudLogAnalysis/logging_view_cli.html#analyzing_cf_logs_cli)을 참조하십시오.
+CF(Cloud Foundry) 애플리케이션 로그를 분석하려면 `bx cf logs` 명령을 사용하십시오.
+자세한 정보는 [cf 로그](/docs/cli/reference/cfcommands/index.html#cf_logs)를 참조하십시오.
 
 
 ## CLI에서 CF 앱 로그 분석
@@ -43,11 +43,11 @@ CF(Cloud Foundry) 애플리케이션 로그를 분석하려면 `cf logs` 명령�
 
 Cloud Foundry 앱에 사용 가능한 모든 로그를 보려면 다음 단계를 완료하십시오.
 
-1. 터미널을 열고 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오. 
+1. 터미널을 열고 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
 2. 명령행에서 모든 로그를 표시하려면 다음 명령을 실행하십시오.
 
-   <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var></code></pre>
+   <pre class="pre screen"><code> bx cf logs <var class="keyword varname">appname</var></code></pre>
    
    
 ### Cloud Foundry 앱에 대한 최신 로그 항목 보기
@@ -55,11 +55,11 @@ Cloud Foundry 앱에 사용 가능한 모든 로그를 보려면 다음 단계�
 
 Cloud Foundry 앱에 사용 가능한 최신 로그를 보려면 다음 단계를 완료하십시오.
 
-1. 터미널을 열고 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오. 
+1. 터미널을 열고 {{site.data.keyword.Bluemix_notm}}에 로그인하십시오.
 
 2. 명령행에서 모든 로그를 표시하려면 다음 명령을 실행하십시오.
 
-     <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var> --recent</code></pre>
+     <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent</code></pre>
 
 <div class="note tip"><span class="tiptitle">팁:</span> 명령행 창에 <span class="keyword cmdname">cf push</span> 또는 <span class="keyword cmdname">cf start</span> 명령을 실행하는 경우, 다른 명령행 창에 <samp class="ph codeph">cf logs appname --recent</samp>를 입력하여
 로그를 실시간으로 확인할 수 있습니다. </div>
@@ -74,7 +74,7 @@ Cloud Foundry 앱에 사용 가능한 최신 로그를 보려면 다음 단계�
 
 2. 명령행에서 모든 로그를 표시하려면 다음 명령을 실행하십시오.
 
-    <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
+    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
     
     **cut** 옵션에 대한 자세한 정보를 보려면 **cut --help**를 입력하십시오.
 
@@ -88,38 +88,38 @@ Cloud Foundry 앱에 대한 특정 키워드가 포함된 로그 항목을 표�
 
 2. 명령행에서 모든 로그를 표시하려면 다음 명령을 실행하십시오.
 
-    <pre class="pre screen"><code>cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
+    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
     
 
 예를 들어, 키워드 **APP**이 포함된 로그 항목을 표시하기 위해 다음 명령을 사용할 수 있습니다.
 
-<pre class="pre screen"><code>cf logs appname --recent | grep '\[App'</code></pre>
+<pre class="pre screen"><code>bx cf logs appname --recent | grep '\[App'</code></pre>
 
-**grep** 옵션에 대한 자세한 정보를 보려면 **grep --help**를 입력하십시오. 
+**grep** 옵션에 대한 자세한 정보를 보려면 **grep --help**를 입력하십시오.
 
 
 ### Cloud Foundry 애플리케이션 로그
 {: #cf_app_logs_cli}
 
-{{site.data.keyword.Bluemix}}에서 Cloud Foundry 애플리케이션을 배치한 후에 다음 로그를 Cloud Foundry 애플리케이션에 대해 사용할 수 있습니다. 
+{{site.data.keyword.Bluemix_notm}}에서 Cloud Foundry 애플리케이션을 배치한 후에 다음 로그를 Cloud Foundry 애플리케이션에 대해 사용할 수 있습니다.
 
 **buildpack.log**
 
-이 로그 파일은 디버깅에 대해 세분화된 정보 이벤트를 기록합니다. 이 로그를 사용하여 빌드팩 실행 문제점을 해결할 수 있습니다. 
+이 로그 파일은 디버깅에 대해 세분화된 정보 이벤트를 기록합니다. 이 로그를 사용하여 빌드팩 실행 문제점을 해결할 수 있습니다.
 
-*buildpack.log* 파일에 데이터를 생성하려면 `cf set-env appname JBP_LOG_LEVEL DEBUG` 명령을 사용하여 빌드팩 추적을 사용으로 설정해야 합니다. 
+*buildpack.log* 파일에 데이터를 생성하려면 `cf set-env appname JBP_LOG_LEVEL DEBUG` 명령을 사용하여 빌드팩 추적을 사용으로 설정해야 합니다.
    
-이 로그를 보려면 `cf files appname app/.buildpack-diagnostics/buildpack.log` 명령을 입력하십시오. 
+이 로그를 보려면 `cf files appname app/.buildpack-diagnostics/buildpack.log` 명령을 입력하십시오.
 
 
 **staging_task.log**
 
-이 로그 파일은 스테이징 태스크의 주요 단계 후 메시지를 기록합니다. 이 로그를 사용하여 스테이징 문제점을 해결할 수 있습니다. 
+이 로그 파일은 스테이징 태스크의 주요 단계 후 메시지를 기록합니다. 이 로그를 사용하여 스테이징 문제점을 해결할 수 있습니다.
 
-이 로그를 보려면 `cf files appname logs/staging_task.log` 명령을 입력하십시오.
+이 로그를 보려면 `bx cf files appname logs/staging_task.log` 명령을 입력하십시오.
 
 
-**참고:** 애플리케이션 로깅 사용 방법에 대한 정보는 [런타임 오류 디버깅](/docs/debug/index.html#debugging-runtime-errors)을 참조하십시오. 
+**참고:** 애플리케이션 로깅 사용 방법에 대한 정보는 [런타임 오류 디버깅](/docs/debug/index.html#debugging-runtime-errors)을 참조하십시오.
 
 
 

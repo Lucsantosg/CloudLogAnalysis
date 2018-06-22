@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,7 +25,7 @@ lastupdated: "2018-01-10"
 
 
 ## 停用帳戶的日誌保留原則
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_acc}
 
 當您停用保留原則時，會保留所有日誌。 
 
@@ -42,7 +42,7 @@ lastupdated: "2018-01-10"
 3. 將保留期間設為 **-1**，以停用保留期間。執行下列指令：
 
     ```
-    bx logging option-update -r account -i AccountID -e RETENTION_VALUE
+        bx logging option-update -r account -i AccountID -e RETENTION_VALUE
     ```
     {: codeblock}
 	
@@ -72,7 +72,7 @@ bx logging option-update -r account -i 12345677fgh436902a3 -e -1
 2. 將保留期間設為 **-1**，以停用保留期間。執行下列指令：
 
     ```
-    bx logging option-show -e RETENTION_VALUE
+        bx logging option-show -e RETENTION_VALUE
 	```
     {: codeblock}
 	
@@ -89,7 +89,7 @@ bx logging option-update -e -1
 
 
 ## 檢查帳戶的日誌保留原則
-{: #check_retention_policy_space}
+{: #check_retention_policy_acc}
 
 若要取得為帳戶所設定的保留期間，請完成下列步驟：
 
@@ -104,19 +104,21 @@ bx logging option-update -e -1
 3. 取得保留期間。執行下列指令：
 
     ```
-    bx logging option-show -r account -i AccountID
+        bx logging option-show -r account -i AccountID
     ```
     {: codeblock}
 
     輸出如下：
 
     ```
-    bx logging option-show -r account -i kjskdsjfksjdflkjdsfbbd06461b066
+        bx logging option-show -r account -i kjskdsjfksjdflkjdsfbbd06461b066
     Showing log options of resource: kjskdsjfksjdflkjdsfbbd06461b066 ...
+
+    
 
     Resource ID                              Retention   
     a:kjskdsjfksjdflkjdsfbbd06461b066       30   
-    ```
+	```
     {: screen}
 	
 ## 檢查空間的日誌保留原則
@@ -131,25 +133,27 @@ bx logging option-update -e -1
 2. 取得保留期間。執行下列指令：
 
     ```
-    bx logging option-show
+        bx logging option-show
     ```
     {: codeblock}
 
     輸出如下：
 
     ```
-    bx logging option-show
+        bx logging option-show
     Showing log options of resource: 12345678-1234-2edr-a9de-378620d6fab5 ...
+
+    
 
     SpaceId                                Retention   
     12345678-1234-2edr-a9de-378620d6fab5   30   
-    ```
+	```
     {: screen}
     
 
 
 ## 設定帳戶層次日誌保留原則
-{: #set_retention_policy_space}
+{: #set_retention_policy_acc}
 
 請完成下列步驟：
 
@@ -164,7 +168,7 @@ bx logging option-update -e -1
 3. 設定保留期間。執行下列指令：
 
     ```
-    bx logging option-update -r account -i AccountID -e RETENTION_VALUE
+        bx logging option-update -r account -i AccountID -e RETENTION_VALUE
     ```
     {: codeblock}
     
@@ -183,7 +187,7 @@ bx logging option-update -r account -i AccountID -e 15
 
 
 ## 設定空間的日誌保留原則
-{: #set_retention_policy_account}
+{: #set_retention_policy_space}
 
 若要查看空間的保留期間，請完成下列步驟：
 
@@ -194,7 +198,7 @@ bx logging option-update -r account -i AccountID -e 15
 2. 設定保留期間。執行下列指令：
 
     ```
-    bx logging option-update -e RETENTION_VALUE
+        bx logging option-update -e RETENTION_VALUE
     ```
     {: codeblock}
     

@@ -24,15 +24,15 @@ lastupdated: "2018-01-31"
 ## Log Analysis CF 플러그인 설치
 {: #install_cli}
 
-{{site.data.keyword.loganalysisshort}} CLI를 설치하려면 다음 단계를 완료하십시오. 
+{{site.data.keyword.loganalysisshort}} CLI를 설치하려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오. 
+1. {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오.
 
-   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오. 
+   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오.
 
-2. {{site.data.keyword.loganalysisshort}} CF 플러그인을 설치하십시오. 
+2. {{site.data.keyword.loganalysisshort}} CF 플러그인을 설치하십시오.
 
-    * Linux의 경우 [Linux에서 {{site.data.keyword.loganalysisshort}} CLI 설치](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux)를 참조하십시오. 
+    * Linux의 경우 [Linux에서 {{site.data.keyword.loganalysisshort}} CLI 설치](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux)를 참조하십시오.
     * Windows의 경우 [Windows에서 {{site.data.keyword.loganalysisshort}} CLI 설치](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows)를 참조하십시오.
     * Mac OS X의 경우 [Mac OS X에서 {{site.data.keyword.loganalysisshort}} CLI 설치](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac)를 참조하십시오.
  
@@ -63,27 +63,27 @@ lastupdated: "2018-01-31"
 ## Linux에서 Log Analysis CLI 설치
 {: #install_cli_linux}
 
-Linux에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계를 완료하십시오. 
+Linux에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계를 완료하십시오.
 
-1. 로그 콜렉션 CLI 플러그인을 설치하십시오. 
+1. 로그 콜렉션 CLI 플러그인을 설치하십시오.
 
     1. [{{site.data.keyword.Bluemix_notm}} CLI 페이지](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins)에서 {{site.data.keyword.loganalysisshort}} 서비스 CLI 플러그인(IBM-Logging)의 최신 릴리스를 다운로드하십시오. 
 	
-		플랫폼 값 **linux64**를 선택하십시오.
+		플랫폼 값 **linux64**를 선택하십시오. 
 		**파일 저장**을 클릭하십시오. 
     
     2. 플러그인의 압축을 푸십시오.
     
-        예를 들어, Ubuntu에서 `logging-cli-linux64.gz` 플러그인을 압축 해제하려면 다음 명령을 실행하십시오. 
+        예를 들어, Ubuntu에서 `logging-cli-linux64.gz` 플러그인을 압축 해제하려면 다음 명령을 실행하십시오.
         
         ```
         gunzip logging-cli-linux64.gz
         ```
         {: codeblock}
 
-    3. 파일을 실행 가능하게 하십시오. 
+    3. 파일을 실행 가능하게 하십시오.
     
-        예를 들어, 파일을 `logging-cli-linux64` 실행 가능하게 하려면 다음 명령을 실행하십시오. 
+        예를 들어, 파일을 `logging-cli-linux64` 실행 가능하게 하려면 다음 명령을 실행하십시오.
         
         ```
         chmod a+x logging-cli-linux64
@@ -92,7 +92,7 @@ Linux에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계를
 
     4. 로깅 CF 플러그인을 설치하십시오.
     
-        예를 들어, 파일을 `logging-cli-linux64` 실행 가능하게 하려면 다음 명령을 실행하십시오. 
+        예를 들어, 파일을 `logging-cli-linux64` 실행 가능하게 하려면 다음 명령을 실행하십시오.
         
         ```
         bx cf install-plugin -f logging-cli-linux64
@@ -101,9 +101,9 @@ Linux에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계를
 
 2. 환경 변수 **LANG**을 설정하십시오.
 
-    시스템 로케일이 CF에서 지원되지 않은 경우, *LANG*를 기본값 *en_US.UTF-8*로 설정하십시오. CF 지원 로케일에 대한 자세한 정보는 [cf CLI 시작하기 ![외부 링크 아이콘](../../../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.cloudfoundry.org/cf-cli/getting-started.html){: new_window}을 참조하십시오. 
+    시스템 로케일이 CF에서 지원되지 않은 경우, *LANG*를 기본값 *en_US.UTF-8*로 설정하십시오. CF 지원 로케일에 대한 자세한 정보는 [cf CLI 시작하기 ![외부 링크 아이콘](../../../../icons/launch-glyph.svg "외부 링크 아이콘")](https://docs.cloudfoundry.org/cf-cli/getting-started.html){: new_window}을 참조하십시오.
 	
-	Ubuntu 시스템의 경우를 예로 들면, *~/.bashrc* 파일을 편집하고 다음 행을 입력하십시오. 
+	Ubuntu 시스템의 경우를 예로 들면, *~/.bashrc* 파일을 편집하고 다음 행을 입력하십시오.
     
     ```
     # add entry for logging CLI
@@ -111,7 +111,7 @@ Linux에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계를
     ```
     {: codeblock}
     
-    새 터미널 창을 열고 다음 명령을 실행하여 LANG 및 LOGGING_ENDPOINT 변수가 설정되었는지 확인하십시오. 
+    새 터미널 창을 열고 다음 명령을 실행하여 LANG 변수가 설정되었는지 확인하십시오. 
     
     ```
     $echo LANG
@@ -136,17 +136,17 @@ Linux에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계를
     {: screen}
 
 
-## Linux에서 Log Analysis CLI 설치
+## Windows에서 Log Analysis CLI 설치
 {: #install_cli_windows}
 
-Windows에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계를 완료하십시오. 
+Windows에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계를 완료하십시오.
 
 1. [{{site.data.keyword.Bluemix_notm}} CLI 페이지](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins)에서 {{site.data.keyword.loganalysisshort}} 서비스 CLI 플러그인(IBM-Logging)의 최신 릴리스를 다운로드하십시오. 
 	
-	1. 플랫폼 값 **win64**를 선택하십시오.	 
+	1. 플랫폼 값 **win64**를 선택하십시오. 
 	2. **파일 저장**을 클릭하십시오.  
     
-2. Windows에서 로그 콜렉션 플러그인을 설치하려면 **cf install-plugin** 명령을 실행하십시오.  
+2. Windows에서 로그 콜렉션 플러그인을 설치하려면 **cf install-plugin** 명령을 실행하십시오. 
 
     ```
 	bx cf install-plugin PluginName
@@ -165,16 +165,16 @@ Windows에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계�
     플러그인이 설치되면 다음 메시지가 표시됩니다. `플러그인 IBM-Logging 1.0.1이 설치되었습니다.`
 
 3. 로깅 CLI 플러그인의 설치를 확인하십시오.
-
+  
     예를 들면, 플러그인의 버전을 확인하십시오. 다음 명령을 실행하십시오.
-
+    
     ```
     bx cf logging --version
     ```
     {: codeblock}
-
+    
     출력은 다음과 같습니다.
-
+   
     ```
     bx cf logging version 1.0.1
     ```
@@ -186,12 +186,12 @@ Windows에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계�
 
 Mac OS X에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계를 완료하십시오.
 
-1. [{{site.data.keyword.Bluemix_notm}} CLI 페이지](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins)에서 {{site.data.keyword.loganalysisshort}} 서비스 CLI 플러그인(IBM-Logging)의 최신 릴리스를 다운로드하십시오.
+1. [{{site.data.keyword.Bluemix_notm}} CLI 페이지](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins)에서 {{site.data.keyword.loganalysisshort}} 서비스 CLI 플러그인(IBM-Logging)의 최신 릴리스를 다운로드하십시오. 
 	
-	1. 플랫폼 값 **osx**를 선택하십시오.
-	2. **파일 저장**을 클릭하십시오.
-
-2. Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 **cf install-plugin** 명령을 실행하십시오.
+	1. 플랫폼 값 **osx**를 선택하십시오. 
+	2. **파일 저장**을 클릭하십시오.  
+    
+2. Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 **cf install-plugin** 명령을 실행하십시오. 
 
     ```
 	bx cf install-plugin PluginName
@@ -210,16 +210,16 @@ Mac OS X에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계
     플러그인이 설치되면 다음 메시지가 표시됩니다. `플러그인 IBM-Logging 1.0.1이 설치되었습니다.`
 
 3. 로깅 CLI 플러그인의 설치를 확인하십시오.
-
+  
     예를 들면, 플러그인의 버전을 확인하십시오. 다음 명령을 실행하십시오.
-
+    
     ```
     bx cf logging --version
     ```
     {: codeblock}
-
+    
     출력은 다음과 같습니다.
-
+   
     ```
     bx cf logging version 1.0.1
     ```
@@ -235,63 +235,62 @@ Mac OS X에서 로그 콜렉션 CF 플러그인을 설치하려면 다음 단계
 {{site.data.keyword.loganalysisshort}} 서비스 CLI를 설치 제거하려면 다음 단계를 완료하십시오.
 
 1. 설치된 로깅 CLI 플러그인의 버전을 확인하십시오.
-
+  
     예를 들면, 플러그인의 버전을 확인하십시오. 다음 명령을 실행하십시오.
-
+    
     ```
     bx cf plugins
     ```
     {: codeblock}
-
+    
     출력은 다음과 같습니다.
-
+   
     ```
 Listing Installed Plugins...
     OK
-
-    
 
     Plugin Name   Version   Command Name   Command Help
     IBM-Logging   1.0.1     logging        IBM Logging plug-in
     ```
     {: screen}
-
+    
 2. 플러그인이 설치된 경우 `cf uninstall-plugin`을 실행하여 로깅 CLI 플러그인을 설치 제거하십시오.
 
     다음 명령을 실행하십시오.
-
+        
     ```
     bx cf uninstall-plugin IBM-Logging
     ```
     {: codeblock}
-
+  
 
 ## 일반 도움말 가져오기
 {: #general_cli_help}
 
 CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오.
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
-
+    
 2. 지원되는 명령 및 CLI에 대한 정보를 나열합니다. 다음 명령을 실행하십시오.
 
     ```
     bx cf logging help 
     ```
     {: codeblock}
-
+    
+    
 
 ## 명령에 대한 도움말 가져오기
 {: #command_cli_help}
 
 명령을 사용하는 방법에 대한 도움말을 가져오려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오.
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
-
+    
 2. 지원되는 명령의 목록을 가져오고 필요로 하는 명령을 식별합니다. 다음 명령을 실행하십시오.
 
     ```
@@ -305,7 +304,7 @@ CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다
     bx cf logging help *Command*
     ```
     {: codeblock}
-
+    
     여기서, *Command*는 CLI 명령의 이름입니다(예: *status*).
 
 
@@ -315,10 +314,10 @@ CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다
 
 명령에는 하위 명령이 있을 수 있습니다. 하위 명령에 대한 도움말을 가져오려면 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오.
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
-
+    
 2. 지원되는 명령의 목록을 가져오고 필요로 하는 명령을 식별합니다. 다음 명령을 실행하십시오.
 
     ```
@@ -332,7 +331,7 @@ CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다
     bx cf logging help *Command*
     ```
     {: codeblock}
-
+    
     여기서, *Command*는 CLI 명령의 이름입니다(예: *session*).
 
 4. 명령에 대한 도움말을 가져오고 지원되는 하위 명령을 식별합니다. 다음 명령을 실행하십시오.
@@ -341,9 +340,9 @@ CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다
     bx cf logging *Command* help *Subcommand*
     ```
     {: codeblock}
-
-    여기서,
-
+    
+    여기서, 
+    
     * *Command*는 CLI 명령의 이름입니다(예: *status*).
     * *Subcommand*는 지원되는 하위 명령의 이름입니다(예: *session* 명령의 올바른 하위 명령은 *list*임).
 

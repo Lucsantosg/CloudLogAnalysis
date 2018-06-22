@@ -8,24 +8,19 @@ IBM Cloud Log Analysis
     index.md
     
     {: .topicgroup}
-    關於 Log Analysis
+    有關 Log Analysis
         log_analysis_ov.md
-        log_analysis_component_ov
         manage_logs.md
         log_ingestion.md
         kibana/analyzing_logs_Kibana.md
         security_ov.md
+        compliance.md
 
     {: .topicgroup}
-    雲端資源的記載功能
+    記載雲端資源
         cfapps/logging_cf_apps.md
         containers/containers_kubernetes.md
-        containers/containers_bluemix.md
         vm/logging_vm_ov.md
-
-    {: .topicgroup}
-    新增功能
-        migration/es17_to_es51.md
     
     {: .topicgroup}
     指導教學
@@ -43,7 +38,6 @@ IBM Cloud Log Analysis
     how-to/change_plan.md
     how-to/quota.md
     how-to/manage-logs/config_log_collection_cli_cloud.md
-    how-to/manage-logs/config_log_collection_cli.md
 
     {: .topicgroup}
     進階日誌分析 (Kibana)
@@ -55,18 +49,11 @@ IBM Cloud Log Analysis
         kibana/launch.md
 
     {: .topicgroup}
-    管理日誌（IBM Cloud 外掛程式）
+    管理日誌
         how-to/manage-logs/configuring_retention_policy_cloud.md
         how-to/manage-logs/deleting_logs_cloud.md
         how-to/manage-logs/downloading_logs_cloud.md
         how-to/manage-logs/viewing_log_information_cloud.md
-
-    {: .topicgroup}
-    管理日誌（CF 外掛程式）
-        how-to/manage-logs/configuring_retention_policy.md
-        how-to/manage-logs/deleting_logs.md
-        how-to/manage-logs/downloading_logs.md
-        how-to/manage-logs/viewing_log_information.md
 
     {: .topicgroup}
     傳送日誌
@@ -91,34 +78,13 @@ IBM Cloud Log Analysis
         containers/containers_kube_other_logs.md
         containers/containers_key_owner.md
         containers/containers_spaceid.md
-        containers/logging_containers_other_logs.md
-
-    {: .topicgroup}
-    Log Analysis (Kibana 4) 已淘汰
-        kibana4/logging_kibana_analize_logs_interactively.md
-        kibana4/logging_kibana_visualizations.md
-        kibana4/logging_kibana_analize_logs_dashboard.md
-        kibana4/k4_define_search.md
-        kibana4/k4_filter_logs.md
-        kibana4/k4_launch.md
-
-    {: .topicgroup}
-    Log Analysis (Kibana 3) 已淘汰
-        kibana3/logging_kibana_query.md
-        kibana3/logging_kibana_filter_by_component.md
-        kibana3/logging_kibana_filter_by_time_period.md
-        kibana3/logging_kibana_filter_by_instance_id.md
-        kibana3/logging_kibana_filter_by_known_application_id.md
-        kibana3/logging_kibana_filter_by_message_type.md
-        kibana3/logging_kibana_tables_graphs.md
-        kibana3/logging_kibana_export_share_dashboard.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    reference/logging_cli.md  
+    qa/kibana_formats.md
     reference/log_analysis_cli_cloud.md  
 
-    [日誌收集 API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
+    [Log Analysis API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
     {: .navgroup-end}     
     
     {: .navgroup id="help"}
@@ -131,8 +97,24 @@ IBM Cloud Log Analysis
     {: .topicgroup}
     常見問題
         qa/faq_kibana.md
-        qa/kibana_formats.md
         qa/cli_qa.md
 
+    {: .topicgroup}
+    管理日誌（CF 外掛程式）已淘汰
+        reference/logging_cli.md  
+        how-to/manage-logs/config_log_collection_cli.md
+        how-to/manage-logs/configuring_retention_policy.md
+        how-to/manage-logs/deleting_logs.md
+        how-to/manage-logs/downloading_logs.md
+        how-to/manage-logs/viewing_log_information.md
+
+    {: .topicgroup}
+    Log Analysis (Kibana 4) 已淘汰
+        kibana4/logging_kibana_analize_logs_interactively.md
+        kibana4/logging_kibana_visualizations.md
+        kibana4/logging_kibana_analize_logs_dashboard.md
+        kibana4/k4_define_search.md
+        kibana4/k4_filter_logs.md
+        kibana4/k4_launch.md
     {: .navgroup-end}
     

@@ -48,4 +48,4 @@ Pour obtenir le jeton d'autorisation, procédez comme suit :
 	La sortie renvoie le jeton UAA que vous devez utiliser pour authentifier votre ID utilisateur dans cet espace et dans cette organisation.
 	
 
-**Remarque :** lorsque vous utilisez le jeton, retirez *Bearer* de la valeur du jeton que vous avez transmis dans un appel d'API.
+**Remarque :** lorsque vous utilisez le jeton, retirez *Bearer* de la valeur du jeton que vous avez transmis dans un appel d'API. 

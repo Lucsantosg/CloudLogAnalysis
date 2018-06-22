@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -26,7 +26,7 @@ lastupdated: "2018-01-10"
 
 
 ## 刪除特定一段時間內的日誌
-{: #time_range}
+{: #fix_period}
 
 請完成下列步驟：
 
@@ -57,7 +57,7 @@ lastupdated: "2018-01-10"
 	
 3. 刪除特定日期所儲存的日誌。
 
-	```
+    ```
 	bx cf logging delete -s StartDate -e EndDate
 	```
 	{: codeblock}
@@ -65,7 +65,7 @@ lastupdated: "2018-01-10"
 	其中
 	
 	* *-s* 設定「世界標準時間 (UTC)」格式的開始日期：YYYY-MM-DD（例如，2006-01-02）。
-	* *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
+    * *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
     	
 	例如，若要刪除 2017 年 5 月 25 日的日誌，請執行下列指令：
 	
@@ -76,7 +76,7 @@ lastupdated: "2018-01-10"
 
 	
 ## 依日誌類型刪除特定一段時間內的日誌 
-{: #time_range}
+{: #log_type}
 
 請完成下列步驟：
 
@@ -107,7 +107,7 @@ lastupdated: "2018-01-10"
 	
 3. 刪除特定日期所儲存的日誌。
 
-	```
+    ```
 	bx cf logging delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
@@ -115,7 +115,7 @@ lastupdated: "2018-01-10"
 	其中
 	
 	* *-s* 設定「世界標準時間 (UTC)」格式的開始日期：YYYY-MM-DD（例如，2006-01-02）。
-	* *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
+    * *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
 	* *-t* 設定日誌類型。
     	
 	例如，若要刪除 2017 年 5 月 25 日類型為 linux_syslog 的日誌，請執行下列指令：
@@ -128,7 +128,7 @@ lastupdated: "2018-01-10"
 		
 	
 ## 依日誌類型刪除特定一段時間內的帳戶日誌 
-{: #time_range}
+{: #acc_log_type}
 
 請完成下列步驟：
 
@@ -159,7 +159,7 @@ lastupdated: "2018-01-10"
 	
 3. 刪除特定日期所儲存的日誌。
 
-	```
+    ```
 	bx cf logging delete -s StartDate -e EndDate -t LogType -a
 	```
 	{: codeblock}
@@ -167,7 +167,7 @@ lastupdated: "2018-01-10"
 	其中
 	
 	* *-s* 設定「世界標準時間 (UTC)」格式的開始日期：YYYY-MM-DD（例如，2006-01-02）。
-	* *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
+    * *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
 	* *-t* 設定日誌類型。
     	
 	例如，若要刪除 2017 年 5 月 25 日類型為 linux_syslog 且儲存在「日誌收集」中帳戶層次的日誌，請執行下列指令：

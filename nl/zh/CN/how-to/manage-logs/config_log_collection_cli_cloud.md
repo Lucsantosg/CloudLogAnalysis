@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -13,14 +13,14 @@ lastupdated: "2018-01-10"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# 配置 {{site.data.keyword.loganalysisshort}} CLI（{{site.data.keyword.Bluemix_notm}} 插件）
+# 配置 {{site.data.keyword.loganalysisshort}} CLI
 {: #config_log_collection_cli}
 
 {{site.data.keyword.loganalysisshort}} 服务包含可用于在云中管理日志的命令行界面 (CLI)。可以使用 {{site.data.keyword.Bluemix_notm}} 插件来查看日志的状态、下载日志以及配置日志保留时间策略。该 CLI 提供了以下不同类型的帮助：了解 CLI 和受支持命令的一般帮助、了解如何使用命令的命令帮助，以及了解如何使用某个命令的子命令的子命令帮助。
 {:shortdesc}
 
 
-## 从 {{site.data.keyword.Bluemix_notm}} 存储库安装 {{site.data.keyword.loganalysisshort}} 插件
+## 通过 {{site.data.keyword.Bluemix_notm}} 存储库安装 {{site.data.keyword.loganalysisshort}} 插件
 {: #install_cli_repo}
 
 要安装 {{site.data.keyword.loganalysisshort}} CLI，请完成以下步骤：
@@ -29,10 +29,10 @@ lastupdated: "2018-01-10"
 
    有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
    
-2. 查找存储库中插件的名称。运行以下命令：
+2. 在存储库中查找插件的名称。运行以下命令：
 
     ```
-    bx plugin repo-plugins
+        bx plugin repo-plugins
     ```
     {: codeblock}
     
@@ -41,16 +41,16 @@ lastupdated: "2018-01-10"
 3. 安装 {{site.data.keyword.loganalysisshort}} 插件。运行以下命令：
 
     ```
-    bx plugin install logging-cli -r Bluemix
+        bx plugin install logging-cli -r Bluemix
     ```
     {: codeblock}
  
-4. 验证是否已安装 {{site.data.keyword.loganalysisshort}} 插件。
+4. 验证 {{site.data.keyword.loganalysisshort}} 插件是否已安装。
   
     例如，运行以下命令以查看安装的插件列表：
     
     ```
-    bx plugin list
+        bx plugin list
     ```
     {: codeblock}
     
@@ -66,7 +66,7 @@ lastupdated: "2018-01-10"
     {: screen}
 
 
-## 从文件安装 {{site.data.keyword.loganalysisshort}} 插件
+## 通过文件安装 {{site.data.keyword.loganalysisshort}} 插件
 {: #install_cli}
 
 要安装 {{site.data.keyword.loganalysisshort}} CLI，请完成以下步骤：
@@ -86,7 +86,7 @@ lastupdated: "2018-01-10"
     例如，检查该插件的版本。运行以下命令：
     
     ```
-    bx plugin list
+        bx plugin list
     ```
     {: codeblock}
     
@@ -103,7 +103,7 @@ lastupdated: "2018-01-10"
  
 
 
-## 在 Linux 上从文件安装 Log Analysis 插件
+## 在 Linux 上通过文件安装 Log Analysis 插件
 {: #install_cli_linux}
 
 要在 Linux 上安装“日志收集”插件，请完成以下步骤：
@@ -119,14 +119,14 @@ lastupdated: "2018-01-10"
 2. 安装插件。运行以下命令：
         
     ```
-    bx plugin install -f logging-cli-linux-amd64-0.1.1
+        bx plugin install -f logging-cli-linux-amd64-0.1.1
     ```
     {: codeblock}
 
 
 
 
-## 在 Windows 上从文件安装 Log Analysis 插件
+## 在 Windows 上通过文件安装 Log Analysis 插件
 {: #install_cli_windows}
 
 要在 Windows 上安装“日志收集”插件，请完成以下步骤：
@@ -139,13 +139,13 @@ lastupdated: "2018-01-10"
 2. 安装插件。运行以下命令：
         
     ```
-    bx plugin install -f logging-cli-windows-amd64-0.1.1.exe
+        bx plugin install -f logging-cli-windows-amd64-0.1.1.exe
     ```
     {: codeblock}
 
 	
 
-## 在 Mac OS X 上从文件安装 Log Analysis 插件
+## 在 Mac OS X 上通过文件安装 Log Analysis 插件
 {: #install_cli_mac}
 
 要在 Mac OS X 上安装“日志收集”插件，请完成以下步骤：
@@ -155,10 +155,17 @@ lastupdated: "2018-01-10"
 	1. 选择平台值：**osx**。 
 	2. 单击**保存文件**。  
     
-2. 安装插件。运行以下命令：
+2. 更改文件的许可权。运行以下命令：
+
+    ```
+    chmod u+x logging-cli-darwin-amd64-0.1.1
+    ```
+     {: codeblock}
+
+3. 安装插件。运行以下命令：
         
     ```
-    bx plugin install -f logging-cli-darwin-amd64-0.1.1
+        bx plugin install -f logging-cli-darwin-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -177,7 +184,7 @@ lastupdated: "2018-01-10"
     例如，检查该插件的版本。运行以下命令：
     
     ```
-    bx plugin list
+        bx plugin list
     ```
     {: codeblock}
     
@@ -197,13 +204,13 @@ lastupdated: "2018-01-10"
     运行以下命令：
         
     ```
-    bx plugin uninstall logging-cli
+        bx plugin uninstall logging-cli
     ```
     {: codeblock}
   
 
-## 从存储库更新 Log Analysis CLI
-{: #uninstall_cli}
+## 更新存储库中的 Log Analysis CLI
+{: #update_cli}
 
 要更新日志记录 CLI，请运行 *bx plugin update* 命令。
 {:shortdesc}
@@ -213,7 +220,7 @@ lastupdated: "2018-01-10"
 1. 更新 {{site.data.keyword.loganalysisshort}} 插件。运行以下命令：
 
     ```
-    bx plugin update logging-cli -r Bluemix
+        bx plugin update logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -222,7 +229,7 @@ lastupdated: "2018-01-10"
     例如，验证插件的版本。运行以下命令：
     
     ```
-    bx plugin list
+        bx plugin list
     ```
     {: codeblock}
     
@@ -253,7 +260,7 @@ lastupdated: "2018-01-10"
 2. 列出有关受支持命令和 CLI 的信息。运行以下命令：
 
     ```
-    bx logging help 
+        bx logging help 
     ```
     {: codeblock}
     
@@ -271,7 +278,7 @@ lastupdated: "2018-01-10"
 2. 获取受支持命令的列表，并确定您需要的命令。运行以下命令：
 
     ```
-    bx logging help 
+        bx logging help 
     ```
     {: codeblock}
 
@@ -298,7 +305,7 @@ lastupdated: "2018-01-10"
 2. 获取受支持命令的列表，并确定您需要的命令。运行以下命令：
 
     ```
-    bx logging help 
+        bx logging help 
     ```
     {: codeblock}
 

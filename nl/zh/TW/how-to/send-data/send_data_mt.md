@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -25,9 +25,10 @@ lastupdated: "2018-01-10"
 ## 必要條件
 {: #prereqs}
 
-* 用來登入 {{site.data.keyword.Bluemix_notm}} 的 {{site.data.keyword.IBM_notm}} ID。
+* 用來登入 {{site.data.keyword.Bluemix_notm}} 的 {{site.data.keyword.Bluemix_notm}} ID。
 * 有權使用 {{site.data.keyword.loganalysisshort}} 服務處理空間的使用者 ID。如需相關資訊，請參閱[安全](/docs/services/CloudLogAnalysis/security_ov.html#security_ov)。
 * 本端環境中已安裝的 {{site.data.keyword.loganalysisshort}} CLI。
+* 以容許日誌汲取的方案將 {{site.data.keyword.loganalysisshort}} 服務佈建在您帳戶的空間中。
 
 
 ## 步驟 1：取得記載記號
@@ -39,35 +40,28 @@ lastupdated: "2018-01-10"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 執行 `bx cf logging auth` 指令。 
+2. 執行 `bx logging token-get` 指令。 
 
     ```
-    bx cf logging auth
+    bx logging token-get
     ```
     {: codeblock}
 
-    這個指令會傳回下列資訊：
-    
-    * 記載記號。
-    * 組織 ID：這是您所登入之 {{site.data.keyword.Bluemix_notm}} 組織的 GUID。 
-    * 空間 ID：您所登入之組織內空間的 GUID。 
+    這個指令會傳回記載記號。
     
     例如，
 
     ```
-    bx cf logging auth
-    +-----------------+--------------------------------------+
-    |      NAME       |                VALUE                 |
-    +-----------------+--------------------------------------+
-    | Access Token    | $(cf oauth-token|cut -d' ' -f2)      |
-    | Logging Token   | oT98_abcdefz                         |
-    | Organization Id | 98450123-5555-9999-9999-0210fjyuwplt |
-    | Space Id        | 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf |
-    +-----------------+--------------------------------------+
+    bx logging token-get
+    Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
+    OK
+
+    Tenant Id                              Logging Token   
+    93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf   oT98_abcdefz   
     ```
     {: screen}
 
-如需相關資訊，請參閱 [cf logging auth](/docs/services/CloudLogAnalysis/reference/logging_cli.html#auth)。
+    其中 *Tenant Id* 是您計劃要傳送日誌之空間的 GUID。
 
 
 ## 步驟 2：配置 mt-logstash-forwarder
@@ -78,7 +72,7 @@ lastupdated: "2018-01-10"
 1.	以 root 使用者身分登入。 
 
     ```
-    sudo -s
+        sudo -s
     ```
     {: codeblock}
     
@@ -87,7 +81,7 @@ lastupdated: "2018-01-10"
     例如，針對 Ubunutu 系統，檢查 `timedatectl status` 是否顯示 *Network time on: yes*。如果是，Ubuntu 系統即已配置成使用 NTP，而且您可以跳過此步驟。
     
     ```
-    # timedatectl status
+        # timedatectl status
     Local time: Mon 2017-06-12 03:01:22 PDT
     Universal time: Mon 2017-06-12 10:01:22 UTC
     RTC time: Mon 2017-06-12 10:01:22
@@ -103,35 +97,35 @@ lastupdated: "2018-01-10"
     1.	執行下列指令，以更新套件。 
 
         ```
-        apt-get update
+                apt-get update
         ```
         {: codeblock}
         
     2.	執行下列指令，以安裝 ntp 套件。 
 
         ```
-        apt-get install ntp
+                apt-get install ntp
         ```
         {: codeblock}
         
     3.	執行下列指令，以安裝 ntpdate 套件。 
     
         ```
-        apt-get install ntpdate
+                apt-get install ntpdate
         ```
         {: codeblock}
         
     4.	執行下列指令，以停止服務。 
         
         ```
-        service ntp stop
+                service ntp stop
         ```
         {: codeblock}
         
     5.	執行下列指令，以同步化系統時鐘。 
     
         ```
-        ntpdate -u 0.ubuntu.pool.ntp.org
+                ntpdate -u 0.ubuntu.pool.ntp.org
         ```
         {: codeblock}
         
@@ -145,7 +139,7 @@ lastupdated: "2018-01-10"
     6.	執行下列指令，以重新啟動 ntpd。 
     
         ```
-        service ntp start
+                service ntp start
         ```
         {: codeblock}
     
@@ -154,21 +148,21 @@ lastupdated: "2018-01-10"
     7.	執行下列指令，讓 ntpd 服務在當機或重新開機之後自動啟動。 
     
         ```
-        service ntp enable
+                service ntp enable
         ```
         {: codeblock}
         
         顯示的結果是可用來管理 ntpd 服務的指令清單，例如：
         
         ```
-        Usage: /etc/init.d/ntpd {start|stop|status|restart|try-restart|force-reload}
+                Usage: /etc/init.d/ntpd {start|stop|status|restart|try-restart|force-reload}
         ```
         {: screen}
 
 3. 在系統的套件管理程式中，新增 {{site.data.keyword.loganalysisshort}} 服務的儲存庫。執行下列指令：
 
     ```
-    wget -O - https://downloads.opvis.bluemix.net/client/IBM_Logmet_repo_install.sh | bash
+        wget -O - https://downloads.opvis.bluemix.net/client/IBM_Logmet_repo_install.sh | bash
     ```
     {: codeblock}
 
@@ -177,7 +171,7 @@ lastupdated: "2018-01-10"
     1. 執行下列指令，以安裝 mt-logstash-forwarder：
     
         ```
-        apt-get install mt-logstash-forwarder 
+                apt-get install mt-logstash-forwarder 
         ```
         {: codeblock}
         
@@ -186,7 +180,7 @@ lastupdated: "2018-01-10"
        編輯檔案 `/etc/mt-logstash-forwarder/mt-lsf-config.sh`。例如，您可以使用 vi 編輯器：
                
        ```
-       vi /etc/mt-logstash-forwarder/mt-lsf-config.sh
+              vi /etc/mt-logstash-forwarder/mt-lsf-config.sh
        ```
        {: codeblock}
         
@@ -204,7 +198,7 @@ lastupdated: "2018-01-10"
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>目標 URL。若要取得汲取 URL 清單，請參閱[汲取 URL](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。例如，將值設為 **https://ingest.logging.ng.bluemix.net:9091**，以傳送美國南部地區中的日誌。</td>
+            <td>目標 URL。若要取得汲取 URL 清單，請參閱[汲取 URL](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。例如，將值設為 **ingest.logging.ng.bluemix.net:9091**，以傳送美國南部地區中的日誌。</td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>
@@ -223,7 +217,7 @@ lastupdated: "2018-01-10"
        例如，請查看下列範例檔案，尋找英國地區中 ID 為 *7d576e3b-170b-4fc2-a6c6-b7166fd57912* 的空間：
         
        ```
-       # more mt-lsf-config.sh 
+              # more mt-lsf-config.sh 
        LSF_INSTANCE_ID="myhelloapp"
        LSF_TARGET="ingest.logging.ng.bluemix.net:9091"
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
@@ -235,7 +229,7 @@ lastupdated: "2018-01-10"
     3. 啟動 mt-logstash-forwarder。 
     
        ```
-       service mt-logstash-forwarder start
+              service mt-logstash-forwarder start
        ```
        {: codeblock}
                 
@@ -256,7 +250,7 @@ lastupdated: "2018-01-10"
     例如，在 Ubuntu 系統中，執行下列指令：
     
     ```
-    cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
+        cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
     ```
     {: codeblock}
         
@@ -267,7 +261,7 @@ lastupdated: "2018-01-10"
      重新啟動 mt-logstash-forwarder 服務。執行下列指令：
     
     ```
-    service mt-logstash-forwarder restart
+        service mt-logstash-forwarder restart
     ```
     {: codeblock}
 
@@ -278,7 +272,7 @@ lastupdated: "2018-01-10"
 1.	複製 `/etc/mt-logstash-forwarder/conf.d/syslog.conf` 檔案。 
 
     ```
-    cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
+        cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
     ```
     {: codeblock}
     

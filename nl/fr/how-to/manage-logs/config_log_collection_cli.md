@@ -13,7 +13,7 @@ lastupdated: "2018-01-31"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Configuration de l'interface de ligne de commande Log Analysis (plug-in CF) - Dépréciée 
+# Configuration de l'interface de ligne de commande Log Analysis (plug-in CF) - Dépréciée
 {: #config_log_collection_cli}
 
 Le service {{site.data.keyword.loganalysisshort}} inclut une interface de ligne de commande (CLI) que vous pouvez utiliser pour gérer vos journaux dans le cloud. Vous pouvez utiliser le plug-in Cloud Foundry (CF) pour afficher le statut du journal, télécharger des journaux et configurer la règle de conservation des journaux. L'interface CLI offre différents types d'aides : une aide générale concernant l'interface CLI et les commandes prises en charge,
@@ -114,7 +114,7 @@ sur les environnements locaux pris en charge par CF, voir [Getting Started with 
     ```
     {: codeblock}
     
-    Ouvrez une nouvelle fenêtre de terminal et exécutez la commande suivante pour vérifier que les variables LANG et LOGGING_ENDPOINT sont définies :
+    Ouvrez une nouvelle fenêtre de terminal et exécutez la commande suivante pour vérifier que la variable LANG est définie :
     
     ```
     $echo LANG
@@ -158,7 +158,7 @@ Procédez comme suit pour installer le plug-in CF Log Collection sous Windows :
 	
 	où *PluginName* est le nom du fichier que vous avez téléchargé.
 	
-    Par exemple, pour installer le plug-in *logging-cli-win64_v1.0.1.exe*, exécutez la commande suivante depuis une fenêtre de terminal :
+    Par exemple, pour installer le plug-in *logging-cli-win64_v1.0.1.exe*, exécutez la commande suivante depuis une fenêtre de terminal : 
 	
 	```
 	bx cf install-plugin logging-cli-win64_v1.0.1.exe
@@ -167,7 +167,7 @@ Procédez comme suit pour installer le plug-in CF Log Collection sous Windows :
 	
     Lorsque le plug-in est installé, le message suivant s'affiche : `Plugin IBM-Logging 1.0.1 successfully installed.`
 
-3. Vérifiez l'installation du plug-in d'interface de ligne de commande de journalisation.
+3. Vérifiez l'installation du plug-in de l'interface de ligne de commande de journalisation.
   
     Par exemple, vérifiez la version du plug-in. Exécutez la commande suivante :
     
@@ -187,7 +187,7 @@ Procédez comme suit pour installer le plug-in CF Log Collection sous Windows :
 ## Installation de l'interface de ligne de commande de Log Analysis sous Mac OS X
 {: #install_cli_mac}
 
-Procédez comme suit pour installer le plug-in CF Log Collection sous Mac OS X :
+Procédez comme suit pour installer le plug-in Log Collection CF sous Mac OS X :
 
 1. Téléchargez l'édition la plus récente du plug-in d'interface de ligne de commande du service {{site.data.keyword.loganalysisshort}} (IBM-Logging) depuis la [page de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
 	
@@ -203,7 +203,7 @@ Procédez comme suit pour installer le plug-in CF Log Collection sous Mac OS X :
 	
 	où *PluginName* est le nom du fichier que vous avez téléchargé.
 	
-    Par exemple, pour installer le plug-in *logging-cli-darwin_v1.0.1*, exécutez la commande suivante depuis un terminal :
+    Par exemple, pour installer le plug-in *logging-cli-darwin_v1.0.1*, exécutez la commande suivante depuis un terminal : 
 	
 	```
 	bx cf install-plugin logging-cli-darwin_v1.0.1
@@ -212,7 +212,7 @@ Procédez comme suit pour installer le plug-in CF Log Collection sous Mac OS X :
 	
     Lorsque le plug-in est installé, le message suivant s'affiche : `Plugin IBM-Logging 1.0.1 successfully installed.`
 
-3. Vérifiez l'installation du plug-in d'interface de ligne de commande de journalisation.
+3. Vérifiez l'installation du plug-in de l'interface de ligne de commande de journalisation.
   
     Par exemple, vérifiez la version du plug-in. Exécutez la commande suivante :
     
@@ -237,7 +237,7 @@ Pour désinstaller l'interface de ligne de commande de journalisation, supprimez
 
 Procédez comme suit pour désinstaller l'interface de ligne de commande du service {{site.data.keyword.loganalysisshort}} :
 
-1. Vérifiez la version du plug-in de l'interface de ligne de commande de journalisation qui est installée.
+1. Vérifiez la version du plug-in d'interface de ligne de commande de journalisation qui est installée.
   
     Par exemple, vérifiez la version du plug-in. Exécutez la commande suivante :
     
@@ -257,7 +257,7 @@ Procédez comme suit pour désinstaller l'interface de ligne de commande du serv
     ```
     {: screen}
     
-2. Si le plug-in est installé, exécutez la commande `cf uninstall-plugin` pour désinstaller le plug-in de l'interface de ligne de commande de journalisation.
+2. Si le plug-in est installé, exécutez la commande `cf uninstall-plugin` pour désinstaller le plug-in d'interface de ligne de commande de journalisation.
 
     Exécutez la commande suivante :
         
@@ -267,14 +267,16 @@ Procédez comme suit pour désinstaller l'interface de ligne de commande du serv
     {: codeblock}
   
 
-## Obtention de l'aide générale
+## Obtention d'une aide générale
 {: #general_cli_help}
 
-Pour obtenir des informations générales sur l'interface de ligne de commande et sur les commandes prises en charge, procédez comme suit :
+Pour obtenir des informations générales sur l'interface de ligne de commande et prendre connaissance des commandes prises en charge, procédez comme suit :
 
 1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
 
-    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    Pour plus d'informations, voir
+[Comment se connecter
+à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Affichez des informations sur les commandes prises en charge et sur l'interface de ligne de commande. Exécutez la commande suivante :
 
@@ -285,16 +287,18 @@ Pour obtenir des informations générales sur l'interface de ligne de commande e
     
     
 
-## Obtention d'aide sur une commande
+## Obtenir de l'aide sur une commande
 {: #command_cli_help}
 
 Pour obtenir de l'aide au sujet de l'utilisation d'une commande, procédez comme suit :
 
 1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
 
-    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    Pour plus d'informations, voir
+[Comment se connecter
+à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Obtenez la liste des commandes prises en charge et identifiez celle dont vous avez besoin. Exécutez la commande :
+2. Obtenez la liste des commandes prises en charge et identifiez celle dont vous avez besoin. Exécutez la commande suivante :
 
     ```
     bx cf logging help 
@@ -319,9 +323,11 @@ Une commande peut avoir des sous-commandes. Pour obtenir de l'aide sur des sous-
 
 1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
 
-    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    Pour plus d'informations, voir
+[Comment se connecter
+à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Obtenez la liste des commandes prises en charge et identifiez celle dont vous avez besoin. Exécutez la commande :
+2. Obtenez la liste des commandes prises en charge et identifiez celle dont vous avez besoin. Exécutez la commande suivante :
 
     ```
     bx cf logging help 
@@ -347,7 +353,7 @@ Une commande peut avoir des sous-commandes. Pour obtenir de l'aide sur des sous-
     où 
     
     * *Command* est le nom d'une commande de l'interface de ligne de commande, par exemple *status*.
-    * *Subcommand* est le nom d'une sous-commande prise en charge, par exemple *list* pour la commande *session*.
+    * *Subcommand* est le nom d'une sous-commande prise en charge. Par exemple, pour la commande *session*, une sous-commande valide est *list*.
 
 
 

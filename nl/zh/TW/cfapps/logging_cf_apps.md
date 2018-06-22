@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -14,10 +14,10 @@ lastupdated: "2018-01-10"
 {:screen: .screen}
 {:pre: .pre}
 
-# {{site.data.keyword.Bluemix_notm}} 中 Cloud Foundry 應用程式的記載功能
-{: #logging_bluemix_cf_apps}
+# Cloud Foundry 應用程式
+{: #logging_cf_apps}
 
-在 {{site.data.keyword.Bluemix}} 中，您可以透過 {{site.data.keyword.Bluemix_notm}} 儀表板、Kibana 和指令行介面來檢視、過濾及分析 Cloud Foundry (CF) 日誌。此外，您還可以將日誌記錄串流到外部日誌管理工具。
+在 {{site.data.keyword.Bluemix}} 中，您可以透過 {{site.data.keyword.Bluemix_notm}} 儀表板、Kibana 及指令行介面，來檢視、過濾及分析 Cloud Foundry (CF) 日誌。此外，您還可以將日誌記錄串流到外部日誌管理工具。
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} 會記錄 Cloud Foundry 平台和 Cloud Foundry 應用程式所產生的日誌資料。在日誌中，您可以檢視針對應用程式所產生的錯誤、警告及參考訊息。 
@@ -49,7 +49,7 @@ lastupdated: "2018-01-10"
 
 {{site.data.keyword.loganalysisshort}} 服務提供其他方案，讓您依所需將日誌儲存在「日誌收集」。 
 
-* 您可以配置日誌保留原則，以定義您要將日誌保留在「日誌收集」中的天數。如需相關資訊，請參閱[日誌保留原則](/docs/services/CloudLogAnalysis/log_analysis_ov.html#policies)。
+* 您可以配置日誌保留原則，以定義您要將日誌保留在「日誌收集」中的天數。如需相關資訊，請參閱[日誌保留原則](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy)。
 * 您可以使用指令行或 API，手動刪除日誌。
 
 如需每一個方案價格的相關資訊，請參閱[服務方案](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
@@ -69,11 +69,11 @@ lastupdated: "2018-01-10"
 
 * 在 {{site.data.keyword.Bluemix_notm}} 使用者介面中分析日誌，以檢視應用程式的最新活動。
     
-    在 {{site.data.keyword.Bluemix_notm}} 中，您可以透過每一個 Cloud Foundry 應用程式都有的**日誌**標籤，來檢視、過濾及分析日誌。如需相關資訊，請參閱[從 {{site.data.keyword.Bluemix_notm}} 使用者介面分析 CF 應用程式日誌](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#launch_logs_cloud_ui_cf)。
+    在 {{site.data.keyword.Bluemix_notm}} 中，您可以透過每一個 Cloud Foundry 應用程式都有的**日誌**標籤，來檢視、過濾及分析日誌。如需相關資訊，請參閱[透過 CF 應用程式儀表板分析 CF 應用程式日誌](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_ui)。
     
 * 在 Kibana 中分析日誌，以執行進階分析作業。
     
-    在 {{site.data.keyword.Bluemix_notm}} 中，您可以使用 Kibana（一種開放程式碼分析與視覺化平台），以各種圖形（例如圖表和表格）監視、搜尋、分析及視覺化您的資料。如需相關資訊，請參閱[在 Kibana 中分析日誌](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)。
+    在 {{site.data.keyword.Bluemix_notm}} 中，您可以使用 Kibana（一種開放程式碼分析與視覺化平台），以各種圖形（例如圖表和表格）監視、搜尋、分析及視覺化您的資料。如需相關資訊，請參閱[透過 {{site.data.keyword.loganalysisshort}} 使用者介面分析 CF 應用程式日誌](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_la)。
 	
 	**提示：**若要啟動 Kibana，請參閱[從 CF 應用程式的儀表板導覽至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app)。
 
@@ -87,15 +87,15 @@ lastupdated: "2018-01-10"
 
 針對以 Diego 為基礎的 Cloud Foundry 架構中所部署的 Cloud Foundry (CF) 應用程式，可以使用下列日誌來源：
     
-| 日誌來源 | 元件名稱 | 說明 | 
+|日誌來源 |元件名稱 |說明 | 
 |------------|----------------|-------------|
-| LGR | 日誌聚集器| LGR 元件提供用來轉遞 Cloud Foundry 內日誌之 Cloud Foundry 日誌聚集器的相關資訊。|
-| RTR | 路由器| RTR 元件提供向應用程式發出之 HTTP 要求的相關資訊。| 
-| STG | 編譯打包| STG 元件提供應用程式如何編譯打包或重新編譯打包的相關資訊。| 
-| APP | 應用程式 | APP 元件提供來自應用程式的日誌。此日誌將顯示您程式碼中的 stderr 和 stdout。| 
-| API | Cloud Foundry API | API 元件提供使用者要求變更應用程式狀態後，所產生之內部動作的相關資訊。| 
-| CELL | Diego Cell | CELL 元件提供應用程式啟動、停止或當機的相關資訊。|
-| SSH | SSH | SSH 元件會在使用者每次使用 **cf ssh** 指令來存取應用程式時，提供資訊。|
+|LGR |日誌聚集器|LGR 元件提供用來轉遞 Cloud Foundry 內日誌之 Cloud Foundry 日誌聚集器的相關資訊。|
+|RTR |路由器|RTR 元件提供向應用程式發出之 HTTP 要求的相關資訊。| 
+|STG |編譯打包|STG 元件提供應用程式如何編譯打包或重新編譯打包的相關資訊。| 
+|APP |應用程式 |APP 元件提供來自應用程式的日誌。此日誌將顯示您程式碼中的 stderr 和 stdout。| 
+|API |Cloud Foundry API |API 元件提供使用者要求變更應用程式狀態後，所產生之內部動作的相關資訊。| 
+|CELL |Diego Cell |CELL 元件提供應用程式啟動、停止或當機的相關資訊。|
+|SSH |SSH |SSH 元件會在使用者每次使用 **cf ssh** 指令來存取應用程式時，提供資訊。|
 {: caption="表 1. 以 Diego 為基礎的 CF 架構中所部署 CF 應用程式的日誌來源" caption-side="top"}
 
 下圖顯示以 Diego 為基礎的 Cloud Foundry 架構中的不同元件（日誌來源）： 
@@ -107,14 +107,14 @@ lastupdated: "2018-01-10"
 
 針對 Droplet Execution Agent (DEA) 架構上所部署的 Cloud Foundry (CF) 應用程式，可以使用下列日誌來源：
     
-| 日誌來源 | 元件名稱 | 說明 | 
+|日誌來源 |元件名稱 |說明 | 
 |------------|----------------|-------------|
-| LGR | 日誌聚集器| LGR 元件提供用來轉遞 Cloud Foundry 內日誌之 Cloud Foundry 日誌聚集器的相關資訊。|
-| RTR | 路由器| RTR 元件提供向應用程式發出之 HTTP 要求的相關資訊。| 
-| STG | 編譯打包| STG 元件提供應用程式如何編譯打包或重新編譯打包的相關資訊。| 
-| APP | 應用程式 | APP 元件提供來自應用程式的日誌。此日誌將顯示您程式碼中的 stderr 和 stdout。| 
-| API | Cloud Foundry API | API 元件提供使用者要求變更應用程式狀態後，所產生之內部動作的相關資訊。| 
-| DEA | Droplet Execution Agent| DEA 元件提供應用程式啟動、停止或當機的相關資訊。<br> 只有在應用程式部署在以 DEA 為基礎的 Cloud Foundry 架構中時，此元件才可供使用。| 
+|LGR |日誌聚集器|LGR 元件提供用來轉遞 Cloud Foundry 內日誌之 Cloud Foundry 日誌聚集器的相關資訊。|
+|RTR |路由器|RTR 元件提供向應用程式發出之 HTTP 要求的相關資訊。| 
+|STG |編譯打包|STG 元件提供應用程式如何編譯打包或重新編譯打包的相關資訊。| 
+|APP |應用程式 |APP 元件提供來自應用程式的日誌。此日誌將顯示您程式碼中的 stderr 和 stdout。| 
+|API |Cloud Foundry API |API 元件提供使用者要求變更應用程式狀態後，所產生之內部動作的相關資訊。| 
+|DEA |Droplet Execution Agent|DEA 元件提供應用程式啟動、停止或當機的相關資訊。<br> 只有在應用程式部署在以 DEA 為基礎的 Cloud Foundry 架構中時，此元件才可供使用。| 
 {: caption="表 2. 以 DEA 為基礎的 CF 架構中所部署 CF 應用程式的日誌來源" caption-side="top"}
 
 下圖顯示以 DEA 為基礎的 Cloud Foundry 架構中的不同元件（日誌來源）： 
@@ -132,15 +132,15 @@ lastupdated: "2018-01-10"
 
 每個日誌項目都包含下列欄位：
 
-| 欄位 | 說明 |
+|欄位 |說明 |
 |-------|-------------|
-| 時間戳記 | 日誌陳述文字的時間。時間戳記最多定義到毫秒。|
-| 元件 | 產生日誌的元件。如需不同元件的清單，請參閱 [CF 應用程式的日誌來源](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#logging_bluemix_cf_apps_log_sources)。<br> 每一個元件類型後面都接著一個斜線，以及一個指出應用程式實例用的數字。數字 0 配置給第一個實例，數字 1 配置給第二個實例，依此類推。|
-| 訊息 | 元件所發出的訊息。訊息會視環境定義而改變。|
+|時間戳記 |日誌陳述文字的時間。時間戳記最多定義到毫秒。|
+|元件 |產生日誌的元件。如需不同元件的清單，請參閱 [CF 應用程式的日誌來源](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#logging_bluemix_cf_apps_log_sources)。<br> 每一個元件類型後面都接著一個斜線，以及一個指出應用程式實例用的數字。數字 0 配置給第一個實例，數字 1 配置給第二個實例，依此類推。|
+|訊息 |元件所發出的訊息。訊息會視環境定義而改變。|
 {: caption="表 1. CF 應用程式日誌項目欄位" caption-side="top"}
 
 
 ## 指導教學：在 Kibana 中分析 Cloud Foundry 應用程式的日誌
 {: #tutorial}  
 
-若要瞭解如何使用 Kibana 來分析 Cloud Foundry 應用程式的日誌，請參閱[在 Kibana 中分析 Cloud Foundry 應用程式的日誌](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)。
+若要瞭解如何使用 Kibana 來分析 Cloud Foundry 應用程式的日誌，請參閱[在 Kibana 中分析 Cloud Foundry 應用程式的日誌](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)。

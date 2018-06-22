@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -47,16 +47,16 @@ lastupdated: "2018-01-10"
     $ bx logging log-show
     Showing log status of resource: 12345678-abcd-4193-aere-378620d6fab5 ...
 
-    Date         Size       Count   Searchable          Types
+    Date         Size       Count   Searchable          Types   
 	2017-05-24   16         3020    None                default
 	2017-05-25   1224       76115   All                 linux_syslog,log
-    2017-05-26   19663113   17639   All                 default,linux_syslog
+    2017-05-26   19663113   17639   All                 default,linux_syslog  
     ```
     {: screen}
 	
 3. 刪除特定日期所儲存的日誌。
 
-	```
+    ```
 	bx logging log-delete -s StartDate -e EndDate
 	```
 	{: codeblock}
@@ -64,7 +64,7 @@ lastupdated: "2018-01-10"
 	其中
 	
 	* *-s* 設定「世界標準時間 (UTC)」格式的開始日期：YYYY-MM-DD（例如，2006-01-02）。
-	* *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
+    * *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
     	
 	例如，若要刪除 2017 年 5 月 25 日的日誌，請執行下列指令：
 	
@@ -75,7 +75,7 @@ lastupdated: "2018-01-10"
 
 	
 ## 依日誌類型刪除特定一段時間內的日誌 
-{: #time_range}
+{: #log_type}
 
 請完成下列步驟，以依日誌類型刪除空間網域中特定一段時間內所儲存的日誌：
 
@@ -96,16 +96,16 @@ lastupdated: "2018-01-10"
     $ bx logging log-show
     Showing log status of resource: 12345678-1234-2edr-a9de-378620d6fab5 ...
 
-Date         Size       Count   Searchable          Types
+    Date         Size       Count   Searchable          Types   
 	2017-05-24   16         3020    None                default
 	2017-05-25   1224       76115   All                 linux_syslog,log
-    2017-05-26   19663113   17639   All                 default,linux_syslog
+    2017-05-26   19663113   17639   All                 default,linux_syslog  
     ```
     {: screen}
 	
 3. 刪除特定日期所儲存的日誌。
 
-	```
+    ```
 	bx logging log-delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
@@ -113,7 +113,7 @@ Date         Size       Count   Searchable          Types
 	其中
 	
 	* *-s* 設定「世界標準時間 (UTC)」格式的開始日期：YYYY-MM-DD（例如，2006-01-02）。
-	* *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
+    * *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
 	* *-t* 設定日誌類型。
     	
 	例如，若要刪除 2017 年 5 月 25 日類型為 linux_syslog 的日誌，請執行下列指令：
@@ -126,7 +126,7 @@ Date         Size       Count   Searchable          Types
 		
 	
 ## 依日誌類型刪除特定一段時間內的帳戶日誌 
-{: #time_range}
+{: #time_range_acc}
 
 請完成下列步驟：
 
@@ -162,7 +162,7 @@ Date         Size       Count   Searchable          Types
 	
 4. 刪除特定日期所儲存的日誌。
 
-	```
+    ```
 	bx logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
 	```
 	{: codeblock}
@@ -170,7 +170,7 @@ Date         Size       Count   Searchable          Types
 	其中
 	
 	* *-s* 設定「世界標準時間 (UTC)」格式的開始日期：YYYY-MM-DD（例如，2006-01-02）。
-	* *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
+    * *-e* 設定「世界標準時間 (UTC)」格式的結束日期：YYYY-MM-DD
 	* *-t* 設定日誌類型。
     	
 	例如，若要刪除 2017 年 5 月 25 日類型為 linux_syslog 且儲存在「日誌收集」中帳戶層次的日誌，請執行下列指令：

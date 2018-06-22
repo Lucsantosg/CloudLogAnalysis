@@ -1,11 +1,12 @@
 ---
 
 copyright:
-  years: 2017
+  years: 2017, 2018
 
-lastupdated: "2017-07-19"
+lastupdated: "2018-01-10"
 
 ---
+
 
 
 {:shortdesc: .shortdesc}
@@ -17,12 +18,12 @@ lastupdated: "2017-07-19"
 # Analisi dei log interattiva in Kibana
 {:#analize_logs_interactively}
 
-Nella pagina Rileva, puoi visualizzare e analizzare i tuoi log {{site.data.keyword.Bluemix}} interattivamente. Puoi definire le query di ricerca per filtrare i dati utilizzando il linguaggio di query Lucene. Per ogni query ricerca, puoi applicare i filtri per restringere le voci disponibili per l'analisi. Puoi salvare un ricerca per un riutilizzo futuro.
+Nella pagina Rileva, puoi visualizzare e analizzare i tuoi log interattivamente. Puoi definire le query di ricerca per filtrare i dati utilizzando il linguaggio di query Lucene. Per ogni query ricerca, puoi applicare i filtri per restringere le voci disponibili per l'analisi. Puoi salvare un ricerca per un riutilizzo futuro.
 {:shortdesc}
 
-In {{site.data.keyword.Bluemix_notm}}, per impostazione predefinita, la serie di dati visualizzati nella pagina Rileva quando avvii Kibana dalla IU {{site.data.keyword.Bluemix_notm}}, è configurata solo per mostrare le voci per il contenitore o l'applicazione Cloud Foundry (CF) da cui hai avviato Kibana. Per ulteriori informazioni su come visualizzare quale sottoserie dei tuoi dati viene visualizzata dalla pagina Rileva, vedi [Identificazione dei dati visualizzati](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
+In {{site.data.keyword.Bluemix_notm}}, per impostazione predefinita, la serie di dati visualizzata nella pagina Rileva quando avvii Kibana dalla IU {{site.data.keyword.Bluemix_notm}} è configurata per mostrare solo le voci per il contenitore o l'applicazione CF (Cloud Foundry) da cui hai avviato Kibana. Per ulteriori informazioni su come visualizzare quale sottoserie dei tuoi dati viene visualizzata dalla pagina Rileva, vedi [Identificazione dei dati visualizzati](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 
-La seguente tabella mostra la query predefinita per la risorsa quando avvii kibana da {{site.data.keyword.Bluemix_notm}}:
+La seguente tabella mostra la query predefinita per ogni risorsa quando avvii Kibana da {{site.data.keyword.Bluemix_notm}}:
 
 | Risorsa | Query di ricerca predefinita Kibana |
 |---------------|---------------|
@@ -69,18 +70,18 @@ Per definire una nuova ricerca, utilizza la query di ricerca predefinita come tu
     
 * Personalizza il *Selezionatore di tempo* per i dati basati sul tempo. Puoi definire un intervallo di tempo assoluto per una query, uno relativo o scegliere da una serie di valori predefiniti. Per maggiori informazioni, vedi [Configurazione di un filtro temporale](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 
-Dopo aver configurato la ricerca che definisce la sottoserie di dati che desideri analizzare, puoi salvarla per un riutilizzo successivo.
+Dopo aver configurato la ricerca che definisce la sottoserie di dati che desideri analizzare, puoi salvarla per un riutilizzo successivo. Per maggiori informazioni, vedi [Salvataggio di una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search).
 
 Puoi eseguire ognuna delle seguenti attività con le ricerche che definisci nella pagina Rileva:
 
 | Attività | Descrizione |
 |------|-------------|
-| [Salvare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Salvare la ricerca per un riutilizzo successivo.  |
 | [Eliminazione di una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | Eliminare una ricerca quando non è più necessaria. |
 | [Esportare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | Esportare una ricerca per condividerla.  |
+| [Importare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Importare una ricerca.  |
 | [Ricaricare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | Caricare una ricerca esistente per analizzare nuovamente una serie di dati. |
 | [Aggiornare i dati di una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | Configurare l'aggiornamento automatico dei dati visualizzati tramite la ricerca.  |
-| [Importare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Importare una ricerca.  |
+| [Salvare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Salvare la ricerca per un riutilizzo successivo.  |
 {: caption="Tabella 3. Attività per lavorare con le ricerche" caption-side="top"}
 
 
@@ -102,7 +103,7 @@ La tabella disponibile per analizzare i dati nella pagina Rileva, include i segu
 
 Puoi aggiungere una colonna del campo alla tabella scegliendo una delle seguenti opzioni:
 
-* Aggiungi una colonna del campo dall'Elenco campo disponibile nella pagina.
+* Aggiungi una colonna del campo dall'Elenco campi disponibile nella pagina.
 
     1. Nella pagina Rileva, identifica il campo nella sezione `Campi selezionati`.
     2. Passa con il mouse su un campo nell'Elenco campi.
@@ -145,9 +146,9 @@ Considera le seguenti informazioni per identificare i dati disponibili nella tab
 
 1. Controlla il modello di indice nella pagina **Gestione**.
 
-    Il modello di indice definisce la query di ricerca applicata per impostazione predefinita per mostrare le voci nelle tue pagine Kibana. Per impostazione predefinita, il modello di indice è preconfigurato e impostato per tutti i dati disponibili in uno spazio {{site.data.keyword.Bluemix_notm}}. Ad esempio,
+    Il modello di indice definisce la query di ricerca applicata per impostazione predefinita per mostrare le voci nelle tue pagine Kibana. Per impostazione predefinita, il modello di indice è preconfigurato e impostato su tutti i dati disponibili in uno spazio. Ad esempio,
 
-    * Se avvii Kibana dalla IU {{site.data.keyword.Bluemix_notm}}, dalla sezione *Log* delle pagine della IU di una risorsa specifica come un contenitore o un'applicazione Cloud Foundry (CF), il modello di indice applicato include tutte le voci disponibili nello spazio.
+    * Se avvii Kibana dalla IU {{site.data.keyword.Bluemix_notm}}, dalla sezione *Log* delle pagine della IU di una risorsa specifica come un contenitore o un'applicazione CF (Cloud Foundry), il modello di indice applicato include tutte le voci disponibili nello spazio.
     
     * Se avvii Kibana da un browser o dal dashboard del servizio {{site.data.keyword.loganalysisshort}}, il modello di indice applicato include tutte le voci disponibili nello spazio che Kibana visualizza dopo il tuo accesso.
         
@@ -179,7 +180,7 @@ Puoi ordinare solo le voci nella tabella per i campi indicizzati.
 
 Per trovare quali campi sono indicizzati, completa la seguente procedura:
 
-1. Nella pagina Rileva, fai clic sull'icona di configurazione ![icona di configurazione](images/configure_icon.jpg "icona di configurazione") disponibile nella sezione della pagina **Campi disponibili**.
+1. Nella pagina Rileva, fai clic sull'icona di configurazione ![Icona di configurazione](images/configure_icon.jpg "Icona di configurazione") disponibile nella sezione della pagina **Campi disponibili**.
 
 2. Per identificare i campi che vengono indicizzati, seleziona **Sì** per il campo di ricerca **Indicizzato**.
 
@@ -225,7 +226,7 @@ Per rimuovere i campi dalla tabella, completa la seguente procedura:
 ## Visualizzazione di una voce nella tabella
 {: #discover_view_entry_in_table}
 
-Per visualizzare i dati di una voce nella tabella, fai clic sul pulsante di espansione ![icona pulsante di espansione](images/expand_icon.jpg "icona pulsante di espansione") della voce che desideri analizzare. 
+Per visualizzare i dati di una voce nella tabella, fai clic sul pulsante di espansione ![Icona pulsante di espansione](images/expand_icon.jpg "Icona pulsante di espansione") della voce che desideri analizzare. 
 
 Successivamente, scegli una delle seguenti opzioni per visualizzare i dati:
 
@@ -235,12 +236,12 @@ Successivamente, scegli una delle seguenti opzioni per visualizzare i dati:
 ## Visualizzazione delle statistiche dei dati del campo
 {: #discover_view_fields_stats}
 
-Nella pagina Rileva, puoi visualizzare le statistiche di ogni campo nell'*Elenco campo* e nell'*istogramma*. 
+Nella pagina Rileva, puoi visualizzare le statistiche di ogni campo nell'*Elenco campi* e nell'*istogramma*. 
 
 Puoi visualizzare le seguenti informazioni nell'Elenco Campi:
 * Il numero di voci nella tabella che contengono uno specifico campo.
 * I primi 5 valori.
-* La percentuale di voci che contiene ciascun valore.
+* La percentuale di voci che contiene ogni valore.
 
 Puoi visualizzare le seguenti informazioni nell'istogramma:
 * Il numero di voci in un intervallo di tempo.

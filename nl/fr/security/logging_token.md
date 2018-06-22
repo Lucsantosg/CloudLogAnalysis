@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -43,12 +43,11 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 	```
 	{: codeblock}
 
-La sortie renvoie le jeton de journalisation.
+La sortie renvoie le jeton de journalisation. 
 
 
-## Obtention du jeton de journalisation pour envoyer des journaux dans un espace via l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}
+## Obtention du jeton de journalisation pour envoyer des journaux dans un espace via l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}} 
 {: #logging_token_cloud_cli}
-
 
 Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer des journaux au service {{site.data.keyword.loganalysisshort}}, procédez comme suit :
 
@@ -62,7 +61,7 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Créez une clé de service dans l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition. Exécutez les commandes suivantes :
+3. Créez une clé de service dans l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} est mis à disposition. Exécutez les commandes suivantes :
 
     Répertoriez les services afin d'obtenir le nom de l'instance {{site.data.keyword.loganalysisshort}} dans l'espace :
 	
@@ -71,7 +70,7 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 	```
 	{: codeblock}
 	
-	Exemple :
+	Exemple :
 	
 	```
 	bx service list
@@ -81,7 +80,7 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
     OK
 
     name              service          plan       bound apps   last operation
-    Log Analysis-vg   ibmLogAnalysis   standard                create succeeded
+    Log Analysis-vg   ibmloganalysis   standard                create succeeded
     ```
 	{: screen}
 	
@@ -134,33 +133,7 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 	```
 	{: screen}
 
-## Obtention du jeton de journalisation pour envoyer des journaux dans un espace via l'interface de ligne de commande Log Analysis (plug-in CF)
-{: #logging_token_cf_plugin}
 
-Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer des journaux au service {{site.data.keyword.loganalysisshort}}, procédez comme suit :
-
-1. Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
-
-   Pour plus d'informations, voir [Téléchargement et installation de l'interface de ligne de commande {{site.data.keyword.Bluemix}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
-   
-   Si l'interface de ligne de commande est installée, passez à l'étape suivante.
-    
-2. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
-
-    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
-	
-3. Obtenez l'identificateur global unique de l'espace pour lequel vous avez obtenu un jeton d'authentification.
-
-   Pour plus d'informations, voir [Comment obtenir l'identificateur global unique d'un espace ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid).  
-   
-4. Obtenez le jeton de journalisation. Exécutez la commande suivante :
-
-    ```
-    bx cf logging auth
-    ```
-    {: codeblock}
-
-La commande renvoie le *jeton de journalisation* et l'*ID d'espace* dont vous avez besoin pour envoyer des journaux dans l'espace associé à cet ID.	
 	
 ## Obtention du jeton de journalisation pour envoyer des journaux dans un espace via l'API Log Analysis
 {: #logging_token_api}
@@ -221,56 +194,3 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 	
     La commande renvoie le jeton de journalisation que vous devez utiliser pour envoyer des journaux dans cet espace.
 	
-## Obtention du jeton de journalisation pour envoyer des journaux dans le domaine de compte via l'API Log Analysis
-{: #logging_acc_token_api}
-
-
-Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer des journaux au service {{site.data.keyword.loganalysisshort}}, procédez comme suit :
-
-1. Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
-
-   Pour plus d'informations, voir [Téléchargement et installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
-   
-   Si l'interface de ligne de commande est installée, passez à l'étape suivante.
-    
-2. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
-
-    Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
-	
-3. Obtenez le [jeton IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
-
-    La sortie de cette commande renvoie le jeton IAM.
-
-4. Obtenez l'identificateur global unique pour le compte.
-
-   Pour plus d'informations, voir [Comment obtenir l'identificateur global unique d'un compte ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).  
-	
-5. Exportez les variables suivantes : TOKEN et AccountID.
-
-    * *TOKEN* est le jeton oauth que vous avez obtenu à l'étape précédente sans le préfixe Bearer.
-	
-	* *AccountID* est l'identificateur global unique du compte que vous avez obtenu à l'étape précédente. 
-		
-	Exemple :
-	
-	```
-	export TOKEN="eyJhbGciOiJI....cGFzc3dvcmQiLCJjZiIsInVhYSIsIm9wZW5pZCJdfQ.JaoaVudG4jqjeXz6q3JQL_SJJfoIFvY8m-rGlxryWS8"
-	export AccountID="667fb8953456fg41095"
-	```
-	{: screen}
-	
-6. Obtenez le jeton de journalisation. Exécutez la commande suivante :
- 
-    ```
-	curl -k -X GET  --header "X-Auth-User-Token:iam ${TOKEN}"  --header "X-Auth-Project-Id: a-${AccountID}" -k  LOGGING_ENDPOINT/token
-    ```
-    {: codeblock}	
-	
-	où
-	* AccountID est l'identificateur global unique de l'espace dans lequel le service s'exécute.
-	* TOKEN est le jeton IAM que vous avez obtenu à l'étape précédente sans le préfixe Bearer.
-	* LOGGING_ENDPOINT est le noeud final {{site.data.keyword.loganalysisshort}} pour la région {{site.data.keyword.Bluemix_notm}} où l'organisation et l'espace sont disponibles. LOGGING_ENDPOINT est différent selon la région. Pour afficher les URL des différents noeuds finaux, voir [Noeuds finaux](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
-	
-    La commande renvoie le jeton de journalisation que vous devez utiliser pour envoyer des journaux dans le domaine de compte.
-	
-

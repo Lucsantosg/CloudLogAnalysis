@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-04-19"
 
 ---
 
@@ -17,16 +17,16 @@ lastupdated: "2018-01-10"
 # 로그 삭제
 {: #deleting_logs}
 
-[bx cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) 명령을 사용하여 로그 콜렉션에서 로그를 삭제합니다.
+[bx cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) 명령을 사용하여 로그 콜렉션에서 로그를 삭제합니다. 
 {:shortdesc}
 
 * 특정 시간 범위 내의 로그를 삭제할 수 있습니다.
-* 유형별 로그를 삭제할 수 있습니다. 각 로그 파일에는 한 유형의 로그 항목만 있습니다. 
+* 유형별 로그를 삭제할 수 있습니다. 각 로그 파일에는 한 유형의 로그 항목만 있습니다.
 * 영역 또는 계정 도메인에 대한 로그를 삭제할 수 있습니다.
 
 
 ## 특정 기간의 로그 삭제
-{: #time_range}
+{: #fix_period}
 
 다음 단계를 완료하십시오.
 
@@ -34,14 +34,14 @@ lastupdated: "2018-01-10"
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
     
-2. *status* 명령을 실행하여 로그 콜렉션에서 사용할 수 있는 로그를 확인하십시오. 
+2. *status* 명령을 실행하여 로그 콜렉션에서 사용할 수 있는 로그를 확인하십시오.
 
     ```
     bx cf logging status
     ```
     {: codeblock}
     
-    예: 
+    예:
     
     ```
     $ bx cf logging status
@@ -55,7 +55,7 @@ lastupdated: "2018-01-10"
     ```
     {: screen}
 	
-3. 특정일에 저장된 로그를 삭제하십시오. 
+3. 특정일에 저장된 로그를 삭제하십시오.
 
     ```
 	bx cf logging delete -s StartDate -e EndDate
@@ -76,37 +76,36 @@ lastupdated: "2018-01-10"
 
 	
 ## 특정 기간 동안의 로그 유형별 로그 삭제
-{: #time_range}
+{: #log_type}
 
 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오.
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
-
+    
 2. *status* 명령을 실행하여 로그 콜렉션에서 사용할 수 있는 로그를 확인하십시오.
 
     ```
     bx cf logging status
     ```
     {: codeblock}
-
+    
     예:
-
+    
     ```
     $ bx cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
-    | 2017-05-24 |    16  | 3020  |        log         |   없음
-|
+    | 2017-05-24 |    16  | 3020  |        log         |   없음     |
     +------------+--------+-------+--------------------+------------+
     | 2017-05-25 |   1224 | 76115 | linux_syslog,log   |    All     |
     +------------+--------+-------+--------------------+------------+
     ```
     {: screen}
 	
-3. 특정일에 저장된 로그를 삭제하십시오. 
+3. 특정일에 저장된 로그를 삭제하십시오.
 
     ```
 	bx cf logging delete -s StartDate -e EndDate -t LogType
@@ -129,37 +128,36 @@ lastupdated: "2018-01-10"
 		
 	
 ## 특정 기간 동안의 로그 유형별 계정 로그 삭제
-{: #time_range}
+{: #acc_log_type}
 
 다음 단계를 완료하십시오.
 
-1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오.
+1. {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
-
+    
 2. *status* 명령을 실행하여 로그 콜렉션에서 계정 레벨로 사용할 수 있는 로그를 확인하십시오.
 
     ```
     bx cf logging status  -a
     ```
     {: codeblock}
-
+    
     예:
-
+    
     ```
     $ bx cf logging status -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
-    | 2017-05-24 |    16  | 3020  |        log         |   없음
-|
+    | 2017-05-24 |    16  | 3020  |        log         |   없음     |
     +------------+--------+-------+--------------------+------------+
     | 2017-05-25 |   1224 | 76115 | linux_syslog,log   |    All     |
     +------------+--------+-------+--------------------+------------+
     ```
     {: screen}
 	
-3. 특정일에 저장된 로그를 삭제하십시오. 
+3. 특정일에 저장된 로그를 삭제하십시오.
 
     ```
 	bx cf logging delete -s StartDate -e EndDate -t LogType -a

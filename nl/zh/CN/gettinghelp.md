@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-02-01"
+lastupdated: "2018-01-10"
 
 ---
 
@@ -26,7 +26,7 @@ lastupdated: "2018-02-01"
 <!--Insert the appropriate Stack Overflow tag for your service for <service_keyword> in URL and text below:  -->
   * 如果对使用 {{site.data.keyword.loganalysisshort}} 服务来开发或部署应用程序有技术方面的问题，请将您的问题发布在 [Stack Overflow](http://stackoverflow.com/search?q=log-analysis+ibm-bluemix){:new_window} 上，并使用“ibm-bluemix”和“log-analysis”标记所提问题。
 <!--Insert the appropriate dW Answers tag for your service for <service_keyword> in URL below:  -->
-  * 有关服务和入门指示信息的问题，请使用 [{{site.data.keyword.IBM_notm}} developerWorks dW Answers](https://developer.ibm.com/answers/topics/log-analysis/?smartspace=bluemix){:new_window} 论坛。请包含“log-analysis”和“bluemix”标记。
+  * 有关服务和入门指示信息的问题，请使用 [{{site.data.keyword.IBM_notm}} developerWorks dW Answers](https://developer.ibm.com/answers/topics/log-analysis/?smartspace=ibm-cloud){:new_window} 论坛。
 
 请参阅[获取帮助](https://www.{DomainName}/docs/support/index.html#getting-help)了解有关如何使用论坛的更多详细信息。
 

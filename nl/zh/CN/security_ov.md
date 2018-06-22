@@ -39,7 +39,7 @@ lastupdated: "2018-01-31"
 
     IAM 认证模型提供 UI、CLI 或 API 管理能力。 
 
-**注：**UAA 令牌和 IAM 令牌会在一段时间后到期。 
+**注**：UAA 令牌和 IAM 令牌会在一段时间后到期。 
 
 ## 角色
 {: #roles}
@@ -228,11 +228,8 @@ lastupdated: "2018-01-31"
 要向空间域发送日志，请选择以下任何一种方法：
 
 * [使用 {{site.data.keyword.Bluemix_notm}} 命令 bx 服务，获取日志记录令牌以向空间发送日志](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
-* [使用 Log Analysis CLI（CF 插件）获取日志记录令牌以向空间发送日志](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cf_plugin)
+* [使用 Log Analysis CLI 获取日志记录令牌以向空间发送日志](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [使用 Log Analysis API 获取日志记录令牌以向空间发送日志](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
-
-要向帐户域发送日志，请参阅[使用 Log Analysis API 获取日志记录令牌以向帐户域发送日志](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_acc_token_api)。
-
 
 
 ## 授予用户使用日志的许可权

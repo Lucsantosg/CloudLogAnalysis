@@ -43,7 +43,7 @@ siga estos pasos:
     
     ```
     bx cf plugins
- ```
+    ```
     {: codeblock}
     
     La salida tiene el aspecto siguiente:
@@ -51,12 +51,12 @@ siga estos pasos:
     ```
     Invoking 'cf plugins'...
 
-  Listing Installed Plugins...
+    Listing Installed Plugins...
     OK
 
     Plugin Name           Version   Command Name   Command Help
     IBM-Logging           1.0.2     logging        IBM Logging plug-in
- ```
+    ```
     {: screen}
  
 
@@ -97,12 +97,12 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
         
         ```
         bx cf install-plugin -f logging-cli-linux64
- ```
+        ```
         {: codeblock}
 
 2. Defina la variable de entorno **LANG**.
 
-    Establezca *LANG* en el valor predeterminado *en_US.UTF-8* si el entorno local del sistema no recibe soporte de CF. Para obtener información sobre los entornos locales soportados de CF, consulte [Iniciación a la CLI de cf![Icono de enlace externo](../../../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.cloudfoundry.org/cf-cli/getting-started.html){: new_window}
+    Establezca *LANG* en el valor predeterminado *en_US.UTF-8* si el entorno local del sistema no recibe soporte de CF. Para obtener información sobre los entornos locales soportados de CF, consulte [Iniciación a la CLI de cf ![Icono de enlace externo](../../../../icons/launch-glyph.svg "Icono de enlace externo")](https://docs.cloudfoundry.org/cf-cli/getting-started.html){: new_window}
 	
 	Por ejemplo, en un sistema Ubuntu, edite el archivo *~/.bashrc* y especifique las siguientes líneas:
     
@@ -112,7 +112,7 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
     ```
     {: codeblock}
     
-    Abra una nueva ventana de terminal y ejecute el mandato siguiente para verificar que las variables LANG y LOGGING_ENDPOINT estén establecidas:
+    Abra una nueva ventana de terminal y ejecute el mandato siguiente para verificar que la variable LANG esté establecida:
     
     ```
     $echo LANG
@@ -126,14 +126,14 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
     
     ```
     bx cf logging --version
- ```
+    ```
     {: codeblock}
     
     La salida tiene el aspecto siguiente:
    
     ```
     cf logging version 1.0.2
- ```
+    ```
     {: screen}
 
 
@@ -171,14 +171,14 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
     
     ```
     bx cf logging --version
- ```
+    ```
     {: codeblock}
     
     La salida tiene el aspecto siguiente:
    
     ```
     bx cf logging version 1.0.1
- ```
+    ```
     {: screen}
 	
 
@@ -187,7 +187,7 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
 
 Siga estos pasos para instalar el plugin de CF de recopilación de registros en Mac OS X:
 
-  1. Descargue el último release del plugin de la CLI del servicio {{site.data.keyword.loganalysisshort}} (IBM-Logging) de [la página de la CLI de {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins).
+1. Descargue el último release del plugin de la CLI del servicio {{site.data.keyword.loganalysisshort}} (IBM-Logging) de [la página de la CLI de {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
 	
 	1. Seleccione el valor de plataforma: **osx**. 
 	2. Pulse **Guardar archivo**.  
@@ -216,14 +216,14 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
     
     ```
     bx cf logging --version
- ```
+    ```
     {: codeblock}
     
     La salida tiene el aspecto siguiente:
    
     ```
     bx cf logging version 1.0.1
- ```
+    ```
     {: screen}
 	
 	
@@ -241,16 +241,14 @@ Siga estos pasos para desinstalar la CLI del servicio {{site.data.keyword.logana
     
     ```
     bx cf plugins
- ```
+    ```
     {: codeblock}
     
     La salida tiene el aspecto siguiente:
    
     ```
-Listing Installed Plugins...
+    Listing Installed Plugins...
     OK
-
-    
 
     Plugin Name   Version   Command Name   Command Help
     IBM-Logging   1.0.1     logging        IBM Logging plug-in
@@ -263,7 +261,7 @@ Listing Installed Plugins...
         
     ```
     bx cf uninstall-plugin IBM-Logging
- ```
+    ```
     {: codeblock}
   
 
@@ -272,15 +270,15 @@ Listing Installed Plugins...
 
 Para obtener información general sobre la CLI y los mandatos soportados, siga estos pasos:
 
-1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}.
+1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
-  Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
-
- 2. Obtenga información sobre los mandatos soportados y sobre la CLI. Ejecute el mandato siguiente:
+    Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    
+2. Obtenga información sobre los mandatos soportados y sobre la CLI. Ejecute el mandato siguiente:
 
     ```
-    bx cf logging help
- ```
+    bx cf logging help 
+    ```
     {: codeblock}
     
     
@@ -290,65 +288,64 @@ Para obtener información general sobre la CLI y los mandatos soportados, siga e
 
 Para obtener ayuda sobre cómo utilizar un mandato, siga los pasos siguientes:
 
-  1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}.
+1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
-  Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
-
- 2. Obtenga la lista de mandatos soportados e identifique el que necesita. Ejecute el mandato:
+    Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    
+2. Obtenga la lista de mandatos soportados e identifique el que necesita. Ejecute el mandato:
 
     ```
-    bx cf logging help
- ```
+    bx cf logging help 
+    ```
     {: codeblock}
 
 3. Obtenga ayuda sobre el mandato. Ejecute el mandato siguiente:
 
     ```
     bx cf logging help *Mandato*
- ```
+    ```
     {: codeblock}
     
     donde *Mandato* es el nombre de un mandato de la CLI, como por ejemplo *status*.
 
 
 
-  ## Obtención de ayuda sobre un submandato
+## Obtención de ayuda sobre un submandato
 {: #subcommand_cli_help}
 
 Un mandato puede tener submandatos. Para obtener ayuda sobre los submandatos, siga los pasos siguientes:
 
-1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}.
+1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
-  Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
-
- 2. Obtenga la lista de mandatos soportados e identifique el que necesita. Ejecute el mandato:
+    Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    
+2. Obtenga la lista de mandatos soportados e identifique el que necesita. Ejecute el mandato:
 
     ```
-    bx cf logging help
- ```
+    bx cf logging help 
+    ```
     {: codeblock}
 
 3. Obtenga ayuda sobre el mandato e identifique los submandatos soportados. Ejecute el mandato siguiente:
 
     ```
     bx cf logging help *Mandato*
- ```
+    ```
     {: codeblock}
     
     donde *Mandato* es el nombre de un mandato de la CLI, como por ejemplo *session*.
 
-  4. Obtenga ayuda sobre el mandato e identifique los submandatos soportados. Ejecute el mandato siguiente:
+4. Obtenga ayuda sobre el mandato e identifique los submandatos soportados. Ejecute el mandato siguiente:
 
     ```
     bx cf logging *Mandato* help *Submandato*
- ```
+    ```
     {: codeblock}
     
     donde 
     
     * *Mandato* es el nombre de un mandato de la CLI, como por ejemplo *status*.
- * *Submandato*^es el nombre de un submandato soportado, como por ejemplo, para el mandato *session*, un submandato válido es *list*.
-
+    * *Submandato*^es el nombre de un submandato soportado, como por ejemplo, para el mandato *session*, un submandato válido es *list*.
 
 
 

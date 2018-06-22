@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-04-10"
 
 ---
 
@@ -80,7 +80,7 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
     OK
 
     name              service          plan       bound apps   last operation
-    Log Analysis-vg   ibmLogAnalysis   standard                create succeeded
+    Log Analysis-vg   ibmloganalysis   standard                create succeeded
     ```
 	{: screen}
 	
@@ -133,33 +133,7 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
 	```
 	{: screen}
 
-## Protokollierungstoken zum Senden von Protokollen an einen Bereich über die Log Analysis-Befehlszeilenschnittstelle (CF-Plug-in) abrufen
-{: #logging_token_cf_plugin}
 
-Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, mit dem Sie Protokolle an den {{site.data.keyword.loganalysisshort}}-Service senden können:
-
-1. Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle.
-
-   Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix}}-Befehlszeilenschnittstelle herunterladen und installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
-   
-   Fahren Sie mit dem nächsten Schritt fort, wenn die Befehlszeilenschnittstelle bereits installiert ist.
-    
-2. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
-
-    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
-	
-3. Rufen Sie die GUID für den Bereich ab, für den Sie ein Authentifizierungstoken abgerufen haben.
-
-   Weitere Informationen finden Sie unter [Wie rufe ich die GUID von einem Bereich ab?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid).  
-   
-4. Rufen Sie das Protokollierungstoken ab. Führen Sie den folgenden Befehl aus:
-
-    ```
-    bx cf logging auth
-    ```
-    {: codeblock}
-
-Der Befehl gibt das *Protokollierungstoken* und die *Bereichs-ID* zurück, die Sie beide zum Senden von Protokollen an den Bereich mit dieser ID benötigen.	
 	
 ## Protokollierungstoken zum Senden von Protokollen an einen Bereich über die Log Analysis-API abrufen
 {: #logging_token_api}
@@ -220,56 +194,3 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
 	
     Der Befehl gibt das Protokollierungstoken zurück, das Sie verwenden müssen, um Protokolle an diesen Bereich senden zu können.
 	
-## Protokollierungstoken zum Senden von Protokollen an die Kontodomäne über die Log Analysis-API abrufen
-{: #logging_acc_token_api}
-
-
-Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, mit dem Sie Protokolle an den {{site.data.keyword.loganalysisshort}}-Service senden können:
-
-1. Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle.
-
-   Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstellen herunterladen und installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
-   
-   Fahren Sie mit dem nächsten Schritt fort, wenn die Befehlszeilenschnittstelle bereits installiert ist.
-    
-2. Melden Sie sich an einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
-
-    Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
-	
-3. Rufen Sie das [IAM-Token] ab (/docs/services/CloudLogAnalysis/security/auth_iam.html#iam_token_cli).
-
-    Die Ausgabe enthält das IAM-Token.
-
-4. Rufen Sie die GUID für das Konto ab.
-
-   Weitere Informationen finden Sie unter [Wie rufe ich die GUID von einem Konto ab?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).  
-	
-5. Exportieren Sie die folgenden Variablen: TOKEN und AccountID.
-
-    * *TOKEN* ist das OAuth-Token aus dem vorherigen Schritt mit Ausschluss von 'Bearer'.
-	
-	* *AccountID* ist die GUID des Kontos aus dem vorherigen Schritt 
-		
-	Beispiel:
-	
-	```
-	export TOKEN="eyJhbGciOiJI....cGFzc3dvcmQiLCJjZiIsInVhYSIsIm9wZW5pZCJdfQ.JaoaVudG4jqjeXz6q3JQL_SJJfoIFvY8m-rGlxryWS8"
-	export AccountID="667fb8953456fg41095"
-	```
-	{: screen}
-	
-6. Rufen Sie das Protokollierungstoken ab. Führen Sie den folgenden Befehl aus:
- 
-    ```
-	curl -k -X GET  --header "X-Auth-User-Token:iam ${TOKEN}"  --header "X-Auth-Project-Id: a-${Konto-ID}" -k  PROTOKOLLIERUNGSENDPUNKT/token
-    ```
-    {: codeblock}	
-	
-	Dabei gilt:
-	* Konto-ID ist die GUID des Bereichs, in dem der Service ausgeführt wird.
-	* TOKEN ist das IAM-Token aus dem vorherigen Schritt ohne das Präfix 'bearer'.
-	* PROTOKOLLIERUNGSENDPUNKT ist der {{site.data.keyword.loganalysisshort}}-Endpunkt für die {{site.data.keyword.Bluemix_notm}}-Region, in der sich die Organisation und der Bereich befinden. Der PROTOKOLLIERUNGSENDPUNKT ist für jede Region anders. Informationen zum Anzeigen von URLs für die verschiedenen Endpunkte finden Sie unter [Endpunkte](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
-	
-    Der Befehl gibt das Protokollierungstoken zurück, das Sie verwenden müssen, um Protokolle an die Kontodomäne senden zu können.
-	
-
