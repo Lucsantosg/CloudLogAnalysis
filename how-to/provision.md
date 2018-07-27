@@ -55,7 +55,7 @@ Complete the following steps to provision an instance of the {{site.data.keyword
 
 1. [Pre-requisite] Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
+   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview).
    
    If the CLI is installed, continue with the next step.
     

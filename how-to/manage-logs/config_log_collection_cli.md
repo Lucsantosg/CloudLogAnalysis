@@ -28,7 +28,7 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
+   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview).
 
 2. Install the {{site.data.keyword.loganalysisshort}} CF plugin.
 

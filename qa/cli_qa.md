@@ -89,7 +89,7 @@ where
 ## How do I install the IBM Cloud CLI?
 {: #install_bmx_cli}
 
-See [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
+See [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/index.html#overview).
 
 
 

@@ -52,9 +52,7 @@ This tutorial walks through the steps that are required to get the following end
 
 3. Install the CLIs to work with the {{site.data.keyword.containershort}} and the {{site.data.keyword.loganalysisshort}} in your Ubuntu system.
 
-    * Install the {{site.data.keyword.Bluemix_notm}} CLI. For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
-    
-    * Install the {{site.data.keyword.containershort}} CLI to create and manage your Kubernetes clusters in {{site.data.keyword.containershort}}, and to deploy containerized apps to your cluster. For more information, see [Install the CS plugin](/docs/containers/cs_cli_install.html#cs_cli_install_steps).
+    * Install the {{site.data.keyword.Bluemix_notm}} CLI. Install the {{site.data.keyword.containershort}} CLI to create and manage your Kubernetes clusters in {{site.data.keyword.containershort}}, and to deploy containerized apps to your cluster. For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview).
     
     * Install the {{site.data.keyword.loganalysisshort}} CLI. For more information, see [Configuring the Log Analysis CLI (IBM Cloud plugin)](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
     

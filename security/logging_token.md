@@ -28,7 +28,7 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
+   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview).
    
    If the CLI is installed, continue with the next step.
     
@@ -53,7 +53,7 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
+   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview).
    
    If the CLI is installed, continue with the next step.
     
@@ -143,7 +143,7 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
+   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview).
    
    If the CLI is installed, continue with the next step.
     

@@ -30,7 +30,7 @@ To get the authorization token, complete the following steps:
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
+   For more information, see [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/index.html#overview).
    
    If the CLI is installed, continue with the next step.
     

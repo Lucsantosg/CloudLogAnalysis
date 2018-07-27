@@ -22,7 +22,7 @@ In the {{site.data.keyword.Bluemix}}, you can view, filter, and analyze logs thr
 {:shortdesc}
 
 To analyze Cloud Foundry (CF) application logs, use the following command: `ibmcloud cf logs`
-For more information, see [cf logs](/docs/cli/reference/cfcommands/index.html#cf_logs).
+For more information, see [cf logs](/docs/cli/reference/ibmcloud/cf_index.html#cf_logs).
 
 
 ## Analyzing CF app logs from the CLI
