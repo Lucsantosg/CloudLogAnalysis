@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -41,7 +41,7 @@ Consider the following information when deciding whether to forward logs to a sp
 * When you send logs to the account domain, the search quota is 500MB per day, and you cannot store logs in Log Collection for long term storage.
 * When you send logs to a space domain, you can choose a {{site.data.keyword.loganalysisshort}} service plan that defines the search quota per day, and a you can store logs in Log Collection for long term storage.
 
-**Note:** By default, sending logs from a cluster to the {{site.data.keyword.loganalysisshort}} service is not automatically enabled. To enable logging, you must create one or more logging configurations in the cluster to automatically forward logs into the {{site.data.keyword.loganalysisshort}} service. You can enable logging through the command line, by using the `bx cs logging-config-create` command, or through the cluster dashboard available in the {{site.data.keyword.Bluemix_notm}} UI. For more information, see [Enabling automatic collection of cluster logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
+**Note:** By default, sending logs from a cluster to the {{site.data.keyword.loganalysisshort}} service is not automatically enabled. To enable logging, you must create one or more logging configurations in the cluster to automatically forward logs into the {{site.data.keyword.loganalysisshort}} service. You can enable logging through the command line, by using the `ibmcloud cs logging-config-create` command, or through the cluster dashboard available in the {{site.data.keyword.Bluemix_notm}} UI. For more information, see [Enabling automatic collection of cluster logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
 
 When you work with a Kubernetes cluster, the namespaces *ibm-system* and *kube-system* are reserved. Do not create, delete, modify, or change permissions of resources that are available in these namespaces. Logs for these namespaces are for {{site.data.keyword.IBM_notm}} use.
 
@@ -159,7 +159,7 @@ You must open TCP port 443 and TCP port 9091 from each worker to the {{site.data
 ## Forwarding custom application logs
 {: #forward_app_logs}
 
-To enable log forwarding of custom application logs in a cluster to the {{site.data.keyword.loganalysisshort}} service, you must define a cluster logging configuration with **Log source** set to **application**. You can define this configuration by using the `bx cs logging-config-create` command or through the cluster UI.
+To enable log forwarding of custom application logs in a cluster to the {{site.data.keyword.loganalysisshort}} service, you must define a cluster logging configuration with **Log source** set to **application**. You can define this configuration by using the `ibmcloud cs logging-config-create` command or through the cluster UI.
 
 When you configure the cluster to forward custom logs, you can specify a list of containers running in your cluster from which you want to forward custom logs, and the paths inside those containers where custom file logs are located.
 

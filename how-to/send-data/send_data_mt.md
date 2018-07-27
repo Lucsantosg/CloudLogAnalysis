@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -40,10 +40,10 @@ Complete the following steps from a terminal session where the {{site.data.keywo
 
     For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Run the `bx logging token-get` command. 
+2. Run the `ibmcloud logging token-get` command. 
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     ```
     {: codeblock}
 
@@ -52,7 +52,7 @@ Complete the following steps from a terminal session where the {{site.data.keywo
     For example,
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
     OK
 

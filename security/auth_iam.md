@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -29,7 +29,7 @@ To get the authorization token by using the {{site.data.keyword.Bluemix_notm}} C
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   For more information, see [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
    
    If the CLI is installed, continue with the next step.
     
@@ -37,10 +37,10 @@ To get the authorization token by using the {{site.data.keyword.Bluemix_notm}} C
 
     For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Run the `bx iam oauth-tokens` command to get the IAM token.
+3. Run the `ibmcloud iam oauth-tokens` command to get the IAM token.
 
     ```
-	bx iam oauth-tokens
+	ibmcloud iam oauth-tokens
 	```
 	{: codeblock}
 	

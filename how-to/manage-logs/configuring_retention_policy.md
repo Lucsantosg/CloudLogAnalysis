@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -34,7 +34,7 @@ Complete the following steps to disable a retention policy:
 2. Set the retention period to **-1** to disable the retention period. Run the command:
 
     ```
-    bx cf logging option -r -1
+    ibmcloud cf logging option -r -1
     ```
     {: codeblock}
     
@@ -43,7 +43,7 @@ Complete the following steps to disable a retention policy:
 For example, to disable the retention period for a space with ID *d35da1e3-b345-475f-8502-cfgh436902a3*, run the following command:
 
 ```
-bx cf logging option -r -1
+ibmcloud cf logging option -r -1
 ```
 {: codeblock}
 
@@ -72,7 +72,7 @@ To get the retention period that is set for a space, complete the following step
 2. Get the the retention period. Run the command:
 
     ```
-    bx cf logging option
+    ibmcloud cf logging option
     ```
     {: codeblock}
 
@@ -100,7 +100,7 @@ To get the retention period that is set for each space in an account, complete t
 2. Get the the retention period for each space in the account. Run the command:
 
     ```
-    bx cf logging option -a
+    ibmcloud cf logging option -a
     ```
     {: codeblock}
 
@@ -130,7 +130,7 @@ To see the retention period for an account, complete the following steps:
 2. Set the retention period. Run the command:
 
     ```
-    bx cf logging option -r *Number_of_days* - a
+    ibmcloud cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
@@ -142,7 +142,7 @@ To see the retention period for an account, complete the following steps:
 For example, to keep any type of log in your account for 15 days only, run the following command:
 
 ```
-bx cf logging option -r 15 -a
+ibmcloud cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -171,7 +171,7 @@ To see the retention period for a space, complete the following steps:
 2. Set the retention period. Run the command:
 
     ```
-    bx cf logging option -r *Number_of_days*
+    ibmcloud cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
@@ -183,7 +183,7 @@ To see the retention period for a space, complete the following steps:
 For example, to keep logs that are available in a space for a year, run the following command:
 
 ```
-bx cf logging option -r 365
+ibmcloud cf logging option -r 365
 ```
 {: codeblock}
 

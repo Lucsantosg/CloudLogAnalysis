@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2018-04-19"
 # Configuring the log retention policy
 {: #configuring_retention_policy}
 
-By default, the retention policy is disabled, and logs are kept indefinitely. Use the command **bx logging option-update** to change the retention policy.
+By default, the retention policy is disabled, and logs are kept indefinitely. Use the command **ibmcloud logging option-update** to change the retention policy.
 {:shortdesc}
 
-You can use the command **bx logging option-show** to view the retention policy that defines the maximum number of days that logs are kept in Log Collection. 
+You can use the command **ibmcloud logging option-show** to view the retention policy that defines the maximum number of days that logs are kept in Log Collection. 
 
 When you set a retention policy, after the retention period has expired, logs are deleted automatically.
 
@@ -42,7 +42,7 @@ Complete the following steps to disable a retention policy:
 3. Set the retention period to **-1** to disable the retention period. Run the command:
 
     ```
-    bx logging option-update -r account -i AccountID -e RETENTION_VALUE
+    ibmcloud logging option-update -r account -i AccountID -e RETENTION_VALUE
 	```
     {: codeblock}
 	
@@ -53,7 +53,7 @@ Complete the following steps to disable a retention policy:
 For example, to disable the retention period for an account with ID *12345677fgh436902a3*, run the following command:
 
 ```
-bx logging option-update -r account -i 12345677fgh436902a3 -e -1
+ibmcloud logging option-update -r account -i 12345677fgh436902a3 -e -1
 ```
 {: codeblock}
 
@@ -72,7 +72,7 @@ Complete the following steps to disable a retention policy:
 2. Set the retention period to **-1** to disable the retention period. Run the command:
 
     ```
-    bx logging option-show -e RETENTION_VALUE
+    ibmcloud logging option-show -e RETENTION_VALUE
 	```
     {: codeblock}
 	
@@ -83,7 +83,7 @@ Complete the following steps to disable a retention policy:
 For example, to disable the retention period for a space with ID *d35da1e3-b345-475f-8502-cfgh436902a3*, run the following command:
 
 ```
-bx logging option-update -e -1
+ibmcloud logging option-update -e -1
 ```
 {: codeblock}
 
@@ -104,14 +104,14 @@ To get the retention period that is set for an account, complete the following s
 3. Get the retention period. Run the command:
 
     ```
-    bx logging option-show -r account -i AccountID
+    ibmcloud logging option-show -r account -i AccountID
     ```
     {: codeblock}
 
     The output is:
 
     ```
-    bx logging option-show -r account -i kjskdsjfksjdflkjdsfbbd06461b066
+    ibmcloud logging option-show -r account -i kjskdsjfksjdflkjdsfbbd06461b066
     Showing log options of resource: kjskdsjfksjdflkjdsfbbd06461b066 ...
 
     Resource ID                              Retention   
@@ -131,14 +131,14 @@ To get the retention period that is set for a space, complete the following step
 2. Get the retention period. Run the command:
 
     ```
-    bx logging option-show
+    ibmcloud logging option-show
     ```
     {: codeblock}
 
     The output is:
 
     ```
-    bx logging option-show
+    ibmcloud logging option-show
     Showing log options of resource: 12345678-1234-2edr-a9de-378620d6fab5 ...
 
     SpaceId                                Retention   
@@ -164,7 +164,7 @@ Complete the following steps:
 3. Set the retention period. Run the command:
 
     ```
-    bx logging option-update -r account -i AccountID -e RETENTION_VALUE
+    ibmcloud logging option-update -r account -i AccountID -e RETENTION_VALUE
     ```
     {: codeblock}
     
@@ -176,7 +176,7 @@ Complete the following steps:
 For example, to keep any type of log in your account for 15 days only, run the following command:
 
 ```
-bx logging option-update -r account -i AccountID -e 15
+ibmcloud logging option-update -r account -i AccountID -e 15
 ```
 {: codeblock}
 
@@ -194,7 +194,7 @@ To see the retention period for a space, complete the following steps:
 2. Set the retention period. Run the command:
 
     ```
-    bx logging option-update -e RETENTION_VALUE
+    ibmcloud logging option-update -e RETENTION_VALUE
     ```
     {: codeblock}
     
@@ -206,7 +206,7 @@ To see the retention period for a space, complete the following steps:
 For example, to keep logs that are available in a space for a year, run the following command:
 
 ```
-bx logging option-update -e 365
+ibmcloud logging option-update -e 365
 ```
 {: codeblock}
 

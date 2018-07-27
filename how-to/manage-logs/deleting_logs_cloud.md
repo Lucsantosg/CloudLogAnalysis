@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-19"
 # Deleting logs
 {: #deleting_logs}
 
-Use the [bx logging log-delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) command to delete logs from Log Collection. 
+Use the [ibmcloud logging log-delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) command to delete logs from Log Collection. 
 {:shortdesc}
 
 * You can delete logs within a specific time range.
@@ -37,14 +37,14 @@ Complete the following steps to delete all the logs that are stored in a space d
 2. Run the following command to see the logs that are available in Log Collection.
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     For example,
     
     ```
-    $ bx logging log-show
+    $ ibmcloud logging log-show
     Showing log status of resource: 12345678-abcd-4193-aere-378620d6fab5 ...
 
     Date         Size       Count   Searchable          Types   
@@ -57,7 +57,7 @@ Complete the following steps to delete all the logs that are stored in a space d
 3. Delete the logs that are stored on a specific day.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate
+	ibmcloud logging log-delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
@@ -69,7 +69,7 @@ Complete the following steps to delete all the logs that are stored in a space d
 	For example, to delete the logs for 25 May 2017, run the following command:
 	
 	```
-	bx logging log-delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
@@ -86,14 +86,14 @@ Complete the following steps to delete logs by log type that are stored in a spa
 2. Run the following command to see the logs that are available in Log Collection.
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     For example,
     
     ```
-    $ bx logging log-show
+    $ ibmcloud logging log-show
     Showing log status of resource: 12345678-1234-2edr-a9de-378620d6fab5 ...
 
     Date         Size       Count   Searchable          Types   
@@ -106,7 +106,7 @@ Complete the following steps to delete logs by log type that are stored in a spa
 3. Delete the logs that are stored on a specific day.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate -t LogType
+	ibmcloud logging log-delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
@@ -119,7 +119,7 @@ Complete the following steps to delete logs by log type that are stored in a spa
 	For example, to delete the logs of type linux_syslog for 25 May 2017, run the following command:
 	
 	```
-	bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
@@ -141,14 +141,14 @@ Complete the following steps:
 3. Run the following command to see the logs that are available in Log Collection at the account level.
 
     ```
-    bx logging log-show  -r account -i AccountID
+    ibmcloud logging log-show  -r account -i AccountID
     ```
     {: codeblock}
     
     For example,
     
     ```
-    $ bx logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
+    $ ibmcloud logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
 	Showing log status of resource: 123456789123456789567c9c8de6dece ...
 
     Date         Size       Count   Searchable          Types   
@@ -163,7 +163,7 @@ Complete the following steps:
 4. Delete the logs that are stored on a specific day.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
+	ibmcloud logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
 	```
 	{: codeblock}
 	
@@ -176,7 +176,7 @@ Complete the following steps:
 	For example, to delete the logs of type linux_syslog for 25 May 2017 that are stored in Log Collection at account level, run the following command:
 	
 	```
-	bx logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -r account -i 123456789123456789567c9c8de6dece
+	ibmcloud logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -r account -i 123456789123456789567c9c8de6dece
 	```
 	{: screen}
 	

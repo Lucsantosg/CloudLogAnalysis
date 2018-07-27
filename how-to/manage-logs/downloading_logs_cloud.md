@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-06-08"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -35,17 +35,17 @@ For more information, see [How do I log in to the {{site.data.keyword.Bluemix_no
 ## Step 2: Identify what logs are available
 {: #step2}
 
-1. Use the `bx logging log-show` command to see what logs are available for the last 2 weeks. Run the following command:
+1. Use the `ibmcloud logging log-show` command to see what logs are available for the last 2 weeks. Run the following command:
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     For example, the output of running this command is:
     
     ```
-    bx logging log-show 
+    ibmcloud logging log-show 
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
     Date         Size     Count   Searchable   Types   
@@ -64,7 +64,7 @@ For more information, see [How do I log in to the {{site.data.keyword.Bluemix_no
 
 A session is required to define the scope of log data that is available for a download, and to keep the status of the download. 
 
-Use the command [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) to create a session. Optionally, you can specify start date, end date, and types of logs when you create a session:  
+Use the command [ibmcloud logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) to create a session. Optionally, you can specify start date, end date, and types of logs when you create a session:  
 
 * When you specify the start date and the end date, the session provides access to logs between those inclusive dates. 
 * When you specify the type of log (**-t**), the session provides access to a particular type of log. This is an important feature when you manage logs at scale, because you can scope a session to only a small subset of logs that you are interested in.
@@ -74,7 +74,7 @@ Use the command [bx logging session-create](/docs/services/CloudLogAnalysis/refe
 To create a session that is used to download all the logs that are available for the last 2 weeks, run the following command:
 
 ```
-bx logging session-create 
+ibmcloud logging session-create 
 ```
 {: codeblock}
 
@@ -88,7 +88,7 @@ The session returns the following information:
 For example,
 
 ```
-$ bx logging session-create
+$ ibmcloud logging session-create
 Creating session for lopezdsr@uk.ibm.com resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
@@ -97,7 +97,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 ```
 {: screen}
 
-**Tip:** To see the list of active sessions, run the command [bx logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
+**Tip:** To see the list of active sessions, run the command [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
 
 ## Step 4: Download log data to a file
 {: #step4}
@@ -105,7 +105,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 To download the logs that are specified by the session parameters, run the following command:
 
 ```
-bx logging log-download -o Log_File_Name Session_ID
+ibmcloud logging log-download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -117,7 +117,7 @@ where
 For example,
 
 ```
-bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -133,12 +133,12 @@ The progress indicator moves from 0 to 100% as the logs download.
 ## Step 5: Delete the session
 {: #step5}
 
-After the download is complete, you must delete the session by using the [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) command. 
+After the download is complete, you must delete the session by using the [ibmcloud logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) command. 
 
 Run the following command to delete a session:
 
 ```
-bx logging session-delete Session_ID
+ibmcloud logging session-delete Session_ID
 ```
 {: codeblock}
 
@@ -147,7 +147,7 @@ Where Session_ID is the GUID of the session that you created in a previous step.
 For example,
 
 ```
-bx logging session-delete -jshdjsunelsssr4566722==
+ibmcloud logging session-delete -jshdjsunelsssr4566722==
 Deleting session: -jshdjsunelsssr4566722== of resource: 12345678-1234-5678-abcd-378620d6fab5 ...
 Session: -jshdjsunelsssr4566722== is deleted
 

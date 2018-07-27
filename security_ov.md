@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -227,7 +227,7 @@ To send logs into the {{site.data.keyword.loganalysisshort}} service, you need a
 
 To send logs to a space domain, choose any of the following methods:
 
-* [Getting the logging token to send logs to a space by using the {{site.data.keyword.Bluemix_notm}} command bx service ](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
+* [Getting the logging token to send logs to a space by using the {{site.data.keyword.Bluemix_notm}} command ibmcloud service ](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
 * [Getting the logging token to send logs to a space by using the Log Analysis CLI](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [Getting the logging token to send logs to a space by using the Log Analysis API](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
 

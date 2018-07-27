@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -52,7 +52,7 @@ This tutorial walks through the steps that are required to get the following end
 
 3. Install the CLIs to work with the {{site.data.keyword.containershort}} and the {{site.data.keyword.loganalysisshort}} in your Ubuntu system.
 
-    * Install the {{site.data.keyword.Bluemix_notm}} CLI. For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+    * Install the {{site.data.keyword.Bluemix_notm}} CLI. For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
     
     * Install the {{site.data.keyword.containershort}} CLI to create and manage your Kubernetes clusters in {{site.data.keyword.containershort}}, and to deploy containerized apps to your cluster. For more information, see [Install the CS plugin](/docs/containers/cs_cli_install.html#cs_cli_install_steps).
     
@@ -87,14 +87,14 @@ Complete the following steps:
 	Initialize the {{site.data.keyword.containershort}} service plug-in.
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
     Set your terminal context to your cluster.
     
 	```
-	bx cs cluster-config MyCluster
+	ibmcloud cs cluster-config MyCluster
 	```
 	{: codeblock}
 
@@ -121,7 +121,7 @@ When the app is deployed, logs are collected automatically by the {{site.data.ke
 Before you define logging configurations, check your current logging configuration definitions in the cluster. Run the following command:
 
 ```
-$ bx cs logging-config-get ClusterName
+$ ibmcloud cs logging-config-get ClusterName
 ```
 {: codeblock}
 
@@ -130,7 +130,7 @@ where *ClusterName* is the name of your cluster.
 For example, the logging configurations that are defined for the cluster *mycluster* are the following: 
 
 ```
-$ bx cs logging-config-get mycluster
+$ ibmcloud cs logging-config-get mycluster
 Retrieving cluster mycluster logging configurations...
 OK
 Id                                     Source       Namespace   Host                                Port   Org            Space   Protocol   Paths   
@@ -166,7 +166,7 @@ Complete the following steps to send stdout and stderr logs to a space domain, w
 2. Create a cluster logging configuration. Run the following command to send *stdout* and *stderr* log files to the {{site.data.keyword.loganalysisshort}} service:
 
     ```
-    bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -181,7 +181,7 @@ Complete the following steps to send stdout and stderr logs to a space domain, w
 For example, to create a logging configuration that forwards stdout and stderr logs to the space dev in the US South region, run the following command:
 
 ```
-bx cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -208,7 +208,7 @@ Complete the following steps to send worker logs to a space domain, where the or
 2. Create a cluster logging configuration. Run the following command to send */var/log/syslog* and */var/log/auth.log* log files to the {{site.data.keyword.loganalysisshort}} service:
 
     ```
-    bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -223,7 +223,7 @@ Complete the following steps to send worker logs to a space domain, where the or
 For example, to create a logging configuration that forwards worker logs to the space domain in the US South region, run the following command:
 
 ```
-bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -280,7 +280,7 @@ Complete the following steps:
 1. Identify the user in the account that is the {{site.data.keyword.containershort}} key owner. From a terminal, run the following command:
 
     ```
-    bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -307,7 +307,7 @@ Complete the following steps:
 4. Refresh the logging configuration. Run the following command:
     
     ```
-    bx cs logging-config-refresh ClusterName
+    ibmcloud cs logging-config-refresh ClusterName
     ```
     {: codeblock}
         
@@ -482,10 +482,10 @@ For more information, see [Filtering logs in Kibana](/docs/services/CloudLogAnal
 
 CLI commands:
 
-* [bx cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
-* [bx cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
-* [bx cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
-* [bx cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
-* [bx cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
-* [bx cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
+* [ibmcloud cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
+* [ibmcloud cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
+* [ibmcloud cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
+* [ibmcloud cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
+* [ibmcloud cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
+* [ibmcloud cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -24,11 +24,9 @@ If you have problems or questions when using the {{site.data.keyword.loganalysis
 
 * You can review the forums to see whether other users ran into the same problem. When using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 <!--Insert the appropriate Stack Overflow tag for your service for <service_keyword> in URL and text below:  -->
-  * If you have technical questions about developing or deploying an app with the {{site.data.keyword.loganalysisshort}} service, post your question on [Stack Overflow](http://stackoverflow.com/search?q=log-analysis+ibm-bluemix){:new_window} and tag your question with "ibm-bluemix" and "log-analysis".
+  * If you have technical questions about developing or deploying an app with the {{site.data.keyword.loganalysisshort}} service, post your question on [Stack Overflow](http://stackoverflow.com/search?q=log-analysis+ibm-cloud){:new_window} and tag your question with "ibm-cloud" and "log-analysis".
 <!--Insert the appropriate dW Answers tag for your service for <service_keyword> in URL below:  -->
   * For questions about the service and getting started instructions, use the [{{site.data.keyword.IBM_notm}} developerWorks dW Answers](https://developer.ibm.com/answers/topics/log-analysis/?smartspace=ibm-cloud){:new_window} forum.
 
-See [Getting help](https://www.{DomainName}/docs/support/index.html#getting-help) for more details about using the forums.
-
-* If you still can't resolve the problem, you can open an IBM support ticket. For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](https://www.{DomainName}/docs/support/index.html#contacting-support).
+* If you still can't resolve the problem, you can open an IBM support ticket. For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](/docs/get-support/howtogetsupport.html#getting-customer-support).
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-16"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,13 +17,13 @@ lastupdated: "2018-01-16"
 # Retrieving the key owner for a cluster
 {: #containers_key_owner}
 
-Use the command *bx cs api-key-info* to get the {{site.data.keyword.loganalysisshort}} key owner for a cluster.
+Use the command *ibmcloud cs api-key-info* to get the {{site.data.keyword.loganalysisshort}} key owner for a cluster.
 {:shortdesc}
 
 Run the following command:
 
 ```
- bx cs api-key-info ClusterName
+ ibmcloud cs api-key-info ClusterName
 ```
 {: codeblock}
 
@@ -33,7 +33,7 @@ where **ClusterName** is the name of the cluster.
 For example, the output of running the command is the following:
 
 ```
-bx cs api-key-info MyDemoCluster
+ibmcloud cs api-key-info MyDemoCluster
 Getting information about the API key owner for cluster MyDemoCluster...
 OK
 Name           Email   

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-19"
 # Deleting logs
 {: #deleting_logs}
 
-Use the [bx cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) command to delete logs from Log Collection. 
+Use the [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) command to delete logs from Log Collection. 
 {:shortdesc}
 
 * You can delete logs within a specific time range.
@@ -37,14 +37,14 @@ Complete the following steps:
 2. Run the *status* command to see the logs that are available in Log Collection.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     For example,
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -58,7 +58,7 @@ Complete the following steps:
 3. Delete the logs that are stored on a specific day.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate
+	ibmcloud cf logging delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
@@ -70,7 +70,7 @@ Complete the following steps:
 	For example, to delete the logs for 25 May 2017, run the following command:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
@@ -87,14 +87,14 @@ Complete the following steps:
 2. Run the *status* command to see the logs that are available in Log Collection.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     For example,
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -108,7 +108,7 @@ Complete the following steps:
 3. Delete the logs that are stored on a specific day.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
@@ -121,7 +121,7 @@ Complete the following steps:
 	For example, to delete the logs of type linux_syslog for 25 May 2017, run the following command:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
@@ -139,14 +139,14 @@ Complete the following steps:
 2. Run the *status* command to see the logs that are available in Log Collection at the account level.
 
     ```
-    bx cf logging status  -a
+    ibmcloud cf logging status  -a
     ```
     {: codeblock}
     
     For example,
     
     ```
-    $ bx cf logging status -a
+    $ ibmcloud cf logging status -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -160,7 +160,7 @@ Complete the following steps:
 3. Delete the logs that are stored on a specific day.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType -a
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType -a
 	```
 	{: codeblock}
 	
@@ -173,7 +173,7 @@ Complete the following steps:
 	For example, to delete the logs of type linux_syslog for 25 May 2017 that are stored in Log Collection at account level, run the following command:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
 	```
 	{: screen}
 	

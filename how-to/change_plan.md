@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-03-15"
 # Changing the plan
 {: #change_plan}
 
-You can change your {{site.data.keyword.loganalysisshort}} service plan through the {{site.data.keyword.Bluemix_notm}} UI or by running the `bx cf update-service` command. You can upgrade or reduce your plan at any time.
+You can change your {{site.data.keyword.loganalysisshort}} service plan through the {{site.data.keyword.Bluemix_notm}} UI or by running the `ibmcloud service update` command. You can upgrade or reduce your plan at any time.
 {:shortdesc}
 
 ## Changing the service plan through the UI
@@ -52,14 +52,14 @@ To change your service plan in Bluemix through the CLI, complete the following s
 
     For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Run the `bx service list` command to check your current plan, and to get the {{site.data.keyword.loganalysisshort}} service name from the list of services that is available in the space. 
+2. Run the `ibmcloud service list` command to check your current plan, and to get the {{site.data.keyword.loganalysisshort}} service name from the list of services that is available in the space. 
 
     The value of the field **name** is the one that you must use to change the plan. 
 
     For example,
 	
 	```
-	$ bx  bx service list
+	$ ibmcloud service list
     Invoking 'cf services'...
 
     Getting services in org MyOrg / space dev as xxx@ibm.com...
@@ -70,16 +70,16 @@ To change your service plan in Bluemix through the CLI, complete the following s
     ```
 	{: screen}
     
-3. Upgrade or reduce your plan. Run the `bx service update` command.
+3. Upgrade or reduce your plan. Run the `ibmcloud service update` command.
     
 	```
-	bx service update service_name [-p new_plan]
+	ibmcloud service update service_name [-p new_plan]
 	```
 	{: codeblock}
 	
 	where 
 	
-	* *service_name* is the name of your service. You can run the `bx service list` command to get the value.
+	* *service_name* is the name of your service. You can run the `ibmcloud service list` command to get the value.
 	* *new_plan* is the name of the plan.
 	
 	The following table lists the different plans and their supported values:
@@ -115,16 +115,16 @@ To change your service plan in Bluemix through the CLI, complete the following s
 	For example, to reduce your plan to the *Lite* plan, run the following command:
 	
 	```
-	bx service update "Log Analysis-m2" -p standard
+	ibmcloud service update "Log Analysis-m2" -p standard
     Updating service instance Log Analysis-m2 as xxx@ibm.com...
     OK
 	```
 	{: screen}
 
-4. Verify the new plan is changed. Run the `bx service list` command.
+4. Verify the new plan is changed. Run the `ibmcloud service list` command.
 
   ```
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 

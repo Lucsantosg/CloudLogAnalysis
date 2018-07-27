@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -55,7 +55,7 @@ Complete the following steps to provision an instance of the {{site.data.keyword
 
 1. [Pre-requisite] Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
    
    If the CLI is installed, continue with the next step.
     
@@ -63,10 +63,10 @@ Complete the following steps to provision an instance of the {{site.data.keyword
 
     For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Run the `bx service create` command to provision an instance.
+3. Run the `ibmcloud service create` command to provision an instance.
 
     ```
-	bx service create service_name service_plan service_instance_name
+	ibmcloud service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -79,14 +79,14 @@ Complete the following steps to provision an instance of the {{site.data.keyword
 	For example, to create an instance of the {{site.data.keyword.loganalysisshort}} service with the Lite plan, run the following command:
 	
 	```
-	bx service create ibmLogAnalysis standard my_logging_svc
+	ibmcloud service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. Verify that the service is created successfully. Run the following command:
 
     ```	
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	

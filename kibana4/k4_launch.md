@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -75,7 +75,7 @@ The query that is used to filter the data that is displayed in Kibana retrieves 
 
 Complete the following step to launch Kibana from a browser:
 
-1. Open [https://logging.<span class="keyword" data-hd-keyref="DomainName">DomainName</span>](https://logging.{DomainName}) to log in to the Kibana user interface.
+1. Launch the Kibana user interface.
     
     For example, 
       

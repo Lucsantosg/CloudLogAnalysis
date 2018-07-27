@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-06-14"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -94,7 +94,7 @@ Complete the following steps to grant a user access to view account logs by usin
 2. Check that the user is a member of the account. Run the following command to get the list of users in the account:
 
     ```
-	bx account users
+	ibmcloud account users
 	```
     {: codeblock}	
 
@@ -102,12 +102,12 @@ Complete the following steps to grant a user access to view account logs by usin
 
 3. If the user is not a member of the account, contact the account owner and request an invite of the user to the account. For more information, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
 
-    **Tip:** The command to invite a user to an account is the following: `bx iam account-user-invite USER_EMAIL`
+    **Tip:** The command to invite a user to an account is the following: `ibmcloud iam account-user-invite USER_EMAIL`
 		
 4. Assign a policy to the user. Run the following command:
 
     ```
-    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
+    ibmcloud iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
 
@@ -118,7 +118,7 @@ Complete the following steps to grant a user access to view account logs by usin
 5. Verify that the policy is assigned to the user. Run the following command to list all the policies assigned to a user:
 
     ```
-    bx iam user-policies USER_NAME
+    ibmcloud iam user-policies USER_NAME
 	```
 	{: codeblock}
 

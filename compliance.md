@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-20"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,7 +31,7 @@ The General Data Protection Regulation (GDPR) seeks to create a harmonized data 
 ### Regions
 {: #regions}
 
-The {{site.data.keyword.loganalysisshort}} service intends to be compliant with GDPR by the deadline of May 25, 2018 in the {{site.data.keyword.Bluemix_notm}} Public regions where the service is available.
+The {{site.data.keyword.loganalysisshort}} service is compliant with GDPR in the {{site.data.keyword.Bluemix_notm}} Public regions where the service is available.
 
 
 ### Data retention
@@ -62,12 +62,12 @@ Consider the following information:
 
     You can use the [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} or the [Log Collection CLI](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} to delete logs manually from Log Collection. 
 
-    You can use the CLI to delete logs manually from Log Collection. For more information, see [bx logging log-delete by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+    You can use the CLI to delete logs manually from Log Collection. For more information, see [ibmcloud logging log-delete by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
 
 
 If you change from a paid plan to the standard or lite plan, logs in Log Collection will be deleted in about one day.
 
-At any time, you can open a support ticket and request that all your data is deleted from Log Search and log Collection. For information about opening an IBM support ticket, see [Contacting support](https://www.{DomainName}/docs/support/index.html#contacting-support).
+At any time, you can open a support ticket and request that all your data is deleted from Log Search and log Collection. For information about opening an IBM support ticket, see [Contacting support](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 
 

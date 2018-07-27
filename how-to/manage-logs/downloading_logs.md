@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,10 +31,10 @@ For more information, see [How do I log in to the {{site.data.keyword.Bluemix_no
 ## Step 2: Identify what logs are available
 {: #step2}
 
-1. Use the `bx cf logging status` command to see what logs are available for the last 2 weeks. Run the following command:
+1. Use the `ibmcloud cf logging status` command to see what logs are available for the last 2 weeks. Run the following command:
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
@@ -69,7 +69,7 @@ Use the command [cf logging session create](/docs/services/CloudLogAnalysis/refe
 To create a session that is used to download logs of type *log*, run the following command:
 
 ```
-bx cf logging session create -t log
+ibmcloud cf logging session create -t log
 ```
 {: codeblock}
 
@@ -83,7 +83,7 @@ The session returns the following information:
 For example,
 
 ```
-$ bx cf logging session create -t log     
+$ ibmcloud cf logging session create -t log     
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -111,7 +111,7 @@ $ bx cf logging session create -t log
 To download the logs that are specified by the session parameters, run the following command:
 
 ```
-bx cf logging download -o Log_File_Name Session_ID
+ibmcloud cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -123,7 +123,7 @@ where
 For example,
 
 ```
-bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -144,7 +144,7 @@ After the download is complete, you must delete the session by using the [cf log
 Run the following command to delete a session:
 
 ```
-bx cf logging session delete Session_ID
+ibmcloud cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -153,7 +153,7 @@ Where Session_ID is the GUID of the session that you created in a previous step.
 For example,
 
 ```
-bx cf logging session delete -jshdjsunelsssr4566722==
+ibmcloud cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

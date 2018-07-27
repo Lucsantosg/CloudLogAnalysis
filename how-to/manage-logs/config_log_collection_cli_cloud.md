@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -27,12 +27,12 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
    
 2. Find out the name of the plugin in the repo. Run the following command:
 
     ```
-    bx plugin repo-plugins
+    ibmcloud plugin repo-plugins
     ```
     {: codeblock}
     
@@ -41,7 +41,7 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
 3. Install the {{site.data.keyword.loganalysisshort}} plugin. Run the following command:
 
     ```
-    bx plugin install logging-cli -r Bluemix
+    ibmcloud plugin install logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -50,14 +50,14 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
     For example, run the following command to see the list of plugins that are installed:
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     The output looks as follows:
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -73,7 +73,7 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#install_use).
 
 2. Install the {{site.data.keyword.loganalysisshort}} plugin.
 
@@ -86,14 +86,14 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
     For example, check the version of the plugin. Run the following command:
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     The output looks as follows:
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -119,7 +119,7 @@ Complete the following steps to install the Log Collection plugin on Linux:
 2. Install the plugin. Run the following command:
         
     ```
-    bx plugin install -f logging-cli-linux-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-linux-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -139,7 +139,7 @@ Complete the following steps to install the Log Collection plugin on Windows:
 2. Install the plugin. Run the following command:
         
     ```
-    bx plugin install -f logging-cli-windows-amd64-0.1.1.exe
+    ibmcloud plugin install -f logging-cli-windows-amd64-0.1.1.exe
     ```
     {: codeblock}
 
@@ -165,7 +165,7 @@ Complete the following steps to install the Log Collection plugin on Mac OS X:
 3. Install the plugin. Run the following command:
         
     ```
-    bx plugin install -f logging-cli-darwin-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-darwin-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -184,14 +184,14 @@ Complete the following steps to uninstall the {{site.data.keyword.loganalysissho
     For example, check the version of the plugin. Run the following command:
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     The output looks as follows:
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -199,12 +199,12 @@ Complete the following steps to uninstall the {{site.data.keyword.loganalysissho
     ```
     {: screen}
     
-2. If the plugin is installed, run the `bx plugin uninstall` to uninstall the logging CLI plugin.
+2. If the plugin is installed, run the `ibmcloud plugin uninstall` to uninstall the logging CLI plugin.
 
     Run the following command:
         
     ```
-    bx plugin uninstall logging-cli
+    ibmcloud plugin uninstall logging-cli
     ```
     {: codeblock}
   
@@ -212,7 +212,7 @@ Complete the following steps to uninstall the {{site.data.keyword.loganalysissho
 ## Updating the Log Analysis CLI from the repo
 {: #update_cli}
 
-To update the logging CLI, run the *bx plugin update* command.
+To update the logging CLI, run the *ibmcloud plugin update* command.
 {:shortdesc}
 
 Complete the following steps to update the {{site.data.keyword.loganalysisshort}} service CLI:
@@ -220,7 +220,7 @@ Complete the following steps to update the {{site.data.keyword.loganalysisshort}
 1. Update the {{site.data.keyword.loganalysisshort}} plugin. Run the following command:
 
     ```
-    bx plugin update logging-cli -r Bluemix
+    ibmcloud plugin update logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -229,14 +229,14 @@ Complete the following steps to update the {{site.data.keyword.loganalysisshort}
     For example, verify the version of the plugin. Run the following command:
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     The output looks as follows:
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -260,7 +260,7 @@ To get general information about the CLI and what commands are supported, comple
 2. List information about the supported commands and the CLI. Run the following command:
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
     
@@ -278,14 +278,14 @@ To get help on how to use a command, complete the followimg steps:
 2. Get the list of supported comnmands and identify the one that you need. Run the command:
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. Get help on the command. Run the following command:
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Command*
     ```
     {: codeblock}
     
@@ -305,14 +305,14 @@ A command can have subcommands. To get help on subcommands, complete the followi
 2. Get the list of supported comnmands and identify the one that you need. Run the command:
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. Get help on the command and identify the supported subcommands. Run the following command:
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Command*
     ```
     {: codeblock}
     
@@ -321,7 +321,7 @@ A command can have subcommands. To get help on subcommands, complete the followi
 4. Get help on the command and identify the supported subcommands. Run the following command:
 
     ```
-    bx logging *Command* help *Subcommand*
+    ibmcloud logging *Command* help *Subcommand*
     ```
     {: codeblock}
     
@@ -334,17 +334,17 @@ A command can have subcommands. To get help on subcommands, complete the followi
 ## Show the details of the plugin
 {: #show}
   
-Use the 'bx plugin show logging-cli' command to show the plugin details. 
+Use the 'ibmcloud plugin show logging-cli' command to show the plugin details. 
 
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
 ```
 {: codeblock}
     
 The output looks as follows:
    
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
                                   
 Plugin                         logging-cli   
 Version                        0.1.1   
