@@ -84,7 +84,7 @@ IBM Cloud Log Analysis
     qa/kibana_formats.md
     reference/log_analysis_cli_cloud.md  
 
-    [Log Analysis API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
+    [Log Analysis API](https://console.bluemix.net/apidocs/ibmloganalysis)
     {: .navgroup-end}     
     
     {: .navgroup id="help"}
