@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloudloganalysis" audience="service" href="/docs/services/CloudLogAnalysis/index.html"}
+{: .toc subcollection="cloudloganalysis" audience="service" arm="3663228" href="/docs/services/CloudLogAnalysis/index.html"}
 IBM Cloud Log Analysis
 
     {: .navgroup id="learn"}
