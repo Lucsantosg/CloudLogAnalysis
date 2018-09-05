@@ -30,3 +30,4 @@ If you have problems or questions when using the {{site.data.keyword.loganalysis
 
 * If you still can't resolve the problem, you can open an IBM support ticket. For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
+
