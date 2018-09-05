@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-07-25"
+lastupdated: "2018-08-21"
 
 ---
 
@@ -424,7 +424,7 @@ Creates a new session.
 **Note:** You can have up to 30 concurrent sessions in a space. The session is created for a user. Sessions cannot be shared between users in a space.
 
 ```
-ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE]
+ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-T, --time, LOG_TIME]
 ```
 {: codeblock}
 
@@ -449,6 +449,10 @@ ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resourc
   
   <dt>-t, --type, LOG_TYPE</dt>
   <dd>(Optional) Sets the log type. <br>For example, *syslog* is a type of log. <br>The default value is set to asterisk (*). <br>You can specify multiple log types by separating each type with a comma, for example, *log_type_1,log_type_2,log_type_3*.
+  </dd>
+
+  <dt>-T, --time, LOG_TIME</dt>
+  <dd>(Optional) Sets the hour of the day for which you want to get logs of a specific type. </br>Valid values are 0-23. </br>It should be used combined with LOG_TYPE.
   </dd>
 
 </dl>
