@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 
 1. Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
 
-   Pour plus d'informations, voir [Téléchargement et installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Pour plus d'informations, voir [Téléchargement et installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Si l'interface de ligne de commande est installée, passez à l'étape suivante.
     
@@ -39,11 +39,11 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 3. Exécutez la commande suivante :
 
     ```
-	bx logging token-get
+	ibmcloud logging token-get
 	```
 	{: codeblock}
 
-La sortie renvoie le jeton de journalisation. 
+La sortie renvoie le jeton de journalisation.
 
 
 ## Obtention du jeton de journalisation pour envoyer des journaux dans un espace via l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}} 
@@ -53,7 +53,7 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 
 1. Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
 
-   Pour plus d'informations, voir [Téléchargement et installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Pour plus d'informations, voir [Téléchargement et installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Si l'interface de ligne de commande est installée, passez à l'étape suivante.
     
@@ -66,14 +66,14 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
     Répertoriez les services afin d'obtenir le nom de l'instance {{site.data.keyword.loganalysisshort}} dans l'espace :
 	
     ```
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	
 	Exemple :
 	
 	```
-	bx service list
+	ibmcloud service list
     Invoking 'cf services'...
 
     Getting services in org lopezdsr_org / space dev as xxx@yyyy...
@@ -87,14 +87,14 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 	Créez une clé. Utilisez la valeur de **name** pour servicename et entrez le nom de votre clé.
 	
 	```
-	bx service key-create servicename KeyName 
+	ibmcloud service key-create servicename KeyName 
 	```
 	{: codeblock}
 	
 	Exemple :
 	
 	```
-	bx service key-create "Log Analysis-vg" mykey2
+	ibmcloud service key-create "Log Analysis-vg" mykey2
     Invoking 'cf create-service-key Log Analysis-vg mykey2'...
 
     Creating service key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -105,14 +105,14 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 4. Obtenez le jeton de journalisation. Exécutez la commande suivante :
 	
 	```
-	bx service key-show name Keyname
+	ibmcloud service key-show name Keyname
 	```
 	{: codeblock}
 	
 	Exemple : 
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" 
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" 
     Invoking 'cf service-key Log Analysis-vg mykey2'...
 
     Getting key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -128,7 +128,7 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 	Pour obtenir le jeton de journalisation, vous pouvez exécuter la commande suivante :
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
     sdtghyrtfde4
 	```
 	{: screen}
@@ -143,7 +143,7 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 
 1. Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
 
-   Pour plus d'informations, voir [Téléchargement et installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Pour plus d'informations, voir [Téléchargement et installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Si l'interface de ligne de commande est installée, passez à l'étape suivante.
     
@@ -153,10 +153,10 @@ Pour obtenir le jeton de journalisation que vous pouvez utiliser pour envoyer de
 	
 3. Obtenez le [jeton UAA](/docs/services/CloudLogAnalysis/security/auth_uaa.html#uaa_cli).
 
-    Par exemple, exécutez la commande `bx cf oauth-token` pour obtenir le jeton UAA.
+    Par exemple, exécutez la commande `ibmcloud cf oauth-token` pour obtenir le jeton UAA.
 
     ```
-	bx cf oauth-token
+	ibmcloud cf oauth-token
 	```
 	{: codeblock}
 	

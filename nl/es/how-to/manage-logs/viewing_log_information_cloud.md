@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,17 +17,17 @@ lastupdated: "2018-04-19"
 # Visualización de la información de registro
 {: #viewing_log_status}
 
-Utilice el mandato [bx logging log-show](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#status) para obtener información sobre los registros que se recopilan y almacenan en el componente de recopilación de registros. Puede obtener información sobre el tamaño, el número de registros, los tipos de registro y si los registros están disponibles o no para su análisis en Kibana.
+Utilice el mandato [ibmcloud logging log-show](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#status) para obtener información sobre los registros que se recopilan y almacenan en el componente de recopilación de registros. Puede obtener información sobre el tamaño, el número de registros, los tipos de registro y si los registros están disponibles o no para su análisis en Kibana.
 {:shortdesc}
 
 ## Obtención de información sobre los registros durante un periodo de tiempo
 {: #viewing_logs}
 
-Utilice el mandato `bx logging log-show` con las opciones **-s** para definir la fecha inicial y **-e** para definir la fecha final. Por ejemplo:
+Utilice el mandato `ibmcloud logging log-show` con las opciones **-s** para definir la fecha inicial y **-e** para definir la fecha final. Por ejemplo:
 
-* `bx logging log-show` ofrece información correspondiente a las 2 últimas semanas.
-* `bx logging log-show -s 2017-05-03` ofrece información comprendida entre el 3 de mayo de 2017 y el día de hoy.
-* `bx logging log-show -s 2017-05-03 -e 2017-05-08` ofrece información comprendida entre el 3 de mayo de 2017 y el 8 de mayo de 2017. 
+* `ibmcloud logging log-show` ofrece información correspondiente a las 2 últimas semanas.
+* `ibmcloud logging log-show -s 2017-05-03` ofrece información comprendida entre el 3 de mayo de 2017 y el día de hoy.
+* `ibmcloud logging log-show -s 2017-05-03 -e 2017-05-08` ofrece información comprendida entre el 3 de mayo de 2017 y el 8 de mayo de 2017. 
 
 Siga estos pasos para obtener para obtener información sobre los registros almacenados en un espacio:
 
@@ -38,18 +38,18 @@ Siga estos pasos para obtener para obtener información sobre los registros alma
 2. Ejecute el mandato siguiente:
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     Por ejemplo,
     
     ```
-    $ bx logging log-show -s 2017-11-17 -e 2017-11-17
+    $ ibmcloud logging log-show -s 2017-11-17 -e 2017-11-17
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types
-    2017-11-17   794008   706     All          default
+    Date         Size       Count   Searchable          Types   
+    2017-11-17   794008   706     All          default   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
     OK
     ```
@@ -59,11 +59,11 @@ Siga estos pasos para obtener para obtener información sobre los registros alma
 ## Obtención de información sobre un tipo de registro durante un periodo de tiempo
 {: #viewing_logs_by_log_type}
 
-Para obtener información sobre un tipo de registro durante un periodo de tiempo, utilice el mandato `bx logging log-show` con las opciones **-t** para especificar el tipo de registro, **-s** para definir la fecha inicial y **-e** para definir la fecha final. Por ejemplo,
+Para obtener información sobre un tipo de registro durante un periodo de tiempo, utilice el mandato `ibmcloud logging log-show` con las opciones **-t** para especificar el tipo de registro, **-s** para definir la fecha inicial y **-e** para definir la fecha final. Por ejemplo,
 
-* `bx logging log-show -t syslog` proporciona información sobre los registros de tipo *syslog* durante las 2 últimas semanas.
-* `bx logging log-show -s 2017-05-03 -t syslog` proporciona información sobre los registros de tipo *syslog* comprendido entre el 3 de mayo de 2017 y el día de hoy.
-* `bx logging log-show -s 2017-05-03 -e 2017-05-08 -t syslog` proporciona información sobre los registros de tipo *syslog* entre el 3 de mayo de 2017 y el 8 de mayo de 2017. 
+* `ibmcloud logging log-show -t syslog` proporciona información sobre los registros de tipo *syslog* durante las 2 últimas semanas.
+* `ibmcloud logging log-show -s 2017-05-03 -t syslog` proporciona información sobre los registros de tipo *syslog* comprendido entre el 3 de mayo de 2017 y el día de hoy.
+* `ibmcloud logging log-show -s 2017-05-03 -e 2017-05-08 -t syslog` proporciona información sobre los registros de tipo *syslog* entre el 3 de mayo de 2017 y el 8 de mayo de 2017. 
 
 Siga estos pasos para obtener información sobre un tipo de registro durante un periodo de tiempo:
 
@@ -74,7 +74,7 @@ Siga estos pasos para obtener información sobre un tipo de registro durante un 
 2. Ejecute el mandato siguiente:
 
     ```
-    bx logging log-show -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    ibmcloud logging log-show -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -89,11 +89,11 @@ Siga estos pasos para obtener información sobre un tipo de registro durante un 
     Por ejemplo,
     
     ```
-    $ bx logging log-show -s 2017-05-24 -e 2017-05-25 -t syslog
+    $ ibmcloud logging log-show -s 2017-05-24 -e 2017-05-25 -t syslog
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types
-    2017-11-17   794008   706     All          syslog
+    Date         Size       Count   Searchable          Types   
+    2017-11-17   794008   706     All          syslog   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
     OK
     ```
@@ -104,7 +104,7 @@ Siga estos pasos para obtener información sobre un tipo de registro durante un 
 ## Obtención de información sobre los registros a nivel de cuenta
 {: #viewing_logs_account}
 
-Para obtener información sobre los registros que están disponibles a nivel de cuenta durante un periodo de tiempo, utilice el mandato `bx logging log-show` con la opción **-r account** e **-i** para definir el ID de la cuenta. También puede especificar las opciones **-t** para especificar el tipo de registro, **-s** para definir la fecha inicial y **-e** para definir la fecha final. 
+Para obtener información sobre los registros que están disponibles a nivel de cuenta durante un periodo de tiempo, utilice el mandato `ibmcloud logging log-show` con la opción **-r account** e **-i** para definir el ID de la cuenta. También puede especificar las opciones **-t** para especificar el tipo de registro, **-s** para definir la fecha inicial y **-e** para definir la fecha final. 
 
 Siga estos pasos para obtener para obtener información de la cuenta sobre los registros:
 
@@ -119,7 +119,7 @@ Siga estos pasos para obtener para obtener información de la cuenta sobre los r
 3. Ejecute el mandato siguiente:
 
     ```
-    bx logging log-show -r account -i AccountID -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    ibmcloud logging log-show -r account -i AccountID -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -130,18 +130,17 @@ Siga estos pasos para obtener para obtener información de la cuenta sobre los r
     * *-s* se utiliza para definir la fecha inicial en hora universal coordinada (UTC): *AAAA-MM-DD*
     * *-e* se utiliza para definir la fecha final en hora universal coordinada (UTC): *AAAA-MM-DD*
     * *-t* se utiliza para definir el tipo de registro.
-    
 
     Puede especificar varios tipos de registro separando cada tipo con una coma, por ejemplo **log_type_1,log_type_2,log_type_3**. 
  
     Por ejemplo, para ver información sobre los registros almacenados correspondientes al 17 de noviembre de 2017 a nivel de cuenta para la cuenta *123456789123456789567c9c8de6dece*, ejecute el siguiente mandato:
     
     ```
-    $ bx logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
+    $ ibmcloud logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
 	Showing log status of resource: 123456789123456789567c9c8de6dece ...
 
-    Date         Size      Count   Searchable   Types
-	2017-11-17   794008    200     All          syslog
+    Date         Size       Count   Searchable          Types   
+	2017-11-17   794008    200     All          syslog  
     Logs of resource 123456789123456789567c9c8de6dece is showed
     OK
     ```
@@ -151,7 +150,7 @@ Siga estos pasos para obtener para obtener información de la cuenta sobre los r
 ## Obtención de información sobre los registros a nivel de organización
 {: #viewing_logs_org}
 
-Para obtener información sobre los registros que están disponibles a nivel de organización durante un periodo de tiempo, utilice el mandato `bx logging log-show` con la opción **-r org** e **-i** para definir el ID de la organización. También puede especificar las opciones **-t** para especificar el tipo de registro, **-s** para definir la fecha inicial y **-e** para definir la fecha final. 
+Para obtener información sobre los registros que están disponibles a nivel de organización durante un periodo de tiempo, utilice el mandato `ibmcloud logging log-show` con la opción **-r org** e **-i** para definir el ID de la organización. También puede especificar las opciones **-t** para especificar el tipo de registro, **-s** para definir la fecha inicial y **-e** para definir la fecha final. 
 
 Siga estos pasos para obtener para obtener información de la cuenta sobre los registros:
 
@@ -166,7 +165,7 @@ Siga estos pasos para obtener para obtener información de la cuenta sobre los r
 3. Ejecute el mandato siguiente:
 
     ```
-    bx logging log-show -r org -i OrgID -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    ibmcloud logging log-show -r org -i OrgID -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -178,17 +177,16 @@ Siga estos pasos para obtener para obtener información de la cuenta sobre los r
     * *-e* se utiliza para definir la fecha final en hora universal coordinada (UTC): *AAAA-MM-DD*
     * *-t* se utiliza para definir el tipo de registro.
     
-
     Puede especificar varios tipos de registro separando cada tipo con una coma, por ejemplo **log_type_1,log_type_2,log_type_3**. 
  
     Por ejemplo, para ver información sobre los registros almacenados correspondientes al 17 de noviembre de 2017 en el dominio de organización para la organización con ID *abcd56789123456789567c9c8de6dece*, ejecute el siguiente mandato:
     
     ```
-    $ bx logging log-show -r org -i abcd56789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
+    $ ibmcloud logging log-show -r org -i abcd56789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
 	Showing log status of resource: abcd56789123456789567c9c8de6dece ...
 
-    Date         Size      Count   Searchable   Types
-	2017-11-17   794008    200     All          syslog
+    Date         Size       Count   Searchable          Types   
+	2017-11-17   794008    200     All          syslog  
     Logs of resource abcd56789123456789567c9c8de6dece is showed
     OK
     ```

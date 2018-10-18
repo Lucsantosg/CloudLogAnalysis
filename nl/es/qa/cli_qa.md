@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -30,10 +30,10 @@ Aquí encontrará las respuestas a preguntas comunes sobre el uso de la CLI de {
 ## ¿Cómo iniciar sesión en IBM Cloud?
 {: #login}
 
-Ejecute el siguiente mandato para iniciar una sesión en una región de {{site.data.keyword.Bluemix_notm}} en la que esté disponible el servicio {{site.data.keyword.loganalysisshort}}: 
+Ejecute el siguiente mandato para iniciar una sesión en una región de {{site.data.keyword.Bluemix_notm}} en la que esté disponible el servicio {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx login -a Endpoint
+ibmcloud login -a Endpoint
 ```
 {: codeblock}
 	
@@ -66,7 +66,7 @@ Donde *Endpoint* es el URL para iniciar sesión en {{site.data.keyword.Bluemix_n
 Por ejemplo, para iniciar sesión en la región EE. UU. sur, ejecute el siguiente mandato:
 	
 ```
-bx login -a https://api.ng.bluemix.net
+ibmcloud login -a https://api.ng.bluemix.net
 ```
 {: codeblock}
 
@@ -75,7 +75,7 @@ Siga las instrucciones.
 También puede establecer una organización y un espacio. Ejecute el mandato siguiente:
 
 ```
-bx target -o OrgName -s SpaceName
+ibmcloud target -o OrgName -s SpaceName
 ```
 {: codeblock}
 
@@ -89,7 +89,7 @@ donde
 ## ¿Cómo se instala la CLI de IBM Cloud?
 {: #install_bmx_cli}
 
-Consulte [Descargar e instalar la CLI de {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+Consulte [Descargar e instalar la CLI de {{site.data.keyword.Bluemix}} CLI](/docs/cli/index.html#overview).
 
 
 
@@ -102,21 +102,21 @@ Siga estos pasos para obtener el GUID de una cuenta:
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Ejecute el mandato `bx iam accounts` para obtener el GUID de una cuenta.
+2. Ejecute el mandato `ibmcloud iam accounts` para obtener la señal de GUID.
 
     ```
-	bx iam accounts
+	ibmcloud iam accounts
 	```
 	{: codeblock} 
 	
 	Por ejemplo, para recuperar todas las cuentas con sus correspondientes GUID para el usuario xxx@yyy.com, ejecute el mandato:
 	
 	```
-	bx iam accounts
+	ibmcloud iam accounts
 	Retrieving all accounts of xxx@yyy.com...
     OK
-    Account GUID                       Name                               Type    State    Owner User ID
-    12345123451234512345123451234512   A Account                          TRIAL   ACTIVE   xxx@yyy.com
+    Account GUID                       Name                               Type    State    Owner User ID   
+    12345123451234512345123451234512   A Account                          TRIAL   ACTIVE   xxx@yyy.com   
     23456234562345622456234561234561   B Account                          TRIAL   ACTIVE   zzz@yyy.com   
 	```
 	{: screen}
@@ -125,20 +125,20 @@ Siga estos pasos para obtener el GUID de una cuenta:
 ## ¿Cómo se obtiene el GUID de una organización?
 {: #org_guid}
 
-Siga los pasos siguientes para obtener el GUID de una organización:
+Siga estos pasos para obtener el GUID de una organización:
 	
 1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Ejecute el mandato `bx iam org` para obtener el GUID de organización. 
+2. Ejecute el mandato `ibmcloud iam org` para obtener el GUID de organización. 
 
     ```
-    bx iam org NAME --guid
+    ibmcloud iam org NAME --guid
     ```
     {: codeblock}
 	
-    donde NAME es el nombre de la organización de {{site.data.keyword.Bluemix_notm}}.
+    donde NAME es el nombre de la organización de {{site.data.keyword.Bluemix_notm}}.        
 		
 		
 		
@@ -151,10 +151,10 @@ Siga estos pasos para obtener el GUID de un espacio:
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Ejecute el mandato `bx iam space` para obtener el GUID del espacio. 
+2. Ejecute el mandato `ibmcloud iam space` para obtener el GUID del espacio. 
 
     ```
-    bx iam space NAME --guid
+    ibmcloud iam space NAME --guid
     ```
     {: codeblock}
 	
@@ -163,7 +163,7 @@ Siga estos pasos para obtener el GUID de un espacio:
     Por ejemplo, para obtener el GUID del espacio *dev*, ejecute el mandato siguiente:
 	
     ```
-    bx iam space dev --guid
+    ibmcloud iam space dev --guid
     e03afff1-3456-4af6-1234-59treg1b0abc
     ```
     {: screen}

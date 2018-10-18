@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-20"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,7 +31,7 @@ lastupdated: "2018-04-20"
 ### 地區
 {: #regions}
 
-{{site.data.keyword.loganalysisshort}} 服務想要在提供此服務的 {{site.data.keyword.Bluemix_notm}} Public 地區，於 2018 年 5 月 25 日截止時間之前符合 GDPR 標準。
+{{site.data.keyword.loganalysisshort}} 服務在提供該服務的「{{site.data.keyword.Bluemix_notm}} 公用」地區中遵循 GDPR。
 
 
 ### 資料保留
@@ -62,12 +62,12 @@ lastupdated: "2018-04-20"
 
     您可以使用[日誌收集 API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} 或[日誌收集 CLI](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window}，手動刪除「日誌收集」中的日誌。 
 
-    您可以使用 CLI，手動刪除「日誌收集」中的日誌。如需相關資訊，請參閱[使用 {{site.data.keyword.Bluemix_notm}} 外掛程式來執行 bx logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)。
+    您可以使用 CLI，手動刪除「日誌收集」中的日誌。如需相關資訊，請參閱[使用 {{site.data.keyword.Bluemix_notm}} 外掛程式來執行 ibmcloud logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)。
 
 
 如果您從付費方案變更為標準或精簡方案，則「日誌收集」中的日誌將在大約一天內被刪除。
 
-您隨時都可以開立支援問題單，並要求從「日誌搜尋」及「日誌收集」中刪除所有資料。如需開立 IBM 支援問題單的相關資訊，請參閱[與支援中心聯絡](https://www.{DomainName}/docs/support/index.html#contacting-support)。
+您隨時都可以開立支援問題單，並要求從「日誌搜尋」及「日誌收集」中刪除所有資料。如需開立 IBM 支援問題單的相關資訊，請參閱[與支援中心聯絡](/docs/get-support/howtogetsupport.html#getting-customer-support)。
 
 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,11 +18,11 @@ lastupdated: "2018-01-10"
 # Obtención de la señal de UAA
 {: #auth_uaa}
 
-Para gestionar registros mediante la API de {{site.data.keyword.loganalysisshort}}, debe utilizar una señal de autenticación. Utilice la CLI de {{site.data.keyword.loganalysisshort}} para obtener la señal de UAA. La señal tiene un tiempo de caducidad. 
+Para gestionar los registros disponible mediante la API de {{site.data.keyword.loganalysisshort}}, debe utilizar una señal de autenticación.
 {:shortdesc}
 
 		
-## Obtención de la señal de UAA mediante la CLI de análisis de registros (plugin de CF)
+## Obtención de la señal de UAA
 {: #uaa_cli}
 
 
@@ -30,7 +30,7 @@ Para obtener la señal de autorización, siga estos pasos:
 
 1. Instale la CLI de {{site.data.keyword.Bluemix_notm}}.
 
-   Para obtener más información, consulte [Descargue e instale la CLI de {{site.data.keyword.Bluemix}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obtener más información, consulte [Descargar e instalar la CLI de {{site.data.keyword.Bluemix}}](/docs/cli/index.html#overview).
    
    Si la CLI está instalada, continúe en el paso siguiente.
     
@@ -38,10 +38,10 @@ Para obtener la señal de autorización, siga estos pasos:
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Ejecute el mandato `bx cf oauth-token` para obtener la señal de UAA de {{site.data.keyword.Bluemix_notm}}.
+3. Ejecute el mandato `ibmcloud iam oauth-token` para obtener la señal de UAA de {{site.data.keyword.Bluemix_notm}}.
 
     ```
-	bx cf oauth-token
+	ibmcloud iam oauth-token
 	```
 	{: codeblock}
 	

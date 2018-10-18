@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -30,10 +30,10 @@ lastupdated: "2018-04-10"
 ## 如何登录到 IBM Cloud？
 {: #login}
 
-运行以下命令，以登录到 {{site.data.keyword.Bluemix_notm}} 中 {{site.data.keyword.loganalysisshort}} 服务可用的区域：
+运行以下命令，以登录到 {{site.data.keyword.Bluemix_notm}} 中 {{site.data.keyword.loganalysisshort}} 服务所在的区域：
 
 ```
-bx login -a Endpoint
+ibmcloud login -a Endpoint
 ```
 {: codeblock}
 	
@@ -66,7 +66,7 @@ bx login -a Endpoint
 例如，要登录到美国南部区域，请运行以下命令：
 	
 ```
-bx login -a https://api.ng.bluemix.net
+ibmcloud login -a https://api.ng.bluemix.net
 ```
 {: codeblock}
 
@@ -75,7 +75,7 @@ bx login -a https://api.ng.bluemix.net
 您还可以设置组织和空间。运行以下命令：
 
 ```
-bx target -o OrgName -s SpaceName
+ibmcloud target -o OrgName -s SpaceName
 ```
 {: codeblock}
 
@@ -89,7 +89,7 @@ bx target -o OrgName -s SpaceName
 ## 如何安装 IBM Cloud CLI？
 {: #install_bmx_cli}
 
-请参阅[下载并安装 {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+请参阅[下载并安装 {{site.data.keyword.Bluemix}} CLI](/docs/cli/index.html#overview)。
 
 
 
@@ -102,10 +102,10 @@ bx target -o OrgName -s SpaceName
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-2. 运行 `bx iam accounts` 命令以获取帐户的 GUID。
+2. 运行 `ibmcloud iam accounts` 命令以获取帐户的 GUID。
 
     ```
-	bx iam accounts
+	ibmcloud iam accounts
 	```
 	{: codeblock} 
 	
@@ -113,7 +113,7 @@ bx target -o OrgName -s SpaceName
 	
 	
 	```
-	bx iam accounts
+	ibmcloud iam accounts
 	Retrieving all accounts of xxx@yyy.com...
     OK
     Account GUID                       Name                               Type    State    Owner User ID   
@@ -132,10 +132,10 @@ bx target -o OrgName -s SpaceName
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
-2. 运行 `bx iam org` 命令以获取组织 GUID。 
+2. 运行 `ibmcloud iam org` 命令来获取组织 GUID。 
 
     ```
-        bx iam org NAME --guid
+    ibmcloud iam org NAME --guid
     ```
     {: codeblock}
 	
@@ -154,10 +154,10 @@ bx target -o OrgName -s SpaceName
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-2. 运行 `bx iam space` 命令以获取空间 GUID。 
+2. 运行 `ibmcloud iam space` 命令来获取空间 GUID。 
 
     ```
-        bx iam space NAME --guid
+    ibmcloud iam space NAME --guid
     ```
     {: codeblock}
 	
@@ -168,7 +168,7 @@ bx target -o OrgName -s SpaceName
     例如，要获取空间 *dev* 的 GUID，请运行以下命令：
 	
     ```
-        bx iam space dev --guid
+    ibmcloud iam space dev --guid
     e03afff1-3456-4af6-1234-59treg1b0abc
     ```
     {: screen}

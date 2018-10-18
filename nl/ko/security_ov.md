@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -227,7 +227,7 @@ CLI 또는 API를 통해 {{site.data.keyword.loganalysisshort}} 서비스에 대
 
 로그를 영역 도메인으로 보내려면 다음 방법 중 하나를 선택하십시오.
 
-* [{{site.data.keyword.Bluemix_notm}} 명령 bx 서비스를 사용하여 로그를 영역으로 보내는 로깅 토큰 가져오기](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
+* [{{site.data.keyword.Bluemix_notm}} 명령 ibmcloud service를 사용하여 로그를 영역으로 보내는 데 필요한 로깅 토큰 가져오기](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
 * [Log Analysis CLI를 사용하여 로그를 영역으로 보내는 로깅 토큰 가져오기](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [Log Analysis API를 사용하여 로그를 영역으로 보내는 로깅 토큰 가져오기](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
 

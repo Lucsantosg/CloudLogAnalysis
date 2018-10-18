@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -52,9 +52,7 @@ lastupdated: "2018-03-12"
 
 3. 安裝 CLI，以在 Ubuntu 系統中使用 {{site.data.keyword.containershort}} 及 {{site.data.keyword.loganalysisshort}}。
 
-    * 安裝 {{site.data.keyword.Bluemix_notm}} CLI。如需相關資訊，請參閱[安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
-    
-    * 安裝 {{site.data.keyword.containershort}} CLI，以在 {{site.data.keyword.containershort}} 中建立及管理 Kubernetes 叢集，以及將容器化應用程式部署至叢集。如需相關資訊，請參閱[安裝 CS 外掛程式](/docs/containers/cs_cli_install.html#cs_cli_install_steps)。
+    * 安裝 {{site.data.keyword.Bluemix_notm}} CLI。安裝 {{site.data.keyword.containershort}} CLI，以在 {{site.data.keyword.containershort}} 中建立及管理 Kubernetes 叢集，以及將容器化應用程式部署至叢集。如需相關資訊，請參閱[安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
     
     * 安裝 {{site.data.keyword.loganalysisshort}} CLI。如需相關資訊，請參閱[配置 Log Analysis CLI（IBM Cloud 外掛程式）](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)。
     
@@ -87,14 +85,14 @@ lastupdated: "2018-03-12"
 	起始設定 {{site.data.keyword.containershort}} 服務外掛程式。
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
     將終端機環境定義設為叢集。
     
 	```
-	bx cs cluster-config MyCluster
+	ibmcloud cs cluster-config MyCluster
 	```
 	{: codeblock}
 
@@ -121,7 +119,7 @@ lastupdated: "2018-03-12"
 在您定義記載配置之前，請檢查叢集中的現行記載配置定義。執行下列指令：
 
 ```
-$ bx cs logging-config-get ClusterName
+$ ibmcloud cs logging-config-get ClusterName
 ```
 {: codeblock}
 
@@ -130,7 +128,7 @@ $ bx cs logging-config-get ClusterName
 例如，針對叢集 *mycluster* 所定義的記載配置如下： 
 
 ```
-$ bx cs logging-config-get mycluster
+$ ibmcloud cs logging-config-get mycluster
 Retrieving cluster mycluster logging configurations...
 OK
 Id                                     Source       Namespace   Host                                Port   Org            Space   Protocol   Paths   
@@ -166,7 +164,7 @@ ae249c04-a3a9-4c29-a890-22d8da7bd1b2   container    *           ingest.logging.n
 2. 建立叢集記載配置。執行下列指令，以將 *stdout* 及 *stderr* 日誌檔傳送至 {{site.data.keyword.loganalysisshort}} 服務：
 
     ```
-        bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -181,7 +179,7 @@ ae249c04-a3a9-4c29-a890-22d8da7bd1b2   container    *           ingest.logging.n
 例如，若要建立記載配置以將 stdout 及 stderr 日誌轉遞至美國南部地區的空間 dev，請執行下列指令：
 
 ```
-bx cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -208,7 +206,7 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 2. 建立叢集記載配置。執行下列指令，以將 */var/log/syslog* 及 */var/log/auth.log* 日誌檔傳送至 {{site.data.keyword.loganalysisshort}} 服務：
 
     ```
-        bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -223,7 +221,7 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 例如，若要建立記載配置以將工作者日誌轉遞至美國南部地區的空間網域，請執行下列指令：
 
 ```
-bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -280,7 +278,7 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 1. 識別帳戶中為 {{site.data.keyword.containershort}} 金鑰擁有者的使用者。從終端機中，執行下列指令：
 
     ```
-        bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -307,8 +305,8 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 4. 重新整理記載配置。執行下列指令：
     
     ```
-            bx cs logging-config-refresh ClusterName
-        ```
+    ibmcloud cs logging-config-refresh ClusterName
+    ```
     {: codeblock}
         
     其中 *ClusterName* 是叢集的名稱。
@@ -482,10 +480,10 @@ app.listen(8080, function() {
 
 CLI 指令：
 
-* [bx cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
-* [bx cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
-* [bx cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
-* [bx cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
-* [bx cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
-* [bx cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
+* [ibmcloud cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
+* [ibmcloud cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
+* [ibmcloud cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
+* [ibmcloud cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
+* [ibmcloud cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
+* [ibmcloud cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -24,7 +24,7 @@ lastupdated: "2018-03-12"
 Per poter visualizzare e analizzare i log di cluster nel servizio {{site.data.keyword.loganalysisshort}}, devi configurare il cluster per inoltrare tali log al servizio {{site.data.keyword.loganalysisshort}}. 
 {:shortdesc}
 
-## Passo 1: controlla le autorizzazioni del tuo ID utente 
+## Passo 1: controlla le autorizzazioni del tuo ID utente
 {: step1}
 
 Il tuo ID utente deve avere le seguenti autorizzazioni per poter aggiungere una configurazione di registrazione al cluster:
@@ -42,7 +42,7 @@ Per controllare che il tuo ID utente abbia queste politiche IAM, completa la seg
 
 2. Dalla barra dei menu, fai clic su **Gestisci > Account > Utenti**.  La finestra *Utenti* visualizza un elenco di utenti con i loro indirizzi email per l'account attualmente selezionato.
 	
-3. Seleziona l'ID utente e verifica che abbia entrambe le politiche. 
+3. Seleziona l'ID utente e verifica che abbia entrambe le politiche.
 
 
 
@@ -59,14 +59,14 @@ Completa la seguente procedura:
 2. Inizializza il plug-in del servizio {{site.data.keyword.loganalysisshort}}.
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
 3. Imposta il contesto di terminale sul tuo cluster.
     
 	```
-	bx cs cluster-config ClusterName
+	ibmcloud cs cluster-config ClusterName
 	```
 	{: codeblock}
 
@@ -121,7 +121,7 @@ Completa la seguente procedura:
 1. Identifica l'utente nell'account che è il proprietario della chiave {{site.data.keyword.containershort}}. Da un terminale, esegui questo comando:
 
     ```
-    bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -133,7 +133,7 @@ Completa la seguente procedura:
 
     Dalla barra dei menu, fai clic su **Gestisci > Account > Utenti**.  La finestra *Utenti* visualizza un elenco di utenti con i loro indirizzi email per l'account attualmente selezionato.
 	
-    Seleziona l'ID dell'utente e verifica che l'utente abbia il ruolo *orgManager* (Gestore organizzazione) per l'organizzazione e *SpaceManager* (Gestore spazio) o *Developer* (Sviluppatore) per lo spazio. 
+    Seleziona l'ID dell'utente e verifica che l'utente abbia il ruolo *orgManager* (Gestore organizzazione) per l'organizzazione e *SpaceManager* (Gestore spazio) o *Developer* (Sviluppatore) per lo spazio.
  
 3. Se l'utente non dispone delle autorizzazioni corrette, completa la seguente procedura:
 
@@ -142,7 +142,7 @@ Completa la seguente procedura:
     2. Aggiorna la configurazione della registrazione. Esegui il seguente comando:
     
         ```
-        bx cs logging-config-refresh ClusterName
+        ibmcloud cs logging-config-refresh ClusterName
         ```
         {: codeblock}
         
@@ -158,7 +158,7 @@ Completa la seguente procedura:
 Esegui questo comando per inviare i file di log *stdout* e *stderr* al servizio {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -173,14 +173,14 @@ dove
 Ad esempio, per creare una configurazione della registrazione che inoltra i log stdout e stderr al dominio dell'account nella regione Germania, esegui questo comando:
 
 ```
-bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
 Per creare una configurazione della registrazione che invia i log stdout e stderr a un dominio dello spazio nella regione Germania, esegui questo comando:
 
 ```
-bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
 ```
 {: screen}
 
@@ -192,7 +192,7 @@ bx cs logging-config-create MyCluster --logsource container --type ibm --namespa
 Esegui questo comando per inviare i file di log */var/log/apps/**/.log* e */var/log/apps/*/.err* al servizio {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
+ibmcloud cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -208,14 +208,14 @@ dove
 Ad esempio, per creare una configurazione della registrazione che inoltra i log dell'applicazione a un dominio dello spazio nella regione Germania, esegui questo comando:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
+ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 Ad esempio, per creare una configurazione della registrazione che inoltra i log dell'applicazione al dominio dell'account nella regione Germania, esegui questo comando:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
+ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -228,7 +228,7 @@ bx cs logging-config-create MyCluster --logsource application --type ibm --hostn
 Esegui questo comando per inviare i file di log */var/log/syslog* e */var/log/auth.log* al servizio {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -244,14 +244,14 @@ dove
 Ad esempio, per creare una configurazione della registrazione che inoltra i log di lavoro a un dominio dello spazio nella regione Germania, esegui questo comando:
 
 ```
-bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Ad esempio, per creare una configurazione della registrazione che inoltra i log di lavoro al dominio dell'account nella regione Germania, esegui questo comando:
 
 ```
-bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -263,7 +263,7 @@ bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname 
 Esegui questo comando per inviare i file di log */var/log/kubelet.log* e */var/log/kube-proxy.log* al servizio {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -279,14 +279,14 @@ dove
 Ad esempio, per creare una configurazione della registrazione che inoltra i log di componente di sistema Kubernetes a un dominio dello spazio nella regione Germania, esegui questo comando:
 
 ```
-bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Ad esempio, per creare una configurazione della registrazione che inoltra i log di componente di sistema Kubernetes al dominio dell'account nella regione Germania, esegui questo comando:
 
 ```
-bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -298,7 +298,7 @@ bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostna
 Esegui questo comando per inviare i file di log */var/log/alb/ids/.log*, */var/log/alb/ids/.err*, */var/log/alb/customerlogs/.log* e /var/log/alb/customerlogs/.err* al servizio {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
+ibmcloud cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
 ```
 {: codeblock}
 
@@ -314,14 +314,14 @@ dove
 Ad esempio, per creare una configurazione della registrazione che inoltra i log di controller Ingress a un dominio dello spazio nella regione Germania, esegui questo comando:
 
 ```
-bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Ad esempio, per creare una configurazione della registrazione che inoltra i log di controller Ingress al dominio dell'account nella regione Germania, esegui questo comando:
 
 ```
-bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
+ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
 ```
 {: screen}
 

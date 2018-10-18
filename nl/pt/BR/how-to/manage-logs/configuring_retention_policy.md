@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -34,7 +34,7 @@ Conclua as etapas a seguir para desativar uma política de retenção:
 2. Configure o período de retenção como **-1** para desativar o período de retenção. Execute o comando:
 
     ```
-    bx cf logging option -r -1
+    ibmcloud cf logging option -r -1
     ```
     {: codeblock}
     
@@ -43,7 +43,7 @@ Conclua as etapas a seguir para desativar uma política de retenção:
 Por exemplo, para desativar o período de retenção de um espaço com o ID *d35da1e3-b345-475f-8502-cfgh436902a3*, execute o comando a seguir:
 
 ```
-bx cf logging option -r -1
+ibmcloud cf logging option -r -1
 ```
 {: codeblock}
 
@@ -72,7 +72,7 @@ Para obter o período de retenção que é configurado para um espaço, conclua 
 2. Sai o período de retenção. Execute o comando:
 
     ```
-    bx cf logging option
+    ibmcloud cf logging option
     ```
     {: codeblock}
 
@@ -100,7 +100,7 @@ Para obter o período de retenção que é configurado para cada espaço em uma 
 2. Obtenha o período de retenção de cada espaço na conta. Execute o comando:
 
     ```
-    bx cf logging option -a
+    ibmcloud cf logging option -a
     ```
     {: codeblock}
 
@@ -130,7 +130,7 @@ Para ver o período de retenção para uma conta, conclua as etapas a seguir:
 2. Configure o período de retenção. Execute o comando:
 
     ```
-    bx cf logging option -r *Number_of_days* - a
+    ibmcloud cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
@@ -142,7 +142,7 @@ Para ver o período de retenção para uma conta, conclua as etapas a seguir:
 Por exemplo, para manter qualquer tipo de log em sua conta por 15 dias apenas, execute o comando a seguir:
 
 ```
-bx cf logging option -r 15 -a
+ibmcloud cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -171,7 +171,7 @@ Para ver o período de retenção para um espaço, conclua as etapas a seguir:
 2. Configure o período de retenção. Execute o comando:
 
     ```
-    bx cf logging option -r *Number_of_days*
+    ibmcloud cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
@@ -183,7 +183,7 @@ Para ver o período de retenção para um espaço, conclua as etapas a seguir:
 Por exemplo, para manter os logs disponíveis em um espaço por um ano, execute o comando a seguir:
 
 ```
-bx cf logging option -r 365
+ibmcloud cf logging option -r 365
 ```
 {: codeblock}
 

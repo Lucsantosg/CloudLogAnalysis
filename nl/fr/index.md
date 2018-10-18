@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-03-09"
 Suivez ce tutoriel pour commencer à utiliser le service {{site.data.keyword.loganalysislong}} dans {{site.data.keyword.Bluemix}}. 
 {:shortdesc}
 
-Par défaut, {{site.data.keyword.Bluemix_notm}} offre des fonctions de journalisation intégrées pour certains services. Vous pouvez utiliser le service {{site.data.keyword.loganalysisshort}} pour étendre vos fonctions de collecte et de conservation de journaux. 
+Par défaut, {{site.data.keyword.Bluemix_notm}} offre des fonctions de journalisation intégrées pour certains services. Vous pouvez utiliser le service {{site.data.keyword.loganalysisshort}} pour étendre vos fonctions de collecte et de conservation de journaux.
 
 ## Avant de commencer
 {: #prereqs}
@@ -32,9 +32,9 @@ Vous devez disposer d'un ID utilisateur membre ou propriétaire d'un compte {{si
 ## Etape 1 : Choix de la ressource de cloud dont sous souhaitez afficher les journaux
 {: #step1}
 
-Dans {{site.data.keyword.Bluemix_notm}}, les applications CF, les conteneurs qui s'exécutent sur le {{site.data.keyword.containershort}} et les services sélectionnés collectent automatiquement des données de journal et les transmettent au service {{site.data.keyword.loganalysisshort}}. 
+Dans {{site.data.keyword.Bluemix_notm}}, les applications CF, les conteneurs qui s'exécutent sur le {{site.data.keyword.containershort}} et les services sélectionnés collectent automatiquement des données de journal et les transmettent au service {{site.data.keyword.loganalysisshort}}.
 
-Le tableau suivant répertorie les différentes ressources de cloud. Suivez le tutoriel d'une ressource pour commencer à utiliser le service {{site.data.keyword.loganalysisshort}} : 
+Le tableau suivant répertorie les différentes ressources de cloud. Suivez le tutoriel d'une ressource pour commencer à utiliser le service {{site.data.keyword.loganalysisshort}} :
 
 <table>
   <caption>Tutoriels pour commencer à utiliser le service {{site.data.keyword.loganalysisshort}} </caption>
@@ -105,9 +105,9 @@ Procédez comme suit pour accorder à un utilisateur des droits permettant d'aff
 Pour plus d'informations, voir [Octroi de droits](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
 
 
-Un utilisateur doit accéder à Kibana dans la région de cloud publique dans laquelle les données de journal sont disponibles pour afficher et analyser les données de journal.  
+Un utilisateur doit accéder à Kibana dans la région de cloud publique dans laquelle les données de journal sont disponibles pour afficher et analyser les données de journal. 
 
-Par exemple, pour lancer Kibana dans la région Sud des Etats-Unis, ouvrez un navigateur Web et entrez l'URL suivante : 
+Par exemple, pour lancer Kibana dans la région Sud des Etats-Unis, ouvrez un navigateur Web et entrez l'URL suivante :
 
 ```
 https://logging.ng.bluemix.net/ 

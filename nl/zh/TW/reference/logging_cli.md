@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-01-10"
 {: shortdesc}
 
 **必要條件**
-* 在執行記載指令之前，請先使用 `bx login` 指令來登入 {{site.data.keyword.Bluemix_notm}}，以產生 {{site.data.keyword.Bluemix_short}} 存取記號，並鑑別您的階段作業。如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
+* 在執行記載指令之前，請先使用 `ibmcloud login` 指令來登入 {{site.data.keyword.Bluemix_notm}}，以產生 {{site.data.keyword.Bluemix_short}} 存取記號，並鑑別您的階段作業。如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
 若要瞭解如何使用 {{site.data.keyword.loganalysisshort}} CLI，請參閱[管理日誌](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)。
 
@@ -31,59 +31,59 @@ lastupdated: "2018-01-10"
     <th>使用時機</th>
   </tr>
   <tr>
-    <td>[bx cf logging](#base)</td>
+    <td>[ibmcloud cf logging](#base)</td>
     <td>使用這個指令，以取得 CLI 的相關資訊（例如版本或指令清單）。</td>
   </tr>
   <tr>
-    <td>[bx cf logging auth](#auth)</td>
+    <td>[ibmcloud cf logging auth](#auth)</td>
     <td>使用這個指令，以取得用來將日誌傳送至 {{site.data.keyword.loganalysisshort}} 服務的記載記號。</td>
   </tr>
   <tr>
-    <td>[bx cf logging delete](#delete)</td>
+    <td>[ibmcloud cf logging delete](#delete)</td>
     <td>使用這個指令，以刪除「日誌收集」中所儲存的日誌。</td>
   </tr>
   <tr>
-    <td>[bx cf logging download（測試版）](#download)</td>
+    <td>[ibmcloud cf logging download（測試版）](#download)</td>
     <td>使用這個指令，以將日誌從「日誌收集」下載至本端檔案，或透過管道將日誌傳送至另一個程式（例如 Elastic Stack）。</td>
   </tr>
   <tr>
-    <td>[bx cf logging help](#help)</td>
+    <td>[ibmcloud cf logging help](#help)</td>
     <td>使用這個指令，以取得如何使用 CLI 的協助以及所有指令的清單。</td>
   </tr>
   <tr>
-    <td>[bx cf logging option](#option)</td>
+    <td>[ibmcloud cf logging option](#option)</td>
     <td>使用這個指令，以檢視或設定空間或帳戶中可用日誌的保留期間。</td>
   </tr>
   <tr>
-    <td>[bx cf logging session create（測試版）](#session_create)</td>
+    <td>[ibmcloud cf logging session create（測試版）](#session_create)</td>
     <td>使用這個指令，以建立新的階段作業。</td>
   <tr>
   <tr>
-    <td>[bx cf logging session delete（測試版）](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete（測試版）](#session_delete)</td>
     <td>使用這個指令，以刪除階段作業。</td>
   <tr>  
   <tr>
-    <td>[bx cf logging session list（測試版）](#session_list)</td>
+    <td>[ibmcloud cf logging session list（測試版）](#session_list)</td>
     <td>使用這個指令，以列出作用中階段作業及其 ID。</td>
   <tr>  
   <tr>
-    <td>[bx cf logging session show（測試版）](#session_show)</td>
+    <td>[ibmcloud cf logging session show（測試版）](#session_show)</td>
     <td>使用這個指令，以顯示單一階段作業的狀態。</td>
   <tr>  
   <tr>
-    <td>[bx cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status)</td>
     <td>使用這個指令，以取得空間或帳戶中所收集日誌的相關資訊。</td>
   </tr>
   </table>
 
 
-## bx cf logging
+## ibmcloud cf logging
 {: #base}
 
 提供 CLI 版本及如何使用 CLI 的相關資訊。
 
 ```
-bx cf logging [parameters]
+ibmcloud cf logging [parameters]
 ```
 {: codeblock}
 
@@ -103,19 +103,19 @@ bx cf logging [parameters]
 若要取得指令清單，請執行下列指令：
 
 ```
-bx cf logging --help
+ibmcloud cf logging --help
 ```
 {: codeblock}
 
 若要取得 CLI 版本，請執行下列指令：
 
 ```
-bx cf logging --version
+ibmcloud cf logging --version
 ```
 {: codeblock}
 
 
-## bx cf logging auth
+## ibmcloud cf logging auth
 {: #auth}
 
 傳回可用來將日誌傳送至 {{site.data.keyword.loganalysisshort}} 服務的記載記號。 
@@ -123,7 +123,7 @@ bx cf logging --version
 **附註：**記號不會到期。
 
 ```
-bx cf logging auth
+ibmcloud cf logging auth
 ```
 {: codeblock}
 
@@ -143,13 +143,13 @@ bx cf logging auth
   </dd>
 </dl>
 
-## bx cf logging delete
+## ibmcloud cf logging delete
 {: #delete}
 
 刪除「日誌收集」中所儲存的日誌。
 
 ```
-bx cf logging delete [parameters]
+ibmcloud cf logging delete [parameters]
 ```
 {: codeblock}
 
@@ -176,21 +176,21 @@ bx cf logging delete [parameters]
 
 若要刪除 2017 年 5 月 25 日類型為 *linux_syslog* 的日誌，請執行下列指令：
 ```
-bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: codeblock}
 
 
 
-## bx cf logging download（測試版）
+## ibmcloud cf logging download（測試版）
 {: #download}
 
 將日誌從「日誌收集」下載至本端檔案，或透過管道將日誌傳送至另一個程式（例如 Elastic Stack）。 
 
-**附註：**若要下載檔案，您需要先建立階段作業。階段作業會根據日期範圍、日誌類型及帳戶類型來定義要下載的日誌。您可以在階段作業環境定義內下載日誌。如需相關資訊，請參閱 [bx cf logging session create（測試版）](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create)。
+**附註：**若要下載檔案，您需要先建立階段作業。階段作業會根據日期範圍、日誌類型及帳戶類型來定義要下載的日誌。您可以在階段作業環境定義內下載日誌。如需相關資訊，請參閱 [ibmcloud cf logging session create（測試版）](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create)。
 
 ```
-bx cf logging download [parameters] [arguments]
+ibmcloud cf logging download [parameters] [arguments]
 ```
 {: codeblock}
 
@@ -205,7 +205,7 @@ bx cf logging download [parameters] [arguments]
 
 <dl>
 <dt>session_ID</dt>
-<dd>設為當您執行指令 `bx cf logging session create` 時所取得的階段作業 ID 值。此值指出要在下載日誌時使用的階段作業。<br>**附註：**`bx cf logging session create` 指令提供參數來控制下載哪些日誌。</dd>
+<dd>設為當您執行指令 `ibmcloud cf logging session create` 時所取得的階段作業 ID 值。此值指出要在下載日誌時使用的階段作業。<br>**附註：**`ibmcloud cf logging session create` 指令提供參數來控制下載哪些日誌。</dd>
 </dl>
 
 **附註：**下載完成之後，重新執行相同的指令將會拒絕執行任何作業。若要重新下載相同的資料，您必須使用不同的檔案或不同的階段作業。
@@ -215,14 +215,14 @@ bx cf logging download [parameters] [arguments]
 在 Linux 系統中，若要將日誌下載至稱為 mylogs.gz 的檔案，請執行下列指令：
 
 ```
-bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 若要將日誌下載至您自己的 Elastic Stack，請執行下列指令：
 
 ```
-bx cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -243,13 +243,13 @@ output {
 {: screen}
 
 
-## bx cf logging help
+## ibmcloud cf logging help
 {: #help}
 
 提供如何使用指令的相關資訊。
 
 ```
-bx cf logging help [command]
+ibmcloud cf logging help [command]
 ```
 {: codeblock}
 
@@ -267,12 +267,12 @@ bx cf logging help [command]
 若要取得如何執行指令以檢視日誌狀態的協助，請執行下列指令：
 
 ```
-bx cf logging help status
+ibmcloud cf logging help status
 ```
 {: codeblock}
 
 
-## bx cf logging option
+## ibmcloud cf logging option
 {: #option}
 
 顯示或變更空間或帳戶中可用日誌的保留期間。 
@@ -283,7 +283,7 @@ bx cf logging help status
 **附註：**依預設，會儲存所有日誌。您必須使用 **delete** 指令手動刪除它們。請設定保留原則，以自動刪除日誌。
 
 ```
-bx cf logging option [parameters]
+ibmcloud cf logging option [parameters]
 ```
 {: codeblock}
 
@@ -294,7 +294,7 @@ bx cf logging option [parameters]
 <dd>（選用）設定保留天數。<br> 預設值為 *-1* 天。</dd>
 
 <dt>--at-account-level, -a </dt>
-  <dd>（選用）將範圍設為帳戶層次。<br>如果未指定這個參數，現行空間的預設值會設為 *-1*，而現行空間就是您使用 `bx cf login` 指令所登入的空間。
+  <dd>（選用）將範圍設為帳戶層次。<br>如果未指定這個參數，現行空間的預設值會設為 *-1*，而現行空間就是您使用 `ibmcloud cf login` 指令所登入的空間。
   </dd>
 </dl>
 
@@ -303,7 +303,7 @@ bx cf logging option [parameters]
 若要查看所登入空間的預設現行保留期間，請執行下列指令：
 
 ```
-bx cf logging option
+ibmcloud cf logging option
 ```
 {: codeblock}
 
@@ -313,7 +313,7 @@ bx cf logging option
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        -1 |
+| d35da1e3-b345-475f-8502-ibmcloud cfgh436902a3 |        -1 |
 +--------------------------------------+-----------+
 ```
 {: screen}
@@ -322,7 +322,7 @@ bx cf logging option
 若要將所登入空間的保留期間變更為 25 天，請執行下列指令：
 
 ```
-bx cf logging option -r 25
+ibmcloud cf logging option -r 25
 ```
 {: codeblock}
 
@@ -332,13 +332,13 @@ bx cf logging option -r 25
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        25 |
+| d35da1e3-b345-475f-8502-ibmcloud cfgh436902a3 |        25 |
 +--------------------------------------+-----------+
 ```
 {: screen}
 
 
-## bx cf logging session create（測試版）
+## ibmcloud cf logging session create（測試版）
 {: #session_create}
 
 建立新的階段作業。
@@ -346,7 +346,7 @@ bx cf logging option -r 25
 **附註：**一個空間最多可以有 30 個並行階段作業。階段作業是為使用者而建立。空間中的使用者之間無法共用階段作業。
 
 ```
-bx cf logging session create [parameters]
+ibmcloud cf logging session create [parameters]
 ```
 {: codeblock}
 
@@ -366,7 +366,7 @@ bx cf logging session create [parameters]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>（選用）將範圍設為帳戶層次。<br>如果未指定這個參數，預設值會設為僅限現行空間，即您使用 `bx cf login` 指令所登入的空間。
+  <dd>（選用）將範圍設為帳戶層次。<br>如果未指定這個參數，預設值會設為僅限現行空間，即您使用 `ibmcloud cf login` 指令所登入的空間。
   </dd>
 </dl>
 
@@ -401,18 +401,18 @@ bx cf logging session create [parameters]
 若要建立一個階段作業，其中包括 2017 年 5 月 20 日與 2017 年 5 月 26 日之間日誌類型為 *log* 的日誌，請執行下列指令：
 
 ```
-bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
+ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 ```
 {: screen}
 
 
-## bx cf logging session delete（測試版）
+## ibmcloud cf logging session delete（測試版）
 {: #session_delete}
 
 刪除依階段作業 ID 所指定的階段作業。
 
 ```
-bx cf logging session delete [arguments]
+ibmcloud cf logging session delete [arguments]
 ```
 {: codeblock}
 
@@ -420,7 +420,7 @@ bx cf logging session delete [arguments]
 
 <dl>
 <dt>session ID</dt>
-<dd>您要刪除之階段作業的 ID。<br>您可以使用 `bx cf logging session list` 指令來取得所有作用中階段作業 ID。</dd>
+<dd>您要刪除之階段作業的 ID。<br>您可以使用 `ibmcloud cf logging session list` 指令來取得所有作用中階段作業 ID。</dd>
 </dl>
 
 **範例**
@@ -428,19 +428,19 @@ bx cf logging session delete [arguments]
 若要刪除階段作業 ID 為 *cI6hvAa0KR_tyhjxZZz9Uw==* 的階段作業，請執行下列指令：
 
 ```
-bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## bx cf logging session list（測試版）
+## ibmcloud cf logging session list（測試版）
 {: #session_list}
 
 列出作用中階段作業及其 ID。
 
 ```
-bx cf logging session list 
+ibmcloud cf logging session list 
 ```
 {: codeblock}
 
@@ -464,13 +464,13 @@ bx cf logging session list
 </dl>
  
 
-## bx cf logging session show（測試版）
+## ibmcloud cf logging session show（測試版）
 {: #session_show}
 
 顯示單一階段作業的狀態。
 
 ```
-bx cf logging session show [arguments]
+ibmcloud cf logging session show [arguments]
 ```
 {: codeblock}
 
@@ -511,18 +511,18 @@ bx cf logging session show [arguments]
 若要顯示階段作業 ID 為 *cI6hvAa0KR_tyhjxZZz9Uw==* 的階段作業的詳細資料，請執行下列指令：
 
 ```
-bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
-## bx cf logging status
+## ibmcloud cf logging status
 {: #status}
 
 傳回空間或帳戶中所收集日誌的相關資訊。
 
 ```
-bx cf logging status [parameters]
+ibmcloud cf logging status [parameters]
 ```
 {: codeblock}
 
@@ -542,7 +542,7 @@ bx cf logging status [parameters]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>（選用）將範圍設為帳戶層次。<br> **附註：**請設定這個值以取得帳戶資訊。<br>如果未指定這個參數，預設值會設為僅限現行空間，即您使用 `bx cf login` 指令所登入的空間。
+  <dd>（選用）將範圍設為帳戶層次。<br> **附註：**請設定這個值以取得帳戶資訊。<br>如果未指定這個參數，預設值會設為僅限現行空間，即您使用 `ibmcloud cf login` 指令所登入的空間。
   </dd>
   
   <dt>--list-type-detail, -l</dt>
@@ -550,6 +550,6 @@ bx cf logging status [parameters]
   </dd>
 </dl>
 
-**附註：**未指定開始及結束日期時，`bx cf logging status` 指令只會報告過去 2 週儲存在「日誌收集」中的日誌。
+**附註：**未指定開始及結束日期時，`ibmcloud cf logging status` 指令只會報告過去 2 週儲存在「日誌收集」中的日誌。
 
 

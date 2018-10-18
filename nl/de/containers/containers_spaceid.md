@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-16"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -23,11 +23,11 @@ Sie können einen Cluster in einem {{site.data.keyword.Bluemix_notm}}-Konto im K
 Führen Sie den folgenden Befehl aus, um nach der Bereichs-ID zu suchen, die einem Cluster zugeordnet ist:
 
 ```
-bx cs cluster-get ClusterName --json
+ibmcloud cs cluster-get ClusterName --json
 ```
 {: codeblock}
 
-Dabei ist **Clustername** der Name des Clusters.
+Dabei ist **ClusterName** der Name des Clusters.
 
 
 Die Ausgabe kann nach dem Ausführen des Befehls beispielsweise folgendermaßen aussehen:

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -34,7 +34,7 @@ Führen Sie die folgenden Schritte aus, um eine Aufbewahrungsrichtlinie zu inakt
 2. Legen Sie den Aufbewahrungszeitraum auf **-1** fest, um den Aufbewahrungszeitraum zu inaktivieren. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging option -r -1
+    ibmcloud cf logging option -r -1
     ```
     {: codeblock}
     
@@ -43,7 +43,7 @@ Führen Sie die folgenden Schritte aus, um eine Aufbewahrungsrichtlinie zu inakt
 Um beispielsweise den Aufbewahrungszeitraum für einen Bereich mit der ID *d35da1e3-b345-475f-8502-cfgh436902a3* zu inaktivieren, führen Sie den folgenden Befehl aus:
 
 ```
-bx cf logging option -r -1
+ibmcloud cf logging option -r -1
 ```
 {: codeblock}
 
@@ -72,7 +72,7 @@ Um die Aufbewahrungsdauer abzurufen, die für einen Bereich festgelegt ist, füh
 2. Rufen Sie den Aufbewahrungszeitraum ab. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging option
+    ibmcloud cf logging option
     ```
     {: codeblock}
 
@@ -100,7 +100,7 @@ Um die Aufbewahrungsdauer abzurufen, die für jeden Bereich in einem Konto festg
 2. Rufen Sie den Aufbewahrungszeitraum für jeden Bereich in dem Konto ab. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging option -a
+    ibmcloud cf logging option -a
     ```
     {: codeblock}
 
@@ -130,7 +130,7 @@ Um die Aufbewahrungsdauer für ein Konto anzuzeigen, führen Sie die folgenden S
 2. Legen Sie den Aufbewahrungszeitraum fest. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging option -r *Anzahl_von_Tagen* - a
+    ibmcloud cf logging option -r *Anzahl_von_Tagen* - a
     ```
     {: codeblock}
     
@@ -142,7 +142,7 @@ Um die Aufbewahrungsdauer für ein Konto anzuzeigen, führen Sie die folgenden S
 Beispiel: Wenn alle Protokolltypen nur für 15 Tage in Ihrem Konto verbleiben sollen, führen Sie den folgenden Befehl aus:
 
 ```
-bx cf logging option -r 15 -a
+ibmcloud cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -171,7 +171,7 @@ Um die Aufbewahrungsdauer für einen Bereich anzuzeigen, führen Sie die folgend
 2. Legen Sie den Aufbewahrungszeitraum fest. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging option -r *Anzahl_von_Tagen*
+    ibmcloud cf logging option -r *Anzahl_von_Tagen*
     ```
     {: codeblock}
     
@@ -183,7 +183,7 @@ Um die Aufbewahrungsdauer für einen Bereich anzuzeigen, führen Sie die folgend
 Beispiel: Wenn Protokolle für ein ganzes Jahr in einem Bereich verbleiben sollen, führen Sie den folgenden Befehl aus:
 
 ```
-bx cf logging option -r 365
+ibmcloud cf logging option -r 365
 ```
 {: codeblock}
 

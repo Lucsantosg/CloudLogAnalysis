@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -69,7 +69,7 @@ Protokolle, die in 'Log Collection' gespeichert sind, werden so lange aufbewahrt
 
 * Sie können die ['Log Collection'-API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} oder die ['Log Collection'-Befehlszeilenschnittstelle](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} verwenden, um Protokolle manuell aus 'Log Collection' zu löschen. 
 
-* Sie können die Befehlszeilenschnittstelle verwenden. Weitere Informationen zum manuellen Löschen von Protokollen über die Befehlszeilenschnittstelle finden Sie in [bx logging log-delete durch Nutzung des {{site.data.keyword.Bluemix_notm}}-Plug-ins](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+* Sie können die Befehlszeilenschnittstelle verwenden. Weitere Informationen zum manuellen Löschen von Protokollen über die Befehlszeilenschnittstelle finden Sie in [ibmcloud logging log-delete durch Nutzung des {{site.data.keyword.Bluemix_notm}}-Plug-ins](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
     
 
 
@@ -85,16 +85,15 @@ Weitere Informationen finden Sie in den folgenden Abschnitten:
 
 
 
-
 ## Informationen zu den Protokollen abrufen
 {: #info_about_logs}
 
-Allgemeine Informationen zu Ihren Protokollen können Sie über die Befehle `bx logging log-show` oder `cf logging status` abrufen. Weitere Informationen finden Sie in den folgenden Abschnitten:
+Allgemeine Informationen zu Ihren Protokollen können Sie über die Befehle `ibmcloud logging log-show` oder `cf logging status` abrufen. Weitere Informationen finden Sie in den folgenden Abschnitten:
 
 * [Protokollinformationen mithilfe des {{site.data.keyword.Bluemix_notm}}-Plug-ins anzeigen](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
 * [Protokollinformationen mithilfe des CF-Plug-ins anzeigen](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
 
-Zur Kostenkontrolle können Sie unter anderem die Größe der Protokolle Ihrer Apps über einen bestimmten Zeitraum überwachen. Sie können sich beispielsweise über die Größe der einzelnen Protokolltypen für einen {{site.data.keyword.Bluemix_notm}}-Bereich innerhalb einer Woche informieren, um zu ermitteln, ob eine App oder ein Service mehr Protokolle erstellt als erwartet. Um die Größe Ihrer Protokolle zu überprüfen, können Sie die Befehle `bx logging log-show` oder `cf logging status` verwenden.
+Zur Kostenkontrolle können Sie unter anderem die Größe der Protokolle Ihrer Apps über einen bestimmten Zeitraum überwachen. Sie können sich beispielsweise über die Größe der einzelnen Protokolltypen für einen {{site.data.keyword.Bluemix_notm}}-Bereich innerhalb einer Woche informieren, um zu ermitteln, ob eine App oder ein Service mehr Protokolle erstellt als erwartet. Um die Größe Ihrer Protokolle zu überprüfen, können Sie die Befehle `ibmcloud logging log-show` oder `cf logging status` verwenden.
 
 Sie können Informationen zu Protokollen anzeigen, die in einer Bereichsdomäne, einer Organisationsdomäne oder ein Kontodomäne gespeichert sind.
 
@@ -105,7 +104,7 @@ Sie können Informationen zu Protokollen anzeigen, die in einer Bereichsdomäne,
 
 Informationen zur Installation der Befehlszeilenschnittstelle (CLI) finden Sie unter [Befehlszeilenschnittstelle für Protokollierung installieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
 
-Um die Version der Befehlszeilenschnittstelle zu prüfen, führen Sie den Befehl `bx plugin list` aus.
+Um die Version der Befehlszeilenschnittstelle zu prüfen, führen Sie den Befehl `ibmcloud plugin list` aus.
 
 Hilfeinformationen zur Befehlsausführung finden Sie unter [Befehlszeilenhilfe für die Befehlsausführung abrufen](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#command_cli_help).
 

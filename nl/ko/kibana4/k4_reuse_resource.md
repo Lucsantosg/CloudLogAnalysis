@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -19,10 +19,10 @@ lastupdated: "2018-04-10"
 검색, 시각화 또는 대시보드를 한 {{site.data.keyword.Bluemix}} 영역에서 다른 영역으로 복사하려면 Kibana에서 사용할 수 있는 내보내기 및 가져오기 기능을 사용하십시오. Kibana에서 리소스를 개별적으로 복사하거나 모든 리소스를 내보낼 수 있습니다.
 {:shortdesc}
 
-| 태스크 | 설명 |
+|태스크 |설명 |
 |------|-------------|
-| [검색 복사](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search) | 영역 간에 검색 복사 |
-| [시각화 복사](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_visualization) | 영역 간에 시각화 복사 |
+|[검색 복사](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search) |영역 간에 검색 복사 |
+|[시각화 복사](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_visualization) |영역 간에 시각화 복사 |
 
 검색, 시각화 또는 대시보드 재사용에 대해서는 {{site.data.keyword.Bluemix_notm}}에서 다음 시나리오를 고려하십시오. 
 
@@ -47,7 +47,7 @@ lastupdated: "2018-04-10"
 
 1. 복사하려는 검색을 사용할 수 있는 Kibana를 실행하십시오. 
 
-    * {{site.data.keyword.Bluemix_notm}} UI에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 다음 필드가 포함되어 있습니다. *영역 ID* 및 CF(Cloud Foundry)의 *애플리케이션 ID* 또는 컨테이너의 *인스턴스 ID*. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} 대시보드에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)을 참조하십시오. 
+    * {{site.data.keyword.Bluemix_notm}} UI에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 다음 필드가 포함되어 있습니다. *영역 ID* 및 CF(Cloud Foundry)의 *애플리케이션 ID* 또는 컨테이너의 *인스턴스 ID*. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} 대시보드에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)을 참조하십시오.
     
     * 브라우저에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 *영역 ID* 필드가 포함되어 있습니다. 자세한 정보는 [브라우저에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)을 참조하십시오.
 
@@ -187,7 +187,7 @@ Kibana에서 검색을 사용하여 새 영역의 애플리케이션에 사용�
 
 1. 복사하려는 시각화를 사용할 수 있는 영역의 Kibana를 실행하십시오. 
 
-    * {{site.data.keyword.Bluemix_notm}} UI에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 다음 필드가 포함되어 있습니다. *영역 ID* 및 CF(Cloud Foundry)의 *애플리케이션 ID* 또는 컨테이너의 *인스턴스 ID*. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} 대시보드에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)을 참조하십시오. 
+    * {{site.data.keyword.Bluemix_notm}} UI에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 다음 필드가 포함되어 있습니다. *영역 ID* 및 CF(Cloud Foundry)의 *애플리케이션 ID* 또는 컨테이너의 *인스턴스 ID*. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} 대시보드에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)을 참조하십시오.
     
     * 브라우저에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 *영역 ID* 필드가 포함되어 있습니다. 자세한 정보는 [브라우저에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)을 참조하십시오.
     

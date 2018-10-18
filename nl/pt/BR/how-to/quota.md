@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,16 +31,16 @@ Conclua as etapas a seguir:
     Por exemplo, para efetuar login no Sul dos EUA, execute o comando:
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Execute o comando da CLI `bx logging quota-usage-show`. 
+2. Execute o comando da CLI `ibmcloud logging quota-usage-show`. 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
     ```
     {: codeblock}
 
@@ -53,7 +53,7 @@ Conclua as etapas a seguir:
 Por exemplo, para mostrar o uso de cota de uma conta, execute o comando a seguir:
 
 ```
- bx logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
+ ibmcloud logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
 Showing quota usage for resource: 475693845023932019c6567c9c8de6dece ...
 OK
 
@@ -65,7 +65,7 @@ Daily Allotmant   Current Usage
 Para mostrar o uso de cota de um espaço, execute o comando a seguir:
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -86,16 +86,16 @@ Conclua as etapas a seguir:
     Por exemplo, para efetuar login no Sul dos EUA, execute o comando:
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Execute o comando da CLI `bx logging quota-usage-show` com o parâmetro `-s`. 
+2. Execute o comando da CLI `ibmcloud logging quota-usage-show` com o parâmetro `-s`. 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID] [-s,--history]
+    ibmcloud logging quota-usage-show  [ -r, -- resource-type RESOURCE_TYPE ][-i,--resource-id RESOURCE_ID]  [ -s, -- history ]
     ```
     {: codeblock}
 
@@ -107,7 +107,7 @@ Conclua as etapas a seguir:
 Por exemplo,
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744...
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744...
 OK
 
 Date Allotmant Usage 2018.02.28 524288000 80405926 2018.03.06 524288000 18955540 2018.03.05 524288000 47262944 2018.03.08 524288000 18311338 2018.03.01 524288000 82416831 2018.03.03 524288000 75045462 2018.03.07 524288000 17386278 2018.03.02 524288000 104316444 2018.03.04 524288000 73125223   
@@ -128,7 +128,7 @@ Conclua as etapas a seguir:
 2. Obtenha o ID da conta. Execute o comando a seguir:
 
     ```
-	bx iam accounts
+	Contas ibmcloud iam
 	```
     {: codeblock}	
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-08-21"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-03-09"
 {: shortdesc}
 
 **전제조건**
-* 로깅 명령을 실행하기 전에 `bx login` 명령으로 {{site.data.keyword.Bluemix_notm}}에 로그인하여 액세스 토큰을 생성하고 세션을 인증하십시오.
+* 로깅 명령을 실행하기 전에 `ibmcloud login` 명령으로 {{site.data.keyword.Bluemix_notm}}에 로그인하여 액세스 토큰을 생성하고 세션을 인증하십시오.
 
 {{site.data.keyword.loganalysisshort}} CLI 사용 방법에 대해 알아보려면 [로그 관리](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)를 참조하십시오.
 
@@ -31,67 +31,67 @@ lastupdated: "2018-03-09"
     <th>사용하는 경우</th>
   </tr>
   <tr>
-    <td>[bx logging](#base)</td>
+    <td>[ibmcloud logging](#base)</td>
     <td>이 명령을 사용하여 CLI에 대한 정보(예: 명령 목록)를 가져옵니다.</td>
   </tr>
   <tr>
-    <td>[bx logging log-delete](#delete)</td>
+    <td>[ibmcloud logging log-delete](#delete)</td>
     <td>이 명령을 사용하여 로그 콜렉션에 저장된 로그를 삭제합니다.</td>
   </tr>
   <tr>
-    <td>[bx logging log-download](#download)</td>
+    <td>[ibmcloud logging log-download](#download)</td>
     <td>이 명령을 사용하여 로그 콜렉션에서 로컬 파일로 로그를 다운로드하거나 다른 프로그램(예: Elastic Stack)으로 로그를 보냅니다. </td>
   </tr>
   <tr>
-    <td>[bx logging log-show](#status)</td>
+    <td>[ibmcloud logging log-show](#status)</td>
     <td>이 명령을 사용하여 영역, 조직 또는 계정에서 수집된 로그에 대한 정보를 가져옵니다.</td>
   </tr>
   <tr>
-    <td>[bx logging help](#help)</td>
+    <td>[ibmcloud logging help](#help)</td>
     <td>이 명령을 사용하여 모든 명령의 목록 및 CLI 사용 방법에 대한 도움말을 가져옵니다.</td>
   </tr>
   <tr>
-    <td>[bx logging option-show](#optionshow)</td>
+    <td>[ibmcloud logging option-show](#optionshow)</td>
     <td>이 명령을 사용하여 영역, 조직 또는 계정에서 사용 가능한 보존 기간을 확인합니다.</td>
   </tr>
   <tr>
-    <td>[bx logging option-update](#optionupdate)</td>
+    <td>[ibmcloud logging option-update](#optionupdate)</td>
     <td>이 명령을 사용하여 영역, 조직 또는 계정에서 사용 가능한 보존 기간을 설정합니다.</td>
   </tr>
   <tr>
-    <td>[bx logging quota-usage-show](#quotausage)</td>
-    <td>이 명령을 사용하여 영역, 조직 또는 계정의 할당량 사용량 정보를 가져옵니다. 또한 할당량 히스토리 정보를 가져올 수도 있습니다. </td>
+    <td>[ibmcloud logging quota-usage-show](#quotausage)</td>
+    <td>이 명령을 사용하여 영역, 조직 또는 계정의 할당량 사용량 정보를 가져옵니다. 또한 할당량 히스토리 정보를 가져올 수도 있습니다.</td>
   </tr>
   <tr>
-    <td>[bx logging session-create](#session_create)</td>
+    <td>[ibmcloud logging session-create](#session_create)</td>
     <td>이 명령을 사용하여 새 세션을 작성합니다.</td>
   <tr>
   <tr>
-    <td>[bx logging session-delete](#session_delete)</td>
+    <td>[ibmcloud logging session-delete](#session_delete)</td>
     <td>이 명령을 사용하여 세션을 삭제합니다.</td>
   <tr>  
   <tr>
-    <td>[bx logging sessions](#session_list)</td>
+    <td>[ibmcloud logging sessions](#session_list)</td>
     <td>이 명령을 사용하여 활성 세션 및 해당 ID를 나열합니다.</td>
   <tr>  
   <tr>
-    <td>[bx logging session-show](#session_show)</td>
+    <td>[ibmcloud logging session-show](#session_show)</td>
     <td>이 명령을 사용하여 단일 세션의 상태를 표시합니다.</td>
   <tr>  
   <tr>
-    <td>[bx logging token-get](#tokenget)</td>
+    <td>[ibmcloud logging token-get](#tokenget)</td>
     <td>이 명령을 사용하여 {{site.data.keyword.loganalysisshort}} 서비스에 로그 데이터를 전송하기 위한 로깅 토큰을 가져옵니다.</td>
   </tr>
 </table>
 
 
-## bx logging
+## ibmcloud logging
 {: #base}
 
 CLI에 대한 일반 정보를 제공합니다.
 
 ```
-bx logging 
+ibmcloud logging 
 ```
 {: codeblock}
 
@@ -100,11 +100,11 @@ bx logging
 명령의 목록을 가져오려면 다음 명령을 실행하십시오.
 
 ```
-bx logging
+ibmcloud logging
 이름:
-   bx logging - IBM Cloud Log Analysis Service
+   ibmcloud logging - IBM Cloud Log Analysis Service
 사용법:
-   bx logging command [arguments...] [command options]
+   ibmcloud logging command [arguments...] [command options]
 
 명령:
 명령:
@@ -119,22 +119,22 @@ bx logging
    option-update      로그 옵션 표시
    token-get          로그를 전송하기 위해 로깅 토큰 가져오기
    quota-usage-show   할당량 사용량 정보 보기
-   help
-
-명령에 해당 자세한 정보를 보려면 'bx logging help [command]'를 입력하십시오.
+   help             
+   
+명령에 대한 자세한 정보를 보려면 'ibmcloud logging help [command]'를 입력하십시오.
 ```
 {: codeblock}
 
 
 
 
-## bx logging log-delete
+## ibmcloud logging log-delete
 {: #delete}
 
 로그 콜렉션에 저장된 로그를 삭제합니다.
 
 ```
-bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
+ibmcloud logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
 ```
 {: codeblock}
 
@@ -166,21 +166,21 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
 
 2017년 5월 25일에 유형 *linux_syslog*의 로그를 삭제하려면 다음 명령을 실행하십시오.
 ```
-bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: screen}
 
 
 
-## bx logging log-download 
+## ibmcloud logging log-download 
 {: #download}
 
 로그 콜렉션에서 로컬 파일로 로그를 다운로드하거나 다른 프로그램(예: Elastic Stack)으로 로그를 보냅니다. 
 
-**참고:** 파일을 다운로드하려면 먼저 세션을 작성해야 합니다. 세션은 날짜 범위, 로그 유형 및 계정 유형을 기반으로 어느 로그를 다운로드할 것인지 정의합니다. 세션의 컨텍스트 내에서 로그를 다운로드합니다. 자세한 정보는 [bx logging session create(베타)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create)를 참조하십시오.
+**참고:** 파일을 다운로드하려면 먼저 세션을 작성해야 합니다. 세션은 날짜 범위, 로그 유형 및 계정 유형을 기반으로 어느 로그를 다운로드할 것인지 정의합니다. 세션의 컨텍스트 내에서 로그를 다운로드합니다. 자세한 정보는 [ibmcloud logging session-create(베타)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create)를 참조하십시오.
 
 ```
- bx logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
+ ibmcloud logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
 
 ```
 {: codeblock}
@@ -205,7 +205,7 @@ bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 <dl>
   <dt>SESSION_ID</dt>
-  <dd>이 값은 로그를 다운로드할 때 사용해야 하는 세션 ID를 나타냅니다. <br>**참고:** `bx logging session-create` 명령은 다운로드되는 로그를 제어하는 매개변수를 제공합니다. </dd>
+  <dd>이 값은 로그를 다운로드할 때 사용해야 하는 세션 ID를 나타냅니다. <br>**참고:** `ibmcloud logging session-create` 명령은 다운로드되는 로그를 제어하는 매개변수를 제공합니다. </dd>
 </dl>
 
 **참고:** 다운로드가 완료된 후에 같은 명령을 다시 실행하면 아무 것도 수행하지 않게 됩니다. 동일한 데이터를 다시 다운로드하려면 다른 파일 또는 다른 세션을 사용해야 합니다.
@@ -215,14 +215,14 @@ bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 Linux 시스템에서 로그를 mylogs.gz라는 파일로 다운로드하려면 다음 명령을 실행하십시오.
 
 ```
-bx logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 사용자 자신의 Elastic Stack에 로그를 다운로드하려면 다음 명령을 실행하십시오.
 
 ```
-bx logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -243,13 +243,13 @@ output {
 {: screen}
 
 
-## bx logging help
+## ibmcloud logging help
 {: #help}
 
 명령 사용 방법에 대한 정보를 제공합니다.
 
 ```
-bx logging help [command] 
+ibmcloud logging help [command] 
 ```
 {: codeblock}
 
@@ -267,12 +267,12 @@ bx logging help [command]
 로그의 상태를 보기 위해 명령을 실행하는 방법에 대한 도움말을 가져오려면 다음 명령을 실행하십시오.
 
 ```
-bx logging help log-show
+ibmcloud logging help log-show
 이름:
    log-show - 일별 로그 수, 크기 및 유형 표시
 
 사용법:
-   bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+   ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 
 옵션:
    -r, --resource-type     리소스 유형, 올바른 유형은 account, org 또는 space임
@@ -286,7 +286,7 @@ bx logging help log-show
 {: screen}
 
 
-## bx logging option-show
+## ibmcloud logging option-show
 {: #optionshow}
 
 영역, 조직 또는 계정에서 사용할 수 있는 로그의 보존 기간을 표시합니다. 
@@ -297,7 +297,7 @@ bx logging help log-show
 **참고:** 기본적으로 모든 로그가 저장됩니다. **delete** 명령을 사용하여 로그를 수동으로 삭제해야 합니다. 자동으로 로그를 삭제하려면 보존 정책을 설정하십시오.
 
 ```
-bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -319,14 +319,14 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
 사용자가 로그인한 영역의 기본 현재 보존 기간을 보려면 다음 명령을 실행하십시오.
 
 ```
-bx logging option-show
+ibmcloud logging option-show
 ```
 {: screen}
 
 
 
 
-## bx logging option-update
+## ibmcloud logging option-update
 {: #optionupdate}
 
 영역, 조직 또는 계정에서 사용할 수 있는 로그의 보존 기간을 변경합니다. 
@@ -335,7 +335,7 @@ bx logging option-show
 * 기본값은 **-1**입니다. 
 
 ```
-bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
+ibmcloud logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
 ```
 {: codeblock}
 
@@ -360,21 +360,21 @@ bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RE
 사용자가 로그인한 영역에 대한 보존 기간을 25일로 변경하려면 다음 명령을 실행하십시오.
 
 ```
-bx logging option-update -e 25
+ibmcloud logging option-update -e 25
 ```
 {: screen}
 
 
-## bx logging quota-usage-show
+## ibmcloud logging quota-usage-show
 {: #quotausage}
 
-영역, 조직 또는 계정의 할당량 사용량에 대한 정보를 제공합니다. 또한 히스토리 사용량을 가져오는 데 할당량 사용량을 사용할 수도 있습니다. 
+영역, 조직 또는 계정의 할당량 사용량에 대한 정보를 제공합니다. 또한 히스토리 사용량을 가져오는 데 할당량 사용량을 사용할 수도 있습니다.
 
 * 기간은 일 수로 설정됩니다.
 * 기본값은 **-1**입니다. 
 
 ```
-bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
 ```
 {: codeblock}
 
@@ -390,16 +390,16 @@ bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id
   </dd>
   
   <dt>-s,--history</dt>
-  <dd>(선택사항) 할당량 사용량에 대한 히스토리 정보를 가져오도록 이 매개변수를 설정하십시오. </dd>
+  <dd>(선택사항) 할당량 사용량에 대한 히스토리 정보를 가져오도록 이 매개변수를 설정하십시오.</dd>
 
 </dl>
 
 **예**
 
-영역 도메인에 대한 할당량 사용량을 가져오려면 다음 명령을 실행하십시오. 
+영역 도메인에 대한 할당량 사용량을 가져오려면 다음 명령을 실행하십시오.
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -416,7 +416,7 @@ Date         Allotmant   Usage
 ```
 {: screen}
 
-## bx logging session-create
+## ibmcloud logging session-create
 {: #session_create}
 
 새 세션을 작성합니다.
@@ -424,7 +424,7 @@ Date         Allotmant   Usage
 **참고:** 하나의 영역에 최대 30개의 동시 세션이 가능합니다. 세션은 사용자에 대해 작성됩니다. 세션은 영역의 사용자 사이에서 공유할 수 없습니다.
 
 ```
-bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE]
+ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-T, --time, LOG_TIME]
 ```
 {: codeblock}
 
@@ -449,6 +449,10 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
   
   <dt>-t, --type, LOG_TYPE</dt>
   <dd>(선택사항) 로그 유형을 설정합니다. <br>예를 들면, *syslog*는 로그의 유형입니다. <br>기본값은 별표(*)로 설정됩니다. <br>각 유형을 쉼표로 구분하여 여러 개의 로그 유형을 지정할 수 있습니다(예: *log_type_1,log_type_2,log_type_3*).
+  </dd>
+
+  <dt>-T, --time, LOG_TIME</dt>
+  <dd>(선택사항) 특정 유형의 로그를 가져오려는 날의 시간(시 단위)을 설정합니다. </br>올바른 값은 0-23입니다. </br>이를 LOG_TYPE과 함께 결합하여 사용해야 합니다.
   </dd>
 
 </dl>
@@ -487,23 +491,23 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
 2017년 11월 13일의 로그가 포함된 세션을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx logging session-create -s 2017-11-13 -e 2017-11-13
+ibmcloud logging session-create -s 2017-11-13 -e 2017-11-13
 Creating session for xxxxx@yyy.com resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
-ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type
-1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z   2017-11-13   2017-11-13   ANY_TYPE
+ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
+1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z   2017-11-13   2017-11-13   ANY_TYPE   
 Session: 1ef776d1-4d25-4297-9693-882606c725c8 is created
 ```
 {: screen}
 
 
-## bx logging session-delete 
+## ibmcloud logging session-delete 
 {: #session_delete}
 
 세션 ID별로 지정된 세션을 삭제합니다.
 
 ```
-bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 ```
 {: codeblock}
 
@@ -532,19 +536,19 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
 세션 ID가 *cI6hvAa0KR_tyhjxZZz9Uw==*인 세션을 삭제하려면 다음 명령을 실행하십시오.
 
 ```
-bx logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## bx logging sessions
+## ibmcloud logging sessions
 {: #session_list}
 
 활성 세션 및 해당 ID를 나열합니다.
 
 ```
-bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -578,23 +582,23 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **예**
 
 ```
-bx logging sessions
+ibmcloud logging sessions
 Listing sessions of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
-ID                                     Space                                  CreateTime                       AccessTime
-1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z
+ID                                     Space                                  CreateTime                       AccessTime   
+1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z   
 Listed the sessions of resource xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
 ```
 :{ screen}
 
 
-## bx logging session-show
+## ibmcloud logging session-show
 {: #session_show}
 
 단일 세션의 상태를 표시합니다.
 
 ```
-bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 
 ```
 {: codeblock}
@@ -621,17 +625,17 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
 세션 ID가 *cI6hvAa0KR_tyhjxZZz9Uw==*인 세션의 세부사항을 표시하려면 다음 명령을 실행하십시오.
 
 ```
-bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
-## bx logging token-get
+## ibmcloud logging token-get
 {: #tokenget}
 
 로그 데이터를 {{site.data.keyword.loganalysisshort}}로 전송하는 데 필요한 로깅 토큰을 리턴합니다.
 
 ```
-bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -651,7 +655,7 @@ bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOUR
 **예**
 
 ```
-bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -661,13 +665,13 @@ js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx
 {: screen}
 
 
-## bx logging log-show
+## ibmcloud logging log-show
 {: #status}
 
 {{site.data.keyword.Bluemix_notm}} 영역 또는 계정에서 수집된 로그에 대한 정보를 리턴합니다.
 
 ```
-bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 ```
 {: codeblock}
 
@@ -707,7 +711,7 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **예**
 
 ```
-bx logging log-show
+ibmcloud logging log-show
 Showing log status of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 Date         Size        Count    Searchable   Types   
@@ -720,7 +724,7 @@ Date         Size        Count    Searchable   Types
 {: screen}
 
 ```
- bx logging log-show -l
+ ibmcloud logging log-show -l
 Showing log status of resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 Date         Size        Count    Searchable   Type   

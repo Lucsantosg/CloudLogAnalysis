@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -76,7 +76,7 @@ lastupdated: "2018-04-10"
 
 請完成下列步驟，以從瀏覽器啟動 Kibana：
 
-1. 開啟 [https://logging.<span class="keyword" data-hd-keyref="DomainName">DomainName</span>](https://logging.{DomainName})，以登入 Kibana 使用者介面。
+1. 啟動 Kibana 使用者介面。
     
     例如， 
       

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-19"
 # Suppression de journaux
 {: #deleting_logs}
 
-Utilisez la commande [bx logging log-delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) pour supprimer des journaux de Log Collection. 
+Utilisez la commande [ibmcloud logging log-delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) pour supprimer des journaux de Log Collection. 
 {:shortdesc}
 
 * Vous pouvez supprimer des journaux dans un intervalle spécifique.
@@ -37,14 +37,14 @@ Procédez comme suit pour supprimer tous les journaux qui sont stockés dans un 
 2. Exécutez la commande suivante pour afficher les journaux disponibles dans Log Collection :
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     Exemple :
     
     ```
-    $ bx logging log-show
+    $ ibmcloud logging log-show
     Showing log status of resource: 12345678-abcd-4193-aere-378620d6fab5 ...
 
     Date         Size       Count   Searchable          Types   
@@ -57,19 +57,19 @@ Procédez comme suit pour supprimer tous les journaux qui sont stockés dans un 
 3. Supprimez les journaux qui ont été stockés un jour spécifique.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate
+	ibmcloud logging log-delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
 	où
 	
-	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02. 
-    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ. 
+	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02.
+    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ.
     	
 	Par exemple, pour supprimer les journaux du 25 mai 2017, exécutez la commande suivante :
 	
 	```
-	bx logging log-delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
@@ -77,7 +77,7 @@ Procédez comme suit pour supprimer tous les journaux qui sont stockés dans un 
 ## Suppression de journaux par type de journal pour une période spécifique 
 {: #log_type}
 
-Procédez comme suit pour supprimer par type de journal des journaux qui sont stockés dans un domaine d'espace pour une période spécifique : 
+Procédez comme suit pour supprimer par type de journal des journaux qui sont stockés dans un domaine d'espace pour une période spécifique :
 
 1. Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
 
@@ -86,14 +86,14 @@ Procédez comme suit pour supprimer par type de journal des journaux qui sont st
 2. Exécutez la commande suivante pour afficher les journaux disponibles dans Log Collection :
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     Exemple :
     
     ```
-    $ bx logging log-show
+    $ ibmcloud logging log-show
     Showing log status of resource: 12345678-1234-2edr-a9de-378620d6fab5 ...
 
     Date         Size       Count   Searchable          Types   
@@ -106,20 +106,20 @@ Procédez comme suit pour supprimer par type de journal des journaux qui sont st
 3. Supprimez les journaux qui ont été stockés un jour spécifique.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate -t LogType
+	ibmcloud logging log-delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
 	où
 	
-	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02. 
-    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ. 
-	* *-t* définit le type de journal. 
+	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02.
+    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ.
+	* *-t* définit le type de journal.
     	
 	Par exemple, pour supprimer les journaux du type linux_syslog du 25 mai 2017, entrez la commande suivante :
 	
 	```
-	bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
@@ -138,17 +138,17 @@ Procédez comme suit :
 
     Pour plus d'informations, voir [Comment obtenir l'identificateur global unique d'un compte ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).
     
-3. Exécutez la commande suivante pour afficher les journaux qui sont disponibles dans Log Collection au niveau du compte : 
+3. Exécutez la commande suivante pour afficher les journaux qui sont disponibles dans Log Collection au niveau du compte :
 
     ```
-    bx logging log-show  -r account -i AccountID
+    ibmcloud logging log-show  -r account -i AccountID
     ```
     {: codeblock}
     
     Exemple :
     
     ```
-    $ bx logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
+    $ ibmcloud logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
 	Showing log status of resource: 123456789123456789567c9c8de6dece ...
 
     Date         Size       Count   Searchable          Types   
@@ -163,20 +163,20 @@ Procédez comme suit :
 4. Supprimez les journaux qui ont été stockés un jour spécifique.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
+	ibmcloud logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
 	```
 	{: codeblock}
 	
 	où
 	
-	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02. 
-    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ. 
-	* *-t* définit le type de journal. 
+	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02.
+    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ.
+	* *-t* définit le type de journal.
     	
 	Par exemple, afin de supprimer les journaux de type linux_syslog du 25 mai 2017 qui sont stockés dans Log Collection au niveau du compte, exécutez la commande suivante :
 	
 	```
-	bx logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -r account -i 123456789123456789567c9c8de6dece
+	ibmcloud logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -r account -i 123456789123456789567c9c8de6dece
 	```
 	{: screen}
 	

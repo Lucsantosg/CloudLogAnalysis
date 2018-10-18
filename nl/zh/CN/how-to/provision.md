@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -56,7 +56,7 @@ lastupdated: "2018-03-15"
 
 1. [先决条件] 安装 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
    
    如果 CLI 已安装，请继续执行下一步。
     
@@ -64,30 +64,30 @@ lastupdated: "2018-03-15"
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-3. 运行 `bx service create` 命令以供应实例。
+3. 运行 `ibmcloud service create` 命令来供应实例。
 
     ```
-	bx service create service_name service_plan service_instance_name
+	ibmcloud service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
 	其中
 	
-	* * service_name 是服务的名称，即 **ibmLogAnalysis**。
+	* service_name 是服务的名称，即 **ibmLogAnalysis**。
 	* service_plan 是服务套餐名称。有关套餐的列表，请参阅[服务套餐](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
 	* service_instance_name 是要用于所创建的新服务实例的名称。
 
-	例如，要使用轻量套餐创建 {{site.data.keyword.loganalysisshort}} 服务的实例，请运行以下命令：
+	例如，要使用轻量套餐创建 {{site.data.keyword.loganalysisshort}} 服务实例，请运行以下命令：
 	
 	```
-	bx service create ibmLogAnalysis standard my_logging_svc
+	ibmcloud service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
-4. 验证服务是否已成功创建。运行以下命令：
+4. 验证服务是否创建成功。运行以下命令：
 
     ```	
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	
@@ -96,7 +96,7 @@ lastupdated: "2018-03-15"
 	
 	
 	```
-        Getting services in org MyOrg / space MySpace as xxx@yyy.com...
+    Getting services in org MyOrg / space MySpace as xxx@yyy.com...
     OK
 
     

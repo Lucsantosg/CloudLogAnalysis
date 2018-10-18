@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -34,7 +34,7 @@ lastupdated: "2018-01-10"
 2. 보존 기간을 **-1**로 설정하여 보존 기간을 사용 안함으로 설정하십시오. 다음 명령을 실행하십시오.
 
     ```
-    bx cf logging option -r -1
+    ibmcloud cf logging option -r -1
     ```
     {: codeblock}
     
@@ -43,7 +43,7 @@ lastupdated: "2018-01-10"
 예를 들어, ID가 *d35da1e3-b345-475f-8502-cfgh436902a3*인 영역에 대한 보존 기간을 사용 안함으로 설정하려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging option -r -1
+ibmcloud cf logging option -r -1
 ```
 {: codeblock}
 
@@ -72,7 +72,7 @@ bx cf logging option -r -1
 2. 보존 기간을 가져오십시오. 다음 명령을 실행하십시오.
 
     ```
-    bx cf logging option
+    ibmcloud cf logging option
     ```
     {: codeblock}
 
@@ -100,7 +100,7 @@ bx cf logging option -r -1
 2. 계정의 각 영역에 대한 보존 기간을 가져오십시오. 다음 명령을 실행하십시오.
 
     ```
-    bx cf logging option -a
+    ibmcloud cf logging option -a
     ```
     {: codeblock}
 
@@ -130,7 +130,7 @@ bx cf logging option -r -1
 2. 보존 기간을 설정하십시오. 다음 명령을 실행하십시오.
 
     ```
-    bx cf logging option -r *Number_of_days* - a
+    ibmcloud cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
@@ -142,7 +142,7 @@ bx cf logging option -r -1
 예를 들어, 계정에서 모든 유형의 로그를 15일 동안만 보존하려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging option -r 15 -a
+ibmcloud cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -171,7 +171,7 @@ bx cf logging option -r 15 -a
 2. 보존 기간을 설정하십시오. 다음 명령을 실행하십시오.
 
     ```
-    bx cf logging option -r *Number_of_days*
+    ibmcloud cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
@@ -183,7 +183,7 @@ bx cf logging option -r 15 -a
 예를 들어, 1년 동안 영역에서 사용 가능한 로그를 보존하려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging option -r 365
+ibmcloud cf logging option -r 365
 ```
 {: codeblock}
 

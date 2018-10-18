@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -38,7 +38,7 @@ lastupdated: "2018-04-10"
 
 |任务|更多信息|
 |------|------------------|
-|[创建新的仪表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#K4_dashboard_new)|可以创建多个仪表板。每个仪表板可以设计为包含不同的搜索、可视化项和不同的日志数据子集。|
+|[新建仪表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#K4_dashboard_new)|可以创建多个仪表板。每个仪表板可以设计为包含不同的搜索、可视化项和不同的日志数据子集。|
 |[保存仪表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_save)|可以保存仪表板以供日后复用。|
 |[装入仪表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_reload)|可以上传仪表板以更新其数据，修改仪表板或分析数据。|
 |[删除仪表板](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_delete)|删除不需要的仪表板。|

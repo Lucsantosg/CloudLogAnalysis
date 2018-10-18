@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,11 +18,11 @@ lastupdated: "2018-01-10"
 # 获取 UAA 令牌
 {: #auth_uaa}
 
-要使用 {{site.data.keyword.loganalysisshort}} API 来管理日志，您必须使用认证令牌。使用 {{site.data.keyword.loganalysisshort}} CLI 以获取 UAA 令牌。令牌具有到期时间。
+要使用 {{site.data.keyword.loganalysisshort}} API 来管理可在空间域中使用的日志，您必须使用认证令牌。
 {:shortdesc}
 
 		
-## 使用 Log Analysis CLI 获取 UAA 令牌（CF 插件）
+## 获取 UAA 令牌
 {: #uaa_cli}
 
 
@@ -30,7 +30,7 @@ lastupdated: "2018-01-10"
 
 1. 安装 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   有关更多信息，请参阅[下载并安装 {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   有关更多信息，请参阅[下载并安装 {{site.data.keyword.Bluemix}} CLI](/docs/cli/index.html#overview)。
    
    如果 CLI 已安装，请继续执行下一步。
     
@@ -38,10 +38,10 @@ lastupdated: "2018-01-10"
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-3. 运行 `bx cf oauth-token` 命令以获取 {{site.data.keyword.Bluemix_notm}} UAA 令牌。
+3. 运行 `ibmcloud iam oauth-token` 命令以获取 {{site.data.keyword.Bluemix_notm}} UAA 令牌。
 
     ```
-	bx cf oauth-token
+	ibmcloud iam oauth-token
 	```
 	{: codeblock}
 	
@@ -52,4 +52,3 @@ lastupdated: "2018-01-10"
 	
 
 **注**：使用令牌时，请从您在 API 调用中传递的令牌值中除去 *Bearer*。
-

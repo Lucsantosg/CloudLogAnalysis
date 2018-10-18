@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-16"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,13 +17,13 @@ lastupdated: "2018-01-16"
 # クラスターのキー所有者の取得
 {: #containers_key_owner}
 
-クラスターの {{site.data.keyword.loganalysisshort}} キー所有者を取得するには、コマンド *bx cs api-key-info* を使用します。
+クラスターの {{site.data.keyword.loganalysisshort}} キー所有者を取得するには、コマンド *ibmcloud cs api-key-info* を使用します。
 {:shortdesc}
 
 次のコマンドを実行します。
 
 ```
- bx cs api-key-info ClusterName
+ ibmcloud cs api-key-info ClusterName
 ```
 {: codeblock}
 
@@ -33,7 +33,7 @@ lastupdated: "2018-01-16"
 このコマンド実行の出力は、以下の例のようになります。
 
 ```
-bx cs api-key-info MyDemoCluster
+ibmcloud cs api-key-info MyDemoCluster
 Getting information about the API key owner for cluster MyDemoCluster...
 OK
 Name           Email   

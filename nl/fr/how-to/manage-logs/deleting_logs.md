@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,9 +17,7 @@ lastupdated: "2018-04-19"
 # Suppression de journaux
 {: #deleting_logs}
 
-Utilisez la commande
-[bx cf
-logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) pour supprimer des journaux de Log Collection. 
+Utilisez la commande [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) pour supprimer des journaux de Log Collection. 
 {:shortdesc}
 
 * Vous pouvez supprimer des journaux dans un intervalle spécifique.
@@ -40,14 +38,14 @@ Procédez comme suit :
 2. Exécutez la commande *status* afin d'afficher les journaux qui sont disponibles dans Log Collection.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Exemple :
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -61,19 +59,19 @@ Procédez comme suit :
 3. Supprimez les journaux qui ont été stockés un jour spécifique.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate
+	ibmcloud cf logging delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
 	où
 	
-	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02. 
-    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ. 
+	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02.
+    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ.
     	
 	Par exemple, pour supprimer les journaux du 25 mai 2017, exécutez la commande suivante :
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
@@ -90,14 +88,14 @@ Procédez comme suit :
 2. Exécutez la commande *status* afin d'afficher les journaux qui sont disponibles dans Log Collection.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Exemple :
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -111,20 +109,20 @@ Procédez comme suit :
 3. Supprimez les journaux qui ont été stockés un jour spécifique.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
 	où
 	
-	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02. 
-    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ. 
-	* *-t* définit le type de journal. 
+	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02.
+    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ.
+	* *-t* définit le type de journal.
     	
 	Par exemple, pour supprimer les journaux du type linux_syslog du 25 mai 2017, entrez la commande suivante :
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
@@ -139,17 +137,17 @@ Procédez comme suit :
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Exécutez la commande *status* afin d'afficher les journaux qui sont disponibles pour Log Collection au niveau du compte. 
+2. Exécutez la commande *status* afin d'afficher les journaux qui sont disponibles pour Log Collection au niveau du compte.
 
     ```
-    bx cf logging status  -a
+    ibmcloud cf logging status  -a
     ```
     {: codeblock}
     
     Exemple :
     
     ```
-    $ bx cf logging status -a
+    $ ibmcloud cf logging status -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -163,20 +161,20 @@ Procédez comme suit :
 3. Supprimez les journaux qui ont été stockés un jour spécifique.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType -a
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType -a
 	```
 	{: codeblock}
 	
 	où
 	
-	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02. 
-    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ. 
-	* *-t* définit le type de journal. 
+	* *-s* définit la date de début en temps universel coordonné (TUC) : AAAA-MM-JJ, par exemple 2006-01-02.
+    * *-e* définit la date de fin en temps universel coordonné (TUC) : AAAA-MM-JJ.
+	* *-t* définit le type de journal.
     	
 	Par exemple, afin de supprimer les journaux de type linux_syslog du 25 mai 2017 qui sont stockés dans Log Collection au niveau du compte, exécutez la commande suivante :
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
 	```
 	{: screen}
 	

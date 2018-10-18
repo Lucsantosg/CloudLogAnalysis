@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ lastupdated: "2018-01-31"
 
 1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
 
-   詳しくは、『[{{site.data.keyword.Bluemix_notm}} CLI のインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
+   詳しくは、[『{{site.data.keyword.Bluemix_notm}}CLI のインストール』](/docs/cli/index.html#overview)を参照してください。
 
 2. {{site.data.keyword.loganalysisshort}} CF プラグインをインストールします。
 
@@ -41,7 +41,7 @@ lastupdated: "2018-01-31"
     例えば、プラグインのバージョンを確認します。 次のコマンドを実行します。
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -95,7 +95,7 @@ Linux にLog Collection  CF プラグインをインストールするには、�
         例えば、ファイル `logging-cli-linux64` を実行可能にするには、次のコマンドを実行します。
         
         ```
-        bx cf install-plugin -f logging-cli-linux64
+        ibmcloud cf install-plugin -f logging-cli-linux64
         ```
         {: codeblock}
 
@@ -124,7 +124,7 @@ Linux にLog Collection  CF プラグインをインストールするには、�
     例えば、プラグインのバージョンを確認します。 次のコマンドを実行します。
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
@@ -149,34 +149,34 @@ Windows にLog Collection  CF プラグインをインストールするには�
 2. **cf install-plugin** コマンドを実行して、Log Collection プラグインを Windows にインストールします。 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
-	ここで、「PluginName」はダウンロードしたファイルの名前です。
+	ここで、*PluginName* はダウンロードしたファイルの名前です。
 	
-    例えば、プラグイン「logging-cli-win64_v1.0.1.exe」をインストールするには、端末ウィンドウから次のコマンドを実行します。
+    例えば、プラグイン「*logging-cli-win64_v1.0.1.exe*」をインストールするには、端末ウィンドウから次のコマンドを実行します。
 	
 	```
-	bx cf install-plugin logging-cli-win64_v1.0.1.exe
+	ibmcloud cf install-plugin logging-cli-win64_v1.0.1.exe
 	```
 	{: codeblock}
 	
-    プラグインがインストールされたら、メッセージ「プラグイン IBM-Logging 1.0.1 は正常にインストールされました」が表示されます。
+    プラグインがインストールされたら、メッセージ「`プラグイン IBM-Logging 1.0.1 は正常にインストールされました`」が表示されます。
 
 3. ロギング CLI プラグインのインストールを検証します。
   
     例えば、プラグインのバージョンを確認します。 次のコマンドを実行します。
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     出力は以下のようになります。
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -184,44 +184,44 @@ Windows にLog Collection  CF プラグインをインストールするには�
 ## Mac OS X への Log Analysis CLI のインストール
 {: #install_cli_mac}
 
-Mac OS X にLog Collection  CF プラグインをインストールするには、以下のステップを実行します。
+Mac OS X にLog Collection CF プラグインをインストールするには、以下のステップを実行します。
 
-1. 最新リリースの {{site.data.keyword.loganalysisshort}} サービス CLI プラグイン (IBM-Logging) を [{{site.data.keyword.Bluemix_notm}} CLI ページ](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins) からダウンロードします。 
+1. 最新リリースの {{site.data.keyword.loganalysisshort}} サービス CLI プラグイン (IBM-Logging) を [{{site.data.keyword.Bluemix_notm}} CLI ページ](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins)からダウンロードします。 
 	
-	1. プラットフォーム値「osx」を選択します。 
-	2. 「ファイルの保存」をクリックします。  
+	1. プラットフォーム値**「osx」**を選択します。 
+	2. **「ファイルの保存」**をクリックします。  
     
-2. 「cf install-plugin」コマンドを実行して、Log Collection プラグインを Mac OS X にインストールします。 
+2. **cf install-plugin** コマンドを実行して、Log Collection プラグインを Mac OS X にインストールします。 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
-	ここで、「PluginName」はダウンロードしたファイルの名前です。
+	ここで、*PluginName* はダウンロードしたファイルの名前です。
 	
-    例えば、プラグイン「logging-cli-darwin_v1.0.1」をインストールするには、端末から次のコマンドを実行します。
+    例えば、プラグイン「*logging-cli-darwin_v1.0.1*」をインストールするには、端末から次のコマンドを実行します。
 	
 	```
-	bx cf install-plugin logging-cli-darwin_v1.0.1
+	ibmcloud cf install-plugin logging-cli-darwin_v1.0.1
 	```
 	{: codeblock}
 	
-    プラグインがインストールされたら、メッセージ「プラグイン IBM-Logging 1.0.1 は正常にインストールされました」が表示されます。
+    プラグインがインストールされたら、メッセージ「`プラグイン IBM-Logging 1.0.1 は正常にインストールされました`」が表示されます。
 
 3. ロギング CLI プラグインのインストールを検証します。
   
     例えば、プラグインのバージョンを確認します。 次のコマンドを実行します。
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     出力は以下のようになります。
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -239,7 +239,7 @@ Mac OS X にLog Collection  CF プラグインをインストールするには�
     例えば、プラグインのバージョンを確認します。 次のコマンドを実行します。
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -254,29 +254,29 @@ Mac OS X にLog Collection  CF プラグインをインストールするには�
     ```
     {: screen}
     
-2. プラグインがインストールされている場合、「cf uninstall-plugin」を実行して、ロギング CLI プラグインをアンインストールします。
+2. プラグインがインストールされている場合、`cf uninstall-plugin` を実行してロギング CLI プラグインをアンインストールします。
 
     次のコマンドを実行します。
         
     ```
-    bx cf uninstall-plugin IBM-Logging
+    ibmcloud cf uninstall-plugin IBM-Logging
     ```
     {: codeblock}
   
 
-## 一般ヘルプの入手
+## 一般ヘルプの利用
 {: #general_cli_help}
 
-CLI およびサポートされているコマンドに関する一般情報を入手するには、以下のステップを実行します。
+CLI に関する一般情報およびサポートされているコマンドについての情報を取得するには、以下のステップを実行します。
 
 1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    詳しくは、[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login) を参照してください。
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
 2. サポートされるコマンドおよび CLI についての情報をリストします。 次のコマンドを実行します。
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
     
@@ -289,23 +289,23 @@ CLI およびサポートされているコマンドに関する一般情報を�
 
 1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    詳しくは、[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login) を参照してください。
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
 2. サポートされるコマンドのリストを取得し、必要なコマンドを識別します。 コマンドを実行します。
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. 特定のコマンドに関するヘルプを取得します。 次のコマンドを実行します。
 
     ```
-    bx cf logging help *Command*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
-    ここで、「Command」は CLI コマンドの名前です (例:「status」)。
+    ここで、*Command* は CLI コマンドの名前です (例: *status*)。
 
 
 
@@ -316,35 +316,35 @@ CLI およびサポートされているコマンドに関する一般情報を�
 
 1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    詳しくは、[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login) を参照してください。
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
 2. サポートされるコマンドのリストを取得し、必要なコマンドを識別します。 コマンドを実行します。
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. 特定のコマンドに関するヘルプを取得し、サポートされるサブコマンドを識別します。 次のコマンドを実行します。
 
     ```
-    bx cf logging help *Command*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
-    ここで、「Command」は CLI コマンドの名前です (例:「session」)。
+    ここで、*Command* は CLI コマンドの名前です (例: *session*)。
 
 4. 特定のコマンドに関するヘルプを取得し、サポートされるサブコマンドを識別します。 次のコマンドを実行します。
 
     ```
-    bx cf logging *Command* help *Subcommand*
+    ibmcloud cf logging *Command* help *Subcommand*
     ```
     {: codeblock}
     
     各部分の説明: 
     
-    * 「Command」は CLI コマンドの名前です (例:「status」)。
-    * 「Subcommand」はサポートされるサブコマンドの名前です (例: コマンド「session」の有効なサブコマンドは「list」です)。
+    * *Command* は CLI コマンドの名前です (例: *status*)。
+    * *Subcommand* はサポートされるサブコマンドの名前です (例: コマンド *session* の有効なサブコマンドは *list* です)。
 
 
 

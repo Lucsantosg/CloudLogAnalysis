@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -55,7 +55,7 @@ Führen Sie die folgenden Schritte aus, um eine Instanz des {{site.data.keyword.
 
 1. [Voraussetzung] Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle.
 
-   Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Weitere Informationen finden Sie in [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle installieren](/docs/cli/index.html#overview).
    
    Fahren Sie mit dem nächsten Schritt fort, wenn die Befehlszeilenschnittstelle bereits installiert ist.
     
@@ -63,30 +63,30 @@ Führen Sie die folgenden Schritte aus, um eine Instanz des {{site.data.keyword.
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Führen Sie den Befehl `bx service create` aus, um eine Instanz bereitzustellen.
+3. Führen Sie den Befehl `ibmcloud service create` aus, um eine Instanz bereitzustellen.
 
     ```
-	bx service create service_name service_plan service_instance_name
+	ibmcloud service create service-name service_plan service_instance_name
 	```
 	{: codeblock}
 	
-	Hierbei gilt Folgendes:
+	Dabei gilt:
 	
 	* service_name ist der Name des Service, also **ibmLogAnalysis**.
-	* service_plan ist der Name des Serviceplans. Eine Liste der Pläne finden Sie unter [Servicepläne] (/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
-	* service_instance_name ist der Name, den Sie für die neue von Ihnen erstellte Serviceinstanz verwenden möchten.
+	* service_plan ist der Name des Serviceplans. Eine Liste der Pläne finden Sie unter [Servicepläne](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+	* service_instance_name ist der Name, den Sie für die neue von Ihnen erstellte Serviceinstanz verwenden.
 
 	Beispiel: Führen Sie zum Erstellen einer Instanz des Service {{site.data.keyword.loganalysisshort}} mit einem Lite-Plan den folgenden Befehl aus:
 	
 	```
-	bx service create ibmLogAnalysis standard my_logging_svc
+	ibmcloud service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. Stellen Sie sicher, dass der Service ordnungsgemäß erstellt wurde. Führen Sie den folgenden Befehl aus:
 
     ```	
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	

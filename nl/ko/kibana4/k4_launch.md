@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -75,7 +75,7 @@ Kibana에 표시되는 데이터 필터링에 사용되는 조회는 {{site.data
 
 브라우저에서 Kibana를 실행하려면 다음 단계를 완료하십시오.
 
-1. [https://logging.<span class="keyword" data-hd-keyref="DomainName">DomainName</span>](https://logging.{DomainName})을 열어 Kibana 사용자 인터페이스에 로그인하십시오.
+1. Kibana 사용자 인터페이스를 실행하십시오.
     
     예: 
       

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2018-04-19"
 # Configuration de la règle de conservation des journaux
 {: #configuring_retention_policy}
 
-Par défaut, la règle de conservation est désactivée et les journaux sont conservés indéfiniment. Utilisez la commande **bx logging option-update** pour changer la règle de conservation.
+Par défaut, la règle de conservation est désactivée et les journaux sont conservés indéfiniment. Utilisez la commande **ibmcloud logging option-update** pour changer la règle de conservation.
 {:shortdesc}
 
-Vous pouvez utiliser la commande **bx logging option-show** pour afficher la règle de conservation qui définit le nombre maximal de jours pendant lequel les journaux sont conservés dans le composant Log Collection. 
+Vous pouvez utiliser la commande **ibmcloud logging option-show** pour afficher la règle de conservation qui définit le nombre maximal de jours pendant lequel les journaux sont conservés dans le composant Log Collection. 
 
 Lorsque vous définissez une règle de conservation, une fois que la durée de conservation est arrivée à expiration, les journaux sont supprimés automatiquement.
 
@@ -42,7 +42,7 @@ Procédez comme suit pour désactiver une règle de conservation :
 3. Pour désactiver la règle de conservation, définissez la valeur **-1**. Exécutez la commande suivante :
 
     ```
-    bx logging option-update -r account -i AccountID -e RETENTION_VALUE
+    ibmcloud logging option-update -r account -i AccountID -e RETENTION_VALUE
 	```
     {: codeblock}
 	
@@ -50,10 +50,10 @@ Procédez comme suit pour désactiver une règle de conservation :
     
 **Exemple**
     
-Par exemple, afin de désactiver la durée de conservation pour un compte dont l'ID est *12345677fgh436902a3*, exécutez la commande suivante : 
+Par exemple, afin de désactiver la durée de conservation pour un compte dont l'ID est *12345677fgh436902a3*, exécutez la commande suivante :
 
 ```
-bx logging option-update -r account -i 12345677fgh436902a3 -e -1
+ibmcloud logging option-update -r account -i 12345677fgh436902a3 -e -1
 ```
 {: codeblock}
 
@@ -72,7 +72,7 @@ Procédez comme suit pour désactiver une règle de conservation :
 2. Pour désactiver la règle de conservation, définissez la valeur **-1**. Exécutez la commande suivante :
 
     ```
-    bx logging option-show -e RETENTION_VALUE
+    ibmcloud logging option-show -e RETENTION_VALUE
 	```
     {: codeblock}
 	
@@ -83,7 +83,7 @@ Procédez comme suit pour désactiver une règle de conservation :
 Par exemple, pour désactiver la durée de conservation d'un espace dont l'ID est *d35da1e3-b345-475f-8502-cfgh436902a3*, exécutez la commande suivante :
 
 ```
-bx logging option-update -e -1
+ibmcloud logging option-update -e -1
 ```
 {: codeblock}
 
@@ -104,14 +104,14 @@ Afin d'obtenir la durée de conservation définie pour un compte, procédez comm
 3. Obtenez la durée de conservation. Exécutez la commande suivante :
 
     ```
-    bx logging option-show -r account -i AccountID
+    ibmcloud logging option-show -r account -i AccountID
     ```
     {: codeblock}
 
     La sortie est :
 
     ```
-    bx logging option-show -r account -i kjskdsjfksjdflkjdsfbbd06461b066
+    ibmcloud logging option-show -r account -i kjskdsjfksjdflkjdsfbbd06461b066
     Showing log options of resource: kjskdsjfksjdflkjdsfbbd06461b066 ...
 
     Resource ID                              Retention   
@@ -131,14 +131,14 @@ Afin d'obtenir la durée de conservation définie pour un espace, procédez comm
 2. Obtenez la durée de conservation. Exécutez la commande suivante :
 
     ```
-    bx logging option-show
+    ibmcloud logging option-show
     ```
     {: codeblock}
 
     La sortie est :
 
     ```
-    bx logging option-show
+    ibmcloud logging option-show
     Showing log options of resource: 12345678-1234-2edr-a9de-378620d6fab5 ...
 
     SpaceId                                Retention   
@@ -164,7 +164,7 @@ Procédez comme suit :
 3. Définissez la durée de conservation. Exécutez la commande suivante :
 
     ```
-    bx logging option-update -r account -i AccountID -e RETENTION_VALUE
+    ibmcloud logging option-update -r account -i AccountID -e RETENTION_VALUE
     ```
     {: codeblock}
     
@@ -176,7 +176,7 @@ Procédez comme suit :
 Par exemple, pour conserver un type de journal spécifique dans votre compte pendant seulement 15 jours, exécutez la commande suivante :
 
 ```
-bx logging option-update -r account -i AccountID -e 15
+ibmcloud logging option-update -r account -i AccountID -e 15
 ```
 {: codeblock}
 
@@ -194,7 +194,7 @@ Afin d'afficher la durée de conservation pour un espace, procédez comme suit :
 2. Définissez la durée de conservation. Exécutez la commande suivante :
 
     ```
-    bx logging option-update -e RETENTION_VALUE
+    ibmcloud logging option-update -e RETENTION_VALUE
     ```
     {: codeblock}
     
@@ -206,7 +206,7 @@ Afin d'afficher la durée de conservation pour un espace, procédez comme suit :
 Par exemple, pour conserver les journaux disponibles dans un espace pendant un an, exécutez la commande suivante :
 
 ```
-bx logging option-update -e 365
+ibmcloud logging option-update -e 365
 ```
 {: codeblock}
 

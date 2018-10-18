@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ Siga los pasos siguientes para enviar datos de registro a un espacio de {{site.d
 * Un ID de {{site.data.keyword.Bluemix_notm}} para iniciar una sesión en {{site.data.keyword.Bluemix_notm}}.
 * Un ID de usuario que tenga permisos para trabajar en un espacio con el servicio {{site.data.keyword.loganalysisshort}}. Para obtener más información, consulte [Seguridad](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
 * La CLI de {{site.data.keyword.loganalysisshort}} instalada en el entorno local.
-* El servicio {{site.data.keyword.loganalysisshort}} suministrado en un espacio de la cuenta con un plan que permita la ingestión de registros. 
+* El servicio {{site.data.keyword.loganalysisshort}} suministrado en un espacio de la cuenta con un plan que permita la ingestión de registros.
 
 
 ## Paso 1: Obtenga la señal de registro
@@ -40,10 +40,10 @@ Siga los pasos siguientes desde una sesión de terminal donde esté instalada la
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Ejecute el mandato `bx logging token-get`.  
+2. Ejecute el mandato `ibmcloud logging token-get`. 
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     ```
     {: codeblock}
 
@@ -52,16 +52,16 @@ Siga los pasos siguientes desde una sesión de terminal donde esté instalada la
     Por ejemplo,
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
     OK
 
-    Tenant Id                              Logging Token
-    93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf   oT98_abcdefz
+    Tenant Id                              Logging Token   
+    93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf   oT98_abcdefz   
     ```
     {: screen}
 
-    donde *Tenant Id* es el GUID del espacio al que va a enviar los registros. 
+    donde *Tenant Id* es el GUID del espacio al que va a enviar los registros.
 
 
 ## Paso 2: Configure mt-logstash-forwarder

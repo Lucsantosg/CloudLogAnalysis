@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,10 +31,10 @@ lastupdated: "2018-01-10"
 ## ステップ 2: 使用可能なログを識別する
 {: #step2}
 
-1. `bx cf logging status` コマンドを使用して、最近 2 週間の使用可能なログを表示します。 次のコマンドを実行します。
+1. `ibmcloud cf logging status` コマンドを使用して、最近 2 週間の使用可能なログを表示します。 次のコマンドを実行します。
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
@@ -64,10 +64,12 @@ lastupdated: "2018-01-10"
 * 開始日および終了日を指定すると、セッションはそれらの日付の間 (開始日と終了日を含む) のログへのアクセスを提供します。 
 * ログのタイプ (**-t**) を指定すると、セッションは特定タイプのログへのアクセスを提供します。 これは、ログのうち興味のある小さなサブセットのみにセッションのスコープを限定できるため、大量のログを管理する場合に重要な機能です。
 
+**注:** セッションごとに、最長 15 日間分のログがダウンロードできます。
+
 タイプが *log* のログをダウンロードするために使用されるセッションを作成するには、次のコマンドを実行します。
 
 ```
-bx cf logging session create -t log
+ibmcloud cf logging session create -t log
 ```
 {: codeblock}
 
@@ -81,7 +83,7 @@ bx cf logging session create -t log
 以下に例を示します。
 
 ```
-$ bx cf logging session create -t log     
+$ ibmcloud cf logging session create -t log     
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -109,7 +111,7 @@ $ bx cf logging session create -t log
 セッション・パラメーターで指定されたログをダウンロードするには、次のコマンドを実行します。
 
 ```
-bx cf logging download -o Log_File_Name Session_ID
+ibmcloud cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -121,7 +123,7 @@ bx cf logging download -o Log_File_Name Session_ID
 以下に例を示します。
 
 ```
-bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -142,7 +144,7 @@ bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
 セッションを削除するには、次のコマンドを実行します。
 
 ```
-bx cf logging session delete Session_ID
+ibmcloud cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -151,7 +153,7 @@ bx cf logging session delete Session_ID
 以下に例を示します。
 
 ```
-bx cf logging session delete -jshdjsunelsssr4566722==
+ibmcloud cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

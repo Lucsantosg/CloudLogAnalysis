@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -37,14 +37,14 @@ La seguente tabella elenca diverse attività che puoi eseguire nella pagina Dash
 
 | Attività | Ulteriori informazioni |
 |------|------------------|
-| [Crea un nuovo dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#K4_dashboard_new) | Puoi creare più dashboard. Ogni dashboard può essere progettato per includere diverse ricerche, visualizzazioni e una sottorete di dati di log differente.  |
-| [Salva un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_save) | Puoi salvare un dashboard per un riutilizzo successivo. |
-| [Carica un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_reload) | Puoi caricare un dashboard per aggiornarne i dati, modificarlo o analizzare i dati. |
-| [Elimina un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_delete) | Eliminare i dashboard che non sono richiesti. |
-| [Esporta un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_export) | Puoi esportare un dashboard come un file JSON. |
-| [Importa un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_import) | Puoi importare un dashboard come un file JSON. |
-| [Condividi un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_share) | Puoi condividere un dashboard tramite la tua origine HTML o il dashboard Kibana. |
-| [Aggiungi una visualizzazione](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_add_visualization) | Puoi aggiungere una ricerca o una visualizzazione esistente a un dashboard.|
+| [Creare un nuovo dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#K4_dashboard_new) | Puoi creare più dashboard. Ogni dashboard può essere progettato per includere diverse ricerche, visualizzazioni e una sottorete di dati di log differente.  |
+| [Salvare un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_save) | Puoi salvare un dashboard per un riutilizzo successivo. |
+| [Caricare un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_reload) | Puoi caricare un dashboard per aggiornarne i dati, modificarlo o analizzare i dati. |
+| [Eliminare un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_delete) | Eliminare i dashboard che non sono richiesti. |
+| [Esportare un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_export) | Puoi esportare un dashboard come un file JSON. |
+| [Importare un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_import) | Puoi importare un dashboard come un file JSON. |
+| [Condividere un dashboard](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_share) | Puoi condividere un dashboard tramite la tua origine HTML o il dashboard Kibana. |
+| [Aggiungere una visualizzazione](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_dashboard.html#k4_dashboard_add_visualization) | Puoi aggiungere una ricerca o una visualizzazione esistente a un dashboard.|
 {: caption="Tabella 2. Attività per lavorare con i dashboard" caption-side="top"}
 
 Per ulteriori informazioni sulle applicazioni Kibana, vedi la [ ![Icona link esterno](../../../icons/launch-glyph.svg "Icona link esterno")](https://www.elastic.co/guide/en/kibana/4.1/index.html){: new_window}.

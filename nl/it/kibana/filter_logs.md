@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -80,7 +80,7 @@ Completa la seguente procedura per cercare le voci che includono un valore del c
 
 3. Per aggiungere un filtro che cerca le voci con un valore di campo, scegli la lente di ingrandimento con un segno più ![Lente di ingrandimento in modalità inclusiva](images/include_field_icon.jpg "Pulsante di lente di ingrandimento in modalità inclusiva") per tale valore.
 
-    Per aggiungere un filtro che cerca le voci che non includono il valore di camp, scegli la lente di ingrandimento con un segno meno![Lente di ingrandimento in modalità esclusiva](images/exclude_field_icon.jpg "Pulsante di lente di ingrandimento in modalità esclusiva") per il valore.
+    Per aggiungere un filtro che cerca le voci che non includono il valore di campo, scegli la lente di ingrandimento con un segno meno![Lente di ingrandimento in modalità esclusiva](images/exclude_field_icon.jpg "Pulsante di lente di ingrandimento in modalità esclusiva") per il valore.
 
 4. Scegli una delle seguenti opzioni per utilizzare i filtri in Kibana:
 

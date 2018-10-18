@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -20,15 +20,15 @@ lastupdated: "2018-04-19"
 # {{site.data.keyword.containershort_notm}}
 {: #containers_kubernetes}
 
-在 {{site.data.keyword.Bluemix_notm}} 中，您可以使用 {{site.data.keyword.loganalysisshort}} 服务在 Public 和 Dedicated 中存储并分析由 {{site.data.keyword.containershort}} 自动收集的容器日志和 Kubernetes 集群日志。
+在 {{site.data.keyword.Bluemix_notm}} 中，可以使用 {{site.data.keyword.loganalysisshort}} 服务来存储和分析 Public 和 Dedicated 中由 {{site.data.keyword.containershort}} 自动收集的容器日志和 Kubernetes 集群日志。
 {:shortdesc}
 
 在帐户中，您可以具有 1 个或多个 Kubernetes 集群。在供应集群时，{{site.data.keyword.containershort}} 会自动收集日志。 
 
 * 在部署 Pod 时，系统会收集应用程序日志。 
-* {{site.data.keyword.containershort}} 会自动收集容器进程发至 stdout（标准输出）和 stderr（标准错误）的信息。
+* {{site.data.keyword.containershort}} 会自动收集容器进程输出至 stdout（标准输出）和 stderr（标准错误）的信息。
 
-要使这些日志可用于在 {{site.data.keyword.loganalysisshort}} 服务中进行分析，您必须配置集群以将日志转发到 {{site.data.keyword.loganalysisshort}}。可以将日志转发到 {{site.data.keyword.loganalysisshort}} 帐户域或帐户中的空间域。缺省情况下：
+要使这些日志可在 {{site.data.keyword.loganalysisshort}} 服务中得到分析，必须配置集群以将日志转发到 {{site.data.keyword.loganalysisshort}}。可以将日志转发到 {{site.data.keyword.loganalysisshort}} 帐户域或您帐户中的空间域。缺省情况下：
 
 * 在美国南部区域可用的集群会将日志发送到美国南部区域可用的 {{site.data.keyword.loganalysisshort}} 服务。
 * 在美国东部区域可用的集群会将日志发送到美国南部区域可用的 {{site.data.keyword.loganalysisshort}} 服务。
@@ -41,7 +41,7 @@ lastupdated: "2018-04-19"
 * 将日志发送到帐户域时，搜索配额为每天 500 MB，并且无法在“日志收集”中长期存储日志。
 * 将日志发送到空间域时，可以选择可定义每天搜索配额的 {{site.data.keyword.loganalysisshort}} 服务套餐，并且可以在“日志收集”中长期存储日志。
 
-**注**：缺省情况下，不会自动启用将日志从集群发送到 {{site.data.keyword.loganalysisshort}} 服务。要启用日志记录，必须在集群中创建一个或多个日志记录配置，用于将日志自动转发到 {{site.data.keyword.loganalysisshort}} 服务。您可以通过命令行使用 `bx cs logging-config-create` 命令或通过 {{site.data.keyword.Bluemix_notm}} UI 中提供的集群仪表板来启用日志记录。有关更多信息，请参阅[启用自动收集集群日志](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs)。
+**注**：缺省情况下，不会自动启用将日志从集群发送到 {{site.data.keyword.loganalysisshort}} 服务的功能。要启用日志记录，必须在集群中创建一个或多个日志记录配置，以便将日志自动转发到 {{site.data.keyword.loganalysisshort}} 服务。您可以通过命令行使用 `ibmcloud cs logging-config-create` 命令或通过 {{site.data.keyword.Bluemix_notm}} UI 中提供的集群仪表板来启用日志记录。有关更多信息，请参阅[启用集群日志的自动收集](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs)。
 
 使用 Kubernetes 集群时，系统会保留 *ibm-system* 和 *kube-system* 名称空间。请勿创建、删除、修改或更改这些名称空间中可用的资源的许可权。这些名称空间的日志供 {{site.data.keyword.IBM_notm}} 使用。
 
@@ -50,20 +50,20 @@ lastupdated: "2018-04-19"
 ## 将日志转发到空间域
 {: #space}
 
-将集群配置为将集群日志转发到 {{site.data.keyword.loganalysisshort}} 时，请考虑以下信息：
+配置集群以将集群日志转发到 {{site.data.keyword.loganalysisshort}} 时，请考虑以下信息：
 
-* 必须定义将在其中转发集群日志的 Cloud Foundry 组织和空间。 
-* 组织和空间在任何 {{site.data.keyword.IBM_notm}} Public Cloud 区域中都可用。
+* 必须定义要将这些日志转发到的 Cloud Foundry 组织和空间。 
+* 可以在任何 {{site.data.keyword.IBM_notm}} Public Cloud 区域中使用组织和空间。
 
-**注**：对于在 **{{site.data.keyword.Bluemix_notm}} Dedicated** 上供应的集群，无法将集群配置为将集群日志转发到专用帐户上可用的 Cloud Foundry 空间。
+**注**：对于在 **{{site.data.keyword.Bluemix_notm}} Dedicated** 上供应的集群，无法配置集群以将集群日志转发到专用帐户上可用的 Cloud Foundry 空间。
 
-要在 Kibana 中分析将日志转发到空间域的集群的日志数据，请考虑以下信息：
+对于将日志转发到空间域的集群，要在 Kibana 中分析其日志数据，请考虑以下信息：
 
-* 您必须在收集集群日志的组织和空间可用的 Public 区域中启动 Kibana。
-* 要增加 Kibana 搜索配额并将日志存储在“日志收集”中以进行长期存储，您必须使用满足需求的套餐，在要转发日志的空间中供应 {{site.data.keyword.loganalysisshort}} 服务。 
-* 您的用户标识必须具有查看日志的许可权。要查看空间域中的日志，用户需要 CF 角色。**审计员**是可以授权查看日志的最低角色。有关更多信息，请参阅[用户查看日志所需的角色](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)。
+* 必须在收集集群日志的组织和空间所在的 Public 区域中启动 Kibana。
+* 要增加 Kibana 搜索配额并将日志存储在“日志收集”中以便长期存储，必须使用与您的需求匹配的套餐，在要将日志转发到的空间中供应 {{site.data.keyword.loganalysisshort}} 服务。 
+* 您的用户标识必须具有查看日志的许可权。要查看空间域中的日志，用户需要 CF 角色。至少要为用户授予**审计员**角色，他们才能查看日志。有关更多信息，请参阅[用户查看日志所需的角色](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)。
 
-要管理存储在长期存储（日志收集）中的集群日志数据，您的用户标识必须具有 IAM 策略以使用 {{site.data.keyword.loganalysisshort}} 服务。您的用户标识必须具有**管理员**、**操作员**或**编辑者**许可权。有关更多信息，请参阅[用户管理日志所需的角色](/docs/services/CloudLogAnalysis/manage_logs.html#roles)。
+要管理长期存储（存储在“日志收集”中）的集群日志数据，您的用户标识必须具有 IAM 策略，以便使用 {{site.data.keyword.loganalysisshort}} 服务。您的用户标识必须具有**管理员**、**操作员**或**编辑者**许可权。有关更多信息，请参阅[用户管理日志所需的角色](/docs/services/CloudLogAnalysis/manage_logs.html#roles)。
 
 
 下图显示了集群将日志转发到空间域时，Public 中 {{site.data.keyword.containershort}} 的日志记录的高级别视图：
@@ -75,14 +75,14 @@ lastupdated: "2018-04-19"
 ## 将日志转发到帐户域
 {: #acc_public}
 
-将集群配置为将集群日志转发到帐户域时，请考虑以下信息：
+配置集群以将集群日志转发到帐户域时，请考虑以下信息：
 
-* **{{site.data.keyword.Bluemix_notm}} Public 上供应的集群**：日志会转发到运行集群的 {{site.data.keyword.Bluemix_notm}} Public 区域中的帐户域。
-* **{{site.data.keyword.Bluemix_notm}} Dedicated 上供应的集群**：日志会转发到运行专用集群的 {{site.data.keyword.Bluemix_notm}} Public 区域中的帐户域。
+* **{{site.data.keyword.Bluemix_notm}} Public 上供应的集群**：会将日志转发到同一 {{site.data.keyword.Bluemix_notm}} Public 区域中集群运行所在的帐户域。
+* **{{site.data.keyword.Bluemix_notm}} Dedicated 上供应的集群**：会将日志转发到同一 {{site.data.keyword.Bluemix_notm}} Public 区域中 Dedicated 集群运行所在的帐户域。
 
-要在 Kibana 中分析将日志转发到帐户域的集群的日志数据，请考虑以下信息：
+对于将日志转发到帐户域的集群，要在 Kibana 中分析其日志数据，请考虑以下信息：
 
-* 您必须在将集群将日志转发到 {{site.data.keyword.loganalysisshort}} 服务的 Public 区域中启动 Kibana。
+* 必须在集群将日志发送到 {{site.data.keyword.loganalysisshort}} 服务所在的 Public 区域中启动 Kibana。
 
     * 在美国南部区域可用的集群会将日志发送到美国南部区域可用的 {{site.data.keyword.loganalysisshort}} 服务。
     * 在美国东部区域可用的集群会将日志发送到美国南部区域可用的 {{site.data.keyword.loganalysisshort}} 服务。
@@ -103,10 +103,10 @@ lastupdated: "2018-04-19"
 
 
 
-## 将集群配置为将日志转发到 {{site.data.keyword.loganalysisshort}}
+## 配置集群以将日志转发到 {{site.data.keyword.loganalysisshort}}
 {: #config_forward_logs}
 
-您可以选择转发到 {{site.data.keyword.loganalysisshort}} 服务的集群日志。 
+可以选择将哪些集群日志转发到 {{site.data.keyword.loganalysisshort}} 服务。 
 
 有关如何配置集群以将日志文件转发到 {{site.data.keyword.loganalysisshort}} 服务的更多信息，请参阅[启用集群日志的自动收集](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs)部分。
 
@@ -159,19 +159,19 @@ lastupdated: "2018-04-19"
 ## 转发定制应用程序日志
 {: #forward_app_logs}
 
-要启用将集群中的定制应用程序日志转发到 {{site.data.keyword.loganalysisshort}} 服务，必须定义**日志源**设置为**应用程序**的集群日志记录配置。可以使用 `bx cs logging-config-create` 命令或通过集群 UI 定义此配置。
+要启用将集群中的定制应用程序日志转发到 {{site.data.keyword.loganalysisshort}} 服务的功能，必须定义一个集群日志记录配置，将其中的**日志源**设置为**应用程序**。可以使用 `ibmcloud cs logging-config-create` 命令或通过集群 UI 定义此配置。
 
-将集群配置为转发定制日志时，可以指定要转发定制日志的集群中运行的容器列表，以及定制文件日志所在的容器内的路径。
+配置集群以转发定制日志时，可以指定集群中运行的容器的列表，以便从这些容器中转发定制日志，还可以指定容器内部用于存放定制文件日志的路径。
 
-* 您必须指定 **app-paths** 参数来设置要监视的容器内的路径列表。位于这些路径中的日志会转发到 {{site.data.keyword.loganalysisshort}} 服务。 
+* 必须指定 **app-paths** 参数来设置要监视的容器内部的路径列表。系统会将位于这些路径中的日志转发到 {{site.data.keyword.loganalysisshort}} 服务。 
 
-    要设置此参数，请定义容器内逗号分隔的可用路径列表。接受通配符，如“/var/log/*.log”。
+    要设置此参数，请定义容器内部可用路径的列表（用逗号分隔）。可以使用通配符，如“/var/log/*.log”。
 
-* （可选）可以设置 **app-containers** 参数以指定从中收集日志并将日志转发到 {{site.data.keyword.loganalysisshort}} 服务的容器列表。
+* （可选）可以设置 **app-containers** 参数来指定要从中收集日志并将日志转发到 {{site.data.keyword.loganalysisshort}} 服务的容器的列表。
 
-    要设置此参数，请定义逗号分隔的容器列表。
+    要设置此参数，请定义容器的列表（用逗号分隔）。
 
-**提示**：您可以在集群中定义**日志源**设置为**应用程序** 的多个集群日志记录配置。如果集群中托管日志的容器具有不同路径，请考虑为其日志位于同一路径的每组容器分别定义集群日志记录配置。 
+**提示**：可以在集群中定义多个集群日志记录配置，将其中的**日志源**设置为**应用程序**。如果集群中的容器使用不同的路径来托管日志，请考虑为日志路径相同的每组容器分别定义集群日志记录配置。 
 
 
 
@@ -381,25 +381,25 @@ lastupdated: "2018-04-19"
 {: #security}
 
 
-要将集群日志转发到 {{site.data.keyword.loganalysisshort}}，您必须向 {{site.data.keyword.containershort}} 密钥所有者以及要配置日志记录集群配置的用户标识授予 {{site.data.keyword.Bluemix_notm}} 许可权。
+要将集群日志转发到 {{site.data.keyword.loganalysisshort}}，必须向 {{site.data.keyword.containershort}} 密钥所有者以及要配置日志记录集群配置的用户标识授予 {{site.data.keyword.Bluemix_notm}} 许可权。
 
-配置日志记录集群配置的用户标识必须具有以下许可权：
+要配置日志记录集群配置的用户标识必须具有以下许可权：
 
-* {{site.data.keyword.containershort}} 的 IAM 策略，且具有**查看者**许可权。
-* 集群实例的 IAM 策略，且具有**管理员**或**操作员**许可权。
+* {{site.data.keyword.containershort}} 的 IAM 策略，以及**查看者**许可权。
+* 集群实例的 IAM 策略，以及**管理员**或**操作员**许可权。
 
-对于要将日志转发到的 {{site.data.keyword.loganalysisshort}} **空间域**的集群，{{site.data.keyword.containershort}} 密钥所有者需要以下许可权：
+要让集群将日志转发到 {{site.data.keyword.loganalysisshort}} **空间域**，{{site.data.keyword.containershort}} 密钥所有者必须具有以下许可权：
 
-* {{site.data.keyword.containershort}} 的 IAM 策略，且具有**管理员**角色。
-* {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，且具有**管理员**角色。
-* 对在其中空间可用的组织的 Cloud Foundry (CF) **orgManager** 角色。
-* 对在其中从集群转发日志的空间的 CF **SpaceManager** 角色或 **Developer** 角色。
+* {{site.data.keyword.containershort}} 的 IAM 策略，以及**管理员**角色。
+* {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，以及**管理员**角色。
+* 空间所在组织的 Cloud Foundry (CF) **orgManager** 角色。
+* 将日志从集群转发到的空间的 CF **SpaceManager** 角色或 **Developer** 角色。
 
 
-对于要将日志转发到的 {{site.data.keyword.loganalysisshort}} **帐户域**的集群，{{site.data.keyword.containershort}} 密钥所有者需要以下许可权：
+要让集群将日志转发到 {{site.data.keyword.loganalysisshort}} **帐户域**，{{site.data.keyword.containershort}} 密钥所有者必须具有以下许可权：
 
-* {{site.data.keyword.containershort}} 的 IAM 策略，且具有**管理员**角色。
-* {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，且具有**管理员**角色。
+* {{site.data.keyword.containershort}} 的 IAM 策略，以及**管理员**角色。
+* {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，以及**管理员**角色。
 
 
 

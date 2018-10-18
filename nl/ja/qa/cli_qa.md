@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -33,7 +33,7 @@ lastupdated: "2018-04-10"
 次のコマンドを実行して、{{site.data.keyword.loganalysisshort}} サービスが使用可能な {{site.data.keyword.Bluemix_notm}} 内の地域にログインします。
 
 ```
-bx login -a Endpoint
+ibmcloud login -a Endpoint
 ```
 {: codeblock}
 	
@@ -66,16 +66,16 @@ bx login -a Endpoint
 例えば、米国南部地域にログインするには、次のコマンドを実行します。
 	
 ```
-bx login -a https://api.ng.bluemix.net
+ibmcloud login -a https://api.ng.bluemix.net
 ```
 {: codeblock}
 
 手順に従います。 
 
-組織およびスペースを設定することもできます。次のコマンドを実行します。
+組織およびスペースを設定することもできます。 次のコマンドを実行します。
 
 ```
-bx target -o OrgName -s SpaceName
+ibmcloud target -o OrgName -s SpaceName
 ```
 {: codeblock}
 
@@ -89,7 +89,7 @@ bx target -o OrgName -s SpaceName
 ## IBM Cloud CLI のインストール方法を教えてください
 {: #install_bmx_cli}
 
-『[{{site.data.keyword.Bluemix}} CLI のダウンロードとインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
+[『{{site.data.keyword.Bluemix}}CLI のダウンロードとインストール』](/docs/cli/index.html#overview)を参照してください。
 
 
 
@@ -102,17 +102,17 @@ bx target -o OrgName -s SpaceName
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 	
-2. `bx iam accounts` コマンドを実行して、アカウントの GUID を取得します。
+2. `ibmcloud iam accounts` コマンドを実行して、アカウントの GUID を取得します。
 
     ```
-	bx iam accounts
+	ibmcloud iam accounts
 	```
 	{: codeblock} 
 	
 	例えば、ユーザー xxx@yyy.com のすべてのアカウントを、対応する GUID と共に取得するには、以下のコマンドを実行します。
 	
 	```
-	bx iam accounts
+	ibmcloud iam accounts
 	Retrieving all accounts of xxx@yyy.com...
     OK
     Account GUID                       Name                               Type    State    Owner User ID   
@@ -129,16 +129,16 @@ bx target -o OrgName -s SpaceName
 	
 1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    詳しくは、[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login) を参照してください。
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 
-2. `bx iam org` コマンドを実行して、組織の GUID を取得します。 
+2. `ibmcloud iam org` コマンドを実行して、組織の GUID を取得します。 
 
     ```
-    bx iam org NAME --guid
+    ibmcloud iam org NAME --guid
     ```
     {: codeblock}
 	
-    ここで、NAME は {{site.data.keyword.Bluemix_notm}} 組織の名前です。
+    ここで、NAME は、{{site.data.keyword.Bluemix_notm}} 組織の名前です。        
 		
 		
 		
@@ -149,12 +149,12 @@ bx target -o OrgName -s SpaceName
 	
 1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    詳しくは、[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login) を参照してください。
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 	
-2. `bx iam space` コマンドを実行して、スペースの GUID を取得します。 
+2. `ibmcloud iam space` コマンドを実行して、スペースの GUID を取得します。 
 
     ```
-    bx iam space NAME --guid
+    ibmcloud iam space NAME --guid
     ```
     {: codeblock}
 	
@@ -163,7 +163,7 @@ bx target -o OrgName -s SpaceName
     例えば、スペース *dev* の GUID を取得するには、以下のコマンドを実行します。
 	
     ```
-    bx iam space dev --guid
+    ibmcloud iam space dev --guid
     e03afff1-3456-4af6-1234-59treg1b0abc
     ```
     {: screen}

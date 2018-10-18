@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -26,9 +26,9 @@ lastupdated: "2018-04-19"
 {: #prereqs}
 
 * 用于登录到 {{site.data.keyword.Bluemix_notm}} 的 {{site.data.keyword.Bluemix_notm}} 标识。
-* 该用户标识具有在空间中使用 {{site.data.keyword.loganalysisshort}} 服务的许可权。有关更多信息，请参阅[安全性](/docs/services/CloudLogAnalysis/security_ov.html#security_ov)。
-* 本地环境中已安装 {{site.data.keyword.loganalysisshort}} CLI。
-* 在帐户的空间中使用允许日志数据获取的套餐供应了 {{site.data.keyword.loganalysisshort}} 服务。
+* 有权在空间中使用 {{site.data.keyword.loganalysisshort}} 服务的用户标识。有关更多信息，请参阅[安全性](/docs/services/CloudLogAnalysis/security_ov.html#security_ov)。
+* 在本地环境中安装的 {{site.data.keyword.loganalysisshort}} CLI。
+* 使用允许日志获取的套餐在您帐户的空间中供应的 {{site.data.keyword.loganalysisshort}} 服务。
 
 
 ## 步骤 1：获取日志记录令牌
@@ -40,19 +40,19 @@ lastupdated: "2018-04-19"
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 运行 `bx logging token-get` 命令。 
+2. 运行 `ibmcloud logging token-get` 命令。 
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     ```
     {: codeblock}
 
-    命令返回日志记录令牌。
+    该命令会返回日志记录令牌。
     
     例如：
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
     OK
 
@@ -61,7 +61,7 @@ lastupdated: "2018-04-19"
     ```
     {: screen}
 
-    其中，*Tenant Id* 是计划发送日志数据的空间的 GUID。
+    其中，*Tenant Id* 是您计划将日志发送到的空间的 GUID。
 
 
 ## 步骤 2：配置 mt-logstash-forwarder
@@ -72,7 +72,7 @@ lastupdated: "2018-04-19"
 1.	以 root 用户身份登录。 
 
     ```
-        sudo -s
+    sudo -s
     ```
     {: codeblock}
     
@@ -81,7 +81,7 @@ lastupdated: "2018-04-19"
     例如，对于 Ubuntu 系统，请检查 `timedatectl status` 是否显示 *Network time on: yes*。如果是，说明 Ubuntu 系统已经配置为使用 NTP，您可跳过此步骤。
     
     ```
-        # timedatectl status
+    # timedatectl status
     Local time: Mon 2017-06-12 03:01:22 PDT
     Universal time: Mon 2017-06-12 10:01:22 UTC
     RTC time: Mon 2017-06-12 10:01:22
@@ -97,49 +97,49 @@ lastupdated: "2018-04-19"
     1.	运行以下命令来更新包。 
 
         ```
-                apt-get update
+        apt-get update
         ```
         {: codeblock}
         
     2.	运行以下命令来安装 ntp 包。 
 
         ```
-                apt-get install ntp
+        apt-get install ntp
         ```
         {: codeblock}
         
     3.	运行以下命令来安装 ntpdate 包。 
     
         ```
-                apt-get install ntpdate
+        apt-get install ntpdate
         ```
         {: codeblock}
         
     4.	运行以下命令来停止服务。 
         
         ```
-                service ntp stop
+        service ntp stop
         ```
         {: codeblock}
         
     5.	运行以下命令来同步系统时钟。 
     
         ```
-                ntpdate -u 0.ubuntu.pool.ntp.org
+        ntpdate -u 0.ubuntu.pool.ntp.org
         ```
         {: codeblock}
         
         结果证实时间已调整，例如：
         
         ```
-        4 May 19:02:17 ntpdate[5732]: adjust time server 50.116.55.65 offset 0.000685 sec
+4 May 19:02:17 ntpdate[5732]: adjust time server 50.116.55.65 offset 0.000685 sec
         ```
         {: screen}
         
     6.	运行以下命令来重新启动 ntpd。 
     
         ```
-                service ntp start
+        service ntp start
         ```
         {: codeblock}
     
@@ -148,21 +148,21 @@ lastupdated: "2018-04-19"
     7.	运行以下命令来支持 ntpd 服务在崩溃或重新引导后自动启动。 
     
         ```
-                service ntp enable
+        service ntp enable
         ```
         {: codeblock}
         
         显示的结果是可用于管理 ntpd 服务的命令的列表，例如：
         
         ```
-                Usage: /etc/init.d/ntpd {start|stop|status|restart|try-restart|force-reload}
+        Usage: /etc/init.d/ntpd {start|stop|status|restart|try-restart|force-reload}
         ```
         {: screen}
 
 3. 为系统软件包管理器中的 {{site.data.keyword.loganalysisshort}} 服务添加存储库。运行以下命令：
 
     ```
-        wget -O - https://downloads.opvis.bluemix.net/client/IBM_Logmet_repo_install.sh | bash
+    wget -O - https://downloads.opvis.bluemix.net/client/IBM_Logmet_repo_install.sh | bash
     ```
     {: codeblock}
 
@@ -171,7 +171,7 @@ lastupdated: "2018-04-19"
     1. 运行以下命令来安装 mt-logstash-forwarder：
     
         ```
-                apt-get install mt-logstash-forwarder 
+        apt-get install mt-logstash-forwarder 
         ```
         {: codeblock}
         
@@ -180,7 +180,7 @@ lastupdated: "2018-04-19"
        编辑 `/etc/mt-logstash-forwarder/mt-lsf-config.sh` 文件。例如，可以使用 vi 编辑器：
                
        ```
-              vi /etc/mt-logstash-forwarder/mt-lsf-config.sh
+       vi /etc/mt-logstash-forwarder/mt-lsf-config.sh
        ```
        {: codeblock}
         
@@ -198,7 +198,7 @@ lastupdated: "2018-04-19"
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>目标 URL。要取得数据获取 URL 的列表，请参阅[数据获取 URL](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。例如，将此值设置为 **ingest.logging.ng.bluemix.net:9091**，以发送美国南部区域中的日志。</td>
+            <td>目标 URL。要取得数据获取 URL 的列表，请参阅[数据获取 URL](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。例如，将此值设置为 **ingest.logging.ng.bluemix.net:9091**，以将日志发送到美国南部区域。</td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>
@@ -217,7 +217,7 @@ lastupdated: "2018-04-19"
        例如，查看以下样本文件，以找到英国区域中标识为 *7d576e3b-170b-4fc2-a6c6-b7166fd57912* 的空间：
         
        ```
-              # more mt-lsf-config.sh 
+       # more mt-lsf-config.sh 
        LSF_INSTANCE_ID="myhelloapp"
        LSF_TARGET="ingest.logging.ng.bluemix.net:9091"
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
@@ -229,7 +229,7 @@ lastupdated: "2018-04-19"
     3. 启动 mt-logstash-forwarder。 
     
        ```
-              service mt-logstash-forwarder start
+       service mt-logstash-forwarder start
        ```
        {: codeblock}
                 
@@ -250,7 +250,7 @@ lastupdated: "2018-04-19"
     例如，在 Ubuntu 系统中，运行以下命令：
     
     ```
-        cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
+    cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
     ```
     {: codeblock}
         
@@ -261,7 +261,7 @@ lastupdated: "2018-04-19"
      重新启动 mt-logstash-forwarder 服务。运行以下命令：
     
     ```
-        service mt-logstash-forwarder restart
+    service mt-logstash-forwarder restart
     ```
     {: codeblock}
 
@@ -272,7 +272,7 @@ lastupdated: "2018-04-19"
 1.	复制 `/etc/mt-logstash-forwarder/conf.d/syslog.conf` 文件。 
 
     ```
-        cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
+    cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
     ```
     {: codeblock}
     

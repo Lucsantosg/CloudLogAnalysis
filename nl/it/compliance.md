@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-20"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,20 +18,20 @@ lastupdated: "2018-04-20"
 # Conformità
 {: #compliance}
 
-[ {{site.data.keyword.Bluemix}} fornisce una piattaforma cloud e i servizi creati con gli standard di sicurezza più rigorosi di IBM.](/docs/security/compliance.html#compliance). Il servizio {{site.data.keyword.loganalysislong}} è un servizio DevOps creato per {{site.data.keyword.Bluemix_notm}}.
+[ {{site.data.keyword.Bluemix}} fornisce una piattaforma cloud e i servizi creati con gli standard di sicurezza più rigorosi di IBM.](/docs/security/compliance.html#compliance). Il servizio {{site.data.keyword.loganalysislong}} è un servizio DevOps creato per {{site.data.keyword.Bluemix_notm}}. 
 {:shortdesc}
 
 
-## Normative sulla protezione dei dati generali (GDPR) 
+## Normative sulla protezione dei dati generali (GDPR)
 
-Le normative sulla protezione dei dati generali (GDPR) cercano di creare un quadro giuridico di protezione dei dati armonizzato nella UE e ha lo scopo di ridare ai cittadini il controllo dei propri dati personali, mentre impone regole rigorose a chi ospita e ‘elabora’ questi dati, ovunque nel mondo. Il Regolamento introduce anche regole inerenti la libera circolazione di dati personali all'interno e all'esterno dell'UE.  
+Le normative sulla protezione dei dati generali (GDPR) cercano di creare un quadro giuridico di protezione dei dati armonizzato nella UE e ha lo scopo di ridare ai cittadini il controllo dei propri dati personali, mentre impone regole rigorose a chi ospita e ‘elabora’ questi dati, ovunque nel mondo. Il Regolamento introduce anche regole inerenti la libera circolazione di dati personali all'interno e all'esterno dell'UE. 
 
 **Dichiarazione:** il servizio {{site.data.keyword.loganalysisshort}} archivia e visualizza i record di log dalle risorse cloud in esecuzione nel tuo account in {{site.data.keyword.Bluemix_notm}} e dai log che potresti inviare dall'esterno di {{site.data.keyword.Bluemix_notm}}. Le informazioni personali (PI) non devono essere incluse nelle voci di log archiviate in {{site.data.keyword.loganalysisshort}} poiché questi dati sono accessibili ad altri utenti nella tua azienda, nonché a {{site.data.keyword.IBM_notm}} per poter abilitare il supporto del servizio cloud.
 
 ### Regioni
 {: #regions}
 
-Il servizio {{site.data.keyword.loganalysisshort}} intende essere conforme a GDPR entro la scadenza del 25 maggio 2018 nelle regioni {{site.data.keyword.Bluemix_notm}} pubblico in cui è disponibile il servizio.
+Il servizio {{site.data.keyword.loganalysisshort}} è conforme al regolamento GDPR nelle regioni di {{site.data.keyword.Bluemix_notm}} pubblico in cui è disponibile il servizio.
 
 
 ### Conservazione di dati
@@ -56,18 +56,18 @@ Tieni conto delle seguenti informazioni:
 
 * I log archiviati nella Ricerca dei log vengono eliminati dopo 3 giorni.
 
-* I log archiviati nella Raccolta dei log vengono eliminati dopo alcuni giorni quando configuri una politica di conservazione o quando li elimini manualmente.  
+* I log archiviati nella Raccolta dei log vengono eliminati dopo alcuni giorni quando configuri una politica di conservazione o quando li elimini manualmente. 
 
     Puoi configurare una politica di conservazione log per definire il numero di giorni in cui desideri conservare i log nella raccolta di log. Per maggiori informazioni, consulta [Visualizzazione e configurazione della politica di conservazione dei log utilizzando il plugin {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
 
     Puoi utilizzare la [API Raccolta dei log](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} oppure la [CLI Raccolta dei log](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} per eliminare i log manualmente da Raccolta dei log. 
 
-    Puoi utilizzare la CLI per eliminare i log manualmente dalla Raccolta dei log. Per ulteriori informazioni, vedi [bx logging log-delete utilizzando il plugin {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+    Puoi utilizzare la CLI per eliminare i log manualmente dalla Raccolta dei log. Per ulteriori informazioni, vedi [ibmcloud logging log-delete utilizzando il plugin {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
 
 
 Se passi da un piano a pagamento a uno standard o lite, i log nella Raccolta dei log saranno eliminati in circa un giorno.
 
-In qualsiasi momento, puoi aprire un ticket di supporto e richiedere che tutti i tuoi dati siano eliminati dalla Ricerca dei log o dalla Raccolta dei log. Per informazioni su come aprire un ticket di supporto IBM, vedi [Come contattare il supporto](https://www.{DomainName}/docs/support/index.html#contacting-support).
+In qualsiasi momento, puoi aprire un ticket di supporto e richiedere che tutti i tuoi dati siano eliminati dalla Ricerca dei log o dalla Raccolta dei log. Per informazioni su come aprire un ticket di supporto IBM, vedi [Come contattare il supporto](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 
 

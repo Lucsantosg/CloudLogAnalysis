@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -37,7 +37,7 @@ In {{site.data.keyword.Bluemix_notm}}, i contenitori, le applicazioni CF in esec
 La seguente tabella elenca le differenti risorse cloud. Completa l'esercitazione di una risorsa per iniziare ad utilizzare il servizio {{site.data.keyword.loganalysisshort}}:
 
 <table>
-  <caption>Esercitazioni per iniziare ad utilizzare il servizio {{site.data.keyword.loganalysisshort}}  </caption>
+  <caption>Esercitazioni per iniziare ad utilizzare il servizio {{site.data.keyword.loganalysisshort}} </caption>
   <tr>
     <th>Risorsa</th>
     <th>Esercitazione</th>
@@ -53,7 +53,7 @@ La seguente tabella elenca le differenti risorse cloud. Completa l'esercitazione
   <tr>
     <td>Applicazioni CF</td>
     <td>[Analizza i log in Kibana per un'applicazione Cloud Foundry](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)</td>
-    <td>Pubblico </td>
+    <td>Pubblico</td>
     <td>![Visualizzazione di alto livello della registrazione delle applicazioni CF in {{site.data.keyword.Bluemix_notm}}](cfapps/images/cfapps_logs.png "Visualizzazione di alto livello della registrazione delle applicazioni CF in {{site.data.keyword.Bluemix_notm}}")</td>
   </tr>
 </table>
@@ -106,7 +106,7 @@ Per ulteriori informazioni vedi: [Concessione di autorizzazioni](/docs/services/
 
 Un utente deve accedere a Kibana nella regione cloud pubblica in cui sono disponibili i dati di log per visualizzarli e analizzarli. 
 
-Ad esempio, per avviare Kibana nella regione Stati Uniti Sud, apri un browser web e immetti il seguente URL: 
+Ad esempio, per avviare Kibana nella regione Stati Uniti Sud, apri un browser web e immetti il seguente URL:
 
 ```
 https://logging.ng.bluemix.net/ 

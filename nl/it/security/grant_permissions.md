@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -14,11 +14,13 @@ lastupdated: "2018-04-10"
 {:pre: .pre}
 
 
-# Concessione di autorizzazioni
+# Concessione di autorizzazioni per gestire i log e visualizzare i log dell'account
 {: #grant_permissions}
 
-In {{site.data.keyword.Bluemix}}, puoi assegnare uno o più ruoli agli utenti. Questi ruoli definiscono quali attività sono abilitate per tale utente per lavorare con il servizio {{site.data.keyword.loganalysisshort}}. 
+In {{site.data.keyword.Bluemix}}, puoi assegnare a un utente uno o più ruoli IAM. Questi ruoli definiscono quali attività sono abilitate per tale utente per lavorare con il servizio {{site.data.keyword.loganalysisshort}}.  
 {:shortdesc}
+
+Ad esempio, puoi concedere a un utente il ruolo **operatore** per consentirgli di gestire i log. Se vuoi che l'utente visualizzi solo i log dell'account, puoi concedergli il ruolo di **visualizzatore**. Per ulteriori informazioni, vedi [Ruoli IAM](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
 
 **Nota:** 
 
@@ -89,50 +91,50 @@ Completa la seguente procedura per concedere a un utente l'accesso per visualizz
 
     Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Controlla che l'utente sia un membro dell'account. Esegui il seguente comando per ottenere l'elenco degli utenti nell'account: 
+2. Controlla che l'utente sia un membro dell'account. Esegui il seguente comando per ottenere l'elenco degli utenti nell'account:
 
     ```
-	bx account users
+	ibmcloud account users
 	```
     {: codeblock}	
 
-	Viene visualizzato un elenco di utenti con i loro GUID.
+	Viene visualizzato un elenco di utenti con i relativi GUID.
 
 3. Se l'utente non è un membro dell'account, contatta il proprietario dell'account e richiedi un invito per tale utente nell'account. Per ulteriori informazioni, vedi [Invito di utenti](/docs/iam/iamuserinv.html#iamuserinv).
 
-    **Suggerimento:** il comando per invitare un utente in un account è il seguente: `bx iam account-user-invite USER_EMAIL`
+    **Suggerimento:** il comando per invitare un utente in un account è il seguente: `ibmcloud iam account-user-invite USER_EMAIL`
 		
 4. Assegna una politica all'utente. Esegui il seguente comando:
 
     ```
-    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
+    ibmcloud iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
 
 	dove
     * USER_NAME è l'ID {{site.data.keyword.Bluemix_notm}} dell'utente.
-	* ROLE è un ruolo IAM. I valori validi sono: *administrator*, *operator*, *editor* e *viewer*
+	* ROLE è un ruolo IAM. I valori validi sono: *amministratore*, *operatore*, *editor* e *visualizzatore*
 
 5. Verifica che la politica sia assegnata all'utente. Immetti il seguente comando per elencare tutte le politiche assegnate a un utente:
 
     ```
-    bx iam user-policies USER_NAME
+    ibmcloud iam user-policies USER_NAME
 	```
 	{: codeblock}
 
 
 
 
-## Concessione della autorizzazioni a un utente per visualizzare i log dello spazio utilizzando la IU {{site.data.keyword.Bluemix_notm}}
+## Concessione delle autorizzazioni a un utente per visualizzare i log dello spazio utilizzando la IU {{site.data.keyword.Bluemix_notm}}
 {: #grant_permissions_ui_space}
 
-Per concedere a un utente le autorizzazioni a visualizzare i log in uno spazio, devi assegnarli un ruolo Cloud Foundry che descrive le azioni che può eseguire con il servizio {{site.data.keyword.loganalysisshort}} nello spazio. 
+Per concedere a un utente le autorizzazioni per visualizzare i log in uno spazio, devi assegnare all'utente un ruolo Cloud Foundry che descriva le azioni che questo utente può eseguire con il servizio {{site.data.keyword.loganalysisshort}} nello spazio. 
 
 Completa la seguente procedura per concedere a un utente le autorizzazioni a lavorare con il servizio {{site.data.keyword.loganalysisshort}}:
 
 1. Accedi alla console {{site.data.keyword.Bluemix_notm}}.
 
-    Apri un browser web e avvia il dashboard {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Icona link esterno](../../../icons/launch-glyph.svg "Icona link esterno")](http://bluemix.net){:new_window}
+    Apri un browser web e avvia il dashboard {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Icona di link esterno](../../../icons/launch-glyph.svg "Icona di link esterno")](http://bluemix.net){:new_window}
 	
 	Dopo che hai eseguito l'accesso con il tuo ID utente e la tua password, viene aperta la IU {{site.data.keyword.Bluemix_notm}}.
 
@@ -150,7 +152,7 @@ Completa la seguente procedura per concedere a un utente le autorizzazioni a lav
 
 5. Scegli uno spazio. Quindi, dal menu delle azioni, seleziona **Modifica ruolo spazio**.
 
-6. Seleziona 1 o più ruoli spazio. I ruoli validi sono: *Gestore*, *Sviluppatore* e *Revisore*
+6. Seleziona 1 o più ruoli spazio. I ruoli validi sono: *Gestore*, *Sviluppatore * e *Revisore*
 	
 7. Fai clic su **Salva ruolo**.
 

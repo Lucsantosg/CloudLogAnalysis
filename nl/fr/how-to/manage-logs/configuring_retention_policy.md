@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -37,7 +37,7 @@ Effectuez les étapes suivantes pour désactiver une règle de conservation :
 2. Définissez la valeur **-1** pour désactiver la durée de conservation. Exécutez la commande suivante :
 
     ```
-    bx cf logging option -r -1
+    ibmcloud cf logging option -r -1
     ```
     {: codeblock}
     
@@ -46,7 +46,7 @@ Effectuez les étapes suivantes pour désactiver une règle de conservation :
 Par exemple, pour désactiver la durée de conservation d'un espace dont l'ID est *d35da1e3-b345-475f-8502-cfgh436902a3*, exécutez la commande suivante :
 
 ```
-bx cf logging option -r -1
+ibmcloud cf logging option -r -1
 ```
 {: codeblock}
 
@@ -75,7 +75,7 @@ Afin d'obtenir la durée de conservation définie pour un espace, procédez comm
 2. Obtenez la durée de conservation. Exécutez la commande suivante :
 
     ```
-    bx cf logging option
+    ibmcloud cf logging option
     ```
     {: codeblock}
 
@@ -103,7 +103,7 @@ Afin d'obtenir la durée de conservation définie pour chaque espace sur un comp
 2. Obtenez la durée de conservation de chaque espace du compte. Exécutez la commande suivante :
 
     ```
-    bx cf logging option -a
+    ibmcloud cf logging option -a
     ```
     {: codeblock}
 
@@ -133,7 +133,7 @@ Afin d'afficher la durée de conservation pour un compte, procédez comme suit :
 2. Définissez la durée de conservation. Exécutez la commande suivante :
 
     ```
-    bx cf logging option -r *Number_of_days* - a
+    ibmcloud cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
@@ -145,7 +145,7 @@ Afin d'afficher la durée de conservation pour un compte, procédez comme suit :
 Par exemple, pour conserver un type de journal spécifique dans votre compte pendant seulement 15 jours, exécutez la commande suivante :
 
 ```
-bx cf logging option -r 15 -a
+ibmcloud cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -174,7 +174,7 @@ Afin d'afficher la durée de conservation pour un espace, procédez comme suit :
 2. Définissez la durée de conservation. Exécutez la commande suivante :
 
     ```
-    bx cf logging option -r *Number_of_days*
+    ibmcloud cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
@@ -186,7 +186,7 @@ Afin d'afficher la durée de conservation pour un espace, procédez comme suit :
 Par exemple, pour conserver les journaux disponibles dans un espace pendant un an, exécutez la commande suivante :
 
 ```
-bx cf logging option -r 365
+ibmcloud cf logging option -r 365
 ```
 {: codeblock}
 

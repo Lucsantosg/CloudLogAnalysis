@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -55,7 +55,7 @@ lastupdated: "2018-03-15"
 
 1. [前提条件] {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
 
-   詳しくは、『[{{site.data.keyword.Bluemix_notm}} CLI のインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
+   詳しくは、[『{{site.data.keyword.Bluemix_notm}}CLI のインストール』](/docs/cli/index.html#overview)を参照してください。
    
    CLI がインストールされている場合は、次のステップに進みます。
     
@@ -63,30 +63,30 @@ lastupdated: "2018-03-15"
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 	
-3. `bx service create` コマンドを実行して、インスタンスをプロビジョンします。
+3. `ibmcloud service create` コマンドを実行して、インスタンスをプロビジョンします。
 
     ```
-	bx service create service_name service_plan service_instance_name
+	ibmcloud service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
-	各部分の説明:
+	説明
 	
-	* service_name はサービスの名前 (「ibmLogAnalysis」) です。
-	* service_plan はサービス・プラン名です。 プランのリストについては、[サービス・プラン](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans) を参照してください。
+	* service_name はサービスの名前 (**ibmLogAnalysis**) です。
+	* service_plan はサービス・プラン名です。 プランのリストについては、『[サービス・プラン](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)』を参照してください。
 	* service_instance_name は、作成する新規サービス・インスタンスに使用する名前です。
-	
+
 	例えば、ライト・プランで {{site.data.keyword.loganalysisshort}} サービスのインスタンスを作成するには、以下のコマンドを実行します。
 	
 	```
-	bx service create ibmLogAnalysis standard my_logging_svc
+	ibmcloud service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. サービスが正常に作成されたことを確認します。 次のコマンドを実行します。
 
     ```	
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	

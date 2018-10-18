@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with AI Text Handler 1.0.0 -->
+<ExtractedAITHs>
+<ExtractedAITH file="/cfapps/images/cfapps_logs.ai">
+<text></text>
+<text>ログ</text>
+<text>IBM Cloud - Public</text>
+<text>IBM Cloud Log Analysis</text>
+<text>Cloud Foundry アプリ</text>
+<text>IBM CLOUD - PUBLIC</text>
+<text>スペース・ドメイン</text>
+<text>組織</text>
+<text>Kibana</text>
+<text>スペース</text>
+</ExtractedAITH>
+<ExtractedAITH file="/cfapps/images/cf_apps_ov.ai">
+<text>組織</text>
+<text>
+高度な
+分析タスク 
+
+</text>
+<text>Kibana</text>
+<text>IBM CLOUD</text>
+<text></text>
+<text>IBM Cloud Log Analysis</text>
+<text>スペース</text>
+<text>ログ・レコード</text>
+<text></text>
+<text>CF アプリ</text>
+<text>IBM Cloud アカウント</text>
+</ExtractedAITH>
+<ExtractedAITH file="/cfapps/images/logging_cf_apps_ov.ai">
+<text>IBM CLOUD</text>
+<text>IBM Cloud Log Analysis</text>
+<text>着信
+データの
+処理</text>
+<text>Log Search</text>
+<text>Kibana</text>
+<text>IBM Cloud UI</text>
+<text>検索可能なログ・レコードの保管</text>
+<text>Cloud Foundry アプリ</text>
+<text>STDOUT、STDERR</text>
+<text>Loggregator</text>
+<text>ログ・レコード</text>
+<text>ログ・
+レコードの
+転送</text>
+<text>スペース</text>
+<text>組織</text>
+<text></text>
+<text>CLI</text>
+<text>API</text>
+<text>Log Collection</text>
+<text>データの送信、削除、ダウンロード
+</text>
+</ExtractedAITH>
+<ExtractedAITH file="/containers/images/containers_kube.ai">
+<text>IBM Cloud Container Service</text>
+<text>Kibana</text>
+<text>
+高度な
+分析タスク 
+
+</text>
+<text></text>
+<text>ログ・
+レコードの
+転送</text>
+<text>IBM CLOUD - PUBLIC</text>
+<text>クローラー</text>
+<text>Kubernetes クラスター</text>
+<text>ログ・レコード</text>
+<text>IBM Cloud Log Analysis</text>
+<text>アカウント</text>
+<text>スペース</text>
+</ExtractedAITH>
+<ExtractedAITH file="/containers/images/containers_kube_1.ai">
+<text>組織</text>
+<text>
+高度な
+分析タスク 
+
+</text>
+<text>Kibana</text>
+<text>IBM CLOUD</text>
+<text></text>
+<text>IBM Cloud Log Analysis</text>
+<text>スペース</text>
+<text>クローラー</text>
+<text>IBM Cloud Container Service</text>
+<text>ログ・
+レコードの
+転送</text>
+<text>ログ・レコード</text>
+<text>Kubernetes クラスター</text>
+</ExtractedAITH>
+<ExtractedAITH file="/containers/images/containers_kube_dedicated.ai">
+<text>IBM Cloud Container Service</text>
+<text>Kibana</text>
+<text>
+高度な
+分析タスク 
+
+</text>
+<text>アカウント・ドメイン</text>
+<text>IBM CLOUD - DEDICATED</text>
+<text>IBM CLOUD - PUBLIC</text>
+<text>ログ・レコード</text>
+<text></text>
+<text>クローラー</text>
+<text>IBM Cloud Log Analysis</text>
+<text>スペース</text>
+<text>ログ・
+レコードの
+転送</text>
+<text>Kubernetes クラスター</text>
+</ExtractedAITH>
+<ExtractedAITH file="/containers/images/containers_kube_logs.ai">
+<text></text>
+<text>Kibana</text>
+<text>IBM Cloud - Public</text>
+<text>スペース</text>
+<text>Kubernetes クラスター</text>
+<text>IBM CLOUD - PUBLIC</text>
+<text>IBM Cloud Log Analysis</text>
+<text>IBM Cloud Container Service</text>
+<text>ログ</text>
+</ExtractedAITH>
+<ExtractedAITH file="/images/loganalysis_F1.ai">
+<text>Log Analysis</text>
+<text>IBM Cloud</text>
+<text>IBM Cloud 外部のデータ・ソース</text>
+<text>$ _</text>
+<text>Cloud Foundry アプリ</text>
+<text>CLI</text>
+<text>API</text>
+<text>Log-collection
+ストレージ</text>
+<text>Log-search
+ストレージ</text>
+<text>Kibana</text>
+<text>サービス</text>
+<text>コンテナー</text>
+<text>仮想マシン</text>
+</ExtractedAITH>
+</ExtractedAITHs>

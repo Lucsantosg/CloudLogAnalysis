@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -55,7 +55,7 @@ Completa la seguente procedura per eseguire il provisioning di un'istanza del se
 
 1. [Prerequisito] Installa la CLI {{site.data.keyword.Bluemix_notm}}.
 
-   Per ulteriori informazioni, vedi [Installazione della CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Per ulteriori informazioni, vedi [Installazione della CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Se la CLI è installata, continua con il passo successivo.
     
@@ -63,30 +63,30 @@ Completa la seguente procedura per eseguire il provisioning di un'istanza del se
 
     Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Esegui il comando `bx service create` per eseguire il provisioning di un'istanza.
+3. Esegui il comando `ibmcloud service create` per eseguire il provisioning di un'istanza.
 
     ```
-	bx service create service_name service_plan service_instance_name
+	ibmcloud service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
 	Dove
 	
-	* nome_servizio è il nome del servizio, ossia **ibmLogAnalysis**.
-	* piano_di_servizio è il nome del piano di servizio. Per un elenco dei piani, vedi [Piani di servizio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
-	* nome_istanza_servizio è il nome che vuoi usare per la nuova istanza del servizio che crei.
+	* service_name è il nome del servizio, ossia **ibmLogAnalysis**.
+	* service_plan è il nome del piano di servizio. Per un elenco dei piani, vedi [Piani di servizio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+	* service_instance_name è il nome che vuoi usare per la nuova istanza del servizio che crei.
 
 	Ad esempio, per creare un'istanza del servizio {{site.data.keyword.loganalysisshort}} con il piano Lite, esegui questo comando:
 	
 	```
-	bx service create ibmLogAnalysis standard my_logging_svc
+	ibmcloud service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. Verifica che il servizio venga creato correttamente. Esegui il seguente comando:
 
     ```	
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	

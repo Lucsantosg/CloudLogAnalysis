@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -26,28 +26,28 @@ Kibana에서 *시각화* 페이지를 사용하여 로그 데이터를 분석하
 
 여러 가지 시각화 유형이 다음 표에 나열되어 있습니다.
 
-| 시각화의 유형 | 설명 |
+|시각화의 유형 |설명 |
 |-----------------------|-------------|
-| 영역 차트 | 양적 데이터를 그래프로 표시합니다. 집계된 데이터의 세트를 두 개 이상을 비교하는 데 사용합니다. |
-| 데이터 표 | 구성된 집계에 대해 원시 데이터를 표 형식으로 표시합니다. |
-| 선형 차트 | 시간 기반 데이터를 표시합니다. 시간 기반으로 집계된 데이터의 세트를 두 개 이상을 비교하는 데 사용합니다. |
-| 마크다운 위젯 | 텍스트 정보를 표시하는 데 사용합니다. |
-| 메트릭 | 히트 수 또는 숫자 필드의 정확한 평균을 표시하는 데 사용합니다. |
-| 원형 차트 | 필드의 다른 값을 표시하는 데 사용합니다. | 
-| 세로 막대형 차트 | 시간 기반인 데이터와 시간 기반이 아닌 데이터를 표시합니다. 데이터를 그룹화하는 데 사용합니다. |
+|영역 차트 |양적 데이터를 그래프로 표시합니다. 집계된 데이터의 세트를 두 개 이상을 비교하는 데 사용합니다. |
+|데이터 표 |구성된 집계에 대해 원시 데이터를 표 형식으로 표시합니다. |
+|선형 차트 |시간 기반 데이터를 표시합니다. 시간 기반으로 집계된 데이터의 세트를 두 개 이상을 비교하는 데 사용합니다. |
+|마크다운 위젯 |텍스트 정보를 표시하는 데 사용합니다. |
+|메트릭 |히트 수 또는 숫자 필드의 정확한 평균을 표시하는 데 사용합니다. |
+|원형 차트 |필드의 다른 값을 표시하는 데 사용합니다. | 
+|세로 막대형 차트 |시간 기반인 데이터와 시간 기반이 아닌 데이터를 표시합니다. 데이터를 그룹화하는 데 사용합니다. |
 {: caption="표 1. 시각화 유형" caption-side="top"}
 
 시각화 페이지에서 다음 태스크를 수행할 수 있습니다.
 
-| 태스크 | 자세한 정보 |
+|태스크 |자세한 정보 |
 |------|------------------|
-| [새 시각화 작성](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create) | *검색* 페이지에 저장하는 검색이나 *시각화* 페이지에 정의하는 새 조회에서 시각화를 작성할 수 있습니다. |
-| [시각화 저장](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_save) | 나중에 다시 사용할 수 있도록 시각화를 저장할 수 있습니다. |
-| [시각화 로드](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_reload) | 해당 데이터를 업데이트, 수정 또는 분석하기 위해 시각화를 업로드할 수 있습니다. |
-| [시각화 삭제](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_delete) | 필요하지 않은 시각화는 삭제합니다. |
-| [시각화 내보내기](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_export) | 시각화를 JSON 파일로 내보낼 수 있습니다.  |
-| [시각화 가져오기](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_import) | 시각화를 JSON 파일로 가져올 수 있습니다.  |
-| [시각화 공유](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_share) | HTML 소스 또는 Kibana 대시보드를 통해 시각화를 공유할 수 있습니다.  |
+|[새 시각화 작성](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create) |*검색* 페이지에 저장하는 검색이나 *시각화* 페이지에 정의하는 새 조회에서 시각화를 작성할 수 있습니다. |
+|[시각화 저장](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_save) |나중에 다시 사용할 수 있도록 시각화를 저장할 수 있습니다. |
+|[시각화 로드](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_reload) |해당 데이터를 업데이트, 수정 또는 분석하기 위해 시각화를 업로드할 수 있습니다. |
+|[시각화 삭제](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_delete) |필요하지 않은 시각화는 삭제합니다. |
+|[시각화 내보내기](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_export) |시각화를 JSON 파일로 내보낼 수 있습니다.  |
+|[시각화 가져오기](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_import) |시각화를 JSON 파일로 가져올 수 있습니다.  |
+|[시각화 공유](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_share) |HTML 소스 또는 Kibana 대시보드를 통해 시각화를 공유할 수 있습니다.  |
 {: caption="표 2. 시각화로 작업하는 태스크" caption-side="top"}
 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -38,13 +38,13 @@ La seguente tabella elenca diverse attività che puoi eseguire nella pagina Dash
 
 | Attività | Ulteriori informazioni |
 |------|------------------|
-| [Aggiungi una visualizzazione](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#add_visualization) | Puoi aggiungere una ricerca o una visualizzazione esistente a un dashboard.|
-| [Crea un nuovo dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#new) | Puoi creare più dashboard. Ogni dashboard può essere progettato per includere diverse ricerche, visualizzazioni e una sottorete di dati di log differente.  |
-| [Elimina un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) | Eliminare i dashboard che non sono richiesti. |
-| [Esporta un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) | Puoi esportare un dashboard come un file JSON. |
-| [Importa un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) | Puoi importare un dashboard come un file JSON. |
-| [Carica un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) | Puoi caricare un dashboard per aggiornarne i dati, modificarlo o analizzare i dati. |
-| [Salva un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | Puoi salvare un dashboard per un riutilizzo successivo. |
+| [Aggiungere una visualizzazione](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#add_visualization) | Puoi aggiungere una ricerca o una visualizzazione esistente a un dashboard.|
+| [Creare un nuovo dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#new) | Puoi creare più dashboard. Ogni dashboard può essere progettato per includere diverse ricerche, visualizzazioni e una sottorete di dati di log differente.  |
+| [Eliminare un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) | Eliminare i dashboard che non sono richiesti. |
+| [Esportare un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) | Puoi esportare un dashboard come un file JSON. |
+| [Importare un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) | Puoi importare un dashboard come un file JSON. |
+| [Caricare un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) | Puoi caricare un dashboard per aggiornarne i dati, modificarlo o analizzare i dati. |
+| [Salvare un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | Puoi salvare un dashboard per un riutilizzo successivo. |
 {: caption="Tabella 2. Attività per lavorare con i dashboard" caption-side="top"}
 
 Per ulteriori informazioni sulle applicazioni Kibana, vedi la [ ![Icona link esterno](../../../icons/launch-glyph.svg "Icona link esterno")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.

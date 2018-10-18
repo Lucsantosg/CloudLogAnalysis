@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -227,7 +227,7 @@ Per inviare i log nel servizio {{site.data.keyword.loganalysisshort}}, ti serve 
 
 Per inviare i log a un dominio dello spazio, scegli uno dei seguenti metodi:
 
-* [Ottenimento del token di registrazione per inviare i log a uno spazio utilizzando il comando {{site.data.keyword.Bluemix_notm}} bx service ](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
+* [Ottenimento del token di registrazione per inviare i log a uno spazio utilizzando il comando {{site.data.keyword.Bluemix_notm}} ibmcloud service ](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
 * [Ottenimento del token di registrazione per inviare i log a uno spazio utilizzando la CLI Analisi dei log](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [Ottenimento del token di registrazione per inviare i log a uno spazio utilizzando la API Analisi dei log](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
 

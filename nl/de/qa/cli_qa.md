@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -33,7 +33,7 @@ Im Folgenden finden Sie Antworten auf häufig gestellte Fragen zur Verwendung de
 ühren Sie den folgenden Befehl aus, um sich bei einer Region in {{site.data.keyword.Bluemix_notm}} anzumelden, in der der {{site.data.keyword.loganalysisshort}}-Service verfügbar ist:
 
 ```
-bx login -a Endpunkt
+ibmcloud login -a Endpunkt
 ```
 {: codeblock}
 	
@@ -66,7 +66,7 @@ Dabei ist *Endpunkt* die URL für die Anmeldung bei {{site.data.keyword.Bluemix_
 Führen Sie zum Beispiel den folgenden Befehl aus, um sich an der Region 'USA (Süden)' anzumelden:
 	
 ```
-bx login -a https://api.ng.bluemix.net
+ibmcloud login -a https://api.ng.bluemix.net
 ```
 {: codeblock}
 
@@ -75,7 +75,7 @@ Gehen Sie gemäß den Anweisungen vor.
 Sie können auch eine Organisation und einen Bereich festlegen. Führen Sie den folgenden Befehl aus:
 
 ```
-bx target -o Organisationsname -s Bereichsname
+ibmcloud target -o Organisationsname -s Bereichsname
 ```
 {: codeblock}
 
@@ -89,7 +89,7 @@ Dabei gilt:
 ## Wie installiere ich die IBM Cloud-Befehlszeilenschnittstelle?
 {: #install_bmx_cli}
 
-Siehe [{{site.data.keyword.Bluemix}}-Befehlszeilenschnittstelle herunterladen und installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+Siehe [{{site.data.keyword.Bluemix}}-Befehlszeilenschnittstelle herunterladen und installieren](/docs/cli/index.html#overview).
 
 
 
@@ -102,17 +102,17 @@ Führen Sie die folgenden Schritte aus, um die GUID eines Kontos abzurufen:
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Führen Sie den Befehl `bx iam accounts` aus, um die GUID eines Kontos abzurufen.
+2. Führen Sie den Befehl `ibmcloud iam accounts` aus, um die GUID eines Kontos abzurufen.
 
     ```
-	bx iam accounts
+	ibmcloud iam accounts
 	```
 	{: codeblock} 
 	
 	Um beispielsweise alle Konten mit den entsprechenden GUIDs für Benutzer xxx@yyy.com abzurufen, führen Sie den folgenden Befehl aus:
 	
 	```
-	bx iam accounts
+	ibmcloud iam accounts
 	Retrieving all accounts of xxx@yyy.com...
     OK
     Account GUID                       Name                               Type    State    Owner User ID   
@@ -127,18 +127,18 @@ Führen Sie die folgenden Schritte aus, um die GUID eines Kontos abzurufen:
 
 Führen Sie die folgenden Schritte aus, um die GUID einer Organisation abzurufen:
 	
-1. Melden Sie sich an einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Führen Sie den Befehl 'bx iam org' aus, um die GUID der Organisation abzurufen. 
+2. Führen Sie den Befehl `ibmcloud iam org` aus, um die GUID der Organisation abzurufen. 
 
     ```
-    bx iam org NAME --guid
+    ibmcloud iam org NAME --guid
     ```
     {: codeblock}
 	
-    Dabei ist NAME der Name der {{site.data.keyword.Bluemix_notm}}-Organisation.
+    Dabei ist NAME der Name einer {{site.data.keyword.Bluemix_notm}}-Organisation.        
 		
 		
 		
@@ -147,14 +147,14 @@ Führen Sie die folgenden Schritte aus, um die GUID einer Organisation abzurufen
 	
 Führen Sie die folgenden Schritte aus, um die GUID eines Bereichs abzurufen:
 	
-1. Melden Sie sich an einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Führen Sie den Befehl 'bx iam space' aus, um die GUID des Bereichs abzurufen. 
+2. Führen Sie den Befehl `ibmcloud iam space` aus, um die GUID des Bereichs abzurufen. 
 
     ```
-    bx iam space NAME --guid
+    ibmcloud iam space NAME --guid
     ```
     {: codeblock}
 	
@@ -163,7 +163,7 @@ Führen Sie die folgenden Schritte aus, um die GUID eines Bereichs abzurufen:
     Um beispielsweise die GUID für den Bereich *dev* abzurufen, führen Sie den folgenden Befehl aus:
 	
     ```
-    bx iam space dev --guid
+    ibmcloud iam space dev --guid
     e03afff1-3456-4af6-1234-59treg1b0abc
     ```
     {: screen}

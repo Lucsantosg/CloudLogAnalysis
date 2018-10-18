@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -41,10 +41,10 @@ Puoi eseguire ognuna delle seguenti attività per personalizzare la tabella nell
 
 | Attività | Descrizione | 
 |------|-------------|
-| [Aggiungere una colonna del campo](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | Aggiungere i campi per visualizzare i dati specifici necessari per l'analisi invece del messaggio completo. |
-| [Riorganizzare una colonna del campo](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | Spostare la posizione di un campo nella tabella nella posizione che desideri. |
+| [Aggiungere una colonna di campo](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | Aggiungere i campi per visualizzare i dati specifici necessari per l'analisi invece del messaggio completo. |
+| [Riorganizzare una colonna di campo](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | Spostare la posizione di un campo nella tabella nella posizione che desideri. |
 | [Visualizzare una voce](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | Espandere una voce nella tabella per visualizzare i dettagli della voce analizzata per il campo o come JSON. |
-| [Rimuovere una colonna del campo](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | Rimuovere un campo quando non è più necessario nella vista delle analisi. |
+| [Rimuovere una colonna di campo](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | Rimuovere un campo quando non è più necessario nella vista delle analisi. |
 | [Ordinare le voci per il valore di un campo indicizzato](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | Riordinare le voci per analisi più semplici. |
 | [Aggiornare automaticamente i dati](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | Aggiornare i dati visualizzati nella tabella con le ultime voci. Per impostazione predefinita, l'aggiornamento è **DISATTIVO**. |
 {: caption="Tabella 2. Attività per personalizzare una tabella" caption-side="top"}
@@ -74,9 +74,9 @@ Puoi eseguire ognuna delle seguenti attività con le ricerche che definisci nell
 | Attività | Descrizione |
 |------|-------------|
 | Salvare una ricerca | Salvare la ricerca per un riutilizzo successivo.  |
-| Eliminare una ricerca| Eliminare una ricerca quando non è più necessaria. |
+| Eliminare una ricerca | Eliminare una ricerca quando non è più necessaria. |
 | Esportare una ricerca | Esportare una ricerca per condividerla.  |
-| Ricaricare una ricerca | Caricare una ricerca esistente per analizzare nuovamente una serie di dati. |
+| Ricaricare una ricerca  | Caricare una ricerca esistente per analizzare nuovamente una serie di dati. |
 | Aggiornare i dati di una ricerca | Configurare l'aggiornamento automatico dei dati visualizzati tramite la ricerca.  |
 | Importare una ricerca | Importare una ricerca.  |
 {: caption="Tabella 3. Attività per lavorare con le ricerche" caption-side="top"}
@@ -92,16 +92,16 @@ Per maggiori informazioni, vedi [Visualizzazione delle statistiche dei dati del 
 **Nota:** i dati visualizzati nella tabella e nell'istogramma sono statici. Per continuare a visualizzare le ultime voci, devi impostare un intervallo di aggiornamento. 
 
 
-## Aggiunta di colonne del campo alla tabella
+## Aggiunta di colonne di campo alla tabella
 {: #kibana_discover_add_fields_to_table}
 
 La tabella disponibile per analizzare i dati nella pagina Rileva, include i seguenti campi per impostazione predefinita:
 * **time:** questo campo indica quando una voce è stata acquisita e registrata in {{site.data.keyword.Bluemix_notm}}.
 * **_source:** questo campo include i dati originali della voce.
 
-Puoi aggiungere una colonna del campo alla tabella scegliendo una delle seguenti opzioni:
+Puoi aggiungere una colonna di campo alla tabella scegliendo una delle seguenti opzioni:
 
-* Aggiungi una colonna del campo dall'Elenco campi disponibile nella pagina.
+* Aggiungi una colonna di campo dall'Elenco campi disponibile nella pagina.
 
     1. Nella pagina Rileva, identifica il campo nella sezione `Campi selezionati`.
     2. Passa con il mouse su un campo nell'Elenco campi.
@@ -110,7 +110,7 @@ Puoi aggiungere una colonna del campo alla tabella scegliendo una delle seguenti
     
     3. Per aggiungere un campo, fai clic su **Aggiungi**.
     
- * Aggiungi un campo dalla vista tabella di una voce espansa.
+ * Aggiungi una colonna di campo dalla vista tabella di una voce espansa.
 
     1. Espandi una voce nella tabella.
     2. Nella vista Tabella, identifica il campo che desideri aggiungere.
@@ -120,7 +120,7 @@ Puoi aggiungere una colonna del campo alla tabella scegliendo una delle seguenti
     3. Fai clic sull'icona **Attiva/disattiva colonna nella tabella** ![Attiva/disattiva colonna nella tabella](images/k4_toggle_field_icon.jpg).
     
 
-**Nota:** quando aggiungi una colonna del campo alla tabella per la prima volta, la colonna del campo *_source* visualizzata nella tabella è nascosta. Il campo *_source* mostra il valore di ogni campo per ogni voce di log. Per visualizzare altri valori del campo per una voce di log nella tabella dopo aver aggiunto una colonna alla tabella, vedi la scheda vista tabella o la scheda JSON di ogni voce.
+**Nota:** quando aggiungi una colonna di campo alla tabella per la prima volta, la colonna di campo *_source* visualizzata nella tabella è nascosta. Il campo *_source* mostra il valore di ogni campo per ogni voce di log. Per visualizzare altri valori del campo per una voce di log nella tabella dopo aver aggiunto una colonna alla tabella, vedi la scheda vista tabella o la scheda JSON di ogni voce.
 
 Ad esempio, se aggiungi il campo *application_id* alla tabella, la tabella cambia per presentarsi così:
 
@@ -157,7 +157,7 @@ Considera le seguenti informazioni per identificare i dati disponibili nella tab
 
     Il modello di indice definisce la query di ricerca applicata per impostazione predefinita per mostrare le voci nelle tue pagine Kibana. Per impostazione predefinita, il modello di indice è preconfigurato e impostato su tutti i dati disponibili in uno spazio. Ad esempio,
 
-    * Se avvii Kibana dalla IU {{site.data.keyword.Bluemix_notm}}, dalla sezione *Log* delle pagine della IU di una risorsa specifica come un contenitore o un'applicazione CF (Cloud Foundry), il modello di indice applicato include tutte le voci disponibili nello spazio.
+    * Se avvii Kibana dall'IU {{site.data.keyword.Bluemix_notm}}, dalla sezione *Log* delle pagine dell'IU di una risorsa specifica come un contenitore o un'applicazione CF (Cloud Foundry), il modello di indice applicato include tutte le voci disponibili nello spazio.
     
     * Se avvii Kibana da un browser, il modello dell'indice applicato include tutte le voci disponibili nello spazio visualizzato da Kibana in cui sei collegato.
         
@@ -210,10 +210,10 @@ Per ordinare le voci in una tabella per i valori di un campo indicizzato, comple
 **Nota:** quando ordini per un campo di tempo, per impostazione predefinita le voci sono ordinate in ordine cronologico inverso. Le voci più recenti vengono visualizzate per prime.
 
 
-## Riorganizzazione delle colonne del campo nella tabella
+## Riorganizzazione delle colonne di campo nella tabella
 {: #kibana_discover_rearrange_fields_in_table}
 
-Puoi riorganizzare le colonne del campo nella tabella. Passa con il mouse sull'intestazione della colonna che desideri spostare e fai clic sul pulsante **Sposta colonna a sinistra** o **Sposta colonna a destra**.
+Puoi riorganizzare le colonne di campo nella tabella. Passa con il mouse sull'intestazione della colonna che desideri spostare e fai clic sul pulsante **Sposta colonna a sinistra** o **Sposta colonna a destra**.
 <br>
 ![Sposta campo nella tabella](images/k4_add_field_filter_new_table_look.jpg "Sposta campo nella tabella")
 
@@ -234,7 +234,7 @@ Completa la seguente procedura per ricaricare l'elenco dei campi visualizzati in
 L'elenco dei campi viene aggiornato.
 
 
-## Rimozione delle colonne del campo dalla tabella
+## Rimozione delle colonne di campo dalla tabella
 {: #kibana_discover_remove_fields_from_table}
 
 Per rimuovere i campi dalla tabella, completa la seguente procedura:

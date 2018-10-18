@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -52,9 +52,7 @@ Questa esercitazione illustra in modo dettagliato i passi necessari per rendere 
 
 3. Installare le CLI per gestire il {{site.data.keyword.containershort}} e {{site.data.keyword.loganalysisshort}} nel tuo sistema Ubuntu.
 
-    * Installa la CLI {{site.data.keyword.Bluemix_notm}}. Per ulteriori informazioni, vedi [Installazione della CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
-    
-    * Installa la CLI {{site.data.keyword.containershort}} per creare e gestire i tuoi cluster Kubernetes in {{site.data.keyword.containershort}} e per distribuire le applicazioni inserite nel contenitore al tuo cluster. Per ulteriori informazioni, vedi [Installa il plugin CS](/docs/containers/cs_cli_install.html#cs_cli_install_steps).
+    * Installa la CLI {{site.data.keyword.Bluemix_notm}}. Installa la CLI {{site.data.keyword.containershort}} per creare e gestire i tuoi cluster Kubernetes in {{site.data.keyword.containershort}} e per distribuire le applicazioni inserite nel contenitore al tuo cluster. Per ulteriori informazioni, vedi [Installazione della CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
     
     * Installa la CLI {{site.data.keyword.loganalysisshort}}. Per ulteriori informazioni, vedi [Configurazione della CLI Analisi dei log (plugin IBM Cloud)](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
     
@@ -87,14 +85,14 @@ Completa la seguente procedura:
 	Inizializza il plug-in del servizio {{site.data.keyword.containershort}}.
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
     Imposta il contesto di terminale sul tuo cluster.
     
 	```
-	bx cs cluster-config MyCluster
+	ibmcloud cs cluster-config MyCluster
 	```
 	{: codeblock}
 
@@ -121,7 +119,7 @@ Quando viene distribuita l'applicazione, i log vengono raccolti automaticamente 
 Prima di definire le configurazioni di registrazione, controlla le tue definizioni di configurazione di registrazione correnti nel cluster. Esegui il seguente comando:
 
 ```
-$ bx cs logging-config-get ClusterName
+$ ibmcloud cs logging-config-get ClusterName
 ```
 {: codeblock}
 
@@ -130,11 +128,11 @@ dove *ClusterName* è il nome del tuo cluster.
 Ad esempio, le configurazioni di registrazione definite per il cluster *mycluster* sono le seguenti: 
 
 ```
-$ bx cs logging-config-get mycluster
+$ ibmcloud cs logging-config-get mycluster
 Retrieving cluster mycluster logging configurations...
 OK
-Id                                     Source       Namespace   Host                                Port   Org            Space   Protocol   Paths
-13ded2c0-83f5-4cc5-8de7-1e34e1287f34   worker       -           ingest.logging.ng.bluemix.net       9091   Demo_Org       dev     ibm        /var/log/syslog,/var/log/auth.log
+Id                                     Source       Namespace   Host                                Port   Org            Space   Protocol   Paths   
+13ded2c0-83f5-4cc5-8de7-1e34e1287f34   worker       -           ingest.logging.ng.bluemix.net       9091   Demo_Org       dev     ibm        /var/log/syslog,/var/log/auth.log   
 ae249c04-a3a9-4c29-a890-22d8da7bd1b2   container    *           ingest.logging.ng.bluemix.net       9091   Demo_Org.      dev     ibm        -
 31739fc1-42e2-4b66-ac57-6a32091c257a   ingress      -           ingest.logging.ng.bluemix.net       9091   Demo_Org.      dev     ibm        /var/log/alb/ids/*.log,/var/log/alb/ids/*.err,/var/log/alb/customerlogs/*.log,/var/log/alb/customerlogs/*.err
 6b8cfe89-4959-448d-898b-c3b0584eca71   kubernetes   -           ingest-eu-fra.logging.bluemix.net   9091   Demo_Org.      dev     ibm        /var/log/kubelet.log,/var/log/kube-proxy.log   
@@ -166,7 +164,7 @@ Completa la seguente procedura per inviare i log stdout e stderr a un dominio di
 2. Crea una configurazione di registrazione del cluster. Esegui questo comando per inviare i file di log *stdout* e *stderr* al servizio {{site.data.keyword.loganalysisshort}}:
 
     ```
-    bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -181,7 +179,7 @@ Completa la seguente procedura per inviare i log stdout e stderr a un dominio di
 Ad esempio, per creare una configurazione di registrazione che inoltra i log stdout e stderr allo spazio dev nella regione Stati Uniti Sud, esegui questo comando:
 
 ```
-bx cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -208,7 +206,7 @@ Completa la seguente procedura per inviare i log worker a un dominio di spazio, 
 2. Crea una configurazione di registrazione del cluster. Esegui questo comando per inviare i file di log */var/log/syslog* e */var/log/auth.log* al servizio {{site.data.keyword.loganalysisshort}}:
 
     ```
-    bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -223,7 +221,7 @@ Completa la seguente procedura per inviare i log worker a un dominio di spazio, 
 Ad esempio, per creare una configurazione di registrazione che inoltra i log di lavoro al dominio dello spazio nella regione Stati Uniti Sud, esegui questo comando:
 
 ```
-bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -280,7 +278,7 @@ Completa la seguente procedura:
 1. Identifica l'utente nell'account che è il proprietario della chiave {{site.data.keyword.containershort}}. Da un terminale, esegui questo comando:
 
     ```
-    bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -302,12 +300,12 @@ Completa la seguente procedura:
 	
     Seleziona l'ID dell'utente e verifica che l'utente abbia la politica IAM configurata. 
 
-    Se l'utente non dispone della politica IAM tge, vedi [Assegna una politica IAM a un utente tramite la IU IBM Cloud](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
+    Se l'utente non dispone della politica IAM, vedi [Assegna una politica IAM a un utente tramite la IU IBM Cloud](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
 
 4. Aggiorna la configurazione della registrazione. Esegui il seguente comando:
     
     ```
-    bx cs logging-config-refresh ClusterName
+    ibmcloud cs logging-config-refresh ClusterName
     ```
     {: codeblock}
         
@@ -482,10 +480,10 @@ Per maggiori informazioni, vedi [Filtro dei log in Kibana](/docs/services/CloudL
 
 Comandi CLI:
 
-* [bx cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
-* [bx cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
-* [bx cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
-* [bx cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
-* [bx cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
-* [bx cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
+* [ibmcloud cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
+* [ibmcloud cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
+* [ibmcloud cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
+* [ibmcloud cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
+* [ibmcloud cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
+* [ibmcloud cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
 

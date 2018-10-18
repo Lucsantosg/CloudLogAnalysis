@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ Puoi avere 1 o più cluster Kubernetes in un account. I log vengono raccolti aut
 * I log vengono raccolti non appena il pod viene distribuito. 
 * Le informazioni che un processo del contenitore inserisce in stdout (output standard) e stderr (errore standard), vengono raccolte automaticamente dal {{site.data.keyword.containershort}}.
 
-Per avere a disposizione tali log per l'analisi nel servizio {{site.data.keyword.loganalysisshort}}, devi configurare il tuo cluster per inoltrare i log in {{site.data.keyword.loganalysisshort}}. Puoi inoltrare i log al dominio dell'account {{site.data.keyword.loganalysisshort}} oppure a un dominio dello spazio nel tuo account. Per impostazione predefinita: 
+Per avere a disposizione tali log per l'analisi nel servizio {{site.data.keyword.loganalysisshort}}, devi configurare il tuo cluster per inoltrare i log in {{site.data.keyword.loganalysisshort}}. Puoi inoltrare i log al dominio dell'account {{site.data.keyword.loganalysisshort}} oppure a un dominio dello spazio nel tuo account. Per impostazione predefinita:
 
 * Per i cluster disponibili nella regione Stati Uniti Sud, invia i log al servizio {{site.data.keyword.loganalysisshort}} disponibile nella regione Stati Uniti Sud.
 * Per i cluster disponibili nella regione Stati Uniti Est, invia i log al servizio {{site.data.keyword.loganalysisshort}} disponibile nella regione Stati Uniti Est.
@@ -41,7 +41,7 @@ Tieni conto delle seguenti informazioni quando decidi se inoltrare i log a un do
 * Quando invii i log al dominio dell'account, la quota di ricerca è 500MB al giorno e non puoi memorizzare i log in Raccolta dei log per l'archiviazione a lungo termine.
 * Quando invii i log a un dominio dello spazio, puoi scegliere un piano di servizio {{site.data.keyword.loganalysisshort}} che definisce la quota di ricerca al giorno e puoi memorizzare i log in Raccolta dei log per l'archiviazione a lungo termine.
 
-**Nota:** per impostazione predefinita, l'invio dei log da un cluster al servizio {{site.data.keyword.loganalysisshort}} non è abilitato automaticamente. Per abilitare la registrazione, devi creare una o più configurazioni della registrazione nel cluster per inoltrare automaticamente i log nel servizio {{site.data.keyword.loganalysisshort}}. Puoi abilitare la registrazione tramite la riga di comando, utilizzando il comando `bx cs logging-config-create` o con il dashboard del cluster disponibile nella IU {{site.data.keyword.Bluemix_notm}}. Per ulteriori informazioni, vedi [Abilitazione della raccolta automatica dei log di cluster](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
+**Nota:** per impostazione predefinita, l'invio dei log da un cluster al servizio {{site.data.keyword.loganalysisshort}} non è abilitato automaticamente. Per abilitare la registrazione, devi creare una o più configurazioni della registrazione nel cluster per inoltrare automaticamente i log nel servizio {{site.data.keyword.loganalysisshort}}. Puoi abilitare la registrazione tramite la riga di comando, utilizzando il comando `ibmcloud cs logging-config-create`, o tramite il dashboard del cluster disponibile nella IU {{site.data.keyword.Bluemix_notm}}. Per ulteriori informazioni, vedi [Abilitazione della raccolta automatica dei log di cluster](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
 
 Quando lavori con un cluster Kubernetes, gli spazi dei nomi *ibm-system* e *kube-system* sono riservati. Non creare, eliminare, modificare o cambiare le autorizzazioni delle risorse disponibili in tali spazi dei nomi. L'uso dei log per questi spazi dei nomi è riservato a {{site.data.keyword.IBM_notm}}.
 
@@ -57,9 +57,9 @@ Quando configuri il tuo cluster per inoltrare i log di cluster a {{site.data.key
 
 **Nota:** per i cluster forniti a **{{site.data.keyword.Bluemix_notm}} Dedicato**, non è possibile configurare il tuo cluster per inoltrare i log agli spazi Cloud Foundry disponibili nel tuo account dedicato.
 
-Per analizzare i dati di log in Kibana di un cluster che inoltra i log a un dominio dello spazio, tieni conto delle seguenti informazioni: 
+Per analizzare i dati di log in Kibana di un cluster che inoltra i log a un dominio dello spazio, tieni conto delle seguenti informazioni:
 
-* Devi avviare Kibana nella regione pubblica in cui sono disponibili l'organizzazione e lo spazio che raccolgono i log di cluster. 
+* Devi avviare Kibana nella regione pubblica in cui sono disponibili l'organizzazione e lo spazio che raccolgono i log di cluster.
 * Per aumentare la tua quota di ricerca Kibana e archiviare i log nella Raccolta dei log per l'archiviazione a lungo termine, devi eseguire il provisioning del servizio {{site.data.keyword.loganalysisshort}} nello spazio in cui i log stanno venendo inoltrati con un piano che soddisfa i tuoi requisiti. 
 * Il tuo ID utente deve disporre delle autorizzazioni per visualizzare i log. Per visualizzare i log nel dominio dello spazio, un utente ha bisogno di un ruolo CF. **Revisore** è il ruolo più basso che può essere concesso per visualizzare i log. Per ulteriori informazioni, vedi [Ruoli di cui un utente ha bisogno per visualizzare i log](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
@@ -72,15 +72,15 @@ La seguente figura mostra una vista di alto livello di registrazione in Pubblico
 
    
 
-## Inoltro dei log al dominio dell'account 
+## Inoltro dei log al dominio dell'account
 {: #acc_public}
 
-Quando configuri il tuo cluster per inoltrare i log di cluster al dominio dell'account, tieni conto delle seguenti informazioni: 
+Quando configuri il tuo cluster per inoltrare i log di cluster al dominio dell'account, tieni conto delle seguenti informazioni:
 
 * **Cluster con provisioning a {{site.data.keyword.Bluemix_notm}} Pubblico**: i log vengono inoltrati al dominio di account nella stessa regione {{site.data.keyword.Bluemix_notm}} Pubblico in cui è in esecuzione il cluster.
 * **Cluster con provisioning a {{site.data.keyword.Bluemix_notm}} Dedicato**: i log vengono inoltrati al dominio di account nella stessa regione {{site.data.keyword.Bluemix_notm}} Pubblico in cui il cluster dedicato è in esecuzione.
 
-Per analizzare i dati di log in Kibana di un cluster che inoltra i log al dominio dell'account, tieni conto delle seguenti informazioni: 
+Per analizzare i dati di log in Kibana di un cluster che inoltra i log al dominio dell'account, tieni conto delle seguenti informazioni:
 
 * Devi avviare Kibana nella regione pubblica in cui il cluster sta inviando i log al servizio {{site.data.keyword.loganalysisshort}}.
 
@@ -106,7 +106,7 @@ La seguente figura mostra una vista di alto livello di registrazione in Dedicato
 ## Configurazione di un cluster per inoltrare i log a {{site.data.keyword.loganalysisshort}}
 {: #config_forward_logs}
 
-Puoi scegliere quali log di cluster inoltrare al servizio {{site.data.keyword.loganalysisshort}}.  
+Puoi scegliere quali log di cluster inoltrare al servizio {{site.data.keyword.loganalysisshort}}. 
 
 Per ulteriori informazioni su come configurare il tuo cluster per inoltrare i file di log al servizio {{site.data.keyword.loganalysisshort}}, vedi la sezione [Abilitazione della raccolta automatica dei log di cluster](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
 
@@ -159,7 +159,7 @@ Devi aprire la porta TCP 443 e la porta TCP 9091 da ciascun lavoro al servizio {
 ## Inoltro dei log dell'applicazione personalizzati
 {: #forward_app_logs}
 
-Per abilitare l'inoltro dei log dell'applicazione personalizzati in un cluster al servizio {{site.data.keyword.loganalysisshort}}, devi definire una configurazione della registrazione del cluster con **Origine log** impostata su **application**. Puoi definire questa configurazione utilizzando il comando `bx cs logging-config-create` o tramite la IU del cluster.
+Per abilitare l'inoltro dei log dell'applicazione personalizzati in un cluster al servizio {{site.data.keyword.loganalysisshort}}, devi definire una configurazione della registrazione del cluster con **Origine log** impostata su **application**. Puoi definire questa configurazione utilizzando il comando `ibmcloud cs logging-config-create` o tramite la IU del cluster.
 
 Quando configuri il cluster per inoltrare i log personalizzati, puoi specificare un elenco di contenitori in esecuzione nel tuo cluster, da cui vuoi inoltrare i log personalizzati e i percorsi all'interno di questi contenitori in cui sono ubicati i log del file.
 
@@ -169,7 +169,7 @@ Quando configuri il cluster per inoltrare i log personalizzati, puoi specificare
 
 * Facoltativamente, puoi impostare il parametro **app-containers** per specificare l'elenco dei contenitori da cui raccogliere e inoltrare i log al servizio {{site.data.keyword.loganalysisshort}}.
 
-    Per impostare questo parametro, definisci un elenco separato da virgole dei contenitori. 
+    Per impostare questo parametro, definisci un elenco separato da virgole dei contenitori.
 
 **Suggerimento:** puoi definire più configurazioni di registrazione del cluster con **Origine log** impostato su **application** in un cluster. Se i contenitori in un cluster hanno percorsi diversi in cui sono ospitati i log, considera di definire una configurazione di registrazione del cluster per ogni gruppo di contenitori i cui log sono ubicati nello stesso percorso. 
 

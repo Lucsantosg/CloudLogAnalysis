@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2018-04-19"
 # 配置日誌保留原則
 {: #configuring_retention_policy}
 
-依預設，會停用保留原則，並無限期保留日誌。使用指令 **bx logging option-update** 可變更保留原則。
+依預設，會停用保留原則，並無限期保留日誌。使用指令 **ibmcloud logging option-update** 可變更保留原則。
 {:shortdesc}
 
-您可以使用 **bx logging option-show** 指令來檢視保留原則，而此保留原則定義將日誌保留在「日誌收集」中的天數上限。 
+您可以使用 **ibmcloud logging option-show** 指令來檢視保留原則，而此保留原則定義將日誌保留在「日誌收集」中的天數上限。 
 
 當您設定保留原則時，在保留期間到期之後，會自動刪除日誌。
 
@@ -42,8 +42,8 @@ lastupdated: "2018-04-19"
 3. 將保留期間設為 **-1**，以停用保留期間。執行下列指令：
 
     ```
-        bx logging option-update -r account -i AccountID -e RETENTION_VALUE
-    ```
+    ibmcloud logging option-update -r account -i AccountID -e RETENTION_VALUE
+	```
     {: codeblock}
 	
 	RETENTION_VALUE 是定義天數的數值數字。
@@ -53,7 +53,7 @@ lastupdated: "2018-04-19"
 例如，若要停用 ID 為 *12345677fgh436902a3* 的帳戶的保留期間，請執行下列指令：
 
 ```
-bx logging option-update -r account -i 12345677fgh436902a3 -e -1
+ibmcloud logging option-update -r account -i 12345677fgh436902a3 -e -1
 ```
 {: codeblock}
 
@@ -72,7 +72,7 @@ bx logging option-update -r account -i 12345677fgh436902a3 -e -1
 2. 將保留期間設為 **-1**，以停用保留期間。執行下列指令：
 
     ```
-        bx logging option-show -e RETENTION_VALUE
+    ibmcloud logging option-show -e RETENTION_VALUE
 	```
     {: codeblock}
 	
@@ -83,7 +83,7 @@ bx logging option-update -r account -i 12345677fgh436902a3 -e -1
 例如，若要停用 ID 為 *d35da1e3-b345-475f-8502-cfgh436902a3* 的空間的保留期間，請執行下列指令：
 
 ```
-bx logging option-update -e -1
+ibmcloud logging option-update -e -1
 ```
 {: codeblock}
 
@@ -104,17 +104,15 @@ bx logging option-update -e -1
 3. 取得保留期間。執行下列指令：
 
     ```
-        bx logging option-show -r account -i AccountID
+    ibmcloud logging option-show -r account -i AccountID
     ```
     {: codeblock}
 
     輸出如下：
 
     ```
-        bx logging option-show -r account -i kjskdsjfksjdflkjdsfbbd06461b066
+    ibmcloud logging option-show -r account -i kjskdsjfksjdflkjdsfbbd06461b066
     Showing log options of resource: kjskdsjfksjdflkjdsfbbd06461b066 ...
-
-    
 
     Resource ID                              Retention   
     a:kjskdsjfksjdflkjdsfbbd06461b066       30   
@@ -133,17 +131,15 @@ bx logging option-update -e -1
 2. 取得保留期間。執行下列指令：
 
     ```
-        bx logging option-show
+    ibmcloud logging option-show
     ```
     {: codeblock}
 
     輸出如下：
 
     ```
-        bx logging option-show
+    ibmcloud logging option-show
     Showing log options of resource: 12345678-1234-2edr-a9de-378620d6fab5 ...
-
-    
 
     SpaceId                                Retention   
     12345678-1234-2edr-a9de-378620d6fab5   30   
@@ -168,7 +164,7 @@ bx logging option-update -e -1
 3. 設定保留期間。執行下列指令：
 
     ```
-        bx logging option-update -r account -i AccountID -e RETENTION_VALUE
+    ibmcloud logging option-update -r account -i AccountID -e RETENTION_VALUE
     ```
     {: codeblock}
     
@@ -180,7 +176,7 @@ bx logging option-update -e -1
 例如，若要將帳戶中的任何日誌類型僅保留 15 天，請執行下列指令：
 
 ```
-bx logging option-update -r account -i AccountID -e 15
+ibmcloud logging option-update -r account -i AccountID -e 15
 ```
 {: codeblock}
 
@@ -198,7 +194,7 @@ bx logging option-update -r account -i AccountID -e 15
 2. 設定保留期間。執行下列指令：
 
     ```
-        bx logging option-update -e RETENTION_VALUE
+    ibmcloud logging option-update -e RETENTION_VALUE
     ```
     {: codeblock}
     
@@ -210,7 +206,7 @@ bx logging option-update -r account -i AccountID -e 15
 例如，若要將空間中可用的日誌保留一年，請執行下列指令：
 
 ```
-bx logging option-update -e 365
+ibmcloud logging option-update -e 365
 ```
 {: codeblock}
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ Para instalar a CLI do {{site.data.keyword.loganalysisshort}}, conclua as etapas
 
 1. Instale a CLI do {{site.data.keyword.Bluemix_notm}}.
 
-   Para obter mais informações, veja [Instalando a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obter mais informações, veja [Instalando a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
 
 2. Instale o plug-in CF do {{site.data.keyword.loganalysisshort}}.
 
@@ -41,7 +41,7 @@ Para instalar a CLI do {{site.data.keyword.loganalysisshort}}, conclua as etapas
     Por exemplo, verifique a versão do plug-in. Execute o comando a seguir:
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -95,7 +95,7 @@ Conclua as etapas a seguir para instalar o plug-in CF da Coleção de logs no Li
         Por exemplo, para tornar o arquivo `logging-cli-linux64` executável, execute o comando a seguir:
         
         ```
-        bx cf install-plugin -f logging-cli-linux64
+        ibmcloud cf install-plugin -f logging-cli-linux64
         ```
         {: codeblock}
 
@@ -124,7 +124,7 @@ Conclua as etapas a seguir para instalar o plug-in CF da Coleção de logs no Li
     Por exemplo, verifique a versão do plug-in. Execute o comando a seguir:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging -- version
     ```
     {: codeblock}
     
@@ -149,7 +149,7 @@ Conclua as etapas a seguir para instalar o plug-in do CF Log Analysis no Windows
 2. Execute o comando **cf install-plugin** para instalar o plug-in Coleção de logs no Windows. 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
@@ -158,7 +158,7 @@ Conclua as etapas a seguir para instalar o plug-in do CF Log Analysis no Windows
     Por exemplo, para instalar o plug-in *logging-cli-win64_v1.0.1.exe*, execute o comando a seguir de uma janela do terminal:
 	
 	```
-	bx cf install-plugin logging-cli-win64_v1.0.1.exe
+	ibmcloud cf install-plugin logging-cli-win64_v1.0.1.exe
 	```
 	{: codeblock}
 	
@@ -169,14 +169,14 @@ Conclua as etapas a seguir para instalar o plug-in do CF Log Analysis no Windows
     Por exemplo, verifique a versão do plug-in. Execute o comando a seguir:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging -- version
     ```
     {: codeblock}
     
     A saída é semelhante ao seguinte:
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -194,7 +194,7 @@ Conclua as etapas a seguir para instalar o plug-in do CF da Coleção de logs no
 2. Execute o comando **cf install-plugin** para install instalar o plug-in da Coleção de logs no Mac OS X. 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
@@ -203,7 +203,7 @@ Conclua as etapas a seguir para instalar o plug-in do CF da Coleção de logs no
     Por exemplo, para instalar o plug-in *logging-cli-darwin_v1.0.1*, execute o comando a seguir em um terminal:
 	
 	```
-	bx cf install-plugin logging-cli-darwin_v1.0.1
+	ibmcloud cf install-plugin logging-cli-darwin_v1.0.1
 	```
 	{: codeblock}
 	
@@ -214,14 +214,14 @@ Conclua as etapas a seguir para instalar o plug-in do CF da Coleção de logs no
     Por exemplo, verifique a versão do plug-in. Execute o comando a seguir:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging -- version
     ```
     {: codeblock}
     
     A saída é semelhante ao seguinte:
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -239,7 +239,7 @@ Conclua as etapas a seguir para desinstalar a CLI do serviço {{site.data.keywor
     Por exemplo, verifique a versão do plug-in. Execute o comando a seguir:
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -259,7 +259,7 @@ Conclua as etapas a seguir para desinstalar a CLI do serviço {{site.data.keywor
     Execute o comando a seguir:
         
     ```
-    bx cf uninstall-plugin IBM-Logging
+    ibmcloud cf uninstall-plugin IBM-Logging
     ```
     {: codeblock}
   
@@ -276,7 +276,7 @@ Para obter informações gerais sobre a CLI e quais comandos são suportados, co
 2. Liste informações sobre os comandos suportados e a CLI. Execute o comando a seguir:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
     
@@ -294,14 +294,14 @@ Para obter ajuda sobre como usar um comando, conclua as etapas a seguir:
 2. Obtenha a lista de comandos suportados e identifique aquele que você precisa. Execute o comando:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. Obter ajuda sobre o comando. Execute o comando a seguir:
 
     ```
-    bx cf logging help *Command*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
@@ -321,14 +321,14 @@ Um comando pode ter subcomandos. Para obter ajuda sobre subcomandos, conclua as 
 2. Obtenha a lista de comandos suportados e identifique aquele que você precisa. Execute o comando:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. Obtenha ajuda sobre o comando e identifique os subcomandos suportados. Execute o comando a seguir:
 
     ```
-    bx cf logging help *Command*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
@@ -337,7 +337,7 @@ Um comando pode ter subcomandos. Para obter ajuda sobre subcomandos, conclua as 
 4. Obtenha ajuda sobre o comando e identifique os subcomandos suportados. Execute o comando a seguir:
 
     ```
-    bx cf logging *Command* help *Subcommand*
+    ibmcloud cf logging *Command* help *Subcommand*
     ```
     {: codeblock}
     

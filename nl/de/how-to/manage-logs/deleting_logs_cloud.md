@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-19"
 # Protokolle löschen
 {: #deleting_logs}
 
-Mit dem Befehl [bx logging log-delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) können Sie Protokolle aus 'Log Collection' löschen. 
+Mit dem Befehl [ibmcloud logging log-delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) können Sie Protokolle aus 'Log Collection' löschen.
 {:shortdesc}
 
 * Sie können Protokolle für einen bestimmten Zeitraum löschen.
@@ -37,14 +37,14 @@ Führen Sie die folgenden Schritte aus, um alle Protokolle zu löschen, die in e
 2. Führen Sie den folgenden Befehl aus, um die in 'Log Collection' verfügbaren Protokolle anzuzeigen.
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     Beispiel:
     
     ```
-    $ bx logging log-show
+    $ ibmcloud logging log-show
     Showing log status of resource: 12345678-abcd-4193-aere-378620d6fab5 ...
 
     Date         Size       Count   Searchable          Types   
@@ -57,43 +57,43 @@ Führen Sie die folgenden Schritte aus, um alle Protokolle zu löschen, die in e
 3. Löschen Sie die Protokolle, die für einen bestimmten Tag gespeichert sind.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate
+	ibmcloud logging log-delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
 	Dabei gilt:
 	
 	* *-s* legt das Startdatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT, z. B. 2006-01-02.
-    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT
+    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT	
     	
 	Führen Sie beispielsweise den folgenden Befehl aus, um die Protokolle für den 25. Mai 2017 zu löschen:
 	
 	```
-	bx logging log-delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
 	
-## Protokolle nach Protokolltyp für einen bestimmten Zeitraum löschen
+## Protokolle nach Protokolltyp für einen bestimmten Zeitraum löschen 
 {: #log_type}
 
 Führen Sie die folgenden Schritte aus, um Protokolle nach Protokolltyp zu löschen, die in einer Bereichsdomäne für einen bestimmten Zeitraum gespeichert sind:
 
-1. Melden Sie sich an einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Führen Sie den folgenden Befehl aus, um die in 'Log Collection' verfügbaren Protokolle anzuzeigen.
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     Beispiel:
     
     ```
-    $ bx logging log-show
+    $ ibmcloud logging log-show
     Showing log status of resource: 12345678-1234-2edr-a9de-378620d6fab5 ...
 
     Date         Size       Count   Searchable          Types   
@@ -106,49 +106,49 @@ Führen Sie die folgenden Schritte aus, um Protokolle nach Protokolltyp zu lösc
 3. Löschen Sie die Protokolle, die für einen bestimmten Tag gespeichert sind.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate -t LogType
+	ibmcloud logging log-delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
 	Dabei gilt:
 	
 	* *-s* legt das Startdatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT, z. B. 2006-01-02.
-    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT
-	* *-t* legt den Protokolltyp fest.
+    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT	
+	* Mit *-t* wird der Protokolltyp festgelegt.
     	
 	Führen Sie beispielsweise den folgenden Befehl aus, um die Protokolle des Typs 'linux_syslog' für den 25. Mai 2017 zu löschen:
 	
 	```
-	bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
 		
 	
-## Kontoprotokolle nach Protokolltyp für einen bestimmten Zeitraum löschen
+## Kontoprotokolle nach Protokolltyp für einen bestimmten Zeitraum löschen 
 {: #time_range_acc}
 
 Führen Sie die folgenden Schritte aus:
 
-1. Melden Sie sich an einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
 2. Rufen Sie die Konto-ID ab.
 
-    Weitere Informationen finden Sie unter [Wie rufe ich die GUID von einem Konto ab?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).
+    Weitere Informationen finden Sie unter [Wie rufe ich die GUID eines Kontos ab?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).
     
 3. Führen Sie den folgenden Befehl aus, um die in 'Log Collection' verfügbaren Protokolle auf der Kontoebene anzuzeigen.
 
     ```
-    bx logging log-show  -r account -i AccountID
+    ibmcloud logging log-show  -r account -i AccountID
     ```
     {: codeblock}
     
     Beispiel:
     
     ```
-    $ bx logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
+    $ ibmcloud logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
 	Showing log status of resource: 123456789123456789567c9c8de6dece ...
 
     Date         Size       Count   Searchable          Types   
@@ -163,20 +163,20 @@ Führen Sie die folgenden Schritte aus:
 4. Löschen Sie die Protokolle, die für einen bestimmten Tag gespeichert sind.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
+	ibmcloud logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
 	```
 	{: codeblock}
 	
 	Dabei gilt:
 	
 	* *-s* legt das Startdatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT, z. B. 2006-01-02.
-    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT
-	* *-t* legt den Protokolltyp fest.
+    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT	
+	* Mit *-t* wird der Protokolltyp festgelegt.
     	
 	Führen Sie beispielsweise den folgenden Befehl aus, um die Protokolle des Typs 'linux_syslog' für den 25. Mai 2017 zu löschen, die in 'Log Collection' auf der Kontoebene gespeichert sind:
 	
 	```
-	bx logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -r account -i 123456789123456789567c9c8de6dece
+	ibmcloud logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -r account -i 123456789123456789567c9c8de6dece
 	```
 	{: screen}
 	

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -21,8 +21,8 @@ lastupdated: "2018-04-10"
 No {{site.data.keyword.Bluemix}}, é possível visualizar, filtrar e analisar logs por meio da interface da linha de comandos. 
 {:shortdesc}
 
-Para analisar logs do aplicativo Cloud Foundry (CF), use o comando a seguir: `bx cf logs`
-Para obter mais informações, veja [cf logs](/docs/cli/reference/cfcommands/index.html#cf_logs).
+Para analisar os logs do aplicativo Cloud Foundry (CF), use o comando a seguir: `ibmcloud cf logs`
+Para obter mais informações, veja [cf logs](/docs/cli/reference/ibmcloud/cf_index.html#cf_logs).
 
 
 ## Analisando logs do app CF na CLI
@@ -47,7 +47,7 @@ Para ver todos os logs disponíveis para um app Cloud Foundry, conclua as etapas
 
 2. Na linha de comandos, execute o comando a seguir para exibir todos os logs:
 
-   <pre class="pre screen"><code> bx cf logs <var class="keyword varname">appname</var></code></pre>
+   <pre class="pre screen"><code>  ibmcloud cf logs  <var class="keyword varname"> appname </var> </code></pre>
    
    
 ### Visualizando as entradas de log mais recentes para um app Cloud Foundry
@@ -59,7 +59,7 @@ Para ver os logs mais recentes que estão disponíveis para um app Cloud Foundry
 
 2. Na linha de comandos, execute o comando a seguir para exibir todos os logs:
 
-     <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent</code></pre>
+     <pre class="pre screen"><code> ibmcloud cf logs  <var class="keyword varname"> appname </var>  -- recente </code></pre>
 
 <div class="note tip"><span class="tiptitle">Dica:</span> ao executar o comando <span class="keyword cmdname">cf push</span> ou <span class="keyword cmdname">cf
 start</span> em uma janela de linha de comandos, é possível inserir <samp class="ph codeph">cf
@@ -76,7 +76,7 @@ Para visualizar uma parte dos logs que estão disponíveis para um app Cloud Fou
 
 2. Na linha de comandos, execute o comando a seguir para exibir todos os logs:
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
     
     Para obter mais informações sobre a opção **cut**, insira **cut --help**.
 
@@ -90,12 +90,12 @@ Para exibir entradas de log que contenham determinadas palavras-chave para um ap
 
 2. Na linha de comandos, execute o comando a seguir para exibir todos os logs:
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
     
 
 Por exemplo, para exibir entradas de log que contenham a palavra-chave **APP**, é possível usar o comando a seguir:
 
-<pre class="pre screen"><code>bx cf logs appname --recent | grep '\[App'</code></pre>
+<pre class="pre screen"><code>ibmcloud cf logs appname --recent | grep '\[App'</code></pre>
 
 Para obter mais informações sobre a opção **grep**, digite **grep --help**.
 
@@ -123,10 +123,8 @@ app/.buildpack-diagnostics/buildpack.log`
 Esse arquivo de log registra mensagens depois das principais etapas da
 tarefa de preparação. É possível usar esse log para solucionar problemas de preparação.
 
-Para visualizar esse log, insira o comando a seguir: `bx cf files appname logs/staging_task.log`
+Para visualizar esse log, insira o comando a seguir: `ibmcloud cf files appname logs/staging_task.log`
 
-
-**Nota:** para obter informações sobre como ativar a criação de log do aplicativo, consulte [Depurando erros de tempo de execução](/docs/debug/index.html#debugging-runtime-errors).
 
 
 

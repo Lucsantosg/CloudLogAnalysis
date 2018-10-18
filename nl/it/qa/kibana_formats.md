@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -44,7 +44,7 @@ Puoi configurare Kibana in modo che visualizzi nella pagina *Ricerca* i seguenti
 | org_id | L'ID univoco della tua organizzazione {{site.data.keyword.Bluemix_notm}} |
 | org_name | Il nome dell'organizzazione {{site.data.keyword.Bluemix_notm}} in cui viene preparata la tua applicazione. |
 | origin | Il componente in cui l'evento è stato creato. |
-| source_id | Il componente che produce i log. <br> Il seguente elenco descrive i log di ogni componente: <br> * **API**: le risposte registrate per le chiamate API che richiedono una modifica allo stato della tua applicazione. <br> * **APP**: le risposte registrate dalla tua applicazione. <br> * **CELL**: le risposte registrate dalla cella Diego che indicano quando un'applicazione viene avviata, interrotta o arrestata in modo anomalo <br> * **LGR**: le risposte registrate dal loggregator che indicano problemi con il processo di registrazione. <br> * **RTR**: le risposte registrate dal Router quando istrada le richieste HTTP alla tua applicazione. <br> * **SSH**: le risposte registrate dalla cella Diego quando un utente accede a un contenitore applicazioni utilizzando il comando `cf ssh`. <br> * **STG**: le risposte registrate dalla cella Diego o dal DEA (Droplet Execution Agent) quando la tua applicazione viene preparata o ripreparata |
+| source_id | Il componente che produce i log. <br> Il seguente elenco descrive i log di ogni componente: <br> * **API**: le risposte registrate per le chiamate API che richiedono una modifica allo stato della tua applicazione. <br> * **APP**: le risposte registrate dalla tua applicazione. <br> * **CELL**: le risposte registrate dalla cella Diego che indicano quando un'applicazione viene avviata, interrotta o arrestata in modo anomalo <br> * **LGR**: le risposte registrate dal loggregator che indicano problemi con il processo di registrazione. <br> * **RTR**: le risposte registrate dal Router quando istrada le richieste HTTP alla tua applicazione. <br> * **SSH**: le risposte registrate dalla cella Diego quando un utente accede a un contenitore applicazioni utilizzando il comando `cf ssh`. <br> * **STG**: le risposte registrate dalla cella Diego o dal DEA (Droplet Execution Agent) quando la tua applicazione viene preparata o ripreparata. |
 | space_name | Il nome dello spazio {{site.data.keyword.Bluemix_notm}} in cui viene preparata la tua applicazione. |
 | timestamp | L'ora dell'evento registrato. La data e ora è definita fino al millisecondo. |
 {: caption="Tabella 1. Campi per le applicazioni CF" caption-side="top"}

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-03-09"
 このチュートリアルを使用して、{{site.data.keyword.Bluemix}} で {{site.data.keyword.loganalysislong}} サービスを使用した作業を開始する方法を学習します。 
 {:shortdesc}
 
-デフォルトでは、{{site.data.keyword.Bluemix_notm}} は、選択されたサービスに対して、統合されたロギング機能を提供します。ログを処理するときに、収集および保存の機能を {{site.data.keyword.loganalysisshort}} サービスを使用して拡張できます。
+デフォルトでは、{{site.data.keyword.Bluemix_notm}} は、選択されたサービスに対して、統合されたロギング機能を提供します。 ログを処理するときに、収集および保存の機能を {{site.data.keyword.loganalysisshort}} サービスを使用して拡張できます。
 
 ## 始める前に
 {: #prereqs}
@@ -34,10 +34,10 @@ lastupdated: "2018-03-09"
 
 {{site.data.keyword.Bluemix_notm}} では、CF アプリケーション、{{site.data.keyword.containershort}} で実行されているコンテナー、および選択されたサービスは、自動的にログ・データを収集し、それを {{site.data.keyword.loganalysisshort}} サービスに転送します。
 
-以下の表に、各種クラウド・リソースを示します。{{site.data.keyword.loganalysisshort}} サービスの入門として、いずれかのリソースのチュートリアルを実行してください。
+以下の表に、各種クラウド・リソースを示します。 {{site.data.keyword.loganalysisshort}} サービスの入門として、いずれかのリソースのチュートリアルを実行してください。
 
 <table>
-  <caption>{{site.data.keyword.loganalysisshort}} サービス入門チュートリアル</caption>
+  <caption>{{site.data.keyword.loganalysisshort}} サービス入門チュートリアル </caption>
   <tr>
     <th>リソース</th>
     <th>チュートリアル</th>
@@ -121,7 +121,7 @@ https://logging.ng.bluemix.net/
 ## 次のステップ 
 {: #next_steps}
 
-ログ・データを表示および分析するために Kibana をカスタマイズします。詳しくは、『[ログの表示と分析](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)』を参照してください。
+ログ・データを表示および分析するために Kibana をカスタマイズします。 詳しくは、『[ログの表示と分析](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)』を参照してください。
     
 
 

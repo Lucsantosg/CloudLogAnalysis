@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-03-09"
 使用本教程可了解如何开始使用 {{site.data.keyword.Bluemix}} 中的 {{site.data.keyword.loganalysislong}} 服务。
 {:shortdesc}
 
-缺省情况下，{{site.data.keyword.Bluemix_notm}} 为所选服务提供集成的日志记录功能。使用日志时，您可以通过 {{site.data.keyword.loganalysisshort}} 服务来扩展收集和保留功能。
+缺省情况下，{{site.data.keyword.Bluemix_notm}} 会为所选服务提供集成的日志记录功能。使用日志时，可以通过 {{site.data.keyword.loganalysisshort}} 服务来扩展收集和保留功能。
 
 ## 开始之前
 {: #prereqs}
@@ -32,9 +32,9 @@ lastupdated: "2018-03-09"
 ## 步骤 1：选择要查看其日志的云资源
 {: #step1}
 
-在 {{site.data.keyword.Bluemix_notm}} 中，CF 应用程序、在 {{site.data.keyword.containershort}} 上运行的容器以及所选服务会自动收集日志数据，然后将其转发到 {{site.data.keyword.loganalysisshort}} 服务。
+在 {{site.data.keyword.Bluemix_notm}} 中，CF 应用程序、{{site.data.keyword.containershort}} 上运行的容器以及所选服务会自动收集日志数据，然后将这些数据转发到 {{site.data.keyword.loganalysisshort}} 服务。
 
-下表列出了不同的云资源。请完成相关资源的教程，以开始使用 {{site.data.keyword.loganalysisshort}} 服务：
+下表列出了不同的云资源。要开始使用 {{site.data.keyword.loganalysisshort}} 服务，请完成相关资源的教程：
 
 <table>
   <caption>用于开始使用 {{site.data.keyword.loganalysisshort}} 服务的教程</caption>
@@ -47,13 +47,13 @@ lastupdated: "2018-03-09"
   <tr>
     <td>在 {{site.data.keyword.containershort}} 上运行的容器</td>
     <td>[在 Kibana 中分析 Kubernetes 集群中部署的应用程序的日志](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs)</td>
-    <td>公共</br>专用</td>
+    <td>Public </br>Dedicated</td>
     <td>![在 Kubernetes 集群中部署的容器的高级别组件概览图](containers/images/containers_kube_logs.png "在 Kubernetes 集群中部署的容器的高级别组件概览图")</td>
   </tr>
   <tr>
     <td>CF 应用程序</td>
     <td>[在 Kibana 中分析 Cloud Foundry 应用程序的日志](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)</td>
-    <td>公共</td>
+    <td>Public</td>
     <td>![{{site.data.keyword.Bluemix_notm}} 中 CF 应用程序日志记录的高级别视图](cfapps/images/cfapps_logs.png "{{site.data.keyword.Bluemix_notm}} 中 CF 应用程序日志记录的高级别视图")</td>
   </tr>
 </table>
@@ -61,7 +61,7 @@ lastupdated: "2018-03-09"
 
 
 
-## 步骤 2：为用户设置许可权以查看日志
+## 步骤 2：为用户设置日志查看许可权
 {: #step2}
 
 要控制允许用户执行的 {{site.data.keyword.loganalysisshort}} 操作，您可以向用户分配角色和策略。 
@@ -104,9 +104,9 @@ lastupdated: "2018-03-09"
 有关更多信息，请参阅[授予许可权](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)。
 
 
-用户必须在日志数据可用的云公共区域中访问 Kibana，以查看和分析日志数据。 
+用户必须在日志数据所在的云 Public 区域中访问 Kibana，才能查看和分析日志数据。 
 
-例如，要在美国南部区域中启动 Kibana，请打开 Web 浏览器并输入以下 URL：
+例如，要在美国南部区域启动 Kibana，请打开 Web 浏览器，然后输入以下 URL：
 
 ```
 https://logging.ng.bluemix.net/

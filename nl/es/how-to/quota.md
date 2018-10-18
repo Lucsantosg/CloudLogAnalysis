@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,46 +31,46 @@ Siga estos pasos:
     Por ejemplo, para iniciar sesión en la región EE.UU. Sur, ejecute este mandato:
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Ejecute el mandato de la cli `bx logging quota-usage-show`.  
+2. Ejecute el mandato de la cli `ibmcloud logging quota-usage-show`. 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
     ```
     {: codeblock}
 
     donde 
 
     * Los valores válidos para RESOURCE_TYPE son los siguientes: space, account
-    * RESOURCE_ID es el GUID de la cuenta o del espacio cuya cuota de uso desea obtener. 
+    * RESOURCE_ID es el GUID de la cuenta o del espacio cuya cuota de uso desea obtener.
 
 
 Por ejemplo, para mostrar el uso de la cuota de una cuenta, ejecute el mandato siguiente:
 
 ```
- bx logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
+ ibmcloud logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
 Showing quota usage for resource: 475693845023932019c6567c9c8de6dece ...
 OK
 
 Daily Allotmant   Current Usage
-524288000         0
+524288000         0   
 ```
 {: screen}
 
 Para mostrar la cuota de uso de un espacio, ejecute el siguiente mandato:
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
 Daily Allotmant   Current Usage
-524288000         6774014
+524288000         6774014   
 ```
 {: screen}
 
@@ -86,28 +86,28 @@ Siga estos pasos:
     Por ejemplo, para iniciar sesión en la región EE.UU. Sur, ejecute este mandato:
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Ejecute el mandato de la cli `bx logging quota-usage-show` con el parámetro `-s`. 
+2. Ejecute el mandato de la cli `ibmcloud logging quota-usage-show` con el parámetro `-s`. 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID] [-s,--history]
     ```
     {: codeblock}
 
     donde 
 
     * Los valores válidos para RESOURCE_TYPE son los siguientes: space, account
-    * RESOURCE_ID es el GUID de la cuenta o del espacio cuya cuota de uso desea obtener. 
+    * RESOURCE_ID es el GUID de la cuenta o del espacio cuya cuota de uso desea obtener.
 
 Por ejemplo,
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -120,7 +120,7 @@ Date         Allotmant   Usage
 2018.03.03   524288000   75045462
 2018.03.07   524288000   17386278
 2018.03.02   524288000   104316444
-2018.03.04   524288000   73125223
+2018.03.04   524288000   73125223   
 ```
 {: screen}
 
@@ -138,7 +138,7 @@ Siga estos pasos:
 2. Obtenga el ID de la cuenta. Ejecute el mandato siguiente:
 
     ```
-	bx iam accounts
+	ibmcloud iam accounts
 	```
     {: codeblock}	
 
@@ -169,7 +169,7 @@ Siga estos pasos:
 	```
 	{: codeblock}
 	
-	donde *ENDPOINT* varía según la región. Para ver una lista de los puntos finales por región, consulte [Puntos finales de registro](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
+	donde *ENDPOINT* varía según la región. Para obtener una lista de puntos finales por región, consulte [Puntos finales de registro](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
 	
 	Por ejemplo, ejecute este mandato cURL para obtener la cuota correspondiente a la cuenta de la región EE.UU. Sur:
 	
@@ -204,13 +204,13 @@ Siga estos pasos:
 
 Siga estos pasos:
 
-1. Inicie la sesión en {{site.data.keyword.Bluemix_notm}}. 
+1. Inicie sesión en {{site.data.keyword.Bluemix_notm}}. 
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 2. Obtenga el ID del espacio.
 
-    Para obtener más información, consulte [Cómo se obtiene el GUID de un espacio](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid).
+    Para obtener más información, consulte [Cómo se obtiene el GUID de un espacio](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid)
 	
 	Exporte el ID del espacio a una variable de shell. Por ejemplo:
 	
@@ -237,7 +237,7 @@ Siga estos pasos:
 	```
 	{: codeblock}
 	
-	donde *ENDPOINT* varía según la región. Para ver una lista de los puntos finales por región, consulte [Puntos finales de registro](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
+	donde *ENDPOINT* varía según la región. Para obtener una lista de puntos finales por región, consulte [Puntos finales de registro](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
 
     Por ejemplo, ejecute el siguiente mandato cURL para obtener la cuota y el uso de un dominio de espacio de la región EE.UU. Sur:
 	

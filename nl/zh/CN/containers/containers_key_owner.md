@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-16"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,13 +17,13 @@ lastupdated: "2018-01-16"
 # 检索集群的密钥所有者
 {: #containers_key_owner}
 
-使用 *bx cs api-key-info* 命令以获取集群的 {{site.data.keyword.loganalysisshort}} 密钥所有者。
+使用 *ibmcloud cs api-key-info* 命令以获取集群的 {{site.data.keyword.loganalysisshort}} 密钥所有者。
 {:shortdesc}
 
 运行以下命令：
 
 ```
- bx cs api-key-info ClusterName
+ ibmcloud cs api-key-info ClusterName
 ```
 {: codeblock}
 
@@ -33,7 +33,7 @@ lastupdated: "2018-01-16"
 例如，运行该命令的输出如下：
 
 ```
-bx cs api-key-info MyDemoCluster
+ibmcloud cs api-key-info MyDemoCluster
 Getting information about the API key owner for cluster MyDemoCluster...
 OK
 Name           Email   

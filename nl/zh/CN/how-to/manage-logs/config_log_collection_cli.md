@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ lastupdated: "2018-01-31"
 
 1. 安装 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
 
 2. 安装 {{site.data.keyword.loganalysisshort}} CF 插件。
 
@@ -41,14 +41,14 @@ lastupdated: "2018-01-31"
     例如，检查该插件的版本。运行以下命令：
     
     ```
-        bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
     输出如下所示：
    
     ```
-        Invoking 'cf plugins'...
+    Invoking 'cf plugins'...
 
     
 
@@ -78,7 +78,7 @@ lastupdated: "2018-01-31"
         例如，要在 Ubuntu 中解压缩 `logging-cli-linux64.gz` 插件，请运行以下命令：
         
         ```
-                gunzip logging-cli-linux64.gz
+        gunzip logging-cli-linux64.gz
         ```
         {: codeblock}
 
@@ -87,7 +87,7 @@ lastupdated: "2018-01-31"
         例如，要使 `logging-cli-linux64` 文件成为可执行文件，请运行以下命令：
         
         ```
-                chmod a+x logging-cli-linux64
+        chmod a+x logging-cli-linux64
         ```
         {: codeblock}
 
@@ -96,7 +96,7 @@ lastupdated: "2018-01-31"
         例如，要使 `logging-cli-linux64` 文件成为可执行文件，请运行以下命令：
         
         ```
-                bx cf install-plugin -f logging-cli-linux64
+        ibmcloud cf install-plugin -f logging-cli-linux64
         ```
         {: codeblock}
 
@@ -107,15 +107,15 @@ lastupdated: "2018-01-31"
 	例如，在 Ubuntu 系统中，编辑 *~/.bashrc* 文件并输入以下行：
     
     ```
-        # add entry for logging CLI
+    # add entry for logging CLI
     export LANG = en_US.UTF-8
     ```
     {: codeblock}
     
-    打开新的终端窗口，并运行以下命令以验证 LANG 是否已设置：
+    打开新的终端窗口，然后运行以下命令来验证是否已设置 LANG 变量：
     
     ```
-        $echo LANG
+    $echo LANG
     en_US.UTF-8
     ```
     {: screen}   
@@ -125,14 +125,14 @@ lastupdated: "2018-01-31"
     例如，检查该插件的版本。运行以下命令：
     
     ```
-        bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     输出如下所示：
    
     ```
-        cf logging version 1.0.2
+    cf logging version 1.0.2
     ```
     {: screen}
 
@@ -150,34 +150,34 @@ lastupdated: "2018-01-31"
 2. 运行 **cf install-plugin** 命令以在 Windows 上安装“日志收集”插件。 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
-	其中，*PluginName* 是已下载文件的名称。
+	其中，*PluginName* 是所下载文件的名称。
 	
     例如，要安装 *logging-cli-win64_v1.0.1.exe* 插件，请在终端窗口中运行以下命令：
 	
 	```
-	bx cf install-plugin logging-cli-win64_v1.0.1.exe
+	ibmcloud cf install-plugin logging-cli-win64_v1.0.1.exe
 	```
 	{: codeblock}
 	
-    该插件安装后，将收到以下消息：`IBM-Logging 1.0.1 插件已成功安装。`
+    当插件安装完成时，您会收到以下消息：`IBM-Logging 1.0.1 插件已成功安装。`
 
 3. 验证日志记录 CLI 插件的安装情况。
   
     例如，检查该插件的版本。运行以下命令：
     
     ```
-        bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     输出如下所示：
    
     ```
-        bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -192,37 +192,37 @@ lastupdated: "2018-01-31"
 	1. 选择平台值：**osx**。 
 	2. 单击**保存文件**。  
     
-2. 运行 **cf install-plugin** 命令以在 Mac OS X 上安装“日志收集”插件。 
+2. 运行 **cf install-plugin** 命令，以在 Mac OS X 上安装“日志收集”插件。 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
-	其中，*PluginName* 是已下载文件的名称。
+	其中，*PluginName* 是所下载文件的名称。
 	
-    例如，要安装 *logging-cli-darwin_v1.0.1* 插件，请在终端中运行以下命令：
+    例如，要安装 *logging-cli-darwin_v1.0.1* 插件，请在终端上运行以下命令：
 	
 	```
-	bx cf install-plugin logging-cli-darwin_v1.0.1
+	ibmcloud cf install-plugin logging-cli-darwin_v1.0.1
 	```
 	{: codeblock}
 	
-    该插件安装后，将收到以下消息：`IBM-Logging 1.0.1 插件已成功安装。`
+    当插件安装完成时，您会收到以下消息：`IBM-Logging 1.0.1 插件已成功安装。`
 
 3. 验证日志记录 CLI 插件的安装情况。
   
     例如，检查该插件的版本。运行以下命令：
     
     ```
-        bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     输出如下所示：
    
     ```
-        bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -240,14 +240,14 @@ lastupdated: "2018-01-31"
     例如，检查该插件的版本。运行以下命令：
     
     ```
-        bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
     输出如下所示：
    
     ```
-        Listing Installed Plugins...
+    Listing Installed Plugins...
     OK
 
     Plugin Name   Version   Command Name   Command Help
@@ -255,12 +255,12 @@ lastupdated: "2018-01-31"
     ```
     {: screen}
     
-2. 如果该插件已安装，请运行 `cf uninstall-plugin` 来卸载该插件。
+2. 如果已安装该插件，请运行 `cf uninstall-plugin` 来卸载该日志记录 CLI 插件。
 
     运行以下命令：
         
     ```
-        bx cf uninstall-plugin IBM-Logging
+    ibmcloud cf uninstall-plugin IBM-Logging
     ```
     {: codeblock}
   
@@ -277,7 +277,7 @@ lastupdated: "2018-01-31"
 2. 列出有关受支持命令和 CLI 的信息。运行以下命令：
 
     ```
-        bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
     
@@ -295,14 +295,14 @@ lastupdated: "2018-01-31"
 2. 获取受支持命令的列表，并确定您需要的命令。运行以下命令：
 
     ```
-        bx cf logging help 
+    ibmcloud cf logging help
     ```
     {: codeblock}
 
 3. 获取有关命令的帮助。运行以下命令：
 
     ```
-        bx cf logging help *Command*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
@@ -322,14 +322,14 @@ lastupdated: "2018-01-31"
 2. 获取受支持命令的列表，并确定您需要的命令。运行以下命令：
 
     ```
-        bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. 获取有关命令的帮助并确定受支持的子命令。运行以下命令：
 
     ```
-        bx cf logging help *Command*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
@@ -338,7 +338,7 @@ lastupdated: "2018-01-31"
 4. 获取有关命令的帮助并确定受支持的子命令。运行以下命令：
 
     ```
-        bx cf logging *Command* help *Subcommand*
+    ibmcloud cf logging *Command* help *Subcommand*
     ```
     {: codeblock}
     

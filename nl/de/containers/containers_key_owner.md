@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-16"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,23 +17,23 @@ lastupdated: "2018-01-16"
 # Schlüsseleigner für einen Cluster abrufen
 {: #containers_key_owner}
 
-Verwenden Sie den Befehl *bx cs api-key-info*, um den {{site.data.keyword.loganalysisshort}}-Schlüsseleigner für einen Cluster abzurufen.
+Verwenden Sie den Befehl *ibmcloud cs api-key-info*, um den {{site.data.keyword.loganalysisshort}}-Schlüsseleigner für einen Cluster abzurufen.
 {:shortdesc}
 
 Führen Sie den folgenden Befehl aus:
 
 ```
- bx cs api-key-info ClusterName
+ ibmcloud cs api-key-info ClusterName
 ```
 {: codeblock}
 
-Dabei ist **Clustername** der Name des Clusters.
+Dabei ist **ClusterName** der Name des Clusters.
 
 
 Die Ausgabe kann nach dem Ausführen des Befehls beispielsweise folgendermaßen aussehen:
 
 ```
-bx cs api-key-info MyDemoCluster
+ibmcloud cs api-key-info MyDemoCluster
 Getting information about the API key owner for cluster MyDemoCluster...
 OK
 Name           Email   

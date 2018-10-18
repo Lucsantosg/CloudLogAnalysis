@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -21,8 +21,8 @@ lastupdated: "2018-04-10"
 {{site.data.keyword.Bluemix}} では、ログの表示、フィルター操作、および分析をコマンド・ライン・インターフェースを介して行うことができます。 
 {:shortdesc}
 
-Cloud Foundry (CF) アプリケーション・ログを分析するには、コマンド `bx cf logs` を使用します。
-詳しくは、『[cf logs](/docs/cli/reference/cfcommands/index.html#cf_logs)』を参照してください。
+Cloud Foundry (CF) アプリケーション・ログを分析するには、コマンド `ibmcloud cf logs` を使用します。
+詳しくは、『[cf logs](/docs/cli/reference/ibmcloud/cf_index.html#cf_logs)』を参照してください。
 
 
 ## CLI からの CF アプリ・ログの分析
@@ -47,7 +47,7 @@ Cloud Foundry (CF) アプリケーション・ログを分析するには、コ�
 
 2. コマンド・ラインから次のコマンドを実行して、すべてのログを表示します。
 
-   <pre class="pre screen"><code> bx cf logs <var class="keyword varname">appname</var></code></pre>
+   <pre class="pre screen"><code> ibmcloud cf logs <var class="keyword varname">appname</var></code></pre>
    
    
 ### Cloud Foundry アプリの最新ログ項目の表示
@@ -59,7 +59,7 @@ Cloud Foundry (CF) アプリケーション・ログを分析するには、コ�
 
 2. コマンド・ラインから次のコマンドを実行して、すべてのログを表示します。
 
-     <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent</code></pre>
+     <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent</code></pre>
 
 <div class="note tip"><span class="tiptitle">ヒント:</span> 1 つのコマンド・ライン・ウィンドウで <span class="keyword cmdname">cf push</span> コマンドまたは <span class="keyword cmdname">cf start</span> コマンドを実行した場合、別のコマンド・ライン・ウィンドウで <samp class="ph codeph">cf logs appname --recent</samp> と入力して、リアルタイムにログを確認できます。 </div>
 
@@ -73,7 +73,7 @@ Cloud Foundry (CF) アプリケーション・ログを分析するには、コ�
 
 2. コマンド・ラインから次のコマンドを実行して、すべてのログを表示します。
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
     
     **cut** オプションについて詳しくは、**cut --help** と入力してください。
 
@@ -87,12 +87,12 @@ Cloud Foundry (CF) アプリケーション・ログを分析するには、コ�
 
 2. コマンド・ラインから次のコマンドを実行して、すべてのログを表示します。
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
     
 
 例えば、キーワード「**APP**」が含まれているログ項目を表示するには、以下のコマンドを使用できます。
 
-<pre class="pre screen"><code>bx cf logs appname --recent | grep '\[App'</code></pre>
+<pre class="pre screen"><code>ibmcloud cf logs appname --recent | grep '\[App'</code></pre>
 
 **grep** オプションについて詳しくは、**grep --help** と入力してください。
 
@@ -115,10 +115,8 @@ Cloud Foundry (CF) アプリケーション・ログを分析するには、コ�
 
 このログ・ファイルは、ステージング・タスクの重要なステップ後のメッセージを記録します。 このログを使用して、ステージングの問題をトラブルシューティングすることができます。
 
-このログを表示するには、コマンド `bx cf files appname logs/staging_task.log` を入力します。
+このログを表示するには、コマンド `ibmcloud cf files appname logs/staging_task.log` を入力します。
 
-
-**注:** アプリケーションのロギングを有効にする方法については、『[ランタイム・エラーのデバッグ](/docs/debug/index.html#debugging-runtime-errors)』を参照してください。
 
 
 

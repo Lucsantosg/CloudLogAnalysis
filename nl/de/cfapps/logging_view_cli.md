@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -21,8 +21,8 @@ lastupdated: "2018-04-10"
 In {{site.data.keyword.Bluemix}} können Sie Protokolle über die Befehlszeilenschnittstelle (CLI) anzeigen. 
 {:shortdesc}
 
-Verwenden Sie zur Analyse von Cloud Foundry-Anwendungsprotokollen den folgenden Befehl: `bx cf logs`
-Weitere Informationen finden Sie unter [cf logs](/docs/cli/reference/cfcommands/index.html#cf_logs).
+Verwenden Sie zur Analyse von Cloud Foundry-Anwendungsprotokollen den folgenden Befehl: `ibmcloud cf logs`
+Weitere Informationen finden Sie unter [cf logs](/docs/cli/reference/ibmcloud/cf_index.html#cf_logs).
 
 
 ## CF-App-Protokolle über die Befehlszeilenschnittstelle analysieren
@@ -47,7 +47,7 @@ Führen Sie die folgenden Schritte aus, um alle für eine Cloud Foundry-App verf
 
 2. Führen Sie den folgenden Befehl von der Befehlszeile aus, um alle Protokolle anzuzeigen:
 
-   <pre class="pre screen"><code> bx cf logs <var class="keyword varname">App-Name</var></code></pre>
+   <pre class="pre screen"><code> ibmcloud cf logs <var class="keyword varname">App-Name</var></code></pre>
    
    
 ### Neueste Protokolleinträge für eine Cloud Foundry-App anzeigen
@@ -59,7 +59,7 @@ Führen Sie die folgenden Schritte aus, um die neuesten für eine Cloud Foundry-
 
 2. Führen Sie den folgenden Befehl von der Befehlszeile aus, um alle Protokolle anzuzeigen:
 
-     <pre class="pre screen"><code>bx cf logs <var class="keyword varname">App-Name</var> --recent</code></pre>
+     <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">App-Name</var> --recent</code></pre>
 
 <div class="note tip"><span class="tiptitle">Tipp:</span> Wenn Sie den Befehl <span class="keyword cmdname">cf push</span> oder <span class="keyword cmdname">cf start</span> in einem Befehlszeilenfenster ausführen, können Sie <samp class="ph codeph">cf logs appname --recent</samp> in einem anderen Befehlszeilenfenster eingeben, um die Protokolle in Echtzeit zu sehen. </div>
 
@@ -73,7 +73,7 @@ Führen Sie die folgenden Schritte aus, um einen Teil der für eine Cloud Foundr
 
 2. Führen Sie den folgenden Befehl von der Befehlszeile aus, um alle Protokolle anzuzeigen:
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">App-Name</var> --recent  | cut -c 29-40,46-</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">App-Name</var> --recent  | cut -c 29-40,46-</code></pre>
     
     Weitere Informationen zur Option **cut** können Sie durch Eingabe von **cut --help** abrufen.
 
@@ -87,12 +87,12 @@ Führen Sie die folgenden Schritte aus, um Protokolleinträge anzuzeigen, die be
 
 2. Führen Sie den folgenden Befehl von der Befehlszeile aus, um alle Protokolle anzuzeigen:
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">App-Name</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">App-Name</var> --recent | grep '<var class="keyword varname">Schlüsselwort</var>'</code></pre>
     
 
 Beispiel: Um Protokolleinträge anzuzeigen, die das Schlüsselwort **APP** enthalten, können Sie den folgenden Befehl verwenden:
 
-<pre class="pre screen"><code>bx cf logs appname --recent | grep '\[App'</code></pre>
+<pre class="pre screen"><code>ibmcloud cf logs appname --recent | grep '\[App'</code></pre>
 
 Weitere Informationen zur Option **grep** können Sie durch Eingabe von **grep --help** abrufen.
 
@@ -115,10 +115,8 @@ Um dieses Protokoll anzuzeigen, geben Sie den folgenden Befehl ein: `cf files ap
 
 Diese Protokolldatei zeichnet Nachrichten nach den Hauptschritten der Staging-Task auf. Mithilfe dieses Protokolls können Sie Staging-Probleme beheben.
 
-Um dieses Protokoll anzuzeigen, geben Sie den folgenden Befehl ein: `bx cf files appname logs/staging_task.log`
+Um dieses Protokoll anzuzeigen, geben Sie den folgenden Befehl ein: `ibmcloud cf files appname logs/staging_task.log`
 
-
-**Hinweis:** Informationen zur Aktivierung der Anwendungsprotokollierung finden Sie unter [Laufzeitfehler beheben](/docs/debug/index.html#debugging-runtime-errors).
 
 
 

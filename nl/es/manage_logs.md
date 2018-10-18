@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -69,7 +69,7 @@ Los registros que se almacenan en el componente de recopilación de registros se
 
 * Puede utilizar la [API de recopilación de registros](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} o la [CLI de recopilación de registros](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} para suprimir registros manualmente del componente de recopilación de registros. 
 
-* Puede utilizar la CLI. Para obtener más información sobre cómo suprimir registros manualmente mediante la CLI, consulte [bx logging log-delete mediante el plugin de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+* Puede utilizar la CLI. Para obtener más información sobre cómo suprimir registros manualmente mediante la CLI, consulte [ibmcloud logging log-delete mediante el plugin de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
     
 
 
@@ -85,16 +85,15 @@ Para obtener más información, consulte:
 
 
 
-
 ## Obtención de información sobre sus registros
 {: #info_about_logs}
 
-Para obtener información general sobre sus registros, utilice el mandato `bx logging log-show` o el mandato `cf logging status`. Para obtener más información, consulte:
+Para obtener información general sobre sus registros, utilice el mandato `ibmcloud logging log-show` o el mandato `cf logging status`. Para obtener más información, consulte:
 
 * [Visualización de información de registro mediante el plugin de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
 * [Visualización de información de registro mediante el plugin de CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
 
-Por ejemplo, para mantener el coste bajo control, es posible que desee supervisar el tamaño de los registros de sus apps durante un periodo de tiempo. Por ejemplo, quizás desee saber el tamaño de cada tipo de registro durante una semana para un espacio de {{site.data.keyword.Bluemix_notm}} a fin de identificar si alguna app o servicio está generando más registros de los esperados. Para comprobar el tamaño de sus registros, utilice el mandato `bx logging log-show` o el mandato `cf logging status`.
+Por ejemplo, para mantener el coste bajo control, es posible que desee supervisar el tamaño de los registros de sus apps durante un periodo de tiempo. Por ejemplo, quizás desee saber el tamaño de cada tipo de registro durante una semana para un espacio de {{site.data.keyword.Bluemix_notm}} a fin de identificar si alguna app o servicio está generando más registros de los esperados. Para comprobar el tamaño de sus registros, utilice el mandato `ibmcloud logging log-show` o el mandato `cf logging status`.
 
 Puede ver información sobre los registros almacenados en un dominio del espacio, en un dominio de la organización o en un dominio de la cuenta.
 
@@ -105,7 +104,7 @@ Puede ver información sobre los registros almacenados en un dominio del espacio
 
 Para ver cómo se instala la CLI, consulte [Instalación de la CLI de registro](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
 
-Para comprobar la versión de la CLI, ejecute el mandato `bx plugin list`.
+Para comprobar la versión de la CLI, ejecute el mandato `ibmcloud plugin list`.
 
 Para obtener ayuda sobre cómo se ejecutan los mandatos, consulte [Obtención de ayuda en línea de mandatos para ejecutar mandatos](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#command_cli_help).
 

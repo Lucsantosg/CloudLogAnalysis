@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -34,7 +34,7 @@ lastupdated: "2018-01-10"
 2. 将保留期设置为 **-1** 以禁用保留期。运行以下命令：
 
     ```
-        bx cf logging option -r -1
+    ibmcloud cf logging option -r -1
     ```
     {: codeblock}
     
@@ -43,7 +43,7 @@ lastupdated: "2018-01-10"
 例如，要禁用标识为 *d35da1e3-b345-475f-8502-cfgh436902a3* 的空间的保留期，请运行以下命令：
 
 ```
-bx cf logging option -r -1
+ibmcloud cf logging option -r -1
 ```
 {: codeblock}
 
@@ -72,14 +72,14 @@ bx cf logging option -r -1
 2. 获取保留期。运行以下命令：
 
     ```
-        bx cf logging option
+    ibmcloud cf logging option
     ```
     {: codeblock}
 
     输出为：
 
     ```
-        +--------------------------------------+-----------+
+    +--------------------------------------+-----------+
     |               SPACEID                | RETENTION |
     +--------------------------------------+-----------+
     | d35da1e3-b345-475f-8502-cfgh436902a3 |        30 |
@@ -100,14 +100,14 @@ bx cf logging option -r -1
 2. 获取帐户中每个空间的保留期。运行以下命令：
 
     ```
-        bx cf logging option -a
+    ibmcloud cf logging option -a
     ```
     {: codeblock}
 
     输出为：
 
     ```
-        +--------------------------------------+-----------+
+    +--------------------------------------+-----------+
     |               SPACEID                | RETENTION |
     +--------------------------------------+-----------+
     | d35da1e3-b345-475f-8502-cfgh436902a3 |        30 |
@@ -130,7 +130,7 @@ bx cf logging option -r -1
 2. 设置保留期。运行以下命令：
 
     ```
-    bx cf logging option -r *Number_of_days* - a
+    ibmcloud cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
@@ -142,7 +142,7 @@ bx cf logging option -r -1
 例如，要使帐户中任何类型的日志仅保留 15 天，请运行以下命令：
 
 ```
-bx cf logging option -r 15 -a
+ibmcloud cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -171,7 +171,7 @@ bx cf logging option -r 15 -a
 2. 设置保留期。运行以下命令：
 
     ```
-    bx cf logging option -r *Number_of_days*
+    ibmcloud cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
@@ -183,7 +183,7 @@ bx cf logging option -r 15 -a
 例如，要使空间中可用的日志保留 1 年，请运行以下命令：
 
 ```
-bx cf logging option -r 365
+ibmcloud cf logging option -r 365
 ```
 {: codeblock}
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -43,8 +43,8 @@ lastupdated: "2018-03-12"
 
     您的 {{site.data.keyword.Bluemix_notm}} 用户标识必须已分配有以下策略：
     
-    * {{site.data.keyword.containershort}} 的 IAM 策略，且具有*编辑者*、*操作员*或*管理员*许可权。
-    * 对供应 {{site.data.keyword.loganalysisshort}} 服务的空间的 CF 角色，且具有*开发者*许可权。
+    * {{site.data.keyword.containershort}} 的 IAM 策略，以及*编辑者*、*操作员*或*管理员*许可权。
+    * {{site.data.keyword.loganalysisshort}} 服务供应所在空间的 CF 角色，以及*开发者*许可权。
     
     有关更多信息，请参阅[通过 IBM Cloud UI 向用户分配 IAM 策略](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)和[使用 IBM Cloud UI 向用户授予查看空间日志的许可权](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)。
 
@@ -52,9 +52,7 @@ lastupdated: "2018-03-12"
 
 3. 安装 CLI，以在 Ubuntu 系统中使用 {{site.data.keyword.containershort}} 和 {{site.data.keyword.loganalysisshort}}。
 
-    * 安装 {{site.data.keyword.Bluemix_notm}} CLI。有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
-    
-    * 安装 {{site.data.keyword.containershort}} CLI，以在 {{site.data.keyword.containershort}} 中创建和管理 Kubernetes 集群，以及将容器化应用程序部署到集群中。有关更多信息，请参阅[安装 CS 插件](/docs/containers/cs_cli_install.html#cs_cli_install_steps)。
+    * 安装 {{site.data.keyword.Bluemix_notm}} CLI。安装 {{site.data.keyword.containershort}} CLI，以在 {{site.data.keyword.containershort}} 中创建和管理 Kubernetes 集群，以及将容器化应用程序部署到集群中。有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
     
     * 安装 {{site.data.keyword.loganalysisshort}} CLI。有关更多信息，请参阅[配置 Log Analysis CLI（IBM Cloud 插件）](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)。
     
@@ -87,14 +85,14 @@ lastupdated: "2018-03-12"
 	初始化 {{site.data.keyword.containershort}} 服务插件。
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
     设置集群的终端上下文。
     
 	```
-	bx cs cluster-config MyCluster
+	ibmcloud cs cluster-config MyCluster
 	```
 	{: codeblock}
 
@@ -121,7 +119,7 @@ lastupdated: "2018-03-12"
 定义日志记录配置之前，请检查集群中的当前日志记录配置定义。运行以下命令：
 
 ```
-$ bx cs logging-config-get ClusterName
+$ ibmcloud cs logging-config-get ClusterName
 ```
 {: codeblock}
 
@@ -130,7 +128,7 @@ $ bx cs logging-config-get ClusterName
 例如，为集群 *mycluster* 定义的日志记录配置如下： 
 
 ```
-$ bx cs logging-config-get mycluster
+$ ibmcloud cs logging-config-get mycluster
 Retrieving cluster mycluster logging configurations...
 OK
 Id                                     Source       Namespace   Host                                Port   Org            Space   Protocol   Paths   
@@ -166,7 +164,7 @@ ae249c04-a3a9-4c29-a890-22d8da7bd1b2   container    *           ingest.logging.n
 2. 创建集群日志记录配置。运行以下命令以将 *stdout* 和 *stderr* 日志文件发送到 {{site.data.keyword.loganalysisshort}} 服务：
 
     ```
-        bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
+    ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -181,7 +179,7 @@ ae249c04-a3a9-4c29-a890-22d8da7bd1b2   container    *           ingest.logging.n
 例如，要创建日志记录配置，用于将 stdout 和 stderr 日志转发到美国南部区域中的 dev 空间，请运行以下命令：
 
 ```
-bx cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -208,7 +206,7 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 2. 创建集群日志记录配置。运行以下命令以将 */var/log/syslog* 和 */var/log/auth.log* 日志文件发送到 {{site.data.keyword.loganalysisshort}} 服务：
 
     ```
-        bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
+    ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -223,7 +221,7 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 例如，要创建日志记录配置，用于将工作程序日志转发到美国南部区域中的空间域，请运行以下命令：
 
 ```
-bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -274,43 +272,43 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 
 要将集群日志转发到空间，{{site.data.keyword.containershort_notm}} 密钥所有者必须具有以下许可权：
 
-* {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，且具有*管理员*许可权。
-* 要转发其中日志的组织和空间中的 Cloud Foundry (CF) 许可权。容器密钥所有者需要对组织的 *orgManager* 角色以及对空间的 *SpaceManager* 和 *Developer* 角色。
+* {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，以及*管理员*许可权。
+* 要将日志转发到的组织和空间中的 Cloud Foundry (CF) 许可权。容器密钥所有者需要组织的 *orgManager* 角色，以及空间的 *SpaceManager* 和 *Developer* 角色。
 
 请完成以下步骤：
 
 1. 确定帐户中作为 {{site.data.keyword.containershort}} 密钥所有者的用户。在终端中，运行以下命令：
 
     ```
-        bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
     其中，*ClusterName* 是集群的名称。
 
-2. 验证确定为 {{site.data.keyword.containershort}} 密钥所有者的用户是否具有对组织的 *orgManager* 角色，以及对空间的 *SpaceManager* 和 *Developer* 角色。
+2. 验证身份为 {{site.data.keyword.containershort}} 密钥所有者的用户是否具有组织的 *orgManager* 角色，以及空间的 *SpaceManager* 和 *Developer* 角色。
 
     登录到 {{site.data.keyword.Bluemix_notm}} 控制台。打开 Web 浏览器并启动 {{site.data.keyword.Bluemix_notm}}“仪表板”：[http://bluemix.net ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window}。使用用户标识和密码登录后，{{site.data.keyword.Bluemix_notm}} UI 将打开。
 
     从菜单栏，单击**管理 > 帐户 > 用户**。*用户*窗口显示用户列表，其中包含目前所选帐户的电子邮件地址。
 	
-    选择用户的标识，并验证用户是否具有对组织的 *orgManager* 角色，以及对空间的 *SpaceManager* 和 *Developer* 角色。
+    选择用户标识并验证用户是否具有组织的 *orgManager* 角色，以及空间的 *SpaceManager* 和 *Developer* 角色。
 
-    如果用户没有正确的许可权，请向用户授予以下许可权：对组织的 *orgManager* 角色，以及对空间的 *SpaceManager* 和 *Developer* 角色。有关更多信息，请参阅[使用 IBM Cloud UI 向用户授予查看空间日志的许可权](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)。
+    如果用户没有正确的许可权，请授予用户以下许可权：组织的 *orgManager* 角色，以及空间的 *SpaceManager* 和 *Developer* 角色。有关更多信息，请参阅[使用 IBM Cloud UI 向用户授予查看空间日志的许可权](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)。
     
-3. 验证确定为 {{site.data.keyword.containershort}} 密钥所有者的用户是否具有 {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，且具有*管理员*许可权。
+3. 验证身份为 {{site.data.keyword.containershort}} 密钥所有者的用户是否具有 {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，以及*管理员*许可权。
 
     从菜单栏，单击**管理 > 帐户 > 用户**。*用户*窗口显示用户列表，其中包含目前所选帐户的电子邮件地址。
 	
-    选择用户的标识，并验证用户是否已设置 IAM 策略。 
+    选择用户标识并验证用户是否已设置 IAM 策略。 
 
-    如果用户没有设置 IAM 策略，请参阅[通过 IBM Cloud UI 将 IAM 策略分配给用户](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)。
+    如果用户没有 IAM 策略，请参阅[通过 IBM Cloud UI 将 IAM 策略分配给用户](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)。
 
 4. 刷新日志记录配置。运行以下命令：
     
     ```
-            bx cs logging-config-refresh ClusterName
-        ```
+    ibmcloud cs logging-config-refresh ClusterName
+    ```
     {: codeblock}
         
     其中，*ClusterName* 是集群的名称。
@@ -354,7 +352,7 @@ app.listen(8080, function() {
 
     有关如何启动 Kibana 的更多信息，请参阅[通过 Web 浏览器导航至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)。
 
-    要分析集群的日志数据，您必须在创建集群的云公共区域中访问 Kibana。 
+    要分析集群的日志数据，必须在创建集群的云 Public 区域中访问 Kibana。 
     
     例如，在美国南部区域中，输入以下 URL 以启动 Kibana：
 	
@@ -484,10 +482,10 @@ app.listen(8080, function() {
 
 CLI 命令：
 
-* [bx cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
-* [bx cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
-* [bx cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
-* [bx cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
-* [bx cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
-* [bx cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
+* [ibmcloud cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
+* [ibmcloud cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
+* [ibmcloud cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
+* [ibmcloud cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
+* [ibmcloud cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
+* [ibmcloud cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
 

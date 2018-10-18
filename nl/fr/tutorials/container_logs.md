@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -43,7 +43,7 @@ Ce tutoriel vous guide tout au long des étapes à suivre pour le scénario de b
 
     Votre ID utilisateur pour {{site.data.keyword.Bluemix_notm}} doit être associé aux règles suivantes :
     
-    * Une règle IAM pour {{site.data.keyword.containershort}} avec les droits *Editeur*, *Opérateur* ou *Administrateur*. 
+    * Une règle IAM pour {{site.data.keyword.containershort}} avec les droits *Editeur*, *Opérateur* ou *Administrateur*.
     * Un rôle CF pour l'espace dans lequel le service {{site.data.keyword.loganalysisshort}} a été mis à disposition avec les droits *Développeur*.
     
     Pour plus d'informations, voir [Affectation d'une règle IAM à un utilisateur dans l'interface utilisateur IBM Cloud](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account) et [Octroi à un utilisateur des droits permettant d'afficher les journaux d'espace dans l'interface utilisateur IBM Cloud](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
@@ -52,9 +52,7 @@ Ce tutoriel vous guide tout au long des étapes à suivre pour le scénario de b
 
 3. Installer les interfaces de ligne de commande pour pouvoir utiliser {{site.data.keyword.containershort}} et {{site.data.keyword.loganalysisshort}} sur votre système Ubuntu.
 
-    * Installer l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}. Pour plus d'informations, voir [Installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)
-    
-    * Installer l'interface de ligne de commande {{site.data.keyword.containershort}} pour pouvoir créer et gérer vos clusters Kubernetes dans {{site.data.keyword.containershort}}, et pour pouvoir déployer des applications conteneurisées dans votre cluster. Pour plus d'informations, voir les instructions d'[installation du plug-in CS](/docs/containers/cs_cli_install.html#cs_cli_install_steps).
+    * Installer l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}. Installer l'interface de ligne de commande {{site.data.keyword.containershort}} pour pouvoir créer et gérer vos clusters Kubernetes dans {{site.data.keyword.containershort}}, et pour pouvoir déployer des applications conteneurisées dans votre cluster. Pour plus d'informations, voir [Installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.](/docs/cli/index.html#overview)
     
     * Installer l'interface de ligne de commande {{site.data.keyword.loganalysisshort}}. Pour plus d'informations, voir [Configuration de l'interface de ligne de commande Log Analysis (plug-in IBM Cloud)](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
     
@@ -90,14 +88,14 @@ Procédez comme suit :
 {{site.data.keyword.containershort}}.
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
     Définissez votre cluster comme contexte du terminal.
     
 	```
-	bx cs cluster-config MyCluster
+	ibmcloud cs cluster-config MyCluster
 	```
 	{: codeblock}
 
@@ -124,7 +122,7 @@ Lorsque l'application est déployée, les journaux sont collectés automatiqueme
 Avant de définir des configurations de journalisation, vérifiez vos définitions de configuration de journalisation existantes dans le cluster. Exécutez la commande suivante :
 
 ```
-$ bx cs logging-config-get ClusterName
+$ ibmcloud cs logging-config-get ClusterName
 ```
 {: codeblock}
 
@@ -133,7 +131,7 @@ où *ClusterName* est le nom de votre cluster.
 Par exemple, les configurations de journalisation qui sont définies pour le cluster *mycluster* sont les suivantes : 
 
 ```
-$ bx cs logging-config-get mycluster
+$ ibmcloud cs logging-config-get mycluster
 Retrieving cluster mycluster logging configurations...
 OK
 Id                                     Source       Namespace   Host                                Port   Org            Space   Protocol   Paths   
@@ -154,9 +152,13 @@ Pour afficher la liste des sources de journal pour lesquelles vous pouvez défin
 
 Procédez comme suit pour envoyer les journaux de sortie standard et d'erreur standard à un domaine d'espace, où le nom d'organisation est *MyOrg* et le nom d'espace est *dev* dans la région Sud des Etats-Unis :
 
-1. Vérifiez que votre ID utilisateur disposer des droits permettant d'ajouter une configuration de cluster. Seuls les utilisateurs associés à une règle IAM pour {{site.data.keyword.containershort}} et disposant des droits permettant de gérer les clusters peuvent activer cette fonction. L'un des rôles suivants est requis : *Administrateur*, *Opérateur*.
+1. Vérifiez que votre ID utilisateur disposer des droits permettant d'ajouter une configuration de cluster. Seuls les utilisateurs associés à une règle IAM pour
+{{site.data.keyword.containershort}} et disposant des droits permettant de gérer
+les clusters peuvent activer cette fonction. L'un des rôles suivants est requis : *Administrateur*,
+*Opérateur*.
 
-    Afin de vérifier que votre ID utilisateur est associé à une règle IAM pour la gestion des clusters, procédez comme suit :
+    Afin de vérifier que votre ID utilisateur est associé à une règle IAM pour la
+gestion des clusters, procédez comme suit :
     
     1. Connectez vous à la console {{site.data.keyword.Bluemix_notm}}. Ouvrez un navigateur Web et lancez le tableau de bord {{site.data.keyword.Bluemix_notm}} : [http://bluemix.net ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window} Une fois que vous êtes connecté avec votre ID utilisateur et votre mot de passe, l'interface utilisateur {{site.data.keyword.Bluemix_notm}} s'ouvre.
 
@@ -169,7 +171,7 @@ Procédez comme suit pour envoyer les journaux de sortie standard et d'erreur st
 2. Créez une configuration de journalisation de cluster. Exécutez la commande suivante pour envoyer les fichiers journaux de sortie standard (*stdout*) et d'erreur standard (*stderr*) au service {{site.data.keyword.loganalysisshort}} :
 
     ```
-    bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -184,7 +186,7 @@ Procédez comme suit pour envoyer les journaux de sortie standard et d'erreur st
 Par exemple, pour créer une configuration de journalisation qui transfère les journaux de sortie standard et d'erreur standard au développeur de l'espace dans la région Sud des Etats-Unis, exécutez la commande suivante :
 
 ```
-bx cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -217,7 +219,7 @@ gestion des clusters, procédez comme suit :
 {{site.data.keyword.loganalysisshort}} :
 
     ```
-    bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -232,13 +234,13 @@ gestion des clusters, procédez comme suit :
 Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'agent à un domaine d'espace dans la région Sud des Etats-Unis, exécutez la commande suivante :
 
 ```
-bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
 
 
-## Etape 3 : Octroi de droits à votre utilisateur pour l'affichage des journaux dans un domaine d'espace 
+## Etape 3 : Octroi de droits à votre utilisateur pour l'affichage des journaux dans un domaine d'espace
 {: #step3}
 
 Afin d'accorder des droits à un utilisateur pour qu'il puisse afficher les journaux dans un espace, vous devez lui attribuer un rôle Cloud Foundry qui décrit les actions qu'il peut effectuer avec le service {{site.data.keyword.loganalysisshort}} dans l'espace. 
@@ -276,20 +278,20 @@ Pour accorder à un utilisateur des droits permettant d'utiliser le service {{si
 7. Cliquez sur **Sauvegarder le rôle**.
 
 
-## Etape 4 : Octroi de droits au propriétaire de clé {{site.data.keyword.containershort_notm}} 
+## Etape 4 : Octroi de droits au propriétaire de clé {{site.data.keyword.containershort_notm}}
 {: #step4}
 
-Pour que les journaux de cluster soient transférés vers un espace, le propriétaire de clé {{site.data.keyword.containershort_notm}} doit disposer des droits suivants : 
+Pour que les journaux de cluster soient transférés vers un espace, le propriétaire de clé {{site.data.keyword.containershort_notm}} doit disposer des droits suivants :
 
 * Règle IAM pour le service {{site.data.keyword.loganalysisshort}} avec des droits *Administrateur*.
-* Droits Cloud Foundry (CF) dans l'organisation et l'espace où les journaux doivent être transférés. Le propriétaire de clé du conteneur requiert le rôle *orgManager* pour l'organisation et les rôles *SpaceManager* et *Developer* pour l'espace. 
+* Droits Cloud Foundry (CF) dans l'organisation et l'espace où les journaux doivent être transférés. Le propriétaire de clé du conteneur requiert le rôle *orgManager* pour l'organisation et les rôles *SpaceManager* et *Developer* pour l'espace.
 
 Procédez comme suit :
 
 1. Identifiez sur le compte l'utilisateur qui est le propriétaire de clé {{site.data.keyword.containershort}}. Depuis un terminal, exécutez la commande suivante :
 
     ```
-    bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -309,14 +311,14 @@ Procédez comme suit :
 
     Dans la barre de menus, cliquez sur **Gérer > Compte > Utilisateurs**.  La fenêtre *Utilisateurs* affiche une liste d'utilisateurs avec leur adresse électronique et leur statut sur le compte actuellement sélectionné.
 	
-    Sélectionnez l'ID de l'utilisateur et vérifiez que l'utilisateur dispose de l'ensemble de règles IAM.  
+    Sélectionnez l'ID de l'utilisateur et vérifiez que l'utilisateur dispose de l'ensemble de règles IAM. 
 
     Si l'utilisateur ne dispose pas de la règle IAM, voir [Affectation d'une règle IAM à un utilisateur dans l'interface utilisateur IBM Cloud](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
 
 4. Actualisez la configuration de journalisation. Exécutez la commande suivante :
     
     ```
-    bx cs logging-config-refresh ClusterName
+    ibmcloud cs logging-config-refresh ClusterName
     ```
     {: codeblock}
         
@@ -352,7 +354,7 @@ Dans cet exemple d'application, lorsque vous testez votre application dans un na
 
 
 
-## Etape 6 : Affichage des données de journal dans Kibana 
+## Etape 6 : Affichage des données de journal dans Kibana
 {: #step6}
 
 Procédez comme suit :
@@ -445,7 +447,7 @@ Procédez comme suit :
 Pour plus d'informations sur les autres zones de recherche pertinentes pour les clusters Kubernetes, voir [Recherche des journaux](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#log_search).
 
 
-## Etape 7 : Filtrage des données par nom de cluster Kubernetes dans Kibana 
+## Etape 7 : Filtrage des données par nom de cluster Kubernetes dans Kibana
 {: #step7}
     
 Le tableau affiché dans la page *Discover* répertorie toutes les entrées disponibles pour l'analyse. Les entrées répertoriées correspondent à la requête de recherche affichée dans la barre *Rechercher*. Utilisez un astérisque (*) afin d'afficher toutes les entrées pour la période configurée pour la page.
@@ -491,10 +493,10 @@ Pour plus d'informations, voir [Filtrage des journaux dans Kibana](/docs/service
 
 Commandes de l'interface de ligne de commande :
 
-* [bx cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
-* [bx cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
-* [bx cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
-* [bx cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
-* [bx cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
-* [bx cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
+* [ibmcloud cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
+* [ibmcloud cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
+* [ibmcloud cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
+* [ibmcloud cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
+* [ibmcloud cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
+* [ibmcloud cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
 

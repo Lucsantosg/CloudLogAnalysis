@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -73,12 +73,12 @@ Puede realizar cualquiera de las siguientes tareas con búsquedas que defina en 
 
 | Tarea | Descripción |
 |------|-------------|
-| Guardar una búsqueda| Guardar la búsqueda para volverla a utilizar posteriormente.  |
-| Suprimir una búsqueda| Suprimir una búsqueda cuando ya no se necesite. |
-| Exportar una búsqueda| Exportar una búsqueda para compartirla.  |
-| Volver a cargar una búsqueda| Cargar una búsqueda existente para analizar un conjunto de datos. |
-| Renovar los datos de una búsqueda| Configurar la renovación automática de los datos que se visualizan en la búsqueda.  |
-| Importar una búsqueda| Importar una búsqueda.  |
+| Guardar una búsqueda | Guardar la búsqueda para volverla a utilizar posteriormente.  |
+| Suprimir una búsqueda | Suprimir una búsqueda cuando ya no se necesite. |
+| Exportar una búsqueda | Exportar una búsqueda para compartirla.  |
+| Volver a cargar una búsqueda  | Cargar una búsqueda existente para analizar un conjunto de datos. |
+| Renovar los datos de una búsqueda | Configurar la renovación automática de los datos que se visualizan en la búsqueda.  |
+| Importar una búsqueda | Importar una búsqueda.  |
 {: caption="Tabla 3. Tareas para trabajar con búsquedas" caption-side="top"}
 
 <br>

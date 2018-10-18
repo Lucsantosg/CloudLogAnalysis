@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -32,7 +32,7 @@ Sie müssen über eine Benutzer-ID verfügen, die ein Mitglied oder Eigner eines
 ## Schritt 1: Wählen Sie eine Cloud-Ressource aus, für die Sie Protokolle anzeigen möchten.
 {: #step1}
 
-In {{site.data.keyword.Bluemix_notm}} (CF-Anwendungen) sammeln Container, die auf {{site.data.keyword.containershort}} ausgeführt werden, und ausgewählte Services automatisch Protokolldaten und leiten sie an den {{site.data.keyword.loganalysisshort}}-Service weiter. 
+In {{site.data.keyword.Bluemix_notm}} (CF-Anwendungen) sammeln Container, die auf {{site.data.keyword.containershort}} ausgeführt werden, und ausgewählte Services automatisch Protokolldaten und leiten sie an den {{site.data.keyword.loganalysisshort}}-Service weiter.
 
 In der folgenden Tabelle sind die verschiedenen Cloudressourcen aufgelistet. Absolvieren Sie das Lernprogramm, um mit der Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service zu beginnen:
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,29 +31,29 @@ Procédez comme suit :
     Par exemple, pour vous connecter à la région Sud des Etats-Unis, exécutez la commande suivante :
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Exécutez la commande de l'interface de ligne de commande `bx logging quota-usage-show`.  
+2. Exécutez la commande d'interface de ligne de commande `ibmcloud logging quota-usage-show`. 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
     ```
     {: codeblock}
 
     où 
 
     * Les valeurs admises pour RESOURCE_TYPE sont les suivantes : space, account
-    * RESOURCE_ID est l'identificateur global unique du compte ou de l'espace dont vous voulez obtenir l'utilisation de quota. 
+    * RESOURCE_ID est l'identificateur global unique du compte ou de l'espace dont vous voulez obtenir l'utilisation de quota.
 
 
 Par exemple, pour afficher l'utilisation du quota d'un compte, exécutez la commande suivante :
 
 ```
- bx logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
+ ibmcloud logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
 Showing quota usage for resource: 475693845023932019c6567c9c8de6dece ...
 OK
 
@@ -65,7 +65,7 @@ Daily Allotmant   Current Usage
 Pour afficher l'utilisation du quota d'un espace, exécutez la commande suivante :
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -86,28 +86,28 @@ Procédez comme suit :
     Par exemple, pour vous connecter à la région Sud des Etats-Unis, exécutez la commande suivante :
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Exécutez la commande de l'interface de ligne de commande `bx logging quota-usage-show` avec le paramètre `-s`. 
+2. Exécutez la commande d'interface de ligne de commande `ibmcloud logging quota-usage-show` avec le paramètre `-s`. 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID] [-s,--history]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID] [-s,--history]
     ```
     {: codeblock}
 
     où 
 
     * Les valeurs admises pour RESOURCE_TYPE sont les suivantes : space, account
-    * RESOURCE_ID est l'identificateur global unique du compte ou de l'espace dont vous voulez obtenir l'utilisation de quota. 
+    * RESOURCE_ID est l'identificateur global unique du compte ou de l'espace dont vous voulez obtenir l'utilisation de quota.
 
 Par exemple
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -138,7 +138,7 @@ Procédez comme suit :
 2. Obtenez l'ID du compte. Exécutez la commande suivante :
 
     ```
-	bx iam accounts
+	ibmcloud iam accounts
 	```
     {: codeblock}	
 
@@ -151,7 +151,7 @@ Procédez comme suit :
 	```
 	{: screen}
 
-3. Obtenez le jeton UAA.  
+3. Obtenez le jeton UAA. 
 
     Pour plus d'informations, voir [Obtention du jeton UAA](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa).
 
@@ -208,7 +208,7 @@ Procédez comme suit :
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Obtenez l'ID de l'espace. 
+2. Obtenez l'ID de l'espace.
 
     Pour plus d'informations, voir [Comment obtenir l'identificateur global unique d'un espace ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid).
 	
@@ -219,7 +219,7 @@ Procédez comme suit :
 	```
 	{: screen}
 
-3. Obtenez le jeton UAA.  
+3. Obtenez le jeton UAA. 
 
     Pour plus d'informations, voir [Obtention du jeton UAA](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa).
 

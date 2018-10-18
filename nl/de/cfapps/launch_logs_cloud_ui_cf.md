@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -29,7 +29,7 @@ Berücksichtigen Sie bei der Anzeige von CF-App-Protokollen die folgenden Inform
     <th>Informationen</th>
   </tr>
   <tr>
-    <td>Über die CF-App-Benutzerschnittstelle verfügbare Protokollregisterkarte</td>
+    <td>Über die CF-App-Benutzerschnittstelle verfügbare Protokollregisterkarte </td>
     <td>Die Protokolle, die für eine Analyse verfügbar sind, enthalten Daten der letzten 24 Stunden.</td>
   </tr>
   <tr>
@@ -64,7 +64,7 @@ Führen Sie die folgenden Schritte aus, um die Bereitstellungs- oder Laufzeitpro
     
 3. Klicken Sie auf die Option zur Anzeige in Kibana.
 
-Die Protokolle, die für eine Analyse verfügbar sind, enthalten standardmäßig Daten der letzten 15 Minuten. 
+Die Protokolle, die für eine Analyse verfügbar sind, enthalten standardmäßig Daten der letzten 15 Minuten.
 
 **Tipp:** Informationen zur Analyse von Daten für einen angepassten Zeitraum, finden Sie unter [Erweiterte Protokollanalyse mit Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana). 
 

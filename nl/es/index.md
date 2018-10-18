@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -32,7 +32,7 @@ Debe tener un ID de usuario que sea miembro o un propietario de una cuenta de {{
 ## Paso 1: Elegir un recurso de la nube cuyos registros se desea ver
 {: #step1}
 
-En {{site.data.keyword.Bluemix_notm}}, las aplicaciones CF, los contenedores que se ejecutan en el {{site.data.keyword.containershort}} y servicios seleccionados recopilan datos de registro automáticamente y los reenvían al servicio {{site.data.keyword.loganalysisshort}}. 
+En {{site.data.keyword.Bluemix_notm}}, las aplicaciones CF, los contenedores que se ejecutan en el {{site.data.keyword.containershort}} y servicios seleccionados recopilan datos de registro automáticamente y los reenvían al servicio {{site.data.keyword.loganalysisshort}}.
 
 En la tabla siguiente encontrará los distintos recursos de la nube. Consulte la guía de aprendizaje de un recurso para empezar a trabajar con el servicio {{site.data.keyword.loganalysisshort}}:
 
@@ -53,7 +53,7 @@ En la tabla siguiente encontrará los distintos recursos de la nube. Consulte la
   <tr>
     <td>Apps de CF</td>
     <td>[Análisis de registros en Kibana para una app de Cloud Foundry](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)</td>
-    <td>Público </td>
+    <td>Público</td>
     <td>![Vista general del registro de las apps de CF en {{site.data.keyword.Bluemix_notm}}](cfapps/images/cfapps_logs.png "Vista general del registro de las apps CF en {{site.data.keyword.Bluemix_notm}}")</td>
   </tr>
 </table>

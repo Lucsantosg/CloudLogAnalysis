@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -69,7 +69,7 @@ Log Collection に保管されたログは、保存ポリシーを構成する�
 
 * [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} または [Log Collection CLI](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} を使用して、Log Collection からログを手動で削除できます。 
 
-* CLI を使用できます。 CLI を使用してログを手動で削除することについて詳しくは、『[{{site.data.keyword.Bluemix_notm}} プラグインを使用した bx logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)』を参照してください。
+* CLI を使用できます。 CLI を使用してログを手動で削除することについて詳しくは、『[{{site.data.keyword.Bluemix_notm}} プラグインを使用した ibmcloud logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)』を参照してください。
     
 
 
@@ -85,16 +85,15 @@ Log Collection に保管されたログは、保存ポリシーを構成する�
 
 
 
-
 ## ログに関する情報の取得
 {: #info_about_logs}
 
-ログに関する一般情報を取得するには、`bx logging log-show` コマンドまたは `cf logging status` コマンドを使用します。 詳しくは、以下を参照してください。
+ログに関する一般情報を取得するには、`ibmcloud logging log-show` コマンドまたは `cf logging status` コマンドを使用します。 詳しくは、以下を参照してください。
 
 * [{{site.data.keyword.Bluemix_notm}} プラグインを使用したログ情報の表示](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
 * [CF プラグインを使用したログ情報の表示](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status)
 
-例えば、コストを制御するため、一定の期間にアプリのログのサイズをモニターしたい場合があります。 例えば、予想より多いログを生成しているアプリまたはサービスがあるかどうかを調べるため、ある {{site.data.keyword.Bluemix_notm}} スペースについて、1 週間における各ログ・タイプのサイズを把握したいといった場合が考えられます。 ログのサイズを確認するには、`bx logging log-show` コマンドまたは `cf logging status` コマンドを使用します。
+例えば、コストを制御するため、一定の期間にアプリのログのサイズをモニターしたい場合があります。 例えば、予想より多いログを生成しているアプリまたはサービスがあるかどうかを調べるため、ある {{site.data.keyword.Bluemix_notm}} スペースについて、1 週間における各ログ・タイプのサイズを把握したいといった場合が考えられます。 ログのサイズを確認するには、`ibmcloud logging log-show` コマンドまたは `cf logging status` コマンドを使用します。
 
 スペース・ドメイン、組織ドメイン、またはアカウント・ドメインに保管されたログに関する情報を表示できます。
 
@@ -105,7 +104,7 @@ Log Collection に保管されたログは、保存ポリシーを構成する�
 
 CLI のインストール方法について詳しくは、『[ロギング CLI のインストール](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)』を参照してください。
 
-CLI のバージョンを確認するには、`bx plugin list` コマンドを実行します。
+CLI のバージョンを確認するには、`ibmcloud plugin list` コマンドを実行します。
 
 コマンドの実行方法についてのヘルプを利用するには、『[コマンドの実行に関するコマンド・ライン・ヘルプの利用](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#command_cli_help)』を参照してください。
 

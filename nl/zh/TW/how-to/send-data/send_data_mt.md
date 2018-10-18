@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -40,10 +40,10 @@ lastupdated: "2018-04-19"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 執行 `bx logging token-get` 指令。 
+2. 執行 `ibmcloud logging token-get` 指令。 
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     ```
     {: codeblock}
 
@@ -52,7 +52,7 @@ lastupdated: "2018-04-19"
     例如，
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
     OK
 
@@ -72,7 +72,7 @@ lastupdated: "2018-04-19"
 1.	以 root 使用者身分登入。 
 
     ```
-        sudo -s
+    sudo -s
     ```
     {: codeblock}
     
@@ -81,7 +81,7 @@ lastupdated: "2018-04-19"
     例如，針對 Ubunutu 系統，檢查 `timedatectl status` 是否顯示 *Network time on: yes*。如果是，Ubuntu 系統即已配置成使用 NTP，而且您可以跳過此步驟。
     
     ```
-        # timedatectl status
+    # timedatectl status
     Local time: Mon 2017-06-12 03:01:22 PDT
     Universal time: Mon 2017-06-12 10:01:22 UTC
     RTC time: Mon 2017-06-12 10:01:22
@@ -97,49 +97,49 @@ lastupdated: "2018-04-19"
     1.	執行下列指令，以更新套件。 
 
         ```
-                apt-get update
+        apt-get update
         ```
         {: codeblock}
         
     2.	執行下列指令，以安裝 ntp 套件。 
 
         ```
-                apt-get install ntp
+        apt-get install ntp
         ```
         {: codeblock}
         
     3.	執行下列指令，以安裝 ntpdate 套件。 
     
         ```
-                apt-get install ntpdate
+        apt-get install ntpdate
         ```
         {: codeblock}
         
     4.	執行下列指令，以停止服務。 
         
         ```
-                service ntp stop
+        service ntp stop
         ```
         {: codeblock}
         
     5.	執行下列指令，以同步化系統時鐘。 
     
         ```
-                ntpdate -u 0.ubuntu.pool.ntp.org
+        ntpdate -u 0.ubuntu.pool.ntp.org
         ```
         {: codeblock}
         
         結果會確認時間已調整，例如：
         
         ```
-        4 May 19:02:17 ntpdate[5732]: adjust time server 50.116.55.65 offset 0.000685 sec
+4 May 19:02:17 ntpdate[5732]: adjust time server 50.116.55.65 offset 0.000685 sec
         ```
         {: screen}
         
     6.	執行下列指令，以重新啟動 ntpd。 
     
         ```
-                service ntp start
+        service ntp start
         ```
         {: codeblock}
     
@@ -148,21 +148,21 @@ lastupdated: "2018-04-19"
     7.	執行下列指令，讓 ntpd 服務在當機或重新開機之後自動啟動。 
     
         ```
-                service ntp enable
+        service ntp enable
         ```
         {: codeblock}
         
         顯示的結果是可用來管理 ntpd 服務的指令清單，例如：
         
         ```
-                Usage: /etc/init.d/ntpd {start|stop|status|restart|try-restart|force-reload}
+        Usage: /etc/init.d/ntpd {start|stop|status|restart|try-restart|force-reload}
         ```
         {: screen}
 
 3. 在系統的套件管理程式中，新增 {{site.data.keyword.loganalysisshort}} 服務的儲存庫。執行下列指令：
 
     ```
-        wget -O - https://downloads.opvis.bluemix.net/client/IBM_Logmet_repo_install.sh | bash
+    wget -O - https://downloads.opvis.bluemix.net/client/IBM_Logmet_repo_install.sh | bash
     ```
     {: codeblock}
 
@@ -171,7 +171,7 @@ lastupdated: "2018-04-19"
     1. 執行下列指令，以安裝 mt-logstash-forwarder：
     
         ```
-                apt-get install mt-logstash-forwarder 
+        apt-get install mt-logstash-forwarder 
         ```
         {: codeblock}
         
@@ -180,7 +180,7 @@ lastupdated: "2018-04-19"
        編輯檔案 `/etc/mt-logstash-forwarder/mt-lsf-config.sh`。例如，您可以使用 vi 編輯器：
                
        ```
-              vi /etc/mt-logstash-forwarder/mt-lsf-config.sh
+       vi /etc/mt-logstash-forwarder/mt-lsf-config.sh
        ```
        {: codeblock}
         
@@ -217,7 +217,7 @@ lastupdated: "2018-04-19"
        例如，請查看下列範例檔案，尋找英國地區中 ID 為 *7d576e3b-170b-4fc2-a6c6-b7166fd57912* 的空間：
         
        ```
-              # more mt-lsf-config.sh 
+       # more mt-lsf-config.sh 
        LSF_INSTANCE_ID="myhelloapp"
        LSF_TARGET="ingest.logging.ng.bluemix.net:9091"
        LSF_TENANT_ID="7d576e3b-170b-4fc2-a6c6-b7166fd57912"
@@ -229,7 +229,7 @@ lastupdated: "2018-04-19"
     3. 啟動 mt-logstash-forwarder。 
     
        ```
-              service mt-logstash-forwarder start
+       service mt-logstash-forwarder start
        ```
        {: codeblock}
                 
@@ -250,7 +250,7 @@ lastupdated: "2018-04-19"
     例如，在 Ubuntu 系統中，執行下列指令：
     
     ```
-        cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
+    cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
     ```
     {: codeblock}
         
@@ -261,7 +261,7 @@ lastupdated: "2018-04-19"
      重新啟動 mt-logstash-forwarder 服務。執行下列指令：
     
     ```
-        service mt-logstash-forwarder restart
+    service mt-logstash-forwarder restart
     ```
     {: codeblock}
 
@@ -272,7 +272,7 @@ lastupdated: "2018-04-19"
 1.	複製 `/etc/mt-logstash-forwarder/conf.d/syslog.conf` 檔案。 
 
     ```
-        cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
+    cp /etc/mt-logstash-forwarder/conf.d/syslog.conf /etc/mt-logstash-forwarder/conf.d/myapp.conf
     ```
     {: codeblock}
     

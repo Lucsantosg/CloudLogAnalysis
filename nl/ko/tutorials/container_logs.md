@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -52,9 +52,7 @@ lastupdated: "2018-03-12"
 
 3. Ubuntu 시스템에서 {{site.data.keyword.containershort}} 및 {{site.data.keyword.loganalysisshort}}에 대해 작업하기 위한 CLI를 설치하십시오.
 
-    * {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오.
-    
-    * {{site.data.keyword.containershort}}에서 Kubernetes 클러스터를 작성 및 관리하고 컨테이너식 앱을 클러스터에 배치하기 위한 {{site.data.keyword.containershort}} CLI를 설치하십시오. 자세한 정보는 [CS 플러그인 설치](/docs/containers/cs_cli_install.html#cs_cli_install_steps)를 참조하십시오.
+    * {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오. {{site.data.keyword.containershort}}에서 Kubernetes 클러스터를 작성 및 관리하고 컨테이너식 앱을 클러스터에 배치하기 위한 {{site.data.keyword.containershort}} CLI를 설치하십시오. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/index.html#overview)를 참조하십시오.
     
     * {{site.data.keyword.loganalysisshort}} CLI를 설치하십시오. 자세한 정보는 [Log Analysis CLI(IBM Cloud 플러그인) 구성](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)을 참조하십시오.
     
@@ -87,14 +85,14 @@ lastupdated: "2018-03-12"
 	{{site.data.keyword.containershort}} 서비스 플러그인을 초기화하십시오.
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
     터미널 컨텍스트를 클러스터로 설정하십시오.
     
 	```
-	bx cs cluster-config MyCluster
+	ibmcloud cs cluster-config MyCluster
 	```
 	{: codeblock}
 
@@ -121,7 +119,7 @@ lastupdated: "2018-03-12"
 로깅 구성을 정의하기 전에 클러스터의 현재 로깅 구성 정의를 확인하십시오. 다음 명령을 실행하십시오.
 
 ```
-$ bx cs logging-config-get ClusterName
+$ ibmcloud cs logging-config-get ClusterName
 ```
 {: codeblock}
 
@@ -130,7 +128,7 @@ $ bx cs logging-config-get ClusterName
 예를 들어, *mycluster* 클러스터에 대해 정의된 로깅 구성은 다음과 같습니다. 
 
 ```
-$ bx cs logging-config-get mycluster
+$ ibmcloud cs logging-config-get mycluster
 Retrieving cluster mycluster logging configurations...
 OK
 Id                                     Source       Namespace   Host                                Port   Org            Space   Protocol   Paths   
@@ -166,7 +164,7 @@ stdout 및 stderr 로그를 영역 도메인으로 보내려면 다음 단계를
 2. 클러스터 로깅 구성을 작성하십시오. 다음 명령을 실행하여 *stdout* 및 *stderr* 로그 파일을 {{site.data.keyword.loganalysisshort}} 서비스로 보내십시오.
 
     ```
-    bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -181,7 +179,7 @@ stdout 및 stderr 로그를 영역 도메인으로 보내려면 다음 단계를
 예를 들어, stdout 및 stderr 로그를 미국 남부 지역의 영역 개발자에게 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -208,7 +206,7 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 2. 클러스터 로깅 구성을 작성하십시오. 다음 명령을 실행하여 */var/log/syslog* 및 */var/log/auth.log* 로그 파일을 {{site.data.keyword.loganalysisshort}} 서비스로 보내십시오.
 
     ```
-    bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -223,7 +221,7 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 예를 들어, 작업자 로그를 미국 남부 지역의 영역 도메인에 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -270,7 +268,7 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 ## 4단계: {{site.data.keyword.containershort_notm}} 키 소유자 권한 부여
 {: #step4}
 
-영역으로 전달될 클러스터 로그의 경우 {{site.data.keyword.containershort_notm}} 키 소유자에는 다음 권한이 있어야 합니다. 
+영역으로 전달될 클러스터 로그의 경우 {{site.data.keyword.containershort_notm}} 키 소유자에는 다음 권한이 있어야 합니다.
 
 * *관리자* 권한이 있는 {{site.data.keyword.loganalysisshort}} 서비스에 대한 IAM 정책
 * 로그가 전달될 조직 및 영역의 CF(Cloud Foundry) 권한. 컨테이너 키 소유자에는 조직에 대한 *orgManager* 역할과 영역에 대한 *SpaceManager* 및 *개발자*가 필요합니다.
@@ -280,7 +278,7 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 1. {{site.data.keyword.containershort}} 키 소유자인 계정의 사용자를 식별하십시오. 터미널에서 다음 명령을 실행하십시오.
 
     ```
-    bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -307,7 +305,7 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 4. 로깅 구성을 새로 고치십시오. 다음 명령을 실행하십시오.
     
     ```
-        bx cs logging-config-refresh ClusterName
+    ibmcloud cs logging-config-refresh ClusterName
     ```
     {: codeblock}
         
@@ -482,10 +480,10 @@ Kubernetes 클러스터와 관련된 다른 검색 필드에 대한 자세한 �
 
 CLI 명령:
 
-* [bx cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
-* [bx cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
-* [bx cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
-* [bx cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
-* [bx cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
-* [bx cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
+* [ibmcloud cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
+* [ibmcloud cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
+* [ibmcloud cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
+* [ibmcloud cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
+* [ibmcloud cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
+* [ibmcloud cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
 

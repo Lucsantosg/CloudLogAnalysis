@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ Para obter o token de criação de log que pode ser usado para enviar logs para 
 
 1. Instale a CLI do {{site.data.keyword.Bluemix_notm}}.
 
-   Para obter mais informações, veja [Fazer download e instalar a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obter mais informações, veja [Fazer download e instalar a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Se a CLI estiver instalada, continue com a próxima etapa.
     
@@ -39,7 +39,7 @@ Para obter o token de criação de log que pode ser usado para enviar logs para 
 3. Execute o comando a seguir:
 
     ```
-	bx logging token-get
+	ibmcloud logging token-get
 	```
 	{: codeblock}
 
@@ -53,7 +53,7 @@ Para obter o token de criação de log que pode ser usado para enviar logs para 
 
 1. Instale a CLI do {{site.data.keyword.Bluemix_notm}}.
 
-   Para obter mais informações, veja [Fazer download e instalar a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obter mais informações, veja [Fazer download e instalar a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Se a CLI estiver instalada, continue com a próxima etapa.
     
@@ -66,14 +66,14 @@ Para obter o token de criação de log que pode ser usado para enviar logs para 
     Liste os serviços para obter o nome da instância do {{site.data.keyword.loganalysisshort}} no espaço:
 	
     ```
-	bx service list
+	Lista de serviços ibmcloud
 	```
 	{: codeblock}
 	
 	Por exemplo:
 	
 	```
-	bx service list
+	ibmcloud service list
     Invoking 'cf services'...
 
     Getting services in org lopezdsr_org / space dev as xxx@yyyy...
@@ -87,14 +87,14 @@ Para obter o token de criação de log que pode ser usado para enviar logs para 
 	Crie uma chave. Use o valor de **name** para o nome do serviço e insira o nome de sua chave.
 	
 	```
-	bx service key-create servicename KeyName 
+	ibmcloud service key-create servicename KeyName 
 	```
 	{: codeblock}
 	
 	Por exemplo,
 	
 	```
-	bx service key-create "Log Analysis-vg" mykey2
+	ibmcloud service key-create "Log Analysis-vg" mykey2
     Invoking 'cf create-service-key Log Analysis-vg mykey2'...
 
     Creating service key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -105,14 +105,14 @@ Para obter o token de criação de log que pode ser usado para enviar logs para 
 4. Obtenha o token de criação de log. Execute o comando a seguir:
 	
 	```
-	bx service key-show name Keyname
+	ibmcloud service key-show name Keyname
 	```
 	{: codeblock}
 	
 	Por exemplo, 
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" 
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" 
     Invoking 'cf service-key Log Analysis-vg mykey2'...
 
     Obtendo a chave mykey2 para a instância de serviço Log Analysis-vg como xxx@yyyy...
@@ -128,7 +128,7 @@ Para obter o token de criação de log que pode ser usado para enviar logs para 
 	Para obter o token de criação de log, é possível executar o comando a seguir:
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
     sdtghyrtfde4
 	```
 	{: screen}
@@ -143,7 +143,7 @@ Para obter o token de criação de log que pode ser usado para enviar logs para 
 
 1. Instale a CLI do {{site.data.keyword.Bluemix_notm}}.
 
-   Para obter mais informações, veja [Fazer download e instalar a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obter mais informações, veja [Fazer download e instalar a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Se a CLI estiver instalada, continue com a próxima etapa.
     
@@ -153,10 +153,10 @@ Para obter o token de criação de log que pode ser usado para enviar logs para 
 	
 3. Obtenha o [token do UAA](/docs/services/CloudLogAnalysis/security/auth_uaa.html#uaa_cli).
 
-    Por exemplo, execute o comando `bx cf oauth-token` para obter o token do UAA.
+    Por exemplo, execute o comando `ibmcloud cf oauth-token` para obter o token UAA.
 
     ```
-	bx cf oauth-token
+	ibmcloud cf oauth-token
 	```
 	{: codeblock}
 	

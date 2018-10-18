@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-08-21"
 
 ---
 
@@ -20,7 +20,7 @@ A CLI do {{site.data.keyword.loganalysislong}} é um plug-in do {{site.data.keyw
 {: shortdesc}
 
 **Pré-requisitos**
-* Antes de executar os comandos de criação de log, efetue login no {{site.data.keyword.Bluemix_notm}} com o comando `bx login` para gerar um token de acesso e autenticar sua sessão.
+* Antes de executar os comandos de criação de log, efetue login no {{site.data.keyword.Bluemix_notm}} com o comando `ibmcloud login` para gerar um token de acesso e autenticar sua sessão.
 
 Para descobrir sobre como usar a CLI do {{site.data.keyword.loganalysisshort}}, veja [Gerenciando logs](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov).
 
@@ -31,67 +31,67 @@ Para descobrir sobre como usar a CLI do {{site.data.keyword.loganalysisshort}}, 
     <th>Quando utilizá-lo</th>
   </tr>
   <tr>
-    <td>[bx logging](#base)</td>
+    <td>[ criação de log ibmcloud ](#base)</td>
     <td>Use esse comando para obter informações sobre a CLI, como a lista de comandos.</td>
   </tr>
   <tr>
-    <td>[bx logging log-delete](#delete)</td>
+    <td>[ ibmcloud logging log-delete ](#delete)</td>
     <td>Use esse comando para excluir logs armazenados na Coleção de logs.</td>
   </tr>
   <tr>
-    <td>[bx logging log-download](#download)</td>
+    <td>[ ibmcloud logging log-download ](#download)</td>
     <td>Use este comando para fazer download de logs da Coleção de logs para um arquivo local ou canalizar os logs para outro programa, como Elastic Stack. </td>
   </tr>
   <tr>
-    <td>[bx logging log-show](#status)</td>
+    <td>[ ibmcloud logging log-show ](#status)</td>
     <td>Use esse comando para obter informações sobre os logs que são coletados em um espaço, organização ou conta.</td>
   </tr>
   <tr>
-    <td>[bx logging help](#help)</td>
+    <td>[ ajuda de criação de log ibmcloud ](#help)</td>
     <td>Use esse comando para obter ajuda sobre como usar a CLI, além de uma lista de todos os comandos.</td>
   </tr>
   <tr>
-    <td>[bx logging option-show](#optionshow)</td>
+    <td>[ opção de criação de log ibmcloud-show ](#optionshow)</td>
     <td>Use esse comando para visualizar o período de retenção para logs que estão disponíveis em um espaço, organização ou conta.</td>
   </tr>
   <tr>
-    <td>[bx logging option-update](#optionupdate)</td>
+    <td>[ opção de criação de log ibmcloud-update ](#optionupdate)</td>
     <td>Use esse comando para configurar o período de retenção para logs que estão disponíveis em um espaço, organização ou conta.</td>
   </tr>
   <tr>
-    <td>[bx logging cota-usage-show](#quotausage)</td>
+    <td>[ ibmcloud logging quota-usage-show-show ](#quotausage)</td>
     <td>Use esse comando para obter as informações de uso de cota para um espaço, uma organização ou uma conta. Também é possível obter as informações de histórico de cota.</td>
   </tr>
   <tr>
-    <td>[bx logging session-create](#session_create)</td>
+    <td>[ ibmcloud logging session-create ](#session_create)</td>
     <td>Use esse comando para criar uma nova sessão.</td>
   <tr>
   <tr>
-    <td>[bx logging session-delete](#session_delete)</td>
+    <td>[Sessão de criação de log ibmcloud-delete](#session_delete)</td>
     <td>Use esse comando para excluir uma sessão.</td>
   <tr>  
   <tr>
-    <td>[bx logging sessions](#session_list)</td>
+    <td>[ sessões de criação de log ibmcloud ](#session_list)</td>
     <td>Use esse comando para listar sessões ativas e seus IDs.</td>
   <tr>  
   <tr>
-    <td>[bx logging session-show](#session_show)</td>
+    <td>[ ibmcloud logging session-show ](#session_show)</td>
     <td>Use esse comando para mostrar o status de uma única sessão.</td>
   <tr>  
   <tr>
-    <td>[Bx logging token-get](#tokenget)</td>
+    <td>[ token de criação de log ibmcloud-get ](#tokenget)</td>
     <td>Use esse comando para obter o token de criação de log para enviar dados do log para o serviço {{site.data.keyword.loganalysisshort}}.</td>
   </tr>
 </table>
 
 
-## bx logging
+## ibmcloud logging
 {: #base}
 
 Fornece informações gerais sobre a CLI.
 
 ```
-bx logging 
+ibmcloud logging 
 ```
 {: codeblock}
 
@@ -100,11 +100,11 @@ bx logging
 Para obter a lista de comandos, execute o comando a seguir:
 
 ```
-bx logging
-NOME:
-   bx logging - IBM Cloud Log Analysis Service
-USO:
-   bx logging command [arguments...] [command options]
+ibmcloud logging 
+NAME:
+   ibmcloud logging - IBM Cloud Log Analysis Service
+USAGE:
+   ibmcloud logging command [arguments...] [command options]
 
 COMMANDS:
 COMMANDS:
@@ -121,20 +121,20 @@ COMMANDS:
    quota-usage-show   Show quota usage info
    help             
    
-Insira 'bx logging help [command]' para obter mais informações sobre um comando.
+Enter 'ibmcloud logging help [command]' for more information about a command.
 ```
 {: codeblock}
 
 
 
 
-## bx logging log-delete
+## ibmcloud logging log-delete
 {: #delete}
 
 Exclui logs armazenados na Coleção de logs.
 
 ```
-bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
+ibmcloud logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
 ```
 {: codeblock}
 
@@ -166,21 +166,21 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
 
 Para excluir os logs do tipo *linux_syslog* em 25 de maio de 2017, execute o comando a seguir:
 ```
-bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: screen}
 
 
 
-## bx logging log-download 
+## ibmcloud logging log-download 
 {: #download}
 
 Faz download de logs da Coleção de logs em um arquivo local ou canaliza logs para outro programa, como um Elastic Stack. 
 
-**Nota:** para fazer download de arquivos, será necessário criar uma sessão primeiro. Uma sessão define de quais logs fazer download com base no intervalo de data, no tipo de log e no tipo de conta. O download de logs é feito dentro do contexto de uma sessão. Para obter mais informações, veja [bx logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create).
+**Nota:** para fazer download de arquivos, será necessário criar uma sessão primeiro. Uma sessão define de quais logs fazer download com base no intervalo de data, no tipo de log e no tipo de conta. O download de logs é feito dentro do contexto de uma sessão. Para obter mais informações, veja [ibmcloud logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create).
 
 ```
- bx logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
+ ibmcloud logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
 
 ```
 {: codeblock}
@@ -205,7 +205,7 @@ Faz download de logs da Coleção de logs em um arquivo local ou canaliza logs p
 
 <dl>
   <dt>SESSION_ID</dt>
-  <dd>Esse valor indica o ID da sessão que se deve usar ao fazer download de logs. <br>**Nota:** o comando `bx logging session-create` fornece os parâmetros que controlam quais logs são transferidos por download. </dd>
+  <dd>Esse valor indica o ID da sessão que se deve usar ao fazer download de logs. <br>**Nota:** o comando `ibmcloud logging session-create` fornece os parâmetros que controlam quais logs são transferidos por download. </dd>
 </dl>
 
 **Nota:** após a conclusão do download, a execução do mesmo comando novamente recusará a realização de qualquer coisa. Para fazer download dos mesmos dados novamente, deve-se usar um arquivo diferente ou uma sessão diferente.
@@ -215,14 +215,14 @@ Faz download de logs da Coleção de logs em um arquivo local ou canaliza logs p
 Em um sistema Linux, para fazer download de logs em um arquivo chamado mylogs.gz, execute o comando a seguir:
 
 ```
-bx logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 Para fazer download de logs em seu próprio Elastic Stack, execute o comando a seguir:
 
 ```
-bx logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -242,13 +242,13 @@ input {
 {: screen}
 
 
-## bx logging help
+## ibmcloud logging help
 {: #help}
 
 Fornece informações sobre como usar um comando.
 
 ```
-bx logging help [command] 
+ibmcloud logging help [ command ] 
 ```
 {: codeblock}
 
@@ -266,12 +266,12 @@ bx logging help [command]
 Para obter ajuda sobre como executar o comando para visualizar o status de logs, execute o comando a seguir:
 
 ```
-bx logging help log-show
-NOME:
-   log-show - Mostrar a contagem, o tamanho e o tipo de logs por dia
+ibmcloud logging help log-show
+NAME:
+   log-show - Show the count, size, and type of logs per day
 
-USO:
-   bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+USAGE:
+   ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 
 OPÇÕES:
    -r, --resource-type     Tipo de recurso, o tipo de recurso válido é conta, organização ou espaço
@@ -285,7 +285,7 @@ OPÇÕES:
 {: screen}
 
 
-## bx logging option-show
+## ibmcloud logging option-show
 {: #optionshow}
 
 Exibe o período de retenção para logs que estão disponíveis em um espaço, organização ou conta. 
@@ -296,7 +296,7 @@ Exibe o período de retenção para logs que estão disponíveis em um espaço, 
 **Nota:** por padrão, todos os logs são armazenados. Deve-se excluí-los manualmente usando o comando **delete**. Configure uma política de retenção para excluir os logs automaticamente.
 
 ```
-bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -318,14 +318,14 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
 Para ver o período de retenção atual padrão para o espaço no qual você efetuou login, execute o comando a seguir:
 
 ```
-bx logging option-show
+ibmcloud logging option-show
 ```
 {: screen}
 
 
 
 
-## bx logging option-update
+## ibmcloud logging option-update
 {: #optionupdate}
 
 Muda o período de retenção para logs que estão disponíveis em um espaço, organização ou conta. 
@@ -334,7 +334,7 @@ Muda o período de retenção para logs que estão disponíveis em um espaço, o
 * O valor padrão é **-1**. 
 
 ```
-bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
+ibmcloud logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
 ```
 {: codeblock}
 
@@ -359,12 +359,12 @@ bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RE
 Para mudar o período de retenção para 25 dias do espaço ao qual você está conectado, execute o comando a seguir:
 
 ```
-bx logging option-update -e 25
+Opção de criação de log ibmcloud-update -e 25
 ```
 {: screen}
 
 
-## Bx logging cota-usage-show
+## ibmcloud logging quota-usage-show
 {: #quotausage}
 
 Informações sobre o uso de cota de um espaço, uma organização ou uma conta. Também é possível utilizá-lo para obter o uso de histórico.
@@ -373,7 +373,7 @@ Informações sobre o uso de cota de um espaço, uma organização ou uma conta.
 * O valor padrão é **-1**. 
 
 ```
-bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
 ```
 {: codeblock}
 
@@ -398,14 +398,14 @@ bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id
 Para obter o uso de cota histórico para um domínio de espaço, execute o comando a seguir:
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744...
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744...
 OK
 
 Date Allotmant Usage 2018.02.28 524288000 80405926 2018.03.06 524288000 18955540 2018.03.05 524288000 47262944 2018.03.08 524288000 18311338 2018.03.01 524288000 82416831 2018.03.03 524288000 75045462 2018.03.07 524288000 17386278 2018.03.02 524288000 104316444 2018.03.04 524288000 73125223   
 ```
 {: screen}
 
-## bx logging session-create
+## Sessão de criação de log ibmcloud-create
 {: #session_create}
 
 Cria uma nova sessão.
@@ -413,7 +413,7 @@ Cria uma nova sessão.
 **Nota:** é possível ter até 30 sessões simultâneas em um espaço. A sessão é criada para um usuário. As sessões não podem ser compartilhadas entre usuários em um espaço.
 
 ```
-bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE]
+ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-T, --time, LOG_TIME]
 ```
 {: codeblock}
 
@@ -438,6 +438,10 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
   
   <dt>-t, --type, LOG_TYPE</dt>
   <dd>(Opcional) Configura o tipo de log. <br>Por exemplo, *syslog* é um tipo de log. <br>O valor padrão é configurado como asterisco (*). <br>É possível especificar múltiplos tipos de log separando cada tipo com uma vírgula, por exemplo, *log_type_1,log_type_2,log_type_3*.
+  </dd>
+
+  <dt>-T, --time, LOG_TIME</dt>
+  <dd>(Opcional) Configura a hora do dia em que você deseja obter logs de um tipo específico. </br>Os valores válidos são de 0 a 23. </br>Isso deve ser usado combinado com LOG_TYPE.
   </dd>
 
 </dl>
@@ -476,7 +480,7 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
 Para criar uma sessão que inclua logs para 13 de novembro de 2017, execute o comando a seguir:
 
 ```
-bx logging session-create -s 2017-11-13 -e 2017-11-13
+ibmcloud logging session-create -s 2017-11-13 -e 2017-11-13
 Creating session for xxxxx@yyy.com resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
@@ -486,13 +490,13 @@ Session: 1ef776d1-4d25-4297-9693-882606c725c8 is created
 {: screen}
 
 
-## bx logging session-delete 
+## Sessão de criação de log ibmcloud-delete 
 {: #session_delete}
 
 Exclui uma sessão, especificada pelo ID de sessão.
 
 ```
-bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 ```
 {: codeblock}
 
@@ -521,19 +525,19 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
 Para excluir uma sessão com o ID de sessão *cI6hvAa0KR_tyhjxZZz9Uw==*, execute o comando a seguir:
 
 ```
-bx logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-delete cI6hvAa0KR_tyhjxZZz9Uw ==
 ```
 {: screen}
 
 
 
-## bx logging sessions
+## ibmcloud logging sessions
 {: #session_list}
 
 Lista as sessões ativas e seus IDs.
 
 ```
-bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -567,7 +571,7 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **Exemplo**
 
 ```
-bx logging sessions
+ibmcloud logging sessions
 Listing sessions of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 ID                                     Space                                  CreateTime                       AccessTime   
@@ -577,13 +581,13 @@ Listed the sessions of resource xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 :{ screen}
 
 
-## bx logging session-show
+## ibmcloud logging session-show
 {: #session_show}
 
 Mostra o status de uma sessão única.
 
 ```
-bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 
 ```
 {: codeblock}
@@ -610,17 +614,17 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
 Para mostrar detalhes de uma sessão com ID de sessão *cI6hvAa0KR_tyhjxZZz9Uw==*, execute o comando a seguir:
 
 ```
-bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-show cI6hvAa0KR_tyhjxZZz9Uw ==
 ```
 {: screen}
 
-## Bx logging token-get
+## ibmcloud logging token-get
 {: #tokenget}
 
 Retorna o token de criação de log que é necessário para enviar dados de log para o {{site.data.keyword.loganalysisshort}}.
 
 ```
-bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -640,7 +644,7 @@ bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOUR
 **Exemplo**
 
 ```
-bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -650,13 +654,13 @@ js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx
 {: screen}
 
 
-## bx logging log-show
+## ibmcloud logging log-show
 {: #status}
 
 Retorna informações sobre os logs coletados em um espaço ou uma conta do {{site.data.keyword.Bluemix_notm}}.
 
 ```
-bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 ```
 {: codeblock}
 
@@ -696,7 +700,7 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **Exemplo**
 
 ```
-bx logging log-show
+ibmcloud logging log-show
 Showing log status of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 Date         Size        Count    Searchable   Types   
@@ -709,7 +713,7 @@ Date         Size        Count    Searchable   Types
 {: screen}
 
 ```
- bx logging log-show -l
+ ibmcloud logging log-show -l
 Showing log status of resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 Date         Size        Count    Searchable   Type   

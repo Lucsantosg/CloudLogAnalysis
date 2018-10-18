@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -76,7 +76,7 @@ La requête utilisée pour filtrer les données affichées dans Kibana extrait l
 
 Procédez comme suit pour lancer Kibana depuis un navigateur :
 
-1. Accédez à l'URL [https://logging.<span class="keyword" data-hd-keyref="DomainName">nom_domaine</span>](https://logging.{DomainName}) pour vous connecter à l'interface utilisateur Kibana.
+1. Lancez l'interface utilisateur Kibana.
     
     Exemple 
       

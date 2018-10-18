@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -68,7 +68,7 @@ Il servizio {{site.data.keyword.loganalysisshort}} fornisce più piani. Ogni pia
 
 Puoi scegliere uno dei seguenti metodi per analizzare i log della tua applicazione Cloud Foundry:
 
-* Analizza il log nella IU {{site.data.keyword.Bluemix_notm}} per visualizzare l'attività più recente dell'applicazione. 
+* Analizza il log nella IU {{site.data.keyword.Bluemix_notm}} per visualizzare l'attività più recente dell'applicazione.
     
     In {{site.data.keyword.Bluemix_notm}}, puoi visualizzare, filtrare e analizzare i log attraverso la scheda **Log** disponibile per ogni applicazione Cloud Foundry. Per ulteriori informazioni, vedi [Analisi dei log dell'applicazione CF tramite il dashboard dell'applicazione CF](/docs/services/CloudLogAnalysis/cfapps/launch_logs_cloud_ui_cf.html#cfapp_ui).
     

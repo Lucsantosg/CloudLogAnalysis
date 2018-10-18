@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ lastupdated: "2018-04-10"
 
 1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
 
-   詳しくは、『[{{site.data.keyword.Bluemix_notm}} CLI のダウンロードとインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
+   詳しくは、[『{{site.data.keyword.Bluemix_notm}}CLI のダウンロードとインストール』](/docs/cli/index.html#overview)を参照してください。
    
    CLI がインストールされている場合は、次のステップに進みます。
     
@@ -39,41 +39,41 @@ lastupdated: "2018-04-10"
 3. 次のコマンドを実行します。
 
     ```
-	bx logging token-get
+	ibmcloud logging token-get
 	```
 	{: codeblock}
 
 出力でロギング・トークンが返されます。
 
 
-## {{site.data.keyword.Bluemix_notm}} CLI を使用して、ログをスペースに送信するためのロギング・トークンを取得する
+## {{site.data.keyword.Bluemix_notm}} CLI を使用して、ログをスペースに送信するためのロギング・トークンを取得する 
 {: #logging_token_cloud_cli}
 
-ログを {{site.data.keyword.loganalysisshort}} サービスに送信するために使用できるロギング・トークンを取得するには、以下のステップを実行します。
+{{site.data.keyword.loganalysisshort}} サービスにログを送信するために使用できるロギング・トークンを取得するには、以下のステップを実行します。
 
 1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
 
-   詳しくは、[{{site.data.keyword.Bluemix_notm}} CLI のダウンロードとインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install) を参照してください。
+   詳しくは、[『{{site.data.keyword.Bluemix_notm}}CLI のダウンロードとインストール』](/docs/cli/index.html#overview)を参照してください。
    
    CLI がインストールされている場合は、次のステップに進みます。
     
 2. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    詳しくは、[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login) を参照してください。
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 	
 3. {{site.data.keyword.loganalysisshort}} サービスがプロビジョンされたスペース内でサービス・キーを作成します。 次のコマンドを実行します。
 
-    スペース内の {{site.data.keyword.loganalysisshort}} インスタンスの名前を取得するために、サービスをリストします。
+    スペース内の {{site.data.keyword.loganalysisshort}} インスタンスの名前を取得するため、サービスをリストします。
 	
     ```
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	
-	以下に例を示します。
+	例えば次のようにします。
 	
 	```
-	bx service list
+	ibmcloud service list
     Invoking 'cf services'...
 
     Getting services in org lopezdsr_org / space dev as xxx@yyyy...
@@ -84,17 +84,17 @@ lastupdated: "2018-04-10"
     ```
 	{: screen}
 	
-	キーを作成します。 servicename には値 **name** を使用し、キーの名前を入力します。
+	キーを作成します。 servicename には **name** の値を使用し、キーの名前を入力してください。
 	
 	```
-	bx service key-create servicename KeyName 
+	ibmcloud service key-create servicename KeyName 
 	```
 	{: codeblock}
 	
 	以下に例を示します。
 	
 	```
-	bx service key-create "Log Analysis-vg" mykey2
+	ibmcloud service key-create "Log Analysis-vg" mykey2
     Invoking 'cf create-service-key Log Analysis-vg mykey2'...
 
     Creating service key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -105,14 +105,14 @@ lastupdated: "2018-04-10"
 4. ロギング・トークンを取得します。 次のコマンドを実行します。
 	
 	```
-	bx service key-show name Keyname
+	ibmcloud service key-show name Keyname
 	```
 	{: codeblock}
 	
 	以下に例を示します。 
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" 
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" 
     Invoking 'cf service-key Log Analysis-vg mykey2'...
 
     Getting key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -128,7 +128,7 @@ lastupdated: "2018-04-10"
 	ロギング・トークンを取得するため、以下のコマンドを実行できます。
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
     sdtghyrtfde4
 	```
 	{: screen}
@@ -143,7 +143,7 @@ lastupdated: "2018-04-10"
 
 1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
 
-   詳しくは、『[{{site.data.keyword.Bluemix_notm}} CLI のダウンロードとインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
+   詳しくは、[『{{site.data.keyword.Bluemix_notm}}CLI のダウンロードとインストール』](/docs/cli/index.html#overview)を参照してください。
    
    CLI がインストールされている場合は、次のステップに進みます。
     
@@ -153,10 +153,10 @@ lastupdated: "2018-04-10"
 	
 3. [UAA トークン](/docs/services/CloudLogAnalysis/security/auth_uaa.html#uaa_cli)を取得します。
 
-    例えば、`bx cf oauth-token` コマンドを実行して、UAA トークンを取得します。
+    例えば、`ibmcloud cf oauth-token` コマンドを実行して、UAA トークンを取得します。
 
     ```
-	bx cf oauth-token
+	ibmcloud cf oauth-token
 	```
 	{: codeblock}
 	
@@ -164,7 +164,7 @@ lastupdated: "2018-04-10"
 
 4. スペースの GUID を取得します。
 
-   詳しくは、[スペースの GUID の取得方法を教えてください](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid) を参照してください。  
+   詳しくは、『[スペースの GUID の取得方法を教えてください](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid)』を参照してください。  
 	
 5. 変数 TOKEN および SPACEID をエクスポートします。
 
@@ -187,10 +187,10 @@ lastupdated: "2018-04-10"
     ```
     {: codeblock}	
 	
-	ここで、
+	各部分の説明:
 	* SPACEID は、サービスが実行されているスペースの GUID です。
 	* TOKEN は、前のステップで取得した UAA トークンから bearer 接頭部を除外したものです。
-	* LOGGING_ENDPOINT は、組織およびスペースが使用可能な {{site.data.keyword.Bluemix_notm}} 地域の {{site.data.keyword.loganalysisshort}} エンドポイントです。 LOGGING_ENDPOINT は地域ごとに異なります。 異なるエンドポイントの URL を確認するには、[エンドポイント](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints) を参照してください。
+	* LOGGING_ENDPOINT は、組織およびスペースが使用可能な {{site.data.keyword.Bluemix_notm}} 地域の {{site.data.keyword.loganalysisshort}} エンドポイントです。 LOGGING_ENDPOINT は地域ごとに異なります。 様々なエンドポイントの URL を確認するには、『[エンドポイント](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints)』を参照してください。.
 	
     このコマンドは、そのスペースにログを送信するめに使用する必要のあるロギング・トークンを返します。
 	

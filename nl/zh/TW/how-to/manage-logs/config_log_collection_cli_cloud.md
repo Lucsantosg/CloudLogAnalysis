@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -27,12 +27,12 @@ lastupdated: "2018-04-19"
 
 1. 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   如需相關資訊，請參閱[安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   如需相關資訊，請參閱[安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
    
 2. 在儲存庫中，找出外掛程式的名稱。執行下列指令：
 
     ```
-        bx plugin repo-plugins
+    ibmcloud plugin repo-plugins
     ```
     {: codeblock}
     
@@ -41,7 +41,7 @@ lastupdated: "2018-04-19"
 3. 安裝 {{site.data.keyword.loganalysisshort}} 外掛程式。執行下列指令：
 
     ```
-        bx plugin install logging-cli -r Bluemix
+    ibmcloud plugin install logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -50,14 +50,14 @@ lastupdated: "2018-04-19"
     例如，執行下列指令，以查看已安裝的外掛程式清單：
     
     ```
-        bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
-    輸出的外觀如下：
+    輸出如下所示：
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -73,7 +73,7 @@ lastupdated: "2018-04-19"
 
 1. 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   如需相關資訊，請參閱[安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   如需相關資訊，請參閱[安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
 
 2. 安裝 {{site.data.keyword.loganalysisshort}} 外掛程式。
 
@@ -86,14 +86,14 @@ lastupdated: "2018-04-19"
     例如，檢查外掛程式的版本。執行下列指令：
     
     ```
-        bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
-    輸出的外觀如下：
+    輸出如下所示：
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -119,7 +119,7 @@ lastupdated: "2018-04-19"
 2. 安裝外掛程式。執行下列指令：
         
     ```
-        bx plugin install -f logging-cli-linux-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-linux-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -139,7 +139,7 @@ lastupdated: "2018-04-19"
 2. 安裝外掛程式。執行下列指令：
         
     ```
-        bx plugin install -f logging-cli-windows-amd64-0.1.1.exe
+    ibmcloud plugin install -f logging-cli-windows-amd64-0.1.1.exe
     ```
     {: codeblock}
 
@@ -158,14 +158,14 @@ lastupdated: "2018-04-19"
 2. 變更檔案的許可權。執行下列指令：
 
     ```
-    chmod u+x logging-cli-darwin-amd64-0.1.1
+chmod u+x logging-cli-darwin-amd64-0.1.1
     ```
      {: codeblock}
 
 3. 安裝外掛程式。執行下列指令：
         
     ```
-        bx plugin install -f logging-cli-darwin-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-darwin-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -184,14 +184,14 @@ lastupdated: "2018-04-19"
     例如，檢查外掛程式的版本。執行下列指令：
     
     ```
-        bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
-    輸出的外觀如下：
+    輸出如下所示：
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -199,12 +199,12 @@ lastupdated: "2018-04-19"
     ```
     {: screen}
     
-2. 如果已安裝外掛程式，請執行 `bx plugin uninstall` 來解除安裝記載 CLI 外掛程式。
+2. 如果已安裝外掛程式，請執行 `ibmcloud plugin uninstall` 來解除安裝記載 CLI 外掛程式。
 
     執行下列指令：
         
     ```
-        bx plugin uninstall logging-cli
+    ibmcloud plugin uninstall logging-cli
     ```
     {: codeblock}
   
@@ -212,7 +212,7 @@ lastupdated: "2018-04-19"
 ## 從儲存庫中更新 Log Analysis CLI
 {: #update_cli}
 
-若要更新記載 CLI，請執行 *bx plugin update* 指令。
+若要更新記載 CLI，請執行 *ibmcloud plugin update* 指令。
 {:shortdesc}
 
 請完成下列步驟，以更新 {{site.data.keyword.loganalysisshort}} 服務 CLI：
@@ -220,7 +220,7 @@ lastupdated: "2018-04-19"
 1. 更新 {{site.data.keyword.loganalysisshort}} 外掛程式。執行下列指令：
 
     ```
-        bx plugin update logging-cli -r Bluemix
+    ibmcloud plugin update logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -229,14 +229,14 @@ lastupdated: "2018-04-19"
     例如，驗證外掛程式的版本。執行下列指令：
     
     ```
-        bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
-    輸出的外觀如下：
+    輸出如下所示：
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -257,10 +257,10 @@ lastupdated: "2018-04-19"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 列出支援指令及 CLI 的相關資訊。執行下列指令：
+2. 列出所支援指令及 CLI 的相關資訊。執行下列指令：
 
     ```
-        bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
     
@@ -275,17 +275,17 @@ lastupdated: "2018-04-19"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 取得支援的指令清單，並識別您需要的指令。。執行下列指令：
+2. 取得所支援指令的清單，並識別您需要的指令。執行下列指令：
 
     ```
-        bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. 取得指令的說明。執行下列指令：
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Command*
     ```
     {: codeblock}
     
@@ -302,17 +302,17 @@ lastupdated: "2018-04-19"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 取得支援的指令清單，並識別您需要的指令。。執行下列指令：
+2. 取得所支援指令的清單，並識別您需要的指令。執行下列指令：
 
     ```
-        bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. 取得指令的說明，並識別所支援的次指令。執行下列指令：
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Command*
     ```
     {: codeblock}
     
@@ -321,7 +321,7 @@ lastupdated: "2018-04-19"
 4. 取得指令的說明，並識別所支援的次指令。執行下列指令：
 
     ```
-    bx logging *Command* help *Subcommand*
+    ibmcloud logging *Command* help *Subcommand*
     ```
     {: codeblock}
     
@@ -334,17 +334,17 @@ lastupdated: "2018-04-19"
 ## 顯示外掛程式的詳細資料
 {: #show}
   
-請使用 'bx plugin show logging-cli' 指令，以顯示外掛程式詳細資料。 
+請使用 'ibmcloud plugin show logging-cli' 指令，以顯示外掛程式詳細資料。 
 
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
 ```
 {: codeblock}
     
-輸出的外觀如下：
+輸出如下所示：
    
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
                                   
 Plugin                         logging-cli   
 Version                        0.1.1   

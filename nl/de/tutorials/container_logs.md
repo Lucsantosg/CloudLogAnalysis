@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -52,9 +52,7 @@ In diesem Lernprogramm werden die Schritte gezeigt, die erforderlich sind, um da
 
 3. Installieren Sie die CLIs für die Arbeit mit dem {{site.data.keyword.containershort}} und {{site.data.keyword.loganalysisshort}} in Ihrem Ubuntu-System.
 
-    * Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle. Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
-    
-    * Installieren Sie die {{site.data.keyword.containershort}}-CLI, um Ihre Kubernetes-Cluster in {{site.data.keyword.containershort}} zu erstellen und zu verwalten und um containerisierte Apps für Ihren Cluster bereitzustellen. Weitere Informationen finden Sie unter [CS-Plug-in installieren](/docs/containers/cs_cli_install.html#cs_cli_install_steps).
+    * Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle. Installieren Sie die {{site.data.keyword.containershort}}-CLI, um Ihre Kubernetes-Cluster in {{site.data.keyword.containershort}} zu erstellen und zu verwalten und um containerisierte Apps für Ihren Cluster bereitzustellen. Weitere Informationen finden Sie in [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle installieren](/docs/cli/index.html#overview).
     
     * Installieren Sie die {{site.data.keyword.loganalysisshort}}-Befehlszeilenschnittstelle. Weitere Informationen finden Sie unter [Log Analysis-CLI (IBM Cloud-Plug-in) konfigurieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
     
@@ -87,14 +85,14 @@ Führen Sie die folgenden Schritte aus:
 	Initialisieren Sie das Plug-in für den {{site.data.keyword.containershort}}-Service.
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
     Legen Sie den Terminalkontext für den Cluster fest.
     
 	```
-	bx cs cluster-config Mein_Cluster
+	ibmcloud cs cluster-config MyCluster
 	```
 	{: codeblock}
 
@@ -121,7 +119,7 @@ Wenn die App bereitgestellt wird, werden Protokolle automatisch vom {{site.data.
 Bevor Sie Protokollierungskonfigurationen definieren, überprüfen Sie Ihre aktuellen Definitionen für die Protokollierungskonfiguration im Cluster. Führen Sie den folgenden Befehl aus:
 
 ```
-$ bx cs logging-config-get ClusterName
+$ ibmcloud cs logging-config-get ClusterName
 ```
 {: codeblock}
 
@@ -130,7 +128,7 @@ Dabei ist *ClusterName* der Name Ihres Clusters.
 Zum Beispiel sind die Protokollierungskonfigurationen, die für den Cluster *mycluster* definiert werden, die folgenden: 
 
 ```
-$ bx cs logging-config-get mycluster
+$ ibmcloud cs logging-config-get mycluster
 Retrieving cluster mycluster logging configurations...
 OK
 Id                                     Source       Namespace   Host                                Port   Org            Space   Protocol   Paths   
@@ -166,7 +164,7 @@ Führen Sie die folgenden Schritte aus, um 'stdout'- und 'stderr'-Protokolle an 
 2. Erstellen Sie eine Protokollierungskonfiguration für den Cluster. Führen Sie den folgenden Befehl aus, um *stdout*- und *stderr*-Protokolldateien an den {{site.data.keyword.loganalysisshort}}-Service zu senden:
 
     ```
-    bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -181,7 +179,7 @@ Führen Sie die folgenden Schritte aus, um 'stdout'- und 'stderr'-Protokolle an 
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die 'stdout'- und 'stderr'-Protokolle an 'space dev' in der Region "USA (Süden)" weiterleitet:
 
 ```
-bx cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -208,7 +206,7 @@ Führen Sie die folgenden Schritte aus, um Workerprotokolle an eine Bereichsdom�
 2. Erstellen Sie eine Protokollierungskonfiguration für den Cluster. Führen Sie den folgenden Befehl aus, um die Protokolldateien */var/log/syslog* und */var/log/auth.log* an den {{site.data.keyword.loganalysisshort}}-Service zu senden:
 
     ```
-    bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -223,7 +221,7 @@ Führen Sie die folgenden Schritte aus, um Workerprotokolle an eine Bereichsdom�
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die Workerprotokolle an die Bereichsdomäne in der Region "USA (Süden)" weiterleitet:
 
 ```
-bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -280,11 +278,11 @@ Führen Sie die folgenden Schritte aus:
 1. Identifizieren Sie den Benutzer in dem Konto, der der {{site.data.keyword.containershort}}-Schlüsseleigner ist. Führen Sie über ein Terminal den folgenden Befehl aus:
 
     ```
-    bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
-    Dabei ist *Clustername* der Name des Clusters.
+    Dabei ist *ClusterName* der Name des Clusters.
 
 2. Überprüfen Sie, ob der als {{site.data.keyword.containershort}}-Schlüsseleigner identifizierte Benutzer über die Rollen *Organisationsmanager* für die Organisation sowie *Bereichsmanager* und *Entwickler* für den Bereich verfügt.
 
@@ -296,22 +294,22 @@ Führen Sie die folgenden Schritte aus:
 
     Wenn der Benutzer nicht über die richtigen Berechtigungen verfügt, erteilen Sie dem Benutzer die folgenden Berechtigungen: die Rolle *orgManager* für die Organisation sowie die Rollen *SpaceManager* und *Developer* für den Bereich. Weitere Informationen finden Sie unter [Einem Benutzer Berechtigungen zum Anzeigen von Bereichsprotokollen unter Verwendung der IBM Cloud-Benutzerschnittstelle erteilen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
     
-3. Überprüfen Sie, ob der als {{site.data.keyword.containershort}}-Schlüsseleigner identifizierte Benutzer über die IAM-Richtlinie für den {{site.data.keyword.loganalysisshort}}-Service mit den Berechtigungen als *Administrator* verfügt. 
+3. Überprüfen Sie, ob der als {{site.data.keyword.containershort}}-Schlüsseleigner identifizierte Benutzer über die IAM-Richtlinie für den {{site.data.keyword.loganalysisshort}}-Service mit den Berechtigungen als *Administrator* verfügt.
 
     Klicken Sie in der Menüleiste auf **Verwalten > Konto > Benutzer**.  Im Fenster *Benutzer* wird eine Liste mit Benutzern und den entsprechenden E-Mail-Adressen für das aktuell ausgewählte Konto angezeigt.
 	
-    SWählen Sie die ID des Benutzers aus und überprüfen Sie, ob der Benutzer über den IAM-Richtliniensatz verfügt. 
+    Wählen Sie die ID des Benutzers aus und überprüfen Sie, ob der Benutzer über den IAM-Richtliniensatz verfügt. 
 
     Wenn der Benutzer nicht über die IAM-Richtlinie verfügt, siehe [Einem Benutzer über die IBM Cloud-Benutzerschnittstelle eine IAM-Richtlinie zuweisen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
 
 4. Aktualisieren Sie die Protokollierungskonfiguration. Führen Sie den folgenden Befehl aus:
     
     ```
-    bx cs logging-config-refresh ClusterName
+    ibmcloud cs logging-config-refresh ClusterName
     ```
     {: codeblock}
         
-    Dabei ist *Clustername* der Name des Clusters.
+    Dabei ist *ClusterName* der Name des Clusters.
 	
 
 
@@ -482,10 +480,10 @@ Weitere Informationen finden Sie unter [Protokolle in Kibana filtern](/docs/serv
 
 CLI-Befehle:
 
-* [bx cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
-* [bx cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
-* [bx cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
-* [bx cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
-* [bx cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
-* [bx cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
+* [ibmcloud cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
+* [ibmcloud cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
+* [ibmcloud cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
+* [ibmcloud cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
+* [ibmcloud cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
+* [ibmcloud cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
 

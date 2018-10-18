@@ -48,10 +48,10 @@ Node.js 애플리케이션에 대한 자세한 정보는 [How to log in node.js 
 
 일부 애플리케이션 런타임 로그와 Loggregator에서 자동으로 선택되는 로그 사이의 맵핑이 다음 표에 나열되어 있습니다.
 
-| **런타임** |    **STDOUT**     | **STDERR** |
+|**런타임** |**STDOUT**     |**STDERR** |
 |-----------------|-------------------|-------------------|
-| Liberty | system.out | system.err |
-| Node.js | console.log, console.info | console.error, console.warn |
-| Ruby | stdout| stderr |
+|Liberty |system.out |system.err |
+|Node.js |console.log, console.info |console.error, console.warn |
+|Ruby |stdout|stderr |
 {: caption="표 1. 일부 애플리케이션 런타임 로그와 Loggregator에서 자동으로 선택되는 로그 사이의 맵핑" caption-side="top"}
 

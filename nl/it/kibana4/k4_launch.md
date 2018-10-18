@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -76,7 +76,7 @@ tutte le risorse che vengono distribuite all'interno dello spazio dell'organizza
 
 Completa la seguente procedura per avviare Kibana da un browser:
 
-1. Apri [https://logging.<span class="keyword" data-hd-keyref="DomainName">DomainName</span>](https://logging.{DomainName}) per accedere all'interfaccia utente Kibana.
+1. Avvia l'interfaccia utente Kibana.
     
     Ad esempio, 
       

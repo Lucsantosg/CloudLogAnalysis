@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -14,16 +14,19 @@ lastupdated: "2018-04-10"
 {:pre: .pre}
 
 
-# 授予许可权
+# 授予许可权以管理日志和查看帐户日志
 {: #grant_permissions}
 
-在 {{site.data.keyword.Bluemix}} 中，您可以将一个或多个角色分配给用户。这些角色可定义要启用什么任务以便该用户能够使用 {{site.data.keyword.loganalysisshort}} 服务。
+在 {{site.data.keyword.Bluemix}} 中，您可以为用户分配一个或多个 IAM 角色。这些角色可定义要启用什么任务以便该用户能够使用 {{site.data.keyword.loganalysisshort}} 服务。
+  
 {:shortdesc}
+
+例如，您可以授予用户**操作员**角色以允许该用户管理日志。如果只希望某个用户查看帐户日志，那么可授予该用户**查看者**角色。有关更多信息，请参阅 [IAM 角色](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles)。
 
 **注：** 
 
-* 要授予用户管理日志或查看帐户日志的许可权，您必须有权将策略分配给帐户中的其他用户，或者您必须是帐户所有者。如果您不是帐户所有者，那么必须具有包含编辑者、操作员或管理员角色的 IAM 策略。
-* 要授予用户查看空间中日志的许可权，您必须在组织和空间中具有为用户分配 Cloud Foundry 角色的许可权，Cloud Foundry 角色描述此用户可以在该空间中使用 {{site.data.keyword.loganalysisshort}} 服务执行的操作。 
+* 要授予用户管理日志或查看帐户日志的许可权，您必须有权将策略分配给帐户中的其他用户，或者您必须是帐户所有者。如果您不是帐户所有者，那么必须具有 IAM 策略以及编辑者、操作员或管理员角色。
+* 要授予用户查看空间中日志的许可权，您必须在组织和空间中有权为该用户分配 Cloud Foundry 角色，该角色描述了此用户可以在该空间中使用 {{site.data.keyword.loganalysisshort}} 服务执行的操作。 
 
 ## 通过 {{site.data.keyword.Bluemix_notm}} UI 向用户分配 IAM 政策
 {: #grant_permissions_ui_account}
@@ -46,7 +49,7 @@ lastupdated: "2018-04-10"
 
     如果用户不是帐户的成员，请参阅[邀请用户](/docs/iam/iamuserinv.html#iamuserinv)。
 
-4. 在**访问策略**部分中，单击**分配访问权**，然后选择**分配对资源的访问权**。
+4. 在**访问策略**部分，单击**分配访问权**，然后选择**分配对资源的访问权**。
 
     这将打开*向用户分配资源访问权** 窗口。
 
@@ -86,27 +89,27 @@ lastupdated: "2018-04-10"
 
 完成以下步骤，使用命令行，授予用户查看帐户日志的访问权：
 
-1. 在终端中，登录到 {{site.data.keyword.Bluemix_notm}} 帐户。 
+1. 在终端上，登录到 {{site.data.keyword.Bluemix_notm}} 帐户。 
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
-2. 检查用户是否为该帐户的成员。运行以下命令以获取帐户中用户的列表：
+2. 检查用户是否是帐户成员。运行以下命令来获取帐户中用户的列表：
 
     ```
-	bx account users
+	ibmcloud account users
 	```
     {: codeblock}	
 
-	这将显示包含其 GUID 的用户列表。
+	这将显示用户及其 GUID 的列表。
 
-3. 如果用户不是帐户的成员，请联系帐户所有者并请求邀请该用户加入帐户。有关更多信息，请参阅[邀请用户](/docs/iam/iamuserinv.html#iamuserinv)。
+3. 如果用户不是帐户成员，请联系帐户所有者并请求邀请该用户加入帐户。有关更多信息，请参阅[邀请用户](/docs/iam/iamuserinv.html#iamuserinv)。
 
-    **提示**：用于邀请用户加入帐户的命令如下：`bx iam account-user-invite USER_EMAIL`
+    **提示**：用于邀请用户加入帐户的命令如下：`ibmcloud iam account-user-invite USER_EMAIL`
 		
 4. 为用户分配策略。运行以下命令：
 
     ```
-    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
+    ibmcloud iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
 
@@ -114,10 +117,10 @@ lastupdated: "2018-04-10"
     * USER_NAME 是用户的 {{site.data.keyword.Bluemix_notm}} 标识。
 	* ROLE 是 IAM 角色。有效值为：*administrator*、*operator*、*editor* 和 *viewer*
 
-5. 验证是否为用户分配了策略。运行以下命令以列出分配给用户的所有策略：
+5. 验证是否为用户分配了策略。运行以下命令来列出分配给用户的所有策略：
 
     ```
-    bx iam user-policies USER_NAME
+    ibmcloud iam user-policies USER_NAME
 	```
 	{: codeblock}
 
@@ -127,7 +130,7 @@ lastupdated: "2018-04-10"
 ## 使用 {{site.data.keyword.Bluemix_notm}} UI 向用户授予查看空间日志的许可权
 {: #grant_permissions_ui_space}
 
-要授予用户查看空间中日志的许可权，您必须为该用户分配 Cloud Foundry 角色，该角色描述此用户可以在空间中使用 {{site.data.keyword.loganalysisshort}} 服务执行的操作。 
+要授予用户查看空间中日志的许可权，您必须为该用户分配 Cloud Foundry 角色，该角色描述了此用户可以在空间中使用 {{site.data.keyword.loganalysisshort}} 服务执行的操作。 
 
 要授予用户使用 {{site.data.keyword.loganalysisshort}} 服务的许可权，请完成以下步骤：
 

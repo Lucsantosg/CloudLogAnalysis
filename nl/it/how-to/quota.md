@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,19 +28,19 @@ Completa la seguente procedura:
 
 1. Accedi a {{site.data.keyword.Bluemix_notm}}.
 
-    Ad esempio, per accedere alla regione Stati Uniti Sud, immetti il comando: 
+    Ad esempio, per accedere alla regione Stati Uniti Sud, immetti il comando:
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Esegui il comando cli `bx logging quota-usage-show`. 
+2. Esegui il comando della CLI `ibmcloud logging quota-usage-show`. 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
     ```
     {: codeblock}
 
@@ -53,7 +53,7 @@ Completa la seguente procedura:
 Ad esempio, per visualizzare l'utilizzo della quota di un account, immetti il seguente comando:
 
 ```
- bx logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
+ ibmcloud logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
 Showing quota usage for resource: 475693845023932019c6567c9c8de6dece ...
 OK
 
@@ -65,7 +65,7 @@ Daily Allotmant   Current Usage
 Per visualizzare l'utilizzo della quota di uno spazio, immetti il seguente comando:
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -83,19 +83,19 @@ Completa la seguente procedura:
 
 1. Accedi a {{site.data.keyword.Bluemix_notm}}.
 
-    Ad esempio, per accedere alla regione Stati Uniti Sud, immetti il comando: 
+    Ad esempio, per accedere alla regione Stati Uniti Sud, immetti il comando:
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Esegui il comando cli `bx logging quota-usage-show` con il parametro `-s`. 
+2. Esegui il comando della CLI `ibmcloud logging quota-usage-show` con il parametro `-s`. 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID] [-s,--history]
     ```
     {: codeblock}
 
@@ -107,7 +107,7 @@ Completa la seguente procedura:
 Ad esempio,
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -138,11 +138,11 @@ Completa la seguente procedura:
 2. Ottieni l'ID dell'account. Esegui il seguente comando:
 
     ```
-	bx iam accounts
+	ibmcloud iam accounts
 	```
     {: codeblock}	
 
-	Viene visualizzato un elenco di account con i loro GUID.
+	Viene visualizzato un elenco di account con i relativi GUID.
 	
 	Esporta l'ID account in una variabile shell. Ad esempio:
 	

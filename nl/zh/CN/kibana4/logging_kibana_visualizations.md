@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -42,7 +42,7 @@ lastupdated: "2018-04-10"
 
 |任务|更多信息|
 |------|------------------|
-|[创建新的可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create)|通过在*发现*页面中定义并保存的搜索，或通过在*可视化*页面中定义的新查询，可以创建可视化项。|
+|[新建可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create)|通过在*发现*页面中定义并保存的搜索，或通过在*可视化*页面中定义的新查询，可以创建可视化项。|
 |[保存可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_save)|可以保存可视化项以供未来复用。|
 |[装入可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_reload)|可以上传可视化项以更新其数据，修改可视化项或分析数据。|
 |[删除可视化项](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_delete)|删除不需要的可视化项。|

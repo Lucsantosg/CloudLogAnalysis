@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -75,7 +75,7 @@ lastupdated: "2018-04-10"
 
 要通过浏览器启动 Kibana，请完成以下步骤：
 
-1. 打开 [https://logging.<span class="keyword" data-hd-keyref="DomainName">DomainName</span>](https://logging.{DomainName}) 以登录到 Kibana 用户界面。
+1. 启动 Kibana 用户界面。
     
     例如： 
       

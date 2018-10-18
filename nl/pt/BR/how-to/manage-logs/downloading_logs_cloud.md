@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-01-10"
 # Fazendo download de logs
 {: #downloading_logs}
 
-É possível fazer download de logs em um arquivo local ou canalizar dados em outro programa. É possível fazer download de logs dentro do contexto de uma sessão. Uma sessão especifica quais logs serão transferidos por download. Se o download dos logs é interrompido, a sessão permite continuar o download de onde parou. Após a conclusão do download, deve-se excluir a sessão.
+É possível fazer download de logs em um arquivo local ou canalizar dados em outro programa. O download de logs é feito dentro do contexto de uma sessão. Uma sessão especifica quais logs serão transferidos por download. Se o download dos logs é interrompido, a sessão permite continuar o download de onde parou. Após a conclusão do download, deve-se excluir a sessão.
 {:shortdesc}
 
 Para concluir as etapas, deve-se instalar a CLI do {{site.data.keyword.loganalysisshort}}. Para obter mais informações, veja [Configurando a CLI do {{site.data.keyword.loganalysisshort}}](https://console.bluemix.net/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli_).
@@ -35,17 +35,17 @@ Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.B
 ## Etapa 2: identificar quais logs estão disponíveis
 {: #step2}
 
-1. Use o comando `bx logging log-show` para ver quais logs estão disponíveis para as últimas 2 semanas. Execute o comando a seguir:
+1. Use o comando `ibmcloud logging log-show` para ver quais logs estão disponíveis para as duas últimas semanas. Execute o comando a seguir:
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     Por exemplo, a saída da execução desse comando é:
     
     ```
-    bx logging log-show 
+    ibmcloud logging log-show 
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
     Tipos pesquisáveis de contagem de tamanho de data   
@@ -64,15 +64,17 @@ Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.B
 
 É necessária uma sessão para definir o escopo de dados do log que estão disponíveis para um download e para manter o status do download. 
 
-Use o comando [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) para criar uma sessão. Opcionalmente, é possível especificar a data de início, a data de encerramento e os tipos de logs quando você cria uma sessão:  
+Use o comando [ibmcloud logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) para criar uma sessão. Opcionalmente, é possível especificar a data de início, a data de encerramento e os tipos de logs quando você cria uma sessão:  
 
 * Quando você especificar a data de início e a data de encerramento, a sessão fornecerá acesso aos logs entre essas datas inclusivas. 
 * Quando você especificar o tipo de log (**-t**), a sessão fornecerá acesso a um tipo específico de log. Esse é um recurso importante ao gerenciar logs em escala, porque é possível definir o escopo de uma sessão para apenas um pequeno subconjunto de logs nos quais você estiver interessado.
 
+**Nota:** para cada sessão, é possível fazer download de logs por até 15 dias.
+
 Para criar uma sessão que é usada para fazer download de todos os logs que estão disponíveis para as últimas 2 semanas, execute o comando a seguir:
 
 ```
-bx logging session-create 
+Sessão de criação de log ibmcloud-create 
 ```
 {: codeblock}
 
@@ -86,7 +88,7 @@ A sessão retorna as seguintes informações:
 Por exemplo,
 
 ```
-$ bx logging session-create
+$ ibmcloud logging session-create
 Creating session for lopezdsr@uk.ibm.com resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
@@ -95,7 +97,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 ```
 {: screen}
 
-**Dica:** para ver a lista de sessões ativas, execute o comando [bx logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
+**Dica:** para ver a lista de sessões ativas, execute o comando [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
 
 ## Etapa 4: fazer download de dados do log em um arquivo
 {: #step4}
@@ -103,7 +105,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 Para fazer download dos logs especificados pelos parâmetros de sessão, execute o comando a seguir:
 
 ```
-bx logging log-download -o Log_File_Name Session_ID
+ibmcloud logging log-download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -115,7 +117,7 @@ Em que
 Por exemplo,
 
 ```
-bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -131,12 +133,12 @@ O indicador de progresso move-se de 0 para 100% conforme o download dos logs é 
 ## Etapa 5: excluir a sessão
 {: #step5}
 
-Após a conclusão do download, deve-se excluir a sessão usando o comando [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete). 
+Após a conclusão do download, deve-se excluir a sessão usando o comando [ibmcloud logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete). 
 
 Execute o comando a seguir para excluir uma sessão:
 
 ```
-bx logging session-delete Session_ID
+ibmcloud logging session-delete Session_ID
 ```
 {: codeblock}
 
@@ -145,7 +147,7 @@ Em que Session_ID é o GUID da sessão que você criou em uma etapa anterior.
 Por exemplo,
 
 ```
-bx logging session-delete -jshdjsunelsssr4566722==
+ibmcloud logging session-delete -jshdjsunelsssr4566722==
 Deleting session: -jshdjsunelsssr4566722== of resource: 12345678-1234-5678-abcd-378620d6fab5 ...
 Session: -jshdjsunelsssr4566722== is deleted
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -22,11 +22,11 @@ lastupdated: "2018-04-10"
 
 {{site.data.keyword.Bluemix_notm}}에서 Kibana를 실행할 때 리소스별 기본 조회가 다음 표에 표시됩니다.
 
-| 리소스 | 기본 Kibana 검색 조회 |
+|리소스 |기본 Kibana 검색 조회 |
 |---------------|---------------|
-| CF 애플리케이션   | `application_id:<app_GUID>`    |
-| 단일 Docker 컨테이너 | `instance:<instance_GUID>`    |
-| 2개의 인스턴스가 있는 컨테이너 그룹 | `instance:<instance_GUID> OR instance:<instance_GUID>` |
+|CF 애플리케이션   |`application_id:<app_GUID>`    |
+|단일 Docker 컨테이너 |`instance:<instance_GUID>`    |
+|2개의 인스턴스가 있는 컨테이너 그룹 |`instance:<instance_GUID> OR instance:<instance_GUID>` |
 {: caption="표 1. 기본 조회 검색" caption-side="top"}
 
 **참고:** 
@@ -39,14 +39,14 @@ lastupdated: "2018-04-10"
 
 검색 페이지에서 표를 사용자 정의하기 위해 다음 태스크 중에서 수행할 수 있습니다.
 
-| 태스크 | 설명 | 
+|태스크 |설명 | 
 |------|-------------|
-| [필드 열 추가](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | 전체 메시지 대신에 분석에 필요한 특정 데이터를 보기 위한 필드를 추가합니다. |
-| [필드 열 재배열](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | 표에서 필드의 위치를 원하는 위치로 이동합니다. |
-| [항목 보기](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | 필드에 의해 구문 분석된 항목의 세부사항을 보거나 JSON으로 보기 위해 표에서 항목을 펼칩니다. |
-| [필드 열 제거](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | 필드가 분석을 위해 보기에서 필요하지 않은 경우 해당 필드를 제거합니다. |
-| [색인화된 필드의 값으로 항목 순서 지정](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | 분석이 더 용이하도록 항목을 다시 정렬합니다. |
-| [자동으로 데이터 새로 고치기](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | 표에 표시되는 데이터를 최신 항목으로 새로 고칩니다. 기본적으로 새로 고치기는 **OFF**입니다. |
+|[필드 열 추가](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) |전체 메시지 대신에 분석에 필요한 특정 데이터를 보기 위한 필드를 추가합니다. |
+|[필드 열 재배열](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) |표에서 필드의 위치를 원하는 위치로 이동합니다. |
+|[항목 보기](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) |필드에 의해 구문 분석된 항목의 세부사항을 보거나 JSON으로 보기 위해 표에서 항목을 펼칩니다. |
+|[필드 열 제거](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) |필드가 분석을 위해 보기에서 필요하지 않은 경우 해당 필드를 제거합니다. |
+|[색인화된 필드의 값으로 항목 순서 지정](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) |분석이 더 용이하도록 항목을 다시 정렬합니다. |
+|[자동으로 데이터 새로 고치기](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) |표에 표시되는 데이터를 최신 항목으로 새로 고칩니다. 기본적으로 새로 고치기는 **OFF**입니다. |
 {: caption="표 2. 표 사용자 정의 태스크" caption-side="top"}
 
 <br>
@@ -71,14 +71,14 @@ lastupdated: "2018-04-10"
 
 검색 페이지에서 정의하는 검색을 사용하여 다음 태스크 중에서 수행할 수 있습니다.
 
-| 태스크 | 설명 |
+|태스크 |설명 |
 |------|-------------|
-| 검색 저장 | 나중에 다시 사용하도록 검색을 저장합니다.  |
-| 검색 삭제 | 더 이상 필요하지 않은 경우 검색을 삭제합니다. |
-| 검색 내보내기 | 검색을 공유하도록 내보냅니다.  |
-| 검색 다시 로드 | 데이터 세트를 다시 분석하도록 기존 검색을 업로드합니다. |
-| 검색의 데이터 새로 고치기 | 검색을 통해 표시된 데이터의 자동 새로 고치기를 구성합니다.  |
-| 검색 가져오기 | 검색을 가져옵니다.  |
+|검색 저장 |나중에 다시 사용하도록 검색을 저장합니다.  |
+|검색 삭제 |더 이상 필요하지 않은 경우 검색을 삭제합니다. |
+|검색 내보내기 |검색을 공유하도록 내보냅니다.  |
+|검색 다시 로드  |데이터 세트를 다시 분석하도록 기존 검색을 업로드합니다. |
+|검색의 데이터 새로 고치기 |검색을 통해 표시된 데이터의 자동 새로 고치기를 구성합니다.  |
+|검색 가져오기 |검색을 가져옵니다.  |
 {: caption="표 3. 검색으로 작업하는 태스크" caption-side="top"}
 
 <br>

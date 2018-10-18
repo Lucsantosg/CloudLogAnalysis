@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-16"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -23,7 +23,7 @@ lastupdated: "2018-01-16"
 Para localizar o ID do espaço que está associado a um cluster, execute o comando a seguir:
 
 ```
-bx cs cluster-get ClusterName --json
+ibmcloud cs cluster-get ClusterName -- json
 ```
 {: codeblock}
 

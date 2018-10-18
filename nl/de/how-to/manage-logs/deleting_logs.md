@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-19"
 # Protokolle löschen
 {: #deleting_logs}
 
-Mit dem Befehl [bx cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) können Sie Protokolle aus 'Log Collection' löschen. 
+Mit dem Befehl [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) können Sie Protokolle aus 'Log Collection' löschen.
 {:shortdesc}
 
 * Sie können Protokolle für einen bestimmten Zeitraum löschen.
@@ -37,14 +37,14 @@ Führen Sie die folgenden Schritte aus:
 2. Führen Sie den Befehl *status* aus, um die in 'Log Collection' verfügbaren Protokolle anzuzeigen.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Beispiel:
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -58,43 +58,43 @@ Führen Sie die folgenden Schritte aus:
 3. Löschen Sie die Protokolle, die für einen bestimmten Tag gespeichert sind.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate
+	ibmcloud cf logging delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
 	Dabei gilt:
 	
 	* *-s* legt das Startdatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT, z. B. 2006-01-02.
-    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT
+    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT	
     	
 	Führen Sie beispielsweise den folgenden Befehl aus, um die Protokolle für den 25. Mai 2017 zu löschen:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
 	
-## Protokolle nach Protokolltyp für einen bestimmten Zeitraum löschen
+## Protokolle nach Protokolltyp für einen bestimmten Zeitraum löschen 
 {: #log_type}
 
 Führen Sie die folgenden Schritte aus:
 
-1. Melden Sie sich an einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Führen Sie den Befehl *status* aus, um die in 'Log Collection' verfügbaren Protokolle anzuzeigen.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Beispiel:
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -108,45 +108,45 @@ Führen Sie die folgenden Schritte aus:
 3. Löschen Sie die Protokolle, die für einen bestimmten Tag gespeichert sind.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
 	Dabei gilt:
 	
 	* *-s* legt das Startdatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT, z. B. 2006-01-02.
-    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT
-	* *-t* legt den Protokolltyp fest.
+    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT	
+	* Mit *-t* wird der Protokolltyp festgelegt.
     	
 	Führen Sie beispielsweise den folgenden Befehl aus, um die Protokolle des Typs 'linux_syslog' für den 25. Mai 2017 zu löschen:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
 		
 	
-## Kontoprotokolle nach Protokolltyp für einen bestimmten Zeitraum löschen
+## Kontoprotokolle nach Protokolltyp für einen bestimmten Zeitraum löschen 
 {: #acc_log_type}
 
 Führen Sie die folgenden Schritte aus:
 
-1. Melden Sie sich an einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Führen Sie den Befehl *status* aus, um die in 'Log Collection' verfügbaren Protokolle auf der Kontoebene anzuzeigen.
 
     ```
-    bx cf logging status  -a
+    ibmcloud cf logging status  -a
     ```
     {: codeblock}
     
     Beispiel:
     
     ```
-    $ bx cf logging status -a
+    $ ibmcloud cf logging status -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -160,20 +160,20 @@ Führen Sie die folgenden Schritte aus:
 3. Löschen Sie die Protokolle, die für einen bestimmten Tag gespeichert sind.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType -a
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType -a
 	```
 	{: codeblock}
 	
 	Dabei gilt:
 	
 	* *-s* legt das Startdatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT, z. B. 2006-01-02.
-    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT
-	* *-t* legt den Protokolltyp fest.
+    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT	
+	* Mit *-t* wird der Protokolltyp festgelegt.
     	
 	Führen Sie beispielsweise den folgenden Befehl aus, um die Protokolle des Typs 'linux_syslog' für den 25. Mai 2017 zu löschen, die in 'Log Collection' auf der Kontoebene gespeichert sind:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
 	```
 	{: screen}
 	

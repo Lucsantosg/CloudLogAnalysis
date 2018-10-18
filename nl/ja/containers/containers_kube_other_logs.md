@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -59,14 +59,14 @@ lastupdated: "2018-03-12"
 2. {{site.data.keyword.loganalysisshort}} サービス・プラグインを初期化します。
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
 3. 端末コンテキストをクラスターに設定します。
     
 	```
-	bx cs cluster-config ClusterName
+	ibmcloud cs cluster-config ClusterName
 	```
 	{: codeblock}
 
@@ -114,14 +114,14 @@ lastupdated: "2018-03-12"
 3. {{site.data.keyword.containershort_notm}} キー所有者のユーザー ID を選択し、そのユーザー ID に両方のポリシーがあることを検証します。
 
 
-ログをスペース・ドメインに転送する場合、組織およびスペース内で {{site.data.keyword.containershort}} キー所有者に Cloud Foundry (CF) 許可を付与する必要もあります。キー所有者には、組織の *orgManager* 役割と、スペースの *SpaceManager* または*開発者* の役割が必要です。
+ログをスペース・ドメインに転送する場合、組織およびスペース内で {{site.data.keyword.containershort}} キー所有者に Cloud Foundry (CF) 許可を付与する必要もあります。 キー所有者には、組織の *orgManager* 役割と、スペースの *SpaceManager* または*開発者* の役割が必要です。
 
 以下のステップを実行します。
 
 1. {{site.data.keyword.containershort}} キー所有者であるアカウントのユーザーを識別します。 端末から次のコマンドを実行します。
 
     ```
-    bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -142,7 +142,7 @@ lastupdated: "2018-03-12"
     2. ロギング構成を更新します。 次のコマンドを実行します。
     
         ```
-        bx cs logging-config-refresh ClusterName
+        ibmcloud cs logging-config-refresh ClusterName
         ```
         {: codeblock}
         
@@ -158,7 +158,7 @@ lastupdated: "2018-03-12"
 *stdout* および *stderr* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
 
 ```
-bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -173,14 +173,14 @@ bx cs logging-config-create ClusterName --logsource container --namespace '*' --
 例えば、stdout および stderr のログをドイツ地域のアカウント・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
 stdout および stderr のログをドイツ地域のスペース・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
 ```
 {: screen}
 
@@ -192,7 +192,7 @@ bx cs logging-config-create MyCluster --logsource container --type ibm --namespa
 */var/log/apps/**/.log* および */var/log/apps/*/.err* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
+ibmcloud cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -202,20 +202,20 @@ bx cs logging-config-create ClusterName --logsource application --type ibm --hos
 * *EndPoint* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされた地域内のロギング・サービスの URL です。 エンドポイントのリストについては、[エンドポイント](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)を参照してください。
 * *OrgName* は、スペースがある組織の名前です。
 * *SpaceName* は、{{site.data.keyword.loganalysisshort}} サービスがプロビジョンされたスペースの名前です。
-* *app-containers* はオプション・パラメーターであり、これを設定して、監視したいコンテナーのリストを定義できます。それらのコンテナーのみから、ログが {{site.data.keyword.loganalysisshort}} に転送されます。1 つ以上のコンテナーをコンマで区切って設定できます。
-* *app-paths* は、監視したい、コンテナー内部のパスを定義します。1 つ以上のパスをコンマで区切って設定できます。「/var/log/*.log」のようなワイルドカードを使用できます。 
+* *app-containers* はオプション・パラメーターであり、これを設定して、監視したいコンテナーのリストを定義できます。 それらのコンテナーのみから、ログが {{site.data.keyword.loganalysisshort}} に転送されます。 1 つ以上のコンテナーをコンマで区切って設定できます。
+* *app-paths* は、監視したい、コンテナー内部のパスを定義します。 1 つ以上のパスをコンマで区切って設定できます。 「/var/log/*.log」のようなワイルドカードを使用できます。 
 
 例えば、アプリケーション・ログをドイツ地域のスペース・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
+ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 例えば、アプリケーション・ログをドイツ地域のアカウント・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
+ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -228,7 +228,7 @@ bx cs logging-config-create MyCluster --logsource application --type ibm --hostn
 */var/log/syslog* および */var/log/auth.log* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
 
 ```
-bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -244,14 +244,14 @@ bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname
 例えば、ワーカー・ログをドイツ地域のスペース・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 例えば、ワーカー・ログをドイツ地域のアカウント・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -263,7 +263,7 @@ bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname 
 */var/log/kubelet.log* および */var/log/kube-proxy.log* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
 
 ```
-bx cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -279,14 +279,14 @@ bx cs logging-config-create ClusterName --logsource kubernetes --type ibm --host
 例えば、Kubernetes システム・コンポーネント・ログをドイツ地域のスペース・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 例えば、Kubernetes システム・コンポーネント・ログをドイツ地域のアカウント・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -298,7 +298,7 @@ bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostna
 */var/log/alb/ids/.log*、*/var/log/alb/ids/.err*、*/var/log/alb/customerlogs/.log*、および /var/log/alb/customerlogs/.err* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
 
 ```
-bx cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
+ibmcloud cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
 ```
 {: codeblock}
 
@@ -314,14 +314,14 @@ bx cs logging-config-create ClusterName --logsource ingress --type ibm --hostnam
 例えば、Ingress コントローラー・ログをドイツ地域のスペース・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 例えば、Ingress コントローラー・ログをドイツ地域のアカウント・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
+ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
 ```
 {: screen}
 

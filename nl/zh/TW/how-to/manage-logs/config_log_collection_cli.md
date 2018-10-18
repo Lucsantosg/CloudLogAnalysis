@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ lastupdated: "2018-01-31"
 
 1. 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   如需相關資訊，請參閱[安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   如需相關資訊，請參閱[安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
 
 2. 安裝 {{site.data.keyword.loganalysisshort}} CF 外掛程式。
 
@@ -41,14 +41,14 @@ lastupdated: "2018-01-31"
     例如，檢查外掛程式的版本。執行下列指令：
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
     輸出的外觀如下：
    
     ```
-    Invoking 'cf plugins'...
+Invoking 'cf plugins'...
 
     Listing Installed Plugins...
     OK
@@ -94,7 +94,7 @@ lastupdated: "2018-01-31"
         例如，若要將檔案 `logging-cli-linux64` 設為可執行檔，請執行下列指令：
         
         ```
-        bx cf install-plugin -f logging-cli-linux64
+        ibmcloud cf install-plugin -f logging-cli-linux64
         ```
         {: codeblock}
 
@@ -123,11 +123,11 @@ lastupdated: "2018-01-31"
     例如，檢查外掛程式的版本。執行下列指令：
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
-    輸出的外觀如下：
+    輸出如下所示：
    
     ```
     cf logging version 1.0.2
@@ -148,7 +148,7 @@ lastupdated: "2018-01-31"
 2. 執行 **cf install-plugin** 指令，以在 Windows 上安裝日誌收集外掛程式。 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
@@ -157,7 +157,7 @@ lastupdated: "2018-01-31"
     例如，若要安裝外掛程式 *logging-cli-win64_v1.0.1*，請從終端機視窗執行下列指令：
 	
 	```
-	bx cf install-plugin logging-cli-win64_v1.0.1.exe
+	ibmcloud cf install-plugin logging-cli-win64_v1.0.1.exe
 	```
 	{: codeblock}
 	
@@ -168,14 +168,14 @@ lastupdated: "2018-01-31"
     例如，檢查外掛程式的版本。執行下列指令：
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
-    輸出的外觀如下：
+    輸出如下所示：
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -193,7 +193,7 @@ lastupdated: "2018-01-31"
 2. 執行 **cf install-plugin** 指令，以在 Mac OS X 上安裝日誌收集外掛程式。 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
@@ -202,7 +202,7 @@ lastupdated: "2018-01-31"
     例如，若要安裝外掛程式 *logging-cli-darwin_v1.0.1*，請從終端機執行下列指令：
 	
 	```
-	bx cf install-plugin logging-cli-darwin_v1.0.1
+	ibmcloud cf install-plugin logging-cli-darwin_v1.0.1
 	```
 	{: codeblock}
 	
@@ -213,14 +213,14 @@ lastupdated: "2018-01-31"
     例如，檢查外掛程式的版本。執行下列指令：
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
-    輸出的外觀如下：
+    輸出如下所示：
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -238,14 +238,14 @@ lastupdated: "2018-01-31"
     例如，檢查外掛程式的版本。執行下列指令：
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
-    輸出的外觀如下：
+    輸出如下所示：
    
     ```
-    Listing Installed Plugins...
+Listing Installed Plugins...
     OK
 
     Plugin Name   Version   Command Name   Command Help
@@ -258,7 +258,7 @@ lastupdated: "2018-01-31"
     執行下列指令：
         
     ```
-    bx cf uninstall-plugin IBM-Logging
+    ibmcloud cf uninstall-plugin IBM-Logging
     ```
     {: codeblock}
   
@@ -272,10 +272,10 @@ lastupdated: "2018-01-31"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 列出支援指令及 CLI 的相關資訊。執行下列指令：
+2. 列出所支援指令及 CLI 的相關資訊。執行下列指令：
 
     ```
-    bx cf logging help
+    ibmcloud cf logging help 
     ```
     {: codeblock}
     
@@ -290,17 +290,17 @@ lastupdated: "2018-01-31"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 取得支援的指令清單，並識別您需要的指令。。執行下列指令：
+2. 取得所支援指令的清單，並識別您需要的指令。執行下列指令：
 
     ```
-    bx cf logging help
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. 取得指令的說明。執行下列指令：
 
     ```
-    bx cf logging help *Command*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
@@ -317,17 +317,17 @@ lastupdated: "2018-01-31"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
     
-2. 取得支援的指令清單，並識別您需要的指令。。執行下列指令：
+2. 取得所支援指令的清單，並識別您需要的指令。執行下列指令：
 
     ```
-    bx cf logging help
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. 取得指令的說明，並識別所支援的次指令。執行下列指令：
 
     ```
-    bx cf logging help *Command*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
@@ -336,7 +336,7 @@ lastupdated: "2018-01-31"
 4. 取得指令的說明，並識別所支援的次指令。執行下列指令：
 
     ```
-    bx cf logging *Command* help *Subcommand*
+    ibmcloud cf logging *Command* help *Subcommand*
     ```
     {: codeblock}
     

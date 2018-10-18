@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -14,15 +14,17 @@ lastupdated: "2018-04-10"
 {:pre: .pre}
 
 
-# 許可の付与
+# ログの管理許可とアカウント・ログの表示許可の付与
 {: #grant_permissions}
 
-{{site.data.keyword.Bluemix}} では、ユーザーに 1 つ以上の役割を割り当てることができます。 これらの役割は、{{site.data.keyword.loganalysisshort}} サービスを使用して作業するためにユーザーが使用できるタスクを定義します。 
+{{site.data.keyword.Bluemix}} では、1 人のユーザーに 1 つ以上の IAM 役割を割り当てることができます。 これらの役割は、{{site.data.keyword.loganalysisshort}} サービスを使用して作業するためにユーザーが使用できるタスクを定義します。  
 {:shortdesc}
+
+例えば、ユーザーに**オペレーター**の役割を付与して、そのユーザーにログの管理を許可することができます。 ユーザーにアカウント・ログを見てもらいたいだけなら、そのユーザーに**ビューアー**の役割を付与することができます。 詳しくは、[IAM 役割](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles)を参照してください。
 
 **注:** 
 
-* ログの管理またはアカウント・ログの表示を行う許可をユーザーに付与するには、アカウント内の他のユーザーにポリシーを割り当てる許可を持っているか、または、アカウント所有者である必要があります。アカウント所有者でない場合、エディター、オペレーター、または管理者の役割が設定された IAM ポリシーを持っている必要があります。
+* ログの管理またはアカウント・ログの表示を行う許可をユーザーに付与するには、アカウント内の他のユーザーにポリシーを割り当てる許可を持っているか、または、アカウント所有者である必要があります。 アカウント所有者でない場合、エディター、オペレーター、または管理者の役割が設定された IAM ポリシーを持っている必要があります。
 * スペース内のログを表示する許可をユーザーに付与するには、そのユーザーがそのスペース内で {{site.data.keyword.loganalysisshort}} サービスを使用して実行できるアクションを記述する Cloud Foundry 役割をそのユーザーに割り当てるための、組織およびスペースでの許可を持っている必要があります。 
 
 ## {{site.data.keyword.Bluemix_notm}} UI を使用してユーザーに IAM ポリシーを割り当てる
@@ -89,34 +91,34 @@ lastupdated: "2018-04-10"
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 
-2. ユーザーがアカウントのメンバーであることを確認します。次のコマンドを実行して、アカウント内のユーザーのリストを取得します。
+2. ユーザーがアカウントのメンバーであることを確認します。 次のコマンドを実行して、アカウント内のユーザーのリストを取得します。
 
     ```
-	bx account users
+	ibmcloud account users
 	```
     {: codeblock}	
 
 	ユーザーとその GUID のリストが表示されます。
 
-3. ユーザーがアカウントのメンバーでない場合、アカウント所有者に連絡して、ユーザーをアカウントに招待するよう依頼します。詳しくは、[ユーザーの招待](/docs/iam/iamuserinv.html#iamuserinv) を参照してください。
+3. ユーザーがアカウントのメンバーでない場合、アカウント所有者に連絡して、ユーザーをアカウントに招待するよう依頼します。 詳しくは、『[ユーザーの招待](/docs/iam/iamuserinv.html#iamuserinv)』を参照してください。
 
-    **ヒント:** アカウントにユーザーを招待するコマンドは、bx iam account-user-invite USER_EMAIL です。
+    **ヒント:** アカウントにユーザーを招待するコマンドは、`ibmcloud iam account-user-invite USER_EMAIL` です。
 		
-4. ユーザーにポリシーを割り当てます。次のコマンドを実行します。
+4. ユーザーにポリシーを割り当てます。 次のコマンドを実行します。
 
     ```
-    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
+    ibmcloud iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
 
-	ここで、
+	各部分の説明:
     * USER_NAME は、ユーザーの {{site.data.keyword.Bluemix_notm}} ID です。
-	* ROLE は、IAM 役割です。有効な値は、*administrator*、*operator*、*editor*、および *viewer* です。
+	* ROLE は、IAM 役割です。 有効な値は、*管理者*、*オペレーター*、*エディター*、*ビューアー*です。
 
-5. ポリシーがユーザーに割り当てられたことを検証します。次のコマンドを実行して、ユーザーに割り当てられたすべてのポリシーをリストします。
+5. ポリシーがユーザーに割り当てられたことを検証します。 次のコマンドを実行して、ユーザーに割り当てられたすべてのポリシーをリストします。
 
     ```
-    bx iam user-policies USER_NAME
+    ibmcloud iam user-policies USER_NAME
 	```
 	{: codeblock}
 
@@ -126,29 +128,29 @@ lastupdated: "2018-04-10"
 ## {{site.data.keyword.Bluemix_notm}} UI を使用して、スペース・ログを表示する許可をユーザーに付与する
 {: #grant_permissions_ui_space}
 
-スペース内のログを表示する許可をユーザーに付与するには、そのユーザーがそのスペース内で {{site.data.keyword.loganalysisshort}} サービスを使用して実行できるアクションを記述する Cloud Foundry 役割をそのユーザーに割り当てる必要があります。 
+スペース内のログを表示する許可をユーザーに付与するには、そのユーザーがそのスペース内で {{site.data.keyword.loganalysisshort}} サービスを使用して実行できるアクションを記述した Cloud Foundry 役割をそのユーザーに割り当てる必要があります。 
 
 {{site.data.keyword.loganalysisshort}} サービスを使用して作業する許可をユーザーに付与するには、以下のステップを実行します。
 
 1. {{site.data.keyword.Bluemix_notm}} コンソールにログインします。
 
-    Web ブラウザーを開き、{{site.data.keyword.Bluemix_notm}} ダッシュボードを起動します。[http://bluemix.net ![外部リンク・アイコン](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+    Web ブラウザーを開き、{{site.data.keyword.Bluemix_notm}} ダッシュボード: [http://bluemix.net ![外部リンク・アイコン](../../../icons/launch-glyph.svg "外部リンク・アイコン")](http://bluemix.net){:new_window} を起動します。
 	
 	ユーザー ID とパスワードを使用してログインすると、{{site.data.keyword.Bluemix_notm}} UI が開きます。
 
-2. メニュー・バーから、「管理」>「アカウント」>「ユーザー」をクリックします。 
+2. メニュー・バーから、**「管理」>「アカウント」>「ユーザー」**をクリックします。 
 
-    「ユーザー」ウィンドウに、現在選択されているアカウントにおけるユーザーのリストが、E メール・アドレスと共に表示されます。
+    「*ユーザー*」ウィンドウに、現在選択されているアカウントにおけるユーザーのリストが、E メール・アドレスと共に表示されます。
 	
-3. ユーザーがアカウントのメンバーの場合、リストからユーザー名を選択するか、*「アクション」** メニューから**「ユーザーの管理」をクリックします。
+3. ユーザーがアカウントのメンバーである場合、リストからユーザー名を選択するか、または、**「アクション」**メニューから*「ユーザーの管理」*をクリックします。
 
-    ユーザーがアカウントのメンバーではない場合、[ユーザーの招待](/docs/iam/iamuserinv.html#iamuserinv) を参照してください。
+    ユーザーがアカウントのメンバーでない場合、『[ユーザーの招待](/docs/iam/iamuserinv.html#iamuserinv)』を参照してください。
 
-4. **「Cloud Foundry アクセス権限」**を選択し、次に組織を選択します。
+4. **「Cloud Foundry アクセス権限」**を選択してから、組織を選択します。
 
     その組織で使用可能なスペースのリストが表示されます。
 
-5. スペースを 1 つ選択します。 次に、メニュー・アクションから、**「スペースの役割の編集」**を選択します。
+5. スペースを 1 つ選択します。 次に、メニュー・アクションから**「スペースの役割の編集」**を選択します。
 
 6. スペースの役割を 1 つ以上選択します。 有効な役割は、*管理者*、*開発者*、および*監査員* です。
 	

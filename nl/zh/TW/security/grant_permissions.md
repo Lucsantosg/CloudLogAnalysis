@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -14,11 +14,13 @@ lastupdated: "2018-04-10"
 {:pre: .pre}
 
 
-# 授與許可權
+# 授與許可權以管理日誌以及檢視帳戶日誌
 {: #grant_permissions}
 
-在 {{site.data.keyword.Bluemix}} 中，您可以將一個以上的角色指派給使用者。這些角色定義針對該使用者啟用以使用 {{site.data.keyword.loganalysisshort}} 服務的作業。
+在 {{site.data.keyword.Bluemix}} 中，您可以將一個以上的 IAM 角色指派給使用者。這些角色定義針對該使用者啟用以使用 {{site.data.keyword.loganalysisshort}} 服務的作業。  
 {:shortdesc}
+
+例如，您可以將**操作員**角色授與使用者，以容許他管理日誌。如果您只想要使用者檢視帳戶日誌，則可以將**檢視者**角色授與使用者。如需相關資訊，請參閱 [IAM 角色](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles)。
 
 **附註：** 
 
@@ -91,7 +93,7 @@ lastupdated: "2018-04-10"
 2. 確認使用者是帳戶成員。執行下列指令，以取得帳戶中的使用者清單：
 
     ```
-	bx account users
+	ibmcloud account users
 	```
     {: codeblock}	
 
@@ -99,12 +101,12 @@ lastupdated: "2018-04-10"
 
 3. 如果使用者不是帳戶成員，請聯絡帳戶擁有者，並提出邀請使用者加入帳戶的要求。如需相關資訊，請參閱[邀請使用者](/docs/iam/iamuserinv.html#iamuserinv)。
 
-    **提示：**邀請使用者加入帳戶的指令如下：`bx iam account-user-invite USER_EMAIL`
+    **提示：**邀請使用者加入帳戶的指令如下：`ibmcloud iam account-user-invite USER_EMAIL`
 		
 4. 將原則指派給使用者。執行下列指令：
 
     ```
-    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
+    ibmcloud iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
 
@@ -115,7 +117,7 @@ lastupdated: "2018-04-10"
 5. 驗證已將原則指派給使用者。執行下列指令，以列出已指派給使用者的所有原則：
 
     ```
-    bx iam user-policies USER_NAME
+    ibmcloud iam user-policies USER_NAME
 	```
 	{: codeblock}
 

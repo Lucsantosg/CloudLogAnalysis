@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-03-15"
 # Changement de plan
 {: #change_plan}
 
-Vous pouvez changer de plan de service {{site.data.keyword.loganalysisshort}} dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}} ou en exécutant la commande `bx cf update-service`. Vous
+Vous pouvez changer de plan de service {{site.data.keyword.loganalysisshort}} dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}} ou en exécutant la commande `ibmcloud service update`. Vous
 pouvez choisir un plan de niveau supérieur ou inférieur à tout moment.
 {:shortdesc}
 
@@ -55,14 +55,14 @@ Pour modifier votre plan de service dans Bluemix via l'interface de ligne de com
 [Comment se connecter
 à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Exécutez la commande `bx service list` pour identifier le plan en cours et obtenir le nom du service {{site.data.keyword.loganalysisshort}} depuis la liste des services qui est disponible dans l'espace. 
+2. Exécutez la commande `ibmcloud service list` pour identifier le plan en cours et obtenir le nom du service {{site.data.keyword.loganalysisshort}} depuis la liste des services qui est disponible dans l'espace. 
 
     La valeur de la zone **name** est celle que vous devez utiliser pour modifier le plan. 
 
     Exemple :
 	
 	```
-	$ bx  bx service list
+	$ ibmcloud service list
     Invoking 'cf services'...
 
     Getting services in org MyOrg / space dev as xxx@ibm.com...
@@ -73,16 +73,16 @@ Pour modifier votre plan de service dans Bluemix via l'interface de ligne de com
     ```
 	{: screen}
     
-3. Choisissez un plan de niveau supérieur ou inférieur. Exécutez la commande `bx service update`.
+3. Choisissez un plan de niveau supérieur ou inférieur. Exécutez la commande `ibmcloud service update`.
     
 	```
-	bx service update service_name [-p new_plan]
+	ibmcloud service update service_name [-p new_plan]
 	```
 	{: codeblock}
 	
 	où 
 	
-	* *service_name* est le nom de votre service. Vous pouvez exécuter la commande `bx service list` pour obtenir la valeur.
+	* *service_name* est le nom de votre service. Vous pouvez exécuter la commande `ibmcloud service list` pour obtenir la valeur.
 	* *new_plan* est le nom du plan.
 	
 	Le tableau suivant présente les différents plans et les valeurs prises en charge :
@@ -118,16 +118,16 @@ Pour modifier votre plan de service dans Bluemix via l'interface de ligne de com
 	Par exemple, pour passer au plan de niveau inférieur *Lite*, exécutez la commande suivante :
 	
 	```
-	bx service update "Log Analysis-m2" -p standard
+	ibmcloud service update "Log Analysis-m2" -p standard
     Updating service instance Log Analysis-m2 as xxx@ibm.com...
     OK
 	```
 	{: screen}
 
-4. Vérifiez que le nouveau plan est modifié. Exécutez la commande `bx service list`.
+4. Vérifiez que le nouveau plan est modifié. Exécutez la commande `ibmcloud service list`.
 
   ```
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 

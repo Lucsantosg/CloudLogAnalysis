@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,16 +31,16 @@ lastupdated: "2018-03-09"
     例えば、米国南部にログインするには、次のコマンドを実行します。
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 
-2. CLI コマンド `bx logging quota-usage-show` を実行します。 
+2. CLI コマンド `ibmcloud logging quota-usage-show` を実行します。 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
     ```
     {: codeblock}
 
@@ -53,7 +53,7 @@ lastupdated: "2018-03-09"
 例えば、あるアカウントの割り当て使用量を表示するには、次のコマンドを実行します。
 
 ```
- bx logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
+ ibmcloud logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
 Showing quota usage for resource: 475693845023932019c6567c9c8de6dece ...
 OK
 
@@ -65,7 +65,7 @@ Daily Allotmant   Current Usage
 あるスペースの割り当て使用量を表示するには、次のコマンドを実行します。
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -86,16 +86,16 @@ Daily Allotmant   Current Usage
     例えば、米国南部にログインするには、次のコマンドを実行します。
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 
-2. CLI コマンド `bx logging quota-usage-show` をパラメーター `-s` を指定して実行します。 
+2. CLI コマンド `ibmcloud logging quota-usage-show` をパラメーター `-s` を指定して実行します。 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID] [-s,--history]
     ```
     {: codeblock}
 
@@ -107,7 +107,7 @@ Daily Allotmant   Current Usage
 以下に例を示します。
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -138,13 +138,13 @@ Date         Allotmant   Usage
 2. アカウントの ID を取得します。 次のコマンドを実行します。
 
     ```
-	bx iam accounts
+	ibmcloud iam accounts
 	```
     {: codeblock}	
 
 	アカウントとその GUID のリストが表示されます。
 	
-	アカウント ID をシェル変数にエクスポートします。 以下に例を示します。
+	アカウント ID をシェル変数にエクスポートします。 例えば次のようにします。
 	
 	```
 	export AccountID="1234567891234567812341234123412"
@@ -153,9 +153,9 @@ Date         Allotmant   Usage
 
 3. UAA トークンを取得します。 
 
-    詳しくは、[UAA トークンの取得](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa) を参照してください。
+    詳しくは、『[UAA トークンの取得](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa)』を参照してください。
 
-    UAA トークンをシェル変数にエクスポートします。 「Bearer」を含めないでください。 以下に例を示します。
+    UAA トークンをシェル変数にエクスポートします。 `Bearer` を含めないでください。 例えば次のようにします。
 	
 	```
 	export TOKEN="xxxxxxxxxxxxxxxxxxxxx"
@@ -169,7 +169,7 @@ Date         Allotmant   Usage
 	```
 	{: codeblock}
 	
-	ここで、*ENDPOINT* は地域ごとに異なります。 地域ごとのエンドポイントのリストを取得については、[ロギング・エンドポイント](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints) を参照してください。
+	ここで、*ENDPOINT* は地域ごとに異なります。 地域ごとのエンドポイントのリストについては、『[ロギング・エンドポイント](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints)』を参照してください。
 	
 	例えば、米国南部地域のアカウントの割り当て量を取得するには、次の cURL コマンドを実行します。
 	
@@ -206,13 +206,13 @@ Date         Allotmant   Usage
 
 1. {{site.data.keyword.Bluemix_notm}} にログインします。 
 
-    詳しくは、[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login) を参照してください。
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 
 2. スペースの ID を取得します。
 
-    詳しくは、[スペースの GUID の取得方法を教えてください](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid) を参照してください。
+    詳しくは、『[スペースの GUID の取得方法を教えてください](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid)』を参照してください。
 	
-	スペース ID をシェル変数にエクスポートします。 以下に例を示します。
+	スペース ID をシェル変数にエクスポートします。 例えば次のようにします。
 	
 	```
 	export SpaceID="xxxxxxxxxxxxxxxxxxxxx"
@@ -221,9 +221,9 @@ Date         Allotmant   Usage
 
 3. UAA トークンを取得します。 
 
-    詳しくは、[UAA トークンの取得](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa) を参照してください。
+    詳しくは、『[UAA トークンの取得](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa)』を参照してください。
 
-    UAA トークンをシェル変数にエクスポートします。 「Bearer」を含めないでください。 以下に例を示します。
+    UAA トークンをシェル変数にエクスポートします。 `Bearer` を含めないでください。 例えば次のようにします。
 	
 	```
 	export TOKEN="xxxxxxxxxxxxxxxxxxxxx"
@@ -237,7 +237,7 @@ Date         Allotmant   Usage
 	```
 	{: codeblock}
 	
-	ここで、*ENDPOINT* は地域ごとに異なります。 地域ごとのエンドポイントのリストを取得については、[ロギング・エンドポイント](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints) を参照してください。
+	ここで、*ENDPOINT* は地域ごとに異なります。 地域ごとのエンドポイントのリストについては、『[ロギング・エンドポイント](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints)』を参照してください。
 
     例えば、米国南部地域のスペース・ドメインの割り当て量および使用量を取得するには、以下の cURL コマンドを実行します。
 	
