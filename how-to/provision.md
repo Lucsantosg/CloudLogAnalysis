@@ -36,7 +36,7 @@ Complete the following steps to provision an instance of the {{site.data.keyword
 
 2. Click **Catalog**. The list of the services that are available on {{site.data.keyword.Bluemix_notm}} opens.
 
-3. Select the **DevOps** category to filter the list of services that is displayed.
+3. Select the **Developer Tools** category to filter the list of services that is displayed.
 
 4. Click the **Log Analysis** tile.
 
