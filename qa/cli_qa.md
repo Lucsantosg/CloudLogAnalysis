@@ -21,23 +21,23 @@ lastupdated: "2018-07-25"
 Here are the answers to common questions about using the {{site.data.keyword.Bluemix}} CLI with the {{site.data.keyword.loganalysisshort}} service. 
 {:shortdesc}
 
-* [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)
+* [How do I log into the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)
 * [How do I install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/services/CloudLogAnalysis/qa/cli_qa.html#install_bmx_cli)
 * [How do I get the GUID of an account](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid)
 * [How do I get the GUID of an organization](/docs/services/CloudLogAnalysis/qa/cli_qa.html#org_guid)
 * [How do I get the GUID of a space](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid)
 
-## How do I login in to the IBM Cloud?
+## How do I login into the IBM Cloud?
 {: #login}
 
-Run the following command to log in to a region in the {{site.data.keyword.Bluemix_notm}} where the {{site.data.keyword.loganalysisshort}} service is available:
+Run the following command to log into a region in the {{site.data.keyword.Bluemix_notm}} where the {{site.data.keyword.loganalysisshort}} service is available:
 
 ```
 ibmcloud login -a Endpoint
 ```
 {: codeblock}
 	
-Where *Endpoint* is the URL to log in to the {{site.data.keyword.Bluemix_notm}}. This URL is different per region.
+Where *Endpoint* is the URL to log into the {{site.data.keyword.Bluemix_notm}}. This URL is different per region.
 	
 <table>
     <caption>List of endpoints to access the {{site.data.keyword.Bluemix_notm}}</caption>
@@ -63,7 +63,7 @@ Where *Endpoint* is the URL to log in to the {{site.data.keyword.Bluemix_notm}}.
 	</tr>
 </table>
 
-For example, to log in to the US South region, run the following command:
+For example, to log into the US South region, run the following command:
 	
 ```
 ibmcloud login -a https://api.ng.bluemix.net

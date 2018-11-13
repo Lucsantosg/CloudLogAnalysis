@@ -24,7 +24,7 @@ Logging capabilities are not enabled automatically for virtual machines (VMs). H
 
 The {{site.data.keyword.loganalysisshort}} service offers different plans. All plans, with the exception of the *Lite* plan, include the ability to send logs into Log Collection. For more information about the plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-You can send logs into the {site.data.keyword.loganalysisshort}} by using the mt-logstash-forwarder. For more information, see [Send log data by using a Multi-Tenant Logstash Forwarder (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
+You can send logs into the {{site.data.keyword.loganalysisshort}} by using the mt-logstash-forwarder. For more information, see [Send log data by using a Multi-Tenant Logstash Forwarder (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
 
 
 ## Log collection
