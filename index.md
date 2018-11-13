@@ -24,6 +24,7 @@ Use this tutorial to learn how to start working with the {{site.data.keyword.log
 
 By default, {{site.data.keyword.Bluemix_notm}} offers integrated logging capabilities for selected services. You can use the {{site.data.keyword.loganalysisshort}} service to expand your collection and retention capabilities when working with logs.
 
+
 ## Before you begin
 {: #prereqs}
 
