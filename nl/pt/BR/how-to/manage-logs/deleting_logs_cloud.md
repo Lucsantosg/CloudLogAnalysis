@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-19"
 # Excluindo logs
 {: #deleting_logs}
 
-Use o comando [bx logging log-delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) para excluir logs da Coleção de logs. 
+Use o comando [ibmcloud logging log-delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) para excluir logs da Coleção de logs. 
 {:shortdesc}
 
 * É possível excluir logs dentro de um intervalo de tempo específico.
@@ -37,14 +37,14 @@ Conclua as etapas a seguir para excluir todos os logs que são armazenados em um
 2. Execute o comando a seguir para ver os logs que estão disponíveis na Coleção de logs.
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     Por exemplo,
     
     ```
-    $ bx logging log-show
+    $ ibmcloud logging log-show
     Showing log status of resource: 12345678-abcd-4193-aere-378620d6fab5 ...
 
     Tipos pesquisáveis de contagem de tamanho de data   
@@ -57,7 +57,7 @@ Conclua as etapas a seguir para excluir todos os logs que são armazenados em um
 3. Exclua os logs que são armazenados em um dia específico.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate
+	ibmcloud logging log-delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
@@ -69,7 +69,7 @@ Conclua as etapas a seguir para excluir todos os logs que são armazenados em um
 	Por exemplo, para excluir os logs para 25 de maio de 2017, execute o comando a seguir:
 	
 	```
-	bx logging log-delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
@@ -86,14 +86,14 @@ Conclua as etapas a seguir para excluir os logs pelo tipo de log armazenados em 
 2. Execute o comando a seguir para ver os logs que estão disponíveis na Coleção de logs.
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     Por exemplo,
     
     ```
-    $ bx logging log-show
+    $ ibmcloud logging log-show
     Showing log status of resource: 12345678-1234-2edr-a9de-378620d6fab5 ...
 
     Tipos pesquisáveis de contagem de tamanho de data   
@@ -106,7 +106,7 @@ Conclua as etapas a seguir para excluir os logs pelo tipo de log armazenados em 
 3. Exclua os logs que são armazenados em um dia específico.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate -t LogType
+	ibmcloud logging log-delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
@@ -119,7 +119,7 @@ Conclua as etapas a seguir para excluir os logs pelo tipo de log armazenados em 
 	Por exemplo, para excluir os logs do tipo linux_syslog para 25 de maio de 2017, execute o comando a seguir:
 	
 	```
-	bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
@@ -141,15 +141,14 @@ Conclua as etapas a seguir:
 3. Execute o comando a seguir para ver os logs disponíveis em Coleção de logs no nível de conta.
 
     ```
-    bx logging log-show  -r account -i AccountID
+    ibmcloud logging log-show  -r account -i AccountID
     ```
     {: codeblock}
     
     Por exemplo,
     
     ```
-    $ bx logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
-	Showing log status of resource: 123456789123456789567c9c8de6dece ...
+    $ ibmcloud logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25 	Showing log status of resource: 123456789123456789567c9c8de6dece...
 
     Tipos pesquisáveis de contagem de tamanho de data   
 	2017-05-24   16         3020    All                 default
@@ -163,7 +162,7 @@ Conclua as etapas a seguir:
 4. Exclua os logs que são armazenados em um dia específico.
 
     ```
-	bx logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
+	ibmcloud logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
 	```
 	{: codeblock}
 	
@@ -176,7 +175,7 @@ Conclua as etapas a seguir:
 	Por exemplo, para excluir os logs do tipo linux_syslog para 25 de maio de 2017 que são armazenados em Coleção de logs no nível de conta, execute o comando a seguir:
 	
 	```
-	bx logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -r account -i 123456789123456789567c9c8de6dece
+	ibmcloud logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -r account -i 123456789123456789567c9c8de6dece
 	```
 	{: screen}
 	

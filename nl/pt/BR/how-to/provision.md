@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -55,7 +55,7 @@ Conclua as etapas a seguir para provisionar uma instância do serviço {{site.da
 
 1. [Pré-requisito] Instale a CLI do {{site.data.keyword.Bluemix_notm}}.
 
-   Para obter mais informações, veja [Instalando a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obter mais informações, veja [Instalando a CLI do {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Se a CLI estiver instalada, continue com a próxima etapa.
     
@@ -63,10 +63,10 @@ Conclua as etapas a seguir para provisionar uma instância do serviço {{site.da
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Execute o comando `bx service create` para provisionar uma instância.
+3. Execute o comando `ibmcloud service create` para provisionar uma instância.
 
     ```
-	bx service create service_name service_plan service_instance_name
+	ibmcloud create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -79,14 +79,14 @@ Conclua as etapas a seguir para provisionar uma instância do serviço {{site.da
 	Por exemplo, para criar uma instância do serviço {{site.data.keyword.loganalysisshort}} com o plano Lite, execute o comando a seguir:
 	
 	```
-	Bx service create ibmLogAnalysis standard my_logging_svc
+	serviço ibmcloud create ibmLogAnalysis padrão my_logging_svc
 	```
 	{: codeblock}
 	
 4. Verifique se o serviço foi criado com sucesso. Execute o comando a seguir:
 
     ```	
-	bx service list
+	Lista de serviços ibmcloud
 	```
 	{: codeblock}
 	

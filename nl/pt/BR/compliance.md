@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-20"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-04-20"
 # Conformidade
 {: #compliance}
 
-[O {{site.data.keyword.Bluemix}} fornece uma plataforma de nuvem e serviços que são construídos para padrões de segurança rigorosos da IBM.](/docs/security/compliance.html#compliance). O serviço {{site.data.keyword.loganalysislong}} é um serviço DevOps construído para o {{site.data.keyword.Bluemix_notm}}.
+[O {{site.data.keyword.Bluemix}} fornece uma plataforma de nuvem e serviços que são construídos para padrões de segurança rigorosos da IBM.](/docs/security/compliance.html#compliance). O serviço {{site.data.keyword.loganalysislong}} é um serviço DevOps construído para o {{site.data.keyword.Bluemix_notm}}. 
 {:shortdesc}
 
 
@@ -31,7 +31,7 @@ O General Data Protection Regulation (GDPR) procura criar uma estrutura harmoniz
 ### Regiões
 {: #regions}
 
-O serviço {{site.data.keyword.loganalysisshort}} pretende estar em conformidade com o GDPR no prazo final de 25 de maio de 2018 nas regiões públicas do {{site.data.keyword.Bluemix_notm}} nas quais o serviço está disponível.
+O serviço {{site.data.keyword.loganalysisshort}} é compatível com o GDPR nas regiões do {{site.data.keyword.Bluemix_notm}} Public em que o serviço está disponível.
 
 
 ### Retenção de Dados
@@ -62,12 +62,12 @@ Considere as seguintes informações:
 
     É possível usar a [API de Coleção de logs](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} ou a [CLI de Coleção de logs](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} para excluir logs manualmente da Coleção de logs. 
 
-    É possível usar a CLI para excluir os logs manualmente da Coleção de logs. Para obter mais informações, veja [bx logging log-delete usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+    É possível usar a CLI para excluir os logs manualmente da Coleção de logs. Para obter mais informações, veja [ibmcloud logging log-delete usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
 
 
 Se você mudar de um plano pago para o plano padrão ou lite, os logs na Coleção de logs serão excluídos em aproximadamente um dia.
 
-A qualquer momento, será possível abrir um chamado de suporte e solicitar que todos os dados sejam excluídos da Procura de log e da Coleção de logs. Para obter informações sobre como abrir um chamado de suporte IBM, veja [Entrando em contato com o suporte](https://www.{DomainName}/docs/support/index.html#contacting-support).
+A qualquer momento, será possível abrir um chamado de suporte e solicitar que todos os dados sejam excluídos da Procura de log e da Coleção de logs. Para obter informações sobre como abrir um chamado de suporte IBM, veja [Entrando em contato com o suporte](/docs/get-support/howtogetsupport.html#getting-customer-support).
 
 
 

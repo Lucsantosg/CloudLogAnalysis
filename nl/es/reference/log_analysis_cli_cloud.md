@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-08-21"
 
 ---
 
@@ -20,7 +20,7 @@ La CLI de {{site.data.keyword.loganalysislong}} es un plug-in de {{site.data.key
 {: shortdesc}
 
 **Requisitos previos**
-* Antes de ejecutar mandatos de registro, inicie una sesión en {{site.data.keyword.Bluemix_notm}} con el mandato `bx login` para generar una señal de acceso y autenticar la sesión.
+* Antes de ejecutar mandatos de registro, inicie una sesión en {{site.data.keyword.Bluemix_notm}} con el mandato `ibmcloud login` para generar una señal de acceso y autenticar la sesión.
 
 Para obtener información sobre la utilización de la interfaz de línea de mandatos de {{site.data.keyword.loganalysisshort}}, consulte [Gestión de registros](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov).
 
@@ -31,68 +31,67 @@ Para obtener información sobre la utilización de la interfaz de línea de mand
     <th>Cuándo utilizarlo</th>
   </tr>
   <tr>
-    <td>[bx logging](#base)</td>
+    <td>[ibmcloud logging](#base)</td>
     <td>Utilice este mandato para obtener información sobre la CLI, como por ejemplo la lista de mandatos.</td>
   </tr>
   <tr>
-    <td>[bx logging log-delete](#delete)</td>
+    <td>[ibmcloud logging log-delete](#delete)</td>
     <td>Utilice este mandato para suprimir los registros almacenados en el componente de recopilación de registros.</td>
   </tr>
   <tr>
-    <td>[bx logging log-download](#download)</td>
+    <td>[ibmcloud logging log-download](#download)</td>
     <td>Utilice este mandato para descargar de la recopilación de registros en un archivo local, o para direccionar los registros a otro programa, como por ejemplo Elastic Stack. </td>
   </tr>
   <tr>
-    <td>[bx logging log-show](#status)</td>
+    <td>[ibmcloud logging log-show](#status)</td>
     <td>Utilice este mandato para obtener información sobre los registros que se han recopilado en un espacio, organización o cuenta.</td>
   </tr>
   <tr>
-    <td>[bx logging help](#help)</td>
+    <td>[ibmcloud logging help](#help)</td>
     <td>Utilice este mandato para obtener ayuda sobre cómo utilizar la CLI y una lista de todos los mandatos.</td>
   </tr>
   <tr>
-    <td>[bx logging option-show](#optionshow)</td>
+    <td>[ibmcloud logging option-show](#optionshow)</td>
     <td>Utilice este mandato para ver el periodo de retención para los registros que están disponibles en un espacio, una organización o una cuenta.</td>
   </tr>
   <tr>
-    <td>[bx logging option-update](#optionupdate)</td>
+    <td>[ibmcloud logging option-update](#optionupdate)</td>
     <td>Utilice este mandato para establecer el periodo de retención para los registros que están disponibles en un espacio, una organización o una cuenta.</td>
   </tr>
   <tr>
-    <td>[bx logging quota-usage-show](#quotausage)</td>
+    <td>[ibmcloud logging quota-usage-show](#quotausage)</td>
     <td>Utilice este mandato para obtener la información de uso de cuota para un espacio, una organización o una cuenta. También puede obtener información del historial de la cuota.</td>
   </tr>
   <tr>
-    <td>[bx logging session-create
-](#session_create)</td>
+    <td>[ibmcloud logging session-create](#session_create)</td>
     <td>Utilice este mandato para crear una nueva sesión.</td>
   <tr>
   <tr>
-    <td>[bx logging session-delete](#session_delete)</td>
+    <td>[ibmcloud logging session-delete](#session_delete)</td>
     <td>Utilice este mandato para suprimir una sesión.</td>
   <tr>  
   <tr>
-    <td>[bx logging sessions](#session_list)</td>
+    <td>[ibmcloud logging sessions](#session_list)</td>
     <td>Utilice este mandato para obtener una lista de las sesiones activas y sus ID.</td>
   <tr>  
   <tr>
-    <td>[bx logging session-show](#session_show)</td>
+    <td>[ibmcloud logging session-show](#session_show)</td>
     <td>Utilice este mandato para ver el estado de una sesión individual.</td>
   <tr>  
   <tr>
-    <td>[bx logging token-get](#tokenget)</td>
-    <td>Utilice este mandato para obtener la señal de registro para enviar datos de registro al servicio {{site.data.keyword.loganalysisshort}}. </td>
+    <td>[ibmcloud logging token-get](#tokenget)</td>
+    <td>Utilice este mandato para obtener la señal de registro para enviar datos de registro al servicio {{site.data.keyword.loganalysisshort}}.</td>
   </tr>
 </table>
 
 
-## bx logging
+## ibmcloud logging
 {: #base}
 
 Proporciona información general sobre la CLI.
 
 ```
-bx logging 
+ibmcloud logging 
 ```
 {: codeblock}
 
@@ -101,11 +100,11 @@ bx logging
 Para obtener la lista de mandatos, ejecute el mandato siguiente:
 
 ```
-bx logging
+ibmcloud logging
 NAME:
-   bx logging - IBM Cloud Log Analysis Service
+   ibmcloud logging - IBM Cloud Log Analysis Service
 USAGE:
-   bx logging command [argumentos...] [opciones de mandato]
+   ibmcloud logging command [argumentos...] [opciones de mandato]
 
 MANDATOS:
 
@@ -120,22 +119,22 @@ MANDATOS:
    option-update      Mostrar las opciones de registro
    token-get          Obtener una señal de registro para enviar registros
    quota-usage-show   Mostrar información de uso de cuota
-   help
-
-Indique 'bx logging help [mandato]' para obtener más información sobre un mandato.
+   help             
+   
+Indique 'ibmcloud logging help [mandato]' para obtener más información sobre un mandato.
 ```
 {: codeblock}
 
 
 
 
-## bx logging log-delete
+## ibmcloud logging log-delete
 {: #delete}
 
 Suprime los registros almacenados en el componente de recopilación de registros.
 
 ```
-bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
+ibmcloud logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
 ```
 {: codeblock}
 
@@ -167,21 +166,21 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
 
 Para suprimir los registros de tipo *linux_syslog* del 25 de mayo de 2017, ejecute el mandato siguiente:
 ```
-bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: screen}
 
 
 
-## bx logging log-download 
+## ibmcloud logging log-download 
 {: #download}
 
 Descarga los registros del componente de recopilación de registros en un archivo local o direcciona los registros a otro programa, como por ejemplo Elastic Stack. 
 
-**Nota:** Para descargar archivos, primero tiene que crear una sesión. Una sesión define los registros que se van a descargar en función de rango de fechas, tipo de registro y tipo de cuenta. Los registros se descargan dentro del contexto de una sesión. Para obtener más información, consulte [bx logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create).
+**Nota:** Para descargar archivos, primero tiene que crear una sesión. Una sesión define los registros que se van a descargar en función de rango de fechas, tipo de registro y tipo de cuenta. Los registros se descargan dentro del contexto de una sesión. Para obtener más información, consulte [ibmcloud logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create).
 
 ```
- bx logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
+ ibmcloud logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
 
 ```
 {: codeblock}
@@ -206,7 +205,7 @@ Descarga los registros del componente de recopilación de registros en un archiv
 
 <dl>
   <dt>SESSION_ID</dt>
-  <dd>Este valor indica el ID de la sesión que debe utilizar al descargar los registros. <br>**Nota:** El mandato `bx logging session-create` proporciona los parámetros que controlan los registros que se descargan. </dd>
+  <dd>Este valor indica el ID de la sesión que debe utilizar al descargar los registros. <br>**Nota:** El mandato `ibmcloud logging session-create` proporciona los parámetros que controlan los registros que se descargan. </dd>
 </dl>
 
 **Nota:** Una vez finalizada la descarga, si se intenta ejecutar el mismo mandato de nuevo, este no hará nada. Para volver a descargar los mismos datos, debe utilizar otro archivo u otra sesión.
@@ -216,14 +215,14 @@ Descarga los registros del componente de recopilación de registros en un archiv
 En un sistema Linux, para descargar registros en un archivo denominado mylogs.gz, ejecute el mandato siguiente:
 
 ```
-bx logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 Para descargar registros en su propia plataforma Elastic Stack, ejecute el mandato siguiente:
 
 ```
-bx logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -244,13 +243,13 @@ output {
 {: screen}
 
 
-## bx logging help
+## ibmcloud logging help
 {: #help}
 
 Proporciona información sobre cómo utilizar un mandato.
 
 ```
-bx logging help [mandato] 
+ibmcloud logging help [mandato] 
 ```
 {: codeblock}
 
@@ -268,12 +267,12 @@ bx logging help [mandato]
 Para obtener ayuda sobre cómo ejecutar el mandato para ver el estado de los registros, ejecute el mandato siguiente:
 
 ```
-bx logging help log-show
+ibmcloud logging help log-show
 NOMBRE:
    log-show - Mostrar el recuento, tamaño y tipo de los registros por día
 
 USO:
-   bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+   ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 
 OPCIONES:
    -r, --resource-type     Tipo de recurso, los tipos de recurso válidos son account, org o space
@@ -287,7 +286,7 @@ OPCIONES:
 {: screen}
 
 
-## bx logging option-show
+## ibmcloud logging option-show
 {: #optionshow}
 
 Muestra el periodo de retención para los registros que están disponibles en un espacio, una organización o una cuenta. 
@@ -298,7 +297,7 @@ Muestra el periodo de retención para los registros que están disponibles en un
 **Nota:** de forma predeterminada, se almacenan todos los registros. Debe suprimirlos manualmente mediante el mandato **delete**. Defina una política de retención para suprimir registros automáticamente.
 
 ```
-bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -320,14 +319,14 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
 Para ver el periodo de retención actual predeterminado para el espacio en el que ha iniciado la sesión, ejecute el mandato siguiente:
 
 ```
-bx logging option-show
+ibmcloud logging option-show
 ```
 {: screen}
 
 
 
 
-## bx logging option-update
+## ibmcloud logging option-update
 {: #optionupdate}
 
 Cambia el periodo de retención para los registros que están disponibles en un espacio, una organización o una cuenta. 
@@ -336,7 +335,7 @@ Cambia el periodo de retención para los registros que están disponibles en un 
 * El valor predeterminado es **-1**. 
 
 ```
-bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
+ibmcloud logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
 ```
 {: codeblock}
 
@@ -361,21 +360,21 @@ bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RE
 Para cambiar el periodo de retención por 25 días para el espacio en el que ha iniciado la sesión, ejecute el mandato siguiente:
 
 ```
-bx logging option-update -e 25
+ibmcloud logging option-update -e 25
 ```
 {: screen}
 
 
-## bx logging quota-usage-show
+## ibmcloud logging quota-usage-show
 {: #quotausage}
 
-Informa sobre el uso de la cuota de un espacio, de una organización o de una cuenta. También puede utilizarlo para obtener un historial del uso. 
+Informa sobre el uso de la cuota de un espacio, de una organización o de una cuenta. También puede utilizarlo para obtener un historial del uso.
 
 * El periodo se establece en número de días.
 * El valor predeterminado es **-1**. 
 
 ```
-bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
 ```
 {: codeblock}
 
@@ -397,10 +396,10 @@ bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id
 
 **Ejemplo**
 
-Para obtener un historial del uso de la cuota para un dominio del espacio, ejecute el siguiente mandato: 
+Para obtener un historial del uso de la cuota para un dominio del espacio, ejecute el siguiente mandato:
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -413,11 +412,11 @@ Date         Allotmant   Usage
 2018.03.03   524288000   75045462
 2018.03.07   524288000   17386278
 2018.03.02   524288000   104316444
-2018.03.04   524288000   73125223
+2018.03.04   524288000   73125223   
 ```
 {: screen}
 
-## bx logging session-create
+## ibmcloud logging session-create
 {: #session_create}
 
 Crea una nueva sesión.
@@ -425,7 +424,7 @@ Crea una nueva sesión.
 **Nota:** Puede tener un máximo de 30 sesiones simultáneas en un espacio. La sesión se crea para un usuario. Las sesiones no se pueden compartir entre usuarios de un espacio.
 
 ```
-bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE]
+ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-T, --time, LOG_TIME]
 ```
 {: codeblock}
 
@@ -450,6 +449,10 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
   
   <dt>-t, --type, LOG_TYPE</dt>
   <dd>(Opcional) Define el tipo de registro. <br>Por ejemplo, *syslog* es un tipo de registro. <br>El valor predeterminado es asterisco (*). <br>Puede especificar varios tipos de registro separando cada tipo con una coma, por ejemplo *log_type_1,log_type_2,log_type_3*.
+  </dd>
+
+  <dt>-T, --time, LOG_TIME</dt>
+  <dd>(Opcional) Establece la hora del día para la que desea obtener registros de un tipo específico. </br>Los valores válidos son 0-23. </br>Debería utilizarse en combinación con LOG_TYPE.
   </dd>
 
 </dl>
@@ -488,23 +491,23 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
 Para crear una sesión que incluya registros correspondientes al 13 de noviembre de 2017, ejecute el siguiente mandato:
 
 ```
-bx logging session-create -s 2017-11-13 -e 2017-11-13
+ibmcloud logging session-create -s 2017-11-13 -e 2017-11-13
 Creating session for xxxxx@yyy.com resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
-ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type
-1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z   2017-11-13   2017-11-13   ANY_TYPE
+ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
+1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z   2017-11-13   2017-11-13   ANY_TYPE   
 Session: 1ef776d1-4d25-4297-9693-882606c725c8 is created
 ```
 {: screen}
 
 
-## bx logging session-delete 
+## ibmcloud logging session-delete 
 {: #session_delete}
 
 Suprime una sesión, especificada por ID de sesión.
 
 ```
-bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 ```
 {: codeblock}
 
@@ -533,19 +536,19 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
 Para suprimir una sesión con el ID de sesión *cI6hvAa0KR_tyhjxZZz9Uw==*, ejecute el mandato siguiente:
 
 ```
-bx logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## bx logging sessions
+## ibmcloud logging sessions
 {: #session_list}
 
 Muestra una lista de las sesiones activas y sus ID.
 
 ```
-bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -579,23 +582,23 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **Ejemplo**
 
 ```
-bx logging sessions
+ibmcloud logging sessions
 Listing sessions of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
-ID                                     Space                                  CreateTime                       AccessTime
-1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z
+ID                                     Space                                  CreateTime                       AccessTime   
+1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z   
 Listed the sessions of resource xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
 ```
 :{ screen}
 
 
-## bx logging session-show
+## ibmcloud logging session-show
 {: #session_show}
 
 Muestra el estado de una sesión individual.
 
 ```
-bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 
 ```
 {: codeblock}
@@ -622,17 +625,17 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
 Para mostrar los detalles de una sesión con el ID de sesión *cI6hvAa0KR_tyhjxZZz9Uw==*, ejecute el mandato siguiente:
 
 ```
-bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
-## bx logging token-get
+## ibmcloud logging token-get
 {: #tokenget}
 
 Devuelve la señal de registro que se necesita para enviar datos de registro a {{site.data.keyword.loganalysisshort}}.
 
 ```
-bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -652,23 +655,23 @@ bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOUR
 **Ejemplo**
 
 ```
-bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
 Tenant Id                              Logging Token
-js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx
+js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx   
 ```
 {: screen}
 
 
-## bx logging log-show
+## ibmcloud logging log-show
 {: #status}
 
 Devuelve información sobre los registros que se han recopilado en un espacio o cuenta de {{site.data.keyword.Bluemix_notm}}.
 
 ```
-bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 ```
 {: codeblock}
 
@@ -708,20 +711,20 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **Ejemplo**
 
 ```
-bx logging log-show
+ibmcloud logging log-show
 Showing log status of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
-Date         Size        Count    Searchable   Types
-2017-11-07   1878197     1333     None         default
-2017-11-13   201653512   179391   All          default,linux_syslog
-2017-11-14   32134119    30425    All          default,linux_syslog
-2017-11-15   303901156   269689   All          linux_syslog,default
+Date         Size        Count    Searchable   Types   
+2017-11-07   1878197     1333     None         default   
+2017-11-13   201653512   179391   All          default,linux_syslog   
+2017-11-14   32134119    30425    All          default,linux_syslog   
+2017-11-15   303901156   269689   All          linux_syslog,default   
 2017-11-16   107253679   96648    All          default,linux_syslog   
 ```
 {: screen}
 
 ```
- bx logging log-show -l
+ ibmcloud logging log-show -l
 Showing log status of resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 Date         Size        Count    Searchable   Type

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -25,7 +25,7 @@ lastupdated: "2018-04-19"
 ## 전제조건
 {: #prereqs}
 
-* {{site.data.keyword.Bluemix_notm}}에 로그인할 {{site.data.keyword.Bluemix_notm}} ID. 
+* {{site.data.keyword.Bluemix_notm}}에 로그인할 {{site.data.keyword.Bluemix_notm}} ID.
 * 영역에서 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행할 수 있는 권한이 있는 사용자 ID. 자세한 정보는 [보안](/docs/services/CloudLogAnalysis/security_ov.html#security_ov)을 참조하십시오.
 * 로컬 환경에 설치된 {{site.data.keyword.loganalysisshort}} CLI.
 * 로그 수집을 허용하는 플랜과 함께 계정의 영역에 프로비저닝된 {{site.data.keyword.loganalysisshort}} 서비스.
@@ -40,10 +40,10 @@ lastupdated: "2018-04-19"
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
     
-2. `bx logging token-get` 명령을 실행하십시오. 
+2. `ibmcloud logging token-get` 명령을 실행하십시오. 
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     ```
     {: codeblock}
 
@@ -52,7 +52,7 @@ lastupdated: "2018-04-19"
     예:
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
     OK
 

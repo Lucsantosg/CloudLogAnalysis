@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -20,7 +20,8 @@ lastupdated: "2018-01-10"
 {: shortdesc}
 
 **전제조건**
-* 로깅 명령을 실행하기 전에 `bx login` 명령으로 {{site.data.keyword.Bluemix_notm}}에 로그인하여 {{site.data.keyword.Bluemix_short}} 액세스 토큰을 생성하고 세션을 인증하십시오. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
+* 로깅 명령을 실행하기 전에 `ibmcloud login` 명령으로 {{site.data.keyword.Bluemix_notm}}에 로그인하여 {{site.data.keyword.Bluemix_short}} 액세스 토큰을
+생성하고 세션을 인증하십시오. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 
 {{site.data.keyword.loganalysisshort}} CLI 사용 방법에 대해 알아보려면 [로그 관리](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)를 참조하십시오.
 
@@ -31,59 +32,59 @@ lastupdated: "2018-01-10"
     <th>사용하는 경우</th>
   </tr>
   <tr>
-    <td>[bx cf logging](#base)</td>
+    <td>[ibmcloud cf logging](#base)</td>
     <td>이 명령을 사용하여 CLI에 대한 정보(예: 명령의 목록 또는 버전)를 가져옵니다.</td>
   </tr>
   <tr>
-    <td>[bx cf logging auth](#auth)</td>
+    <td>[ibmcloud cf logging auth](#auth)</td>
     <td>이 명령을 사용하여 {{site.data.keyword.loganalysisshort}} 서비스에 로그를 전송하는 데 사용할 수 있는 로깅 토큰을 가져옵니다.</td>
   </tr>
   <tr>
-    <td>[bx cf logging delete](#delete)</td>
+    <td>[ibmcloud cf logging delete](#delete)</td>
     <td>이 명령을 사용하여 로그 콜렉션에 저장된 로그를 삭제합니다.</td>
   </tr>
   <tr>
-    <td>[bx cf logging download(베타)](#download)</td>
+    <td>[ibmcloud cf logging download(베타)](#download)</td>
     <td>이 명령을 사용하여 로그 콜렉션에서 로컬 파일로 로그를 다운로드하거나 다른 프로그램(예: Elastic Stack)으로 로그를 보냅니다. </td>
   </tr>
   <tr>
-    <td>[bx cf logging help](#help)</td>
+    <td>[ibmcloud cf logging help](#help)</td>
     <td>이 명령을 사용하여 모든 명령의 목록 및 CLI 사용 방법에 대한 도움말을 가져옵니다.</td>
   </tr>
   <tr>
-    <td>[bx cf logging option](#option)</td>
+    <td>[ibmcloud cf logging option](#option)</td>
     <td>이 명령을 사용하여 영역 또는 계정에서 사용 가능한 로그에 대한 보존 기간을 보거나 설정합니다.</td>
   </tr>
   <tr>
-    <td>[bx cf logging session create(베타)](#session_create)</td>
+    <td>[ibmcloud cf logging session create(베타)](#session_create)</td>
     <td>이 명령을 사용하여 새 세션을 작성합니다.</td>
   <tr>
   <tr>
-    <td>[bx cf logging session delete(베타)](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete(베타)](#session_delete)</td>
     <td>이 명령을 사용하여 세션을 삭제합니다.</td>
   <tr>  
   <tr>
-    <td>[bx cf logging session list(베타)](#session_list)</td>
+    <td>[ibmcloud cf logging session list(베타)](#session_list)</td>
     <td>이 명령을 사용하여 활성 세션 및 해당 ID를 나열합니다.</td>
   <tr>  
   <tr>
-    <td>[bx cf logging session show(베타)](#session_show)</td>
+    <td>[ibmcloud cf logging session show(베타)](#session_show)</td>
     <td>이 명령을 사용하여 단일 세션의 상태를 표시합니다.</td>
   <tr>  
   <tr>
-    <td>[bx cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status)</td>
     <td>이 명령을 사용하여 영역 또는 계정에서 수집된 로그에 대한 정보를 가져옵니다.</td>
   </tr>
   </table>
 
 
-## bx cf logging
+## ibmcloud cf logging
 {: #base}
 
 CLI의 버전 및 CLI 사용 방법에 대한 정보를 제공합니다.
 
 ```
-bx cf logging [parameters]
+ibmcloud cf logging [parameters]
 ```
 {: codeblock}
 
@@ -103,19 +104,19 @@ bx cf logging [parameters]
 명령의 목록을 가져오려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging --help
+ibmcloud cf logging --help
 ```
 {: codeblock}
 
 CLI의 버전을 가져오려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging --version
+ibmcloud cf logging --version
 ```
 {: codeblock}
 
 
-## bx cf logging auth
+## ibmcloud cf logging auth
 {: #auth}
 
 {{site.data.keyword.loganalysisshort}} 서비스에 로그를 전송하기 위해 사용할 수 있는 로깅 토큰을 리턴합니다. 
@@ -123,7 +124,7 @@ bx cf logging --version
 **참고: ** 토큰은 만료되지 않습니다.
 
 ```
-bx cf logging auth
+ibmcloud cf logging auth
 ```
 {: codeblock}
 
@@ -143,13 +144,13 @@ bx cf logging auth
   </dd>
 </dl>
 
-## bx cf logging delete
+## ibmcloud cf logging delete
 {: #delete}
 
 로그 콜렉션에 저장된 로그를 삭제합니다.
 
 ```
-bx cf logging delete [parameters]
+ibmcloud cf logging delete [parameters]
 ```
 {: codeblock}
 
@@ -177,21 +178,21 @@ bx cf logging delete [parameters]
 
 2017년 5월 25일에 유형 *linux_syslog*의 로그를 삭제하려면 다음 명령을 실행하십시오.
 ```
-bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: codeblock}
 
 
 
-## bx cf logging download(베타)
+## ibmcloud cf logging download(베타)
 {: #download}
 
 로그 콜렉션에서 로컬 파일로 로그를 다운로드하거나 다른 프로그램(예: Elastic Stack)으로 로그를 보냅니다. 
 
-**참고:** 파일을 다운로드하려면 먼저 세션을 작성해야 합니다. 세션은 날짜 범위, 로그 유형 및 계정 유형을 기반으로 어느 로그를 다운로드할 것인지 정의합니다. 세션의 컨텍스트 내에서 로그를 다운로드합니다. 자세한 정보는 [bx cf logging session create(베타)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create)를 참조하십시오.
+**참고:** 파일을 다운로드하려면 먼저 세션을 작성해야 합니다. 세션은 날짜 범위, 로그 유형 및 계정 유형을 기반으로 어느 로그를 다운로드할 것인지 정의합니다. 세션의 컨텍스트 내에서 로그를 다운로드합니다. 자세한 정보는 [ibmcloud cf logging session create(베타)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create)를 참조하십시오.
 
 ```
-bx cf logging download [parameters] [arguments]
+ibmcloud cf logging download [parameters] [arguments]
 ```
 {: codeblock}
 
@@ -206,7 +207,7 @@ bx cf logging download [parameters] [arguments]
 
 <dl>
 <dt>session_ID</dt>
-<dd>`bx cf logging session create` 명령을 실행할 때 가져오는 세션 ID 값으로 설정하십시오. 이 값은 로그를 다운로드할 때 사용할 세션을 표시합니다. <br>**참고:** `bx cf logging session create` 명령은 어떤 로그를 다운로드할 것인지 제어하는 매개변수를 제공합니다. </dd>
+<dd>`ibmcloud cf logging session create` 명령을 실행하여 가져오는 세션 ID 값으로 설정하십시오. 이 값은 로그를 다운로드할 때 사용할 세션을 표시합니다. <br>**참고:** `ibmcloud cf logging session create` 명령은 다운로드되는 로그를 제어하는 매개변수를 제공합니다. </dd>
 </dl>
 
 **참고:** 다운로드가 완료된 후에 같은 명령을 다시 실행하면 아무 것도 수행하지 않게 됩니다. 동일한 데이터를 다시 다운로드하려면 다른 파일 또는 다른 세션을 사용해야 합니다.
@@ -216,14 +217,14 @@ bx cf logging download [parameters] [arguments]
 Linux 시스템에서 로그를 mylogs.gz라는 파일로 다운로드하려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 사용자 자신의 Elastic Stack에 로그를 다운로드하려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -244,13 +245,13 @@ output {
 {: screen}
 
 
-## bx cf logging help
+## ibmcloud cf logging help
 {: #help}
 
 명령 사용 방법에 대한 정보를 제공합니다.
 
 ```
-bx cf logging help [command]
+ibmcloud cf logging help [command]
 ```
 {: codeblock}
 
@@ -268,12 +269,12 @@ bx cf logging help [command]
 로그의 상태를 보기 위해 명령을 실행하는 방법에 대한 도움말을 가져오려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging help status
+ibmcloud cf logging help status
 ```
 {: codeblock}
 
 
-## bx cf logging option
+## ibmcloud cf logging option
 {: #option}
 
 영역 또는 계정에서 사용 가능한 로그에 대한 보존 기간을 표시하거나 변경합니다. 
@@ -284,7 +285,7 @@ bx cf logging help status
 **참고:** 기본적으로 모든 로그가 저장됩니다. **delete** 명령을 사용하여 로그를 수동으로 삭제해야 합니다. 자동으로 로그를 삭제하려면 보존 정책을 설정하십시오.
 
 ```
-bx cf logging option [parameters]
+ibmcloud cf logging option [parameters]
 ```
 {: codeblock}
 
@@ -295,7 +296,7 @@ bx cf logging option [parameters]
 <dd>(선택사항) 보존일 수를 설정합니다. <br> 기본값은 *-1*일입니다.</dd>
 
 <dt>--at-account-level, -a </dt>
-  <dd>(선택사항) 계정 레벨에 범위를 설정합니다. <br>이 매개변수가 지정되지 않은 경우, 명령 `bx cf login`을 사용하여 로그인한 영역인 현재 영역에 대해 *-1*로 기본값이 설정됩니다.
+  <dd>(선택사항) 계정 레벨에 범위를 설정합니다. <br>이 매개변수가 지정되지 않은 경우, `ibmcloud cf login` 명령을 사용하여 로그인한 영역인 현재 영역에 대해 *-1*로 기본값이 설정됩니다.
   </dd>
 </dl>
 
@@ -304,7 +305,7 @@ bx cf logging option [parameters]
 사용자가 로그인한 영역의 기본 현재 보존 기간을 보려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging option
+ibmcloud cf logging option
 ```
 {: codeblock}
 
@@ -314,7 +315,7 @@ bx cf logging option
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        -1 |
+| d35da1e3-b345-475f-8502-ibmcloud cfgh436902a3 |        -1 |
 +--------------------------------------+-----------+
 ```
 {: screen}
@@ -323,7 +324,7 @@ bx cf logging option
 사용자가 로그인한 영역에 대한 보존 기간을 25일로 변경하려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging option -r 25
+ibmcloud cf logging option -r 25
 ```
 {: codeblock}
 
@@ -333,13 +334,13 @@ bx cf logging option -r 25
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        25 |
+| d35da1e3-b345-475f-8502-ibmcloud cfgh436902a3 |        25 |
 +--------------------------------------+-----------+
 ```
 {: screen}
 
 
-## bx cf logging session create(베타)
+## ibmcloud cf logging session create(베타)
 {: #session_create}
 
 새 세션을 작성합니다.
@@ -347,7 +348,7 @@ bx cf logging option -r 25
 **참고:** 하나의 영역에 최대 30개의 동시 세션이 가능합니다. 세션은 사용자에 대해 작성됩니다. 세션은 영역의 사용자 사이에서 공유할 수 없습니다.
 
 ```
-bx cf logging session create [parameters]
+ibmcloud cf logging session create [parameters]
 ```
 {: codeblock}
 
@@ -367,7 +368,7 @@ bx cf logging session create [parameters]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(선택사항) 계정 레벨에 범위를 설정합니다. <br>이 매개변수가 지정되지 않은 경우, 명령 `bx cf login`을 사용하여 로그인한 영역인 현재 영역에 대해서만 기본값이 설정됩니다.
+  <dd>(선택사항) 계정 레벨에 범위를 설정합니다. <br>이 매개변수가 지정되지 않은 경우, `ibmcloud cf login` 명령을 사용하여 로그인한 영역인 현재 영역만으로 기본값이 설정됩니다.
   </dd>
 </dl>
 
@@ -402,18 +403,18 @@ bx cf logging session create [parameters]
 *log*의 로그 유형에 대해 2017년 5월 20일과 2017년 5월 26일 사이의 로그가 포함된 세션을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
+ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 ```
 {: screen}
 
 
-## bx cf logging session delete(베타)
+## ibmcloud cf logging session delete(베타)
 {: #session_delete}
 
 세션 ID별로 지정된 세션을 삭제합니다.
 
 ```
-bx cf logging session delete [arguments]
+ibmcloud cf logging session delete [arguments]
 ```
 {: codeblock}
 
@@ -421,7 +422,7 @@ bx cf logging session delete [arguments]
 
 <dl>
 <dt>세션 ID</dt>
-<dd>삭제하려는 세션의 ID입니다. <br>`bx cf logging session list` 명령을 사용하여 모든 활성 세션 ID를 가져올 수 있습니다.</dd>
+<dd>삭제하려는 세션의 ID입니다. <br>`ibmcloud cf logging session list` 명령을 사용하여 모든 활성 세션 ID를 가져올 수 있습니다.</dd>
 </dl>
 
 **예**
@@ -429,19 +430,19 @@ bx cf logging session delete [arguments]
 세션 ID가 *cI6hvAa0KR_tyhjxZZz9Uw==*인 세션을 삭제하려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## bx cf logging session list(베타)
+## ibmcloud cf logging session list(베타)
 {: #session_list}
 
 활성 세션 및 해당 ID를 나열합니다.
 
 ```
-bx cf logging session list 
+ibmcloud cf logging session list 
 ```
 {: codeblock}
 
@@ -465,13 +466,13 @@ bx cf logging session list
 </dl>
  
 
-## bx cf logging session show(베타)
+## ibmcloud cf logging session show(베타)
 {: #session_show}
 
 단일 세션의 상태를 표시합니다.
 
 ```
-bx cf logging session show [arguments]
+ibmcloud cf logging session show [arguments]
 ```
 {: codeblock}
 
@@ -512,18 +513,18 @@ bx cf logging session show [arguments]
 세션 ID가 *cI6hvAa0KR_tyhjxZZz9Uw==*인 세션의 세부사항을 표시하려면 다음 명령을 실행하십시오.
 
 ```
-bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
-## bx cf logging status
+## ibmcloud cf logging status
 {: #status}
 
 영역 또는 계정에서 수집된 로그에 대한 정보를 리턴합니다.
 
 ```
-bx cf logging status [parameters]
+ibmcloud cf logging status [parameters]
 ```
 {: codeblock}
 
@@ -543,7 +544,7 @@ bx cf logging status [parameters]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(선택사항) 계정 레벨에 범위를 설정합니다. <br> **참고:** 계정 정보를 가져오려면 이 값을 설정하십시오. <br>이 매개변수가 지정되지 않은 경우, 명령 `bx cf login`을 사용하여 로그인한 영역인 현재 영역에 대해서만 기본값이 설정됩니다.
+  <dd>(선택사항) 계정 레벨에 범위를 설정합니다. <br> **참고:** 계정 정보를 가져오려면 이 값을 설정하십시오. <br>이 매개변수가 지정되지 않은 경우, `ibmcloud cf login` 명령을 사용하여 로그인한 영역인 현재 영역만으로 기본값이 설정됩니다.
   </dd>
   
   <dt>--list-type-detail, -l</dt>
@@ -551,6 +552,6 @@ bx cf logging status [parameters]
   </dd>
 </dl>
 
-**참고:** `bx cf logging status` 명령은 시작 및 종료 날짜가 지정되지 않은 로그 콜렉션에 저장된 최근 2주의 로그만 보고합니다.
+**참고:** `ibmcloud cf logging status` 명령은 시작 및 종료 날짜가 지정되지 않은 경우 로그 콜렉션에 저장된 최근 2주 동안의 로그만 보고합니다.
 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -35,17 +35,17 @@ lastupdated: "2018-01-10"
 ## 步驟 2：識別可用的日誌
 {: #step2}
 
-1. 使用 `bx logging log-show` 指令，以查看過去 2 週的可用日誌。執行下列指令：
+1. 使用 `ibmcloud logging log-show` 指令，以查看過去 2 週的可用日誌。執行下列指令：
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     例如，此指令的執行輸出如下：
     
     ```
-    bx logging log-show
+    ibmcloud logging log-show 
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
     Date         Size     Count   Searchable   Types   
@@ -64,15 +64,17 @@ lastupdated: "2018-01-10"
 
 需要有階段作業，才能定義可供下載的日誌資料範圍，以及保持下載的狀態。 
 
-使用指令 [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) 來建立階段作業。您可以選擇指定建立階段作業的開始日期、結束日期及日誌類型：  
+使用指令 [ibmcloud logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) 來建立階段作業。您可以選擇指定建立階段作業的開始日期、結束日期及日誌類型：  
 
 * 當您指定開始日期及結束日期時，階段作業可讓您存取這兩個日期（含）之間的日誌。 
 * 當您指定日誌類型 (**-t**) 時，階段作業可讓您存取特定類型的日誌。當您管理大規模的日誌時，這是重要特性，因為您可以將階段作業的範圍設定為僅感興趣的小部分日誌。
 
+**附註：**針對每一個階段作業，您最多可以下載 15 天的日誌。
+
 若要建立用來下載過去 2 週可用之所有日誌的階段作業，請執行下列指令：
 
 ```
-bx logging session-create 
+ibmcloud logging session-create 
 ```
 {: codeblock}
 
@@ -86,7 +88,7 @@ bx logging session-create
 例如，
 
 ```
-$ bx logging session-create
+$ ibmcloud logging session-create
 Creating session for lopezdsr@uk.ibm.com resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type
@@ -95,7 +97,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 ```
 {: screen}
 
-**提示：**若要查看作用中階段作業清單，請執行此指令 [bx logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list)。
+**提示：**若要查看作用中階段作業清單，請執行此指令 [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list)。
 
 ## 步驟 4：將日誌資料下載至檔案
 {: #step4}
@@ -103,7 +105,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 若要下載階段作業參數所指定的日誌，請執行下列指令：
 
 ```
-bx logging log-download -o Log_File_Name Session_ID
+ibmcloud logging log-download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -115,7 +117,7 @@ bx logging log-download -o Log_File_Name Session_ID
 例如，
 
 ```
-bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -131,12 +133,12 @@ bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
 ## 步驟 5：刪除階段作業
 {: #step5}
 
-下載完成之後，您必須使用 [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 指令來刪除階段作業。 
+下載完成之後，您必須使用 [ibmcloud logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 指令來刪除階段作業。 
 
 執行下列指令，以刪除階段作業：
 
 ```
-bx logging session-delete Session_ID
+ibmcloud logging session-delete Session_ID
 ```
 {: codeblock}
 
@@ -145,7 +147,7 @@ bx logging session-delete Session_ID
 例如，
 
 ```
-bx logging session-delete -jshdjsunelsssr4566722==
+ibmcloud logging session-delete -jshdjsunelsssr4566722==
 Deleting session: -jshdjsunelsssr4566722== of resource: 12345678-1234-5678-abcd-378620d6fab5 ...
 Session: -jshdjsunelsssr4566722== is deleted
 

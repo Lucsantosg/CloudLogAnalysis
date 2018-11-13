@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -29,7 +29,7 @@ Führen Sie die folgenden Schritte über das Terminal aus, um das Berechtigungst
 
 1. Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle.
 
-   Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix}}-Befehlszeilenschnittstelle herunterladen und installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix}}-Befehlszeilenschnittstelle herunterladen und installieren](/docs/cli/index.html#overview).
    
    Fahren Sie mit dem nächsten Schritt fort, wenn die Befehlszeilenschnittstelle bereits installiert ist.
     
@@ -37,14 +37,14 @@ Führen Sie die folgenden Schritte über das Terminal aus, um das Berechtigungst
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Führen Sie den Befehl `bx iam oauth-tokens` aus, um das IAM-Token abzurufen.
+3. Führen Sie den Befehl `ibmcloud iam oauth-tokens` aus, um das IAM-Token abzurufen.
 
     ```
-	bx iam oauth-tokens
+	ibmcloud iam oauth-tokens
 	```
 	{: codeblock}
 	
-	Die Ausgabe enthält das IAM-Token, das Sie für die Authentifizierung Ihrer Benutzer-ID in diesem Bereich und dieser Organisation benötigen. Sie können das IAM-Token in eine Shellvariable, wie '$iam_token', exportieren.
+	Die Ausgabe enthält das IAM-Token, das Sie für die Authentifizierung Ihrer Benutzer-ID in diesem Bereich und dieser Organisation benötigen. Sie können das IAM-Token in eine Shellvariable wie `$iam_token` exportieren.
 
 
 

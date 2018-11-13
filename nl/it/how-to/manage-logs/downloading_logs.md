@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,10 +31,10 @@ Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm
 ## Passo 2: Identifica quali log sono disponibili
 {: #step2}
 
-1. Utilizza il comando `bx cf logging status` per visualizzare quali log sono disponibili per le ultime 2 settimane. Esegui il seguente comando:
+1. Utilizza il comando `ibmcloud cf logging status` per vedere quali log sono disponibili per le ultime 2 settimane. Esegui il seguente comando:
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
@@ -64,10 +64,12 @@ Utilizza il comando [cf logging session create](/docs/services/CloudLogAnalysis/
 * Quando specifici la data di inizio e di fine, la sessione fornisce l'accesso ai log compresi in queste date. 
 * Quando specifici il tipo di log (**-t**), la sessione fornisce l'accesso a un tipo di log particolare. Questa funzione è importante quando gestisci i log su larga scala, perché puoi indirizzare una sessione solo su piccole sottoserie di log a cui sei interessato.
 
+**Nota:** per ogni sessione, puoi scaricare i log per un massimo di 15 giorni.
+
 Per creare una sessione che viene utilizzata per scaricare i log del tipo *log*, esegui il seguente comando:
 
 ```
-bx cf logging session create -t log
+ibmcloud cf logging session create -t log
 ```
 {: codeblock}
 
@@ -81,7 +83,7 @@ La sessione restituisce le seguenti informazioni:
 Ad esempio,
 
 ```
-$ bx cf logging session create -t log
+$ ibmcloud cf logging session create -t log     
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -109,7 +111,7 @@ $ bx cf logging session create -t log
 Per scaricare i log specificati dai parametri della sessione, esegui il seguente comando:
 
 ```
-bx cf logging download -o Log_File_Name Session_ID
+ibmcloud cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -121,7 +123,7 @@ dove
 Ad esempio,
 
 ```
-bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -142,7 +144,7 @@ Dopo aver completato lo scaricamento, devi eliminare la sessione utilizzando il 
 Esegui il seguente comando per eliminare una sessione:
 
 ```
-bx cf logging session delete Session_ID
+ibmcloud cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -151,7 +153,7 @@ Dove Session_ID è il GUID della sessione che hai creato in un passo precedente.
 Ad esempio,
 
 ```
-bx cf logging session delete -jshdjsunelsssr4566722==
+ibmcloud cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

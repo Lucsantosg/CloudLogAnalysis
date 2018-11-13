@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ Para obtener la señal de registro que puede utilizar para enviar registros al s
 
 1. Instale la CLI de {{site.data.keyword.Bluemix_notm}}.
 
-   Para obtener más información, consulte [Descargue e instale la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obtener más información, consulte [Descargar e instalar la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Si la CLI está instalada, continúe en el paso siguiente.
     
@@ -39,41 +39,41 @@ Para obtener la señal de registro que puede utilizar para enviar registros al s
 3. Ejecute el mandato siguiente:
 
     ```
-	bx logging token-get
+	ibmcloud logging token-get
 	```
 	{: codeblock}
 
 La salida devuelve la señal de registro.
 
 
-## Obtención de la señal de registro para enviar registros a un espacio mediante la CLI de {{site.data.keyword.Bluemix_notm}}
+## Obtención de la señal de registro para enviar registros a un espacio mediante la CLI de {{site.data.keyword.Bluemix_notm}} 
 {: #logging_token_cloud_cli}
 
-Para obtener la señal de registro que puede utilizar para enviar registros al servicio de {{site.data.keyword.loganalysisshort}}, siga estos pasos:
+Para obtener la señal de registro que puede utilizar para enviar registros al servicio {{site.data.keyword.loganalysisshort}}, siga estos pasos:
 
 1. Instale la CLI de {{site.data.keyword.Bluemix_notm}}.
 
-   Para obtener más información, consulte [Descargue e instale la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
-
+   Para obtener más información, consulte [Descargar e instalar la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
+   
    Si la CLI está instalada, continúe en el paso siguiente.
     
 2. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Cree una clave de servicio en el espacio donde se suministra el servicio de {{site.data.keyword.loganalysisshort}}. Ejecute los siguientes mandatos:
+3. Cree una clave de servicio en el espacio en el que se suministra el servicio {{site.data.keyword.loganalysisshort}}. Ejecute los siguientes mandatos:
 
     Cree una lista de los servicios para obtener el nombre de la instancia de {{site.data.keyword.loganalysisshort}} en el espacio:
 	
     ```
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	
 	Por ejemplo:
 	
 	```
-	bx service list
+	ibmcloud service list
     Invoking 'cf services'...
 
     Getting services in org lopezdsr_org / space dev as xxx@yyyy...
@@ -87,14 +87,14 @@ Para obtener la señal de registro que puede utilizar para enviar registros al s
 	Cree una clave. Utilice el valor de **name** para el nombre de servicio y especifique el nombre de la clave.
 	
 	```
-	bx service key-create servicename KeyName 
+	ibmcloud service key-create servicename KeyName 
 	```
 	{: codeblock}
 	
 	Por ejemplo,
 	
 	```
-	bx service key-create "Log Analysis-vg" mykey2
+	ibmcloud service key-create "Log Analysis-vg" mykey2
     Invoking 'cf create-service-key Log Analysis-vg mykey2'...
 
     Creating service key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -105,14 +105,14 @@ Para obtener la señal de registro que puede utilizar para enviar registros al s
 4. Obtenga la señal de registro. Ejecute el mandato siguiente:
 	
 	```
-	bx service key-show name Keyname
+	ibmcloud service key-show name Keyname
 	```
 	{: codeblock}
 	
 	Por ejemplo, 
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" 
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" 
     Invoking 'cf service-key Log Analysis-vg mykey2'...
 
     Getting key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -128,7 +128,7 @@ Para obtener la señal de registro que puede utilizar para enviar registros al s
 	Para obtener la señal de registro, puede ejecutar el mandato siguiente:
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
     sdtghyrtfde4
 	```
 	{: screen}
@@ -143,7 +143,7 @@ Para obtener la señal de registro que puede utilizar para enviar registros al s
 
 1. Instale la CLI de {{site.data.keyword.Bluemix_notm}}.
 
-   Para obtener más información, consulte [Descargue e instale la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obtener más información, consulte [Descargar e instalar la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Si la CLI está instalada, continúe en el paso siguiente.
     
@@ -153,10 +153,10 @@ Para obtener la señal de registro que puede utilizar para enviar registros al s
 	
 3. Obtenga la [señal de UAA](/docs/services/CloudLogAnalysis/security/auth_uaa.html#uaa_cli).
 
-    Por ejemplo, ejecute el mandato `bx cf oauth-token` para obtener la señal de UAA.
+    Por ejemplo, ejecute el mandato `ibmcloud cf oauth-token` para obtener la señal de UAA.
 
     ```
-	bx cf oauth-token
+	ibmcloud cf oauth-token
 	```
 	{: codeblock}
 	
@@ -164,11 +164,11 @@ Para obtener la señal de registro que puede utilizar para enviar registros al s
 
 4. Obtenga el GUID del espacio.
 
-   Para obtener más información, consulte [Cómo se obtiene el GUID de un espacio](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid).  
+   Para obtener más información, consulte [Cómo se obtiene el GUID de un espacio](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid)  
 	
 5. Exporte las siguientes variables: TOKEN y SPACEID.
 
-    * *TOKEN* es la señal de oauth que ha obtenido en el paso anterior, sin incluir 'Bearer'.
+    * *TOKEN* es la señal de oauth que ha obtenido en el paso anterior, sin incluir Bearer.
 	
 	* *SPACEID* es el GUID del espacio que ha obtenido en el paso anterior. 
 		

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -29,8 +29,8 @@ CF 앱 로그를 보려면 다음 정보를 고려하십시오.
     <th>정보</th>
   </tr>
   <tr>
-    <td>CF 앱 UI를 통해 사용 가능한 로그 탭</td>
-    <td>분석에 사용할 수 있는 로그에는 최근 24시간 동안의 데이터가 포함되어 있습니다. </td>
+    <td>CF 앱 UI를 통해 사용 가능한 로그 탭 </td>
+    <td>분석에 사용할 수 있는 로그에는 최근 24시간 동안의 데이터가 포함되어 있습니다.</td>
   </tr>
   <tr>
     <td>{{site.data.keyword.loganalysisshort}} 대시보드(Kibana)</td>
@@ -64,7 +64,7 @@ Cloud Foundry 앱의 런타임 로그 또는 배치를 보려면 다음 단계�
     
 3. **Kibana에서 보기**를 클릭하십시오.
 
-기본적으로 분석에 사용할 수 있는 로그에는 최근 15분 동안의 데이터가 포함되어 있습니다. 
+기본적으로 분석에 사용할 수 있는 로그에는 최근 15분 동안의 데이터가 포함되어 있습니다.
 
 **팁:** 사용자 정의 기간 동안의 데이터를 분석하려면 [Kibana를 사용한 고급 로그 분석](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)을 참조하십시오. 
 

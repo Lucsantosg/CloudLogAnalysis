@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -25,11 +25,11 @@ lastupdated: "2018-04-10"
 ## 获取 IAM 令牌
 {: #iam_token_cli}
 
-要使用 {{site.data.keyword.Bluemix_notm}} CLI 获取授权令牌，请在终端中完成以下步骤：
+要使用 {{site.data.keyword.Bluemix_notm}} CLI 获取授权令牌，请在终端上完成以下步骤：
 
 1. 安装 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   有关更多信息，请参阅[下载并安装 {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   有关更多信息，请参阅[下载并安装 {{site.data.keyword.Bluemix}} CLI](/docs/cli/index.html#overview)。
    
    如果 CLI 已安装，请继续执行下一步。
     
@@ -37,10 +37,10 @@ lastupdated: "2018-04-10"
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-3. 运行 `bx iam oauth-tokens` 命令以获取 IAM 令牌。
+3. 运行 `ibmcloud iam oauth-tokens` 命令以获取 IAM 令牌。
 
     ```
-	bx iam oauth-tokens
+	ibmcloud iam oauth-tokens
 	```
 	{: codeblock}
 	

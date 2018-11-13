@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -25,7 +25,7 @@ lastupdated: "2018-01-10"
 
 使用 `cf logging status` 命令可查看“日志收集”中存储的日志的大小、计数、日志类型以及这些日志是否可供在 Kibana 中进行分析。 
 
-将 `cf logging status` 命令与 **-s**（用于设置开始日期）和 **-e** 选项（设置用于结束日期）一起使用。例如：
+将 `cf logging status` 命令与选项 **-s**（用于设置开始日期）和 **-e**（用于设置结束日期）一起使用。例如：
 
 * `cf logging status` 提供最近 2 周的信息。
 * `cf logging status -s 2017-05-03` 提供从 2017 年 5 月 3 日一直到当前日期的信息。
@@ -40,14 +40,14 @@ lastupdated: "2018-01-10"
 2. 运行 *status* 命令。
 
     ```
-        bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     例如：
     
     ```
-        $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -62,7 +62,7 @@ lastupdated: "2018-01-10"
 ## 获取有关某个日志类型在一段时间内的信息
 {: #viewing_logs_by_log_type}
 
-要获取有关一段时间内某个日志类型的信息，请将 `cf logging status` 命令与 **-t**（用于指定日志类型）、**-s**（用于设置开始日期）和 **-e** 选项（用于设置结束日期）一起使用。例如：
+要获取有关一段时间内某个日志类型的信息，请将 `cf logging status` 命令与选项 **-t**（用于指定日志类型）、**-s**（用于设置开始日期）和 **-e**（用于设置结束日期）一起使用。例如：
 
 * `cf logging status -t syslog` 提供有关类型为 *syslog* 的日志最近 2 周的信息。
 * `cf logging status -s 2017-05-03 -t syslog` 提供有关类型为 *syslog* 的日志从 2017 年 5 月 3 日一直到当前日期的信息。
@@ -77,7 +77,7 @@ lastupdated: "2018-01-10"
 2. 运行 *status* 命令。
 
     ```
-    bx cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    ibmcloud cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -92,7 +92,7 @@ lastupdated: "2018-01-10"
     例如：
     
     ```
-        $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log
+    $ ibmcloud cf logging status -s 2017-05-24 -e 2017-05-25 -t log
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -108,7 +108,7 @@ lastupdated: "2018-01-10"
 ## 获取有关日志的帐户信息
 {: #viewing_logs_account}
 
-要获取有关 {{site.data.keyword.Bluemix_notm}} 帐户上的日志在一段时间内的信息，请将 `cf logging status` 命令与 **-a** 选项一起使用。您还可以指定 **-t**（用于指定日志类型）、**-s**（用于设置开始日期）和 **-e** 选项（用于设置结束日期）。 
+要获取有关 {{site.data.keyword.Bluemix_notm}} 帐户上的日志在一段时间内的信息，请将 `cf logging status` 命令与 **-a** 选项一起使用。您还可以指定选项 **-t**（用于指定日志类型）、**-s**（用于设置开始日期）和 **-e**（用于设置结束日期）。 
 
 要获取日志的帐户信息，请完成以下步骤：
 
@@ -119,7 +119,7 @@ lastupdated: "2018-01-10"
 2. 运行 *status* 命令。
 
     ```
-    bx cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    ibmcloud cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -136,7 +136,7 @@ lastupdated: "2018-01-10"
     例如：
     
     ```
-        $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
+    $ ibmcloud cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+

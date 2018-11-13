@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-19"
 # Supresión de registros
 {: #deleting_logs}
 
-Utilice el mandato [bx cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) para suprimir los registros de la recopilación de registros. 
+Utilice el mandato [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) para suprimir los registros de la recopilación de registros. 
 {:shortdesc}
 
 * Puede suprimir los registros comprendidos en un determinado intervalo de tiempo.
@@ -37,14 +37,14 @@ Siga estos pasos:
 2. Ejecute el mandato *status* para ver los registros disponibles en la recopilación de registros.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Por ejemplo,
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -58,7 +58,7 @@ Siga estos pasos:
 3. Suprima los registros almacenados en un día específico.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate
+	ibmcloud cf logging delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
@@ -70,15 +70,15 @@ Siga estos pasos:
 	Por ejemplo, para suprimir los registros correspondientes al 25 de mayo de 2017, ejecute el mandato siguiente:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
 	
-## Supresión de registros por tipo de registro correspondientes a un determinado periodo de tiempo
+## Supresión de registros según su tipo correspondientes a un determinado periodo de tiempo 
 {: #log_type}
 
-Siga los pasos siguientes:
+Siga estos pasos:
 
 1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
@@ -87,20 +87,20 @@ Siga los pasos siguientes:
 2. Ejecute el mandato *status* para ver los registros disponibles en la recopilación de registros.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Por ejemplo,
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
-    | 2017-05-24 |    16  | 3020  |        log         |   Ninguno     |
+    | 2017-05-24 |    16  | 3020  |        log         |   None     |
     +------------+--------+-------+--------------------+------------+
-    | 2017-05-25 |   1224 | 76115 | linux_syslog,log   |    Todos     |
+    | 2017-05-25 |   1224 | 76115 | linux_syslog,log   |    All     |
     +------------+--------+-------+--------------------+------------+
     ```
     {: screen}
@@ -108,7 +108,7 @@ Siga los pasos siguientes:
 3. Suprima los registros almacenados en un día específico.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
@@ -116,21 +116,21 @@ Siga los pasos siguientes:
 	
 	* *-s* define la fecha inicial en hora universal coordinada (UTC): AAAA-MM-DD, por ejemplo 2006-01-02.
     * *-e* define la fecha final en hora universal coordinada (UTC): AAAA-MM-DD
-    * *-t* define el tipo de registro.
+	* *-t* establece el tipo de registro.
     	
 	Por ejemplo, para suprimir los registros de tipo linux_syslog correspondientes al 25 de mayo de 2017, ejecute el mandato siguiente:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
 		
 	
-## Supresión de registros de la cuenta por tipo de registro correspondientes a un determinado periodo de tiempo
+## Supresión de registros de cuenta según el tipo de registro correspondientes a un determinado periodo de tiempo 
 {: #acc_log_type}
 
-Siga los pasos siguientes:
+Siga estos pasos:
 
 1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
@@ -139,20 +139,20 @@ Siga los pasos siguientes:
 2. Ejecute el mandato *status* para ver los registros disponibles en la recopilación de registros a nivel de cuenta.
 
     ```
-    bx cf logging status  -a
+    ibmcloud cf logging status  -a
     ```
     {: codeblock}
     
     Por ejemplo,
     
     ```
-    $ bx cf logging status -a
+    $ ibmcloud cf logging status -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
-    | 2017-05-24 |    16  | 3020  |        log         |   Ninguno     |
+    | 2017-05-24 |    16  | 3020  |        log         |   None     |
     +------------+--------+-------+--------------------+------------+
-    | 2017-05-25 |   1224 | 76115 | linux_syslog,log   |    Todos     |
+    | 2017-05-25 |   1224 | 76115 | linux_syslog,log   |    All     |
     +------------+--------+-------+--------------------+------------+
     ```
     {: screen}
@@ -160,7 +160,7 @@ Siga los pasos siguientes:
 3. Suprima los registros almacenados en un día específico.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType -a
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType -a
 	```
 	{: codeblock}
 	
@@ -168,12 +168,12 @@ Siga los pasos siguientes:
 	
 	* *-s* define la fecha inicial en hora universal coordinada (UTC): AAAA-MM-DD, por ejemplo 2006-01-02.
     * *-e* define la fecha final en hora universal coordinada (UTC): AAAA-MM-DD
-    * *-t* define el tipo de registro.
+	* *-t* establece el tipo de registro.
     	
 	Por ejemplo, para suprimir los registros de tipo linux_syslog correspondientes al 25 de mayo de 2017 almacenados en la recopilación de registros a nivel de cuenta, ejecute el mandato siguiente:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
 	```
 	{: screen}
 	

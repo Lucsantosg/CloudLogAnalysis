@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,11 +18,11 @@ lastupdated: "2018-01-10"
 # Obtendo o token do UAA
 {: #auth_uaa}
 
-Para gerenciar logs usando a API do {{site.data.keyword.loganalysisshort}}, deve-se usar um token de autenticação. Use a CLI do {{site.data.keyword.loganalysisshort}} para obter o token do UAA. O token tem um tempo de expiração. 
+Para gerenciar os logs que estão disponíveis em um domínio de espaço usando a API do {{site.data.keyword.loganalysisshort}}, deve-se usar um token de autenticação.
 {:shortdesc}
 
 		
-## Obtendo o token do UAA usando a CLI do Log Analysis (plug-in do CF)
+## Obtendo o token do UAA
 {: #uaa_cli}
 
 
@@ -30,7 +30,7 @@ Para obter o token de autorização, conclua as etapas a seguir:
 
 1. Instale a CLI do {{site.data.keyword.Bluemix_notm}}.
 
-   Para obter mais informações, veja [Fazer download e instalar a CLI do {{site.data.keyword.Bluemix}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obter mais informações, veja [Fazer download e instalar a CLI do {{site.data.keyword.Bluemix}}](/docs/cli/index.html#overview).
    
    Se a CLI estiver instalada, continue com a próxima etapa.
     
@@ -38,14 +38,14 @@ Para obter o token de autorização, conclua as etapas a seguir:
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Execute o comando `bx cf oauth-token` para obter o token do UAA do {{site.data.keyword.Bluemix_notm}}.
+3. Execute o comando `ibmcloud iam oauth-token` para obter o token do UAA do {{site.data.keyword.Bluemix_notm}}.
 
     ```
-	bx cf oauth-token
+	ibmcloud iam oauth-token
 	```
 	{: codeblock}
 	
 	A saída retorna o token UAA que se deve usar para autenticar seu ID do usuário nesse espaço e nessa organização.
 	
 
-**Nota:** Ao usar o token, remova *Bearer* do valor do token que você passa em uma chamada API.
+**Nota:** ao usar o token, remova *Bearer* do valor do token que for passado em uma chamada API.

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-19"
 # ログの削除
 {: #deleting_logs}
 
-Log Collection からログを削除するには、[bx cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) コマンドを使用します。 
+Log Collection からログを削除するには、[ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) コマンドを使用します。 
 {:shortdesc}
 
 * 特定期間内のログを削除できます。
@@ -37,14 +37,14 @@ Log Collection からログを削除するには、[bx cf logging delete](/docs/
 2. *status* コマンドを実行して、Log Collection 内にあるログを表示します。
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     以下に例を示します。
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -58,11 +58,11 @@ Log Collection からログを削除するには、[bx cf logging delete](/docs/
 3. 特定の日に保管されたログを削除します。
 
     ```
-	bx cf logging delete -s StartDate -e EndDate
+	ibmcloud cf logging delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
-	ここで、
+	各部分の説明:
 	
 	* *-s* は、開始日を協定世界時 (UTC) YYYY-MM-DD で設定します。例えば、2006-01-02 です。
     * *-e* は、終了日を協定世界時 (UTC) YYYY-MM-DD で設定します。
@@ -70,31 +70,31 @@ Log Collection からログを削除するには、[bx cf logging delete](/docs/
 	例えば、2017 年 5 月 25 日のログを削除するには、以下のコマンドを実行します。
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
 	
-## 特定期間のログ・タイプ別のログの削除
+## 特定期間のログ・タイプ別のログの削除 
 {: #log_type}
 
 以下のステップを実行します。
 
 1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    詳しくは、[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login) を参照してください。
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
 2. *status* コマンドを実行して、Log Collection 内にあるログを表示します。
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     以下に例を示します。
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -108,11 +108,11 @@ Log Collection からログを削除するには、[bx cf logging delete](/docs/
 3. 特定の日に保管されたログを削除します。
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
-	ここで、
+	各部分の説明:
 	
 	* *-s* は、開始日を協定世界時 (UTC) YYYY-MM-DD で設定します。例えば、2006-01-02 です。
     * *-e* は、終了日を協定世界時 (UTC) YYYY-MM-DD で設定します。
@@ -121,32 +121,32 @@ Log Collection からログを削除するには、[bx cf logging delete](/docs/
 	例えば、2017 年 5 月 25 日のタイプ linux_syslog のログを削除するには、以下のコマンドを実行します。
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
 		
 	
-## 特定期間のログ・タイプ別のアカウント・ログの削除
+## 特定期間のアカウント・ログ・タイプ別のログの削除 
 {: #acc_log_type}
 
 以下のステップを実行します。
 
 1. {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
-    詳しくは、[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login) を参照してください。
+    詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
-2. *status* コマンドを実行して、アカウント・レベルで Log Collection 内にあるログを表示します。
+2. *status* コマンドを実行し、アカウント・レベルで Log Collection 内の使用可能なログを確認します。
 
     ```
-    bx cf logging status  -a
+    ibmcloud cf logging status  -a
     ```
     {: codeblock}
     
     以下に例を示します。
     
     ```
-    $ bx cf logging status -a
+    $ ibmcloud cf logging status -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -160,11 +160,11 @@ Log Collection からログを削除するには、[bx cf logging delete](/docs/
 3. 特定の日に保管されたログを削除します。
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType -a
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType -a
 	```
 	{: codeblock}
 	
-	ここで、
+	各部分の説明:
 	
 	* *-s* は、開始日を協定世界時 (UTC) YYYY-MM-DD で設定します。例えば、2006-01-02 です。
     * *-e* は、終了日を協定世界時 (UTC) YYYY-MM-DD で設定します。
@@ -173,7 +173,7 @@ Log Collection からログを削除するには、[bx cf logging delete](/docs/
 	例えば、アカウント・レベルで Log Collection に保管された、2017 年 5 月 25 日のタイプ linux_syslog のログを削除するには、以下のコマンドを実行します。
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
 	```
 	{: screen}
 	

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -22,7 +22,7 @@ lastupdated: "2018-03-09"
 이 튜토리얼을 사용하여 {{site.data.keyword.Bluemix}}의 {{site.data.keyword.loganalysislong}} 서비스에 대한 작업을 시작하는 방법을 학습할 수 있습니다. 
 {:shortdesc}
 
-기본적으로 {{site.data.keyword.Bluemix_notm}}는 선택된 서비스에 대한 통합된 로깅 기능을 제공합니다. 로그에 대해 작업할 때 {{site.data.keyword.loganalysisshort}} 서비스를 사용하여 콜렉션 및 보존 기능을 확장할 수 있습니다. 
+기본적으로 {{site.data.keyword.Bluemix_notm}}는 선택된 서비스에 대한 통합된 로깅 기능을 제공합니다. 로그에 대해 작업할 때 {{site.data.keyword.loganalysisshort}} 서비스를 사용하여 콜렉션 및 보존 기능을 확장할 수 있습니다.
 
 ## 시작하기 전에
 {: #prereqs}
@@ -37,7 +37,7 @@ lastupdated: "2018-03-09"
 여러 가지 클라우드 리소스가 다음 표에 나열되어 있습니다. {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 시작하려면 리소스에 대한 다음 튜토리얼을 완료하십시오.
 
 <table>
-  <caption>{{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 시작하기 위한 튜토리얼</caption>
+  <caption>{{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 시작하기 위한 튜토리얼 </caption>
   <tr>
     <th>리소스</th>
     <th>튜토리얼</th>
@@ -53,7 +53,7 @@ lastupdated: "2018-03-09"
   <tr>
     <td>CF 앱</td>
     <td>[Kibana에서 Cloud Foundry 앱에 대한 로그 분석](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)</td>
-    <td>공용 </td>
+    <td>공용</td>
     <td>![{{site.data.keyword.Bluemix_notm}}에서 CF 앱의 로깅에 대한 상위 레벨 보기](cfapps/images/cfapps_logs.png "{{site.data.keyword.Bluemix_notm}}에서 CF 앱의 로깅에 대한 상위 레벨 보기")</td>
   </tr>
 </table>
@@ -121,7 +121,7 @@ https://logging.ng.bluemix.net/
 ## 다음 단계 
 {: #next_steps}
 
-로그 데이터를 보고 분석하려면 Kibana를 사용자 정의하십시오. 자세한 정보는 [로그 보기 및 분석](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)을 참조하십시오. 
+로그 데이터를 보고 분석하려면 Kibana를 사용자 정의하십시오. 자세한 정보는 [로그 보기 및 분석](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)을 참조하십시오.
     
 
 

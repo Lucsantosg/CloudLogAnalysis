@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -55,7 +55,7 @@ lastupdated: "2018-03-15"
 
 1. [전제조건] {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오.
 
-   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오.
+   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/index.html#overview)를 참조하십시오.
    
    CLI가 설치되면 다음 단계로 계속 진행하십시오.
     
@@ -63,30 +63,30 @@ lastupdated: "2018-03-15"
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 	
-3. `bx service create` 명령을 실행하여 인스턴스를 프로비저닝하십시오. 
+3. `ibmcloud service create` 명령을 실행하여 인스턴스를 프로비저닝하십시오.
 
     ```
-	bx service create service_name service_plan service_instance_name
+	ibmcloud service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
 	여기서,
 	
-	* service_name은 서비스 이름(즉, **ibmLogAnalysis**)입니다.
-	* service_plan은 서비스 플랜 이름입니다. 플랜 목록의 경우 [서비스 플랜](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)을 참조하십시오.
-	* service_instance_name은 사용자가 작성한 새 서비스 인스턴스에 사용하려는 이름입니다.
+	* service_name은 서비스 이름(즉 **ibmLogAnalysis**)입니다.
+	* service_plan은 서비스 플랜 이름입니다. 플랜 목록은 [서비스 플랜](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)을 참조하십시오.
+	* service_instance_name은 작성하는 새 서비스 인스턴스에 사용할 이름입니다.
 
 	예를 들어, 라이트 플랜으로 {{site.data.keyword.loganalysisshort}} 서비스의 인스턴스를 작성하려면 다음 명령을 실행하십시오.
 	
 	```
-	bx service create ibmLogAnalysis standard my_logging_svc
+	ibmcloud service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. 서비스가 작성되었는지 확인하십시오. 다음 명령을 실행하십시오.
 
     ```	
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	

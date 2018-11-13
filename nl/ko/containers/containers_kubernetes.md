@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -20,14 +20,15 @@ lastupdated: "2018-04-19"
 # {{site.data.keyword.containershort_notm}}
 {: #containers_kubernetes}
 
-{{site.data.keyword.Bluemix_notm}}에서 {{site.data.keyword.loganalysisshort}} 서비스를 사용하여 {{site.data.keyword.containershort}}가 공용 및 전용으로 자동으로 수집하는 컨테이너 로그 및 Kubernetes 클러스터 로그를 저장하고 분석할 수 있습니다. {:shortdesc}
+{{site.data.keyword.Bluemix_notm}}에서 {{site.data.keyword.loganalysisshort}} 서비스를 사용하여 {{site.data.keyword.containershort}}가 공용 및 전용으로 자동으로 수집하는 컨테이너 로그 및 Kubernetes 클러스터 로그를 저장하고 분석할 수 있습니다.
+{:shortdesc}
 
 계정에 1개 이상의 Kubernetes 클러스터가 있을 수 있습니다. 클러스터가 프로비저닝되는 즉시 {{site.data.keyword.containershort}}가 자동으로 로그를 수집합니다. 
 
 * 포드가 배치되는 즉시 애플리케이션 로그가 수집됩니다. 
 * {{site.data.keyword.containershort}}는 컨테이너 프로세스가 stdout(표준 출력) 및 stderr(표준 오류)로 인쇄하는 정보를 자동으로 수집합니다.
 
-{{site.data.keyword.loganalysisshort}} 서비스에 해당 로그를 분석할 수 있도록 하려면 로그를 {{site.data.keyword.loganalysisshort}}로 전달하도록 클러스터를 구성해야 합니다. 로그를 {{site.data.keyword.loganalysisshort}} 계정 도메인 또는 계정의 영역 도메인으로 전달할 수 있습니다. 기본적으로, 다음이 적용됩니다. 
+{{site.data.keyword.loganalysisshort}} 서비스에 해당 로그를 분석할 수 있도록 하려면 로그를 {{site.data.keyword.loganalysisshort}}로 전달하도록 클러스터를 구성해야 합니다. 로그를 {{site.data.keyword.loganalysisshort}} 계정 도메인 또는 계정의 영역 도메인으로 전달할 수 있습니다. 기본적으로, 다음이 적용됩니다.
 
 * 미국 남부 지역에서 사용 가능한 클러스터가 미국 남부 지역에서 사용 가능한 {{site.data.keyword.loganalysisshort}} 서비스로 로그를 보냅니다.
 * 미국 동부 지역에서 사용 가능한 클러스터가 미국 남부 지역에서 사용 가능한 {{site.data.keyword.loganalysisshort}} 서비스로 로그를 보냅니다.
@@ -40,7 +41,7 @@ lastupdated: "2018-04-19"
 * 로그를 계정 도메인으로 보내는 경우 검색 할당량이 일별 500MB이며 장기 스토리지용 로그 콜렉션에 로그를 저장할 수 없습니다.
 * 로그를 영역 도메인으로 보내는 경우 일별 검색 할당량을 정의하는 {{site.data.keyword.loganalysisshort}} 서비스 플랜을 선택할 수 있으며 장기 스토리지용 로그 콜렉션에 로그를 저장할 수 있습니다.
 
-**참고:** 기본적으로 클러스터에서 {{site.data.keyword.loganalysisshort}} 서비스로 로그 전송은 자동으로 사용 가능하게 설정되지 않습니다. 로깅을 사용으로 설정하려면 자동으로 로그를 {{site.data.keyword.loganalysisshort}} 서비스로 전달하도록 클러스터에서 하나 이상의 로깅 구성을 작성해야 합니다. `bx cs logging-config-create` 명령을 사용한 명령행 또는 {{site.data.keyword.Bluemix_notm}} UI에서 사용 가능한 클러스터 대시보드를 통해 로깅을 사용으로 설정할 수 있습니다. 자세한 정보는 [클러스터 로그의 자동 수집 사용](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs)을 참조하십시오. 
+**참고:** 기본적으로 클러스터에서 {{site.data.keyword.loganalysisshort}} 서비스로 로그 전송은 자동으로 사용 가능하게 설정되지 않습니다. 로깅을 사용으로 설정하려면 자동으로 로그를 {{site.data.keyword.loganalysisshort}} 서비스로 전달하도록 클러스터에서 하나 이상의 로깅 구성을 작성해야 합니다. `ibmcloud cs logging-config-create` 명령을 사용한 명령행 또는 {{site.data.keyword.Bluemix_notm}} UI에서 사용 가능한 클러스터 대시보드를 통해 로깅을 사용으로 설정할 수 있습니다. 자세한 정보는 [클러스터 로그의 자동 수집 사용](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs)을 참조하십시오.
 
 Kubernetes 클러스터로 작업하는 경우, 네임스페이스 *ibm-system* 및 *kube-system*이 예약됩니다. 해당 네임스페이스에서 사용 가능한 리소스의 권한을 작성, 삭제, 수정 또는 변경하지 마십시오. 이러한 네임스페이스에 대한 로그는 {{site.data.keyword.IBM_notm}} 사용을 위한 것입니다.
 
@@ -49,20 +50,20 @@ Kubernetes 클러스터로 작업하는 경우, 네임스페이스 *ibm-system* 
 ## 로그를 영역 도메인으로 전달
 {: #space}
 
-클러스터 로그를 {{site.data.keyword.loganalysisshort}}로 전달하도록 클러스터를 구성하는 경우 다음 정보를 고려하십시오. 
+클러스터 로그를 {{site.data.keyword.loganalysisshort}}로 전달하도록 클러스터를 구성하는 경우 다음 정보를 고려하십시오.
 
 * 해당 로그가 전달될 Cloud Foundry 조직 및 영역을 정의해야 합니다. 
-* 조직 및 영역은 모든 {{site.data.keyword.IBM_notm}} Public Cloud 지역에서 사용 가능합니다. 
+* 조직 및 영역은 모든 {{site.data.keyword.IBM_notm}} Public Cloud 지역에서 사용 가능합니다.
 
-**참고:** **{{site.data.keyword.Bluemix_notm}} 데디케이티드**에 프로비저닝된 클러스터의 경우 클러스터를 전용 계정에서 사용 가능한 Cloud Foundry 영역으로 전달하도록 클러스터를 구성할 수 없습니다. 
+**참고:** **{{site.data.keyword.Bluemix_notm}} 데디케이티드**에 프로비저닝된 클러스터의 경우 클러스터를 전용 계정에서 사용 가능한 Cloud Foundry 영역으로 전달하도록 클러스터를 구성할 수 없습니다.
 
 로그를 영역 도메인으로 전달하는 Kibana에서 클러스터에 대한 로그 데이터를 분석하려면 다음 정보를 고려하십시오.
 
-* 클러스터를 수집하는 조직 및 영역이 사용 가능한 공용 지역에서 Kibana를 실행해야 합니다. 
-* Kibana 검색 할당량을 늘리고 장기 스토리지를 위해 로그 콜렉션에 로그를 저장하려면 로그가 요구사항을 충족하는 플랜과 함께 전달 중인 영역에서 {{site.data.keyword.loganalysisshort}} 서비스를 프로비저닝해야 합니다.  
+* 클러스터를 수집하는 조직 및 영역이 사용 가능한 공용 지역에서 Kibana를 실행해야 합니다.
+* Kibana 검색 할당량을 늘리고 장기 스토리지를 위해 로그 콜렉션에 로그를 저장하려면 로그가 요구사항을 충족하는 플랜과 함께 전달 중인 영역에서 {{site.data.keyword.loganalysisshort}} 서비스를 프로비저닝해야 합니다. 
 * 사용자 ID에 로그를 볼 수 있는 권한이 있어야 합니다. 영역 도메인에서 로그를 보려면 사용자에게 CF 역할이 필요합니다. **감사자**는 로그를 보기 위해 부여할 수 있는 최하위 역할입니다. 자세한 정보는 [로그 보기를 위해 사용자에게 필요한 역할](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)을 참조하십시오.
 
-장기 스토리지(로그 콜렉션)에 저장된 클러스터 로그 데이터를 관리하려면 사용자 ID에 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행하기 위한 IAM 정책이 있어야 합니다. 사용자 ID에 **관리자**, **운영자** 또는 **편집자** 권한이 있어야 합니다. 자세한 정보는 [로그 관리를 위해 사용자에게 필요한 역할](/docs/services/CloudLogAnalysis/manage_logs.html#roles)을 참조하십시오.
+장기 스토리지(로그 콜렉션)에 저장된 클러스터 로그 데이터를 관리하려면 사용자 ID에 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행하기 위한 IAM 정책이 있어야 합니다. 사용자 ID에 **관리자**, **운영자** 또는 **편집자** 권한이 있어야 합니다.  자세한 정보는 [로그 관리를 위해 사용자에게 필요한 역할](/docs/services/CloudLogAnalysis/manage_logs.html#roles)을 참조하십시오.
 
 
 다음 그림은 클러스터가 로그를 영역 도메인으로 전달하는 경우 {{site.data.keyword.containershort}}의 공용 로깅에 대한 상위 레벨 보기를 보여줍니다.
@@ -74,14 +75,14 @@ Kubernetes 클러스터로 작업하는 경우, 네임스페이스 *ibm-system* 
 ## 로그를 계정 도메인으로 전달
 {: #acc_public}
 
-클러스터 로그를 계정 도메인으로 전달하도록 클러스터를 구성하는 경우 다음 정보를 고려하십시오. 
+클러스터 로그를 계정 도메인으로 전달하도록 클러스터를 구성하는 경우 다음 정보를 고려하십시오.
 
 * **{{site.data.keyword.Bluemix_notm}} 공용에 프로비저닝된 클러스터**: 클러스터가 실행 중인 것과 동일한 {{site.data.keyword.Bluemix_notm}} 공용 지역에 있는 계정 도메인으로 로그가 전달됩니다.
 * **{{site.data.keyword.Bluemix_notm}} 전용에 프로비저닝된 클러스터**: 전용 클러스터가 실행 중인 것과 동일한 {{site.data.keyword.Bluemix_notm}} 공용 지역에 있는 계정 도메인으로 로그가 전달됩니다.
 
 로그를 계정 도메인으로 전달하는 Kibana에서 클러스터에 대한 로그 데이터를 분석하려면 다음 정보를 고려하십시오.
 
-* 클러스터가 {{site.data.keyword.loganalysisshort}} 서비스로 로그를 보내는 공용 지역에서 Kibana를 실행해야 합니다. 
+* 클러스터가 {{site.data.keyword.loganalysisshort}} 서비스로 로그를 보내는 공용 지역에서 Kibana를 실행해야 합니다.
 
     * 미국 남부 지역에서 사용 가능한 클러스터가 미국 남부 지역에서 사용 가능한 {{site.data.keyword.loganalysisshort}} 서비스로 로그를 보냅니다.
     * 미국 동부 지역에서 사용 가능한 클러스터가 미국 남부 지역에서 사용 가능한 {{site.data.keyword.loganalysisshort}} 서비스로 로그를 보냅니다.
@@ -105,7 +106,7 @@ Kubernetes 클러스터로 작업하는 경우, 네임스페이스 *ibm-system* 
 ## 로그를 {{site.data.keyword.loganalysisshort}}로 전달하도록 클러스터 구성
 {: #config_forward_logs}
 
-{{site.data.keyword.loganalysisshort}} 서비스로 전달하는 클러스터 로그를 선택할 수 있습니다.  
+{{site.data.keyword.loganalysisshort}} 서비스로 전달하는 클러스터 로그를 선택할 수 있습니다. 
 
 로그 파일을 {{site.data.keyword.loganalysisshort}} 서비스로 전달하도록 클러스터를 구성하는 방법에 대한 자세한 정보는 [클러스터 로그의 자동 수집 사용](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs) 섹션을 참조하십시오.
 
@@ -158,19 +159,19 @@ Kubernetes 클러스터로 작업하는 경우, 네임스페이스 *ibm-system* 
 ## 사용자 정의 애플리케이션 로그 전달
 {: #forward_app_logs}
 
-{{site.data.keyword.loganalysisshort}} 서비스로 클러스터의 사용자 정의 애플리케이션 로그를 전달할 수 있도록 하려면 **로그 소스**가 **애플리케이션**으로 설정된 클러스터 로깅 구성을 정의해야 합니다. `bx cs logging-config-create` 명령행을 사용하거나 클러스터 UI를 통해 이 구성을 정의할 수 있습니다. 
+{{site.data.keyword.loganalysisshort}} 서비스로 클러스터의 사용자 정의 애플리케이션 로그를 전달할 수 있도록 하려면 **로그 소스**가 **애플리케이션**으로 설정된 클러스터 로깅 구성을 정의해야 합니다. `ibmcloud cs logging-config-create` 명령을 사용하거나 클러스터 UI를 통해 이 구성을 정의할 수 있습니다.
 
-사용자 정의 로그를 전달하도록 클러스터를 구성하는 경우 사용자 정의 로그를 전달할 클러스터에서 실행되는 컨테이너의 목록 및 사용자 정의 파일 로그가 있는 해당 컨테이너 내부의 경로를 지정할 수 있습니다. 
+사용자 정의 로그를 전달하도록 클러스터를 구성하는 경우 사용자 정의 로그를 전달할 클러스터에서 실행되는 컨테이너의 목록 및 사용자 정의 파일 로그가 있는 해당 컨테이너 내부의 경로를 지정할 수 있습니다.
 
-* 보려는 컨테이너 내부의 경로 목록을 설정하려면 **app-paths** 매개변수를 지정해야 합니다. 경로에 있는 로그가 {{site.data.keyword.loganalysisshort}} 서비스로 전달되지 않습니다.  
+* 보려는 컨테이너 내부의 경로 목록을 설정하려면 **app-paths** 매개변수를 지정해야 합니다. 경로에 있는 로그가 {{site.data.keyword.loganalysisshort}} 서비스로 전달되지 않습니다. 
 
-    이 매개변수를 설정하려면 컨테이너 내부에서 사용할 수 있는 쉼표로 구분된 경로 목록을 정의해야 합니다. 와일드카드(예: '/var/log/*.log')는 사용할 수 있습니다. 
+    이 매개변수를 설정하려면 컨테이너 내부에서 사용할 수 있는 쉼표로 구분된 경로 목록을 정의해야 합니다. 와일드카드(예: '/var/log/*.log')는 사용할 수 있습니다.
 
-* 선택적으로, 로그를 수집하고 {{site.data.keyword.loganalysisshort}} 서비스로 로그를 전달할 컨테이너 목록을 지정하도록 **app-containers** 매개변수를 설정할 수 있습니다. 
+* 선택적으로, 로그를 수집하고 {{site.data.keyword.loganalysisshort}} 서비스로 로그를 전달할 컨테이너 목록을 지정하도록 **app-containers** 매개변수를 설정할 수 있습니다.
 
-    이 매개변수를 설정하려면 쉼표로 구분된 컨테이너 목록을 정의하십시오. 
+    이 매개변수를 설정하려면 쉼표로 구분된 컨테이너 목록을 정의하십시오.
 
-**팁:** 클러스터에서 **로그 소스**가 **애플리케이션**으로 설정된 다중 클러스터 로깅 구성을 정의할 수 있습니다. 클러스터의 컨테이너에 로그가 호스팅되는 다른 경로가 있는 경우, 로그가 동일한 경로에 있는 컨테이너의 각 그룹마다 클러스터 로깅 구성 정의를 고려하십시오.  
+**팁:** 클러스터에서 **로그 소스**가 **애플리케이션**으로 설정된 다중 클러스터 로깅 구성을 정의할 수 있습니다. 클러스터의 컨테이너에 로그가 호스팅되는 다른 경로가 있는 경우, 로그가 동일한 경로에 있는 컨테이너의 각 그룹마다 클러스터 로깅 구성 정의를 고려하십시오. 
 
 
 
@@ -382,12 +383,12 @@ Ingress 제어기 로그를 분석할 때 유용할 수 있는 필드:
 
 클러스터 로그를 {{site.data.keyword.loganalysisshort}}로 전달하려면, {{site.data.keyword.Bluemix_notm}} 권한을 {{site.data.keyword.containershort}} 키 소유자 및 로깅 클러스터 구성을 구성하는 사용자 ID에 부여해야 합니다.
 
-로깅 클러스터 구성을 구성하는 사용자 ID에는 다음 권한이 있어야 합니다. 
+로깅 클러스터 구성을 구성하는 사용자 ID에는 다음 권한이 있어야 합니다.
 
 * **뷰어** 권한이 있는 {{site.data.keyword.containershort}}에 대한 IAM 정책
 * **관리자** 또는 **운영자** 권한이 있는 클러스터 인스턴스에 대한 IAM 정책
 
-로그를 {{site.data.keyword.loganalysisshort}} **영역 도메인**으로 전달하는 클러스터의 경우 다음 권한이 {{site.data.keyword.containershort}} 키 소유자에게 필요합니다. 
+로그를 {{site.data.keyword.loganalysisshort}} **영역 도메인**으로 전달하는 클러스터의 경우 다음 권한이 {{site.data.keyword.containershort}} 키 소유자에게 필요합니다.
 
 * **관리자** 역할이 있는 {{site.data.keyword.containershort}}에 대한 IAM 정책
 * **관리자** 역할이 있는 {{site.data.keyword.loganalysisshort}} 서비스에 대한 IAM 정책
@@ -395,7 +396,7 @@ Ingress 제어기 로그를 분석할 때 유용할 수 있는 필드:
 * 로그가 클러스터에서 전달되는 영역의 CF **SpaceManager** 역할 또는 **개발자** 역할
 
 
-로그를 {{site.data.keyword.loganalysisshort}} **계정 도메인**으로 전달하는 클러스터의 경우 다음 권한이 {{site.data.keyword.containershort}} 키 소유자에게 필요합니다. 
+로그를 {{site.data.keyword.loganalysisshort}} **계정 도메인**으로 전달하는 클러스터의 경우 다음 권한이 {{site.data.keyword.containershort}} 키 소유자에게 필요합니다.
 
 * **관리자** 역할이 있는 {{site.data.keyword.containershort}}에 대한 IAM 정책
 * **관리자** 역할이 있는 {{site.data.keyword.loganalysisshort}} 서비스에 대한 IAM 정책

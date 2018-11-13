@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloudloganalysis" audience="service" href="/docs/services/CloudLogAnalysis/index.html"}
+{: .toc subcollection="cloudloganalysis" audience="service" arm="3663228" href="/docs/services/CloudLogAnalysis/index.html"}
 IBM Cloud Log Analysis
 
     {: .navgroup id="learn"}
@@ -84,7 +84,7 @@ IBM Cloud Log Analysis
     qa/kibana_formats.md
     reference/log_analysis_cli_cloud.md  
 
-    [API de análisis de registros](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api)
+    [API de análisis de registros](https://console.bluemix.net/apidocs/log-analysis-api)
     {: .navgroup-end}     
     
     {: .navgroup id="help"}

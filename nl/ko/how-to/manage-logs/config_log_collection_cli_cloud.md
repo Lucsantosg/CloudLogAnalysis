@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -27,12 +27,12 @@ lastupdated: "2018-04-19"
 
 1. {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오.
 
-   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오.
+   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/index.html#overview)를 참조하십시오.
    
 2. 저장소에서 플러그인의 이름을 찾으십시오. 다음 명령을 실행하십시오.
 
     ```
-    bx plugin repo-plugins
+    ibmcloud plugin repo-plugins
     ```
     {: codeblock}
     
@@ -41,7 +41,7 @@ lastupdated: "2018-04-19"
 3. {{site.data.keyword.loganalysisshort}} 플러그인을 설치하십시오. 다음 명령을 실행하십시오.
 
     ```
-    bx plugin install logging-cli -r Bluemix
+    ibmcloud plugin install logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -50,14 +50,14 @@ lastupdated: "2018-04-19"
     예를 들어, 다음 명령을 실행하여 설치된 플러그인의 목록을 확인하십시오.
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     출력은 다음과 같습니다.
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -73,7 +73,7 @@ lastupdated: "2018-04-19"
 
 1. {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오.
 
-   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오.
+   자세한 정보는 [{{site.data.keyword.Bluemix_notm}} CLI 설치](/docs/cli/index.html#overview)를 참조하십시오.
 
 2. {{site.data.keyword.loganalysisshort}} 플러그인을 설치하십시오.
 
@@ -86,14 +86,14 @@ lastupdated: "2018-04-19"
     예를 들면, 플러그인의 버전을 확인하십시오. 다음 명령을 실행하십시오.
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     출력은 다음과 같습니다.
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -119,7 +119,7 @@ Linux에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를 �
 2. 플러그인을 설치하십시오. 다음 명령을 실행하십시오.
         
     ```
-    bx plugin install -f logging-cli-linux-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-linux-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -139,7 +139,7 @@ Windows에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를 
 2. 플러그인을 설치하십시오. 다음 명령을 실행하십시오.
         
     ```
-    bx plugin install -f logging-cli-windows-amd64-0.1.1.exe
+    ibmcloud plugin install -f logging-cli-windows-amd64-0.1.1.exe
     ```
     {: codeblock}
 
@@ -165,7 +165,7 @@ Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를
 3. 플러그인을 설치하십시오. 다음 명령을 실행하십시오.
         
     ```
-    bx plugin install -f logging-cli-darwin-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-darwin-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -184,14 +184,14 @@ Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를
     예를 들면, 플러그인의 버전을 확인하십시오. 다음 명령을 실행하십시오.
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     출력은 다음과 같습니다.
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -199,12 +199,12 @@ Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를
     ```
     {: screen}
     
-2. 플러그인이 설치된 경우 `bx plugin uninstall`을 실행하여 로깅 CLI 플러그인을 설치 제거하십시오.
+2. 플러그인이 설치되어 있는 경우에는 `ibmcloud plugin uninstall`을 실행하여 로깅 CLI 플러그인을 설치 제거하십시오.
 
     다음 명령을 실행하십시오.
         
     ```
-    bx plugin uninstall logging-cli
+    ibmcloud plugin uninstall logging-cli
     ```
     {: codeblock}
   
@@ -212,7 +212,7 @@ Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를
 ## 저장소에서 Log Analysis CLI 업데이트
 {: #update_cli}
 
-로깅 CLI를 업데이트하려면 *bx plugin update* 명령을 실행하십시오.
+로깅 CLI를 업데이트하려면 *ibmcloud plugin update* 명령을 실행하십시오.
 {:shortdesc}
 
 {{site.data.keyword.loganalysisshort}} 서비스 CLI를 업데이트하려면 다음 단계를 완료하십시오.
@@ -220,7 +220,7 @@ Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를
 1. {{site.data.keyword.loganalysisshort}} 플러그인을 업데이트하십시오. 다음 명령을 실행하십시오.
 
     ```
-    bx plugin update logging-cli -r Bluemix
+    ibmcloud plugin update logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -229,14 +229,14 @@ Mac OS X에서 로그 콜렉션 플러그인을 설치하려면 다음 단계를
     예를 들어, 플러그인의 버전을 확인하십시오. 다음 명령을 실행하십시오.
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     출력은 다음과 같습니다.
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -260,7 +260,7 @@ CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다
 2. 지원되는 명령 및 CLI에 대한 정보를 나열합니다. 다음 명령을 실행하십시오.
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
     
@@ -278,14 +278,14 @@ CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다
 2. 지원되는 명령의 목록을 가져오고 필요로 하는 명령을 식별합니다. 다음 명령을 실행하십시오.
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. 명령에 대한 도움말을 가져옵니다. 다음 명령을 실행하십시오.
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Command*
     ```
     {: codeblock}
     
@@ -305,14 +305,14 @@ CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다
 2. 지원되는 명령의 목록을 가져오고 필요로 하는 명령을 식별합니다. 다음 명령을 실행하십시오.
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. 명령에 대한 도움말을 가져오고 지원되는 하위 명령을 식별합니다. 다음 명령을 실행하십시오.
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Command*
     ```
     {: codeblock}
     
@@ -321,7 +321,7 @@ CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다
 4. 명령에 대한 도움말을 가져오고 지원되는 하위 명령을 식별합니다. 다음 명령을 실행하십시오.
 
     ```
-    bx logging *Command* help *Subcommand*
+    ibmcloud logging *Command* help *Subcommand*
     ```
     {: codeblock}
     
@@ -334,17 +334,17 @@ CLI 및 지원되는 명령에 대한 일반적인 정보를 가져오려면 다
 ## 플러그인의 세부사항 표시
 {: #show}
   
-'bx plugin show logging-cli' 명령을 사용하여 플러그인 세부사항을 표시합니다. 
+플러그인 세부사항을 표시하려면 'ibmcloud plugin show logging-cli' 명령을 사용하십시오. 
 
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
 ```
 {: codeblock}
     
 출력은 다음과 같습니다.
    
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
                                   
 Plugin                         logging-cli   
 Version                        0.1.1   

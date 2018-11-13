@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -25,11 +25,11 @@ Per gestire i log disponibili nel dominio di account utilizzando la API {{site.d
 ## Ottenimento del token IAM
 {: #iam_token_cli}
 
-Per ottenere il token di autorizzazione utilizzando la CLI {{site.data.keyword.Bluemix_notm}}, completa la seguente procedura da un terminale: 
+Per ottenere il token di autorizzazione utilizzando la CLI {{site.data.keyword.Bluemix_notm}}, completa la seguente procedura da un terminale:
 
 1. Installa la CLI {{site.data.keyword.Bluemix_notm}}.
 
-   Per ulteriori informazioni, vedi [Scarica e installa la CLI {{site.data.keyword.Bluemix}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Per ulteriori informazioni, vedi [Scarica e installa la CLI {{site.data.keyword.Bluemix}}](/docs/cli/index.html#overview).
    
    Se la CLI è installata, continua con il passo successivo.
     
@@ -37,10 +37,10 @@ Per ottenere il token di autorizzazione utilizzando la CLI {{site.data.keyword.B
 
     Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Esegui il comando `bx iam oauth-tokens` per ottenere il token IAM.
+3. Esegui il comando `ibmcloud iam oauth-tokens` per ottenere il token IAM.
 
     ```
-	bx iam oauth-tokens
+	ibmcloud iam oauth-tokens
 	```
 	{: codeblock}
 	

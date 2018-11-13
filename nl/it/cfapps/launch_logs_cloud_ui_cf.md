@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -20,13 +20,13 @@ lastupdated: "2018-04-10"
 Nella IU {{site.data.keyword.Bluemix}} puoi visualizzare, filtrare e analizzare i log tramite la scheda Log disponibile per ciascuna applicazione Cloud Foundry o tramite la IU del servizio {{site.data.keyword.loganalysisshort}}.
 {:shortdesc}
 
-Per visualizzare i log dell'applicazione CF, tieni conto delle seguenti informazioni:  
+Per visualizzare i log dell'applicazione CF, tieni conto delle seguenti informazioni: 
 
 <table>
   <caption>Informazioni sui log dell'applicazione CF in {{site.data.keyword.Bluemix_notm}}</caption>
   <tr>
     <th>Opzioni IU</th>
-    <th>Informazioni </th>
+    <th>Informazioni</th>
   </tr>
   <tr>
     <td>Scheda Log disponibile tramite la IU dell'applicazione CF </td>
@@ -53,7 +53,7 @@ Per visualizzare i log di distribuzione o di runtime di un'applicazione Cloud Fo
 Per impostazione predefinita, i log disponibili per l'analisi dalla console {{site.data.keyword.Bluemix_notm}} includono i dati delle ultime 24 ore.
 
 
-## Passaggio ai log dell'applicazione CF tramite la IU {{site.data.keyword.loganalysisshort}}  
+## Passaggio ai log dell'applicazione CF tramite la IU {{site.data.keyword.loganalysisshort}} 
 {: #cfapp_la}
 
 Per visualizzare i log di distribuzione o di runtime di un'applicazione Cloud Foundry, completa la seguente procedura:
@@ -64,7 +64,7 @@ Per visualizzare i log di distribuzione o di runtime di un'applicazione Cloud Fo
     
 3. Fai clic su **Visualizza in Kibana**.
 
-Per impostazione predefinita, i log disponibili per l'analisi includono i dati degli ultimi 15 minuti. 
+Per impostazione predefinita, i log disponibili per l'analisi includono i dati degli ultimi 15 minuti.
 
 **Suggerimento:** per analizzare i dati per un periodo personalizzato, consulta [Analisi log avanzata con Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana). 
 

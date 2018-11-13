@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -40,14 +40,14 @@ Siga estos pasos para obtener para obtener información sobre los registros:
 2. Ejecute el mandato *status*.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Por ejemplo,
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -77,7 +77,7 @@ Siga estos pasos para obtener información sobre un tipo de registro durante un 
 2. Ejecute el mandato *status*.
 
     ```
-    bx cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    ibmcloud cf logging status -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -92,7 +92,7 @@ Siga estos pasos para obtener información sobre un tipo de registro durante un 
     Por ejemplo,
     
     ```
-    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log
+    $ ibmcloud cf logging status -s 2017-05-24 -e 2017-05-25 -t log
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -119,7 +119,7 @@ Siga estos pasos para obtener para obtener información de la cuenta sobre los r
 2. Ejecute el mandato *status*.
 
     ```
-    bx cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
+    ibmcloud cf logging status -a -s YYYY-MM-DD -e YYYY-MM-DD -t *Log_Type*
     ```
     {: codeblock}
     
@@ -136,7 +136,7 @@ Siga estos pasos para obtener para obtener información de la cuenta sobre los r
     Por ejemplo,
     
     ```
-    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
+    $ ibmcloud cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+

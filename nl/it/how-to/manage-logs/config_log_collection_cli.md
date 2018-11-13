@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ Per installare la CLI {{site.data.keyword.loganalysisshort}}, completa questa pr
 
 1. Installa la CLI {{site.data.keyword.Bluemix_notm}}.
 
-   Per ulteriori informazioni, vedi [Installazione della CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Per ulteriori informazioni, vedi [Installazione della CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
 
 2. Installa il plugin CF {{site.data.keyword.loganalysisshort}}.
 
@@ -41,7 +41,7 @@ Per installare la CLI {{site.data.keyword.loganalysisshort}}, completa questa pr
     Ad esempio, verifica la versione del plugin. Esegui il seguente comando:
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -95,7 +95,7 @@ Completa la seguente procedura per installare il plugin CF di raccolta dei log s
         Ad esempio, per rendere il file `logging-cli-linux64` eseguibile, esegui il seguente comando:
         
         ```
-        bx cf install-plugin -f logging-cli-linux64
+        ibmcloud cf install-plugin -f logging-cli-linux64
         ```
         {: codeblock}
 
@@ -124,7 +124,7 @@ Completa la seguente procedura per installare il plugin CF di raccolta dei log s
     Ad esempio, verifica la versione del plugin. Esegui il seguente comando:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
@@ -149,16 +149,16 @@ Completa la seguente procedura per installare il plugin CF di raccolta dei log s
 2. Esegui il comando **cf install-plugin** per installare il plugin di raccolta dei log su Windows. 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
-	dove *NomePlugin* è il nome del file che hai scaricato.
+	dove *PluginName* è il nome del file che hai scaricato.
 	
-    Ad esempio, per installare il plugin *logging-cli-win64_v1.0.1.exe*, esegui il seguente comando da una finestra di terminale:
+    Ad esempio, per installare il plugin *logging-cli-win64_v1.0.1.exe*, immetti il seguente comando da una finestra di terminale:
 	
 	```
-	bx cf install-plugin logging-cli-win64_v1.0.1.exe
+	ibmcloud cf install-plugin logging-cli-win64_v1.0.1.exe
 	```
 	{: codeblock}
 	
@@ -169,14 +169,14 @@ Completa la seguente procedura per installare il plugin CF di raccolta dei log s
     Ad esempio, verifica la versione del plugin. Esegui il seguente comando:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     L'output sarà simile al seguente:
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -184,9 +184,9 @@ Completa la seguente procedura per installare il plugin CF di raccolta dei log s
 ## Installazione della CLI Analisi dei log su Mac OS X
 {: #install_cli_mac}
 
-Completa la seguente procedura per installare il plugin CF Raccolta dei log su Mac OS X:
+Completa la seguente procedura per installare il plugin CF di raccolta dei log su Mac OS X:
 
-1. Scarica la versione più recente del plugin della CLI del servizio {{site.data.keyword.loganalysisshort}} (IBM-Logging) dalla [pagina della CLI {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
+1. Scarica la versione più recenti del plugin della CLI del servizio {{site.data.keyword.loganalysisshort}} (IBM-Logging) dalla [pagina della CLI {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
 	
 	1. Seleziona il valore della piattaforma: **osx**. 
 	2. Fai clic su **Salva file**.  
@@ -194,16 +194,16 @@ Completa la seguente procedura per installare il plugin CF Raccolta dei log su M
 2. Esegui il comando **cf install-plugin** per installare il plugin di raccolta dei log su Mac OS X. 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
-	dove *NomePlugin* è il nome del file che hai scaricato.
+	dove *PluginName* è il nome del file che hai scaricato.
 	
-    Ad esempio, per installare il plugin *logging-cli-darwin_v1.0.1*, esegui il seguente comando da un terminale:
+    Ad esempio, per installare il plugin *logging-cli-darwin_v1.0.1*, immetti il seguente comando da un terminale:
 	
 	```
-	bx cf install-plugin logging-cli-darwin_v1.0.1
+	ibmcloud cf install-plugin logging-cli-darwin_v1.0.1
 	```
 	{: codeblock}
 	
@@ -214,14 +214,14 @@ Completa la seguente procedura per installare il plugin CF Raccolta dei log su M
     Ad esempio, verifica la versione del plugin. Esegui il seguente comando:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     L'output sarà simile al seguente:
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -234,12 +234,12 @@ Per disinstallare la CLI di registrazione, elimina il plugin.
 
 Completa la seguente procedura per disinstallare la CLI del servizio {{site.data.keyword.loganalysisshort}}:
 
-1. Verifica la versione del plugin della CLI di registrazione installato.
+1. Verifica la versione del plugin della CLI di registrazione installata.
   
     Ad esempio, verifica la versione del plugin. Esegui il seguente comando:
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -259,12 +259,12 @@ Completa la seguente procedura per disinstallare la CLI del servizio {{site.data
     Esegui il seguente comando:
         
     ```
-    bx cf uninstall-plugin IBM-Logging
+    ibmcloud cf uninstall-plugin IBM-Logging
     ```
     {: codeblock}
   
 
-## Ottenimento della guida generale
+## Come ottenere supporto generale
 {: #general_cli_help}
 
 Per ottenere le informazioni generali sulla CLI e su quali comandi sono supportati, completa la seguente procedura:
@@ -273,46 +273,46 @@ Per ottenere le informazioni generali sulla CLI e su quali comandi sono supporta
 
     Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Elenca le informazioni sui comandi supportati e sulla CLI. Esegui il seguente comando:
+2. Per elencare le informazioni sui comandi supportati e sulla CLI. Esegui il seguente comando:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
     
     
 
-## Ottenimento della guida su un comando
+## Come ottenere supporto per un comando
 {: #command_cli_help}
 
-Per ottenere una guida su come usare un comando, completa la seguente procedura:
+Per ottenere supporto sull'utilizzo di un comando, completa la seguente procedura:
 
 1. Accedi a una regione, un'organizzazione e uno spazio in {{site.data.keyword.Bluemix_notm}}. 
 
     Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Ottieni l'elenco dei comandi supportati e identifica quello di cui hai bisogno. Esegui il comando:
+2. Per ottenere l'elenco dei comandi supportati e identificare il comando di cui hai bisogno. Esegui il comando:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
-3. Ottieni una guida sul comando. Esegui il seguente comando:
+3. Per ottenere supporto sul comando. Esegui il seguente comando:
 
     ```
-    bx cf logging help *Comando*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
-    dove *Comando* è il nome di un comando CLI, ad esempio *status*.
+    dove *Command* è il nome di un comando della CLI, ad esempio, *status*.
 
 
 
-## Ottenimento della guida su un comando secondario
+## Come ottenere supporto per un comando secondario
 {: #subcommand_cli_help}
 
-Un comando può avere dei comandi secondari. Per ottenere supporto sui comandi secondari, completa la seguente procedura:
+Un comando può avere comandi secondari. Per ottenere supporto sui comandi secondari, completa la seguente procedura:
 
 1. Accedi a una regione, un'organizzazione e uno spazio in {{site.data.keyword.Bluemix_notm}}. 
 
@@ -321,30 +321,30 @@ Un comando può avere dei comandi secondari. Per ottenere supporto sui comandi s
 2. Ottieni l'elenco di comandi supportati e identifica quello di cui hai bisogno. Esegui il comando:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
-3. Ottieni una guida sul comando e identifica i comandi secondari supportati. Esegui il seguente comando:
+3. Per ottenere supporto sul comando e identificare i comandi secondari supportati. Esegui il seguente comando:
 
     ```
-    bx cf logging help *Comando*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
-    dove *Comando* è il nome di un comando CLI, ad esempio *session*.
+    dove *Command* è il nome di un comando della CLI, ad esempio, *session*.
 
-4. Ottieni una guida sul comando e identifica i comandi secondari supportati. Esegui il seguente comando:
+4. Per ottenere supporto sul comando e identificare i comandi secondari supportati. Esegui il seguente comando:
 
     ```
-    bx cf logging *Comando* help *Comando secondario*
+    ibmcloud cf logging *Command* help *Subcommand*
     ```
     {: codeblock}
     
     dove 
     
-    * *Comando* è il nome del comando CLI, ad esempio *status*.
-    * *Comando secondario* è il nome di un comando secondario supportato, ad esempio, per il comando *session*, un comando secondario valido è *list*.
+    * *Command* è il nome di un comando della CLI, ad esempio, *status*.
+    * *Subcommand* è il nome del comando secondario supportato, ad esempio, per il comando *session*, un comando secondario valido è *list*.
 
 
 

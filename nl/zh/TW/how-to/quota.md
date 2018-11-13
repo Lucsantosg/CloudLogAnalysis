@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,16 +31,16 @@ lastupdated: "2018-03-09"
     例如，若要登入「美國南部」，請執行以下指令：
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
-2. 執行 `bx logging quota-usage-show` CLI 指令。 
+2. 執行 `ibmcloud logging quota-usage-show` CLI 指令。 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
     ```
     {: codeblock}
 
@@ -53,7 +53,7 @@ lastupdated: "2018-03-09"
 例如，若要顯示帳戶的配額用量，請執行下列指令：
 
 ```
- bx logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
+ ibmcloud logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
 Showing quota usage for resource: 475693845023932019c6567c9c8de6dece ...
 OK
 
@@ -65,7 +65,7 @@ Daily Allotmant   Current Usage
 若要顯示空間的配額用量，請執行下列指令：
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -86,16 +86,16 @@ Daily Allotmant   Current Usage
     例如，若要登入「美國南部」，請執行以下指令：
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
-2. 執行 `bx logging quota-usage-show` CLI 指令，並搭配參數 `-s`。 
+2. 執行 `ibmcloud logging quota-usage-show` CLI 指令，並搭配參數 `-s`。 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID] [-s,--history]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID] [-s,--history]
     ```
     {: codeblock}
 
@@ -107,7 +107,7 @@ Daily Allotmant   Current Usage
 例如，
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -138,7 +138,7 @@ Date         Allotmant   Usage
 2. 取得帳戶的 ID。執行下列指令：
 
     ```
-	bx iam accounts
+	ibmcloud iam accounts
 	```
     {: codeblock}	
 
@@ -165,7 +165,7 @@ Date         Allotmant   Usage
 4. 取得網域的配額及現行用量。執行下列指令：
 
     ```
-        curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET ENDPOINT/quota/usage
+    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET ENDPOINT/quota/usage
 	```
 	{: codeblock}
 	
@@ -174,14 +174,14 @@ Date         Allotmant   Usage
 	例如，執行 cURL 指令，以取得美國南部地區中帳戶的配額：
 	
 	```
-    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET https://logging.ng.bluemix.net/quota/usage
+curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET https://logging.ng.bluemix.net/quota/usage
 	```
 	{: codeblock}
 	
 	此結果會包括每日配額及用量的相關資訊。
 	
 	```
-    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET https://logging.ng.bluemix.net/quota/usage
+curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET https://logging.ng.bluemix.net/quota/usage
     HTTP/1.1 200 OK
     Server: nginx/1.10.3 (Ubuntu)
     Date: Wed, 29 Nov 2017 13:18:20 GMT
@@ -233,7 +233,7 @@ Date         Allotmant   Usage
 4. 取得網域的配額及現行用量。執行下列指令：
 
     ```
-        curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET ENDPOINT/quota/usage
+    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET ENDPOINT/quota/usage
 	```
 	{: codeblock}
 	
@@ -242,14 +242,14 @@ Date         Allotmant   Usage
     例如，執行下列 cURL 指令，以取得美國南部地區中空間網域的配額及用量：
 	
     ```
-    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET https://logging.ng.bluemix.net/quota/usage
+curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET https://logging.ng.bluemix.net/quota/usage
 	```
 	{: codeblock}
 	
 	此結果會包括每日配額及用量的相關資訊。
 	
 	```
-    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET https://logging.ng.bluemix.net/quota/usage
+curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET https://logging.ng.bluemix.net/quota/usage
     HTTP/1.1 200 OK
     Server: nginx/1.10.3 (Ubuntu)
     Date: Wed, 29 Nov 2017 13:18:20 GMT

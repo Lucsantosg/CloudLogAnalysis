@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -61,7 +61,7 @@ Zum Definieren einer neuen Suche verwenden Sie die Standardsuchabfrage als Ausga
 
 * Wenden Sie Feldfilter an, um die Gruppe von Daten einzugrenzen, die angezeigt wird. Sie können jeden Filter umschalten, auf der Seite fixieren, nach Bedarf aktivieren oder inaktivieren und so konfigurieren, dass der Wert eingeschlossen oder ausgeschlossen wird. 
 
-    **Tipp:** Wenn Sie ein Feld nicht in der *Feldliste* finden können, das Sie erwarten, oder wenn einige der Lupensymbole neben den aufgelisteten Feldern auf der Seite 'Discover' inaktiviert sind, laden Sie die Feldliste erneut, indem Sie das Indexmuster auf der Seite 'Settings' aktualisieren.  
+    **Tipp:** Wenn Sie ein Feld nicht in der *Feldliste* finden können, das Sie erwarten, oder wenn einige der Lupensymbole neben den aufgelisteten Feldern auf der Seite 'Discover' inaktiviert sind, laden Sie die Feldliste erneut, indem Sie das Indexmuster auf der Seite 'Settings' aktualisieren. 
 
     Wenn Ihre CF-App zum Beispiel viele Instanzen hat, möchten Sie möglicherweise die Daten für eine bestimmte Instanz analysieren. Sie können einen Feldfilter für den bestimmten Instanz-ID-Wert definieren, den Sie analysieren wollen. 
     
@@ -76,7 +76,7 @@ Sie können eine der folgenden Tasks für Suchen ausführen, die Sie auf der Sei
 | Eine Suche speichern | Sie können eine Suche zur späteren Verwendung speichern.  |
 | Eine Suche löschen | Sie können eine Suche löschen, wenn sie nicht mehr benötigt wird. |
 | Eine Suche exportieren | Sie können eine Suche zur gemeinsamen Nutzung exportieren.  |
-| Eine Suche neu laden | Sie können eine vorhandene Suche hochladen, um eine Gruppe von Daten erneut zu analysieren. |
+| Eine Suche neu laden  | Sie können eine vorhandene Suche hochladen, um eine Gruppe von Daten erneut zu analysieren. |
 | Die Daten einer Suche aktualisieren | Sie können eine automatische Aktualisierung der Daten, die durch die Suche angezeigt wird, konfigurieren.  |
 | Eine Suche importieren | Sie können eine Suche importieren.  |
 {: caption="Tabelle 3. Tasks für die Arbeit mit Suchen" caption-side="top"}

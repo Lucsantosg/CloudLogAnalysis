@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -27,12 +27,12 @@ lastupdated: "2018-04-19"
 
 1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
 
-   詳しくは、『[{{site.data.keyword.Bluemix_notm}} CLI のインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
+   詳しくは、[『{{site.data.keyword.Bluemix_notm}}CLI のインストール』](/docs/cli/index.html#overview)を参照してください。
    
 2. リポジトリー内にあるプラグインの名前を検索します。 次のコマンドを実行します。
 
     ```
-    bx plugin repo-plugins
+    ibmcloud plugin repo-plugins
     ```
     {: codeblock}
     
@@ -41,7 +41,7 @@ lastupdated: "2018-04-19"
 3. {{site.data.keyword.loganalysisshort}} プラグインをインストールします。 次のコマンドを実行します。
 
     ```
-    bx plugin install logging-cli -r Bluemix
+    ibmcloud plugin install logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -50,14 +50,14 @@ lastupdated: "2018-04-19"
     例えば、以下のコマンドを実行して、インストール済みのプラグインのリストを表示します。
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     出力は以下のようになります。
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -73,7 +73,7 @@ lastupdated: "2018-04-19"
 
 1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
 
-   詳しくは、『[{{site.data.keyword.Bluemix_notm}} CLI のインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
+   詳しくは、[『{{site.data.keyword.Bluemix_notm}}CLI のインストール』](/docs/cli/index.html#overview)を参照してください。
 
 2. {{site.data.keyword.loganalysisshort}} プラグインをインストールします。
 
@@ -86,14 +86,14 @@ lastupdated: "2018-04-19"
     例えば、プラグインのバージョンを確認します。 次のコマンドを実行します。
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     出力は以下のようになります。
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -119,7 +119,7 @@ Linux にLog Collection プラグインをインストールするには、以�
 2. プラグインをインストールします。 次のコマンドを実行します。
         
     ```
-    bx plugin install -f logging-cli-linux-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-linux-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -139,7 +139,7 @@ Windows にLog Collection プラグインをインストールするには、以
 2. プラグインをインストールします。 次のコマンドを実行します。
         
     ```
-    bx plugin install -f logging-cli-windows-amd64-0.1.1.exe
+    ibmcloud plugin install -f logging-cli-windows-amd64-0.1.1.exe
     ```
     {: codeblock}
 
@@ -155,7 +155,7 @@ Mac OS X にLog Collection プラグインをインストールするには、�
 	1. プラットフォーム値**「osx」**を選択します。 
 	2. **「ファイルの保存」**をクリックします。  
     
-2. ファイルの許可を変更します。次のコマンドを実行します。
+2. ファイルの許可を変更します。 次のコマンドを実行します。
 
     ```
     chmod u+x logging-cli-darwin-amd64-0.1.1
@@ -165,7 +165,7 @@ Mac OS X にLog Collection プラグインをインストールするには、�
 3. プラグインをインストールします。 次のコマンドを実行します。
         
     ```
-    bx plugin install -f logging-cli-darwin-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-darwin-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -184,14 +184,14 @@ Mac OS X にLog Collection プラグインをインストールするには、�
     例えば、プラグインのバージョンを確認します。 次のコマンドを実行します。
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     出力は以下のようになります。
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -199,12 +199,12 @@ Mac OS X にLog Collection プラグインをインストールするには、�
     ```
     {: screen}
     
-2. プラグインがインストールされている場合、`bx plugin uninstall` を実行してロギング CLI プラグインをアンインストールします。
+2. プラグインがインストールされている場合、`ibmcloud plugin uninstall` を実行してロギング CLI プラグインをアンインストールします。
 
     次のコマンドを実行します。
         
     ```
-    bx plugin uninstall logging-cli
+    ibmcloud plugin uninstall logging-cli
     ```
     {: codeblock}
   
@@ -212,7 +212,7 @@ Mac OS X にLog Collection プラグインをインストールするには、�
 ## リポジトリーからの Log Analysis CLI の更新
 {: #update_cli}
 
-ロギング CLI を更新するには、*bx plugin update* コマンドを実行します。
+ロギング CLI を更新するには、*ibmcloud plugin update* コマンドを実行します。
 {:shortdesc}
 
 {{site.data.keyword.loganalysisshort}} サービス CLI を更新するには、以下のステップを実行します。
@@ -220,7 +220,7 @@ Mac OS X にLog Collection プラグインをインストールするには、�
 1. {{site.data.keyword.loganalysisshort}} プラグインを更新します。 次のコマンドを実行します。
 
     ```
-    bx plugin update logging-cli -r Bluemix
+    ibmcloud plugin update logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -229,14 +229,14 @@ Mac OS X にLog Collection プラグインをインストールするには、�
     例えば、プラグインのバージョンを検証します。 次のコマンドを実行します。
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     出力は以下のようになります。
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -260,7 +260,7 @@ CLI に関する一般情報およびサポートされているコマンドに�
 2. サポートされるコマンドおよび CLI についての情報をリストします。 次のコマンドを実行します。
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
     
@@ -278,14 +278,14 @@ CLI に関する一般情報およびサポートされているコマンドに�
 2. サポートされるコマンドのリストを取得し、必要なコマンドを識別します。 コマンドを実行します。
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. 特定のコマンドに関するヘルプを取得します。 次のコマンドを実行します。
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Command*
     ```
     {: codeblock}
     
@@ -305,14 +305,14 @@ CLI に関する一般情報およびサポートされているコマンドに�
 2. サポートされるコマンドのリストを取得し、必要なコマンドを識別します。 コマンドを実行します。
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. 特定のコマンドに関するヘルプを取得し、サポートされるサブコマンドを識別します。 次のコマンドを実行します。
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Command*
     ```
     {: codeblock}
     
@@ -321,7 +321,7 @@ CLI に関する一般情報およびサポートされているコマンドに�
 4. 特定のコマンドに関するヘルプを取得し、サポートされるサブコマンドを識別します。 次のコマンドを実行します。
 
     ```
-    bx logging *Command* help *Subcommand*
+    ibmcloud logging *Command* help *Subcommand*
     ```
     {: codeblock}
     
@@ -334,17 +334,17 @@ CLI に関する一般情報およびサポートされているコマンドに�
 ## プラグインの詳細の表示
 {: #show}
   
-プラグイン詳細を表示するには、「bx plugin show logging-cli」コマンドを使用します。 
+プラグイン詳細を表示するには、「ibmcloud plugin show logging-cli」コマンドを使用します。 
 
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
 ```
 {: codeblock}
     
 出力は以下のようになります。
    
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
                                   
 Plugin                         logging-cli   
 Version                        0.1.1   

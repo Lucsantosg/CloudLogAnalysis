@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,16 +31,16 @@ lastupdated: "2018-03-09"
     例如，要登录到美国南部，请运行以下命令：
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
-2. 运行 `bx logging quota-usage-show` CLI 命令。 
+2. 运行 `ibmcloud logging quota-usage-show` CLI 命令。 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID]
     ```
     {: codeblock}
 
@@ -53,7 +53,7 @@ lastupdated: "2018-03-09"
 例如，要显示帐户的配额使用情况，请运行以下命令：
 
 ```
- bx logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
+ ibmcloud logging quota-usage-show -r account -i 475693845023932019c6567c9c8de6dece
 Showing quota usage for resource: 475693845023932019c6567c9c8de6dece ...
 OK
 
@@ -65,7 +65,7 @@ Daily Allotmant   Current Usage
 要显示空间的配额使用情况，请运行以下命令：
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -86,16 +86,16 @@ Daily Allotmant   Current Usage
     例如，要登录到美国南部，请运行以下命令：
 
     ```
-    bx login -a api.ng.bluemix.net
+    ibmcloud login -a api.ng.bluemix.net
     ```
     {: codeblock}
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
-2. 运行带 `-s` 参数的 `bx logging quota-usage-show` CLI 命令。 
+2. 运行带有 `-s` 参数的 `ibmcloud logging quota-usage-show` CLI 命令。 
 
     ```
-    bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID] [-s,--history]
+    ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE][-i,--resource-id RESOURCE_ID] [-s,--history]
     ```
     {: codeblock}
 
@@ -107,7 +107,7 @@ Daily Allotmant   Current Usage
 例如：
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -138,11 +138,11 @@ Date         Allotmant   Usage
 2. 获取帐户的标识。运行以下命令：
 
     ```
-	bx iam accounts
+	ibmcloud iam accounts
 	```
     {: codeblock}	
 
-	这将显示包含其 GUID 的帐户列表。
+	这将显示帐户及其 GUID 的列表。
 	
 	将帐户标识导出到 shell 变量。例如：
 	
@@ -155,7 +155,7 @@ Date         Allotmant   Usage
 
     有关更多信息，请参阅[获取 UAA 令牌](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa)。
 
-    将 UAA 令牌导出到 shell 变量。请勿包含 `Bearer`。例如：
+    将 UAA 令牌导出到 shell 变量。请不要包含 `Bearer`。例如：
 	
 	```
 	export TOKEN="xxxxxxxxxxxxxxxxxxxxx"
@@ -165,18 +165,18 @@ Date         Allotmant   Usage
 4. 获取域的配额和当前使用情况。运行以下命令：
 
     ```
-        curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET ENDPOINT/quota/usage
+    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET ENDPOINT/quota/usage
 	```
 	{: codeblock}
 	
-	其中，对于每个区域，*ENDPOINT* 是不同的。有关每个区域的端点列表，请参阅[日志记录端点](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints)。
+	其中，*ENDPOINT* 对于每个区域来说是不同的。有关每个区域的端点列表，请参阅[日志记录端点](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints)。
 	
 	例如，运行 cURL 命令以获取美国南部区域中帐户的配额：
 	
 	
 	
 	```
-        curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET https://logging.ng.bluemix.net/quota/usage
+    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET https://logging.ng.bluemix.net/quota/usage
 	```
 	{: codeblock}
 	
@@ -185,7 +185,7 @@ Date         Allotmant   Usage
 	
 	
 	```
-        curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET https://logging.ng.bluemix.net/quota/usage
+    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET https://logging.ng.bluemix.net/quota/usage
     HTTP/1.1 200 OK
     Server: nginx/1.10.3 (Ubuntu)
     Date: Wed, 29 Nov 2017 13:18:20 GMT
@@ -229,7 +229,7 @@ Date         Allotmant   Usage
 
     有关更多信息，请参阅[获取 UAA 令牌](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa)。
 
-    将 UAA 令牌导出到 shell 变量。请勿包含 `Bearer`。例如：
+    将 UAA 令牌导出到 shell 变量。请不要包含 `Bearer`。例如：
 	
 	```
 	export TOKEN="xxxxxxxxxxxxxxxxxxxxx"
@@ -239,18 +239,18 @@ Date         Allotmant   Usage
 4. 获取域的配额和当前使用情况。运行以下命令：
 
     ```
-        curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET ENDPOINT/quota/usage
+    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET ENDPOINT/quota/usage
 	```
 	{: codeblock}
 	
-	其中，对于每个区域，*ENDPOINT* 是不同的。有关每个区域的端点列表，请参阅[日志记录端点](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints)。
+	其中，*ENDPOINT* 对于每个区域来说是不同的。有关每个区域的端点列表，请参阅[日志记录端点](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints)。
 
     例如，运行以下 cURL 命令以获取美国南部区域中空间域的配额和使用情况：
 	
     
 	
     ```
-        curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET https://logging.ng.bluemix.net/quota/usage
+    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET https://logging.ng.bluemix.net/quota/usage
 	```
 	{: codeblock}
 	
@@ -259,7 +259,7 @@ Date         Allotmant   Usage
 	
 	
 	```
-        curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET https://logging.ng.bluemix.net/quota/usage
+    curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET https://logging.ng.bluemix.net/quota/usage
     HTTP/1.1 200 OK
     Server: nginx/1.10.3 (Ubuntu)
     Date: Wed, 29 Nov 2017 13:18:20 GMT

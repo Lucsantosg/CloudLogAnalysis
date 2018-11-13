@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -29,7 +29,7 @@ Para obtener la señal de autorización mediante la CLI de {{site.data.keyword.B
 
 1. Instale la CLI de {{site.data.keyword.Bluemix_notm}}.
 
-   Para obtener más información, consulte [Descargue e instale la CLI de {{site.data.keyword.Bluemix}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obtener más información, consulte [Descargar e instalar la CLI de {{site.data.keyword.Bluemix}}](/docs/cli/index.html#overview).
    
    Si la CLI está instalada, continúe en el paso siguiente.
     
@@ -37,10 +37,10 @@ Para obtener la señal de autorización mediante la CLI de {{site.data.keyword.B
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Ejecute el mandato `bx iam oauth-tokens` para obtener la señal de IAM.
+3. Ejecute el mandato `ibmcloud iam oauth-tokens` para obtener la señal de IAM.
 
     ```
-	bx iam oauth-tokens
+	ibmcloud iam oauth-tokens
 	```
 	{: codeblock}
 	

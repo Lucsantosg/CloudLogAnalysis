@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ Per ottenere il token di registrazione che puoi usare per inviare i log al servi
 
 1. Installa la CLI {{site.data.keyword.Bluemix_notm}}.
 
-   Per ulteriori informazioni, vedi [Scarica e installa la CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Per ulteriori informazioni, vedi [Scarica e installa la CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Se la CLI è installata, continua con il passo successivo.
     
@@ -39,21 +39,21 @@ Per ottenere il token di registrazione che puoi usare per inviare i log al servi
 3. Esegui il seguente comando:
 
     ```
-	bx logging token-get
+	ibmcloud logging token-get
 	```
 	{: codeblock}
 
 L'output restituisce il token di registrazione.
 
 
-## Ottenimento del token di registrazione per inviare i log a uno spazio utilizzando la CLI{{site.data.keyword.Bluemix_notm}}
+## Ottenimento del token di registrazione per inviare i log a uno spazio utilizzando la CLI {{site.data.keyword.Bluemix_notm}} 
 {: #logging_token_cloud_cli}
 
 Per ottenere il token di registrazione che puoi usare per inviare i log al servizio {{site.data.keyword.loganalysisshort}}, completa la seguente procedura:
 
 1. Installa la CLI {{site.data.keyword.Bluemix_notm}}.
 
-   Per ulteriori informazioni, vedi [Scarica e installa la CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Per ulteriori informazioni, vedi [Scarica e installa la CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Se la CLI è installata, continua con il passo successivo.
     
@@ -66,14 +66,14 @@ Per ottenere il token di registrazione che puoi usare per inviare i log al servi
     Elenca i servizi per ottenere il nome dell'istanza {{site.data.keyword.loganalysisshort}} nello spazio:
 	
     ```
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	
 	Ad esempio:
 	
 	```
-	bx service list
+	ibmcloud service list
     Invoking 'cf services'...
 
     Getting services in org lopezdsr_org / space dev as xxx@yyyy...
@@ -84,17 +84,17 @@ Per ottenere il token di registrazione che puoi usare per inviare i log al servi
     ```
 	{: screen}
 	
-	Crea una chiave. Usa il valore di**name** per il nome servizio e immetti il nome della tua chiave.
+	Crea una chiave. Usa il valore di **name** per il nome servizio e immetti il nome della tua chiave.
 	
 	```
-	bx service key-create servicename KeyName 
+	ibmcloud service key-create servicename KeyName 
 	```
 	{: codeblock}
 	
 	Ad esempio,
 	
 	```
-	bx service key-create "Log Analysis-vg" mykey2
+	ibmcloud service key-create "Log Analysis-vg" mykey2
     Invoking 'cf create-service-key Log Analysis-vg mykey2'...
 
     Creating service key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -105,14 +105,14 @@ Per ottenere il token di registrazione che puoi usare per inviare i log al servi
 4. Ottieni il token di registrazione. Esegui il seguente comando:
 	
 	```
-	bx service key-show name Keyname
+	ibmcloud service key-show name Keyname
 	```
 	{: codeblock}
 	
 	Ad esempio, 
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" 
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" 
     Invoking 'cf service-key Log Analysis-vg mykey2'...
 
     Getting key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -128,7 +128,7 @@ Per ottenere il token di registrazione che puoi usare per inviare i log al servi
 	Per ottenere il token di registrazione, puoi eseguire questo comando:
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
     sdtghyrtfde4
 	```
 	{: screen}
@@ -143,7 +143,7 @@ Per ottenere il token di registrazione che puoi usare per inviare i log al servi
 
 1. Installa la CLI {{site.data.keyword.Bluemix_notm}}.
 
-   Per ulteriori informazioni, vedi [Scarica e installa la CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Per ulteriori informazioni, vedi [Scarica e installa la CLI {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Se la CLI è installata, continua con il passo successivo.
     
@@ -153,10 +153,10 @@ Per ottenere il token di registrazione che puoi usare per inviare i log al servi
 	
 3. Ottieni il [token UAA](/docs/services/CloudLogAnalysis/security/auth_uaa.html#uaa_cli).
 
-    Ad esempio, esegui il comando `bx cf oauth-token` per ottenere il token UAA.
+    Ad esempio, esegui il comando `ibmcloud cf oauth-token` per ottenere il token UAA.
 
     ```
-	bx cf oauth-token
+	ibmcloud cf oauth-token
 	```
 	{: codeblock}
 	
@@ -189,7 +189,7 @@ Per ottenere il token di registrazione che puoi usare per inviare i log al servi
 	
 	dove
 	* SPACEID è il GUID dello spazio in cui è in esecuzione il servizio.
-	* TOKEN è il token UAA che ottieni in un passo precedenza senza il prefisso bearer.
+	* TOKEN è il token UAA che ottieni in un passo precedente senza il prefisso bearer.
 	* LOGGING_ENDPOINT è l'endpoint {{site.data.keyword.loganalysisshort}} per la regione {{site.data.keyword.Bluemix_notm}} in cui sono disponibili l'organizzazione e lo spazio. Il LOGGING_ENDPOINT è diverso per ogni regione. Per visualizzare gli URL per i diversi endpoint, vedi [Endpoint](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
 	
     Il comando restituisce il token di registrazione che devi utilizzare per inviare i log a tale spazio.

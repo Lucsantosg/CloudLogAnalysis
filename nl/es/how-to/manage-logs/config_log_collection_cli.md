@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -29,7 +29,7 @@ siga estos pasos:
 
 1. Instale la CLI de {{site.data.keyword.Bluemix_notm}}.
 
-   Para obtener más información, consulte [Instalación de la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obtener más información, consulte [Instalación de la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
 
 2. Instale el plugin de {{site.data.keyword.loganalysisshort}} CF.
 
@@ -42,7 +42,7 @@ siga estos pasos:
     Por ejemplo, compruebe la versión del plugin. Ejecute el mandato siguiente:
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -64,7 +64,7 @@ siga estos pasos:
 ## Instalación de la CLI de Log Analysis en Linux
 {: #install_cli_linux}
 
-Siga estos pasos para instalar el plugin de CF de recopilación de registros en Linux:
+Siga estos pasos para instalar el plugin de Log Collection CF en Linux:
 
 1. Instale el plugin de la CLI de recopilación de registros.
 
@@ -96,7 +96,7 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
         Por ejemplo, para convertir el archivo `logging-cli-linux64` en ejecutable, ejecute el siguiente mandato:
         
         ```
-        bx cf install-plugin -f logging-cli-linux64
+        ibmcloud cf install-plugin -f logging-cli-linux64
         ```
         {: codeblock}
 
@@ -125,7 +125,7 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
     Por ejemplo, compruebe la versión del plugin. Ejecute el mandato siguiente:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
@@ -140,7 +140,7 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
 ## Instalación de la CLI de Log Analysis en Windows
 {: #install_cli_windows}
 
-Siga estos pasos para instalar el plugin de CF de recopilación de registros en Windows:
+Siga estos pasos para instalar el plugin Log Collection CF en Windows:
 
 1. Descargue el último release del plugin de la CLI del servicio {{site.data.keyword.loganalysisshort}} (IBM-Logging) de [la página de la CLI de {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
 	
@@ -150,7 +150,7 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
 2. Ejecute el mandato **cf install-plugin** para instalar el plugin de recopilación de registros en Windows. 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
@@ -159,25 +159,25 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
     Por ejemplo, para instalar el plugin *logging-cli-win64_v1.0.1.exe*, ejecute el mandato siguiente desde una ventana de terminal:
 	
 	```
-	bx cf install-plugin logging-cli-win64_v1.0.1.exe
+	ibmcloud cf install-plugin logging-cli-win64_v1.0.1.exe
 	```
 	{: codeblock}
 	
-    Cuando el plugin esté instalado, recibirá el mensaje siguiente: `El plugin IBM-Logging 1.0.1 se ha instalado correctamente.`
+    Cuando el plugin esté instalado, recibirá el mensaje siguiente: `Plugin IBM-Logging 1.0.1 successfully installed.`
 
 3. Verifique la instalación del plugin de la CLI de registro.
   
     Por ejemplo, compruebe la versión del plugin. Ejecute el mandato siguiente:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     La salida tiene el aspecto siguiente:
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -185,7 +185,7 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
 ## Instalación de la CLI de Log Analysis en Mac OS X
 {: #install_cli_mac}
 
-Siga estos pasos para instalar el plugin de CF de recopilación de registros en Mac OS X:
+Siga estos pasos para instalar el plugin Log Collection CF en Mac OS X:
 
 1. Descargue el último release del plugin de la CLI del servicio {{site.data.keyword.loganalysisshort}} (IBM-Logging) de [la página de la CLI de {{site.data.keyword.Bluemix_notm}}](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins). 
 	
@@ -195,7 +195,7 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
 2. Ejecute el mandato **cf install-plugin** para instalar el plugin de recopilación de registros en Mac OS X. 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
@@ -204,25 +204,25 @@ Siga estos pasos para instalar el plugin de CF de recopilación de registros en 
     Por ejemplo, para instalar el plugin *logging-cli-darwin_v1.0.1*, ejecute el mandato siguiente desde un terminal:
 	
 	```
-	bx cf install-plugin logging-cli-darwin_v1.0.1
+	ibmcloud cf install-plugin logging-cli-darwin_v1.0.1
 	```
 	{: codeblock}
 	
-    Cuando el plugin esté instalado, recibirá el mensaje siguiente: `El plugin IBM-Logging 1.0.1 se ha instalado correctamente.`
+    Cuando el plugin esté instalado, recibirá el mensaje siguiente: `Plugin IBM-Logging 1.0.1 successfully installed.`
 
 3. Verifique la instalación del plugin de la CLI de registro.
   
     Por ejemplo, compruebe la versión del plugin. Ejecute el mandato siguiente:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     La salida tiene el aspecto siguiente:
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -240,7 +240,7 @@ Siga estos pasos para desinstalar la CLI del servicio {{site.data.keyword.logana
     Por ejemplo, compruebe la versión del plugin. Ejecute el mandato siguiente:
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -260,7 +260,7 @@ Siga estos pasos para desinstalar la CLI del servicio {{site.data.keyword.logana
     Ejecute el mandato siguiente:
         
     ```
-    bx cf uninstall-plugin IBM-Logging
+    ibmcloud cf uninstall-plugin IBM-Logging
     ```
     {: codeblock}
   
@@ -268,7 +268,7 @@ Siga estos pasos para desinstalar la CLI del servicio {{site.data.keyword.logana
 ## Obtención de ayuda general
 {: #general_cli_help}
 
-Para obtener información general sobre la CLI y los mandatos soportados, siga estos pasos:
+Para obtener información general sobre la CLI y los mandatos soportados, siga los pasos siguientes:
 
 1. Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
@@ -277,7 +277,7 @@ Para obtener información general sobre la CLI y los mandatos soportados, siga e
 2. Obtenga información sobre los mandatos soportados y sobre la CLI. Ejecute el mandato siguiente:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
     
@@ -295,14 +295,14 @@ Para obtener ayuda sobre cómo utilizar un mandato, siga los pasos siguientes:
 2. Obtenga la lista de mandatos soportados e identifique el que necesita. Ejecute el mandato:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. Obtenga ayuda sobre el mandato. Ejecute el mandato siguiente:
 
     ```
-    bx cf logging help *Mandato*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
@@ -322,14 +322,14 @@ Un mandato puede tener submandatos. Para obtener ayuda sobre los submandatos, si
 2. Obtenga la lista de mandatos soportados e identifique el que necesita. Ejecute el mandato:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. Obtenga ayuda sobre el mandato e identifique los submandatos soportados. Ejecute el mandato siguiente:
 
     ```
-    bx cf logging help *Mandato*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
@@ -338,14 +338,14 @@ Un mandato puede tener submandatos. Para obtener ayuda sobre los submandatos, si
 4. Obtenga ayuda sobre el mandato e identifique los submandatos soportados. Ejecute el mandato siguiente:
 
     ```
-    bx cf logging *Mandato* help *Submandato*
+    ibmcloud cf logging *Command* help *Subcommand*
     ```
     {: codeblock}
     
     donde 
     
     * *Mandato* es el nombre de un mandato de la CLI, como por ejemplo *status*.
-    * *Submandato*^es el nombre de un submandato soportado, como por ejemplo, para el mandato *session*, un submandato válido es *list*.
+    * *Submandato* es el nombre de un submandato soportado, como por ejemplo, para el mandato *session*, un submandato válido es *list*.
 
 
 

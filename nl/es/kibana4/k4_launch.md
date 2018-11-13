@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -75,7 +75,7 @@ La consulta que se utiliza para filtrar los datos que aparecen en Kibana recuper
 
 Complete el siguiente paso para iniciar Kibana desde un navegador:
 
-1. Abra [https://logging.<span class="keyword" data-hd-keyref="DomainName">NombreDominio</span>](https://logging.{DomainName}) para iniciar una sesión en la interfaz de usuario de Kibana.
+1. Inicie la interfaz de usuario de Kibana.
     
     Por ejemplo, 
       

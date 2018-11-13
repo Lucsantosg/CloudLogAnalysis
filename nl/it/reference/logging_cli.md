@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -20,7 +20,8 @@ La CLI {{site.data.keyword.loganalysislong}} è un plugin per gestire i log per 
 {: shortdesc}
 
 **Prerequisiti **
-* Prima di eseguire i comandi di registrazione, accedi a {{site.data.keyword.Bluemix_notm}} con il comando `bx login` per generare un token di accesso {{site.data.keyword.Bluemix_short}} e autenticare la tua sessione. Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+* Prima di eseguire i comandi di registrazione, accedi a {{site.data.keyword.Bluemix_notm}} con il comando `ibmcloud login` per generare un token di accesso {{site.data.keyword.Bluemix_short}}
+ e autenticare la tua sessione. Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 Per informazioni su come utilizzare la CLI {{site.data.keyword.loganalysisshort}}, vedi [Gestione dei log](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov).
 
@@ -31,59 +32,59 @@ Per informazioni su come utilizzare la CLI {{site.data.keyword.loganalysisshort}
     <th>Quando utilizzarlo</th>
   </tr>
   <tr>
-    <td>[bx cf logging](#base)</td>
+    <td>[ibmcloud cf logging](#base)</td>
     <td>Utilizza questo comando per ottenere le informazioni sulla CLI, come la versione o l'elenco dei comandi.</td>
   </tr>
   <tr>
-    <td>[bx cf logging auth](#auth)</td>
+    <td>[ibmcloud cf logging auth](#auth)</td>
     <td>Utilizza questo comando per ottenere il token di registrazione che puoi utilizzare per inviare i log al servizio {{site.data.keyword.loganalysisshort}}.</td>
   </tr>
   <tr>
-    <td>[bx cf logging delete](#delete)</td>
+    <td>[ibmcloud cf logging delete](#delete)</td>
     <td>Utilizza questo comando per eliminare i log archiviati in Raccolta dei log.</td>
   </tr>
   <tr>
-    <td>[bx cf logging download (Beta)](#download)</td>
+    <td>[ibmcloud cf logging download (Beta)](#download)</td>
     <td>Utilizza questo comando per scaricare i log dalla raccolta dei log in un file locale o per inviarli ad un altro programma come lo stack Elastic. </td>
   </tr>
   <tr>
-    <td>[bx cf logging help](#help)</td>
+    <td>[ibmcloud cf logging help](#help)</td>
     <td>Utilizza questo comando per ottenere supporto su come utilizzare la CLI e per ottenere un elenco di tutti i comandi.</td>
   </tr>
   <tr>
-    <td>[bx cf logging option](#option)</td>
+    <td>[ibmcloud cf logging option](#option)</td>
     <td>Utilizza questo comando per visualizzare o configurare il periodo di conservazione per i log disponibili in uno spazio o in un account.</td>
   </tr>
   <tr>
-    <td>[bx cf logging session create (Beta)](#session_create)</td>
+    <td>[ibmcloud cf logging session create (Beta)](#session_create)</td>
     <td>Utilizza questo comando per creare una nuova sessione.</td>
   <tr>
   <tr>
-    <td>[bx cf logging session delete (Beta)](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete (Beta)](#session_delete)</td>
     <td>Utilizza questo comando per eliminare una sessione.</td>
   <tr>  
   <tr>
-    <td>[bx cf logging session list (Beta)](#session_list)</td>
+    <td>[ibmcloud cf logging session list (Beta)](#session_list)</td>
     <td>Utilizza questo comando per elencare le sessioni attive e i rispettivi ID.</td>
   <tr>  
   <tr>
-    <td>[bx cf logging session show (Beta)](#session_show)</td>
+    <td>[ibmcloud cf logging session show (Beta)](#session_show)</td>
     <td>Utilizza questo comando per visualizzare lo stato di una sola sessione.</td>
   <tr>  
   <tr>
-    <td>[bx cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status)</td>
     <td>Utilizza questo comando per ottenere le informazioni sui log raccolti in uno spazio o in un account.</td>
   </tr>
   </table>
 
 
-## bx cf logging
+## ibmcloud cf logging
 {: #base}
 
 Fornisce le informazioni sulla versione della CLI e su come utilizzarla.
 
 ```
-bx cf logging [parametri]
+ibmcloud cf logging [parametri]
 ```
 {: codeblock}
 
@@ -103,19 +104,19 @@ bx cf logging [parametri]
 Per ottenere l'elenco dei comandi, esegui il seguente comando:
 
 ```
-bx cf logging --help
+ibmcloud cf logging --help
 ```
 {: codeblock}
 
 Per ottenere la versione della CLI, esegui il seguente comando:
 
 ```
-bx cf logging --version
+ibmcloud cf logging --version
 ```
 {: codeblock}
 
 
-## bx cf logging auth
+## ibmcloud cf logging auth
 {: #auth}
 
 Restituisce un token di registrazione che puoi utilizzare per inviare i log al servizio {{site.data.keyword.loganalysisshort}}. 
@@ -123,7 +124,7 @@ Restituisce un token di registrazione che puoi utilizzare per inviare i log al s
 **Nota:** il token non scade.
 
 ```
-bx cf logging auth
+ibmcloud cf logging auth
 ```
 {: codeblock}
 
@@ -143,13 +144,13 @@ bx cf logging auth
   </dd>
 </dl>
 
-## bx cf logging delete
+## ibmcloud cf logging delete
 {: #delete}
 
 Elimina i log archiviati in Raccolta dei log.
 
 ```
-bx cf logging delete [parametri]
+ibmcloud cf logging delete [parametri]
 ```
 {: codeblock}
 
@@ -177,21 +178,21 @@ bx cf logging delete [parametri]
 
 Per eliminare i log di tipo *linux_syslog* per il 25 maggio 2017, esegui il seguente comando:
 ```
-bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: codeblock}
 
 
 
-## bx cf logging download (Beta)
+## ibmcloud cf logging download (Beta)
 {: #download}
 
 Scarica i log dalla raccolta dei log in un file locale o li invia a un altro programma come uno stack Elastic. 
 
-**Nota:** per scaricare i file, devi prima creare una sessione. Una sessione definisce quali log scaricare in base all'intervallo di date, al tipo di log e al tipo di account. Scarica i log nel contesto di una sessione. Per ulteriori informazioni, vedi [bx cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
+**Nota:** per scaricare i file, devi prima creare una sessione. Una sessione definisce quali log scaricare in base all'intervallo di date, al tipo di log e al tipo di account. Scarica i log nel contesto di una sessione. Per ulteriori informazioni, vedi [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
 
 ```
-bx cf logging download [parametri] [argomenti]
+ibmcloud cf logging download [parametri] [argomenti]
 ```
 {: codeblock}
 
@@ -206,7 +207,7 @@ bx cf logging download [parametri] [argomenti]
 
 <dl>
 <dt>ID_sessione</dt>
-<dd>Imposta sul valore di ID sessione che ottieni quando esegui il comando `cf logging session create`. Questo valore indica quale sessione utilizzare quando scarichi i log. <br>**Nota:** il comando `bx cf logging session create` fornisce i parametri che controllano quali log vengono scaricati. </dd>
+<dd>Imposta sul valore di ID sessione che ottieni quando esegui il comando `ibmcloud cf logging session create`. Questo valore indica quale sessione utilizzare quando scarichi i log. <br>**Nota:** il comando `ibmcloud cf logging session create` fornisce i parametri che controllano quali log vengono scaricati. </dd>
 </dl>
 
 **Nota:** dopo che lo scaricamento è terminato, rieseguendo lo stesso comando non succederà nulla. Per riscaricare gli stessi dati, devi utilizzare un file o una sessione differenti.
@@ -216,14 +217,14 @@ bx cf logging download [parametri] [argomenti]
 In un sistema Linux, per scaricare i log in un file denominato mylogs.gz, esegui questo comando:
 
 ```
-bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 Per scaricare i log nel tuo proprio stack Elastic, esegui il seguente comando:
 
 ```
-bx cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -244,13 +245,13 @@ output {
 {: screen}
 
 
-## bx cf logging help
+## ibmcloud cf logging help
 {: #help}
 
 Fornisce le informazioni su come utilizzare un comando.
 
 ```
-bx cf logging help [comando]
+ibmcloud cf logging help [comando]
 ```
 {: codeblock}
 
@@ -268,12 +269,12 @@ bx cf logging help [comando]
 Per ottenere supporto su come eseguire il comando per visualizzare lo stato dei log, esegui il seguente comando:
 
 ```
-bx cf logging help status
+ibmcloud cf logging help status
 ```
 {: codeblock}
 
 
-## bx cf logging option
+## ibmcloud cf logging option
 {: #option}
 
 Visualizza o modifica il periodo di conservazione per i log disponibili in uno spazio o in un account. 
@@ -284,7 +285,7 @@ Visualizza o modifica il periodo di conservazione per i log disponibili in uno s
 **Nota:** per impostazione predefinita sono archiviati tutti i log. Devi eliminarli manualmente utilizzando il comando **delete**. Imposta una politica di conservazione per eliminare i log automaticamente.
 
 ```
-bx cf logging option [parametri]
+ibmcloud cf logging option [parametri]
 ```
 {: codeblock}
 
@@ -295,7 +296,7 @@ bx cf logging option [parametri]
 <dd>(Facoltativo) imposta il numero di giorni di conservazione. <br> Il valore predefinito è *-1* giorni.</dd>
 
 <dt>--at-account-level, -a </dt>
-  <dd>(Facoltativo) imposta l'ambito al livello dell'account. <br>Se questo parametro non viene specificato, il valore predefinito viene impostato su *-1* per lo spazio corrente, che è lo spazio a cui hai eseguito l'accesso utilizzando il comando `bx cf login`.
+  <dd>(Facoltativo) imposta l'ambito al livello dell'account. <br>Se questo parametro non viene specificato, il valore predefinito è impostato su *-1* per lo spazio corrente, che è lo spazio in cui hai effettuato l'accesso utilizzando il comando `ibmcloud cf login`.
   </dd>
 </dl>
 
@@ -304,7 +305,7 @@ bx cf logging option [parametri]
 Per visualizzare il periodo di conservazione corrente predefinito per lo spazio in cui hai eseguito l'accesso, esegui il seguente comando:
 
 ```
-bx cf logging option
+ibmcloud cf logging option
 ```
 {: codeblock}
 
@@ -314,7 +315,7 @@ L'output è:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        -1 |
+| d35da1e3-b345-475f-8502-ibmcloud cfgh436902a3 |        -1 |
 +--------------------------------------+-----------+
 ```
 {: screen}
@@ -323,7 +324,7 @@ L'output è:
 Per modificare il periodo di conservazione in 25 giorni per lo spazio in cui hai eseguito l'accesso, esegui il seguente comando:
 
 ```
-bx cf logging option -r 25
+ibmcloud cf logging option -r 25
 ```
 {: codeblock}
 
@@ -333,13 +334,13 @@ L'output è:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        25 |
+| d35da1e3-b345-475f-8502-ibmcloud cfgh436902a3 |        25 |
 +--------------------------------------+-----------+
 ```
 {: screen}
 
 
-## bx cf logging session create (Beta)
+## ibmcloud cf logging session create (Beta)
 {: #session_create}
 
 Crea una nuova sessione.
@@ -347,7 +348,7 @@ Crea una nuova sessione.
 **Nota:** puoi avere fino a 30 sessioni simultanee in uno spazio. La sessione viene creata per un utente. Le sessioni non possono essere condivise tra gli utenti in uno spazio.
 
 ```
-bx cf logging session create [parametri]
+ibmcloud cf logging session create [parametri]
 ```
 {: codeblock}
 
@@ -367,7 +368,7 @@ bx cf logging session create [parametri]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Facoltativo) imposta l'ambito al livello dell'account. <br>Se questo parametro non viene specificato, il valore predefinito viene impostato solo sullo spazio corrente, che è lo spazio in cui hai eseguito l'accesso utilizzando il comando `bx cf login`.
+  <dd>(Facoltativo) imposta l'ambito al livello dell'account. <br>Se questo parametro non viene specificato, il valore predefinito viene impostato solo sullo spazio corrente, ovvero lo spazio in cui hai effettuato l'accesso utilizzando il comando `ibmcloud cf login`.
   </dd>
 </dl>
 
@@ -402,18 +403,18 @@ bx cf logging session create [parametri]
 Per creare una sessione che include i log tra il 20 maggio 2017 e il 26 maggio 2017 per un tipo di log di *log*, esegui il seguente comando:
 
 ```
-bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
+ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 ```
 {: screen}
 
 
-## bx cf logging session delete (Beta)
+## ibmcloud cf logging session delete (Beta)
 {: #session_delete}
 
 Elimina una sessione, specificata per ID sessione.
 
 ```
-bx cf logging session delete [argomenti]
+ibmcloud cf logging session delete [argomenti]
 ```
 {: codeblock}
 
@@ -421,7 +422,7 @@ bx cf logging session delete [argomenti]
 
 <dl>
 <dt>ID sessione</dt>
-<dd>L'ID della sessione che desideri eliminare. <br>Puoi utilizzare il comando `bx cf logging session list` per ottenere tutti gli ID della sessione attivi.</dd>
+<dd>L'ID della sessione che desideri eliminare. <br>Puoi utilizzare il comando `ibmcloud cf logging session list` per ottenere tutti gli ID delle sessioni attive.</dd>
 </dl>
 
 **Esempio**
@@ -429,19 +430,19 @@ bx cf logging session delete [argomenti]
 Per eliminare una sessione con ID sessione *cI6hvAa0KR_tyhjxZZz9Uw==*, esegui il seguente comando:
 
 ```
-bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## bx cf logging session list (Beta)
+## ibmcloud cf logging session list (Beta)
 {: #session_list}
 
 Elenca le sessioni attive e i rispettivi ID.
 
 ```
-bx cf logging session list 
+ibmcloud cf logging session list 
 ```
 {: codeblock}
 
@@ -465,13 +466,13 @@ bx cf logging session list
 </dl>
  
 
-## bx cf logging session show (Beta)
+## ibmcloud cf logging session show (Beta)
 {: #session_show}
 
 Visualizza lo stato di una sola sessione.
 
 ```
-bx cf logging session show [argomenti]
+ibmcloud cf logging session show [argomenti]
 ```
 {: codeblock}
 
@@ -512,18 +513,18 @@ bx cf logging session show [argomenti]
 Per visualizzare i dettagli di una sessione con ID sessione *cI6hvAa0KR_tyhjxZZz9Uw==*, esegui il seguente comando:
 
 ```
-bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
-## bx cf logging status
+## ibmcloud cf logging status
 {: #status}
 
 Restituisce le informazioni sui log raccolti in uno spazio o in un account.
 
 ```
-bx cf logging status [parametri]
+ibmcloud cf logging status [parametri]
 ```
 {: codeblock}
 
@@ -543,7 +544,7 @@ bx cf logging status [parametri]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Facoltativo) imposta l'ambito al livello dell'account. <br> **Nota:** imposta questo valore per ottenere le informazioni sull'account. <br>Se questo parametro non viene specificato, il valore predefinito viene impostato solo sullo spazio corrente, che è lo spazio in cui hai eseguito l'accesso utilizzando il comando `bx cf login`.
+  <dd>(Facoltativo) imposta l'ambito al livello dell'account. <br> **Nota:** imposta questo valore per ottenere le informazioni sull'account. <br>Se questo parametro non viene specificato, il valore predefinito viene impostato solo sullo spazio corrente, ovvero lo spazio in cui hai effettuato l'accesso utilizzando il comando `ibmcloud cf login`.
   </dd>
   
   <dt>--list-type-detail, -l</dt>
@@ -551,6 +552,6 @@ bx cf logging status [parametri]
   </dd>
 </dl>
 
-**Nota:** il comando `bx cf logging status` restituisce solo le ultime due settimane di log archiviati in Raccolta dei log quando non vengono specificate una data di inizio e di fine.
+**Nota:** il comando `ibmcloud cf logging status` restituisce solo le ultime due settimane di log archiviati in Raccolta dei log quando non vengono specificate una data di inizio e di fine.
 
 

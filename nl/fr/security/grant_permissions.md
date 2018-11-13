@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -14,16 +14,18 @@ lastupdated: "2018-04-10"
 {:pre: .pre}
 
 
-# Octroi de droits
+# Octroi de droits permettant de gérer des journaux et d'afficher des journaux de compte
 {: #grant_permissions}
 
-Dans {{site.data.keyword.Bluemix}}, vous pouvez affecter un ou plusieurs rôles à des utilisateurs. Ces rôles définissent quelles tâches sont activées pour que cet utilisateur puisse se servir du service {{site.data.keyword.loganalysisshort}}. 
+Dans {{site.data.keyword.Bluemix}}, vous pouvez affecter un ou plusieurs rôles IAM à un utilisateur. Ces rôles définissent quelles tâches sont activées pour que cet utilisateur puisse utiliser le service {{site.data.keyword.loganalysisshort}}.  
 {:shortdesc}
+
+Par exemple, vous pouvez octroyer à un utilisateur le rôle **Opérateur** afin de lui permettre de gérer des journaux. Pour qu'un utilisateur puisse uniquement afficher des journaux de compte, vous pouvez lui octroyer le rôle **Afficheur**. Pour plus d'informations, voir [Rôles IAM](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
 
 **Remarque :** 
 
-* Pour accorder à un utilisateur des droits qui lui permettent de gérer des journaux ou d'afficher des journaux de compte, vous devez être autorisé à affecter des règles à d'autres utilisateurs dans le compte, ou vous devez être le propriétaire du compte. Si vous n'êtes pas le propriétaire du compte, vous devez disposer d'une règle IAM dotée du rôle Editeur, Opérateur ou Administrateur. 
-* Afin d'accorder des droits à un utilisateur pour qu'il puisse afficher les journaux dans un espace, vous devez disposer de droits dans l'organisation et l'espace qui permettent d'attribuer à l'utilisateur un rôle Cloud Foundry qui décrit les actions qu'il peut effectuer avec le service {{site.data.keyword.loganalysisshort}} dans cet espace.  
+* Pour accorder à un utilisateur des droits qui lui permettent de gérer des journaux ou d'afficher des journaux de compte, vous devez être autorisé à affecter des règles à d'autres utilisateurs dans le compte, ou vous devez être le propriétaire du compte. Si vous n'êtes pas le propriétaire du compte, vous devez disposer d'une règle IAM dotée du rôle Editeur, Opérateur ou Administrateur.
+* Afin d'accorder des droits à un utilisateur pour qu'il puisse afficher les journaux dans un espace, vous devez disposer de droits dans l'organisation et l'espace qui permettent d'attribuer à l'utilisateur un rôle Cloud Foundry qui décrit les actions qu'il peut effectuer avec le service {{site.data.keyword.loganalysisshort}} dans cet espace. 
 
 ## Affectation d'une règle IAM à un utilisateur dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}}
 {: #grant_permissions_ui_account}
@@ -44,7 +46,7 @@ Pour accorder à un utilisateur des droits permettant d'utiliser le service {{si
 
     Si l'utilisateur n'est pas membre du compte, voir [Invitation d'utilisateurs](/docs/iam/iamuserinv.html#iamuserinv).
 
-4. Dans la section **Règles d'accès**, cliquez sur **Affecter un accès**, puis cliquez sur **Affecter l'accès aux ressources**. 
+4. Dans la section **Règles d'accès**, cliquez sur **Affecter un accès**, puis cliquez sur **Affecter l'accès aux ressources**.
 
     La fenêtre *Affecter l'accès à la ressource à** s'ouvre.
 
@@ -94,7 +96,7 @@ Procédez comme suit pour accorder à un utilisateur le droit permettant d'affic
 2. Vérifiez que l'utilisateur est membre du compte. Exécutez la commande suivante pour obtenir la liste des utilisateurs du compte :
 
     ```
-	bx account users
+	ibmcloud account users
 	```
     {: codeblock}	
 
@@ -102,23 +104,23 @@ Procédez comme suit pour accorder à un utilisateur le droit permettant d'affic
 
 3. Si l'utilisateur n'est pas membre du compte, contactez le propriétaire de compte et demandez une invitation autorisant l'utilisateur à accéder au compte. Pour plus d'informations, voir [Invitation d'utilisateurs](/docs/iam/iamuserinv.html#iamuserinv).
 
-    **Astuce :** La commande permettant d'inviter un utilisateur à accéder à un compte est la suivante : `bx iam account-user-invite USER_EMAIL`
+    **Astuce :** la commande permettant d'inviter un utilisateur à accéder à un compte est la suivante : `ibmcloud iam account-user-invite USER_EMAIL`
 		
 4. Affectez une règle à l'utilisateur. Exécutez la commande suivante :
 
     ```
-    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
+    ibmcloud iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
 
 	où
-    * USER_NAME est l'ID {{site.data.keyword.Bluemix_notm}} de l'utilisateur. 
+    * USER_NAME est l'ID {{site.data.keyword.Bluemix_notm}} de l'utilisateur.
 	* ROLE est un rôle IAM. Les valeurs admises sont : *administrator*, *operator*, *editor* et *viewer*
 
 5. Vérifiez que la règle est affectée à l'utilisateur. Exécutez la commande suivante pour répertorier toutes les règles affectées à un utilisateur :
 
     ```
-    bx iam user-policies USER_NAME
+    ibmcloud iam user-policies USER_NAME
 	```
 	{: codeblock}
 

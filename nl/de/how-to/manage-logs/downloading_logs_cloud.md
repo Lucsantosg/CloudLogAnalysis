@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -35,20 +35,20 @@ Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keywo
 ## Schritt 2: Verfügbare Protokolle ermitteln
 {: #step2}
 
-1. Verwenden Sie den Befehl `bx logging log-show`, um zu ermitteln, welche Protokolle für die letzten beiden Wochen zur Verfügung stehen. Führen Sie den folgenden Befehl aus:
+1. Verwenden Sie den Befehl `ibmcloud logging log-show`, um zu ermitteln, welche Protokolle für die letzten beiden Wochen zur Verfügung stehen. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     Dieser Befehl stellt beispielsweise folgende Ausgabe bereit:
     
     ```
-    bx logging log-show 
+    ibmcloud logging log-show 
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types   
+    Date         Size       Count   Searchable          Types   
     2017-11-16   794008   706     All          syslog, default   
 	2017-11-17   794008   706     All          default   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
@@ -64,15 +64,17 @@ Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keywo
 
 Eine Sitzung ist erforderlich, um den Umfang der Protokolldaten zu definieren, die für einen Download verfügbar sind, und um den Status des Downloads zu behalten. 
 
-Verwenden Sie den Befehl [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) zum Erstellen einer Sitzung. Optional können Sie das Startdatum, das Enddatum und Protokolltypen angeben, wenn Sie eine Sitzung erstellen:  
+Verwenden Sie den Befehl [ibmcloud logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) zum Erstellen einer Sitzung. Optional können Sie das Startdatum, das Enddatum und Protokolltypen angeben, wenn Sie eine Sitzung erstellen:  
 
 * Wenn Sie das Startdatum und das Enddatum angeben, ermöglicht die Sitzung den Zugriff auf die Protokolle für diesen Datumsbereich. 
 * Wenn Sie den Protokolltyp angeben (**-t**), ermöglicht die Sitzung den Zugriff auf einen bestimmten Protokolltyp. Dies ist ein wichtiges Feature, wenn Sie viele Protokolle verwalten müssen, da Sie den Geltungsbereich auf die Protokolle eingrenzen können, die im betreffenden Fall relevant sind.
 
+**Hinweis:** Für jede Sitzung können Sie Protokolle für bis zu 15 Tage herunterladen.
+
 Um eine Sitzung zu erstellen, die verwendet wird, um alle verfügbaren Protokolle der letzten zwei Wochen herunterzuladen, führen Sie den folgenden Befehl aus:
 
 ```
-bx logging session-create 
+ibmcloud logging session-create 
 ```
 {: codeblock}
 
@@ -86,7 +88,7 @@ Die Sitzung gibt die folgenden Informationen zurück:
 Beispiel:
 
 ```
-$ bx logging session-create
+$ ibmcloud logging session-create
 Creating session for lopezdsr@uk.ibm.com resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
@@ -95,7 +97,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 ```
 {: screen}
 
-**Tipp:** Um die Liste aktiver Sitzungen anzuzeigen, führen Sie den Befehl [bx logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list) aus.
+**Tipp:** Um die Liste aktiver Sitzungen anzuzeigen, führen Sie den Befehl [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list) aus.
 
 ## Schritt 4: Protokolldaten in eine Datei herunterladen
 {: #step4}
@@ -103,19 +105,19 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 Führen Sie den folgenden Befehl aus, um die Protokolle herunterzuladen, die durch die Sitzungsparameter angegeben sind:
 
 ```
-bx logging log-download -o Protokolldateiname Sitzungs-ID
+ibmcloud logging log-download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
 Dabei gilt:
 
-* 'Protokolldateiname' ist der Name der Ausgabedatei.
-* 'Sitzungs-ID' ist die GUID der Sitzung. Sie haben diesen Wert im vorherigen Schritt erhalten.
+* Log_File_Name ist der Name der Ausgabedatei.
+* Session_ID ist die GUID der Sitzung. Sie haben diesen Wert im vorherigen Schritt erhalten.
 
 Beispiel:
 
 ```
-bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -131,21 +133,21 @@ Der Fortschrittsanzeiger zeigt den jeweils aktuellen Downloadstatus auf einer Sk
 ## Schritt 5: Sitzung löschen
 {: #step5}
 
-Wenn der Download abgeschlossen ist, müssen Sie die Sitzung mit dem Befehl [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) löschen. 
+Wenn der Download abgeschlossen ist, müssen Sie die Sitzung mit dem Befehl [ibmcloud logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) löschen. 
 
 Führen Sie den folgenden Befehl aus, um eine Sitzung zu löschen:
 
 ```
-bx logging session-delete Sitzungs-ID
+ibmcloud logging session-delete Session_ID
 ```
 {: codeblock}
 
-Dabei ist 'Sitzungs-ID' die GUID der Sitzung, die Sie im vorherigen Schritt erstellt haben.
+Dabei ist Session-ID die GUID der Sitzung, die Sie im vorherigen Schritt erstellt haben.
 
 Beispiel:
 
 ```
-bx logging session-delete -jshdjsunelsssr4566722==
+ibmcloud logging session-delete -jshdjsunelsssr4566722==
 Deleting session: -jshdjsunelsssr4566722== of resource: 12345678-1234-5678-abcd-378620d6fab5 ...
 Session: -jshdjsunelsssr4566722== is deleted
 

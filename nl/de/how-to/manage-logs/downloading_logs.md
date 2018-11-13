@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,10 +31,10 @@ Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keywo
 ## Schritt 2: Verfügbare Protokolle ermitteln
 {: #step2}
 
-1. Verwenden Sie den Befehl `bx cf logging status`, um zu ermitteln, welche Protokolle für die letzten beiden Wochen zur Verfügung stehen. Führen Sie den folgenden Befehl aus:
+1. Verwenden Sie den Befehl `ibmcloud cf logging status`, um zu ermitteln, welche Protokolle für die letzten beiden Wochen zur Verfügung stehen. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
@@ -64,10 +64,12 @@ Verwenden Sie den Befehl [cf logging session create](/docs/services/CloudLogAnal
 * Wenn Sie das Startdatum und das Enddatum angeben, ermöglicht die Sitzung den Zugriff auf die Protokolle für diesen Datumsbereich. 
 * Wenn Sie den Protokolltyp angeben (**-t**), ermöglicht die Sitzung den Zugriff auf einen bestimmten Protokolltyp. Dies ist ein wichtiges Feature, wenn Sie viele Protokolle verwalten müssen, da Sie den Geltungsbereich auf die Protokolle eingrenzen können, die im betreffenden Fall relevant sind.
 
+**Hinweis:** Für jede Sitzung können Sie für bis zu 15 Tage Protokolle herunterladen.
+
 Um eine Sitzung zu erstellen, die verwendet wird, um Protokolle des Typs *log* herunterzuladen, führen Sie den folgenden Befehl aus:
 
 ```
-bx cf logging session create -t log
+ibmcloud cf logging session create -t log
 ```
 {: codeblock}
 
@@ -81,7 +83,7 @@ Die Sitzung gibt die folgenden Informationen zurück:
 Beispiel:
 
 ```
-$ bx cf logging session create -t log     
+$ ibmcloud cf logging session create -t log     
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -109,19 +111,19 @@ $ bx cf logging session create -t log
 Führen Sie den folgenden Befehl aus, um die Protokolle herunterzuladen, die durch die Sitzungsparameter angegeben sind:
 
 ```
-bx cf logging download -o Protokolldateiname Sitzungs-ID
+ibmcloud cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
 Dabei gilt:
 
-* 'Protokolldateiname' ist der Name der Ausgabedatei.
-* 'Sitzungs-ID' ist die GUID der Sitzung. Sie haben diesen Wert im vorherigen Schritt erhalten.
+* Log_File_Name ist der Name der Ausgabedatei.
+* Session_ID ist die GUID der Sitzung. Sie haben diesen Wert im vorherigen Schritt erhalten.
 
 Beispiel:
 
 ```
-bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -142,16 +144,16 @@ Wenn der Download abgeschlossen ist, müssen Sie die Sitzung mit dem Befehl [cf 
 Führen Sie den folgenden Befehl aus, um eine Sitzung zu löschen:
 
 ```
-bx cf logging session delete Sitzungs-ID
+ibmcloud cf logging session delete Session_ID
 ```
 {: codeblock}
 
-Dabei ist 'Sitzungs-ID' die GUID der Sitzung, die Sie im vorherigen Schritt erstellt haben.
+Dabei ist Session_ID die GUID der Sitzung, die Sie in einem vorherigen Schritt erstellt haben.
 
 Beispiel:
 
 ```
-bx cf logging session delete -jshdjsunelsssr4566722==
+ibmcloud cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

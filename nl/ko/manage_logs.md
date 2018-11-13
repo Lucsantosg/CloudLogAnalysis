@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -69,7 +69,7 @@ lastupdated: "2018-01-31"
 
 * [로그 콜렉션 API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} 또는 [로그 콜렉션 CLI](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window}를 사용하여 로그 콜렉션에서 로그를 수동으로 삭제할 수 있습니다. 
 
-* CLI를 사용할 수 있습니다. CLI를 통해 수동으로 로그 삭제에 대한 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} 플러그인을 사용하여 bx logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)를 참조하십시오.
+* CLI를 사용할 수 있습니다. CLI를 통해 수동으로 로그를 삭제하는 데 대한 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} 플러그인을 사용한 ibmcloud logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)를 참조하십시오.
     
 
 
@@ -85,16 +85,15 @@ Kibana에서 최근 3일 동안의 로그를 검색할 수 있습니다. 더 이
 
 
 
-
 ## 사용자 로그에 대한 정보 가져오기
 {: #info_about_logs}
 
-사용자 로그에 대한 일반 정보를 얻으려면 `bx logging log-show` 또는 `cf logging status` 명령을 사용하십시오. 자세한 정보는 다음을 참조하십시오.
+사용자의 로그에 대한 일반 정보를 얻으려면 `ibmcloud logging log-show` 또는 `cf logging status` 명령을 사용하십시오. 자세한 정보는 다음을 참조하십시오.
 
 * [{{site.data.keyword.Bluemix_notm}} 플러그인을 사용하여 로그 정보 보기](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
 * [CF 플러그인을 사용하여 로그 정보 보기](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
 
-예를 들어 비용을 계속 제어하기 위해 일정 기간 동안의 앱의 로그 크기를 모니터하고자 할 수 있습니다. 예를 들면, 앱 또는 서비스가 예상보다 더 많은 로그를 생성하고 있는지 식별하기 위해 {{site.data.keyword.Bluemix_notm}} 영역에 대해 1주일 동안의 각 로그 유형의 크기를 알려고 할 수 있습니다. 로그 크기를 확인하려면 `bx logging log-show` 또는 `cf logging status` 명령을 사용하십시오.
+예를 들어 비용을 계속 제어하기 위해 일정 기간 동안의 앱의 로그 크기를 모니터하고자 할 수 있습니다. 예를 들면, 앱 또는 서비스가 예상보다 더 많은 로그를 생성하고 있는지 식별하기 위해 {{site.data.keyword.Bluemix_notm}} 영역에 대해 1주일 동안의 각 로그 유형의 크기를 알려고 할 수 있습니다. 로그 크기를 확인하려면 `ibmcloud logging log-show` 또는 `cf logging status` 명령을 사용하십시오.
 
 영역 도메인, 조직 도메인 또는 계정 도메인에 저장되는 로그에 대한 정보를 볼 수 있습니다.
 
@@ -105,7 +104,7 @@ Kibana에서 최근 3일 동안의 로그를 검색할 수 있습니다. 더 이
 
 CLI 설치 방법을 학습하려면 [로깅 CLI 설치](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)를 참조하십시오.
 
-CLI 버전을 확인하려면 `bx plugin list` 명령을 실행하십시오.
+CLI 버전을 확인하려면 `ibmcloud plugin list` 명령을 실행하십시오.
 
 명령 실행 방법에 대한 도움말을 보려면 [명령 실행을 위한 명령행 도움말 가져오기](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#command_cli_help)를 참조하십시오.
 

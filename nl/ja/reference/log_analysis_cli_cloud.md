@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-08-21"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-03-09"
 {: shortdesc}
 
 **前提条件**
-* ロギング・コマンドを実行する前に、`bx login` コマンドを使用して {{site.data.keyword.Bluemix_notm}} にログインし、アクセス・トークンを生成して、セッションを認証します。
+* ロギング・コマンドを実行する前に、`ibmcloud login` コマンドを使用して {{site.data.keyword.Bluemix_notm}} にログインし、アクセス・トークンを生成して、セッションを認証します。
 
 {{site.data.keyword.loganalysisshort}} CLI の使用方法については、『[ログの管理](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)』を参照してください。
 
@@ -31,67 +31,67 @@ lastupdated: "2018-03-09"
     <th>いつ使用するか</th>
   </tr>
   <tr>
-    <td>[bx logging](#base)</td>
+    <td>[ibmcloud logging](#base)</td>
     <td>この CLI についての情報 (コマンド・リストなど) を取得するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[bx logging log-delete](#delete)</td>
+    <td>[ibmcloud logging log-delete](#delete)</td>
     <td>Log Collection に保管されたログを削除するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[bx logging log-download](#download)</td>
+    <td>[ibmcloud logging log-download](#download)</td>
     <td>Log Collection からローカル・ファイルにログをダウンロードするか、または、別のプログラム (例えば Elastic スタック) にログをパイプするには、このコマンドを使用します。 </td>
   </tr>
   <tr>
-    <td>[bx logging log-show](#status)</td>
+    <td>[ibmcloud logging log-show](#status)</td>
     <td>スペース、組織、またはアカウントで収集されたログに関する情報を取得するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[bx logging help](#help)</td>
+    <td>[ibmcloud logging help](#help)</td>
     <td>この CLI の使用方法に関するヘルプ、およびすべてのコマンドのリストを取得するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[bx logging option-show](#optionshow)</td>
+    <td>[ibmcloud logging option-show](#optionshow)</td>
     <td>スペース、組織、またはアカウント内にあるログの保存期間を表示するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[bx logging option-update](#optionupdate)</td>
+    <td>[ibmcloud logging option-update](#optionupdate)</td>
     <td>スペース、組織、またはアカウント内にあるログの保存期間を設定するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[bx logging quota-usage-show](#quotausage)</td>
-    <td>スペース、組織、またはアカウントの割り当て使用量情報を取得するには、このコマンドを使用します。割り当て量の履歴情報を取得することもできます。</td>
+    <td>[ibmcloud logging quota-usage-show](#quotausage)</td>
+    <td>スペース、組織、またはアカウントの割り当て使用量情報を取得するには、このコマンドを使用します。 割り当て量の履歴情報を取得することもできます。</td>
   </tr>
   <tr>
-    <td>[bx logging session-create](#session_create)</td>
+    <td>[ibmcloud logging session-create](#session_create)</td>
     <td>新規セッションを作成するには、このコマンドを使用します。</td>
   <tr>
   <tr>
-    <td>[bx logging session-delete](#session_delete)</td>
+    <td>[ibmcloud logging session-delete](#session_delete)</td>
     <td>セッションを削除するには、このコマンドを使用します。</td>
   <tr>  
   <tr>
-    <td>[bx logging sessions](#session_list)</td>
+    <td>[ibmcloud logging sessions](#session_list)</td>
     <td>アクティブ・セッションおよびその ID をリストするには、このコマンドを使用します。</td>
   <tr>  
   <tr>
-    <td>[bx logging session-show](#session_show)</td>
+    <td>[ibmcloud logging session-show](#session_show)</td>
     <td>単一セッションの状況を表示するには、このコマンドを使用します。</td>
   <tr>  
   <tr>
-    <td>[bx logging token-get](#tokenget)</td>
+    <td>[ibmcloud logging token-get](#tokenget)</td>
     <td>ログ・データを {{site.data.keyword.loganalysisshort}} サービスに送信するためのロギング・トークンを取得するには、このコマンドを使用します。</td>
   </tr>
 </table>
 
 
-## bx logging
+## ibmcloud logging
 {: #base}
 
 CLI に関する一般情報を提供します。
 
 ```
-bx logging 
+ibmcloud logging 
 ```
 {: codeblock}
 
@@ -100,11 +100,11 @@ bx logging
 コマンドのリストを取得するには、次のコマンドを実行します。
 
 ```
-bx logging 
+ibmcloud logging 
 NAME:
-   bx logging - IBM Cloud Log Analysis Service
+   ibmcloud logging - IBM Cloud Log Analysis Service
 USAGE:
-   bx logging command [arguments...] [command options]
+   ibmcloud logging command [arguments...] [command options]
 
 COMMANDS:
 COMMANDS:
@@ -121,20 +121,20 @@ COMMANDS:
    quota-usage-show   Show quota usage info
    help             
    
-Enter 'bx logging help [command]' for more information about a command.
+Enter 'ibmcloud logging help [command]' for more information about a command.
 ```
 {: codeblock}
 
 
 
 
-## bx logging log-delete
+## ibmcloud logging log-delete
 {: #delete}
 
 Log Collection に保管されたログを削除します。
 
 ```
-bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
+ibmcloud logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
 ```
 {: codeblock}
 
@@ -142,11 +142,11 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(オプション) リソースのタイプを設定します。有効な値は、*space*、*account*、および *org* です。
+  <dd>(オプション) リソースのタイプを設定します。 有効な値は、*space*、*account*、および *org* です。
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。<br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
+  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。 <br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -166,21 +166,21 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
 
 2017 年 5 月 25 日のタイプ *linux_syslog* のログを削除するには、次のコマンドを実行します。
 ```
-bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: screen}
 
 
 
-## bx logging log-download 
+## ibmcloud logging log-download 
 {: #download}
 
 Log Collection からローカル・ファイルにログをダウンロードするか、別のプログラム (Elastic スタックなど) にログをパイプします。 
 
-**注:** ファイルをダウンロードするには、まずセッションを作成する必要があります。 セッションは、日付範囲、ログ・タイプ、およびアカウント・タイプに基づいて、ダウンロードするログを定義します。 ログのダウンロードは、1 つのセッションのコンテキスト内で行います。 詳しくは、[bx logging session create (ベータ)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) を参照してください。
+**注:** ファイルをダウンロードするには、まずセッションを作成する必要があります。 セッションは、日付範囲、ログ・タイプ、およびアカウント・タイプに基づいて、ダウンロードするログを定義します。 ログのダウンロードは、1 つのセッションのコンテキスト内で行います。 詳しくは、[ibmcloud logging session create (ベータ)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) を参照してください。
 
 ```
- bx logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
+ ibmcloud logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
 
 ```
 {: codeblock}
@@ -189,11 +189,11 @@ Log Collection からローカル・ファイルにログをダウンロード�
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(オプション) リソースのタイプを設定します。有効な値は、*space*、*account*、および *org* です。
+  <dd>(オプション) リソースのタイプを設定します。 有効な値は、*space*、*account*、および *org* です。
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。<br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
+  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。 <br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
   </dd>
  
   <dt>-o, --output OUTPUT</dt>
@@ -205,7 +205,7 @@ Log Collection からローカル・ファイルにログをダウンロード�
 
 <dl>
   <dt>SESSION_ID</dt>
-  <dd>この値は、ログをダウンロードするときに使用する必要のあるセッションの ID を示します。 <br>**注:** `bx logging session-create` コマンドには、どのログがダウンロードされるのかを制御するパラメーターがあります。 </dd>
+  <dd>この値は、ログをダウンロードするときに使用する必要のあるセッションの ID を示します。 <br>**注:** `ibmcloud logging session-create` コマンドには、どのログがダウンロードされるのかを制御するパラメーターがあります。 </dd>
 </dl>
 
 **注:** ダウンロードが完了した後に同じコマンドを再実行しても何も実行されません。 同じデータをもう一度ダウンロードするには、別のファイルまたは別のセッションを使用する必要があります。
@@ -215,14 +215,14 @@ Log Collection からローカル・ファイルにログをダウンロード�
 Linux システムで、mylogs.gz という名前のファイルにログをダウンロードするには、次のコマンドを実行します。
 
 ```
-bx logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 ユーザー独自の Elastic スタックにログをダウンロードするには、次のコマンドを実行します。
 
 ```
-bx logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -243,13 +243,13 @@ output {
 {: screen}
 
 
-## bx logging help
+## ibmcloud logging help
 {: #help}
 
 コマンドの使用方法に関する情報を提供します。
 
 ```
-bx logging help [command] 
+ibmcloud logging help [command] 
 ```
 {: codeblock}
 
@@ -267,12 +267,12 @@ bx logging help [command]
 ログの状況を表示するためのコマンドの実行方法に関するヘルプを取得するには、次のコマンドを実行します。
 
 ```
-bx logging help log-show
+ibmcloud logging help log-show
 NAME:
    log-show - Show the count, size, and type of logs per day
 
 USAGE:
-   bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+   ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 
 OPTIONS:
    -r, --resource-type     Resource type, the valid resource type is account, org, or space
@@ -286,7 +286,7 @@ OPTIONS:
 {: screen}
 
 
-## bx logging option-show
+## ibmcloud logging option-show
 {: #optionshow}
 
 スペース、組織、またはアカウントで使用可能なログの保存期間を表示します。 
@@ -297,7 +297,7 @@ OPTIONS:
 **注:** デフォルトでは、すべてのログが保管されます。 これらのログは、**delete** コマンドを使用して手動で削除する必要があります。 ログを自動的に削除するには、保存ポリシーを設定します。
 
 ```
-bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -305,11 +305,11 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(オプション) リソースのタイプを設定します。有効な値は、*space*、*account*、および *org* です。
+  <dd>(オプション) リソースのタイプを設定します。 有効な値は、*space*、*account*、および *org* です。
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。<br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
+  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。 <br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
   </dd>
 
 </dl>
@@ -319,14 +319,14 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
 ログインしているスペースに対するデフォルトの現在の保存期間を表示するには、次のコマンドを実行します。
 
 ```
-bx logging option-show
+ibmcloud logging option-show
 ```
 {: screen}
 
 
 
 
-## bx logging option-update
+## ibmcloud logging option-update
 {: #optionupdate}
 
 スペース、組織、またはアカウントで使用可能なログの保存期間を変更します。 
@@ -335,7 +335,7 @@ bx logging option-show
 * デフォルト値は **-1** です。 
 
 ```
-bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
+ibmcloud logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
 ```
 {: codeblock}
 
@@ -360,21 +360,21 @@ bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RE
 ログインしているスペースに対する保存期間を 25 日間に変更するには、次のコマンドを実行します。
 
 ```
-bx logging option-update -e 25
+ibmcloud logging option-update -e 25
 ```
 {: screen}
 
 
-## bx logging quota-usage-show
+## ibmcloud logging quota-usage-show
 {: #quotausage}
 
-スペース、組織、またはアカウントの割り当て使用量について通知します。これを使用して、使用量の履歴を取得することもできます。
+スペース、組織、またはアカウントの割り当て使用量について通知します。 これを使用して、使用量の履歴を取得することもできます。
 
 * 期間は日数で設定されます。
 * デフォルト値は **-1** です。 
 
 ```
-bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
 ```
 {: codeblock}
 
@@ -382,11 +382,11 @@ bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(オプション) リソースのタイプを設定します。有効な値は、*space*、*account*、および *org* です。
+  <dd>(オプション) リソースのタイプを設定します。 有効な値は、*space*、*account*、および *org* です。
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。<br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
+  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。 <br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
   </dd>
   
   <dt>-s,--history</dt>
@@ -399,7 +399,7 @@ bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id
 スペース・ドメインの割り当て使用量の履歴を取得するには、次のコマンドを実行します。
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -416,7 +416,7 @@ Date         Allotmant   Usage
 ```
 {: screen}
 
-## bx logging session-create
+## ibmcloud logging session-create
 {: #session_create}
 
 新規セッションを作成します。
@@ -424,7 +424,7 @@ Date         Allotmant   Usage
 **注:** 1 つのスペースで最大 30 までの並行セッションを保有できます。 セッションは 1 人のユーザーのために作成されます。 スペース内の複数のユーザーでセッションを共有することはできません。
 
 ```
-bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE]
+ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-T, --time, LOG_TIME]
 ```
 {: codeblock}
 
@@ -432,11 +432,11 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(オプション) リソースのタイプを設定します。有効な値は、*space*、*account*、および *org* です。
+  <dd>(オプション) リソースのタイプを設定します。 有効な値は、*space*、*account*、および *org* です。
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。<br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
+  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。 <br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -449,6 +449,10 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
   
   <dt>-t, --type, LOG_TYPE</dt>
   <dd>(オプション) ログ・タイプを設定します。 <br>例えば、*syslog* は、ログのタイプの 1 つです。 <br>デフォルト値はアスタリスク (*) に設定されます。 <br>各タイプをコンマで区切ることによって複数のログ・タイプを指定できます (例: *log_type_1,log_type_2,log_type_3*)。
+  </dd>
+
+  <dt>-T, --time, LOG_TIME</dt>
+  <dd>(オプション) 特定タイプのログを取得したい時刻を設定します。</br>有効値は 0 から 23 です。</br>LOG_TYPE と組み合わせて使う必要があります。
   </dd>
 
 </dl>
@@ -487,7 +491,7 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
 2017 年 11 月 13 日のログを含むセッションを作成するには、次のコマンドを実行します。
 
 ```
-bx logging session-create -s 2017-11-13 -e 2017-11-13
+ibmcloud logging session-create -s 2017-11-13 -e 2017-11-13
 Creating session for xxxxx@yyy.com resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
@@ -497,13 +501,13 @@ Session: 1ef776d1-4d25-4297-9693-882606c725c8 is created
 {: screen}
 
 
-## bx logging session-delete 
+## ibmcloud logging session-delete 
 {: #session_delete}
 
 セッション ID で指定されたセッションを削除します。
 
 ```
-bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 ```
 {: codeblock}
 
@@ -511,11 +515,11 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(オプション) リソースのタイプを設定します。有効な値は、*space*、*account*、および *org* です。
+  <dd>(オプション) リソースのタイプを設定します。 有効な値は、*space*、*account*、および *org* です。
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。<br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
+  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。 <br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
   </dd>
  
 </dl>
@@ -532,19 +536,19 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
 セッション ID が *cI6hvAa0KR_tyhjxZZz9Uw==* のセッションを削除するには、次のコマンドを実行します。
 
 ```
-bx logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## bx logging sessions
+## ibmcloud logging sessions
 {: #session_list}
 
 アクティブ・セッションおよびその ID をリストします。
 
 ```
-bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -553,10 +557,10 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 <dl>
 
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-      <dd>(オプション) リソースのタイプを設定します。有効な値は、*space*、*account*、および *org* です。 </dd>
+      <dd>(オプション) リソースのタイプを設定します。 有効な値は、*space*、*account*、および *org* です。 </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。<br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。  </dd>
+      <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。 <br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。  </dd>
 </dl>
 
 **戻り値**
@@ -578,7 +582,7 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **例**
 
 ```
-bx logging sessions
+ibmcloud logging sessions
 Listing sessions of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 ID                                     Space                                  CreateTime                       AccessTime   
@@ -588,13 +592,13 @@ Listed the sessions of resource xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 :{ screen}
 
 
-## bx logging session-show
+## ibmcloud logging session-show
 {: #session_show}
 
 単一セッションの状況を表示します。
 
 ```
-bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 
 ```
 {: codeblock}
@@ -603,10 +607,10 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
 
 <dl>
    <dt>-r,--resource-type RESOURCE_TYPE</dt>
-      <dd>(オプション) リソースのタイプを設定します。有効な値は、*space*、*account*、および *org* です。 </dd>
+      <dd>(オプション) リソースのタイプを設定します。 有効な値は、*space*、*account*、および *org* です。 </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-      <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。<br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。  </dd>
+      <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。 <br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。  </dd>
 </dl>
 
 **引数**
@@ -621,17 +625,17 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
 セッション ID が *cI6hvAa0KR_tyhjxZZz9Uw==* のセッションの詳細を表示するには、次のコマンドを実行します。
 
 ```
-bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
-## bx logging token-get
+## ibmcloud logging token-get
 {: #tokenget}
 
 ログ・データを {{site.data.keyword.loganalysisshort}} に送信するのに必要なロギング・トークンを返します。
 
 ```
-bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -639,11 +643,11 @@ bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOUR
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(オプション) ログ・データの送信を行う予定のリソースのタイプを設定します。有効な値は、*space*、*account*、および *org* です。
+  <dd>(オプション) ログ・データの送信を行う予定のリソースのタイプを設定します。 有効な値は、*space*、*account*、および *org* です。
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。<br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
+  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。 <br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
   </dd>
 </dl>
 
@@ -651,7 +655,7 @@ bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOUR
 **例**
 
 ```
-bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -661,13 +665,13 @@ js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx
 {: screen}
 
 
-## bx logging log-show
+## ibmcloud logging log-show
 {: #status}
 
 {{site.data.keyword.Bluemix_notm}} スペースまたはアカウントで収集されたログに関する情報を返します。
 
 ```
-bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 ```
 {: codeblock}
 
@@ -679,11 +683,11 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>(オプション) リソースのタイプを設定します。有効な値は、*space*、*account*、および *org* です。
+  <dd>(オプション) リソースのタイプを設定します。 有効な値は、*space*、*account*、および *org* です。
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
-  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。<br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
+  <dd>(オプション) このフィールドを、スペース、組織、またはアカウントの ID に設定します。 <br>デフォルトでは、このパラメーターが指定されていない場合、コマンドではユーザーがログインしているリソースの ID が使用されます。 
   </dd>
   
   <dt>-s, --start START_DATE</dt>
@@ -707,7 +711,7 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **例**
 
 ```
-bx logging log-show
+ibmcloud logging log-show
 Showing log status of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 Date         Size        Count    Searchable   Types   
@@ -720,7 +724,7 @@ Date         Size        Count    Searchable   Types
 {: screen}
 
 ```
- bx logging log-show -l
+ ibmcloud logging log-show -l
 Showing log status of resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 Date         Size        Count    Searchable   Type   

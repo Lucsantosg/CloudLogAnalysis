@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -178,7 +178,7 @@ As tabelas a seguir listam as funções que um usuário deve ter para visualizar
     <td>Visualizar logs no domínio de contas</td>
 	<td></td>
 	<td></td>
-	<td>*Viewer*</td>
+	<td>*Visualizador*</td>
   </tr>
   <tr>
     <td>Visualizar logs em um domínio da organização</td>
@@ -206,7 +206,7 @@ As tabelas a seguir listam as funções que um usuário deve ter para visualizar
     <td>Visualizar logs no domínio de contas</td>
 	<td></td>
 	<td></td>
-	<td>*Viewer*</td>
+	<td>*Visualizador*</td>
   </tr>
   <tr>
     <td>Visualizar logs em um domínio da organização</td>

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für {
 
 1. Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle.
 
-   Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Weitere Informationen finden Sie in [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle installieren](/docs/cli/index.html#overview).
 
 2. Installieren Sie das CF-Plug-in für {{site.data.keyword.loganalysisshort}}.
 
@@ -41,7 +41,7 @@ Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für {
     Überprüfen Sie beispielsweise die Version des Plug-ins. Führen Sie den folgenden Befehl aus:
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -95,7 +95,7 @@ Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' 
         Beispiel: Um die Datei `logging-cli-linux64` in eine ausführbare Datei umzuwandeln, führen Sie den folgenden Befehl aus:
         
         ```
-        bx cf install-plugin -f logging-cli-linux64
+        ibmcloud cf install-plugin -f logging-cli-linux64
         ```
         {: codeblock}
 
@@ -124,7 +124,7 @@ Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' 
     Überprüfen Sie beispielsweise die Version des Plug-ins. Führen Sie den folgenden Befehl aus:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
@@ -149,7 +149,7 @@ Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' 
 2. Führen Sie den Befehl **cf install-plugin** aus, um das Plug-in für 'Log Collection' unter Windows zu installieren. 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
@@ -158,35 +158,35 @@ Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' 
     Beispiel: Zum Installieren des Plug-ins *logging-cli-win64_v1.0.1.exe* führen Sie den folgenden Befehl in einem Terminalfenster aus:
 	
 	```
-	bx cf install-plugin logging-cli-win64_v1.0.1.exe
+	ibmcloud cf install-plugin logging-cli-win64_v1.0.1.exe
 	```
 	{: codeblock}
 	
-    Wenn das Plug-in installiert ist, wird folgende Nachricht angezeigt: 'Plugin IBM-Logging 1.0.1 successfully installed.'`
+    Wenn das Plug-in installiert ist, wird folgende Nachricht angezeigt: `Plugin IBM-Logging 1.0.1 successfully installed.`
 
-3.  Überprüfen Sie die Installation des CLI-Plug-ins für die Protokollierung.
+3. Überprüfen Sie die Installation des CLI-Plug-ins für die Protokollierung.
   
     Überprüfen Sie beispielsweise die Version des Plug-ins. Führen Sie den folgenden Befehl aus:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     Die Ausgabe sieht wie folgt aus:
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
 
-## Befehlszeilenschnittstelle für 'Log Analysis' unter Mac OS X installieren
+## Befehlszeilenschnittstelle für Log Analysis unter Mac OS X installieren
 {: #install_cli_mac}
 
-Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Analysis' unter Mac OS X zu installieren:
+Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' unter Mac OS X zu installieren:
 
-1. Laden Sie die neueste Version des Plug-ins für den {{site.data.keyword.loganalysisshort}}-Service (IBM-Logging) von der [{{site.data.keyword.Bluemix_notm}}-CLI-Seite] (https://clis.ng.bluemix.net/ui/repository.html#cf-plugins) herunter. 
+1. Laden Sie die aktuelle Version des CLI-Plug-ins für den {{site.data.keyword.loganalysisshort}}-Service (IBM-Logging) von der [{{site.data.keyword.Bluemix_notm}}-CLI-Seite](https://clis.ng.bluemix.net/ui/repository.html#cf-plugins) herunter. 
 	
 	1. Wählen Sie den Wert für die Plattform aus: **osx**. 
 	2. Klicken Sie auf die Schaltfläche zum Speichern der Datei (**Save file**).  
@@ -194,52 +194,52 @@ Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Analysis' un
 2. Führen Sie den Befehl **cf install-plugin** aus, um das Plug-in für 'Log Collection' unter Mac OS X zu installieren. 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
 	Hierbei steht *PluginName* für den Namen der Datei, die Sie heruntergeladen haben.
 	
-    Beispiel: Zum Installieren des Plug-ins *logging-cli-darwin_v1.0.1.exe* führen Sie den folgenden Befehl in einem Terminalfenster aus:
+    Beispiel: Zum Installieren des Plug-ins *logging-cli-darwin_v1.0.1* führen Sie den folgenden Befehl in einem Terminal aus:
 	
 	```
-	bx cf install-plugin logging-cli-darwin_v1.0.1
+	ibmcloud cf install-plugin logging-cli-darwin_v1.0.1
 	```
 	{: codeblock}
 	
-    Wenn das Plug-in installiert ist, wird folgende Nachricht angezeigt: 'Plugin IBM-Logging 1.0.1 successfully installed.'`
+    Wenn das Plug-in installiert ist, wird folgende Nachricht angezeigt: `Plugin IBM-Logging 1.0.1 successfully installed.`
 
-3.  Überprüfen Sie die Installation des CLI-Plug-ins für die Protokollierung.
+3. Überprüfen Sie die Installation des CLI-Plug-ins für die Protokollierung.
   
     Überprüfen Sie beispielsweise die Version des Plug-ins. Führen Sie den folgenden Befehl aus:
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     Die Ausgabe sieht wie folgt aus:
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
 	
-## Befehlszeilenschnittstelle für 'Log Analysis' deinstallieren
+## Befehlszeilenschnittstelle für Log Analysis deinstallieren
 {: #uninstall_cli}
 
-Löschen Sie zum Deinstallieren der Befehlszeilenschnittstelle für die Protokollierung das Plug-in.
+Um die Befehlszeilenschnittstelle für die Protokollierung zu deinstallieren, löschen Sie das Plug-in.
 {:shortdesc}
 
-Führen Sie die folgenden Schritte aus, um die {{site.data.keyword.loganalysisshort}}-Service-CLI zu deinstallieren:
+Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für den {{site.data.keyword.loganalysisshort}}-Service zu deinstallieren:
 
 1. Überprüfen Sie die Version des installierten CLI-Plug-ins für die Protokollierung.
   
     Überprüfen Sie beispielsweise die Version des Plug-ins. Führen Sie den folgenden Befehl aus:
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -254,54 +254,54 @@ Führen Sie die folgenden Schritte aus, um die {{site.data.keyword.loganalysissh
     ```
     {: screen}
     
-2. Wenn das Plug-in installiert ist, führen Sie den Befehl `cf uninstall-plugin` aus, um das Plug-in für die Protokollierung zu deinstallieren.
+2. Wenn das Plug-in installiert ist, führen Sie den Befehl `cf uninstall-plugin` aus, um das CLI-Plug-in für die Protokollierung zu deinstallier.
 
     Führen Sie den folgenden Befehl aus:
         
     ```
-    bx cf uninstall-plugin IBM-Logging
+    ibmcloud cf uninstall-plugin IBM-Logging
     ```
     {: codeblock}
   
 
-## Erweiterte Hilfe erhalten
+## Allgemeine Hilfe anfordern
 {: #general_cli_help}
 
 Führen Sie die folgenden Schritte aus, um allgemeine Informationen zur Befehlszeilenschnittstelle und den unterstützten Befehlen zu erhalten:
 
-1. Melden Sie sich an einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Listen Sie Informationen zu den unterstützten Befehlen und zur Befehlszeilenschnittstelle auf. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
     
     
 
-## Hilfe zur Verwendung eines Befehls anfordern
+## Hilfe zu einem Befehl abrufen
 {: #command_cli_help}
 
 Gehen Sie wie folgt vor, um Hilfe zur Verwendung eines Befehls abzurufen:
 
-1. Melden Sie sich an einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Rufen Sie die Liste der unterstützten Befehle auf und suchen Sie nach dem gewünschten Befehl. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. Rufen Sie Hilfeinformationen zu dem Befehl ab. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging help *Befehl*
+    ibmcloud cf logging help *Befehl*
     ```
     {: codeblock}
     
@@ -309,26 +309,26 @@ Gehen Sie wie folgt vor, um Hilfe zur Verwendung eines Befehls abzurufen:
 
 
 
-## Hilfe zur Verwendung eines Unterbefehls abrufen
+## Hilfe zu einem Unterbefehl abrufen
 {: #subcommand_cli_help}
 
-Ein Befehl verfügt über Unterbefehle. Gehen Sie wie folgt vor, um Hilfe zu Unterbefehlen abzurufen:
+Ein Befehl kann Unterbefehle haben. Gehen Sie wie folgt vor, um Hilfe zu Unterbefehlen abzurufen:
 
-1. Melden Sie sich an einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+1. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
 2. Rufen Sie die Liste der unterstützten Befehle auf und suchen Sie nach dem gewünschten Befehl. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. Rufen Sie Hilfeinformationen zu dem Befehl ab und ermitteln Sie die unterstützten Unterbefehle. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging help *Befehl*
+    ibmcloud cf logging help *Befehl*
     ```
     {: codeblock}
     
@@ -337,14 +337,14 @@ Ein Befehl verfügt über Unterbefehle. Gehen Sie wie folgt vor, um Hilfe zu Unt
 4. Rufen Sie Hilfeinformationen zu dem Befehl ab und ermitteln Sie die unterstützten Unterbefehle. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx cf logging *Befehl* help *Unterbefehl*
+    ibmcloud cf logging *Befehl* help *Unterbefehl*
     ```
     {: codeblock}
     
     Dabei gilt: 
     
     * *Befehl* ist der Name eines CLI-Befehls, z. B. *status*.
-    * *Unterbefehl* ist der Name eines unterstützten Unterbefehls, z. B. ist *list* ein gültiger Unterbefehl für den Befehl *session*.
+    * *Unterbefehl* ist der Name eines unterstützten Unterbefehls; z. B. ist *list* ein gültiger Unterbefehl für den Befehl *session*.
 
 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -40,14 +40,14 @@ Führen Sie die folgenden Schritte aus, um Informationen zu Protokollen abzurufe
 2. Führen Sie den Befehl *status* aus.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Beispiel:
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -77,7 +77,7 @@ Führen Sie die folgenden Schritte aus, um Informationen zu einem Protokolltyp �
 2. Führen Sie den Befehl *status* aus.
 
     ```
-    bx cf logging status -s JJJJ-MM-TT -e JJJJ-MM-TT -t *Protokolltyp*
+    ibmcloud cf logging status -s JJJJ-MM-TT -e JJJJ-MM-TT -t *Protokolltyp*
     ```
     {: codeblock}
     
@@ -92,7 +92,7 @@ Führen Sie die folgenden Schritte aus, um Informationen zu einem Protokolltyp �
     Beispiel:
     
     ```
-    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log
+    $ ibmcloud cf logging status -s 2017-05-24 -e 2017-05-25 -t log
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -119,7 +119,7 @@ Führen Sie die folgenden Schritte aus, um Kontoinformationen zu Protokollen abz
 2. Führen Sie den Befehl *status* aus.
 
     ```
-    bx cf logging status -a -s JJJJ-MM-TT -e JJJJ-MM-TT -t *Protokolltyp*
+    ibmcloud cf logging status -a -s JJJJ-MM-TT -e JJJJ-MM-TT -t *Protokolltyp*
     ```
     {: codeblock}
     
@@ -136,7 +136,7 @@ Führen Sie die folgenden Schritte aus, um Kontoinformationen zu Protokollen abz
     Beispiel:
     
     ```
-    $ bx cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
+    $ ibmcloud cf logging status -s 2017-05-24 -e 2017-05-25 -t log -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+

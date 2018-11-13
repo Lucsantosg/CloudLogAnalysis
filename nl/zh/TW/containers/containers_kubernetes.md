@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -41,7 +41,7 @@ lastupdated: "2018-04-19"
 * 當您將日誌傳送至帳戶網域時，每天的搜尋配額為 500 MB，而且您無法將日誌儲存至「日誌收集」來進行長期儲存。
 * 當您將日誌傳送至空間網域時，可以選擇定義每天搜尋配額的 {{site.data.keyword.loganalysisshort}} 服務方案，而且您可以將日誌儲存至「日誌收集」來進行長期儲存。
 
-**附註：**依預設，不會自動啟用將日誌從叢集傳送至 {{site.data.keyword.loganalysisshort}} 服務。若要啟用記載功能，您必須在叢集中建立一個以上的記載配置，以自動將日誌轉遞至 {{site.data.keyword.loganalysisshort}} 服務。您可以透過指令行啟用記載功能，方法是使用 `bx cs logging-config-create` 指令，或是透過 {{site.data.keyword.Bluemix_notm}} 使用者介面中提供的叢集儀表板。如需相關資訊，請參閱[啟用自動收集叢集日誌](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs)。
+**附註：**依預設，不會自動啟用將日誌從叢集傳送至 {{site.data.keyword.loganalysisshort}} 服務。若要啟用記載功能，您必須在叢集中建立一個以上的記載配置，以自動將日誌轉遞至 {{site.data.keyword.loganalysisshort}} 服務。您可以透過指令行啟用記載功能，方法是使用 `ibmcloud cs logging-config-create` 指令，或是透過 {{site.data.keyword.Bluemix_notm}} 使用者介面中提供的叢集儀表板。如需相關資訊，請參閱[啟用自動收集叢集日誌](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs)。
 
 當您使用 Kubernetes 叢集時，會保留名稱空間 *ibm-system* 及 *kube-system*。請不要在這些名稱空間中建立、刪除、修改或變更可用資源的許可權。這些名稱空間的日誌適用於 {{site.data.keyword.IBM_notm}}。
 
@@ -159,7 +159,7 @@ lastupdated: "2018-04-19"
 ## 轉遞自訂應用程式日誌
 {: #forward_app_logs}
 
-若要啟用將叢集中的自訂應用程式日誌轉遞至 {{site.data.keyword.loganalysisshort}} 服務，您必須定義將**日誌來源**設為**應用程式**的叢集記載配置。您可以使用 `bx cs logging-config-create` 指令或是透過叢集使用者介面，來定義此配置。
+若要啟用將叢集中的自訂應用程式日誌轉遞至 {{site.data.keyword.loganalysisshort}} 服務，您必須定義將**日誌來源**設為**應用程式**的叢集記載配置。您可以使用 `ibmcloud cs logging-config-create` 指令或是透過叢集使用者介面，來定義此配置。
 
 當您配置叢集以轉遞自訂日誌時，您可以指定在您要從中轉遞自訂日誌之叢集中執行的容器清單，以及自訂檔案日誌所在的那些容器內的路徑。
 

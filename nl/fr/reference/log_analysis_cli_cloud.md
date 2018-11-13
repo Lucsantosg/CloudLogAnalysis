@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-08-21"
 
 ---
 
@@ -20,7 +20,7 @@ L'interface de ligne de commande {{site.data.keyword.loganalysislong}} est un pl
 {: shortdesc}
 
 **Prérequis**
-* Avant d'exécuter les commandes de journalisation, connectez-vous à {{site.data.keyword.Bluemix_notm}} avec la commande `bx login` pour générer un jeton d'accès et authentifier votre session.
+* Avant d'exécuter les commandes de journalisation, connectez-vous à {{site.data.keyword.Bluemix_notm}} avec la commande `ibmcloud login` pour générer un jeton d'accès et authentifier votre session.
 
 Pour savoir comment utiliser l'interface de ligne de commande {{site.data.keyword.loganalysisshort}},
 voir [Gestion des journaux](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov).
@@ -32,67 +32,67 @@ voir [Gestion des journaux](/docs/services/CloudLogAnalysis/log_analysis_ov.html
     <th>Quant l'utiliser</th>
   </tr>
   <tr>
-    <td>[bx logging](#base)</td>
+    <td>[ibmcloud logging](#base)</td>
     <td>Utilisez cette commande pour obtenir des informations sur l'interface de ligne de commande, comme la liste des commandes.</td>
   </tr>
   <tr>
-    <td>[bx logging log-delete](#delete)</td>
+    <td>[ibmcloud logging log-delete](#delete)</td>
     <td>Utilisez cette commande pour supprimer des journaux stockés dans le composant Log Collection.</td>
   </tr>
   <tr>
-    <td>[bx logging log-download](#download)</td>
+    <td>[ibmcloud logging log-download](#download)</td>
     <td>Utilisez cette commande pour télécharger des journaux depuis le composant Log Collection dans un fichier local ou pour diriger les journaux vers un autre programme tel qu'Elastic Stack. </td>
   </tr>
   <tr>
-    <td>[bx logging log-show](#status)</td>
+    <td>[ibmcloud logging log-show](#status)</td>
     <td>Utilisez cette commande pour obtenir des informations sur les journaux qui sont collectés dans un espace, une organisation ou un compte.</td>
   </tr>
   <tr>
-    <td>[bx logging help](#help)</td>
+    <td>[ibmcloud logging help](#help)</td>
     <td>Utilisez cette commande pour obtenir de l'aide au sujet de l'utilisation de l'interface de ligne de commande ainsi que la liste de toutes les commandes.</td>
   </tr>
   <tr>
-    <td>[bx logging option-show](#optionshow)</td>
+    <td>[ibmcloud logging option-show](#optionshow)</td>
     <td>Utilisez cette commande pour afficher la durée de conservation des journaux qui sont disponibles dans un espace, une organisation ou un compte.</td>
   </tr>
   <tr>
-    <td>[bx logging option-update](#optionupdate)</td>
+    <td>[ibmcloud logging option-update](#optionupdate)</td>
     <td>Utilisez cette commande pour définir la durée de conservation pour les journaux qui sont disponibles dans un espace, une organisation ou un compte.</td>
   </tr>
   <tr>
-    <td>[bx logging quota-usage-show](#quotausage)</td>
-    <td>Utilisez cette commande pour obtenir les informations d'utilisation de quota pour un espace, une organisation ou un compte. Vous pouvez également obtenir l'historique du quota. </td>
+    <td>[ibmcloud logging quota-usage-show](#quotausage)</td>
+    <td>Utilisez cette commande pour obtenir les informations d'utilisation de quota pour un espace, une organisation ou un compte. Vous pouvez également obtenir l'historique du quota.</td>
   </tr>
   <tr>
-    <td>[bx logging session-create](#session_create)</td>
+    <td>[ibmcloud logging session-create](#session_create)</td>
     <td>Utilisez cette commande pour créer une session.</td>
   <tr>
   <tr>
-    <td>[bx logging session-delete](#session_delete)</td>
+    <td>[ibmcloud logging session-delete](#session_delete)</td>
     <td>Utilisez cette commande pour supprimer une session.</td>
   <tr>  
   <tr>
-    <td>[bx logging sessions](#session_list)</td>
+    <td>[ibmcloud logging sessions](#session_list)</td>
     <td>Utilisez cette commande pour afficher la liste des sessions actives et leurs ID.</td>
   <tr>  
   <tr>
-    <td>[bx logging session-show](#session_show)</td>
+    <td>[ibmcloud logging session-show](#session_show)</td>
     <td>Utilisez cette commande pour afficher le statut d'une session unique.</td>
   <tr>  
   <tr>
-    <td>[bx logging token-get](#tokenget)</td>
+    <td>[ibmcloud logging token-get](#tokenget)</td>
     <td>Utilisez cette commande pour obtenir le jeton de journalisation qui permet d'envoyer des données de journal au service {{site.data.keyword.loganalysisshort}}.</td>
   </tr>
 </table>
 
 
-## bx logging
+## ibmcloud logging
 {: #base}
 
 Fournit des informations générales sur l'interface de ligne de commande.
 
 ```
-bx logging 
+ibmcloud logging 
 ```
 {: codeblock}
 
@@ -101,11 +101,11 @@ bx logging
 Pour obtenir la liste des commandes, exécutez la commande suivante :
 
 ```
-bx logging 
+ibmcloud logging 
 NAME:
-   bx logging - IBM Cloud Log Analysis Service
+   ibmcloud logging - IBM Cloud Log Analysis Service
 USAGE:
-   bx logging command [arguments...] [command options]
+   ibmcloud logging command [arguments...] [command options]
 
 COMMANDS:
 COMMANDS:
@@ -122,20 +122,20 @@ COMMANDS:
    quota-usage-show   Show quota usage info
    help             
    
-Enter 'bx logging help [command]' for more information about a command.
+Enter 'ibmcloud logging help [command]' for more information about a command.
 ```
 {: codeblock}
 
 
 
 
-## bx logging log-delete
+## ibmcloud logging log-delete
 {: #delete}
 
 Supprime les journaux stockés dans le composant Log Collection.
 
 ```
-bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
+ibmcloud logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
 ```
 {: codeblock}
 
@@ -169,22 +169,22 @@ date en cours.
 
 Afin de supprimer les journaux du type *linux_syslog* du 25 mai 2017, exécutez la commande suivante :
 ```
-bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: screen}
 
 
 
-## bx logging log-download 
+## ibmcloud logging log-download 
 {: #download}
 
 Télécharge les journaux depuis le composant Log Collection vers un fichier local ou dirige les journaux vers un autre programme, tel qu'Elastic Stack. 
 
 **Remarque :** pour télécharger les fichiers, vous devez d'abord créer une session. Une session définit quels journaux doivent être téléchargés en fonction de la plage
-de dates, du type de journal et du type de compte. Les journaux sont téléchargés dans le contexte d'une session. Pour plus d'informations, voir [bx logging session create (bêta)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create).
+de dates, du type de journal et du type de compte. Les journaux sont téléchargés dans le contexte d'une session. Pour plus d'informations, voir [ibmcloud logging session create (bêta)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create).
 
 ```
- bx logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
+ ibmcloud logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
 
 ```
 {: codeblock}
@@ -210,7 +210,7 @@ paramètre sur la valeur par défaut pour que les journaux soient générés dan
 
 <dl>
   <dt>SESSION_ID</dt>
-  <dd>Cette valeur indique l'ID de la session que vous devez utiliser lors du téléchargement des journaux. <br>**Remarque :** la commande `bx logging session-create` fournit les paramètres qui déterminent quels sont les journaux qui sont téléchargés. </dd>
+  <dd>Cette valeur indique l'ID de la session que vous devez utiliser lors du téléchargement des journaux. <br>**Remarque :** la commande `ibmcloud logging session-create` fournit les paramètres qui déterminent quels sont les journaux qui sont téléchargés. </dd>
 </dl>
 
 **Remarque :** si vous exécutez à nouveau la même commande une fois que le téléchargement est terminé, cela n'aura aucun effet. Pour télécharger à nouveau les mêmes
@@ -221,14 +221,14 @@ données, vous devez utiliser un fichier différent ou une session différente.
 Sur un système Linux, pour télécharger les journaux dans un fichier appelé mylogs.gz, exécutez la commande suivante :
 
 ```
-bx logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 Pour télécharger des journaux dans Elastic Stack, exécutez la commande suivante :
 
 ```
-bx logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -249,13 +249,13 @@ output {
 {: screen}
 
 
-## bx logging help
+## ibmcloud logging help
 {: #help}
 
 Fournit des informations sur le mode d'utilisation d'une commande.
 
 ```
-bx logging help [command] 
+ibmcloud logging help [command] 
 ```
 {: codeblock}
 
@@ -273,12 +273,12 @@ bx logging help [command]
 Pour obtenir de l'aide sur la façon dont vous pouvez exécuter la commande pour afficher le statut des journaux, exécutez la commande suivante :
 
 ```
-bx logging help log-show
+ibmcloud logging help log-show
 NAME:
    log-show - Show the count, size, and type of logs per day
 
 USAGE:
-   bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+   ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 
 OPTIONS:
    -r, --resource-type     Resource type, the valid resource type is account, org, or space
@@ -292,7 +292,7 @@ OPTIONS:
 {: screen}
 
 
-## bx logging option-show
+## ibmcloud logging option-show
 {: #optionshow}
 
 Affiche la durée de conservation pour les journaux qui sont disponibles dans un espace, une organisation ou un compte. 
@@ -303,7 +303,7 @@ Affiche la durée de conservation pour les journaux qui sont disponibles dans un
 **Remarque :** par défaut, tous les journaux sont stockés. Vous devez les supprimer manuellement à l'aide de la commande **delete**. Définissez une règle de conservation pour supprimer les journaux automatiquement.
 
 ```
-bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -325,14 +325,14 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
 Afin d'afficher la durée de conservation en cours par défaut pour l'espace auquel vous êtes connecté, exécutez la commande suivante :
 
 ```
-bx logging option-show
+ibmcloud logging option-show
 ```
 {: screen}
 
 
 
 
-## bx logging option-update
+## ibmcloud logging option-update
 {: #optionupdate}
 
 Change la durée de conservation des journaux qui sont disponibles dans un espace, une organisation ou un compte. 
@@ -341,7 +341,7 @@ Change la durée de conservation des journaux qui sont disponibles dans un espac
 * La valeur par défaut est **-1**. 
 
 ```
-bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
+ibmcloud logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
 ```
 {: codeblock}
 
@@ -366,21 +366,21 @@ bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RE
 Afin de modifier la durée de conservation à 25 jours pour l'espace auquel vous êtes connecté, exécutez la commande suivante :
 
 ```
-bx logging option-update -e 25
+ibmcloud logging option-update -e 25
 ```
 {: screen}
 
 
-## bx logging quota-usage-show
+## ibmcloud logging quota-usage-show
 {: #quotausage}
 
-Fournit des informations sur l'utilisation du quota d'un espace, d'une organisation ou d'un compte. Vous pouvez également l'utiliser pour obtenir l'utilisation de l'historique. 
+Fournit des informations sur l'utilisation du quota d'un espace, d'une organisation ou d'un compte. Vous pouvez également l'utiliser pour obtenir l'utilisation de l'historique.
 
 * La durée est définie en nombre de jours.
 * La valeur par défaut est **-1**. 
 
 ```
-bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
 ```
 {: codeblock}
 
@@ -396,7 +396,7 @@ bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id
   </dd>
   
   <dt>-s,--history</dt>
-  <dd>(Facultatif) Définissez ce paramètre pour obtenir les informations d'historique relatives à l'utilisation du quota. </dd>
+  <dd>(Facultatif) Définissez ce paramètre pour obtenir les informations d'historique relatives à l'utilisation du quota.</dd>
 
 </dl>
 
@@ -405,7 +405,7 @@ bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id
 Pour obtenir l'historique de l'utilisation du quota d'un domaine d'espace, exécutez la commande suivante :
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -422,7 +422,7 @@ Date         Allotmant   Usage
 ```
 {: screen}
 
-## bx logging session-create
+## ibmcloud logging session-create
 {: #session_create}
 
 Crée une session.
@@ -431,7 +431,7 @@ Crée une session.
 entre les utilisateurs dans un espace.
 
 ```
-bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE]
+ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-T, --time, LOG_TIME]
 ```
 {: codeblock}
 
@@ -458,6 +458,10 @@ date en cours.
   
   <dt>-t, --type, LOG_TYPE</dt>
   <dd>(Facultatif) Définit le type de journal. <br>Par exemple, *syslog* est un type de journal. <br>La valeur par défaut est un astérisque (*). <br>Vous pouvez spécifier plusieurs types de journaux en séparant chacun d'eux par une virgule, par exemple *log_type_1,log_type_2,log_type_3*.
+  </dd>
+
+  <dt>-T, --time, LOG_TIME</dt>
+  <dd>(Facultatif) Définit l'heure à laquelle vous souhaitez obtenir les journaux pour un type spécifique. </br>Les valeurs valides sont comprises entre 0 et 23.</br>Doit être combinée avec LOG_TYPE.
   </dd>
 
 </dl>
@@ -496,7 +500,7 @@ date en cours.
 Afin de créer une session qui inclut les journaux du 13 novembre 2017, exécutez la commande suivante :
 
 ```
-bx logging session-create -s 2017-11-13 -e 2017-11-13
+ibmcloud logging session-create -s 2017-11-13 -e 2017-11-13
 Creating session for xxxxx@yyy.com resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
@@ -506,13 +510,13 @@ Session: 1ef776d1-4d25-4297-9693-882606c725c8 is created
 {: screen}
 
 
-## bx logging session-delete 
+## ibmcloud logging session-delete 
 {: #session_delete}
 
 Supprime une session, spécifiée par l'ID de session.
 
 ```
-bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 ```
 {: codeblock}
 
@@ -541,19 +545,19 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
 Pour supprimer une session dont l'ID de session est *cI6hvAa0KR_tyhjxZZz9Uw==*, exécutez la commande suivante :
 
 ```
-bx logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## bx logging sessions
+## ibmcloud logging sessions
 {: #session_list}
 
 Affiche la liste des sessions actives et leurs ID.
 
 ```
-bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -587,7 +591,7 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **Exemple**
 
 ```
-bx logging sessions
+ibmcloud logging sessions
 Listing sessions of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 ID                                     Space                                  CreateTime                       AccessTime   
@@ -597,13 +601,13 @@ Listed the sessions of resource xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 :{ screen}
 
 
-## bx logging session-show
+## ibmcloud logging session-show
 {: #session_show}
 
 Affiche le statut d'une session unique.
 
 ```
-bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 
 ```
 {: codeblock}
@@ -630,17 +634,17 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
 Pour afficher les détails d'une session avec l'ID de session *cI6hvAa0KR_tyhjxZZz9Uw==*, exécutez la commande suivante :
 
 ```
-bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
-## bx logging token-get
+## ibmcloud logging token-get
 {: #tokenget}
 
 Renvoie le jeton de journalisation qui est requis pour l'envoi des données de journal à {{site.data.keyword.loganalysisshort}}.
 
 ```
-bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -660,7 +664,7 @@ bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOUR
 **Exemple**
 
 ```
-bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -670,13 +674,13 @@ js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx
 {: screen}
 
 
-## bx logging log-show
+## ibmcloud logging log-show
 {: #status}
 
 Renvoie des informations sur les journaux qui sont collectés dans un compte ou dans un espace {{site.data.keyword.Bluemix_notm}}.
 
 ```
-bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 ```
 {: codeblock}
 
@@ -718,7 +722,7 @@ date en cours.
 **Exemple**
 
 ```
-bx logging log-show
+ibmcloud logging log-show
 Showing log status of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 Date         Size        Count    Searchable   Types   
@@ -731,7 +735,7 @@ Date         Size        Count    Searchable   Types
 {: screen}
 
 ```
- bx logging log-show -l
+ ibmcloud logging log-show -l
 Showing log status of resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 Date         Size        Count    Searchable   Type   

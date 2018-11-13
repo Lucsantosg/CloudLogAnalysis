@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-16"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,13 +17,13 @@ lastupdated: "2018-01-16"
 # 클러스터의 키 소유자 검색
 {: #containers_key_owner}
 
-*bx cs api-key-info* 명령을 사용하여 클러스터의 {{site.data.keyword.loganalysisshort}} 키 소유자를 가져오십시오.
+클러스터의 {{site.data.keyword.loganalysisshort}} 키 소유자를 가져오려면 *ibmcloud cs api-key-info* 명령을 사용하십시오.
 {:shortdesc}
 
 다음 명령을 실행하십시오.
 
 ```
- bx cs api-key-info ClusterName
+ ibmcloud cs api-key-info ClusterName
 ```
 {: codeblock}
 
@@ -33,7 +33,7 @@ lastupdated: "2018-01-16"
 예를 들어 이 명령 실행에 대한 출력은 다음과 같습니다.
 
 ```
-bx cs api-key-info MyDemoCluster
+ibmcloud cs api-key-info MyDemoCluster
 Getting information about the API key owner for cluster MyDemoCluster...
 OK
 Name           Email   

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-08-21"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-03-09"
 {: shortdesc}
 
 **必要條件**
-* 在執行記載指令之前，請先使用 `bx login` 指令來登入 {{site.data.keyword.Bluemix_notm}}，以產生存取記號，並鑑別您的階段作業。
+* 在執行記載指令之前，請先使用 `ibmcloud login` 指令來登入 {{site.data.keyword.Bluemix_notm}}，以產生存取記號，並鑑別您的階段作業。
 
 若要瞭解如何使用 {{site.data.keyword.loganalysisshort}} CLI，請參閱[管理日誌](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)。
 
@@ -31,67 +31,67 @@ lastupdated: "2018-03-09"
     <th>使用時機</th>
   </tr>
   <tr>
-    <td>[bx logging](#base)</td>
+    <td>[ibmcloud logging](#base)</td>
     <td>使用這個指令，以取得 CLI 的相關資訊（例如指令清單）。</td>
   </tr>
   <tr>
-    <td>[bx logging log-delete](#delete)</td>
+    <td>[ibmcloud logging log-delete](#delete)</td>
     <td>使用這個指令，以刪除「日誌收集」中所儲存的日誌。</td>
   </tr>
   <tr>
-    <td>[bx logging log-download](#download)</td>
+    <td>[ibmcloud logging log-download](#download)</td>
     <td>使用這個指令，以將日誌從「日誌收集」下載至本端檔案，或透過管道將日誌傳送至另一個程式（例如 Elastic Stack）。</td>
   </tr>
   <tr>
-    <td>[bx logging log-show](#status)</td>
+    <td>[ibmcloud logging log-show](#status)</td>
     <td>使用這個指令，以取得空間、組織或帳戶中所收集日誌的相關資訊。</td>
   </tr>
   <tr>
-    <td>[bx logging help](#help)</td>
+    <td>[ibmcloud logging help](#help)</td>
     <td>使用這個指令，以取得如何使用 CLI 的協助以及所有指令的清單。</td>
   </tr>
   <tr>
-    <td>[bx logging option-show](#optionshow)</td>
+    <td>[ibmcloud logging option-show](#optionshow)</td>
     <td>使用這個指令，以檢視空間、組織或帳戶中可用日誌的保留期間。</td>
   </tr>
   <tr>
-    <td>[bx logging option-update](#optionupdate)</td>
+    <td>[ibmcloud logging option-update](#optionupdate)</td>
     <td>使用這個指令，以設定空間、組織或帳戶中可用日誌的保留期間。</td>
   </tr>
   <tr>
-    <td>[bx logging quota-usage-show](#quotausage)</td>
+    <td>[ibmcloud logging quota-usage-show](#quotausage)</td>
     <td>使用這個指令，以取得空間、組織或帳戶的配額用量資訊。您也可以取得配額歷程資訊。</td>
   </tr>
   <tr>
-    <td>[bx logging session-create](#session_create)</td>
+    <td>[ibmcloud logging session-create](#session_create)</td>
     <td>使用這個指令，以建立新的階段作業。</td>
   <tr>
   <tr>
-    <td>[bx logging session-delete](#session_delete)</td>
+    <td>[ibmcloud logging session-delete](#session_delete)</td>
     <td>使用這個指令，以刪除階段作業。</td>
   <tr>  
   <tr>
-    <td>[bx logging sessions](#session_list)</td>
+    <td>[ibmcloud logging sessions](#session_list)</td>
     <td>使用這個指令，以列出作用中階段作業及其 ID。</td>
   <tr>  
   <tr>
-    <td>[bx logging session-show](#session_show)</td>
+    <td>[ibmcloud logging session-show](#session_show)</td>
     <td>使用這個指令，以顯示單一階段作業的狀態。</td>
   <tr>  
   <tr>
-    <td>[bx logging token-get](#tokenget)</td>
+    <td>[ibmcloud logging token-get](#tokenget)</td>
     <td>使用這個指令，以取得用來將日誌資料傳送至 {{site.data.keyword.loganalysisshort}} 服務的記載記號。</td>
   </tr>
 </table>
 
 
-## bx logging
+## ibmcloud logging
 {: #base}
 
 提供 CLI 的一般資訊。
 
 ```
-bx logging 
+ibmcloud logging 
 ```
 {: codeblock}
 
@@ -100,11 +100,11 @@ bx logging
 若要取得指令清單，請執行下列指令：
 
 ```
-bx logging 
+ibmcloud logging 
 NAME:
-   bx logging - IBM Cloud Log Analysis Service
+   ibmcloud logging - IBM Cloud Log Analysis Service
 USAGE:
-   bx logging command [arguments...] [command options]
+   ibmcloud logging command [arguments...] [command options]
 
 COMMANDS:
 COMMANDS:
@@ -121,20 +121,20 @@ COMMANDS:
    quota-usage-show   Show quota usage info
    help             
    
-Enter 'bx logging help [command]' for more information about a command.
+Enter 'ibmcloud logging help [command]' for more information about a command.
 ```
 {: codeblock}
 
 
 
 
-## bx logging log-delete
+## ibmcloud logging log-delete
 {: #delete}
 
 刪除「日誌收集」中所儲存的日誌。
 
 ```
-bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
+ibmcloud logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
 ```
 {: codeblock}
 
@@ -166,21 +166,21 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
 
 若要刪除 2017 年 5 月 25 日類型為 *linux_syslog* 的日誌，請執行下列指令：
 ```
-bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: screen}
 
 
 
-## bx logging log-download 
+## ibmcloud logging log-download 
 {: #download}
 
 將日誌從「日誌收集」下載至本端檔案，或透過管道將日誌傳送至另一個程式（例如 Elastic Stack）。 
 
-**附註：**若要下載檔案，您需要先建立階段作業。階段作業會根據日期範圍、日誌類型及帳戶類型來定義要下載的日誌。您可以在階段作業環境定義內下載日誌。如需相關資訊，請參閱 [bx logging session create（測試版）](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create)。
+**附註：**若要下載檔案，您需要先建立階段作業。階段作業會根據日期範圍、日誌類型及帳戶類型來定義要下載的日誌。您可以在階段作業環境定義內下載日誌。如需相關資訊，請參閱 [ibmcloud logging session create（測試版）](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create)。
 
 ```
- bx logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
+ ibmcloud logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
 
 ```
 {: codeblock}
@@ -205,7 +205,7 @@ bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 <dl>
   <dt>SESSION_ID</dt>
-  <dd>此值指出您在下載日誌時必須使用的階段作業 ID。<br>**附註：**`bx logging session-create` 指令提供參數來控制下載哪些日誌。</dd>
+  <dd>此值指出您在下載日誌時必須使用的階段作業 ID。<br>**附註：**`ibmcloud logging session-create` 指令提供參數來控制下載哪些日誌。</dd>
 </dl>
 
 **附註：**下載完成之後，重新執行相同的指令將會拒絕執行任何作業。若要重新下載相同的資料，您必須使用不同的檔案或不同的階段作業。
@@ -215,14 +215,14 @@ bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 在 Linux 系統中，若要將日誌下載至稱為 mylogs.gz 的檔案，請執行下列指令：
 
 ```
-bx logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 若要將日誌下載至您自己的 Elastic Stack，請執行下列指令：
 
 ```
-bx logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -243,13 +243,13 @@ output {
 {: screen}
 
 
-## bx logging help
+## ibmcloud logging help
 {: #help}
 
 提供如何使用指令的相關資訊。
 
 ```
-bx logging help [command] 
+ibmcloud logging help [command] 
 ```
 {: codeblock}
 
@@ -267,12 +267,12 @@ bx logging help [command]
 若要取得如何執行指令以檢視日誌狀態的協助，請執行下列指令：
 
 ```
-bx logging help log-show
+ibmcloud logging help log-show
 NAME:
    log-show - Show the count, size, and type of logs per day
 
 USAGE:
-   bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+   ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 
 OPTIONS:
    -r, --resource-type     Resource type, the valid resource type is account, org, or space
@@ -286,7 +286,7 @@ OPTIONS:
 {: screen}
 
 
-## bx logging option-show
+## ibmcloud logging option-show
 {: #optionshow}
 
 顯示空間、組織或帳戶中可用日誌的保留期間。 
@@ -297,7 +297,7 @@ OPTIONS:
 **附註：**依預設，會儲存所有日誌。您必須使用 **delete** 指令手動刪除它們。請設定保留原則，以自動刪除日誌。
 
 ```
-bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -319,14 +319,14 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
 若要查看所登入空間的預設現行保留期間，請執行下列指令：
 
 ```
-bx logging option-show
+ibmcloud logging option-show
 ```
 {: screen}
 
 
 
 
-## bx logging option-update
+## ibmcloud logging option-update
 {: #optionupdate}
 
 變更空間、組織或帳戶中可用日誌的保留期間。 
@@ -335,7 +335,7 @@ bx logging option-show
 * 預設值為 **-1**。 
 
 ```
-bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
+ibmcloud logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
 ```
 {: codeblock}
 
@@ -360,12 +360,12 @@ bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RE
 若要將所登入空間的保留期間變更為 25 天，請執行下列指令：
 
 ```
-bx logging option-update -e 25
+ibmcloud logging option-update -e 25
 ```
 {: screen}
 
 
-## bx logging quota-usage-show
+## ibmcloud logging quota-usage-show
 {: #quotausage}
 
 通知空間、組織或帳戶的配額用量。您也可以用它來取得歷程用量。
@@ -374,7 +374,7 @@ bx logging option-update -e 25
 * 預設值為 **-1**。 
 
 ```
-bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
 ```
 {: codeblock}
 
@@ -399,7 +399,7 @@ bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id
 若要取得空間網域的歷程配額用量，請執行下列指令：
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -416,7 +416,7 @@ Date         Allotmant   Usage
 ```
 {: screen}
 
-## bx logging session-create
+## ibmcloud logging session-create
 {: #session_create}
 
 建立新的階段作業。
@@ -424,7 +424,7 @@ Date         Allotmant   Usage
 **附註：**一個空間最多可以有 30 個並行階段作業。階段作業是為使用者而建立。空間中的使用者之間無法共用階段作業。
 
 ```
-bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE]
+ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-T, --time, LOG_TIME]
 ```
 {: codeblock}
 
@@ -449,6 +449,10 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
   
   <dt>-t, --type, LOG_TYPE</dt>
   <dd>（選用）設定日誌類型。<br>例如，*syslog* 是日誌類型。<br>預設值設為星號 (*)。<br>您可以指定多種日誌類型，作法是使用逗點來區隔每一種類型，例如，*log_type_1,log_type_2,log_type_3*。
+  </dd>
+
+  <dt>-T, --time, LOG_TIME</dt>
+  <dd>（選用）設定您要取得特定類型日誌的當日小時。</br>有效值為 0-23。</br>它應該結合 LOG_TYPE 一起使用。
   </dd>
 
 </dl>
@@ -487,23 +491,23 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
 若要建立包含 2017 年 11 月 13 日之日誌的階段作業，請執行下列指令：
 
 ```
-bx logging session-create -s 2017-11-13 -e 2017-11-13
+ibmcloud logging session-create -s 2017-11-13 -e 2017-11-13
 Creating session for xxxxx@yyy.com resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
-ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type
-1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z   2017-11-13   2017-11-13   ANY_TYPE
+ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
+1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z   2017-11-13   2017-11-13   ANY_TYPE   
 Session: 1ef776d1-4d25-4297-9693-882606c725c8 is created
 ```
 {: screen}
 
 
-## bx logging session-delete 
+## ibmcloud logging session-delete 
 {: #session_delete}
 
 刪除依階段作業 ID 所指定的階段作業。
 
 ```
-bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 ```
 {: codeblock}
 
@@ -532,19 +536,19 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
 若要刪除階段作業 ID 為 *cI6hvAa0KR_tyhjxZZz9Uw==* 的階段作業，請執行下列指令：
 
 ```
-bx logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## bx logging sessions
+## ibmcloud logging sessions
 {: #session_list}
 
 列出作用中階段作業及其 ID。
 
 ```
-bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -580,12 +584,12 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **範例**
 
 ```
-bx logging sessions
+ibmcloud logging sessions
 Listing sessions of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
-ID                                     Space                                  CreateTime                       AccessTime
-1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z
-Listed the sessions of resource xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ID                                     Space                                  CreateTime                       AccessTime   
+1ef776d1-4d25-4297-9693-882606c725c8   xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx   2017-11-16T11:52:06.376125207Z   2017-11-16T11:52:06.376125207Z   
+Listed the sessions of resource xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
 ```
 :{ screen}
 
@@ -593,13 +597,13 @@ Listed the sessions of resource xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 
 
-## bx logging session-show
+## ibmcloud logging session-show
 {: #session_show}
 
 顯示單一階段作業的狀態。
 
 ```
-bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 
 ```
 {: codeblock}
@@ -628,17 +632,17 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
 若要顯示階段作業 ID 為 *cI6hvAa0KR_tyhjxZZz9Uw==* 的階段作業的詳細資料，請執行下列指令：
 
 ```
-bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
-## bx logging token-get
+## ibmcloud logging token-get
 {: #tokenget}
 
 傳回用來將日誌資料傳送至 {{site.data.keyword.loganalysisshort}} 所需的記載記號。
 
 ```
-bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -658,7 +662,7 @@ bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOUR
 **範例**
 
 ```
-bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -668,13 +672,13 @@ js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx
 {: screen}
 
 
-## bx logging log-show
+## ibmcloud logging log-show
 {: #status}
 
 傳回 {{site.data.keyword.Bluemix_notm}} 空間或帳戶中所收集日誌的相關資訊。
 
 ```
-bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 ```
 {: codeblock}
 
@@ -714,20 +718,20 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **範例**
 
 ```
-bx logging log-show
+ibmcloud logging log-show
 Showing log status of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
-Date         Size        Count    Searchable   Types
-2017-11-07   1878197     1333     None         default
-2017-11-13   201653512   179391   All          default,linux_syslog
-2017-11-14   32134119    30425    All          default,linux_syslog
-2017-11-15   303901156   269689   All          linux_syslog,default
-2017-11-16   107253679   96648    All          default,linux_syslog
+Date         Size        Count    Searchable   Types   
+2017-11-07   1878197     1333     None         default   
+2017-11-13   201653512   179391   All          default,linux_syslog   
+2017-11-14   32134119    30425    All          default,linux_syslog   
+2017-11-15   303901156   269689   All          linux_syslog,default   
+2017-11-16   107253679   96648    All          default,linux_syslog   
 ```
 {: screen}
 
 ```
- bx logging log-show -l
+ ibmcloud logging log-show -l
 Showing log status of resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 Date         Size        Count    Searchable   Type   

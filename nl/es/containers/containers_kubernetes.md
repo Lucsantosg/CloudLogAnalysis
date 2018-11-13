@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -20,7 +20,8 @@ lastupdated: "2018-04-19"
 # {{site.data.keyword.containershort_notm}}
 {: #containers_kubernetes}
 
-En {{site.data.keyword.Bluemix_notm}}, puede utilizar el servicio {{site.data.keyword.loganalysisshort}} para almacenar y analizar registros de contenedor y registros de clúster Kubernetes recopilados automáticamente por {{site.data.keyword.containershort}} en el entorno público y dedicado. {:shortdesc}
+En {{site.data.keyword.Bluemix_notm}}, puede utilizar el servicio {{site.data.keyword.loganalysisshort}} para almacenar y analizar registros de contenedor y registros de clúster Kubernetes recopilados automáticamente por {{site.data.keyword.containershort}} en el entorno público y dedicado.
+{:shortdesc}
 
 Puede tener uno o varios clústeres Kubernetes en una cuenta. {{site.data.keyword.containershort}} recupera los registros automáticamente en cuanto se suministra el clúster. 
 
@@ -28,7 +29,6 @@ Puede tener uno o varios clústeres Kubernetes en una cuenta. {{site.data.keywor
 * La información que imprime un proceso de contenedor en stdout (salida estándar) y stderr (error estándar) la recopila automáticamente el {{site.data.keyword.containershort}}.
 
 Para que estos registros estén disponibles para su análisis en el servicio {{site.data.keyword.loganalysisshort}}, debe configurar el clúster de modo que reenvíe los registros a {{site.data.keyword.loganalysisshort}}. Puede reenviar registros a la cuenta de {{site.data.keyword.loganalysisshort}} o a un dominio del espacio de su cuenta. De forma predeterminada:
-
 
 * Los clústeres que están disponibles en la región EE.UU. Sur envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. Sur.
 * Los clústeres que están disponibles en la región EE.UU. Este envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. Sur.
@@ -41,7 +41,7 @@ Tenga en cuenta la siguiente información al decidir si reenvía registros a un 
 * Al enviar registros al dominio de la cuenta, la cuota de búsqueda es de 500 MB al día, y no se pueden almacenar registros en la Recopilación de registros para su almacenamiento a largo plazo.
 * Al enviar registros a un dominio de espacio, puede elegir un plan de servicio de {{site.data.keyword.loganalysisshort}} que defina la cuota de búsqueda por día, y puede almacenar registros de almacenamiento en la Recopilación de registros para el almacenamiento a largo plazo.
 
-**Nota:** De forma predeterminada, el envío de registros de un clúster al servicio de {{site.data.keyword.loganalysisshort}} no está habilitado automáticamente. Para habilitar el registro, debe crear una o varias configuraciones de registro en el clúster para reenviar automáticamente registros al servicio de {{site.data.keyword.loganalysisshort}}. Puede habilitar el registro mediante la línea de mandatos, mediante el mandato `bx cs logging-config-create` o mediante el panel de control del clúster disponible en la IU de {{site.data.keyword.Bluemix_notm}}. Para obtener más información, consulte [Habilitación de la recopilación automática de registros de clúster](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
+**Nota:** De forma predeterminada, el envío de registros de un clúster al servicio de {{site.data.keyword.loganalysisshort}} no está habilitado automáticamente. Para habilitar el registro, debe crear una o varias configuraciones de registro en el clúster para reenviar automáticamente registros al servicio de {{site.data.keyword.loganalysisshort}}. Puede habilitar el registro mediante la línea de mandatos, mediante el mandato `ibmcloud cs logging-config-create` o mediante el panel de control del clúster disponible en la IU de {{site.data.keyword.Bluemix_notm}}. Para obtener más información, consulte [Habilitación de la recopilación automática de registros de clúster](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
 
 Cuando trabaja con un clúster Kubernetes, se reservan los espacios de nombres *ibm-system* y *kube-system*. No cree, suprima, modifique ni cambie permisos de recursos que estén disponibles en dichos espacios de nombres. Los registros para estos espacios de nombres están para que {{site.data.keyword.IBM_notm}} los utilice.
 
@@ -52,18 +52,18 @@ Cuando trabaja con un clúster Kubernetes, se reservan los espacios de nombres *
 
 Cuando configure el clúster para que reenvíe los registros del clúster a {{site.data.keyword.loganalysisshort}}, tenga en cuenta la siguiente información:
 
-* Debe definir una organización y un espacio de Cloud Foundry donde se reenviarán estos registros.  
-* La organización y el espacio pueden estar disponibles en cualquier región de la nube pública de {{site.data.keyword.IBM_notm}}. 
+* Debe definir una organización y un espacio de Cloud Foundry donde se reenviarán estos registros. 
+* La organización y el espacio pueden estar disponibles en cualquier región de la nube pública de {{site.data.keyword.IBM_notm}}.
 
 **Nota:** Para los clústeres que se suministran en **{{site.data.keyword.Bluemix_notm}} dedicado**, no se puede configurar el clúster para que reenvíe los registros del clúster a espacios de Cloud Foundry que están disponibles en su cuenta dedicada.
 
 Para analizar datos de registro en Kibana para un clúster que reenvía registros a un dominio del espacio, tenga en cuenta la siguiente información:
 
-* Debe iniciar Kibana en la región pública en la que están disponibles la organización y el espacio que recopilan los registros del clúster. 
+* Debe iniciar Kibana en la región pública en la que están disponibles la organización y el espacio que recopilan los registros del clúster.
 * Para aumentar la cuota de búsqueda de Kibana y almacenar los registros en la recopilación de registros para su almacenamiento a largo plazo, debe suministrar el servicio {{site.data.keyword.loganalysisshort}} en el espacio donde se reenviarán los registros con un plan que se ajuste a sus necesidades. 
 * El ID de usuario debe tener permisos para ver registros. Para ver registros en el dominio del espacio, el usuario necesita un rol de CF. **Auditor** es el rol de nivel inferior que se puede otorgar para ver registros. Para obtener más información, consulte [Roles que necesita un usuario a ver registros](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
-Para gestionar los datos de registro del clúster que se guardan en el almacenamiento a largo plazo (recopilación de registros), el ID de usuario debe tener una política de IAM para poder trabajar con el servicio {{site.data.keyword.loganalysisshort}}. El ID de usuario debe tener los permisos de **administrador**, **operador** o **editor**. Para obtener más información, consulte [Roles que necesita un usuario para gestionar registros](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+Para gestionar los datos de registro del clúster que se guardan en el almacenamiento a largo plazo (recopilación de registros), el ID de usuario debe tener una política de IAM para poder trabajar con el servicio {{site.data.keyword.loganalysisshort}}. El ID de usuario debe tener los permisos de **administrador**, **operador** o **editor**.  Para obtener más información, consulte [Roles que necesita un usuario para gestionar registros](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
 
 
 En la figura siguiente se muestra una vista general del registro en un entorno público para {{site.data.keyword.containershort}} cuando el clúster reenvía registros a un dominio de espacio:
@@ -77,12 +77,12 @@ En la figura siguiente se muestra una vista general del registro en un entorno p
 
 Cuando configure el clúster para que reenvíe los registros del clúster al dominio de la cuenta, tenga en cuenta la siguiente información:
 
-* **Clúster suministrado en {{site.data.keyword.Bluemix_notm}} público**: los registros se reenvían al dominio de la cuenta en la misma región de {{site.data.keyword.Bluemix_notm}} público en el que se ejecuta el clúster. 
-* **Clúster suministrado en {{site.data.keyword.Bluemix_notm}} dedicado**: los registros se reenvían al dominio de la cuenta en la misma región de {{site.data.keyword.Bluemix_notm}} público en el que se ejecuta el clúster dedicado. 
+* **Clúster suministrado en {{site.data.keyword.Bluemix_notm}} público**: los registros se reenvían al dominio de la cuenta en la misma región de {{site.data.keyword.Bluemix_notm}} público en el que se ejecuta el clúster.
+* **Clúster suministrado en {{site.data.keyword.Bluemix_notm}} dedicado**: los registros se reenvían al dominio de la cuenta en la misma región de {{site.data.keyword.Bluemix_notm}} público en el que se ejecuta el clúster dedicado.
 
 Para analizar datos de registro en Kibana para un clúster que reenvía registros a un dominio de la cuenta, tenga en cuenta la siguiente información:
 
-* Debe iniciar Kibana en la región pública en la que el clúster envía registros al servicio {{site.data.keyword.loganalysisshort}}. 
+* Debe iniciar Kibana en la región pública en la que el clúster envía registros al servicio {{site.data.keyword.loganalysisshort}}.
 
     * Los clústeres que están disponibles en la región EE.UU. Sur envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. Sur.
     * Los clústeres que están disponibles en la región EE.UU. Este envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. Sur.
@@ -159,17 +159,17 @@ Debe abrir el puerto TCP 443 y el puerto TCP 9091 entre cada trabajador y el ser
 ## Reenvío de registros de aplicaciones personalizadas
 {: #forward_app_logs}
 
-Para habilitar el reenvío de registros de aplicaciones personalizadas de un clúster al servicio {{site.data.keyword.loganalysisshort}}, debe definir una configuración de registro de clúster con **Origen de registro** establecido en **aplicación**. Puede definir esta configuración mediante el mandato `bx cs logging-config-create` o mediante la IU del clúster. 
+Para habilitar el reenvío de registros de aplicaciones personalizadas de un clúster al servicio {{site.data.keyword.loganalysisshort}}, debe definir una configuración de registro de clúster con **Origen de registro** establecido en **aplicación**. Puede definir esta configuración mediante el mandato `ibmcloud cs logging-config-create` o mediante la IU del clúster.
 
-Cuando configure el clúster para que reenvíe registros personalizados, puede especificar una lista de los contenedores que se ejecutan en el clúster desde los que desea reenviar registros personalizados y las vías de acceso de estos contenedores en las que se encuentran los registros de archivos personalizados. 
+Cuando configure el clúster para que reenvíe registros personalizados, puede especificar una lista de los contenedores que se ejecutan en el clúster desde los que desea reenviar registros personalizados y las vías de acceso de estos contenedores en las que se encuentran los registros de archivos personalizados.
 
-* Debe especificar el parámetro **app-paths** para definir la lista de vías de acceso de los contenedores que desea examinar. Los registros situados en estas vías de acceso se reenvía al servicio {{site.data.keyword.loganalysisshort}}.  
+* Debe especificar el parámetro **app-paths** para definir la lista de vías de acceso de los contenedores que desea examinar. Los registros situados en estas vías de acceso se reenvía al servicio {{site.data.keyword.loganalysisshort}}. 
 
-    Para establecer este parámetro, defina una lista separada por comas de vías de acceso disponibles en los contenedores. Se aceptan caracteres comodín como '/var/log/*.log'. 
+    Para establecer este parámetro, defina una lista separada por comas de vías de acceso disponibles en los contenedores. Se aceptan caracteres comodín como '/var/log/*.log'.
 
-* Si lo desea, puede establecer el parámetro **app-containers** para especificar la lista de contenedores desde donde recopilar y reenviar registros al servicio {{site.data.keyword.loganalysisshort}}. 
+* Si lo desea, puede establecer el parámetro **app-containers** para especificar la lista de contenedores desde donde recopilar y reenviar registros al servicio {{site.data.keyword.loganalysisshort}}.
 
-    Para establecer este parámetro, defina una lista de contenedores separados por comas. 
+    Para establecer este parámetro, defina una lista de contenedores separados por comas.
 
 **Consejo:** Puede definir varias configuraciones de registro de clúster con **Origen de registro** establecido en **aplicación** en un clúster. Si los contenedores de un clúster tienen diferentes vías de acceso donde se alojan registros, tenga en cuenta la posibilidad de definir una configuración de registro de clúster para cada grupo de contenedores cuyos registros se encuentran en la misma vía de acceso. 
 
@@ -385,21 +385,21 @@ Para reenviar registros de clúster a {{site.data.keyword.loganalysisshort}}, de
 
 El ID de usuario que realiza las configuraciones de registros del clúster debe tener los permisos siguientes:
 
-* Política de IAM para el servicio {{site.data.keyword.containershort}} con permisos de **visor**. 
+* Política de IAM para el servicio {{site.data.keyword.containershort}} con permisos de **visor**.
 * Política de IAM para la instancia del clúster con permisos de **administrador** o de **operador**.
 
-Para un clúster que reenvía registros a un **dominio de espacio** de {{site.data.keyword.loganalysisshort}}, se necesitan los permisos siguientes para el propietario de la clave de {{site.data.keyword.containershort}}: 
+Para un clúster que reenvía registros a un **dominio de espacio** de {{site.data.keyword.loganalysisshort}}, se necesitan los permisos siguientes para el propietario de la clave de {{site.data.keyword.containershort}}:
 
-* Política de IAM para el servicio {{site.data.keyword.containershort}} con el rol de **administrador**. 
-* Política de IAM para el servicio {{site.data.keyword.loganalysisshort}} con el rol de **administrador**. 
-* Rol **orgManager** de Cloud Foundry (CF) para la organización en la que está disponible el espacio. 
-* El rol **SpaceManager** o **Developer** de CF para el espacio al que se reenvían registros desde el clúster. 
+* Política de IAM para el servicio {{site.data.keyword.containershort}} con el rol de **administrador**.
+* Política de IAM para el servicio {{site.data.keyword.loganalysisshort}} con el rol de **administrador**.
+* Rol **orgManager** de Cloud Foundry (CF) para la organización en la que está disponible el espacio.
+* El rol **SpaceManager** o **Developer** de CF para el espacio al que se reenvían registros desde el clúster.
 
 
-Para un clúster que reenvía registros al **dominio de la cuenta** de {{site.data.keyword.loganalysisshort}}, se necesitan los permisos siguientes para el propietario de la clave de {{site.data.keyword.containershort}}: 
+Para un clúster que reenvía registros al **dominio de la cuenta** de {{site.data.keyword.loganalysisshort}}, se necesitan los permisos siguientes para el propietario de la clave de {{site.data.keyword.containershort}}:
 
-* Política de IAM para el servicio {{site.data.keyword.containershort}} con el rol de **administrador**. 
-* Política de IAM para el servicio {{site.data.keyword.loganalysisshort}} con el rol de **administrador**. 
+* Política de IAM para el servicio {{site.data.keyword.containershort}} con el rol de **administrador**.
+* Política de IAM para el servicio {{site.data.keyword.loganalysisshort}} con el rol de **administrador**.
 
 
 

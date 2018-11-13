@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -71,7 +71,7 @@ Les journaux qui sont stockés dans le composant Log Collection sont conservés 
 
 * Vous pouvez utiliser l'[API Log Collection](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} ou l'[interface de ligne de commande Log Collection](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} pour supprimer manuellement des journaux depuis le composant Log Collection. 
 
-* Vous pouvez utiliser l'interface de ligne de commande. Pour plus d'informations sur la suppression manuelle des journaux via l'interface de ligne de commande, voir [bx logging log-delete avec le plug-in {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+* Vous pouvez utiliser l'interface de ligne de commande. Pour plus d'informations sur la suppression manuelle des journaux via l'interface de ligne de commande, voir [ibmcloud logging log-delete avec le plug-in {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
     
 
 
@@ -88,17 +88,16 @@ Pour plus d'informations, voir :
 
 
 
-
 ## Obtention d'informations sur les journaux
 {: #info_about_logs}
 
-Pour des informations générales sur vos journaux, utilisez la commande `bx logging log-show` ou `cf logging status`. Pour plus d'informations, voir :
+Pour obtenir des informations générales sur vos journaux, utilisez la commande `ibmcloud logging log-show` ou `cf logging status`. Pour plus d'informations, voir :
 
 * [Affichage des informations sur le journal avec le plug-in {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status).
 * [Affichage des informations sur le journal avec le plug-in CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
 
 Par exemple, pour contrôler les coûts, il est utile de connaître la taille des journaux de vos applications pendant une période donnée. Ainsi, vous pouvez décider de surveiller la taille de chaque
-type de journal pendant une semaine pour un espace {{site.data.keyword.Bluemix_notm}} afin de déterminer si une application ou un service génère plus de journaux que prévu. Pour vérifier la taille de vos journaux, utilisez la commande `bx logging log-show` ou `cf logging status`.
+type de journal pendant une semaine pour un espace {{site.data.keyword.Bluemix_notm}} afin de déterminer si une application ou un service génère plus de journaux que prévu. Pour vérifier la taille de vos journaux, utilisez la commande `ibmcloud logging log-show` ou `cf logging status`.
 
 Vous pouvez afficher des informations sur les journaux qui sont stockés dans un domaine d'espace, un domaine d'organisation ou un domaine de compte.
 
@@ -110,7 +109,7 @@ Vous pouvez afficher des informations sur les journaux qui sont stockés dans un
 Pour savoir comment installer l'interface de ligne de commande, voir
 [Installation de l'interface de ligne de commande de journalisation](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
 
-Pour vérifier la version de l'interface de ligne de commande, exécutez la commande `bx plugin list`.
+Pour vérifier la version de l'interface de ligne de commande, exécutez la commande `ibmcloud plugin list`.
 
 Pour obtenir de l'aide sur l'exécution des commandes, voir [Aide sur
 l'utilisation de la ligne de commande pour exécuter les commandes](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#command_cli_help).

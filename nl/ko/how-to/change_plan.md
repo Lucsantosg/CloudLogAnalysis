@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-03-15"
 # 플랜 변경
 {: #change_plan}
 
-{{site.data.keyword.Bluemix_notm}} UI를 통해 또는 `bx cf update-service` 명령을 실행하여 {{site.data.keyword.loganalysisshort}} 서비스 플랜을 변경할 수 있습니다. 플랜은 언제든지 업그레이드하거나 줄일 수 있습니다.
+{{site.data.keyword.Bluemix_notm}} UI를 통해, 또는 `ibmcloud service update` 명령을 실행하여 {{site.data.keyword.loganalysisshort}} 서비스 플랜을 변경할 수 있습니다. 플랜은 언제든지 업그레이드하거나 줄일 수 있습니다.
 {:shortdesc}
 
 ## UI를 통해 서비스 플랜 변경
@@ -52,14 +52,14 @@ CLI를 통해 Bluemix의 서비스 플랜을 변경하려면 다음 단계를 �
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 	
-2. `bx service list` 명령을 실행하여 현재 플랜을 확인하고 영역에서 사용할 수 있는 서비스 목록에서 {{site.data.keyword.loganalysisshort}} 서비스 이름을 가져오십시오.  
+2. `ibmcloud service list` 명령을 실행하여 현재 플랜을 확인하고, 영역에서 사용할 수 있는 서비스 목록에서 {{site.data.keyword.loganalysisshort}} 서비스 이름을 가져오십시오. 
 
     필드 **name**의 값은 플랜을 변경하는 데 사용해야 하는 값입니다. 
 
     예:
 	
 	```
-	$ bx  bx service list
+	$ ibmcloud service list
     Invoking 'cf services'...
 
     Getting services in org MyOrg / space dev as xxx@ibm.com...
@@ -70,16 +70,16 @@ CLI를 통해 Bluemix의 서비스 플랜을 변경하려면 다음 단계를 �
     ```
 	{: screen}
     
-3. 플랜을 업그레이드하거나 줄이십시오. `bx service update` 명령을 실행하십시오.
+3. 플랜을 업그레이드하거나 줄이십시오. `ibmcloud service update` 명령을 실행하십시오.
     
 	```
-	bx service update service_name [-p new_plan]
+	ibmcloud service update service_name [-p new_plan]
 	```
 	{: codeblock}
 	
 	여기서 
 	
-	* *service_name*은 서비스의 이름입니다. `bx service list` 명령을 실행하여 값을 가져올 수 있습니다. 
+	* *service_name*은 서비스의 이름입니다. `ibmcloud service list` 명령을 실행하여 값을 가져올 수 있습니다.
 	* *new_plan*은 플랜의 이름입니다.
 	
 	여러 가지 플랜과 지원되는 해당 값이 다음 표에 나와 있습니다.
@@ -115,16 +115,16 @@ CLI를 통해 Bluemix의 서비스 플랜을 변경하려면 다음 단계를 �
 	예를 들어, *라이트* 플랜으로 플랜을 줄이려면 다음 명령을 실행하십시오.
 	
 	```
-	bx service update "Log Analysis-m2" -p standard
+	ibmcloud service update "Log Analysis-m2" -p standard
     Updating service instance Log Analysis-m2 as xxx@ibm.com...
     OK
 	```
 	{: screen}
 
-4. 새 플랜이 변경되었는지 확인하십시오. `bx service list` 명령을 실행하십시오.
+4. 새 플랜이 변경되었는지 확인하십시오. `ibmcloud service list` 명령을 실행하십시오.
 
   ```
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 

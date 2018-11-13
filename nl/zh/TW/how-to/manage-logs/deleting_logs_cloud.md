@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-19"
 # 刪除日誌
 {: #deleting_logs}
 
-請使用 [bx logging log-delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 指令，以從「日誌收集」中刪除日誌。
+請使用 [ibmcloud logging log-delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 指令，以從「日誌收集」中刪除日誌。
 {:shortdesc}
 
 * 您可以刪除特定時間範圍內的日誌。
@@ -37,14 +37,14 @@ lastupdated: "2018-04-19"
 2. 執行下列指令，以查看「日誌收集」中可用的日誌。
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     例如，
     
     ```
-    $ bx logging log-show
+    $ ibmcloud logging log-show
     Showing log status of resource: 12345678-abcd-4193-aere-378620d6fab5 ...
 
     Date         Size       Count   Searchable          Types   
@@ -57,7 +57,7 @@ lastupdated: "2018-04-19"
 3. 刪除特定日期所儲存的日誌。
 
     ```
-	bx logging log-delete -s StartDate -e EndDate
+	ibmcloud logging log-delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
@@ -69,7 +69,7 @@ lastupdated: "2018-04-19"
 	例如，若要刪除 2017 年 5 月 25 日的日誌，請執行下列指令：
 	
 	```
-	bx logging log-delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
@@ -86,14 +86,14 @@ lastupdated: "2018-04-19"
 2. 執行下列指令，以查看「日誌收集」中可用的日誌。
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     例如，
     
     ```
-    $ bx logging log-show
+    $ ibmcloud logging log-show
     Showing log status of resource: 12345678-1234-2edr-a9de-378620d6fab5 ...
 
     Date         Size       Count   Searchable          Types   
@@ -106,7 +106,7 @@ lastupdated: "2018-04-19"
 3. 刪除特定日期所儲存的日誌。
 
     ```
-	bx logging log-delete -s StartDate -e EndDate -t LogType
+	ibmcloud logging log-delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
@@ -119,7 +119,7 @@ lastupdated: "2018-04-19"
 	例如，若要刪除 2017 年 5 月 25 日類型為 linux_syslog 的日誌，請執行下列指令：
 	
 	```
-	bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
@@ -141,14 +141,14 @@ lastupdated: "2018-04-19"
 3. 執行下列指令，以查看「日誌收集」中帳戶層次的可用日誌。
 
     ```
-    bx logging log-show  -r account -i AccountID
+    ibmcloud logging log-show  -r account -i AccountID
     ```
     {: codeblock}
     
     例如，
     
     ```
-    $ bx logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
+    $ ibmcloud logging log-show -r account -i 123456789123456789567c9c8de6dece -s 2017-05-24 -e 2017-05-25
 	Showing log status of resource: 123456789123456789567c9c8de6dece ...
 
     Date         Size       Count   Searchable          Types   
@@ -163,7 +163,7 @@ lastupdated: "2018-04-19"
 4. 刪除特定日期所儲存的日誌。
 
     ```
-	bx logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
+	ibmcloud logging log-delete -s StartDate -e EndDate -t LogType -r account -i AccountID
 	```
 	{: codeblock}
 	
@@ -176,7 +176,7 @@ lastupdated: "2018-04-19"
 	例如，若要刪除 2017 年 5 月 25 日類型為 linux_syslog 且儲存在「日誌收集」中帳戶層次的日誌，請執行下列指令：
 	
 	```
-	bx logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -r account -i 123456789123456789567c9c8de6dece
+	ibmcloud logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -r account -i 123456789123456789567c9c8de6dece
 	```
 	{: screen}
 	

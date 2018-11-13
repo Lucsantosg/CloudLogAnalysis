@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -21,8 +21,8 @@ Per copiare una ricerca, una visualizzazione o un dashboard da uno spazio {{site
 
 | Attività | Descrizione |
 |------|-------------|
-| [Copia una ricerca](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search) | Copia una ricerca tra gli spazi. |
-| [Copia una visualizzazione](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_visualization) | Copia una visualizzazione tra gli spazi |
+| [Copiare una ricerca](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search) | Copia una ricerca tra gli spazi. |
+| [Copiare una visualizzazione](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_visualization) | Copia una visualizzazione tra gli spazi |
 
 Considera i seguenti scenari in {{site.data.keyword.Bluemix_notm}} per il riutilizzo di ricerche, visualizzazioni o dashboard: 
 

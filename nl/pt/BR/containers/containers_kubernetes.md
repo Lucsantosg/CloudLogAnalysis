@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -20,7 +20,8 @@ lastupdated: "2018-04-19"
 # {{site.data.keyword.containershort_notm}}
 {: #containers_kubernetes}
 
-No {{site.data.keyword.Bluemix_notm}}, é possível usar o serviço {{site.data.keyword.loganalysisshort}} para armazenar e analisar logs do contêiner e logs de cluster do Kubernetes que são coletados automaticamente pelo {{site.data.keyword.containershort}} no Public e no Dedicated.{:shortdesc}
+No {{site.data.keyword.Bluemix_notm}}, é possível usar o serviço {{site.data.keyword.loganalysisshort}} para armazenar e analisar logs do contêiner e logs de cluster do Kubernetes que são coletados automaticamente pelo {{site.data.keyword.containershort}} no Public e no Dedicated.
+{:shortdesc}
 
 É possível ter 1 ou mais clusters do Kubernetes em uma conta. Os logs são coletados automaticamente pelo {{site.data.keyword.containershort}} assim que o cluster é provisionado. 
 
@@ -40,7 +41,7 @@ Considere as informações a seguir ao decidir se deseja encaminhar logs para um
 * Ao enviar logs para o domínio de contas, a cota de procura é 500 MB por dia e não é possível armazenar logs na Coleção de logs para armazenamento de longo prazo.
 * Ao enviar logs para um domínio de espaço, será possível escolher um plano de serviço {{site.data.keyword.loganalysisshort}} que defina a cota de procura por dia e armazenar logs na Coleção de logs para armazenamento de longo prazo.
 
-**Nota:** por padrão, o envio de logs de um cluster para o serviço {{site.data.keyword.loganalysisshort}} não é ativado automaticamente. Para ativar a criação de log, deve-se criar uma ou mais configurações de criação de log no cluster para encaminhar logs automaticamente para o serviço {{site.data.keyword.loganalysisshort}}. É possível ativar a criação de log por meio da linha de comandos usando o comando `bx cs logging-config-create` ou por meio do painel do cluster disponível na UI do {{site.data.keyword.Bluemix_notm}}. Para obter mais informações, veja [Ativando a coleta automática de logs de cluster](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
+**Nota:** por padrão, o envio de logs de um cluster para o serviço {{site.data.keyword.loganalysisshort}} não é ativado automaticamente. Para ativar a criação de log, deve-se criar uma ou mais configurações de criação de log no cluster para encaminhar logs automaticamente para o serviço {{site.data.keyword.loganalysisshort}}. É possível ativar a criação de log por meio da linha de comandos usando o comando `ibmcloud cs logging-config-create` ou por meio do painel do cluster disponível na IU do {{site.data.keyword.Bluemix_notm}}. Para obter mais informações, veja [Ativando a coleta automática de logs de cluster](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
 
 Ao trabalhar com um cluster do Kubernetes, os namespaces *ibm-system* e *kube-system* são reservados. Não crie, exclua, modifique ou mude permissões de recursos que estão disponíveis nesses namespaces. Os logs para esses namespaces são para uso da {{site.data.keyword.IBM_notm}}.
 
@@ -62,7 +63,7 @@ Para analisar dados do log no Kibana para um cluster que encaminha logs para um 
 * Para aumentar sua cota de procura do Kibana e armazenar logs na Coleção de logs para armazenamento de longo prazo, deve-se provisionar o serviço {{site.data.keyword.loganalysisshort}} no espaço no qual os logs estão sendo encaminhados com um plano que atenda às suas necessidades. 
 * Seu ID do usuário deve ter permissões para visualizar logs. Para ver logs no domínio de espaço, um usuário precisa de uma função do CF. **Auditor** é a menor função que pode ser concedida para visualizar logs. Para obter mais informações, veja [Funções que são requeridas por um usuário para visualizar logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
-Para gerenciar dados do log de cluster armazenados no armazenamento de longo prazo (Coleção de logs), seu ID de usuário deve ter uma política do IAM para funcionar com o serviço {{site.data.keyword.loganalysisshort}}. Seu ID de usuário deve ter as permissões **Administrador**, **Operador** ou **Editor**. Para obter mais informações, veja [Funções que são requeridas por um usuário para gerenciar os logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+Para gerenciar dados do log de cluster armazenados no armazenamento de longo prazo (Coleção de logs), seu ID de usuário deve ter uma política do IAM para funcionar com o serviço {{site.data.keyword.loganalysisshort}}. Seu ID de usuário deve ter as permissões **Administrador**, **Operador** ou **Editor**.  Para obter mais informações, veja [Funções que são requeridas por um usuário para gerenciar os logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
 
 
 A figura a seguir mostra uma visualização de alto nível de criação de log no Public para o {{site.data.keyword.containershort}} quando o cluster encaminha logs para um domínio de espaço:
@@ -158,7 +159,7 @@ Deve-se abrir a porta TCP 443 e a porta TCP 9091 de cada trabalhador para o serv
 ## Redirecionando logs de aplicativo customizado
 {: #forward_app_logs}
 
-Para ativar o encaminhamento de log de logs de aplicativo customizado em um cluster para o serviço {{site.data.keyword.loganalysisshort}}, deve-se definir uma configuração de criação de log de cluster com **Origem de log** configurada como **aplicativo**. É possível definir essa configuração usando o comando `bx cs logging-config-create` ou por meio da UI do cluster.
+Para ativar o encaminhamento de log de logs de aplicativo customizado em um cluster para o serviço {{site.data.keyword.loganalysisshort}}, deve-se definir uma configuração de criação de log de cluster com **Origem de log** configurada como **aplicativo**. É possível definir essa configuração usando o comando `ibmcloud cs logging-config-create` ou por meio da IU do cluster.
 
 Ao configurar o cluster para encaminhar logs customizados, é possível especificar uma lista de contêineres em execução em seu cluster dos quais você deseja encaminhar logs customizados e os caminhos nesses contêineres nos quais os logs de arquivo customizado estão localizados.
 

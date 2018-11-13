@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -25,11 +25,11 @@ lastupdated: "2018-04-10"
 ## IAM 토큰 가져오기
 {: #iam_token_cli}
 
-{{site.data.keyword.Bluemix_notm}} CLI를 사용하여 인증 토큰을 가져오려면 터미널에서 다음 단계를 완료하십시오. 
+{{site.data.keyword.Bluemix_notm}} CLI를 사용하여 인증 토큰을 가져오려면 터미널에서 다음 단계를 완료하십시오.
 
 1. {{site.data.keyword.Bluemix_notm}} CLI를 설치하십시오.
 
-   자세한 정보는 [{{site.data.keyword.Bluemix}} CLI 다운로드 및 설치](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)를 참조하십시오.
+   자세한 정보는 [{{site.data.keyword.Bluemix}} CLI 다운로드 및 설치](/docs/cli/index.html#overview)를 참조하십시오.
    
    CLI가 설치되면 다음 단계로 계속 진행하십시오.
     
@@ -37,10 +37,10 @@ lastupdated: "2018-04-10"
 
     자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 	
-3. `bx iam oauth-tokens` 명령을 실행하여 IAM 토큰을 가져오십시오.
+3. `ibmcloud iam oauth-tokens` 명령을 실행하여 IAM 토큰을 가져오십시오.
 
     ```
-	bx iam oauth-tokens
+	ibmcloud iam oauth-tokens
 	```
 	{: codeblock}
 	
@@ -48,5 +48,5 @@ lastupdated: "2018-04-10"
 
 
 
-**참고:** 이 토큰을 사용하는 경우 API 호출에서 전달한 토큰 값에서 *Bearer*를 제거하십시오.
+**참고:** 이 토큰을 사용하는 경우 API 호출에서 전달하는 토큰 값에서 *Bearer*를 제거하십시오.
 

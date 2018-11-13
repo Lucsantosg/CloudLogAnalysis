@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -42,7 +42,7 @@ Para añadir un filtro para un valor que no se muestra en la *Lista de campos*, 
 
 Siga los pasos siguientes para añadir un filtro para un valor que no está disponible en la lista que se muestra en la sección *Lista de campos*:
 
-1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
     Por ejemplo, en la figura siguiente se muestran los valores de las instancias correspondientes a una app CF en la *Lista de campos*. 
     
@@ -81,7 +81,7 @@ Puede buscar entradas que incluyan un determinado valor de campo.
 
 Siga estos pasos para buscar entradas que incluyan un determinado valor de campo:
 
-1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. En la *Lista de campos*, identifique el campo para la que desee definir un filtro y pulse sobre el mismo.
 
@@ -140,7 +140,7 @@ Siga estos pasos para buscar entradas que incluyan un determinado valor de campo
 
 Siga estos pasos para buscar entradas que incluyan un determinado origen de registro:
 
-1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. En la *Lista de campos*, seleccione el campo **source_id**.
 
@@ -166,7 +166,7 @@ Siga estos pasos para buscar entradas que incluyan un determinado origen de regi
 
 Siga estos pasos para buscar entradas que incluyan un determinado tipo de registro:
 
-1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. En la *Lista de campos*, seleccione el campo **type**.
 
@@ -192,7 +192,7 @@ Siga estos pasos para buscar entradas que incluyan un determinado tipo de regist
 
 Siga estos pasos para ver y filtrar los registros por ID de instancia en el panel de control de Kibana:
 
-1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. En la *Lista de campos*, seleccione uno de los siguientes campos para buscar un determinado ID de instancia:
 
@@ -221,7 +221,7 @@ Siga estos pasos para ver y filtrar los registros por ID de instancia en el pane
 
 Siga estos pasos para buscar entradas que incluyan un determinado tipo de mensaje:
 
-1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. En la *Lista de campos*, seleccione el campo **message_type**.
 
@@ -253,7 +253,7 @@ Cuando Elasticsearch analiza el campo valor de una serie, divide el texto en lí
     
 Siga estos pasos para buscar entradas que incluyan un determinado texto en un valor de campo:
 
-1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Examine la página Descubrir de Kibana para ver el subconjunto de datos que muestra. Para obtener más información, consulte [Identificación de los datos que se muestran en la página Descubrir de Kibana](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. Identifique los campos que se analizan en ElasticSearch de forma predeterminada.
 

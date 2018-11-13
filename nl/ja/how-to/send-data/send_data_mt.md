@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -40,10 +40,10 @@ lastupdated: "2018-04-19"
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
     
-2. `bx logging token-get` コマンドを実行します。 
+2. `ibmcloud logging token-get` コマンドを実行します。 
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     ```
     {: codeblock}
 
@@ -52,7 +52,7 @@ lastupdated: "2018-04-19"
     以下に例を示します。
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
     OK
 
@@ -198,7 +198,7 @@ lastupdated: "2018-04-19"
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>ターゲット URL。 取り込み URL のリストを取得するには、『[取り込み URL](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)』を参照してください。 例えば、米国南部地域のログを送信するには、値を **ingest.logging.ng.bluemix.net:9091** に設定します。</td>
+            <td>ターゲット URL。 取り込み URL のリストを取得するには、『[取り込み URL](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)』を参照してください。 例えば、米国南部地域のログを送信するには、値を **ingest.logging.ng.bluemix.net:9091** に設定します。 </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>

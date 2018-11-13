@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -105,7 +105,7 @@ Kibana에서 검색 페이지를 열 때 사용 가능한 필드 섹션에 나�
 
 계정 로그를 보려면 다음 단계를 완료하십시오.
 
-1. [Kibana를 실행](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)하십시오. 예를 들어 미국 남부 지역의 경우 `https://logging.ng.bluemix.net` URL을 사용하십시오, 
+1. [Kibana를 실행](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)하십시오. 예를 들어 미국 남부 지역의 경우 `https://logging.ng.bluemix.net` URL을 사용하십시오,
 
 2. **AccountName 계정 로그 보기** 옵션을 선택하여 계정 로그를 표시하십시오. *AccountName*은 계정의 이름입니다.
 

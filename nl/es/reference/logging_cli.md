@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -20,7 +20,7 @@ La CLI de {{site.data.keyword.loganalysislong}} es un plugin para gestionar los 
 {: shortdesc}
 
 **Requisitos previos**
-* Antes de ejecutar mandatos de registro, inicie una sesión en {{site.data.keyword.Bluemix_notm}} con el mandato `bx login` para generar una señal de acceso de {{site.data.keyword.Bluemix_short}} y autenticar la sesión. Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+* Antes de ejecutar mandatos de registro, inicie una sesión en {{site.data.keyword.Bluemix_notm}} con el mandato `ibmcloud login` para generar una señal de acceso de {{site.data.keyword.Bluemix_short}} y autenticar la sesión. Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 Para obtener información sobre la utilización de la interfaz de línea de mandatos de {{site.data.keyword.loganalysisshort}}, consulte [Gestión de registros](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov).
 
@@ -31,59 +31,59 @@ Para obtener información sobre la utilización de la interfaz de línea de mand
     <th>Cuándo utilizarlo</th>
   </tr>
   <tr>
-    <td>[bx cf logging](#base)</td>
+    <td>[ibmcloud cf logging](#base)</td>
     <td>Utilice este mandato para obtener información sobre la CLI, como por ejemplo la versión o la lista de mandatos.</td>
   </tr>
   <tr>
-    <td>[bx cf logging auth](#auth)</td>
+    <td>[ibmcloud cf logging auth](#auth)</td>
     <td>Utilice este mandato para obtener la señal de registro que puede utilizar para enviar registros al servicio {{site.data.keyword.loganalysisshort}}.</td>
   </tr>
   <tr>
-    <td>[bx cf logging delete](#delete)</td>
+    <td>[ibmcloud cf logging delete](#delete)</td>
     <td>Utilice este mandato para suprimir los registros almacenados en el componente de recopilación de registros.</td>
   </tr>
   <tr>
-    <td>[bx cf logging download (Beta)](#download)</td>
+    <td>[ibmcloud cf logging download (Beta)](#download)</td>
     <td>Utilice este mandato para descargar de la recopilación de registros en un archivo local, o para direccionar los registros a otro programa, como por ejemplo Elastic Stack. </td>
   </tr>
   <tr>
-    <td>[bx cf logging help](#help)</td>
+    <td>[ibmcloud cf logging help](#help)</td>
     <td>Utilice este mandato para obtener ayuda sobre cómo utilizar la CLI y una lista de todos los mandatos.</td>
   </tr>
   <tr>
-    <td>[bx cf logging option](#option)</td>
+    <td>[ibmcloud cf logging option](#option)</td>
     <td>Utilice este mandato para ver o definir el periodo de retención para los registros que están disponibles en un espacio o una cuenta.</td>
   </tr>
   <tr>
-    <td>[bx cf logging session create (Beta)](#session_create)</td>
+    <td>[ibmcloud cf logging session create (Beta)](#session_create)</td>
     <td>Utilice este mandato para crear una nueva sesión.</td>
   <tr>
   <tr>
-    <td>[bx cf logging session delete (Beta)](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete (Beta)](#session_delete)</td>
     <td>Utilice este mandato para suprimir una sesión.</td>
   <tr>  
   <tr>
-    <td>[bx cf logging session list (Beta)](#session_list)</td>
+    <td>[ibmcloud cf logging session list (Beta)](#session_list)</td>
     <td>Utilice este mandato para obtener una lista de las sesiones activas y sus ID.</td>
   <tr>  
   <tr>
-    <td>[bx cf logging session show (Beta)](#session_show)</td>
+    <td>[ibmcloud cf logging session show (Beta)](#session_show)</td>
     <td>Utilice este mandato para ver el estado de una sesión individual.</td>
   <tr>  
   <tr>
-    <td>[bx cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status)</td>
     <td>Utilice este mandato para obtener información sobre los registros que se han recopilado en un espacio o cuenta.</td>
   </tr>
   </table>
 
 
-## bx cf logging
+## ibmcloud cf logging
 {: #base}
 
 Proporciona información sobre la versión de la CLI y sobre cómo utilizar la CLI.
 
 ```
-bx cf logging [parámetros]
+ibmcloud cf logging [parámetros]
 ```
 {: codeblock}
 
@@ -103,19 +103,19 @@ bx cf logging [parámetros]
 Para obtener la lista de mandatos, ejecute el mandato siguiente:
 
 ```
-bx cf logging --help
+ibmcloud cf logging --help
 ```
 {: codeblock}
 
 Para obtener la versión de la CLI, ejecute el mandato siguiente:
 
 ```
-bx cf logging --version
+ibmcloud cf logging --version
 ```
 {: codeblock}
 
 
-## bx cf logging auth
+## ibmcloud cf logging auth
 {: #auth}
 
 Devuelve una señal de registro que puede utilizar para enviar registros al servicio {{site.data.keyword.loganalysisshort}}. 
@@ -123,7 +123,7 @@ Devuelve una señal de registro que puede utilizar para enviar registros al serv
 **Nota:** La señal no caduca.
 
 ```
-bx cf logging auth
+ibmcloud cf logging auth
 ```
 {: codeblock}
 
@@ -143,13 +143,13 @@ bx cf logging auth
   </dd>
 </dl>
 
-## bx cf logging delete
+## ibmcloud cf logging delete
 {: #delete}
 
 Suprime los registros almacenados en el componente de recopilación de registros.
 
 ```
-bx cf logging delete [parámetros]
+ibmcloud cf logging delete [parámetros]
 ```
 {: codeblock}
 
@@ -177,21 +177,21 @@ bx cf logging delete [parámetros]
 
 Para suprimir los registros de tipo *linux_syslog* del 25 de mayo de 2017, ejecute el mandato siguiente:
 ```
-bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: codeblock}
 
 
 
-## bx cf logging download (Beta)
+## ibmcloud cf logging download (Beta)
 {: #download}
 
 Descarga los registros del componente de recopilación de registros en un archivo local o direcciona los registros a otro programa, como por ejemplo Elastic Stack. 
 
-**Nota:** Para descargar archivos, primero tiene que crear una sesión. Una sesión define los registros que se van a descargar en función de rango de fechas, tipo de registro y tipo de cuenta. Los registros se descargan dentro del contexto de una sesión. Para obtener más información, consulte [bx cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
+**Nota:** Para descargar archivos, primero tiene que crear una sesión. Una sesión define los registros que se van a descargar en función de rango de fechas, tipo de registro y tipo de cuenta. Los registros se descargan dentro del contexto de una sesión. Para obtener más información, consulte [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
 
 ```
-bx cf logging download [parámetros] [argumentos]
+ibmcloud cf logging download [parámetros] [argumentos]
 ```
 {: codeblock}
 
@@ -206,7 +206,7 @@ bx cf logging download [parámetros] [argumentos]
 
 <dl>
 <dt>ID_sesión</dt>
-<dd>Establezca el valor de ID de sesión que se obtiene cuando se ejecuta el mandato `bx cf logging session create`. Este valor indica la sesión que se utilizará para descargar los registros. <br>**Nota:** El mandato `bx cf logging session create` proporciona los parámetros que controlan los registros que se descargan. </dd>
+<dd>Establezca el valor de ID de sesión que se obtiene cuando se ejecuta el mandato `ibmcloud cf logging session create`. Este valor indica la sesión que se utilizará para descargar los registros. <br>**Nota:** El mandato `ibmcloud cf logging session create` proporciona los parámetros que controlan los registros que se descargan. </dd>
 </dl>
 
 **Nota:** Una vez finalizada la descarga, si se intenta ejecutar el mismo mandato de nuevo, este no hará nada. Para volver a descargar los mismos datos, debe utilizar otro archivo u otra sesión.
@@ -216,14 +216,14 @@ bx cf logging download [parámetros] [argumentos]
 En un sistema Linux, para descargar registros en un archivo denominado mylogs.gz, ejecute el mandato siguiente:
 
 ```
-bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 Para descargar registros en su propia plataforma Elastic Stack, ejecute el mandato siguiente:
 
 ```
-bx cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -244,13 +244,13 @@ output {
 {: screen}
 
 
-## bx cf logging help
+## ibmcloud cf logging help
 {: #help}
 
 Proporciona información sobre cómo utilizar un mandato.
 
 ```
-bx cf logging help [mandato]
+ibmcloud cf logging help [mandato]
 ```
 {: codeblock}
 
@@ -268,12 +268,12 @@ bx cf logging help [mandato]
 Para obtener ayuda sobre cómo ejecutar el mandato para ver el estado de los registros, ejecute el mandato siguiente:
 
 ```
-bx cf logging help status
+ibmcloud cf logging help status
 ```
 {: codeblock}
 
 
-## bx cf logging option
+## ibmcloud cf logging option
 {: #option}
 
 Muestra o cambia el periodo de retención para los registros que están disponibles en un espacio o una cuenta. 
@@ -284,7 +284,7 @@ Muestra o cambia el periodo de retención para los registros que están disponib
 **Nota:** de forma predeterminada, se almacenan todos los registros. Debe suprimirlos manualmente mediante el mandato **delete**. Defina una política de retención para suprimir registros automáticamente.
 
 ```
-bx cf logging option [parámetros]
+ibmcloud cf logging option [parámetros]
 ```
 {: codeblock}
 
@@ -295,7 +295,7 @@ bx cf logging option [parámetros]
 <dd>(Opcional) Define el número de días de retención. <br> El valor predeterminado es *-1* días.</dd>
 
 <dt>--at-account-level, -a </dt>
-  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en *-1* para el espacio actual, que es el espacio donde ha iniciado la sesión mediante el mandato `bx cf login`.
+  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en *-1* para el espacio actual, que es el espacio donde ha iniciado la sesión mediante el mandato `ibmcloud cf login`.
   </dd>
 </dl>
 
@@ -304,7 +304,7 @@ bx cf logging option [parámetros]
 Para ver el periodo de retención actual predeterminado para el espacio en el que ha iniciado la sesión, ejecute el mandato siguiente:
 
 ```
-bx cf logging option
+ibmcloud cf logging option
 ```
 {: codeblock}
 
@@ -314,7 +314,7 @@ La salida es:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        -1 |
+| d35da1e3-b345-475f-8502-ibmcloud cfgh436902a3 |        -1 |
 +--------------------------------------+-----------+
 ```
 {: screen}
@@ -323,7 +323,7 @@ La salida es:
 Para cambiar el periodo de retención por 25 días para el espacio en el que ha iniciado la sesión, ejecute el mandato siguiente:
 
 ```
-bx cf logging option -r 25
+ibmcloud cf logging option -r 25
 ```
 {: codeblock}
 
@@ -333,13 +333,13 @@ La salida es:
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        25 |
+| d35da1e3-b345-475f-8502-ibmcloud cfgh436902a3 |        25 |
 +--------------------------------------+-----------+
 ```
 {: screen}
 
 
-## bx cf logging session create (Beta)
+## ibmcloud cf logging session create (Beta)
 {: #session_create}
 
 Crea una nueva sesión.
@@ -347,7 +347,7 @@ Crea una nueva sesión.
 **Nota:** Puede tener un máximo de 30 sesiones simultáneas en un espacio. La sesión se crea para un usuario. Las sesiones no se pueden compartir entre usuarios de un espacio.
 
 ```
-bx cf logging session create [parámetros]
+ibmcloud cf logging session create [parámetros]
 ```
 {: codeblock}
 
@@ -367,7 +367,7 @@ bx cf logging session create [parámetros]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en solo el espacio actual, es decir, el espacio donde ha iniciado la sesión mediante el mandato `bx cf login`.
+  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en solo el espacio actual, es decir, el espacio donde ha iniciado la sesión mediante el mandato `ibmcloud cf login`.
   </dd>
 </dl>
 
@@ -402,18 +402,18 @@ bx cf logging session create [parámetros]
 Para crear una sesión que incluya los registros comprendidos entre el 20 de mayo de 2017 y el 26 de mayo de 2017 para el tipo de registro *log*, ejecute el mandato siguiente:
 
 ```
-bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
+ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 ```
 {: screen}
 
 
-## bx cf logging session delete (Beta)
+## ibmcloud cf logging session delete (Beta)
 {: #session_delete}
 
 Suprime una sesión, especificada por ID de sesión.
 
 ```
-bx cf logging session delete [argumentos]
+ibmcloud cf logging session delete [argumentos]
 ```
 {: codeblock}
 
@@ -422,7 +422,7 @@ bx cf logging session delete [argumentos]
 <dl>
 <dt>ID de
 sesión</dt>
-<dd>ID de la sesión que desea suprimir. <br>Puede utilizar el mandato `bx cf logging session list` para obtener todos los ID de sesiones activas.</dd>
+<dd>ID de la sesión que desea suprimir. <br>Puede utilizar el mandato `ibmcloud cf logging session list` para obtener todos los ID de sesiones activas.</dd>
 </dl>
 
 **Ejemplo**
@@ -430,19 +430,19 @@ sesión</dt>
 Para suprimir una sesión con el ID de sesión *cI6hvAa0KR_tyhjxZZz9Uw==*, ejecute el mandato siguiente:
 
 ```
-bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## bx cf logging session list (Beta)
+## ibmcloud cf logging session list (Beta)
 {: #session_list}
 
 Muestra una lista de las sesiones activas y sus ID.
 
 ```
-bx cf logging session list 
+ibmcloud cf logging session list 
 ```
 {: codeblock}
 
@@ -466,13 +466,13 @@ bx cf logging session list
 </dl>
  
 
-## bx cf logging session show (Beta)
+## ibmcloud cf logging session show (Beta)
 {: #session_show}
 
 Muestra el estado de una sesión individual.
 
 ```
-bx cf logging session show [argumentos]
+ibmcloud cf logging session show [argumentos]
 ```
 {: codeblock}
 
@@ -513,18 +513,18 @@ bx cf logging session show [argumentos]
 Para mostrar los detalles de una sesión con el ID de sesión *cI6hvAa0KR_tyhjxZZz9Uw==*, ejecute el mandato siguiente:
 
 ```
-bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
-## bx cf logging status
+## ibmcloud cf logging status
 {: #status}
 
 Devuelve información sobre los registros que se han recopilado en un espacio o cuenta.
 
 ```
-bx cf logging status [argumentos]
+ibmcloud cf logging status [parámetros]
 ```
 {: codeblock}
 
@@ -544,7 +544,7 @@ bx cf logging status [argumentos]
   </dd>
   
   <dt>--at-account-level, -a </dt>
-  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br> **Nota:** Defina este valor para obtener información sobre la cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en solo el espacio actual, es decir, el espacio donde ha iniciado la sesión mediante el mandato `bx cf login`.
+  <dd>(Opcional) Establece el ámbito a nivel de cuenta. <br> **Nota:** Defina este valor para obtener información sobre la cuenta. <br>Si no se especifica este parámetro, el valor predeterminado se establece en solo el espacio actual, es decir, el espacio donde ha iniciado la sesión mediante el mandato `ibmcloud cf login`.
   </dd>
   
   <dt>--list-type-detail, -l</dt>
@@ -552,6 +552,6 @@ bx cf logging status [argumentos]
   </dd>
 </dl>
 
-**Nota:** El mandato `bx cf logging status` solo muestra las 2 últimas semanas de registros que se han almacenado en el componente de recopilación de registros cuando no se especifican fechas inicial y final.
+**Nota:** El mandato `ibmcloud cf logging status` solo muestra las 2 últimas semanas de registros que se han almacenado en el componente de recopilación de registros cuando no se especifican fechas inicial y final.
 
 

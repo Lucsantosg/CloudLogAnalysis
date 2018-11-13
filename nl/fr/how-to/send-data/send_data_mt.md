@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -40,19 +40,19 @@ Effectuez les étapes suivantes depuis une session de terminal dans laquelle l'i
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
     
-2. Exécutez la commande `bx logging token-get`.  
+2. Exécutez la commande `ibmcloud logging token-get`. 
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     ```
     {: codeblock}
 
-    La commande renvoie le jeton de journalisation. 
+    La commande renvoie le jeton de journalisation.
     
     Exemple
 
     ```
-    bx logging token-get
+    ibmcloud logging token-get
     Getting log token of resource: 93f54jh6-b5f5-46c9-9f0e-kfeutpldnbcf ...
     OK
 

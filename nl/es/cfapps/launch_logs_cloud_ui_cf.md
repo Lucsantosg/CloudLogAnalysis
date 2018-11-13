@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -29,7 +29,7 @@ Para ver registros de las apps de CF, tenga en cuenta la siguiente información:
     <th>Información</th>
   </tr>
   <tr>
-    <td>Separador de registro disponible en la IU de las apps de CF</td>
+    <td>Separador de registro disponible en la IU de las apps de CF </td>
     <td>Los registros que están disponibles para su análisis incluyen datos correspondientes a las últimas 24 horas.</td>
   </tr>
   <tr>

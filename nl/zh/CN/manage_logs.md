@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -65,11 +65,11 @@ lastupdated: "2018-01-31"
 
 除非您配置了保留时间策略或手动将日志删除，否则会保留在“日志收集”中存储的日志。 
 
-* 可以配置日志保留时间策略，以定义希望日志在“日志收集”中保留的天数。[使用 {{site.data.keyword.Bluemix_notm}} 插件查看和配置日志保留时间策略](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy)。
+* 可以配置日志保留时间策略，以定义希望日志在“日志收集”中保留的天数。有关更多信息，请参阅[使用 {{site.data.keyword.Bluemix_notm}} 插件查看和配置日志保留时间策略](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy)。
 
 * 您可以使用[日志收集 API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} 或[日志收集 CLI](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} 从“日志收集”中手动删除日志。 
 
-* 您可以使用 CLI。有关通过 CLI 手动删除日志的更多信息，请参阅[使用 {{site.data.keyword.Bluemix_notm}} 插件运行 bx logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)。
+* 您可以使用 CLI。有关通过 CLI 手动删除日志的更多信息，请参阅[使用 {{site.data.keyword.Bluemix_notm}} 插件运行 ibmcloud logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)。
     
 
 
@@ -85,16 +85,15 @@ lastupdated: "2018-01-31"
 
 
 
-
 ## 获取日志的信息
 {: #info_about_logs}
 
-要获取有关日志的常规信息，请使用 `bx logging log-show` 或 `cf logging status` 命令。要获取更多信息，请参阅：
+要获取有关日志的常规信息，请使用 `ibmcloud logging log-show` 或 `cf logging status` 命令。要获取更多信息，请参阅：
 
 * [使用 {{site.data.keyword.Bluemix_notm}} 插件查看日志信息](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
 * [使用 CF 插件查看日志信息](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status)。
 
-例如，为了控制成本，您可能希望监视应用程序日志在一段时间内的大小。例如，您可能希望知道 {{site.data.keyword.Bluemix_notm}} 空间的每种日志类型在一周内的大小，以确定任何应用程序或服务生成的日志是否超过期望数量。要检查日志的大小，请使用 `bx logging log-show` 或 `cf logging status` 命令。
+例如，为了控制成本，您可能希望监视应用程序日志在一段时间内的大小。例如，您可能希望知道 {{site.data.keyword.Bluemix_notm}} 空间的每种日志类型在一周内的大小，以确定任何应用程序或服务生成的日志是否超过期望数量。要检查日志的大小，请使用 `ibmcloud logging log-show` 或 `cf logging status` 命令。
 
 您可以查看存储在空间域、组织域或帐户域的日志的信息。
 
@@ -105,7 +104,7 @@ lastupdated: "2018-01-31"
 
 要了解如何安装 CLI，请参阅[安装日志记录 CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)。
 
-要检查 CLI 的版本，请运行 `bx plugin list` 命令。
+要检查 CLI 的版本，请运行 `ibmcloud plugin list` 命令。
 
 要获取有关如何运行命令的帮助，请参阅[获取命令行帮助以运行命令](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#command_cli_help)。
 

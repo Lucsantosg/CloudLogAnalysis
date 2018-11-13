@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -55,7 +55,7 @@ Siga estos pasos para suministrar una instancia del servicio {{site.data.keyword
 
 1. [Requisito previo] Instale la CLI de {{site.data.keyword.Bluemix_notm}}.
 
-   Para obtener más información, consulte [Instalación de la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obtener más información, consulte [Instalación de la CLI de {{site.data.keyword.Bluemix_notm}}](/docs/cli/index.html#overview).
    
    Si la CLI está instalada, continúe en el paso siguiente.
     
@@ -63,30 +63,30 @@ Siga estos pasos para suministrar una instancia del servicio {{site.data.keyword
 
     Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Ejecute el mandato `bx service create` para suministrar una instancia.
+3. Ejecute el mandato `ibmcloud service create` para suministrar una instancia.
 
     ```
-	bx service create service_name service_plan service_instance_name
+	ibmcloud service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
 	Donde
 	
 	* service_name es el nombre del servicio, que es **ibmLogAnalysis**.
-	* service_plan es el nombre del plan de servicio. Para ver una lista de planes, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+	* service_plan es el nombre del plan de servicio. Para obtener una lista de planes, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 	* service_instance_name es el nombre que desea utilizar para la nueva instancia de servicio que cree.
 
 	Por ejemplo, para crear una instancia del servicio {{site.data.keyword.loganalysisshort}} con el plan Lite, ejecute este mandato:
 	
 	```
-	bx service create ibmLogAnalysis standard my_logging_svc
+	ibmcloud service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. Verifique que el servicio se ha creado correctamente. Ejecute el mandato siguiente:
 
     ```	
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	

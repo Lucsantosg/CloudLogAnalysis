@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-16"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,13 +17,13 @@ lastupdated: "2018-01-16"
 # Recuperación del propietario de la clave de un clúster
 {: #containers_key_owner}
 
-Utilice el mandato *bx cs api-key-info* para obtener el propietario de la clave de {{site.data.keyword.loganalysisshort}} de un clúster.
+Utilice el mandato *ibmcloud cs api-key-info* para obtener el propietario de la clave de {{site.data.keyword.loganalysisshort}} de un clúster.
 {:shortdesc}
 
 Ejecute el mandato siguiente:
 
 ```
- bx cs api-key-info ClusterName
+ ibmcloud cs api-key-info ClusterName
 ```
 {: codeblock}
 
@@ -33,7 +33,7 @@ donde **ClusterName** es el nombre del clúster.
 Por ejemplo, el resultado de ejecutar el mandato es el siguiente:
 
 ```
-bx cs api-key-info MyDemoCluster
+ibmcloud cs api-key-info MyDemoCluster
 Getting information about the API key owner for cluster MyDemoCluster...
 OK
 Name           Email   

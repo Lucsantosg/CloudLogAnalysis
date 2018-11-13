@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -27,12 +27,12 @@ lastupdated: "2018-03-12"
 ## 步骤 1：检查用户标识的许可权
 {: step1}
 
-您的用户标识必须具有以下许可权，才能将日志记录配置添加到集群：
+您的用户标识必须具有以下许可权，才能向集群添加日志记录配置：
 
-* {{site.data.keyword.containershort}} 的 IAM 策略，且具有**查看者**许可权。
-* 集群实例的 IAM 策略，且具有**管理员**或**操作员**许可权。
+* {{site.data.keyword.containershort}} 的 IAM 策略，以及**查看者**许可权。
+* 集群实例的 IAM 策略，以及**管理员**或**操作员**许可权。
 
-要检查用户标识是否具有这些 IAM 策略，请完成以下步骤：
+要检查您的用户标识是否具有这些 IAM 策略，请完成以下步骤：
 
 **注**：只有帐户所有者或具有分配策略许可权的用户才能执行此步骤。
 
@@ -59,14 +59,14 @@ lastupdated: "2018-03-12"
 2. 初始化 {{site.data.keyword.loganalysisshort}} 服务插件。
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
 3. 设置集群的终端上下文。
     
 	```
-	bx cs cluster-config ClusterName
+	ibmcloud cs cluster-config ClusterName
 	```
 	{: codeblock}
 
@@ -100,8 +100,8 @@ lastupdated: "2018-03-12"
 
 {{site.data.keyword.containershort}} 密钥所有者需要以下 IAM 策略：
 
-* {{site.data.keyword.containershort}} 的 IAM 策略，且具有**管理员**角色。
-* {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，且具有**管理员**角色。
+* {{site.data.keyword.containershort}} 的 IAM 策略，以及**管理员**角色。
+* {{site.data.keyword.loganalysisshort}} 服务的 IAM 策略，以及**管理员**角色。
 
 请完成以下步骤： 
 
@@ -111,38 +111,38 @@ lastupdated: "2018-03-12"
 
 2. 从菜单栏，单击**管理 > 帐户 > 用户**。*用户*窗口显示用户列表，其中包含目前所选帐户的电子邮件地址。
 	
-3. 选择 {{site.data.keyword.containershort_notm}} 密钥所有者的用户标识，并验证该用户标识是否具有这两个策略。
+3. 选择 {{site.data.keyword.containershort_notm}} 密钥所有者的用户标识，然后验证该用户标识是否具有这两个策略。
 
 
-将日志转发到空间域时，还必须向组织和空间中的 {{site.data.keyword.containershort}} 密钥所有者授予 Cloud Foundry (CF) 许可权。密钥所有者需要对组织的 *orgManager* 角色以及对空间的 *SpaceManager* 或 *Developer* 角色。
+将日志转发到空间域时，还必须向组织和空间中的 {{site.data.keyword.containershort}} 密钥所有者授予 Cloud Foundry (CF) 许可权。密钥所有者需要组织的 *orgManager* 角色，以及空间的 *SpaceManager* 或 *Developer* 角色。
 
 请完成以下步骤：
 
 1. 确定帐户中作为 {{site.data.keyword.containershort}} 密钥所有者的用户。在终端中，运行以下命令：
 
     ```
-        bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
     其中，*ClusterName* 是集群的名称。
     
-2. 验证确定为 {{site.data.keyword.containershort}} 密钥所有者的用户是否具有对组织的 *orgManager* 角色，以及对空间的 *SpaceManager* 和 *Developer* 角色。
+2. 验证身份为 {{site.data.keyword.containershort}} 密钥所有者的用户是否具有组织的 *orgManager* 角色，以及空间的 *SpaceManager* 和 *Developer* 角色。
 
     登录到 {{site.data.keyword.Bluemix_notm}} 控制台。打开 Web 浏览器并启动 {{site.data.keyword.Bluemix_notm}}“仪表板”：[http://bluemix.net ![外部链接图标](../../../icons/launch-glyph.svg "外部链接图标")](http://bluemix.net){:new_window}。使用用户标识和密码登录后，{{site.data.keyword.Bluemix_notm}} UI 将打开。
 
     从菜单栏，单击**管理 > 帐户 > 用户**。*用户*窗口显示用户列表，其中包含目前所选帐户的电子邮件地址。
 	
-    选择用户的标识，并验证用户是否具有对组织的 *orgManager* 角色，以及对空间的 *SpaceManager* 或 *Developer* 角色。
+    选择用户标识并验证用户是否具有组织的 *orgManager* 角色，以及空间的 *SpaceManager* 或 *Developer* 角色。
  
 3. 如果用户没有正确的许可权，请完成以下步骤：
 
-    1. 向用户授予以下许可权：对组织的 *orgManager* 角色，以及对空间的 *SpaceManager* 和 *Developer* 角色。有关更多信息，请参阅[使用 IBM Cloud UI 向用户授予查看空间日志的许可权](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)。
+    1. 向用户授予以下许可权：组织的 *orgManager* 角色，以及空间的 *SpaceManager* 和 *Developer* 角色。有关更多信息，请参阅[使用 IBM Cloud UI 向用户授予查看空间日志的许可权](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)。
     
     2. 刷新日志记录配置。运行以下命令：
     
         ```
-                bx cs logging-config-refresh ClusterName
+        ibmcloud cs logging-config-refresh ClusterName
         ```
         {: codeblock}
         
@@ -158,7 +158,7 @@ lastupdated: "2018-03-12"
 运行以下命令以将 *stdout* 和 *stderr* 日志文件发送到 {{site.data.keyword.loganalysisshort}} 服务：
 
 ```
-bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -173,14 +173,14 @@ bx cs logging-config-create ClusterName --logsource container --namespace '*' --
 例如，要创建日志记录配置，用于将 stdout 和 stderr 日志转发到德国区域中的帐户域，请运行以下命令：
 
 ```
-bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
 要创建日志记录配置，用于将 stdout 和 stderr 日志转发到德国区域中的空间域，请运行以下命令：
 
 ```
-bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
 ```
 {: screen}
 
@@ -192,7 +192,7 @@ bx cs logging-config-create MyCluster --logsource container --type ibm --namespa
 运行以下命令以将 */var/log/apps/**/.log* 和 */var/log/apps/*/.err* 日志文件发送到 {{site.data.keyword.loganalysisshort}} 服务：
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
+ibmcloud cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -202,20 +202,20 @@ bx cs logging-config-create ClusterName --logsource application --type ibm --hos
 * *EndPoint* 是供应 {{site.data.keyword.loganalysisshort}} 服务的区域中的日志记录服务的 URL。有关端点的列表，请参阅[端点](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)。
 * *OrgName* 是其中空间可用的组织的名称。
 * *SpaceName* 是供应 {{site.data.keyword.loganalysisshort}} 服务的空间的名称。
-* *app-containers* 是可选参数，可以设置该参数以定义要监视的容器的列表。这些容器仅是将日志转发到 {{site.data.keyword.loganalysisshort}} 的容器。您可以设置一个或多个容器，容器之间用逗号分隔。
-* *app-paths* 定义要监视的容器内的路径。您可以设置一个或多个路径，路径之间用逗号分隔。接受通配符，如“/var/log/*.log”。 
+* *app-containers* 是可选参数，您可以设置该参数来定义要监视的容器的列表。这些容器就是从中将日志转发到 {{site.data.keyword.loganalysisshort}} 的容器。您可以设置一个或多个容器（用逗号分隔）。
+* *app-paths* 定义要监视的容器内部的路径。您可以设置一个或多个路径（用逗号分隔）。可以使用通配符，如“/var/log/*.log”。 
 
 例如，要创建日志记录配置，用于将应用程序日志转发到德国区域中的空间域，请运行以下命令：
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
+ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 例如，要创建日志记录配置，用于将应用程序日志转发到德国区域中的帐户域，请运行以下命令：
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
+ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -228,7 +228,7 @@ bx cs logging-config-create MyCluster --logsource application --type ibm --hostn
 运行以下命令以将 */var/log/syslog* 和 */var/log/auth.log* 日志文件发送到 {{site.data.keyword.loganalysisshort}} 服务：
 
 ```
-bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -244,14 +244,14 @@ bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname
 例如，要创建日志记录配置，用于将工作程序日志转发到德国区域中的空间域，请运行以下命令：
 
 ```
-bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 例如，要创建日志记录配置，用于将工作程序日志转发到德国区域中的帐户域，请运行以下命令：
 
 ```
-bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -263,7 +263,7 @@ bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname 
 运行以下命令以将 */var/log/kubelet.log* 和 */var/log/kube-proxy.log* 日志文件发送到 {{site.data.keyword.loganalysisshort}} 服务：
 
 ```
-bx cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -279,14 +279,14 @@ bx cs logging-config-create ClusterName --logsource kubernetes --type ibm --host
 例如，要创建日志记录配置，用于将 Kubernetes 系统组件日志转发到德国区域中的空间域，请运行以下命令：
 
 ```
-bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 例如，要创建日志记录配置，用于将 Kubernetes 系统组件日志转发到德国区域中的帐户域，请运行以下命令：
 
 ```
-bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -298,7 +298,7 @@ bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostna
 运行以下命令以将 */var/log/alb/ids/.log*、*/var/log/alb/ids/.err*、*/var/log/alb/customerlogs/.log* 和 /var/log/alb/customerlogs/.err* 日志文件发送到 {{site.data.keyword.loganalysisshort}} 服务：
 
 ```
-bx cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
+ibmcloud cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
 ```
 {: codeblock}
 
@@ -314,14 +314,14 @@ bx cs logging-config-create ClusterName --logsource ingress --type ibm --hostnam
 例如，要创建日志记录配置，用于将 Ingress 控制器日志转发到德国区域中的空间域，请运行以下命令：
 
 ```
-bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 例如，要创建日志记录配置，用于将 Ingress 控制器日志转发到德国区域中的帐户域，请运行以下命令：
 
 ```
-bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
+ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
 ```
 {: screen}
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,10 +31,10 @@ lastupdated: "2018-01-10"
 ## 步驟 2：識別可用的日誌
 {: #step2}
 
-1. 使用 `bx cf logging status` 指令，以查看過去 2 週的可用日誌。執行下列指令：
+1. 使用 `ibmcloud cf logging status` 指令，以查看過去 2 週的可用日誌。執行下列指令：
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
@@ -64,10 +64,12 @@ lastupdated: "2018-01-10"
 * 當您指定開始日期及結束日期時，階段作業可讓您存取這兩個日期（含）之間的日誌。 
 * 當您指定日誌類型 (**-t**) 時，階段作業可讓您存取特定類型的日誌。當您管理大規模的日誌時，這是重要特性，因為您可以將階段作業的範圍設定為僅感興趣的小部分日誌。
 
+**附註：**針對每一個階段作業，您最多可以下載 15 天的日誌。
+
 若要建立用來下載日誌類型為 *log* 的階段作業，請執行下列指令：
 
 ```
-bx cf logging session create -t log
+ibmcloud cf logging session create -t log
 ```
 {: codeblock}
 
@@ -81,7 +83,7 @@ bx cf logging session create -t log
 例如，
 
 ```
-$ bx cf logging session create -t log     
+$ ibmcloud cf logging session create -t log     
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -109,7 +111,7 @@ $ bx cf logging session create -t log
 若要下載階段作業參數所指定的日誌，請執行下列指令：
 
 ```
-bx cf logging download -o Log_File_Name Session_ID
+ibmcloud cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -121,7 +123,7 @@ bx cf logging download -o Log_File_Name Session_ID
 例如，
 
 ```
-bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -142,7 +144,7 @@ bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
 執行下列指令，以刪除階段作業：
 
 ```
-bx cf logging session delete Session_ID
+ibmcloud cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -151,7 +153,7 @@ bx cf logging session delete Session_ID
 例如，
 
 ```
-bx cf logging session delete -jshdjsunelsssr4566722==
+ibmcloud cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

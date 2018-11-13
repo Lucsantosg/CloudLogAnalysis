@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -69,7 +69,7 @@ Os logs armazenados em Coleção de logs são mantidos até você configurar uma
 
 * É possível usar a [API de Coleção de logs](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} ou a [CLI de Coleção de logs](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} para excluir logs manualmente da Coleção de logs. 
 
-* É possível usar a CLI. Para obter mais informações sobre como excluir logs manualmente por meio da CLI, veja [bx logging log-delete usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+* É possível usar a CLI. Para obter mais informações sobre como excluir logs manualmente por meio da CLI, veja [ibmcloud logging log-delete usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
     
 
 
@@ -85,16 +85,15 @@ Para obter mais informações, veja:
 
 
 
-
 ## Obtendo informações sobre seus logs
 {: #info_about_logs}
 
-Para obter informações gerais sobre seus logs, use o comando `bx logging log-show` ou `cf logging status`. Para obter mais informações, veja:
+Para obter informações gerais sobre seus logs, use o comando `ibmcloud logging log-show` ou o comando `cf logging status`. Para obter mais informações, veja:
 
 * [Visualizando informações de log usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
 * [Visualizando informações de log usando o plug-in do CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
 
-Por exemplo, para manter o custo sob controle, você pode desejar monitorar o tamanho dos logs de seus apps durante um período de tempo. Por exemplo, talvez você queira saber o tamanho de cada tipo de log durante uma semana para um espaço do {{site.data.keyword.Bluemix_notm}} para identificar se algum app ou serviço está gerando mais logs do que o esperado. Para verificar o tamanho de seus logs, use o comando `bx logging log-show` ou `cf logging status`.
+Por exemplo, para manter o custo sob controle, você pode desejar monitorar o tamanho dos logs de seus apps durante um período de tempo. Por exemplo, talvez você queira saber o tamanho de cada tipo de log durante uma semana para um espaço do {{site.data.keyword.Bluemix_notm}} para identificar se algum app ou serviço está gerando mais logs do que o esperado. Para verificar o tamanho de seus logs, use o comando `ibmcloud logging log-show` ou o comando `cf logging status`.
 
 É possível visualizar informações sobre os logs que são armazenados em um domínio de espaço, um domínio de organização ou um domínio de contas.
 
@@ -105,7 +104,7 @@ Por exemplo, para manter o custo sob controle, você pode desejar monitorar o ta
 
 Para saber como instalar a CLI, veja [Instalando a CLI de criação de log](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
 
-Para verificar a versão da CLI, execute o comando `bx plugin list`.
+Para verificar a versão da CLI, execute o comando `ibmcloud plugin list`.
 
 Para obter ajuda sobre como executar comandos, veja [Obtendo ajuda da linha de comandos para executar comandos](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#command_cli_help).
 

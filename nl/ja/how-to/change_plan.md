@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-03-15"
 # プランの変更
 {: #change_plan}
 
-{{site.data.keyword.Bluemix_notm}} UI を介して、または、`bx cf update-service` コマンドを実行することによって、{{site.data.keyword.loganalysisshort}} サービス・プランを変更できます。 プランはいつでもアップグレードまたは削減することができます。
+{{site.data.keyword.Bluemix_notm}} UI を介して、または、`ibmcloud service update` コマンドを実行することによって、{{site.data.keyword.loganalysisshort}} サービス・プランを変更できます。 プランはいつでもアップグレードまたは削減することができます。
 {:shortdesc}
 
 ## UI を使用したサービス・プランの変更
@@ -52,14 +52,14 @@ Bluemix で CLI を介してサービス・プランを変更するには、以�
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 	
-2. `bx service list` コマンドを実行して、現在のプランを確認し、スペースで使用可能なサービスのリストから {{site.data.keyword.loganalysisshort}} サービス名を取得します。 
+2. `ibmcloud service list` コマンドを実行して、現在のプランを確認し、スペースで使用可能なサービスのリストから {{site.data.keyword.loganalysisshort}} サービス名を取得します。 
 
     プランを変更する際、**name** フィールドの値を使用する必要があります。 
 
     以下に例を示します。
 	
 	```
-	$ bx  bx service list
+	$ ibmcloud service list
     Invoking 'cf services'...
 
     Getting services in org MyOrg / space dev as xxx@ibm.com...
@@ -70,16 +70,16 @@ Bluemix で CLI を介してサービス・プランを変更するには、以�
     ```
 	{: screen}
     
-3. プランをアップグレードまたは削減します。 `bx service update` コマンドを実行します。
+3. プランをアップグレードまたは削減します。 `ibmcloud service update` コマンドを実行します。
     
 	```
-	bx service update service_name [-p new_plan]
+	ibmcloud service update service_name [-p new_plan]
 	```
 	{: codeblock}
 	
 	各部分の説明: 
 	
-	* *service_name* は、サービスの名前です。 `bx service list` コマンドを実行して値を取得できます。
+	* *service_name* は、サービスの名前です。 `ibmcloud service list` コマンドを実行して値を取得できます。
 	* *new_plan* は、プランの名前です。
 	
 	次の表に、各種プランおよびサポートされている値を示します。
@@ -115,16 +115,16 @@ Bluemix で CLI を介してサービス・プランを変更するには、以�
 	例えば、プランを削減して*ライト*・プランにするには、次のコマンドを実行します。
 	
 	```
-	bx service update "Log Analysis-m2" -p standard
+	ibmcloud service update "Log Analysis-m2" -p standard
     Updating service instance Log Analysis-m2 as xxx@ibm.com...
     OK
 	```
 	{: screen}
 
-4. 新規プランに変更されたことを検証します。 `bx service list` コマンドを実行します。
+4. 新規プランに変更されたことを検証します。 `ibmcloud service list` コマンドを実行します。
 
   ```
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 

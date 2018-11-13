@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -227,7 +227,7 @@ Para enviar registros al servicio {{site.data.keyword.loganalysisshort}}, necesi
 
 Para enviar registros a un dominio del espacio, elija uno de los siguientes métodos:
 
-* [Obtención de la señal de registro para enviar registros a un espacio mediante el mandato de {{site.data.keyword.Bluemix_notm}} bx service ](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
+* [Obtención de la señal de registro para enviar registros a un espacio mediante el mandato de {{site.data.keyword.Bluemix_notm}} ibmcloud service ](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
 * [Obtención de la señal de registro para enviar registros a un espacio mediante la CLI de análisis de registro](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [Obtención de la señal de registro para enviar registros a un espacio mediante la API de análisis de registro](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
 

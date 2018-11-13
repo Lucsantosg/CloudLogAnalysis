@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -20,12 +20,13 @@ lastupdated: "2018-04-19"
 # {{site.data.keyword.containershort_notm}}
 {: #containers_kubernetes}
 
-Dans {{site.data.keyword.Bluemix_notm}}, vous pouvez utiliser le service {{site.data.keyword.loganalysisshort}} pour stocker et analyser des journaux de conteneur et des journaux de cluster Kubernetes qui sont collectés automatiquement par {{site.data.keyword.containershort}} dans l'environnement public et dans l'environnement dédié.{:shortdesc}
+Dans {{site.data.keyword.Bluemix_notm}}, vous pouvez utiliser le service {{site.data.keyword.loganalysisshort}} pour stocker et analyser des journaux de conteneur et des journaux de cluster Kubernetes qui sont collectés automatiquement par {{site.data.keyword.containershort}} dans l'environnement public et dans l'environnement dédié.
+{:shortdesc}
 
 Vous pouvez disposer d'un ou de plusieurs clusters Kubernetes sur votre compte. Les journaux sont collectés automatiquement par {{site.data.keyword.containershort}} dès que le cluster est mis à disposition. 
 
 * Les journaux d'application sont collectés dès que le pod est déployé. 
-* Les informations, qu'un processus de conteneur affiche dans la sortie standard (stdout) et l'erreur standard (stderr), sont collectées automatiquement par le service {{site.data.keyword.containershort}}. 
+* Les informations, qu'un processus de conteneur affiche dans la sortie standard (stdout) et l'erreur standard (stderr), sont collectées automatiquement par le service {{site.data.keyword.containershort}}.
 
 Pour que ces journaux soient disponibles pour l'analyse dans le service {{site.data.keyword.loganalysisshort}}, vous devez configurer votre cluster pour le transfert des journaux dans {{site.data.keyword.loganalysisshort}}. Vous pouvez transférer les journaux au domaine de compte {{site.data.keyword.loganalysisshort}} ou à un domaine d'espace sur votre compte. Par défaut :
 
@@ -40,7 +41,7 @@ Tenez compte des informations suivantes lorsque vous choisissez de transférer l
 * Si vous envoyez des journaux au domaine de compte, le quota de recherche est de 500 Mo par jour et vous ne pouvez pas stocker les journaux à long terme dans le composant Log Collection.
 * Si vous envoyez des journaux à un domaine d'espace, vous pouvez choisir un plan de service {{site.data.keyword.loganalysisshort}} qui définit le quota de recherche par jour, et vous pouvez stocker les journaux à long terme dans le composant Log Collection.
 
-**Remarque :** Par défaut, l'envoi de journaux depuis un cluster au service {{site.data.keyword.loganalysisshort}} n'est pas activé automatiquement. Pour activer la journalisation, vous devez créer une ou plusieurs configurations de journalisation dans le cluster pour transférer automatiquement des journaux au service {{site.data.keyword.loganalysisshort}}. Vous pouvez activer la journalisation via la ligne de commande, à l'aide de la commande `bx cs logging-config-create`, ou via le tableau de bord du cluster disponible dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}}. Pour plus d'informations, voir [Activation de la collecte automatique des journaux de cluster](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
+**Remarque :** Par défaut, l'envoi de journaux depuis un cluster au service {{site.data.keyword.loganalysisshort}} n'est pas activé automatiquement. Pour activer la journalisation, vous devez créer une ou plusieurs configurations de journalisation dans le cluster pour transférer automatiquement des journaux au service {{site.data.keyword.loganalysisshort}}. Vous pouvez activer la journalisation via la ligne de commande, à l'aide de la commande `ibmcloud cs logging-config-create`, ou via le tableau de bord du cluster disponible dans l'interface utilisateur {{site.data.keyword.Bluemix_notm}}. Pour plus d'informations, voir [Activation de la collecte automatique des journaux de cluster](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
 
 Lorsque vous utilisez un cluster Kubernetes, les espaces de nom *ibm-system* et *kube-system* sont réservés. Vous ne devez pas créer, supprimer, modifier ou changer les droits d'accès aux ressources disponibles dans ces espaces. Les journaux de ces espaces de nom sont destinés à une utilisation par {{site.data.keyword.IBM_notm}}.
 
@@ -51,18 +52,18 @@ Lorsque vous utilisez un cluster Kubernetes, les espaces de nom *ibm-system* et 
 
 Lorsque vous configurez votre cluster pour transférer les journaux de cluster vers {{site.data.keyword.loganalysisshort}}, prenez en compte les informations suivantes :
 
-* Vous devez définir une organisation Cloud Foundry et un espace où ces journaux seront transférés.  
-* L'organisation et l'espace peuvent être disponibles dans n'importe quelle région {{site.data.keyword.IBM_notm}} Public Cloud. 
+* Vous devez définir une organisation Cloud Foundry et un espace où ces journaux seront transférés. 
+* L'organisation et l'espace peuvent être disponibles dans n'importe quelle région {{site.data.keyword.IBM_notm}} Public Cloud.
 
-**Remarque :** Pour les clusters qui sont mis à disposition dans un environnement **{{site.data.keyword.Bluemix_notm}} dédié**, il n'est pas possible de configurer votre cluster pour transférer les journaux de cluster vers des espaces Cloud Foundry disponibles sur votre compte dédié. 
+**Remarque :** Pour les clusters qui sont mis à disposition dans un environnement **{{site.data.keyword.Bluemix_notm}} dédié**, il n'est pas possible de configurer votre cluster pour transférer les journaux de cluster vers des espaces Cloud Foundry disponibles sur votre compte dédié.
 
-Si vous voulez analyser des données de journal dans Kibana pour un cluster qui transfère des journaux à un domaine d'espace, tenez compte des informations suivantes : 
+Si vous voulez analyser des données de journal dans Kibana pour un cluster qui transfère des journaux à un domaine d'espace, tenez compte des informations suivantes :
 
 * Vous devez lancer Kibana dans la région publique dans laquelle l'organisation et l'espace qui collectent les journaux de cluster sont disponibles.
-* Pour augmenter votre quota de recherche Kibana et stocker des journaux dans Log Collection à long terme, vous devez mettre à disposition le service {{site.data.keyword.loganalysisshort}} dans l'espace où les journaux sont transférés avec un plan répondant à vos exigences.  
+* Pour augmenter votre quota de recherche Kibana et stocker des journaux dans Log Collection à long terme, vous devez mettre à disposition le service {{site.data.keyword.loganalysisshort}} dans l'espace où les journaux sont transférés avec un plan répondant à vos exigences. 
 * Votre ID utilisateur doit disposer des droits permettant d'afficher les journaux. Pour pouvoir afficher les journaux dans le domaine d'espace, un utilisateur a besoin du rôle CF. **Auditeur** est le rôle le moins important qui peut être accordé pour afficher des journaux. Pour plus d'informations, voir [Rôles requis par un utilisateur pour afficher les journaux](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
-Pour pouvoir gérer les données de journal de cluster qui sont stockées dans l'espace de stockage à long terme (Log Collection), votre ID utilisateur doit être associé à une règle IAM afin de pouvoir utiliser le service {{site.data.keyword.loganalysisshort}}. Il doit disposer des droits **Administrateur**, **Opérateur** ou **Editeur**. Pour plus d'informations, voir [Rôles requis par un utilisateur pour gérer les journaux](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+Pour pouvoir gérer les données de journal de cluster qui sont stockées dans l'espace de stockage à long terme (Log Collection), votre ID utilisateur doit être associé à une règle IAM afin de pouvoir utiliser le service {{site.data.keyword.loganalysisshort}}. Il doit disposer des droits **Administrateur**, **Opérateur** ou **Editeur**.  Pour plus d'informations, voir [Rôles requis par un utilisateur pour gérer les journaux](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
 
 
 Le diagramme ci-dessous offre une vue d'ensemble de la journalisation dans l'environnement public pour {{site.data.keyword.containershort}} lorsque le cluster transmet des journaux au domaine d'espace.
@@ -77,10 +78,10 @@ Le diagramme ci-dessous offre une vue d'ensemble de la journalisation dans l'env
 
 Lorsque vous configurez votre cluster pour transférer les journaux de cluster vers le domaine de compte, prenez en compte les informations suivantes :
 
-* **Cluster mis à disposition sur {{site.data.keyword.Bluemix_notm}} Public** : les journaux sont transférés vers le domaine de compte dans la région publique {{site.data.keyword.Bluemix_notm}} où le cluster s'exécute. 
-* **Cluster mis à disposition sur {{site.data.keyword.Bluemix_notm}} Dédié** : les journaux sont transférés vers le domaine de compte dans la région publique {{site.data.keyword.Bluemix_notm}} où le cluster dédié s'exécute. 
+* **Cluster mis à disposition sur {{site.data.keyword.Bluemix_notm}} Public** : les journaux sont transférés vers le domaine de compte dans la région publique {{site.data.keyword.Bluemix_notm}} où le cluster s'exécute.
+* **Cluster mis à disposition sur {{site.data.keyword.Bluemix_notm}} Dédié** : les journaux sont transférés vers le domaine de compte dans la région publique {{site.data.keyword.Bluemix_notm}} où le cluster dédié s'exécute.
 
-Si vous voulez analyser des données de journal dans Kibana pour un cluster qui transfère des journaux au domaine de compte, tenez compte des informations suivantes : 
+Si vous voulez analyser des données de journal dans Kibana pour un cluster qui transfère des journaux au domaine de compte, tenez compte des informations suivantes :
 
 * Vous devez lancer Kibana dans la région publique où le cluster envoie des journaux au service {{site.data.keyword.loganalysisshort}}.
 
@@ -170,19 +171,19 @@ Vous devez ouvrir le port TCP 443 et le port TCP 9091 depuis chaque agent vers l
 ## Transfert de journaux d'application personnalisés
 {: #forward_app_logs}
 
-Pour activer le transfert des journaux d'application personnalisés situés dans un cluster vers le service {{site.data.keyword.loganalysisshort}}, vous devez définir une configuration de journalisation de cluster où **Source de journal** a pour valeur **application**. Vous pouvez définir cette configuration à l'aide de la commande `bx cs logging-config-create` ou de l'interface utilisateur du cluster. 
+Pour activer le transfert des journaux d'application personnalisés situés dans un cluster vers le service {{site.data.keyword.loganalysisshort}}, vous devez définir une configuration de journalisation de cluster où **Source de journal** a pour valeur **application**. Vous pouvez définir cette configuration à l'aide de la commande `ibmcloud cs logging-config-create` ou de l'interface utilisateur du cluster.
 
-Lorsque vous configurez le cluster pour transférer des journaux personnalisés, vous pouvez spécifier une liste de conteneurs qui s'exécutent dans le cluster à partir duquel vous voulez transférer des journaux personnalisés, ainsi que les chemins à l'intérieur des conteneurs où se trouvent les fichiers journaux personnalisés. 
+Lorsque vous configurez le cluster pour transférer des journaux personnalisés, vous pouvez spécifier une liste de conteneurs qui s'exécutent dans le cluster à partir duquel vous voulez transférer des journaux personnalisés, ainsi que les chemins à l'intérieur des conteneurs où se trouvent les fichiers journaux personnalisés.
 
-* Vous devez spécifier le paramètre **app-paths** pour définir la liste des chemins à l'intérieur des conteneurs à surveiller. Les journaux situés dans ces chemins sont transférés au service {{site.data.keyword.loganalysisshort}}.  
+* Vous devez spécifier le paramètre **app-paths** pour définir la liste des chemins à l'intérieur des conteneurs à surveiller. Les journaux situés dans ces chemins sont transférés au service {{site.data.keyword.loganalysisshort}}. 
 
-    Pour définir ce paramètre, définissez une liste séparée par des virgules des chemins d'accès qui sont disponibles dans les conteneurs. Les caractères génériques tels que '/var/log/*.log' sont acceptés. 
+    Pour définir ce paramètre, définissez une liste séparée par des virgules des chemins d'accès qui sont disponibles dans les conteneurs. Les caractères génériques tels que '/var/log/*.log' sont acceptés.
 
-* Vous pouvez éventuellement définir le paramètre **app-containers** pour spécifier la liste de conteneurs à partir de laquelle collecter et transférer des journaux vers le service {{site.data.keyword.loganalysisshort}}. 
+* Vous pouvez éventuellement définir le paramètre **app-containers** pour spécifier la liste de conteneurs à partir de laquelle collecter et transférer des journaux vers le service {{site.data.keyword.loganalysisshort}}.
 
-    Pour définir ce paramètre, définissez une liste de conteneurs séparée par des virgules. 
+    Pour définir ce paramètre, définissez une liste de conteneurs séparée par des virgules.
 
-**Astuce :** vous pouvez définir plusieurs configurations de journalisation de cluster avec la **source de journal** définie sur **application** dans un cluster. Si des conteneurs dans un cluster possèdent différents chemins d'hébergement pour les journaux, pensez à définir une configuration de journalisation de cluster pour chaque groupe de conteneurs dont les journaux se trouvent dans le même chemin.  
+**Astuce :** vous pouvez définir plusieurs configurations de journalisation de cluster avec la **source de journal** définie sur **application** dans un cluster. Si des conteneurs dans un cluster possèdent différents chemins d'hébergement pour les journaux, pensez à définir une configuration de journalisation de cluster pour chaque groupe de conteneurs dont les journaux se trouvent dans le même chemin. 
 
 
 
@@ -393,7 +394,7 @@ est disponible en tant que zone que vous pouvez utiliser pour effectuer un filtr
 {: #security}
 
 
-Pour transférer des journaux de cluster vers {{site.data.keyword.loganalysisshort}}, vous devez accorder des droits {{site.data.keyword.Bluemix_notm}} au propriétaire de clé {{site.data.keyword.containershort}} et à l'ID utilisateur qui configure les configurations de cluster de journalisation. 
+Pour transférer des journaux de cluster vers {{site.data.keyword.loganalysisshort}}, vous devez accorder des droits {{site.data.keyword.Bluemix_notm}} au propriétaire de clé {{site.data.keyword.containershort}} et à l'ID utilisateur qui configure les configurations de cluster de journalisation.
 
 L'ID utilisateur qui configure les configurations de cluster de journalisation doit avoir les droits suivants :
 

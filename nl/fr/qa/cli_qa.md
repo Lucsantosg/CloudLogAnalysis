@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -33,7 +33,7 @@ Vous trouverez ci-après les réponses aux questions fréquentes concernant l'ut
 Exécutez la commande suivante pour vous connecter à une région d'{{site.data.keyword.Bluemix_notm}} où le service {{site.data.keyword.loganalysisshort}} est disponible :
 
 ```
-bx login -a Endpoint
+ibmcloud login -a Endpoint
 ```
 {: codeblock}
 	
@@ -66,7 +66,7 @@ Où *Endpoint* est l'URL permettant de se connecter à {{site.data.keyword.Bluem
 Par exemple, pour vous connecter à la région du sud des États-Unis, exécutez la commande suivante :
 	
 ```
-bx login -a https://api.ng.bluemix.net
+ibmcloud login -a https://api.ng.bluemix.net
 ```
 {: codeblock}
 
@@ -75,7 +75,7 @@ Suivez les instructions.
 Vous pouvez également définir une organisation et un espace. Exécutez la commande suivante :
 
 ```
-bx target -o OrgName -s SpaceName
+ibmcloud target -o OrgName -s SpaceName
 ```
 {: codeblock}
 
@@ -89,7 +89,7 @@ où
 ## Comment installer l'interface de ligne de commande IBM Cloud ?
 {: #install_bmx_cli}
 
-Voir [Téléchargement et installation de l'interface de ligne de commande {{site.data.keyword.Bluemix}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+Voir [Téléchargement et installation de l'interface de ligne de commande {{site.data.keyword.Bluemix}}](/docs/cli/index.html#overview).
 
 
 
@@ -102,17 +102,17 @@ Procédez comme suit pour obtenir l'identificateur global unique d'un compte :
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Exécutez la commande `bx iam accounts` pour obtenir l'identificateur global unique d'un compte.
+2. Exécutez la commande `ibmcloud iam accounts` pour obtenir l'identificateur global unique d'un compte.
 
     ```
-	bx iam accounts
+	ibmcloud iam accounts
 	```
 	{: codeblock} 
 	
 	Par exemple, afin d'extraire tous les comptes et les identificateurs globaux uniques correspondants pour l'utilisateur xxx@yyy.com, exécutez la commande :
 	
 	```
-	bx iam accounts
+	ibmcloud iam accounts
 	Retrieving all accounts of xxx@yyy.com...
     OK
     Account GUID                       Name                               Type    State    Owner User ID   
@@ -131,14 +131,14 @@ Procédez comme suit pour obtenir l'identificateur global unique d'une organisat
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
-2. Exécutez la commande `bx iam org` pour obtenir l'identificateur global unique de l'organisation.  
+2. Exécutez la commande `ibmcloud iam org` pour obtenir l'identificateur global unique de l'organisation. 
 
     ```
-    bx iam org NAME --guid
+    ibmcloud iam org NAME --guid
     ```
     {: codeblock}
 	
-    où NAME est le nom de l'organisation {{site.data.keyword.Bluemix_notm}}.         
+    où NAME est le nom de l'organisation {{site.data.keyword.Bluemix_notm}}.        
 		
 		
 		
@@ -151,19 +151,19 @@ Procédez comme suit pour obtenir l'identificateur global unique d'un espace :
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-2. Exécutez la commande `bx iam space` pour obtenir l'identificateur global unique de l'espace.  
+2. Exécutez la commande `ibmcloud iam space` pour obtenir l'identificateur global unique de l'espace. 
 
     ```
-    bx iam space NAME --guid
+    ibmcloud iam space NAME --guid
     ```
     {: codeblock}
 	
     où NAME est le nom d'un espace {{site.data.keyword.Bluemix_notm}}. 
 	
-    Par exemple, pour obtenir l'identificateur global unique de l'espace *dev*, exécutez la commande suivante : 
+    Par exemple, pour obtenir l'identificateur global unique de l'espace *dev*, exécutez la commande suivante :
 	
     ```
-    bx iam space dev --guid
+    ibmcloud iam space dev --guid
     e03afff1-3456-4af6-1234-59treg1b0abc
     ```
     {: screen}

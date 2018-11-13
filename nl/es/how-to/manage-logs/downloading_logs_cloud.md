@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -35,22 +35,22 @@ Para obtener más información, consulte [Cómo iniciar la sesión en {{site.dat
 ## Paso 2: Identificar los registros disponibles
 {: #step2}
 
-1. Utilice el mandato `bx logging log-show` para ver qué registros están disponibles durante las 2 últimas semanas. Ejecute el mandato siguiente:
+1. Utilice el mandato `ibmcloud logging log-show` para ver qué registros están disponibles durante las 2 últimas semanas. Ejecute el mandato siguiente:
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     Por ejemplo, el resultado de ejecutar este mandato es:
     
     ```
-    bx logging log-show
+    ibmcloud logging log-show 
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types
-    2017-11-16   794008   706     All          syslog, default
-	2017-11-17   794008   706     All          default
+    Date         Size       Count   Searchable          Types   
+    2017-11-16   794008   706     All          syslog, default   
+	2017-11-17   794008   706     All          default   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
     OK
     ```
@@ -64,15 +64,17 @@ Para obtener más información, consulte [Cómo iniciar la sesión en {{site.dat
 
 Se necesita una sesión para definir el ámbito de datos de registro que están disponibles para una descarga y para mantener el estado de la descarga. 
 
-Utilice el mandato [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) para crear una sesión. Si lo desea, puede especificar fecha de inicio, fecha final y tipos de registros cuando se crea una sesión:  
+Utilice el mandato [ibmcloud logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) para crear una sesión. Si lo desea, puede especificar fecha de inicio, fecha final y tipos de registros cuando se crea una sesión:  
 
 * Si especifica la fecha de inicio y la fecha final, la sesión proporciona acceso a los registros entre ambas fechas inclusive. 
 * Si especifica el tipo de registro (**-t**), la sesión proporciona acceso a un determinado tipo de registro. Esta es una característica importante para gestionar registros a escala, porque puede delimitar el ámbito de una sesión a un pequeño subconjunto de registros en los que está interesado.
 
+**Nota:** Para cada sesión, puede descargar los registros de un máximo de 15 días.
+
 Para crear una sesión que se utiliza para descargar todos los registros que están disponibles para las últimas 2 semanas, ejecute el mandato siguiente:
 
 ```
-bx logging session-create 
+ibmcloud logging session-create 
 ```
 {: codeblock}
 
@@ -86,7 +88,7 @@ La sesión devuelve la siguiente información:
 Por ejemplo,
 
 ```
-$ bx logging session-create
+$ ibmcloud logging session-create
 Creating session for lopezdsr@uk.ibm.com resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type
@@ -95,7 +97,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 ```
 {: screen}
 
-**Consejo:** Para ver la lista de sesiones activas, ejecute el mandato [bx logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
+**Consejo:** Para ver la lista de sesiones activas, ejecute el mandato [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
 
 ## Paso 4: Descargar los datos de registro en un archivo
 {: #step4}
@@ -103,7 +105,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 Para descargar los registros especificados por los parámetros de sesión, ejecute el mandato siguiente:
 
 ```
-bx logging log-download -o Log_File_Name Session_ID
+ibmcloud logging log-download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -115,7 +117,7 @@ donde
 Por ejemplo,
 
 ```
-bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -131,12 +133,12 @@ El indicador de progreso pasa de 0 a 100% a medida que se descargan los registro
 ## Paso 5: Suprimir la sesión
 {: #step5}
 
-Una vez finalizada la descarga, debe suprimir la sesión mediante el mandato [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete). 
+Una vez finalizada la descarga, debe suprimir la sesión mediante el mandato [ibmcloud logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete). 
 
 Ejecute el siguiente mandato para suprimir una sesión:
 
 ```
-bx logging session-delete Session_ID
+ibmcloud logging session-delete Session_ID
 ```
 {: codeblock}
 
@@ -145,7 +147,7 @@ Donde Session_ID es el GUID de la sesión que ha creado en un paso anterior.
 Por ejemplo,
 
 ```
-bx logging session-delete -jshdjsunelsssr4566722==
+ibmcloud logging session-delete -jshdjsunelsssr4566722==
 Deleting session: -jshdjsunelsssr4566722== of resource: 12345678-1234-5678-abcd-378620d6fab5 ...
 Session: -jshdjsunelsssr4566722== is deleted
 

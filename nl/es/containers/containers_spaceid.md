@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-16"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -23,7 +23,7 @@ Puede crear un clúster en una cuenta de {{site.data.keyword.Bluemix_notm}} en e
 Para encontrar el ID de espacio asociado con un clúster, ejecute el mandato siguiente:
 
 ```
-bx cs cluster-get ClusterName --json
+ibmcloud cs cluster-get ClusterName --json
 ```
 {: codeblock}
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -52,9 +52,7 @@ lastupdated: "2018-03-12"
 
 3. {{site.data.keyword.containershort}} および {{site.data.keyword.loganalysisshort}} の処理を行うための CLI を Ubuntu システムにインストールします。
 
-    * {{site.data.keyword.Bluemix_notm}} CLI をインストールします。 詳しくは、『[{{site.data.keyword.Bluemix_notm}} CLI のインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
-    
-    * {{site.data.keyword.containershort}} での Kubernetes クラスターの作成と管理、およびクラスターへのコンテナー化アプリのデプロイを行うための {{site.data.keyword.containershort}} CLI をインストールします。 詳しくは、[CS プラグインのインストール](/docs/containers/cs_cli_install.html#cs_cli_install_steps)を参照してください。
+    * {{site.data.keyword.Bluemix_notm}} CLI をインストールします。 {{site.data.keyword.containershort}} での Kubernetes クラスターの作成と管理、およびクラスターへのコンテナー化アプリのデプロイを行うための {{site.data.keyword.containershort}} CLI をインストールします。 詳しくは、[『{{site.data.keyword.Bluemix_notm}}CLI のインストール』](/docs/cli/index.html#overview)を参照してください。
     
     * {{site.data.keyword.loganalysisshort}} CLI をインストールします。 詳しくは、『[Log Analysis CLI の構成 (IBM Cloud プラグイン)](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)』を参照してください。
     
@@ -87,14 +85,14 @@ lastupdated: "2018-03-12"
 	{{site.data.keyword.containershort}} サービス・プラグインを初期化します。
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
     端末コンテキストをクラスターに設定します。
     
 	```
-	bx cs cluster-config MyCluster
+	ibmcloud cs cluster-config MyCluster
 	```
 	{: codeblock}
 
@@ -121,7 +119,7 @@ lastupdated: "2018-03-12"
 ロギング構成を定義する前に、クラスター内の現行ロギング構成定義を確認してください。 次のコマンドを実行します。
 
 ```
-$ bx cs logging-config-get ClusterName
+$ ibmcloud cs logging-config-get ClusterName
 ```
 {: codeblock}
 
@@ -130,7 +128,7 @@ $ bx cs logging-config-get ClusterName
 例えば、クラスター *mycluster* に対して定義されているロギング構成は、以下のようになります。 
 
 ```
-$ bx cs logging-config-get mycluster
+$ ibmcloud cs logging-config-get mycluster
 Retrieving cluster mycluster logging configurations...
 OK
 Id                                     Source       Namespace   Host                                Port   Org            Space   Protocol   Paths   
@@ -166,7 +164,7 @@ stdout および stderr のログをスペース・ドメインに送信する�
 2. クラスター・ロギング構成を作成します。 *stdout* および *stderr* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
 
     ```
-    bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -181,7 +179,7 @@ stdout および stderr のログをスペース・ドメインに送信する�
 例えば、stdout および stderr のログを米国南部地域のスペース dev に転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -208,7 +206,7 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 2. クラスター・ロギング構成を作成します。 */var/log/syslog* および */var/log/auth.log* ログ・ファイルを {{site.data.keyword.loganalysisshort}} サービスに送信するには、以下のコマンドを実行します。
 
     ```
-    bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+    ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
     ```
     {: codeblock}
 
@@ -223,7 +221,7 @@ bx cs logging-config-create mycluster --logsource container --type ibm --namespa
 例えば、ワーカー・ログを米国南部地域のスペース・ドメインに転送するロギング構成を作成するには、次のコマンドを実行します。
 
 ```
-bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
+ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hostname ingest.logging.ng.bluemix.net --port 9091 --org MyOrg --space dev 
 ```
 {: screen}
 
@@ -273,14 +271,14 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 クラスター・ログがスペースに転送されるためには、{{site.data.keyword.containershort_notm}} キー所有者は以下の許可を持っている必要があります。
 
 * *管理者* 許可が設定された、{{site.data.keyword.loganalysisshort}} サービス用の IAM ポリシー。
-* ログが転送される組織およびスペースでの Cloud Foundry (CF) 許可。コンテナーのキー所有者には、組織の *orgManager* 役割と、スペースの *SpaceManager* および*開発者* の役割が必要です。
+* ログが転送される組織およびスペースでの Cloud Foundry (CF) 許可。 コンテナーのキー所有者には、組織の *orgManager* 役割と、スペースの *SpaceManager* および*開発者* の役割が必要です。
 
 以下のステップを実行します。
 
 1. {{site.data.keyword.containershort}} キー所有者であるアカウントのユーザーを識別します。 端末から次のコマンドを実行します。
 
     ```
-    bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -294,7 +292,7 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 	
     ユーザーの ID を選択し、ユーザーに組織の *orgManager* 役割とスペースの *SpaceManager* および*開発者* の役割があることを確認します。
 
-    ユーザーに正しい許可がない場合、ユーザーに次の許可を付与します。組織の *orgManager* 役割と、スペースの *SpaceManager* および*開発者* の役割。詳しくは、[IBM Cloud UI を使用して、スペース・ログを表示する許可をユーザーに付与する](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)を参照してください。
+    ユーザーに正しい許可がない場合、ユーザーに次の許可を付与します。組織の *orgManager* 役割と、スペースの *SpaceManager* および*開発者* の役割。 詳しくは、[IBM Cloud UI を使用して、スペース・ログを表示する許可をユーザーに付与する](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space)を参照してください。
     
 3. {{site.data.keyword.containershort}} キー所有者として識別されたユーザーに、*管理者* の許可が設定された、{{site.data.keyword.loganalysisshort}} サービス用 IAM ポリシーがあることを検証します。
 
@@ -307,7 +305,7 @@ bx cs logging-config-create mycluster --logsource worker  --type ibm --hostname 
 4. ロギング構成を更新します。 次のコマンドを実行します。
     
     ```
-    bx cs logging-config-refresh ClusterName
+    ibmcloud cs logging-config-refresh ClusterName
     ```
     {: codeblock}
         
@@ -482,10 +480,10 @@ Kubernetes クラスターに関係するその他の検索フィールドにつ
 
 CLI コマンド:
 
-* [bx cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
-* [bx cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
-* [bx cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
-* [bx cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
-* [bx cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
-* [bx cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
+* [ibmcloud cs api-key-info](/docs/containers/cs_cli_reference.html#cs_api_key_info)
+* [ibmcloud cs logging-config-create](/docs/containers/cs_cli_reference.html#cs_logging_create)
+* [ibmcloud cs logging-config-get](/docs/containers/cs_cli_reference.html#cs_logging_get)
+* [ibmcloud cs logging-config-update](/docs/containers/cs_cli_reference.html#cs_logging_update)
+* [ibmcloud cs logging-config-rm](/docs/containers/cs_cli_reference.html#cs_logging_rm)
+* [ibmcloud cs logging-config-refresh](/docs/containers/cs_cli_reference.html#cs_logging_refresh)
 

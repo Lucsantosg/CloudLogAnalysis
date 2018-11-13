@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -21,8 +21,8 @@ lastupdated: "2018-04-10"
 Dans {{site.data.keyword.Bluemix}}, vous pouvez afficher, filtrer et analyser des journaux depuis l'interface de ligne de commande. 
 {:shortdesc}
 
-Pour analyser les journaux de l'application Cloud Foundry (CF), utilisez la commande suivante : `bx cf logs`
-Pour plus d'informations, voir [cf logs](/docs/cli/reference/cfcommands/index.html#cf_logs).
+Pour analyser les journaux de l'application Cloud Foundry (CF), utilisez la commande suivante : `ibmcloud cf logs`
+Pour plus d'informations, voir [cf logs](/docs/cli/reference/ibmcloud/cf_index.html#cf_logs).
 
 
 ## Analyse des journaux d'application CF depuis l'interface de ligne de commande
@@ -47,7 +47,7 @@ Pour afficher tous les journaux disponibles pour une application Cloud Foundry, 
 
 2. Depuis la ligne de commande, exécutez la commande suivante pour afficher tous les journaux :
 
-   <pre class="pre screen"><code> bx cf logs <var class="keyword varname">nom_app</var></code></pre>
+   <pre class="pre screen"><code> ibmcloud cf logs <var class="keyword varname">nom_app</var></code></pre>
    
    
 ### Affichage des dernières entrées de journal d'une application Cloud Foundry
@@ -59,7 +59,7 @@ Pour afficher les derniers journaux disponibles pour une application Cloud Found
 
 2. Depuis la ligne de commande, exécutez la commande suivante pour afficher tous les journaux :
 
-     <pre class="pre screen"><code>bx cf logs <var class="keyword varname">nom_app</var> --recent</code></pre>
+     <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">nom_app</var> --recent</code></pre>
 
 <div class="note tip"><span class="tiptitle">Astuce :</span> lorsque vous exécutez la commande <span class="keyword cmdname">cf push</span> ou <span class="keyword cmdname">cf start</span> dans une seule fenêtre de ligne de commande, vous pouvez entrer <samp class="ph codeph">cf logs nom_app --recent</samp> dans une autre fenêtre de ligne de commande pour afficher les journaux en temps réel. </div>
 
@@ -73,7 +73,7 @@ Pour afficher une partie des journaux disponibles pour une application Cloud Fou
 
 2. Depuis la ligne de commande, exécutez la commande suivante pour afficher tous les journaux :
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">nom_app</var> --recent  | cut -c 29-40,46-</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">nom_app</var> --recent  | cut -c 29-40,46-</code></pre>
     
     Pour plus d'informations sur l'option **cut**, entrez **cut --help**.
 
@@ -87,12 +87,12 @@ Pour afficher les entrées de journal contenant certains mots clés pour une app
 
 2. Depuis la ligne de commande, exécutez la commande suivante pour afficher tous les journaux :
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">nom_app</var> --recent | grep '<var class="keyword varname">mot clé</var>'</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">nom_app</var> --recent | grep '<var class="keyword varname">mot clé</var>'</code></pre>
     
 
 Par exemple, pour afficher les entrées de journal contenant le mot clé **APP**, utilisez la commande suivante :
 
-<pre class="pre screen"><code>bx cf logs nom_app --recent | grep '\[App'</code></pre>
+<pre class="pre screen"><code>ibmcloud cf logs nom_app --recent | grep '\[App'</code></pre>
 
 Pour plus d'informations sur l'option **grep**, entrez **grep --help**.
 
@@ -115,10 +115,8 @@ Pour consulter ce journal, entrez la commande suivante : `cf files nom_applicati
 
 Ce fichier journal enregistre des messages après les étapes principales de la tâche de constitution. Vous pouvez l'utiliser pour identifier les problèmes liés à la constitution.
 
-Pour consulter ce journal, entrez la commande suivante : `bx cf files nom_app logs/staging_task.log`
+Pour consulter ce journal, entrez la commande suivante : `ibmcloud cf files nom_app logs/staging_task.log`
 
-
-**Remarque :** pour des informations sur l'activation de la journalisation des applications, voir [Débogage d'erreurs d'exécution](/docs/debug/index.html#debugging-runtime-errors).
 
 
 

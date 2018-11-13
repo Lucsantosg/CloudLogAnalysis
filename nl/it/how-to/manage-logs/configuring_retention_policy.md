@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -34,7 +34,7 @@ Completa la seguente procedura per disabilitare una politica di conservazione:
 2. Imposta il periodo di conservazione su **-1** per disabilitarlo. Esegui il comando:
 
     ```
-    bx cf logging option -r -1
+    ibmcloud cf logging option -r -1
     ```
     {: codeblock}
     
@@ -43,7 +43,7 @@ Completa la seguente procedura per disabilitare una politica di conservazione:
 Ad esempio, per disabilitare il periodo di conservazione per uno spazio con ID *d35da1e3-b345-475f-8502-cfgh436902a3*, esegui il seguente comando:
 
 ```
-bx cf logging option -r -1
+ibmcloud cf logging option -r -1
 ```
 {: codeblock}
 
@@ -72,7 +72,7 @@ Per ottenere il periodo di conservazione impostato per uno spazio, completa la s
 2. Per ottenere il periodo di conservazione. Esegui il comando:
 
     ```
-    bx cf logging option
+    ibmcloud cf logging option
     ```
     {: codeblock}
 
@@ -100,7 +100,7 @@ Per ottenere il periodo di conservazione impostato per ogni spazio in un account
 2. Per ottenere il periodo di conservazione di ogni spazio nell'account. Esegui il comando:
 
     ```
-    bx cf logging option -a
+    ibmcloud cf logging option -a
     ```
     {: codeblock}
 
@@ -130,7 +130,7 @@ Per visualizzare il periodo di conservazione per un account, completa la seguent
 2. Per impostare il periodo di conservazione. Esegui il comando:
 
     ```
-    bx cf logging option -r *Number_of_days* - a
+    ibmcloud cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
@@ -142,7 +142,7 @@ Per visualizzare il periodo di conservazione per un account, completa la seguent
 Ad esempio, per conservare qualsiasi tipo di log nel tuo account soltanto per 15 giorni, esegui il seguente comando:
 
 ```
-bx cf logging option -r 15 -a
+ibmcloud cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -171,7 +171,7 @@ Per visualizzare il periodo di conservazione per uno spazio, completa la seguent
 2. Per impostare il periodo di conservazione. Esegui il comando:
 
     ```
-    bx cf logging option -r *Number_of_days*
+    ibmcloud cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
@@ -183,7 +183,7 @@ Per visualizzare il periodo di conservazione per uno spazio, completa la seguent
 Ad esempio, per conservare i log disponibili in un spazio per un anno, esegui il seguente comando:
 
 ```
-bx cf logging option -r 365
+ibmcloud cf logging option -r 365
 ```
 {: codeblock}
 

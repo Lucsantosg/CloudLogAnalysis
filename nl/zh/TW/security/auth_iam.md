@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -29,7 +29,7 @@ lastupdated: "2018-04-10"
 
 1. 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   如需相關資訊，請參閱[下載並安裝 {{site.data.keyword.Bluemix}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   如需相關資訊，請參閱[下載並安裝 {{site.data.keyword.Bluemix}} CLI](/docs/cli/index.html#overview)。
    
    如果已安裝 CLI，請繼續進行下一步。
     
@@ -37,10 +37,10 @@ lastupdated: "2018-04-10"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-3. 執行 `bx iam oauth-tokens` 指令來取得 IAM 記號。
+3. 執行 `ibmcloud iam oauth-tokens` 指令來取得 IAM 記號。
 
     ```
-	bx iam oauth-tokens
+	ibmcloud iam oauth-tokens
 	```
 	{: codeblock}
 	

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -227,7 +227,7 @@ Zum Senden von Protokollen an den {{site.data.keyword.loganalysisshort}}-Service
 
 Wählen Sie eine der folgenden Methoden aus, um Protokolle an eine Bereichsdomäne zu senden:
 
-* [Protokollierungstoken zum Senden von Protokollen an einen Bereich mit dem {{site.data.keyword.Bluemix_notm}}-Befehl 'bx service' abrufen](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
+* [Protokollierungstoken zum Senden von Protokollen an einen Bereich mit dem {{site.data.keyword.Bluemix_notm}}-Befehl 'ibmcloud service' abrufen](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
 * [Protokollierungstoken zum Senden von Protokollen an einen Bereich über die Log Analysis-Befehlszeilenschnittstelle abrufen](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [Protokollierungstoken zum Senden von Protokollen an einen Bereich über die Log Analysis-API abrufen](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
 

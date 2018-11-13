@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-01-10"
 # 下载日志
 {: #downloading_logs}
 
-可以将日志下载到本地文件或通过管道将数据传递到其他程序。您将在会话的上下文中下载日志。会话指定将下载哪些日志。如果日志下载中断，会话支持从其中断的地方恢复下载。下载完成后，必须删除会话。
+可以将日志下载到本地文件或通过管道将数据传递到其他程序。您将在会话上下文中下载日志。会话指定将下载哪些日志。如果日志下载中断，会话支持从其中断的地方恢复下载。下载完成后，必须删除会话。
 {:shortdesc}
 
 要完成这些步骤，请安装 {{site.data.keyword.loganalysisshort}} CLI。有关更多信息，请参阅[配置 {{site.data.keyword.loganalysisshort}} CLI](https://console.bluemix.net/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli_)。
@@ -35,20 +35,18 @@ lastupdated: "2018-01-10"
 ## 步骤 2：确定可用的日志
 {: #step2}
 
-1. 使用 `bx logging log-show` 命令可查看最近 2 周可用的日志。运行以下命令：
+1. 使用 `ibmcloud logging log-show` 命令可查看最近 2 周可用的日志。运行以下命令：
 
     ```
-        bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     例如，运行此命令的输出为：
     
     ```
-        bx logging log-show 
+    ibmcloud logging log-show 
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
-
-    
 
     Date         Size       Count   Searchable          Types   
     2017-11-16   794008   706     All          syslog, default   
@@ -66,15 +64,17 @@ lastupdated: "2018-01-10"
 
 要定义可供下载的日志数据的作用域，并保持下载的状态，会话是必需的。 
 
-使用 [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) 命令以创建会话。（可选）创建会话时，可以指定开始日期、结束日期和日志类型：  
+使用 [ibmcloud logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) 命令来创建会话。（可选）创建会话时，可以指定开始日期、结束日期和日志类型：  
 
 * 指定开始日期和结束日期时，会话会提供对这两个日期之间（含这两个日期）的日志的访问权。 
 * 指定日志类型 (**-t**) 时，会话会提供对特定类型日志的访问权。在管理大量日志时，这是非常重要的功能，因为可以将会话的作用域仅限为您关注的一小部分日志。
 
+**注：**对于每个会话，可下载最长 15 天的日志。
+
 要创建会话以用于下载过去两周可用的所有日志，请运行以下命令：
 
 ```
-bx logging session-create 
+ibmcloud logging session-create 
 ```
 {: codeblock}
 
@@ -88,7 +88,7 @@ bx logging session-create
 例如：
 
 ```
-$ bx logging session-create
+$ ibmcloud logging session-create
 Creating session for lopezdsr@uk.ibm.com resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
@@ -97,7 +97,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 ```
 {: screen}
 
-**提示**：要查看活动会话的列表，请运行 [bx logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list) 命令。
+**提示**：要查看活动会话的列表，请运行 [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list) 命令。
 
 ## 步骤 4：将日志数据下载到文件
 {: #step4}
@@ -105,7 +105,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 要下载会话参数指定的日志，请运行以下命令：
 
 ```
-bx logging log-download -o Log_File_Name Session_ID
+ibmcloud logging log-download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -117,7 +117,7 @@ bx logging log-download -o Log_File_Name Session_ID
 例如：
 
 ```
-bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -133,12 +133,12 @@ bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
 ## 步骤 5：删除会话
 {: #step5}
 
-下载完成后，必须使用 [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 命令来删除会话。 
+下载完成后，必须使用 [ibmcloud logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 命令来删除会话。 
 
 运行以下命令来删除会话：
 
 ```
-bx logging session-delete Session_ID
+ibmcloud logging session-delete Session_ID
 ```
 {: codeblock}
 
@@ -147,7 +147,7 @@ bx logging session-delete Session_ID
 例如：
 
 ```
-bx logging session-delete -jshdjsunelsssr4566722==
+ibmcloud logging session-delete -jshdjsunelsssr4566722==
 Deleting session: -jshdjsunelsssr4566722== of resource: 12345678-1234-5678-abcd-378620d6fab5 ...
 Session: -jshdjsunelsssr4566722== is deleted
 

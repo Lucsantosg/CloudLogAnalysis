@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,11 +18,11 @@ lastupdated: "2018-01-10"
 # Ottenimento del token UAA
 {: #auth_uaa}
 
-Per gestire i log utilizzando la API {{site.data.keyword.loganalysisshort}}, devi utilizzare un token di autenticazione. Utilizza la CLI {{site.data.keyword.loganalysisshort}} per ottenere il token UAA. Il token ha un tempo di scadenza. 
+Per gestire i log disponibili in un dominio dello spazio tramite l'API {{site.data.keyword.loganalysisshort}}, devi utilizzare un token di autenticazione.
 {:shortdesc}
 
 		
-## Ottenimento del token UAA utilizzando la CLI Analisi dei log (plugin CF)
+## Ottenimento del token UAA
 {: #uaa_cli}
 
 
@@ -30,7 +30,7 @@ Per ottenere il token di autorizzazione, completa la seguente procedura:
 
 1. Installa la CLI {{site.data.keyword.Bluemix_notm}}.
 
-   Per ulteriori informazioni, vedi [Scarica e installa la CLI {{site.data.keyword.Bluemix}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Per ulteriori informazioni, vedi [Scarica e installa la CLI {{site.data.keyword.Bluemix}}](/docs/cli/index.html#overview).
    
    Se la CLI è installata, continua con il passo successivo.
     
@@ -38,10 +38,10 @@ Per ottenere il token di autorizzazione, completa la seguente procedura:
 
     Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Esegui il comando `bx cf oauth-token` per ottenere il token UAA {{site.data.keyword.Bluemix_notm}}.
+3. Esegui il comando `ibmcloud iam oauth-token` per ottenere il token UAA {{site.data.keyword.Bluemix_notm}}.
 
     ```
-	bx cf oauth-token
+	ibmcloud iam oauth-token
 	```
 	{: codeblock}
 	

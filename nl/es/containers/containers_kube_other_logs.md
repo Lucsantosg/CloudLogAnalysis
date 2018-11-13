@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -27,9 +27,9 @@ Para poder ver y analizar registros del clúster en el servicio {{site.data.keyw
 ## Paso 1: Comprobar los permisos para el ID de usuario
 {: step1}
 
-El ID de usuario debe tener los siguientes permisos para poder añadir configuración de registro al clúster: 
+El ID de usuario debe tener los siguientes permisos para poder añadir configuración de registro al clúster:
 
-* Política de IAM para el servicio {{site.data.keyword.containershort}} con permisos de **visor**. 
+* Política de IAM para el servicio {{site.data.keyword.containershort}} con permisos de **visor**.
 * Política de IAM para la instancia del clúster con permisos de **administrador** o de **operador**.
 
 Para comprobar que el ID de usuario tiene estas políticas de IAM, siga estos pasos:
@@ -42,7 +42,7 @@ Para comprobar que el ID de usuario tiene estas políticas de IAM, siga estos pa
 
 2. En la barra de menús, pulse **Gestionar > Cuenta > Usuarios**.  La ventana *Usuarios* muestra una lista de usuarios con sus direcciones de correo electrónico para la cuenta seleccionada actualmente.
 	
-3. Seleccione el ID de usuario y verifique que el ID de usuario tenga ambas políticas. 
+3. Seleccione el ID de usuario y verifique que el ID de usuario tenga ambas políticas.
 
 
 
@@ -59,14 +59,14 @@ Siga estos pasos:
 2. Inicialice el plug-in del servicio {{site.data.keyword.loganalysisshort}}.
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
 3. Establezca el contexto de terminal para el clúster.
     
 	```
-	bx cs cluster-config ClusterName
+	ibmcloud cs cluster-config ClusterName
 	```
 	{: codeblock}
 
@@ -98,10 +98,10 @@ Puede elegir los registros del clúster que desea reenviar al servicio {{site.da
 {: #step4}
 
 
-El propietario de la clave de {{site.data.keyword.containershort}} necesita las siguientes políticas de IAM: 
+El propietario de la clave de {{site.data.keyword.containershort}} necesita las siguientes políticas de IAM:
 
-* Política de IAM para el servicio {{site.data.keyword.containershort}} con el rol de **administrador**. 
-* Política de IAM para el servicio {{site.data.keyword.loganalysisshort}} con el rol de **administrador**. 
+* Política de IAM para el servicio {{site.data.keyword.containershort}} con el rol de **administrador**.
+* Política de IAM para el servicio {{site.data.keyword.loganalysisshort}} con el rol de **administrador**.
 
 Siga estos pasos: 
 
@@ -121,7 +121,7 @@ Siga estos pasos:
 1. Identifique el usuario en la cuenta que es el propietario de la clave de {{site.data.keyword.containershort}}. Desde un terminal, ejecute el mandato siguiente:
 
     ```
-    bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -142,7 +142,7 @@ Siga estos pasos:
     2. Renueve la configuración de registro. Ejecute el mandato siguiente:
     
         ```
-        bx cs logging-config-refresh ClusterName
+        ibmcloud cs logging-config-refresh ClusterName
         ```
         {: codeblock}
         
@@ -158,7 +158,7 @@ Siga estos pasos:
 Ejecute el siguiente mandato para enviar los archivos de registro *stdout* y *stderr* al servicio de {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -173,14 +173,14 @@ donde
 Por ejemplo, para crear una configuración de registro que reenvíe los registros stdout y stderr al dominio de la cuenta en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
 Para crear una configuración de registro que reenvíe los registros stdout y stderr al dominio del espacio en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
 ```
 {: screen}
 
@@ -192,7 +192,7 @@ bx cs logging-config-create MyCluster --logsource container --type ibm --namespa
 Ejecute el siguiente mandato para enviar los archivos de registro */var/log/apps/**/.log* y */var/log/apps/*/.err* al servicio {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
+ibmcloud cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -203,19 +203,19 @@ donde
 * *OrgName* es el nombre de la organización donde está disponible el espacio.
 * *SpaceName* es el nombre del espacio donde se suministra el servicio de {{site.data.keyword.loganalysisshort}}.
 * *app-containers* es un parámetro opcional que puede establecer para definir una lista de contenedores que desea examinar. Estos contenedores son los únicos desde los que se reenviarán registros a {{site.data.keyword.loganalysisshort}}. Puede establecer uno o varios contenedores separados por comas.
-* *app-paths* define las vías de acceso dentro de los contenedores que desea examinar. Puede establecer una o varias vías de acceso separadas por comas.Se aceptan caracteres comodín como '/var/log/*.log'.  
+* *app-paths* define las vías de acceso dentro de los contenedores que desea examinar. Puede establecer una o varias vías de acceso separadas por comas. Se aceptan caracteres comodín como '/var/log/*.log'. 
 
 Por ejemplo, para crear una configuración de registro que reenvíe los registros de aplicaciones a un dominio de espacio en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
+ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 Por ejemplo, para crear una configuración de registro que reenvíe los registros de aplicaciones al dominio de la cuenta en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
+ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -228,7 +228,7 @@ bx cs logging-config-create MyCluster --logsource application --type ibm --hostn
 Ejecute el siguiente mandato para enviar los archivos de registro */var/log/syslog* y */var/log/auth.log* al servicio {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -244,14 +244,14 @@ donde
 Por ejemplo, para crear una configuración de registro que reenvíe los registros de trabajo a un dominio de espacio en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Por ejemplo, para crear una configuración de registro que reenvíe los registros de trabajo al dominio de la cuenta en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -263,7 +263,7 @@ bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname 
 Ejecute el siguiente mandato para enviar los archivos de registro */var/log/kubelet.log* y */var/log/kube-proxy.log* al servicio {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -279,14 +279,14 @@ donde
 Por ejemplo, para crear una configuración de registro que reenvíe los registros de componentes de sistema de Kubernetes a un dominio de espacio en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Por ejemplo, para crear una configuración de registro que reenvíe los registros de componentes de sistema de Kubernetes en el dominio de la cuenta en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -298,7 +298,7 @@ bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostna
 Ejecute el siguiente mandato para enviar los archivos de registro */var/log/alb/ids/.log*, */var/log/alb/ids/.err*, */var/log/alb/customerlogs/.log* y /var/log/alb/customerlogs/.err* al servicio {{site.data.keyword.loganalysisshort}}:
 
 ```
-bx cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
+ibmcloud cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
 ```
 {: codeblock}
 
@@ -314,14 +314,14 @@ donde
 Por ejemplo, para crear una configuración de registro que reenvíe los registros de controlador de ingress a un dominio de espacio en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Por ejemplo, para crear una configuración de registro que reenvíe los registros de controlador de ingress en el dominio de la cuenta en la región alemana, ejecute el mandato siguiente:
 
 ```
-bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
+ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
 ```
 {: screen}
 

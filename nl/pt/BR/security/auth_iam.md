@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -29,7 +29,7 @@ Para obter o token de autorização usando a CLI do {{site.data.keyword.Bluemix_
 
 1. Instale a CLI do {{site.data.keyword.Bluemix_notm}}.
 
-   Para obter mais informações, veja [Fazer download e instalar a CLI do {{site.data.keyword.Bluemix}}](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Para obter mais informações, veja [Fazer download e instalar a CLI do {{site.data.keyword.Bluemix}}](/docs/cli/index.html#overview).
    
    Se a CLI estiver instalada, continue com a próxima etapa.
     
@@ -37,10 +37,10 @@ Para obter o token de autorização usando a CLI do {{site.data.keyword.Bluemix_
 
     Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Execute o comando `bx iam oauth-tokens` para obter o token IAM.
+3. Execute o comando `ibmcloud iam oauth-tokens` para obter o token IAM.
 
     ```
-	bx iam oauth-tokens
+	ibmcloud iam oauth-tokens
 	```
 	{: codeblock}
 	

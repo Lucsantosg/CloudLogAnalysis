@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -29,7 +29,7 @@ lastupdated: "2018-04-10"
 
 1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
 
-   詳しくは、『[{{site.data.keyword.Bluemix}} CLI のダウンロードとインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
+   詳しくは、[『{{site.data.keyword.Bluemix}}CLI のダウンロードとインストール』](/docs/cli/index.html#overview)を参照してください。
    
    CLI がインストールされている場合は、次のステップに進みます。
     
@@ -37,14 +37,14 @@ lastupdated: "2018-04-10"
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 	
-3. `bx iam oauth-tokens` コマンドを実行して、IAM トークンを取得します。
+3. `ibmcloud iam oauth-tokens` コマンドを実行して、IAM トークンを取得します。
 
     ```
-	bx iam oauth-tokens
+	ibmcloud iam oauth-tokens
 	```
 	{: codeblock}
 	
-	この出力は、そのスペースおよび組織でユーザー ID を認証するために使用する必要がある IAM トークンを返します。 この IAM トークンを「$iam_token」などのシェル変数にエクスポートできます。
+	この出力は、そのスペースおよび組織でユーザー ID を認証するために使用する必要がある IAM トークンを返します。 この IAM トークンを「`$iam_token`」などのシェル変数にエクスポートできます。
 
 
 

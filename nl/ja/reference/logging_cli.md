@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-01-10"
 {: shortdesc}
 
 **前提条件**
-* ロギング・コマンドを実行する前に、`bx login` コマンドを使用して {{site.data.keyword.Bluemix_notm}} にログインし、{{site.data.keyword.Bluemix_short}} アクセス・トークンを生成して、セッションを認証します。 詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
+* ロギング・コマンドを実行する前に、`ibmcloud login` コマンドを使用して {{site.data.keyword.Bluemix_notm}} にログインし、{{site.data.keyword.Bluemix_short}} アクセス・トークンを生成して、セッションを認証します。 詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 
 {{site.data.keyword.loganalysisshort}} CLI の使用方法については、『[ログの管理](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)』を参照してください。
 
@@ -31,59 +31,59 @@ lastupdated: "2018-01-10"
     <th>いつ使用するか</th>
   </tr>
   <tr>
-    <td>[bx cf logging](#base)</td>
+    <td>[ibmcloud cf logging](#base)</td>
     <td>この CLI についての情報 (バージョンまたはコマンド・リストなど) を取得するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[bx cf logging auth](#auth)</td>
+    <td>[ibmcloud cf logging auth](#auth)</td>
     <td>{{site.data.keyword.loganalysisshort}} サービスにログを送信するために使用できるロギング・トークンを取得するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[bx cf logging delete](#delete)</td>
+    <td>[ibmcloud cf logging delete](#delete)</td>
     <td>Log Collection に保管されたログを削除するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[bx cf logging download (ベータ)](#download)</td>
+    <td>[ibmcloud cf logging download (ベータ)](#download)</td>
     <td>Log Collection からローカル・ファイルにログをダウンロードするか、または、別のプログラム (例えば Elastic スタック) にログをパイプするには、このコマンドを使用します。 </td>
   </tr>
   <tr>
-    <td>[bx cf logging help](#help)</td>
+    <td>[ibmcloud cf logging help](#help)</td>
     <td>この CLI の使用方法に関するヘルプ、およびすべてのコマンドのリストを取得するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[bx cf logging option](#option)</td>
+    <td>[ibmcloud cf logging option](#option)</td>
     <td>スペースまたはアカウントで使用可能なログの保存期間を表示または設定するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[bx cf logging session create (ベータ)](#session_create)</td>
+    <td>[ibmcloud cf logging session create (ベータ)](#session_create)</td>
     <td>新規セッションを作成するには、このコマンドを使用します。</td>
   <tr>
   <tr>
-    <td>[bx cf logging session delete (ベータ)](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete (ベータ)](#session_delete)</td>
     <td>セッションを削除するには、このコマンドを使用します。</td>
   <tr>  
   <tr>
-    <td>[bx cf logging session list (ベータ)](#session_list)</td>
+    <td>[ibmcloud cf logging session list (ベータ)](#session_list)</td>
     <td>アクティブ・セッションおよびその ID をリストするには、このコマンドを使用します。</td>
   <tr>  
   <tr>
-    <td>[bx cf logging session show (ベータ)](#session_show)</td>
+    <td>[ibmcloud cf logging session show (ベータ)](#session_show)</td>
     <td>単一セッションの状況を表示するには、このコマンドを使用します。</td>
   <tr>  
   <tr>
-    <td>[bx cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status)</td>
     <td>スペースまたはアカウントで収集されたログに関する情報を取得するには、このコマンドを使用します。</td>
   </tr>
   </table>
 
 
-## bx cf logging
+## ibmcloud cf logging
 {: #base}
 
 CLI のバージョンおよび CLI の使用方法についての情報を提供します。
 
 ```
-bx cf logging [parameters]
+ibmcloud cf logging [parameters]
 ```
 {: codeblock}
 
@@ -103,19 +103,19 @@ bx cf logging [parameters]
 コマンドのリストを取得するには、次のコマンドを実行します。
 
 ```
-bx cf logging --help
+ibmcloud cf logging --help
 ```
 {: codeblock}
 
 CLI のバージョンを取得するには、次のコマンドを実行します。
 
 ```
-bx cf logging --version
+ibmcloud cf logging --version
 ```
 {: codeblock}
 
 
-## bx cf logging auth
+## ibmcloud cf logging auth
 {: #auth}
 
 {{site.data.keyword.loganalysisshort}} サービスにログを送信するために使用できるロギング・トークンを返します。 
@@ -123,7 +123,7 @@ bx cf logging --version
 **注:** このトークンは期限切れになりません。
 
 ```
-bx cf logging auth
+ibmcloud cf logging auth
 ```
 {: codeblock}
 
@@ -143,13 +143,13 @@ bx cf logging auth
   </dd>
 </dl>
 
-## bx cf logging delete
+## ibmcloud cf logging delete
 {: #delete}
 
 Log Collection に保管されたログを削除します。
 
 ```
-bx cf logging delete [parameters]
+ibmcloud cf logging delete [parameters]
 ```
 {: codeblock}
 
@@ -177,21 +177,21 @@ bx cf logging delete [parameters]
 
 2017 年 5 月 25 日のタイプ *linux_syslog* のログを削除するには、次のコマンドを実行します。
 ```
-bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: codeblock}
 
 
 
-## bx cf logging download (ベータ)
+## ibmcloud cf logging download (ベータ)
 {: #download}
 
 Log Collection からローカル・ファイルにログをダウンロードするか、別のプログラム (Elastic スタックなど) にログをパイプします。 
 
-**注:** ファイルをダウンロードするには、まずセッションを作成する必要があります。 セッションは、日付範囲、ログ・タイプ、およびアカウント・タイプに基づいて、ダウンロードするログを定義します。 ログのダウンロードは、1 つのセッションのコンテキスト内で行います。 詳しくは、[bx cf logging session create (ベータ)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) を参照してください。
+**注:** ファイルをダウンロードするには、まずセッションを作成する必要があります。 セッションは、日付範囲、ログ・タイプ、およびアカウント・タイプに基づいて、ダウンロードするログを定義します。 ログのダウンロードは、1 つのセッションのコンテキスト内で行います。 詳しくは、[ibmcloud cf logging session create (ベータ)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) を参照してください。
 
 ```
-bx cf logging download [parameters] [arguments]
+ibmcloud cf logging download [parameters] [arguments]
 ```
 {: codeblock}
 
@@ -206,7 +206,7 @@ bx cf logging download [parameters] [arguments]
 
 <dl>
 <dt>セッション ID</dt>
-<dd>`bx cf logging session create` コマンドの実行時に取得したセッション ID 値に設定します。 この値は、ログをダウンロードするときに使用するセッションを指示します。 <br>**注:** `bx cf logging session create` コマンドには、どのログがダウンロードされるのかを制御するパラメーターがあります。 </dd>
+<dd>`ibmcloud cf logging session create` コマンドの実行時に取得したセッション ID 値に設定します。 この値は、ログをダウンロードするときに使用するセッションを指示します。 <br>**注:** `ibmcloud cf logging session create` コマンドには、どのログがダウンロードされるのかを制御するパラメーターがあります。 </dd>
 </dl>
 
 **注:** ダウンロードが完了した後に同じコマンドを再実行しても何も実行されません。 同じデータをもう一度ダウンロードするには、別のファイルまたは別のセッションを使用する必要があります。
@@ -216,14 +216,14 @@ bx cf logging download [parameters] [arguments]
 Linux システムで、mylogs.gz という名前のファイルにログをダウンロードするには、次のコマンドを実行します。
 
 ```
-bx cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud cf logging download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 ユーザー独自の Elastic スタックにログをダウンロードするには、次のコマンドを実行します。
 
 ```
-bx cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud cf logging download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -244,13 +244,13 @@ output {
 {: screen}
 
 
-## bx cf logging help
+## ibmcloud cf logging help
 {: #help}
 
 コマンドの使用方法に関する情報を提供します。
 
 ```
-bx cf logging help [command]
+ibmcloud cf logging help [command]
 ```
 {: codeblock}
 
@@ -268,12 +268,12 @@ bx cf logging help [command]
 ログの状況を表示するためのコマンドの実行方法に関するヘルプを取得するには、次のコマンドを実行します。
 
 ```
-bx cf logging help status
+ibmcloud cf logging help status
 ```
 {: codeblock}
 
 
-## bx cf logging option
+## ibmcloud cf logging option
 {: #option}
 
 スペースまたはアカウントで使用可能なログの保存期間を表示または変更します。 
@@ -284,7 +284,7 @@ bx cf logging help status
 **注:** デフォルトでは、すべてのログが保管されます。 これらのログは、**delete** コマンドを使用して手動で削除する必要があります。 ログを自動的に削除するには、保存ポリシーを設定します。
 
 ```
-bx cf logging option [parameters]
+ibmcloud cf logging option [parameters]
 ```
 {: codeblock}
 
@@ -295,7 +295,7 @@ bx cf logging option [parameters]
 <dd>(オプション) 保存日数を設定します。 <br> デフォルト値は *-1* 日です。</dd>
 
 <dt>--at-account-level、-a </dt>
-  <dd>(オプション) スコープをアカウント・レベルに設定します。 <br>このパラメーターが指定されていない場合、デフォルト値は、現行スペース (`bx cf login` コマンドを使用してログインしたスペース) では *-1* に設定されます。
+  <dd>(オプション) スコープをアカウント・レベルに設定します。 <br>このパラメーターが指定されていない場合、デフォルト値は、現行スペース (`ibmcloud cf login` コマンドを使用してログインしたスペース) では *-1* に設定されます。
   </dd>
 </dl>
 
@@ -304,7 +304,7 @@ bx cf logging option [parameters]
 ログインしているスペースに対するデフォルトの現在の保存期間を表示するには、次のコマンドを実行します。
 
 ```
-bx cf logging option
+ibmcloud cf logging option
 ```
 {: codeblock}
 
@@ -314,7 +314,7 @@ bx cf logging option
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        -1 |
+| d35da1e3-b345-475f-8502-ibmcloud cfgh436902a3 |        -1 |
 +--------------------------------------+-----------+
 ```
 {: screen}
@@ -323,7 +323,7 @@ bx cf logging option
 ログインしているスペースに対する保存期間を 25 日間に変更するには、次のコマンドを実行します。
 
 ```
-bx cf logging option -r 25
+ibmcloud cf logging option -r 25
 ```
 {: codeblock}
 
@@ -333,13 +333,13 @@ bx cf logging option -r 25
 +--------------------------------------+-----------+
 |               SPACEID                | RETENTION |
 +--------------------------------------+-----------+
-| d35da1e3-b345-475f-8502-bx cfgh436902a3 |        25 |
+| d35da1e3-b345-475f-8502-ibmcloud cfgh436902a3 |        25 |
 +--------------------------------------+-----------+
 ```
 {: screen}
 
 
-## bx cf logging session create (ベータ)
+## ibmcloud cf logging session create (ベータ)
 {: #session_create}
 
 新規セッションを作成します。
@@ -347,7 +347,7 @@ bx cf logging option -r 25
 **注:** 1 つのスペースで最大 30 までの並行セッションを保有できます。 セッションは 1 人のユーザーのために作成されます。 スペース内の複数のユーザーでセッションを共有することはできません。
 
 ```
-bx cf logging session create [parameters]
+ibmcloud cf logging session create [parameters]
 ```
 {: codeblock}
 
@@ -367,7 +367,7 @@ bx cf logging session create [parameters]
   </dd>
   
   <dt>--at-account-level、-a </dt>
-  <dd>(オプション) スコープをアカウント・レベルに設定します。 <br>このパラメーターが指定されていない場合、デフォルト値は、現行スペース (つまり、`bx cf login` コマンドを使用してログインしたスペース) のみに設定されます。
+  <dd>(オプション) スコープをアカウント・レベルに設定します。 <br>このパラメーターが指定されていない場合、デフォルト値は、現行スペース (つまり、`ibmcloud cf login` コマンドを使用してログインしたスペース) のみに設定されます。
   </dd>
 </dl>
 
@@ -402,18 +402,18 @@ bx cf logging session create [parameters]
 2017 年 5 月 20 日から 2017 年 5 月 26 日までの間にあり、ログ・タイプが *log* のログを含むセッションを作成するには、次のコマンドを実行します。
 
 ```
-bx cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
+ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 ```
 {: screen}
 
 
-## bx cf logging session delete (ベータ)
+## ibmcloud cf logging session delete (ベータ)
 {: #session_delete}
 
 セッション ID で指定されたセッションを削除します。
 
 ```
-bx cf logging session delete [arguments]
+ibmcloud cf logging session delete [arguments]
 ```
 {: codeblock}
 
@@ -421,7 +421,7 @@ bx cf logging session delete [arguments]
 
 <dl>
 <dt>セッション ID</dt>
-<dd>削除するセッションの ID。 <br>`bx cf logging session list` コマンドを使用して、すべてのアクティブ・セッションの ID を取得できます。</dd>
+<dd>削除するセッションの ID。 <br>`ibmcloud cf logging session list` コマンドを使用して、すべてのアクティブ・セッションの ID を取得できます。</dd>
 </dl>
 
 **例**
@@ -429,19 +429,19 @@ bx cf logging session delete [arguments]
 セッション ID が *cI6hvAa0KR_tyhjxZZz9Uw==* のセッションを削除するには、次のコマンドを実行します。
 
 ```
-bx cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## bx cf logging session list (ベータ)
+## ibmcloud cf logging session list (ベータ)
 {: #session_list}
 
 アクティブ・セッションおよびその ID をリストします。
 
 ```
-bx cf logging session list 
+ibmcloud cf logging session list 
 ```
 {: codeblock}
 
@@ -465,13 +465,13 @@ bx cf logging session list
 </dl>
  
 
-## bx cf logging session show (ベータ)
+## ibmcloud cf logging session show (ベータ)
 {: #session_show}
 
 単一セッションの状況を表示します。
 
 ```
-bx cf logging session show [arguments]
+ibmcloud cf logging session show [arguments]
 ```
 {: codeblock}
 
@@ -512,18 +512,18 @@ bx cf logging session show [arguments]
 セッション ID が *cI6hvAa0KR_tyhjxZZz9Uw==* のセッションの詳細を表示するには、次のコマンドを実行します。
 
 ```
-bx cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
-## bx cf logging status
+## ibmcloud cf logging status
 {: #status}
 
 スペースまたはアカウントで収集されたログに関する情報を返します。
 
 ```
-bx cf logging status [parameters]
+ibmcloud cf logging status [parameters]
 ```
 {: codeblock}
 
@@ -543,7 +543,7 @@ bx cf logging status [parameters]
   </dd>
   
   <dt>--at-account-level、-a </dt>
-  <dd>(オプション) スコープをアカウント・レベルに設定します。 <br> **注:** アカウント情報を取得するには、この値を設定します。 <br>このパラメーターが指定されていない場合、デフォルト値は、現行スペース (つまり、`bx cf login` コマンドを使用してログインしたスペース) のみに設定されます。
+  <dd>(オプション) スコープをアカウント・レベルに設定します。 <br> **注:** アカウント情報を取得するには、この値を設定します。 <br>このパラメーターが指定されていない場合、デフォルト値は、現行スペース (つまり、`ibmcloud cf login` コマンドを使用してログインしたスペース) のみに設定されます。
   </dd>
   
   <dt>--list-type-detail、-l</dt>
@@ -551,6 +551,6 @@ bx cf logging status [parameters]
   </dd>
 </dl>
 
-**注:** `bx cf logging status` コマンドは、開始日および終了日が指定されていない場合、Log Collection に保管された最近 2 週間分のログのみを報告します。
+**注:** `ibmcloud cf logging status` コマンドは、開始日および終了日が指定されていない場合、Log Collection に保管された最近 2 週間分のログのみを報告します。
 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,8 @@ lastupdated: "2018-04-10"
 # Accès aux journaux d'une application Cloud Foundry
 {: #launch_logs_cloud_ui_cf}
 
-Dans l'interface utilisateur {{site.data.keyword.Bluemix}}, vous pouvez afficher, filtrer et analyser des journaux dans l'onglet des journaux qui est disponible pour chaque application Cloud Foundry ou via l'interface utilisateur du service {{site.data.keyword.loganalysisshort}}. {:shortdesc}
+Dans l'interface utilisateur {{site.data.keyword.Bluemix}}, vous pouvez afficher, filtrer et analyser des journaux dans l'onglet des journaux qui est disponible pour chaque application Cloud Foundry ou via l'interface utilisateur du service {{site.data.keyword.loganalysisshort}}.
+{:shortdesc}
 
 Pour afficher les journaux de l'application CF, tenez compte des informations suivantes : 
 
@@ -28,12 +29,12 @@ Pour afficher les journaux de l'application CF, tenez compte des informations su
     <th>Information</th>
   </tr>
   <tr>
-    <td>Onglet des journaux disponible via l'interface utilisateur de l'application CF</td>
-    <td>Les journaux disponibles pour l'analyse incluent les données des dernières 24 heures. </td>
+    <td>Onglet des journaux disponible via l'interface utilisateur de l'application CF </td>
+    <td>Les journaux disponibles pour l'analyse incluent les données des dernières 24 heures.</td>
   </tr>
   <tr>
     <td>Tableau de bord {{site.data.keyword.loganalysisshort}} (Kibana)</td>
-    <td>Les journaux disponibles pour l'analyse incluent les données des trois derniers jours. Vous pouvez également indiquer une période personnalisée. </td>
+    <td>Les journaux disponibles pour l'analyse incluent les données des trois derniers jours. Vous pouvez également indiquer une période personnalisée.</td>
   </tr>
 </table>
 
@@ -63,7 +64,7 @@ Pour consulter les journaux de déploiement ou d'exécution d'une application Cl
     
 3. Cliquez sur **Afficher dans Kibana**.
 
-Par défaut, les journaux disponibles pour l'analyse incluent les données des 15 dernières minutes. 
+Par défaut, les journaux disponibles pour l'analyse incluent les données des 15 dernières minutes.
 
 **Conseil :** pour analyser des données pour une période personnalisée, voir [Analyse de journal avancée avec Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana). 
 

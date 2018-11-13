@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-12"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -27,12 +27,12 @@ lastupdated: "2018-03-12"
 ## 1단계: 사용자 ID의 권한 검사
 {: step1}
 
-사용자 ID에는 로깅 구성을 클러스터에 추가할 수 있도록 다음 권한이 있어야 합니다. 
+사용자 ID에는 로깅 구성을 클러스터에 추가할 수 있도록 다음 권한이 있어야 합니다.
 
 * **뷰어** 권한이 있는 {{site.data.keyword.containershort}}에 대한 IAM 정책
 * **관리자** 또는 **운영자** 권한이 있는 클러스터 인스턴스에 대한 IAM 정책
 
-사용자 ID에 이 IAM 정책이 있는지 확인하려면 다음 단계를 완료하십시오. 
+사용자 ID에 이 IAM 정책이 있는지 확인하려면 다음 단계를 완료하십시오.
 
 **참고:** 정책 지정 권한을 가진 계정 소유자 또는 사용자만 이 단계를 수행할 수 있습니다.
 
@@ -59,14 +59,14 @@ lastupdated: "2018-03-12"
 2. {{site.data.keyword.loganalysisshort}} 서비스 플러그인을 초기화하십시오.
 
 	```
-	bx cs init
+	ibmcloud cs init
 	```
 	{: codeblock}
 
 3. 터미널 컨텍스트를 클러스터로 설정하십시오.
     
 	```
-	bx cs cluster-config ClusterName
+	ibmcloud cs cluster-config ClusterName
 	```
 	{: codeblock}
 
@@ -98,7 +98,7 @@ lastupdated: "2018-03-12"
 {: #step4}
 
 
-{{site.data.keyword.containershort}} 키 소유자는 다음 AIM 정책이 필요합니다. 
+{{site.data.keyword.containershort}} 키 소유자는 다음 AIM 정책이 필요합니다.
 
 * **관리자** 역할이 있는 {{site.data.keyword.containershort}}에 대한 IAM 정책
 * **관리자** 역할이 있는 {{site.data.keyword.loganalysisshort}} 서비스에 대한 IAM 정책
@@ -121,7 +121,7 @@ lastupdated: "2018-03-12"
 1. {{site.data.keyword.containershort}} 키 소유자인 계정의 사용자를 식별하십시오. 터미널에서 다음 명령을 실행하십시오.
 
     ```
-    bx cs api-key-info ClusterName
+    ibmcloud cs api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -142,7 +142,7 @@ lastupdated: "2018-03-12"
     2. 로깅 구성을 새로 고치십시오. 다음 명령을 실행하십시오.
     
         ```
-        bx cs logging-config-refresh ClusterName
+        ibmcloud cs logging-config-refresh ClusterName
         ```
         {: codeblock}
         
@@ -158,7 +158,7 @@ lastupdated: "2018-03-12"
 다음 명령을 실행하여 *stdout* 및 *stderr* 로그 파일을 {{site.data.keyword.loganalysisshort}} 서비스로 보내십시오.
 
 ```
-bx cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -173,14 +173,14 @@ bx cs logging-config-create ClusterName --logsource container --namespace '*' --
 예를 들어, stdout 및 stderr 로그를 독일 지역의 계정 도메인에 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
 stdout 및 stderr 로그를 독일 지역의 영역 도메인에 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
 ```
 {: screen}
 
@@ -192,7 +192,7 @@ bx cs logging-config-create MyCluster --logsource container --type ibm --namespa
 다음 명령을 실행하여 */var/log/apps/**/.log* 및 */var/log/apps/*/.err* 로그 파일을 {{site.data.keyword.loganalysisshort}} 서비스로 보내십시오.
 
 ```
-bx cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
+ibmcloud cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -202,20 +202,20 @@ bx cs logging-config-create ClusterName --logsource application --type ibm --hos
 * *EndPoint*는 {{site.data.keyword.loganalysisshort}} 서비스가 프로비저닝된 영역의 로깅 서비스에 대한 URL입니다. 엔드포인트 목록은 [엔드포인트](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls)를 참조하십시오.
 * *OrgName*은 영역이 사용 가능한 조직의 이름입니다.
 * *SpaceName*은 {{site.data.keyword.loganalysisshort}} 서비스가 프로비저닝된 영역의 이름입니다.
-* *app-containers*는 보려는 컨테이너 목록을 정의하도록 설정할 수 있는 선택적 매개변수입니다. 컨테이너는 로그가 {{site.data.keyword.loganalysisshort}}로 전달될 유일한 항목입니다. 쉼표로 구분하여 하나 이상의 컨테이너를 설정할 수 있습니다. 
-* *app-paths*는 보려는 컨테이너 내부의 경로를 정의합니다. 쉼표로 구분하여 하나 이상의 경로를 설정할 수 있습니다. 와일드카드(예: '/var/log/*.log')는 사용할 수 있습니다.  
+* *app-containers*는 보려는 컨테이너 목록을 정의하도록 설정할 수 있는 선택적 매개변수입니다. 컨테이너는 로그가 {{site.data.keyword.loganalysisshort}}로 전달될 유일한 항목입니다. 쉼표로 구분하여 하나 이상의 컨테이너를 설정할 수 있습니다.
+* *app-paths*는 보려는 컨테이너 내부의 경로를 정의합니다. 쉼표로 구분하여 하나 이상의 경로를 설정할 수 있습니다. 와일드카드(예: '/var/log/*.log')는 사용할 수 있습니다. 
 
 예를 들어, 애플리케이션 로그를 독일 지역의 영역 도메인에 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
+ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 예를 들어, 애플리케이션 로그를 독일 지역의 계정 도메인에 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
+ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -228,7 +228,7 @@ bx cs logging-config-create MyCluster --logsource application --type ibm --hostn
 다음 명령을 실행하여 */var/log/syslog* 및 */var/log/auth.log* 로그 파일을 {{site.data.keyword.loganalysisshort}} 서비스로 보내십시오.
 
 ```
-bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -244,14 +244,14 @@ bx cs logging-config-create ClusterName --logsource worker --type ibm --hostname
 예를 들어, 작업자 로그를 독일 지역의 영역 도메인에 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 예를 들어, 작업자 로그를 독일 지역의 계정 도메인에 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -263,7 +263,7 @@ bx cs logging-config-create MyCluster --logsource worker  --type ibm --hostname 
 다음 명령을 사용하여 */var/log/kubelet.log* 및 */var/log/kube-proxy.log* 로그 파일을 {{site.data.keyword.loganalysisshort}} 서비스로 보내십시오.
 
 ```
-bx cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -279,14 +279,14 @@ bx cs logging-config-create ClusterName --logsource kubernetes --type ibm --host
 예를 들어, Kubernetes 시스템 컴포넌트 로그를 독일 지역의 영역 도메인에 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 예를 들어, Kubernetes 시스템 컴포넌트 로그를 독일 지역의 계정 도메인에 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -298,7 +298,7 @@ bx cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostna
 다음 명령을 사용하여 */var/log/alb/ids/.log*, */var/log/alb/ids/.err*, */var/log/alb/customerlogs/.log* 및 /var/log/alb/customerlogs/.err* 로그 파일을 {{site.data.keyword.loganalysisshort}} 서비스로 보내십시오.
 
 ```
-bx cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
+ibmcloud cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
 ```
 {: codeblock}
 
@@ -314,14 +314,14 @@ bx cs logging-config-create ClusterName --logsource ingress --type ibm --hostnam
 예를 들어, Ingress 제어기 로그를 독일 지역의 영역 도메인에 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 예를 들어, Ingress 제어기 로그를 독일 지역의 계정 도메인에 전달하는 로깅 구성을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
+ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
 ```
 {: screen}
 

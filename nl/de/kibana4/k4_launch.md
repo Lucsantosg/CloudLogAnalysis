@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -75,7 +75,7 @@ Die Abfrage, durch die die in Kibana angezeigten Daten gefiltert werden, ruft Pr
 
 Führen Sie den folgenden Schritt aus, um Kibana über einen Browser zu starten:
 
-1. Öffnen Sie die Seite [https://logging.<span class="keyword" data-hd-keyref="DomainName">Domänenname</span>](https://logging.{DomainName}), um sich an der Kibana-Benutzerschnittstelle anzumelden.
+1. Starten Sie die Kibana-Benutzerschnittstelle.
     
     Beispiel: 
       

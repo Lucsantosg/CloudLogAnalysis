@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-03-15"
 # 更改套餐
 {: #change_plan}
 
-可以通过 {{site.data.keyword.Bluemix_notm}} UI 或通过运行 `bx cf update-service` 命令来更改 {{site.data.keyword.loganalysisshort}} 服务套餐。您可以随时升级或降级套餐。
+可以通过 {{site.data.keyword.Bluemix_notm}} UI 或通过运行 `ibmcloud service update` 命令来更改 {{site.data.keyword.loganalysisshort}} 服务套餐。您可以随时升级或降级套餐。
 {:shortdesc}
 
 ## 通过 UI 更改服务套餐
@@ -52,14 +52,14 @@ lastupdated: "2018-03-15"
 
     有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-2. 运行 `bx service list` 命令以检查当前套餐，并从空间中可用的服务的列表中获取 {{site.data.keyword.loganalysisshort}} 服务名称。 
+2. 运行 `ibmcloud service list` 命令，以检查当前套餐，并从空间中可用的服务的列表中获取 {{site.data.keyword.loganalysisshort}} 服务名称。 
 
     **name** 字段的值是必须用于更改套餐的名称。 
 
     例如：
 	
 	```
-	$ bx  bx service list
+	$ ibmcloud service list
     Invoking 'cf services'...
 
     Getting services in org MyOrg / space dev as xxx@ibm.com...
@@ -70,16 +70,16 @@ lastupdated: "2018-03-15"
     ```
 	{: screen}
     
-3. 升级或降级套餐。运行 `bx service update` 命令。
+3. 升级或降级套餐。运行 `ibmcloud service update` 命令。
     
 	```
-	bx service update service_name [-p new_plan]
+	ibmcloud service update service_name [-p new_plan]
 	```
 	{: codeblock}
 	
 	其中 
 	
-	* *service_name* 是服务的名称。可以运行 `bx service list` 命令来获取此值。
+	* *service_name* 是服务的名称。要获取此值，可以运行 `ibmcloud service list` 命令。
 	* *new_plan* 是套餐的名称。
 	
 	下表列出了不同的套餐及其支持的值：
@@ -115,16 +115,16 @@ lastupdated: "2018-03-15"
 	例如，要将套餐降级到*轻量*套餐，请运行以下命令：
 	
 	```
-	bx service update "Log Analysis-m2" -p standard
+	ibmcloud service update "Log Analysis-m2" -p standard
     Updating service instance Log Analysis-m2 as xxx@ibm.com...
     OK
 	```
 	{: screen}
 
-4. 验证是否已更改为新套餐。运行 `bx service list` 命令。
+4. 验证是否已更改为新套餐。运行 `ibmcloud service list` 命令。
 
   ```
-	bx service list
+	ibmcloud service list
 	```
 	    {: codeblock}
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -21,7 +21,7 @@ lastupdated: "2018-04-10"
 En {{site.data.keyword.Bluemix}}, puede ver, filtrar y analizar registros mediante la interfaz de línea de mandatos. 
 {:shortdesc}
 
-Para analizar los registros de aplicación de Cloud Foundry (CF), utilice el siguiente mandato: `bx cf logs` Para obtener más información, consulte [cf logs](/docs/cli/reference/cfcommands/index.html#cf_logs).
+Para analizar los registros de aplicación de Cloud Foundry (CF), utilice el siguiente mandato: `ibmcloud cf logs` Para obtener más información, consulte [cf logs](/docs/cli/reference/ibmcloud/cf_index.html#cf_logs).
 
 
 ## Análisis de registros de app de CF desde la CLI
@@ -46,7 +46,7 @@ Para ver todos los registros disponibles de una app Cloud Foundry, siga estos pa
 
 2. Desde la línea de mandatos, ejecute el siguiente mandato para visualizar todos los registros:
 
-   <pre class="pre screen"><code> bx cf logs <var class="keyword varname">appname</var></code></pre>
+   <pre class="pre screen"><code> ibmcloud cf logs <var class="keyword varname">appname</var></code></pre>
    
    
 ### Visualización de las últimas entradas de registro de una app Cloud Foundry
@@ -58,7 +58,7 @@ Para ver los registros más recientes disponibles para una app Cloud Foundry, si
 
 2. Desde la línea de mandatos, ejecute el siguiente mandato para visualizar todos los registros:
 
-     <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent</code></pre>
+     <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent</code></pre>
 
 <div class="note tip"><span class="tiptitle">Consejo:</span> Cuando ejecute el mandato <span class="keyword cmdname">cf push</span> o <span class="keyword cmdname">cf
 start</span> en una ventana de línea de mandatos, puede escribir <samp class="ph codeph">cf
@@ -75,7 +75,7 @@ Para ver una parte de los registros disponibles para una app Cloud Foundry corre
 
 2. Desde la línea de mandatos, ejecute el siguiente mandato para visualizar todos los registros:
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
     
     Para obtener más información sobre la opción **cut**, escriba **cut --help**.
 
@@ -89,12 +89,12 @@ Para visualizar las entradas de registro que contienen determinadas palabras cla
 
 2. Desde la línea de mandatos, ejecute el siguiente mandato para visualizar todos los registros:
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
     
 
 Por ejemplo, para visualizar las entradas de registro que contienen la palabra clave **APP**, puede utilizar el mandato siguiente:
 
-<pre class="pre screen"><code>bx cf logs appname --recent | grep '\[App'</code></pre>
+<pre class="pre screen"><code>ibmcloud cf logs appname --recent | grep '\[App'</code></pre>
 
 Para obtener más información sobre la opción **grep**, escriba **grep --help**.
 
@@ -117,10 +117,8 @@ Para ver este registro, ejecute el siguiente mandato: `cf files appname app/.bui
 
 Este archivo de registro registra mensajes después de los principales pasos de la tarea de transferencia. Puede utilizar este registro para resolver problemas de transferencia.
 
-Para ver este registro, ejecute el siguiente mandato: `bx cf files appname logs/staging_task.log`
+Para ver este registro, ejecute el siguiente mandato: `ibmcloud cf files appname logs/staging_task.log`
 
-
-**Nota:** Para obtener información sobre cómo habilitar el registro de aplicación, consulte [Depuración de errores de tiempo de ejecución](/docs/debug/index.html#debugging-runtime-errors).
 
 
 

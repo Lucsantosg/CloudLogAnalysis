@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ lastupdated: "2018-04-10"
 
 1. 安装 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   有关更多信息，请参阅[下载并安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   有关更多信息，请参阅[下载并安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
    
    如果 CLI 已安装，请继续执行下一步。
     
@@ -39,11 +39,11 @@ lastupdated: "2018-04-10"
 3. 运行以下命令：
 
     ```
-	bx logging token-get
+	ibmcloud logging token-get
 	```
 	{: codeblock}
 
-输出返回日志记录令牌。
+输出会返回日志记录令牌。
 
 
 ## 使用 {{site.data.keyword.Bluemix_notm}} CLI 获取日志记录令牌以向空间发送日志 
@@ -53,7 +53,7 @@ lastupdated: "2018-04-10"
 
 1. 安装 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   有关更多信息，请参阅[下载并安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   有关更多信息，请参阅[下载并安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
    
    如果 CLI 已安装，请继续执行下一步。
     
@@ -68,17 +68,15 @@ lastupdated: "2018-04-10"
     列出服务以获取空间中 {{site.data.keyword.loganalysisshort}} 实例的名称：
 	
     ```
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	
 	例如：
 	
 	```
-	bx service list
+	ibmcloud service list
     Invoking 'cf services'...
-
-    
 
     Getting services in org lopezdsr_org / space dev as xxx@yyyy...
     OK
@@ -93,14 +91,14 @@ lastupdated: "2018-04-10"
 	创建密钥。对 servicename 使用 **name** 值并输入您密钥的名称。
 	
 	```
-	bx service key-create servicename KeyName 
+	ibmcloud service key-create servicename KeyName 
 	```
 	{: codeblock}
 	
 	例如：
 	
 	```
-	bx service key-create "Log Analysis-vg" mykey2
+	ibmcloud service key-create "Log Analysis-vg" mykey2
     Invoking 'cf create-service-key Log Analysis-vg mykey2'...
 
     Creating service key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -111,14 +109,14 @@ lastupdated: "2018-04-10"
 4. 获取日志记录令牌。运行以下命令：
 	
 	```
-	bx service key-show name Keyname
+	ibmcloud service key-show name Keyname
 	```
 	{: codeblock}
 	
 	例如： 
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" 
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" 
     Invoking 'cf service-key Log Analysis-vg mykey2'...
 
     Getting key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -134,7 +132,7 @@ lastupdated: "2018-04-10"
 	要获取日志记录令牌，您可以运行以下命令：
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
     sdtghyrtfde4
 	```
 	{: screen}
@@ -149,7 +147,7 @@ lastupdated: "2018-04-10"
 
 1. 安装 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   有关更多信息，请参阅[下载并安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   有关更多信息，请参阅[下载并安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
    
    如果 CLI 已安装，请继续执行下一步。
     
@@ -159,10 +157,10 @@ lastupdated: "2018-04-10"
 	
 3. 获取 [UAA 令牌](/docs/services/CloudLogAnalysis/security/auth_uaa.html#uaa_cli)。
 
-    例如，运行 `bx cf oauth-token` 命令以获取 UAA 令牌。
+    例如，运行 `ibmcloud cf oauth-token` 命令以获取 UAA 令牌。
 
     ```
-	bx cf oauth-token
+	ibmcloud cf oauth-token
 	```
 	{: codeblock}
 	
@@ -178,7 +176,7 @@ lastupdated: "2018-04-10"
 
     * *TOKEN* 是上一步中获取的 oauth 令牌（不包含 Bearer）。
 	
-	* *SPACEID* 是上一步中获取的空间的 GUID。 
+	* *SPACEID* 是上一步中获取的空间 GUID。 
 		
 	例如：
 	
@@ -196,9 +194,9 @@ lastupdated: "2018-04-10"
     {: codeblock}	
 	
 	其中
-	* SPACEID 是运行服务的空间的 GUID。
-	* TOKEN 是在上一步中获取的 UAA 令牌，不带 bearer 前缀。
-	* LOGGING_ENDPOINT 是可以使用组织和空间的 {{site.data.keyword.Bluemix_notm}} 区域的 {{site.data.keyword.loganalysisshort}} 端点。每个区域的 LOGGING_ENDPOINT 不同。要查看不同端点的 URL，请参阅[端点](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints)。
+	* SPACEID 是服务运行所在空间的 GUID。
+	* TOKEN 是上一步中获取的 UAA 令牌，不带 Bearer 前缀。
+	* LOGGING_ENDPOINT 是组织和空间所在的 {{site.data.keyword.Bluemix_notm}} 区域的 {{site.data.keyword.loganalysisshort}} 端点。每个区域的 LOGGING_ENDPOINT 不同。要查看不同端点的 URL，请参阅[端点](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints)。
 	
     该命令返回您向该空间发送日志时必须使用的日志记录令牌。 	
 

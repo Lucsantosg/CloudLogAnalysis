@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -21,8 +21,8 @@ lastupdated: "2018-04-10"
 In {{site.data.keyword.Bluemix}}, puoi visualizzare, filtrare e analizzare i log tramite l'interfaccia riga di comando (CLI). 
 {:shortdesc}
 
-Per analizzare i log dell'applicazione CF (Cloud Foundry) utilizza il seguente comando: `bx cf logs`
-Per maggiori informazioni, vedi [cf logs](/docs/cli/reference/cfcommands/index.html#cf_logs).
+Per analizzare i log dell'applicazione CF (Cloud Foundry) utilizza il seguente comando: `ibmcloud cf logs`
+Per ulteriori informazioni, vedi [cf logs](/docs/cli/reference/ibmcloud/cf_index.html#cf_logs).
 
 
 ## Analisi dei log dell'applicazione CF dalla CLI
@@ -47,7 +47,7 @@ Per visualizzare tutti i log disponibili per un'applicazione Cloud Foundry, comp
 
 2. Nella riga di comando, immetti il seguente comando per visualizzare tutti i log:
 
-   <pre class="pre screen"><code> bx cf logs <var class="keyword varname">appname</var></code></pre>
+   <pre class="pre screen"><code> ibmcloud cf logs <var class="keyword varname">appname</var></code></pre>
    
    
 ### Visualizzazione delle ultime voci di log per un'applicazione Cloud Foundry
@@ -59,7 +59,7 @@ Per visualizzare i log più recenti disponibili per un'applicazione Cloud Foundr
 
 2. Nella riga di comando, immetti il seguente comando per visualizzare tutti i log:
 
-     <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent</code></pre>
+     <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent</code></pre>
 
 <div class="note tip"><span class="tiptitle">Suggerimento:</span> quando esegui il comando <span class="keyword cmdname">cf push</span> o <span class="keyword cmdname">cf
 start</span> in una finestra della riga di comando, puoi immettere <samp class="ph codeph">cf logs appname --recent</samp> in un'altra finestra di riga di comando per visualizzare i log in tempo reale. </div>
@@ -74,7 +74,7 @@ Per visualizzare una parte dei log disponibili per un'applicazione Cloud Foundry
 
 2. Nella riga di comando, immetti il seguente comando per visualizzare tutti i log:
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
     
     Per ulteriori informazioni sull'opzione **cut**, immetti **cut --help**.
 
@@ -88,12 +88,12 @@ Per visualizzare le voci di log che contengono determinate parole chiave per un'
 
 2. Nella riga di comando, immetti il seguente comando per visualizzare tutti i log:
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
     
 
 Ad esempio, per visualizzare le voci di log che contengono la parola chiave **APP**, puoi utilizzare il seguente comando:
 
-<pre class="pre screen"><code>bx cf logs appname --recent | grep '\[App'</code></pre>
+<pre class="pre screen"><code>ibmcloud cf logs appname --recent | grep '\[App'</code></pre>
 
 Per ulteriori informazioni sull'opzione **grep**, immetti **grep --help**.
 
@@ -116,10 +116,8 @@ Per visualizzare questo log, immetti il seguente comando: `cf files appname app/
 
 Questo file di log registra i messaggi dopo i passi principali dell'attività di preparazione. Puoi utilizzare questo log per risolvere i problemi relativi alla preparazione.
 
-Per visualizzare questo log, immetti il seguente comando: `bx cf files appname logs/staging_task.log`
+Per visualizzare questo log, immetti il seguente comando: `ibmcloud cf files appname logs/staging_task.log`
 
-
-**Nota:** per informazioni su come abilitare la registrazione dell'applicazione, vedi [Debug degli errori di runtime](/docs/debug/index.html#debugging-runtime-errors).
 
 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -55,7 +55,7 @@ lastupdated: "2018-03-15"
 
 1. [必要條件] 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   如需相關資訊，請參閱[安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   如需相關資訊，請參閱[安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
    
    如果已安裝 CLI，請繼續進行下一步。
     
@@ -63,10 +63,10 @@ lastupdated: "2018-03-15"
 
     如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 	
-3. 執行 `bx service create` 指令，以佈建實例。
+3. 執行 `ibmcloud service create` 指令，以佈建實例。
 
     ```
-	bx service create service_name service_plan service_instance_name
+	ibmcloud service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -79,21 +79,21 @@ lastupdated: "2018-03-15"
 	例如，若要使用精簡方案建立 {{site.data.keyword.loganalysisshort}} 服務的實例，請執行下列指令：
 	
 	```
-	bx service create ibmLogAnalysis standard my_logging_svc
+	ibmcloud service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. 驗證已順利建立服務。執行下列指令：
 
     ```	
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	
 	執行指令的輸出看起來如下：
 	
 	```
-    Getting services in org MyOrg / space MySpace as xxx@yyy.com...
+Getting services in org MyOrg / space MySpace as xxx@yyy.com...
     OK
     
     name                           service                  plan                   bound apps              last operation

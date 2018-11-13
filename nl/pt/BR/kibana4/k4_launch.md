@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -75,7 +75,7 @@ A consulta que é usada para filtrar os dados que são exibidos no Kibana recupe
 
 Conclua a etapa a seguir para ativar o Kibana por meio de um navegador:
 
-1. Abra [https://logging.<span class="keyword" data-hd-keyref="DomainName">DomainName</span>](https://logging.{DomainName}) para efetuar login na interface com o usuário do Kibana.
+1. Ative a interface com o usuário do Kibana.
     
     Por exemplo, 
       

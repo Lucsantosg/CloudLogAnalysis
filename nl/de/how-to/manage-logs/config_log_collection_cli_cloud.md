@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -27,12 +27,12 @@ Führen Sie die folgenden Schritte aus, um die {{site.data.keyword.loganalysissh
 
 1. Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle.
 
-   Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Weitere Informationen finden Sie in [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle installieren](/docs/cli/index.html#overview).
    
 2. Suchen Sie den Namen des Plug-ins im Repository. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx plugin repo-plugins
+    ibmcloud plugin repo-plugins
     ```
     {: codeblock}
     
@@ -41,7 +41,7 @@ Führen Sie die folgenden Schritte aus, um die {{site.data.keyword.loganalysissh
 3. Installieren Sie das Plug-in für {{site.data.keyword.loganalysisshort}}. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx plugin install logging-cli -r Bluemix
+    ibmcloud plugin install logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -50,14 +50,14 @@ Führen Sie die folgenden Schritte aus, um die {{site.data.keyword.loganalysissh
     Führen Sie beispielsweise den folgenden Befehl aus, um die Liste der installierten Plug-ins anzuzeigen:
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     Die Ausgabe sieht wie folgt aus:
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -73,7 +73,7 @@ Führen Sie die folgenden Schritte aus, um die {{site.data.keyword.loganalysissh
 
 1. Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle.
 
-   Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Weitere Informationen finden Sie in [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle installieren](/docs/cli/index.html#overview).
 
 2. Installieren Sie das Plug-in für {{site.data.keyword.loganalysisshort}}.
 
@@ -86,14 +86,14 @@ Führen Sie die folgenden Schritte aus, um die {{site.data.keyword.loganalysissh
     Überprüfen Sie beispielsweise die Version des Plug-ins. Führen Sie den folgenden Befehl aus:
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     Die Ausgabe sieht wie folgt aus:
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -119,19 +119,19 @@ Führen Sie die folgenden Schritte aus, um das Log Analysis-Plug-in unter Linux 
 2. Installieren Sie das Plug-in. Führen Sie den folgenden Befehl aus:
         
     ```
-    bx plugin install -f logging-cli-linux-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-linux-amd64-0.1.1
     ```
     {: codeblock}
 
 
 
 
-## Log AnalysisPlug-in unter Windows über eine Datei installieren
+## Log Analysis-Plug-in unter Windows über eine Datei installieren
 {: #install_cli_windows}
 
 Führen Sie die folgenden Schritte aus, um das Log Analysis-Plug-in unter Windows zu installieren:
 
-1. Laden Sie die aktuelle Version des CLI-Plug-ins für den {{site.data.keyword.loganalysisshort}}-Service (IBM-Logging) von der [{{site.data.keyword.Bluemix_notm}}-CLI-Seite](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins) herunter. 
+1. Laden Sie die aktuelle Version des CLI-Plug-ins für den {{site.data.keyword.loganalysisshort}}-Service (IBM Logging) von der [{{site.data.keyword.Bluemix_notm}}-CLI-Seite](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins) herunter. 
 	
 	1. Wählen Sie den Wert für die Plattform aus: **win64**. 
 	2. Klicken Sie auf die Schaltfläche zum Speichern der Datei (**Save file**).  
@@ -139,7 +139,7 @@ Führen Sie die folgenden Schritte aus, um das Log Analysis-Plug-in unter Window
 2. Installieren Sie das Plug-in. Führen Sie den folgenden Befehl aus:
         
     ```
-    bx plugin install -f logging-cli-windows-amd64-0.1.1.exe
+    ibmcloud plugin install -f logging-cli-windows-amd64-0.1.1.exe
     ```
     {: codeblock}
 
@@ -165,7 +165,7 @@ Führen Sie die folgenden Schritte aus, um das Log Analysis-Plug-in unter Mac OS
 3. Installieren Sie das Plug-in. Führen Sie den folgenden Befehl aus:
         
     ```
-    bx plugin install -f logging-cli-darwin-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-darwin-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -184,14 +184,14 @@ Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für d
     Überprüfen Sie beispielsweise die Version des Plug-ins. Führen Sie den folgenden Befehl aus:
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     Die Ausgabe sieht wie folgt aus:
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -199,12 +199,12 @@ Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für d
     ```
     {: screen}
     
-2. Wenn das Plug-in installiert ist, führen Sie den Befehl `bx plugin uninstall` aus, um das Plug-in für die Protokollierung zu deinstallieren.
+2. Wenn das Plug-in installiert ist, führen Sie den Befehl `ibmcloud plugin uninstall` aus, um das CLI-Plug-in für die Protokollierung zu deinstallieren.
 
     Führen Sie den folgenden Befehl aus:
         
     ```
-    bx plugin uninstall logging-cli
+    ibmcloud plugin uninstall logging-cli
     ```
     {: codeblock}
   
@@ -212,7 +212,7 @@ Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für d
 ## Log Analysis-Befehlszeilenschnittstelle über das Repository aktualisieren
 {: #update_cli}
 
-Zum Aktualisieren der Befehlszeilenschnittstelle für die Protokollierung führen Sie den Befehl *bx plugin update* aus.
+Zum Aktualisieren der Befehlszeilenschnittstelle für die Protokollierung führen Sie den Befehl *ibmcloud plugin update* aus.
 {:shortdesc}
 
 Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für den {{site.data.keyword.loganalysisshort}}-Service zu aktualisieren:
@@ -220,7 +220,7 @@ Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für d
 1. Aktualisieren Sie das {{site.data.keyword.loganalysisshort}}-Plug-in. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx plugin update logging-cli -r Bluemix
+    ibmcloud plugin update logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -229,14 +229,14 @@ Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für d
     Überprüfen Sie beispielsweise die Version des Plug-ins. Führen Sie den folgenden Befehl aus:
     
     ```
-    bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     Die Ausgabe sieht wie folgt aus:
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -260,7 +260,7 @@ Führen Sie die folgenden Schritte aus, um allgemeine Informationen zur Befehlsz
 2. Listen Sie Informationen zu den unterstützten Befehlen und zur Befehlszeilenschnittstelle auf. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
     
@@ -278,14 +278,14 @@ Gehen Sie wie folgt vor, um Hilfe zur Verwendung eines Befehls abzurufen:
 2. Rufen Sie die Liste der unterstützten Befehle auf und suchen Sie nach dem gewünschten Befehl. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. Rufen Sie Hilfeinformationen zu dem Befehl ab. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Befehl*
     ```
     {: codeblock}
     
@@ -305,14 +305,14 @@ Ein Befehl kann Unterbefehle haben. Gehen Sie wie folgt vor, um Hilfe zu Unterbe
 2. Rufen Sie die Liste der unterstützten Befehle auf und suchen Sie nach dem gewünschten Befehl. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. Rufen Sie Hilfeinformationen zu dem Befehl ab und ermitteln Sie die unterstützten Unterbefehle. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Befehl*
     ```
     {: codeblock}
     
@@ -321,7 +321,7 @@ Ein Befehl kann Unterbefehle haben. Gehen Sie wie folgt vor, um Hilfe zu Unterbe
 4. Rufen Sie Hilfeinformationen zu dem Befehl ab und ermitteln Sie die unterstützten Unterbefehle. Führen Sie den folgenden Befehl aus:
 
     ```
-    bx logging *Command* help *Subcommand*
+    ibmcloud logging *Befehl* help *Unterbefehl*
     ```
     {: codeblock}
     
@@ -334,17 +334,17 @@ Ein Befehl kann Unterbefehle haben. Gehen Sie wie folgt vor, um Hilfe zu Unterbe
 ## Details des Plug-ins anzeigen
 {: #show}
   
-Mit dem Befehl 'bx plugin show logging-cli' können Sie die Details des Plug-ins anzeigen. 
+Mit dem Befehl 'ibmcloud plugin show logging-cli' können Sie die Details des Plug-ins anzeigen. 
 
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
 ```
 {: codeblock}
     
 Die Ausgabe sieht wie folgt aus:
    
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
                                   
 Plug-in                         logging-cli
 Version                        0.1.1

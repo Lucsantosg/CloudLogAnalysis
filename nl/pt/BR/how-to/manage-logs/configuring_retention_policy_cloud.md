@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -16,10 +16,10 @@ lastupdated: "2018-04-19"
 # Configurando a política de retenção de log
 {: #configuring_retention_policy}
 
-Por padrão, a política de retenção é desativada e os logs são mantidos indefinidamente. Use o comando **bx logging option-update** para mudar a política de retenção.
+Por padrão, a política de retenção é desativada e os logs são mantidos indefinidamente. Use o comando **ibmcloud logging option-update** para mudar a política de retenção.
 {:shortdesc}
 
-É possível usar o comando **bx logging option-show** para visualizar a política de retenção que define o número máximo de dias que os logs são mantidos na Coleção de logs. 
+É possível usar o comando **ibmcloud logging option-show** para visualizar a política de retenção que define o número máximo de dias pelos quais os logs são mantidos na Coleção de logs. 
 
 Ao configurar uma política de retenção, após a expiração do período de retenção, os logs são excluídos automaticamente.
 
@@ -42,7 +42,7 @@ Conclua as etapas a seguir para desativar uma política de retenção:
 3. Configure o período de retenção como **-1** para desativar o período de retenção. Execute o comando:
 
     ```
-    bx logging option-update -r account -i AccountID -e RETENTION_VALUE
+    ibmcloud logging option-update -r account -i AccountID -e RETENTION_VALUE
 	```
     {: codeblock}
 	
@@ -53,7 +53,7 @@ Conclua as etapas a seguir para desativar uma política de retenção:
 Por exemplo, para desativar o período de retenção de uma conta com ID *12345677fgh436902a3*, execute o comando a seguir:
 
 ```
-bx logging option-update -r account -i 12345677fgh436902a3 -e -1
+ibmcloud logging option-update -r account -i 12345677fgh436902a3 -e -1
 ```
 {: codeblock}
 
@@ -72,7 +72,7 @@ Conclua as etapas a seguir para desativar uma política de retenção:
 2. Configure o período de retenção como **-1** para desativar o período de retenção. Execute o comando:
 
     ```
-    bx logging option-show -e RETENTION_VALUE
+    ibmcloud logging option-show -e RETENTION_VALUE
 	```
     {: codeblock}
 	
@@ -83,7 +83,7 @@ Conclua as etapas a seguir para desativar uma política de retenção:
 Por exemplo, para desativar o período de retenção de um espaço com o ID *d35da1e3-b345-475f-8502-cfgh436902a3*, execute o comando a seguir:
 
 ```
-bx logging option-update -e -1
+Opção de criação de log ibmcloud-update -e -1
 ```
 {: codeblock}
 
@@ -104,14 +104,14 @@ Para obter o período de retenção configurado para uma conta, conclua as etapa
 3. Obtenha o período de retenção. Execute o comando:
 
     ```
-    bx logging option-show -r account -i AccountID
+    ibmcloud logging option-show -r account -i AccountID
     ```
     {: codeblock}
 
     A saída é:
 
     ```
-    bx logging option-show -r account -i kjskdsjfksjdflkjdsfbbd06461b066
+    ibmcloud logging option-show -r account -i kjskdsjfksjdflkjdsfbbd06461b066
     Showing log options of resource: kjskdsjfksjdflkjdsfbbd06461b066 ...
 
     Resource ID                              Retention   
@@ -131,14 +131,14 @@ Para obter o período de retenção que é configurado para um espaço, conclua 
 2. Obtenha o período de retenção. Execute o comando:
 
     ```
-    bx logging option-show
+    ibmcloud logging option-show
     ```
     {: codeblock}
 
     A saída é:
 
     ```
-    bx logging option-show
+    ibmcloud logging option-show
     Showing log options of resource: 12345678-1234-2edr-a9de-378620d6fab5 ...
 
     SpaceId                                Retention   
@@ -164,7 +164,7 @@ Conclua as etapas a seguir:
 3. Configure o período de retenção. Execute o comando:
 
     ```
-    bx logging option-update -r account -i AccountID -e RETENTION_VALUE
+    ibmcloud logging option-update -r account -i AccountID -e RETENTION_VALUE
     ```
     {: codeblock}
     
@@ -176,7 +176,7 @@ Conclua as etapas a seguir:
 Por exemplo, para manter qualquer tipo de log em sua conta por 15 dias apenas, execute o comando a seguir:
 
 ```
-bx logging option-update -r account -i AccountID -e 15
+ibmcloud logging option-update -r account -i AccountID -e 15
 ```
 {: codeblock}
 
@@ -194,7 +194,7 @@ Para ver o período de retenção para um espaço, conclua as etapas a seguir:
 2. Configure o período de retenção. Execute o comando:
 
     ```
-    bx logging option-update -e RETENTION_VALUE
+    Opção de criação de log ibmcloud-update -e RETENTION_VALUE
     ```
     {: codeblock}
     
@@ -206,7 +206,7 @@ Para ver o período de retenção para um espaço, conclua as etapas a seguir:
 Por exemplo, para manter os logs disponíveis em um espaço por um ano, execute o comando a seguir:
 
 ```
-bx logging option-update -e 365
+Opção de criação de log ibmcloud-update -e 365
 ```
 {: codeblock}
 

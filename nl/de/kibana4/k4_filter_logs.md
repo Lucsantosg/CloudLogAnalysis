@@ -3,7 +3,7 @@
 copyright:
   years: 2015, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -42,7 +42,7 @@ Um einen Filter für einen Wert hinzuzufügen, der nicht in der *Feldliste* ange
 
 Führen Sie die folgenden Schritte aus, um einen Filter für einen Wert hinzuzufügen, der nicht in der Liste enthalten ist, die im Abschnitt *Feldliste* angezeigt wird:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
     Die folgende Abbildung zeigt beispielsweise die Werte von Instanzen für eine CF-App in der *Feldliste*. 
     
@@ -81,7 +81,7 @@ Sie können nach Einträgen suchen, die einen bestimmten Feldwert enthalten.
 
 Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen bestimmten Feldwert enthalten:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. Geben Sie in der *Feldliste* das Feld an, für das Sie einen Filter definieren möchten, und klicken Sie darauf.
 
@@ -140,7 +140,7 @@ Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen 
 
 Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die eine bestimmte Protokollquelle enthalten:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. Wählen Sie in der *Feldliste* das Feld **source_id** aus.
 
@@ -166,7 +166,7 @@ Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die eine b
 
 Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen bestimmten Protokolltyp enthalten:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. Wählen Sie in der *Feldliste* das Feld **type** aus.
 
@@ -192,7 +192,7 @@ Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen 
 
 Führen Sie die folgenden Schritte aus, um Ihre Protokolle im Kibana-Dashboard nach Instanz-ID anzuzeigen und zu filtern:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. Wählen Sie in der *Feldliste* eines der folgenden Felder aus, um nach einer bestimmten Instanz-ID zu suchen:
 
@@ -221,7 +221,7 @@ Führen Sie die folgenden Schritte aus, um Ihre Protokolle im Kibana-Dashboard n
 
 Führen Sie die folgenden Schritte aus, um nach Einträgen zu suchen, die einen bestimmten Nachrichtentyp enthalten:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. Wählen Sie in der *Feldliste* das Feld **message_type** aus.
 
@@ -253,7 +253,7 @@ Wenn Elasticsearch den Wert einer Zeichenfolgefelds analysiert, teilt es den Tex
     
 Führen Sie die folgenden Schritte aus, um nach Einträgen suchen, die bestimmten Text in einem Feldwert enthalten:
 
-1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). 
+1. Prüfen Sie auf der Kibana-Seite 'Discover', welches Subset Ihrer Daten angezeigt wird. Weitere Informationen finden Sie unter [Daten ermitteln, die auf Ihrer Kibana-Seite 'Discover' angezeigt werden](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
 
 2. Geben Sie die Felder an, die standardmäßig in Elasticsearch analysiert werden.
 

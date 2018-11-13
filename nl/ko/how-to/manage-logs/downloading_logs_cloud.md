@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -35,20 +35,20 @@ lastupdated: "2018-01-10"
 ## 2단계: 사용 가능한 로그 식별
 {: #step2}
 
-1. `bx logging log-show` 명령을 사용하여 최근 2주 동안 사용 가능한 로그를 확인하십시오. 다음 명령을 실행하십시오.
+1. `ibmcloud logging log-show` 명령을 사용하여 최근 2주 동안의 사용 가능한 로그를 확인하십시오. 다음 명령을 실행하십시오.
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     예를 들면, 이 명령을 실행하면 출력은 다음과 같습니다.
     
     ```
-    bx logging log-show 
+    ibmcloud logging log-show 
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
-    Date         Size     Count   Searchable   Types   
+    Date         Size       Count   Searchable          Types   
     2017-11-16   794008   706     All          syslog, default   
 	2017-11-17   794008   706     All          default   
     Logs of resource cedc73c5-1234-5678-abcd-378620d6fab5 is showed
@@ -64,15 +64,17 @@ lastupdated: "2018-01-10"
 
 세션은 다운로드의 상태를 유지하고, 다운로드할 수 있는 로그 데이터의 범위를 정의하기 위해 필요합니다. 
 
-[bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) 명령을 사용하여 세션을 작성하십시오. 선택사항으로 시작 날짜, 종료 날짜 및 세션 작성 시 로그의 유형을 지정할 수 있습니다.  
+[ibmcloud logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) 명령을 사용하여 세션을 작성하십시오. 선택사항으로 시작 날짜, 종료 날짜 및 세션 작성 시 로그의 유형을 지정할 수 있습니다.  
 
 * 시작 날짜 및 종료 날짜를 지정하면 세션은 해당 날짜가 포함된 범위에서 로그에 대한 액세스를 제공합니다. 
 * 로그의 유형(**-t**)을 지정하면 세션은 특정 유형의 로그에 대한 액세스를 제공합니다. 사용자가 관심이 있는 작은 서브세트의 로그로만 세션의 범위를 정할 수 있기 때문에 범위에서 로그를 관리할 때 중요한 기능입니다.
 
+**참고:** 각 세션에 대해 최대 15일 동안의 로그를 다운로드할 수 있습니다.
+
 최근 2주 동안 사용 가능한 모든 로드를 다운로드하는 데 사용되는 세션을 작성하려면 다음 명령을 실행하십시오.
 
 ```
-bx logging session-create 
+ibmcloud logging session-create 
 ```
 {: codeblock}
 
@@ -86,7 +88,7 @@ bx logging session-create
 예:
 
 ```
-$ bx logging session-create
+$ ibmcloud logging session-create
 Creating session for lopezdsr@uk.ibm.com resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type
@@ -95,7 +97,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 ```
 {: screen}
 
-**팁:** 활성 세션의 목록을 보려면 [bx logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list) 명령을 실행하십시오.
+**팁:** 활성 세션의 목록을 보려면 [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list) 명령을 실행하십시오.
 
 ## 4단계: 파일에 로그 데이터 다운로드
 {: #step4}
@@ -103,7 +105,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 세션 매개변수에 의해 지정된 로그를 다운로드하려면 다음 명령을 실행하십시오.
 
 ```
-bx logging log-download -o Log_File_Name Session_ID
+ibmcloud logging log-download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -115,7 +117,7 @@ bx logging log-download -o Log_File_Name Session_ID
 예:
 
 ```
-bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -131,12 +133,12 @@ bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
 ## 5단계: 세션 삭제
 {: #step5}
 
-다운로드가 완료된 후에 [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 명령을 사용하여 세션을 삭제해야 합니다. 
+다운로드가 완료되고 나면 [ibmcloud logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete) 명령을 사용하여 세션을 삭제해야 합니다. 
 
 세션을 삭제하려면 다음 명령을 실행하십시오.
 
 ```
-bx logging session-delete Session_ID
+ibmcloud logging session-delete Session_ID
 ```
 {: codeblock}
 
@@ -145,7 +147,7 @@ bx logging session-delete Session_ID
 예:
 
 ```
-bx logging session-delete -jshdjsunelsssr4566722==
+ibmcloud logging session-delete -jshdjsunelsssr4566722==
 Deleting session: -jshdjsunelsssr4566722== of resource: 12345678-1234-5678-abcd-378620d6fab5 ...
 Session: -jshdjsunelsssr4566722== is deleted
 

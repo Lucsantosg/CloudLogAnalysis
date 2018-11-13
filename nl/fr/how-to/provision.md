@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-15"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -55,7 +55,7 @@ Procédez comme suit pour mettre à disposition une instance du service {{site.d
 
 1. [Prérequis] Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
 
-   Pour plus d'informations, voir [Installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)
+   Pour plus d'informations, voir [Installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.](/docs/cli/index.html#overview)
    
    Si l'interface de ligne de commande est installée, passez à l'étape suivante.
     
@@ -63,10 +63,10 @@ Procédez comme suit pour mettre à disposition une instance du service {{site.d
 
     Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
-3. Exécutez la commande `bx service create` pour mettre à disposition une instance.
+3. Exécutez la commande `ibmcloud service create` pour mettre à disposition une instance.
 
     ```
-	bx service create service_name service_plan service_instance_name
+	ibmcloud service create service_name service_plan service_instance_name
 	```
 	{: codeblock}
 	
@@ -79,14 +79,14 @@ Procédez comme suit pour mettre à disposition une instance du service {{site.d
 	Par exemple, pour créer une instance du service {{site.data.keyword.loganalysisshort}} avec le plan Lite, exécutez la commande suivante :
 	
 	```
-	bx service create ibmLogAnalysis standard my_logging_svc
+	ibmcloud service create ibmLogAnalysis standard my_logging_svc
 	```
 	{: codeblock}
 	
 4. Vérifiez que le service a été créé. Exécutez la commande suivante :
 
     ```	
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	

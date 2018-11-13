@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-10"
 # Cloud Foundry アプリ
 {: #logging_cf_apps}
 
-{{site.data.keyword.Bluemix}} では、Cloud Foundry (CF) ログの表示、フィルター操作、および分析を、{{site.data.keyword.Bluemix_notm}} ダッシュボード、Kibana、およびコマンド・ライン・インターフェースを介して行うことができます。それに加えて、ログ・レコードを外部ログ管理ツールにストリーミングすることもできます。 
+{{site.data.keyword.Bluemix}} では、Cloud Foundry (CF) ログの表示、フィルター操作、および分析を、{{site.data.keyword.Bluemix_notm}} ダッシュボード、Kibana、およびコマンド・ライン・インターフェースを介して行うことができます。 それに加えて、ログ・レコードを外部ログ管理ツールにストリーミングすることもできます。 
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} は、Cloud Foundry プラットフォームによって生成されるログ・データ、および Cloud Foundry アプリケーションによって生成されるログ・データを記録します。 ログでは、アプリに対して生成されたエラー、警告、および情報の各メッセージを表示できます。 

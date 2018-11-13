@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2018-04-19"
 # Excluindo logs
 {: #deleting_logs}
 
-Use o comando [bx cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) para excluir logs da Coleção de logs. 
+Use o comando [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) para excluir logs da Coleção de logs. 
 {:shortdesc}
 
 * É possível excluir logs dentro de um intervalo de tempo específico.
@@ -37,21 +37,21 @@ Conclua as etapas a seguir:
 2. Execute o comando *status* para ver os logs que estão disponíveis em Coleção de logs.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Por exemplo,
     
     ```
-    $ bx cf logging status +------------+--------+-------+--------------------+------------+ | DATE | COUNT | SIZE | TYPES | SEARCHABLE | +------------+--------+-------+--------------------+------------+ | 2017-05-24 | 16 | 3020 | log | None | +------------+--------+-------+--------------------+------------+ | 2017-05-25 | 1224 | 76115 | linux_syslog,log | All | +------------+--------+-------+--------------------+------------+
+    $ ibmcloud cf logging status +------------+--------+-------+--------------------+------------+ | DATE | COUNT | SIZE | TYPES | SEARCHABLE | +------------+--------+-------+--------------------+------------+ | 2017-05-24 | 16 | 3020 | log | None | +------------+--------+-------+--------------------+------------+ | 2017-05-25 | 1224 | 76115 | linux_syslog,log | All | +------------+--------+-------+--------------------+------------+
     ```
     {: screen}
 	
 3. Exclua os logs que são armazenados em um dia específico.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate
+	ibmcloud cf logging delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
@@ -63,7 +63,7 @@ Conclua as etapas a seguir:
 	Por exemplo, para excluir os logs para 25 de maio de 2017, execute o comando a seguir:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
@@ -80,21 +80,21 @@ Conclua as etapas a seguir:
 2. Execute o comando *status* para ver os logs que estão disponíveis em Coleção de logs.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Por exemplo,
     
     ```
-    $ bx cf logging status +------------+--------+-------+--------------------+------------+ | DATE | COUNT | SIZE | TYPES | SEARCHABLE | +------------+--------+-------+--------------------+------------+ | 2017-05-24 | 16 | 3020 | log | None | +------------+--------+-------+--------------------+------------+ | 2017-05-25 | 1224 | 76115 | linux_syslog,log | All | +------------+--------+-------+--------------------+------------+
+    $ ibmcloud cf logging status +------------+--------+-------+--------------------+------------+ | DATE | COUNT | SIZE | TYPES | SEARCHABLE | +------------+--------+-------+--------------------+------------+ | 2017-05-24 | 16 | 3020 | log | None | +------------+--------+-------+--------------------+------------+ | 2017-05-25 | 1224 | 76115 | linux_syslog,log | All | +------------+--------+-------+--------------------+------------+
     ```
     {: screen}
 	
 3. Exclua os logs que são armazenados em um dia específico.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
@@ -107,7 +107,7 @@ Conclua as etapas a seguir:
 	Por exemplo, para excluir os logs do tipo linux_syslog para 25 de maio de 2017, execute o comando a seguir:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
@@ -125,14 +125,14 @@ Conclua as etapas a seguir:
 2. Execute o comando *status* para ver os logs disponíveis em Coleção de logs no nível de conta.
 
     ```
-    bx cf logging status  -a
+    ibmcloud cf logging status -a
     ```
     {: codeblock}
     
     Por exemplo,
     
     ```
-    $ bx cf logging status -a
+    $ ibmcloud cf logging status -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -146,7 +146,7 @@ Conclua as etapas a seguir:
 3. Exclua os logs que são armazenados em um dia específico.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType -a
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType -a
 	```
 	{: codeblock}
 	
@@ -159,7 +159,7 @@ Conclua as etapas a seguir:
 	Por exemplo, para excluir os logs do tipo linux_syslog para 25 de maio de 2017 que são armazenados em Coleção de logs no nível de conta, execute o comando a seguir:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
 	```
 	{: screen}
 	

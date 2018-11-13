@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ lastupdated: "2018-04-19"
 * アプリケーション・ログの収集は、ポッドがデプロイされるとすぐに行われます。 
 * コンテナー・プロセスが STDOUT (標準出力) および STDERR (標準エラー) に出力する情報は {{site.data.keyword.containershort}} によって自動的に収集されます。
 
-{{site.data.keyword.loganalysisshort}} サービスでの分析にそれらのログを使用できるようにするには、{{site.data.keyword.loganalysisshort}} にログを転送するようにクラスターを構成する必要があります。ログは、{{site.data.keyword.loganalysisshort}} アカウント・ドメインまたはアカウント内のスペース・ドメインに転送できます。デフォルトでは次のようになります。
+{{site.data.keyword.loganalysisshort}} サービスでの分析にそれらのログを使用できるようにするには、{{site.data.keyword.loganalysisshort}} にログを転送するようにクラスターを構成する必要があります。 ログは、{{site.data.keyword.loganalysisshort}} アカウント・ドメインまたはアカウント内のスペース・ドメインに転送できます。 デフォルトでは次のようになります。
 
 * 米国南部地域で使用可能なクラスターは、米国南部地域で使用可能な {{site.data.keyword.loganalysisshort}} サービスにログを送信します。
 * 米国東部地域で使用可能なクラスターは、米国南部地域で使用可能な {{site.data.keyword.loganalysisshort}} サービスにログを送信します。
@@ -41,9 +41,9 @@ lastupdated: "2018-04-19"
 * ログをアカウント・ドメインに送信する場合、検索割り当て量は 1 日当たり 500 MB バイトであり、長期保管のためにログを Log Collection に保管することはできません。
 * ログをスペース・ドメインに送信する場合は、1 日当たりの検索割り当て量を定義する {{site.data.keyword.loganalysisshort}} サービス・プランを選択でき、長期保管のためにログを Log Collection 内に保管できます。
 
-**注:** デフォルトでは、クラスターから {{site.data.keyword.loganalysisshort}} サービスへのログの送信は自動的には有効になりません。ロギングを有効にするためには、{{site.data.keyword.loganalysisshort}} サービスに自動的にログを転送するようにクラスター内に 1 つ以上のロギング構成を作成する必要があります。コマンド・ラインで `bx cs logging-config-create` コマンドを使用するか、または、{{site.data.keyword.Bluemix_notm}} UI で使用可能なクラスター・ダッシュボードを使用して、ロギングを有効にすることができます。詳しくは、『[クラスター・ログの自動収集の有効化](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs)』を参照してください。
+**注:** デフォルトでは、クラスターから {{site.data.keyword.loganalysisshort}} サービスへのログの送信は自動的には有効になりません。 ロギングを有効にするためには、{{site.data.keyword.loganalysisshort}} サービスに自動的にログを転送するようにクラスター内に 1 つ以上のロギング構成を作成する必要があります。 コマンド・ラインで `ibmcloud cs logging-config-create` コマンドを使用するか、または、{{site.data.keyword.Bluemix_notm}} UI で使用可能なクラスター・ダッシュボードを使用して、ロギングを有効にすることができます。 詳しくは、『[クラスター・ログの自動収集の有効化](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs)』を参照してください。
 
-Kubernetes クラスターについての作業を行う際、名前空間 *ibm-system* および *kube-system* は予約済みです。これらの名前空間で使用可能なリソースの許可を作成、削除、または変更しないでください。 これらの名前空間のログは、{{site.data.keyword.IBM_notm}} の使用を目的としています。
+Kubernetes クラスターについての作業を行う際、名前空間 *ibm-system* および *kube-system* は予約済みです。 これらの名前空間で使用可能なリソースの許可を作成、削除、または変更しないでください。 これらの名前空間のログは、{{site.data.keyword.IBM_notm}} の使用を目的としています。
 
 
 
@@ -61,9 +61,9 @@ Kubernetes クラスターについての作業を行う際、名前空間 *ibm-
 
 * クラスター・ログを収集する組織およびスペースが使用可能になっている Public 地域で Kibana を起動する必要があります。
 * Kibana 検索割り当て量を増やし、長期保管用の Log Collection にログを保管するには、要件を満たすプランを使用して、ログの転送が行われるスペースに {{site.data.keyword.loganalysisshort}} サービスをプロビジョンする必要があります。 
-* ご使用のユーザー ID が、ログを表示する許可を持っている必要があります。 スペース・ドメイン内のログを表示するユーザーには CF 役割が必要です。 **監査員**は、ログの表示を認可される最低の役割です。詳しくは、『[ログを表示するユーザーに必要な役割](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)』を参照してください。
+* ご使用のユーザー ID が、ログを表示する許可を持っている必要があります。 スペース・ドメイン内のログを表示するユーザーには CF 役割が必要です。 **監査員**は、ログの表示を認可される最低の役割です。 詳しくは、『[ログを表示するユーザーに必要な役割](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)』を参照してください。
 
-長期保管用ストレージ (Log Collection) に保管されたクラスター・ログ・デーを管理するには、ユーザー ID が、{{site.data.keyword.loganalysisshort}} サービスと連携するための IAM ポリシーを持っている必要があります。ユーザー ID が、**管理者**、**オペレーター**、または**エディター**の許可を持っている必要があります。詳しくは、『[ログを管理するユーザーに必要な役割](/docs/services/CloudLogAnalysis/manage_logs.html#roles)』を参照してください。
+長期保管用ストレージ (Log Collection) に保管されたクラスター・ログ・デーを管理するには、ユーザー ID が、{{site.data.keyword.loganalysisshort}} サービスと連携するための IAM ポリシーを持っている必要があります。 ユーザー ID が、**管理者**、**オペレーター**、または**エディター**の許可を持っている必要があります。  詳しくは、『[ログを管理するユーザーに必要な役割](/docs/services/CloudLogAnalysis/manage_logs.html#roles)』を参照してください。
 
 
 以下の図は、クラスターがログをスペース・ドメインに転送する場合に、Public の {{site.data.keyword.containershort}} で行われるロギングの概略を示しています。
@@ -159,19 +159,19 @@ Kubernetes クラスターについての作業を行う際、名前空間 *ibm-
 ## カスタム・アプリケーション・ログの転送
 {: #forward_app_logs}
 
-クラスター内のカスタム・アプリケーション・ログの {{site.data.keyword.loganalysisshort}} サービスへの転送を有効にするには、**「ログ・ソース」**を**「アプリケーション」**に設定して、クラスター・ロギング構成を定義する必要があります。この構成は、`bx cs logging-config-create` コマンドを使用して、または、クラスター UI を介して定義できます。
+クラスター内のカスタム・アプリケーション・ログの {{site.data.keyword.loganalysisshort}} サービスへの転送を有効にするには、**「ログ・ソース」**を**「アプリケーション」**に設定して、クラスター・ロギング構成を定義する必要があります。 この構成は、`ibmcloud cs logging-config-create` コマンドを使用して、または、クラスター UI を介して定義できます。
 
 カスタム・ログを転送するようにクラスターを構成するときに、カスタム・ログの転送元にしたい、クラスター内で実行されているコンテナーのリストと、それらのコンテナー内のカスタム・ファイル・ログが置かれているパスを指定できます。
 
-* **app-paths** パラメーターを指定して、監視したいコンテナー内のパスのリストを設定する必要があります。これらのパスに置かれたログが {{site.data.keyword.loganalysisshort}} サービスに転送されます。 
+* **app-paths** パラメーターを指定して、監視したいコンテナー内のパスのリストを設定する必要があります。 これらのパスに置かれたログが {{site.data.keyword.loganalysisshort}} サービスに転送されます。 
 
-    このパラメーターを設定するには、コンテナー内にあるパスのコンマ区切りリストを定義します。「/var/log/*.log」のようなワイルドカードを使用できます。
+    このパラメーターを設定するには、コンテナー内にあるパスのコンマ区切りリストを定義します。 「/var/log/*.log」のようなワイルドカードを使用できます。
 
 * オプションで、**app-containers** パラメーターを設定して、ログを収集して {{site.data.keyword.loganalysisshort}} サービスに転送する元のコンテナーのリストを指定できます。
 
     このパラメーターを設定するには、コンテナーのコンマ区切りリストを定義します。
 
-**ヒント:** **「ログ・ソース」**を**「アプリケーション」**に設定した複数のクラスター・ロギング構成を 1 つのクラスター内に定義できます。クラスター内のコンテナーにおいて複数の異なるパスでログがホスティングされる場合、ログが同じパスに置かれるコンテナーのグループごとに 1 つのクラスター・ロギング構成を定義することを検討してください。 
+**ヒント:** **「ログ・ソース」**を**「アプリケーション」**に設定した複数のクラスター・ロギング構成を 1 つのクラスター内に定義できます。 クラスター内のコンテナーにおいて複数の異なるパスでログがホスティングされる場合、ログが同じパスに置かれるコンテナーのグループごとに 1 つのクラスター・ロギング構成を定義することを検討してください。 
 
 
 
@@ -356,7 +356,7 @@ Ingress コントローラー・ログの分析に役立つフィールド:
 
 デフォルトで、コンテナーのロギングは自動的に有効になります。 Docker ログ・ファイルのすべての項目は、Kibana で **message** フィールドに表示されます。 コンテナー・ログ項目の一部である特定のフィールドを使用して、Kibana でデータをフィルター操作および分析する必要がある場合は、有効な JSON フォーマットの出力を送信するようにアプリケーションを構成します。 例えば、JSON フォーマットのメッセージを  STDOUT (標準出力) および STDERR (標準エラー) に記録します。
 
-メッセージ中の使用可能な各フィールドは構文解析されて、その値に一致するタイプのフィールドに変換されます。例えば、以下の JSON メッセージの各フィールドをご覧ください。
+メッセージ中の使用可能な各フィールドは構文解析されて、その値に一致するタイプのフィールドに変換されます。 例えば、以下の JSON メッセージの各フィールドをご覧ください。
     
 ```
 {"field1":"string type",

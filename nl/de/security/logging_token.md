@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
 
 1. Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle.
 
-   Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle herunterladen und installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Weitere Informationen finden Sie in [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle herunterladen und installieren](/docs/cli/index.html#overview).
    
    Fahren Sie mit dem nächsten Schritt fort, wenn die Befehlszeilenschnittstelle bereits installiert ist.
     
@@ -39,25 +39,25 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
 3. Führen Sie den folgenden Befehl aus:
 
     ```
-	bx logging token-get
+	ibmcloud logging token-get
 	```
 	{: codeblock}
 
 Die Ausgabe gibt das Protokollierungstoken zurück.
 
 
-## Protokollierungstoken zum Senden von Protokollen an einen Bereich mithilfe der {{site.data.keyword.Bluemix_notm}}-CLI abrufen
+## Protokollierungstoken zum Senden von Protokollen an einen Bereich über die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle abrufen 
 {: #logging_token_cloud_cli}
 
 Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, mit dem Sie Protokolle an den {{site.data.keyword.loganalysisshort}}-Service senden können:
 
 1. Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle.
 
-   Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstellen herunterladen und installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Weitere Informationen finden Sie in [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle herunterladen und installieren](/docs/cli/index.html#overview).
    
    Fahren Sie mit dem nächsten Schritt fort, wenn die Befehlszeilenschnittstelle bereits installiert ist.
     
-2. Melden Sie sich an einer Region, einer Organisation und einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
+2. Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
     Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
@@ -66,14 +66,14 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
     Listen Sie die Services auf, um den Namen der {{site.data.keyword.loganalysisshort}}-Instanz im Bereich abzurufen:
 	
     ```
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	
 	Beispiel:
 	
 	```
-	bx service list
+	ibmcloud service list
     Invoking 'cf services'...
 
     Getting services in org lopezdsr_org / space dev as xxx@yyyy...
@@ -87,14 +87,14 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
 	Erstellen Sie einen Schlüssel. Verwenden Sie den Wert **name** als Servicenamen und geben Sie den Namen Ihres Schlüssels ein.
 	
 	```
-	bx service key-create Servicename Schlüsselname 
+	ibmcloud service key-create servicename KeyName 
 	```
 	{: codeblock}
 	
 	Beispiel:
 	
 	```
-	bx service key-create "Log Analysis-vg" mykey2
+	ibmcloud service key-create "Log Analysis-vg" mykey2
     Invoking 'cf create-service-key Log Analysis-vg mykey2'...
 
     Creating service key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -105,14 +105,14 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
 4. Rufen Sie das Protokollierungstoken ab. Führen Sie den folgenden Befehl aus:
 	
 	```
-	bx service key-show Name Schlüsselname
+	ibmcloud service key-show name Keyname
 	```
 	{: codeblock}
 	
 	Beispiel: 
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" 
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" 
     Invoking 'cf service-key Log Analysis-vg mykey2'...
 
     Getting key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -128,7 +128,7 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
 	Führen Sie zum Abrufen des Protokollierungstokens den folgenden Befehl aus:
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
     sdtghyrtfde4
 	```
 	{: screen}
@@ -143,7 +143,7 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
 
 1. Installieren Sie die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle.
 
-   Weitere Informationen finden Sie unter [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle herunterladen und installieren](/docs/cli/reference/bluemix_cli/download_cli.html#download_install).
+   Weitere Informationen finden Sie in [{{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle herunterladen und installieren](/docs/cli/index.html#overview).
    
    Fahren Sie mit dem nächsten Schritt fort, wenn die Befehlszeilenschnittstelle bereits installiert ist.
     
@@ -153,10 +153,10 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
 	
 3. Rufen Sie das [UAA-Token](/docs/services/CloudLogAnalysis/security/auth_uaa.html#uaa_cli) ab.
 
-    Führen Sie zum Abrufen des UAA-Tokens beispielsweise den Befehl `bx cf oauth-token` aus.
+    Führen Sie zum Abrufen des UAA-Tokens beispielsweise den Befehl `ibmcloud cf oauth-token` aus.
 
     ```
-	bx cf oauth-token
+	ibmcloud cf oauth-token
 	```
 	{: codeblock}
 	
@@ -164,7 +164,7 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
 
 4. Rufen Sie die GUID für den Bereich ab.
 
-   Weitere Informationen finden Sie unter [Wie rufe ich die GUID von einem Bereich ab?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid).  
+   Weitere Informationen finden Sie unter [Wie rufe ich die GUID eines Bereichs ab?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid).  
 	
 5. Exportieren Sie die folgenden Variablen: TOKEN und SPACEID.
 
@@ -183,14 +183,14 @@ Führen Sie die folgenden Schritte aus, um das Protokollierungstoken abzurufen, 
 6. Rufen Sie das Protokollierungstoken ab. Führen Sie den folgenden Befehl aus:
  
     ```
-	curl -k -X GET  --header "X-Auth-Token: ${TOKEN}"  --header "X-Auth-Project-Id: s-${BEREICHS-ID}"  PROTOKOLLIERUNGSENDPUNKT/token
+	curl -k -X GET  --header "X-Auth-Token: ${TOKEN}"  --header "X-Auth-Project-Id: s-${SPACEID}"  LOGGING_ENDPOINT/token
     ```
     {: codeblock}	
 	
 	Dabei gilt:
-	* BEREICHS-ID ist die GUID des Bereichs, in dem der Service ausgeführt wird.
-	* TOKEN ist das UAA-Token aus dem vorherigen Schritt ohne das Präfix 'bearer'.
-	* PROTOKOLLIERUNGSENDPUNKT ist der {{site.data.keyword.loganalysisshort}}-Endpunkt für die {{site.data.keyword.Bluemix_notm}}-Region, in der sich die Organisation und der Bereich befinden. Der PROTOKOLLIERUNGSENDPUNKT ist für jede Region anders. Informationen zum Anzeigen von URLs für die verschiedenen Endpunkte finden Sie unter [Endpunkte](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
+	* SPACEID ist die GUID des Bereichs, in dem der Service ausgeführt wird.
+	* TOKEN ist das UAA-Token aus dem vorherigen Schritt ohne das Präfix 'bearer.
+	* LOGGING_ENDPOINT ist der {{site.data.keyword.loganalysisshort}}-Endpunkt für die {{site.data.keyword.Bluemix_notm}}-Region, in der sich die Organisation und der Bereich befinden. LOGGING_ENDPOINT ist für jede Region anders. Weitere Informationen zu den URLs für die verschiedenen Endpunkte finden Sie unter [Endpunkte](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
 	
     Der Befehl gibt das Protokollierungstoken zurück, das Sie verwenden müssen, um Protokolle an diesen Bereich senden zu können.
 	

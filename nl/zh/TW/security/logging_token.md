@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -28,7 +28,7 @@ lastupdated: "2018-04-10"
 
 1. 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   如需相關資訊，請參閱[下載並安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   如需相關資訊，請參閱[下載並安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
    
    如果已安裝 CLI，請繼續進行下一步。
     
@@ -39,7 +39,7 @@ lastupdated: "2018-04-10"
 3. 執行下列指令：
 
     ```
-	bx logging token-get
+	ibmcloud logging token-get
 	```
 	{: codeblock}
 
@@ -53,7 +53,7 @@ lastupdated: "2018-04-10"
 
 1. 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   如需相關資訊，請參閱[下載並安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   如需相關資訊，請參閱[下載並安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
    
    如果已安裝 CLI，請繼續進行下一步。
     
@@ -66,17 +66,15 @@ lastupdated: "2018-04-10"
     列出服務，以取得空間中的 {{site.data.keyword.loganalysisshort}} 實例名稱：
 	
     ```
-	bx service list
+	ibmcloud service list
 	```
 	{: codeblock}
 	
 	例如：
 	
 	```
-	bx service list
+	ibmcloud service list
     Invoking 'cf services'...
-
-    
 
     Getting services in org lopezdsr_org / space dev as xxx@yyyy...
     OK
@@ -91,14 +89,14 @@ lastupdated: "2018-04-10"
 	建立金鑰。使用 **name** 的值作為 servicename，並輸入金鑰名稱。
 	
 	```
-	bx service key-create servicename KeyName 
+	ibmcloud service key-create servicename KeyName 
 	```
 	{: codeblock}
 	
 	例如，
 	
 	```
-	bx service key-create "Log Analysis-vg" mykey2
+	ibmcloud service key-create "Log Analysis-vg" mykey2
     Invoking 'cf create-service-key Log Analysis-vg mykey2'...
 
     Creating service key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -109,14 +107,14 @@ lastupdated: "2018-04-10"
 4. 取得記載記號。執行下列指令：
 	
 	```
-	bx service key-show name Keyname
+	ibmcloud service key-show name Keyname
 	```
 	{: codeblock}
 	
 	例如， 
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" 
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" 
     Invoking 'cf service-key Log Analysis-vg mykey2'...
 
     Getting key mykey2 for service instance Log Analysis-vg as xxx@yyyy...
@@ -132,7 +130,7 @@ lastupdated: "2018-04-10"
 	若要取得記載記號，您可以執行下列指令：
 	
 	```
-	bx service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
+	ibmcloud service key-show "Log Analysis-vg" "mykey2" | tail -n +4 | jq -r .logging_token
     sdtghyrtfde4
 	```
 	{: screen}
@@ -147,7 +145,7 @@ lastupdated: "2018-04-10"
 
 1. 安裝 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   如需相關資訊，請參閱[下載並安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   如需相關資訊，請參閱[下載並安裝 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
    
    如果已安裝 CLI，請繼續進行下一步。
     
@@ -157,10 +155,10 @@ lastupdated: "2018-04-10"
 	
 3. 取得 [UAA 記號](/docs/services/CloudLogAnalysis/security/auth_uaa.html#uaa_cli)。
 
-    例如，執行 `bx cf oauth-token` 指令來取得 UAA 記號。
+    例如，執行 `ibmcloud cf oauth-token` 指令來取得 UAA 記號。
 
     ```
-	bx cf oauth-token
+	ibmcloud cf oauth-token
 	```
 	{: codeblock}
 	

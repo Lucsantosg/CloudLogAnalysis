@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -29,7 +29,7 @@ Pour installer l'interface de ligne de commande {{site.data.keyword.loganalysiss
 
 1. Installez l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.
 
-   Pour plus d'informations, voir [Installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)
+   Pour plus d'informations, voir [Installation de l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}}.](/docs/cli/index.html#overview)
 
 2. Installez le plug-in CF {{site.data.keyword.loganalysisshort}}.
 
@@ -42,7 +42,7 @@ Pour installer l'interface de ligne de commande {{site.data.keyword.loganalysiss
     Par exemple, vérifiez la version du plug-in. Exécutez la commande suivante :
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -96,7 +96,7 @@ Procédez comme suit pour installer le plug-in CF Log Collection sous Linux :
         Par exemple, pour rendre le fichier `logging-cli-linux64` exécutable, exécutez la commande suivante :
         
         ```
-        bx cf install-plugin -f logging-cli-linux64
+        ibmcloud cf install-plugin -f logging-cli-linux64
         ```
         {: codeblock}
 
@@ -127,7 +127,7 @@ sur les environnements locaux pris en charge par CF, voir [Getting Started with 
     Par exemple, vérifiez la version du plug-in. Exécutez la commande suivante :
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
@@ -152,16 +152,16 @@ Procédez comme suit pour installer le plug-in CF Log Collection sous Windows :
 2. Exécutez la commande **cf install-plugin** pour installer le plug-in Log Collection sous Windows. 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
 	où *PluginName* est le nom du fichier que vous avez téléchargé.
 	
-    Par exemple, pour installer le plug-in *logging-cli-win64_v1.0.1.exe*, exécutez la commande suivante depuis une fenêtre de terminal : 
+    Par exemple, pour installer le plug-in *logging-cli-win64_v1.0.1.exe*, exécutez la commande suivante depuis une fenêtre de terminal :
 	
 	```
-	bx cf install-plugin logging-cli-win64_v1.0.1.exe
+	ibmcloud cf install-plugin logging-cli-win64_v1.0.1.exe
 	```
 	{: codeblock}
 	
@@ -172,14 +172,14 @@ Procédez comme suit pour installer le plug-in CF Log Collection sous Windows :
     Par exemple, vérifiez la version du plug-in. Exécutez la commande suivante :
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     La sortie est similaire à la suivante :
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -197,16 +197,16 @@ Procédez comme suit pour installer le plug-in Log Collection CF sous Mac OS X :
 2. Exécutez la commande **cf install-plugin** pour installer le plug-in Log Collection sous Mac OS X. 
 
     ```
-	bx cf install-plugin PluginName
+	ibmcloud cf install-plugin PluginName
 	```
 	{: codeblock}
 	
 	où *PluginName* est le nom du fichier que vous avez téléchargé.
 	
-    Par exemple, pour installer le plug-in *logging-cli-darwin_v1.0.1*, exécutez la commande suivante depuis un terminal : 
+    Par exemple, pour installer le plug-in *logging-cli-darwin_v1.0.1*, exécutez la commande suivante depuis un terminal :
 	
 	```
-	bx cf install-plugin logging-cli-darwin_v1.0.1
+	ibmcloud cf install-plugin logging-cli-darwin_v1.0.1
 	```
 	{: codeblock}
 	
@@ -217,14 +217,14 @@ Procédez comme suit pour installer le plug-in Log Collection CF sous Mac OS X :
     Par exemple, vérifiez la version du plug-in. Exécutez la commande suivante :
     
     ```
-    bx cf logging --version
+    ibmcloud cf logging --version
     ```
     {: codeblock}
     
     La sortie est similaire à la suivante :
    
     ```
-    bx cf logging version 1.0.1
+    ibmcloud cf logging version 1.0.1
     ```
     {: screen}
 	
@@ -242,7 +242,7 @@ Procédez comme suit pour désinstaller l'interface de ligne de commande du serv
     Par exemple, vérifiez la version du plug-in. Exécutez la commande suivante :
     
     ```
-    bx cf plugins
+    ibmcloud cf plugins
     ```
     {: codeblock}
     
@@ -262,7 +262,7 @@ Procédez comme suit pour désinstaller l'interface de ligne de commande du serv
     Exécutez la commande suivante :
         
     ```
-    bx cf uninstall-plugin IBM-Logging
+    ibmcloud cf uninstall-plugin IBM-Logging
     ```
     {: codeblock}
   
@@ -281,7 +281,7 @@ Pour obtenir des informations générales sur l'interface de ligne de commande e
 2. Affichez des informations sur les commandes prises en charge et sur l'interface de ligne de commande. Exécutez la commande suivante :
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
     
@@ -301,14 +301,14 @@ Pour obtenir de l'aide au sujet de l'utilisation d'une commande, procédez comme
 2. Obtenez la liste des commandes prises en charge et identifiez celle dont vous avez besoin. Exécutez la commande suivante :
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. Obtenez de l'aide sur la commande. Exécutez la commande suivante :
 
     ```
-    bx cf logging help *Command*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
@@ -330,14 +330,14 @@ Une commande peut avoir des sous-commandes. Pour obtenir de l'aide sur des sous-
 2. Obtenez la liste des commandes prises en charge et identifiez celle dont vous avez besoin. Exécutez la commande suivante :
 
     ```
-    bx cf logging help 
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
 3. Obtenez de l'aide sur la commande et identifiez les sous-commandes prises en charge. Exécutez la commande suivante :
 
     ```
-    bx cf logging help *Command*
+    ibmcloud cf logging help *Command*
     ```
     {: codeblock}
     
@@ -346,7 +346,7 @@ Une commande peut avoir des sous-commandes. Pour obtenir de l'aide sur des sous-
 4. Obtenez de l'aide sur la commande et identifiez les sous-commandes prises en charge. Exécutez la commande suivante :
 
     ```
-    bx cf logging *Command* help *Subcommand*
+    ibmcloud cf logging *Command* help *Subcommand*
     ```
     {: codeblock}
     

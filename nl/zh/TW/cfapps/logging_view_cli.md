@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -21,8 +21,8 @@ lastupdated: "2018-04-10"
 在 {{site.data.keyword.Bluemix}} 中，您可以透過指令行介面來檢視、過濾及分析日誌。
 {:shortdesc}
 
-若要分析 Cloud Foundry (CF) 應用程式日誌，請使用下列指令：`bx cf logs`
-如需相關資訊，請參閱 [cf logs](/docs/cli/reference/cfcommands/index.html#cf_logs)。
+若要分析 Cloud Foundry (CF) 應用程式日誌，請使用下列指令：`ibmcloud cf logs`
+如需相關資訊，請參閱 [cf logs](/docs/cli/reference/ibmcloud/cf_index.html#cf_logs)。
 
 
 ## 從 CLI 分析 CF 應用程式日誌
@@ -47,7 +47,7 @@ lastupdated: "2018-04-10"
 
 2. 從指令行執行下列指令，以顯示所有日誌：
 
-   <pre class="pre screen"><code> bx cf logs <var class="keyword varname">appname</var></code></pre>
+   <pre class="pre screen"><code> ibmcloud cf logs <var class="keyword varname">appname</var></code></pre>
    
    
 ### 檢視 Cloud Foundry 應用程式最新的日誌項目
@@ -59,7 +59,7 @@ lastupdated: "2018-04-10"
 
 2. 從指令行執行下列指令，以顯示所有日誌：
 
-     <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent</code></pre>
+     <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent</code></pre>
 
 <div class="note tip"><span class="tiptitle">提示：</span>當您在某個指令行視窗中執行 <span class="keyword cmdname">cf push</span> 或 <span class="keyword cmdname">cf start</span> 指令時，即可在另一個指令行視窗中輸入 <samp class="ph codeph">cf logs appname --recent</samp>，以即時查看日誌。</div>
 
@@ -73,7 +73,7 @@ lastupdated: "2018-04-10"
 
 2. 從指令行執行下列指令，以顯示所有日誌：
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent  | cut -c 29-40,46-</code></pre>
     
     如需 **cut** 選項的相關資訊，請輸入 **cut --help**。
 
@@ -87,12 +87,12 @@ lastupdated: "2018-04-10"
 
 2. 從指令行執行下列指令，以顯示所有日誌：
 
-    <pre class="pre screen"><code>bx cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
+    <pre class="pre screen"><code>ibmcloud cf logs <var class="keyword varname">appname</var> --recent | grep '<var class="keyword varname">keyword</var>'</code></pre>
     
 
 例如，若要顯示包含關鍵字 **APP** 的日誌項目，您可以使用下列指令：
 
-<pre class="pre screen"><code>bx cf logs appname --recent | grep '\[App'</code></pre>
+<pre class="pre screen"><code>ibmcloud cf logs appname --recent | grep '\[App'</code></pre>
 
 如需 **grep** 選項的相關資訊，請鍵入 **grep --help**。
 
@@ -115,10 +115,8 @@ lastupdated: "2018-04-10"
 
 此日誌檔會在編譯打包作業的主要步驟之後記錄訊息。您可以使用此日誌，對編譯打包問題進行疑難排解。
 
-若要檢視此日誌，請輸入下列指令：`bx cf files appname logs/staging_task.log`
+若要檢視此日誌，請輸入下列指令：`ibmcloud cf files appname logs/staging_task.log`
 
-
-**附註：**如需如何啟用應用程式記載的相關資訊，請參閱[針對運行環境錯誤進行除錯](/docs/debug/index.html#debugging-runtime-errors)。
 
 
 

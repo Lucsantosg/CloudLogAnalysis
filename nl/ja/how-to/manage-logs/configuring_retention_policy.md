@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -34,7 +34,7 @@ Log Collection 内でログが保持される最大日数を定義する保存�
 2. 保存期間を無効にするため、保存期間を **-1** に設定します。 コマンドを実行します。
 
     ```
-    bx cf logging option -r -1
+    ibmcloud cf logging option -r -1
     ```
     {: codeblock}
     
@@ -43,7 +43,7 @@ Log Collection 内でログが保持される最大日数を定義する保存�
 例えば、ID *d35da1e3-b345-475f-8502-cfgh436902a3* のスペースの保存期間を無効にするには、次のコマンドを実行します。
 
 ```
-bx cf logging option -r -1
+ibmcloud cf logging option -r -1
 ```
 {: codeblock}
 
@@ -72,7 +72,7 @@ bx cf logging option -r -1
 2. 保存期間を取得します。 コマンドを実行します。
 
     ```
-    bx cf logging option
+    ibmcloud cf logging option
     ```
     {: codeblock}
 
@@ -100,7 +100,7 @@ bx cf logging option -r -1
 2. アカウントの各スペースの保存期間を取得します。 コマンドを実行します。
 
     ```
-    bx cf logging option -a
+    ibmcloud cf logging option -a
     ```
     {: codeblock}
 
@@ -130,7 +130,7 @@ bx cf logging option -r -1
 2. 保存期間を設定します。 コマンドを実行します。
 
     ```
-    bx cf logging option -r *Number_of_days* - a
+    ibmcloud cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
@@ -142,7 +142,7 @@ bx cf logging option -r -1
 例えば、アカウントのすべてのタイプのログを 15 日間だけ保持するには、次のコマンドを実行します。
 
 ```
-bx cf logging option -r 15 -a
+ibmcloud cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -171,7 +171,7 @@ bx cf logging option -r 15 -a
 2. 保存期間を設定します。 コマンドを実行します。
 
     ```
-    bx cf logging option -r *Number_of_days*
+    ibmcloud cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
@@ -183,7 +183,7 @@ bx cf logging option -r 15 -a
 例えば、スペースで使用可能なログを 1 年間保持するには、次のコマンドを実行します。
 
 ```
-bx cf logging option -r 365
+ibmcloud cf logging option -r 365
 ```
 {: codeblock}
 

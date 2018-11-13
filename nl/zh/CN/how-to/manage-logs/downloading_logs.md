@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -31,17 +31,17 @@ lastupdated: "2018-01-10"
 ## 步骤 2：确定可用的日志
 {: #step2}
 
-1. 使用 `bx cf logging status` 命令可查看最近 2 周可用的日志。运行以下命令：
+1. 使用 `ibmcloud cf logging status` 命令可查看最近 2 周可用的日志。运行以下命令：
 
     ```
-        bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     例如，运行此命令的输出为：
     
     ```
-        +------------+--------+-------+--------------------+------------+
+    +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
     | 2017-05-24 |    16  | 3020  |        log         |   None     |
@@ -64,10 +64,12 @@ lastupdated: "2018-01-10"
 * 指定开始日期和结束日期时，会话会提供对这两个日期之间（含这两个日期）的日志的访问权。 
 * 指定日志类型 (**-t**) 时，会话会提供对特定类型日志的访问权。在管理大量日志时，这是非常重要的功能，因为可以将会话的作用域仅限为您关注的一小部分日志。
 
+**注：**对于每个会话，可下载最长 15 天的日志。
+
 要创建会话以用于下载类型为 *log* 的日志，请运行以下命令：
 
 ```
-bx cf logging session create -t log
+ibmcloud cf logging session create -t log
 ```
 {: codeblock}
 
@@ -81,7 +83,7 @@ bx cf logging session create -t log
 例如：
 
 ```
-$ bx cf logging session create -t log     
+$ ibmcloud cf logging session create -t log     
 +--------------+--------------------------------------+
 |     NAME     |                VALUE                 |
 +--------------+--------------------------------------+
@@ -109,7 +111,7 @@ $ bx cf logging session create -t log
 要下载会话参数指定的日志，请运行以下命令：
 
 ```
-bx cf logging download -o Log_File_Name Session_ID
+ibmcloud cf logging download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -121,7 +123,7 @@ bx cf logging download -o Log_File_Name Session_ID
 例如：
 
 ```
-bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -142,7 +144,7 @@ bx cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
 运行以下命令来删除会话：
 
 ```
-bx cf logging session delete Session_ID
+ibmcloud cf logging session delete Session_ID
 ```
 {: codeblock}
 
@@ -151,7 +153,7 @@ bx cf logging session delete Session_ID
 例如：
 
 ```
-bx cf logging session delete -jshdjsunelsssr4566722==
+ibmcloud cf logging session delete -jshdjsunelsssr4566722==
 +---------+------------------------+
 |  NAME   |         VALUE          |
 +---------+------------------------+

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,12 +17,12 @@ lastupdated: "2018-04-19"
 # Eliminazione dei log
 {: #deleting_logs}
 
-Utilizza il comando [bx cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) per eliminare i log da Raccolta dei log. 
+Utilizza il comando [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) per eliminare i log da Raccolta dei log. 
 {:shortdesc}
 
 * Puoi eliminare i log entro uno specifico intervallo di tempo.
 * Puoi eliminare i log in base al tipo. Nota: ciascun file di log ha solo un tipo di voci di log.
-* Puoi eliminare i log per uno spazio oppure al dominio dell'account.
+* Puoi eliminare i log per uno spazio o nel dominio dell'account.
 
 
 ## Eliminazione dei log per uno specifico periodo di tempo
@@ -37,14 +37,14 @@ Completa la seguente procedura:
 2. Esegui il comando *status* per visualizzare i log disponibili in Raccolta dei log.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Ad esempio,
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -58,7 +58,7 @@ Completa la seguente procedura:
 3. Elimina i log archiviati in uno specifico giorno.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate
+	ibmcloud cf logging delete -s StartDate -e EndDate
 	```
 	{: codeblock}
 	
@@ -70,12 +70,12 @@ Completa la seguente procedura:
 	Ad esempio, per eliminare i log per il 25 maggio 2017, esegui questo comando:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25
 	```
 	{: screen}
 
 	
-## Eliminazione dei log in base al tipo di log per uno specifico periodo di tempo
+## Eliminazione dei log in base al tipo di log per uno specifico periodo di tempo 
 {: #log_type}
 
 Completa la seguente procedura:
@@ -87,14 +87,14 @@ Completa la seguente procedura:
 2. Esegui il comando *status* per visualizzare i log disponibili in Raccolta dei log.
 
     ```
-    bx cf logging status
+    ibmcloud cf logging status
     ```
     {: codeblock}
     
     Ad esempio,
     
     ```
-    $ bx cf logging status
+    $ ibmcloud cf logging status
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -108,7 +108,7 @@ Completa la seguente procedura:
 3. Elimina i log archiviati in uno specifico giorno.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType
 	```
 	{: codeblock}
 	
@@ -121,13 +121,13 @@ Completa la seguente procedura:
 	Ad esempio, per eliminare i log di tipo linux_syslog per il 25 maggio 2017, esegui questo comando:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 	```
 	{: screen}
 
 		
 	
-## Eliminazione dei log dell'account in base al tipo di log per uno specifico periodo di tempo
+## Eliminazione dei log dell'account in base al tipo di log per uno specifico periodo di tempo 
 {: #acc_log_type}
 
 Completa la seguente procedura:
@@ -139,14 +139,14 @@ Completa la seguente procedura:
 2. Esegui il comando *status* per visualizzare i log disponibili in Raccolta dei log a livello dell'account.
 
     ```
-    bx cf logging status  -a
+    ibmcloud cf logging status  -a
     ```
     {: codeblock}
     
     Ad esempio,
     
     ```
-    $ bx cf logging status -a
+    $ ibmcloud cf logging status -a
     +------------+--------+-------+--------------------+------------+
     |    DATE    |  COUNT | SIZE  |       TYPES        | SEARCHABLE |
     +------------+--------+-------+--------------------+------------+
@@ -160,7 +160,7 @@ Completa la seguente procedura:
 3. Elimina i log archiviati in uno specifico giorno.
 
     ```
-	bx cf logging delete -s StartDate -e EndDate -t LogType -a
+	ibmcloud cf logging delete -s StartDate -e EndDate -t LogType -a
 	```
 	{: codeblock}
 	
@@ -173,7 +173,7 @@ Completa la seguente procedura:
 	Ad esempio, per eliminare i log di tipo linux_syslog per il 25 maggio 2017 archiviati in Raccolta dei log a livello dell'account, esegui questo comando:
 	
 	```
-	bx cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
+	ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog -a
 	```
 	{: screen}
 	

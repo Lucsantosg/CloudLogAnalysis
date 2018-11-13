@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -227,7 +227,7 @@ lastupdated: "2018-01-31"
 
 要向空间域发送日志，请选择以下任何一种方法：
 
-* [使用 {{site.data.keyword.Bluemix_notm}} 命令 bx 服务，获取日志记录令牌以向空间发送日志](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
+* [使用 {{site.data.keyword.Bluemix_notm}} 命令 ibmcloud 服务，获取日志记录令牌以向空间发送日志](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
 * [使用 Log Analysis CLI 获取日志记录令牌以向空间发送日志](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [使用 Log Analysis API 获取日志记录令牌以向空间发送日志](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
 

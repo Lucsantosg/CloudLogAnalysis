@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -106,7 +106,7 @@ lastupdated: "2018-01-10"
 
 要查看帐户日志，请完成以下步骤：
 
-1. [启动 Kibana。](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)例如，对于美国南部区域，使用 URL `https://logging.ng.bluemix.net`。
+1. [启动 Kibana。](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)例如，对于美国南部区域，请使用 URL `https://logging.ng.bluemix.net`。
 
 2. 选择选项**查看 AccountName 帐户日志**以显示帐户日志。*AccountName* 是帐户的名称。
 

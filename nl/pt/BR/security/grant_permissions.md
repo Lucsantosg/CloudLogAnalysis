@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -14,11 +14,13 @@ lastupdated: "2018-04-10"
 {:pre: .pre}
 
 
-# Concedendo permissões
+# Concedendo permissões para gerenciar logs e visualizar logs de conta
 {: #grant_permissions}
 
-No {{site.data.keyword.Bluemix}}, é possível designar uma ou mais funções para os usuários. Essas funções definem quais tarefas estão ativadas para esse usuário para trabalhar com o serviço {{site.data.keyword.loganalysisshort}}. 
+No {{site.data.keyword.Bluemix}}, é possível designar a um usuário uma ou mais funções do IAM. Essas funções definem quais tarefas estão ativadas para esse usuário para trabalhar com o serviço {{site.data.keyword.loganalysisshort}}.  
 {:shortdesc}
+
+Por exemplo, é possível conceder a um usuário a função de **operador** para permitir que ele gerencie logs. Se você desejar que apenas um usuário visualize logs da conta, será possível conceder ao usuário a função de **visualizador**. Para obter mais informações, veja [Funções do IAM](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
 
 **Nota:** 
 
@@ -92,7 +94,7 @@ Conclua as etapas a seguir para conceder a um usuário acesso para visualizar lo
 2. Verifique se o usuário é um membro da conta. Execute o comando a seguir para obter a lista de usuários na conta:
 
     ```
-	Usuários de conta bx
+	ibmcloud account users
 	```
     {: codeblock}	
 
@@ -100,12 +102,12 @@ Conclua as etapas a seguir para conceder a um usuário acesso para visualizar lo
 
 3. Se o usuário não for um membro da conta, entre em contato com o proprietário da conta e solicite um convite do usuário para a conta. Para obter mais informações, veja [Convidando usuários](/docs/iam/iamuserinv.html#iamuserinv).
 
-    **Dica:** o comando para convidar um usuário para uma conta é o seguinte: `bx iam account-user-invite USER_EMAIL`
+    **Dica:** o comando para convidar um usuário para uma conta é o seguinte: `ibmcloud iam account-user-invite USER_EMAIL`
 		
 4. Designe uma política ao usuário. Execute o comando a seguir:
 
     ```
-    bx iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
+    ibmcloud iam user-policy-create USER_NAME --roles ROLE --service-name ibmloganalysis
 	```
 	{: codeblock}
 
@@ -116,7 +118,7 @@ Conclua as etapas a seguir para conceder a um usuário acesso para visualizar lo
 5. Verifique se a política foi designada ao usuário. Execute o comando a seguir para listar todas as políticas designadas a um usuário:
 
     ```
-    Bx iam user-policies USER_NAME
+    ibmcloud iam user-policies USER_NAME
 	```
 	{: codeblock}
 

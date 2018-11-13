@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-03-09"
+lastupdated: "2018-08-21"
 
 ---
 
@@ -20,7 +20,7 @@ lastupdated: "2018-03-09"
 {: shortdesc}
 
 **先决条件**
-* 运行日志记录命令之前，请先使用 `bx login` 命令登录到 {{site.data.keyword.Bluemix_notm}}，以生成访问令牌并对会话进行认证。
+* 运行日志记录命令之前，请先使用 `ibmcloud login` 命令登录到 {{site.data.keyword.Bluemix_notm}}，以生成访问令牌并对会话进行认证。
 
 要了解如何使用 {{site.data.keyword.loganalysisshort}} CLI，请参阅[管理日志](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)。
 
@@ -31,67 +31,67 @@ lastupdated: "2018-03-09"
     <th>何时使用</th>
   </tr>
   <tr>
-    <td>[bx logging](#base)</td>
+    <td>[ibmcloud logging](#base)</td>
     <td>使用此命令可获取有关 CLI 的信息，例如命令列表。</td>
   </tr>
   <tr>
-    <td>[bx logging log-delete](#delete)</td>
+    <td>[ibmcloud logging log-delete](#delete)</td>
     <td>使用此命令可删除存储在“日志收集”中的日志。</td>
   </tr>
   <tr>
-    <td>[bx logging log-download](#download)</td>
+    <td>[ibmcloud logging log-download](#download)</td>
     <td>使用此命令可将“日志收集”中的日志下载到本地文件，或者通过管道将日志传递到其他程序，例如 Elastic 堆栈。</td>
   </tr>
   <tr>
-    <td>[bx logging log-show](#status)</td>
+    <td>[ibmcloud logging log-show](#status)</td>
     <td>使用此命令可获取有关在空间、组织或帐户中收集的日志的信息。</td>
   </tr>
   <tr>
-    <td>[bx logging help](#help)</td>
+    <td>[ibmcloud logging help](#help)</td>
     <td>使用此命令可获取有关如何使用 CLI 的帮助以及所有命令的列表。</td>
   </tr>
   <tr>
-    <td>[bx logging option-show](#optionshow)</td>
+    <td>[ibmcloud logging option-show](#optionshow)</td>
     <td>使用此命令可查看空间、组织或帐户中可用的日志的保留期。</td>
   </tr>
   <tr>
-    <td>[bx logging option-update](#optionupdate)</td>
+    <td>[ibmcloud logging option-update](#optionupdate)</td>
     <td>使用此命令可设置空间、组织或帐户中可用的日志的保留期。</td>
   </tr>
   <tr>
-    <td>[bx logging quota-usage-show](#quotausage)</td>
+    <td>[ibmcloud logging quota-usage-show](#quotausage)</td>
     <td>使用此命令可获取空间、组织或帐户的配额使用情况信息。还可以获取配额历史记录信息。</td>
   </tr>
   <tr>
-    <td>[bx logging session-create](#session_create)</td>
+    <td>[ibmcloud logging session-create](#session_create)</td>
     <td>使用此命令可创建新会话。</td>
   <tr>
   <tr>
-    <td>[bx logging session-delete](#session_delete)</td>
+    <td>[ibmcloud logging session-delete](#session_delete)</td>
     <td>使用此命令可删除会话。</td>
   <tr>  
   <tr>
-    <td>[bx logging sessions](#session_list)</td>
+    <td>[ibmcloud logging sessions](#session_list)</td>
     <td>使用此命令可列出活动会话及其标识。</td>
   <tr>  
   <tr>
-    <td>[bx logging session-show](#session_show)</td>
+    <td>[ibmcloud logging session-show](#session_show)</td>
     <td>使用此命令可显示单个会话的状态。</td>
   <tr>  
   <tr>
-    <td>[bx logging token-get](#tokenget)</td>
-    <td>使用此命令可获取日志记录令牌，此令牌用于将日志发送到 {{site.data.keyword.loganalysisshort}} 服务。</td>
+    <td>[ibmcloud logging token-get](#tokenget)</td>
+    <td>使用此命令可获取日志记录令牌，以便将日志数据发送到 {{site.data.keyword.loganalysisshort}} 服务。</td>
   </tr>
 </table>
 
 
-## bx logging
+## ibmcloud logging
 {: #base}
 
 提供有关 CLI 的常规信息。
 
 ```
-bx logging 
+ibmcloud logging 
 ```
 {: codeblock}
 
@@ -100,11 +100,11 @@ bx logging
 要获取命令的列表，请运行以下命令：
 
 ```
-bx logging
-名称：
-   bx logging - IBM Cloud Log Analysis 服务
-用法：
-   bx logging command [arguments...] [command options]
+ibmcloud logging 
+NAME:
+   ibmcloud logging - IBM Cloud Log Analysis Service
+USAGE:
+   ibmcloud logging command [arguments...] [command options]
 
 命令：
 命令：
@@ -121,20 +121,20 @@ bx logging
    quota-usage-show   显示配额使用情况信息
    help
 
-输入“bx logging help [command]”以获取命令的更多信息。
+输入“ibmcloud logging help [command]”以获取有关命令的更多信息。
 ```
 {: codeblock}
 
 
 
 
-## bx logging log-delete
+## ibmcloud logging log-delete
 {: #delete}
 
 删除存储在“日志收集”中的日志。
 
 ```
-bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
+ibmcloud logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-f, --force ]
 ```
 {: codeblock}
 
@@ -142,7 +142,7 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>（可选）设置资源类型。有效值为：*space*、*account* 和 *org*
+  <dd>（可选）设置资源的类型。有效值为：*space*、*account* 和 *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
@@ -163,21 +163,21 @@ bx logging log-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOU
 
 要删除 2017 年 5 月 25 日类型为 *linux_syslog* 的日志，请运行以下命令：
 ```
-bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
+ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 ```
 {: screen}
 
 
 
-## bx logging log-download 
+## ibmcloud logging log-download 
 {: #download}
 
 将“日志收集”中的日志下载到本地文件，或者通过管道将日志传递到其他程序，例如 Elastic 堆栈。 
 
-**注**：要下载文件，需要首先创建会话。会话会根据日期范围、日志类型和帐户类型来定义要下载的日志。您将在会话上下文中下载日志。有关更多信息，请参阅 [bx logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create)。
+**注**：要下载文件，需要首先创建会话。会话会根据日期范围、日志类型和帐户类型来定义要下载的日志。您将在会话上下文中下载日志。有关更多信息，请参阅 [ibmcloud logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create)。
 
 ```
- bx logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
+ ibmcloud logging log-download  [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-o, --output OUTPUT] SESSION_ID
 
 ```
 {: codeblock}
@@ -186,7 +186,7 @@ bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>（可选）设置资源类型。有效值为：*space*、*account* 和 *org*
+  <dd>（可选）设置资源的类型。有效值为：*space*、*account* 和 *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
@@ -201,7 +201,7 @@ bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 <dl>
   <dt>SESSION_ID</dt>
-  <dd>此值指示下载日志时必须使用的会话的标识。<br>**注**：`bx logging session-create` 命令提供用于控制下载哪些日志的参数。</dd>
+  <dd>此值指示下载日志时必须使用的会话的标识。<br>**注**：`ibmcloud logging session-create` 命令提供用于控制下载哪些日志的参数。</dd>
 </dl>
 
 **注**：下载完成后，再次运行相同的命令将拒绝执行任何操作。要重新下载相同的数据，必须使用其他文件或其他会话。
@@ -211,14 +211,14 @@ bx logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 在 Linux 系统中，要将日志下载到名为 mylogs.gz 的文件中，请运行以下命令：
 
 ```
-bx logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
+ibmcloud logging log-download -o mylogs.gz guBeZTIuYtreOPi-WMnbUg==
 ```
 {: screen}
 
 要将日志下载到自己的 Elastic 堆栈，请运行以下命令：
 
 ```
-bx logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
+ibmcloud logging log-download guBeZTIuYtreOPi-WMnbUg== | gunzip | logstash -f logstash.conf
 ```
 {: screen}
 
@@ -239,13 +239,13 @@ output {
 {: screen}
 
 
-## bx logging help
+## ibmcloud logging help
 {: #help}
 
 提供有关如何使用命令的信息。
 
 ```
-bx logging help [command] 
+ibmcloud logging help [command] 
 ```
 {: codeblock}
 
@@ -263,12 +263,12 @@ bx logging help [command]
 要获取有关如何运行命令来查看日志状态的帮助，请运行以下命令：
 
 ```
-bx logging help log-show
+ibmcloud logging help log-show
 名称：
    log-show - 显示每天日志的计数、大小和类型
 
 用法：
-   bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+   ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 
 选项：
    -r, --resource-type     资源类型，有效资源类型为 account、org 或 space
@@ -282,7 +282,7 @@ bx logging help log-show
 {: screen}
 
 
-## bx logging option-show
+## ibmcloud logging option-show
 {: #optionshow}
 
 显示空间、组织或帐户中可用的日志的保留期。 
@@ -293,7 +293,7 @@ bx logging help log-show
 **注**：缺省情况下，将存储所有日志。日志必须使用 **delete** 命令手动删除。设置保留时间策略可自动删除日志。
 
 ```
-bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -301,7 +301,7 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>（可选）设置资源类型。有效值为：*space*、*account* 和 *org*
+  <dd>（可选）设置资源的类型。有效值为：*space*、*account* 和 *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
@@ -314,14 +314,14 @@ bx logging option-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESO
 要查看所登录到的空间的缺省当前保留期，请运行以下命令：
 
 ```
-bx logging option-show
+ibmcloud logging option-show
 ```
 {: screen}
 
 
 
 
-## bx logging option-update
+## ibmcloud logging option-update
 {: #optionupdate}
 
 更改空间、组织或帐户中可用的日志的保留期。 
@@ -330,7 +330,7 @@ bx logging option-show
 * 缺省值为 **-1**。 
 
 ```
-bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
+ibmcloud logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] <-e,--retention RETENTION_VALUE>
 ```
 {: codeblock}
 
@@ -338,7 +338,7 @@ bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RE
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>（可选）设置资源类型。有效值为：*space*、*account* 和 *org*
+  <dd>（可选）设置资源的类型。有效值为：*space*、*account* 和 *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
@@ -354,21 +354,21 @@ bx logging option-update [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RE
 要将所登录到的空间的保留期更改为 25 天，请运行以下命令：
 
 ```
-bx logging option-update -e 25
+ibmcloud logging option-update -e 25
 ```
 {: screen}
 
 
-## bx logging quota-usage-show
+## ibmcloud logging quota-usage-show
 {: #quotausage}
 
-获取有关空间、组织或帐户的配额使用情况的信息。您还可以将其用于获取历史使用情况。
+获取有关空间、组织或帐户的配额使用情况的信息。您还可以使用它来获取历史使用情况。
 
 * 保留期以天数为单位进行设置。
 * 缺省值为 **-1**。 
 
 ```
-bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
+ibmcloud logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s,--history]
 ```
 {: codeblock}
 
@@ -376,14 +376,14 @@ bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>（可选）设置资源类型。有效值为：*space*、*account* 和 *org*
+  <dd>（可选）设置资源的类型。有效值为：*space*、*account* 和 *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
   <dd>（可选）将此字段设置为空间、组织或帐户的标识。<br>缺省情况下，如果您未指定此参数，那么该命令使用您登录的资源的标识。</dd>
   
   <dt>-s,--history</dt>
-  <dd>（可选）设置此参数可获取有关配额使用情况的历史信息。</dd>
+  <dd>（可选）设置此参数可获取有关配额使用情况的历史记录信息。</dd>
 
 </dl>
 
@@ -392,7 +392,7 @@ bx logging quota-usage-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id
 要获取空间域的历史配额使用情况，请运行以下命令：
 
 ```
-bx logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
+ibmcloud logging quota-usage-show -r space -i js7ydf98-8682-430d-bav4-36b712341744 -s
 Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -409,7 +409,7 @@ Date         Allotmant   Usage
 ```
 {: screen}
 
-## bx logging session-create
+## ibmcloud logging session-create
 {: #session_create}
 
 创建新的会话。
@@ -417,7 +417,7 @@ Date         Allotmant   Usage
 **注**：一个空间中最多可以有 30 个并发会话。会话是为用户创建的。因此，空间中的不同用户之间不能共享会话。
 
 ```
-bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE]
+ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-T, --time, LOG_TIME]
 ```
 {: codeblock}
 
@@ -425,7 +425,7 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>（可选）设置资源类型。有效值为：*space*、*account* 和 *org*
+  <dd>（可选）设置资源的类型。有效值为：*space*、*account* 和 *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
@@ -439,6 +439,10 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
   
   <dt>-t, --type, LOG_TYPE</dt>
   <dd>（可选）设置日志类型。<br>例如，*syslog* 是一种日志类型。<br>缺省值设置为星号 (*)。<br>可以指定多种日志类型并使用逗号分隔各个类型，例如 *log_type_1,log_type_2,log_type_3*。</dd>
+
+  <dt>-T, --time, LOG_TIME</dt>
+  <dd>（可选）设置一天中想要获取特定类型日志的具体时间。</br>有效值为 0 到 23。</br>它应该与 LOG_TYPE 一起使用。
+  </dd>
 
 </dl>
 
@@ -476,7 +480,7 @@ bx logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
 要创建包含 2017 年 11 月 13 日日志的会话，请运行以下命令：
 
 ```
-bx logging session-create -s 2017-11-13 -e 2017-11-13
+ibmcloud logging session-create -s 2017-11-13 -e 2017-11-13
 Creating session for xxxxx@yyy.com resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
@@ -486,13 +490,13 @@ Session: 1ef776d1-4d25-4297-9693-882606c725c8 is created
 {: screen}
 
 
-## bx logging session-delete 
+## ibmcloud logging session-delete 
 {: #session_delete}
 
 删除会话标识指定的会话。
 
 ```
-bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 ```
 {: codeblock}
 
@@ -500,7 +504,7 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>（可选）设置资源类型。有效值为：*space*、*account* 和 *org*
+  <dd>（可选）设置资源的类型。有效值为：*space*、*account* 和 *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
@@ -520,19 +524,19 @@ bx session-delete [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_
 要删除会话标识为 *cI6hvAa0KR_tyhjxZZz9Uw==* 的会话，请运行以下命令：
 
 ```
-bx logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-delete cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
 
 
-## bx logging sessions
+## ibmcloud logging sessions
 {: #session_list}
 
 列出活动会话及其标识。
 
 ```
-bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -541,7 +545,7 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 <dl>
 
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-      <dd>（可选）设置资源类型。有效值为：*space*、*account* 和 *org*
+      <dd>（可选）设置资源的类型。有效值为：*space*、*account* 和 *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
@@ -567,7 +571,7 @@ bx logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **示例**
 
 ```
-bx logging sessions
+ibmcloud logging sessions
 Listing sessions of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 ID                                     Space                                  CreateTime                       AccessTime   
@@ -580,13 +584,13 @@ Listed the sessions of resource xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 
 
-## bx logging session-show
+## ibmcloud logging session-show
 {: #session_show}
 
 显示单个会话的状态。
 
 ```
-bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
+ibmcloud logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] SESSION_ID
 
 ```
 {: codeblock}
@@ -595,7 +599,7 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
 
 <dl>
    <dt>-r,--resource-type RESOURCE_TYPE</dt>
-      <dd>（可选）设置资源类型。有效值为：*space*、*account* 和 *org*
+      <dd>（可选）设置资源的类型。有效值为：*space*、*account* 和 *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
@@ -614,17 +618,17 @@ bx logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RES
 要显示会话标识为 *cI6hvAa0KR_tyhjxZZz9Uw==* 的会话的详细信息，请运行以下命令：
 
 ```
-bx logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
+ibmcloud logging session-show cI6hvAa0KR_tyhjxZZz9Uw==
 ```
 {: screen}
 
-## bx logging token-get
+## ibmcloud logging token-get
 {: #tokenget}
 
 返回将日志数据发送到 {{site.data.keyword.loganalysisshort}} 所需的日志记录令牌。
 
 ```
-bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
+ibmcloud logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID]
 ```
 {: codeblock}
 
@@ -632,7 +636,7 @@ bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOUR
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>（可选）设置计划发送日志数据的资源的类型。有效值为：*space*、*account* 和 *org*
+  <dd>（可选）设置您计划将日志数据发送到的资源的类型。有效值为：*space*、*account* 和 *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
@@ -643,7 +647,7 @@ bx logging token-get [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOUR
 **示例**
 
 ```
-bx logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
+ibmcloud logging token-get -r space -i js7ydf98-8682-430d-bav4-36b712341744
 Getting log token of resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
@@ -653,13 +657,13 @@ js7ydf98-8682-430d-bav4-36b712341744   xxxxxxxxxx
 {: screen}
 
 
-## bx logging log-show
+## ibmcloud logging log-show
 {: #status}
 
 返回有关在 {{site.data.keyword.Bluemix_notm}} 空间或帐户中收集的日志的信息。
 
 ```
-bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
+ibmcloud logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURCE_ID] [-s, --start START_DATE] [-e, --end END_DATE] [-t, --type, LOG_TYPE] [-l, --list-type-detail]
 ```
 {: codeblock}
 
@@ -671,7 +675,7 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 
 <dl>
   <dt>-r,--resource-type RESOURCE_TYPE</dt>
-  <dd>（可选）设置资源类型。有效值为：*space*、*account* 和 *org*
+  <dd>（可选）设置资源的类型。有效值为：*space*、*account* 和 *org*
   </dd>
   
    <dt>-i,--resource-id RESOURCE_ID</dt>
@@ -694,7 +698,7 @@ bx logging log-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id RESOURC
 **示例**
 
 ```
-bx logging log-show
+ibmcloud logging log-show
 Showing log status of resource: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx ...
 
 Date         Size        Count    Searchable   Types   
@@ -707,7 +711,7 @@ Date         Size        Count    Searchable   Types
 {: screen}
 
 ```
- bx logging log-show -l
+ ibmcloud logging log-show -l
 Showing log status of resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 Date         Size        Count    Searchable   Type   

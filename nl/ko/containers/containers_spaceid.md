@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-16"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -23,7 +23,7 @@ Cloud Foundry 조직 및 영역의 컨텍스트 내의 {{site.data.keyword.Bluem
 클러스터와 연관된 영역 ID를 찾으려면 다음 명령을 실행하십시오.
 
 ```
-bx cs cluster-get ClusterName --json
+ibmcloud cs cluster-get ClusterName --json
 ```
 {: codeblock}
 

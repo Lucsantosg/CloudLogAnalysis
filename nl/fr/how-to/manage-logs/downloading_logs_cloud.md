@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -37,17 +37,17 @@ Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Blue
 ## Etape 2 : Identification des journaux disponibles
 {: #step2}
 
-1. Utilisez la commande `bx logging log-show` pour identifier les journaux disponibles pour les deux dernières semaines. Exécutez la commande suivante :
+1. Utilisez la commande `ibmcloud logging log-show` pour identifier les journaux disponibles pour les deux dernières semaines. Exécutez la commande suivante :
 
     ```
-    bx logging log-show
+    ibmcloud logging log-show
     ```
     {: codeblock}
     
     Par exemple, l'exécution de cette commande génère la sortie suivante :
     
     ```
-    bx logging log-show 
+    ibmcloud logging log-show 
     Showing log status of resource: cedc73c5-1234-5678-abcd-378620d6fab5 ...
 
     Date         Size       Count   Searchable          Types   
@@ -67,17 +67,19 @@ en tant que jours TUC. Pour obtenir des journaux pour un jour à heure locale sp
 
 Une session est requise pour définir l'étendue des données de journal disponibles pour un téléchargement et pour conserver le statut du téléchargement. 
 
-Utilisez la commande [bx logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) pour créer une session. Vous pouvez également spécifier une date
+Utilisez la commande [ibmcloud logging session-create](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_create) pour créer une session. Vous pouvez également spécifier une date
 de début, une date de fin et des types de journaux lorsque vous créez une session :  
 
 * Lorsque vous spécifiez la date de début et la date de fin, la session fournit un accès aux journaux entre ces dates incluses. 
 * Lorsque vous spécifiez le type de journal (**-t**), la session fournit un accès à un type de journal particulier. Cette fonction est importante lorsque vous
 gérez des journaux à grande échelle car vous pouvez étendre une session à un petit sous-ensemble de journaux qui vous intéresse.
 
+**Remarque :** pour chaque session, vous pouvez télécharger des journaux de 15 jours au maximum.
+
 Pour créer une session permettant de télécharger tous les journaux disponibles pour les deux dernières semaines, exécutez la commande suivante :
 
 ```
-bx logging session-create 
+ibmcloud logging session-create 
 ```
 {: codeblock}
 
@@ -91,7 +93,7 @@ La session renvoie les informations suivantes :
 Exemple
 
 ```
-$ bx logging session-create
+$ ibmcloud logging session-create
 Creating session for lopezdsr@uk.ibm.com resource: cedc73c5-6d55-4193-a9de-378620d6fab5 ...
 
 ID                                     Space                                  CreateTime                       AccessTime                       Start        End          Type   
@@ -100,7 +102,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 ```
 {: screen}
 
-**Astuce :** pour afficher la liste des sessions actives, exécutez la commande [bx logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
+**Astuce :** pour afficher la liste des sessions actives, exécutez la commande [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
 
 ## Etape 4 : Téléchargement des données de journal dans un fichier
 {: #step4}
@@ -108,7 +110,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 Pour télécharger les journaux qui sont spécifiés par les paramètres de session, exécutez la commande suivante :
 
 ```
-bx logging log-download -o Log_File_Name Session_ID
+ibmcloud logging log-download -o Log_File_Name Session_ID
 ```
 {: codeblock}
 
@@ -120,7 +122,7 @@ où
 Exemple
 
 ```
-bx logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
+ibmcloud logging log-download -o helloLogs.gz -jshdjsunelsssr4566722==
  160.00 KB / 380.33 KB [==============>------------------------]  42.07% 20.99 KB/s 10s
 ```
 {: screen}
@@ -137,12 +139,12 @@ les diriger directement vers votre propre pile ELK.
 ## Etape 5 : Suppression de la session
 {: #step5}
 
-Une fois que le téléchargement est terminé, vous devez supprimer la session à l'aide de la commande [bx logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete). 
+Une fois que le téléchargement est terminé, vous devez supprimer la session à l'aide de la commande [ibmcloud logging session delete](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#delete). 
 
 Exécutez la commande suivante pour supprimer une session :
 
 ```
-bx logging session-delete Session_ID
+ibmcloud logging session-delete Session_ID
 ```
 {: codeblock}
 
@@ -151,7 +153,7 @@ où Session_ID est l'identificateur global unique de la session créée à l'ét
 Exemple
 
 ```
-bx logging session-delete -jshdjsunelsssr4566722==
+ibmcloud logging session-delete -jshdjsunelsssr4566722==
 Deleting session: -jshdjsunelsssr4566722== of resource: 12345678-1234-5678-abcd-378620d6fab5 ...
 Session: -jshdjsunelsssr4566722== is deleted
 

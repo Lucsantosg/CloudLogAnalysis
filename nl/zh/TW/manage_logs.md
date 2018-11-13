@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-31"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -69,7 +69,7 @@ lastupdated: "2018-01-31"
 
 * 您可以使用[日誌收集 API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} 或[日誌收集 CLI](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window}，手動刪除「日誌收集」中的日誌。 
 
-* 您可以使用 CLI。如需透過 CLI 手動刪除日誌的相關資訊，請參閱[使用 {{site.data.keyword.Bluemix_notm}} 外掛程式來執行 bx logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)。
+* 您可以使用 CLI。如需透過 CLI 手動刪除日誌的相關資訊，請參閱[使用 {{site.data.keyword.Bluemix_notm}} 外掛程式來執行 ibmcloud logging log-delete](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs)。
     
 
 
@@ -85,16 +85,15 @@ lastupdated: "2018-01-31"
 
 
 
-
 ## 取得日誌的相關資訊
 {: #info_about_logs}
 
-若要取得日誌的一般資訊，請使用 `bx logging log-show` 或 `cf logging status` 指令。如需相關資訊，請參閱：
+若要取得日誌的一般資訊，請使用 `ibmcloud logging log-show` 或 `cf logging status` 指令。如需相關資訊，請參閱：
 
 * [使用 {{site.data.keyword.Bluemix_notm}} 外掛程式檢視日誌資訊](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
 * [使用 CF 外掛程式檢視日誌資訊](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status)。
 
-例如，若要持續控制成本，您可能要監視一段時間內的應用程式日誌大小。例如，您可能要知道 {{site.data.keyword.Bluemix_notm}} 空間一週內每一種日誌類型的大小，才能識別是否有任何應用程式或服務所產生的日誌超出預期。若要檢查日誌大小，請使用 `bx logging log-show` 或 `cf logging status` 指令。
+例如，若要持續控制成本，您可能要監視一段時間內的應用程式日誌大小。例如，您可能要知道 {{site.data.keyword.Bluemix_notm}} 空間一週內每一種日誌類型的大小，才能識別是否有任何應用程式或服務所產生的日誌超出預期。若要檢查日誌大小，請使用 `ibmcloud logging log-show` 或 `cf logging status` 指令。
 
 您可以檢視空間網域、組織網域或帳戶網域中所儲存日誌的相關資訊。
 
@@ -105,7 +104,7 @@ lastupdated: "2018-01-31"
 
 若要瞭解如何安裝 CLI，請參閱[安裝記載 CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)。
 
-若要檢查 CLI 版本，請執行指令 `bx plugin list`。
+若要檢查 CLI 版本，請執行指令 `ibmcloud plugin list`。
 
 若要取得如何執行指令的協助，請參閱[取得執行指令的指令行協助](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#command_cli_help)。
 

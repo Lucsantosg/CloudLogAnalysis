@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -18,11 +18,11 @@ lastupdated: "2018-01-10"
 # UAA トークンの取得
 {: #auth_uaa}
 
-{{site.data.keyword.loganalysisshort}} API を使用してログを管理するには、認証トークンを使用する必要があります。 {{site.data.keyword.loganalysisshort}} CLI を使用して UAA トークンを取得します。 トークンには有効期限があります。 
+スペース・内にあるログを {{site.data.keyword.loganalysisshort}} API を使用して管理するには、認証トークンを使用する必要があります。
 {:shortdesc}
 
 		
-## Log Analysis CLI (CF プラグイン) を使用した UAA トークンの取得
+## UAA トークンの取得
 {: #uaa_cli}
 
 
@@ -30,7 +30,7 @@ lastupdated: "2018-01-10"
 
 1. {{site.data.keyword.Bluemix_notm}} CLI をインストールします。
 
-   詳しくは、『[{{site.data.keyword.Bluemix}} CLI のダウンロードとインストール](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)』を参照してください。
+   詳しくは、[『{{site.data.keyword.Bluemix}}CLI のダウンロードとインストール』](/docs/cli/index.html#overview)を参照してください。
    
    CLI がインストールされている場合は、次のステップに進みます。
     
@@ -38,10 +38,10 @@ lastupdated: "2018-01-10"
 
     詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 	
-3. `bx cf oauth-token` コマンドを実行して、{{site.data.keyword.Bluemix_notm}} UAA トークンを取得します。
+3. `ibmcloud iam oauth-token` コマンドを実行して、{{site.data.keyword.Bluemix_notm}} UAA トークンを取得します。
 
     ```
-	bx cf oauth-token
+	ibmcloud iam oauth-token
 	```
 	{: codeblock}
 	

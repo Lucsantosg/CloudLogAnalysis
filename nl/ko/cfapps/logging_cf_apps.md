@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -88,15 +88,15 @@ Cloud Foundry 앱의 로깅은 {{site.data.keyword.Bluemix_notm}}에서 앱을 �
 
 Diego를 기반으로 하는 Cloud Foundry 아키텍처에 배치된 CF(Cloud Foundry) 애플리케이션의 경우, 다음과 같은 로그 소스를 사용할 수 있습니다.
     
-| 로그 소스 | 컴포넌트 이름 | 설명 | 
+|로그 소스 |컴포넌트 이름 |설명 | 
 |------------|----------------|-------------|
-| LGR | Loggregator | LGR 컴포넌트는 Cloud Foundry의 내부에서 로그를 전달하는 Cloud Foundry Loggregator에 대한 정보를 제공합니다. |
-| RTR | 라우터 | RTR 컴포넌트는 애플리케이션에 HTTP 요청에 대한 정보를 제공합니다. | 
-| STG | 스테이징 | STG 컴포넌트는 애플리케이션을 스테이징하거나 다시 스테이징하는 방법에 대한 정보를 제공합니다. | 
-| APP | 애플리케이션 | APP 컴포넌트는 애플리케이션에서 로그를 제공합니다. 여기에서 사용자 코드의 stderr 및 stdout가 표시됩니다. | 
-| API | Cloud Foundry API | API 컴포넌트는 애플리케이션의 상태를 변경하는 사용자의 요청의 결과인 내부 조치에 대한 정보를 제공합니다. | 
-| CELL | Diego 셀 | CELL 컴포넌트는 애플리케이션의 시작, 중지 또는 충돌에 대한 정보를 제공합니다.|
-| SSH | SSH | SSH 컴포넌트는 **cf ssh** 명령을 사용하여 사용자가 애플리케이션에 액세스할 때마다 정보를 제공합니다. |
+|LGR |Loggregator |LGR 컴포넌트는 Cloud Foundry의 내부에서 로그를 전달하는 Cloud Foundry Loggregator에 대한 정보를 제공합니다. |
+|RTR |라우터 |RTR 컴포넌트는 애플리케이션에 HTTP 요청에 대한 정보를 제공합니다. | 
+|STG |스테이징 |STG 컴포넌트는 애플리케이션을 스테이징하거나 다시 스테이징하는 방법에 대한 정보를 제공합니다. | 
+|APP |애플리케이션 |APP 컴포넌트는 애플리케이션에서 로그를 제공합니다. 여기에서 사용자 코드의 stderr 및 stdout가 표시됩니다. | 
+|API |Cloud Foundry API |API 컴포넌트는 애플리케이션의 상태를 변경하는 사용자의 요청의 결과인 내부 조치에 대한 정보를 제공합니다. | 
+|CELL |Diego 셀 |CELL 컴포넌트는 애플리케이션의 시작, 중지 또는 충돌에 대한 정보를 제공합니다.|
+|SSH |SSH |SSH 컴포넌트는 **cf ssh** 명령을 사용하여 사용자가 애플리케이션에 액세스할 때마다 정보를 제공합니다. |
 {: caption="표 1. Diego를 기반으로 하는 CF 아키텍처에 배치된 CF 앱에 대한 로그 소스" caption-side="top"}
 
 다음 그림에는 Diego를 기반으로 하는 Cloud Foundry 아키텍처의 여러 가지 컴포넌트(로그 소스)가 표시됩니다. 
@@ -108,14 +108,14 @@ Diego를 기반으로 하는 Cloud Foundry 아키텍처에 배치된 CF(Cloud Fo
 
 DEA(Droplet Execution Agent) 아키텍처에 배치된 CF(Cloud Foundry) 애플리케이션의 경우, 다음과 같은 로그 소스를 사용할 수 있습니다.
     
-| 로그 소스 | 컴포넌트 이름 | 설명 | 
+|로그 소스 |컴포넌트 이름 |설명 | 
 |------------|----------------|-------------|
-| LGR | Loggregator | LGR 컴포넌트는 Cloud Foundry의 내부에서 로그를 전달하는 Cloud Foundry Loggregator에 대한 정보를 제공합니다. |
-| RTR | 라우터 | RTR 컴포넌트는 애플리케이션에 HTTP 요청에 대한 정보를 제공합니다. | 
-| STG | 스테이징 | STG 컴포넌트는 애플리케이션을 스테이징하거나 다시 스테이징하는 방법에 대한 정보를 제공합니다. | 
-| APP | 애플리케이션 | APP 컴포넌트는 애플리케이션에서 로그를 제공합니다. 여기에서 사용자 코드의 stderr 및 stdout가 표시됩니다. | 
-| API | Cloud Foundry API | API 컴포넌트는 애플리케이션의 상태를 변경하는 사용자의 요청의 결과인 내부 조치에 대한 정보를 제공합니다. | 
-| DEA | DEA(Droplet Execution Agent) | DEA 컴포넌트는 애플리케이션의 시작, 중지 또는 충돌에 대한 정보를 제공합니다. <br> 이 컴포넌트는 애플리케이션이 DEA를 기반으로 하는 Cloud Foundry 아키텍처에 배치된 경우에만 사용 가능합니다. | 
+|LGR |Loggregator |LGR 컴포넌트는 Cloud Foundry의 내부에서 로그를 전달하는 Cloud Foundry Loggregator에 대한 정보를 제공합니다. |
+|RTR |라우터 |RTR 컴포넌트는 애플리케이션에 HTTP 요청에 대한 정보를 제공합니다. | 
+|STG |스테이징 |STG 컴포넌트는 애플리케이션을 스테이징하거나 다시 스테이징하는 방법에 대한 정보를 제공합니다. | 
+|APP |애플리케이션 |APP 컴포넌트는 애플리케이션에서 로그를 제공합니다. 여기에서 사용자 코드의 stderr 및 stdout가 표시됩니다. | 
+|API |Cloud Foundry API |API 컴포넌트는 애플리케이션의 상태를 변경하는 사용자의 요청의 결과인 내부 조치에 대한 정보를 제공합니다. | 
+|DEA |DEA(Droplet Execution Agent) |DEA 컴포넌트는 애플리케이션의 시작, 중지 또는 충돌에 대한 정보를 제공합니다. <br> 이 컴포넌트는 애플리케이션이 DEA를 기반으로 하는 Cloud Foundry 아키텍처에 배치된 경우에만 사용 가능합니다. | 
 {: caption="표 2. DEA를 기반으로 하는 CF 아키텍처에 배치된 CF 앱에 대한 로그 소스" caption-side="top"}
 
 다음 그림에는 DEA를 기반으로 하는 Cloud Foundry 아키텍처의 여러 가지 컴포넌트(로그 소스)가 표시됩니다. 
@@ -133,11 +133,11 @@ DEA(Droplet Execution Agent) 아키텍처에 배치된 CF(Cloud Foundry) 애플�
 
 각 로그 항목에는 다음 필드가 포함됩니다.
 
-| 필드 | 설명 |
+|필드 |설명 |
 |-------|-------------|
-| 시간소인 | 로그 명령문의 시간입니다. 시간소인은 밀리초 단위까지 정의됩니다. |
-| 컴포넌트 | 로그를 생성하는 컴포넌트입니다. 다른 컴포넌트의 목록을 보려면 [CF 앱의 로그 소스](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#logging_bluemix_cf_apps_log_sources)를 참조하십시오. <br> 각 컴포넌트 유형은 슬래시와 애플리케이션 인스턴스를 표시하는 숫자가 뒤이어 옵니다. 0은 첫 번째 인스턴스에 할당된 숫자이고, 1은 두 번째에 할당된 숫자이며 이런 식으로 계속됩니다. |
-| 메시지 | 컴포넌트에서 발행하는 메시지입니다. 메시지는 컨텍스트에 따라 달라집니다. |
+|시간소인 |로그 명령문의 시간입니다. 시간소인은 밀리초 단위까지 정의됩니다. |
+|컴포넌트 |로그를 생성하는 컴포넌트입니다. 다른 컴포넌트의 목록을 보려면 [CF 앱의 로그 소스](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#logging_bluemix_cf_apps_log_sources)를 참조하십시오. <br> 각 컴포넌트 유형은 슬래시와 애플리케이션 인스턴스를 표시하는 숫자가 뒤이어 옵니다. 0은 첫 번째 인스턴스에 할당된 숫자이고, 1은 두 번째에 할당된 숫자이며 이런 식으로 계속됩니다. |
+|메시지 |컴포넌트에서 발행하는 메시지입니다. 메시지는 컨텍스트에 따라 달라집니다. |
 {: caption="표 1. CF 앱 로그 항목 필드" caption-side="top"}
 
 

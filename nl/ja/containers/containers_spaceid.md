@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-16"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -17,13 +17,13 @@ lastupdated: "2018-01-16"
 # クラスターのスペース ID の取得
 {: #containers_spaceid}
 
-Cloud Foundry 組織およびスペースのコンテキスト内で {{site.data.keyword.Bluemix_notm}} アカウントにクラスターを作成できます。
+Cloud Foundry 組織およびスペースのコンテキスト内で {{site.data.keyword.Bluemix_notm}} アカウントにクラスターを作成できます。 
 {:shortdesc}
 
 クラスターに関連付けられているスペース ID を見つけるには、以下のコマンドを実行します。
 
 ```
-bx cs cluster-get ClusterName --json
+ibmcloud cs cluster-get ClusterName --json
 ```
 {: codeblock}
 

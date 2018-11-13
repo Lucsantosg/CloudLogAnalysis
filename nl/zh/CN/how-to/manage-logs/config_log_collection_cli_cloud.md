@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-04-19"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -27,12 +27,12 @@ lastupdated: "2018-04-19"
 
 1. 安装 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
    
 2. 在存储库中查找插件的名称。运行以下命令：
 
     ```
-        bx plugin repo-plugins
+    ibmcloud plugin repo-plugins
     ```
     {: codeblock}
     
@@ -41,7 +41,7 @@ lastupdated: "2018-04-19"
 3. 安装 {{site.data.keyword.loganalysisshort}} 插件。运行以下命令：
 
     ```
-        bx plugin install logging-cli -r Bluemix
+    ibmcloud plugin install logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -50,14 +50,14 @@ lastupdated: "2018-04-19"
     例如，运行以下命令以查看安装的插件列表：
     
     ```
-        bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     输出如下所示：
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -73,7 +73,7 @@ lastupdated: "2018-04-19"
 
 1. 安装 {{site.data.keyword.Bluemix_notm}} CLI。
 
-   有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/reference/bluemix_cli/download_cli.html#download_install)。
+   有关更多信息，请参阅[安装 {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview)。
 
 2. 安装 {{site.data.keyword.loganalysisshort}} 插件。
 
@@ -86,14 +86,14 @@ lastupdated: "2018-04-19"
     例如，检查该插件的版本。运行以下命令：
     
     ```
-        bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     输出如下所示：
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -106,7 +106,7 @@ lastupdated: "2018-04-19"
 ## 在 Linux 上通过文件安装 Log Analysis 插件
 {: #install_cli_linux}
 
-要在 Linux 上安装“日志收集”插件，请完成以下步骤：
+要在 Linux 上安装 Log Analysis 插件，请完成以下步骤：
 
 1. 安装插件。
 
@@ -119,7 +119,7 @@ lastupdated: "2018-04-19"
 2. 安装插件。运行以下命令：
         
     ```
-        bx plugin install -f logging-cli-linux-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-linux-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -129,7 +129,7 @@ lastupdated: "2018-04-19"
 ## 在 Windows 上通过文件安装 Log Analysis 插件
 {: #install_cli_windows}
 
-要在 Windows 上安装“日志收集”插件，请完成以下步骤：
+要在 Windows 上安装 Log Analysis 插件，请完成以下步骤：
 
 1. 从 [{{site.data.keyword.Bluemix_notm}} CLI 页面](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins)下载 {{site.data.keyword.loganalysisshort}} 服务 CLI 插件 (IBM-Logging) 的最新发行版。 
 	
@@ -139,7 +139,7 @@ lastupdated: "2018-04-19"
 2. 安装插件。运行以下命令：
         
     ```
-        bx plugin install -f logging-cli-windows-amd64-0.1.1.exe
+    ibmcloud plugin install -f logging-cli-windows-amd64-0.1.1.exe
     ```
     {: codeblock}
 
@@ -148,7 +148,7 @@ lastupdated: "2018-04-19"
 ## 在 Mac OS X 上通过文件安装 Log Analysis 插件
 {: #install_cli_mac}
 
-要在 Mac OS X 上安装“日志收集”插件，请完成以下步骤：
+要在 Mac OS X 上安装 Log Analysis 插件，请完成以下步骤：
 
 1. 从 [{{site.data.keyword.Bluemix_notm}} CLI 页面](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins)下载 {{site.data.keyword.loganalysisshort}} 服务 CLI 插件 (IBM-Logging) 的最新发行版。 
 	
@@ -158,14 +158,14 @@ lastupdated: "2018-04-19"
 2. 更改文件的许可权。运行以下命令：
 
     ```
-    chmod u+x logging-cli-darwin-amd64-0.1.1
+chmod u+x logging-cli-darwin-amd64-0.1.1
     ```
      {: codeblock}
 
 3. 安装插件。运行以下命令：
         
     ```
-        bx plugin install -f logging-cli-darwin-amd64-0.1.1
+    ibmcloud plugin install -f logging-cli-darwin-amd64-0.1.1
     ```
     {: codeblock}
 
@@ -184,14 +184,14 @@ lastupdated: "2018-04-19"
     例如，检查该插件的版本。运行以下命令：
     
     ```
-        bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     输出如下所示：
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -199,12 +199,12 @@ lastupdated: "2018-04-19"
     ```
     {: screen}
     
-2. 如果日志记录 CLI 插件已安装，请运行 `bx plugin uninstall` 来卸载该插件。
+2. 如果日志记录 CLI 插件已安装，请运行 `ibmcloud plugin uninstall` 来卸载该插件。
 
     运行以下命令：
         
     ```
-        bx plugin uninstall logging-cli
+    ibmcloud plugin uninstall logging-cli
     ```
     {: codeblock}
   
@@ -212,7 +212,7 @@ lastupdated: "2018-04-19"
 ## 更新存储库中的 Log Analysis CLI
 {: #update_cli}
 
-要更新日志记录 CLI，请运行 *bx plugin update* 命令。
+要更新日志记录 CLI，请运行 *ibmcloud plugin update* 命令。
 {:shortdesc}
 
 要更新 {{site.data.keyword.loganalysisshort}} 服务 CLI，请完成以下步骤：
@@ -220,7 +220,7 @@ lastupdated: "2018-04-19"
 1. 更新 {{site.data.keyword.loganalysisshort}} 插件。运行以下命令：
 
     ```
-        bx plugin update logging-cli -r Bluemix
+    ibmcloud plugin update logging-cli -r Bluemix
     ```
     {: codeblock}
  
@@ -229,14 +229,14 @@ lastupdated: "2018-04-19"
     例如，验证插件的版本。运行以下命令：
     
     ```
-        bx plugin list
+    ibmcloud plugin list
     ```
     {: codeblock}
     
     输出如下所示：
    
     ```
-    bx plugin list
+    ibmcloud plugin list
     Listing installed plug-ins...
 
     Plugin Name          Version   
@@ -260,7 +260,7 @@ lastupdated: "2018-04-19"
 2. 列出有关受支持命令和 CLI 的信息。运行以下命令：
 
     ```
-        bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
     
@@ -278,14 +278,14 @@ lastupdated: "2018-04-19"
 2. 获取受支持命令的列表，并确定您需要的命令。运行以下命令：
 
     ```
-        bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. 获取有关命令的帮助。运行以下命令：
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Command*
     ```
     {: codeblock}
     
@@ -305,14 +305,14 @@ lastupdated: "2018-04-19"
 2. 获取受支持命令的列表，并确定您需要的命令。运行以下命令：
 
     ```
-        bx logging help 
+    ibmcloud logging help 
     ```
     {: codeblock}
 
 3. 获取有关命令的帮助并确定受支持的子命令。运行以下命令：
 
     ```
-    bx logging help *Command*
+    ibmcloud logging help *Command*
     ```
     {: codeblock}
     
@@ -321,7 +321,7 @@ lastupdated: "2018-04-19"
 4. 获取有关命令的帮助并确定受支持的子命令。运行以下命令：
 
     ```
-    bx logging *Command* help *Subcommand*
+    ibmcloud logging *Command* help *Subcommand*
     ```
     {: codeblock}
     
@@ -334,17 +334,17 @@ lastupdated: "2018-04-19"
 ## 显示插件的详细信息
 {: #show}
   
-使用“bx plugin show logging-cli”命令显示插件详细信息。 
+使用“ibmcloud plugin show logging-cli”命令显示插件详细信息。 
 
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
 ```
 {: codeblock}
     
 输出如下所示：
    
 ```
-bx plugin show logging-cli
+ibmcloud plugin show logging-cli
                                   
 Plugin                         logging-cli   
 Version                        0.1.1   

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018
 
-lastupdated: "2018-01-10"
+lastupdated: "2018-07-25"
 
 ---
 
@@ -34,7 +34,7 @@ Siga los siguientes pasos para inhabilitar una política de retención:
 2. Establezca el periodo de retención en **-1** para inhabilitar el periodo de retención. Ejecute el mandato:
 
     ```
-    bx cf logging option -r -1
+    ibmcloud cf logging option -r -1
     ```
     {: codeblock}
     
@@ -43,7 +43,7 @@ Siga los siguientes pasos para inhabilitar una política de retención:
 Por ejemplo, para inhabilitar el periodo de retención para un espacio con el ID *d35da1e3-b345-475f-8502-cfgh436902a3*, ejecute el siguiente mandato:
 
 ```
-bx cf logging option -r -1
+ibmcloud cf logging option -r -1
 ```
 {: codeblock}
 
@@ -72,7 +72,7 @@ Para obtener el periodo de retención establecido para un espacio, siga los paso
 2. Obtenga el periodo de retención. Ejecute el mandato:
 
     ```
-    bx cf logging option
+    ibmcloud cf logging option
     ```
     {: codeblock}
 
@@ -100,7 +100,7 @@ Para obtener el periodo de retención establecido para cada espacio de una cuent
 2. Obtenga el periodo de retención para cada espacio de la cuenta. Ejecute el mandato:
 
     ```
-    bx cf logging option -a
+    ibmcloud cf logging option -a
     ```
     {: codeblock}
 
@@ -130,7 +130,7 @@ Para ver el periodo de retención correspondiente a una cuenta, siga los pasos s
 2. Establezca el periodo de retención. Ejecute el mandato:
 
     ```
-    bx cf logging option -r *Número_de_días* - a
+    ibmcloud cf logging option -r *Number_of_days* - a
     ```
     {: codeblock}
     
@@ -142,7 +142,7 @@ Para ver el periodo de retención correspondiente a una cuenta, siga los pasos s
 Por ejemplo, para conservar cualquier tipo de registro en su cuenta durante solo 15 días, ejecute el mandato siguiente:
 
 ```
-bx cf logging option -r 15 -a
+ibmcloud cf logging option -r 15 -a
 ```
 {: codeblock}
 
@@ -171,7 +171,7 @@ Para ver el periodo de retención correspondiente a un espacio, siga los pasos s
 2. Establezca el periodo de retención. Ejecute el mandato:
 
     ```
-    bx cf logging option -r *Número_de_días*
+    ibmcloud cf logging option -r *Number_of_days*
     ```
     {: codeblock}
     
@@ -185,7 +185,7 @@ siguiente
 mandato:
 
 ```
-bx cf logging option -r 365
+ibmcloud cf logging option -r 365
 ```
 {: codeblock}
 
