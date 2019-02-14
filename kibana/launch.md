@@ -75,7 +75,7 @@ Complete the following steps to launch Kibana from the dashboard of the {{site.d
 
 By default, the **Discover** page loads with the default index pattern selected and a time filter set to the last 15 minutes. 
 
-If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](filter_logs.html#set_time_filter).
+If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 
 	
 	
