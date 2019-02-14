@@ -81,7 +81,7 @@ You can launch Kibana in any of the following ways:
 ## Analyze data interactively
 {: #analyze_discover}
 
-In the Discover page, you can define new search queries and apply filters per query. The log data is displayed through a table and a  histogram. You can use these visualizations to analyze the data interactively. For more information, see [Analyzing logs interactively in Kibana](analize_logs_interactively.html#analize_logs_interactively).
+In the Discover page, you can define new search queries and apply filters per query. The log data is displayed through a table and a  histogram. You can use these visualizations to analyze the data interactively. For more information, see [Analyzing logs interactively in Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#analize_logs_interactively).
 
 You can configure filters from log fields, for example, message_type and instance_ID, and set a time period. You can enable or disable dynamically these filters. The table and histogram will display the log entries that meet the query and filtering criteria that you enable. For more information, see [Filtering logs in Kibana](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
 
