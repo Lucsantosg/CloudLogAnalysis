@@ -32,10 +32,10 @@ Use the **cf logs** command to display logs from a Cloud Foundry app and from th
 
 To view logs that you are interested in or exclude the content that you don't want to view, you can use the **cf logs** command with filtering options such as **cut** and **grep** in the cf command line interface:
 
-* To view the logs for a Cloud Foundry app, see [Viewing the log for a Cloud Foundry app](logging_view_cli.html#full_log_cli).
-* To view the most recent log records for a Cloud Foundry app, see [Viewing the latest log entries for a Cloud Foundry app](logging_view_cli.html#tailing_log_cli).
-* To view the log records for a Cloud Foundry app in a specific time range, see [Viewing a section of the logs](logging_view_cli.html#partial_log_cli).
-* To view entries in the logs for a Cloud Foundry app that contain specific keywords, see [Viewing log entries that contain certain keywords](logging_view_cli.html#partial_by_keyword_log_cli).
+* To view the logs for a Cloud Foundry app, see [Viewing the log for a Cloud Foundry app](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#full_log_cli).
+* To view the most recent log records for a Cloud Foundry app, see [Viewing the latest log entries for a Cloud Foundry app](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#tailing_log_cli).
+* To view the log records for a Cloud Foundry app in a specific time range, see [Viewing a section of the logs](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#partial_log_cli).
+* To view entries in the logs for a Cloud Foundry app that contain specific keywords, see [Viewing log entries that contain certain keywords](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#partial_by_keyword_log_cli).
 
 
 ### Viewing the log for a Cloud Foundry app
