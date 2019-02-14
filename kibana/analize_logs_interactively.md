@@ -62,7 +62,7 @@ You can define other searches. For more information, see [Filtering logs by defi
 
 To define a new search, use the default search query as your starting point, and then refine the search by performing the following tasks:
 
-* Apply field filters to refine the set of data that you can see. You can toggle each filter, pin it to the page, enable or disable it as needed, and configure it to include or exclude the value. For more information, see [Filtering logs in Kibana](filter_logs.html#filter_logs).
+* Apply field filters to refine the set of data that you can see. You can toggle each filter, pin it to the page, enable or disable it as needed, and configure it to include or exclude the value. For more information, see [Filtering logs in Kibana](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
 
     **Tip:** If you cannot find a field in the *Fields list* that you expect to see, or some of the magnifying glasses by the listed fields are disabled in the Discover page, reload the list of fields by refreshing the index pattern in the Settings page. For more information, see [Reloading the Field List](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields).
 
