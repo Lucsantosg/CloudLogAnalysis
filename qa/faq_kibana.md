@@ -43,7 +43,7 @@ To resolve this problem, complete the following steps:
 
     **Note**: By default, in the {{site.data.keyword.Bluemix_notm}}, the *Time Picker* is set to show data for the last 15 minutes.
 
-    For more information on how to set the *Time Picker*, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+    For more information on how to set the *Time Picker*, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter1).
        
 2. Click the magnifying glass that is located in the *Discover* page search bar. The page data is refreshed based on the default search query.
 

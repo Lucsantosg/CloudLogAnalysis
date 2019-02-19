@@ -63,7 +63,7 @@ To analyze log data in Kibana for a cluster that forwards logs to a space domain
 * To increase your Kibana search quota and store logs in Log Collection for long-term storage, you must provision the {{site.data.keyword.loganalysisshort}} service in the space where logs are being forwarded with a plan that meets your requirements. 
 * Your user ID must have permissions to view logs. To see logs in the space domain, a user needs a CF role. **Auditor** is the lowest role that can be granted to view logs. For more information, see [Roles that are required by a user to view logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
-To manage cluster log data that is stored in long-term storage (Log Collection), you user ID must have an IAM policy to work with the {{site.data.keyword.loganalysisshort}} service. Your user ID must have **Administrator**, **Operator**, or **Editor** permissions.  For more information, see [Roles that are required by a user to manage logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+To manage cluster log data that is stored in long-term storage (Log Collection), you user ID must have an IAM policy to work with the {{site.data.keyword.loganalysisshort}} service. Your user ID must have **Administrator**, **Operator**, or **Editor** permissions.  For more information, see [Roles that are required by a user to manage logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
 
 
 The following figure shows a high level view of logging in Public for the {{site.data.keyword.containershort}} when the cluster forwards logs to a space domain:
@@ -354,7 +354,7 @@ Fields that might be useful when analyzing Ingress controller logs:
 ## Sending logs so you can use the fields in a message as Kibana search fields
 {: #send_data_in_json}
 
-By default, logging is automatically enabled for containers. Every entry in the Docker log file is displayed in Kibana in the field **message**. If you need to filter and analyze your data in Kibana by using a specific field that is part of the container log entry, configure your application to send valid JSON formatted output. For example, log the message in JSON format to stdout (standard output) and stderr (standard error).
+By default, logging is automatically enabled for containers. Every entry in the Container runtime log file is displayed in Kibana in the field **message**. If you need to filter and analyze your data in Kibana by using a specific field that is part of the container log entry, configure your application to send valid JSON formatted output. For example, log the message in JSON format to stdout (standard output) and stderr (standard error).
 
 Each field that is available in the message is parsed to the type of field that matches is value. For example, each field in the following JSON message:
     
@@ -404,7 +404,7 @@ For a cluster to forwards logs into the {{site.data.keyword.loganalysisshort}} *
 
 
 ## Storing logs in Log Collection
-{: #log_collection}
+{: #log_collection1}
 
 Consider the following information about the default behaviour in the {{site.data.keyword.Bluemix_notm}} when working with logs:
 
@@ -429,7 +429,7 @@ To analyze log data, use Kibana to perform advanced analytical tasks. Kibana is 
 * You can launch Kibana directly from a web browser. For more information, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 * You can launch Kibana from the [{{site.data.keyword.Bluemix_notm}} UI within the context of a cluster. For more information, see [Navigating to Kibana from the dashboard of a container that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube).
 
-If you forward the log data of an app that runs in a container to the Docker log collector in JSON format, you can search and analyze log data in Kibana by using JSON fields. For more information, see [Sending logs so you can use the fields in a message as Kibana search fields](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json).
+If you forward the log data of an app that runs in a container to the Container runtime log collector in JSON format, you can search and analyze log data in Kibana by using JSON fields. For more information, see [Sending logs so you can use the fields in a message as Kibana search fields](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json).
 
 To view logs in Kibana, consider the following information:
 

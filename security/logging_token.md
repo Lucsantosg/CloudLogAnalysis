@@ -164,7 +164,7 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
 
 4. Get the GUID for the space.
 
-   For more information, see [How do I get the GUID of a space](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid).  
+   For more information, see [How do I get the GUID of a space](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid2).  
 	
 5. Export the following variables: TOKEN and SPACEID.
 

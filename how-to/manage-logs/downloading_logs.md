@@ -15,7 +15,7 @@ lastupdated: "2018-07-25"
 {:pre: .pre}
 
 # Downloading logs
-{: #downloading_logs}
+{: #downloading_logs1}
 
 You can download logs to a local file or pipe data into another program. You download of logs within the context of a session. A session specifies which logs will be downloaded. If the download of the logs is interrupted, the session enables resuming the download from where it left off. After the download is completed, you must delete the session.
 {:shortdesc}
@@ -29,7 +29,7 @@ Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_n
 For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 ## Step 2: Identify what logs are available
-{: #step2}
+{: #step31}
 
 1. Use the `ibmcloud cf logging status` command to see what logs are available for the last 2 weeks. Run the following command:
 
@@ -55,11 +55,11 @@ For more information, see [How do I log in to the {{site.data.keyword.Bluemix_no
 
 
 ## Step 3: Create a session
-{: #step3}
+{: #step32}
 
 A session is required to define the scope of log data that is available for a download, and to keep the status of the download. 
 
-Use the command [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) to create a session. Optionally, you can specify start date, end date, and types of logs when you create a session:  
+Use the command [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1) to create a session. Optionally, you can specify start date, end date, and types of logs when you create a session:  
 
 * When you specify the start date and the end date, the session provides access to logs between those inclusive dates. 
 * When you specify the type of log (**-t**), the session provides access to a particular type of log. This is an important feature when you manage logs at scale, because you can scope a session to only a small subset of logs that you are interested in.
@@ -103,10 +103,10 @@ $ ibmcloud cf logging session create -t log
 ```
 {: screen}
 
-**Tip:** To see the list of active sessions, run the command [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list).
+**Tip:** To see the list of active sessions, run the command [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list1).
 
 ## Step 4: Download log data to a file
-{: #step4}
+{: #step42}
 
 To download the logs that are specified by the session parameters, run the following command:
 
@@ -137,9 +137,9 @@ The progress indicator moves from 0 to 100% as the logs download.
 * You can also process the data with any program that can parse JSON. 
 
 ## Step 5: Delete the session
-{: #step5}
+{: #step51}
 
-After the download is complete, you must delete the session by using the [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete) command. 
+After the download is complete, you must delete the session by using the [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete1) command. 
 
 Run the following command to delete a session:
 

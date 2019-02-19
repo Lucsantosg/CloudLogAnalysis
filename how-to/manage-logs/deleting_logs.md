@@ -15,9 +15,9 @@ lastupdated: "2018-07-25"
 {:pre: .pre}
 
 # Deleting logs
-{: #deleting_logs}
+{: #deleting_logs1}
 
-Use the [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) command to delete logs from Log Collection. 
+Use the [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) command to delete logs from Log Collection. 
 {:shortdesc}
 
 * You can delete logs within a specific time range.
@@ -76,7 +76,7 @@ Complete the following steps:
 
 	
 ## Deleting logs by log type for a specific period of time 
-{: #log_type}
+{: #log_type1}
 
 Complete the following steps:
 

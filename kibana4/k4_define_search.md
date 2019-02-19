@@ -30,7 +30,7 @@ Complete the following tasks to define a custom search:
 
     2. Access Kibana. Click **Advanced View** ![Advanced view link](images/logging_advanced_view.jpg "Advanced view link"). The Kibana dashboard is displayed.
     
-    For containers that run in a Kubernetes cluster, [launch Kibana from the browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser). 
+    For containers that run in a Kubernetes cluster, [launch Kibana from the browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1). 
     
     When you access Kibana, the default search is applied. You can see the logs for the list of instances of the resource you launched Kibana for. You can filter the logs for any or all of the {{site.data.keyword.Bluemix_notm}} resources in that space.
 
@@ -123,7 +123,7 @@ Complete the following steps to load a saved search:
 2. Select the search that you want to load. 
 
 ## Starting a new search
-{: #k4_new_search}
+{: #k4_new_search1}
 
 To start a new search, click the **New Search** button ![New search](images/k4_new_search_icon.jpg "New search") in the Discover page toolbar.
 

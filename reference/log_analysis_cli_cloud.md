@@ -129,7 +129,7 @@ Enter 'ibmcloud logging help [command]' for more information about a command.
 
 
 ## ibmcloud logging log-delete
-{: #delete}
+{: #delete3}
 
 Deletes logs that are stored in Log Collection.
 
@@ -173,7 +173,7 @@ ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud logging log-download 
-{: #download}
+{: #download3}
 
 Downloads logs from Log Collection to a local file or pipes logs to another program such an Elastic Stack. 
 

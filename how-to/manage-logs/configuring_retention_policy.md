@@ -14,7 +14,7 @@ lastupdated: "2018-07-25"
 {:pre: .pre}
 
 # Configuring the log retention policy
-{: #configuring_retention_policy}
+{: #configuring_retention_policy1}
 
 Use the command **cf logging option** to view and configure the retention policy that defines the maximum number of days that logs are kept in Log Collection. By default, the retention policy is disabled, and logs are kept indefinitely. After the retention period has expired, logs are deleted automatically. 
 {:shortdesc}
@@ -23,7 +23,7 @@ You can have different retention policies defined in the account. You can have a
 
 
 ## Disabling the log retention policy for a space
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_space1}
 
 Complete the following steps to disable a retention policy:
 
@@ -61,7 +61,7 @@ The output is:
 
 
 ## Checking the log retention policy for a space
-{: #check_retention_policy_space}
+{: #check_retention_policy_space1}
 
 To get the retention period that is set for a space, complete the following steps:
 
@@ -119,7 +119,7 @@ To get the retention period that is set for each space in an account, complete t
     
 
 ## Setting an account level log retention policy
-{: #set_retention_policy_space}
+{: #set_retention_policy_space1}
 
 To see the retention period for an account, complete the following steps:
 

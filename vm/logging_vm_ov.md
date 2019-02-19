@@ -20,7 +20,7 @@ Logging capabilities are not enabled automatically for virtual machines (VMs). H
 
 
 ## Log ingestion
-{: #log_ingestion}
+{: #log_ingestion2}
 
 The {{site.data.keyword.loganalysisshort}} service offers different plans. All plans, with the exception of the *Lite* plan, include the ability to send logs into Log Collection. For more information about the plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
@@ -28,7 +28,7 @@ You can send logs into the {{site.data.keyword.loganalysisshort}} by using the m
 
 
 ## Log collection
-{: #log_collection}
+{: #log_collection2}
 
 By default, the {{site.data.keyword.Bluemix_notm}} stores log data for up to 3 days:   
 
@@ -43,7 +43,7 @@ The {{site.data.keyword.loganalysisshort}} service provides additional plans tha
 
 
 ## Log search
-{: #log_search}
+{: #log_search2}
 
 By default, you can use Kibana to search up to 500 MB of logs per day in the {{site.data.keyword.Bluemix_notm}}. 
 

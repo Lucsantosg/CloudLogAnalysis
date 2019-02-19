@@ -69,7 +69,7 @@ To see the logs of a Cloud Foundry application or Docker container in Kibana, co
 
 
 ##  Navigating to the Kibana dashboard from a web browser
-{: #launch_Kibana_from_browser}
+{: #launch_Kibana_from_browser1}
 
 The query that is used to filter the data that is displayed in Kibana retrieves log entries for a space in the {{site.data.keyword.Bluemix_notm}} organization. The log information that Kibana displays includes records for all resources that are deployed within the space of the {{site.data.keyword.Bluemix_notm}} organization that you are logged in.
 

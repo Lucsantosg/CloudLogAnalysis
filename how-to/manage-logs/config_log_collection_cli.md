@@ -14,7 +14,7 @@ lastupdated: "2018-07-25"
 {:pre: .pre}
 
 # Configuring the Log Analysis CLI (CF plugin) Deprecated
-{: #config_log_collection_cli}
+{: #config_log_collection_cli1}
 
 The {{site.data.keyword.loganalysisshort}} service includes a command line interface (CLI) that you can use to manage your logs in the cloud. You can use the Cloud Foundry (CF) plugin to view the status of the log, to download logs, and to configure the log retention policy. The CLI offers different types of help: general help to learn about the CLI and supported commands, command help to learn how to use a command, or subcommand help to learn how to use a subcommands for a command.
 {:shortdesc}
@@ -22,7 +22,7 @@ The {{site.data.keyword.loganalysisshort}} service includes a command line inter
 
 
 ## Installing the Log Analysis CF plugin
-{: #install_cli}
+{: #install_cli1}
 
 To install the {{site.data.keyword.loganalysisshort}} CLI, complete the following steps:
 
@@ -32,9 +32,9 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
 
 2. Install the {{site.data.keyword.loganalysisshort}} CF plugin.
 
-    * For Linux, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux).
-    * For Windows, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows).
-    * For Mac OS X, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Mac OS X ](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac).
+    * For Linux, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux1).
+    * For Windows, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows1).
+    * For Mac OS X, see [Installing the {{site.data.keyword.loganalysisshort}} CLI on Mac OS X ](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac1).
  
 3. Verify the installation of the CLI plugin.
   
@@ -61,7 +61,7 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
 
 
 ## Installing the Log Analysis CLI on Linux
-{: #install_cli_linux}
+{: #install_cli_linux1}
 
 Complete the following steps to install the Log Collection CF plugin on Linux:
 
@@ -137,7 +137,7 @@ Complete the following steps to install the Log Collection CF plugin on Linux:
 
 
 ## Installing the Log Analysis CLI on Windows
-{: #install_cli_windows}
+{: #install_cli_windows1}
 
 Complete the following steps to install the Log Collection CF plugin on Windows:
 
@@ -182,7 +182,7 @@ Complete the following steps to install the Log Collection CF plugin on Windows:
 	
 
 ## Installing the Log Analysis CLI on Mac OS X
-{: #install_cli_mac}
+{: #install_cli_mac1}
 
 Complete the following steps to install the Log Collection CF plugin on Mac OS X:
 
@@ -227,7 +227,7 @@ Complete the following steps to install the Log Collection CF plugin on Mac OS X
 	
 	
 ## Uninstalling the Log Analysis CLI
-{: #uninstall_cli}
+{: #uninstall_cli1}
 
 To uninstall the logging CLI, delete the plugin.
 {:shortdesc}
@@ -265,7 +265,7 @@ Complete the following steps to uninstall the {{site.data.keyword.loganalysissho
   
 
 ## Getting general help
-{: #general_cli_help}
+{: #general_cli_help1}
 
 To get general information about the CLI and what commands are supported, complete the followimg steps:
 
@@ -283,7 +283,7 @@ To get general information about the CLI and what commands are supported, comple
     
 
 ## Getting help on a command
-{: #command_cli_help}
+{: #command_cli_help1}
 
 To get help on how to use a command, complete the followimg steps:
 
@@ -310,7 +310,7 @@ To get help on how to use a command, complete the followimg steps:
 
 
 ## Getting help on a subcommand
-{: #subcommand_cli_help}
+{: #subcommand_cli_help1}
 
 A command can have subcommands. To get help on subcommands, complete the followimg steps:
 

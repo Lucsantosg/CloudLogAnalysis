@@ -143,7 +143,7 @@ Complete the following steps to get the GUID of an organization:
 		
 		
 ## How do I get the GUID of a space
-{: #space_guid}
+{: #space_guid2}
 	
 Complete the following steps to get the GUID of a space:
 	

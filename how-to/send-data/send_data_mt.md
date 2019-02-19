@@ -23,7 +23,7 @@ To send log data into the {{site.data.keyword.loganalysisshort}} service, you ca
 Complete the following steps to send log data to a space in the {{site.data.keyword.Bluemix_notm}}:
 
 ## Prereqs
-{: #prereqs}
+{: #prereqs1}
 
 * An {{site.data.keyword.Bluemix_notm}} ID to log in to {{site.data.keyword.Bluemix_notm}}.
 * A user ID that has permissions to work in a space with the {{site.data.keyword.loganalysisshort}} service. For more information, see [Security](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).

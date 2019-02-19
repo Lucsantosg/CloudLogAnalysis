@@ -15,7 +15,7 @@ lastupdated: "2018-07-25"
 {:pre: .pre}
 
 # Viewing log information
-{: #viewing_log_status}
+{: #viewing_log_status1}
 
 Use the [ibmcloud logging log-show](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#status) command to obtain information about the logs that are collected and stored in Log Collection. You can obtain information about the size, number of records, log types, and whether the logs are available or not for analysis in Kibana.
 {:shortdesc}

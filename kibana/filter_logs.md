@@ -25,7 +25,7 @@ In the Discover page, you can create search queries and apply filters to constra
 
 * You can add filters from the *Fields list* or from the table entries. A filter refines the data selection by including or excluding information. You can enable or disable a filter, invert the filter action, toggle the filter on or off, or remove it entirely. 
 
-After you define a new search, save it so you can reuse it for future analysis in the Discover page or to create visualizations that you can use in custom dashboards. For more information, see [Saving a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search).
+After you define a new search, save it so you can reuse it for future analysis in the Discover page or to create visualizations that you can use in custom dashboards. For more information, see [Saving a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1).
 
 When you perform a new search, the histogram, the table, and the Fields list are updated automatically to show the search results. To find out what data is shown, see [Identifying the data that is displayed in the Discover page](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 

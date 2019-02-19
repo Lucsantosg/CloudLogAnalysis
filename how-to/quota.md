@@ -200,7 +200,7 @@ Complete the following steps:
 
 	
 ## Calculating the search quota and daily usage of a space by using the API
-{: #space}
+{: #space1}
 
 Complete the following steps:
 

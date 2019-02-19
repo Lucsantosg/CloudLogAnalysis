@@ -47,7 +47,7 @@ Complete the following tasks to define a custom search:
 
      For example, for a CF app, you can create a query `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]`  that lists entries for instances *0* and *1* only. 
 
-3. Save the query so you can reuse it later. For more information, see [Saving a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search). 
+3. Save the query so you can reuse it later. For more information, see [Saving a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1). 
 
 **Note:** If you need to delete a query, see [Deleting a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search).
 
@@ -111,7 +111,7 @@ Complete the following steps to set a refresh interval:
 
 
 ## Reloading a search
-{: #reload_search}
+{: #reload_search1}
 
 Complete the following steps to load a saved search:
 
@@ -125,7 +125,7 @@ Complete the following steps to load a saved search:
 To start a new search, click the **New Search** button ![New search](images/new_search_icon.jpg "New search") in the Discover page toolbar.
 
 ## Saving a search 
-{: #save_search}
+{: #save_search1}
 
 Consider the following information about saving custom searches in Kibana:
 

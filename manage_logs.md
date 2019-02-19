@@ -50,7 +50,7 @@ You can use the {{site.data.keyword.loganalysisshort}} CLI to view and configure
 * You can change at any time the retention policy.
 * You can disable the policy by setting its value to *-1*. 
 
-**Note:** When you disable the log retention policy, you must maintain the logs in Log Collection. You can use the CLI command [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete) to delete old logs.
+**Note:** When you disable the log retention policy, you must maintain the logs in Log Collection. You can use the CLI command [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete4) to delete old logs.
 
 For more information, see:
 
@@ -74,14 +74,14 @@ Logs that are stored in Log Collection are kept until you either configure a ret
 
 
 ## Downloading logs
-{: #download_logs}
+{: #download_logs2}
 
 You can search logs for the last 3 days in Kibana. To be able to analyze older log data, you can download logs to a local file, or you can pipe these logs to other programs such as a local Elastic Stack. 
 
 For more information, see:
 
 * [Downloading logs by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs_cloud.html#downloading_logs).
-* [Downloading logs by using the CF plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs).
+* [Downloading logs by using the CF plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs1).
 
 
 
@@ -90,8 +90,8 @@ For more information, see:
 
 To obtain general information about your logs, use the `ibmcloud logging log-show` or the `cf logging status` command. For more information, see:
 
-* [Viewing log information by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
-* [Viewing log information by using the CF plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
+* [Viewing log information by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status1)
+* [Viewing log information by using the CF plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status1).
 
 For example, to keep cost under control, you might want to monitor the size of the logs of your apps over a period of time. For example, you might want to know the size of each log type during a week for a {{site.data.keyword.Bluemix_notm}} space to identify if any app or service is generating more logs than expected. To check the size of your logs, use the `ibmcloud logging log-show` or the `cf logging status` command.
 
@@ -100,7 +100,7 @@ You can view information about logs that are stored in a space domain, an organi
 
 
 ## Installing the {{site.data.keyword.loganalysisshort_notm}} CLI ({{site.data.keyword.Bluemix_notm}} plugin)
-{: #install_cli}
+{: #install_cli2}
 
 To learn how to install the CLI, see [Installing the logging CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
 
@@ -139,7 +139,7 @@ The following table lists the logging URLs per region:
 </table>
 
 ## Roles that are required by a user to manage logs
-{: #roles}
+{: #roles1}
 
 In the {{site.data.keyword.Bluemix_notm}}, you can assign one or more roles to users. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service. 
 

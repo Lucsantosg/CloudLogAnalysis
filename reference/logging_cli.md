@@ -56,30 +56,30 @@ To find out about how to use the {{site.data.keyword.loganalysisshort}} CLI, see
     <td>Use this command to view or set the retention period for logs that are available in a space or account.</td>
   </tr>
   <tr>
-    <td>[ibmcloud cf logging session create (Beta)](#session_create)</td>
+    <td>[ibmcloud cf logging session create (Beta)](#session_create1)</td>
     <td>Use this command to create a new session.</td>
   <tr>
   <tr>
-    <td>[ibmcloud cf logging session delete (Beta)](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete (Beta)](#session_delete1)</td>
     <td>Use this command to delete a session.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session list (Beta)](#session_list)</td>
+    <td>[ibmcloud cf logging session list (Beta)](#session_list1)</td>
     <td>Use this command to list active sessions and their IDs.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session show (Beta)](#session_show)</td>
+    <td>[ibmcloud cf logging session show (Beta)](#session_show1)</td>
     <td>Use this command to show the status of a single session.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status1)</td>
     <td>Use this command to get information about the logs that are collected in a space or account.</td>
   </tr>
   </table>
 
 
 ## ibmcloud cf logging
-{: #base}
+{: #base1}
 
 Provides information about the version of the CLI and how to use the CLI.
 
@@ -145,7 +145,7 @@ ibmcloud cf logging auth
 </dl>
 
 ## ibmcloud cf logging delete
-{: #delete}
+{: #delete2}
 
 Deletes logs that are stored in Log Collection.
 
@@ -185,11 +185,11 @@ ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud cf logging download (Beta)
-{: #download}
+{: #download4}
 
 Downloads logs from Log Collection to a local file or pipes logs to another program such an Elastic Stack. 
 
-**Note:** To download files, you need to create a session first. A session defines which logs to download based on date range, log type, and account type. You download logs within the context of a session. For more information, see [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
+**Note:** To download files, you need to create a session first. A session defines which logs to download based on date range, log type, and account type. You download logs within the context of a session. For more information, see [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1).
 
 ```
 ibmcloud cf logging download [parameters] [arguments]
@@ -246,7 +246,7 @@ output {
 
 
 ## ibmcloud cf logging help
-{: #help}
+{: #help1}
 
 Provides information on how to use a command.
 
@@ -341,7 +341,7 @@ The output is:
 
 
 ## ibmcloud cf logging session create (Beta)
-{: #session_create}
+{: #session_create1}
 
 Creates a new session.
 
@@ -409,7 +409,7 @@ ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 
 
 ## ibmcloud cf logging session delete (Beta)
-{: #session_delete}
+{: #session_delete1}
 
 Deletes a session, specified by session id.
 
@@ -437,7 +437,7 @@ ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging session list (Beta)
-{: #session_list}
+{: #session_list1}
 
 Lists the active sessions and their IDs.
 
@@ -467,7 +467,7 @@ ibmcloud cf logging session list
  
 
 ## ibmcloud cf logging session show (Beta)
-{: #session_show}
+{: #session_show1}
 
 Shows the status of a single session.
 
@@ -519,7 +519,7 @@ ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging status
-{: #status}
+{: #status1}
 
 Returns information about the logs that are collected in a space or account.
 

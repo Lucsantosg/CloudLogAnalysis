@@ -20,7 +20,7 @@ lastupdated: "2018-07-25"
 If you have problems or questions when using the {{site.data.keyword.loganalysislong}}, you can get help by searching for information or by asking questions through a forum. You can also open a support ticket.
 {:shortdesc}
 
-* You can check whether the {{site.data.keyword.Bluemix_notm}} is available by going to the [{{site.data.keyword.Bluemix_notm}} status page](https://developer.ibm.com/bluemix/support/#status){:new_window}.
+* You can check whether the {{site.data.keyword.Bluemix_notm}} is available by going to the [{{site.data.keyword.Bluemix_notm}} status page](https://developer.ibm.com/bluemix/support/#status2){:new_window}.
 
 * You can review the forums to see whether other users ran into the same problem. When using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 <!--Insert the appropriate Stack Overflow tag for your service for <service_keyword> in URL and text below:  -->
@@ -29,5 +29,4 @@ If you have problems or questions when using the {{site.data.keyword.loganalysis
   * For questions about the service and getting started instructions, use the [{{site.data.keyword.IBM_notm}} developerWorks dW Answers](https://developer.ibm.com/answers/topics/log-analysis/?smartspace=ibm-cloud){:new_window} forum.
 
 * If you still can't resolve the problem, you can open an IBM support ticket. For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](/docs/get-support/howtogetsupport.html#getting-customer-support).
-
 

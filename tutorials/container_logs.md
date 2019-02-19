@@ -70,7 +70,7 @@ This tutorial walks through the steps that are required to get the following end
  
 
 ## Step 1: Provision a Kubernetes cluster
-{: #step1}
+{: #step25}
 
 Complete the following steps:
 
@@ -108,7 +108,7 @@ Complete the following steps:
 
 
 ## Step 2: Configure your cluster to forward logs automatically to the {{site.data.keyword.loganalysisshort}} service
-{: #step2}
+{: #step26}
 
 When the app is deployed, logs are collected automatically by the {{site.data.keyword.containershort}}. However, logs are not automatically forwarded to the {{site.data.keyword.loganalysisshort}} service. You must create 1 or more logging configurations in your cluster that define:
 
@@ -228,7 +228,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## Step 3: Grant your user permissions to see logs in a space domain
-{: #step3}
+{: #step33}
 
 To grant a user permissions to view logs in a space, you must assign that user a Cloud Foundry role that describes the actions that this user can do with the {{site.data.keyword.loganalysisshort}} service in the space. 
 
@@ -266,7 +266,7 @@ Complete the following steps to grant a user permissions to work with the {{site
 
 
 ## Step 4: Grant the {{site.data.keyword.containershort_notm}} key owner permissions
-{: #step4}
+{: #step52}
 
 For cluster logs to be forwarded to a space, the {{site.data.keyword.containershort_notm}} key owner must have the following permissions:
 
@@ -315,7 +315,7 @@ Complete the following steps:
 
 
 ## Step 5: Deploy a sample app in the Kubernetes cluster to generate content in stdout
-{: #step5}
+{: #step53}
 
 Deploy and run a sample app in the Kubernetes cluster. Complete the steps in the following tutorial to deploy the sample app: [Lesson 1: Deploying single instance apps to Kubernetes clusters](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1).
 

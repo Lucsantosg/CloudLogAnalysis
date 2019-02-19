@@ -32,7 +32,7 @@ You can create custom searches to filter your logs. The following list outline s
  
 * You can search your log for a specific field value or exclude entries from the log for a specific field value. For more information, see [Filtering your logs for a specific field value](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field).
  
-* You can filter your logs to show entries within a time period. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter).
+* You can filter your logs to show entries within a time period. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter1).
      
 
 ## Adding a filter for a value that is not listed in the *Fields list*
@@ -297,7 +297,7 @@ The table shows entries for your CF app where the text *CWWKT0016I* is part of t
         
 
 ## Setting a time filter
-{: #set_time_filter}
+{: #set_time_filter1}
 
 View and filter logs within a time period by configuring the *Time Picker*.
 

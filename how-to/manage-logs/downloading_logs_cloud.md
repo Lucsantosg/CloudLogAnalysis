@@ -26,14 +26,14 @@ To complete the steps, you must install the {{site.data.keyword.loganalysisshort
 Complete the following steps to download log data that is available in a space into a local file:
 
 ## Step 1: Log in to the {{site.data.keyword.Bluemix_notm}}
-{: #step1}
+{: #downloading_logs_step1}
 
 Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
 For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 ## Step 2: Identify what logs are available
-{: #step2}
+{: #step21}
 
 1. Use the `ibmcloud logging log-show` command to see what logs are available for the last 2 weeks. Run the following command:
 
@@ -100,7 +100,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 **Tip:** To see the list of active sessions, run the command [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
 
 ## Step 4: Download log data to a file
-{: #step4}
+{: #step41}
 
 To download the logs that are specified by the session parameters, run the following command:
 

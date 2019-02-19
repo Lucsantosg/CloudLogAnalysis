@@ -43,7 +43,7 @@ The following table lists different tasks that you can perform in the Dashboard 
 | [Delete a dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) | Delete dashboards that are not required. |
 | [Export a dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) | You can export a dashboard as a JSON file. |
 | [Import a dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) | You can import a dashboard as a JSON file. |
-| [Load a dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) | You can upload a dashboard to either update its data, modify it, or analyze the data. |
+| [Load a dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload3) | You can upload a dashboard to either update its data, modify it, or analyze the data. |
 | [Save a dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | You can save a dashboard for later reuse. |
 {: caption="Table 2. Tasks to work with dashboards" caption-side="top"}
 
@@ -83,7 +83,7 @@ Complete the following steps to create a new dashboard:
 
 
 ## Deleting a Kibana dashboard
-{: #delete}
+{: #delete1}
 
 To delete a dashboard, complete the following steps in the **Management** page:
 
@@ -120,7 +120,7 @@ To import a dashboard as a JSON file, complete the following steps in the **Mana
 The dashboard is added to the list of dashboards.
 
 ## Loading a Kibana dashboard
-{: #reload}
+{: #reload3}
 
 Complete the following steps to load a saved dashboard:
 

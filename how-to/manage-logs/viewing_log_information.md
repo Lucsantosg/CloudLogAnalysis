@@ -17,11 +17,11 @@ lastupdated: "2018-07-25"
 # Viewing log information
 {: #viewing_log_status}
 
-Use the [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) command to obtain information about the logs that are collected and stored in Log Collection.
+Use the [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) command to obtain information about the logs that are collected and stored in Log Collection.
 {:shortdesc}
 
 ## Obtaining information about logs over a period of time
-{: #viewing_logs}
+{: #viewing_logs1}
 
 Use the `cf logging status` command to see the size, count, log types, and whether the logs are available or not for analysis in Kibana for logs that are stored in Log Collection. 
 
@@ -60,7 +60,7 @@ Complete the following steps to get information about logs:
 
 
 ## Obtaining information about a type of log over a period of time
-{: #viewing_logs_by_log_type}
+{: #viewing_logs_by_log_type1}
 
 To obtain information about a type of log over a period of time, use the `cf logging status` command with the options **-t** to specify the type of log, **-s** to set the start day, and **-e** to set the end date. For example,
 
@@ -106,7 +106,7 @@ Complete the following steps to get information about a type of log over a perio
 
 
 ## Obtaining account information about logs
-{: #viewing_logs_account}
+{: #viewing_logs_account1}
 
 To obtain information about logs over a period of time across the {{site.data.keyword.Bluemix_notm}} account, use the `cf logging status` command with the option **-a**. You can also specify the options **-t** to specify the type of log, **-s** to set the start day, and **-e** to set the end date. 
 

@@ -25,7 +25,7 @@ To work with the {{site.data.keyword.loganalysisshort}} service API, you need to
 
 
 ## Authentication models
-{: #auth}
+{: #auth1}
 
 To work with the {{site.data.keyword.loganalysisshort}} service through the CLI or the API, you need an authentication token.
 
@@ -35,14 +35,14 @@ The {{site.data.keyword.loganalysisshort}} service supports the following authen
 
     You can only use the CLI to manage UAA tokens.
 	
-* [IAM Authentication](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)
+* [IAM Authentication](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)
 
     The IAM authentication model offers UI, CLI, or API management capabilities. 
 
 **Note:** A UAA token and an IAM token expire after a period of time. 
 
 ## Roles
-{: #roles}
+{: #roles3}
 
 There are two types of roles in the {{site.data.keyword.Bluemix_notm}} that control the actions users can do when they work with the {{site.data.keyword.loganalysisshort}} service:
 
@@ -217,7 +217,7 @@ For more information, see [Getting the UAA token](/docs/services/CloudLogAnalysi
 * Use the {{{site.data.keyword.Bluemix_notm}} CLI to get the IAM token. 
 * The token has an expiration time. 
 
-For more information, see [Getting the IAM token](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam).
+For more information, see [Getting the IAM token](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1).
 
 
 ## Getting the logging token to send logs into Log Analysis
@@ -233,11 +233,11 @@ To send logs to a space domain, choose any of the following methods:
 
 
 ## Granting permissions to a user to work with logs
-{: #grant_permissions}
+{: #grant_permissions1}
 
 For a user to be able to manage logs, or to view logs, the user must be granted permissions in the {{site.data.keyword.Bluemix_notm}} to work with the {{site.data.keyword.loganalysisshort}} service.
 
-* For information about permissions required to manage logs, see [Roles that are required by a user to manage logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+* For information about permissions required to manage logs, see [Roles that are required by a user to manage logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
 * For information about permissions required to view logs, see [Roles that are required by a user to view logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
 For more information on how to grant permissions, see:

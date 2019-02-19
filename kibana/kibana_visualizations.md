@@ -44,12 +44,12 @@ In the Visualize page, you can perform any of the following tasks:
 
 | Task | More information |
 |------|------------------|
-| [Create a new visualization](kibana_visualizations.html#create) | You can create visualizations from a search that you define and save in the *Discover* page or from a new query that you define in the *Visualize* page. |
-| [Delete a visualization](kibana_visualizations.html#delete) | Delete visualizations that are not required. |
-| [Export a visualization](kibana_visualizations.html#export) | You can export a visualization as a JSON file.  |
-| [Import a visualization](kibana_visualizations.html#import) | You can import a visualization as a JSON file.  |
-| [Load a visualization](kibana_visualizations.html#reload) | You can upload a visualization to either update its data, mofify it, analyze the data. |
-| [Save a visualization](kibana_visualizations.html#save) | You can save visualizations for later reuse. |
+| [Create a new visualization](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#create) | You can create visualizations from a search that you define and save in the *Discover* page or from a new query that you define in the *Visualize* page. |
+| [Delete a visualization](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#delete) | Delete visualizations that are not required. |
+| [Export a visualization](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#export) | You can export a visualization as a JSON file.  |
+| [Import a visualization](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#import1) | You can import a visualization as a JSON file.  |
+| [Load a visualization](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#reload2) | You can upload a visualization to either update its data, mofify it, analyze the data. |
+| [Save a visualization](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#save2) | You can save visualizations for later reuse. |
 {: caption="Table 2. Tasks to work with visualizations" caption-side="top"}
 
 
@@ -74,7 +74,7 @@ Complete the following steps to create a visualization from the Visualize page:
 
     * If you select **From a New Search, Select Index**, define a new query. The query is used to define the subset of data that is retrieved and used by  the visualization.
 
-        For more information, see [Filtering logs by defining custom queries](define_search.html#define_search).
+        For more information, see [Filtering logs by defining custom queries](/docs/services/CloudLogAnalysis/kibana/define_search.html#define_search).
 
 For more information about Kibana, see the [Kibana User Guide ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
@@ -92,7 +92,7 @@ To delete a visualization, complete the following steps in the **Management** pa
 
 
 ## Exporting a visualization
-{: #export}
+{: #export1}
 
 To export a visualization as a JSON file, complete the following steps in the **Management** page:
 
@@ -105,7 +105,7 @@ To export a visualization as a JSON file, complete the following steps in the **
 4. Save the file.
 
 ## Importing a visualization
-{: #import}
+{: #import1}
 
 To import a visualization as a JSON file, complete the following steps in the **Management** page:
 
@@ -120,7 +120,7 @@ The visualization is added to the list of visualizations.
 
  
 ## Loading a visualization
-{: #reload}
+{: #reload2}
 
 Complete the following steps to load a saved visualization:
 
@@ -130,7 +130,7 @@ Complete the following steps to load a saved visualization:
 
 
 ## Saving a visualization
-{: #save}
+{: #save2}
 
 Complete the following steps to save a visualization in the Visualize page:
 

@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2018, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-01-18"
 
 ---
 
@@ -23,7 +23,6 @@ Use this tutorial to learn how to start working with the {{site.data.keyword.log
 {:shortdesc}
 
 By default, {{site.data.keyword.Bluemix_notm}} offers integrated logging capabilities for selected services. You can use the {{site.data.keyword.loganalysisshort}} service to expand your collection and retention capabilities when working with logs.
-
 
 ## Before you begin
 {: #prereqs}
@@ -63,15 +62,17 @@ The following table lists different cloud resources. Complete the tutorial for a
 
 
 ## Step 2: Set permissions for a user to view logs
-{: #step2}
+{: #step24}
 
 To control the {{site.data.keyword.loganalysisshort}} actions that a user is allowed to perform, you can assign roles and policies to a user. 
 
 There are two types of security permissions in the {{site.data.keyword.Bluemix_notm}} that control the actions users can do when they work with the {{site.data.keyword.loganalysisshort}} service:
 
 * Cloud Foundry (CF) roles: You grant a user a CF role to define the permissions that the user has to view logs in a space.
-* IAM roles: You grant a user an IAM policy to define the permissions that the user has to view logs in the account domain, and the permissions that the user has to manage logs that are stored in Log Collection. 
+* IAM roles: You grant a user an IAM policy to define the permissions that the user has to view logs in the account domain.
 
+### Set permissions for a user to view logs in a space domain
+{: #step42a}
 
 Complete the following steps to grant a user permissions to view logs in a space:
 
@@ -102,10 +103,67 @@ Complete the following steps to grant a user permissions to view logs in a space
 7. Click **Save role**.
 
 
-For more information, see [Granting permissions](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
+
+### Set permissions for a user to view logs in an account domain
+{: #step24b}
 
 
-A user must access Kibana in the cloud Public region where the log data is available to view and analyze log data. 
+Complete the following steps to grant a user permissions to view account logs:
+
+1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
+
+    Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+	
+	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+
+2. From the menu bar, click **Manage > Account > Users**. 
+
+    The *Users* window displays a list of users with their email addresses for the currently selected account.
+	
+3. If the user is a member of the account, select the user name from the list, or click **Manage user** from the *Actions* menu.
+
+    If the user is not a member of the account, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
+
+4. In the **Access policies** section, click **Assign access**, then select **Assign access to resources**.
+
+    The *Assign resource access to user** window opens.
+
+5. Enter information about the policy. The following table lists the fields that are required to define a policy: 
+
+    <table>
+	  <caption>List of fields to configure an IAM policy.</caption>
+	  <tr>
+	    <th>Field</th>
+		<th>Value</th>
+	  </tr>
+	  <tr>
+	    <td>Services</td>
+		<td>*IBM Cloud Log Analysis*</td>
+	  </tr>	  
+	  <tr>
+	    <td>Regions</td>
+		<td>You can specify the regions where the user is going to be granted access to work with logs. Select one or more regions individually, or select **All current regions** to grant access to all regions.</td>
+	  </tr>
+	  <tr>
+	    <td>Service instance</td>
+		<td>Select *All service instances*.</td>
+	  </tr>
+	  <tr>
+	    <td>Roles</td>
+		<td>Select one or more IAM roles. <br>Valid roles are: *administrator*, *operator*, *editor*, and *viewer*. <br>For more information about the actions that are allowed per role, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+		</td>
+	  </tr>
+     </table>
+	
+6. Click **Assign**.
+	
+The policy that you configure is applicable to the selected regions. 
+
+
+## Next steps 
+{: #next_steps}
+
+**Note:** A user must access Kibana in the cloud Public region where the log data is available to view and analyze log data. 
 
 For example, to launch Kibana in the US South region, open a web browser, and enter the following URL:
 
@@ -117,12 +175,9 @@ https://logging.ng.bluemix.net/
 
 For more information on how to launch Kibana in other regions, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 
-**Note:** When you launch Kibana, if you get a message that indicates *bearer token not valid*, check your permissions in the space. This message is an indication that your user ID does not have permissions to see logs.
+**Note:** When you launch Kibana, if you get a message that indicates *bearer token not valid*, check your permissions in the account. This message is an indication that your user ID does not have permissions to see logs.
 
-## Next steps 
-{: #next_steps}
-
-Customize Kibana to view and analyze your log data. For more information, see [Viewing and analyzing logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)
+Next, customize Kibana to view and analyze your log data. For more information, see [Viewing and analyzing logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)
     
 
 

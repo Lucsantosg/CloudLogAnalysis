@@ -32,6 +32,12 @@ Logging of Cloud Foundry apps is automatically enabled when you use the Cloud Fo
 
 The {{site.data.keyword.Bluemix_notm}} keeps a limited amount of log information. When information is logged, the old information is replaced by the newer information. If you have to comply with organizational or industry policies that require you to keep part or all the log information for audit or other purposes, you can stream your logs to an external log host, such as a third-party log management service or other host. For more information, see [Configuring external log hosts](/docs/services/CloudLogAnalysis/external/logging_external_hosts.html#thirdparty_logging).
 
+## Log ingestion
+{: #log_ingestion1}
+
+You can send logs into the {{site.data.keyword.loganalysisshort}} by using the multi-tenant Logstash Forwarder. For more information, see [Send log data by using a Multi-Tenant Logstash Forwarder (mt-logstash-forwarder).](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
+
+The {{site.data.keyword.loganalysisshort}} service offers different plans. All plans, with the exception of the *Lite* plan, include the ability to send logs into Log Collection. For more information about the plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 ## Log collection
 {: #log_collection}
@@ -50,7 +56,7 @@ The {{site.data.keyword.loganalysisshort}} service provides additional plans tha
 For more information about the price of each plan, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 ## Log search
-{: #log_search}
+{: #log_search1}
 
 By default, you can use Kibana to search up to 500 MB of logs per day in {{site.data.keyword.Bluemix_notm}}. 
 
