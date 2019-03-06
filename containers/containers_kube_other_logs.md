@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Enabling automatic collection of cluster logs
@@ -59,14 +64,14 @@ Complete the following steps:
 2. Initialize the {{site.data.keyword.loganalysisshort}} service plug-in.
 
 	```
-	ibmcloud cs init
+	ibmcloud ks init
 	```
 	{: codeblock}
 
 3. Set your terminal context to your cluster.
     
 	```
-	ibmcloud cs cluster-config ClusterName
+	ibmcloud ks cluster-config ClusterName
 	```
 	{: codeblock}
 
@@ -121,7 +126,7 @@ Complete the following steps:
 1. Identify the user in the account that is the {{site.data.keyword.containershort}} key owner. From a terminal, run the following command:
 
     ```
-    ibmcloud cs api-key-info ClusterName
+    ibmcloud ks api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -142,7 +147,7 @@ Complete the following steps:
     2. Refresh the logging configuration. Run the following command:
     
         ```
-        ibmcloud cs logging-config-refresh ClusterName
+        ibmcloud ks logging-config-refresh ClusterName
         ```
         {: codeblock}
         
@@ -158,7 +163,7 @@ Complete the following steps:
 Run the following command to send *stdout* and *stderr* log files to the {{site.data.keyword.loganalysisshort}} service:
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -173,14 +178,14 @@ where
 For example, to create a logging configuration that forwards stdout and stderr logs to the account domain in the German region, run the following command:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
 To create a logging configuration that forwards stdout and stderr logs to a space domain in the German region, run the following command:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+ibmcloud ks logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
 ```
 {: screen}
 
@@ -192,7 +197,7 @@ ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --n
 Run the following command to send */var/log/apps/**/.log* and */var/log/apps/*/.err* log files to the {{site.data.keyword.loganalysisshort}} service:
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
+ibmcloud ks logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -208,14 +213,14 @@ where
 For example, to create a logging configuration that forwards application logs to a space domain in the German region, run the following command:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
+ibmcloud ks logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 For example, to create a logging configuration that forwards application logs to the account domain in the German region, run the following command:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
+ibmcloud ks logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -228,7 +233,7 @@ ibmcloud cs logging-config-create MyCluster --logsource application --type ibm -
 Run the following command to send */var/log/syslog* and */var/log/auth.log* log files to the {{site.data.keyword.loganalysisshort}} service:
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -244,14 +249,14 @@ where
 For example, to create a logging configuration that forwards worker logs to a space domain in the German region, run the following command:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 For example, to create a logging configuration that forwards worker logs to the account domain in the German region, run the following command:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -263,7 +268,7 @@ ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hos
 Run the following command to send */var/log/kubelet.log* and */var/log/kube-proxy.log* log files to the {{site.data.keyword.loganalysisshort}} service:
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -279,14 +284,14 @@ where
 For example, to create a logging configuration that forwards Kubernetes system component logs to a space domain in the German region, run the following command:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 For example, to create a logging configuration that forwards Kubernetes system component logs to the account domain in the German region, run the following command:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -298,7 +303,7 @@ ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --
 Run the following command to send */var/log/alb/ids/.log*, */var/log/alb/ids/.err*, */var/log/alb/customerlogs/.log*, and /var/log/alb/customerlogs/.err* log files to the {{site.data.keyword.loganalysisshort}} service:
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
+ibmcloud ks logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
 ```
 {: codeblock}
 
@@ -314,14 +319,14 @@ where
 For example, to create a logging configuration that forwards ingress controller logs to a space domain in the German region, run the following command:
 
 ```
-ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 For example, to create a logging configuration that forwards ingress controller logs to the account domain in the German region, run the following command:
 
 ```
-ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
+ibmcloud ks logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
 ```
 {: screen}
 

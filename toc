@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloudloganalysis" audience="service" arm="3663228" href="/docs/services/CloudLogAnalysis/index.html" path="services/CloudLogAnalysis"}
+{: .toc subcollection="cloudloganalysis" audience="service" arm="3663228" href="/docs/services/CloudLogAnalysis?topic=cloudloganalysis-getting-started-with-cla#getting-started-with-cla" path="services/CloudLogAnalysis"}
 IBM Cloud Log Analysis
 
     {: .navgroup id="learn"}

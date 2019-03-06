@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Analyzing CF logs from the CLI
@@ -35,7 +43,7 @@ To view logs that you are interested in or exclude the content that you don't wa
 * To view the logs for a Cloud Foundry app, see [Viewing the log for a Cloud Foundry app](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#full_log_cli).
 * To view the most recent log records for a Cloud Foundry app, see [Viewing the latest log entries for a Cloud Foundry app](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#tailing_log_cli).
 * To view the log records for a Cloud Foundry app in a specific time range, see [Viewing a section of the logs](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#partial_log_cli).
-* To view entries in the logs for a Cloud Foundry app that contain specific keywords, see [Viewing log entries that contain certain keywords](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#partial_by_keyword_log_cli).
+* To view entries in the logs for a Cloud Foundry app that contain specific keywords, see [Viewing log entries that contain certain keywords](logging_view_cli.html#partial_by_keyword_log_cli).
 
 
 ### Viewing the log for a Cloud Foundry app

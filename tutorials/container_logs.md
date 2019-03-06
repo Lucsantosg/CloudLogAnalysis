@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster

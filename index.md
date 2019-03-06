@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018, 2019
+  years: 2017, 2019
 
-lastupdated: "2019-01-18"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2019-01-18"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Getting started tutorial
 {: #getting-started-with-cla}

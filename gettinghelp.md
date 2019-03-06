@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Getting help and support
@@ -20,7 +29,7 @@ lastupdated: "2018-07-25"
 If you have problems or questions when using the {{site.data.keyword.loganalysislong}}, you can get help by searching for information or by asking questions through a forum. You can also open a support ticket.
 {:shortdesc}
 
-* You can check whether the {{site.data.keyword.Bluemix_notm}} is available by going to the [{{site.data.keyword.Bluemix_notm}} status page](https://developer.ibm.com/bluemix/support/#status2){:new_window}.
+* You can check whether the {{site.data.keyword.Bluemix_notm}} is available by going to the [{{site.data.keyword.Bluemix_notm}} status page](https://developer.ibm.com/bluemix/support/#status){:new_window}.
 
 * You can review the forums to see whether other users ran into the same problem. When using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.
 <!--Insert the appropriate Stack Overflow tag for your service for <service_keyword> in URL and text below:  -->
