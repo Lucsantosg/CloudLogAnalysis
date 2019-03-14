@@ -66,16 +66,16 @@ Consider the following information:
 
 * Logs that are stored in Log Collection are deleted after a number of days when you configure a retention policy, or when you delete them manually. 
 
-    You can configure a log retention policy to define the number of days that you want to keep logs in Log Collection. For more information, see [Viewing and configuring the log retention policy by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/configuring_retention_policy_cloud.html#configuring_retention_policy).
+    You can configure a log retention policy to define the number of days that you want to keep logs in Log Collection. For more information, see [Viewing and configuring the log retention policy by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-configuring_retention_policy#configuring_retention_policy).
 
-    You can use the [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} or the [Log Collection CLI](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#log_analysis_cli){: new_window} to delete logs manually from Log Collection. 
+    You can use the [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} or the [Log Collection CLI](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-log_analysis_cli#log_analysis_cli){: new_window} to delete logs manually from Log Collection. 
 
-    You can use the CLI to delete logs manually from Log Collection. For more information, see [ibmcloud logging log-delete by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs/deleting_logs_cloud.html#deleting_logs).
+    You can use the CLI to delete logs manually from Log Collection. For more information, see [ibmcloud logging log-delete by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-deleting_logs#deleting_logs).
 
 
 If you change from a paid plan to the standard or lite plan, logs in Log Collection will be deleted in about one day.
 
-At any time, you can open a support ticket and request that all your data is deleted from Log Search and log Collection. For information about opening an IBM support ticket, see [Contacting support](/docs/get-support/howtogetsupport.html#getting-customer-support).
+At any time, you can open a support ticket and request that all your data is deleted from Log Search and log Collection. For information about opening an IBM support ticket, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support#getting-customer-support).
 
 
 

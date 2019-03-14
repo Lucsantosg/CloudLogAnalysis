@@ -34,7 +34,7 @@ You might see these error messages when using the {{site.data.keyword.loganalysi
 
 **Message description**
 
-You have reached the daily quota that is allocated to the Bluemix space {Space GUID} for the {{site.data.keyword.loganalysisfull}} instance {Instance GUID}. Your current daily allotment is 500MB for Log Search storage, which is retained in Log Search storage for a period of 3 days, during which it can be searched for in Kibana. To upgrade your plan so that you can store more data in Log Search storage per day, and also retain all logs in Log Collection storage, upgrade the {{site.data.keyword.loganalysisshort}} service plan for this space. For more information about service plans and how to upgrade your plan, see [Plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+You have reached the daily quota that is allocated to the Bluemix space {Space GUID} for the {{site.data.keyword.loganalysisfull}} instance {Instance GUID}. Your current daily allotment is 500MB for Log Search storage, which is retained in Log Search storage for a period of 3 days, during which it can be searched for in Kibana. To upgrade your plan so that you can store more data in Log Search storage per day, and also retain all logs in Log Collection storage, upgrade the {{site.data.keyword.loganalysisshort}} service plan for this space. For more information about service plans and how to upgrade your plan, see [Plans](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#plans).
 
 
 **Message explanation** 
@@ -43,7 +43,7 @@ You can get a message with ID *BXNLG020001W* when you reach the Log Search stora
 
 **Recovery**
 
-To upgrade your plan so that you can store more data in Log Search storage per day, and also retain all logs in Log Collection storage, upgrade the {{site.data.keyword.loganalysisshort}} service plan for this space. For more information about service plans and how to upgrade your plan, see [Plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+To upgrade your plan so that you can store more data in Log Search storage per day, and also retain all logs in Log Collection storage, upgrade the {{site.data.keyword.loganalysisshort}} service plan for this space. For more information about service plans and how to upgrade your plan, see [Plans](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#plans).
 
 
 ## BXNLG020002W 
@@ -52,7 +52,7 @@ To upgrade your plan so that you can store more data in Log Search storage per d
 
 **Message description**
 
-You have reached the daily quota that is allocated to the Bluemix space {Space GUID} for the  {{site.data.keyword.loganalysisfull}} instance {Instance GUID}.  Your current daily allotment is XXX for Log Search storage, which is retained for a period of 3 days, during which it can be searched for in Kibana. This does not affect your log retention policy in Log Collection storage. To upgrade your plan so that you can store more data in Log Search storage per day, upgrade the {{site.data.keyword.loganalysisshort}} service plan for this space. For more information about service plans and how to upgrade your plan, see [Plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+You have reached the daily quota that is allocated to the Bluemix space {Space GUID} for the  {{site.data.keyword.loganalysisfull}} instance {Instance GUID}.  Your current daily allotment is XXX for Log Search storage, which is retained for a period of 3 days, during which it can be searched for in Kibana. This does not affect your log retention policy in Log Collection storage. To upgrade your plan so that you can store more data in Log Search storage per day, upgrade the {{site.data.keyword.loganalysisshort}} service plan for this space. For more information about service plans and how to upgrade your plan, see [Plans](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#plans).
 
 XXX represents the size of the searchable data for your current plan.
 
@@ -62,7 +62,7 @@ You have reached the daily quota that is allocated to the space {Space GUID} for
 
 **Recovery**
 
-To upgrade your plan so that you can store more data in Log Search storage per day, upgrade the {{site.data.keyword.loganalysisshort}} service plan for this space. For more information about service plans and how to upgrade your plan, see [Plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+To upgrade your plan so that you can store more data in Log Search storage per day, upgrade the {{site.data.keyword.loganalysisshort}} service plan for this space. For more information about service plans and how to upgrade your plan, see [Plans](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#plans).
 
 
 

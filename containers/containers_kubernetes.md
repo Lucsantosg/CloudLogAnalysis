@@ -47,7 +47,7 @@ Consider the following information when deciding whether to forward logs to a sp
 * When you send logs to the account domain, the search quota is 500MB per day, and you cannot store logs in Log Collection for long term storage.
 * When you send logs to a space domain, you can choose a {{site.data.keyword.loganalysisshort}} service plan that defines the search quota per day, and a you can store logs in Log Collection for long term storage.
 
-**Note:** By default, sending logs from a cluster to the {{site.data.keyword.loganalysisshort}} service is not automatically enabled. To enable logging, you must create one or more logging configurations in the cluster to automatically forward logs into the {{site.data.keyword.loganalysisshort}} service. You can enable logging through the command line, by using the `ibmcloud cs logging-config-create` command, or through the cluster dashboard available in the {{site.data.keyword.Bluemix_notm}} UI. For more information, see [Enabling automatic collection of cluster logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
+**Note:** By default, sending logs from a cluster to the {{site.data.keyword.loganalysisshort}} service is not automatically enabled. To enable logging, you must create one or more logging configurations in the cluster to automatically forward logs into the {{site.data.keyword.loganalysisshort}} service. You can enable logging through the command line, by using the `ibmcloud cs logging-config-create` command, or through the cluster dashboard available in the {{site.data.keyword.Bluemix_notm}} UI. For more information, see [Enabling automatic collection of cluster logs](/docs/services/CloudLogAnalysis/containers?topic=cloudloganalysis-containers_kube_other_logs#containers_kube_other_logs).
 
 When you work with a Kubernetes cluster, the namespaces *ibm-system* and *kube-system* are reserved. Do not create, delete, modify, or change permissions of resources that are available in these namespaces. Logs for these namespaces are for {{site.data.keyword.IBM_notm}} use.
 
@@ -67,9 +67,9 @@ To analyze log data in Kibana for a cluster that forwards logs to a space domain
 
 * You must launch Kibana in the Public region where the organization and the space collecting the cluster logs are available.
 * To increase your Kibana search quota and store logs in Log Collection for long-term storage, you must provision the {{site.data.keyword.loganalysisshort}} service in the space where logs are being forwarded with a plan that meets your requirements. 
-* Your user ID must have permissions to view logs. To see logs in the space domain, a user needs a CF role. **Auditor** is the lowest role that can be granted to view logs. For more information, see [Roles that are required by a user to view logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
+* Your user ID must have permissions to view logs. To see logs in the space domain, a user needs a CF role. **Auditor** is the lowest role that can be granted to view logs. For more information, see [Roles that are required by a user to view logs](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analyzing_logs_Kibana#roles).
 
-To manage cluster log data that is stored in long-term storage (Log Collection), you user ID must have an IAM policy to work with the {{site.data.keyword.loganalysisshort}} service. Your user ID must have **Administrator**, **Operator**, or **Editor** permissions.  For more information, see [Roles that are required by a user to manage logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
+To manage cluster log data that is stored in long-term storage (Log Collection), you user ID must have an IAM policy to work with the {{site.data.keyword.loganalysisshort}} service. Your user ID must have **Administrator**, **Operator**, or **Editor** permissions.  For more information, see [Roles that are required by a user to manage logs](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-manage_logs#roles1).
 
 
 The following figure shows a high level view of logging in Public for the {{site.data.keyword.containershort}} when the cluster forwards logs to a space domain:
@@ -114,13 +114,13 @@ The following figure shows a high level view of logging in Dedicated for the {{s
 
 You can choose which cluster logs to forward to the {{site.data.keyword.loganalysisshort}} service. 
 
-For more information about how to configure your cluster to forward log files to the {{site.data.keyword.loganalysisshort}} service, see the section [Enabling automatic collection of cluster logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers_kube_other_logs).
+For more information about how to configure your cluster to forward log files to the {{site.data.keyword.loganalysisshort}} service, see the section [Enabling automatic collection of cluster logs](/docs/services/CloudLogAnalysis/containers?topic=cloudloganalysis-containers_kube_other_logs#containers_kube_other_logs).
 
-* To enable automatic log collection and forwarding of stdout and stderr, see [Enabling automatic log collection and forwarding of container logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#containers).
-* To enable automatic log collection and forwarding of application logs, see [Enabling automatic log collection and forwarding of application logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#apps). 
-* To enable automatic log collection and forwarding of worker logs, see [Enabling automatic log collection and forwarding of worker logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#workers). 
-* To enable automatic log collection and forwarding of the Kubernetes system component logs, see [Enabling automatic log collection and forwarding of the Kubernetes system component logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#system). 
-* To enable automatic log collection and forwarding of the Kubernetes ingress controller logs, see [Enabling automatic log collection and forwarding of the Kubernetes ingress controller logs](/docs/services/CloudLogAnalysis/containers/containers_kube_other_logs.html#controller).
+* To enable automatic log collection and forwarding of stdout and stderr, see [Enabling automatic log collection and forwarding of container logs](/docs/services/CloudLogAnalysis/containers?topic=cloudloganalysis-containers_kube_other_logs#containers).
+* To enable automatic log collection and forwarding of application logs, see [Enabling automatic log collection and forwarding of application logs](/docs/services/CloudLogAnalysis/containers?topic=cloudloganalysis-containers_kube_other_logs#apps). 
+* To enable automatic log collection and forwarding of worker logs, see [Enabling automatic log collection and forwarding of worker logs](/docs/services/CloudLogAnalysis/containers?topic=cloudloganalysis-containers_kube_other_logs#workers). 
+* To enable automatic log collection and forwarding of the Kubernetes system component logs, see [Enabling automatic log collection and forwarding of the Kubernetes system component logs](/docs/services/CloudLogAnalysis/containers?topic=cloudloganalysis-containers_kube_other_logs#system). 
+* To enable automatic log collection and forwarding of the Kubernetes ingress controller logs, see [Enabling automatic log collection and forwarding of the Kubernetes ingress controller logs](/docs/services/CloudLogAnalysis/containers?topic=cloudloganalysis-containers_kube_other_logs#controller).
 
 
 
@@ -226,7 +226,7 @@ You can configure your cluster to forward logs to the {{site.data.keyword.logana
 
 By default, you can use Kibana to search up to 500 MB of logs per day in the {{site.data.keyword.Bluemix_notm}}. 
 
-To search for larger logs, you can use the {{site.data.keyword.loganalysisshort}} service. The service provides multiple plans. Each plan has different log search capabilities, for example, the *Log Collection* plan allows you to search up to 1 GB of data per day. For more information about the plans that are available, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+To search for larger logs, you can use the {{site.data.keyword.loganalysisshort}} service. The service provides multiple plans. Each plan has different log search capabilities, for example, the *Log Collection* plan allows you to search up to 1 GB of data per day. For more information about the plans that are available, see [Service plans](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#plans).
 
 When you search your logs, consider the following fields that are available in Kibana:
 
@@ -419,23 +419,23 @@ Consider the following information about the default behaviour in the {{site.dat
 * Up to 1.5 GB of data is searchable for a maximum of 3 days. Log data rolls over (First In, First Out) after either 1.5 GB of data is reached or after 3 days.
 * Logs are not stored in Log Collection for long term storage.
 
-The {{site.data.keyword.loganalysisshort}} service provides additional plans that allow you to store logs in Log Collection for as long as you require. For more information about the price of each plan, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans). 
+The {{site.data.keyword.loganalysisshort}} service provides additional plans that allow you to store logs in Log Collection for as long as you require. For more information about the price of each plan, see [Service plans](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#plans). 
 
 To manage logs in Log Collection, consider the following information:
 
-* You can configure a log retention policy that you can use to define the number of days that you want to keep logs in Log Collection. For more information, see [Log Retention policy](/docs/services/CloudLogAnalysis/manage_logs.html#log_retention_policy).
+* You can configure a log retention policy that you can use to define the number of days that you want to keep logs in Log Collection. For more information, see [Log Retention policy](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-manage_logs#log_retention_policy).
 * You can delete logs manually by using the Log Collection CLI or the Log Collection API. 
-* To manage logs in log collection, a user needs an IAM policy with permissions to work with the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.Bluemix_notm}}. For more information, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+* To manage logs in log collection, a user needs an IAM policy with permissions to work with the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.Bluemix_notm}}. For more information, see [IAM roles](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-security_ov#iam_roles).
 
 ## Viewing and analyzing logs
 {: #logging_containers_ov_methods}
 
-To analyze log data, use Kibana to perform advanced analytical tasks. Kibana is an open source analytics and visualization platform, that you can use to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. For more information, see [Analyzing logs in Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+To analyze log data, use Kibana to perform advanced analytical tasks. Kibana is an open source analytics and visualization platform, that you can use to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. For more information, see [Analyzing logs in Kibana](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analyzing_logs_Kibana#analyzing_logs_Kibana).
 
-* You can launch Kibana directly from a web browser. For more information, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
-* You can launch Kibana from the [{{site.data.keyword.Bluemix_notm}} UI within the context of a cluster. For more information, see [Navigating to Kibana from the dashboard of a container that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube).
+* You can launch Kibana directly from a web browser. For more information, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-launch#launch_Kibana_from_browser).
+* You can launch Kibana from the [{{site.data.keyword.Bluemix_notm}} UI within the context of a cluster. For more information, see [Navigating to Kibana from the dashboard of a container that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-launch#launch_Kibana_for_containers_kube).
 
-If you forward the log data of an app that runs in a container to the Container runtime log collector in JSON format, you can search and analyze log data in Kibana by using JSON fields. For more information, see [Sending logs so you can use the fields in a message as Kibana search fields](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json).
+If you forward the log data of an app that runs in a container to the Container runtime log collector in JSON format, you can search and analyze log data in Kibana by using JSON fields. For more information, see [Sending logs so you can use the fields in a message as Kibana search fields](/docs/services/CloudLogAnalysis/containers?topic=cloudloganalysis-containers_kubernetes#send_data_in_json).
 
 To view logs in Kibana, consider the following information:
 
@@ -447,4 +447,4 @@ To view logs in Kibana, consider the following information:
 ## Tutorial: Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster
 {: #tutorial1}
 
-To learn how to use Kibana to analyze the logs of a container that is deployed in a Kubernetes cluster, see [Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs).
+To learn how to use Kibana to analyze the logs of a container that is deployed in a Kubernetes cluster, see [Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/tutorials?topic=cloudloganalysis-container_logs#container_logs).

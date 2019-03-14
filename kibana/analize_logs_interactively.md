@@ -28,7 +28,7 @@ subcollection: cloudloganalysis
 In the the Discover page, you can view and analyze your logs interactively. You can define search queries to filter that data by using the Lucene query language. For each search query, you can apply filters to refine the entries that are available for analysis. You can save a search for future reuse.
 {:shortdesc}
 
-In the {{site.data.keyword.Bluemix_notm}}, by default, the set of data that is displayed in the Discover page when you launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI is configured to only show the entries for the Cloud Foundry (CF) application or container from which you launch Kibana. For more information on how to see what subset of your data the Discover page displays, see [Identifying the data that is displayed](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
+In the {{site.data.keyword.Bluemix_notm}}, by default, the set of data that is displayed in the Discover page when you launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI is configured to only show the entries for the Cloud Foundry (CF) application or container from which you launch Kibana. For more information on how to see what subset of your data the Discover page displays, see [Identifying the data that is displayed](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#identify_data).
 
 The following table shows the default query per resource when you launch Kibana from the {{site.data.keyword.Bluemix_notm}}:
 
@@ -51,12 +51,12 @@ You can perform any of the following tasks to customize the table in the Discove
 
 | Task | Description | 
 |------|-------------|
-| [Add a field column](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_add_fields_to_table) | Add fields to see specific data that is required for analysis instead of the full message. |
-| [Automatically refresh the data](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_refresh_interval) | Refresh the data displayed in the table with the latest entries. By default, refresh is **OFF**. |
-| [Order entries by value of an indexed field](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_sort_by_table) | Reorder the entries for easier analysis. |
-| [Rearrange a field column](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_rearrange_fields_in_table) | Move the position of a field in the table to the position where you want it. |
-| [Remove a field column](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_remove_fields_from_table) | Remove a field when it is not required in the view for analysis. |
-| [View an entry](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_entry_in_table) | Expand an entry in the table to see the details of the entry parsed by field or as JSON. |
+| [Add a field column](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#discover_add_fields_to_table) | Add fields to see specific data that is required for analysis instead of the full message. |
+| [Automatically refresh the data](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#discover_view_refresh_interval) | Refresh the data displayed in the table with the latest entries. By default, refresh is **OFF**. |
+| [Order entries by value of an indexed field](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#discover_sort_by_table) | Reorder the entries for easier analysis. |
+| [Rearrange a field column](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#discover_rearrange_fields_in_table) | Move the position of a field in the table to the position where you want it. |
+| [Remove a field column](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#discover_remove_fields_from_table) | Remove a field when it is not required in the view for analysis. |
+| [View an entry](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#discover_view_entry_in_table) | Expand an entry in the table to see the details of the entry parsed by field or as JSON. |
 {: caption="Table 2. Tasks to customize a table" caption-side="top"}
 
 <br>
@@ -65,30 +65,30 @@ The following figure shows a sample of a table in the Discover page:
 
 ![Discover page in Kibana](images/discover_page.gif "Discover page in Kibana")
 
-You can define other searches. For more information, see [Filtering logs by defining custom searches](/docs/services/CloudLogAnalysis/kibana/define_search.html#define_search). When you define a new search, the data that is displayed in the histogram and the table is automatically updated.
+You can define other searches. For more information, see [Filtering logs by defining custom searches](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-define_search#define_search). When you define a new search, the data that is displayed in the histogram and the table is automatically updated.
 
 To define a new search, use the default search query as your starting point, and then refine the search by performing the following tasks:
 
-* Apply field filters to refine the set of data that you can see. You can toggle each filter, pin it to the page, enable or disable it as needed, and configure it to include or exclude the value. For more information, see [Filtering logs in Kibana](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
+* Apply field filters to refine the set of data that you can see. You can toggle each filter, pin it to the page, enable or disable it as needed, and configure it to include or exclude the value. For more information, see [Filtering logs in Kibana](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-filter_logs#filter_logs).
 
-    **Tip:** If you cannot find a field in the *Fields list* that you expect to see, or some of the magnifying glasses by the listed fields are disabled in the Discover page, reload the list of fields by refreshing the index pattern in the Settings page. For more information, see [Reloading the Field List](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields).
+    **Tip:** If you cannot find a field in the *Fields list* that you expect to see, or some of the magnifying glasses by the listed fields are disabled in the Discover page, reload the list of fields by refreshing the index pattern in the Settings page. For more information, see [Reloading the Field List](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#discover_view_reload_fields).
 
     For example, if your CF app has multiple instances, you might want to analyze data for a specific instance. You can define a field filter for the specific intance ID value that you want to analyze. 
     
-* Customize the *Time Picker* for time-based data. You can define an absolute time range for a query, a relative one, or choose from a set of pre-defined values. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+* Customize the *Time Picker* for time-based data. You can define an absolute time range for a query, a relative one, or choose from a set of pre-defined values. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-filter_logs#set_time_filter).
 
-After you have configured the search that defines the data subset that you want to analyze, you can save it for later reuse. For more information, see [Saving a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search).
+After you have configured the search that defines the data subset that you want to analyze, you can save it for later reuse. For more information, see [Saving a search](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-define_search#save_search).
 
 You can perform any of the following tasks with searches that you define in the Discover page:
 
 | Task | Description |
 |------|-------------|
-| [Delete a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | Delete a search when is no longer needed. |
-| [Export a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | Export a search to share it.  |
-| [Import a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Import a search.  |
-| [Reload a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search1)  | Upload an existing search to analyze a set of data again. |
-| [Refresh the data of a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | Configure automatic refresh of the data that is displayed through the search.  |
-| [Save a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Save the search for later reuse.  |
+| [Delete a search](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-define_search#delete_search) | Delete a search when is no longer needed. |
+| [Export a search](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-define_search#export_search) | Export a search to share it.  |
+| [Import a search](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-define_search#import_search) | Import a search.  |
+| [Reload a search](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-define_search#reload_search1)  | Upload an existing search to analyze a set of data again. |
+| [Refresh the data of a search](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-define_search#refresh_search) | Configure automatic refresh of the data that is displayed through the search.  |
+| [Save a search](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-define_search#save_search) | Save the search for later reuse.  |
 {: caption="Table 3. Tasks to work with searches" caption-side="top"}
 
 
@@ -96,7 +96,7 @@ You can also look at statistics in the Discover page:
 * You can see stats per field. 
 * You can see stats in the histogram per the `@timestamp` that you have configured.
 
-For more information, see [Viewing Field Data Statistics](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_fields_stats).
+For more information, see [Viewing Field Data Statistics](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#discover_view_fields_stats).
 
 **Note:** The data that is shown in the table and the histogram is static. To keep viewing the latest entries, you must set a refresh interval. 
 
@@ -129,7 +129,7 @@ You can add a field column to the table by choosing any of the following options
 ## Automatically refreshing the data
 {: #discover_view_refresh_interval}
 
-By default, in the {{site.data.keyword.Bluemix_notm}}, the *Auto refresh* period is set to **OFF** and the data that you can see in Kibana corresponds to the last 15 minutes since you launched Kibana. The 15 minutes correspond to the time filter that is pre-configured. You can change it by setting a different time period. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+By default, in the {{site.data.keyword.Bluemix_notm}}, the *Auto refresh* period is set to **OFF** and the data that you can see in Kibana corresponds to the last 15 minutes since you launched Kibana. The 15 minutes correspond to the time filter that is pre-configured. You can change it by setting a different time period. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-filter_logs#set_time_filter).
 
 Complete the following steps to set an *Auto refresh* period:
 

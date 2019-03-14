@@ -34,15 +34,15 @@ In the Discover page, you can create search queries and apply filters to constra
 
 After you define a new search, save it so you can reuse it for future analysis in the Discover page or to create visualizations that you can use in custom dashboards. 
 
-When you perform a new search, the histogram, the table, and the Fields list are updated automatically to show the search results. To find out what data is shown, see [Identifying the data that is displayed in the Discover page](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
+When you perform a new search, the histogram, the table, and the Fields list are updated automatically to show the search results. To find out what data is shown, see [Identifying the data that is displayed in the Discover page](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#k4_identify_data).
 
 You can create custom searches to filter your logs. The following list outline scenarios of how to filter data in your logs:
 
-* You can search your log for entries that include a specific text in the value of a field. For more information, see [Filtering your logs for a specific text in a field value](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_text).
+* You can search your log for entries that include a specific text in the value of a field. For more information, see [Filtering your logs for a specific text in a field value](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-k4_filter_logs#k4_filter_logs_spec_text).
  
-* You can search your log for a specific field value or exclude entries from the log for a specific field value. For more information, see [Filtering your logs for a specific field value](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field).
+* You can search your log for a specific field value or exclude entries from the log for a specific field value. For more information, see [Filtering your logs for a specific field value](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-k4_filter_logs#k4_filter_logs_spec_field).
  
-* You can filter your logs to show entries within a time period. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter1).
+* You can filter your logs to show entries within a time period. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-k4_filter_logs#set_time_filter1).
      
 
 ## Adding a filter for a value that is not listed in the *Fields list*
@@ -52,7 +52,7 @@ To add a filter for a value that is not shown in the *Field list*, search for re
 
 Complete the following steps to add a filter for value that is not available in the list shown in the *Fields list* section:
 
-1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#k4_identify_data).
 
     For example, the following figure shows the values of instances for a CF app in the *Fields list*. 
     
@@ -91,13 +91,13 @@ You can search for entries that include a specific field value.
 
 Complete the following steps to search for entries that include a specific field value:
 
-1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#k4_identify_data).
 
 2. In the *Field List*, identify the field for which you want to define a filter and click it.
 
     A maximum of 5 values is shown for the field. Each value has two magnifying glass buttons. 
     
-    If you cannot see the value, see [Adding a filter for a value that is not listed in the Fields list](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_add_filter_out_value).
+    If you cannot see the value, see [Adding a filter for a value that is not listed in the Fields list](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-k4_filter_logs#k4_add_filter_out_value).
 
 3. To add a filter that searches for entries with a field value, choose the magnifying button ![Magnifying glass button in inclusive mode](images/k4_include_field_icon.jpg "Magnifying glass button in inclusive") for that value.
 
@@ -150,7 +150,7 @@ Complete the following steps to search for entries that include a specific field
 
 Complete the following steps to search for entries that include a specific log source:
 
-1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#k4_identify_data).
 
 2. In the *Field List*, select the field **source_id**.
 
@@ -158,7 +158,7 @@ Complete the following steps to search for entries that include a specific log s
 
 3. To add a filter that searches for entries that include a specific source_id, choose the magnifying button ![Magnifying glass button in inclusive mode](images/k4_include_field_icon.jpg "Magnifying glass button in inclusive") for that value.
 
-    For a list of log sources that are available for CF apps, see [Log sources for CF apps](/docs/services/CloudLogAnalysis/cfapps/logging_cf_apps.html#cf_apps_log_sources_diego).
+    For a list of log sources that are available for CF apps, see [Log sources for CF apps](/docs/services/CloudLogAnalysis/cfapps?topic=cloudloganalysis-logging_cf_apps#cf_apps_log_sources_diego).
 
     For example, to add a filter that includes log entries about the start, stop, or crash of a CF application, select the magnifying glass button ![Magnifying glass button in inclusive mode](images/k4_include_field_icon.jpg "Magnifying glass button in inclusive") that is available for the value *CELL* in the *Fields list* section. The following figure shows the filter for the source_id value *CELL* enabled.
     
@@ -176,7 +176,7 @@ Complete the following steps to search for entries that include a specific log s
 
 Complete the following steps to search for entries that include a specific log type:
 
-1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#k4_identify_data).
 
 2. In the *Field List*, select the field **type**.
 
@@ -202,7 +202,7 @@ Complete the following steps to search for entries that include a specific log t
 
 Complete the following steps to view and filter your logs by instance ID on the Kibana dashboard:
 
-1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#k4_identify_data).
 
 2. In the *Field List*, select one of the following fields to search for a specific instance ID:
 
@@ -231,7 +231,7 @@ Complete the following steps to view and filter your logs by instance ID on the 
 
 Complete the following steps to search for entries that include a specific message type:
 
-1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#k4_identify_data).
 
 2. In the *Field List*, select the field **message_type**.
 
@@ -263,11 +263,11 @@ When Elasticsearch analyzes the value of a string field, it splits the text on w
     
 Complete the following steps to search for entries that include specific text in a field value:
 
-1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data).
+1. Look at the Kibana Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#k4_identify_data).
 
 2. Identify the fields that are analyzed in ElasticSearch by default.
 
-    To display the complete list of analyzed fields that are available for searching and filtering log data, [reload the list of fields](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_reload_fields). Then, in the *Fields list* that is available in the Discover page, complete the following steps:
+    To display the complete list of analyzed fields that are available for searching and filtering log data, [reload the list of fields](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#kibana_discover_view_reload_fields). Then, in the *Fields list* that is available in the Discover page, complete the following steps:
     
     1. Click the configure icon ![Configure icon](images/k4_configure_icon.jpg "configure icon"). The section **Selected fields**, where you can filter fields, is displayed.
 

@@ -49,7 +49,7 @@ Complete the following steps to provision an instance of the {{site.data.keyword
 
 5. Select a service plan. By default, the **Lite** plan is set.
 
-    For more information about the service plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+    For more information about the service plans, see [Service plans](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#plans).
 	
 6. Click **Create** to provision the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.Bluemix_notm}} space where you are logged in.
   
@@ -62,13 +62,13 @@ Complete the following steps to provision an instance of the {{site.data.keyword
 
 1. [Pre-requisite] Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview).
+   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
    
    If the CLI is installed, continue with the next step.
     
 2. Log in to the region, organization, and space in the {{site.data.keyword.Bluemix_notm}} where you want to provision the service. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 	
 3. Run the `ibmcloud service create` command to provision an instance.
 
@@ -80,7 +80,7 @@ Complete the following steps to provision an instance of the {{site.data.keyword
 	Where
 	
 	* service_name is the name of the service, that is, **ibmLogAnalysis**.
-	* service_plan is the service plan name. For a list of plans, see [Service plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+	* service_plan is the service plan name. For a list of plans, see [Service plans](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#plans).
 	* service_instance_name is the name that you want to use for the new service instance that you create.
 
 	For example, to create an instance of the {{site.data.keyword.loganalysisshort}} service with the Lite plan, run the following command:

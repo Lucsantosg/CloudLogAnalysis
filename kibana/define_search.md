@@ -32,15 +32,15 @@ Complete the following tasks to define a custom search:
 
 1. Launch Kibana.
 
-    For Cloud Foundry (CF) apps, see [launch Kibana from the dashboard of a CF app](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_cf_app).
+    For Cloud Foundry (CF) apps, see [launch Kibana from the dashboard of a CF app](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-launch#launch_Kibana_from_cf_app).
 
-	For containers that run in the {{site.data.keyword.Bluemix_notm}}-managed infrastructure, see [launch Kibana from the dashboard of a container](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers).
+	For containers that run in the {{site.data.keyword.Bluemix_notm}}-managed infrastructure, see [launch Kibana from the dashboard of a container](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-launch#launch_Kibana_for_containers).
     
-    For all cloud resources, for example containers that run in a Kubernetes cluster, see [launch Kibana from the browser](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser). 
+    For all cloud resources, for example containers that run in a Kubernetes cluster, see [launch Kibana from the browser](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-launch#launch_Kibana_from_browser). 
 	
 	When you access Kibana, the default search is applied. You can see the logs for the list of instances of the resource that you are querying. You can filter the logs for any or all of the {{site.data.keyword.Bluemix_notm}} resources in that space.
 
-2. Look at the Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data). Then, modify the default query to filter entries.
+2. Look at the Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#identify_data). Then, modify the default query to filter entries.
 
     **Note:** Use the Lucene query language to define your custom query. For more information, see [Apache Lucene - Query Parser Syntax  ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}
     
@@ -54,9 +54,9 @@ Complete the following tasks to define a custom search:
 
      For example, for a CF app, you can create a query `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]`  that lists entries for instances *0* and *1* only. 
 
-3. Save the query so you can reuse it later. For more information, see [Saving a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1). 
+3. Save the query so you can reuse it later. For more information, see [Saving a search](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-define_search#save_search1). 
 
-**Note:** If you need to delete a query, see [Deleting a search](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search).
+**Note:** If you need to delete a query, see [Deleting a search](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-define_search#delete_search).
 
 
 

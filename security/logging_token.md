@@ -37,13 +37,13 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview).
+   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
    
    If the CLI is installed, continue with the next step.
     
 2. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 	
 3. Run the following command:
 
@@ -62,13 +62,13 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview).
+   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
    
    If the CLI is installed, continue with the next step.
     
 2. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 	
 3. Create a service key in the space where the {{site.data.keyword.loganalysisshort}} service is provisioned. Run the following commands:
 
@@ -152,15 +152,15 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli/index.html#overview).
+   For more information, see [Download and install the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
    
    If the CLI is installed, continue with the next step.
     
 2. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 	
-3. Get the [UAA token](/docs/services/CloudLogAnalysis/security/auth_uaa.html#uaa_cli).
+3. Get the [UAA token](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-auth_uaa#uaa_cli).
 
     For example, run the `ibmcloud cf oauth-token` command to get the UAA token.
 
@@ -173,7 +173,7 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
 
 4. Get the GUID for the space.
 
-   For more information, see [How do I get the GUID of a space](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid2).  
+   For more information, see [How do I get the GUID of a space](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#space_guid2).  
 	
 5. Export the following variables: TOKEN and SPACEID.
 
@@ -199,7 +199,7 @@ To get the logging token that you can use to send logs to the {{site.data.keywor
 	where
 	* SPACEID is the GUID of the space where the service is running.
 	* TOKEN is the UAA token that you get in a previous step without the bearer prefix.
-	* LOGGING_ENDPOINT is the {{site.data.keyword.loganalysisshort}} endpoint for the {{site.data.keyword.Bluemix_notm}} region where the organization and space are available. The LOGGING_ENDPOINT is different per region. To see the URLs for the different endpoints, see [Endpoints](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
+	* LOGGING_ENDPOINT is the {{site.data.keyword.loganalysisshort}} endpoint for the {{site.data.keyword.Bluemix_notm}} region where the organization and space are available. The LOGGING_ENDPOINT is different per region. To see the URLs for the different endpoints, see [Endpoints](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-manage_logs#endpoints).
 	
     The command returns the logging token that you must use to send logs to that space.
 	

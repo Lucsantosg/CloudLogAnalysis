@@ -56,9 +56,9 @@ Complete the following steps to copy a search between spaces in the {{site.data.
 
 1. Launch Kibana where the search that you want to copy is available. 
 
-    * Launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI: The JSON search file that you can export includes the following fields: *space ID*, and *application ID* for Cloud Foundry (CF) applications or the *instance ID* for containers. For more information, see [Getting to the Kibana dashboard from the {{site.data.keyword.Bluemix_notm}} dashboard](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
+    * Launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI: The JSON search file that you can export includes the following fields: *space ID*, and *application ID* for Cloud Foundry (CF) applications or the *instance ID* for containers. For more information, see [Getting to the Kibana dashboard from the {{site.data.keyword.Bluemix_notm}} dashboard](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-k4_launch#launch_Kibana_from_bluemix).
     
-    * Launch Kibana from a browser: The JSON search file that you can export includes the field *space ID*. For more information, see [Getting to the Kibana dashboard from a browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1).
+    * Launch Kibana from a browser: The JSON search file that you can export includes the field *space ID*. For more information, see [Getting to the Kibana dashboard from a browser](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-k4_launch#launch_Kibana_from_browser1).
 
 2. In the *Settings* page, select **Objects**, and the **Searches** tab. Then select a search and copy the following information:
 
@@ -94,7 +94,7 @@ Complete the following steps to copy a search between spaces in the {{site.data.
     
 5. Launch Kibana for the {{site.data.keyword.Bluemix_notm}} space where you want to import the search and then, get the following information:
 
-    From the [Bluemix UI](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix):
+    From the [Bluemix UI](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-k4_launch#launch_Kibana_from_bluemix):
     
     <table>
       <tbody>
@@ -196,9 +196,9 @@ Complete the following steps to copy a visualization that you use to analyze dat
 
 1. Launch Kibana for the space where the visualization that you want to copy is available. 
 
-    * Launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI: The JSON search file that you can export includes the following fields: *space ID*, and *application ID* for Cloud Foundry (CF) applications or the *instance ID* for containers. For more information, see [Getting to the Kibana dashboard from the {{site.data.keyword.Bluemix_notm}} dashboard](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
+    * Launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI: The JSON search file that you can export includes the following fields: *space ID*, and *application ID* for Cloud Foundry (CF) applications or the *instance ID* for containers. For more information, see [Getting to the Kibana dashboard from the {{site.data.keyword.Bluemix_notm}} dashboard](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-k4_launch#launch_Kibana_from_bluemix).
     
-    * Launch Kibana from a browser: The JSON search file that you can export includes the field *space ID*. For more information, see [Getting to the Kibana dashboard from a browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1).
+    * Launch Kibana from a browser: The JSON search file that you can export includes the field *space ID*. For more information, see [Getting to the Kibana dashboard from a browser](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-k4_launch#launch_Kibana_from_browser1).
     
 2. Copy the search that is associated with the visualization between spaces. For more information, see [Copying a search between Bluemix spaces](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search).
 

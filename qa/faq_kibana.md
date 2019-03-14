@@ -28,12 +28,12 @@ subcollection: cloudloganalysis
 
 Here are the answers to common questions about using {{site.data.keyword.Bluemix}} logging capabilities. {:shortdesc}
 
-* [What can I do if I cannot see data in the Discover page in Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_discover_kibana)
-* [What can I do if I get an authentication exception](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_dashboard_kibana)
-* [Why do I see the symbol ? by fields in the Kibana Discover page](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_kibana_question)
-* [I get a 403 error when I try to change the default index pattern](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
-* [Short URL does not work](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
-* [Can I search my account logs in Bluemix?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
+* [What can I do if I cannot see data in the Discover page in Kibana](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-faq_kibana#logging_qa_no_data_discover_kibana)
+* [What can I do if I get an authentication exception](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-faq_kibana#logging_qa_no_data_dashboard_kibana)
+* [Why do I see the symbol ? by fields in the Kibana Discover page](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-faq_kibana#logging_qa_kibana_question)
+* [I get a 403 error when I try to change the default index pattern](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-faq_kibana#error_403)
+* [Short URL does not work](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-faq_kibana#short_url)
+* [Can I search my account logs in Bluemix?](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-faq_kibana#acc_logs_1)
 
 
 ## What can I do if I cannot see data in the Discover page in Kibana
@@ -50,7 +50,7 @@ To resolve this problem, complete the following steps:
 
     **Note**: By default, in the {{site.data.keyword.Bluemix_notm}}, the *Time Picker* is set to show data for the last 15 minutes.
 
-    For more information on how to set the *Time Picker*, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter1).
+    For more information on how to set the *Time Picker*, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-filter_logs#set_time_filter1).
        
 2. Click the magnifying glass that is located in the *Discover* page search bar. The page data is refreshed based on the default search query.
 
@@ -58,7 +58,7 @@ To resolve this problem, complete the following steps:
 
     **Note**: By default, in {{site.data.keyword.Bluemix_notm}}, the *Auto refresh* period is set to **OFF**.
     
-    For more information on how to enable it, see [Automatically refreshing the data](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_refresh_interval).
+    For more information on how to enable it, see [Automatically refreshing the data](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#discover_view_refresh_interval).
 
 
 
@@ -90,7 +90,7 @@ To resolve this problem, complete the following steps:
 ## Why do I see the symbol ? by fields in the Kibana Discover page
 {: #logging_qa_kibana_question}
 
-When you open the Discover page in Kibana, you might see a question mark `?` by fields that are listed in the available fields section instead of the character `t`. When you reload the list of fields, the type of fields is analyzed, and the question mark `?` is replaced by the character `t`. For more information, see [Reloading the list of fields](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields).
+When you open the Discover page in Kibana, you might see a question mark `?` by fields that are listed in the available fields section instead of the character `t`. When you reload the list of fields, the type of fields is analyzed, and the question mark `?` is replaced by the character `t`. For more information, see [Reloading the list of fields](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analize_logs_interactively#discover_view_reload_fields).
 
 
 ## I get a 403 error when I try to change the default index pattern
@@ -112,7 +112,7 @@ As an account owner, you can search and analyze your account logs.
 
 Complete the following steps to see your account logs:
 
-1. [Launch Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) For example for the US South region, use the URL `https://logging.ng.bluemix.net`,
+1. [Launch Kibana.](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-launch#launch_Kibana_from_browser) For example for the US South region, use the URL `https://logging.ng.bluemix.net`,
 
 2. Select the option **View AccountName account Logs** to display the account logs. *AccountName* is the name of the account.
 

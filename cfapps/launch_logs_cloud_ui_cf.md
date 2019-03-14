@@ -74,6 +74,6 @@ To see the deployment or runtime logs of a Cloud Foundry app, complete the follo
 
 By default, the logs that are available for analysis include data for the last 15 minutes.
 
-**Tip:** To analyze data for a custom period, see [Advanced log analysis with Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana). 
+**Tip:** To analyze data for a custom period, see [Advanced log analysis with Kibana](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analyzing_logs_Kibana#analyzing_logs_Kibana). 
 
 

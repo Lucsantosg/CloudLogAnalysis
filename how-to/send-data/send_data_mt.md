@@ -34,7 +34,7 @@ Complete the following steps to send log data to a space in the {{site.data.keyw
 {: #prereqs1}
 
 * An {{site.data.keyword.Bluemix_notm}} ID to log in to {{site.data.keyword.Bluemix_notm}}.
-* A user ID that has permissions to work in a space with the {{site.data.keyword.loganalysisshort}} service. For more information, see [Security](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
+* A user ID that has permissions to work in a space with the {{site.data.keyword.loganalysisshort}} service. For more information, see [Security](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-security_ov#security_ov).
 * The {{site.data.keyword.loganalysisshort}} CLI installed in your local environment.
 * The {{site.data.keyword.loganalysisshort}} service provisioned in a space in your account with a plan that allows logs ingestion.
 
@@ -46,7 +46,7 @@ Complete the following steps from a terminal session where the {{site.data.keywo
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
     
 2. Run the `ibmcloud logging token-get` command. 
 
@@ -206,7 +206,7 @@ Complete the following steps to configure mt-logstash-forwarder in the environme
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>Target URL. To get the lits of ingestion URLs, see [Ingestion URLs](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). For example, set the value to **ingest.logging.ng.bluemix.net:9091** to send logs in the US South region. </td>
+            <td>Target URL. To get the lits of ingestion URLs, see [Ingestion URLs](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_ingestion#log_ingestion_urls). For example, set the value to **ingest.logging.ng.bluemix.net:9091** to send logs in the US South region. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>

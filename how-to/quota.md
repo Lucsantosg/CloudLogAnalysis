@@ -43,7 +43,7 @@ Complete the following steps:
     ```
     {: codeblock}
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 2. Run the `ibmcloud logging quota-usage-show` cli command. 
 
@@ -98,7 +98,7 @@ Complete the following steps:
     ```
     {: codeblock}
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 2. Run the `ibmcloud logging quota-usage-show` cli command with the paramater `-s`. 
 
@@ -141,7 +141,7 @@ Complete the following steps:
 
 1. Log in to the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 2. Get the ID of the account. Run the following command:
 
@@ -161,7 +161,7 @@ Complete the following steps:
 
 3. Get the UAA token. 
 
-    For more information, see [Getting the UAA token](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa).
+    For more information, see [Getting the UAA token](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-auth_uaa#auth_uaa).
 
     Export the UAA token to a shell variable. Do not include `Bearer`. For example:
 	
@@ -177,7 +177,7 @@ Complete the following steps:
 	```
 	{: codeblock}
 	
-	where *ENDPOINT* is different per region. For a list of endpoints per region, see [Logging endpoints](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
+	where *ENDPOINT* is different per region. For a list of endpoints per region, see [Logging endpoints](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-manage_logs#endpoints).
 	
 	For example, run the cURL command to get the quota for the account in the US South region:
 	
@@ -214,11 +214,11 @@ Complete the following steps:
 
 1. Log in to the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 2. Get the ID of the space.
 
-    For more information, see [How do I get the GUID of a space](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid).
+    For more information, see [How do I get the GUID of a space](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#space_guid).
 	
 	Export the space ID to a shell variable. For example:
 	
@@ -229,7 +229,7 @@ Complete the following steps:
 
 3. Get the UAA token. 
 
-    For more information, see [Getting the UAA token](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa).
+    For more information, see [Getting the UAA token](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-auth_uaa#auth_uaa).
 
     Export the UAA token to a shell variable. Do not include `Bearer`. For example:
 	
@@ -245,7 +245,7 @@ Complete the following steps:
 	```
 	{: codeblock}
 	
-	where *ENDPOINT* is different per region. For a list of endpoints per region, see [Logging endpoints](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
+	where *ENDPOINT* is different per region. For a list of endpoints per region, see [Logging endpoints](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-manage_logs#endpoints).
 
     For example, run the following cURL command to get the quota and usage of a space domain in the US South region:
 	
