@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Die {{site.data.keyword.loganalysisshort}}-Befehlszeilenschnittstelle
 {: #config_log_collection_cli}
@@ -131,7 +140,7 @@ Führen Sie die folgenden Schritte aus, um das Log Analysis-Plug-in unter Linux 
 
 Führen Sie die folgenden Schritte aus, um das Log Analysis-Plug-in unter Windows zu installieren:
 
-1. Laden Sie die aktuelle Version des CLI-Plug-ins für den {{site.data.keyword.loganalysisshort}}-Service (IBM Logging) von der [{{site.data.keyword.Bluemix_notm}}-CLI-Seite](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins) herunter. 
+1. Laden Sie die aktuelle Version des CLI-Plug-ins für den {{site.data.keyword.loganalysisshort}}-Service (IBM-Logging) von der [{{site.data.keyword.Bluemix_notm}}-CLI-Seite](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins) herunter. 
 	
 	1. Wählen Sie den Wert für die Plattform aus: **win64**. 
 	2. Klicken Sie auf die Schaltfläche zum Speichern der Datei (**Save file**).  

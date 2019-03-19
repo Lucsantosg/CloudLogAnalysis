@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Configuración de la CLI de Log Analysis (plugin CF) en desuso
-{: #config_log_collection_cli}
+{: #config_log_collection_cli1}
 
 El servicio {{site.data.keyword.loganalysisshort}} incluye una interfaz de línea de mandatos (CLI) que puede utilizar para gestionar los registros en la nube. Puede utilizar el plugin de Cloud Foundry (CF) para ver el estado del registro, para descargar registros y para configurar la política de retención de registros. La CLI ofrece distintos tipos de ayuda: ayuda general para obtener información sobre la CLI y los mandatos soportados, ayuda sobre mandatos para ver cómo se utiliza un mandato o ayuda sobre submandatos para aprender a utilizar un submandato de un mandato.
 {:shortdesc}
@@ -22,7 +31,7 @@ El servicio {{site.data.keyword.loganalysisshort}} incluye una interfaz de líne
 
 
 ## Instalación del plugin CF de Log Analysis
-{: #install_cli}
+{: #install_cli1}
 
 Para instalar la CLI de {{site.data.keyword.loganalysisshort}},
 siga estos pasos:
@@ -33,9 +42,9 @@ siga estos pasos:
 
 2. Instale el plugin de {{site.data.keyword.loganalysisshort}} CF.
 
-    * Para Linux, consulte [Instalación de la CLI de {{site.data.keyword.loganalysisshort}} en Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux).
-    * Para Windows, consulte [Instalación de la CLI de {{site.data.keyword.loganalysisshort}} en Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows).
-    * Para Mac OS X, consulte [Instalación de la CLI de {{site.data.keyword.loganalysisshort}} en Mac OS X](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac).
+    * Para Linux, consulte [Instalación de la CLI de {{site.data.keyword.loganalysisshort}} en Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux1).
+    * Para Windows, consulte [Instalación de la CLI de {{site.data.keyword.loganalysisshort}} en Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows1).
+    * Para Mac OS X, consulte [Instalación de la CLI de {{site.data.keyword.loganalysisshort}} en Mac OS X](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac1).
  
 3. Verifique la instalación del plugin de la CLI.
   
@@ -62,7 +71,7 @@ siga estos pasos:
 
 
 ## Instalación de la CLI de Log Analysis en Linux
-{: #install_cli_linux}
+{: #install_cli_linux1}
 
 Siga estos pasos para instalar el plugin de Log Collection CF en Linux:
 
@@ -138,7 +147,7 @@ Siga estos pasos para instalar el plugin de Log Collection CF en Linux:
 
 
 ## Instalación de la CLI de Log Analysis en Windows
-{: #install_cli_windows}
+{: #install_cli_windows1}
 
 Siga estos pasos para instalar el plugin Log Collection CF en Windows:
 
@@ -183,7 +192,7 @@ Siga estos pasos para instalar el plugin Log Collection CF en Windows:
 	
 
 ## Instalación de la CLI de Log Analysis en Mac OS X
-{: #install_cli_mac}
+{: #install_cli_mac1}
 
 Siga estos pasos para instalar el plugin Log Collection CF en Mac OS X:
 
@@ -228,7 +237,7 @@ Siga estos pasos para instalar el plugin Log Collection CF en Mac OS X:
 	
 	
 ## Desinstalación de la CLI de Log Analysis
-{: #uninstall_cli}
+{: #uninstall_cli1}
 
 Para desinstalar la CLI de registro, suprima el plugin.
 {:shortdesc}
@@ -266,7 +275,7 @@ Siga estos pasos para desinstalar la CLI del servicio {{site.data.keyword.logana
   
 
 ## Obtención de ayuda general
-{: #general_cli_help}
+{: #general_cli_help1}
 
 Para obtener información general sobre la CLI y los mandatos soportados, siga los pasos siguientes:
 
@@ -284,7 +293,7 @@ Para obtener información general sobre la CLI y los mandatos soportados, siga l
     
 
 ## Obtención de ayuda sobre un mandato
-{: #command_cli_help}
+{: #command_cli_help1}
 
 Para obtener ayuda sobre cómo utilizar un mandato, siga los pasos siguientes:
 
@@ -311,7 +320,7 @@ Para obtener ayuda sobre cómo utilizar un mandato, siga los pasos siguientes:
 
 
 ## Obtención de ayuda sobre un submandato
-{: #subcommand_cli_help}
+{: #subcommand_cli_help1}
 
 Un mandato puede tener submandatos. Para obtener ayuda sobre los submandatos, siga los pasos siguientes:
 

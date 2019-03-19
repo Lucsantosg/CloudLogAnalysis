@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 規範
@@ -67,7 +75,7 @@ lastupdated: "2018-07-25"
 
 如果您從付費方案變更為標準或精簡方案，則「日誌收集」中的日誌將在大約一天內被刪除。
 
-您隨時都可以開立支援問題單，並要求從「日誌搜尋」及「日誌收集」中刪除所有資料。如需開立 IBM 支援問題單的相關資訊，請參閱[與支援中心聯絡](/docs/get-support/howtogetsupport.html#getting-customer-support)。
+您隨時都可以開立支援問題單，並要求從「日誌搜尋」及「日誌收集」刪除所有資料。如需開立 IBM 支援問題單的相關資訊，請參閱[與支援中心聯絡](/docs/get-support/howtogetsupport.html#getting-customer-support)。
 
 
 

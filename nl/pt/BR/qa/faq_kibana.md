@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Perguntas mais frequentes do Kibana
@@ -51,7 +58,7 @@ aumente o período de tempo.
 
     Para obter mais informações sobre como configurar o *Selecionador de Tempo*, consulte
 [Configurando um filtro de
-tempo](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+tempo](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter1).
        
 2. Clique na lupa que está localizada na barra de procura da página *Descobrir*. Os dados da página são atualizados com base na consulta de procura padrão.
 

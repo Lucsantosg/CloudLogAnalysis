@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Análisis de registros en Kibana mediante visualizaciones 
 {:#kibana_visualizations}
@@ -44,12 +51,12 @@ En la página Visualizar, puede realizar cualquiera de las siguientes tareas:
 
 | Tarea | Más información |
 |------|------------------|
-| [Crear una nueva visualización](kibana_visualizations.html#create) | Puede crear visualizaciones a partir de una búsqueda que defina y guarde en la página *Descubrir* o a partir de una nueva consulta que defina en la página *Visualizar*. |
-| [Suprimir una visualización](kibana_visualizations.html#delete) | Suprima las visualizaciones que ya no necesite. |
-| [Exportar una visualización](kibana_visualizations.html#export) | Puede exportar una visualización como archivo JSON.  |
-| [Importar una visualización](kibana_visualizations.html#import) | Puede importar una visualización como archivo JSON.  |
-| [Cargar una visualización](kibana_visualizations.html#reload) | Puede cargar una visualización para actualizar sus datos, modificarlos o analizar los datos. |
-| [Guardar una visualización](kibana_visualizations.html#save) | Puede guardar visualizaciones para reutilizarlas en el futuro. |
+| [Crear una nueva visualización](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#create) | Puede crear visualizaciones a partir de una búsqueda que defina y guarde en la página *Descubrir* o a partir de una nueva consulta que defina en la página *Visualizar*. |
+| [Suprimir una visualización](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#delete) | Suprima las visualizaciones que ya no necesite. |
+| [Exportar una visualización](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#export) | Puede exportar una visualización como archivo JSON.  |
+| [Importar una visualización](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#import1) | Puede importar una visualización como archivo JSON.  |
+| [Cargar una visualización](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#reload2) | Puede cargar una visualización para actualizar sus datos, modificarlos o analizar los datos. |
+| [Guardar una visualización](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#save2) | Puede guardar visualizaciones para reutilizarlas en el futuro. |
 {: caption="Tabla 2. Tareas para trabajar con visualizaciones" caption-side="top"}
 
 
@@ -74,7 +81,7 @@ Complete los siguientes pasos para crear una visualización desde la página Vis
 
     * Si selecciona **Desde una nueva búsqueda, seleccionar índice**, defina una consulta nueva. La consulta se utiliza para definir el subconjunto de datos que recupera y utiliza la visualización.
 
-        Para obtener más información, consulte [Filtrado de registros mediante la definición de consultas personalizadas](define_search.html#define_search).
+        Para obtener más información, consulte [Filtrado de registros mediante la definición de consultas personalizadas](/docs/services/CloudLogAnalysis/kibana/define_search.html#define_search).
 
 Para obtener más información sobre Kibana, consulte la [Guía del usuario de Kibana ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
@@ -92,7 +99,7 @@ Para suprimir una visualización, siga los pasos siguientes en la página **Gest
 
 
 ## Exportación de una visualización
-{: #export}
+{: #export1}
 
 Para exportar una visualización como archivo JSON, siga los pasos siguientes en la página **Gestión**:
 
@@ -105,7 +112,7 @@ Para exportar una visualización como archivo JSON, siga los pasos siguientes en
 4. Guarde el archivo.
 
 ## Importación de una visualización
-{: #import}
+{: #import1}
 
 Para importar una visualización como archivo JSON, siga los pasos siguientes en la página **Gestión**:
 
@@ -120,7 +127,7 @@ La visualización se añade a la lista de visualizaciones.
 
  
 ## Carga de una visualización
-{: #reload}
+{: #reload2}
 
 Siga los siguientes pasos para cargar una visualización guardada:
 
@@ -130,7 +137,7 @@ Siga los siguientes pasos para cargar una visualización guardada:
 
 
 ## Cómo guardar una visualización
-{: #save}
+{: #save2}
 
 Siga los pasos siguientes para guardar una visualización en la página Visualizar:
 

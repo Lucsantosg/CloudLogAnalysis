@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Suchkontingent und tägliche Nutzung berechnen
@@ -58,7 +66,7 @@ Showing quota usage for resource: 475693845023932019c6567c9c8de6dece ...
 OK
 
 Daily Allotment   Current Usage
-524288000         0
+524288000         0   
 ```
 {: screen}
 
@@ -70,7 +78,7 @@ Showing quota usage for resource: js7ydf98-8682-430d-bav4-36b712341744 ...
 OK
 
 Daily Allotment   Current Usage
-524288000         6774014
+524288000         6774014   
 ```
 {: screen}
 
@@ -120,7 +128,7 @@ Date         Allotment   Usage
 2018.03.03   524288000   75045462
 2018.03.07   524288000   17386278
 2018.03.02   524288000   104316444
-2018.03.04   524288000   73125223
+2018.03.04   524288000   73125223   
 ```
 {: screen}
 
@@ -200,7 +208,7 @@ Führen Sie die folgenden Schritte aus:
 
 	
 ## Suchkontingent und tägliche Nutzung eines Bereichs mit der API berechnen
-{: #space}
+{: #space1}
 
 Führen Sie die folgenden Schritte aus:
 

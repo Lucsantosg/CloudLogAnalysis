@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 在 Kibana 中以交互方式分析日志
 {:#analize_logs_interactively}
@@ -63,7 +70,7 @@ lastupdated: "2018-07-25"
 
 要定义新搜索，请将缺省搜索查询用作起点，然后通过执行以下任务来优化搜索：
 
-* 应用字段过滤器，以优化可以查看的数据集。可以切换每个过滤器，将过滤器锁定到页面，根据需要启用或禁用过滤器，以及配置过滤器以包含或排除值。有关更多信息，请参阅[在 Kibana 中过滤日志](filter_logs.html#filter_logs)。
+* 应用字段过滤器，以优化可以查看的数据集。可以切换每个过滤器，将过滤器锁定到页面，根据需要启用或禁用过滤器，以及配置过滤器以包含或排除值。有关更多信息，请参阅[在 Kibana 中过滤日志](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs)。
 
     **提示：**如果在*字段列表*中找不到希望查看的字段，或者在“发现”页面中所列出字段旁的某些放大镜处于禁用状态，请通过刷新“设置”页面中的索引模式来重新装入字段列表。有关更多信息，请参阅[重新装入字段列表](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields)。
 
@@ -81,7 +88,7 @@ lastupdated: "2018-07-25"
 |[删除搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)|删除不再需要的搜索。|
 |[导出搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search)|导出搜索以进行共享。|
 |[导入搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search)|导入搜索。|
-|[重新装入搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)|上传现有搜索以重新分析一组数据。|
+|[重新装入搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search1)|上传现有搜索以重新分析一组数据。|
 |[刷新搜索的数据](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search)|针对通过搜索显示的数据配置自动刷新。|
 |[保存搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)|保存搜索以供日后复用。|
 {: caption="表 3. 使用搜索的任务" caption-side="top"}

@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # IBM Cloud のスペースへのオンプレミス・データの送信
 {: #send_data_mt}
@@ -23,7 +31,7 @@ lastupdated: "2018-07-25"
 {{site.data.keyword.Bluemix_notm}} 内のスペースにログ・データを送信するには、以下のステップを実行します。
 
 ## 前提条件
-{: #prereqs}
+{: #prereqs1}
 
 * {{site.data.keyword.Bluemix_notm}} にログインするための {{site.data.keyword.Bluemix_notm}} ID。
 * スペース内で {{site.data.keyword.loganalysisshort}} サービスと連携するための許可のあるユーザー ID。 詳しくは、『[セキュリティー](/docs/services/CloudLogAnalysis/security_ov.html#security_ov)』を参照してください。

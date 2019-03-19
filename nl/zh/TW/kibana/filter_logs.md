@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 在 Kibana 中過濾日誌
 {:#filter_logs}
@@ -25,7 +32,7 @@ lastupdated: "2018-07-25"
 
 * 您可以從*欄位清單* 或表格項目中新增過濾器。而過濾器可以透過包含或排除資訊的方式來精簡資料選取項目。您可以啟用或停用過濾器、反轉過濾動作、將過濾器切換為開啟或關閉，或是將它整個移除。 
 
-定義新搜尋之後，請儲存它，以供日後在「探索」頁面中重複使用來進行分析，或是建立視覺效果，以用在自訂儀表板中。如需相關資訊，請參閱[儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)。
+定義新搜尋之後，請儲存它，以供日後在「探索」頁面中重複使用來進行分析，或是建立視覺效果，以用在自訂儀表板中。如需相關資訊，請參閱[儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1)。
 
 當您執行新搜尋時，直方圖、表格及「欄位」清單會自動更新，以顯示搜尋結果。若要瞭解會顯示哪些資料，請參閱[識別探索頁面中顯示的資料](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)。
 

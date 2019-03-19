@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Reutilizando recursos do Kibana para analisar logs do {{site.data.keyword.Bluemix_notm}}
 {:#k4_reuse_resource}
@@ -49,7 +58,7 @@ Conclua as etapas a seguir para copiar uma procura entre espaços no {{site.data
 
     * Ative o Kibana na UI do {{site.data.keyword.Bluemix_notm}}: o arquivo de procura JSON que pode ser exportado inclui os campos a seguir: *ID do espaço* e *ID do aplicativo* para aplicativos Cloud Foundry (CF) ou *ID da instância* para contêineres. Para obter mais informações, veja [Acessando o painel Kibana usando o painel do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Ative o Kibana por meio de um navegador: o arquivo de procura JSON que é possível exportar inclui o campo *ID do espaço*. Para obter mais informações, veja [Acessando o painel do Kibana por meio de um navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
+    * Ative o Kibana por meio de um navegador: o arquivo de procura JSON que é possível exportar inclui o campo *ID do espaço*. Para obter mais informações, veja [Acessando o painel do Kibana por meio de um navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1).
 
 2. Na página *Configurações*, selecione **Objetos** e a guia **Procuras**. Em seguida, selecione uma procura e copie as informações a seguir:
 
@@ -189,7 +198,7 @@ Conclua as etapas a seguir para copiar uma visualização que você usa para ana
 
     * Ative o Kibana na UI do {{site.data.keyword.Bluemix_notm}}: o arquivo de procura JSON que pode ser exportado inclui os campos a seguir: *ID do espaço* e *ID do aplicativo* para aplicativos Cloud Foundry (CF) ou *ID da instância* para contêineres. Para obter mais informações, veja [Acessando o painel Kibana usando o painel do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Ative o Kibana por meio de um navegador: o arquivo de procura JSON que é possível exportar inclui o campo *ID do espaço*. Para obter mais informações, veja [Acessando o painel do Kibana por meio de um navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
+    * Ative o Kibana por meio de um navegador: o arquivo de procura JSON que é possível exportar inclui o campo *ID do espaço*. Para obter mais informações, veja [Acessando o painel do Kibana por meio de um navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1).
     
 2. Copie a procura que está associada à visualização entre espaços. Para obter mais informações, veja [Copiando uma procura entre espaços do Bluemix](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search).
 

@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Cloud Foundry 앱
 {: #logging_cf_apps}
@@ -30,14 +38,14 @@ lastupdated: "2018-07-25"
  
 Cloud Foundry 앱의 로깅은 {{site.data.keyword.Bluemix_notm}}에서 앱을 실행하려고 Cloud Foundry 인프라를 사용할 때 자동으로 사용 가능하게 설정됩니다. Cloud Foundry 런타임 로그를 보려면 STDOUT 및 STDERR에 로그를 작성해야 합니다. 자세한 정보는 [CF 앱을 통해 런타임 애플리케이션 로깅](/docs/services/CloudLogAnalysis/cfapps/logging_writing_to_log_from_cf_app.html#logging_writing_to_log_from_cf_app)을 참조하십시오.
 
-{{site.data.keyword.Bluemix_notm}}는 제한된 양의 로그 정보를 보관합니다. 정보가 로그되면 이전 정보는 새 정보로 대체됩니다. 감사 또는 다른 목적으로 일부 또는 모든 로그 정보를 보존하도록 하는 조직 또는 산업 정책을 따라야 하는 경우, 외부 로그 호스트(예: 써드파티 로그 관리 서비스 또는 다른 호스트)에 로그를 스트림할 수 있습니다. 자세한 정보는 [외부 로그 호스트 구성](/docs/services/CloudLogAnalysis/external/logging_external_hosts.html#thirdparty_logging)을 참조하십시오.
+{{site.data.keyword.Bluemix_notm}}는 제한된 양의 로그 정보를 보관합니다. 정보가 로그되면 이전 정보는 새 정보로 대체됩니다. 감사 또는 다른 목적으로 일부 또는 모든 로그 정보를 보존하도록 하는 조직 또는 산업 정책을 따라야 하는 경우, 외부 로그 호스트(예: 서드파티 로그 관리 서비스 또는 다른 호스트)에 로그를 스트림할 수 있습니다. 자세한 정보는 [외부 로그 호스트 구성](/docs/services/CloudLogAnalysis/external/logging_external_hosts.html#thirdparty_logging)을 참조하십시오.
 
 ## 로그 수집
-{: #log_ingestion}
+{: #log_ingestion1}
 
 다중 테넌트 Logstash 포워더를 사용하여 {{site.data.keyword.loganalysisshort}}에 로그를 전송할 수 있습니다. 자세한 정보는 [다중 테넌트 Logstash 포워더(mt-logstash-forwarder)를 사용하여 로그 데이터 전송](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt)을 참조하십시오.
 
-{{site.data.keyword.loganalysisshort}} 서비스는 여러 가지 플랜을 제공합니다. *라이트* 플랜을 제외한 모든 플랜에는 로그 콜렉션으로 로그를 전송할 수 있는 기능이 포함되어 있습니다. 플랜에 대한 자세한 정보는 [서비스 플랜](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)을 참조하십시오.
+{{site.data.keyword.loganalysisshort}} 서비스는 여러 가지 플랜을 제공합니다. *Lite* 플랜을 제외한 모든 플랜에는 로그 콜렉션으로 로그를 전송할 수 있는 기능이 포함되어 있습니다. 플랜에 대한 자세한 정보는 [서비스 플랜](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)을 참조하십시오.
 
 ## 로그 콜렉션
 {: #log_collection}
@@ -56,7 +64,7 @@ Cloud Foundry 앱의 로깅은 {{site.data.keyword.Bluemix_notm}}에서 앱을 �
 각 플랜의 가격에 대한 자세한 정보는 [서비스 플랜](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)을 참조하십시오.
 
 ## 로그 검색
-{: #log_search}
+{: #log_search1}
 
 기본적으로 Kibana를 사용하여 {{site.data.keyword.Bluemix_notm}}에서 하루에 최대 500MB의 로그를 검색할 수 있습니다. 
 

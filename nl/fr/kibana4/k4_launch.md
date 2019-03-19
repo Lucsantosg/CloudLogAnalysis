@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Accès au tableau de bord Kibana
@@ -70,7 +80,7 @@ Pour consulter les journaux d'une application Cloud Foundry ou d'un conteneur Do
 
 
 ##  Accès au tableau de bord Kibana depuis un navigateur Web
-{: #launch_Kibana_from_browser}
+{: #launch_Kibana_from_browser1}
 
 La requête utilisée pour filtrer les données affichées dans Kibana extrait les entrées de journal pour un espace dans l'organisation {{site.data.keyword.Bluemix_notm}}. Les informations de journal affichées par Kibana incluent des enregistrements pour toutes les ressources déployées dans l'espace de l'organisation {{site.data.keyword.Bluemix_notm}} à laquelle vous êtes connecté.
 

@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # ログ保存ポリシーの構成
-{: #configuring_retention_policy}
+{: #configuring_retention_policy1}
 
 Log Collection 内でログが保持される最大日数を定義する保存ポリシーを表示および構成するには、コマンド **cf logging option** を使用します。 デフォルトでは、保存ポリシーは無効にされ、ログは無期限に保持されます。 保存期間を過ぎると、ログは自動的に削除されます。 
 {:shortdesc}
@@ -23,7 +32,7 @@ Log Collection 内でログが保持される最大日数を定義する保存�
 
 
 ## スペースのログ保存ポリシーの無効化
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_space1}
 
 保存ポリシーを無効化するには、以下のステップを実行します。
 
@@ -61,7 +70,7 @@ ibmcloud cf logging option -r -1
 
 
 ## スペースのログ保存ポリシーの確認
-{: #check_retention_policy_space}
+{: #check_retention_policy_space1}
 
 スペースに設定されている保存期間を取得するには、以下のステップを実行します。
 
@@ -119,7 +128,7 @@ ibmcloud cf logging option -r -1
     
 
 ## アカウント・レベルのログ保存ポリシーの設定
-{: #set_retention_policy_space}
+{: #set_retention_policy_space1}
 
 アカウントの保存期間を表示するには、以下のステップを実行します。
 

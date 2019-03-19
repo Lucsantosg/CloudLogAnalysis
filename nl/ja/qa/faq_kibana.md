@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Kibana FAQ
@@ -43,7 +50,7 @@ Kibana でデータを表示できない場合、以下の異なるシナリオ�
 
     **注**: デフォルトでは、{{site.data.keyword.Bluemix_notm}} において*時間ピッカー* は、過去 15 分間のデータを表示するように設定されています。
 
-    *時間ピッカー* の設定方法について詳しくは、『[時間フィルターの設定](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)』を参照してください。
+    *時間ピッカー* の設定方法について詳しくは、『[時間フィルターの設定](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter1)』を参照してください。
        
 2. 「*Discover*」ページの検索バーにある拡大鏡をクリックします。 ページ・データが、デフォルトの検索照会に基づいて最新表示されます。
 

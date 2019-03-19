@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Domande frequenti e risposte relative all'utilizzo della CLI IBM Cloud
@@ -143,7 +151,7 @@ Completa la seguente procedura per ottenere il GUID di un organizzazione:
 		
 		
 ## Come ottengo il GUID di uno spazio?
-{: #space_guid}
+{: #space_guid2}
 	
 Completa la seguente procedura per ottenere il GUID di uno spazio:
 	

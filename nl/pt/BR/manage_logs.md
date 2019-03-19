@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Gerenciando logs
@@ -50,7 +59,7 @@ O serviço {{site.data.keyword.loganalysisshort}} oferece duas CLIs que podem se
 * É possível mudar a qualquer momento a política de retenção.
 * É possível desativar a política configurando seu valor como *-1*. 
 
-**Nota:** quando você desativar a política de retenção de log, deverá manter os logs da Coleção de logs. É possível usar o comando da CLI [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete) para excluir logs antigos.
+**Nota:** quando você desativar a política de retenção de log, deverá manter os logs da Coleção de logs. É possível usar o comando da CLI [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete4) para excluir logs antigos.
 
 Para obter mais informações, veja:
 
@@ -74,14 +83,14 @@ Os logs armazenados em Coleção de logs são mantidos até você configurar uma
 
 
 ## Fazendo download de logs
-{: #download_logs}
+{: #download_logs2}
 
 É possível procurar logs dos últimos 3 dias no Kibana. Para poder analisar dados de log mais antigos, é possível fazer download de logs em um arquivo local ou canalizar esses logs para outros programas, como um Elastic Stack local. 
 
 Para obter mais informações, veja:
 
 * [Fazendo download de logs usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs_cloud.html#downloading_logs).
-* [Fazendo download de logs usando o plug-in do CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs).
+* [Fazendo download de logs usando o plug-in do CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs1).
 
 
 
@@ -90,8 +99,8 @@ Para obter mais informações, veja:
 
 Para obter informações gerais sobre seus logs, use o comando `ibmcloud logging log-show` ou o comando `cf logging status`. Para obter mais informações, veja:
 
-* [Visualizando informações de log usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
-* [Visualizando informações de log usando o plug-in do CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
+* [Visualizando informação de log usando o plug-in do {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status1)
+* [Visualizando informações de log usando o plug-in do CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status1).
 
 Por exemplo, para manter o custo sob controle, você pode desejar monitorar o tamanho dos logs de seus apps durante um período de tempo. Por exemplo, talvez você queira saber o tamanho de cada tipo de log durante uma semana para um espaço do {{site.data.keyword.Bluemix_notm}} para identificar se algum app ou serviço está gerando mais logs do que o esperado. Para verificar o tamanho de seus logs, use o comando `ibmcloud logging log-show` ou o comando `cf logging status`.
 
@@ -100,7 +109,7 @@ Por exemplo, para manter o custo sob controle, você pode desejar monitorar o ta
 
 
 ## Instalando a CLI do {{site.data.keyword.loganalysisshort_notm}} (plug-in do {{site.data.keyword.Bluemix_notm}})
-{: #install_cli}
+{: #install_cli2}
 
 Para saber como instalar a CLI, veja [Instalando a CLI de criação de log](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
 
@@ -139,7 +148,7 @@ A tabela a seguir lista as URLs de criação de log por região:
 </table>
 
 ## Funções que são requeridas por um usuário para gerenciar os logs
-{: #roles}
+{: #roles1}
 
 No {{site.data.keyword.Bluemix_notm}}, é possível designar uma ou mais funções para os usuários. Essas funções definem quais tarefas estão ativadas para esse usuário para trabalhar com o serviço {{site.data.keyword.loganalysisshort}}. 
 

@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Protokolle in Kibana filtern
 {:#filter_logs}
@@ -25,7 +32,7 @@ Auf der Seite 'Discover' können Sie Suchabfragen erstellen und Filter anwenden,
 
 * Sie können Filter aus der *Feldliste* oder aus den Tabelleneinträgen hinzufügen. Ein Filter verfeinert die Datenauswahl durch Ein- oder Ausschließen von Informationen. Sie können einen Filter aktivieren oder inaktivieren, die Filteraktion umkehren, den Filter ein- und ausschalten oder ihn vollständig entfernen. 
 
-Wenn Sie eine neue Suche definiert haben, können Sie sie speichern, um sie für eine spätere Analyse auf der Seite 'Discover' erneut zu verwenden oder um Visualisierungen zu erstellen, die Sie in angepassten Dashboards einsetzen können. Weitere Informationen finden Sie unter [Suche speichern](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search).
+Wenn Sie eine neue Suche definiert haben, können Sie sie speichern, um sie für eine spätere Analyse auf der Seite 'Discover' erneut zu verwenden oder um Visualisierungen zu erstellen, die Sie in angepassten Dashboards einsetzen können. Weitere Informationen finden Sie unter [Suche speichern](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1).
 
 Wenn Sie eine neue Suche ausführen, werden das Histogramm, die Tabelle und die Feldliste automatisch aktualisiert, sodass sie die Suchergebnisse anzeigen. Informationen darüber, welche Daten angezeigt werden, finden Sie unter [Auf der Seite 'Discover' angezeigte Daten ermitteln](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 

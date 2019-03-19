@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Reutilización de recursos de Kibana para analizar registros de {{site.data.keyword.Bluemix_notm}}
 {:#k4_reuse_resource}
@@ -49,7 +58,7 @@ Complete los siguientes pasos para copiar una búsqueda entre espacios en {{site
 
     * Inicie Kibana desde la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}: El archivo de búsqueda JSON que puede exportar incluye los siguientes campos: *space ID* y *application ID* para aplicaciones Cloud Foundry (CF) o el campo *instance ID* para contenedores. Para obtener más información, consulte [Cómo ir al panel de control de Kibana desde el panel de control de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Inicie Kibana desde un navegador: El archivo de búsqueda JSON que puede exportar incluye el campo *space ID*. Para obtener más información, consulte [Cómo ir al panel de control de Kibana desde un navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
+    * Inicie Kibana desde un navegador: El archivo de búsqueda JSON que puede exportar incluye el campo *space ID*. Para obtener más información, consulte [Cómo ir al panel de control de Kibana desde un navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1).
 
 2. En la página *Valores*, seleccione **Objetos** y el separador **Búsquedas**. A continuación seleccione una búsqueda y copie la siguiente información:
 
@@ -189,7 +198,7 @@ Complete los siguientes pasos para copiar una visualización que utiliza para an
 
     * Inicie Kibana desde la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}: El archivo de búsqueda JSON que puede exportar incluye los siguientes campos: *space ID* y *application ID* para aplicaciones Cloud Foundry (CF) o el campo *instance ID* para contenedores. Para obtener más información, consulte [Cómo ir al panel de control de Kibana desde el panel de control de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Inicie Kibana desde un navegador: El archivo de búsqueda JSON que puede exportar incluye el campo *space ID*. Para obtener más información, consulte [Cómo ir al panel de control de Kibana desde un navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
+    * Inicie Kibana desde un navegador: El archivo de búsqueda JSON que puede exportar incluye el campo *space ID*. Para obtener más información, consulte [Cómo ir al panel de control de Kibana desde un navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1).
     
 2. Copie la búsquela que está asociada con la visualización entre espacios. Para obtener más información, consulte [Copia de una búsqueda entre espacios de Bluemix](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search).
 

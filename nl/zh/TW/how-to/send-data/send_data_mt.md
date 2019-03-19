@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 將內部部署資料傳送至 IBM Cloud 中的空間
 {: #send_data_mt}
@@ -23,7 +31,7 @@ lastupdated: "2018-07-25"
 請完成下列步驟，以在 {{site.data.keyword.Bluemix_notm}} 中將日誌資料傳送至空間：
 
 ## 必要條件
-{: #prereqs}
+{: #prereqs1}
 
 * 用來登入 {{site.data.keyword.Bluemix_notm}} 的 {{site.data.keyword.Bluemix_notm}} ID。
 * 有權使用 {{site.data.keyword.loganalysisshort}} 服務處理空間的使用者 ID。如需相關資訊，請參閱[安全](/docs/services/CloudLogAnalysis/security_ov.html#security_ov)。

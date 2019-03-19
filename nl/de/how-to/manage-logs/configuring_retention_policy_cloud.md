@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Protokollaufbewahrungsrichtlinie konfigurieren
 {: #configuring_retention_policy}
@@ -51,7 +60,6 @@ Führen Sie die folgenden Schritte aus, um eine Aufbewahrungsrichtlinie zu inakt
 **Beispiel**
     
 Um beispielsweise den Aufbewahrungszeitraum für ein Konto mit der ID *12345677fgh436902a3* zu inaktivieren, führen Sie den folgenden Befehl aus:
-
 
 ```
 ibmcloud logging option-update -r account -i 12345677fgh436902a3 -e -1
@@ -166,7 +174,7 @@ Führen Sie die folgenden Schritte aus:
 
     ```
     ibmcloud logging option-update -r account -i AccountID -e AUFBEWAHRUNGSWERT
-	```
+    ```
     {: codeblock}
     
     Dabei ist *AUFBEWAHRUNGSWERT* eine ganze Zahl, die die Aufbewahrungsdauer von Protokollen in Tagen angibt. 

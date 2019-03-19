@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Envoi de données locales dans un espace dans IBM Cloud
 {: #send_data_mt}
@@ -23,7 +31,7 @@ Pour envoyer des données de journal au service {{site.data.keyword.loganalysiss
 Procédez comme suit pour envoyer des données de journal dans un espace dans {{site.data.keyword.Bluemix_notm}} :
 
 ## Configuration requise
-{: #prereqs}
+{: #prereqs1}
 
 * Un {{site.data.keyword.Bluemix_notm}}ID pour la connexion à {{site.data.keyword.Bluemix_notm}}.
 * Un ID utilisateur qui dispose de droits permettant d'utiliser le service {{site.data.keyword.loganalysisshort}} dans un espace. Pour plus d'informations, voir [Sécurité](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).

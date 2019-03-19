@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 下載日誌
-{: #downloading_logs}
+{: #downloading_logs1}
 
 您可以將日誌下載至本端檔案，或透過管道將資料傳送至另一個程式。您可以在階段作業環境定義內下載日誌。階段作業會指定將下載的日誌。如果日誌下載被岔斷，階段作業會從停止處繼續下載。下載完成之後，您必須刪除階段作業。
 {:shortdesc}
@@ -29,7 +37,7 @@ lastupdated: "2018-07-25"
 如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
 ## 步驟 2：識別可用的日誌
-{: #step2}
+{: #step31}
 
 1. 使用 `ibmcloud cf logging status` 指令，以查看過去 2 週的可用日誌。執行下列指令：
 
@@ -55,11 +63,11 @@ lastupdated: "2018-07-25"
 
 
 ## 步驟 3：建立階段作業
-{: #step3}
+{: #step32}
 
 需要有階段作業，才能定義可供下載的日誌資料範圍，以及保持下載的狀態。 
 
-請使用指令 [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) 來建立階段作業。您可以選擇指定建立階段作業的開始日期、結束日期及日誌類型：  
+請使用指令 [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1) 來建立階段作業。您可以選擇指定建立階段作業的開始日期、結束日期及日誌類型：  
 
 * 當您指定開始日期及結束日期時，階段作業可讓您存取這兩個日期（含）之間的日誌。 
 * 當您指定日誌類型 (**-t**) 時，階段作業可讓您存取特定類型的日誌。當您管理大規模的日誌時，這是重要特性，因為您可以將階段作業的範圍設定為僅感興趣的小部分日誌。
@@ -103,10 +111,10 @@ $ ibmcloud cf logging session create -t log
 ```
 {: screen}
 
-**提示：**若要查看作用中階段作業清單，請執行這個指令 [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list)。
+**提示：**若要查看作用中階段作業清單，請執行這個指令 [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list1)。
 
 ## 步驟 4：將日誌資料下載至檔案
-{: #step4}
+{: #step42}
 
 若要下載階段作業參數所指定的日誌，請執行下列指令：
 
@@ -137,9 +145,9 @@ ibmcloud cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
 * 您也可以使用任何可剖析 JSON 的程式來處理資料。 
 
 ## 步驟 5：刪除階段作業
-{: #step5}
+{: #step51}
 
-下載完成之後，您必須使用 [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete) 指令來刪除階段作業。 
+下載完成之後，您必須使用 [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete1) 指令來刪除階段作業。 
 
 執行下列指令，以刪除階段作業：
 

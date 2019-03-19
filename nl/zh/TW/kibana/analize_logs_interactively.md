@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 在 Kibana 中以互動方式分析日誌
 {:#analize_logs_interactively}
@@ -62,7 +69,7 @@ lastupdated: "2018-07-25"
 
 若要定義新搜尋，請使用預設搜尋查詢作為起始點，然後執行下列作業來精簡搜尋：
 
-* 套用欄位過濾器，以精簡您可以看到的資料集。您可以切換每一個過濾器、將其固定至頁面、依需要予以啟用或停用，以及將它配置為包括值或排除值。如需相關資訊，請參閱[在 Kibana 中過濾日誌](filter_logs.html#filter_logs)。
+* 套用欄位過濾器，以精簡您可以看到的資料集。您可以切換每一個過濾器、將其固定至頁面、依需要予以啟用或停用，以及將它配置為包括值或排除值。如需相關資訊，請參閱[在 Kibana 中過濾日誌](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs)。
 
     **提示：**如果在*欄位清單* 中找不到您預期會看到的欄位，或是在「探索」頁面中，列出欄位旁的部分放大鏡已停用，請重新整理「設定」頁面中的索引型樣，以重新載入欄位清單。如需相關資訊，請參閱[重新載入欄位清單](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields)。
 
@@ -79,7 +86,7 @@ lastupdated: "2018-07-25"
 |[刪除搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) |刪除不再需要的搜尋。|
 |[匯出搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) |匯出搜尋以進行共用。|
 |[匯入搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) |匯入搜尋。|
-|[重新載入搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  |上傳現有的搜尋，以重新分析資料集。|
+|[重新載入搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search1)  |上傳現有的搜尋，以重新分析資料集。|
 |[重新整理搜尋的資料](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) |針對透過搜尋而顯示的資料，配置自動重新整理。|
 |[儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) |儲存搜尋，以供之後重複使用。|
 {: caption="表 3. 使用搜尋的作業" caption-side="top"}

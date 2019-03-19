@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Kibana 대시보드로 이동
@@ -75,7 +83,7 @@ Kibana가 표시하는 로그 정보에는 사용자가 로그인한 조직의 �
 
 기본적으로 **검색** 페이지는 기본 인덱스 패턴이 선택되고 시간 필터가 최근 15분으로 설정되어 로드됩니다. 
 
-검색 페이지에 로그 항목이 표시되지 않는 경우, 시간 선택도구를 조정하십시오. 자세한 정보는 [시간 필터 설정](filter_logs.html#set_time_filter)을 참조하십시오.
+검색 페이지에 로그 항목이 표시되지 않는 경우, 시간 선택도구를 조정하십시오. 자세한 정보는 [시간 필터 설정](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)을 참조하십시오.
 
 	
 	

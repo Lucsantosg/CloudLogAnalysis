@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 시작하기 튜토리얼
 {: #getting-started-with-cla}
@@ -62,15 +68,17 @@ lastupdated: "2018-07-25"
 
 
 ## 2단계: 사용자가 로그를 볼 수 있도록 권한 설정
-{: #step2}
+{: #step24}
 
 사용자가 수행할 수 있는 {{site.data.keyword.loganalysisshort}} 조치를 제어하기 위해 사용자에게 역할 및 정책을 지정할 수 있습니다. 
 
 {{site.data.keyword.Bluemix_notm}}에는 사용자가 {{site.data.keyword.loganalysisshort}} 서비스에 대해 작업할 때 수행할 수 있는 조치를 제어하는 두 가지 유형의 보안 권한이 있습니다.
 
 * CF(Cloud Foundry) 역할: 사용자가 영역의 로그를 보기 위해 보유해야 하는 권한을 정의하려면 사용자에게 CF 역할을 부여합니다.
-* IAM 역할: 사용자가 계정 도메인의 로그를 보기 위해 보유해야 하는 권한과 로그 콜렉션에 저장된 로그를 관리하기 위해 보유해야 하는 권한을 정의하려면 사용자에게 IAM 정책을 부여합니다. 
+* IAM 역할: 사용자가 계정 도메인의 로그를 보기 위해 보유해야 하는 권한을 정의하려면 사용자에게 IAM 정책을 부여합니다.
 
+### 사용자가 영역 도메인의 로그를 볼 수 있도록 권한 설정
+{: #step42a}
 
 사용자에게 영역의 로그를 볼 수 있는 권한을 부여하려면 다음 단계를 완료하십시오.
 
@@ -101,10 +109,67 @@ lastupdated: "2018-07-25"
 7. **역할 저장**을 클릭하십시오.
 
 
-자세한 정보는 [권한 부여](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account)를 참조하십시오.
+
+### 사용자가 계정 도메인의 로그를 볼 수 있도록 권한 설정
+{: #step24b}
 
 
-로그 데이터를 보고 분석하려면 로그 데이터가 사용 가능한 클라우드 공용 지역에서 Kibana에 액세스해야 합니다. 
+사용자에게 계정 로그를 볼 수 있는 권한을 부여하려면 다음 단계를 완료하십시오.
+
+1. {{site.data.keyword.Bluemix_notm}} 콘솔에 로그인하십시오.
+
+    웹 브라우저를 열고 {{site.data.keyword.Bluemix_notm}} 대시보드를 실행하십시오. [http://bluemix.net ![외부 링크 아이콘](../../../icons/launch-glyph.svg "외부 링크 아이콘")](http://bluemix.net){:new_window}
+	
+	사용자 ID 및 비밀번호를 사용하여 로그인하면 {{site.data.keyword.Bluemix_notm}} UI가 열립니다.
+
+2. 메뉴 표시줄에서 **관리 > 계정 > 사용자**를 클릭하십시오. 
+
+    *사용자* 창에 현재 선택한 계정의 이메일 주소와 함께 사용자 목록이 표시됩니다.
+	
+3. 사용자가 계정의 구성원인 경우 목록에서 사용자 이름을 선택하거나 *조치* 메뉴에서 **사용자 관리**를 클릭하십시오.
+
+    사용자가 계정의 구성원이 아닌 경우 [사용자 초대](/docs/iam/iamuserinv.html#iamuserinv)를 참조하십시오.
+
+4. **액세스 정책** 섹션에서 **액세스 권한 지정**을 클릭한 후 **리소스에 대한 액세스 권한 지정**을 선택하십시오.
+
+    *사용자에 리소스 액세스 권한 지정** 창이 열립니다.
+
+5. 정책에 대한 정보를 입력하십시오. 다음 표는 정책을 정의하는 데 필요한 필드를 나열합니다. 
+
+    <table>
+	  <caption>IAM 정책을 구성하는 필드 목록입니다.</caption>
+	  <tr>
+	    <th>필드</th>
+		<th>값</th>
+	  </tr>
+	  <tr>
+	    <td>서비스</td>
+		<td>*IBM Cloud Log Analysis*</td>
+	  </tr>	  
+	  <tr>
+	    <td>지역</td>
+		<td>사용자에게 로그 작업을 수행하기 위한 액세스 권한을 부여할 지역을 지정할 수 있습니다. 하나 이상의 지역을 개별적으로 선택하거나 **모든 현재 지역**을 선택하여 모든 지역에 대한 액세스 권한을 부여하십시오.</td>
+	  </tr>
+	  <tr>
+	    <td>서비스 인스턴스</td>
+		<td>*모든 서비스 인스턴스*를 선택하십시오.</td>
+	  </tr>
+	  <tr>
+	    <td>역할</td>
+		<td>하나 이상의 IAM 역할을 선택하십시오. <br>올바른 역할: *관리자*, *운영자*, *편집자* 및 *뷰어*. <br>각 역할에 허용되는 조치에 대한 자세한 정보는 [IAM 역할](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles)을 참조하십시오.
+		</td>
+	  </tr>
+     </table>
+	
+6. **지정**을 클릭하십시오.
+	
+구성하는 정책을 선택한 지역에 적용할 수 있습니다. 
+
+
+## 다음 단계 
+{: #next_steps}
+
+**참고:** 로그 데이터를 보고 분석하려면 로그 데이터가 사용 가능한 클라우드 공용 지역에서 Kibana에 액세스해야 합니다. 
 
 예를 들어, 미국 남부 지역에서 Kibana를 실행하려면 웹 브라우저를 열고 다음 URL을 입력하십시오.
 
@@ -116,12 +181,9 @@ https://logging.ng.bluemix.net/
 
 다른 지역에서 Kibana를 실행하는 방법에 대한 자세한 정보는 [웹 브라우저에서 Kibana로 이동](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)을 참조하십시오.
 
-**참고:** Kibana를 실행할 때 *bearer 토큰이 올바르지 않음*을 나타내는 메시지가 표시되는 경우 영역의 권한을 확인하십시오. 이 메시지는 사용자 ID에 로그를 볼 수 있는 권한이 없음을 표시합니다.
+**참고:** Kibana를 실행할 때 *bearer 토큰이 올바르지 않음*을 나타내는 메시지가 표시되는 경우 계정의 권한을 확인하십시오. 이 메시지는 사용자 ID에 로그를 볼 수 있는 권한이 없음을 표시합니다.
 
-## 다음 단계 
-{: #next_steps}
-
-로그 데이터를 보고 분석하려면 Kibana를 사용자 정의하십시오. 자세한 정보는 [로그 보기 및 분석](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)을 참조하십시오.
+그런 다음 로그 데이터를 보고 분석하려면 Kibana를 사용자 정의하십시오. 자세한 정보는 [로그 보기 및 분석](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)을 참조하십시오.
     
 
 

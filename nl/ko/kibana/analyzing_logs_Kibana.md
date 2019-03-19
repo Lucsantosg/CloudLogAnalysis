@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 로그 보기 및 분석(Kibana)
 {:#analyzing_logs_Kibana}
@@ -80,7 +89,7 @@ Kibana에는 로그 분석에 사용할 수 있는 여러 가지 페이지가 �
 ## 대화식으로 데이터 분석
 {: #analyze_discover}
 
-검색 페이지에서 새 검색 조회를 정의하고 조회별로 필터를 적용할 수 있습니다. 로그 데이터는 표와 히스토그램을 통해 표시됩니다. 이러한 시각화를 사용하여 데이터를 대화식으로 분석할 수 있습니다. 자세한 정보는 [Kibana에서 대화식으로 로그 분석](analize_logs_interactively.html#analize_logs_interactively)을 참조하십시오.
+검색 페이지에서 새 검색 조회를 정의하고 조회별로 필터를 적용할 수 있습니다. 로그 데이터는 표와 히스토그램을 통해 표시됩니다. 이러한 시각화를 사용하여 데이터를 대화식으로 분석할 수 있습니다. 자세한 정보는 [Kibana에서 대화식으로 로그 분석](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#analize_logs_interactively)을 참조하십시오.
 
 로그 필드(예: message_type 및 instance_ID)에서 필터를 구성하고 기간을 설정할 수 있습니다. 이러한 필터를 동적으로 사용 또는 사용 안함으로 설정할 수 있습니다. 사용 가능하게 설정하는 조회 및 필터링 기준을 충족하는 로그 항목이 표와 히스토그램에 표시됩니다. 자세한 정보는 [Kibana에서 로그 필터링](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs)을 참조하십시오.
 

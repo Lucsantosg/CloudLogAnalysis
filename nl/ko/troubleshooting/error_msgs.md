@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 오류 메시지
@@ -31,7 +39,7 @@ lastupdated: "2018-07-25"
 
 **메시지 설명** 
 
-라이트 서비스 플랜에 할당된 로그 검색 스토리지 할당량에 도달하면 ID *BXNLG020001W*가 포함된 메시지가 표시될 수 있습니다. 라이트 플랜은 영역에서 {{site.data.keyword.loganalysisshort}} 서비스를 프로비저닝할 때 기본적으로 설정되는 무료 서비스 플랜입니다. 현재 일별 할당량은 로그 검색 스토리지당 500MB이며, Kibana에서 검색될 수 있는 3일의 기간 동안 로그 검색 스토리지에 보존됩니다.
+Lite 서비스 플랜에 할당된 로그 검색 스토리지 할당량에 도달하면 ID *BXNLG020001W*가 포함된 메시지가 표시될 수 있습니다. Lite 플랜은 영역에서 {{site.data.keyword.loganalysisshort}} 서비스를 프로비저닝할 때 기본적으로 설정되는 무료 서비스 플랜입니다. 현재 일별 할당량은 로그 검색 스토리지당 500MB이며, Kibana에서 검색될 수 있는 3일의 기간 동안 로그 검색 스토리지에 보존됩니다.
 
 **복구**
 

@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Téléchargement des journaux
 {: #downloading_logs}
@@ -28,14 +36,14 @@ Pour exécuter la procédure, vous devez installer l'interface de ligne de comma
 Procédez comme suit pour télécharger dans un fichier journal les données de journal disponibles dans un espace :
 
 ## Etape 1 : Connexion à {{site.data.keyword.Bluemix_notm}}
-{: #step1}
+{: #downloading_logs_step1}
 
 Connectez-vous à une région, une organisation et un espace dans {{site.data.keyword.Bluemix_notm}}. 
 
 Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 ## Etape 2 : Identification des journaux disponibles
-{: #step2}
+{: #step21}
 
 1. Utilisez la commande `ibmcloud logging log-show` pour identifier les journaux disponibles pour les deux dernières semaines. Exécutez la commande suivante :
 
@@ -105,7 +113,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 **Astuce :** pour afficher la liste des sessions actives, exécutez la commande [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
 
 ## Etape 4 : Téléchargement des données de journal dans un fichier
-{: #step4}
+{: #step41}
 
 Pour télécharger les journaux qui sont spécifiés par les paramètres de session, exécutez la commande suivante :
 

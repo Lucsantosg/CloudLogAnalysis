@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Configuración de la política de retención de registros
-{: #configuring_retention_policy}
+{: #configuring_retention_policy1}
 
 Utilice el mandato **cf logging option** para ver y configurar la política de retención que define el número máximo de días que se conservan los registros en el componente de recopilación de registros. De forma predeterminada, la política de retención está inhabilitada y los registros se conservan indefinidamente. Una vez transcurrido el periodo de retención, los registros se suprimen automáticamente. 
 {:shortdesc}
@@ -23,7 +32,7 @@ Puede tener distintas políticas de retención definidas en la cuenta. Puede ten
 
 
 ## Inhabilitación de la política de retención de registros para un espacio
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_space1}
 
 Siga los siguientes pasos para inhabilitar una política de retención:
 
@@ -61,7 +70,7 @@ La salida es:
 
 
 ## Comprobación de la política de retención de registros para un espacio
-{: #check_retention_policy_space}
+{: #check_retention_policy_space1}
 
 Para obtener el periodo de retención establecido para un espacio, siga los pasos siguientes:
 
@@ -119,7 +128,7 @@ Para obtener el periodo de retención establecido para cada espacio de una cuent
     
 
 ## Establecimiento de una política de retención de registros a nivel de cuenta
-{: #set_retention_policy_space}
+{: #set_retention_policy_space1}
 
 Para ver el periodo de retención correspondiente a una cuenta, siga los pasos siguientes:
 

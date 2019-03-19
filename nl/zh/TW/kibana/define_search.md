@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 定義自訂搜尋查詢
 {:#define_search}
@@ -47,7 +54,7 @@ lastupdated: "2018-07-25"
 
      例如，若為 CF 應用程式，您可以建立查詢 `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]`，此查詢只列出實例 *0* 及 *1* 的項目。 
 
-3. 儲存查詢，以供之後重複使用。如需相關資訊，請參閱[儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)。 
+3. 儲存查詢，以供之後重複使用。如需相關資訊，請參閱[儲存搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1)。 
 
 **附註：**如果您需要刪除查詢，請參閱[刪除搜尋](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)。
 
@@ -111,7 +118,7 @@ lastupdated: "2018-07-25"
 
 
 ## 重新載入搜尋
-{: #reload_search}
+{: #reload_search1}
 
 請完成下列步驟，以載入已儲存的搜尋：
 
@@ -125,7 +132,7 @@ lastupdated: "2018-07-25"
 若要開始新搜尋，請按一下「探索」頁面工具列中的**新搜尋**按鈕 ![新搜尋](images/new_search_icon.jpg "新搜尋")。
 
 ## 儲存搜尋 
-{: #save_search}
+{: #save_search1}
 
 請考量下列有關在 Kibana 中儲存自訂搜尋的資訊：
 

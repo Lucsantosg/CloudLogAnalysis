@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Définition de requêtes de recherche personnalisées
 {:#k4_define_search}
@@ -30,7 +40,7 @@ Pour définir une recherche personnalisée, procédez comme suit :
 
     2. Accédez à Kibana. Cliquez sur **Vue avancée** ![Lien Vue avancée](images/logging_advanced_view.jpg "Lien Vue avancée"). Le tableau de bord Kibana s'affiche.
     
-    Pour les conteneurs s'exécutant dans un cluster Kubernetes, [lancez Kibana depuis le navigateur](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser). 
+    Pour les conteneurs s'exécutant dans un cluster Kubernetes, [lancez Kibana depuis le navigateur](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1). 
     
     Lorsque vous accédez à Kibana, la recherche par défaut est appliquée. Vous pouvez voir les journaux de la liste d'instances de la ressource pour laquelle vous avez lancé Kibana. Vous pouvez filtrer les journaux pour une ressource {{site.data.keyword.Bluemix_notm}} spécifique ou pour toutes les ressources dans cet espace.
 
@@ -123,7 +133,7 @@ Pour charger une recherche sauvegardée, procédez comme suit :
 2. Sélectionnez la recherche à charger. 
 
 ## Lancement d'une nouvelle recherche
-{: #k4_new_search}
+{: #k4_new_search1}
 
 Pour lancer une nouvelle recherche, cliquez sur le bouton **New Search** ![Nouvelle recherche](images/k4_new_search_icon.jpg "Nouvelle recherche") dans la barre d'outils de la page Discover.
 

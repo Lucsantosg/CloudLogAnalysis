@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 下載日誌
 {: #downloading_logs}
@@ -26,14 +34,14 @@ lastupdated: "2018-07-25"
 請完成下列步驟，以將空間中可用的日誌資料下載至本端檔案：
 
 ## 步驟 1：登入 {{site.data.keyword.Bluemix_notm}}
-{: #step1}
+{: #downloading_logs_step1}
 
 登入 {{site.data.keyword.Bluemix_notm}} 中的地區、組織及空間。 
 
 如需相關資訊，請參閱[如何登入 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
 ## 步驟 2：識別可用的日誌
-{: #step2}
+{: #step21}
 
 1. 使用 `ibmcloud logging log-show` 指令，以查看過去 2 週的可用日誌。執行下列指令：
 
@@ -100,7 +108,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 **提示：**若要查看作用中階段作業清單，請執行此指令 [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list)。
 
 ## 步驟 4：將日誌資料下載至檔案
-{: #step4}
+{: #step41}
 
 若要下載階段作業參數所指定的日誌，請執行下列指令：
 

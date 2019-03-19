@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Lokale Daten an einen Bereich in IBM Cloud senden
 {: #send_data_mt}
@@ -23,7 +31,7 @@ Zum Senden von Protokolldaten an den {{site.data.keyword.loganalysisshort}}-Serv
 Führen Sie die folgenden Schritte aus, um Protokolldaten an einen Bereich in {{site.data.keyword.Bluemix_notm}} zu senden:
 
 ## Voraussetzungen
-{: #prereqs}
+{: #prereqs1}
 
 * Eine {{site.data.keyword.Bluemix_notm}} ID für die Anmeldung bei {{site.data.keyword.Bluemix_notm}}.
 * Eine Benutzer-ID, die über Berechtigungen zum Arbeiten in einem Bereich mit dem {{site.data.keyword.loganalysisshort}}-Service verfügt. Weitere Informationen finden Sie unter [Sicherheit](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).

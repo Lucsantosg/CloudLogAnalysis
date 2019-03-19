@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 下载日志
-{: #downloading_logs}
+{: #downloading_logs1}
 
 可以将日志下载到本地文件或通过管道将数据传递到其他程序。您将在会话的上下文中下载日志。会话指定将下载哪些日志。如果日志下载中断，会话支持从其中断的地方恢复下载。下载完成后，必须删除会话。
 {:shortdesc}
@@ -29,7 +37,7 @@ lastupdated: "2018-07-25"
 有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
 ## 步骤 2：确定可用的日志
-{: #step2}
+{: #step31}
 
 1. 使用 `ibmcloud cf logging status` 命令可查看最近 2 周可用的日志。运行以下命令：
 
@@ -55,11 +63,11 @@ lastupdated: "2018-07-25"
 
 
 ## 步骤 3：创建会话
-{: #step3}
+{: #step32}
 
 要定义可供下载的日志数据的作用域，并保持下载的状态，会话是必需的。 
 
-使用 [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) 命令以创建会话。（可选）创建会话时，可以指定开始日期、结束日期和日志类型：  
+使用 [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1) 命令以创建会话。（可选）创建会话时，可以指定开始日期、结束日期和日志类型：  
 
 * 指定开始日期和结束日期时，会话会提供对这两个日期之间（含这两个日期）的日志的访问权。 
 * 指定日志类型 (**-t**) 时，会话会提供对特定类型日志的访问权。在管理大量日志时，这是非常重要的功能，因为可以将会话的作用域仅限为您关注的一小部分日志。
@@ -103,10 +111,10 @@ $ ibmcloud cf logging session create -t log
 ```
 {: screen}
 
-**提示**：要查看活动会话的列表，请运行 [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list) 命令。
+**提示**：要查看活动会话的列表，请运行 [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list1) 命令。
 
 ## 步骤 4：将日志数据下载到文件
-{: #step4}
+{: #step42}
 
 要下载会话参数指定的日志，请运行以下命令：
 
@@ -137,9 +145,9 @@ ibmcloud cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
 * 还可以使用能解析 JSON 的任何程序来处理这些数据。 
 
 ## 步骤 5：删除会话
-{: #step5}
+{: #step51}
 
-下载完成后，必须使用 [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete) 命令来删除会话。 
+下载完成后，必须使用 [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete1) 命令来删除会话。 
 
 运行以下命令来删除会话：
 

@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # IBM Cloud Log Analysis-Befehlszeilenschnittstelle (CF-Plug-in)
 {: #logging_cli}
@@ -56,30 +65,30 @@ Informationen zur Verwendung der Befehlszeilenschnittstelle von {{site.data.keyw
     <td>Verwenden Sie diesen Befehl zum Anzeigen oder Festlegen des Aufbewahrungszeitraums für Protokolle, die in einem Bereich oder Konto verfügbar sind.</td>
   </tr>
   <tr>
-    <td>[ibmcloud cf logging session create (Beta)](#session_create)</td>
+    <td>[ibmcloud cf logging session create (Beta)](#session_create1)</td>
     <td>Mit diesem Befehl können Sie eine neue Sitzung erstellen.</td>
   <tr>
   <tr>
-    <td>[ibmcloud cf logging session delete (Beta)](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete (Beta)](#session_delete1)</td>
     <td>Mit diesem Befehl können Sie eine Sitzung löschen.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session list (Beta)](#session_list)</td>
+    <td>[ibmcloud cf logging session list (Beta)](#session_list1)</td>
     <td>Verwenden Sie diesen Befehl, um die aktiven Sitzungen und die zugehörigen IDs aufzulisten.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session show (Beta)](#session_show)</td>
+    <td>[ibmcloud cf logging session show (Beta)](#session_show1)</td>
     <td>Verwenden Sie diesen Befehl, um den Status einer einzelnen Sitzung anzuzeigen.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status1)</td>
     <td>Verwenden Sie diesen Befehl, um Informationen zu den Protokollen abzurufen, die in einem Bereich oder Konto erfasst werden.</td>
   </tr>
   </table>
 
 
 ## ibmcloud cf logging
-{: #base}
+{: #base1}
 
 Dieser Befehl stellt Informationen zur Version und Verwendungsweise der Befehlszeilenschnittstelle bereit.
 
@@ -145,7 +154,7 @@ ibmcloud cf logging auth
 </dl>
 
 ## ibmcloud cf logging delete
-{: #delete}
+{: #delete2}
 
 Mit diesem Befehl können Sie Protokolle löschen, die in 'Log Collection' gespeichert sind.
 
@@ -185,11 +194,11 @@ ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud cf logging download (Beta)
-{: #download}
+{: #download4}
 
 Mit diesem Befehl können Sie Protokolle aus 'Log Collection' in eine lokale Datei herunterladen oder Protokolle an ein anderes Programm (zum Beispiel Elastic Stack) umleiten. 
 
-**Hinweis:** Um Dateien herunterladen zu können, müssen Sie zuerst eine Sitzung erstellen. Eine Sitzung definiert die herunterzuladenden Protokolle abhängig vom Datumsbereich, vom Protokolltyp und vom Kontotyp. Sie laden Protokolle im Kontext einer Sitzung herunter. Weitere Informationen finden Sie unter [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
+**Hinweis:** Um Dateien herunterladen zu können, müssen Sie zuerst eine Sitzung erstellen. Eine Sitzung definiert die herunterzuladenden Protokolle abhängig vom Datumsbereich, vom Protokolltyp und vom Kontotyp. Sie laden Protokolle im Kontext einer Sitzung herunter. Weitere Informationen finden Sie unter [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1).
 
 ```
 ibmcloud cf logging download [Parameter] [Argumente]
@@ -246,7 +255,7 @@ output {
 
 
 ## ibmcloud cf logging help
-{: #help}
+{: #help1}
 
 Dieser Befehl bietet Hinweise zur Verwendung eines Befehls.
 
@@ -341,7 +350,7 @@ Die Ausgabe sieht wie folgt aus:
 
 
 ## ibmcloud cf logging session create (Beta)
-{: #session_create}
+{: #session_create1}
 
 Mit diesem Befehl können Sie eine neue Sitzung erstellen.
 
@@ -409,7 +418,7 @@ ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 
 
 ## ibmcloud cf logging session delete (Beta)
-{: #session_delete}
+{: #session_delete1}
 
 Löscht eine Sitzung, die durch die Sitzungs-ID angegeben ist.
 
@@ -437,7 +446,7 @@ ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging session list (Beta)
-{: #session_list}
+{: #session_list1}
 
 Listet die aktiven Sitzungen und ihre IDs auf.
 
@@ -467,7 +476,7 @@ ibmcloud cf logging session list
  
 
 ## ibmcloud cf logging session show (Beta)
-{: #session_show}
+{: #session_show1}
 
 Zeigt den Status einer einzelnen Sitzung.
 
@@ -519,7 +528,7 @@ ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging status
-{: #status}
+{: #status1}
 
 Verwenden Sie diesen Befehl, um Informationen zu den Protokollen abzurufen, die in einem Bereich oder Konto erfasst werden.
 

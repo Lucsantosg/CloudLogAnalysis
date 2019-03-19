@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Visualización de la información de registro
-{: #viewing_log_status}
+{: #viewing_log_status1}
 
 Utilice el mandato [ibmcloud logging log-show](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#status) para obtener información sobre los registros que se recopilan y almacenan en el componente de recopilación de registros. Puede obtener información sobre el tamaño, el número de registros, los tipos de registro y si los registros están disponibles o no para su análisis en Kibana.
 {:shortdesc}

@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Lernprogramm 'Einführung'
 {: #getting-started-with-cla}
@@ -62,15 +68,17 @@ In der folgenden Tabelle sind die verschiedenen Cloudressourcen aufgelistet. Abs
 
 
 ## Schritt 2: Berechtigungen für einen Benutzer einrichten, damit dieser Protokolle anzeigen kann
-{: #step2}
+{: #step24}
 
 Um die Aktionen in {{site.data.keyword.loganalysisshort}} zu steuern, die ein Benutzer ausführen darf, können Sie einem Benutzer Rollen und Richtlinien zuweisen. 
 
 In {{site.data.keyword.Bluemix_notm}} gibt es zwei Typen von Sicherheitsberechtigungen, die die Aktionen steuern, die Benutzer bei der Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service ausführen können:
 
 * Cloud Foundry (CF)-Rollen: Sie erteilen einem Benutzer eine CF-Rolle, um die Berechtigungen des Benutzers für die Anzeige von Protokollen in einem Bereich zu definieren.
-* IAM-Rollen: Sie erteilen einem Benutzer eine IAM-Richtlinie, um die Berechtigungen des Benutzers für die Anzeige von Protokollen in der Kontodomäne sowie zur Verwaltung der in 'Log Collection' gespeicherten Protokolle zu definieren. 
+* IAM-Rollen: Sie erteilen einem Benutzer eine IAM-Richtlinie, um die Berechtigungen des Benutzers für die Anzeige von Protokollen in der Kontodomäne zu definieren. 
 
+### Berechtigungen für einen Benutzer einrichten, damit dieser Protokolle in einer Bereichsdomäne anzeigen kann
+{: #step42a}
 
 Führen Sie die folgenden Schritte aus, um einem Benutzer Berechtigungen zur Anzeige von Protokollen in einem Bereich zu erteilen:
 
@@ -101,10 +109,67 @@ Führen Sie die folgenden Schritte aus, um einem Benutzer Berechtigungen zur Anz
 7. Klicken Sie auf **Rolle speichern**.
 
 
-Weitere Informationen finden Sie unter [Berechtigungen erteilen](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
+
+### Berechtigungen für einen Benutzer einrichten, damit dieser Protokolle in einer Kontodomäne anzeigen kann
+{: #step24b}
 
 
-Ein Benutzer muss Zugriff auf Kibana in der Public-Cloud-Region haben, in der die Protokolldaten angezeigt und analysiert werden können. 
+Führen Sie die folgenden Schritte aus, um einem Benutzer Berechtigungen zur Anzeige von Kontoprotokollen zu erteilen: 
+
+1. Melden Sie sich bei der {{site.data.keyword.Bluemix_notm}}-Konsole an.
+
+    Öffnen Sie einen Web-Browser und starten Sie das {{site.data.keyword.Bluemix_notm}}-Dashboard: [http://bluemix.net ![Symbol für externen Link](../../../icons/launch-glyph.svg "Symbol für externen Link")](http://bluemix.net){:new_window}
+	
+	Nach der Anmeldung mit Ihrer Benutzer-ID und Ihrem Kennwort wird die {{site.data.keyword.Bluemix_notm}}-Benutzerschnittstelle geöffnet.
+
+2. Klicken Sie in der Menüleiste auf **Verwalten > Konto > Benutzer**. 
+
+    Im Fenster *Benutzer* wird eine Liste mit Benutzern und den entsprechenden E-Mail-Adressen für das aktuell ausgewählte Konto angezeigt.
+	
+3. Wenn der Benutzer ein Mitglied des Kontos ist, wählen Sie den Benutzernamen aus der Liste aus oder klicken Sie im Menü *Aktionen* auf **Benutzer verwalten**.
+
+    Wenn der Benutzer kein Mitglied des Kontos ist, finden Sie unter [Benutzer einladen](/docs/iam/iamuserinv.html#iamuserinv) Informationen zum entsprechenden Vorgehen in diesem Fall.
+
+4. Klicken Sie im Abschnitt **Zugriffsrichtlinien** auf **Zugriff zuweisen** und wählen Sie anschließend **Zugriff auf Ressourcen zuweisen**.
+
+    Das Fenster *Ressourcenzugriff an Benutzer zuweisen** wird geöffnet.
+
+5. Geben Sie Informationen zu der Richtlinie ein. In der folgenden Tabelle sind die Felder aufgeführt, die zum Definieren einer Richtlinie erforderlich sind: 
+
+    <table>
+	  <caption>Liste von Feldern für die Konfiguration einer IAM-Richtlinie.</caption>
+	  <tr>
+	    <th>Feld</th>
+		<th>Wert</th>
+	  </tr>
+	  <tr>
+	    <td>Services</td>
+		<td>*IBM Cloud Log Analysis*</td>
+	  </tr>	  
+	  <tr>
+	    <td>Regionen</td>
+		<td>Sie können die Regionen angeben, für die der Benutzer Zugriff für die Arbeit mit Protokollen erhält. Wählen Sie nacheinander eine oder mehrere Regionen aus oder wählen Sie **Alle aktuellen Regionen** aus, um Zugriff auf alle Regionen zu erteilen.</td>
+	  </tr>
+	  <tr>
+	    <td>Serviceinstanz</td>
+		<td>Wählen Sie *Alle Serviceinstanzen* aus.</td>
+	  </tr>
+	  <tr>
+	    <td>Rollen</td>
+		<td>Wählen Sie eine oder mehrere IAM-Rollen aus. <br>Gültige Rollen sind: *Administrator*, *Operator*, *Editor* und *Anzeigeberechtigter*. <br>Weitere Informationen zu den Aktionen, die pro Rolle zulässig sind, finden Sie unter [IAM-Rollen](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+		</td>
+	  </tr>
+     </table>
+	
+6. Klicken Sie auf **Zuweisen**.
+	
+Die von Ihnen konfigurierte Richtlinie gilt für die ausgewählten Regionen. 
+
+
+## Nächste Schritte 
+{: #next_steps}
+
+**Hinweis:** Ein Benutzer muss über Zugriff auf Kibana in der Public-Cloud-Region verfügen, in der die Protokolldaten angezeigt und analysiert werden können.  
 
 Um beispielsweise in der Region "USA (Süden)" Kibana zu starten, öffnen Sie einen Web-Browser und geben Sie die folgende URL ein:
 
@@ -116,12 +181,9 @@ https://logging.ng.bluemix.net/
 
 Weitere Informationen zum Starten von Kibana in anderen Regionen finden Sie unter [Von einem Web-Browser zu Kibana navigieren](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 
-**Hinweis:** Wenn Sie Kibana starten und die Nachricht *bearer token not valid* (Bearer-Token ungültig) erhalten, überprüfen Sie Ihre Berechtigungen für den Bereich. Diese Nachricht weist darauf hin, dass Ihre Benutzer-ID nicht über die Berechtigungen zur Anzeige von Protokollen verfügt.
+**Hinweis:** Wenn Sie Kibana starten und die Nachricht *bearer token not valid* (Bearer-Token ungültig) erhalten, überprüfen Sie Ihre Berechtigungen für das Konto. Diese Nachricht weist darauf hin, dass Ihre Benutzer-ID nicht über die Berechtigungen zur Anzeige von Protokollen verfügt.
 
-## Nächste Schritte 
-{: #next_steps}
-
-Passen Sie Kibana an, um Ihre Protokolldaten anzuzeigen und zu analysieren. Weitere Informationen finden Sie unter [Protokolle anzeigen und analysieren](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+Passen Sie als nächsten Schritt Kibana an, um Ihre Protokolldaten anzuzeigen und zu analysieren. Weitere Informationen finden Sie unter [Protokolle anzeigen und analysieren](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
     
 
 

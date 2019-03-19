@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Análisis interactivo de registros en Kibana
 {:#analize_logs_interactively}
@@ -62,7 +69,7 @@ Puede definir otras búsquedas. Para obtener más información, consulte [Filtra
 
 Para definir una nueva búsqueda, utilice la consulta de búsqueda predeterminada como punto de partida y luego ajuste la búsqueda realizando las tareas siguientes:
 
-* Aplicar filtros de campo para ajustar el conjunto de datos que puede ver. Puede conmutar cada filtro, fijarlo a la página, habilitarlo o inhabilitarlo según sea necesario y configurarlo para que incluya o excluya el valor. Para obtener más información, consulte [Filtrado de registros en Kibana](filter_logs.html#filter_logs).
+* Aplicar filtros de campo para ajustar el conjunto de datos que puede ver. Puede conmutar cada filtro, fijarlo a la página, habilitarlo o inhabilitarlo según sea necesario y configurarlo para que incluya o excluya el valor. Para obtener más información, consulte [Filtrado de registros en Kibana](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
 
     **Consejo:** Si no encuentra un campo que esperaba ver en la *Lista de campos*, o si alguna de las lupas que aparecen por campos listados está inhabilitada en la página Descubrir, vuelva a cargar la lista de campos renovando el patrón de índice en la página Valores. Para obtener más información, consulte [Cómo volver a cargar la lista de campos](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields).
 
@@ -79,7 +86,7 @@ Puede realizar cualquiera de las siguientes tareas con búsquedas que defina en 
 | [Suprimir una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | Suprimir una búsqueda cuando ya no se necesite. |
 | [Exportar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | Exportar una búsqueda para compartirla.  |
 | [Importar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Importar una búsqueda.  |
-| [Volver a cargar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | Cargar una búsqueda existente para analizar un conjunto de datos. |
+| [Volver a cargar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search1)  | Cargar una búsqueda existente para analizar un conjunto de datos. |
 | [Renovar los datos de una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | Configurar la renovación automática de los datos que se visualizan en la búsqueda.  |
 | [Guardar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Guardar la búsqueda para volverla a utilizar posteriormente.  |
 {: caption="Tabla 3. Tareas para trabajar con búsquedas" caption-side="top"}

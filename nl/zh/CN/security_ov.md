@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 安全性
 {: #security_ov}
@@ -25,7 +32,7 @@ lastupdated: "2018-07-25"
 
 
 ## 认证模型
-{: #auth}
+{: #auth1}
 
 要通过 CLI 或 API 使用 {{site.data.keyword.loganalysisshort}} 服务，您需要认证令牌。
 
@@ -35,14 +42,14 @@ lastupdated: "2018-07-25"
 
     您仅可以使用 CLI 来管理 UAA 令牌。
 	
-* [IAM 认证](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)
+* [IAM 认证](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)
 
     IAM 认证模型提供 UI、CLI 或 API 管理能力。 
 
 **注**：UAA 令牌和 IAM 令牌会在一段时间后到期。 
 
 ## 角色
-{: #roles}
+{: #roles3}
 
 在 {{site.data.keyword.Bluemix_notm}} 中有两种类型的角色，控制在用户使用 {{site.data.keyword.loganalysisshort}} 服务时可以执行的操作：
 
@@ -88,7 +95,7 @@ lastupdated: "2018-07-25"
 	<th>访问特权</th>
   </tr>
   <tr>
-    <td>管理员</td>
+    <td>管理者</td>
 	<td>组织<br>空间</td>
 	<td>所有 RESTful API</td>
   </tr>
@@ -217,7 +224,7 @@ lastupdated: "2018-07-25"
 * 使用 {{{site.data.keyword.Bluemix_notm}} CLI 以获取 IAM 令牌。 
 * 令牌具有到期时间。 
 
-有关更多信息，请参阅[获取 IAM 令牌](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)。
+有关更多信息，请参阅[获取 IAM 令牌](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)。
 
 
 ## 获取日志记录令牌以将日志发送到 Log Analysis
@@ -233,11 +240,11 @@ lastupdated: "2018-07-25"
 
 
 ## 授予用户使用日志的许可权
-{: #grant_permissions}
+{: #grant_permissions1}
 
 要使用户能够管理日志或查看日志，必须在 {{site.data.keyword.Bluemix_notm}} 中授予用户使用 {{site.data.keyword.loganalysisshort}} 服务的许可权。
 
-* 有关管理日志所需的许可权的信息，请参阅[用户管理日志所需的角色](/docs/services/CloudLogAnalysis/manage_logs.html#roles)。
+* 有关管理日志所需的许可权的信息，请参阅[用户管理日志所需的角色](/docs/services/CloudLogAnalysis/manage_logs.html#roles1)。
 * 有关查看日志所需的许可权的信息，请参阅[用户查看日志所需的角色](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)。
 
 有关如何授予许可权的更多信息，请参阅：

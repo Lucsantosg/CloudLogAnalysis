@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Cálculo de la cuota de búsqueda y del uso diario
@@ -28,7 +36,7 @@ Siga estos pasos:
 
 1. Inicie sesión en {{site.data.keyword.Bluemix_notm}}.
 
-    Por ejemplo, para iniciar sesión en la región EE.UU. Sur, ejecute este mandato:
+    Por ejemplo, para iniciar sesión en la región EE.UU. sur, ejecute este mandato:
 
     ```
     ibmcloud login -a api.ng.bluemix.net
@@ -83,7 +91,7 @@ Siga estos pasos:
 
 1. Inicie sesión en {{site.data.keyword.Bluemix_notm}}.
 
-    Por ejemplo, para iniciar sesión en la región EE.UU. Sur, ejecute este mandato:
+    Por ejemplo, para iniciar sesión en la región EE.UU. sur, ejecute este mandato:
 
     ```
     ibmcloud login -a api.ng.bluemix.net
@@ -171,7 +179,7 @@ Siga estos pasos:
 	
 	donde *ENDPOINT* varía según la región. Para obtener una lista de puntos finales por región, consulte [Puntos finales de registro](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
 	
-	Por ejemplo, ejecute este mandato cURL para obtener la cuota correspondiente a la cuenta de la región EE.UU. Sur:
+	Por ejemplo, ejecute este mandato cURL para obtener la cuota correspondiente a la cuenta de la región EE.UU. sur:
 	
 	```
     curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${AccountID}" -XGET https://logging.ng.bluemix.net/quota/usage
@@ -200,7 +208,7 @@ Siga estos pasos:
 
 	
 ## Cálculo de la cuota de búsqueda y del uso diario de un espacio mediante la API
-{: #space}
+{: #space1}
 
 Siga estos pasos:
 
@@ -239,7 +247,7 @@ Siga estos pasos:
 	
 	donde *ENDPOINT* varía según la región. Para obtener una lista de puntos finales por región, consulte [Puntos finales de registro](/docs/services/CloudLogAnalysis/manage_logs.html#endpoints).
 
-    Por ejemplo, ejecute el siguiente mandato cURL para obtener la cuota y el uso de un dominio de espacio de la región EE.UU. Sur:
+    Por ejemplo, ejecute el siguiente mandato cURL para obtener la cuota y el uso de un dominio de espacio de la región EE.UU. sur:
 	
     ```
     curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${SpaceID}" -XGET https://logging.ng.bluemix.net/quota/usage

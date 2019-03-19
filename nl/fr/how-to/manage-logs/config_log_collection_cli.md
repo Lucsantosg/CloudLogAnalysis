@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Configuration de l'interface de ligne de commande Log Analysis (plug-in CF) - Dépréciée
-{: #config_log_collection_cli}
+{: #config_log_collection_cli1}
 
 Le service {{site.data.keyword.loganalysisshort}} inclut une interface de ligne de commande (CLI) que vous pouvez utiliser pour gérer vos journaux dans le cloud. Vous pouvez utiliser le plug-in Cloud Foundry (CF) pour afficher le statut du journal, télécharger des journaux et configurer la règle de conservation des journaux. L'interface CLI offre différents types d'aides : une aide générale concernant l'interface CLI et les commandes prises en charge,
 une aide relative aux commandes pour savoir comment utiliser une commande et une aide relative aux sous-commandes pour savoir comment utiliser une sous-commande d'une commande.
@@ -23,7 +32,7 @@ une aide relative aux commandes pour savoir comment utiliser une commande et une
 
 
 ## Installation du plug-in CF Log Analysis
-{: #install_cli}
+{: #install_cli1}
 
 Pour installer l'interface de ligne de commande {{site.data.keyword.loganalysisshort}}, procédez comme suit :
 
@@ -33,9 +42,9 @@ Pour installer l'interface de ligne de commande {{site.data.keyword.loganalysiss
 
 2. Installez le plug-in CF {{site.data.keyword.loganalysisshort}}.
 
-    * Pour Linux, voir [Installation de l'interface CLI {{site.data.keyword.loganalysisshort}} sous Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux).
-    * Pour Windows, voir [Installation de l'interface CLI {{site.data.keyword.loganalysisshort}} sous Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows).
-    * Pour Mac OS X, voir [Installation de l'interface CLI {{site.data.keyword.loganalysisshort}} sous Mac OS X ](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac).
+    * Pour Linux, voir [Installation de l'interface CLI {{site.data.keyword.loganalysisshort}} sous Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux1).
+    * Pour Windows, voir [Installation de l'interface CLI {{site.data.keyword.loganalysisshort}} sous Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows1).
+    * Pour Mac OS X, voir [Installation de l'interface CLI {{site.data.keyword.loganalysisshort}} sous Mac OS X ](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac1).
  
 3. Vérifiez l'installation du plug-in de l'interface CLI.
   
@@ -62,7 +71,7 @@ Pour installer l'interface de ligne de commande {{site.data.keyword.loganalysiss
 
 
 ## Installation de l'interface de ligne de commande de Log Analysis sous Linux
-{: #install_cli_linux}
+{: #install_cli_linux1}
 
 Procédez comme suit pour installer le plug-in CF Log Collection sous Linux :
 
@@ -140,7 +149,7 @@ sur les environnements locaux pris en charge par CF, voir [Getting Started with 
 
 
 ## Installation de l'interface de ligne de commande de Log Analysis sous Windows
-{: #install_cli_windows}
+{: #install_cli_windows1}
 
 Procédez comme suit pour installer le plug-in CF Log Collection sous Windows :
 
@@ -185,7 +194,7 @@ Procédez comme suit pour installer le plug-in CF Log Collection sous Windows :
 	
 
 ## Installation de l'interface de ligne de commande de Log Analysis sous Mac OS X
-{: #install_cli_mac}
+{: #install_cli_mac1}
 
 Procédez comme suit pour installer le plug-in Log Collection CF sous Mac OS X :
 
@@ -230,7 +239,7 @@ Procédez comme suit pour installer le plug-in Log Collection CF sous Mac OS X :
 	
 	
 ## Désinstallation de l'interface de ligne de commande de Log Analysis
-{: #uninstall_cli}
+{: #uninstall_cli1}
 
 Pour désinstaller l'interface de ligne de commande de journalisation, supprimez le plug-in.
 {:shortdesc}
@@ -268,7 +277,7 @@ Procédez comme suit pour désinstaller l'interface de ligne de commande du serv
   
 
 ## Obtention d'une aide générale
-{: #general_cli_help}
+{: #general_cli_help1}
 
 Pour obtenir des informations générales sur l'interface de ligne de commande et prendre connaissance des commandes prises en charge, procédez comme suit :
 
@@ -288,7 +297,7 @@ Pour obtenir des informations générales sur l'interface de ligne de commande e
     
 
 ## Obtenir de l'aide sur une commande
-{: #command_cli_help}
+{: #command_cli_help1}
 
 Pour obtenir de l'aide au sujet de l'utilisation d'une commande, procédez comme suit :
 
@@ -317,7 +326,7 @@ Pour obtenir de l'aide au sujet de l'utilisation d'une commande, procédez comme
 
 
 ## Obtention d'aide sur une sous-commande
-{: #subcommand_cli_help}
+{: #subcommand_cli_help1}
 
 Une commande peut avoir des sous-commandes. Pour obtenir de l'aide sur des sous-commandes, procédez comme suit :
 

@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # ログの表示と分析 (Kibana)
 {:#analyzing_logs_Kibana}
@@ -79,7 +88,7 @@ Kibana は以下のどの方法でも起動できます。
 ## データの対話式分析
 {: #analyze_discover}
 
-「Discover」ページで、新規検索照会を定義し、照会ごとにフィルターを適用します。 ログ・データは、表およびヒストグラムで表示されます。 これらの視覚化を使用して、データを対話式に分析できます。 詳しくは、『[Kibana でのログの対話式分析](analize_logs_interactively.html#analize_logs_interactively)』を参照してください。
+「Discover」ページで、新規検索照会を定義し、照会ごとにフィルターを適用します。 ログ・データは、表およびヒストグラムで表示されます。 これらの視覚化を使用して、データを対話式に分析できます。 詳しくは、『[Kibana でのログの対話式分析](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#analize_logs_interactively)』を参照してください。
 
 ログ・フィールド (例: message_type や instance_ID) からフィルターを構成したり、期間を設定したりすることができます。 これらのフィルターを動的に有効または無効にすることができます。 有効にした照会およびフィルターの基準に一致するログ項目が表やヒストグラムに表示されます。 詳しくは、『[Kibana でのログのフィルタリング](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs)』を参照してください。
 

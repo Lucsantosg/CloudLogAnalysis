@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Análisis de registros de CF desde la CLI
@@ -31,9 +39,9 @@ Utilice el mandato **cf logs** para visualizar registros de una app Cloud Foundr
 
 Para ver los registros en los que está interesado o para excluir el contenido que no desea ver, puede utilizar el mandato **cf logs** con opciones de filtrado, como por ejemplo,**cut** y **grep** en la interfaz de línea de mandatos cf:
 
-* Para ver los registros correspondientes a una app Cloud Foundry, consulte [Visualización del registro de una app Cloud Foundry](logging_view_cli.html#full_log_cli).
-* Para ver los registros más recientes de una app Cloud Foundry, consulte [Visualización de las últimas entradas de registro de una app Cloud Foundry](logging_view_cli.html#tailing_log_cli).
-* Para ver los registros de una app Cloud Foundry correspondientes a un determinado periodo de tiempo, consulte [Visualización de una sección de los registros](logging_view_cli.html#partial_log_cli).
+* Para ver los registros correspondientes a una app Cloud Foundry, consulte [Visualización del registro de una app Cloud Foundry](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#full_log_cli).
+* Para ver los registros más recientes de una app Cloud Foundry, consulte [Visualización de las últimas entradas de registro de una app Cloud Foundry](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#tailing_log_cli).
+* Para ver los registros de una app Cloud Foundry correspondientes a un determinado periodo de tiempo, consulte [Visualización de una sección de los registros](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#partial_log_cli).
 * Para ver las entradas de los registros de una app Cloud Foundry que contienen palabras clave específicas, consulte [Visualización de entradas de registro que contienen determinadas palabras clave](logging_view_cli.html#partial_by_keyword_log_cli).
 
 

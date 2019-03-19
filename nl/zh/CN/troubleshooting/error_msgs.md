@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 错误消息
@@ -31,7 +39,7 @@ lastupdated: "2018-07-25"
 
 **消息说明** 
 
-达到为 Lite 服务套餐分配的“日志搜索”存储量配额时，会收到标识为 *BXNLG020001W* 的消息。Lite 套餐是一种补充性服务套餐，您在空间中供应 {{site.data.keyword.loganalysisshort}} 服务时，缺省情况下会设置此套餐。您当前为“日志搜索”存储器分配的每日存储量是 500 MB，数据在“日志搜索”存储器中保留 3 天，在此期间可以在 Kibana 中对其进行搜索。
+达到为 Lite 服务套餐分配的“日志搜索”存储量配额时，会收到标识为 *BXNLG020001W* 的消息。轻量套餐是一种补充性服务套餐，您在空间中供应 {{site.data.keyword.loganalysisshort}} 服务时，缺省情况下会设置此套餐。您当前为“日志搜索”存储器分配的每日存储量是 500 MB，数据在“日志搜索”存储器中保留 3 天，在此期间可以在 Kibana 中对其进行搜索。
 
 **恢复**
 

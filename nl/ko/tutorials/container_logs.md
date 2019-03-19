@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Kubernetes 클러스터에 배치된 앱에 대한 Kibana에서 로그 분석
@@ -70,7 +75,7 @@ lastupdated: "2018-07-25"
  
 
 ## 1단계: Kubernetes 클러스터 프로비저닝
-{: #step1}
+{: #step25}
 
 다음 단계를 완료하십시오.
 
@@ -108,7 +113,7 @@ lastupdated: "2018-07-25"
 
 
 ## 2단계: 자동으로 로그를 {{site.data.keyword.loganalysisshort}} 서비스로 전달하도록 클러스터 구성
-{: #step2}
+{: #step26}
 
 앱이 배치될 때 {{site.data.keyword.containershort}}가 자동으로 로그를 수집합니다. 그러나 자동으로 로그가 {{site.data.keyword.loganalysisshort}} 서비스로 전달되지 않습니다. 클러스터에서 다음을 정의하는 하나 이상의 로깅 구성을 작성해야 합니다.
 
@@ -228,7 +233,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## 3단계: 사용자에게 영역 도메인의 로그를 볼 수 있는 권한 부여
-{: #step3}
+{: #step33}
 
 사용자에게 영역의 로그를 볼 수 있는 권한을 부여하려면 해당 사용자에게 이 사용자가 영역에서 {{site.data.keyword.loganalysisshort}} 서비스에 대해 수행할 수 있는 조치를 설명하는 Cloud Foundry 역할을 지정해야 합니다. 
 
@@ -266,7 +271,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## 4단계: {{site.data.keyword.containershort_notm}} 키 소유자 권한 부여
-{: #step4}
+{: #step52}
 
 영역으로 전달될 클러스터 로그의 경우 {{site.data.keyword.containershort_notm}} 키 소유자에는 다음 권한이 있어야 합니다.
 
@@ -315,7 +320,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## 5단계: Kubernetes 클러스터에서 샘플 앱을 배치하여 stdout에 컨텐츠 생성
-{: #step5}
+{: #step53}
 
 Kubernetes 클러스터에서 샘플 앱을 배치하고 실행하십시오. [학습 1: Kubernetes 클러스터에 단일 인스턴스 앱 배치](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1) 튜토리얼의 단계를 완료하여 샘플 앱을 배치하십시오.
 

@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # {{site.data.keyword.containershort_notm}}
@@ -63,7 +69,7 @@ lastupdated: "2018-07-25"
 * 若要增加 Kibana 搜尋配額，並且將日誌儲存在「日誌收集」以進行長期儲存，您必須在以符合您需求的方案轉遞日誌的空間中佈建 {{site.data.keyword.loganalysisshort}} 服務。 
 * 使用者 ID 必須具有檢視日誌的許可權。若要查看空間網域中的日誌，使用者需要 CF 角色。**審核員**是可授與檢視日誌的最低角色。如需相關資訊，請參閱[使用者檢視日誌所需的角色](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)。
 
-若要管理長期儲存（日誌收集）的叢集日誌資料，使用者 ID 必須具有 IAM 原則，才能使用 {{site.data.keyword.loganalysisshort}} 服務。使用者 ID 必須具有 **Administrator**、**Operator** 或 **Editor** 許可權。如需相關資訊，請參閱[使用者管理日誌所需的角色](/docs/services/CloudLogAnalysis/manage_logs.html#roles)。
+若要管理長期儲存（日誌收集）的叢集日誌資料，使用者 ID 必須具有 IAM 原則，才能使用 {{site.data.keyword.loganalysisshort}} 服務。使用者 ID 必須具有 **Administrator**、**Operator** 或 **Editor** 許可權。如需相關資訊，請參閱[使用者管理日誌所需的角色](/docs/services/CloudLogAnalysis/manage_logs.html#roles1)。
 
 
 下圖顯示叢集將日誌轉遞至空間網域時，{{site.data.keyword.containershort}}「公用」中的高階記載視圖：
@@ -199,7 +205,7 @@ lastupdated: "2018-07-25"
 	<td>`/var/log/apps/**/*.log`  </br>`/var/log/apps/**/*.err`</br>**附註：**在 Pod 上，日誌可以寫入 `/var/logs/apps/` 或 `/var/logs/apps/` 的任何子目錄中。在工作者上，您必須將 `/var/log/apps/` 裝載至 Pod 中應用程式要在其中寫入日誌的目錄。</td>
   </tr>
   <tr>
-    <td>工作者</td>
+    <td>工作者節點</td>
 	<td>Kubernetes 叢集內虛擬機器工作者節點的日誌。</td>
 	<td>`/var/log/syslog` </br>`/var/log/auth.log`</td>
   </tr>
@@ -354,7 +360,7 @@ lastupdated: "2018-07-25"
 ## 傳送日誌，讓您可以使用訊息中的欄位作為 Kibana 搜尋欄位
 {: #send_data_in_json}
 
-依預設，會自動啟用容器的記載功能。Docker 日誌檔中的每個項目都會顯示在 Kibana 的 **message** 欄位中。如果您需要在 Kibana 中，使用屬於容器日誌項目一部分的特定欄位來過濾及分析資料，請配置應用程式以傳送有效的 JSON 格式化輸出。例如，將訊息以 JSON 格式記載到 stdout（標準輸出）及 stderr（標準錯誤）。
+依預設，會自動啟用容器的記載功能。容器運行環境日誌檔中的每個項目都會顯示在 Kibana 的 **message** 欄位中。如果您需要在 Kibana 中，使用屬於容器日誌項目一部分的特定欄位來過濾及分析資料，請配置應用程式以傳送有效的 JSON 格式化輸出。例如，將訊息以 JSON 格式記載到 stdout（標準輸出）及 stderr（標準錯誤）。
 
 訊息中可用的每一個欄位都會剖析成符合值的欄位類型。例如，下列 JSON 訊息中的每一個欄位：
     
@@ -404,7 +410,7 @@ lastupdated: "2018-07-25"
 
 
 ## 在日誌收集中儲存日誌
-{: #log_collection}
+{: #log_collection1}
 
 請考量在使用日誌時 {{site.data.keyword.Bluemix_notm}} 中預設行為的下列資訊：
 
@@ -429,7 +435,7 @@ lastupdated: "2018-07-25"
 * 您可以直接從 Web 瀏覽器啟動 Kibana。如需相關資訊，請參閱[從 Web 瀏覽器導覽至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)。
 * 您可以在叢集環境定義內從 {{site.data.keyword.Bluemix_notm}} 使用者介面中啟動 Kibana。如需相關資訊，請參閱[從 Kubernetes 叢集中所部署容器的儀表板導覽至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube)。
 
-如果您將容器中所執行應用程式的日誌資料以 JSON 格式轉遞至 Docker 日誌收集程式，則可以在 Kibana 中使用 JSON 欄位來搜尋及分析日誌資料。如需相關資訊，請參閱[傳送日誌，讓您可以使用訊息中的欄位作為 Kibana 搜尋欄位](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json)。
+如果您將容器中所執行應用程式的日誌資料以 JSON 格式轉遞至容器運行環境日誌收集器，則可以在 Kibana 中使用 JSON 欄位來搜尋及分析日誌資料。如需相關資訊，請參閱[傳送日誌，讓您可以使用訊息中的欄位作為 Kibana 搜尋欄位](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json)。
 
 若要在 Kibana 中檢視日誌，請考量下列資訊：
 

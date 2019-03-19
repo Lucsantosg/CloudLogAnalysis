@@ -1,23 +1,31 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # ログの削除
-{: #deleting_logs}
+{: #deleting_logs1}
 
-Log Collection からログを削除するには、[ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) コマンドを使用します。 
+Log Collection からログを削除するには、[ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) コマンドを使用します。 
 {:shortdesc}
 
 * 特定期間内のログを削除できます。
@@ -76,7 +84,7 @@ Log Collection からログを削除するには、[ibmcloud cf logging delete](
 
 	
 ## 特定期間のログ・タイプ別のログの削除 
-{: #log_type}
+{: #log_type1}
 
 以下のステップを実行します。
 

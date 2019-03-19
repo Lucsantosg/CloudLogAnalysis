@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Configurando a política de retenção de log
-{: #configuring_retention_policy}
+{: #configuring_retention_policy1}
 
 Use o comando **cf logging option** para visualizar e configurar a política de retenção que define o número máximo de dias que os logs são mantidos na Coleção de logs. Por padrão, a política de retenção é desativada e os logs são mantidos indefinidamente. Após a expiração do período de retenção, os logs são excluídos automaticamente. 
 {:shortdesc}
@@ -23,7 +32,7 @@ Use o comando **cf logging option** para visualizar e configurar a política de 
 
 
 ## Desativando a política de retenção de log de um espaço
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_space1}
 
 Conclua as etapas a seguir para desativar uma política de retenção:
 
@@ -61,7 +70,7 @@ A saída é:
 
 
 ## Verificando a política de retenção de log de um espaço
-{: #check_retention_policy_space}
+{: #check_retention_policy_space1}
 
 Para obter o período de retenção que é configurado para um espaço, conclua as etapas a seguir:
 
@@ -119,7 +128,7 @@ Para obter o período de retenção que é configurado para cada espaço em uma 
     
 
 ## Configurando uma política de retenção de log no nível de conta
-{: #set_retention_policy_space}
+{: #set_retention_policy_space1}
 
 Para ver o período de retenção para uma conta, conclua as etapas a seguir:
 

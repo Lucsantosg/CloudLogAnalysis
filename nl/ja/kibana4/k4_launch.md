@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Kibana ダッシュボードへのナビゲート
@@ -69,7 +79,7 @@ Cloud Foundry アプリケーションまたは Docker コンテナーのログ�
 
 
 ##  Web ブラウザーから Kibana ダッシュボードへのナビゲート
-{: #launch_Kibana_from_browser}
+{: #launch_Kibana_from_browser1}
 
 Kibana に表示されるデータをフィルター操作するために使用される照会によって、{{site.data.keyword.Bluemix_notm}} 組織内のスペースのログ項目が取り出されます。 Kibana に表示されるログ情報には、ログインしている {{site.data.keyword.Bluemix_notm}} 組織のスペース内にデプロイされているすべてのリソースに関するレコードが含まれます。
 

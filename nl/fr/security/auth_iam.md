@@ -1,22 +1,30 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Obtention du jeton IAM
-{: #auth_iam}
+{: #auth_iam1}
 
 Pour gérer les journaux qui sont disponibles dans le domaine de compte via l'API {{site.data.keyword.loganalysisshort}}, vous devez utiliser un jeton d'authentification. Utilisez l'interface de ligne de commande {{{site.data.keyword.Bluemix_notm}} pour obtenir le jeton IAM. Le jeton possède un délai d'expiration. 
 {:shortdesc}

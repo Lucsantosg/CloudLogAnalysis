@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 로그 정보 보기
-{: #viewing_log_status}
+{: #viewing_log_status1}
 
 로그 콜렉션에 수집되고 저장된 로그에 대한 정보를 얻으려면 [ibmcloud logging log-show](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#status) 명령을 사용하십시오. 크기, 레코드 수, 로그 유형 및 Kibana에서 분석에 로그를 사용할 수 있는지 여부에 대한 정보를 얻을 수 있습니다.
 {:shortdesc}

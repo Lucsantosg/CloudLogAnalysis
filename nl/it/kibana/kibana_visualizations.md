@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Analisi dei log in Kibana utilizzando le visualizzazioni 
 {:#kibana_visualizations}
@@ -44,12 +51,12 @@ Nella pagina Visualizza, puoi eseguire tutte le seguenti attività:
 
 | Attività | Ulteriori informazioni |
 |------|------------------|
-| [Creare una nuova visualizzazione](kibana_visualizations.html#create) | Puoi creare le visualizzazioni da una ricerca che definisci e salvi nella pagina *Rileva* o da una nuova query che definisci nella pagina *Visualizza*. |
-| [Eliminare una visualizzazione](kibana_visualizations.html#delete) | Elimina le visualizzazioni non richieste. |
-| [Esportare una visualizzazione](kibana_visualizations.html#export) | Puoi esportare una visualizzazione come un file JSON.  |
-| [Importare una visualizzazione](kibana_visualizations.html#import) | Puoi importare una visualizzazione come un file JSON.  |
-| [Caricare una visualizzazione](kibana_visualizations.html#reload) | Puoi caricare una visualizzazione per aggiornarne i dati, modificarla o analizzare i dati. |
-| [Salvare una visualizzazione](kibana_visualizations.html#save) | Puoi salvare le visualizzazioni per un riutilizzo successivo. |
+| [Creare una nuova visualizzazione](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#create) | Puoi creare le visualizzazioni da una ricerca che definisci e salvi nella pagina *Rileva* o da una nuova query che definisci nella pagina *Visualizza*. |
+| [Eliminare una visualizzazione](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#delete) | Elimina le visualizzazioni non richieste. |
+| [Esportare una visualizzazione](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#export) | Puoi esportare una visualizzazione come un file JSON.  |
+| [Importare una visualizzazione](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#import1) | Puoi importare una visualizzazione come un file JSON.  |
+| [Caricare una visualizzazione](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#reload2) | Puoi caricare una visualizzazione per aggiornarne i dati, modificarla o analizzare i dati. |
+| [Salvare una visualizzazione](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#save2) | Puoi salvare le visualizzazioni per un riutilizzo successivo. |
 {: caption="Tabella 2. Attività per lavorare con le visualizzazioni" caption-side="top"}
 
 
@@ -74,7 +81,7 @@ Completa la seguente procedura per creare una visualizzazione dalla pagina Visua
 
     * Se selezioni **Da una nuova ricerca, seleziona indice**, definisci una nuova query. La query viene utilizzata per definire la sottorete di dati richiamati e utilizzati dalla visualizzazione.
 
-        Per ulteriori informazioni, vedi [Filtro dei log definendo query personalizzate](define_search.html#define_search).
+        Per ulteriori informazioni, vedi [Filtro dei log definendo query personalizzate](/docs/services/CloudLogAnalysis/kibana/define_search.html#define_search).
 
 Per ulteriori informazioni sulle applicazioni Kibana, vedi la [ ![Icona link esterno](../../../icons/launch-glyph.svg "Icona link esterno")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
@@ -92,7 +99,7 @@ Per eliminare una visualizzazione, completa la seguente procedura nella pagina *
 
 
 ## Esportazione di una visualizzazione
-{: #export}
+{: #export1}
 
 Per esportare una visualizzazione come un file JSON, completa la seguente procedura nella pagina **Gestione**:
 
@@ -105,7 +112,7 @@ Per esportare una visualizzazione come un file JSON, completa la seguente proced
 4. Salva il file.
 
 ## Importazione di una visualizzazione
-{: #import}
+{: #import1}
 
 Per importare una visualizzazione come un file JSON, completa la seguente procedura nella pagina **Gestione**:
 
@@ -120,7 +127,7 @@ La visualizzazione viene aggiunta all'elenco delle visualizzazioni.
 
  
 ## Caricamento di una visualizzazione
-{: #reload}
+{: #reload2}
 
 Completa la seguente procedura per caricare una visualizzazione salvata:
 
@@ -130,7 +137,7 @@ Completa la seguente procedura per caricare una visualizzazione salvata:
 
 
 ## Salvataggio di una visualizzazione
-{: #save}
+{: #save2}
 
 Completa la seguente procedura per salvare una visualizzazione nella pagina Visualizza:
 

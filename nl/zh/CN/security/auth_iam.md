@@ -1,22 +1,30 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 获取 IAM 令牌
-{: #auth_iam}
+{: #auth_iam1}
 
 要使用 {{site.data.keyword.loganalysisshort}} API 来管理可在帐户域中使用的日志，您必须使用认证令牌。使用 {{{site.data.keyword.Bluemix_notm}} CLI 以获取 IAM 令牌。令牌具有到期时间。
 {:shortdesc}

@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 로그 다운로드
 {: #downloading_logs}
@@ -26,14 +34,14 @@ lastupdated: "2018-07-25"
 영역에서 사용 가능한 로그 데이터를 로컬 파일에 다운로드하려면 다음 단계를 완료하십시오.
 
 ## 1단계: {{site.data.keyword.Bluemix_notm}}에 로그인
-{: #step1}
+{: #downloading_logs_step1}
 
 {{site.data.keyword.Bluemix_notm}}의 지역, 조직 및 영역에 로그인하십시오. 
 
 자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 
 ## 2단계: 사용 가능한 로그 식별
-{: #step2}
+{: #step21}
 
 1. `ibmcloud logging log-show` 명령을 사용하여 최근 2주 동안의 사용 가능한 로그를 확인하십시오. 다음 명령을 실행하십시오.
 
@@ -100,7 +108,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 **팁:** 활성 세션의 목록을 보려면 [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list) 명령을 실행하십시오.
 
 ## 4단계: 파일에 로그 데이터 다운로드
-{: #step4}
+{: #step41}
 
 세션 매개변수에 의해 지정된 로그를 다운로드하려면 다음 명령을 실행하십시오.
 
@@ -142,7 +150,7 @@ ibmcloud logging session-delete Session_ID
 ```
 {: codeblock}
 
-여기서 Session_ID는 이전 단계에서 작성한 세션의 GUID 입니다.
+여기서 Session_ID는 이전 단계에서 작성한 세션의 GUID입니다.
 
 예:
 

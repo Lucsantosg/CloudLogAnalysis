@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Kibana에서 로그 필터링
 {:#filter_logs}
@@ -25,7 +32,7 @@ lastupdated: "2018-07-25"
 
 * *필드 목록* 또는 표 항목에서 필터를 추가할 수 있습니다. 필터는 정보를 포함하거나 제외하여 데이터 선택을 세분화합니다. 필터를 사용 또는 사용 안함으로 설정, 필터 조치 전환, 필터를 설정 또는 해제로 전환하거나 완전히 제거할 수 있습니다. 
 
-새 검색을 정의한 후에 검색 페이지에서 향후 분석에 다시 사용할 수 있도록 하거나 사용자 정의 대시보드에서 사용할 수 있는 시각화를 작성하도록 저장하십시오. 자세한 정보는 [검색 저장](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)을 참조하십시오.
+새 검색을 정의한 후에 검색 페이지에서 향후 분석에 다시 사용할 수 있도록 하거나 사용자 정의 대시보드에서 사용할 수 있는 시각화를 작성하도록 저장하십시오. 자세한 정보는 [검색 저장](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1)을 참조하십시오.
 
 새 검색을 수행하면 히스토그램, 표 및 필드 목록이 검색 결과를 표시하도록 자동으로 업데이트됩니다. 어떤 데이터가 표시되는지 알아보려면 [검색 페이지에 표시된 데이터 식별](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)을 참조하십시오.
 

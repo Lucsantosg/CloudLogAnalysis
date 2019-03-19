@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Riutilizzo di risorse Kibana per analizzare i log {{site.data.keyword.Bluemix_notm}}
 {:#k4_reuse_resource}
@@ -49,7 +58,7 @@ Completa la seguente procedura per copiare una ricerca tra spazi in {{site.data.
 
     * Avvia Kibana dalla IU {{site.data.keyword.Bluemix_notm}}: il file di ricerca JSON che puoi esportare include i seguenti campi: *ID spazio* e *ID applicazione* per le applicazioni CF (Cloud Foundry) oppure *ID istanza* per i contenitori. Per ulteriori informazioni, vedi [Accesso al dashboard Kibana dal dashboard {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Avvia Kibana da un browser: Il file di ricerca JSON che puoi esportare include il campo *ID spazio*. Per ulteriori informazioni, vedi [Accesso al dashboard Kibana da un browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
+    * Avvia Kibana da un browser: Il file di ricerca JSON che puoi esportare include il campo *ID spazio*. Per ulteriori informazioni, vedi [Accesso al dashboard Kibana da un browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1).
 
 2. Nella pagina *Impostazioni*, seleziona **Oggetti** e la scheda **Ricerche**. Seleziona quindi una ricerca e copia le seguenti informazioni:
 
@@ -189,7 +198,7 @@ Completa la seguente procedura per copiare in un altro spazio una visualizzazion
 
     * Avvia Kibana dalla IU {{site.data.keyword.Bluemix_notm}}: il file di ricerca JSON che puoi esportare include i seguenti campi: *ID spazio* e *ID applicazione* per le applicazioni CF (Cloud Foundry) oppure *ID istanza* per i contenitori. Per ulteriori informazioni, vedi [Accesso al dashboard Kibana dal dashboard {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix).
     
-    * Avvia Kibana da un browser: Il file di ricerca JSON che puoi esportare include il campo *ID spazio*. Per ulteriori informazioni, vedi [Accesso al dashboard Kibana da un browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser).
+    * Avvia Kibana da un browser: Il file di ricerca JSON che puoi esportare include il campo *ID spazio*. Per ulteriori informazioni, vedi [Accesso al dashboard Kibana da un browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1).
     
 2. Copia la ricerca associata alla visualizzazione tra gli spazi. Per ulteriori informazioni, vedi [Copia di una ricerca tra spazi Bluemix](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search).
 

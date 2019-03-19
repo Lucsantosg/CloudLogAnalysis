@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # カスタム検索照会の定義
 {:#k4_define_search}
@@ -30,7 +40,7 @@ lastupdated: "2018-07-25"
 
     2. Kibana にアクセスします。 **「詳細ビュー」** ![「詳細ビュー」リンク](images/logging_advanced_view.jpg "「詳細ビュー」リンク") をクリックします。 Kibana ダッシュボードが表示されます。
     
-    Kubernetes クラスター内で実行しているコンテナーの場合、[ブラウザーから Kibana を起動します](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)。 
+    Kubernetes クラスター内で実行しているコンテナーの場合、[ブラウザーから Kibana を起動します](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1)。 
     
     Kibana にアクセスすると、デフォルト検索が適用されます。 Kibana を起動した対象リソースのインスタンスのリストに関するログを確認できます。 そのスペース内の {{site.data.keyword.Bluemix_notm}} リソースのすべてまたは任意のものについて、ログをフィルタリングできます。
 
@@ -123,7 +133,7 @@ lastupdated: "2018-07-25"
 2. ロードする検索を選択します。 
 
 ## 新規検索の開始
-{: #k4_new_search}
+{: #k4_new_search1}
 
 新規検索を開始するには、「Discover」ページのツールバーにある**「New Search」**ボタン ![新規検索](images/k4_new_search_icon.jpg "新規検索")をクリックします。
 

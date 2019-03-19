@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # IBM Cloud Log Analysis
@@ -118,11 +127,11 @@ En la tabla siguiente se muestra la ubicación de los registros por región:
   <tr>
     <td>Sídney</td>
 	  <td>Alojado en Sídney</td>
-	  <td>Alojado en EE.UU. Sur (*)</td>
+	  <td>Alojado en EE.UU. sur (*)</td>
   </tr>
 </table>
 
-(*) Para Sídney, los registros del componente de recopilación de registros están alojados actualmente en EE.UU. Sur. Está planificado situar los datos de los registros del componente de recopilación de registros en Sídney.
+(*) Para Sídney, los registros del componente de recopilación de registros están alojados actualmente en EE.UU. sur. Está planificado situar los datos de los registros del componente de recopilación de registros en Sídney.
 
 ## Planes de servicio
 {: #plans}

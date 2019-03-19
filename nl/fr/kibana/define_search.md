@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Définition de requêtes de recherche personnalisées
 {:#define_search}
@@ -47,7 +54,7 @@ Pour définir une recherche personnalisée, procédez comme suit :
 
      Par exemple, pour une application CF, vous pouvez créer une requête `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]` qui ne répertorie que des entrées pour les instances *0* et *1*. 
 
-3. Enregistrez la requête pour pouvoir la réutiliser ultérieurement. Pour plus d'informations, voir [Sauvegarde d'une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search). 
+3. Enregistrez la requête pour pouvoir la réutiliser ultérieurement. Pour plus d'informations, voir [Sauvegarde d'une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1). 
 
 **Remarque :** si vous devez supprimer une requête, voir [Suppression d'une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search).
 
@@ -111,7 +118,7 @@ Pour définir un intervalle d'actualisation, procédez comme suit :
 
 
 ## Rechargement d'une recherche
-{: #reload_search}
+{: #reload_search1}
 
 Pour charger une recherche sauvegardée, procédez comme suit :
 
@@ -125,7 +132,7 @@ Pour charger une recherche sauvegardée, procédez comme suit :
 Pour lancer une nouvelle recherche, cliquez sur le bouton **New Search** ![Nouvelle recherche](images/new_search_icon.jpg "Nouvelle recherche") dans la barre d'outils de la page Discover.
 
 ## Sauvegarde d'une recherche 
-{: #save_search}
+{: #save_search1}
 
 Tenez compte des informations suivantes concernant la sauvegarde des recherches personnalisées dans Kibana :
 

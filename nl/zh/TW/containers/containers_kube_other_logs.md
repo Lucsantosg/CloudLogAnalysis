@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 啟用自動收集叢集日誌
@@ -59,14 +64,14 @@ lastupdated: "2018-07-25"
 2. 起始設定 {{site.data.keyword.loganalysisshort}} 服務外掛程式。
 
 	```
-	ibmcloud cs init
+	ibmcloud ks init
 	```
 	{: codeblock}
 
 3. 將終端機環境定義設為叢集。
     
 	```
-	ibmcloud cs cluster-config ClusterName
+	ibmcloud ks cluster-config ClusterName
 	```
 	{: codeblock}
 
@@ -121,7 +126,7 @@ lastupdated: "2018-07-25"
 1. 識別帳戶中為 {{site.data.keyword.containershort}} 金鑰擁有者的使用者。從終端機中，執行下列指令：
 
     ```
-    ibmcloud cs api-key-info ClusterName
+    ibmcloud ks api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -142,7 +147,7 @@ lastupdated: "2018-07-25"
     2. 重新整理記載配置。執行下列指令：
     
         ```
-        ibmcloud cs logging-config-refresh ClusterName
+        ibmcloud ks logging-config-refresh ClusterName
         ```
         {: codeblock}
         
@@ -158,7 +163,7 @@ lastupdated: "2018-07-25"
 執行下列指令，以將 *stdout* 及 *stderr* 日誌檔傳送至 {{site.data.keyword.loganalysisshort}} 服務：
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -173,14 +178,14 @@ ibmcloud cs logging-config-create ClusterName --logsource container --namespace 
 例如，若要建立記載配置以將 stdout 及 stderr 日誌轉遞至德國地區的帳戶網域，請執行下列指令：
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
 若要建立記載配置以將 stdout 及 stderr 日誌轉遞至德國地區的空間網域，請執行下列指令：
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+ibmcloud ks logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
 ```
 {: screen}
 
@@ -192,7 +197,7 @@ ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --n
 執行下列指令，以將 */var/log/apps/**/.log* 及 */var/log/apps/*/.err* 日誌檔傳送至 {{site.data.keyword.loganalysisshort}} 服務：
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
+ibmcloud ks logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -208,14 +213,14 @@ ibmcloud cs logging-config-create ClusterName --logsource application --type ibm
 例如，若要建立記載配置以將應用程式日誌轉遞至德國地區的空間網域，請執行下列指令：
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
+ibmcloud ks logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 例如，若要建立記載配置以將應用程式日誌轉遞至德國地區的帳戶網域，請執行下列指令：
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
+ibmcloud ks logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -228,7 +233,7 @@ ibmcloud cs logging-config-create MyCluster --logsource application --type ibm -
 執行下列指令，以將 */var/log/syslog* 及 */var/log/auth.log* 日誌檔傳送至 {{site.data.keyword.loganalysisshort}} 服務：
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -244,14 +249,14 @@ ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --ho
 例如，若要建立記載配置以將工作者日誌轉遞至德國地區的空間網域，請執行下列指令：
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 例如，若要建立記載配置以將工作者日誌轉遞至德國地區的帳戶網域，請執行下列指令：
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -263,7 +268,7 @@ ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hos
 執行下列指令，以將 */var/log/kubelet.log* 及 */var/log/kube-proxy.log* 日誌檔傳送至 {{site.data.keyword.loganalysisshort}} 服務：
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -279,14 +284,14 @@ ibmcloud cs logging-config-create ClusterName --logsource kubernetes --type ibm 
 例如，若要建立記載配置以將 Kubernetes 系統元件日誌轉遞至德國地區的空間網域，請執行下列指令：
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 例如，若要建立記載配置以將 Kubernetes 系統元件日誌轉遞至德國地區的帳戶網域，請執行下列指令：
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -298,7 +303,7 @@ ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --
 執行下列指令，以將 */var/log/alb/ids/.log*、*/var/log/alb/ids/.err*、*/var/log/alb/customerlogs/.log* 及 /var/log/alb/customerlogs/.err* 日誌檔傳送至 {{site.data.keyword.loganalysisshort}} 服務：
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
+ibmcloud ks logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
 ```
 {: codeblock}
 
@@ -314,14 +319,14 @@ ibmcloud cs logging-config-create ClusterName --logsource ingress --type ibm --h
 例如，若要建立記載配置以將 Ingress 控制器日誌轉遞至德國地區的空間網域，請執行下列指令：
 
 ```
-ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 例如，若要建立記載配置以將 Ingress 控制器日誌轉遞至德國地區的帳戶網域，請執行下列指令：
 
 ```
-ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
+ibmcloud ks logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
 ```
 {: screen}
 

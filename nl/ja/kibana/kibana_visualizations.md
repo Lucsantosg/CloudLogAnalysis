@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 視覚化を使用した Kibana でのログの分析 
 {:#kibana_visualizations}
@@ -44,12 +51,12 @@ lastupdated: "2018-07-25"
 
 | タスク | 詳細情報 |
 |------|------------------|
-| [新規視覚化の作成](kibana_visualizations.html#create) | 「*Discover*」ページで定義して保存した検索から、または「*Visualize*」ページで定義した新規照会から視覚化を作成できます。 |
-| [視覚化の削除](kibana_visualizations.html#delete) | 必要ではない視覚化を削除します。 |
-| [視覚化のエクスポート](kibana_visualizations.html#export) | 視覚化を JSON ファイルとしてエクスポートできます。  |
-| [視覚化のインポート](kibana_visualizations.html#import) | 視覚化を JSON ファイルとしてインポートできます。  |
-| [視覚化のロード](kibana_visualizations.html#reload) | 視覚化をアップロードして、そのデータを更新するか、視覚化を変更するか、データを分析できます。 |
-| [視覚化の保存](kibana_visualizations.html#save) | 視覚化を将来再使用するために保存できます。 |
+| [新規視覚化の作成](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#create) | 「*Discover*」ページで定義して保存した検索から、または「*Visualize*」ページで定義した新規照会から視覚化を作成できます。 |
+| [視覚化の削除](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#delete) | 必要ではない視覚化を削除します。 |
+| [視覚化のエクスポート](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#export) | 視覚化を JSON ファイルとしてエクスポートできます。  |
+| [視覚化のインポート](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#import1) | 視覚化を JSON ファイルとしてインポートできます。  |
+| [視覚化のロード](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#reload2) | 視覚化をアップロードして、そのデータを更新するか、視覚化を変更するか、データを分析できます。 |
+| [視覚化の保存](/docs/services/CloudLogAnalysis/kibana/kibana_visualizations.html#save2) | 視覚化を将来再使用するために保存できます。 |
 {: caption="表 2. 視覚化を操作するタスク" caption-side="top"}
 
 
@@ -74,7 +81,7 @@ lastupdated: "2018-07-25"
 
     * **「From a New Search, Select Index」**を選択した場合、新規照会を定義します。 照会は、視覚化で取得および使用されるデータのサブセットを定義するために使用されます。
 
-        詳しくは、『[カスタム検索照会の定義によるログのフィルタリング](define_search.html#define_search)』を参照してください。
+        詳しくは、『[カスタム検索照会の定義によるログのフィルタリング](/docs/services/CloudLogAnalysis/kibana/define_search.html#define_search)』を参照してください。
 
 Kibana について詳しくは、「[Kibana User Guide ![外部リンク・アイコン](../../../icons/launch-glyph.svg "外部リンク・アイコン")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}」を参照してください。
 
@@ -92,7 +99,7 @@ Kibana について詳しくは、「[Kibana User Guide ![外部リンク・ア�
 
 
 ## 視覚化のエクスポート
-{: #export}
+{: #export1}
 
 視覚化を JSON ファイルとしてエクスポートするには、**「Management」**ページで以下のステップを実行します。
 
@@ -105,7 +112,7 @@ Kibana について詳しくは、「[Kibana User Guide ![外部リンク・ア�
 4. ファイルを保存します。
 
 ## 視覚化のインポート
-{: #import}
+{: #import1}
 
 視覚化を JSON ファイルとしてインポートするには、**「Management」**ページで以下のステップを実行します。
 
@@ -120,7 +127,7 @@ Kibana について詳しくは、「[Kibana User Guide ![外部リンク・ア�
 
  
 ## 視覚化のロード
-{: #reload}
+{: #reload2}
 
 保存済み視覚化をロードするには、以下のステップを実行します。
 
@@ -130,7 +137,7 @@ Kibana について詳しくは、「[Kibana User Guide ![外部リンク・ア�
 
 
 ## 視覚化の保存
-{: #save}
+{: #save2}
 
 「Visualize」ページで視覚化を保存するには、以下のステップを実行します。
 

@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Protokolle in Kibana filtern
 {:#k4_filter_logs}
@@ -32,7 +42,7 @@ Sie können angepasste Suchen zum Filtern Ihrer Protokolle erstellen. Die Szenar
  
 * Sie können Ihr Protokoll nach einem bestimmten Feldwert durchsuchen oder Einträge für einen bestimmten Feldwert aus dem Protokoll ausschließen. Weitere Informationen finden Sie unter [Protokolle für einen bestimmten Feldwert filtern](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field).
  
-* Sie können Ihre Protokolle filtern, um Einträge innerhalb eines bestimmten Zeitraums anzuzeigen. Weitere Informationen finden Sie unter [Zeitfilter festlegen](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter).
+* Sie können Ihre Protokolle filtern, um Einträge innerhalb eines bestimmten Zeitraums anzuzeigen. Weitere Informationen finden Sie unter [Zeitfilter festlegen](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter1).
      
 
 ## Filter für einen Wert hinzufügen, der nicht in der *Feldliste* enthalten ist
@@ -297,7 +307,7 @@ Die Tabelle enthält Einträge für Ihre CF-App für die Fälle, in denen der Te
         
 
 ## Zeitfilter festlegen
-{: #set_time_filter}
+{: #set_time_filter1}
 
 Sie können Protokolle für einen bestimmten Zeitraum anzeigen und filtern, indem Sie die Funktion *Time Picker* konfigurieren.
 

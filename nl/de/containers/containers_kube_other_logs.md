@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Automatische Erfassung von Clusterprotokollen aktivieren
@@ -59,14 +64,14 @@ Führen Sie die folgenden Schritte aus:
 2. Initialisieren Sie das Plug-in für den {{site.data.keyword.loganalysisshort}}-Service.
 
 	```
-	ibmcloud cs init
+	ibmcloud ks init
 	```
 	{: codeblock}
 
 3. Legen Sie den Terminalkontext für den Cluster fest.
     
 	```
-	ibmcloud cs cluster-config ClusterName
+	ibmcloud ks cluster-config ClusterName
 	```
 	{: codeblock}
 
@@ -121,7 +126,7 @@ Führen Sie die folgenden Schritte aus:
 1. Identifizieren Sie den Benutzer in dem Konto, der der {{site.data.keyword.containershort}}-Schlüsseleigner ist. Führen Sie über ein Terminal den folgenden Befehl aus:
 
     ```
-    ibmcloud cs api-key-info ClusterName
+    ibmcloud ks api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -142,7 +147,7 @@ Führen Sie die folgenden Schritte aus:
     2. Aktualisieren Sie die Protokollierungskonfiguration. Führen Sie den folgenden Befehl aus:
     
         ```
-        ibmcloud cs logging-config-refresh ClusterName
+        ibmcloud ks logging-config-refresh ClusterName
         ```
         {: codeblock}
         
@@ -158,7 +163,7 @@ Führen Sie die folgenden Schritte aus:
 Führen Sie den folgenden Befehl aus, um *stdout*- und *stderr*-Protokolldateien an den {{site.data.keyword.loganalysisshort}}-Service zu senden:
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -173,14 +178,14 @@ Dabei gilt:
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die 'stdout'- und 'stderr'-Protokolle an die Kontodomäne in der Region "Deutschland" weiterleitet:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die 'stdout'- und 'stderr'-Protokolle an eine Bereichsdomäne in der Region "Deutschland" weiterleitet:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+ibmcloud ks logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
 ```
 {: screen}
 
@@ -192,7 +197,7 @@ ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --n
 Führen Sie die folgenden Befehl aus, um die Protokolldateien */var/log/apps/**/.log* und */var/log/apps/*/.err* an den {{site.data.keyword.loganalysisshort}}-Service zu senden:
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
+ibmcloud ks logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -208,14 +213,14 @@ Dabei gilt:
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die Anwendungsprotokolle an eine Bereichsdomäne in der Region "Deutschland" weiterleitet:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
+ibmcloud ks logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die Anwendungsprotokolle an die Kontodomäne in der Region "Deutschland" weiterleitet:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
+ibmcloud ks logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
@@ -228,7 +233,7 @@ ibmcloud cs logging-config-create MyCluster --logsource application --type ibm -
 Führen Sie den folgenden Befehl aus, um die Protokolldateien */var/log/syslog* und */var/log/auth.log* an den {{site.data.keyword.loganalysisshort}}-Service zu senden:
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -244,14 +249,14 @@ Dabei gilt:
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die Workerprotokolle an eine Bereichsdomäne in der Region "Deutschland" weiterleitet:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die Workerprotokolle an die Kontodomäne in der Region "Deutschland" weiterleitet:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -263,7 +268,7 @@ ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hos
 Führen Sie den folgenden Befehl aus, um die Protokolldateien */var/log/kubelet.log* und */var/log/kube-proxy.log* an den {{site.data.keyword.loganalysisshort}}-Service zu senden:
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -279,14 +284,14 @@ Dabei gilt:
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die Protokolle von Kubernetes-Systemkomponenten an eine Bereichsdomäne in der Region "Deutschland" weiterleitet:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die Protokolle von Kubernetes-Systemkomponenten an die Kontodomäne in der Region "Deutschland" weiterleitet:
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
@@ -298,7 +303,7 @@ ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --
 Führen Sie den folgenden Befehl aus, um die Protokolldateien */var/log/alb/ids/.log*, */var/log/alb/ids/.err*, */var/log/alb/customerlogs/.log* und '/var/log/alb/customerlogs/.err*' an den {{site.data.keyword.loganalysisshort}}-Service zu senden:
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
+ibmcloud ks logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
 ```
 {: codeblock}
 
@@ -314,14 +319,14 @@ Dabei gilt:
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die Protokolle des Ingress-Controllers an eine Bereichsdomäne in der Region "Deutschland" weiterleitet:
 
 ```
-ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Führen Sie zum Beispiel den folgenden Befehl aus, um eine Protokollierungskonfiguration zu erstellen, die Protokolle des Ingress-Controllers an die Kontodomäne in der Region "Deutschland" weiterleitet:
 
 ```
-ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
+ibmcloud ks logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
 ```
 {: screen}
 

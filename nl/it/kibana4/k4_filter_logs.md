@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Filtro dei log in Kibana
 {:#k4_filter_logs}
@@ -32,7 +42,7 @@ Puoi creare delle ricerche personalizzate per filtrare i tuoi log. Il seguente e
  
 * Puoi eseguire la ricerca nel tuo log per un valore del campo specifico o escludere voci dal log per un valore del campo specifico. Per maggiori informazioni, vedi [Filtro dei tuoi log per un valore del campo specifico](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field).
  
-* Puoi filtrare i tuoi log per visualizzare le voci in un periodo di tempo. Per maggiori informazioni, vedi [Configurazione di un filtro temporale](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter).
+* Puoi filtrare i tuoi log per visualizzare le voci in un periodo di tempo. Per maggiori informazioni, vedi [Configurazione di un filtro temporale](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter1).
      
 
 ## Aggiunta di un filtro a un valore non elencato nell'*Elenco campi*
@@ -297,7 +307,7 @@ La tabella mostra le voci per la tua applicazione CF in cui il testo *CWWKT0016I
         
 
 ## Configurazione di un filtro temporale
-{: #set_time_filter}
+{: #set_time_filter1}
 
 Visualizza e filtra i log in un periodo di tempo configurando il *Selezionatore di tempo*.
 

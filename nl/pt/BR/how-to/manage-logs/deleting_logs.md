@@ -1,23 +1,31 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Excluindo logs
-{: #deleting_logs}
+{: #deleting_logs1}
 
-Use o comando [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) para excluir logs da Coleção de logs. 
+Use o comando [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) para excluir logs da Coleção de logs. 
 {:shortdesc}
 
 * É possível excluir logs dentro de um intervalo de tempo específico.
@@ -69,7 +77,7 @@ Conclua as etapas a seguir:
 
 	
 ## Excluindo logs por tipo de log para um período de tempo específico 
-{: #log_type}
+{: #log_type1}
 
 Conclua as etapas a seguir:
 

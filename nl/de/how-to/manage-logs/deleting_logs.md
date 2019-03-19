@@ -1,23 +1,31 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Protokolle löschen
-{: #deleting_logs}
+{: #deleting_logs1}
 
-Mit dem Befehl [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) können Sie Protokolle aus 'Log Collection' löschen.
+Mit dem Befehl [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) können Sie Protokolle aus 'Log Collection' löschen. 
 {:shortdesc}
 
 * Sie können Protokolle für einen bestimmten Zeitraum löschen.
@@ -65,7 +73,7 @@ Führen Sie die folgenden Schritte aus:
 	Dabei gilt:
 	
 	* *-s* legt das Startdatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT, z. B. 2006-01-02.
-    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT	
+    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT
     	
 	Führen Sie beispielsweise den folgenden Befehl aus, um die Protokolle für den 25. Mai 2017 zu löschen:
 	
@@ -76,7 +84,7 @@ Führen Sie die folgenden Schritte aus:
 
 	
 ## Protokolle nach Protokolltyp für einen bestimmten Zeitraum löschen 
-{: #log_type}
+{: #log_type1}
 
 Führen Sie die folgenden Schritte aus:
 
@@ -115,7 +123,7 @@ Führen Sie die folgenden Schritte aus:
 	Dabei gilt:
 	
 	* *-s* legt das Startdatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT, z. B. 2006-01-02.
-    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT	
+    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT
 	* Mit *-t* wird der Protokolltyp festgelegt.
     	
 	Führen Sie beispielsweise den folgenden Befehl aus, um die Protokolle des Typs 'linux_syslog' für den 25. Mai 2017 zu löschen:
@@ -167,7 +175,7 @@ Führen Sie die folgenden Schritte aus:
 	Dabei gilt:
 	
 	* *-s* legt das Startdatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT, z. B. 2006-01-02.
-    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT	
+    * *-e* legt das Enddatum in koordinierter Weltzeit (UTC) fest: JJJJ-MM-TT
 	* Mit *-t* wird der Protokolltyp festgelegt.
     	
 	Führen Sie beispielsweise den folgenden Befehl aus, um die Protokolle des Typs 'linux_syslog' für den 25. Mai 2017 zu löschen, die in 'Log Collection' auf der Kontoebene gespeichert sind:

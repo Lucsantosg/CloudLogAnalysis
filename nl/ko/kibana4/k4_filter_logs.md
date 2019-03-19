@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Kibana에서 로그 필터링
 {:#k4_filter_logs}
@@ -32,7 +42,7 @@ lastupdated: "2018-07-25"
  
 * 특정 필드 값에 대한 로그를 검색하거나 특정 필드 값에 대한 로그에서 항목을 제외할 수 있습니다. 자세한 정보는 [특정 필드 값에 대한 로그 필터링](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field)을 참조하십시오.
  
-* 어느 기간 내의 항목을 표시하도록 로그를 필터링할 수 있습니다. 자세한 정보는 [시간 필터 설정](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter)을 참조하십시오.
+* 어느 기간 내의 항목을 표시하도록 로그를 필터링할 수 있습니다. 자세한 정보는 [시간 필터 설정](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter1)을 참조하십시오.
      
 
 ## *필드 목록*에 나열되지 않은 값에 대한 필터 추가
@@ -297,7 +307,7 @@ Elasticsearch가 문자열 필드의 값을 분석할 때 단어 경계에서 �
         
 
 ## 시간 필터 설정
-{: #set_time_filter}
+{: #set_time_filter1}
 
 *시간 선택도구*를 구성하여 기간 내의 로그를 보고 필터링하십시오.
 

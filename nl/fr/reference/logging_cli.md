@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Interface de ligne de commande d'IBM Cloud Log Analysis (plug-in CF)
 {: #logging_cli}
@@ -57,30 +66,30 @@ voir [Gestion des journaux](/docs/services/CloudLogAnalysis/log_analysis_ov.html
     <td>Utilisez cette commande pour afficher ou définir la durée de conservation des journaux qui sont disponibles dans un espace ou sur un compte.</td>
   </tr>
   <tr>
-    <td>[ibmcloud cf logging session create (bêta)](#session_create)</td>
+    <td>[ibmcloud cf logging session create (bêta)](#session_create1)</td>
     <td>Utilisez cette commande pour créer une nouvelle session.</td>
   <tr>
   <tr>
-    <td>[ibmcloud cf logging session delete (bêta)](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete (bêta)](#session_delete1)</td>
     <td>Utilisez cette commande pour supprimer une session.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session list (bêta)](#session_list)</td>
+    <td>[ibmcloud cf logging session list (bêta)](#session_list1)</td>
     <td>Utilisez cette commande pour afficher la liste des sessions actives et leurs ID.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session show (bêta)](#session_show)</td>
+    <td>[ibmcloud cf logging session show (bêta)](#session_show1)</td>
     <td>Utilisez cette commande pour afficher le statut d'une session unique.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status1)</td>
     <td>Utilisez cette commande pour obtenir des informations sur les journaux qui sont collectés dans un espace ou sur un compte.</td>
   </tr>
   </table>
 
 
 ## ibmcloud cf logging
-{: #base}
+{: #base1}
 
 Fournit des informations sur la version de l'interface de ligne de commande et sur son mode d'utilisation.
 
@@ -146,7 +155,7 @@ ibmcloud cf logging auth
 </dl>
 
 ## ibmcloud cf logging delete
-{: #delete}
+{: #delete2}
 
 Supprime les journaux stockés dans Log Collection.
 
@@ -190,12 +199,12 @@ ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud cf logging download (bêta)
-{: #download}
+{: #download4}
 
 Télécharge les journaux de Log Collection vers un fichier local ou dirige les journaux vers un autre programme, tel qu'Elastic Stack. 
 
 **Remarque :** pour télécharger les fichiers, vous devez d'abord créer une session. Une session définit quels journaux doivent être téléchargés en fonction de la plage
-de dates, du type de journal et du type de compte. Les journaux sont téléchargés dans le contexte d'une session. Pour plus d'informations, voir [ibmcloud cf logging session create (bêta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
+de dates, du type de journal et du type de compte. Les journaux sont téléchargés dans le contexte d'une session. Pour plus d'informations, voir [ibmcloud cf logging session create (bêta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1).
 
 ```
 ibmcloud cf logging download [parameters] [arguments]
@@ -254,7 +263,7 @@ output {
 
 
 ## ibmcloud cf logging help
-{: #help}
+{: #help1}
 
 Fournit des informations sur le mode d'utilisation d'une commande.
 
@@ -349,7 +358,7 @@ La sortie est :
 
 
 ## ibmcloud cf logging session create (bêta)
-{: #session_create}
+{: #session_create1}
 
 Crée une session.
 
@@ -370,8 +379,7 @@ deux semaines précédant la date du jour.
   </dd>
   
   <dt>--end value, -e value</dt>
-  <dd>(Facultatif) Définit la date de fin en temps universel coordonné (TUC) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut est la
-date en cours.
+  <dd>(Facultatif) Définit la date de fin en temps universel coordonné (TUC) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut est la date en cours.
   </dd>
   
   <dt>--type value, -t value</dt>
@@ -398,7 +406,7 @@ date en cours.
 <dt>ID</dt>
 <dd>ID de session.</dd>
 
-<dt>Space</dt>
+<dt>Espace</dt>
 <dd>ID de l'espace dans lequel la session est active.</dd>
 
 <dt>Type-Account</dt>
@@ -420,7 +428,7 @@ ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 
 
 ## ibmcloud cf logging session delete (bêta)
-{: #session_delete}
+{: #session_delete1}
 
 Supprime une session, spécifiée par l'ID de session.
 
@@ -448,7 +456,7 @@ ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging session list (bêta)
-{: #session_list}
+{: #session_list1}
 
 Affiche la liste des sessions actives et leurs ID.
 
@@ -478,7 +486,7 @@ ibmcloud cf logging session list
  
 
 ## ibmcloud cf logging session show (bêta)
-{: #session_show}
+{: #session_show1}
 
 Affiche le statut d'une session unique.
 
@@ -504,12 +512,12 @@ ibmcloud cf logging session show [arguments]
 <dd>Horodatage correspondant à la date et à l'heure de création de la session.</dd>
 
 <dt>Date-Range</dt>
-<dd>Indique les dates utilisées pour filtrer les journaux. Les journaux identifiés dans la plage de dates peuvent être gérés via la session.</dd>
+<dd>Indique les dates utilisées pour filtrer les journaux. Les journaux identifiés dans cette plage de dates peuvent être gérés via la session.</dd>
 
 <dt>ID</dt>
 <dd>ID de session.</dd>
 
-<dt>Space</dt>
+<dt>Espace</dt>
 <dd>ID de l'espace dans lequel la session est active.</dd>
 
 <dt>Type-Account</dt>
@@ -530,7 +538,7 @@ ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging status
-{: #status}
+{: #status1}
 
 Renvoie des informations sur les journaux qui sont collectés dans un espace ou sur un compte.
 
@@ -548,8 +556,7 @@ deux semaines précédant la date du jour.
   </dd>
   
   <dt>--end value, -e value</dt>
-  <dd>(Facultatif) Définit la date de fin en temps universel coordonné (TUC) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut est la
-date en cours.
+  <dd>(Facultatif) Définit la date de fin en temps universel coordonné (TUC) : *AAAA-MM-JJ*, par exemple `2006-01-02`. <br>La valeur par défaut est la date en cours.
   </dd>
   
   <dt>--type value, -t value</dt>

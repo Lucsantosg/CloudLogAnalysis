@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 配置 Log Analysis CLI（CF 插件）（已弃用）
-{: #config_log_collection_cli}
+{: #config_log_collection_cli1}
 
 {{site.data.keyword.loganalysisshort}} 服务包含可用于在云中管理日志的命令行界面 (CLI)。可以使用 Cloud Foundry (CF) 插件来查看日志的状态，下载日志以及配置日志保留时间策略。该 CLI 提供了以下不同类型的帮助：了解 CLI 和受支持命令的一般帮助、了解如何使用命令的命令帮助，以及了解如何使用某个命令的子命令的子命令帮助。
 {:shortdesc}
@@ -22,7 +31,7 @@ lastupdated: "2018-07-25"
 
 
 ## 安装 Log Analysis CF 插件
-{: #install_cli}
+{: #install_cli1}
 
 要安装 {{site.data.keyword.loganalysisshort}} CLI，请完成以下步骤：
 
@@ -32,9 +41,9 @@ lastupdated: "2018-07-25"
 
 2. 安装 {{site.data.keyword.loganalysisshort}} CF 插件。
 
-    * 对于 Linux，请参阅[在 Linux 上安装 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux)。
-    * 对于 Windows，请参阅[在 Windows 上安装 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows)。
-    * 对于 Mac OS X，请参阅[在 Mac OS X 上安装 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac)。
+    * 对于 Linux，请参阅[在 Linux 上安装 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux1)。
+    * 对于 Windows，请参阅[在 Windows 上安装 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows1)。
+    * 对于 Mac OS X，请参阅[在 Mac OS X 上安装 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac1)。
  
 3. 验证 CLI 插件的安装情况。
   
@@ -63,7 +72,7 @@ lastupdated: "2018-07-25"
 
 
 ## 在 Linux 上安装 Log Analysis CLI
-{: #install_cli_linux}
+{: #install_cli_linux1}
 
 要在 Linux 上安装“日志收集”CF 插件，请完成以下步骤：
 
@@ -138,7 +147,7 @@ lastupdated: "2018-07-25"
 
 
 ## 在 Windows 上安装 Log Analysis CLI
-{: #install_cli_windows}
+{: #install_cli_windows1}
 
 要在 Windows 上安装“日志收集”CF 插件，请完成以下步骤：
 
@@ -183,7 +192,7 @@ lastupdated: "2018-07-25"
 	
 
 ## 在 Mac OS X 上安装 Log Analysis CLI
-{: #install_cli_mac}
+{: #install_cli_mac1}
 
 要在 Mac OS X 上安装“日志收集”CF 插件，请完成以下步骤：
 
@@ -228,7 +237,7 @@ lastupdated: "2018-07-25"
 	
 	
 ## 卸载 Log Analysis CLI
-{: #uninstall_cli}
+{: #uninstall_cli1}
 
 要卸载日志记录 CLI，请删除该插件。
 {:shortdesc}
@@ -266,7 +275,7 @@ lastupdated: "2018-07-25"
   
 
 ## 获取一般帮助
-{: #general_cli_help}
+{: #general_cli_help1}
 
 要获取有关 CLI 以及受支持命令的常规信息，请完成以下步骤：
 
@@ -284,7 +293,7 @@ lastupdated: "2018-07-25"
     
 
 ## 获取有关命令的帮助
-{: #command_cli_help}
+{: #command_cli_help1}
 
 要获取有关如何使用命令的帮助，请完成以下步骤：
 
@@ -295,7 +304,7 @@ lastupdated: "2018-07-25"
 2. 获取受支持命令的列表，并确定您需要的命令。运行以下命令：
 
     ```
-    ibmcloud cf logging help
+    ibmcloud cf logging help 
     ```
     {: codeblock}
 
@@ -311,7 +320,7 @@ lastupdated: "2018-07-25"
 
 
 ## 获取有关子命令的帮助
-{: #subcommand_cli_help}
+{: #subcommand_cli_help1}
 
 一个命令可能具有子命令。要获取有关子命令的帮助，请完成以下步骤：
 

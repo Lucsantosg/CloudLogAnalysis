@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 配置 Log Analysis CLI（CF 外掛程式）已淘汰
-{: #config_log_collection_cli}
+{: #config_log_collection_cli1}
 
 {{site.data.keyword.loganalysisshort}} 服務包括指令行介面 (CLI)，可用來管理雲端中的日誌。您可以使用 Cloud Foundry (CF) 外掛程式來檢視日誌的狀態、下載日誌，以及配置日誌保留原則。CLI 提供不同類型的說明：瞭解 CLI 及所支援指令的一般說明、瞭解如何使用指令的指令說明，或瞭解如何使用指令之次指令的次指令說明。
 {:shortdesc}
@@ -22,7 +31,7 @@ lastupdated: "2018-07-25"
 
 
 ## 安裝 Log Analysis CF 外掛程式
-{: #install_cli}
+{: #install_cli1}
 
 若要安裝 {{site.data.keyword.loganalysisshort}} CLI，請完成下列步驟：
 
@@ -32,9 +41,9 @@ lastupdated: "2018-07-25"
 
 2. 安裝 {{site.data.keyword.loganalysisshort}} CF 外掛程式。
 
-    * 若為 Linux，請參閱[在 Linux 上安裝 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux)。
-    * 若為 Windows，請參閱[在 Windows 上安裝 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows)。
-    * 若為 Mac OS X，請參閱[在 Mac OS X 上安裝 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac)。
+    * 若為 Linux，請參閱[在 Linux 上安裝 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux1)。
+    * 若為 Windows，請參閱[在 Windows 上安裝 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows1)。
+    * 若為 Mac OS X，請參閱[在 Mac OS X 上安裝 {{site.data.keyword.loganalysisshort}} CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac1)。
  
 3. 驗證 CLI 外掛程式的安裝。
   
@@ -45,10 +54,10 @@ lastupdated: "2018-07-25"
     ```
     {: codeblock}
     
-    輸出的外觀如下：
+    輸出如下所示：
    
     ```
-Invoking 'cf plugins'...
+    Invoking 'cf plugins'...
 
     Listing Installed Plugins...
     OK
@@ -61,7 +70,7 @@ Invoking 'cf plugins'...
 
 
 ## 在 Linux 上安裝 Log Analysis CLI
-{: #install_cli_linux}
+{: #install_cli_linux1}
 
 請完成下列步驟，以在 Linux 上安裝日誌收集 CF 外掛程式：
 
@@ -80,7 +89,7 @@ Invoking 'cf plugins'...
         ```
         {: codeblock}
 
-    3. 將檔案設為可執行檔。
+    3. 使檔案成為可執行檔。
     
         例如，若要將檔案 `logging-cli-linux64` 設為可執行檔，請執行下列指令：
         
@@ -136,7 +145,7 @@ Invoking 'cf plugins'...
 
 
 ## 在 Windows 上安裝 Log Analysis CLI
-{: #install_cli_windows}
+{: #install_cli_windows1}
 
 請完成下列步驟，以在 Windows 上安裝日誌收集 CF 外掛程式：
 
@@ -181,7 +190,7 @@ Invoking 'cf plugins'...
 	
 
 ## 在 Mac OS X 上安裝 Log Analysis CLI
-{: #install_cli_mac}
+{: #install_cli_mac1}
 
 請完成下列步驟，以在 Mac OS X 上安裝日誌收集 CF 外掛程式：
 
@@ -217,7 +226,7 @@ Invoking 'cf plugins'...
     ```
     {: codeblock}
     
-    輸出如下所示：
+    輸出的外觀如下：
    
     ```
     ibmcloud cf logging version 1.0.1
@@ -226,7 +235,7 @@ Invoking 'cf plugins'...
 	
 	
 ## 解除安裝 Log Analysis CLI
-{: #uninstall_cli}
+{: #uninstall_cli1}
 
 若要解除安裝記載 CLI，請刪除外掛程式。
 {:shortdesc}
@@ -264,7 +273,7 @@ Listing Installed Plugins...
   
 
 ## 取得一般說明
-{: #general_cli_help}
+{: #general_cli_help1}
 
 若要取得 CLI 的一般資訊及支援的指令，請完成下列步驟：
 
@@ -282,7 +291,7 @@ Listing Installed Plugins...
     
 
 ## 取得指令的說明
-{: #command_cli_help}
+{: #command_cli_help1}
 
 若要取得如何使用指令的說明，請完成下列步驟：
 
@@ -309,7 +318,7 @@ Listing Installed Plugins...
 
 
 ## 取得次指令的說明
-{: #subcommand_cli_help}
+{: #subcommand_cli_help1}
 
 指令可以有次指令。若要取得次指令的說明，請完成下列步驟：
 

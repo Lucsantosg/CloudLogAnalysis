@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Enviando dados no local para um espaço no IBM Cloud
 {: #send_data_mt}
@@ -23,7 +31,7 @@ Para enviar dados de log para o serviço {{site.data.keyword.loganalysisshort}},
 Conclua as etapas a seguir para enviar dados do log para um espaço no {{site.data.keyword.Bluemix_notm}}:
 
 ## Pré-requisitos
-{: #prereqs}
+{: #prereqs1}
 
 * Um {{site.data.keyword.Bluemix_notm}} ID para efetuar login no {{site.data.keyword.Bluemix_notm}}.
 * Um ID do usuário que tenha permissões para trabalhar em um espaço com o serviço {{site.data.keyword.loganalysisshort}}. Para obter mais informações, veja [Segurança](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).

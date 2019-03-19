@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Segurança
 {: #security_ov}
@@ -25,7 +32,7 @@ Para trabalhar com a API do serviço {{site.data.keyword.loganalysisshort}}, voc
 
 
 ## Modelos de Autenticação
-{: #auth}
+{: #auth1}
 
 Para trabalhar com o serviço {{site.data.keyword.loganalysisshort}} por meio da CLI ou API, você precisa de um token de autenticação.
 
@@ -35,14 +42,14 @@ O serviço {{site.data.keyword.loganalysisshort}} suporta os modelos de autentic
 
     É possível usar a CLI apenas para gerenciar tokens do UAA.
 	
-* [Autenticação do IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)
+* [Autenticação do IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)
 
     O modelo de autenticação do IAM oferece recursos de gerenciamento de UI, CLI ou API. 
 
 **Nota:** um token do UAA e um token do IAM expiram após um período de tempo. 
 
 ## Funções
-{: #roles}
+{: #roles3}
 
 Há dois tipos de funções no {{site.data.keyword.Bluemix_notm}} que controlam as ações que os usuários podem executar quando eles trabalham com o serviço {{site.data.keyword.loganalysisshort}}:
 
@@ -217,7 +224,7 @@ Para obter mais informações, veja [Obtendo o token do UAA](/docs/services/Clou
 * Use a CLI do {{{site.data.keyword.Bluemix_notm}} para obter o token do IAM. 
 * O token tem um tempo de expiração. 
 
-Para obter mais informações, veja [Obtendo o token do IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam).
+Para obter mais informações, veja [Obtendo o token do IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1).
 
 
 ## Obtendo o token de criação de log para enviar logs para o Log Analysis
@@ -233,11 +240,11 @@ Para enviar logs para um domínio de espaço, escolha um dos métodos a seguir:
 
 
 ## Concedendo permissões para um usuário para trabalhar com logs
-{: #grant_permissions}
+{: #grant_permissions1}
 
 Para que um usuário possa gerenciar logs ou visualizar logs, o usuário deve receber permissões no {{site.data.keyword.Bluemix_notm}} para trabalhar com o serviço {{site.data.keyword.loganalysisshort}}.
 
-* Para obter informações sobre as permissões necessárias para gerenciar os logs, veja [Funções que são necessárias para um usuário para gerenciar os logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+* Para obter informações sobre as permissões necessárias para gerenciar os logs, veja [Funções que são necessárias para um usuário para gerenciar os logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
 * Para obter informações sobre as permissões necessárias para visualizar logs, veja [Funções que são necessárias para um usuário para visualizar logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
 Para obter mais informações sobre como conceder permissões, veja:

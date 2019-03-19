@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 授予许可权以管理日志和查看帐户日志
 {: #grant_permissions}
@@ -156,7 +164,7 @@ lastupdated: "2018-07-25"
 
 5. 选择一个空间。然后，从菜单操作中，选择**编辑空间角色**。
 
-6. 选择一个或多个空间角色。有效角色为：*管理员*、*开发者*和*审计员*
+6. 选择一个或多个空间角色。有效角色为：*管理者*、*开发者*和*审计员*
 	
 7. 单击**保存角色**。
 

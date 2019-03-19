@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 대시보드를 통해 Kibana에서 로그 분석
 {:#analize_logs_dashboard}
@@ -43,7 +51,7 @@ Kibana의 *대시보드* 페이지를 사용하여 대시보드에 그룹화된 
 |[대시보드 삭제](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) |필요하지 않은 대시보드는 삭제합니다. |
 |[대시보드 내보내기](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) |대시보드를 JSON 파일로 내보낼 수 있습니다. |
 |[대시보드 가져오기](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) |대시보드를 JSON 파일로 가져올 수 있습니다. |
-|[대시보드 로드](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) |해당 데이터를 업데이트, 수정 또는 분석하기 위해 대시보드를 업로드할 수 있습니다. |
+|[대시보드 로드](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload3) |해당 데이터를 업데이트, 수정 또는 분석하기 위해 대시보드를 업로드할 수 있습니다. |
 |[대시보드 저장](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) |나중에 다시 사용할 수 있도록 대시보드를 저장할 수 있습니다. |
 {: caption="표 2. 대시보드로 작업하는 태스크" caption-side="top"}
 
@@ -83,7 +91,7 @@ Kibana에 대한 자세한 정보는 [Kibana User Guide ![외부 링크 아이�
 
 
 ## Kibana 대시보드 삭제
-{: #delete}
+{: #delete1}
 
 대시보드를 삭제하려면 **관리** 페이지에서 다음 단계를 완료하십시오.
 
@@ -120,7 +128,7 @@ Kibana에 대한 자세한 정보는 [Kibana User Guide ![외부 링크 아이�
 대시보드가 대시보드 목록에 추가됩니다.
 
 ## Kibana 대시보드 로드
-{: #reload}
+{: #reload3}
 
 저장된 대시보드를 로드하려면 다음 단계를 완료하십시오.
 

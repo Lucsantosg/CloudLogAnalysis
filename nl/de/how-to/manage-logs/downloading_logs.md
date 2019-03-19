@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Protokolle herunterladen
-{: #downloading_logs}
+{: #downloading_logs1}
 
 Sie können Protokolle in eine lokale Datei herunterladen oder Daten über eine Pipe an ein anderes Programm umleiten. Sie laden Protokolle im Kontext einer Sitzung herunter. Eine Sitzung gibt an, welche Protokolle heruntergeladen werden. Wenn der Download der Protokolle unterbrochen wird, ermöglicht die Sitzung die Fortsetzung des Downloads an der Stelle, an der er unterbrochen wurde. Wenn der Download abgeschlossen ist, müssen Sie die Sitzung löschen.
 {:shortdesc}
@@ -29,7 +37,7 @@ Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.d
 Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 ## Schritt 2: Verfügbare Protokolle ermitteln
-{: #step2}
+{: #step31}
 
 1. Verwenden Sie den Befehl `ibmcloud cf logging status`, um zu ermitteln, welche Protokolle für die letzten beiden Wochen zur Verfügung stehen. Führen Sie den folgenden Befehl aus:
 
@@ -55,11 +63,11 @@ Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keywo
 
 
 ## Schritt 3: Sitzung erstellen
-{: #step3}
+{: #step32}
 
 Eine Sitzung ist erforderlich, um den Umfang der Protokolldaten zu definieren, die für einen Download verfügbar sind, und um den Status des Downloads zu behalten. 
 
-Verwenden Sie den Befehl [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) zum Erstellen einer Sitzung. Optional können Sie das Startdatum, das Enddatum und Protokolltypen angeben, wenn Sie eine Sitzung erstellen:  
+Verwenden Sie den Befehl [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1) zum Erstellen einer Sitzung. Optional können Sie das Startdatum, das Enddatum und Protokolltypen angeben, wenn Sie eine Sitzung erstellen:  
 
 * Wenn Sie das Startdatum und das Enddatum angeben, ermöglicht die Sitzung den Zugriff auf die Protokolle für diesen Datumsbereich. 
 * Wenn Sie den Protokolltyp angeben (**-t**), ermöglicht die Sitzung den Zugriff auf einen bestimmten Protokolltyp. Dies ist ein wichtiges Feature, wenn Sie viele Protokolle verwalten müssen, da Sie den Geltungsbereich auf die Protokolle eingrenzen können, die im betreffenden Fall relevant sind.
@@ -103,10 +111,10 @@ $ ibmcloud cf logging session create -t log
 ```
 {: screen}
 
-**Tipp:** Um die Liste aktiver Sitzungen anzuzeigen, führen Sie den Befehl [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list) aus.
+**Tipp:** Um die Liste aktiver Sitzungen anzuzeigen, führen Sie den Befehl [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list1) aus.
 
 ## Schritt 4: Protokolldaten in eine Datei herunterladen
-{: #step4}
+{: #step42}
 
 Führen Sie den folgenden Befehl aus, um die Protokolle herunterzuladen, die durch die Sitzungsparameter angegeben sind:
 
@@ -137,9 +145,9 @@ Der Fortschrittsanzeiger zeigt den jeweils aktuellen Downloadstatus auf einer Sk
 * Sie können die Daten auch mit einem Programm verarbeiten, das JSON-Parsing ermöglicht. 
 
 ## Schritt 5: Sitzung löschen
-{: #step5}
+{: #step51}
 
-Wenn der Download abgeschlossen ist, müssen Sie die Sitzung mit dem Befehl [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete) löschen. 
+Wenn der Download abgeschlossen ist, müssen Sie die Sitzung mit dem Befehl [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete1) löschen. 
 
 Führen Sie den folgenden Befehl aus, um eine Sitzung zu löschen:
 

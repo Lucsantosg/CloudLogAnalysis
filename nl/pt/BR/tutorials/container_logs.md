@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Analisar logs no Kibana para um app que é implementado em um cluster do Kubernetes
@@ -70,7 +75,7 @@ Esse tutorial percorre as etapas necessárias para obter o seguinte cenário de 
  
 
 ## Etapa 1: Provisionar um cluster do Kubernetes
-{: #step1}
+{: #step25}
 
 Conclua as etapas a seguir:
 
@@ -108,7 +113,7 @@ Conclua as etapas a seguir:
 
 
 ## Etapa 2: Configurar seu cluster para encaminhar logs automaticamente para o serviço {{site.data.keyword.loganalysisshort}}
-{: #step2}
+{: #step26}
 
 Quando o app é implementado, os logs são coletados automaticamente pelo {{site.data.keyword.containershort}}. No entanto, os logs não são encaminhados automaticamente para o serviço {{site.data.keyword.loganalysisshort}}. Deve-se criar 1 ou mais configurações de criação de log em seu cluster que definam:
 
@@ -228,7 +233,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## Etapa 3: Conceder permissões ao usuário para ver logs em um domínio de espaço
-{: #step3}
+{: #step33}
 
 Para conceder a um usuário permissões para visualizar logs em um espaço, deve-se designar a esse usuário uma função do Cloud Foundry que descreva as ações que esse usuário pode executar com o serviço {{site.data.keyword.loganalysisshort}} no espaço. 
 
@@ -266,7 +271,7 @@ Conclua as etapas a seguir para conceder a um usuário permissões para trabalha
 
 
 ## Etapa 4: Conceder ao {{site.data.keyword.containershort_notm}} permissões de proprietário da chave
-{: #step4}
+{: #step52}
 
 Para que os logs do cluster sejam encaminhados para um espaço, o proprietário da chave do {{site.data.keyword.containershort_notm}} deve ter as permissões a seguir:
 
@@ -315,7 +320,7 @@ Conclua as etapas a seguir:
 
 
 ## Etapa 5: Implementar um app de amostra no cluster do Kubernetes para gerar conteúdo em stdout
-{: #step5}
+{: #step53}
 
 Implemente e execute um aplicativo de amostra no cluster do Kubernetes. Conclua as etapas no tutorial a seguir para implementar o app de amostra: [Lição 1: Implementando apps de instância única em clusters do Kubernetes](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1).
 

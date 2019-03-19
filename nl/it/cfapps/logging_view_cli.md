@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Analisi dei log CF dalla CLI
@@ -32,9 +40,9 @@ Utilizza il comando **cf logs** per visualizzare i log da un'applicazione Cloud 
 
 Per visualizzare i log che ti interessano o per escludere i contenuti che non vuoi visualizzare, puoi utilizzare il comando **cf logs** con le opzioni di filtro come **cut** e **grep** nell'interfaccia riga di comando cf:
 
-* Per visualizzare i log di un'applicazione Cloud Foundry, vedi [Visualizzazione dei log per un'applicazione Cloud Foundry](logging_view_cli.html#full_log_cli).
-* Per visualizzare i record di log più recenti di un'applicazione Cloud Foundry, vedi [Visualizzazione delle ultime voci di log per un'applicazione Cloud Foundry](logging_view_cli.html#tailing_log_cli).
-* Per visualizzare i record di log di un'applicazione Cloud Foundry in uno specifico intervallo di tempo, vedi [Visualizzazione di una sezione dei log](logging_view_cli.html#partial_log_cli).
+* Per visualizzare i log di un'applicazione Cloud Foundry, vedi [Visualizzazione dei log per un'applicazione Cloud Foundry](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#full_log_cli).
+* Per visualizzare i record di log più recenti di un'applicazione Cloud Foundry, vedi [Visualizzazione delle ultime voci di log per un'applicazione Cloud Foundry](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#tailing_log_cli).
+* Per visualizzare i record di log di un'applicazione Cloud Foundry in uno specifico intervallo di tempo, vedi [Visualizzazione di una sezione dei log](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#partial_log_cli).
 * Per visualizzare le voci di log di un'applicazione Cloud Foundry che contengono specifiche parole chiave, vedi [Visualizzazione di voci di log contenenti determinate parole chiave](logging_view_cli.html#partial_by_keyword_log_cli).
 
 

@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Analyse dans Kibana des journaux d'une application déployée dans un cluster Kubernetes
@@ -70,7 +75,7 @@ Ce tutoriel vous guide tout au long des étapes à suivre pour le scénario de b
  
 
 ## Etape 1 : Mise à disposition d'un cluster Kubernetes
-{: #step1}
+{: #step25}
 
 Procédez comme suit :
 
@@ -111,7 +116,7 @@ Procédez comme suit :
 
 
 ## Etape 2 : Configuration de votre cluster en vue du transfert automatique des journaux au service {{site.data.keyword.loganalysisshort}}
-{: #step2}
+{: #step26}
 
 Lorsque l'application est déployée, les journaux sont collectés automatiquement par {{site.data.keyword.containershort}}. Toutefois, ils ne sont pas transférés automatiquement au service {{site.data.keyword.loganalysisshort}}. Vous devez créer dans votre cluster une ou plusieurs configurations de journalisation, qui définissent :
 
@@ -241,7 +246,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## Etape 3 : Octroi de droits à votre utilisateur pour l'affichage des journaux dans un domaine d'espace
-{: #step3}
+{: #step33}
 
 Afin d'accorder des droits à un utilisateur pour qu'il puisse afficher les journaux dans un espace, vous devez lui attribuer un rôle Cloud Foundry qui décrit les actions qu'il peut effectuer avec le service {{site.data.keyword.loganalysisshort}} dans l'espace. 
 
@@ -279,7 +284,7 @@ Pour accorder à un utilisateur des droits permettant d'utiliser le service {{si
 
 
 ## Etape 4 : Octroi de droits au propriétaire de clé {{site.data.keyword.containershort_notm}}
-{: #step4}
+{: #step52}
 
 Pour que les journaux de cluster soient transférés vers un espace, le propriétaire de clé {{site.data.keyword.containershort_notm}} doit disposer des droits suivants :
 
@@ -328,7 +333,7 @@ Procédez comme suit :
 
 
 ## Etape 5 : Déploiement d'un exemple d'application dans le cluster Kubernetes pour générer un contenu dans la sortie standard
-{: #step5}
+{: #step53}
 
 Déployez et exécutez un exemple d'application dans le cluster Kubernetes. Effectuez les étapes du tutoriel suivant pour déployer l'exemple d'application : [Leçon 1 : Déploiement d'applications avec instance unique dans des clusters Kubernetes](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1).
 

@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 針對 Kubernetes 叢集中所部署的應用程式，在 Kibana 中分析日誌
@@ -70,7 +75,7 @@ lastupdated: "2018-07-25"
  
 
 ## 步驟 1：佈建 Kubernetes 叢集
-{: #step1}
+{: #step25}
 
 請完成下列步驟：
 
@@ -108,7 +113,7 @@ lastupdated: "2018-07-25"
 
 
 ## 步驟 2：配置叢集以將日誌自動轉遞至 {{site.data.keyword.loganalysisshort}} 服務
-{: #step2}
+{: #step26}
 
 部署應用程式時，{{site.data.keyword.containershort}} 會自動收集日誌。不過，不會將日誌自動轉遞至 {{site.data.keyword.loganalysisshort}} 服務。您必須在叢集中建立 1 個以上的記載配置，以定義：
 
@@ -228,7 +233,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## 步驟 3：將查看空間網域中日誌的許可權授與使用者
-{: #step3}
+{: #step33}
 
 若要將檢視空間中日誌的許可權授與使用者，您必須將 Cloud Foundry 角色指派給該使用者，以說明此使用者可在空間中使用 {{site.data.keyword.loganalysisshort}} 服務所執行的動作。 
 
@@ -244,11 +249,11 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
     *使用者* 視窗會顯示目前所選取帳戶的使用者及其電子郵件位址的清單。
 	
-3. 如果使用者是帳戶成員，請從清單中選取使用者名稱，或按一下*動作* 功能表中的**管理使用者**。
+3. 如果使用者是帳戶成員，請從清單選取使用者名稱，或按一下*動作* 功能表中的**管理使用者**。
 
     如果使用者不是帳戶成員，請參閱[邀請使用者](/docs/iam/iamuserinv.html#iamuserinv)。
 
-4. 選取 **Cloud Foundry 存取**，然後選取組織。
+4. 選取 **Cloud Foundry 存取權**，然後選取組織。
 
     即會列出該組織中可用的空間清單。
 
@@ -266,7 +271,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## 步驟 4：授與 {{site.data.keyword.containershort_notm}} 金鑰擁有者許可權
-{: #step4}
+{: #step52}
 
 對於要轉遞至空間的叢集日誌，{{site.data.keyword.containershort_notm}} 金鑰擁有者必須具有下列許可權：
 
@@ -315,7 +320,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## 步驟 5：在 Kubernetes 叢集中部署範例應用程式，以產生 stdout 中的內容
-{: #step5}
+{: #step53}
 
 在 Kubernetes 叢集中部署及執行範例應用程式。完成下列指導教學中的步驟，以部署範例應用程式：[課程 1：將單一實例應用程式部署至 Kubernetes 叢集](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1)。
 

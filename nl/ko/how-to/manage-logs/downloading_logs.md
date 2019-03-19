@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 로그 다운로드
-{: #downloading_logs}
+{: #downloading_logs1}
 
 로그를 로컬 파일에 다운로드하거나 데이터를 다른 프로그램으로 보낼 수 있습니다. 세션의 컨텍스트 내에서 로그를 다운로드합니다. 세션은 어떤 로그를 다운로드할 것인지 지정합니다. 로그의 다운로드가 중단된 경우, 세션은 다운로드가 중지된 지점에서 다운로드를 재개할 수 있습니다. 다운로드가 완료된 후에는 세션을 삭제해야 합니다.
 {:shortdesc}
@@ -29,7 +37,7 @@ lastupdated: "2018-07-25"
 자세한 정보는 [{{site.data.keyword.Bluemix_notm}}에 로그인하는 방법](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)을 참조하십시오.
 
 ## 2단계: 사용 가능한 로그 식별
-{: #step2}
+{: #step31}
 
 1. `ibmcloud cf logging status` 명령을 사용하여 최근 2주 동안의 사용 가능한 로그를 확인하십시오. 다음 명령을 실행하십시오.
 
@@ -55,11 +63,11 @@ lastupdated: "2018-07-25"
 
 
 ## 3단계: 세션 작성
-{: #step3}
+{: #step32}
 
 세션은 다운로드의 상태를 유지하고, 다운로드할 수 있는 로그 데이터의 범위를 정의하기 위해 필요합니다. 
 
-[cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) 명령을 사용하여 세션을 작성하십시오. 선택사항으로 시작 날짜, 종료 날짜 및 세션 작성 시 로그의 유형을 지정할 수 있습니다.  
+[cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1) 명령을 사용하여 세션을 작성하십시오. 선택사항으로 시작 날짜, 종료 날짜 및 세션 작성 시 로그의 유형을 지정할 수 있습니다.  
 
 * 시작 날짜 및 종료 날짜를 지정하면 세션은 해당 날짜가 포함된 범위에서 로그에 대한 액세스를 제공합니다. 
 * 로그의 유형(**-t**)을 지정하면 세션은 특정 유형의 로그에 대한 액세스를 제공합니다. 사용자가 관심이 있는 작은 서브세트의 로그로만 세션의 범위를 정할 수 있기 때문에 범위에서 로그를 관리할 때 중요한 기능입니다.
@@ -103,10 +111,10 @@ $ ibmcloud cf logging session create -t log
 ```
 {: screen}
 
-**팁:** 활성 세션의 목록을 보려면 [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list) 명령을 실행하십시오.
+**팁:** 활성 세션의 목록을 보려면 [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list1) 명령을 실행하십시오.
 
 ## 4단계: 파일에 로그 데이터 다운로드
-{: #step4}
+{: #step42}
 
 세션 매개변수에 의해 지정된 로그를 다운로드하려면 다음 명령을 실행하십시오.
 
@@ -137,9 +145,9 @@ ibmcloud cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
 * JSON을 구문 분석할 수 있는 모든 프로그램으로 데이터를 처리할 수도 있습니다. 
 
 ## 5단계: 세션 삭제
-{: #step5}
+{: #step51}
 
-다운로드가 완료된 후에 [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete) 명령을 사용하여 세션을 삭제해야 합니다. 
+다운로드가 완료된 후에 [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete1) 명령을 사용하여 세션을 삭제해야 합니다. 
 
 세션을 삭제하려면 다음 명령을 실행하십시오.
 
@@ -148,7 +156,7 @@ ibmcloud cf logging session delete Session_ID
 ```
 {: codeblock}
 
-여기서 Session_ID는 이전 단계에서 작성한 세션의 GUID 입니다.
+여기서 Session_ID는 이전 단계에서 작성한 세션의 GUID입니다.
 
 예:
 

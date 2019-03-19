@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 사용자 정의 검색 조회 정의
 {:#k4_define_search}
@@ -30,7 +40,7 @@ lastupdated: "2018-07-25"
 
     2. Kibana에 액세스하십시오. **고급 보기** ![고급 보기 링크](images/logging_advanced_view.jpg "고급 보기 링크")를 클릭하십시오. Kibana 대시보드가 표시됩니다.
     
-    Kubernetes 클러스터에서 실행되는 컨테이너의 경우 [브라우저에서 Kibana를 실행](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)하십시오. 
+    Kubernetes 클러스터에서 실행되는 컨테이너의 경우 [브라우저에서 Kibana를 실행](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1)하십시오. 
     
     Kibana에 액세스하면 기본 검색이 적용됩니다. Kibana를 실행한 리소스의 인스턴스 목록에 대한 로그를 볼 수 있습니다. 해당 영역의 일부 또는 모든 {{site.data.keyword.Bluemix_notm}} 리소스에 대해 로그를 필터링할 수 있습니다.
 
@@ -123,7 +133,7 @@ lastupdated: "2018-07-25"
 2. 로드하려는 검색을 선택하십시오. 
 
 ## 새 검색 시작
-{: #k4_new_search}
+{: #k4_new_search1}
 
 새 검색을 시작하려면 검색 페이지 도구 모음에서 **새 검색** 단추 ![새 검색](images/k4_new_search_icon.jpg "새 검색")을 클릭하십시오.
 

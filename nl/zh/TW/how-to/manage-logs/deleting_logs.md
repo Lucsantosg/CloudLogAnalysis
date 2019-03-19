@@ -1,23 +1,31 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 刪除日誌
-{: #deleting_logs}
+{: #deleting_logs1}
 
-請使用 [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) 指令，以從「日誌收集」中刪除日誌。
+請使用 [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) 指令，以從「日誌收集」中刪除日誌。
 {:shortdesc}
 
 * 您可以刪除特定時間範圍內的日誌。
@@ -76,7 +84,7 @@ lastupdated: "2018-07-25"
 
 	
 ## 依日誌類型刪除特定一段時間內的日誌 
-{: #log_type}
+{: #log_type1}
 
 請完成下列步驟：
 

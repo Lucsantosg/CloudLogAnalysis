@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Protokolle verwalten
@@ -50,7 +59,7 @@ Sie können die Befehlszeilenschnittstelle von {{site.data.keyword.loganalysissh
 * Sie können die Aufbewahrungsrichtlinie jederzeit ändern.
 * Sie können die Richtlinie inaktivieren, indem Sie ihren Wert auf *-1* einstellen. 
 
-**Hinweis:** Wenn Sie die Protokollaufbewahrungsrichtlinie inaktivieren, müssen Sie die Protokolle in 'Log Collection' selbst verwalten. Sie können den CLI-Befehl [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete) verwenden, um alte Protokolle zu löschen.
+**Hinweis:** Wenn Sie die Protokollaufbewahrungsrichtlinie inaktivieren, müssen Sie die Protokolle in 'Log Collection' selbst verwalten. Sie können den CLI-Befehl [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete4) verwenden, um alte Protokolle zu löschen.
 
 Weitere Informationen finden Sie in den folgenden Abschnitten:
 
@@ -74,14 +83,14 @@ Protokolle, die in 'Log Collection' gespeichert sind, werden so lange aufbewahrt
 
 
 ## Protokolle herunterladen
-{: #download_logs}
+{: #download_logs2}
 
 In Kibana können Sie Protokolle für die letzten 3 Tage durchsuchen. Wenn Sie ältere Protokolldaten analysieren möchten, können Sie die betreffenden Protokolle in eine lokale Datei herunterladen oder Sie können diese Protokolle an andere Programme (zum Beispiel eine lokale Elastic Stack-Instanz) umleiten. 
 
 Weitere Informationen finden Sie in den folgenden Abschnitten:
 
 * [Protokolle mithilfe des {{site.data.keyword.Bluemix_notm}}-Plug-ins herunterladen](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs_cloud.html#downloading_logs).
-* [Protokolle mithilfe des CF-Plug-ins herunterladen](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs).
+* [Protokolle mithilfe des CF-Plug-ins herunterladen](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs1).
 
 
 
@@ -90,8 +99,8 @@ Weitere Informationen finden Sie in den folgenden Abschnitten:
 
 Allgemeine Informationen zu Ihren Protokollen können Sie über die Befehle `ibmcloud logging log-show` oder `cf logging status` abrufen. Weitere Informationen finden Sie in den folgenden Abschnitten:
 
-* [Protokollinformationen mithilfe des {{site.data.keyword.Bluemix_notm}}-Plug-ins anzeigen](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
-* [Protokollinformationen mithilfe des CF-Plug-ins anzeigen](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
+* [Protokollinformationen mithilfe des {{site.data.keyword.Bluemix_notm}}-Plug-ins anzeigen](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status1)
+* [Protokollinformationen mithilfe des CF-Plug-ins anzeigen](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status1).
 
 Zur Kostenkontrolle können Sie unter anderem die Größe der Protokolle Ihrer Apps über einen bestimmten Zeitraum überwachen. Sie können sich beispielsweise über die Größe der einzelnen Protokolltypen für einen {{site.data.keyword.Bluemix_notm}}-Bereich innerhalb einer Woche informieren, um zu ermitteln, ob eine App oder ein Service mehr Protokolle erstellt als erwartet. Um die Größe Ihrer Protokolle zu überprüfen, können Sie die Befehle `ibmcloud logging log-show` oder `cf logging status` verwenden.
 
@@ -100,7 +109,7 @@ Sie können Informationen zu Protokollen anzeigen, die in einer Bereichsdomäne,
 
 
 ## {{site.data.keyword.loganalysisshort_notm}}-Befehlszeilenschnittstelle ({{site.data.keyword.Bluemix_notm}}-Plug-in) installieren
-{: #install_cli}
+{: #install_cli2}
 
 Informationen zur Installation der Befehlszeilenschnittstelle (CLI) finden Sie unter [Befehlszeilenschnittstelle für Protokollierung installieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
 
@@ -139,7 +148,7 @@ In der folgenden Tabelle sind die Protokollierungs-URLs nach Region aufgeführt:
 </table>
 
 ## Benutzerrollen für die Verwaltung von Protokollen
-{: #roles}
+{: #roles1}
 
 In {{site.data.keyword.Bluemix_notm}} können Sie Benutzern eine oder mehrere Rollen zuweisen. Diese Rollen definieren, welche Tasks für diesen Benutzer für die Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service aktiviert sind. 
 

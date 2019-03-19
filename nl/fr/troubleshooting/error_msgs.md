@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Messages d'erreur
@@ -54,7 +62,7 @@ Vous avez atteint le quota journalier alloué à l'espace {Space GUID} pour l'in
 
 **Que faire**
 
-Pour passer à un plan de niveau supérieur afin de pouvoir stocker davantage de données dans le stockage Log Search chaque jour, mettez à niveau le plan de service {{site.data.keyword.loganalysisshort}} pour cet espace. Pour plus d'informations sur les plans de service et pour savoir comment effectuer la mise à niveau de votre plan, voir [Plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+Pour mettre à niveau votre plan afin de pouvoir stocker davantage de données dans le stockage Log Search chaque jour, mettez à niveau le plan de service {{site.data.keyword.loganalysisshort}} pour cet espace. Pour plus d'informations sur les plans de service et pour savoir comment effectuer la mise à niveau de votre plan, voir [Plans](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 
 

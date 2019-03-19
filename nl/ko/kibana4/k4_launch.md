@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Kibana 대시보드로 이동
@@ -69,7 +79,7 @@ Kibana에서 Cloud Foundry 애플리케이션 또는 Docker 컨테이너의 로�
 
 
 ##  웹 브라우저에서 Kibana 대시보드로 이동
-{: #launch_Kibana_from_browser}
+{: #launch_Kibana_from_browser1}
 
 Kibana에 표시되는 데이터 필터링에 사용되는 조회는 {{site.data.keyword.Bluemix_notm}} 조직에서 영역에 대한 로그 항목을 검색합니다. Kibana가 표시하는 로그 정보에는 사용자가 로그인한 {{site.data.keyword.Bluemix_notm}} 조직의 영역 내에 배치된 모든 리소스에 대한 레코드가 포함되어 있습니다.
 

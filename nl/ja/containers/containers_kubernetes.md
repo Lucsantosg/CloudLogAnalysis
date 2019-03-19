@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # {{site.data.keyword.containershort_notm}}
@@ -63,7 +69,7 @@ Kubernetes クラスターについての作業を行う際、名前空間 *ibm-
 * Kibana 検索割り当て量を増やし、長期保管用の Log Collection にログを保管するには、要件を満たすプランを使用して、ログの転送が行われるスペースに {{site.data.keyword.loganalysisshort}} サービスをプロビジョンする必要があります。 
 * ご使用のユーザー ID が、ログを表示する許可を持っている必要があります。 スペース・ドメイン内のログを表示するユーザーには CF 役割が必要です。 **監査員**は、ログの表示を認可される最低の役割です。 詳しくは、『[ログを表示するユーザーに必要な役割](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)』を参照してください。
 
-長期保管用ストレージ (Log Collection) に保管されたクラスター・ログ・デーを管理するには、ユーザー ID が、{{site.data.keyword.loganalysisshort}} サービスと連携するための IAM ポリシーを持っている必要があります。 ユーザー ID が、**管理者**、**オペレーター**、または**エディター**の許可を持っている必要があります。  詳しくは、『[ログを管理するユーザーに必要な役割](/docs/services/CloudLogAnalysis/manage_logs.html#roles)』を参照してください。
+長期保管用ストレージ (Log Collection) に保管されたクラスター・ログ・デーを管理するには、ユーザー ID が、{{site.data.keyword.loganalysisshort}} サービスと連携するための IAM ポリシーを持っている必要があります。 ユーザー ID が、**管理者**、**オペレーター**、または**エディター**の許可を持っている必要があります。  詳しくは、『[ログを管理するユーザーに必要な役割](/docs/services/CloudLogAnalysis/manage_logs.html#roles1)』を参照してください。
 
 
 以下の図は、クラスターがログをスペース・ドメインに転送する場合に、Public の {{site.data.keyword.containershort}} で行われるロギングの概略を示しています。
@@ -354,9 +360,9 @@ Ingress コントローラー・ログの分析に役立つフィールド:
 ## メッセージ内のフィールドを Kibana 検索フィールドとして使用できるようにするためのログの送信
 {: #send_data_in_json}
 
-デフォルトで、コンテナーのロギングは自動的に有効になります。 Docker ログ・ファイルのすべての項目は、Kibana で **message** フィールドに表示されます。 コンテナー・ログ項目の一部である特定のフィールドを使用して、Kibana でデータをフィルター操作および分析する必要がある場合は、有効な JSON フォーマットの出力を送信するようにアプリケーションを構成します。 例えば、JSON フォーマットのメッセージを  STDOUT (標準出力) および STDERR (標準エラー) に記録します。
+デフォルトで、コンテナーのロギングは自動的に有効になります。 Container ランタイム・ログ・ファイルのすべての項目は、Kibana で **message** フィールドに表示されます。 コンテナー・ログ項目の一部である特定のフィールドを使用して、Kibana でデータをフィルター操作および分析する必要がある場合は、有効な JSON フォーマットの出力を送信するようにアプリケーションを構成します。 例えば、JSON フォーマットのメッセージを  STDOUT (標準出力) および STDERR (標準エラー) に記録します。
 
-メッセージ中の使用可能な各フィールドは構文解析されて、その値に一致するタイプのフィールドに変換されます。 例えば、以下の JSON メッセージの各フィールドをご覧ください。
+メッセージで使用可能な各フィールドは構文解析されて、その値に一致するタイプのフィールドに変換されます。例えば、以下の JSON メッセージの各フィールドをご覧ください。
     
 ```
 {"field1":"string type",
@@ -404,7 +410,7 @@ Ingress コントローラー・ログの分析に役立つフィールド:
 
 
 ## Log Collection へのログの保管
-{: #log_collection}
+{: #log_collection1}
 
 ログを操作する場合、{{site.data.keyword.Bluemix_notm}} でのデフォルトの動作に関する以下の情報を考慮してください。
 
@@ -429,7 +435,7 @@ Log Collection でログを管理するには、以下の情報を考慮して�
 * Web ブラウザーから Kibana を直接起動できます。 詳しくは、『[Web ブラウザーから Kibana へのナビゲート](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)』を参照してください。
 * クラスターのコンテキストで {{site.data.keyword.Bluemix_notm}} UI から Kibana を起動できます。 詳しくは、『[Kubernetes クラスターにデプロイされたコンテナーのダッシュボードから Kibana へのナビゲート](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube)』を参照してください。
 
-コンテナーで実行されているアプリのログ・データを、JSON フォーマットで Docker ログ・コレクターに転送すると、JSON フィールドを使用して Kibana でログ・データを検索および分析することができます。 詳しくは、『[メッセージ内のフィールドを Kibana 検索フィールドとして使用できるようにするためのログの送信](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json)』を参照してください。
+コンテナーで実行されているアプリのログ・データを、JSON フォーマットで Container ランタイム・ログ・コレクターに転送すると、 JSON フィールドを使用して Kibana でログ・データを検索して分析することができます。 詳しくは、『[メッセージ内のフィールドを Kibana 検索フィールドとして使用できるようにするためのログの送信](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json)』を参照してください。
 
 Kibana でログを表示するには、以下の情報を考慮してください。
 

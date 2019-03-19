@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Filtrage des journaux dans Kibana
 {:#k4_filter_logs}
@@ -32,7 +42,7 @@ Vous pouvez créer des recherches personnalisées pour filtrer vos journaux. La 
  
 * Vous pouvez rechercher dans votre journal une valeur de zone spécifique ou exclure les entrées de journal contenant une valeur de zone spécifique. Pour plus d'informations, voir [Filtrage de vos journaux d'après une valeur de zone spécifique](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field).
  
-* Vous pouvez filtrer vos journaux afin d'afficher les entrées correspondant à une période donnée. Pour plus d'informations, voir [Définition d'un filtre temporel](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter).
+* Vous pouvez filtrer vos journaux afin d'afficher les entrées correspondant à une période donnée. Pour plus d'informations, voir [Définition d'un filtre temporel](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter1).
      
 
 ## Ajout d'un filtre pour une valeur non répertoriée dans la section *Fields list*
@@ -297,7 +307,7 @@ Le tableau affiche les entrées pour votre application CF où le texte *CWWKT001
         
 
 ## Définition d'un filtre temporel
-{: #set_time_filter}
+{: #set_time_filter1}
 
 Affichez et filtrez les journaux pour une période spécifique en configurant le *sélecteur de période*.
 

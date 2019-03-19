@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 重複使用 Kibana 資源以分析 {{site.data.keyword.Bluemix_notm}} 日誌
 {:#k4_reuse_resource}
@@ -49,7 +58,7 @@ lastupdated: "2018-07-25"
 
     * 從 {{site.data.keyword.Bluemix_notm}} 使用者介面啟動 Kibana：您可匯出的 JSON 搜尋檔案包括下列欄位：*空間 ID*，以及 Cloud Foundry (CF) 應用程式的*應用程式 ID* 或容器的*實例 ID*。如需相關資訊，請參閱[從 {{site.data.keyword.Bluemix_notm}} 儀表板進入 Kibana 儀表板](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)。
     
-    * 從瀏覽器啟動 Kibana：您可匯出的 JSON 搜尋檔案包括*空間 ID* 欄位。如需相關資訊，請參閱[從瀏覽器進入 Kibana 儀表板](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)。
+    * 從瀏覽器啟動 Kibana：您可匯出的 JSON 搜尋檔案包括*空間 ID* 欄位。如需相關資訊，請參閱[從瀏覽器進入 Kibana 儀表板](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1)。
 
 2. 在*設定* 頁面中，選取**物件**及**搜尋**標籤。然後選取搜尋，並複製下列資訊：
 
@@ -189,7 +198,7 @@ lastupdated: "2018-07-25"
 
     * 從 {{site.data.keyword.Bluemix_notm}} 使用者介面啟動 Kibana：您可匯出的 JSON 搜尋檔案包括下列欄位：*空間 ID*，以及 Cloud Foundry (CF) 應用程式的*應用程式 ID* 或容器的*實例 ID*。如需相關資訊，請參閱[從 {{site.data.keyword.Bluemix_notm}} 儀表板進入 Kibana 儀表板](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)。
     
-    * 從瀏覽器啟動 Kibana：您可匯出的 JSON 搜尋檔案包括*空間 ID* 欄位。如需相關資訊，請參閱[從瀏覽器進入 Kibana 儀表板](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)。
+    * 從瀏覽器啟動 Kibana：您可匯出的 JSON 搜尋檔案包括*空間 ID* 欄位。如需相關資訊，請參閱[從瀏覽器進入 Kibana 儀表板](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1)。
     
 2. 複製空間之間與視覺效果相關聯的搜尋。如需相關資訊，請參閱[在 Bluemix 空間之間複製搜尋](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search)。
 

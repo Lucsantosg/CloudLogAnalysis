@@ -1,31 +1,39 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-01-10"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 외부 로그 호스트 구성
 {: #thirdparty_logging}
 
-{{site.data.keyword.Bluemix_notm}}는 메모리에 제한된 양의 로그 정보를 보관합니다. 정보가 로그되면 이전 정보는 새 정보로 대체됩니다. 모든 로그 정보를 보관하기 위해 Cloud Foundry 애플리케이션 로그를 외부 로그 호스트(예: 써드파티 로그 관리 서비스 또는 다른 호스트)에 저장할 수 있습니다.
+{{site.data.keyword.Bluemix_notm}}는 메모리에 제한된 양의 로그 정보를 보관합니다. 정보가 로그되면 이전 정보는 새 정보로 대체됩니다. 모든 로그 정보를 보관하기 위해 Cloud Foundry 애플리케이션 로그를 외부 로그 호스트(예: 서드파티 로그 관리 서비스 또는 다른 호스트)에 저장할 수 있습니다.
 {:shortdesc}
 
 외부 로그 호스트에 CF 앱 및 시스템의 로그를 스트림하려면 다음 단계를 완료하십시오.
 
   1. 로깅 엔드포인트를 판별하십시오.
 
-	 Papertrail, Splunk 또는 Sumologic과 같은 써드파티 로그 집계기에 로그를 전송할 수 있습니다. 또한 syslog 호스트, TLS(Transport Layer Security)로 암호화된 syslog 호스트 또는 HTTPS POST 엔드포인트에 로그를 전송할 수 있습니다. 로깅 엔드포인트를 얻기 위한 방법은 여러 가지 로그 호스트에 따라 다릅니다.
+	 Papertrail, Splunk 또는 Sumologic과 같은 서드파티 로그 집계기에 로그를 전송할 수 있습니다. 또한 syslog 호스트, TLS(Transport Layer Security)로 암호화된 syslog 호스트 또는 HTTPS POST 엔드포인트에 로그를 전송할 수 있습니다. 로깅 엔드포인트를 얻기 위한 방법은 여러 가지 로그 호스트에 따라 다릅니다.
 
   2. 사용자 제공 서비스 인스턴스를 작성하십시오.
 

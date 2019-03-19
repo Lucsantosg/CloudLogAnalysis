@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # IBM Cloud Log Analysis CLI（CF 外掛程式）
 {: #logging_cli}
@@ -55,30 +64,30 @@ lastupdated: "2018-07-25"
     <td>使用這個指令，以檢視或設定空間或帳戶中可用日誌的保留期間。</td>
   </tr>
   <tr>
-    <td>[ibmcloud cf logging session create（測試版）](#session_create)</td>
+    <td>[ibmcloud cf logging session create（測試版）](#session_create1)</td>
     <td>使用這個指令，以建立新的階段作業。</td>
   <tr>
   <tr>
-    <td>[ibmcloud cf logging session delete（測試版）](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete（測試版）](#session_delete1)</td>
     <td>使用這個指令，以刪除階段作業。</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session list（測試版）](#session_list)</td>
+    <td>[ibmcloud cf logging session list（測試版）](#session_list1)</td>
     <td>使用這個指令，以列出作用中階段作業及其 ID。</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session show（測試版）](#session_show)</td>
+    <td>[ibmcloud cf logging session show（測試版）](#session_show1)</td>
     <td>使用這個指令，以顯示單一階段作業的狀態。</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status1)</td>
     <td>使用這個指令，以取得空間或帳戶中所收集日誌的相關資訊。</td>
   </tr>
   </table>
 
 
 ## ibmcloud cf logging
-{: #base}
+{: #base1}
 
 提供 CLI 版本及如何使用 CLI 的相關資訊。
 
@@ -144,7 +153,7 @@ ibmcloud cf logging auth
 </dl>
 
 ## ibmcloud cf logging delete
-{: #delete}
+{: #delete2}
 
 刪除「日誌收集」中所儲存的日誌。
 
@@ -183,11 +192,11 @@ ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud cf logging download（測試版）
-{: #download}
+{: #download4}
 
 將日誌從「日誌收集」下載至本端檔案，或透過管道將日誌傳送至另一個程式（例如 Elastic Stack）。 
 
-**附註：**若要下載檔案，您需要先建立階段作業。階段作業會根據日期範圍、日誌類型及帳戶類型來定義要下載的日誌。您可以在階段作業環境定義內下載日誌。如需相關資訊，請參閱 [ibmcloud cf logging session create（測試版）](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create)。
+**附註：**若要下載檔案，您需要先建立階段作業。階段作業會根據日期範圍、日誌類型及帳戶類型來定義要下載的日誌。您可以在階段作業環境定義內下載日誌。如需相關資訊，請參閱 [ibmcloud cf logging session create（測試版）](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1)。
 
 ```
 ibmcloud cf logging download [parameters] [arguments]
@@ -244,7 +253,7 @@ output {
 
 
 ## ibmcloud cf logging help
-{: #help}
+{: #help1}
 
 提供如何使用指令的相關資訊。
 
@@ -339,7 +348,7 @@ ibmcloud cf logging option -r 25
 
 
 ## ibmcloud cf logging session create（測試版）
-{: #session_create}
+{: #session_create1}
 
 建立新的階段作業。
 
@@ -407,7 +416,7 @@ ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 
 
 ## ibmcloud cf logging session delete（測試版）
-{: #session_delete}
+{: #session_delete1}
 
 刪除依階段作業 ID 所指定的階段作業。
 
@@ -435,7 +444,7 @@ ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging session list（測試版）
-{: #session_list}
+{: #session_list1}
 
 列出作用中階段作業及其 ID。
 
@@ -465,7 +474,7 @@ ibmcloud cf logging session list
  
 
 ## ibmcloud cf logging session show（測試版）
-{: #session_show}
+{: #session_show1}
 
 顯示單一階段作業的狀態。
 
@@ -517,7 +526,7 @@ ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging status
-{: #status}
+{: #status1}
 
 傳回空間或帳戶中所收集日誌的相關資訊。
 

@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 로그 분석 서비스 프로비저닝
@@ -36,11 +43,11 @@ lastupdated: "2018-07-25"
 
 2. **카탈로그**를 클릭하십시오. {{site.data.keyword.Bluemix_notm}}에서 사용 가능한 서비스의 목록이 열립니다.
 
-3. **DevOps** 카테고리를 선택하여 표시된 서비스의 목록을 필터링하십시오.
+3. **개발자 도구** 카테고리를 선택하여 표시된 서비스의 목록을 필터링하십시오.
 
 4. **로그 분석** 타일을 클릭하십시오.
 
-5. 서비스 플랜을 선택하십시오. 기본적으로 **라이트** 플랜이 설정됩니다.
+5. 서비스 플랜을 선택하십시오. 기본적으로 **Lite** 플랜이 설정됩니다.
 
     서비스 플랜에 대한 자세한 정보는 [서비스 플랜](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)을 참조하십시오.
 	
@@ -76,7 +83,7 @@ lastupdated: "2018-07-25"
 	* service_plan은 서비스 플랜 이름입니다. 플랜 목록은 [서비스 플랜](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)을 참조하십시오.
 	* service_instance_name은 작성하는 새 서비스 인스턴스에 사용할 이름입니다.
 
-	예를 들어, 라이트 플랜으로 {{site.data.keyword.loganalysisshort}} 서비스의 인스턴스를 작성하려면 다음 명령을 실행하십시오.
+	예를 들어, Lite 플랜으로 {{site.data.keyword.loganalysisshort}} 서비스의 인스턴스를 작성하려면 다음 명령을 실행하십시오.
 	
 	```
 	ibmcloud service create ibmLogAnalysis standard my_logging_svc

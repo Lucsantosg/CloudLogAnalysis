@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 配置日誌保留原則
-{: #configuring_retention_policy}
+{: #configuring_retention_policy1}
 
 使用指令 **cf logging option** 來檢視及配置保留原則，而此保留原則定義將日誌保留在「日誌收集」中的天數上限。依預設，會停用保留原則，並無限期保留日誌。保留期間到期之後，會自動刪除日誌。
 {:shortdesc}
@@ -23,7 +32,7 @@ lastupdated: "2018-07-25"
 
 
 ## 停用空間的日誌保留原則
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_space1}
 
 請完成下列步驟，以停用保留原則：
 
@@ -61,7 +70,7 @@ ibmcloud cf logging option -r -1
 
 
 ## 檢查空間的日誌保留原則
-{: #check_retention_policy_space}
+{: #check_retention_policy_space1}
 
 若要取得為空間所設定的保留期間，請完成下列步驟：
 
@@ -119,7 +128,7 @@ ibmcloud cf logging option -r -1
     
 
 ## 設定帳戶層次日誌保留原則
-{: #set_retention_policy_space}
+{: #set_retention_policy_space1}
 
 若要查看帳戶的保留期間，請完成下列步驟：
 

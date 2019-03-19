@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 使用 IBM Cloud CLI 的常见问题及解答
@@ -30,7 +38,7 @@ lastupdated: "2018-07-25"
 ## 如何登录到 IBM Cloud？
 {: #login}
 
-运行以下命令，以登录到 {{site.data.keyword.Bluemix_notm}} 中 {{site.data.keyword.loganalysisshort}} 服务所在的区域：
+运行以下命令，以登录到 {{site.data.keyword.Bluemix_notm}} 中 {{site.data.keyword.loganalysisshort}} 服务可用的区域：
 
 ```
 ibmcloud login -a Endpoint
@@ -144,7 +152,7 @@ ibmcloud target -o OrgName -s SpaceName
 		
 		
 ## 如何获取空间的 GUID
-{: #space_guid}
+{: #space_guid2}
 	
 完成以下步骤，以获取空间的 GUID：
 	

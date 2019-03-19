@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Preguntas frecuentes y respuestas sobre el uso de la CLI de IBM Cloud
@@ -21,7 +29,7 @@ lastupdated: "2018-07-25"
 Aquí encontrará las respuestas a preguntas comunes sobre el uso de la CLI de {{site.data.keyword.Bluemix}} con el servicio {{site.data.keyword.loganalysisshort}}. 
 {:shortdesc}
 
-* [¿Cómo iniciar sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)
+* [¿Cómo iniciar sesión en {{site.data.keyword.Bluemix_notm}}?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)
 * [¿Cómo se instala la CLI de {{site.data.keyword.Bluemix_notm}}?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#install_bmx_cli)
 * [¿Cómo se obtiene el GUID de una cuenta?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid)
 * [¿Cómo se obtiene el GUID de una organización?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#org_guid)
@@ -143,7 +151,7 @@ Siga estos pasos para obtener el GUID de una organización:
 		
 		
 ## ¿Cómo se obtiene el GUID de un espacio?
-{: #space_guid}
+{: #space_guid2}
 	
 Siga estos pasos para obtener el GUID de un espacio:
 	

@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Fazendo download de logs
 {: #downloading_logs}
@@ -26,14 +34,14 @@ Para concluir as etapas, deve-se instalar a CLI do {{site.data.keyword.loganalys
 Conclua as etapas a seguir para fazer download de dados do log que estão disponíveis em um espaço em um arquivo local:
 
 ## Etapa 1: efetuar login no {{site.data.keyword.Bluemix_notm}}
-{: #step1}
+{: #downloading_logs_step1}
 
 Efetue login em uma região, uma organização e um espaço no {{site.data.keyword.Bluemix_notm}}. 
 
 Para obter mais informações, veja [Como efetuar login no {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 ## Etapa 2: identificar quais logs estão disponíveis
-{: #step2}
+{: #step21}
 
 1. Use o comando `ibmcloud logging log-show` para ver quais logs estão disponíveis para as duas últimas semanas. Execute o comando a seguir:
 
@@ -100,7 +108,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 **Dica:** para ver a lista de sessões ativas, execute o comando [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
 
 ## Etapa 4: fazer download de dados do log em um arquivo
-{: #step4}
+{: #step41}
 
 Para fazer download dos logs especificados pelos parâmetros de sessão, execute o comando a seguir:
 

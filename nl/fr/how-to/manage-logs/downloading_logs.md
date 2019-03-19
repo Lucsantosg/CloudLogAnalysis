@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Téléchargement des journaux
-{: #downloading_logs}
+{: #downloading_logs1}
 
 Vous pouvez télécharger des journaux vers un fichier local ou diriger des données vers un autre programme. Les journaux sont téléchargés dans le contexte d'une session. Une session
 spécifie les journaux à télécharger. Si le téléchargement des journaux est interrompu, la session reprend le téléchargement là où il s'est arrêté. Une fois le téléchargement terminé, vous
@@ -31,7 +39,7 @@ Connectez-vous à une région, une organisation et un espace dans {{site.data.ke
 Pour plus d'informations, voir [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 ## Etape 2 : Identification des journaux disponibles
-{: #step2}
+{: #step31}
 
 1. Utilisez la commande `ibmcloud cf logging status` afin d'identifier les journaux disponibles pour les deux dernières semaines. Exécutez la commande suivante :
 
@@ -58,11 +66,11 @@ en tant que jours TUC. Afin d'obtenir des journaux pour un jour à heure locale 
 
 
 ## Etape 3 : Création d'une session
-{: #step3}
+{: #step32}
 
 Une session est requise pour définir l'étendue des données de journal disponibles pour un téléchargement et pour conserver le statut du téléchargement. 
 
-Utilisez la commande [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) pour créer une session. Vous pouvez également spécifier une date
+Utilisez la commande [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1) pour créer une session. Vous pouvez également spécifier une date
 de début, une date de fin et des types de journaux lorsque vous créez une session :  
 
 * Lorsque vous spécifiez la date de début et la date de fin, la session fournit un accès aux journaux entre ces dates incluses. 
@@ -108,10 +116,10 @@ $ ibmcloud cf logging session create -t log
 ```
 {: screen}
 
-**Astuce :** pour afficher la liste des sessions actives, exécutez la commande [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list).
+**Astuce :** pour afficher la liste des sessions actives, exécutez la commande [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list1).
 
 ## Etape 4 : Téléchargement des données de journal dans un fichier
-{: #step4}
+{: #step42}
 
 Pour télécharger les journaux qui sont spécifiés par les paramètres de session, exécutez la commande suivante :
 
@@ -143,9 +151,9 @@ les diriger directement vers votre propre pile ELK.
 * Vous pouvez également traiter les données avec un programme pouvant analyser JSON. 
 
 ## Etape 5 : Suppression de la session
-{: #step5}
+{: #step51}
 
-Une fois que le téléchargement est terminé, vous devez supprimer la session à l'aide de la commande [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete). 
+Une fois que le téléchargement est terminé, vous devez supprimer la session à l'aide de la commande [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete1). 
 
 Exécutez la commande suivante pour supprimer une session :
 

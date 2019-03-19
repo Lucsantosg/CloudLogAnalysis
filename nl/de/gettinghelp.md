@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Hilfe und Unterstützung anfordern
@@ -29,5 +38,4 @@ Wenn bei Verwendung von {{site.data.keyword.loganalysislong}} Probleme auftreten
   * Bei Fragen zum Service und ersten Schritten verwenden Sie das Forum [{{site.data.keyword.IBM_notm}} developerWorks dW Answers](https://developer.ibm.com/answers/topics/log-analysis/?smartspace=ibm-cloud){:new_window}.
 
 * Wenn sich das Problem so nicht lösen lässt, können Sie ein IBM Support-Ticket öffnen. Weitere Informationen zum Öffnen eines IBM Support-Tickets oder zu Support-Levels und zu Prioritätsstufen von Tickets finden Sie unter [Kontaktaufnahme mit dem Support](/docs/get-support/howtogetsupport.html#getting-customer-support).
-
 

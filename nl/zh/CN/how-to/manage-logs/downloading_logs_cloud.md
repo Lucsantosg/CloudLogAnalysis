@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 下载日志
 {: #downloading_logs}
@@ -26,14 +34,14 @@ lastupdated: "2018-07-25"
 要将空间中可用的日志数据下载到本地文件中，请完成以下步骤：
 
 ## 步骤 1：登录到 {{site.data.keyword.Bluemix_notm}}
-{: #step1}
+{: #downloading_logs_step1}
 
 登录到 {{site.data.keyword.Bluemix_notm}} 中的区域、组织和空间。 
 
 有关更多信息，请参阅[如何登录到 {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)。
 
 ## 步骤 2：确定可用的日志
-{: #step2}
+{: #step21}
 
 1. 使用 `ibmcloud logging log-show` 命令可查看最近 2 周可用的日志。运行以下命令：
 
@@ -100,7 +108,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 **提示**：要查看活动会话的列表，请运行 [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list) 命令。
 
 ## 步骤 4：将日志数据下载到文件
-{: #step4}
+{: #step41}
 
 要下载会话参数指定的日志，请运行以下命令：
 

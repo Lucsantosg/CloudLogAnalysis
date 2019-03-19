@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Configurazione della CLI Analisi dei log (plugin CF) (Obsoleto)
-{: #config_log_collection_cli}
+{: #config_log_collection_cli1}
 
 Il servizio {{site.data.keyword.loganalysisshort}} include una CLI (command line interface) che puoi utilizzare per gestire i tuoi log nel cloud. Puoi utilizzare il plugin CF (Cloud Foundry) per visualizzare lo stato del log, per scaricare i log e per configurare la politica di conservazione dei log. La CLI offre diversi tipi di supporto: il supporto generale per le informazioni sulla CLI e i comandi supportati, il supporto sui comandi per le informazioni sull'utilizzo di un comando o il supporto sui comandi secondari per le informazioni su come utilizzare i comandi secondari di un comando.
 {:shortdesc}
@@ -22,7 +31,7 @@ Il servizio {{site.data.keyword.loganalysisshort}} include una CLI (command line
 
 
 ## Installazione del plugin CF Analisi dei log
-{: #install_cli}
+{: #install_cli1}
 
 Per installare la CLI {{site.data.keyword.loganalysisshort}}, completa questa procedura:
 
@@ -32,9 +41,9 @@ Per installare la CLI {{site.data.keyword.loganalysisshort}}, completa questa pr
 
 2. Installa il plugin CF {{site.data.keyword.loganalysisshort}}.
 
-    * Per Linux, vedi [Installazione della CLI {{site.data.keyword.loganalysisshort}} su Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux).
-    * Per Windows, vedi [Installazione della CLI {{site.data.keyword.loganalysisshort}} su Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows).
-    * Per Mac OS X, vedi [Installazione della CLI {{site.data.keyword.loganalysisshort}} su Mac OS X](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac).
+    * Per Linux, vedi [Installazione della CLI {{site.data.keyword.loganalysisshort}} su Linux](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux1).
+    * Per Windows, vedi [Installazione della CLI {{site.data.keyword.loganalysisshort}} su Windows](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows1).
+    * Per Mac OS X, vedi [Installazione della CLI {{site.data.keyword.loganalysisshort}} su Mac OS X](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac1).
  
 3. Verifica l'installazione del plugin della CLI.
   
@@ -61,7 +70,7 @@ Per installare la CLI {{site.data.keyword.loganalysisshort}}, completa questa pr
 
 
 ## Installazione della CLI Analisi dei log su Linux
-{: #install_cli_linux}
+{: #install_cli_linux1}
 
 Completa la seguente procedura per installare il plugin CF di raccolta dei log su Linux:
 
@@ -137,7 +146,7 @@ Completa la seguente procedura per installare il plugin CF di raccolta dei log s
 
 
 ## Installazione della CLI Analisi dei log su Windows
-{: #install_cli_windows}
+{: #install_cli_windows1}
 
 Completa la seguente procedura per installare il plugin CF di raccolta dei log su Windows:
 
@@ -182,7 +191,7 @@ Completa la seguente procedura per installare il plugin CF di raccolta dei log s
 	
 
 ## Installazione della CLI Analisi dei log su Mac OS X
-{: #install_cli_mac}
+{: #install_cli_mac1}
 
 Completa la seguente procedura per installare il plugin CF di raccolta dei log su Mac OS X:
 
@@ -227,7 +236,7 @@ Completa la seguente procedura per installare il plugin CF di raccolta dei log s
 	
 	
 ## Disinstallazione della CLI Analisi dei log
-{: #uninstall_cli}
+{: #uninstall_cli1}
 
 Per disinstallare la CLI di registrazione, elimina il plugin.
 {:shortdesc}
@@ -265,7 +274,7 @@ Completa la seguente procedura per disinstallare la CLI del servizio {{site.data
   
 
 ## Come ottenere supporto generale
-{: #general_cli_help}
+{: #general_cli_help1}
 
 Per ottenere le informazioni generali sulla CLI e su quali comandi sono supportati, completa la seguente procedura:
 
@@ -283,7 +292,7 @@ Per ottenere le informazioni generali sulla CLI e su quali comandi sono supporta
     
 
 ## Come ottenere supporto per un comando
-{: #command_cli_help}
+{: #command_cli_help1}
 
 Per ottenere supporto sull'utilizzo di un comando, completa la seguente procedura:
 
@@ -310,7 +319,7 @@ Per ottenere supporto sull'utilizzo di un comando, completa la seguente procedur
 
 
 ## Come ottenere supporto per un comando secondario
-{: #subcommand_cli_help}
+{: #subcommand_cli_help1}
 
 Un comando può avere comandi secondari. Per ottenere supporto sui comandi secondari, completa la seguente procedura:
 

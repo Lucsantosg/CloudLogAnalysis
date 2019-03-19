@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-07-25"
+  years: 2017, 2019
+
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 虚拟机
 {: #logging_vm_ov}
@@ -20,15 +30,15 @@ lastupdated: "2018-07-25"
 
 
 ## 日志获取
-{: #log_ingestion}
+{: #log_ingestion2}
 
 {{site.data.keyword.loganalysisshort}} 服务提供了不同的套餐。所有套餐（*轻量*套餐除外）都包含将日志发送到“日志收集”的功能。有关套餐的更多信息，请参阅[服务套餐](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)。
 
-可以使用 mt-logstash-forwarder 将日志发送到 {site.data.keyword.loganalysisshort}}。有关更多信息，请参阅[使用多租户 Logstash 转发器 (mt-logstash-forwarder) 发送日志数据](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt)。
+可以使用 mt-logstash-forwarder 将日志发送到 {{site.data.keyword.loganalysisshort}}。有关更多信息，请参阅[使用多租户 Logstash 转发器 (mt-logstash-forwarder) 发送日志数据](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt)。
 
 
 ## 日志收集
-{: #log_collection}
+{: #log_collection2}
 
 缺省情况下，{{site.data.keyword.Bluemix_notm}} 会将日志数据最长存储 3 天：   
 
@@ -42,7 +52,7 @@ lastupdated: "2018-07-25"
 
 
 ## 日志搜索
-{: #log_search}
+{: #log_search2}
 
 缺省情况下，在 {{site.data.keyword.Bluemix_notm}} 中可以使用 Kibana 每天最多搜索 500 MB 日志。 
 

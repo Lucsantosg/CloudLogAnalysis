@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Protokolle in Kibana über ein Dashboard analysieren
 {:#analize_logs_dashboard}
@@ -43,7 +51,7 @@ In der folgenden Tabelle sind die verschiedenen Tasks aufgeführt, die Sie auf d
 | [Dashboard löschen](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) | Nicht benötigte Dashboards können gelöscht werden. |
 | [Dashboard exportieren](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) | Sie können ein Dashboard als JSON-Datei exportieren. |
 | [Dashboard importieren](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) | Sie können ein Dashboard als JSON-Datei importieren. |
-| [Dashboard laden](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) | Sie können ein Dashboard hochladen, um seine Daten zu aktualisieren, um Änderungen vorzunehmen oder um die Daten zu analysieren. |
+| [Dashboard laden](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload3) | Sie können ein Dashboard hochladen, um seine Daten zu aktualisieren, um Änderungen vorzunehmen oder um die Daten zu analysieren. |
 | [Dashboard speichern](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | Sie können ein Dashboard zur späteren Verwendung speichern. |
 {: caption="Tabelle 2. Tasks für die Arbeit mit Dashboards" caption-side="top"}
 
@@ -83,7 +91,7 @@ Führen Sie die folgenden Schritte aus, um ein neues Dashboard zu erstellen:
 
 
 ## Kibana-Dashboard löschen
-{: #delete}
+{: #delete1}
 
 Führen Sie die folgenden Schritte auf der Seite **Management** aus, um ein Dashboard zu löschen:
 
@@ -120,7 +128,7 @@ Führen Sie die folgenden Schritte auf der Seite **Management** aus, um ein Dash
 Das Dashboard wird zur Liste der Dashboards hinzugefügt.
 
 ## Kibana-Dashboard laden
-{: #reload}
+{: #reload3}
 
 Führen Sie die folgenden Schritte aus, um ein gespeichertes Dashboard zu laden:
 

@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Gestion des journaux
@@ -52,7 +61,7 @@ Vous pouvez utiliser l'interface de ligne de commande {{site.data.keyword.logana
 
 **Remarque :** lorsque vous désactivez la règle de conservation des journaux, vous
 devez maintenir les journaux dans Log Collection. Vous pouvez utiliser la commande de l'interface de ligne de commande
-[cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete) pour supprimer les journaux anciens.
+[cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete4) pour supprimer les journaux anciens.
 
 Pour plus d'informations, voir :
 
@@ -76,7 +85,7 @@ Les journaux qui sont stockés dans le composant Log Collection sont conservés 
 
 
 ## Téléchargement des journaux
-{: #download_logs}
+{: #download_logs2}
 
 Dans Kibana, vous pouvez rechercher les journaux des 3 derniers jours. Pour pouvoir analyser des données de journal plus anciennes, vous pouvez télécharger les journaux vers un fichier
 local ou les diriger vers d'autres programmes comme par exemple une instance locale d'Elastic Stack. 
@@ -84,7 +93,7 @@ local ou les diriger vers d'autres programmes comme par exemple une instance loc
 Pour plus d'informations, voir :
 
 * [Téléchargement des journaux avec le plug-in {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs_cloud.html#downloading_logs).
-* [Téléchargement des journaux avec le plug-in CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs).
+* [Téléchargement des journaux avec le plug-in CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs1).
 
 
 
@@ -93,8 +102,8 @@ Pour plus d'informations, voir :
 
 Pour obtenir des informations générales sur vos journaux, utilisez la commande `ibmcloud logging log-show` ou `cf logging status`. Pour plus d'informations, voir :
 
-* [Affichage des informations sur le journal avec le plug-in {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status).
-* [Affichage des informations sur le journal avec le plug-in CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
+* [Affichage des informations sur le journal avec le plug-in {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status1)
+* [Affichage des informations sur le journal avec le plug-in CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status1).
 
 Par exemple, pour contrôler les coûts, il est utile de connaître la taille des journaux de vos applications pendant une période donnée. Ainsi, vous pouvez décider de surveiller la taille de chaque
 type de journal pendant une semaine pour un espace {{site.data.keyword.Bluemix_notm}} afin de déterminer si une application ou un service génère plus de journaux que prévu. Pour vérifier la taille de vos journaux, utilisez la commande `ibmcloud logging log-show` ou `cf logging status`.
@@ -104,7 +113,7 @@ Vous pouvez afficher des informations sur les journaux qui sont stockés dans un
 
 
 ## Installation de l'interface de ligne de commande {{site.data.keyword.loganalysisshort_notm}} (plug-in {{site.data.keyword.Bluemix_notm}})
-{: #install_cli}
+{: #install_cli2}
 
 Pour savoir comment installer l'interface de ligne de commande, voir
 [Installation de l'interface de ligne de commande de journalisation](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
@@ -145,7 +154,7 @@ Le tableau suivant répertorie les URL de journalisation par région :
 </table>
 
 ## Rôles requis par un utilisateur pour gérer les journaux
-{: #roles}
+{: #roles1}
 
 Dans {{site.data.keyword.Bluemix_notm}}, vous pouvez affecter un ou plusieurs rôles à des utilisateurs. Ces rôles définissent quelles tâches sont activées pour que cet utilisateur puisse utiliser le service {{site.data.keyword.loganalysisshort}}. 
 

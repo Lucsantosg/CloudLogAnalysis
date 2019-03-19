@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Kibana FAQ
@@ -43,7 +50,7 @@ Kibana에서 데이터를 볼 수 없게 되는 다른 시나리오가 있습니
 
     **참고**: 기본적으로 {{site.data.keyword.Bluemix_notm}}에서 *시간 선택도구*는 최근 15분 동안의 데이터를 표시하도록 설정됩니다.
 
-    *시간 선택도구* 설정 방법에 대한 자세한 정보는 [시간 필터 설정](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)을 참조하십시오.
+    *시간 선택도구* 설정 방법에 대한 자세한 정보는 [시간 필터 설정](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter1)을 참조하십시오.
        
 2. *검색* 페이지 검색 표시줄에 있는 돋보기를 클릭하십시오. 페이지 데이터는 기본 검색 조회를 기반으로 새로 고쳐집니다.
 

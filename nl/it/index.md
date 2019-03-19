@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Esercitazione introduttiva
 {: #getting-started-with-cla}
@@ -62,15 +68,17 @@ La seguente tabella elenca le differenti risorse cloud. Completa l'esercitazione
 
 
 ## Passo 2: imposta le autorizzazioni per un utente per visualizzare i log
-{: #step2}
+{: #step24}
 
 Per controllare le azioni {{site.data.keyword.loganalysisshort}} che un utente è autorizzato a eseguire, puoi assegnare ruoli e politiche a un utente. 
 
 Ci sono due tipi di autorizzazioni di sicurezza in {{site.data.keyword.Bluemix_notm}} che controllano le azioni che gli utenti possono eseguire quando gestiscono il servizio {{site.data.keyword.loganalysisshort}}:
 
 * Ruoli CF (Cloud Foundry): concedi a un utente un ruolo CF per definire le autorizzazioni di cui dispone per visualizzare i log in uno spazio.
-* Ruoli IAM: concedi a un utente una politica IAM per definire le autorizzazione di cui dispone per visualizzare i log nel dominio dell'account e le autorizzazioni di cui dispone per gestire i log memorizzati in Raccolta dei log. 
+* Ruoli IAM: concedi a un utente una politica IAM per definire le autorizzazioni di cui dispone per visualizzare i log nel dominio dell'account.
 
+### Imposta le autorizzazioni per un utente per visualizzare i log in un dominio dello spazio
+{: #step42a}
 
 Completa la seguente procedura per concedere a un utente le autorizzazioni a visualizzare i log in uno spazio:
 
@@ -101,10 +109,67 @@ Completa la seguente procedura per concedere a un utente le autorizzazioni a vis
 7. Fai clic su **Salva ruolo**.
 
 
-Per ulteriori informazioni vedi: [Concessione di autorizzazioni](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
+
+### Imposta le autorizzazioni per un utente per visualizzare i log in un dominio dell'account
+{: #step24b}
 
 
-Un utente deve accedere a Kibana nella regione cloud pubblica in cui sono disponibili i dati di log per visualizzarli e analizzarli. 
+Completa la seguente procedura per concedere a un utente le autorizzazioni per visualizzare i log dell'account:
+
+1. Accedi alla console {{site.data.keyword.Bluemix_notm}}.
+
+    Apri un browser web e avvia il dashboard {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Icona di link esterno](../../../icons/launch-glyph.svg "Icona di link esterno")](http://bluemix.net){:new_window}
+	
+	Dopo che hai eseguito l'accesso con il tuo ID utente e la tua password, viene aperta la IU {{site.data.keyword.Bluemix_notm}}.
+
+2. Dalla barra dei menu, fai clic su **Gestisci > Account > Utenti**. 
+
+    La finestra *Utenti* visualizza un elenco di utenti con i loro indirizzi email per l'account attualmente selezionato.
+	
+3. Se l'utente è un membro dell'account, seleziona il suo nome dall'elenco o fai clic su **Gestisci utente** dal menu *Azioni*.
+
+    Se l'utente non è un membro dell'account, vedi [Invito di utenti](/docs/iam/iamuserinv.html#iamuserinv).
+
+4. Nella sezione **Politiche di accesso**, fai clic su **Assegna accesso** e seleziona quindi **Assegna l'accesso alle risorse**.
+
+    Viene visualizzata la finestra *Assegna l'accesso alla risorsa a (utente)**.
+
+5. Immetti le informazioni sulla politica. La seguente tabella elenca i campi obbligatori per definire una politica: 
+
+    <table>
+	  <caption>Elenco di campi per configurare una politica IAM.</caption>
+	  <tr>
+	    <th>Campo</th>
+		<th>Valore</th>
+	  </tr>
+	  <tr>
+	    <td>Servizi</td>
+		<td>*IBM Cloud Log Analysis*</td>
+	  </tr>	  
+	  <tr>
+	    <td>Regioni</td>
+		<td>Puoi specificare le regioni a cui all'utente verrà concesso l'accesso per lavorare con i log. Seleziona una o più regioni singolarmente oppure seleziona **Tutte le regioni correnti** per concedere l'accesso a tutte le regioni.</td>
+	  </tr>
+	  <tr>
+	    <td>Istanza di servizio</td>
+		<td>Seleziona *Tutte le istanze del servizio*.</td>
+	  </tr>
+	  <tr>
+	    <td>Ruoli</td>
+		<td>Seleziona uno o più ruoli IAM. <br>I ruoli validi sono: *amministratore*, *operatore*, *editor* e *visualizzatore*. <br>Per ulteriori informazioni sulle azioni consentite per ogni ruolo, vedi [Ruoli IAM](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+		</td>
+	  </tr>
+     </table>
+	
+6. Fai clic su **Assegna**.
+	
+La politica che configuri è applicabile alle regioni selezionate. 
+
+
+## Passi successivi 
+{: #next_steps}
+
+**Nota:** un utente deve accedere a Kibana nella regione cloud pubblica in cui sono disponibili i dati di log per visualizzarli e analizzarli. 
 
 Ad esempio, per avviare Kibana nella regione Stati Uniti Sud, apri un browser web e immetti il seguente URL:
 
@@ -116,12 +181,9 @@ https://logging.ng.bluemix.net/
 
 Per ulteriori informazioni su come avviare Kibana in altre regioni, vedi [Passaggio a Kibana da un browser web](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 
-**Nota:** quando avvii Kibana, se ricevi un messaggio che indica una condizione di *token di connessione non valido*, controlla le tue autorizzazioni nello spazio. Questo messaggio è un'indicazione che il tuo ID utente non dispone delle autorizzazioni a visualizzare i log.
+**Nota:** quando avvii Kibana, se ricevi un messaggio che indica una condizione di *token di connessione non valido*, controlla le tue autorizzazioni nell'account. Questo messaggio è un'indicazione che il tuo ID utente non dispone delle autorizzazioni a visualizzare i log.
 
-## Passi successivi 
-{: #next_steps}
-
-Personalizza Kibana per visualizzare ed analizzare i tuoi dati di log. Per maggiori informazioni, vedi [Visualizzazione e analisi dei log](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)
+Successivamente, personalizza Kibana per visualizzare ed analizzare i tuoi dati di log. Per maggiori informazioni, vedi [Visualizzazione e analisi dei log](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)
     
 
 

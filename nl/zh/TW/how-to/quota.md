@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 計算搜尋配額及每日用量
@@ -200,7 +208,7 @@ curl -k -i --header "X-Auth-Token:${TOKEN}" --header "X-Auth-Project-Id: a-${Acc
 
 	
 ## 使用 API 計算空間的搜尋配額及每日用量
-{: #space}
+{: #space1}
 
 請完成下列步驟：
 

@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Analizza i log in Kibana per un'applicazione distribuita in un cluster Kubernetes
@@ -70,7 +75,7 @@ Questa esercitazione illustra in modo dettagliato i passi necessari per rendere 
  
 
 ## Passo 1: esegui il provisioning di un cluster Kubernetes
-{: #step1}
+{: #step25}
 
 Completa la seguente procedura:
 
@@ -108,7 +113,7 @@ Completa la seguente procedura:
 
 
 ## Passo 2: configura il tuo cluster per inoltrare i log automaticamente al servizio {{site.data.keyword.loganalysisshort}}
-{: #step2}
+{: #step26}
 
 Quando viene distribuita l'applicazione, i log vengono raccolti automaticamente dal {{site.data.keyword.containershort}}. Tuttavia, i log non vengono inoltrati automaticamente al servizio {{site.data.keyword.loganalysisshort}}. Devi creare 1 o più configurazioni di registrazione nel tuo cluster che definiscono:
 
@@ -228,7 +233,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## Passo 3: concedi le tue autorizzazioni utente per visualizzare i log in un dominio dello spazio
-{: #step3}
+{: #step33}
 
 Per concedere a un utente le autorizzazioni a visualizzare i log in uno spazio, devi assegnare a tale utente un ruolo Cloud Foundry che descrive le azioni che questo utente può eseguire con il servizio {{site.data.keyword.loganalysisshort}} nello spazio. 
 
@@ -266,7 +271,7 @@ Completa la seguente procedura per concedere a un utente le autorizzazioni a lav
 
 
 ## Passo 4: concedere le autorizzazioni al proprietario della chiave {{site.data.keyword.containershort_notm}}
-{: #step4}
+{: #step52}
 
 In modo che i log del cluster siano inoltrati a uno spazio, il proprietario della chiave {{site.data.keyword.containershort_notm}} deve avere le seguenti autorizzazioni:
 
@@ -315,7 +320,7 @@ Completa la seguente procedura:
 
 
 ## Passo 5: distribuisci un'applicazione di esempio nel cluster Kubernetes per generare il contenuto in stdout
-{: #step5}
+{: #step53}
 
 Distribuisci ed esegui un'applicazione di esempio nel cluster Kubernetes. Completa la procedura in questa esercitazione per distribuire l'applicazione di esempio:[Lezione 1: distribuzione di singole applicazioni dell'istanza ai cluster Kubernetes](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1).
 

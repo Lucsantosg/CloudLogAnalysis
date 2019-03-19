@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # {{site.data.keyword.containershort_notm}}
@@ -63,7 +69,7 @@ Per analizzare i dati di log in Kibana di un cluster che inoltra i log a un domi
 * Per aumentare la tua quota di ricerca Kibana e archiviare i log nella Raccolta dei log per l'archiviazione a lungo termine, devi eseguire il provisioning del servizio {{site.data.keyword.loganalysisshort}} nello spazio in cui i log stanno venendo inoltrati con un piano che soddisfa i tuoi requisiti. 
 * Il tuo ID utente deve disporre delle autorizzazioni per visualizzare i log. Per visualizzare i log nel dominio dello spazio, un utente ha bisogno di un ruolo CF. **Revisore** è il ruolo più basso che può essere concesso per visualizzare i log. Per ulteriori informazioni, vedi [Ruoli di cui un utente ha bisogno per visualizzare i log](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
-Per gestire i dati di log di cluster che si trovano nell'archivio a lungo termine (Raccolta dei log), il tuo ID utente deve disporre di una politica IAM per lavorare con il servizio {{site.data.keyword.loganalysisshort}}. Il tuo ID utente deve disporre delle autorizzazioni di **Amministratore**, **Operatore** o **Editor**.  Per ulteriori informazioni, vedi [Ruoli di cui un utente ha bisogno per gestire i log](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+Per gestire i dati di log di cluster che si trovano nell'archivio a lungo termine (Raccolta dei log), il tuo ID utente deve disporre di una politica IAM per lavorare con il servizio {{site.data.keyword.loganalysisshort}}. Il tuo ID utente deve disporre delle autorizzazioni di **Amministratore**, **Operatore** o **Editor**.  Per ulteriori informazioni, vedi [Ruoli di cui un utente ha bisogno per gestire i log](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
 
 
 La seguente figura mostra una vista di alto livello di registrazione in Pubblico per {{site.data.keyword.containershort}} quando il cluster inoltra i log a uno dominio di spazio:
@@ -354,7 +360,7 @@ Campi che potrebbero essere utili quando si analizzano i log di controller Ingre
 ## Invio dei log in modo che tu possa utilizzare i campi in un messaggio come campi di ricerca Kibana
 {: #send_data_in_json}
 
-Per impostazione predefinita, la registrazione è abilitata automaticamente per i contenitori. Ogni voce nel file di log Docker viene visualizzata in Kibana nel campo **message**. Se hai bisogno di filtrare e analizzare i tuoi dati in Kibana utilizzando uno specifico campo che fa parte della voce di log del contenitore, configura la tua applicazione per inviare un output in formato JSON valido. Ad esempio, registra il messaggio in formato JSON in stdout (output standard) e stderr (errore standard).
+Per impostazione predefinita, la registrazione è abilitata automaticamente per i contenitori. Ogni voce nel file di log di runtime del contenitore viene visualizzata in Kibana nel campo **message**. Se hai bisogno di filtrare e analizzare i tuoi dati in Kibana utilizzando uno specifico campo che fa parte della voce di log del contenitore, configura la tua applicazione per inviare un output in formato JSON valido. Ad esempio, registra il messaggio in formato JSON in stdout (output standard) e stderr (errore standard).
 
 Ciascun campo disponibile nel messaggio viene analizzato al tipo di campo che corrisponde al suo valore. Ad esempio, ciascun campo nel seguente messaggio JSON:
     
@@ -404,7 +410,7 @@ Perché un cluster inoltri i log al **dominio dell'account** {{site.data.keyword
 
 
 ## Archiviazione dei log in Raccolta dei log
-{: #log_collection}
+{: #log_collection1}
 
 Tieni conto delle seguenti informazioni sulla modalità di funzionamento predefinita in {{site.data.keyword.Bluemix_notm}} quando gestisci i log:
 
@@ -430,7 +436,7 @@ Per analizzare i dati dei log, usa Kibana per eseguire delle attività di analis
 * Puoi avviare Kibana direttamente da un browser web. Per ulteriori informazioni, vedi [Passaggio a Kibana da un browser web](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 * Puoi avviare Kibana dalla IU {{site.data.keyword.Bluemix_notm}} nel contesto di un cluster. Per ulteriori informazioni, vedi [Passaggio a Kibana da un dashboard di un contenitore distribuito in un cluster Kubernetes](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube).
 
-Se inoltri i dati di log di un'applicazione che viene eseguita in un contenitore al raccoglitore di log Docker in formato JSON, puoi cercare nei dati di log e analizzarli in Kibana utilizzando campi JSON. Per ulteriori informazioni, vedi [Invio dei log in modo che tu possa utilizzare i campi in un messaggio come campi di ricerca Kibana](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json).
+Se inoltri i dati di log di un'applicazione che viene eseguita in un contenitore al raccoglitore di log di runtime del contenitore in formato JSON, puoi cercare nei dati di log e analizzarli in Kibana utilizzando campi JSON. Per ulteriori informazioni, vedi [Invio dei log in modo che tu possa utilizzare i campi in un messaggio come campi di ricerca Kibana](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json).
 
 Per visualizzare i log in Kibana, considera le seguenti informazioni:
 

@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 在 Kibana 中通过仪表板分析日志
 {:#analize_logs_dashboard}
@@ -20,7 +28,7 @@ lastupdated: "2018-07-25"
 使用 Kibana 中的*仪表板*页面可显示按仪表板分组的可视化项集合。使用仪表板可分析日志数据并比较结果。
 {:shortdesc}
 
-在 {{site.data.keyword.Bluemix}} 中，可以定义和定制不同类型的仪表板来对数据进行可视化表示和分析。例如，下表列出了一些常用的仪表板类型：
+在 {{site.data.keyword.Bluemix}} 中，可以定义和定制不同类型的仪表板来对数据进行可视化和分析。例如，下表列出了一些常用的仪表板类型：
 
 |仪表板类型|描述
 |
@@ -44,7 +52,7 @@ lastupdated: "2018-07-25"
 |[删除仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete)|删除不需要的仪表板。|
 |[导出仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export)|可以将仪表板导出为 JSON 文件。|
 |[导入仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import)|可以将仪表板作为 JSON 文件导入。|
-|[装入仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload)|可以上传仪表板以更新其数据，修改仪表板或分析数据。|
+|[装入仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload3)|可以上传仪表板以更新其数据，修改仪表板或分析数据。|
 |[保存仪表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save)|可以保存仪表板以供日后复用。|
 {: caption="表 2. 使用仪表板的任务" caption-side="top"}
 
@@ -84,7 +92,7 @@ lastupdated: "2018-07-25"
 
 
 ## 删除 Kibana 仪表板
-{: #delete}
+{: #delete1}
 
 要删除仪表板，请在**管理**页面中完成以下步骤：
 
@@ -121,7 +129,7 @@ lastupdated: "2018-07-25"
 仪表板将添加到仪表板列表中。
 
 ## 装入 Kibana 仪表板
-{: #reload}
+{: #reload3}
 
 要装入保存的仪表板，请完成以下步骤：
 

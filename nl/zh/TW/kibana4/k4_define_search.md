@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 定義自訂搜尋查詢
 {:#k4_define_search}
@@ -30,7 +40,7 @@ lastupdated: "2018-07-25"
 
     2. 存取 Kibana。按一下**進階視圖** ![「進階視圖」鏈結](images/logging_advanced_view.jpg "「進階視圖」鏈結")。即會顯示 Kibana 儀表板。
     
-    針對在 Kubernetes 叢集中執行的容器，[從瀏覽器啟動 Kibana](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)。 
+    針對在 Kubernetes 叢集中執行的容器，[從瀏覽器啟動 Kibana](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1)。 
     
     當您存取 Kibana 時，會套用預設搜尋。您可以看到您為其啟動 Kibana 之資源實例清單的日誌。您可以針對該空間中的任何或所有 {{site.data.keyword.Bluemix_notm}} 資源過濾日誌。
 
@@ -123,7 +133,7 @@ lastupdated: "2018-07-25"
 2. 選取您要載入的搜尋。 
 
 ## 開始新搜尋
-{: #k4_new_search}
+{: #k4_new_search1}
 
 若要開始新搜尋，請按一下「探索」頁面工具列中的**新搜尋**按鈕 ![新搜尋](images/k4_new_search_icon.jpg "新搜尋")。
 

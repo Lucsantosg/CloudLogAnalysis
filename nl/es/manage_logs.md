@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Gestión de registros
@@ -50,7 +59,7 @@ Puede utilizar la CLI de {{site.data.keyword.loganalysisshort}} para ver y confi
 * Puede cambiar la política de retención siempre que lo desee.
 * Para inhabilitar la política, establezca su valor en *-1*. 
 
-**Nota:** Cuando se inhabilita la política de retención de registros, se deben mantener los registros en el componente de recopilación de registros. Puede utilizar el mandato de la CLI [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete) para suprimir los registros antiguos.
+**Nota:** Cuando se inhabilita la política de retención de registros, se deben mantener los registros en el componente de recopilación de registros. Puede utilizar el mandato de la CLI [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete4) para suprimir los registros antiguos.
 
 Para obtener más información, consulte:
 
@@ -74,14 +83,14 @@ Los registros que se almacenan en el componente de recopilación de registros se
 
 
 ## Descarga de registros
-{: #download_logs}
+{: #download_logs2}
 
 Puede buscar los registros correspondientes a los 3 últimos días en Kibana. Para poder analizar datos de registro más antiguos, puede descargar los registros en un archivo local, o bien puede dirigir estos registros a otros programas como, por ejemplo, Elastic Stack local. 
 
 Para obtener más información, consulte:
 
 * [Descarga de registros mediante el plugin de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs_cloud.html#downloading_logs).
-* [Descarga de registros mediante el plugin de CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs).
+* [Descarga de registros mediante el plugin de CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs1).
 
 
 
@@ -90,8 +99,8 @@ Para obtener más información, consulte:
 
 Para obtener información general sobre sus registros, utilice el mandato `ibmcloud logging log-show` o el mandato `cf logging status`. Para obtener más información, consulte:
 
-* [Visualización de información de registro mediante el plugin de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
-* [Visualización de información de registro mediante el plugin de CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
+* [Visualización de información de registro mediante el plugin de {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status1)
+* [Visualización de información de registro mediante el plugin de CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status1).
 
 Por ejemplo, para mantener el coste bajo control, es posible que desee supervisar el tamaño de los registros de sus apps durante un periodo de tiempo. Por ejemplo, quizás desee saber el tamaño de cada tipo de registro durante una semana para un espacio de {{site.data.keyword.Bluemix_notm}} a fin de identificar si alguna app o servicio está generando más registros de los esperados. Para comprobar el tamaño de sus registros, utilice el mandato `ibmcloud logging log-show` o el mandato `cf logging status`.
 
@@ -100,7 +109,7 @@ Puede ver información sobre los registros almacenados en un dominio del espacio
 
 
 ## Instalación de la CLI de {{site.data.keyword.loganalysisshort_notm}} (plugin de {{site.data.keyword.Bluemix_notm}})
-{: #install_cli}
+{: #install_cli2}
 
 Para ver cómo se instala la CLI, consulte [Instalación de la CLI de registro](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
 
@@ -139,7 +148,7 @@ En la tabla siguiente se muestran los URL de registro por región:
 </table>
 
 ## Roles que necesita un usuario para gestionar registros
-{: #roles}
+{: #roles1}
 
 En {{site.data.keyword.Bluemix_notm}}, puede asignar uno o varios roles a los usuarios. Estos roles definen qué tareas están habilitadas para dicho usuario para trabajar con el servicio de {{site.data.keyword.loganalysisshort}}. 
 
@@ -185,8 +194,7 @@ Las tablas siguientes muestran los roles que debe tener un usuario para gestiona
 	<th>Acciones</th>
   </tr>
   <tr>
-    <td>*Editor
-*</td>
+    <td>*Editor*</td>
     <td>Comprobar el estado de los registros </br>Descargar registros </br>Suprimir registros </br>Cambiar la política de retención de registros </br>Gestionar sesiones</td>
 </table>
 

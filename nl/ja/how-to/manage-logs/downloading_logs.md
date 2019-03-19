@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # ログのダウンロード
-{: #downloading_logs}
+{: #downloading_logs1}
 
 ログをローカル・ファイルにダウンロードしたり、データを別のプログラムにパイプしたりできます。 ログのダウンロードは、1 つのセッションのコンテキスト内で行います。 どのログがダウンロードされるのかをセッションが指定します。 ログのダウンロードが中断された場合、セッションは中断した箇所からのダウンロードの再開を可能にします。 ダウンロードが完了した後、セッションを削除する必要があります。
 {:shortdesc}
@@ -29,7 +37,7 @@ lastupdated: "2018-07-25"
 詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 
 ## ステップ 2: 使用可能なログを識別する
-{: #step2}
+{: #step31}
 
 1. `ibmcloud cf logging status` コマンドを使用して、最近 2 週間の使用可能なログを表示します。 次のコマンドを実行します。
 
@@ -55,11 +63,11 @@ lastupdated: "2018-07-25"
 
 
 ## ステップ 3: セッションを作成する
-{: #step3}
+{: #step32}
 
 ダウンロードに使用可能なログ・データのスコープを定義するため、および、ダウンロードの状況を保持するために、セッションが必要です。 
 
-セッションを作成するには、コマンド [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) を使用します。 オプションで、セッションを作成するときに、ログの開始日、終了日、およびタイプを指定することができます。  
+セッションを作成するには、コマンド [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1) を使用します。 オプションで、セッションを作成するときに、ログの開始日、終了日、およびタイプを指定することができます。  
 
 * 開始日および終了日を指定すると、セッションはそれらの日付の間 (開始日と終了日を含む) のログへのアクセスを提供します。 
 * ログのタイプ (**-t**) を指定すると、セッションは特定タイプのログへのアクセスを提供します。 これは、ログのうち興味のある小さなサブセットのみにセッションのスコープを限定できるため、大量のログを管理する場合に重要な機能です。
@@ -103,10 +111,10 @@ $ ibmcloud cf logging session create -t log
 ```
 {: screen}
 
-**ヒント:** アクティブ・セッションのリストを表示するには、コマンド [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list) を実行します。
+**ヒント:** アクティブ・セッションのリストを表示するには、コマンド [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list1) を実行します。
 
 ## ステップ 4: ログ・データをファイルにダウンロードする
-{: #step4}
+{: #step42}
 
 セッション・パラメーターで指定されたログをダウンロードするには、次のコマンドを実行します。
 
@@ -137,9 +145,9 @@ ibmcloud cf logging download -o helloLogs.gz -jshdjsunelsssr4566722==
 * JSON を構文解析できる任意のプログラムでデータを処理することもできます。 
 
 ## ステップ 5: セッションを削除する
-{: #step5}
+{: #step51}
 
-ダウンロードが完了した後、[cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete) コマンドを使用してセッションを削除する必要があります。 
+ダウンロードが完了した後、[cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete1) コマンドを使用してセッションを削除する必要があります。 
 
 セッションを削除するには、次のコマンドを実行します。
 

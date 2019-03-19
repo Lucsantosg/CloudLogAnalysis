@@ -1,23 +1,31 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Suppression de journaux
-{: #deleting_logs}
+{: #deleting_logs1}
 
-Utilisez la commande [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) pour supprimer des journaux de Log Collection. 
+Utilisez la commande [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) pour supprimer des journaux de Log Collection. 
 {:shortdesc}
 
 * Vous pouvez supprimer des journaux dans un intervalle spécifique.
@@ -77,7 +85,7 @@ Procédez comme suit :
 
 	
 ## Suppression de journaux par type de journal pour une période spécifique 
-{: #log_type}
+{: #log_type1}
 
 Procédez comme suit :
 

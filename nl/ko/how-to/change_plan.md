@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 플랜 변경
@@ -91,7 +99,7 @@ CLI를 통해 Bluemix의 서비스 플랜을 변경하려면 다음 단계를 �
 	    <th>이름</th>
 	  </tr>
 	  <tr>
-	    <td>라이트</td>
+	    <td>Lite</td>
 	    <td>standard</td>
 	  </tr>
 	  <tr>
@@ -112,7 +120,7 @@ CLI를 통해 Bluemix의 서비스 플랜을 변경하려면 다음 단계를 �
 	  </tr>
 	</table>
 	
-	예를 들어, *라이트* 플랜으로 플랜을 줄이려면 다음 명령을 실행하십시오.
+	예를 들어, *Lite* 플랜으로 플랜을 줄이려면 다음 명령을 실행하십시오.
 	
 	```
 	ibmcloud service update "Log Analysis-m2" -p standard

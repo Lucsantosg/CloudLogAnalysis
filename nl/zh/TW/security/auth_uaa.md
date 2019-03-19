@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 取得 UAA 記號
@@ -46,9 +54,6 @@ lastupdated: "2018-07-25"
 	{: codeblock}
 	
 	此輸出會傳回必要的 UAA 記號，以用來在該空間及組織中鑑別使用者 ID。
-	
-
-
 	
 
 **附註：**當您使用記號時，請從您傳入 API 呼叫的記號值中移除 *Bearer*。

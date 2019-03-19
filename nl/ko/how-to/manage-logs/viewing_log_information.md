@@ -1,27 +1,35 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 로그 정보 보기
 {: #viewing_log_status}
 
-[cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) 명령을 사용하여 로그 콜렉션에 수집해서 저장된 로그에 대한 정보를 얻습니다.
+[cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) 명령을 사용하여 로그 콜렉션에 수집해서 저장된 로그에 대한 정보를 얻습니다.
 {:shortdesc}
 
 ## 일정 기간 동안의 로그에 대한 정보 얻기
-{: #viewing_logs}
+{: #viewing_logs1}
 
 `cf logging status` 명령을 사용하여 크기, 개수, 로그 유형 및 로그가 로그 콜렉션에 저장된 로그에 대해 Kibana에서 분석에 사용 가능한지 여부를 확인합니다. 
 
@@ -60,7 +68,7 @@ lastupdated: "2018-07-25"
 
 
 ## 일정 기간 동안의 로그 유형에 대한 정보 얻기
-{: #viewing_logs_by_log_type}
+{: #viewing_logs_by_log_type1}
 
 일정 기간 동안의 로그 유형에 대한 정보를 얻으려면 `cf logging status` 명령을 **-t** 옵션과 함께 사용하여 로그의 유형을 지정하고, **-s**로 시작일을 설정하고, **-e**로 종료 날짜를 설정하십시오. 예:
 
@@ -106,7 +114,7 @@ lastupdated: "2018-07-25"
 
 
 ## 로그에 대한 계정 정보 얻기
-{: #viewing_logs_account}
+{: #viewing_logs_account1}
 
 {{site.data.keyword.Bluemix_notm}} 계정에서 일정 기간 동안의 로그에 대한 정보를 얻으려면 `cf logging status` 명령을 **-a** 옵션과 함께 사용하십시오. 또한, 로그의 유형을 지정하기 위해 **-t** 옵션을 지정하고, **-s**로 시작일을 설정하고, **-e**로 종료 날짜를 설정할 수 있습니다. 
 

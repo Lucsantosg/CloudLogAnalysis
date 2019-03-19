@@ -1,22 +1,30 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Ottenimento del token IAM
-{: #auth_iam}
+{: #auth_iam1}
 
 Per gestire i log disponibili nel dominio di account utilizzando la API {{site.data.keyword.loganalysisshort}}, devi utilizzare un token di autenticazione. Usa la CLI {{{site.data.keyword.Bluemix_notm}} per ottenere il token IAM. Il token ha un tempo di scadenza. 
 {:shortdesc}

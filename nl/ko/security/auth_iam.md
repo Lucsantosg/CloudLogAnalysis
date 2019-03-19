@@ -1,22 +1,30 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # IAM 토큰 가져오기
-{: #auth_iam}
+{: #auth_iam1}
 
 {{site.data.keyword.loganalysisshort}} API를 사용하여 계정 도메인에서 사용 가능한 로그를 관리하려면 인증 토큰을 사용해야 합니다. {{{site.data.keyword.Bluemix_notm}} CLI를 사용하여 IAM 토큰을 가져오십시오. 토큰에는 만료 시간이 있습니다. 
 {:shortdesc}

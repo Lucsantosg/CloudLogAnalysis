@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Foire aux questions concernant Kibana
@@ -43,7 +50,7 @@ Pour résoudre ce problème, procédez comme suit :
 
     **Remarque** : par défaut dans {{site.data.keyword.Bluemix_notm}}, le *sélecteur de période* est configuré pour afficher les données des 15 dernières minutes.
 
-    Pour plus d'informations sur la configuration du *sélecteur de période*, voir [Définition d'un sélecteur de période](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+    Pour plus d'informations sur la configuration du *sélecteur de période*, voir [Définition d'un sélecteur de période](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter1).
        
 2. Cliquez sur la loupe située dans la barre de recherche de la page *Discover*. Les données de la page sont actualisées en fonction de la requête de recherche par défaut.
 

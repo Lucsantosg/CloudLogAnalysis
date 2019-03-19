@@ -1,27 +1,35 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # ログ情報の表示
 {: #viewing_log_status}
 
-収集されて Log Collection に保管されたログに関する情報を取得するには、[cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) コマンドを使用します。
+収集されて Log Collection に保管されたログに関する情報を取得するには、[cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) コマンドを使用します。
 {:shortdesc}
 
 ## 特定の期間のログに関する情報の取得
-{: #viewing_logs}
+{: #viewing_logs1}
 
 Log Collection に保管されたログについて、サイズ、カウント、ログ・タイプ、および、Kibana での分析に使用可能かどうかを表示するには、`cf logging status` コマンドを使用します。 
 
@@ -60,7 +68,7 @@ Log Collection に保管されたログについて、サイズ、カウント�
 
 
 ## 特定の期間のログのタイプに関する情報の取得
-{: #viewing_logs_by_log_type}
+{: #viewing_logs_by_log_type1}
 
 特定の期間のログのタイプに関する情報を取得するには、`cf logging status` コマンドを使用し、その際、オプション **-t** でログのタイプを指定し、**-s** で開始日を、**-e** で終了日を設定します。 以下に例を示します。
 
@@ -106,7 +114,7 @@ Log Collection に保管されたログについて、サイズ、カウント�
 
 
 ## ログに関するアカウント情報の取得
-{: #viewing_logs_account}
+{: #viewing_logs_account1}
 
 特定の期間の {{site.data.keyword.Bluemix_notm}} アカウントでのログに関する情報を取得するには、オプション **-a** を指定して `cf logging status` コマンドを使用します。 オプション **-t** でログのタイプを指定し、**-s** で開始日を、**-e** で終了日を設定することもできます。 
 

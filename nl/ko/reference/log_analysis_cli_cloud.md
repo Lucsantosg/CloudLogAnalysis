@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-08-21"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Log Analysis CLI({{site.data.keyword.Bluemix_notm}} 플러그인)
 {: #log_analysis_cli}
@@ -129,7 +138,7 @@ ibmcloud logging
 
 
 ## ibmcloud logging log-delete
-{: #delete}
+{: #delete3}
 
 로그 콜렉션에 저장된 로그를 삭제합니다.
 
@@ -173,7 +182,7 @@ ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud logging log-download 
-{: #download}
+{: #download3}
 
 로그 콜렉션에서 로컬 파일로 로그를 다운로드하거나 다른 프로그램(예: Elastic Stack)으로 로그를 보냅니다. 
 
@@ -458,7 +467,7 @@ ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resourc
 </dl>
 
 
-**리턴된 값**
+**리턴값**
 
 <dl>
 
@@ -567,7 +576,7 @@ ibmcloud logging sessions [-r,--resource-type RESOURCE_TYPE] [-i,--resource-id R
 
 <dl>	
     <dt>SESSION_ID</dt>
-    <dd>활성 세션의 ID 입니다.</dd>
+    <dd>활성 세션의 ID입니다.</dd>
 	   
     <dt>리소스 ID</dt>
     <dd>세션이 유효한 리소스의 ID입니다.</dd>
@@ -617,7 +626,7 @@ ibmcloud logging session-show [-r,--resource-type RESOURCE_TYPE] [-i,--resource-
 
 <dl>
    <dt>SESSION_ID</dt>
-   <dd>정보를 가져오려는 활성 세션의 ID 입니다.</dd>
+   <dd>정보를 가져오려는 활성 세션의 ID입니다.</dd>
 </dl>
 
 **예**

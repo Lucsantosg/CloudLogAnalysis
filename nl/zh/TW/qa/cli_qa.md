@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 使用 IBM Cloud CLI 的常見問題與解答
@@ -143,7 +151,7 @@ ibmcloud target -o OrgName -s SpaceName
 		
 		
 ## 如何取得空間的 GUID
-{: #space_guid}
+{: #space_guid2}
 	
 請完成下列步驟，以取得空間的 GUID：
 	

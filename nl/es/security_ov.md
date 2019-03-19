@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Seguridad
 {: #security_ov}
@@ -25,7 +32,7 @@ Para trabajar con la API del servicio {{site.data.keyword.loganalysisshort}}, de
 
 
 ## Modelos de autenticación
-{: #auth}
+{: #auth1}
 
 Para trabajar con el servicio {{site.data.keyword.loganalysisshort}} mediante la CLI o la API, necesita una señal de autenticación.
 
@@ -35,14 +42,14 @@ El servicio {{site.data.keyword.loganalysisshort}} da soporte a los siguientes m
 
     Solo puede utilizar la CLI para gestionar las señales de UAA.
 	
-* [Autenticación de IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)
+* [Autenticación de IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)
 
     El modelo de autenticación de IAM ofrece funciones de gestión de IU, CLI o API. 
 
 **Nota:** Una señal de UAA y una señal de IAM caducan transcurrido un periodo de tiempo. 
 
 ## Roles
-{: #roles}
+{: #roles3}
 
 Hay dos tipos de roles en {{site.data.keyword.Bluemix_notm}} que controlan las acciones que pueden llevar a cabo los usuarios cuando trabajan con el servicio {{site.data.keyword.loganalysisshort}}:
 
@@ -217,7 +224,7 @@ Para obtener más información, consulte [Obtención de la señal de UAA](/docs/
 * Utilice la CLI de {{{site.data.keyword.Bluemix_notm}} para obtener la señal de IAM. 
 * La señal tiene un tiempo de caducidad. 
 
-Para obtener más información, consulte [Obtención de la señal de IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam).
+Para obtener más información, consulte [Obtención de la señal de IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1).
 
 
 ## Obtención de la señal de registro para enviar registros al análisis de registros
@@ -233,11 +240,11 @@ Para enviar registros a un dominio del espacio, elija uno de los siguientes mét
 
 
 ## Cómo otorgar permisos a un usuario para que trabaje con registros
-{: #grant_permissions}
+{: #grant_permissions1}
 
 Para que un usuario pueda gestionar registros o ver registros, se deben otorgar al usuario permisos en {{site.data.keyword.Bluemix_notm}} para trabajar con el servicio {{site.data.keyword.loganalysisshort}}.
 
-* Para obtener información sobre los permisos necesarios para gestionar registros, consulte [Roles que necesita un usuario para gestionar registros](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+* Para obtener información sobre los permisos necesarios para gestionar registros, consulte [Roles que necesita un usuario para gestionar registros](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
 * Para obtener información sobre los permisos necesarios para ver registros, consulte [Roles que necesita un usuario para ver registros](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
 Para obtener más información sobre cómo otorgar permisos, consulte:

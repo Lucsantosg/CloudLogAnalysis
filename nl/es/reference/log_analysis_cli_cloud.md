@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-08-21"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # CLI de Log Analysis (plugin de {{site.data.keyword.Bluemix_notm}})
 {: #log_analysis_cli}
@@ -129,7 +138,7 @@ Indique 'ibmcloud logging help [mandato]' para obtener más información sobre u
 
 
 ## ibmcloud logging log-delete
-{: #delete}
+{: #delete3}
 
 Suprime los registros almacenados en el componente de recopilación de registros.
 
@@ -173,7 +182,7 @@ ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud logging log-download 
-{: #download}
+{: #download3}
 
 Descarga los registros del componente de recopilación de registros en un archivo local o direcciona los registros a otro programa, como por ejemplo Elastic Stack. 
 
@@ -480,7 +489,7 @@ ibmcloud logging session-create [-r,--resource-type RESOURCE_TYPE] [-i,--resourc
     <dt>End</dt>
     <dd>Indica el último día que se utiliza para filtrar registros.</dd>
 
-    <dt>Type</dt>
+    <dt>Tipo</dt>
     <dd>Los tipos de registro que se descargan a través de la sesión.</dd>
 
 </dl>

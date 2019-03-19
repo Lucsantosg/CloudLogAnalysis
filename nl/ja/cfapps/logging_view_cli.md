@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # CLI からの CF ログの分析
@@ -32,9 +40,9 @@ Cloud Foundry (CF) アプリケーション・ログを分析するには、コ�
 
 関心のあるログを表示する場合、または表示しない内容を除外する場合、cf コマンド・ライン・インターフェースで **cut** や **grep** などのフィルター・オプションを指定して **cf logs** コマンドを使用できます。
 
-* Cloud Foundry アプリのログを表示する場合は、『[Cloud Foundry アプリのログの表示](logging_view_cli.html#full_log_cli)』を参照してください。
-* Cloud Foundry アプリの最新ログ・レコードを表示する場合は、『[Cloud Foundry アプリの最新ログ項目の表示](logging_view_cli.html#tailing_log_cli)』を参照してください。
-* 特定の時刻範囲の Cloud Foundry アプリのログ・レコードを表示する場合は、『[ログの一部の表示](logging_view_cli.html#partial_log_cli)』を参照してください。
+* Cloud Foundry アプリのログを表示する場合は、『[Cloud Foundry アプリのログの表示](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#full_log_cli)』を参照してください。
+* Cloud Foundry アプリの最新ログ・レコードを表示する場合は、『[Cloud Foundry アプリの最新ログ項目の表示](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#tailing_log_cli)』を参照してください。
+* 特定の時刻範囲の Cloud Foundry アプリのログ・レコードを表示する場合は、『[ログの一部の表示](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#partial_log_cli)』を参照してください。
 * 特定のキーワードを含む Cloud Foundry アプリのログ項目を表示する場合は、『[特定のキーワードを含むログ項目の表示](logging_view_cli.html#partial_by_keyword_log_cli)』を参照してください。
 
 

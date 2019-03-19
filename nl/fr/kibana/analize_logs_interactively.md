@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Analyse interactive de journaux dans Kibana
 {:#analize_logs_interactively}
@@ -64,7 +71,7 @@ Vous pouvez définir d'autres recherches. Pour plus d'informations, voir [Filtra
 
 Pour définir une nouvelle recherche, utilisez comme point de départ la requête de recherche par défaut, puis affinez-la comme suit :
 
-* Appliquez des filtres de zone pour épurer l'ensemble de données affichées. Vous pouvez sélectionner/désélectionner chaque filtre, l'épingler à la page, l'activer ou le désactiver en fonction de vos besoins, et le configurer afin d'inclure ou d'exclure la valeur. Pour plus d'informations, voir [Filtrage des journaux dans Kibana](filter_logs.html#filter_logs).
+* Appliquez des filtres de zone pour épurer l'ensemble de données affichées. Vous pouvez sélectionner/désélectionner chaque filtre, l'épingler à la page, l'activer ou le désactiver en fonction de vos besoins, et le configurer afin d'inclure ou d'exclure la valeur. Pour plus d'informations, voir [Filtrage des journaux dans Kibana](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
 
     **Astuce :** si vous ne localisez pas dans la section *Fields list* une zone que vous vous attendiez à rencontrer, ou que des loupes en regard de zones répertoriées sont désactivées dans la page Discover, rechargez cette liste en actualisant le canevas d'index dans la page Settings. Pour plus d'informations, voir [Rechargement de la liste des zones](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields).
 
@@ -81,7 +88,7 @@ Vous pouvez effectuer les tâches suivantes avec des recherches que vous avez d�
 | [Supprimer une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | Suppression d'une recherche devenue superflue. |
 | [Exporter une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | Exportation d'une recherche pour son partage.  |
 | [Importer une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Importation d'une recherche.  |
-| [Recharger une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | Téléchargement d'une recherche existante pour nouvelle analyse d'un jeu de données. |
+| [Recharger une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search1)  | Téléchargement d'une recherche existante pour nouvelle analyse d'un jeu de données. |
 | [Actualiser les données d'une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | Configuration d'une actualisation automatique des données affichées au cours de la recherche.  |
 | [Sauvegarder une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Sauvegarde de votre recherche pour une utilisation ultérieure.  |
 {: caption="Tableau 3. Tâches de gestion de recherches" caption-side="top"}
@@ -153,7 +160,7 @@ Prenez en compte les informations ci-dessous pour identifier les données dispon
 
     Le canevas d'index définit la requête de recherche appliquée par défaut pour afficher les entrées sur vos pages Kibana. Par défaut, il est préconfiguré et permet d'afficher toutes les données disponibles dans un espace. Exemple :
 
-    * Si vous lancez Kibana depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}} (à savoir depuis la section *Journal* des pages de l'interface utilisateur d'une ressource spécifique comme une application ou un conteneur d'application Cloud Foundry (CF), le canevas d'index appliqué inclut toutes les entrées disponibles dans l'espace.
+    * Si vous lancez Kibana depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}}, à savoir depuis la section *Journal* des pages de l'interface utilisateur d'une ressource spécifique comme une application ou un conteneur d'application Cloud Foundry (CF), le canevas d'index appliqué inclut toutes les entrées disponibles dans l'espace.
     
     * Si vous lancez Kibana depuis un navigateur ou depuis le tableau de bord du service {{site.data.keyword.loganalysisshort}}, le canevas d'index qui est appliqué inclut toutes les entrées disponibles dans l'espace où Kibana indique que vous êtes connecté.
         
