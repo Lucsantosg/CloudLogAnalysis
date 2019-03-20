@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-07-25"
+  years: 2017, 2019
+
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Máquinas virtuais
 {: #logging_vm_ov}
@@ -20,15 +30,15 @@ Os recursos de criação de log não são ativados automaticamente para máquina
 
 
 ## Ingestão de log
-{: #log_ingestion}
+{: #log_ingestion2}
 
 O serviço {{site.data.keyword.loganalysisshort}} oferece planos diferentes. Todos os planos, com a exceção do plano *Lite*, incluem a capacidade de enviar logs para a Coleção de logs. Para obter mais informações sobre os planos, veja [Planos de serviços](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-É possível enviar logs para o {site.data.keyword.loganalysisshort}} usando o mt-logstash-forwarder. Para obter mais informações, veja [Enviar dados do log usando um Multi-Tenant Logstash Forwarder (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
+É possível enviar logs para o {{site.data.keyword.loganalysisshort}} usando o mt-logstash-forwarder. Para obter mais informações, veja [Enviar dados do log usando um Multi-Tenant Logstash Forwarder (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
 
 
 ## Coleta de registro
-{: #log_collection}
+{: #log_collection2}
 
 Por padrão, o {{site.data.keyword.Bluemix_notm}} armazena dados do log por até 3 dias:   
 
@@ -42,7 +52,7 @@ O serviço {{site.data.keyword.loganalysisshort}} fornece planos adicionais que 
 
 
 ## Procura de log
-{: #log_search}
+{: #log_search2}
 
 Por padrão, é possível usar o Kibana para procurar até 500 MB de logs por dia no {{site.data.keyword.Bluemix_notm}}. 
 

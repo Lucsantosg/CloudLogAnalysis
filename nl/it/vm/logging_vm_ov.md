@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-07-25"
+  years: 2017, 2019
+
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Macchine virtuali
 {: #logging_vm_ov}
@@ -20,15 +30,15 @@ Le funzionalità di registrazione non vengono abilitate automaticamente per le m
 
 
 ## Inserimento log
-{: #log_ingestion}
+{: #log_ingestion2}
 
 Il servizio {{site.data.keyword.loganalysisshort}} offre diversi piani. Tutti i piani, con l'eccezione del piano *Lite*, includono la capacità di inviare log alla raccolta di log. Per ulteriori informazioni sui piani, vedi [Piani di servizio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-Puoi inviare log in {site.data.keyword.loganalysisshort}} utilizzando mt-logstash-forwarder. Per maggiori informazioni, consulta [Invia dati di log utilizzando un logstash forwarder a più tenant (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
+Puoi inviare log in {{site.data.keyword.loganalysisshort}} utilizzando mt-logstash-forwarder. Per maggiori informazioni, consulta [Invia dati di log utilizzando un logstash forwarder a più tenant (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
 
 
 ## Raccolta di log
-{: #log_collection}
+{: #log_collection2}
 
 Per impostazione predefinita, {{site.data.keyword.Bluemix_notm}} archivia i dati dei log per un massimo di 3 giorni:   
 
@@ -43,7 +53,7 @@ Il servizio {{site.data.keyword.loganalysisshort}} fornisce ulteriori piani che 
 
 
 ## Ricerca log
-{: #log_search}
+{: #log_search2}
 
 Per impostazione predefinita, puoi utilizzare Kibana per ricercare fino a 500 MB di log al giorno in {{site.data.keyword.Bluemix_notm}}. 
 

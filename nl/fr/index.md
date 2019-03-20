@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Tutoriel d'initiation
 {: #getting-started-with-cla}
@@ -63,15 +69,17 @@ Le tableau suivant répertorie les différentes ressources de cloud. Suivez le t
 
 
 ## Etape 2 : Définition des droits d'un utilisateur pour l'affichage des journaux
-{: #step2}
+{: #step24}
 
 Pour contrôler les actions {{site.data.keyword.loganalysisshort}} qu'un utilisateur peut effectuer, vous pouvez affecter des rôles et des règles à un utilisateur. 
 
 Dans {{site.data.keyword.Bluemix_notm}}, il existe deux types de droits de sécurité qui contrôlent les actions que les utilisateurs peuvent effectuer lorsqu'ils utilisent le service {{site.data.keyword.loganalysisshort}} :
 
 * Les rôles Cloud Foundry (CF) : vous attribuez un rôle CF à un utilisateur pour définir les droits dont cet utilisateur dispose pour afficher les journaux dans un espace.
-* Les rôles IAM : vous affectez une règle IAM à un utilisateur pour définir les droits dont cet utilisateur dispose pour afficher les journaux dans le domaine de compte et pour gérer les journaux qui sont stockés dans Log Collection. 
+* Les rôles IAM : vous affectez une règle IAM à un utilisateur pour définir les droits dont cet utilisateur dispose pour afficher les journaux dans le domaine de compte.
 
+### Définition des droits d'un utilisateur pour l'affichage des journaux dans un domaine d'espace
+{: #step42a}
 
 Procédez comme suit pour accorder à un utilisateur des droits permettant d'afficher les journaux dans un espace :
 
@@ -102,10 +110,67 @@ Procédez comme suit pour accorder à un utilisateur des droits permettant d'aff
 7. Cliquez sur **Sauvegarder le rôle**.
 
 
-Pour plus d'informations, voir [Octroi de droits](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
+
+### Définition des droits d'un utilisateur pour l'affichage des journaux dans un domaine de compte
+{: #step24b}
 
 
-Un utilisateur doit accéder à Kibana dans la région de cloud publique dans laquelle les données de journal sont disponibles pour afficher et analyser les données de journal. 
+Procédez comme suit pour accorder à un utilisateur des droits permettant d'afficher des journaux de compte :
+
+1. Connectez vous à la console {{site.data.keyword.Bluemix_notm}}.
+
+    Ouvrez un navigateur Web et lancez le tableau de bord {{site.data.keyword.Bluemix_notm}} : [http://bluemix.net ![Icône de lien externe](../../../icons/launch-glyph.svg "Icône de lien externe")](http://bluemix.net){:new_window}
+	
+	Une fois que vous êtes connecté avec votre ID utilisateur et votre mot de passe, l'interface utilisateur {{site.data.keyword.Bluemix_notm}} s'ouvre.
+
+2. Dans la barre de menus, cliquez sur **Gérer > Compte > Utilisateurs**. 
+
+    La fenêtre *Utilisateurs* affiche une liste d'utilisateurs avec leur adresse électronique et leur statut sur le compte actuellement sélectionné.
+	
+3. Si l'utilisateur est membre du compte, sélectionnez le nom de l'utilisateur dans la liste ou cliquez sur **Gérer un utilisateur** dans le menu *Actions*.
+
+    Si l'utilisateur n'est pas membre du compte, voir [Invitation d'utilisateurs](/docs/iam/iamuserinv.html#iamuserinv).
+
+4. Dans la section **Règles d'accès**, cliquez sur **Affecter un accès**, puis cliquez sur **Affecter l'accès aux ressources**.
+
+    La fenêtre *Affecter l'accès à la ressource à** s'ouvre.
+
+5. Entrez les informations concernant la règle. Le tableau ci-dessous répertorie les zones requises pour définir une règle. 
+
+    <table>
+	  <caption>Liste des zones de configuration d'une règle IAM.</caption>
+	  <tr>
+	    <th>Zone</th>
+		<th>Valeur</th>
+	  </tr>
+	  <tr>
+	    <td>Services</td>
+		<td>*IBM Cloud Log Analysis*</td>
+	  </tr>	  
+	  <tr>
+	    <td>Régions</td>
+		<td>Vous pouvez spécifier les régions dans lesquelles l'utilisateur disposera des droits permettant d'utiliser les journaux. Sélectionnez ou une plusieurs régions individuellement, ou sélectionnez **Toutes les régions en cours** pour accorder l'accès à toutes les régions.</td>
+	  </tr>
+	  <tr>
+	    <td>Instance de service</td>
+		<td>Sélectionnez *Toutes les instances de service*.</td>
+	  </tr>
+	  <tr>
+	    <td>Rôles</td>
+		<td>Sélectionnez un ou plusieurs rôles IAM. <br>Les rôles valides sont *administrateur*, *opérateur*, *éditeur* et *afficheur*. <br>Pour plus d'informations sur les actions autorisées pour chaque rôle, voir [Rôle IAM](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+		</td>
+	  </tr>
+     </table>
+	
+6. Cliquez sur **Affecter**.
+	
+La règle que vous configurez est applicable aux régions sélectionnées. 
+
+
+## Etapes suivantes 
+{: #next_steps}
+
+**Remarque :** un utilisateur doit accéder à Kibana dans la région de cloud publique dans laquelle les données de journal sont disponibles pour afficher et analyser les données de journal. 
 
 Par exemple, pour lancer Kibana dans la région Sud des Etats-Unis, ouvrez un navigateur Web et entrez l'URL suivante :
 
@@ -117,12 +182,9 @@ https://logging.ng.bluemix.net/
 
 Pour plus d'informations sur le lancement de Kibana dans d'autres régions, voir [Accès à Kibana depuis un navigateur Web](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 
-**Remarque :** lorsque vous lancez Kibana, si un message signale que le *jeton bearer n'est pas valide*, vérifiez vos droits dans l'espace. Ce message indique que votre ID utilisateur ne dispose pas des droits permettant d'afficher les journaux.
+**Remarque :** lorsque vous lancez Kibana, si un message signale que le *jeton bearer n'est pas valide* ; vérifiez vos droits dans le compte. Ce message indique que votre ID utilisateur ne dispose pas des droits permettant d'afficher les journaux.
 
-## Etapes suivantes 
-{: #next_steps}
-
-Personnalisez Kibana pour afficher et analyser vos données de journal. Pour plus d'informations, voir [Affichage et analyse des journaux](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+Ensuite, personnalisez Kibana pour afficher et analyser vos données de journal. Pour plus d'informations, voir [Affichage et analyse des journaux](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
     
 
 

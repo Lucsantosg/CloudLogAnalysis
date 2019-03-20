@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Questions fréquentes sur l'utilisation de l'interface de ligne de commande IBM Cloud et réponses
@@ -21,7 +29,7 @@ lastupdated: "2018-07-25"
 Vous trouverez ci-après les réponses aux questions fréquentes concernant l'utilisation de l'interface de ligne de commande {{site.data.keyword.Bluemix}} avec le service {{site.data.keyword.loganalysisshort}}. 
 {:shortdesc}
 
-* [Comment se connecter à {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)
+* [Comment se connecter à {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)
 * [Comment installer l'interface de ligne de commande {{site.data.keyword.Bluemix_notm}} ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#install_bmx_cli)
 * [Comment obtenir l'identificateur global unique d'un compte ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid)
 * [Comment obtenir l'identificateur global unique d'une organisation ?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#org_guid)
@@ -143,7 +151,7 @@ Procédez comme suit pour obtenir l'identificateur global unique d'une organisat
 		
 		
 ## Comment obtenir l'identificateur global unique d'un espace ?
-{: #space_guid}
+{: #space_guid2}
 	
 Procédez comme suit pour obtenir l'identificateur global unique d'un espace :
 	

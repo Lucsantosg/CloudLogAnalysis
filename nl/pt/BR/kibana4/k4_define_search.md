@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Definindo consultas de procura customizada
 {:#k4_define_search}
@@ -32,7 +42,7 @@ Conclua as tarefas a seguir para definir uma procura customizada:
 
     2. Acesse o Kibana. Clique em **Visualização avançada** ![Link de visualização avançada](images/logging_advanced_view.jpg "Link de visualização avançada"). O painel do Kibana é exibido.
     
-    Para contêineres que são executados em um cluster do Kubernetes, [ative o Kibana por meio do navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser). 
+    Para contêineres que são executados em um cluster do Kubernetes, [ative o Kibana por meio do navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1). 
     
     Ao acessar o Kibana, a procura padrão é aplicada. É possível ver os logs para a lista de instâncias
 do recurso para o qual você ativou o Kibana. É possível filtrar os logs para quaisquer ou todos os
@@ -138,7 +148,7 @@ Conclua as etapas a seguir para carregar uma procura salva:
 2. Selecione a procura que deseja carregar. 
 
 ## Iniciando uma nova procura
-{: #k4_new_search}
+{: #k4_new_search1}
 
 Para iniciar uma nova procura, clique no botão **Nova procura** ![Nova procura](images/k4_new_search_icon.jpg "Nova procura") na barra de ferramentas da página Descobrir.
 

@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 定义定制搜索查询
 {:#define_search}
@@ -47,7 +54,7 @@ lastupdated: "2018-07-25"
 
      例如，对于 CF 应用程序，可以创建查询 `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]`，此查询中仅列出实例 *0* 和 *1* 的条目。 
 
-3. 保存查询，以便将来可以复用。有关更多信息，请参阅[保存搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)。 
+3. 保存查询，以便将来可以复用。有关更多信息，请参阅[保存搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1)。 
 
 **注**：如果需要删除查询，请参阅[删除搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)。
 
@@ -111,7 +118,7 @@ lastupdated: "2018-07-25"
 
 
 ## 重新装入搜索
-{: #reload_search}
+{: #reload_search1}
 
 要装入保存的搜索，请完成以下步骤：
 
@@ -125,7 +132,7 @@ lastupdated: "2018-07-25"
 要开始新搜索，请单击“发现”页面工具栏中的**新建搜索**按钮 ![新建搜索](images/new_search_icon.jpg "新建搜索")。
 
 ## 保存搜索 
-{: #save_search}
+{: #save_search1}
 
 请考虑以下有关在 Kibana 中保存定制搜索的信息：
 

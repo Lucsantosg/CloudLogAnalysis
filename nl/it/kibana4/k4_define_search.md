@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Definizione di query di ricerca personalizzate
 {:#k4_define_search}
@@ -30,7 +40,7 @@ Completa le seguenti attività per definire una ricerca personalizzata:
 
     2. Accedi a Kibana. Fai clic su **Vista avanzata** ![Link Vista avanzata](images/logging_advanced_view.jpg "Link Vista avanzata"). Viene visualizzato il dashboard Kibana.
     
-    Per i contenitori eseguiti in un cluster Kubernetes, [avvia Kibana dal browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser). 
+    Per i contenitori eseguiti in un cluster Kubernetes, [avvia Kibana dal browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1). 
     
     Quando accedi a Kibana, viene applicata la ricerca predefinita. Puoi visualizzare i log per l'elenco di istanze delle risorse per cui hai avviato Kibana. Puoi filtrare i log per ognuna delle risorse {{site.data.keyword.Bluemix_notm}} in tale spazio.
 
@@ -123,7 +133,7 @@ Completa la seguente procedura per caricare una ricerca salvata:
 2. Seleziona la ricerca che desideri caricare. 
 
 ## Avvio di una nuova ricerca
-{: #k4_new_search}
+{: #k4_new_search1}
 
 Per avviare una nuova ricerca, fai clic sul pulsante **Nuova ricerca** ![Nuova ricerca](images/k4_new_search_icon.jpg "Nuova ricerca") nella barra degli strumenti della pagina Rileva.
 

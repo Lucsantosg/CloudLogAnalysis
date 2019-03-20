@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-07-25"
+  years: 2017, 2019
+
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Virtuelle Maschinen
 {: #logging_vm_ov}
@@ -20,15 +30,15 @@ Die Protokollfunktionen werden für virtuelle Maschinen (VMs) nicht automatisch 
 
 
 ## Einpflegen von Protokollen (Log Ingestion)
-{: #log_ingestion}
+{: #log_ingestion2}
 
 Der {{site.data.keyword.loganalysisshort}}-Service bietet verschiedene Pläne. Alle Pläne - mit Ausnahme des *Lite*-Plans - beinhalten die Möglichkeit, Protokolle an 'Log Collection' zu senden. Weitere Informationen zu den Plänen finden Sie unter [Servicepläne](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-Sie können Protokolle über den Multi-Tenant Logstash Forwarder (mt-logstash-forwarder) an {site.data.keyword.loganalysisshort}} senden. Weitere Informationen finden Sie unter [Protokolldaten mit Multi-Tenant Logstash Forwarder (mt-logstash-forwarder) senden](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
+Sie können Protokolle über den Multi-Tenant Logstash Forwarder (mt-logstash-forwarder) an {{site.data.keyword.loganalysisshort}} senden. Weitere Informationen finden Sie unter [Protokolldaten mit Multi-Tenant Logstash Forwarder (mt-logstash-forwarder) senden](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
 
 
 ## Erfassen von Protokollen (Log Collection)
-{: #log_collection}
+{: #log_collection2}
 
 Standardmäßig speichert {{site.data.keyword.Bluemix_notm}} Protokolldaten für bis zu drei Tage:   
 
@@ -42,7 +52,7 @@ Der {{site.data.keyword.loganalysisshort}}-Service bietet zusätzliche Pläne, m
 
 
 ## Durchsuchen von Protokollen (Log Search)
-{: #log_search}
+{: #log_search2}
 
 Standardmäßig können Sie Kibana verwenden, um 500 MB Protokolle pro Tag in {{site.data.keyword.Bluemix_notm}} zu durchsuchen. 
 

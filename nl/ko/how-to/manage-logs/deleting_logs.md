@@ -1,23 +1,31 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 로그 삭제
-{: #deleting_logs}
+{: #deleting_logs1}
 
-로그 콜렉션에서 로그를 삭제하려면 [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) 명령을 사용하십시오. 
+로그 콜렉션에서 로그를 삭제하려면 [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) 명령을 사용하십시오. 
 {:shortdesc}
 
 * 특정 시간 범위 내의 로그를 삭제할 수 있습니다.
@@ -76,7 +84,7 @@ lastupdated: "2018-07-25"
 
 	
 ## 특정 기간 동안의 로그 유형별 로그 삭제 
-{: #log_type}
+{: #log_type1}
 
 다음 단계를 완료하십시오.
 

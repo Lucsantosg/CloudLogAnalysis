@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Kibana でのログの対話式分析
 {:#analize_logs_interactively}
@@ -62,7 +69,7 @@ lastupdated: "2018-07-25"
 
 新規検索を定義するには、始めにデフォルト検索照会を使用してから、以下のタスクを実行して検索を詳細化します。
 
-* フィールド・フィルターを適用して、表示できるデータ・セットを詳細化します。 各フィルターを切り替えたり、ページにピン留めしたり、必要に応じて有効または無効にしたり、値を含める/除外するように構成できます。 詳しくは、『[Kibana でのログのフィルタリング](filter_logs.html#filter_logs)』を参照してください。
+* フィールド・フィルターを適用して、表示できるデータ・セットを詳細化します。 各フィルターを切り替えたり、ページにピン留めしたり、必要に応じて有効または無効にしたり、値を含める/除外するように構成できます。 詳しくは、『[Kibana でのログのフィルタリング](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs)』を参照してください。
 
     **ヒント:** 「Discover」ページで、表示されるはずのフィールドが*フィールド・リスト* で見つからない場合、またはリストされているフィールドの横にある拡大鏡のいくつかが無効になっている場合は、「Settings」ページで索引パターンを最新表示することで、フィールドのリストを再ロードしてください。 詳しくは、『[フィールド・リストの再ロード](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields)』を参照してください。
 
@@ -79,7 +86,7 @@ lastupdated: "2018-07-25"
 | [検索の削除](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | 不要になった検索を削除します。 |
 | [検索のエクスポート](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | 検索を共有するためにエクスポートします。  |
 | [検索のインポート](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | 検索をインポートします。  |
-| [検索の再ロード](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | データ・セットを分析するために既存の検索を再度アップロードします。 |
+| [検索の再ロード](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search1)  | データ・セットを分析するために既存の検索を再度アップロードします。 |
 | [検索のデータの最新表示](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | 検索で表示されるデータの自動最新表示を構成します。  |
 | [検索の保存](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | 後から再使用するために検索を保存します。  |
 {: caption="表 3. 検索を操作するタスク" caption-side="top"}

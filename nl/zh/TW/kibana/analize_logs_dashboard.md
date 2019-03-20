@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 在 Kibana 中透過儀表板來分析日誌
 {:#analize_logs_dashboard}
@@ -27,8 +35,8 @@ lastupdated: "2018-07-25"
 |單一 CF 應用程式儀表板|此儀表板會顯示單一 Cloud Foundry 應用程式的資訊。|
 |單一容器儀表板 |此儀表板會顯示單一容器的資訊。|
 |容器群組儀表板 |此儀表板會顯示特定容器群組的資訊。|
-|多重 CF 應用程式儀表板|此儀表板會顯示部署在相同空間中的所有 Cloud Foundry 應用程式的資訊。| 
-|多重容器儀表板|此儀表板會顯示部署在相同空間中的所有容器的資訊。|
+|多 CF 應用程式儀表板|此儀表板會顯示部署在相同空間中的所有 Cloud Foundry 應用程式的資訊。| 
+|多容器儀表板|此儀表板會顯示部署在相同空間中的所有容器的資訊。|
 |空間儀表板 |此儀表板會顯示空間中可用的記載資料。| 
 {: caption="表 1. 儀表板類型範例" caption-side="top"}
 
@@ -43,7 +51,7 @@ lastupdated: "2018-07-25"
 |[刪除儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) |刪除不需要的儀表板。|
 |[匯出儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) |您可以將儀表板匯出成 JSON 檔案。|
 |[匯入儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) |您可以將儀表板匯入成 JSON 檔案。|
-|[載入儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) |您可以上傳儀表板，以更新其資料、予以修改或分析資料。|
+|[載入儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload3) |您可以上傳儀表板，以更新其資料、予以修改或分析資料。|
 |[儲存儀表板](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) |您可以儲存儀表板，以供之後重複使用。|
 {: caption="表 2. 使用儀表板的作業" caption-side="top"}
 
@@ -83,7 +91,7 @@ lastupdated: "2018-07-25"
 
 
 ## 刪除 Kibana 儀表板
-{: #delete}
+{: #delete1}
 
 若要刪除儀表板，請在**管理**頁面中完成下列步驟：
 
@@ -120,7 +128,7 @@ lastupdated: "2018-07-25"
 該儀表板即會新增至儀表板清單中。
 
 ## 載入 Kibana 儀表板
-{: #reload}
+{: #reload3}
 
 請完成下列步驟，以載入已儲存的儀表板：
 

@@ -1,22 +1,30 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # IAM-Token abrufen
-{: #auth_iam}
+{: #auth_iam1}
 
 Zum Verwalten der im Konto verfügbaren Protokolle über die {{site.data.keyword.loganalysisshort}}-API müssen Sie ein Authentifizierungstoken verwenden. Sie können die Befehlszeilenschnittstelle von {{{site.data.keyword.Bluemix_notm}} verwenden, um das IAM-Token abzurufen. Das Token hat eine Ablaufzeit. 
 {:shortdesc}

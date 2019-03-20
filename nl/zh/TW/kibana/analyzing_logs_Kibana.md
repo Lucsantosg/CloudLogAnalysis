@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 檢視及分析日誌 (Kibana)
 {:#analyzing_logs_Kibana}
@@ -79,7 +88,7 @@ Kibana 包括可用來分析日誌的不同頁面：
 ## 以互動方式分析資料
 {: #analyze_discover}
 
-在「探索」頁面中，您可以定義新的搜尋查詢，並依查詢來套用過濾器。日誌資料會透過表格及直方圖來顯示。您可以使用這些視覺效果，以互動方式來分析資料。如需相關資訊，請參閱[在 Kibana 中以互動方式分析日誌](analize_logs_interactively.html#analize_logs_interactively)。
+在「探索」頁面中，您可以定義新的搜尋查詢，並依查詢來套用過濾器。日誌資料會透過表格及直方圖來顯示。您可以使用這些視覺效果，以互動方式來分析資料。如需相關資訊，請參閱[在 Kibana 中以互動方式分析日誌](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#analize_logs_interactively)。
 
 您可以從日誌欄位（例如 message_type 及 instance_ID）配置過濾器，並設定時段。您可以動態啟用或停用這些過濾器。表格及直方圖將會顯示符合您啟用之查詢和過濾準則的日誌項目。如需相關資訊，請參閱[在 Kibana 中過濾日誌](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs)。
 

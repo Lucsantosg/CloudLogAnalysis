@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # ヘルプとサポートの取得
@@ -29,5 +38,4 @@ lastupdated: "2018-07-25"
   * サービスおよび開始手順についての質問の場合、[{{site.data.keyword.IBM_notm}} developerWorks dW Answers](https://developer.ibm.com/answers/topics/log-analysis/?smartspace=ibm-cloud){:new_window} フォーラムを使用してください。
 
 * それでも問題を解決できない場合は、IBM サポート・チケットを開くことができます。 IBM サポート・チケットのオープン、またはサポート・レベルおよびチケットの重大度については、『[サポートへのお問い合わせ](/docs/get-support/howtogetsupport.html#getting-customer-support)』を参照してください。
-
 

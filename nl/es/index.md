@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Guía de aprendizaje de iniciación
 {: #getting-started-with-cla}
@@ -62,15 +68,17 @@ En la tabla siguiente encontrará los distintos recursos de la nube. Consulte la
 
 
 ## Paso 2: Establecer permisos para que un usuario vea registros
-{: #step2}
+{: #step24}
 
 Para controlar las acciones de {{site.data.keyword.loganalysisshort}} que puede realizar un usuario, puede asignar roles y políticas a un usuario. 
 
 Hay dos tipos de permisos de seguridad en {{site.data.keyword.Bluemix_notm}} que controlan las acciones que pueden realizar los usuarios cuando trabajan con el servicio {{site.data.keyword.loganalysisshort}}:
 
 * Roles de Cloud Foundry (CF): Otorgue un rol de CF a un usuario para definir los permisos que tiene el usuario para ver registros en un espacio.
-* Roles de IAM: Otorgue una política de IAM a un usuario para definir los permisos que tiene el usuario para ver registros en el dominio de la cuenta, y los permisos que tiene el usuario para gestionar registros almacenados en la Recopilación de registros. 
+* Roles de IAM: Otorgue a un usuario una política de IAM para definir los permisos que el usuario tiene para ver los registros en el dominio de la cuenta.
 
+### Establecer permisos para que un usuario vea registros en un dominio de espacios
+{: #step42a}
 
 Siga estos pasos para otorgar permisos a un usuario para ver registros en un espacio:
 
@@ -101,10 +109,67 @@ Siga estos pasos para otorgar permisos a un usuario para ver registros en un esp
 7. Pulse **Guardar rol**.
 
 
-Para obtener más información, consulte [Concesión de permisos](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_account).
+
+### Establecer permisos para que un usuario vea registros en un dominio de cuentas
+{: #step24b}
 
 
-Un usuario debe acceder a Kibana en la región Pública de la nube donde están disponibles los datos de registro para poder ver y analizar los datos de registro. 
+Siga estos pasos para otorgar permisos a un usuario para ver registros de cuentas:
+
+1. Inicie sesión en la consola de {{site.data.keyword.Bluemix_notm}}.
+
+    Abra un navegador web y lance el panel de control de {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![Icono de enlace externo](../../../icons/launch-glyph.svg "Icono de enlace externo")](http://bluemix.net){:new_window}
+	
+	Cuando inicia sesión con su ID de usuario y su contraseña, se abre la interfaz de usuario de {{site.data.keyword.Bluemix_notm}}.
+
+2. En la barra de menús, pulse **Gestionar > Cuenta > Usuarios**. 
+
+    La ventana *Usuarios* muestra una lista de usuarios con sus direcciones de correo electrónico para la cuenta seleccionada actualmente.
+	
+3. Si el usuario es un miembro de la cuenta, seleccione el nombre de usuario de la lista, o pulse **Gestionar usuario** del menú *Acciones*.
+
+    Si el usuario no es un miembro de la cuenta, consulte [Invitación a usuarios](/docs/iam/iamuserinv.html#iamuserinv).
+
+4. En la sección **Políticas de acceso**, pulse **Asignar un acceso** y, a continuación, seleccione **Asignar acceso a recursos**.
+
+    Se abrirá la ventana *Asignar acceso de recursos al usuario**.
+
+5. Especifique la información sobre la política. La tabla siguiente lista los campos necesarios para definir una política: 
+
+    <table>
+	  <caption>Lista de campos para configurar una política IAM.</caption>
+	  <tr>
+	    <th>Campo</th>
+		<th>Valor</th>
+	  </tr>
+	  <tr>
+	    <td>Servicios</td>
+		<td>*IBM Cloud Log Analysis*</td>
+	  </tr>	  
+	  <tr>
+	    <td>Regiones</td>
+		<td>Puede especificar las regiones en las que se otorgará acceso al usuario para trabajar con registros. Seleccione una o varias regiones individualmente, o seleccione **Todas las regiones actuales** para otorgar acceso a todas las regiones.</td>
+	  </tr>
+	  <tr>
+	    <td>Instancia de servicio</td>
+		<td>Seleccione *Todas las instancias de servicio*.</td>
+	  </tr>
+	  <tr>
+	    <td>Roles</td>
+		<td>Seleccione uno o varios roles de IAM. <br>Los roles válidos son: *administrador*, *operador*, *editor*, y *visor*. <br>Para obtener más información sobre las acciones que están permitidas por rol, consulte [Roles de IAM](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+		</td>
+	  </tr>
+     </table>
+	
+6. Pulse **Asignar**.
+	
+La política que configure es aplicable a las regiones seleccionadas. 
+
+
+## Pasos siguientes 
+{: #next_steps}
+
+**Nota:** Un usuario debe acceder a Kibana en la región Pública de la nube donde están disponibles los datos de registro para poder ver y analizar los datos de registro. 
 
 Por ejemplo, para iniciar Kibana en la región EE.UU. sur, abra un navegador web y escriba el siguiente URL:
 
@@ -116,12 +181,9 @@ https://logging.ng.bluemix.net/
 
 Para obtener más información sobre cómo iniciar Kibana en otras regiones, consulte [Navegación a Kibana desde un navegador web](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 
-**Nota:** Cuando inicie Kibana, si obtiene un mensaje que indica *señal de transporte no válida*, compruebe sus permisos en el espacio. Este mensaje es una indicación de que el ID de usuario no tiene permisos para ver registros.
+**Nota:** Cuando inicie Kibana, si obtiene un mensaje que indica *señal de transporte no válida*, compruebe sus permisos en la cuenta. Este mensaje es una indicación de que el ID de usuario no tiene permisos para ver registros.
 
-## Pasos siguientes 
-{: #next_steps}
-
-Personalice Kibana para ver y analizar sus datos de registro. Para obtener más información, consulte [Visualización y análisis de registros](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
+A continuación, personalice Kibana para ver y analizar sus datos de registro. Para obtener más información, consulte [Visualización y análisis de registros](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana).
     
 
 

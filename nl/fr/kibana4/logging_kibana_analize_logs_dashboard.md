@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Analyse des journaux dans Kibana via un tableau de bord
 {:#kibana_analize_logs_dashboard}
@@ -130,11 +139,11 @@ Pour charger un tableau de bord sauvegardé, procédez comme suit :
 
 Procédez comme suit pour sauvegarder un tableau de bord Kibana après l'avoir personnalisé :
 
-1. Dans la barre d'outils, cliquez sur le bouton **Save** ![Sauvegarder le tableau de bord](images/k4_dash_save_icon.jpg "Sauvegarder le tableau de bord)").
+1. Dans la barre d'outils, cliquez sur le bouton **Save** ![Sauvegarder le tableau de bord](images/k4_dash_save_icon.jpg "Sauvegarder le tableau de bord").
 
 2. Entrez un nom pour le tableau de bord.
 
-    **Remarque :** si vous tentez de sauvegarder un tableau de bord avec un nom contenant des espaces vides, l'opération échoue.
+    **Remarque :** Si vous tentez de sauvegarder un tableau de bord avec un nom contenant des espaces vides, l'opération échoue.
 
 3. Cliquez sur l'icône de **sauvegarde** en regard de la zone de nom.
 

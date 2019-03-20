@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Kibana - Häufig gestellte Fragen
@@ -43,7 +50,7 @@ Um das Problem zu beheben, führen Sie die folgenden Schritte aus:
 
     **Hinweis**: Standardmäßig ist der *Time Picker* in {{site.data.keyword.Bluemix_notm}} so eingestellt, dass Daten für die letzten 15 Minuten angezeigt werden.
 
-    Weitere Informationen zum Einstellen des *Time Picker* finden Sie unter [Zeitfilter festlegen](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+    Weitere Informationen zum Einstellen des *Time Picker* finden Sie unter [Zeitfilter festlegen](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter1).
        
 2. Klicken Sie auf die Lupe, die sich in der Suchleiste der Seite *Discover* befindet. Die Seitendaten werden auf der Basis der Standardsuchabfrage aktualisiert.
 

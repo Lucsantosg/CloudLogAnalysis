@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-08-21"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Log Analysis-Befehlszeilenschnittstelle ({{site.data.keyword.Bluemix_notm}}-Plug-in)
 {: #log_analysis_cli}
@@ -129,7 +138,7 @@ Gebe Sie 'ibmcloud logging help [Befehl]' ein, um weitere Informationen zu einem
 
 
 ## ibmcloud logging log-delete
-{: #delete}
+{: #delete3}
 
 Mit diesem Befehl können Sie Protokolle löschen, die in 'Log Collection' gespeichert sind.
 
@@ -173,7 +182,7 @@ ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud logging log-download 
-{: #download}
+{: #download3}
 
 Mit diesem Befehl können Sie Protokolle aus 'Log Collection' in eine lokale Datei herunterladen oder Protokolle an ein anderes Programm (zum Beispiel Elastic Stack) umleiten. 
 

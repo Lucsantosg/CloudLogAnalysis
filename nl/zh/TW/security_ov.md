@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 安全
 {: #security_ov}
@@ -25,7 +32,7 @@ lastupdated: "2018-07-25"
 
 
 ## 鑑別模型
-{: #auth}
+{: #auth1}
 
 若要透過 CLI 或 API 使用 {{site.data.keyword.loganalysisshort}} 服務，您需要鑑別記號。
 
@@ -35,14 +42,14 @@ lastupdated: "2018-07-25"
 
     您只能使用 CLI 來管理 UAA 記號。
 	
-* [IAM 鑑別](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)
+* [IAM 鑑別](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)
 
     IAM 鑑別模型提供使用者介面、CLI 或 API 管理功能。 
 
 **附註：**UAA 記號及 IAM 記號會在一段時間後過期。 
 
 ## 角色
-{: #roles}
+{: #roles3}
 
 {{site.data.keyword.Bluemix_notm}} 中有兩種類型的角色可控制使用者在使用 {{site.data.keyword.loganalysisshort}} 服務時可執行的動作：
 
@@ -217,7 +224,7 @@ lastupdated: "2018-07-25"
 * 使用 {{site.data.keyword.Bluemix_notm}} CLI 來取得 IAM 記號。 
 * 記號具有有效期限。 
 
-如需相關資訊，請參閱[取得 IAM 記號](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)。
+如需相關資訊，請參閱[取得 IAM 記號](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)。
 
 
 ## 取得記載記號以將日誌傳送至 Log Analysis
@@ -233,11 +240,11 @@ lastupdated: "2018-07-25"
 
 
 ## 將日誌使用許可權授與使用者
-{: #grant_permissions}
+{: #grant_permissions1}
 
 若要讓使用者可以管理日誌或檢視日誌，必須將在 {{site.data.keyword.Bluemix_notm}} 中使用 {{site.data.keyword.loganalysisshort}} 服務的許可權授與使用者。
 
-* 如需管理日誌所需許可權的相關資訊，請參閱[使用者管理日誌所需的角色](/docs/services/CloudLogAnalysis/manage_logs.html#roles)。
+* 如需管理日誌所需許可權的相關資訊，請參閱[使用者管理日誌所需的角色](/docs/services/CloudLogAnalysis/manage_logs.html#roles1)。
 * 如需檢視日誌所需許可權的相關資訊，請參閱[使用者檢視日誌所需的角色](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)。
 
 如需如何授與許可權的相關資訊，請參閱：

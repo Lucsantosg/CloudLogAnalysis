@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Análisis de registro en Kibana mediante un panel de control
 {:#analize_logs_dashboard}
@@ -43,7 +51,7 @@ En la tabla siguiente se muestran las diferentes tareas que puede llevar a cabo 
 | [Suprimir un panel de control](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) | Suprima los paneles de control que ya no necesite. |
 | [Exportar un panel de control](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) | Puede exportar un panel de control como archivo JSON. |
 | [Importar un panel de control](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) | Puede importar un panel de control como archivo JSON. |
-| [Cargar un panel de control](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) | Puede cargar un panel de control para actualizar sus datos, modificarlo o analizar los datos. |
+| [Cargar un panel de control](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload3) | Puede cargar un panel de control para actualizar sus datos, modificarlo o analizar los datos. |
 | [Guardar un panel de control](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | Puede guardar un panel de control para reutilizarlo en el futuro. |
 {: caption="Tabla 2. Tareas para trabajar con paneles de control" caption-side="top"}
 
@@ -83,7 +91,7 @@ Siga los siguientes pasos para crear un nuevo panel de control:
 
 
 ## Supresión de un panel de control de Kibana
-{: #delete}
+{: #delete1}
 
 Para suprimir un panel de control, siga los pasos siguientes en la página **Gestión**:
 
@@ -120,7 +128,7 @@ Para importar un panel de control como archivo JSON, siga los pasos siguientes e
 El panel de control se añade a la lista de paneles de control.
 
 ## Carga de un panel de control de Kibana
-{: #reload}
+{: #reload3}
 
 Siga los siguientes pasos para cargar un nuevo panel de control guardado:
 

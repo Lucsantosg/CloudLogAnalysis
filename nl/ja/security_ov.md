@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # セキュリティー
 {: #security_ov}
@@ -25,7 +32,7 @@ lastupdated: "2018-07-25"
 
 
 ## 認証モデル
-{: #auth}
+{: #auth1}
 
 {{site.data.keyword.loganalysisshort}} サービスでの作業を CLI または API を介して行うには、認証トークンが必要です。
 
@@ -35,14 +42,14 @@ lastupdated: "2018-07-25"
 
     UAA トークンを管理するには、CLI のみを使用できます。
 	
-* [IAM 認証](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)
+* [IAM 認証](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)
 
     IAM 認証モデルは、UI、CLI、または API の管理機能を提供します。 
 
 **注:** UAA トークンおよび IAM トークンは、一定期間を過ぎると有効期限が切れます。 
 
 ## 役割
-{: #roles}
+{: #roles3}
 
 {{site.data.keyword.Bluemix_notm}} には 2 つのタイプの役割があり、それらの役割によって、ユーザーが {{site.data.keyword.loganalysisshort}} サービスを使用した処理を行うときに実行できるアクションが制御されます。
 
@@ -217,7 +224,7 @@ lastupdated: "2018-07-25"
 * {{{site.data.keyword.Bluemix_notm}} CLI を使用して IAM トークンを取得します。 
 * トークンには有効期限があります。 
 
-詳しくは、『[IAM トークンの取得](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)』を参照してください。
+詳しくは、『[IAM トークンの取得](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)』を参照してください。
 
 
 ## ログを Log Analysis に送信するためのロギング・トークンの取得
@@ -233,11 +240,11 @@ lastupdated: "2018-07-25"
 
 
 ## ログを処理するためのユーザーへの許可の付与
-{: #grant_permissions}
+{: #grant_permissions1}
 
 ユーザーがログの管理または表示を実行できるためには、{{site.data.keyword.loganalysisshort}} サービスを使用して作業することの許可を {{site.data.keyword.Bluemix_notm}} においてユーザーに付与されている必要があります。
 
-* ログを管理するために必要な許可について詳しくは、『[ログを管理するユーザーに必要な役割](/docs/services/CloudLogAnalysis/manage_logs.html#roles)』を参照してください。
+* ログを管理するために必要な許可について詳しくは、『[ログを管理するユーザーに必要な役割](/docs/services/CloudLogAnalysis/manage_logs.html#roles1)』を参照してください。
 * ログを表示するために必要な許可について詳しくは、『[ログを表示するユーザーに必要な役割](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)』を参照してください。
 
 許可を付与する方法について詳しくは、以下を参照してください。

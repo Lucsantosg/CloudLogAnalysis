@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # CF-Protokolle über die Befehlszeilenschnittstelle analysieren
@@ -32,9 +40,9 @@ Verwenden Sie den Befehl **cf logs**, um Protokolle über eine Cloud Foundry-App
 
 Um die Protokolle anzuzeigen, an denen Sie interessiert sind, oder um Inhalte auszuschließen, die Sie nicht anzeigen möchten, können Sie den Befehl **cf logs** mit Filteroptionen wie **cut** und **grep** in der 'cf'-Befehlszeilenschnittstelle verwenden:
 
-* Informationen zum Anzeigen der Protokolle für eine Cloud Foundry-App finden Sie unter [Protokoll für eine Cloud Foundry-App anzeigen](logging_view_cli.html#full_log_cli).
-* Informationen zum Anzeigen der neuesten Protokolldatensätze für eine Cloud Foundry-App finden Sie unter [Neueste Protokolleinträge für eine Cloud Foundry-App anzeigen](logging_view_cli.html#tailing_log_cli).
-* Informationen zum Anzeigen der Protokolldatensätze für eine Cloud Foundry-App in einem bestimmten Zeitbereich finden Sie unter [Abschnitt eines Cloud Foundry-Protokolls anzeigen](logging_view_cli.html#partial_log_cli).
+* Informationen zum Anzeigen der Protokolle für eine Cloud Foundry-App finden Sie unter [Protokoll für eine Cloud Foundry-App anzeigen](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#full_log_cli).
+* Informationen zum Anzeigen der neuesten Protokolldatensätze für eine Cloud Foundry-App finden Sie unter [Neueste Protokolleinträge für eine Cloud Foundry-App anzeigen](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#tailing_log_cli).
+* Informationen zum Anzeigen der Protokolldatensätze für eine Cloud Foundry-App in einem bestimmten Zeitbereich finden Sie unter [Abschnitt eines Cloud Foundry-Protokolls anzeigen](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#partial_log_cli).
 * Informationen zum Anzeigen von Einträgen in den Protokollen für eine Cloud Foundry-App, die bestimmte Schlüsselwörter enthalten, finden Sie unter [Protokolleinträge anzeigen, die bestimmte Schlüsselwörter enthalten](logging_view_cli.html#partial_by_keyword_log_cli).
 
 

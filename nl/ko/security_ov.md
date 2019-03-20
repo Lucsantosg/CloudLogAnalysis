@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 보안
 {: #security_ov}
@@ -25,7 +32,7 @@ lastupdated: "2018-07-25"
 
 
 ## 인증 모델
-{: #auth}
+{: #auth1}
 
 CLI 또는 API를 통해 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행하려면 인증 토큰이 필요합니다.
 
@@ -35,14 +42,14 @@ CLI 또는 API를 통해 {{site.data.keyword.loganalysisshort}} 서비스에 대
 
     CLI만 사용하여 UAA 토큰을 관리할 수 있습니다.
 	
-* [IAM 인증](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)
+* [IAM 인증](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)
 
     IAM 인증 모델은 UI, CLI 또는 API 관리 기능을 제공합니다. 
 
 **참고:** UAA 토큰 및 IAM 토큰은 특정 기간 이후에 만료됩니다. 
 
 ## 역할
-{: #roles}
+{: #roles3}
 
 {{site.data.keyword.Bluemix_notm}}에는 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 실행할 때 사용자가 수행할 수 있는 조치를 제어하는 두 가지 역할 유형이 있습니다.
 
@@ -217,7 +224,7 @@ CLI 또는 API를 통해 {{site.data.keyword.loganalysisshort}} 서비스에 대
 * {{{site.data.keyword.Bluemix_notm}} CLI를 사용하여 IAM 토큰을 가져오십시오. 
 * 토큰에는 만료 시간이 있습니다. 
 
-자세한 정보는 [IAM 토큰 가져오기](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)를 참조하십시오.
+자세한 정보는 [IAM 토큰 가져오기](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)를 참조하십시오.
 
 
 ## Log Analysis를 사용하여 로그를 보내는 로깅 토큰 가져오기
@@ -233,11 +240,11 @@ CLI 또는 API를 통해 {{site.data.keyword.loganalysisshort}} 서비스에 대
 
 
 ## 사용자에게 로그에 대한 작업을 수행하기 위한 권한 부여
-{: #grant_permissions}
+{: #grant_permissions1}
 
 사용자가 로그를 관리하거나 볼 수 있도록 하려면 {{site.data.keyword.Bluemix_notm}}에서 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행하기 위한 권한을 사용자에게 부여해야 합니다.
 
-* 로그 관리에 필요한 권한에 대한 정보는 [로그 관리를 위해 사용자에게 필요한 역할](/docs/services/CloudLogAnalysis/manage_logs.html#roles)을 참조하십시오.
+* 로그 관리에 필요한 권한에 대한 정보는 [로그 관리를 위해 사용자에게 필요한 역할](/docs/services/CloudLogAnalysis/manage_logs.html#roles1)을 참조하십시오.
 * 로그 보기에 필요한 권한에 대한 정보는 [로그 보기를 위해 사용자에게 필요한 역할](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)을 참조하십시오.
 
 권한 부여 방법에 대한 자세한 정보는 다음을 참조하십시오.

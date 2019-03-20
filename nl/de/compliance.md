@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Compliance
@@ -42,7 +50,7 @@ Der {{site.data.keyword.loganalysisshort}}-Service enthält 2 Datenrepositorys, 
 * Log Search - enthält die Protokolldaten, die für die Analyse über Kibana verfügbar sind.
 * Log Collection - enthält die Protokolldaten für den Langzeitspeicher.
 
-Je nach {{site.data.keyword.loganalysisshort}}-Serviceplan werden die Daten in Log Search oder in Log Search und Log Collection gespeichert. Der Standard- oder Lite-Plan speichert die Datein in Log Search. Alle anderen Pläne speichern die Daten in Log Search und in Log Collection.
+Je nach {{site.data.keyword.loganalysisshort}}-Serviceplan werden die Daten in Log Search oder in Log Search und Log Collection gespeichert. Der Standard- oder Lite-Plan speichert die Daten nur in Log Search. Alle anderen Pläne speichern die Daten in Log Search und in Log Collection.
 
 * Protokolle, die in 'Log Search' gespeichert sind, werden nach drei Tagen gelöscht.
 * Protokolle, die in 'Log Collection' gespeichert sind, werden so lange aufbewahrt, bis Sie entweder eine Aufbewahrungsrichtlinie konfigurieren oder sie manuell löschen. Die Protokolle werden standardmäßig in 'Log Collection' unbegrenzt aufbewahrt.

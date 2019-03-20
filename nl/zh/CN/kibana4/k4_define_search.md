@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 定义定制搜索查询
 {:#k4_define_search}
@@ -30,7 +40,7 @@ lastupdated: "2018-07-25"
 
     2. 访问 Kibana。单击**高级视图** ![“高级视图”链接](images/logging_advanced_view.jpg "“高级视图”链接")。这将显示 Kibana 仪表板。
     
-    对于在 Kubernetes 集群中运行的容器，请[从浏览器启动 Kibana](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)。 
+    对于在 Kubernetes 集群中运行的容器，请[从浏览器启动 Kibana](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1)。 
     
     访问 Kibana 时，将应用缺省搜索。您可以看到已为其启动 Kibana 的资源实例列表的日志。可以过滤该空间中任何或全部 {{site.data.keyword.Bluemix_notm}} 资源的日志。
 
@@ -123,7 +133,7 @@ lastupdated: "2018-07-25"
 2. 选择要装入的搜索。 
 
 ## 开始新搜索
-{: #k4_new_search}
+{: #k4_new_search1}
 
 要开始新搜索，请单击“发现”页面工具栏中的**新建搜索**按钮 ![新建搜索](images/k4_new_search_icon.jpg "新建搜索")。
 

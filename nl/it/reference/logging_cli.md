@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # CLI IBM Cloud Log Analysis (plugin CF)
 {: #logging_cli}
@@ -56,30 +65,30 @@ Per informazioni su come utilizzare la CLI {{site.data.keyword.loganalysisshort}
     <td>Utilizza questo comando per visualizzare o configurare il periodo di conservazione per i log disponibili in uno spazio o in un account.</td>
   </tr>
   <tr>
-    <td>[ibmcloud cf logging session create (Beta)](#session_create)</td>
+    <td>[ibmcloud cf logging session create (Beta)](#session_create1)</td>
     <td>Utilizza questo comando per creare una nuova sessione.</td>
   <tr>
   <tr>
-    <td>[ibmcloud cf logging session delete (Beta)](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete (Beta)](#session_delete1)</td>
     <td>Utilizza questo comando per eliminare una sessione.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session list (Beta)](#session_list)</td>
+    <td>[ibmcloud cf logging session list (Beta)](#session_list1)</td>
     <td>Utilizza questo comando per elencare le sessioni attive e i rispettivi ID.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session show (Beta)](#session_show)</td>
+    <td>[ibmcloud cf logging session show (Beta)](#session_show1)</td>
     <td>Utilizza questo comando per visualizzare lo stato di una sola sessione.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status1)</td>
     <td>Utilizza questo comando per ottenere le informazioni sui log raccolti in uno spazio o in un account.</td>
   </tr>
   </table>
 
 
 ## ibmcloud cf logging
-{: #base}
+{: #base1}
 
 Fornisce le informazioni sulla versione della CLI e su come utilizzarla.
 
@@ -145,7 +154,7 @@ ibmcloud cf logging auth
 </dl>
 
 ## ibmcloud cf logging delete
-{: #delete}
+{: #delete2}
 
 Elimina i log archiviati in Raccolta dei log.
 
@@ -185,11 +194,11 @@ ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud cf logging download (Beta)
-{: #download}
+{: #download4}
 
 Scarica i log dalla raccolta dei log in un file locale o li invia a un altro programma come uno stack Elastic. 
 
-**Nota:** per scaricare i file, devi prima creare una sessione. Una sessione definisce quali log scaricare in base all'intervallo di date, al tipo di log e al tipo di account. Scarica i log nel contesto di una sessione. Per ulteriori informazioni, vedi [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create).
+**Nota:** per scaricare i file, devi prima creare una sessione. Una sessione definisce quali log scaricare in base all'intervallo di date, al tipo di log e al tipo di account. Scarica i log nel contesto di una sessione. Per ulteriori informazioni, vedi [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1).
 
 ```
 ibmcloud cf logging download [parametri] [argomenti]
@@ -246,7 +255,7 @@ output {
 
 
 ## ibmcloud cf logging help
-{: #help}
+{: #help1}
 
 Fornisce le informazioni su come utilizzare un comando.
 
@@ -341,7 +350,7 @@ L'output è:
 
 
 ## ibmcloud cf logging session create (Beta)
-{: #session_create}
+{: #session_create1}
 
 Crea una nuova sessione.
 
@@ -409,7 +418,7 @@ ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 
 
 ## ibmcloud cf logging session delete (Beta)
-{: #session_delete}
+{: #session_delete1}
 
 Elimina una sessione, specificata per ID sessione.
 
@@ -437,7 +446,7 @@ ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging session list (Beta)
-{: #session_list}
+{: #session_list1}
 
 Elenca le sessioni attive e i rispettivi ID.
 
@@ -467,7 +476,7 @@ ibmcloud cf logging session list
  
 
 ## ibmcloud cf logging session show (Beta)
-{: #session_show}
+{: #session_show1}
 
 Visualizza lo stato di una sola sessione.
 
@@ -519,7 +528,7 @@ ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging status
-{: #status}
+{: #status1}
 
 Restituisce le informazioni sui log raccolti in uno spazio o in un account.
 

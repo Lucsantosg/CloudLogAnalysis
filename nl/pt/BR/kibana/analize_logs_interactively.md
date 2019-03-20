@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Analisando logs interativamente no Kibana
 {:#analize_logs_interactively}
@@ -78,7 +85,7 @@ refine a procura executando as seguintes tarefas:
 
 * Aplique filtros de campo para refinar o conjunto de dados que pode ser visto. É possível alternar cada
 filtro, fixá-lo na página, ativá-lo ou desativá-lo, conforme necessário, e configurá-lo para incluir ou
-excluir o valor. Para obter mais informações, consulte [Filtrando logs no Kibana](filter_logs.html#filter_logs).
+excluir o valor. Para obter mais informações, consulte [Filtrando logs no Kibana](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
 
     **Dica:** se não for possível localizar um campo na *Lista de campos*
 que você espera ver ou se algumas das lupas nos campos listados estiverem desativadas na
@@ -110,7 +117,7 @@ procura quando ela não for mais necessária. |
 procura para compartilhá-la.  |
 | [Importar uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Importe uma
 procura.  |
-| [Recarregar uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | Faça
+| [Recarregar uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search1)  | Faça
 upload de uma procura existente para analisar um conjunto de dados novamente. |
 | [Atualizar os dados de uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | Configure atualização automática dos dados que são exibidos por meio da procura.  |
 | [Salvar uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Salve a procura

@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # カスタム検索照会の定義
 {:#define_search}
@@ -47,7 +54,7 @@ lastupdated: "2018-07-25"
 
      例えば、CF アプリの場合、インスタンス *0* および *1* の項目のみがリストされる照会 `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]` を作成できます。 
 
-3. 照会を保存して、後から再使用できるようにします。 詳しくは、『[検索の保存](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)』を参照してください。 
+3. 照会を保存して、後から再使用できるようにします。 詳しくは、『[検索の保存](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1)』を参照してください。 
 
 **注:** 照会を削除する必要がある場合は、『[検索の削除](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)』を参照してください。
 
@@ -111,7 +118,7 @@ lastupdated: "2018-07-25"
 
 
 ## 検索の再ロード
-{: #reload_search}
+{: #reload_search1}
 
 保存済み検索をロードするには、以下のステップを実行します。
 
@@ -125,7 +132,7 @@ lastupdated: "2018-07-25"
 新規検索を開始するには、「Discover」ページのツールバーにある**「New Search」**ボタン ![新規検索](images/new_search_icon.jpg "新規検索")をクリックします。
 
 ## 検索の保存 
-{: #save_search}
+{: #save_search1}
 
 Kibana でのカスタム検索の保存に関する以下の情報を考慮してください。
 

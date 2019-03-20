@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 取得記載記號
@@ -166,7 +175,7 @@ lastupdated: "2018-07-25"
 
 4. 取得空間的 GUID。
 
-   如需相關資訊，請參閱[如何取得空間的 GUID](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid)。  
+   如需相關資訊，請參閱[如何取得空間的 GUID](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid2)。  
 	
 5. 匯出下列變數：TOKEN 及 SPACEID。
 

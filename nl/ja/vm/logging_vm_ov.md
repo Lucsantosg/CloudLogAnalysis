@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-07-25"
+  years: 2017, 2019
+
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 仮想マシン
 {: #logging_vm_ov}
@@ -20,15 +30,15 @@ lastupdated: "2018-07-25"
 
 
 ## ログの取り込み
-{: #log_ingestion}
+{: #log_ingestion2}
 
 {{site.data.keyword.loganalysisshort}} サービスにはさまざまなプランが用意されています。 *ライト*・プランを除くすべてのプランには、Log Collection にログを送信する機能が含まれています。 各種プランについて詳しくは、『[サービス・プラン](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)』を参照してください。
 
-mt-logstash-forwarder を使用することによって、ログを {site.data.keyword.loganalysisshort}} に送信できます。 詳しくは、『[マルチテナント Logstash Forwarder (mt-logstash-forwarder) を使用したログ・データの送信](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt)』を参照してください。
+mt-logstash-forwarder を使用することによって、ログを {{site.data.keyword.loganalysisshort}} に送信できます。 詳しくは、『[マルチテナント Logstash Forwarder (mt-logstash-forwarder) を使用したログ・データの送信](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt)』を参照してください。
 
 
 ## Log Collection
-{: #log_collection}
+{: #log_collection2}
 
 デフォルトでは、{{site.data.keyword.Bluemix_notm}} はログ・データを最大 3 日間保管します。   
 
@@ -42,7 +52,7 @@ mt-logstash-forwarder を使用することによって、ログを {site.data.k
 
 
 ## ログ検索
-{: #log_search}
+{: #log_search2}
 
 デフォルトでは、{{site.data.keyword.Bluemix_notm}} では、1 日当たり 500 MB までのログを Kibana を使用して検索できます。 
 

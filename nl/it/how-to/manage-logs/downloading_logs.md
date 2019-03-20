@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Download dei log
-{: #downloading_logs}
+{: #downloading_logs1}
 
 Puoi scaricare i log in un file locale o inserire i dati in un altro programma. Scarica i log nel contesto di una sessione. Una sessione specifica quali log saranno scaricati. Se lo scaricamento dei log viene interrotto, la sessione abilita il ripristino dello scaricamento dall'interruzione. Dopo aver completato lo scaricamento, devi eliminare la sessione.
 {:shortdesc}
@@ -29,7 +37,7 @@ Accedi a una regione, un'organizzazione e uno spazio in {{site.data.keyword.Blue
 Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 ## Passo 2: Identifica quali log sono disponibili
-{: #step2}
+{: #step31}
 
 1. Utilizza il comando `ibmcloud cf logging status` per vedere quali log sono disponibili per le ultime 2 settimane. Esegui il seguente comando:
 
@@ -55,11 +63,11 @@ Per ulteriori informazioni, vedi [Come accedo a {{site.data.keyword.Bluemix_notm
 
 
 ## Passo 3: crea una sessione
-{: #step3}
+{: #step32}
 
 Una sessione è obbligatoria per definire l'ambito dei dati di log disponibili per uno scaricamento e per conservare lo stato dello scaricamento. 
 
-Utilizza il comando [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) per creare una sessione. Facoltativamente, puoi specificare la data di inizio, di fine e i tipi di log quando crei una sessione:  
+Utilizza il comando [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1) per creare una sessione. Facoltativamente, puoi specificare la data di inizio, di fine e i tipi di log quando crei una sessione:  
 
 * Quando specifici la data di inizio e di fine, la sessione fornisce l'accesso ai log compresi in queste date. 
 * Quando specifici il tipo di log (**-t**), la sessione fornisce l'accesso a un tipo di log particolare. Questa funzione è importante quando gestisci i log su larga scala, perché puoi indirizzare una sessione solo su piccole sottoserie di log a cui sei interessato.
@@ -103,10 +111,10 @@ $ ibmcloud cf logging session create -t log
 ```
 {: screen}
 
-**Suggerimento:** per visualizzare l'elenco delle sessioni attive, esegui il comando [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list).
+**Suggerimento:** per visualizzare l'elenco delle sessioni attive, esegui il comando [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list1).
 
 ## Passo 4: scarica i dati di log in un file
-{: #step4}
+{: #step42}
 
 Per scaricare i log specificati dai parametri della sessione, esegui il seguente comando:
 
@@ -137,9 +145,9 @@ L'indicatore di avanzamento si muove da 0 a 100% come vengono scaricati i log.
 * Puoi anche elaborare i dati con qualsiasi programma che possa analizzare JSON. 
 
 ## Passo 5: elimina la sessione
-{: #step5}
+{: #step51}
 
-Dopo aver completato lo scaricamento, devi eliminare la sessione utilizzando il comando [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete). 
+Dopo aver completato lo scaricamento, devi eliminare la sessione utilizzando il comando [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete1). 
 
 Esegui il seguente comando per eliminare una sessione:
 

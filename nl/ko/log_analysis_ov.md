@@ -1,23 +1,32 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # IBM Cloud Log Analysis
 {: #log_analysis_ov}
 
-{{site.data.keyword.loganalysisfull}} 서비스를 사용하여 {{site.data.keyword.Bluemix}}에서 로그 콜렉션, 로그 보존 및 로그 검색 기능을 확장할 수 있습니다. 애플리케이션의 집계 및 통합된 애플리케이션 또는 환경 통찰에 대한 환경 로그, 로그의 암호화, 필요로 하는 만큼의 기간 동안 로그 데이터의 보존, 문제의 신속한 발견 및 문제점 해결과 같은 기능으로 DevOps 팀의 권한을 강화하십시오. 고급 분석 태스크에 Kibana를 사용하십시오.
+{{site.data.keyword.loganalysisfull}} 서비스를 사용하여 {{site.data.keyword.Bluemix}}에서 로그 콜렉션, 로그 보존 및 로그 검색 기능을 확장할 수 있습니다. 애플리케이션의 집계 및 통합된 애플리케이션 또는 환경 인사이트에 대한 환경 로그, 로그의 암호화, 필요로 하는 만큼의 기간 동안 로그 데이터의 보존, 문제의 신속한 발견 및 문제점 해결과 같은 기능으로 DevOps 팀의 권한을 강화하십시오. 고급 분석 태스크에 Kibana를 사용하십시오.
 {:shortdesc}
 
 {{site.data.keyword.Bluemix_notm}} 로깅 기능은 플랫폼에서 통합됩니다.
@@ -50,7 +59,7 @@ lastupdated: "2018-07-25"
 * 각 플랜은 하루에 검색할 수 있는 로그 크기를 제한합니다. 
 * 검색은 지난 3일 동안의 데이터만 범위에 포함합니다.
 
-3일 이전의 로그에 액세스하려면 로그 콜렉션 CLI 또는 로그 콜렉션 API를 사용하여 로그를 로컬로 다운로드하거나 다른 애플리케이션 또는 써드파티 클라우드 서비스로 로그를 보낼 수 있습니다. 
+3일 이전의 로그에 액세스하려면 로그 콜렉션 CLI 또는 로그 콜렉션 API를 사용하여 로그를 로컬로 다운로드하거나 다른 애플리케이션 또는 서드파티 클라우드 서비스로 로그를 보낼 수 있습니다. 
 
 {{site.data.keyword.loganalysisshort}} CLI를 사용하여 수동으로 또는 보존 정책을 설정하여 로그를 자동으로 삭제할 수 있습니다.
 
@@ -70,7 +79,7 @@ lastupdated: "2018-07-25"
 	
 	로그는 {{site.data.keyword.IBM_notm}} 클라우드 스토리지에 저장됩니다. 로그가 필요할 때 다운로드할 수 있습니다.
 
-3. **문제를 신속하게 발견, 진단 및 식별하도록 사용자의 환경에 대한 통찰을 얻음**
+3. **문제를 신속하게 발견, 진단 및 식별하도록 사용자의 환경에 대한 인사이트를 얻음**
 
     사용자 정의 가능한 대시보드를 통해 사용자의 데이터를 시각화, 분석 및 상호작용하십시오. Elastic 스택 플랫폼에 빌드되어 로그 검색 기능은 사용자의 애플리케이션 요구사항대로 대시보드를 신속하게 빌드하도록 Kibana의 유연성 및 친숙성을 제공합니다.
 
@@ -146,7 +155,7 @@ lastupdated: "2018-07-25"
         <th>로그 검색</th>
       </tr>
       <tr>
-        <td>라이트(기본값)</td>
+        <td>Lite(기본값)</td>
         <td>아니오</td>
         <td>최근 3일</td>
         <td>아니오</td>

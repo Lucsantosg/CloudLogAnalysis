@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Envío de datos locales a un espacio de IBM Cloud
 {: #send_data_mt}
@@ -23,7 +31,7 @@ Para enviar datos de registro al servicio {{site.data.keyword.loganalysisshort}}
 Siga los pasos siguientes para enviar datos de registro a un espacio de {{site.data.keyword.Bluemix_notm}}:
 
 ## Requisitos previos
-{: #prereqs}
+{: #prereqs1}
 
 * Un ID de {{site.data.keyword.Bluemix_notm}} para iniciar una sesión en {{site.data.keyword.Bluemix_notm}}.
 * Un ID de usuario que tenga permisos para trabajar en un espacio con el servicio {{site.data.keyword.loganalysisshort}}. Para obtener más información, consulte [Seguridad](/docs/services/CloudLogAnalysis/security_ov.html#security_ov).
@@ -198,7 +206,7 @@ Siga los pasos siguientes para configurar mt-logstash-forwarder en el entorno en
           </tr>
           <tr>
             <td>LSF_TARGET</td>
-            <td>URL de destino. Para obtener la lista de los URL de ingestión, consulte [URL de ingestión](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Por ejemplo, establezca el valor en **ingest.logging.ng.bluemix.net:9091** para enviar los registros a la región EE.UU. Sur. </td>
+            <td>URL de destino. Para obtener la lista de los URL de ingestión, consulte [URL de ingestión](/docs/services/CloudLogAnalysis/log_ingestion.html#log_ingestion_urls). Por ejemplo, establezca el valor en **ingest.logging.ng.bluemix.net:9091** para enviar los registros a la región EE.UU. sur. </td>
           </tr>
           <tr>
             <td>LSF_TENANT_ID</td>

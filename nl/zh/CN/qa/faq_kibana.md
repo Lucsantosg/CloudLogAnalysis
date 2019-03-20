@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Kibana 常见问题
@@ -44,7 +51,7 @@ lastupdated: "2018-07-25"
 
     **注**：缺省情况下，在 {{site.data.keyword.Bluemix_notm}} 中，*时间选取器*设置为显示最近 15 分钟的数据。
 
-    有关如何设置*时间选取器*的更多信息，请参阅[设置时间过滤器](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)。
+    有关如何设置*时间选取器*的更多信息，请参阅[设置时间过滤器](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter1)。
        
 2. 单击*发现*页面搜索栏中的放大镜。页面数据会基于缺省搜索查询进行刷新。
 

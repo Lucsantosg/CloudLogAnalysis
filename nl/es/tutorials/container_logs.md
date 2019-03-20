@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Análisis de registros en Kibana para una app desplegada en un clúster de Kubernetes
@@ -70,7 +75,7 @@ Esta guía de aprendizaje le guía por los pasos necesarios para hacer que funci
  
 
 ## Paso 1: Suministrar un clúster de Kubernetes
-{: #step1}
+{: #step25}
 
 Siga estos pasos:
 
@@ -108,7 +113,7 @@ Siga estos pasos:
 
 
 ## Paso 2: Configurar el clúster para reenviar registros automáticamente al servicio de {{site.data.keyword.loganalysisshort}}
-{: #step2}
+{: #step26}
 
 Cuando se despliega la app, los registros los recopila automáticamente {{site.data.keyword.containershort}}. Sin embargo, los registros no se reenvían automáticamente al servicio de {{site.data.keyword.loganalysisshort}}. Debe crear una o más configuraciones de registro en el clúster que definan:
 
@@ -228,7 +233,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## Paso 3: Otorgar los permisos de usuario para ver los registros en un dominio de espacio
-{: #step3}
+{: #step33}
 
 Para otorgar permisos a un usuario para ver registros en un espacio, debe asignar a ese usuario un rol de Cloud Foundry que describa las acciones que puede realizar este usuario con el servicio {{site.data.keyword.loganalysisshort}} en el espacio. 
 
@@ -266,7 +271,7 @@ Complete los pasos siguientes para otorgar permisos a un usuario para trabajar c
 
 
 ## Paso 4: Otorgar los permisos de propietario de clave a {{site.data.keyword.containershort_notm}}
-{: #step4}
+{: #step52}
 
 Para que los registros del clúster se reenvíen a un espacio, el propietario de la clave {{site.data.keyword.containershort_notm}} propietario debe tener los permisos siguientes:
 
@@ -315,7 +320,7 @@ Siga estos pasos:
 
 
 ## Paso 5: Desplegar una app de ejemplo en el clúster de Kubernetes para generar contenido en stdout
-{: #step5}
+{: #step53}
 
 Desplegar y ejecutar una app de ejemplo en el clúster de Kubernetes. Complete los pasos de la siguiente guía de aprendizaje para desplegar la app de ejemplo: [Lección 1: Despliegue de apps de una sola instancia en clústeres Kubernetes](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1).
 
@@ -400,7 +405,7 @@ Siga estos pasos:
                 <td></td>
               </tr>
 			  <tr>
-                <td>*ibm-containers.cluster_id_str *</td>
+                <td>*ibm-containers.cluster_id_str*</td>
                 <td>ID de clúster.</td>
                 <td></td>
               </tr>
@@ -425,7 +430,7 @@ Siga estos pasos:
                 <td>En la app de ejemplo, puede ver dos etiquetas: <br>* *kubernetes.labels.pod-template-hash_str* = 3355293961 <br>* *kubernetes.labels.run_str* =	hello-world-deployment  </td>
               </tr>
               <tr>
-                <td>*stream_str *</td>
+                <td>*stream_str*</td>
                 <td>Tipo de registro.</td>
                 <td>*stdout*, *stderr*</td>
               </tr>

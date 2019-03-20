@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Kibana 리소스를 다시 사용하여 {{site.data.keyword.Bluemix_notm}} 로그 분석
 {:#k4_reuse_resource}
@@ -49,7 +58,7 @@ lastupdated: "2018-07-25"
 
     * {{site.data.keyword.Bluemix_notm}} UI에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 다음 필드가 포함되어 있습니다. *영역 ID* 및 CF(Cloud Foundry)의 *애플리케이션 ID* 또는 컨테이너의 *인스턴스 ID*. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} 대시보드에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)을 참조하십시오.
     
-    * 브라우저에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 *영역 ID* 필드가 포함되어 있습니다. 자세한 정보는 [브라우저에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)을 참조하십시오.
+    * 브라우저에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 *영역 ID* 필드가 포함되어 있습니다. 자세한 정보는 [브라우저에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1)을 참조하십시오.
 
 2. *설정* 페이지에서 **오브젝트** 및 **검색** 탭을 선택하십시오. 그런 다음 검색을 선택하고 다음 정보를 복사하십시오.
 
@@ -189,7 +198,7 @@ Kibana에서 검색을 사용하여 새 영역의 애플리케이션에 사용�
 
     * {{site.data.keyword.Bluemix_notm}} UI에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 다음 필드가 포함되어 있습니다. *영역 ID* 및 CF(Cloud Foundry)의 *애플리케이션 ID* 또는 컨테이너의 *인스턴스 ID*. 자세한 정보는 [{{site.data.keyword.Bluemix_notm}} 대시보드에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_bluemix)을 참조하십시오.
     
-    * 브라우저에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 *영역 ID* 필드가 포함되어 있습니다. 자세한 정보는 [브라우저에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser)을 참조하십시오.
+    * 브라우저에서 Kibana를 실행하십시오. 내보낼 수 있는 JSON 검색 파일에는 *영역 ID* 필드가 포함되어 있습니다. 자세한 정보는 [브라우저에서 Kibana 대시보드로 이동](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1)을 참조하십시오.
     
 2. 시각화와 연관된 검색을 영역 간에 복사하십시오. 자세한 정보는 [Bluemix 영역 간에 검색 복사](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search)를 참조하십시오.
 

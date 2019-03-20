@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Analyse des journaux CF depuis l'interface de ligne de commande
@@ -32,9 +40,9 @@ Utilisez la commande **cf logs** pour afficher des journaux depuis une applicati
 
 Pour afficher les journaux qui vous intéressent ou exclure le contenu que vous ne voulez pas afficher, vous pouvez utiliser la commande **cf logs** avec des options de filtrage telles que **cut** et **grep** dans l'interface de ligne de commande cf :
 
-* Pour afficher les journaux d'une application Cloud Foundry, voir [Affichage du journal d'une application Cloud Foundry](logging_view_cli.html#full_log_cli).
-* Pour afficher les derniers enregistrements de journal d'une application Cloud Foundry, voir [Affichage des dernières entrées de journal d'une application Cloud Foundry](logging_view_cli.html#tailing_log_cli).
-* Pour afficher les enregistrements de journal d'une application Cloud Foundry pour une période donnée, voir [Affichage d'une section d'un journal](logging_view_cli.html#partial_log_cli).
+* Pour afficher les journaux d'une application Cloud Foundry, voir [Affichage du journal d'une application Cloud Foundry](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#full_log_cli).
+* Pour afficher les derniers enregistrements de journal d'une application Cloud Foundry, voir [Affichage des dernières entrées de journal d'une application Cloud Foundry](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#tailing_log_cli).
+* Pour afficher les enregistrements de journal d'une application Cloud Foundry pour une période donnée, voir [Affichage d'une section d'un journal](/docs/services/CloudLogAnalysis/cfapps/logging_view_cli.html#partial_log_cli).
 * Pour afficher les entrées des journaux d'une application Cloud Foundry qui contiennent des mots clés spécifiques, voir [Affichage d'entrées de journal contenant certains mots clés](logging_view_cli.html#partial_by_keyword_log_cli).
 
 

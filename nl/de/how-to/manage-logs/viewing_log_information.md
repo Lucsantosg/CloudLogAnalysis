@@ -1,27 +1,35 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Protokollinformationen anzeigen
 {: #viewing_log_status}
 
-Mit dem Befehl [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) können Sie Informationen zu den Protokollen abrufen, die in 'Log Collection' erfasst und gespeichert werden.
+Mit dem Befehl [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) können Sie Informationen zu den Protokollen abrufen, die in 'Log Collection' erfasst und gespeichert werden.
 {:shortdesc}
 
 ## Informationen zu Protokollen über einen Zeitraum abrufen
-{: #viewing_logs}
+{: #viewing_logs1}
 
 Mit dem Befehl `cf logging status` können Sie für die in 'Log Collection' gespeicherten Protokolle die Größe, die Anzahl und die Protokolltypen anzeigen - und Sie können ermitteln, ob die Protokolle für die Analyse in Kibana verfügbar sind oder nicht. 
 
@@ -60,7 +68,7 @@ Führen Sie die folgenden Schritte aus, um Informationen zu Protokollen abzurufe
 
 
 ## Informationen zu einem Protokolltyp über einen Zeitraum abrufen
-{: #viewing_logs_by_log_type}
+{: #viewing_logs_by_log_type1}
 
 Um Informationen zu einem Protokolltyp über eine bestimmten Zeitraum zu erhalten, verwenden Sie den Befehl `cf logging status`  und legen Sie die Option **-t** für den Protokolltyp, **-s** für das Startdatum und **-e** für das Enddatum fest. Beispiel:
 
@@ -106,7 +114,7 @@ Führen Sie die folgenden Schritte aus, um Informationen zu einem Protokolltyp �
 
 
 ## Kontoinformationen zu Protokollen abrufen
-{: #viewing_logs_account}
+{: #viewing_logs_account1}
 
 Um Informationen zu Protokollen über einen bestimmten Zeitraum für das gesamte {{site.data.keyword.Bluemix_notm}}-Konto abzurufen, verwenden Sie den Befehl `cf logging status` mit der Option **-a**. Sie können außerdem die Optionen **-t** für den Protokolltyp, **-s** für das Startdatum und **-e** für das Enddatum festlegen. 
 

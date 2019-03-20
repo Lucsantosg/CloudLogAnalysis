@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Definición de consultas de búsqueda personalizadas
 {:#k4_define_search}
@@ -30,7 +40,7 @@ Complete las siguientes tareas para definir una búsqueda personalizada:
 
     2. Acceda a Kibana. Pulse **Vista avanzada** ![Enlace Vista avanzada](images/logging_advanced_view.jpg "Enlace Vista avanzada"). Se visualiza el panel de control de Kibana.
     
-    Para contenedores que se ejecutan en un clúster Kubernetes, [inicie Kibana desde el navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser). 
+    Para contenedores que se ejecutan en un clúster Kubernetes, [inicie Kibana desde el navegador](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1). 
     
     Cuando se accede a Kibana, se aplica la búsqueda predeterminada. Puede ver los registros para consulta la lista de instancias del recurso para el que ha iniciado Kibana. Puede filtrar los registros para cualquiera de los recursos de {{site.data.keyword.Bluemix_notm}} o para todos ellos en este espacio.
 
@@ -123,7 +133,7 @@ Siga los siguientes pasos para cargar una búsqueda guardada:
 2. Seleccione la búsqueda que desea cargar. 
 
 ## Inicio de una nueva búsqueda
-{: #k4_new_search}
+{: #k4_new_search1}
 
 Para iniciar una nueva búsqueda, pulse el botón **Nueva búsqueda** ![Nueva búsqueda](images/k4_new_search_icon.jpg "Nueva búsqueda") en la barra de herramientas de la página Descubrir.
 

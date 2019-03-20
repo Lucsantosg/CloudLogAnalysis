@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Filtrando logs no Kibana
 {:#filter_logs}
@@ -31,7 +38,7 @@ removê-lo completamente.
 
 Depois de definir uma nova procura, salve-a para que ela possa ser reutilizada para análise futura na
 página Descobrir ou para criar visualizações que possam ser usadas em painéis customizados. Para obter mais
-informações, consulte [Salvando uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search).
+informações, consulte [Salvando uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1).
 
 Ao executar uma nova procura, o histograma, a tabela e a lista de Campos são atualizados automaticamente
 para mostrar os resultados da procura. Para descobrir quais dados são mostrados, consulte

@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 管理日誌
@@ -50,7 +59,7 @@ lastupdated: "2018-07-25"
 * 您隨時都可以變更保留原則。
 * 停用此原則的方式是將其值設為 *-1*。 
 
-**附註：**當您停用日誌保留原則時，必須在「日誌收集」中維護日誌。您可以使用 CLI 指令 [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete) 來刪除舊日誌。
+**附註：**當您停用日誌保留原則時，必須在「日誌收集」中維護日誌。您可以使用 CLI 指令 [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete4) 來刪除舊日誌。
 
 如需相關資訊，請參閱：
 
@@ -74,14 +83,14 @@ lastupdated: "2018-07-25"
 
 
 ## 下載日誌
-{: #download_logs}
+{: #download_logs2}
 
 您可以在 Kibana 中搜尋過去 3 天的日誌。若要可以分析舊日誌資料，您可以將日誌下載至本端檔案，或透過管道將這些日誌輸入至其他程式（例如本端 Elastic Stack）。 
 
 如需相關資訊，請參閱：
 
 * [使用 {{site.data.keyword.Bluemix_notm}} 外掛程式下載日誌](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs_cloud.html#downloading_logs)。
-* [使用 CF 外掛程式下載日誌](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs)。
+* [使用 CF 外掛程式下載日誌](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs1)。
 
 
 
@@ -90,8 +99,8 @@ lastupdated: "2018-07-25"
 
 若要取得日誌的一般資訊，請使用 `ibmcloud logging log-show` 或 `cf logging status` 指令。如需相關資訊，請參閱：
 
-* [使用 {{site.data.keyword.Bluemix_notm}} 外掛程式檢視日誌資訊](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
-* [使用 CF 外掛程式檢視日誌資訊](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status)。
+* [使用 {{site.data.keyword.Bluemix_notm}} 外掛程式檢視日誌資訊](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status1)
+* [使用 CF 外掛程式檢視日誌資訊](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status1)。
 
 例如，若要持續控制成本，您可能要監視一段時間內的應用程式日誌大小。例如，您可能要知道 {{site.data.keyword.Bluemix_notm}} 空間一週內每一種日誌類型的大小，才能識別是否有任何應用程式或服務所產生的日誌超出預期。若要檢查日誌大小，請使用 `ibmcloud logging log-show` 或 `cf logging status` 指令。
 
@@ -100,7 +109,7 @@ lastupdated: "2018-07-25"
 
 
 ## 安裝 {{site.data.keyword.loganalysisshort_notm}} CLI（{{site.data.keyword.Bluemix_notm}} 外掛程式）
-{: #install_cli}
+{: #install_cli2}
 
 若要瞭解如何安裝 CLI，請參閱[安裝記載 CLI](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)。
 
@@ -139,7 +148,7 @@ lastupdated: "2018-07-25"
 </table>
 
 ## 使用者管理日誌所需的角色
-{: #roles}
+{: #roles1}
 
 在 {{site.data.keyword.Bluemix_notm}} 中，您可以將一個以上的角色指派給使用者。這些角色定義針對該使用者啟用以使用 {{site.data.keyword.loganalysisshort}} 服務的作業。 
 

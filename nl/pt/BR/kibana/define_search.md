@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Definindo consultas de procura customizada
 {:#define_search}
@@ -56,7 +63,7 @@ formato a seguir: *log_field_name:[start_of_range TO end_of_range]*; por exemplo
      Por exemplo, para um app CF, é possível criar uma consulta `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]` que liste entradas para as instâncias *0* e *1* somente. 
 
 3. Salve a consulta para poder reutilizá-la posteriormente. Para obter mais
-informações, consulte [Salvando uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search). 
+informações, consulte [Salvando uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1). 
 
 **Nota:** se precisar excluir uma consulta, consulte
 [Excluindo uma procura](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search).
@@ -125,7 +132,7 @@ de menus.
 
 
 ## Recarregando uma procura
-{: #reload_search}
+{: #reload_search1}
 
 Conclua as etapas a seguir para carregar uma procura salva:
 
@@ -139,7 +146,7 @@ Conclua as etapas a seguir para carregar uma procura salva:
 Para iniciar uma nova procura, clique no botão **Nova procura** ![Nova procura](images/new_search_icon.jpg "Nova procura") na barra de ferramentas da página Descobrir.
 
 ## Salvando uma Procura 
-{: #save_search}
+{: #save_search1}
 
 Considere as informações a seguir sobre como salvar procuras customizadas no Kibana:
 

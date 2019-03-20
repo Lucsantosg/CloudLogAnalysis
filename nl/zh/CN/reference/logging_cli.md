@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # IBM Cloud Log Analysis CLI（CF 插件）
 {: #logging_cli}
@@ -55,30 +64,30 @@ lastupdated: "2018-07-25"
     <td>使用此命令可查看或设置空间或帐户中可用的日志的保留期。</td>
   </tr>
   <tr>
-    <td>[ibmcloud cf logging session create (Beta)](#session_create)</td>
+    <td>[ibmcloud cf logging session create (Beta)](#session_create1)</td>
     <td>使用此命令可创建新会话。</td>
   <tr>
   <tr>
-    <td>[ibmcloud cf logging session delete (Beta)](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete (Beta)](#session_delete1)</td>
     <td>使用此命令可删除会话。</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session list (Beta)](#session_list)</td>
+    <td>[ibmcloud cf logging session list (Beta)](#session_list1)</td>
     <td>使用此命令可列出活动会话及其标识。</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session show (Beta)](#session_show)</td>
+    <td>[ibmcloud cf logging session show (Beta)](#session_show1)</td>
     <td>使用此命令可显示单个会话的状态。</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status1)</td>
     <td>使用此命令可获取有关在空间或帐户中收集的日志的信息。</td>
   </tr>
   </table>
 
 
 ## ibmcloud cf logging
-{: #base}
+{: #base1}
 
 提供有关 CLI 版本以及如何使用 CLI 的信息。
 
@@ -141,7 +150,7 @@ ibmcloud cf logging auth
 </dl>
 
 ## ibmcloud cf logging delete
-{: #delete}
+{: #delete2}
 
 删除存储在“日志收集”中的日志。
 
@@ -177,11 +186,11 @@ ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud cf logging download (Beta)
-{: #download}
+{: #download4}
 
 将“日志收集”中的日志下载到本地文件，或者通过管道将日志传递到其他程序，例如 Elastic 堆栈。 
 
-**注**：要下载文件，需要首先创建会话。会话会根据日期范围、日志类型和帐户类型来定义要下载的日志。您将在会话上下文中下载日志。有关更多信息，请参阅 [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create)。
+**注**：要下载文件，需要首先创建会话。会话会根据日期范围、日志类型和帐户类型来定义要下载的日志。您将在会话上下文中下载日志。有关更多信息，请参阅 [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1)。
 
 ```
 ibmcloud cf logging download [parameters] [arguments]
@@ -238,7 +247,7 @@ output {
 
 
 ## ibmcloud cf logging help
-{: #help}
+{: #help1}
 
 提供有关如何使用命令的信息。
 
@@ -332,7 +341,7 @@ ibmcloud cf logging option -r 25
 
 
 ## ibmcloud cf logging session create (Beta)
-{: #session_create}
+{: #session_create1}
 
 创建新的会话。
 
@@ -396,7 +405,7 @@ ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 
 
 ## ibmcloud cf logging session delete (Beta)
-{: #session_delete}
+{: #session_delete1}
 
 删除会话标识指定的会话。
 
@@ -424,7 +433,7 @@ ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging session list (Beta)
-{: #session_list}
+{: #session_list1}
 
 列出活动会话及其标识。
 
@@ -454,7 +463,7 @@ ibmcloud cf logging session list
  
 
 ## ibmcloud cf logging session show (Beta)
-{: #session_show}
+{: #session_show1}
 
 显示单个会话的状态。
 
@@ -506,7 +515,7 @@ ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging status
-{: #status}
+{: #status1}
 
 返回有关在空间或帐户中收集的日志的信息。
 

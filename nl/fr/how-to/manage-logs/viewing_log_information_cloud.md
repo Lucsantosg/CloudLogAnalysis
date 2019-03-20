@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Affichage des informations sur le journal
-{: #viewing_log_status}
+{: #viewing_log_status1}
 
 Utilisez la commande [ibmcloud logging log-show](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#status) pour obtenir des informations sur les journaux qui sont collectés et stockés dans le composant Log Collection. Vous pouvez obtenir des informations sur la taille, le nombre d'enregistrements, les types de journaux, ainsi que sur la disponibilité des journaux pour l'analyse dans Kibana.
 {:shortdesc}

@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Protokolle herunterladen
 {: #downloading_logs}
@@ -26,14 +34,14 @@ Um diese Schritte durchführen zu können, müssen Sie die {{site.data.keyword.l
 Führen Sie die folgenden Schritte aus, um Protokolldaten aus einem Bereich in eine lokale Datei herunterzuladen:
 
 ## Schritt 1: Anmeldung bei {{site.data.keyword.Bluemix_notm}}
-{: #step1}
+{: #downloading_logs_step1}
 
 Melden Sie sich bei einer Region, Organisation und bei einem Bereich in {{site.data.keyword.Bluemix_notm}} an. 
 
 Weitere Informationen finden Sie unter [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 ## Schritt 2: Verfügbare Protokolle ermitteln
-{: #step2}
+{: #step21}
 
 1. Verwenden Sie den Befehl `ibmcloud logging log-show`, um zu ermitteln, welche Protokolle für die letzten beiden Wochen zur Verfügung stehen. Führen Sie den folgenden Befehl aus:
 
@@ -100,7 +108,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 **Tipp:** Um die Liste aktiver Sitzungen anzuzeigen, führen Sie den Befehl [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list) aus.
 
 ## Schritt 4: Protokolldaten in eine Datei herunterladen
-{: #step4}
+{: #step41}
 
 Führen Sie den folgenden Befehl aus, um die Protokolle herunterzuladen, die durch die Sitzungsparameter angegeben sind:
 

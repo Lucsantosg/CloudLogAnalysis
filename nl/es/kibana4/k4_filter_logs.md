@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Filtrado de registros en Kibana
 {:#k4_filter_logs}
@@ -32,7 +42,7 @@ Puede crear búsquedas personalizadas para filtrar los registros. En la lista si
  
 * Puede buscar en el registro un determinado valor de campo o excluir del registro las entradas correspondientes a un valor de campo específico. Para obtener más información, consulte [Filtrado de registros para un determinado valor de campo](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field).
  
-* Puede filtrar los registros para que muestren las entradas comprendidas en un periodo de tiempo. Para obtener más información, consulte [Establecimiento de un filtro de tiempo](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter).
+* Puede filtrar los registros para que muestren las entradas comprendidas en un periodo de tiempo. Para obtener más información, consulte [Establecimiento de un filtro de tiempo](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter1).
      
 
 ## Adición de un filtro para un valor que no aparece en la *Lista de campos*
@@ -297,7 +307,7 @@ La tabla muestra las entradas de la app CF en las que el texto *CWWKT0016I* form
         
 
 ## Establecimiento de un filtro de tiempo
-{: #set_time_filter}
+{: #set_time_filter1}
 
 Vea y filtre los registros comprendidos en un periodo de tiempo configurando el *Selector de tiempo*.
 

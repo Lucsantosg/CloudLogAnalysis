@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-07-25"
+  years: 2017, 2019
+
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Máquinas virtuales
 {: #logging_vm_ov}
@@ -20,15 +30,15 @@ Las funciones de registro no se habilitan automáticamente para las máquinas vi
 
 
 ## Ingestión de registros
-{: #log_ingestion}
+{: #log_ingestion2}
 
 El servicio {{site.data.keyword.loganalysisshort}} ofrece diversos planes. Todos los planes, excepto el plan *Lite*, incluyen la posibilidad de enviar registros a la recopilación de registros. Para obtener más información sobre los planes, consulte [Planes de servicio](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-Puede enviar registros a {site.data.keyword.loganalysisshort}} mediante mt-logstash-forwarder. Para obtener más información, consulte el apartado sobre [Envío de datos de registro mediante el reenviador de Logstash multiarrendatario (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
+Puede enviar registros a {{site.data.keyword.loganalysisshort}} mediante mt-logstash-forwarder. Para obtener más información, consulte el apartado sobre [Envío de datos de registro mediante el reenviador de Logstash multiarrendatario (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
 
 
 ## Recopilación de registros
-{: #log_collection}
+{: #log_collection2}
 
 De forma predeterminada, {{site.data.keyword.Bluemix_notm}} almacena los datos de registro durante un máximo de 3 días:   
 
@@ -42,7 +52,7 @@ El servicio {{site.data.keyword.loganalysisshort}} proporciona planes adicionale
 
 
 ## Búsqueda de registros
-{: #log_search}
+{: #log_search2}
 
 De forma predeterminada, puede utilizar Kibana para buscar un máximo de 500 MB de registros al día en {{site.data.keyword.Bluemix_notm}}. 
 

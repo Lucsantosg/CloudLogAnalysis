@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Descarga de registros
-{: #downloading_logs}
+{: #downloading_logs1}
 
 Puede descargar registros en un archivo local o dirigir los datos a otro programa. Los registros se descargan dentro del contexto de una sesión. Una sesión especifica qué registros se descargarán. Si la descarga de los registros se interrumpe, la sesión permite reanudar la descarga desde donde se quedó. Una vez finalizada la descarga, debe suprimir la sesión.
 {:shortdesc}
@@ -29,7 +37,7 @@ Inicie la sesión en una región, organización y espacio en {{site.data.keyword
 Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 ## Paso 2: Identificar los registros disponibles
-{: #step2}
+{: #step31}
 
 1. Utilice el mandato `ibmcloud cf logging status` para ver qué registros están disponibles durante las 2 últimas semanas. Ejecute el mandato siguiente:
 
@@ -55,11 +63,11 @@ Para obtener más información, consulte [Cómo iniciar la sesión en {{site.dat
 
 
 ## Paso 3: Crear una sesión
-{: #step3}
+{: #step32}
 
 Se necesita una sesión para definir el ámbito de datos de registro que están disponibles para una descarga y para mantener el estado de la descarga. 
 
-Utilice el mandato [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) para crear una sesión. Si lo desea, puede especificar fecha de inicio, fecha final y tipos de registros cuando se crea una sesión:  
+Utilice el mandato [cf logging session create](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1) para crear una sesión. Si lo desea, puede especificar fecha de inicio, fecha final y tipos de registros cuando se crea una sesión:  
 
 * Si especifica la fecha de inicio y la fecha final, la sesión proporciona acceso a los registros entre ambas fechas inclusive. 
 * Si especifica el tipo de registro (**-t**), la sesión proporciona acceso a un determinado tipo de registro. Esta es una característica importante para gestionar registros a escala, porque puede delimitar el ámbito de una sesión a un pequeño subconjunto de registros en los que está interesado.
@@ -103,10 +111,10 @@ $ ibmcloud cf logging session create -t log
 ```
 {: screen}
 
-**Consejo:** Para ver la lista de sesiones activas, ejecute el mandato [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list).
+**Consejo:** Para ver la lista de sesiones activas, ejecute el mandato [cf logging session list](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_list1).
 
 ## Paso 4: Descargar los datos de registro en un archivo
-{: #step4}
+{: #step42}
 
 Para descargar los registros especificados por los parámetros de sesión, ejecute el mandato siguiente:
 
@@ -137,9 +145,9 @@ El indicador de progreso pasa de 0 a 100% a medida que se descargan los registro
 * También puede procesar los datos con cualquier programa que pueda analizar JSON. 
 
 ## Paso 5: Suprimir la sesión
-{: #step5}
+{: #step51}
 
-Una vez finalizada la descarga, debe suprimir la sesión mediante el mandato [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete). 
+Una vez finalizada la descarga, debe suprimir la sesión mediante el mandato [cf logging session delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_delete1). 
 
 Ejecute el siguiente mandato para suprimir una sesión:
 

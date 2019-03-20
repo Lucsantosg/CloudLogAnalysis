@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Perguntas e respostas frequentes usando a CLI do IBM Cloud
@@ -27,17 +35,17 @@ Aqui estão as respostas para perguntas comuns sobre como usar a CLI do {{site.d
 * [Como obter o GUID de uma organização](/docs/services/CloudLogAnalysis/qa/cli_qa.html#org_guid)
 * [Como obter o GUID de um espaço](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid)
 
-## Como efetuar login no IBM Cloud.
+## Como efetuar login no IBM Cloud?
 {: #login}
 
-Execute o comando a seguir para efetuar login em uma região no {{site.data.keyword.Bluemix_notm}} em que o serviço {{site.data.keyword.loganalysisshort}} está disponível:
+Execute o comando a seguir para efetuar login em uma região no {{site.data.keyword.Bluemix_notm}}, em que o serviço do {{site.data.keyword.loganalysisshort}} está disponível: 
 
 ```
 ibmcloud login -a Endpoint
 ```
 {: codeblock}
 	
-Em que *Terminal* é a URL para efetuar login no {{site.data.keyword.Bluemix_notm}}. Essa URL é diferente por região.
+Em que *Endpoint* é a URL para efetuar login no {{site.data.keyword.Bluemix_notm}}. Essa URL é diferente por região.
 	
 <table>
     <caption>Lista de terminais para acessar o {{site.data.keyword.Bluemix_notm}}</caption>
@@ -63,7 +71,7 @@ Em que *Terminal* é a URL para efetuar login no {{site.data.keyword.Bluemix_not
 	</tr>
 </table>
 
-Por exemplo, para efetuar login na região sul dos EUA, execute o comando a seguir:
+Por exemplo, para efetuar login na região Sul dos EUA, execute o comando a seguir:
 	
 ```
 ibmcloud login -a https://api.ng.bluemix.net
@@ -143,7 +151,7 @@ Conclua as etapas a seguir para obter o GUID de uma organização:
 		
 		
 ## Como obter o GUID de um espaço
-{: #space_guid}
+{: #space_guid2}
 	
 Conclua as etapas a seguir para obter o GUID de um espaço:
 	

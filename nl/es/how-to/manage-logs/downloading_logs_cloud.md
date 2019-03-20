@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Descarga de registros
 {: #downloading_logs}
@@ -26,14 +34,14 @@ Para completar los pasos, debe instalar la CLI de {{site.data.keyword.loganalysi
 Siga estos pasos para descargar datos de registro disponibles en un espacio en un archivo local:
 
 ## Paso 1: Iniciar sesión en {{site.data.keyword.Bluemix_notm}}
-{: #step1}
+{: #downloading_logs_step1}
 
 Inicie la sesión en una región, organización y espacio en {{site.data.keyword.Bluemix_notm}}. 
 
 Para obtener más información, consulte [Cómo iniciar la sesión en {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 
 ## Paso 2: Identificar los registros disponibles
-{: #step2}
+{: #step21}
 
 1. Utilice el mandato `ibmcloud logging log-show` para ver qué registros están disponibles durante las 2 últimas semanas. Ejecute el mandato siguiente:
 
@@ -100,7 +108,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 **Consejo:** Para ver la lista de sesiones activas, ejecute el mandato [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list).
 
 ## Paso 4: Descargar los datos de registro en un archivo
-{: #step4}
+{: #step41}
 
 Para descargar los registros especificados por los parámetros de sesión, ejecute el mandato siguiente:
 

@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 사용자 정의 검색 조회 정의
 {:#define_search}
@@ -47,7 +54,7 @@ lastupdated: "2018-07-25"
 
      예를 들어, CF 앱의 경우 인스턴스 *0* 및 *1*에 대한 항목만 나열하는 조회 `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]`을 작성할 수 있습니다. 
 
-3. 나중에 다시 사용할 수 있도록 조회를 저장하십시오. 자세한 정보는 [검색 저장](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)을 참조하십시오. 
+3. 나중에 다시 사용할 수 있도록 조회를 저장하십시오. 자세한 정보는 [검색 저장](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1)을 참조하십시오. 
 
 **참고:** 조회를 삭제해야 하는 경우, [검색 삭제](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search)를 참조하십시오.
 
@@ -111,7 +118,7 @@ lastupdated: "2018-07-25"
 
 
 ## 검색 다시 로드
-{: #reload_search}
+{: #reload_search1}
 
 저장된 검색을 로드하려면 다음 단계를 완료하십시오.
 
@@ -125,7 +132,7 @@ lastupdated: "2018-07-25"
 새 검색을 시작하려면 검색 페이지 도구 모음에서 **새 검색** 단추 ![새 검색](images/new_search_icon.jpg "새 검색")을 클릭하십시오.
 
 ## 검색 저장 
-{: #save_search}
+{: #save_search1}
 
 Kibana에서 사용자 정의 검색을 저장하는 데 대해서는 다음 정보를 고려하십시오.
 

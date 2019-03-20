@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # {{site.data.keyword.containershort_notm}}
@@ -63,7 +69,7 @@ Kubernetes 클러스터로 작업하는 경우, 네임스페이스 *ibm-system* 
 * Kibana 검색 할당량을 늘리고 장기 스토리지를 위해 로그 콜렉션에 로그를 저장하려면 로그가 요구사항을 충족하는 플랜과 함께 전달 중인 영역에서 {{site.data.keyword.loganalysisshort}} 서비스를 프로비저닝해야 합니다. 
 * 사용자 ID에 로그를 볼 수 있는 권한이 있어야 합니다. 영역 도메인에서 로그를 보려면 사용자에게 CF 역할이 필요합니다. **감사자**는 로그를 보기 위해 부여할 수 있는 최하위 역할입니다. 자세한 정보는 [로그 보기를 위해 사용자에게 필요한 역할](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)을 참조하십시오.
 
-장기 스토리지(로그 콜렉션)에 저장된 클러스터 로그 데이터를 관리하려면 사용자 ID에 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행하기 위한 IAM 정책이 있어야 합니다. 사용자 ID에 **관리자**, **운영자** 또는 **편집자** 권한이 있어야 합니다.  자세한 정보는 [로그 관리를 위해 사용자에게 필요한 역할](/docs/services/CloudLogAnalysis/manage_logs.html#roles)을 참조하십시오.
+장기 스토리지(로그 콜렉션)에 저장된 클러스터 로그 데이터를 관리하려면 사용자 ID에 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행하기 위한 IAM 정책이 있어야 합니다. 사용자 ID에 **관리자**, **운영자** 또는 **편집자** 권한이 있어야 합니다.  자세한 정보는 [로그 관리를 위해 사용자에게 필요한 역할](/docs/services/CloudLogAnalysis/manage_logs.html#roles1)을 참조하십시오.
 
 
 다음 그림은 클러스터가 로그를 영역 도메인으로 전달하는 경우 {{site.data.keyword.containershort}}의 공용 로깅에 대한 상위 레벨 보기를 보여줍니다.
@@ -354,7 +360,7 @@ Ingress 제어기 로그를 분석할 때 유용할 수 있는 필드:
 ## 메시지의 필드를 Kibana 검색 필드로 사용할 수 있도록 로그 전송
 {: #send_data_in_json}
 
-기본적으로 로깅은 자동으로 컨테이너에 사용 가능하게 설정됩니다. Docker 로그 파일의 모든 항목은 Kibana에서 **message** 필드에 표시됩니다. 컨테이너 로그 항목의 일부인 특정 필드를 사용하여 Kibana의 데이터를 필터링하고 분석해야 하는 경우, 올바른 JSON 형식화된 출력을 전송하도록 애플리케이션을 구성하십시오. 예를 들어 메시지를 JSON 형식으로 stdout(표준 출력) 및 stderr(표준 오류)로 로깅하십시오.
+기본적으로 로깅은 자동으로 컨테이너에 사용 가능하게 설정됩니다. 컨테이너 런타임 로그 파일의 모든 항목은 Kibana에서 **message** 필드에 표시됩니다. 컨테이너 로그 항목의 일부인 특정 필드를 사용하여 Kibana의 데이터를 필터링하고 분석해야 하는 경우, 올바른 JSON 형식화된 출력을 전송하도록 애플리케이션을 구성하십시오. 예를 들어 메시지를 JSON 형식으로 stdout(표준 출력) 및 stderr(표준 오류)로 로깅하십시오.
 
 메시지에서 사용 가능한 각 필드는 값과 일치하는 필드의 유형으로 구문 분석됩니다. 예를 들면, 다음과 같은 JSON 메시지의 각 필드입니다.
     
@@ -404,7 +410,7 @@ Ingress 제어기 로그를 분석할 때 유용할 수 있는 필드:
 
 
 ## 로그 콜렉션에 로그 저장
-{: #log_collection}
+{: #log_collection1}
 
 로그에 대해 작업할 때 {{site.data.keyword.Bluemix_notm}}의 기본 동작에 대한 다음 정보를 고려하십시오.
 
@@ -430,7 +436,7 @@ Ingress 제어기 로그를 분석할 때 유용할 수 있는 필드:
 * 웹 브라우저에서 직접 Kibana를 실행할 수 있습니다. 자세한 정보는 [웹 브라우저에서 Kibana로 이동](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)을 참조하십시오.
 * 클러스터 컨텍스트 내의 {{site.data.keyword.Bluemix_notm}} UI에서 Kibana를 실행할 수 있습니다. 자세한 정보는 [Kubernetes 클러스터에 배치된 컨테이너의 대시보드에서 Kibana로 이동](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube)을 참조하십시오.
 
-컨테이너에서 실행되는 앱의 로그 데이터를 JSON 형식으로 Docker 로그 콜렉터에 전달하는 경우, JSON 필드를 사용하여 Kibana에서 로그 데이터를 검색하고 분석할 수 있습니다. 자세한 정보는 [메시지의 필드를 Kibana 검색 필드로 사용할 수 있도록 로그 전송](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json)을 참조하십시오.
+컨테이너에서 실행되는 앱의 로그 데이터를 JSON 형식으로 컨테이너 런타임 로그 콜렉터에 전달하는 경우, JSON 필드를 사용하여 Kibana에서 로그 데이터를 검색하고 분석할 수 있습니다. 자세한 정보는 [메시지의 필드를 Kibana 검색 필드로 사용할 수 있도록 로그 전송](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json)을 참조하십시오.
 
 Kibana에서 로그를 보려면 다음 정보를 고려하십시오.
 

@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # IBM Cloud의 영역에 온프레미스 데이터 전송
 {: #send_data_mt}
@@ -23,7 +31,7 @@ lastupdated: "2018-07-25"
 로그 데이터를 {{site.data.keyword.Bluemix_notm}}의 영역으로 보내려면 다음 단계를 완료하십시오.
 
 ## 전제조건
-{: #prereqs}
+{: #prereqs1}
 
 * {{site.data.keyword.Bluemix_notm}}에 로그인할 {{site.data.keyword.Bluemix_notm}} ID.
 * 영역에서 {{site.data.keyword.loganalysisshort}} 서비스에 대한 작업을 수행할 수 있는 권한이 있는 사용자 ID. 자세한 정보는 [보안](/docs/services/CloudLogAnalysis/security_ov.html#security_ov)을 참조하십시오.

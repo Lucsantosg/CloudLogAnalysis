@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # {{site.data.keyword.containershort_notm}}
@@ -63,7 +69,7 @@ lastupdated: "2018-07-25"
 * 要增加 Kibana 搜索配额并将日志存储在“日志收集”中以便长期存储，必须使用与您的需求匹配的套餐，在要将日志转发到的空间中供应 {{site.data.keyword.loganalysisshort}} 服务。 
 * 您的用户标识必须具有查看日志的许可权。要查看空间域中的日志，用户需要 CF 角色。至少要为用户授予**审计员**角色，他们才能查看日志。有关更多信息，请参阅[用户查看日志所需的角色](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles)。
 
-要管理长期存储（存储在“日志收集”中）的集群日志数据，您的用户标识必须具有 IAM 策略，以便使用 {{site.data.keyword.loganalysisshort}} 服务。您的用户标识必须具有**管理员**、**操作员**或**编辑者**许可权。有关更多信息，请参阅[用户管理日志所需的角色](/docs/services/CloudLogAnalysis/manage_logs.html#roles)。
+要管理长期存储（存储在“日志收集”中）的集群日志数据，您的用户标识必须具有 IAM 策略，以便使用 {{site.data.keyword.loganalysisshort}} 服务。您的用户标识必须具有**管理员**、**操作员**或**编辑者**许可权。有关更多信息，请参阅[用户管理日志所需的角色](/docs/services/CloudLogAnalysis/manage_logs.html#roles1)。
 
 
 下图显示了集群将日志转发到空间域时，Public 中 {{site.data.keyword.containershort}} 的日志记录的高级别视图：
@@ -354,7 +360,7 @@ lastupdated: "2018-07-25"
 ## 发送日志以便可以将消息中的字段用作 Kibana 搜索字段
 {: #send_data_in_json}
 
-缺省情况下，会对容器自动启用日志记录。Docker 日志文件中的每个条目都会显示在 Kibana 的 **message** 字段中。如果您需要使用容器日志条目中的特定字段在 Kibana 中过滤和分析数据，请配置应用程序以发送有效的 JSON 格式的输出。例如，以 JSON 格式将消息记录到 stdout（标准输出）和 stderr（标准错误）。
+缺省情况下，会对容器自动启用日志记录。容器运行时日志文件中的每个条目都会显示在 Kibana 的 **message** 字段中。如果您需要使用容器日志条目中的特定字段在 Kibana 中过滤和分析数据，请配置应用程序以发送有效的 JSON 格式的输出。例如，以 JSON 格式将消息记录到 stdout（标准输出）和 stderr（标准错误）。
 
 消息中可用的每个字段都会解析为与值相匹配的字段类型。例如，以下 JSON 消息中的每个字段：
     
@@ -404,7 +410,7 @@ lastupdated: "2018-07-25"
 
 
 ## 在日志收集中存储日志
-{: #log_collection}
+{: #log_collection1}
 
 使用日志时，请考虑有关 {{site.data.keyword.Bluemix_notm}} 中缺省行为的以下信息：
 
@@ -429,7 +435,7 @@ lastupdated: "2018-07-25"
 * 您可以通过 Web 浏览器直接启动 Kibana。有关更多信息，请参阅[通过 Web 浏览器导航至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser)。
 * 您可以在集群上下文中通过 {{site.data.keyword.Bluemix_notm}} UI 来启动 Kibana。有关更多信息，请参阅[通过在 Kubernetes 集群中部署的容器的仪表板导航至 Kibana](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube)。
 
-如果您将在容器中运行的应用程序的日志数据以 JSON 格式转发到 Docker 日志收集器，那么可以使用 JSON 字段在 Kibana 中搜索和分析日志数据。有关更多信息，请参阅[发送日志以便可以将消息中的字段用作 Kibana 搜索字段](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json)。
+如果您将在容器中运行的应用程序的日志数据以 JSON 格式转发到容器运行时日志收集器，那么可以使用 JSON 字段在 Kibana 中搜索和分析日志数据。有关更多信息，请参阅[发送日志以便可以将消息中的字段用作 Kibana 搜索字段](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json)。
 
 要查看 Kibana 中的日志，请考虑以下信息：
 

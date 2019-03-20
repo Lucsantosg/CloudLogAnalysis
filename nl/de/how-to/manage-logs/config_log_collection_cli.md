@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Log Analysis-Befehlszeilenschnittstelle (CF-Plug-in) konfigurieren (veraltet)
-{: #config_log_collection_cli}
+{: #config_log_collection_cli1}
 
 Der {{site.data.keyword.loganalysisshort}}-Service beinhaltet eine Befehlszeilenschnittstelle (CLI), die Sie zur Verwaltung Ihrer Protokolle in der Cloud verwenden können. Sie können das Cloud Foundry-Plug-in (CF) verwenden, um den Status des Protokolls anzuzeigen, um Protokolle herunterzuladen und um die Protokollaufbewahrungsrichtlinie zu konfigurieren. Die Befehlszeilenschnittstelle bietet verschiedene Arten von Hilfe: erweiterte Hilfe zu den CLI- und unterstützten Befehlen sowie Hilfe zur Verwendung von Befehlen und Unterbefehlen.
 {:shortdesc}
@@ -22,7 +31,7 @@ Der {{site.data.keyword.loganalysisshort}}-Service beinhaltet eine Befehlszeilen
 
 
 ## CF-Plug-in für Log Analysis installieren
-{: #install_cli}
+{: #install_cli1}
 
 Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für {{site.data.keyword.loganalysisshort}} zu installieren:
 
@@ -32,9 +41,9 @@ Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für {
 
 2. Installieren Sie das CF-Plug-in für {{site.data.keyword.loganalysisshort}}.
 
-    * Die Schritte für Linux finden Sie unter [Befehlszeilenschnittstelle von {{site.data.keyword.loganalysisshort}} unter Linux installieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux).
-    * Die Schritte für Windows finden Sie unter [Befehlszeilenschnittstelle von {{site.data.keyword.loganalysisshort}} unter Windows installieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows).
-    * Die Schritte für Mac OS X finden Sie unter [Befehlszeilenschnittstelle von {{site.data.keyword.loganalysisshort}} unter Mac OS X installieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac).
+    * Die Schritte für Linux finden Sie unter [Befehlszeilenschnittstelle von {{site.data.keyword.loganalysisshort}} unter Linux installieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux1).
+    * Die Schritte für Windows finden Sie unter [Befehlszeilenschnittstelle von {{site.data.keyword.loganalysisshort}} unter Windows installieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows1).
+    * Die Schritte für Mac OS X finden Sie unter [Befehlszeilenschnittstelle von {{site.data.keyword.loganalysisshort}} unter Mac OS X installieren](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac1).
  
 3. Überprüfen Sie die Installation des Plug-ins für die Benutzerschnittstelle.
   
@@ -61,7 +70,7 @@ Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für {
 
 
 ## Befehlszeilenschnittstelle für 'Log Analysis' unter Linux installieren
-{: #install_cli_linux}
+{: #install_cli_linux1}
 
 Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' unter Linux zu installieren:
 
@@ -137,7 +146,7 @@ Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' 
 
 
 ## Befehlszeilenschnittstelle für 'Log Analysis' unter Windows installieren
-{: #install_cli_windows}
+{: #install_cli_windows1}
 
 Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' unter Windows zu installieren:
 
@@ -182,7 +191,7 @@ Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' 
 	
 
 ## Befehlszeilenschnittstelle für Log Analysis unter Mac OS X installieren
-{: #install_cli_mac}
+{: #install_cli_mac1}
 
 Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' unter Mac OS X zu installieren:
 
@@ -227,7 +236,7 @@ Führen Sie die folgenden Schritte aus, um das CF-Plug-in für 'Log Collection' 
 	
 	
 ## Befehlszeilenschnittstelle für Log Analysis deinstallieren
-{: #uninstall_cli}
+{: #uninstall_cli1}
 
 Um die Befehlszeilenschnittstelle für die Protokollierung zu deinstallieren, löschen Sie das Plug-in.
 {:shortdesc}
@@ -265,7 +274,7 @@ Führen Sie die folgenden Schritte aus, um die Befehlszeilenschnittstelle für d
   
 
 ## Allgemeine Hilfe anfordern
-{: #general_cli_help}
+{: #general_cli_help1}
 
 Führen Sie die folgenden Schritte aus, um allgemeine Informationen zur Befehlszeilenschnittstelle und den unterstützten Befehlen zu erhalten:
 
@@ -283,7 +292,7 @@ Führen Sie die folgenden Schritte aus, um allgemeine Informationen zur Befehlsz
     
 
 ## Hilfe zu einem Befehl abrufen
-{: #command_cli_help}
+{: #command_cli_help1}
 
 Gehen Sie wie folgt vor, um Hilfe zur Verwendung eines Befehls abzurufen:
 
@@ -310,7 +319,7 @@ Gehen Sie wie folgt vor, um Hilfe zur Verwendung eines Befehls abzurufen:
 
 
 ## Hilfe zu einem Unterbefehl abrufen
-{: #subcommand_cli_help}
+{: #subcommand_cli_help1}
 
 Ein Befehl kann Unterbefehle haben. Gehen Sie wie folgt vor, um Hilfe zu Unterbefehlen abzurufen:
 

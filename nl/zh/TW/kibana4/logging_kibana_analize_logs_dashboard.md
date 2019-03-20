@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 在 Kibana 中透過儀表板來分析日誌
 {:#kibana_analize_logs_dashboard}
@@ -26,8 +35,8 @@ lastupdated: "2018-07-25"
 |單一 CF 應用程式儀表板|此儀表板會顯示單一 Cloud Foundry 應用程式的資訊。|
 |單一容器儀表板 |此儀表板會顯示單一容器的資訊。|
 |容器群組儀表板 |此儀表板會顯示特定容器群組的資訊。|
-|多個 CF 應用程式儀表板|此儀表板會顯示部署在相同空間中的所有 Cloud Foundry 應用程式的資訊。| 
-|多個容器儀表板|此儀表板會顯示部署在相同空間中的所有容器的資訊。|
+|多 CF 應用程式儀表板|此儀表板會顯示部署在相同空間中的所有 Cloud Foundry 應用程式的資訊。| 
+|多容器儀表板|此儀表板會顯示部署在相同空間中的所有容器的資訊。|
 |空間儀表板 |此儀表板會顯示空間中可用的記載資料。| 
 {: caption="表 1. 儀表板類型範例" caption-side="top"}
 

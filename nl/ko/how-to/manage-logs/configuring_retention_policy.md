@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 로그 보존 정책 구성
-{: #configuring_retention_policy}
+{: #configuring_retention_policy1}
 
 **cf logging option** 명령을 사용하여 로그 콜렉션에 로그가 보존되는 최대 일 수를 정의하는 보존 정책을 보고 구성합니다. 기본적으로 보존 정책은 사용 안함으로 설정되어 로그가 무기한 보관됩니다. 보존 기간이 만료된 후에 로그는 자동으로 삭제됩니다. 
 {:shortdesc}
@@ -23,7 +32,7 @@ lastupdated: "2018-07-25"
 
 
 ## 영역에 대한 로그 보존 정책 사용 안함으로 설정
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_space1}
 
 보존 정책을 사용하지 않으려면 다음 단계를 완료하십시오.
 
@@ -61,7 +70,7 @@ ibmcloud cf logging option -r -1
 
 
 ## 영역에 대한 로그 보존 정책 확인
-{: #check_retention_policy_space}
+{: #check_retention_policy_space1}
 
 영역에 설정된 보존 기간을 가져오려면 다음 단계를 완료하십시오.
 
@@ -119,7 +128,7 @@ ibmcloud cf logging option -r -1
     
 
 ## 계정 레벨 로그 보존 정책 설정
-{: #set_retention_policy_space}
+{: #set_retention_policy_space1}
 
 계정에 대한 보존 기간을 보려면 다음 단계를 완료하십시오.
 

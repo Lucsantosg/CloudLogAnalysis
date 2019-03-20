@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Filtrage des journaux dans Kibana
 {:#filter_logs}
@@ -25,7 +32,7 @@ Dans la page Discover, vous pouvez définir de nouvelles requêtes de recherche 
 
 * Vous pouvez ajouter des filtres depuis la section *Fields list* ou depuis les entrées de la table. Un filtre affine la sélection de données en incluant ou en excluant des informations. Vous pouvez activer ou désactiver un filtre, inverser l'opération de filtrage, basculer l'état du filtre ou le supprimer complètement. 
 
-Lorsque vous définissez une nouvelle recherche, enregistrez-la pour pouvoir la réutiliser dans une requête future dans la page Discover ou pour créer des visualisations dans des tableaux de bord personnalisés. Pour plus d'informations, voir [Sauvegarde d'une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search).
+Lorsque vous définissez une nouvelle recherche, enregistrez-la pour pouvoir la réutiliser dans une requête future dans la page Discover ou pour créer des visualisations dans des tableaux de bord personnalisés. Pour plus d'informations, voir [Sauvegarde d'une recherche](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1).
 
 Lorsque vous lancez une nouvelle recherche, l'histogramme, le tableau et la section Fields list sont mis à jour automatiquement en affichant les résultats de la recherche. Pour déterminer quelles données sont affichées, voir [Identification des données affichées dans la page Discover](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data).
 

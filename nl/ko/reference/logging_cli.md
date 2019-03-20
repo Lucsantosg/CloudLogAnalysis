@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # IBM Cloud Log Analysis CLI(CF 플러그인)
 {: #logging_cli}
@@ -56,30 +65,30 @@ lastupdated: "2018-07-25"
     <td>이 명령을 사용하여 영역 또는 계정에서 사용 가능한 로그에 대한 보존 기간을 보거나 설정합니다.</td>
   </tr>
   <tr>
-    <td>[ibmcloud cf logging session create(베타)](#session_create)</td>
+    <td>[ibmcloud cf logging session create(베타)](#session_create1)</td>
     <td>이 명령을 사용하여 새 세션을 작성합니다.</td>
   <tr>
   <tr>
-    <td>[ibmcloud cf logging session delete(베타)](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete(베타)](#session_delete1)</td>
     <td>이 명령을 사용하여 세션을 삭제합니다.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session list(베타)](#session_list)</td>
+    <td>[ibmcloud cf logging session list(베타)](#session_list1)</td>
     <td>이 명령을 사용하여 활성 세션 및 해당 ID를 나열합니다.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session show(베타)](#session_show)</td>
+    <td>[ibmcloud cf logging session show(베타)](#session_show1)</td>
     <td>이 명령을 사용하여 단일 세션의 상태를 표시합니다.</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status1)</td>
     <td>이 명령을 사용하여 영역 또는 계정에서 수집된 로그에 대한 정보를 가져옵니다.</td>
   </tr>
   </table>
 
 
 ## ibmcloud cf logging
-{: #base}
+{: #base1}
 
 CLI의 버전 및 CLI 사용 방법에 대한 정보를 제공합니다.
 
@@ -145,7 +154,7 @@ ibmcloud cf logging auth
 </dl>
 
 ## ibmcloud cf logging delete
-{: #delete}
+{: #delete2}
 
 로그 콜렉션에 저장된 로그를 삭제합니다.
 
@@ -185,11 +194,11 @@ ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud cf logging download(베타)
-{: #download}
+{: #download4}
 
 로그 콜렉션에서 로컬 파일로 로그를 다운로드하거나 다른 프로그램(예: Elastic Stack)으로 로그를 보냅니다. 
 
-**참고:** 파일을 다운로드하려면 먼저 세션을 작성해야 합니다. 세션은 날짜 범위, 로그 유형 및 계정 유형을 기반으로 어느 로그를 다운로드할 것인지 정의합니다. 세션의 컨텍스트 내에서 로그를 다운로드합니다. 자세한 정보는 [ibmcloud cf logging session create(베타)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create)를 참조하십시오.
+**참고:** 파일을 다운로드하려면 먼저 세션을 작성해야 합니다. 세션은 날짜 범위, 로그 유형 및 계정 유형을 기반으로 어느 로그를 다운로드할 것인지 정의합니다. 세션의 컨텍스트 내에서 로그를 다운로드합니다. 자세한 정보는 [ibmcloud cf logging session create(베타)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1)를 참조하십시오.
 
 ```
 ibmcloud cf logging download [parameters] [arguments]
@@ -246,7 +255,7 @@ output {
 
 
 ## ibmcloud cf logging help
-{: #help}
+{: #help1}
 
 명령 사용 방법에 대한 정보를 제공합니다.
 
@@ -341,7 +350,7 @@ ibmcloud cf logging option -r 25
 
 
 ## ibmcloud cf logging session create(베타)
-{: #session_create}
+{: #session_create1}
 
 새 세션을 작성합니다.
 
@@ -372,7 +381,7 @@ ibmcloud cf logging session create [parameters]
   </dd>
 </dl>
 
-**리턴된 값**
+**리턴값**
 
 <dl>
 <dt>Access-Time</dt>
@@ -409,7 +418,7 @@ ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 
 
 ## ibmcloud cf logging session delete(베타)
-{: #session_delete}
+{: #session_delete1}
 
 세션 ID별로 지정된 세션을 삭제합니다.
 
@@ -437,7 +446,7 @@ ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging session list(베타)
-{: #session_list}
+{: #session_list1}
 
 활성 세션 및 해당 ID를 나열합니다.
 
@@ -446,7 +455,7 @@ ibmcloud cf logging session list
 ```
 {: codeblock}
 
-**리턴된 값**
+**리턴값**
 
 <dl>
 <dt>ID</dt>
@@ -467,7 +476,7 @@ ibmcloud cf logging session list
  
 
 ## ibmcloud cf logging session show(베타)
-{: #session_show}
+{: #session_show1}
 
 단일 세션의 상태를 표시합니다.
 
@@ -480,10 +489,10 @@ ibmcloud cf logging session show [arguments]
 
 <dl>
 <dt>session_ID</dt>
-<dd>정보를 가져오려는 활성 세션의 ID 입니다.</dd>
+<dd>정보를 가져오려는 활성 세션의 ID입니다.</dd>
 </dl>
 
-**리턴된 값**
+**리턴값**
 
 <dl>
 <dt>Access-Time</dt>
@@ -519,7 +528,7 @@ ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging status
-{: #status}
+{: #status1}
 
 영역 또는 계정에서 수집된 로그에 대한 정보를 리턴합니다.
 

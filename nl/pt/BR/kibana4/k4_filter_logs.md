@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Filtrando logs no Kibana
 {:#k4_filter_logs}
@@ -45,7 +55,7 @@ de campo específico. Para obter mais informações, consulte
 [Filtrando seus logs para um
 valor de campo específico](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field).
  
-* É possível filtrar seus logs para mostrar entradas em um período de tempo. Para obter mais informações, consulte [Configurando um filtro de tempo](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter).
+* É possível filtrar seus logs para mostrar entradas em um período de tempo. Para obter mais informações, consulte [Configurando um filtro de tempo](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter1).
      
 
 ## Incluindo um filtro para um valor que não esteja relacionado na *Lista de campos*
@@ -367,7 +377,7 @@ no campo *mensagem*.
         
 
 ## Configurando um filtro de tempo
-{: #set_time_filter}
+{: #set_time_filter1}
 
 Visualize e filtre logs dentro de um período configurando o *Selecionador de horário*.
 

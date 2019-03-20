@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # IBM Cloud CLI の使用に関するよくある質問と回答
@@ -143,7 +151,7 @@ ibmcloud target -o OrgName -s SpaceName
 		
 		
 ## スペースの GUID の取得方法を教えてください
-{: #space_guid}
+{: #space_guid2}
 	
 スペースの GUID を取得するには、以下の手順を実行します。
 	

@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # IBM Cloud CLI 사용에 대한 FAQ
@@ -143,7 +151,7 @@ ibmcloud target -o OrgName -s SpaceName
 		
 		
 ## 영역의 GUID를 가져오는 방법
-{: #space_guid}
+{: #space_guid2}
 	
 다음 단계를 완료하여 영역의 GUID를 가져오십시오.
 	

@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 로그 관리
@@ -43,14 +52,14 @@ lastupdated: "2018-07-25"
 
 {{site.data.keyword.loganalysisshort}} CLI를 사용하여 로그 보존 정책을 보고 구성할 수 있습니다. 이 정책은 로그 콜렉션에 로그가 보존되는 일 수를 지정합니다. 
 
-* 기본적으로 유료 사용제를 선택하면 로그가 수집되어 로그 콜렉션에 보존됩니다. 
+* 기본적으로 유료 플랜을 선택하면 로그가 수집되어 로그 콜렉션에 보존됩니다. 
 * 보존 기간을 설정하면 보존 기간이 만료된 후에 로그는 로그 콜렉션에서 자동으로 삭제되며 복구될 수 없습니다.
 * 계정에 대한 보존 기간을 지정할 수 있습니다. 그 계정의 모든 영역에 대해 보존 기간이 자동으로 구성됩니다. 
 * 영역에 대한 보존 기간을 지정할 수 있습니다.
 * 보존 기간을 언제든지 변경할 수 있습니다.
 * 정책의 값을 *-1*로 설정하여 사용 안함으로 설정할 수 있습니다. 
 
-**참고:** 로그 보존 정책을 사용 안함으로 설정하면 로그 콜렉션에서 로그를 유지보수해야 합니다. 이전 로그를 삭제하기 위해 CLI 명령 [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete)를 사용할 수 있습니다.
+**참고:** 로그 보존 정책을 사용 안함으로 설정하면 로그 콜렉션에서 로그를 유지보수해야 합니다. 이전 로그를 삭제하기 위해 CLI 명령 [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete4)를 사용할 수 있습니다.
 
 자세한 정보는 다음을 참조하십시오.
 
@@ -74,14 +83,14 @@ lastupdated: "2018-07-25"
 
 
 ## 로그 다운로드
-{: #download_logs}
+{: #download_logs2}
 
 Kibana에서 최근 3일 동안의 로그를 검색할 수 있습니다. 더 이전의 로그 데이터를 분석할 수 있도록 로그를 로컬 파일에 다운로드하거나 로컬 Elastic Stack과 같은 다른 프로그램에 해당 로그를 보낼 수 있습니다. 
 
 자세한 정보는 다음을 참조하십시오.
 
 * [{{site.data.keyword.Bluemix_notm}} 플러그인을 사용하여 로그 다운로드](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs_cloud.html#downloading_logs).
-* [CF 플러그인을 사용하여 로그 다운로드](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs).
+* [CF 플러그인을 사용하여 로그 다운로드](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs1).
 
 
 
@@ -90,8 +99,8 @@ Kibana에서 최근 3일 동안의 로그를 검색할 수 있습니다. 더 이
 
 사용자의 로그에 대한 일반 정보를 얻으려면 `ibmcloud logging log-show` 또는 `cf logging status` 명령을 사용하십시오. 자세한 정보는 다음을 참조하십시오.
 
-* [{{site.data.keyword.Bluemix_notm}} 플러그인을 사용하여 로그 정보 보기](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
-* [CF 플러그인을 사용하여 로그 정보 보기](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
+* [{{site.data.keyword.Bluemix_notm}} 플러그인을 사용하여 로그 정보 보기](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status1)
+* [CF 플러그인을 사용하여 로그 정보 보기](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status1).
 
 예를 들어 비용을 계속 제어하기 위해 일정 기간 동안의 앱의 로그 크기를 모니터하고자 할 수 있습니다. 예를 들면, 앱 또는 서비스가 예상보다 더 많은 로그를 생성하고 있는지 식별하기 위해 {{site.data.keyword.Bluemix_notm}} 영역에 대해 1주일 동안의 각 로그 유형의 크기를 알려고 할 수 있습니다. 로그 크기를 확인하려면 `ibmcloud logging log-show` 또는 `cf logging status` 명령을 사용하십시오.
 
@@ -100,7 +109,7 @@ Kibana에서 최근 3일 동안의 로그를 검색할 수 있습니다. 더 이
 
 
 ## {{site.data.keyword.loganalysisshort_notm}} CLI 설치({{site.data.keyword.Bluemix_notm}} 플러그인)
-{: #install_cli}
+{: #install_cli2}
 
 CLI 설치 방법을 학습하려면 [로깅 CLI 설치](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)를 참조하십시오.
 
@@ -139,7 +148,7 @@ CLI 버전을 확인하려면 `ibmcloud plugin list` 명령을 실행하십시�
 </table>
 
 ## 로그 관리를 위해 사용자에게 필요한 역할
-{: #roles}
+{: #roles1}
 
 {{site.data.keyword.Bluemix_notm}}에서 사용자에게 하나 이상의 역할을 지정할 수 있습니다. 이러한 역할은 사용자가 {{site.data.keyword.loganalysisshort}} 서비스를 사용하여 수행할 수 있는 태스크를 정의합니다. 
 

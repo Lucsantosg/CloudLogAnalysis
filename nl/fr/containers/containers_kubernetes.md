@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,12 +19,14 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # {{site.data.keyword.containershort_notm}}
 {: #containers_kubernetes}
 
-Dans {{site.data.keyword.Bluemix_notm}}, vous pouvez utiliser le service {{site.data.keyword.loganalysisshort}} pour stocker et analyser des journaux de conteneur et des journaux de cluster Kubernetes qui sont collectés automatiquement par {{site.data.keyword.containershort}} dans l'environnement public et dans l'environnement dédié.
+Dans {{site.data.keyword.Bluemix_notm}}, vous pouvez utiliser le service {{site.data.keyword.loganalysisshort}} pour stocker et analyser des journaux de conteneurs et des journaux de cluster Kubernetes qui sont collectés automatiquement par {{site.data.keyword.containershort}} dans l'environnement public et dans l'environnement dédié.
 {:shortdesc}
 
 Vous pouvez disposer d'un ou de plusieurs clusters Kubernetes sur votre compte. Les journaux sont collectés automatiquement par {{site.data.keyword.containershort}} dès que le cluster est mis à disposition. 
@@ -63,7 +69,7 @@ Si vous voulez analyser des données de journal dans Kibana pour un cluster qui 
 * Pour augmenter votre quota de recherche Kibana et stocker des journaux dans Log Collection à long terme, vous devez mettre à disposition le service {{site.data.keyword.loganalysisshort}} dans l'espace où les journaux sont transférés avec un plan répondant à vos exigences. 
 * Votre ID utilisateur doit disposer des droits permettant d'afficher les journaux. Pour pouvoir afficher les journaux dans le domaine d'espace, un utilisateur a besoin du rôle CF. **Auditeur** est le rôle le moins important qui peut être accordé pour afficher des journaux. Pour plus d'informations, voir [Rôles requis par un utilisateur pour afficher les journaux](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
-Pour pouvoir gérer les données de journal de cluster qui sont stockées dans l'espace de stockage à long terme (Log Collection), votre ID utilisateur doit être associé à une règle IAM afin de pouvoir utiliser le service {{site.data.keyword.loganalysisshort}}. Il doit disposer des droits **Administrateur**, **Opérateur** ou **Editeur**.  Pour plus d'informations, voir [Rôles requis par un utilisateur pour gérer les journaux](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+Pour pouvoir gérer les données de journal de cluster qui sont stockées dans l'espace de stockage à long terme (Log Collection), votre ID utilisateur doit être associé à une règle IAM afin de pouvoir utiliser le service {{site.data.keyword.loganalysisshort}}. Il doit disposer des droits **Administrateur**, **Opérateur** ou **Editeur**.  Pour plus d'informations, voir [Rôles requis par un utilisateur pour gérer les journaux](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
 
 
 Le diagramme ci-dessous offre une vue d'ensemble de la journalisation dans l'environnement public pour {{site.data.keyword.containershort}} lorsque le cluster transmet des journaux au domaine d'espace.
@@ -232,8 +238,8 @@ Vous pouvez configurer votre cluster pour le transfert des journaux au service {
 
 Par défaut, vous pouvez utiliser Kibana pour rechercher jusqu'à 500 Mo de journaux par jour dans {{site.data.keyword.Bluemix_notm}}. 
 
-Pour rechercher des journaux plus volumineux, vous pouvez utiliser le service {{site.data.keyword.loganalysisshort}}. Celui-ci fournit plusieurs plans. Chaque plan offre des fonctions de recherche de journaux différentes. Par exemple, le plan
-*Collecte de journaux* vous permet de rechercher jusqu'à 1 Go de données par jour. Pour plus d'informations sur les plans disponibles, voir [Plans de service](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
+Pour rechercher des journaux plus volumineux, vous pouvez utiliser le service {{site.data.keyword.loganalysisshort}}. Celui-ci fournit plusieurs plans. Chaque plan offre des fonctions de recherche de journaux différentes. Par exemple, le plan *Collecte
+de journaux* vous permet de rechercher jusqu'à 1 Go de données par jour. Pour plus d'informations sur les plans disponibles, voir [Plans de service](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
 Lorsque vous effectuez une recherche dans vos journaux, tenez compte des zones suivantes disponibles dans Kibana :
 
@@ -284,7 +290,7 @@ Zones pouvant être utiles lors de l'analyse des journaux de sortie standard et 
   </tr>
   <tr>
     <td>kubernetes.namespace_name_str</td>
-	<td>Nom de l'espace de nom dans lequel l'application s'exécute dans la cluster</td>
+	<td>Nom de l'espace de nom dans lequel l'application s'exécute dans le cluster</td>
 	<td></td>
   </tr>
   <tr>
@@ -367,7 +373,7 @@ Zones pouvant être utiles lors de l'analyse des journaux de contrôleur Ingress
 ## Envoi de journaux pour pouvoir utiliser les zones dans un message comme zones de recherche Kibana
 {: #send_data_in_json}
 
-Par défaut, la journalisation est activée automatiquement pour les conteneurs. Chaque entrée du fichier journal Docker est affichée dans Kibana dans la zone **message**. Si vous avez besoin de filtrer et d'analyser vos données dans Kibana en utilisant une zone spécifique figurant dans l'entrée de journal du conteneur, configurez votre application afin d'envoyer une sortie au format JSON valide. Par exemple, consignez le message au format JSON dans la sortie standard (stdout) et l'erreur standard (stderr).
+Par défaut, la journalisation est automatiquement activée pour les conteneurs. Chaque entrée du fichier journal d'exécution des conteneurs est affichée dans Kibana dans la zone **message**. Si vous avez besoin de filtrer et d'analyser vos données dans Kibana en utilisant une zone spécifique figurant dans l'entrée de journal du conteneur, configurez votre application afin d'envoyer une sortie au format JSON valide. Par exemple, consignez le message au format JSON dans la sortie standard (stdout) et l'erreur standard (stderr).
 
 Chaque zone disponible dans le message est analysée en fonction du type de zone correspondant à sa valeur. Par exemple, chaque zone dans le message JSON suivant :
     
@@ -398,12 +404,12 @@ Pour transférer des journaux de cluster vers {{site.data.keyword.loganalysissho
 
 L'ID utilisateur qui configure les configurations de cluster de journalisation doit avoir les droits suivants :
 
-* Règle IAM pour le {{site.data.keyword.containershort}} avec les droits **Afficheur**.
+* Règle IAM pour {{site.data.keyword.containershort}} avec les droits **Afficheur**.
 * Règle IAM pour l'instance de cluster avec les droits **Administrateur** ou **Opérateur**.
 
 Pour qu'un cluster puisse transférer des journaux dans un **domaine d'espace** {{site.data.keyword.loganalysisshort}}, les droits suivants sont requis pour le propriétaire de clé {{site.data.keyword.containershort}} :
 
-* Règle IAM pour le {{site.data.keyword.containershort}} avec le rôle **Administrateur**.
+* Règle IAM pour {{site.data.keyword.containershort}} avec le rôle **Administrateur**.
 * Règle IAM pour le service {{site.data.keyword.loganalysisshort}} avec le rôle **Administrateur**.
 * Rôle Cloud Foundry (CF) **orgManager** pour l'organisation où l'espace est disponible.
 * Rôle CF **SpaceManager** ou rôle **Developer** pour l'espace où les journaux sont transférés à partir du cluster.
@@ -411,13 +417,13 @@ Pour qu'un cluster puisse transférer des journaux dans un **domaine d'espace** 
 
 Pour qu'un cluster puisse transférer des journaux dans le **domaine de compte** {{site.data.keyword.loganalysisshort}}, les droits suivants sont requis pour le propriétaire de clé {{site.data.keyword.containershort}} :
 
-* Règle IAM pour le {{site.data.keyword.containershort}} avec le rôle **Administrateur**.
+* Règle IAM pour {{site.data.keyword.containershort}} avec le rôle **Administrateur**.
 * Règle IAM pour le service {{site.data.keyword.loganalysisshort}} avec le rôle **Administrateur**.
 
 
 
 ## Stockage des journaux dans le composant Log Collection
-{: #log_collection}
+{: #log_collection1}
 
 Tenez compte des informations suivantes sur le comportement par défaut dans {{site.data.keyword.Bluemix_notm}} lorsque vous utilisez des journaux :
 
@@ -444,7 +450,7 @@ Afin d'analyser les données de journal, utilisez Kibana pour effectuer des tâc
 * Vous pouvez lancer Kibana directement depuis un navigateur Web. Pour plus d'informations, voir [Accès à Kibana depuis un navigateur Web](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 * vous pouvez lancer Kibana depuis l'interface utilisateur {{site.data.keyword.Bluemix_notm}} dans le contexte d'un cluster. Pour plus d'informations, voir [Accès à Kibana depuis le tableau de bord d'un conteneur déployé dans un cluster Kubernetes](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube).
 
-Si vous transmettez au collecteur de journal Docker les données de journal d'une application qui s'exécute dans un conteneur au format JSON, vous pouvez rechercher et analyser ces données dans Kibana à l'aide de zones JSON. Pour plus d'informations, voir [Envoi de journaux pour pouvoir utiliser les zones dans un message comme zones de recherche Kibana](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json).
+Si vous transmettez au collecteur de journal de conteneur les données de journal d'une application qui s'exécute dans un conteneur au format JSON, vous pouvez rechercher et analyser ces données dans Kibana à l'aide de zones JSON. Pour plus d'informations, voir [Envoi de journaux pour pouvoir utiliser les zones dans un message comme zones de recherche Kibana](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json).
 
 Lorsque vous affichez des journaux dans Kibana, tenez compte des informations suivantes :
 

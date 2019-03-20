@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-07-25"
+  years: 2017, 2019
+
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Machines virtuelles
 {: #logging_vm_ov}
@@ -21,17 +31,17 @@ réexpéditeur Logstash à service partagé (mt-logstash-forwarder). Vous pouvez
 
 
 ## Ingestion de journaux
-{: #log_ingestion}
+{: #log_ingestion2}
 
 Le service {{site.data.keyword.loganalysisshort}} propose différents plans. Tous les
 plans, à l'exception du plan *Lite*, permettent d'envoyer des journaux à Log Collection. Pour plus d'informations sur les plans, voir
 [Plans de service](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans).
 
-Vous pouvez envoyer des journaux dans le service {site.data.keyword.loganalysisshort}} à l'aide du réexpéditeur mt-logstash-forwarder. Pour plus d'informations, voir [Envoyer des données de journaux à l'aide d'un réexpéditeur Logstash à service partagé (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
+Vous pouvez envoyer des journaux dans {{site.data.keyword.loganalysisshort}} à l'aide du réexpéditeur mt-logstash-forwarder. Pour plus d'informations, voir [Envoyer des données de journaux à l'aide d'un réexpéditeur Logstash à service partagé (mt-logstash-forwarder)](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt).
 
 
 ## Collecte de journaux
-{: #log_collection}
+{: #log_collection2}
 
 Par défaut, {{site.data.keyword.Bluemix_notm}} stocke les données de journal jusqu'à 3 jours :   
 
@@ -48,7 +58,7 @@ en avez besoin. Pour obtenir plus d'informations sur le tarif de chaque plan, vo
 
 
 ## Recherche de journaux
-{: #log_search}
+{: #log_search2}
 
 Par défaut, vous pouvez utiliser Kibana pour rechercher jusqu'à 500 Mo de journaux par jour dans {{site.data.keyword.Bluemix_notm}}. 
 

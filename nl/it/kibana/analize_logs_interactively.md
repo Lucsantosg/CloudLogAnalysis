@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Analisi dei log interattiva in Kibana
 {:#analize_logs_interactively}
@@ -62,7 +69,7 @@ Puoi definire altre ricerche. Per ulteriori informazioni, vedi [Filtro dei log d
 
 Per definire una nuova ricerca, utilizza la query di ricerca predefinita come tuo punto di partenza e quindi rifinisci la ricerca eseguendo le seguente attività:
 
-* Applica i filtri del campo per rifinire la serie di dati che puoi visualizzare. Puoi attivare/disattivare ogni filtro, bloccarlo nella pagina, abilitarlo o disabilitarlo se necessario e configurarlo per includere o escludere il valore. Per maggiori informazioni, vedi [Filtro dei log in Kibana](filter_logs.html#filter_logs).
+* Applica i filtri del campo per rifinire la serie di dati che puoi visualizzare. Puoi attivare/disattivare ogni filtro, bloccarlo nella pagina, abilitarlo o disabilitarlo se necessario e configurarlo per includere o escludere il valore. Per maggiori informazioni, vedi [Filtro dei log in Kibana](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
 
     **Suggerimento:** se non puoi trovare un campo nell'*Elenco campi* che ti aspetti di visualizzare o alcune delle lenti di ingrandimento per i campi elencati sono disabilitate nella pagina Rileva, ricarica l'elenco dei campi aggiornando il modello di indice nella pagina Rileva. Per maggiori informazioni, vedi [Ricaricamento dell'elenco campo](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields).
 
@@ -79,7 +86,7 @@ Puoi eseguire ognuna delle seguenti attività con le ricerche che definisci nell
 | [Eliminare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | Eliminare una ricerca quando non è più necessaria. |
 | [Esportare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | Esportare una ricerca per condividerla.  |
 | [Importare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Importare una ricerca.  |
-| [Ricaricare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | Caricare una ricerca esistente per analizzare nuovamente una serie di dati. |
+| [Ricaricare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search1)  | Caricare una ricerca esistente per analizzare nuovamente una serie di dati. |
 | [Aggiornare i dati di una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | Configurare l'aggiornamento automatico dei dati visualizzati tramite la ricerca.  |
 | [Salvare una ricerca](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Salvare la ricerca per un riutilizzo successivo.  |
 {: caption="Tabella 3. Attività per lavorare con le ricerche" caption-side="top"}

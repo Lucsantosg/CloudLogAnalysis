@@ -1,23 +1,31 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Supresión de registros
-{: #deleting_logs}
+{: #deleting_logs1}
 
-Utilice el mandato [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) para suprimir los registros de la recopilación de registros. 
+Utilice el mandato [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) para suprimir los registros de la recopilación de registros. 
 {:shortdesc}
 
 * Puede suprimir los registros comprendidos en un determinado intervalo de tiempo.
@@ -76,7 +84,7 @@ Siga estos pasos:
 
 	
 ## Supresión de registros según su tipo correspondientes a un determinado periodo de tiempo 
-{: #log_type}
+{: #log_type1}
 
 Siga estos pasos:
 

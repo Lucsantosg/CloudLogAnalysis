@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 在 Kibana 中分析 Kubernetes 集群中部署的应用程序的日志
@@ -70,7 +75,7 @@ lastupdated: "2018-07-25"
  
 
 ## 步骤 1：供应 Kubernetes 集群
-{: #step1}
+{: #step25}
 
 请完成以下步骤：
 
@@ -108,7 +113,7 @@ lastupdated: "2018-07-25"
 
 
 ## 步骤 2：配置集群以将日志自动转发到 {{site.data.keyword.loganalysisshort}} 服务
-{: #step2}
+{: #step26}
 
 部署应用程序时，{{site.data.keyword.containershort}} 会自动收集日志。但是，日志不会自动转发到 {{site.data.keyword.loganalysisshort}} 服务。您必须在集群中创建 1 个或多个日志记录配置，用于定义如下内容：
 
@@ -228,7 +233,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## 步骤 3：授予用户查看空间域中日志的许可权
-{: #step3}
+{: #step33}
 
 要授予用户查看空间中日志的许可权，您必须为该用户分配 Cloud Foundry 角色，该角色描述此用户可以在空间中使用 {{site.data.keyword.loganalysisshort}} 服务执行的操作。 
 
@@ -262,13 +267,13 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
     您可以选择 1 个或多个角色。 
     
-    有效角色为：*管理员*、*开发者*和*审计员*
+    有效角色为：*管理者*、*开发者*和*审计员*
 	
 7. 单击**保存角色**。
 
 
 ## 步骤 4：授予 {{site.data.keyword.containershort_notm}} 密钥所有者许可权
-{: #step4}
+{: #step52}
 
 要将集群日志转发到空间，{{site.data.keyword.containershort_notm}} 密钥所有者必须具有以下许可权：
 
@@ -317,7 +322,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## 步骤 5：在 Kubernetes 集群中部署样本应用程序以在 stdout 中生成内容
-{: #step5}
+{: #step53}
 
 在 Kubernetes 集群中部署并运行样本应用程序。完成以下教程中的步骤以部署样本应用程序：[第 1 课：将单实例应用程序部署到 Kubernetes 集群](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1)。
 

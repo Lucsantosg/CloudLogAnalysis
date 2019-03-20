@@ -1,27 +1,35 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Visualizzazione delle informazioni sul log
 {: #viewing_log_status}
 
-Utilizza il comando [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) per ottenere le informazioni sui log che vengono raccolti e archiviati in Raccolta dei log.
+Utilizza il comando [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) per ottenere le informazioni sui log che vengono raccolti e archiviati in Raccolta dei log.
 {:shortdesc}
 
 ## Ottenimento delle informazioni sui log per un periodo di tempo
-{: #viewing_logs}
+{: #viewing_logs1}
 
 Utilizza il comando `cf logging status` per visualizzare la dimensione, il numero, i tipi di log e se i log sono disponibili o meno per l'analisi in Kibana dei log archiviati in Raccolta dei log. 
 
@@ -60,7 +68,7 @@ Completa la seguente procedura per ottenere informazioni sui log:
 
 
 ## Ottenimento delle informazioni su un tipo di log per un periodo di tempo
-{: #viewing_logs_by_log_type}
+{: #viewing_logs_by_log_type1}
 
 Per ottenere le informazioni su un tipo di log per un periodo di tempo, utilizza il comando `cf logging status` con le opzioni **-t** per specificare il tipo di log, **-s** per configurare la data di inizio e **-e** per la data di fine. Ad esempio,
 
@@ -106,7 +114,7 @@ Completa la seguente procedura per ottenere informazioni su un tipo di log per u
 
 
 ## Ottenimento delle informazioni sull'account dei log
-{: #viewing_logs_account}
+{: #viewing_logs_account1}
 
 Per ottenere le informazioni sui log per un periodo di tempo in un account {{site.data.keyword.Bluemix_notm}}, utilizza il comando `cf logging status` con l'opzione **-a**. Puoi anche specificare le opzioni **-t** per il tipo di log, **-s** per configurare la data di inizio e **-e** per la data di fine. 
 

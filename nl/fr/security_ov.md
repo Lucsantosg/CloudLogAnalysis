@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Sécurité
 {: #security_ov}
@@ -26,7 +33,7 @@ Pour utiliser l'API de service {{site.data.keyword.loganalysisshort}}, vous deve
 
 
 ## Modèles d'authentification
-{: #auth}
+{: #auth1}
 
 Pour pouvoir utiliser le service {{site.data.keyword.loganalysisshort}} via l'interface de ligne de commande ou l'API, vous avez besoin d'un jeton d'authentification.
 
@@ -36,14 +43,14 @@ Le service {{site.data.keyword.loganalysisshort}} prend en charge les modèles d
 
     Vous pouvez utiliser l'interface de ligne de commande pour gérer les jetons UAA.
 	
-* [Authentification IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)
+* [Authentification IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)
 
     Le modèle d'authentification IAM offre des fonctions d'interface utilisateur, d'interface de ligne de commande ou de gestion d'API. 
 
 **Remarque :** les jetons UAA et IAM arrivent à expiration au bout d'un certain temps. 
 
 ## Rôles
-{: #roles}
+{: #roles3}
 
 Dans {{site.data.keyword.Bluemix_notm}}, il existe deux types de rôle qui contrôlent les actions que les utilisateurs peuvent effectuer lorsqu'ils utilisent le service {{site.data.keyword.loganalysisshort}} :
 
@@ -218,7 +225,7 @@ Pour plus d'informations, voir [Obtention du jeton UAA](/docs/services/CloudLogA
 * Utilisez l'interface de ligne de commande {{{site.data.keyword.Bluemix_notm}} pour obtenir le jeton IAM. 
 * Le jeton possède un délai d'expiration. 
 
-Pour plus d'informations, voir [Obtention du jeton IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam).
+Pour plus d'informations, voir [Obtention du jeton IAM](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1).
 
 
 ## Obtention du jeton de journalisation pour envoyer des journaux à Log Analysis
@@ -234,11 +241,11 @@ Pour envoyer des journaux dans un domaine d'espace, choisissez l'une des méthod
 
 
 ## Octroi de droits à un utilisateur pour l'utilisation des journaux
-{: #grant_permissions}
+{: #grant_permissions1}
 
 Pour qu'un utilisateur puisse gérer les journaux ou les afficher, il doit disposer de droits dans {{site.data.keyword.Bluemix_notm}} permettant d'utiliser le service {{site.data.keyword.loganalysisshort}}.
 
-* Pour des informations sur les droits requis pour gérer les journaux, voir [Rôles requis par un utilisateur pour gérer les journaux](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+* Pour des informations sur les droits requis pour gérer les journaux, voir [Rôles requis par un utilisateur pour gérer les journaux](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
 * Pour des informations sur les droits requis pour afficher les journaux, voir [Rôles requis par un utilisateur pour afficher les journaux](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
 Pour plus d'informations sur l'octroi de droits, voir :

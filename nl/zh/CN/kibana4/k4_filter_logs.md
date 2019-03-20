@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 在 Kibana 中过滤日志
 {:#k4_filter_logs}
@@ -32,7 +42,7 @@ lastupdated: "2018-07-25"
  
 * 可以搜索日志以查找特定字段值，也可以排除日志中包含特定字段值的条目。有关更多信息，请参阅[针对特定字段值过滤日志](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field)。
  
-* 可以过滤日志以显示某个时间段内的条目。有关更多信息，请参阅[设置时间过滤器](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter)。
+* 可以过滤日志以显示某个时间段内的条目。有关更多信息，请参阅[设置时间过滤器](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter1)。
      
 
 ## 为*字段列表*中未列出的值添加过滤器
@@ -300,7 +310,7 @@ Elasticsearch 分析字符串字段的值时，会根据 Unicode Consortium 定�
         
 
 ## 设置时间过滤器
-{: #set_time_filter}
+{: #set_time_filter1}
 
 通过配置*时间选取器*，查看和过滤某个时间段内的日志。
 

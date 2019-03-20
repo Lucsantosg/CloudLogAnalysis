@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Analisando logs no Kibana por meio de um painel
 {:#analize_logs_dashboard}
@@ -43,7 +51,7 @@ A tabela a seguir lista as diferentes tarefas que podem ser executadas na págin
 | [Excluir um painel](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) | Exclua painéis que não forem necessários. |
 | [Exportar um painel](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) | É possível exportar um painel como um arquivo JSON. |
 | [Importar um painel](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) | É possível importar um painel como um arquivo JSON. |
-| [Carregar um painel](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) | É possível fazer upload de um painel para atualizar, modificar ou analisar seus dados. |
+| [Carregar um painel](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload3) | É possível fazer upload de um painel para atualizar, modificar ou analisar seus dados. |
 | [Salvar um painel](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | É possível salvar um painel para reutilização posterior. |
 {: caption="Tabela 2. Tarefas para trabalhar com painéis" caption-side="top"}
 
@@ -83,7 +91,7 @@ Conclua as etapas a seguir para criar um novo painel:
 
 
 ## Excluindo um painel do Kibana
-{: #delete}
+{: #delete1}
 
 Para excluir um painel, conclua as etapas a seguir na página **Gerenciamento**:
 
@@ -120,7 +128,7 @@ Para importar um painel como um arquivo JSON, conclua as etapas a seguir na pág
 O painel é incluído na lista de painéis.
 
 ## Carregando um painel do Kibana
-{: #reload}
+{: #reload3}
 
 Conclua as etapas a seguir para carregar um painel salvo:
 

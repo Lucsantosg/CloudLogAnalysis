@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # IBM Cloud Log Analysis CLI (CF プラグイン)
 {: #logging_cli}
@@ -55,30 +64,30 @@ lastupdated: "2018-07-25"
     <td>スペースまたはアカウントで使用可能なログの保存期間を表示または設定するには、このコマンドを使用します。</td>
   </tr>
   <tr>
-    <td>[ibmcloud cf logging session create (ベータ)](#session_create)</td>
+    <td>[ibmcloud cf logging session create (ベータ)](#session_create1)</td>
     <td>新規セッションを作成するには、このコマンドを使用します。</td>
   <tr>
   <tr>
-    <td>[ibmcloud cf logging session delete (ベータ)](#session_delete)</td>
+    <td>[ibmcloud cf logging session delete (ベータ)](#session_delete1)</td>
     <td>セッションを削除するには、このコマンドを使用します。</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session list (ベータ)](#session_list)</td>
+    <td>[ibmcloud cf logging session list (ベータ)](#session_list1)</td>
     <td>アクティブ・セッションおよびその ID をリストするには、このコマンドを使用します。</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging session show (ベータ)](#session_show)</td>
+    <td>[ibmcloud cf logging session show (ベータ)](#session_show1)</td>
     <td>単一セッションの状況を表示するには、このコマンドを使用します。</td>
   <tr>  
   <tr>
-    <td>[ibmcloud cf logging status](#status)</td>
+    <td>[ibmcloud cf logging status](#status1)</td>
     <td>スペースまたはアカウントで収集されたログに関する情報を取得するには、このコマンドを使用します。</td>
   </tr>
   </table>
 
 
 ## ibmcloud cf logging
-{: #base}
+{: #base1}
 
 CLI のバージョンおよび CLI の使用方法についての情報を提供します。
 
@@ -144,7 +153,7 @@ ibmcloud cf logging auth
 </dl>
 
 ## ibmcloud cf logging delete
-{: #delete}
+{: #delete2}
 
 Log Collection に保管されたログを削除します。
 
@@ -184,11 +193,11 @@ ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud cf logging download (ベータ)
-{: #download}
+{: #download4}
 
 Log Collection からローカル・ファイルにログをダウンロードするか、別のプログラム (Elastic スタックなど) にログをパイプします。 
 
-**注:** ファイルをダウンロードするには、まずセッションを作成する必要があります。 セッションは、日付範囲、ログ・タイプ、およびアカウント・タイプに基づいて、ダウンロードするログを定義します。 ログのダウンロードは、1 つのセッションのコンテキスト内で行います。 詳しくは、[ibmcloud cf logging session create (ベータ)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create) を参照してください。
+**注:** ファイルをダウンロードするには、まずセッションを作成する必要があります。 セッションは、日付範囲、ログ・タイプ、およびアカウント・タイプに基づいて、ダウンロードするログを定義します。 ログのダウンロードは、1 つのセッションのコンテキスト内で行います。 詳しくは、[ibmcloud cf logging session create (ベータ)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1) を参照してください。
 
 ```
 ibmcloud cf logging download [parameters] [arguments]
@@ -245,7 +254,7 @@ output {
 
 
 ## ibmcloud cf logging help
-{: #help}
+{: #help1}
 
 コマンドの使用方法に関する情報を提供します。
 
@@ -340,7 +349,7 @@ ibmcloud cf logging option -r 25
 
 
 ## ibmcloud cf logging session create (ベータ)
-{: #session_create}
+{: #session_create1}
 
 新規セッションを作成します。
 
@@ -408,7 +417,7 @@ ibmcloud cf logging session create -s 2017-05-20 -e 2017-05-26 -t log
 
 
 ## ibmcloud cf logging session delete (ベータ)
-{: #session_delete}
+{: #session_delete1}
 
 セッション ID で指定されたセッションを削除します。
 
@@ -436,7 +445,7 @@ ibmcloud cf logging session delete cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging session list (ベータ)
-{: #session_list}
+{: #session_list1}
 
 アクティブ・セッションおよびその ID をリストします。
 
@@ -466,7 +475,7 @@ ibmcloud cf logging session list
  
 
 ## ibmcloud cf logging session show (ベータ)
-{: #session_show}
+{: #session_show1}
 
 単一セッションの状況を表示します。
 
@@ -518,7 +527,7 @@ ibmcloud cf logging session show cI6hvAa0KR_tyhjxZZz9Uw==
 
 
 ## ibmcloud cf logging status
-{: #status}
+{: #status1}
 
 スペースまたはアカウントで収集されたログに関する情報を返します。
 

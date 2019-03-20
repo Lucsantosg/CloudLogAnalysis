@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Antworten auf häufig gestellte Fragen zur Verwendung der IBM Cloud-Befehlszeilenschnittstelle
@@ -21,16 +29,16 @@ lastupdated: "2018-07-25"
 Im Folgenden finden Sie Antworten auf häufig gestellte Fragen zur Verwendung der {{site.data.keyword.Bluemix}}-Befehlszeilenschnittstelle mit dem {{site.data.keyword.loganalysisshort}}-Service. 
 {:shortdesc}
 
-* [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)
+* [Wie melde ich mich bei {{site.data.keyword.Bluemix_notm}} an? ](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)
 * [Wie installiere ich die {{site.data.keyword.Bluemix_notm}}-Befehlszeilenschnittstelle](/docs/services/CloudLogAnalysis/qa/cli_qa.html#install_bmx_cli)
 * [Wie rufe ich die GUID eines Kontos ab?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid)
 * [Wie rufe ich die GUID einer Organisation ab?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#org_guid)
 * [Wie rufe ich die GUID eines Bereichs ab?](/docs/services/CloudLogAnalysis/qa/cli_qa.html#space_guid)
 
-## Wie melde ich mich bei IBM Cloud an?
+## Wie melde ich mich bei IBM Cloud an? 
 {: #login}
 
-ühren Sie den folgenden Befehl aus, um sich bei einer Region in {{site.data.keyword.Bluemix_notm}} anzumelden, in der der {{site.data.keyword.loganalysisshort}}-Service verfügbar ist:
+Führen Sie den folgenden Befehl aus, um sich bei einer Region in {{site.data.keyword.Bluemix_notm}} anzumelden, in der der {{site.data.keyword.loganalysisshort}}-Service verfügbar ist:
 
 ```
 ibmcloud login -a Endpunkt
@@ -143,7 +151,7 @@ Führen Sie die folgenden Schritte aus, um die GUID einer Organisation abzurufen
 		
 		
 ## Wie rufe ich die GUID eines Bereichs ab?
-{: #space_guid}
+{: #space_guid2}
 	
 Führen Sie die folgenden Schritte aus, um die GUID eines Bereichs abzurufen:
 	

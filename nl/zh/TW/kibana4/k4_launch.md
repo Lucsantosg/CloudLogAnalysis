@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # 導覽至 Kibana 儀表板
@@ -70,7 +80,7 @@ lastupdated: "2018-07-25"
 
 
 ##  從 Web 瀏覽器導覽至 Kibana 儀表板
-{: #launch_Kibana_from_browser}
+{: #launch_Kibana_from_browser1}
 
 用來過濾 Kibana 中所顯示資料的查詢，會擷取 {{site.data.keyword.Bluemix_notm}} 組織中空間的日誌項目。Kibana 所顯示的日誌資訊，包括部署在 {{site.data.keyword.Bluemix_notm}} 組織中您所登入空間內的所有資源記錄。
 

@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Sicherheit
 {: #security_ov}
@@ -25,7 +32,7 @@ Um die API des {{site.data.keyword.loganalysisshort}}-Service verwenden zu könn
 
 
 ## Authentifizierungsmodelle
-{: #auth}
+{: #auth1}
 
 Um den {{site.data.keyword.loganalysisshort}}-Service über die Befehlszeilenschnittstelle oder die API verwenden zu können, ist ein Authentifizierungstoken erforderlich.
 
@@ -35,14 +42,14 @@ Der {{site.data.keyword.loganalysisshort}}-Service unterstützt die folgenden Au
 
     UAA-Token können nur über die Befehlszeilenschnittstelle verwaltet werden.
 	
-* [IAM-Authentifizierung](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam)
+* [IAM-Authentifizierung](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)
 
     Das IAM-Authentifizierungsmodell bietet Managementfunktionalität für die Benutzerschnittstelle, Befehlszeilenschnittstelle oder API. 
 
 **Hinweis:** Ein UAA-Token und ein IAM-Token laufen nach einem bestimmten Zeitraum ab. 
 
 ## Rollen
-{: #roles}
+{: #roles3}
 
 In {{site.data.keyword.Bluemix_notm}} gibt es zwei Typen von Rollen, die die Aktionen steuern, die Benutzer bei der Arbeit mit dem {{site.data.keyword.loganalysisshort}}-Service ausführen können:
 
@@ -118,19 +125,19 @@ In der folgenden Tabelle sind die Berechtigungen der einzelnen IAM-Rollen für d
   </tr>
   <tr>
     <td>Administrator</td>
-	  <td>Informationen zu den Protokollen in einem Bereich oder auf Kontoebene anzeigen. <br>Protokolle in eine lokale Datei herunterladen oder Protokolle an ein anderes Programm (zum Beispiel Elastic Stack) umleiten. <br>Aufbewahrungszeitraum für Protokolle anzeigen, die in einem Bereich oder einem Konto verfügbar sind. <br>Aufbewahrungszeitraum für Protokolle aktualisieren, die in einem Bereich oder einem Konto verfügbar sind. <br>Aktive Sitzungen und ihre IDs auflisten. <br>Sitzungen erstellen, mit denen Protokolle heruntergeladen werden können. <br>Sitzungen löschen, die durch die Sitzungs-ID angegeben sind. <br>Zeigt den Status einer einzelnen Sitzung. <br>Protokolle löschen. </td>
+	  <td>Informationen zu den Protokollen in einem Bereich oder auf Kontoebene anzeigen. <br>Protokolle in eine lokale Datei herunterladen oder Protokolle an ein anderes Programm (zum Beispiel Elastic Stack) umleiten. <br>Aufbewahrungszeitraum für Protokolle anzeigen, die in einem Bereich oder einem Konto verfügbar sind. <br>Aufbewahrungszeitraum für Protokolle aktualisieren, die in einem Bereich oder einem Konto verfügbar sind. <br>Aktive Sitzungen und ihre IDs auflisten. <br>Sitzungen erstellen, mit denen Protokolle heruntergeladen werden können. <br>Sitzungen löschen, die durch die Sitzungs-ID angegeben sind. <br>Status einer einzelnen Sitzung anzeigen. <br>Protokolle löschen. </td>
   </tr>
   <tr>
-    <td>Editor</td>
-	  <td>Informationen zu den Protokollen in einem Bereich oder auf Kontoebene anzeigen. <br>Protokolle in eine lokale Datei herunterladen oder Protokolle an ein anderes Programm (zum Beispiel Elastic Stack) umleiten. <br>Aufbewahrungszeitraum für Protokolle anzeigen, die in einem Bereich oder einem Konto verfügbar sind. <br>Aufbewahrungszeitraum für Protokolle aktualisieren, die in einem Bereich oder einem Konto verfügbar sind. <br>Listet die aktiven Sitzungen und ihre IDs auf. <br>Sitzungen erstellen, mit denen Protokolle heruntergeladen werden können. <br>Sitzungen löschen, die durch die Sitzungs-ID angegeben sind. <br>Zeigt den Status einer einzelnen Sitzung. <br>Protokolle löschen.  </td>
+    <td>Bearbeiter</td>
+	  <td>Informationen zu den Protokollen in einem Bereich oder auf Kontoebene anzeigen. <br>Protokolle in eine lokale Datei herunterladen oder Protokolle an ein anderes Programm (zum Beispiel Elastic Stack) umleiten. <br>Aufbewahrungszeitraum für Protokolle anzeigen, die in einem Bereich oder einem Konto verfügbar sind. <br>Aufbewahrungszeitraum für Protokolle aktualisieren, die in einem Bereich oder einem Konto verfügbar sind. <br>Aktive Sitzungen und ihre IDs auflisten. <br>Sitzungen erstellen, mit denen Protokolle heruntergeladen werden können. <br>Sitzungen löschen, die durch die Sitzungs-ID angegeben sind. <br>Status einer einzelnen Sitzung anzeigen. <br>Protokolle löschen.  </td>
   </tr>
   <tr>
     <td>Operator</td>
-	  <td>Informationen zu den Protokollen in einem Bereich oder auf Kontoebene anzeigen. <br>Aufbewahrungszeitraum für Protokolle anzeigen, die in einem Bereich oder einem Konto verfügbar sind. <br>Listet die aktiven Sitzungen und ihre IDs auf. <br>Zeigt den Status einer einzelnen Sitzung. <br>Protokolle in eine lokale Datei herunterladen oder Protokolle an ein anderes Programm (zum Beispiel Elastic Stack) umleiten.  <br>Sitzungen erstellen, mit denen Protokolle heruntergeladen werden können. <br>Sitzungen löschen, die durch die Sitzungs-ID angegeben sind. </td>
+	  <td>Informationen zu den Protokollen in einem Bereich oder auf Kontoebene anzeigen. <br>Aufbewahrungszeitraum für Protokolle anzeigen, die in einem Bereich oder einem Konto verfügbar sind. <br>Aktive Sitzungen und ihre IDs auflisten. <br>Status einer einzelnen Sitzung anzeigen. <br>Protokolle in eine lokale Datei herunterladen oder Protokolle an ein anderes Programm (zum Beispiel Elastic Stack) umleiten.  <br>Sitzungen erstellen, mit denen Protokolle heruntergeladen werden können. <br>Sitzungen löschen, die durch die Sitzungs-ID angegeben sind. </td>
   </tr>
   <tr>
     <td>Anzeigeberechtigter</td>
-	  <td>Informationen zu den Protokollen in einem Bereich oder auf Kontoebene anzeigen. <br>Aufbewahrungszeitraum für Protokolle anzeigen, die in einem Bereich oder einem Konto verfügbar sind. <br>Listet die aktiven Sitzungen und ihre IDs auf. <br>Zeigt den Status einer einzelnen Sitzung. </td>
+	  <td>Informationen zu den Protokollen in einem Bereich oder auf Kontoebene anzeigen. <br>Aufbewahrungszeitraum für Protokolle anzeigen, die in einem Bereich oder einem Konto verfügbar sind. <br>Aktive Sitzungen und ihre IDs auflisten. <br>Status einer einzelnen Sitzung anzeigen. </td>
   </tr>
 </table>
 
@@ -147,55 +154,55 @@ In der folgenden Tabelle ist die Beziehung zwischen der API, einer Serviceaktion
   <tr>
     <td>DELETE /v1/logging/logs</td>
     <td>ibmcloud-log-analysis.domain.log_delete</td>
-	<td>Administrator, Editor</td>
+	<td>Administrator, Bearbeiter</td>
 	<td>Protokolle löschen.</td>
   </tr>
   <tr>
     <td>GET /v1/logging/logs</td>
     <td>ibmcloud-log-analysis.domain.log_read</td>
-	<td>Administrator, Editor, Anzeigeberechtigter</td>
+	<td>Administrator, Bearbeiter, Anzeigeberechtigter</td>
 	<td>Informationen zu den Protokollen in einem {{site.data.keyword.Bluemix_notm}}-Bereich oder auf Kontoebene anzeigen.</td>
   </tr>
   <tr>
     <td>GET /v1/logging/logs/download</td>
     <td>ibmcloud-log-analysis.domain.log_download</td>
-	<td>Administrator, Editor</td>
+	<td>Administrator, Bearbeiter</td>
 	<td>Protokolle in eine lokale Datei herunterladen oder Protokolle an ein anderes Programm (zum Beispiel Elastic Stack) umleiten.</td>
   </tr>
   <tr>
     <td>GET /v1/logging/logs/retention</td>
     <td>ibmcloud-log-analysis.domain.policy_read</td>
-    <td>Administrator, Editor, Anzeigeberechtigter</td>
+    <td>Administrator, Bearbeiter, Anzeigeberechtigter</td>
     <td>Aufbewahrungszeitraum für Protokolle anzeigen, die in einem {{site.data.keyword.Bluemix_notm}}-Bereich oder einem Konto verfügbar sind.</td>
   </tr>
   <tr>
     <td>PUT /v1/logging/logs/retention</td>
     <td>ibmcloud-log-analysis.domain.policy_write</td>
-    <td>Administrator, Editor</td>
+    <td>Administrator, Bearbeiter</td>
     <td>Aufbewahrungszeitraum für Protokolle aktualisieren, die in einem {{site.data.keyword.Bluemix_notm}}-Bereich oder einem Konto verfügbar sind.</td>
   </tr>
   <tr>
     <td>GET /v1/logging/sessions</td>
     <td>ibmcloud-log-analysis.domain.session_read</td>
-    <td>Administrator, Editor, Anzeigeberechtigter</td>
+    <td>Administrator, Bearbeiter, Anzeigeberechtigter</td>
     <td>Aktive Sitzungen und ihre IDs auflisten.</td>
   </tr>
   <tr>
     <td>POST /v1/logging/sessions</td>
     <td>ibmcloud-log-analysis.domain.session_write</td>
-    <td>Administrator, Editor</td>
+    <td>Administrator, Bearbeiter</td>
     <td>Sitzungen erstellen, mit denen Protokolle heruntergeladen werden können.</td>
   </tr>
   <tr>
     <td>DELETE /v1/logging/sessions/{id}</td>
     <td>ibmcloud-log-analysis.domain.session_delete</td>
-    <td>Administrator, Editor</td>
+    <td>Administrator, Bearbeiter</td>
     <td>Sitzungen löschen, die durch die Sitzungs-ID angegeben sind.</td>
   </tr>
   <tr>
     <td>GET /v1/logging/sessions/{id}</td>
     <td>ibmcloud-log-analysis.domain.session_read</td>
-    <td>Administrator, Editor, Anzeigeberechtigter</td>
+    <td>Administrator, Bearbeiter, Anzeigeberechtigter</td>
     <td>Status einer einzelnen Sitzung anzeigen.</td>
   </tr>
 </table>
@@ -217,7 +224,7 @@ Weitere Informationen finden Sie unter [UAA-Token abrufen](/docs/services/CloudL
 * Sie können die Befehlszeilenschnittstelle von {{{site.data.keyword.Bluemix_notm}} verwenden, um das IAM-Token abzurufen. 
 * Das Token hat eine Ablaufzeit. 
 
-Weitere Informationen finden Sie unter [IAM-Token abrufen](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam).
+Weitere Informationen finden Sie unter [IAM-Token abrufen](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1).
 
 
 ## Protokollierungstoken zum Senden von Protokollen an Log Analysis abrufen
@@ -233,11 +240,11 @@ Wählen Sie eine der folgenden Methoden aus, um Protokolle an eine Bereichsdomä
 
 
 ## Benutzern Berechtigungen zum Arbeiten mit Protokollen erteilen
-{: #grant_permissions}
+{: #grant_permissions1}
 
 Damit ein Benutzer Protokolle verwalten oder Protokolle anzeigen kann, müssen ihm in {{site.data.keyword.Bluemix_notm}} Berechtigungen für die Arbeit mit {{site.data.keyword.loganalysisshort}}-Service erteilt werden.
 
-* Informationen zu Berechtigungen für die Verwaltung von Protokollen finden Sie unter [Rollen für die Verwaltung von Protokollen](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+* Informationen zu Berechtigungen für die Verwaltung von Protokollen finden Sie unter [Rollen für die Verwaltung von Protokollen](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
 * Informationen zu Berechtigungen für das Anzeigen von Protokollen finden Sie unter [Rollen zum Anzeigen von Protokollen](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
 Weitere Informationen zum Erteilen von Berechtigungen finden Sie in den folgenden Abschnitten:

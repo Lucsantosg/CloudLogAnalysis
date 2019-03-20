@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # ログの管理
@@ -50,7 +59,7 @@ lastupdated: "2018-07-25"
 * 保存ポリシーはいつでも変更できます。
 * ポリシーの値を *-1* に設定することによって、ポリシーを無効にすることができます。 
 
-**注:** ログ保存ポリシーを無効にする場合、Log Collection 内のログをユーザー自身が保守する必要があります。 CLI コマンド [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete) を使用して、古いログを削除できます。
+**注:** ログ保存ポリシーを無効にする場合、Log Collection 内のログをユーザー自身が保守する必要があります。 CLI コマンド [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete4) を使用して、古いログを削除できます。
 
 詳しくは、以下を参照してください。
 
@@ -74,14 +83,14 @@ Log Collection に保管されたログは、保存ポリシーを構成する�
 
 
 ## ログのダウンロード
-{: #download_logs}
+{: #download_logs2}
 
 過去 3 日間のログを Kibana で検索できます。 より古いログ・データを分析できるように、ログをローカル・ファイルにダウンロードしたり、これらのログを他のプログラム (ローカル Elastic スタックなど) にパイプしたりすることができます。 
 
 詳しくは、以下を参照してください。
 
 * [{{site.data.keyword.Bluemix_notm}} プラグインを使用したログのダウンロード](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs_cloud.html#downloading_logs)
-* [CF プラグインを使用したログのダウンロード](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs)
+* [CF プラグインを使用したログのダウンロード](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs1)
 
 
 
@@ -90,8 +99,8 @@ Log Collection に保管されたログは、保存ポリシーを構成する�
 
 ログに関する一般情報を取得するには、`ibmcloud logging log-show` コマンドまたは `cf logging status` コマンドを使用します。 詳しくは、以下を参照してください。
 
-* [{{site.data.keyword.Bluemix_notm}} プラグインを使用したログ情報の表示](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
-* [CF プラグインを使用したログ情報の表示](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status)
+* [{{site.data.keyword.Bluemix_notm}} プラグインを使用したログ情報の表示](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status1)
+* [CF プラグインを使用したログ情報の表示](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status1)
 
 例えば、コストを制御するため、一定の期間にアプリのログのサイズをモニターしたい場合があります。 例えば、予想より多いログを生成しているアプリまたはサービスがあるかどうかを調べるため、ある {{site.data.keyword.Bluemix_notm}} スペースについて、1 週間における各ログ・タイプのサイズを把握したいといった場合が考えられます。 ログのサイズを確認するには、`ibmcloud logging log-show` コマンドまたは `cf logging status` コマンドを使用します。
 
@@ -100,7 +109,7 @@ Log Collection に保管されたログは、保存ポリシーを構成する�
 
 
 ## {{site.data.keyword.loganalysisshort_notm}} CLI のインストール ({{site.data.keyword.Bluemix_notm}} プラグイン)
-{: #install_cli}
+{: #install_cli2}
 
 CLI のインストール方法について詳しくは、『[ロギング CLI のインストール](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli)』を参照してください。
 
@@ -139,7 +148,7 @@ CLI のバージョンを確認するには、`ibmcloud plugin list` コマン�
 </table>
 
 ## ログを管理するユーザーに必要な役割
-{: #roles}
+{: #roles1}
 
 {{site.data.keyword.Bluemix_notm}} では、ユーザーに 1 つ以上の役割を割り当てることができます。 これらの役割は、{{site.data.keyword.loganalysisshort}} サービスを使用して作業するためにユーザーが使用できるタスクを定義します。 
 

@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Gestione dei log
@@ -50,7 +59,7 @@ Puoi utilizzare la CLI {{site.data.keyword.loganalysisshort}} per visualizzare e
 * Puoi modificare in qualsiasi momento la politica di conservazione.
 * Puoi disabilitare la politica impostandone il valore su *-1*. 
 
-**Nota:** quando disabiliti la politica di conservazione dei log, devi conservare i log nella Raccolta dei log. Puoi utilizzare il comando CLI [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete) per eliminare i log vecchi.
+**Nota:** quando disabiliti la politica di conservazione dei log, devi conservare i log nella Raccolta dei log. Puoi utilizzare il comando CLI [cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#delete4) per eliminare i log vecchi.
 
 Per ulteriori informazioni, vedi:
 
@@ -74,14 +83,14 @@ I log archiviati in Raccolta dei log vengono conservati finché non configuri un
 
 
 ## Download dei log
-{: #download_logs}
+{: #download_logs2}
 
 Puoi cercare nei log degli ultimi 3 giorni in Kibana. Per poter analizzare i dati di log più vecchi, puoi scaricare i log in un file locale o inserirli in altri programmi come un Elastic Stack locale. 
 
 Per ulteriori informazioni, vedi:
 
 * [Download dei log utilizzando il plugin {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs_cloud.html#downloading_logs).
-* [Download dei log utilizzando il plugin CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs).
+* [Download dei log utilizzando il plugin CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/downloading_logs.html#downloading_logs1).
 
 
 
@@ -90,8 +99,8 @@ Per ulteriori informazioni, vedi:
 
 Per ottenere informazioni generali sui tuoi log, usa il comando `ibmcloud logging log-show` oppure il comando `cf logging status`. Per ulteriori informazioni, vedi:
 
-* [Visualizzazione di informazioni sui log utilizzando il plugin {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status)
-* [Visualizzazione di informazioni sui log utilizzando il plugin CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status).
+* [Visualizzazione di informazioni sui log utilizzando il plugin {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information_cloud.html#viewing_log_status1)
+* [Visualizzazione di informazioni sui log utilizzando il plugin CF](/docs/services/CloudLogAnalysis/how-to/manage-logs/viewing_log_information.html#viewing_log_status1).
 
 Ad esempio, per mantenere i costi sotto controllo, potresti voler monitorare la dimensione dei log delle tue applicazioni per un periodo di tempo. Ad esempio, potresti voler conoscere la dimensione di ogni tipo di log durante una settimana per uno spazio {{site.data.keyword.Bluemix_notm}} per identificare se un'applicazione o un servizio sta generando più log del previsto. Per controllare la dimensione dei tuoi log, usa il comando `ibmcloud logging log-show` oppure il comando `cf logging status`.
 
@@ -100,7 +109,7 @@ Puoi visualizzare le informazioni sui log archiviati in un dominio dello spazio,
 
 
 ## Installazione della CLI {{site.data.keyword.loganalysisshort_notm}} (plugin {{site.data.keyword.Bluemix_notm}})
-{: #install_cli}
+{: #install_cli2}
 
 Per informazioni su come installare la CLI, vedi [Installazione della CLI di registrazione](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli_cloud.html#config_log_collection_cli).
 
@@ -139,7 +148,7 @@ La seguente tabella elenca gli URL di registrazione per ogni regione:
 </table>
 
 ## Ruoli di cui un utente ha bisogno per gestire i log
-{: #roles}
+{: #roles1}
 
 In {{site.data.keyword.Bluemix_notm}}, puoi assegnare uno o più ruoli agli utenti. Questi ruoli definiscono quali attività sono abilitate per tale utente per lavorare con il servizio {{site.data.keyword.loganalysisshort}}. 
 

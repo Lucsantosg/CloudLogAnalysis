@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Activation de la collecte automatique des journaux de cluster
@@ -67,14 +72,14 @@ Procédez comme suit :
 {{site.data.keyword.loganalysisshort}}.
 
 	```
-	ibmcloud cs init
+	ibmcloud ks init
 	```
 	{: codeblock}
 
 3. Définissez votre cluster comme contexte du terminal.
     
 	```
-	ibmcloud cs cluster-config ClusterName
+	ibmcloud ks cluster-config ClusterName
 	```
 	{: codeblock}
 
@@ -139,7 +144,7 @@ Procédez comme suit :
 1. Identifiez sur le compte l'utilisateur qui est le propriétaire de clé {{site.data.keyword.containershort}}. Depuis un terminal, exécutez la commande suivante :
 
     ```
-    ibmcloud cs api-key-info ClusterName
+    ibmcloud ks api-key-info ClusterName
     ```
     {: codeblock}
     
@@ -160,7 +165,7 @@ Procédez comme suit :
     2. Actualisez la configuration de journalisation. Exécutez la commande suivante :
     
         ```
-        ibmcloud cs logging-config-refresh ClusterName
+        ibmcloud ks logging-config-refresh ClusterName
         ```
         {: codeblock}
         
@@ -176,7 +181,7 @@ Procédez comme suit :
 Exécutez la commande suivante pour envoyer les fichiers journaux de sortie standard (*stdout*) et d'erreur standard (*stderr*) au service {{site.data.keyword.loganalysisshort}} :
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource container --namespace '*' --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -191,21 +196,20 @@ où
 Par exemple, pour créer une configuration de journalisation qui transfère les journaux de sortie standard et d'erreur standard au domaine de compte dans la région Allemagne, exécutez la commande suivante :
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
 Pour créer une configuration de journalisation qui transfère les journaux de sortie standard et d'erreur standard à un domaine d'espace dans la région Allemagne, exécutez la commande suivante :
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
+ibmcloud ks logging-config-create MyCluster --logsource container --type ibm --namespace '*' --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace
 ```
 {: screen}
 
 
 
-## Activation de la collecte et du transfert automatiques des journaux
-d'application 
+## Activation de la collecte et du transfert automatiques des journaux d'application 
 {: #apps}
 
 Exécutez la commande suivante pour envoyer les fichiers journaux
@@ -213,7 +217,7 @@ Exécutez la commande suivante pour envoyer les fichiers journaux
 au service {{site.data.keyword.loganalysisshort}} :
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
+ibmcloud ks logging-config-create ClusterName --logsource application --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName --app-containers --app-paths
 ```
 {: codeblock}
 
@@ -229,21 +233,20 @@ où
 Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'application à un domaine d'espace dans la région Allemagne, exécutez la commande suivante :
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
+ibmcloud ks logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org MyOrg --space MySpace --app-paths /var/log/*.log
 ```
 {: screen}
 
 Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'application à un domaine de compte dans la région Allemagne, exécutez la commande suivante :
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
+ibmcloud ks logging-config-create MyCluster --logsource application --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --app-paths /var/log/*.log
 ```
 {: screen}
 
 
 
-## Activation de la collecte et du transfert automatiques des journaux
-d'agent 
+## Activation de la collecte et du transfert automatiques des journaux d'agent 
 {: #workers}
 
 
@@ -252,7 +255,7 @@ Exécutez la commande suivante pour envoyer les fichiers journaux
 {{site.data.keyword.loganalysisshort}} :
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource worker --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -268,21 +271,20 @@ où
 Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'agent à un domaine d'espace dans la région Allemagne, exécutez la commande suivante :
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Par exemple, pour créer une configuration de journalisation qui transfère des journaux d'agent à un domaine de compte dans la région Allemagne, exécutez la commande suivante :
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource worker  --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
 
 
-## Activation de la collecte et du transfert automatiques des journaux de
-composant système Kubernetes
+## Activation de la collecte et du transfert automatiques des journaux de composant système Kubernetes
 {: #system}
 
 Exécutez la commande suivante pour envoyer les fichiers journaux
@@ -290,7 +292,7 @@ Exécutez la commande suivante pour envoyer les fichiers journaux
 {{site.data.keyword.loganalysisshort}} :
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create ClusterName --logsource kubernetes --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName 
 ```
 {: codeblock}
 
@@ -306,21 +308,20 @@ où
 Par exemple, pour créer une configuration de journalisation qui transfère des journaux de composant système Kubernetes à un domaine d'espace dans la région Allemagne, exécutez la commande suivante :
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Par exemple, pour créer une configuration de journalisation qui transfère des journaux de composant système Kubernetes à un domaine de compte dans la région Allemagne, exécutez la commande suivante :
 
 ```
-ibmcloud cs logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
+ibmcloud ks logging-config-create MyCluster --logsource kubernetes --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 
 ```
 {: screen}
 
 
 
-## Activation de la collecte et du transfert automatiques des journaux de
-contrôleur Ingress Kubernetes
+## Activation de la collecte et du transfert automatiques des journaux de contrôleur Ingress Kubernetes
 {: #controller}
 
 Exécutez la commande suivante pour envoyer les fichiers journaux */var/log/alb/ids/.log*,
@@ -328,7 +329,7 @@ Exécutez la commande suivante pour envoyer les fichiers journaux */var/log/alb/
 /var/log/alb/customerlogs/.err* au service {{site.data.keyword.loganalysisshort}} :
 
 ```
-ibmcloud cs logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName s
+ibmcloud ks logging-config-create ClusterName --logsource ingress --type ibm --hostname EndPoint --port 9091 --org OrgName --space SpaceName
 ```
 {: codeblock}
 
@@ -344,14 +345,14 @@ où
 Par exemple, pour créer une configuration de journalisation qui transfère des journaux de contrôleur Ingress à un domaine d'espace dans la région Allemagne, exécutez la commande suivante :
 
 ```
-ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
+ibmcloud ks logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091 --org OrgName --space SpaceName 
 ```
 {: screen}
 
 Par exemple, pour créer une configuration de journalisation qui transfère des journaux de contrôleur Ingress à un domaine de compte dans la région Allemagne, exécutez la commande suivante :
 
 ```
-ibmcloud cs logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
+ibmcloud ks logging-config-create MyLoggingDemoCluster --logsource ingress --type ibm --hostname ingest-eu-fra.logging.bluemix.net --port 9091  
 ```
 {: screen}
 

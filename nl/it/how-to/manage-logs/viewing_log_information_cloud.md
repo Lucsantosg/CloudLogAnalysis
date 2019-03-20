@@ -1,21 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Visualizzazione delle informazioni sul log
-{: #viewing_log_status}
+{: #viewing_log_status1}
 
 Utilizza il comando [ibmcloud logging log-show](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#status) per ottenere informazioni sui log che vengono raccolti e archiviati in Raccolta dei log. Puoi ottenere informazioni sulla dimensione, sul numero di record, sui tipi di log e sulla disponibilità o meno dei log per l'analisi in Kibana.
 {:shortdesc}

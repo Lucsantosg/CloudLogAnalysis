@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 在 Kibana 中通过仪表板分析日志
 {:#kibana_analize_logs_dashboard}
@@ -19,7 +28,7 @@ lastupdated: "2018-07-25"
 使用 Kibana 中的*仪表板*页面可显示按仪表板分组的可视化项集合。使用仪表板可分析日志数据并比较结果。
 {:shortdesc}
 
-在 {{site.data.keyword.Bluemix_notm}} 中，可以定义和定制不同类型的仪表板来对数据进行可视化表示和分析。例如，下表列出了一些常用的仪表板类型：
+在 {{site.data.keyword.Bluemix_notm}} 中，可以定义和定制不同类型的仪表板来对数据进行可视化和分析。例如，下表列出了一些常用的仪表板类型：
 
 |仪表板类型|描述
 |

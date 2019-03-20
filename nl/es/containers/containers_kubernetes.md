@@ -1,9 +1,13 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
@@ -15,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # {{site.data.keyword.containershort_notm}}
@@ -30,8 +36,8 @@ Puede tener uno o varios clústeres Kubernetes en una cuenta. {{site.data.keywor
 
 Para que estos registros estén disponibles para su análisis en el servicio {{site.data.keyword.loganalysisshort}}, debe configurar el clúster de modo que reenvíe los registros a {{site.data.keyword.loganalysisshort}}. Puede reenviar registros a la cuenta de {{site.data.keyword.loganalysisshort}} o a un dominio del espacio de su cuenta. De forma predeterminada:
 
-* Los clústeres que están disponibles en la región EE.UU. Sur envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. Sur.
-* Los clústeres que están disponibles en la región EE.UU. Este envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. Sur.
+* Los clústeres que están disponibles en la región EE.UU. sur envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. sur.
+* Los clústeres que están disponibles en la región EE.UU. este envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. sur.
 * Los clústeres que están disponibles en la región alemana envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región alemana.
 * Los clústeres que están disponibles en la región Sídney envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región Sidney.
 * Los clústeres que están disponibles en la región Reino Unido envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región alemana.
@@ -63,7 +69,7 @@ Para analizar datos de registro en Kibana para un clúster que reenvía registro
 * Para aumentar la cuota de búsqueda de Kibana y almacenar los registros en la recopilación de registros para su almacenamiento a largo plazo, debe suministrar el servicio {{site.data.keyword.loganalysisshort}} en el espacio donde se reenviarán los registros con un plan que se ajuste a sus necesidades. 
 * El ID de usuario debe tener permisos para ver registros. Para ver registros en el dominio del espacio, el usuario necesita un rol de CF. **Auditor** es el rol de nivel inferior que se puede otorgar para ver registros. Para obtener más información, consulte [Roles que necesita un usuario a ver registros](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
-Para gestionar los datos de registro del clúster que se guardan en el almacenamiento a largo plazo (recopilación de registros), el ID de usuario debe tener una política de IAM para poder trabajar con el servicio {{site.data.keyword.loganalysisshort}}. El ID de usuario debe tener los permisos de **administrador**, **operador** o **editor**.  Para obtener más información, consulte [Roles que necesita un usuario para gestionar registros](/docs/services/CloudLogAnalysis/manage_logs.html#roles).
+Para gestionar los datos de registro del clúster que se guardan en el almacenamiento a largo plazo (recopilación de registros), el ID de usuario debe tener una política de IAM para poder trabajar con el servicio {{site.data.keyword.loganalysisshort}}. El ID de usuario debe tener los permisos de **administrador**, **operador** o **editor**.  Para obtener más información, consulte [Roles que necesita un usuario para gestionar registros](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
 
 
 En la figura siguiente se muestra una vista general del registro en un entorno público para {{site.data.keyword.containershort}} cuando el clúster reenvía registros a un dominio de espacio:
@@ -84,8 +90,8 @@ Para analizar datos de registro en Kibana para un clúster que reenvía registro
 
 * Debe iniciar Kibana en la región pública en la que el clúster envía registros al servicio {{site.data.keyword.loganalysisshort}}.
 
-    * Los clústeres que están disponibles en la región EE.UU. Sur envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. Sur.
-    * Los clústeres que están disponibles en la región EE.UU. Este envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. Sur.
+    * Los clústeres que están disponibles en la región EE.UU. sur envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. sur.
+    * Los clústeres que están disponibles en la región EE.UU. este envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región EE.UU. sur.
     * Los clústeres que están disponibles en la región alemana envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región alemana.
     * Los clústeres que están disponibles en la región Sídney envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región Sidney.
     * Los clústeres que están disponibles en la región Reino Unido envían los registros al servicio {{site.data.keyword.loganalysisshort}} que está disponible en la región alemana.
@@ -236,7 +242,7 @@ Campos comunes a cualquier entrada de registro:
   <tr>
     <td>ibm-containers.region_str</td>
 	  <td>Región en la que está disponible el clúster</td>
-	  <td>Por ejemplo, `us-south` es el valor correspondiente a un clúster que está disponible en la región EE.UU. Sur.</td>
+	  <td>Por ejemplo, `us-south` es el valor correspondiente a un clúster que está disponible en la región EE.UU. sur.</td>
   </tr>
   <tr>
     <td>ibm-containers.account_id_str</td>
@@ -277,7 +283,7 @@ Campos que pueden resultar útiles al analizar los registros stdout y stderr de 
   <tr>
     <td>stream_str</td>
 	<td>Tipo de registro</td>
-	<td>*stdout* </br>*stderr *</td>
+	<td>*stdout* </br>*stderr*</td>
   </tr>
 </table>
 
@@ -354,7 +360,7 @@ Campos que pueden resultar útiles al analizar registros del controlador de Ingr
 ## Envío de registros para poder utilizar los campos en un mensaje como campos de búsqueda de Kibana
 {: #send_data_in_json}
 
-De forma predeterminada, la creación de registros se habilita de forma automática para los contenedores. Cada entrada en el archivo de registro Docker se visualiza en Kibana en el campo **message**. Si necesita filtrar y analizar sus datos en Kibana mediante un campo específico que sea parte de la entrada de registro del contenedor, configure su aplicación para enviar la salida en un formato JSON que sea válido. Por ejemplo, registre el mensaje en formato JSON para stdout (salida estándar) y (error estándar).
+De forma predeterminada, la creación de registros se habilita de forma automática para los contenedores. Cada entrada en el archivo de registro de tiempo de ejecución del contenedor se visualiza en Kibana en el campo **message**. Si necesita filtrar y analizar sus datos en Kibana mediante un campo específico que sea parte de la entrada de registro del contenedor, configure su aplicación para enviar la salida en un formato JSON que sea válido. Por ejemplo, registre el mensaje en formato JSON para stdout (salida estándar) y (error estándar).
 
 Cada campo disponible en el mensaje se analiza para el tipo de campo que coincide con su valor. Por ejemplo, cada campo en el siguiente mensaje JSON:
     
@@ -404,7 +410,7 @@ Para un clúster que reenvía registros al **dominio de la cuenta** de {{site.da
 
 
 ## Almacenamiento de registros en el componente de recopilación de registros
-{: #log_collection}
+{: #log_collection1}
 
 Tenga en cuenta la siguiente información sobre el comportamiento predeterminado de {{site.data.keyword.Bluemix_notm}} al trabajar con los registros:
 
@@ -429,7 +435,7 @@ Para analizar los datos de registro, utilice Kibana para realizar tareas de aná
 * Puede iniciar Kibana directamente desde un navegador web. Para obtener más información, consulte [Navegación a Kibana desde un navegador web](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
 * Puede iniciar Kibana desde la IU de [{{site.data.keyword.Bluemix_notm}} dentro del contexto de un clúster. Para obtener más información, consulte [Navegación a Kibana desde el panel de control de un contenedor desplegado en un clúster Kubernetes](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_for_containers_kube).
 
-Si reenvía los datos de registro de una app que se ejecuta en contenedor al recopilador de registros de Docker en un formato JSON, podrá buscar y analizar datos de registro en Kibana utilizando los campos JSON. Para obtener más información, consulte [Envío de registros para poder utilizar los campos en un mensaje como campos de búsqueda de Kibana](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json).
+Si reenvía los datos de registro de una app que se ejecuta en contenedor al recopilador de registros de tiempo de ejecución del contenedor en un formato JSON, podrá buscar y analizar datos de registro en Kibana utilizando los campos JSON. Para obtener más información, consulte [Envío de registros para poder utilizar los campos en un mensaje como campos de búsqueda de Kibana](/docs/services/CloudLogAnalysis/containers/containers_kubernetes.html#send_data_in_json).
 
 Para ver registros en Kibana, tenga en cuenta la siguiente información:
 

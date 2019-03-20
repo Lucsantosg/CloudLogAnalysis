@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-08-21"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Log Analysis CLI（{{site.data.keyword.Bluemix_notm}} 外掛程式）
 {: #log_analysis_cli}
@@ -129,7 +138,7 @@ Enter 'ibmcloud logging help [command]' for more information about a command.
 
 
 ## ibmcloud logging log-delete
-{: #delete}
+{: #delete3}
 
 刪除「日誌收集」中所儲存的日誌。
 
@@ -173,7 +182,7 @@ ibmcloud logging log-delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 
 ## ibmcloud logging log-download 
-{: #download}
+{: #download3}
 
 將日誌從「日誌收集」下載至本端檔案，或透過管道將日誌傳送至另一個程式（例如 Elastic Stack）。 
 

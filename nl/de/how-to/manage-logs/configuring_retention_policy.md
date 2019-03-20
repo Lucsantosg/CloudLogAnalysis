@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Protokollaufbewahrungsrichtlinie konfigurieren
-{: #configuring_retention_policy}
+{: #configuring_retention_policy1}
 
 Mit dem Befehl **cf logging option** wird die Aufbewahrungsrichtlinie angezeigt und konfiguriert, die die Dauer (in Tagen) angibt, für die die Protokolle in 'Log Collection' aufbewahrt werden. Standardmäßig ist die Aufbewahrungsrichtlinie inaktiviert und die Protokolle werden unbegrenzt lange aufbewahrt. Wenn der Aufbewahrungszeitraum abgelaufen ist, werden die Protokolle automatisch gelöscht. 
 {:shortdesc}
@@ -23,7 +32,7 @@ In einem Konto können verschiedene Aufbewahrungsrichtlinien definiert sein. Sie
 
 
 ## Protokollaufbewahrungsrichtlinie für einen Bereich inaktivieren
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_space1}
 
 Führen Sie die folgenden Schritte aus, um eine Aufbewahrungsrichtlinie zu inaktivieren:
 
@@ -61,7 +70,7 @@ Die Ausgabe sieht wie folgt aus:
 
 
 ## Protokollaufbewahrungsrichtlinie für einen Bereich überprüfen
-{: #check_retention_policy_space}
+{: #check_retention_policy_space1}
 
 Um die Aufbewahrungsdauer abzurufen, die für einen Bereich festgelegt ist, führen Sie die folgenden Schritte aus:
 
@@ -119,7 +128,7 @@ Um die Aufbewahrungsdauer abzurufen, die für jeden Bereich in einem Konto festg
     
 
 ## Protokollaufbewahrungsrichtlinie auf Kontoebene festlegen
-{: #set_retention_policy_space}
+{: #set_retention_policy_space1}
 
 Um die Aufbewahrungsdauer für ein Konto anzuzeigen, führen Sie die folgenden Schritte aus:
 

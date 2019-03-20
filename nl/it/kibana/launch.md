@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Passaggio al dashboard Kibana
@@ -75,7 +83,7 @@ Completa la seguente procedura per avviare Kibana dal dashboard del servizio {{s
 
 Per impostazione predefinita, la pagina **Rileva** viene caricata con il modello di indice predefinito selezionato al momento dell'impostazione del filtro negli ultimi 15 minuti. 
 
-Se la pagina Rileva non mostra alcuna voce di log, modifica il selezionatore di tempo. Per maggiori informazioni, vedi [Configurazione di un filtro temporale](filter_logs.html#set_time_filter).
+Se la pagina Rileva non mostra alcuna voce di log, modifica il selezionatore di tempo. Per maggiori informazioni, vedi [Configurazione di un filtro temporale](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
 
 	
 	

@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Protokolle in Kibana interaktiv analysieren
 {:#analize_logs_interactively}
@@ -62,7 +69,7 @@ Sie können weitere Suchen definieren. Weitere Informationen finden Sie unter [P
 
 Zum Definieren einer neuen Suche verwenden Sie die Standardsuchabfrage als Ausgangspunkt und grenzen die Suche dann durch folgende Aktionen ein:
 
-* Wenden Sie Feldfilter an, um die Gruppe von Daten einzugrenzen, die angezeigt wird. Sie können jeden Filter umschalten, auf der Seite fixieren, nach Bedarf aktivieren oder inaktivieren und so konfigurieren, dass der Wert eingeschlossen oder ausgeschlossen wird. Weitere Informationen finden Sie unter [Protokolle in Kibana filtern](filter_logs.html#filter_logs).
+* Wenden Sie Feldfilter an, um die Gruppe von Daten einzugrenzen, die angezeigt wird. Sie können jeden Filter umschalten, auf der Seite fixieren, nach Bedarf aktivieren oder inaktivieren und so konfigurieren, dass der Wert eingeschlossen oder ausgeschlossen wird. Weitere Informationen finden Sie unter [Protokolle in Kibana filtern](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
 
     **Tipp:** Wenn Sie ein Feld in der Liste *Fields*  nicht finden können, das Sie erwarten, oder wenn einige der Lupensymbole neben den aufgelisteten Feldern auf der Seite 'Discover' inaktiviert sind, laden Sie die Feldliste erneut, indem Sie das Indexmuster auf der Seite 'Settings' aktualisieren. Weitere Informationen finden Sie unter [Feldliste erneut laden](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields).
 
@@ -79,7 +86,7 @@ Sie können eine der folgenden Tasks für Suchen ausführen, die Sie auf der Sei
 | [Suche löschen](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) | Sie können eine Suche löschen, wenn sie nicht mehr benötigt wird. |
 | [Suche exportieren](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) | Sie können eine Suche zur gemeinsamen Nutzung exportieren.  |
 | [Suche importieren](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) | Sie können eine Suche importieren.  |
-| [Suche neu laden](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  | Sie können eine vorhandene Suche hochladen, um eine Gruppe von Daten erneut zu analysieren. |
+| [Suche neu laden](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search1)  | Sie können eine vorhandene Suche hochladen, um eine Gruppe von Daten erneut zu analysieren. |
 | [Daten einer Suche aktualisieren](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) | Sie können eine automatische Aktualisierung der Daten, die durch die Suche angezeigt wird, konfigurieren.  |
 | [Suche speichern](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) | Sie können eine Suche zur späteren Verwendung speichern.  |
 {: caption="Tabelle 3. Tasks für die Arbeit mit Suchen" caption-side="top"}

@@ -1,27 +1,35 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Visualizando informações de log
 {: #viewing_log_status}
 
-Use o comando [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) para obter informações sobre os logs coletados e armazenados na Coleção de logs.
+Use o comando [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) para obter informações sobre os logs coletados e armazenados na Coleção de logs.
 {:shortdesc}
 
 ## Obtendo informações sobre logs em um período de tempo
-{: #viewing_logs}
+{: #viewing_logs1}
 
 Use o comando `cf logging status` para ver o tamanho, a contagem, os tipos de log e se os logs estão disponíveis ou não para análise no Kibana para logs armazenados na Coleção de logs. 
 
@@ -54,7 +62,7 @@ exemplo,
 
 
 ## Obtendo informações sobre um tipo de log em um período de tempo
-{: #viewing_logs_by_log_type}
+{: #viewing_logs_by_log_type1}
 
 Para obter informações sobre um tipo de log em um período de tempo, use o comando `cf logging status` com as opções **-t** para especificar o tipo de log, **-s** para configurar o dia de início e **-e** para configurar a data de encerramento. Por
 exemplo,
@@ -102,7 +110,7 @@ exemplo,
 
 
 ## Obtendo informações sobre logs de conta
-{: #viewing_logs_account}
+{: #viewing_logs_account1}
 
 Para obter informações sobre logs em um período de tempo na conta do {{site.data.keyword.Bluemix_notm}}, use o comando `cf logging status` com a opção **-a**. Também é possível especificar as opções **-t** para especificar o tipo de log, **-s** para configurar o dia de início e **-e** para configurar a data de encerramento. 
 

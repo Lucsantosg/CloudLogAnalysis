@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Analyse des journaux dans Kibana via un tableau de bord
 {:#analize_logs_dashboard}
@@ -43,7 +51,7 @@ Le tableau suivant répertorie différentes tâches que vous pouvez effectuer de
 | [Supprimer un tableau de bord](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) | Vous pouvez supprimer les tableaux de bord superflus. |
 | [Exporter un tableau de bord](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) | Vous pouvez exporter un tableau de bord sous forme de fichier JSON. |
 | [Importer un tableau de bord](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) | Vous pouvez importer un tableau de bord depuis un fichier JSON. |
-| [Charger un tableau de bord](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) | Vous pouvez charger un tableau de bord pour mettre à jour les données, les modifier, ou les analyser. |
+| [Charger un tableau de bord](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload3) | Vous pouvez charger un tableau de bord pour mettre à jour les données, les modifier, ou les analyser. |
 | [Sauvegarder un tableau de bord](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | Vous pouvez sauvegarder un tableau de bord pour le réutiliser plus tard. |
 {: caption="Tableau 2. Tâches de gestion de tableaux de bord" caption-side="top"}
 
@@ -83,7 +91,7 @@ Pour créer un tableau de bord, procédez comme suit :
 
 
 ## Suppression d'un tableau de bord Kibana
-{: #delete}
+{: #delete1}
 
 Pour supprimer un tableau de bord, procédez comme suit dans la page **Management** :
 
@@ -120,7 +128,7 @@ Pour importer un tableau de bord en tant que fichier JSON, procédez comme suit 
 Le tableau de bord est ajouté à la liste des tableaux de bord.
 
 ## Chargement d'un tableau de bord Kibana
-{: #reload}
+{: #reload3}
 
 Pour charger un tableau de bord sauvegardé, procédez comme suit :
 

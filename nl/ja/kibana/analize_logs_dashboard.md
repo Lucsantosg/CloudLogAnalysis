@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # ダッシュボードを使用した Kibana でのログの分析
 {:#analize_logs_dashboard}
@@ -43,7 +51,7 @@ Kibana の「*Dashboard*」ページを使用して、ダッシュボードで�
 | [ダッシュボードの削除](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) | 必要ではないダッシュボードを削除します。 |
 | [ダッシュボードのエクスポート](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) | ダッシュボードを JSON ファイルとしてエクスポートできます。 |
 | [ダッシュボードのインポート](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) | ダッシュボードを JSON ファイルとしてインポートできます。 |
-| [ダッシュボードのロード](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) | ダッシュボードをアップロードして、そのデータを更新するか、ダッシュボードを変更するか、データを分析できます。 |
+| [ダッシュボードのロード](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload3) | ダッシュボードをアップロードして、そのデータを更新するか、ダッシュボードを変更するか、データを分析できます。 |
 | [ダッシュボードの保存](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | ダッシュボードを将来再使用するために保存できます。 |
 {: caption="表 2. ダッシュボードを操作するタスク" caption-side="top"}
 
@@ -83,7 +91,7 @@ Kibana について詳しくは、「[Kibana User Guide ![外部リンク・ア�
 
 
 ## Kibana ダッシュボードの削除
-{: #delete}
+{: #delete1}
 
 ダッシュボードを削除するには、**「Management」**ページで以下のステップを実行します。
 
@@ -120,7 +128,7 @@ Kibana について詳しくは、「[Kibana User Guide ![外部リンク・ア�
 ダッシュボードがダッシュボードのリストに追加されます。
 
 ## Kibana ダッシュボードのロード
-{: #reload}
+{: #reload3}
 
 保存済みダッシュボードをロードするには、以下のステップを実行します。
 

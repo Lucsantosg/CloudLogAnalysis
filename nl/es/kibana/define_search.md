@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Definición de consultas de búsqueda personalizadas
 {:#define_search}
@@ -47,7 +54,7 @@ Complete las siguientes tareas para definir una búsqueda personalizada:
 
      Por ejemplo, para una app CF, puede crear una consulta `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]`que muestre solo  las entradas correspondientes a las instancias *0* y *1*. 
 
-3. Guarde la consulta para poderla reutilizar más adelante. Para obtener más información, consulte [Cómo guardar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search). 
+3. Guarde la consulta para poderla reutilizar más adelante. Para obtener más información, consulte [Cómo guardar una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1). 
 
 **Nota:** Si tiene que suprimir una consulta, consulte [Supresión de una búsqueda](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search).
 
@@ -111,7 +118,7 @@ Siga los siguientes pasos para establecer un intervalo de renovación:
 
 
 ## Cómo volver a cargar una búsqueda
-{: #reload_search}
+{: #reload_search1}
 
 Siga los siguientes pasos para cargar una búsqueda guardada:
 
@@ -125,7 +132,7 @@ Siga los siguientes pasos para cargar una búsqueda guardada:
 Para iniciar una nueva búsqueda, pulse el botón **Nueva búsqueda** ![Nueva búsqueda](images/new_search_icon.jpg "Nueva búsqueda") en la barra de herramientas de la página Descubrir.
 
 ## Cómo guardar una búsqueda 
-{: #save_search}
+{: #save_search1}
 
 Tenga en cuenta la siguiente información sobre cómo guardar búsquedas personalizadas en Kibana:
 

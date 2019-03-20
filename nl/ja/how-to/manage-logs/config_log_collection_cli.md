@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Log Analysis CLI (CF プラグイン) の構成 (非推奨)
-{: #config_log_collection_cli}
+{: #config_log_collection_cli1}
 
 {{site.data.keyword.loganalysisshort}} サービスには、クラウドでログを管理するために使用できるコマンド・ライン・インターフェース (CLI) が組み込まれています。 Cloud Foundry (CF) プラグインを使用して、ログ状況の表示、ログのダウンロード、ログ保存ポリシーの構成を行うことができます。 この CLI にはいくつかの種類のヘルプがあります。一般ヘルプではこの CLI およびサポートされるコマンドについての情報が、コマンド・ヘルプではコマンドの使用方法が、サブコマンド・ヘルプではコマンドに対するサブコマンドの使用方法が提供されます。
 {:shortdesc}
@@ -22,7 +31,7 @@ lastupdated: "2018-07-25"
 
 
 ## Log Analysis CF プラグインのインストール
-{: #install_cli}
+{: #install_cli1}
 
 {{site.data.keyword.loganalysisshort}} CLI をインストールするには、以下のステップを実行します。
 
@@ -32,9 +41,9 @@ lastupdated: "2018-07-25"
 
 2. {{site.data.keyword.loganalysisshort}} CF プラグインをインストールします。
 
-    * Linux の場合、『[Linux への {{site.data.keyword.loganalysisshort}} CLI のインストール](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux)』を参照してください。
-    * Windows の場合、『[Windows への {{site.data.keyword.loganalysisshort}} CLI のインストール](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows)』を参照してください。
-    * Mac OS X の場合、『[Mac OS X への {{site.data.keyword.loganalysisshort}} CLI のインストール](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac)』を参照してください。
+    * Linux の場合、『[Linux への {{site.data.keyword.loganalysisshort}} CLI のインストール](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_linux1)』を参照してください。
+    * Windows の場合、『[Windows への {{site.data.keyword.loganalysisshort}} CLI のインストール](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_windows1)』を参照してください。
+    * Mac OS X の場合、『[Mac OS X への {{site.data.keyword.loganalysisshort}} CLI のインストール](/docs/services/CloudLogAnalysis/how-to/manage-logs/config_log_collection_cli.html#install_cli_mac1)』を参照してください。
  
 3. CLI プラグインのインストールを検証します。
   
@@ -61,7 +70,7 @@ lastupdated: "2018-07-25"
 
 
 ## Linux への Log Analysis CLI のインストール
-{: #install_cli_linux}
+{: #install_cli_linux1}
 
 Linux にLog Collection  CF プラグインをインストールするには、以下のステップを実行します。
 
@@ -137,7 +146,7 @@ Linux にLog Collection  CF プラグインをインストールするには、�
 
 
 ## Windows への Log Analysis CLI のインストール
-{: #install_cli_windows}
+{: #install_cli_windows1}
 
 Windows にLog Collection  CF プラグインをインストールするには、以下のステップを実行します。
 
@@ -182,7 +191,7 @@ Windows にLog Collection  CF プラグインをインストールするには�
 	
 
 ## Mac OS X への Log Analysis CLI のインストール
-{: #install_cli_mac}
+{: #install_cli_mac1}
 
 Mac OS X にLog Collection CF プラグインをインストールするには、以下のステップを実行します。
 
@@ -227,7 +236,7 @@ Mac OS X にLog Collection CF プラグインをインストールするには�
 	
 	
 ## Log Analysis CLI のアンインストール
-{: #uninstall_cli}
+{: #uninstall_cli1}
 
 ロギング CLI をアンインストールするには、プラグインを削除します。
 {:shortdesc}
@@ -265,7 +274,7 @@ Mac OS X にLog Collection CF プラグインをインストールするには�
   
 
 ## 一般ヘルプの利用
-{: #general_cli_help}
+{: #general_cli_help1}
 
 CLI に関する一般情報およびサポートされているコマンドについての情報を取得するには、以下のステップを実行します。
 
@@ -283,7 +292,7 @@ CLI に関する一般情報およびサポートされているコマンドに�
     
 
 ## コマンドに関するヘルプの利用
-{: #command_cli_help}
+{: #command_cli_help1}
 
 コマンドの使用法に関するヘルプを利用するには、以下のステップを実行します。
 
@@ -310,7 +319,7 @@ CLI に関する一般情報およびサポートされているコマンドに�
 
 
 ## サブコマンドに関するヘルプの利用
-{: #subcommand_cli_help}
+{: #subcommand_cli_help1}
 
 コマンドにはサブコマンドがある場合があります。 サブコマンドに関するヘルプを利用するには、以下のステップを実行します。
 

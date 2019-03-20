@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Visualizzazione e analisi dei log (Kibana)
 {:#analyzing_logs_Kibana}
@@ -81,7 +90,7 @@ tutte le risorse che vengono distribuite all'interno dello spazio dell'organizza
 ## Analizza i dati interattivamente
 {: #analyze_discover}
 
-Nella pagina Rileva, puoi definire nuove query di ricerca e applicare i filtri alle query. I dati di log sono visualizzati tramite una tabella e un istogramma. Puoi utilizzare queste visualizzazioni per analizzare i dati interattivamente. Per maggiori informazioni, vedi [Analisi dei log interattiva in Kibana](analize_logs_interactively.html#analize_logs_interactively).
+Nella pagina Rileva, puoi definire nuove query di ricerca e applicare i filtri alle query. I dati di log sono visualizzati tramite una tabella e un istogramma. Puoi utilizzare queste visualizzazioni per analizzare i dati interattivamente. Per maggiori informazioni, vedi [Analisi dei log interattiva in Kibana](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#analize_logs_interactively).
 
 Puoi configurare i filtri dai campi di log, ad esempio, message_type e instance_ID e impostare un periodo di tempo. Puoi abilitare o disabilitare dinamicamente questi filtri. La tabella e l'istogramma visualizzeranno le voci di log che soddisfano la query e i criteri di filtro da te abilitati. Per maggiori informazioni, vedi [Filtro dei log in Kibana](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs).
 

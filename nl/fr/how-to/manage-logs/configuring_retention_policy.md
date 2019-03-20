@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Configuration de la règle de conservation des journaux
-{: #configuring_retention_policy}
+{: #configuring_retention_policy1}
 
 Utilisez la commande **cf logging option** pour afficher et configurer la règle de conservation qui définit le nombre maximal de jours pendant lequel les journaux sont
 conservés dans Collecte des journaux. Par défaut, la règle de conservation est désactivée et les journaux sont conservés indéfiniment. Une fois que la durée de conservation a expiré, les journaux sont supprimés automatiquement. 
@@ -26,7 +35,7 @@ durée du niveau de compte, la règle appliquée est la dernière règle configu
 
 
 ## Désactivation de la règle de conservation des journaux pour un espace
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_space1}
 
 Effectuez les étapes suivantes pour désactiver une règle de conservation :
 
@@ -64,7 +73,7 @@ La sortie est :
 
 
 ## Vérification de la règle de conservation des journaux d'un espace
-{: #check_retention_policy_space}
+{: #check_retention_policy_space1}
 
 Afin d'obtenir la durée de conservation définie pour un espace, procédez comme suit :
 
@@ -122,7 +131,7 @@ Afin d'obtenir la durée de conservation définie pour chaque espace sur un comp
     
 
 ## Définition de la règle de conservation des journaux au niveau du compte
-{: #set_retention_policy_space}
+{: #set_retention_policy_space1}
 
 Afin d'afficher la durée de conservation pour un compte, procédez comme suit :
 

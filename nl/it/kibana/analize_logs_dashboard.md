@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Analisi dei log in Kibana tramite un dashboard
 {:#analize_logs_dashboard}
@@ -43,7 +51,7 @@ La seguente tabella elenca diverse attività che puoi eseguire nella pagina Dash
 | [Eliminare un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#delete) | Eliminare i dashboard che non sono richiesti. |
 | [Esportare un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#export) | Puoi esportare un dashboard come un file JSON. |
 | [Importare un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#import) | Puoi importare un dashboard come un file JSON. |
-| [Caricare un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload) | Puoi caricare un dashboard per aggiornarne i dati, modificarlo o analizzare i dati. |
+| [Caricare un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#reload3) | Puoi caricare un dashboard per aggiornarne i dati, modificarlo o analizzare i dati. |
 | [Salvare un dashboard](/docs/services/CloudLogAnalysis/kibana/analize_logs_dashboard.html#save) | Puoi salvare un dashboard per un riutilizzo successivo. |
 {: caption="Tabella 2. Attività per lavorare con i dashboard" caption-side="top"}
 
@@ -83,7 +91,7 @@ Per creare un nuovo dashboard completa la seguente procedura:
 
 
 ## Eliminazione di un dashboard Kibana
-{: #delete}
+{: #delete1}
 
 Per eliminare un dashboard, completa le seguenti istruzioni nella pagina **Gestione**:
 
@@ -120,7 +128,7 @@ Per importare un dashboard come un file JSON, completa la seguente procedura nel
 Il dashboard viene aggiunto all'elenco dei dashboard.
 
 ## Caricamento di un dashboard Kibana
-{: #reload}
+{: #reload3}
 
 Completa la seguente procedura per caricare un dashboard salvato:
 

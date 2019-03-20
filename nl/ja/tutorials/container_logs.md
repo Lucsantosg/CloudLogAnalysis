@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Kubernetes クラスターにデプロイされたアプリに関する Kibana でのログの分析
@@ -70,7 +75,7 @@ lastupdated: "2018-07-25"
  
 
 ## ステップ 1: Kubernetes クラスターをプロビジョンする
-{: #step1}
+{: #step25}
 
 以下のステップを実行します。
 
@@ -108,7 +113,7 @@ lastupdated: "2018-07-25"
 
 
 ## ステップ 2: ログを自動的に {{site.data.keyword.loganalysisshort}} サービスに転送するためにクラスターを構成する
-{: #step2}
+{: #step26}
 
 アプリがデプロイされると、ログは {{site.data.keyword.containershort}} によって自動的に収集されます。 ただし、ログは、自動的には {{site.data.keyword.loganalysisshort}} サービスに転送されません。 以下を定義する 1 つ以上のロギング構成をクラスター内に作成する必要があります。
 
@@ -228,7 +233,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## ステップ 3: スペース・ドメイン内のログを表示するための許可をユーザーに付与する
-{: #step3}
+{: #step33}
 
 スペース内のログを表示する許可をユーザーに付与するには、そのユーザーがそのスペース内で {{site.data.keyword.loganalysisshort}} サービスを使用して実行できるアクションを記述した Cloud Foundry 役割をそのユーザーに割り当てる必要があります。 
 
@@ -266,7 +271,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## ステップ 4: {{site.data.keyword.containershort_notm}} キー所有者に許可を付与する
-{: #step4}
+{: #step52}
 
 クラスター・ログがスペースに転送されるためには、{{site.data.keyword.containershort_notm}} キー所有者は以下の許可を持っている必要があります。
 
@@ -315,7 +320,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## ステップ 5: Kubernetes クラスターにサンプル・アプリをデプロイして、stdout にコンテンツを生成する
-{: #step5}
+{: #step53}
 
 Kubernetes クラスター内でサンプル・アプリをデプロイし、実行します。 [レッスン 1: アプリの 1 つのインスタンスを Kubernetes クラスターにデプロイする](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1)のチュートリアルにあるステップを実行して、サンプル・アプリをデプロイします。
 

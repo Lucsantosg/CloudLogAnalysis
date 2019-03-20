@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 在 Kibana 中過濾日誌
 {:#k4_filter_logs}
@@ -20,7 +30,7 @@ lastupdated: "2018-07-25"
 
 * 您可以在「探索」頁面的搜尋列中，定義一個以上的搜尋查詢。搜尋查詢會定義一部分的日誌項目。請使用 Lucene 查詢語言來定義搜尋查詢。 
 
-* 您可以從*欄位清單* 或表格項目中新增過濾器。而過濾器可以透過包含或排除資訊的方式來修正資料選取項目。您可以啟用或停用過濾器、反轉過濾動作、將過濾器切換為開啟或關閉，或是將它整個移除。 
+* 您可以從*欄位清單* 或表格項目中新增過濾器。而過濾器可以透過包含或排除資訊的方式來精簡資料選取項目。您可以啟用或停用過濾器、反轉過濾動作、將過濾器切換為開啟或關閉，或是將它整個移除。 
 
 定義新搜尋之後，請儲存它，以供日後在「探索」頁面中重複使用來進行分析，或是建立視覺效果，以用在自訂儀表板中。 
 
@@ -32,7 +42,7 @@ lastupdated: "2018-07-25"
  
 * 您可以在日誌中搜尋特定欄位值，或排除日誌中特定欄位值的項目。如需相關資訊，請參閱[針對特定欄位值過濾日誌](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field)。
  
-* 您可以過濾日誌，以顯示某時段內的項目。如需相關資訊，請參閱[設定時間過濾器](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter)。
+* 您可以過濾日誌，以顯示某時段內的項目。如需相關資訊，請參閱[設定時間過濾器](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter1)。
      
 
 ## 新增過濾器以尋找未列在*欄位清單* 中的值
@@ -298,7 +308,7 @@ lastupdated: "2018-07-25"
         
 
 ## 設定時間過濾器
-{: #set_time_filter}
+{: #set_time_filter1}
 
 配置*時間選取器*，以檢視及過濾某個時段內的日誌。
 

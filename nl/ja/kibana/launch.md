@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Kibana ダッシュボードへのナビゲート
@@ -75,7 +83,7 @@ Kibana に表示されるログ情報には、ログインしている組織の�
 
 デフォルトでは、**「Discover」**ページは、デフォルトの索引パターンが選択され、時間フィルターが過去 15 分に設定された状態でロードされます。 
 
-「Discover」ページでログ項目が表示されない場合は、時間ピッカーを調整します。 詳しくは、『[時間フィルターの設定](filter_logs.html#set_time_filter)』を参照してください。
+「Discover」ページでログ項目が表示されない場合は、時間ピッカーを調整します。 詳しくは、『[時間フィルターの設定](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter)』を参照してください。
 
 	
 	

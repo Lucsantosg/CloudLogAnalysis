@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 配置日志保留时间策略
-{: #configuring_retention_policy}
+{: #configuring_retention_policy1}
 
 使用 **cf logging option** 命令可查看和配置保留时间策略，此策略用于定义日志在“日志收集”中保留的最长天数。缺省情况下，会禁用保留时间策略，且日志会无限期保留。在保留期到期后，会自动删除日志。
 {:shortdesc}
@@ -23,7 +32,7 @@ lastupdated: "2018-07-25"
 
 
 ## 禁用空间的日志保留时间策略
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_space1}
 
 要禁用保留时间策略，请完成以下步骤：
 
@@ -61,7 +70,7 @@ ibmcloud cf logging option -r -1
 
 
 ## 检查空间的日志保留时间策略
-{: #check_retention_policy_space}
+{: #check_retention_policy_space1}
 
 要获取为空间设置的保留期，请完成以下步骤：
 
@@ -119,7 +128,7 @@ ibmcloud cf logging option -r -1
     
 
 ## 设置帐户级别的日志保留时间策略
-{: #set_retention_policy_space}
+{: #set_retention_policy_space1}
 
 要查看帐户的保留期，请完成以下步骤：
 

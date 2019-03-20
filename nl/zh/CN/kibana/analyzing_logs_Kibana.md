@@ -1,17 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 查看和分析日志 (Kibana)
 {:#analyzing_logs_Kibana}
@@ -80,7 +89,7 @@ Kibana 包含可用于分析日志的不同页面：
 ## 交互式分析数据
 {: #analyze_discover}
 
-在“发现”页面中，可以定义新搜索查询并按查询应用过滤器。日志数据将通过表和直方图显示。可以使用这些可视化项以交互方式分析数据。有关更多信息，请参阅[在 Kibana 中以交互方式分析日志](analize_logs_interactively.html#analize_logs_interactively)。
+在“发现”页面中，可以定义新搜索查询并按查询应用过滤器。日志数据将通过表和直方图显示。可以使用这些可视化项以交互方式分析数据。有关更多信息，请参阅[在 Kibana 中以交互方式分析日志](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#analize_logs_interactively)。
 
 可以通过日志字段（例如，message_type 和 instance_ID）来配置过滤器，并可以设置时间段。您可以动态启用或禁用这些过滤器。表和直方图将显示满足所启用的查询和过滤条件的日志条目。有关更多信息，请参阅[在 Kibana 中过滤日志](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs)。
 
@@ -143,7 +152,7 @@ Kibana 包含可用于分析日志的不同页面：
   </tr>
   <tr>
     <td>查看空间域中的日志</td>
-	<td>*管理员* </br>*开发者* </br>*审计员*</td>
+	<td>*管理者* </br>*开发者* </br>*审计员*</td>
 	<td></td>
 	<td></td>
   </tr>
@@ -156,7 +165,7 @@ Kibana 包含可用于分析日志的不同页面：
   <tr>
     <td>查看组织域中的日志</td>
 	<td></td>
-	<td>*管理员* </br>*记帐管理员*  </br>*审计员*</td>
+	<td>*管理者* </br>*记帐管理者*  </br>*审计员*</td>
 	<td></td>
   </tr>
 </table>
@@ -212,7 +221,7 @@ Kibana 包含可用于分析日志的不同页面：
   <tr>
     <td>查看组织域中的日志</td>
 	<td></td>
-	<td>*管理员*</td>
+	<td>*管理者*</td>
 	<td></td>
   </tr>
 </table>

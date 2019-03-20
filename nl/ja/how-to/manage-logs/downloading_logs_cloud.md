@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # ログのダウンロード
 {: #downloading_logs}
@@ -26,14 +34,14 @@ lastupdated: "2018-07-25"
 スペースで使用可能なログ・データをローカル・ファイルにダウンロードするには、以下のステップを実行します。
 
 ## ステップ 1: {{site.data.keyword.Bluemix_notm}} にログインする
-{: #step1}
+{: #downloading_logs_step1}
 
 {{site.data.keyword.Bluemix_notm}} で、地域、組織、およびスペースにログインします。 
 
 詳しくは、『[{{site.data.keyword.Bluemix_notm}} にログインするにはどうすればよいですか](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login)』を参照してください。
 
 ## ステップ 2: 使用可能なログを識別する
-{: #step2}
+{: #step21}
 
 1. `ibmcloud logging log-show` コマンドを使用して、最近 2 週間の使用可能なログを表示します。 次のコマンドを実行します。
 
@@ -100,7 +108,7 @@ Session: 944aec4d-61f4-43d1-8f3b-c040195122da is created
 **ヒント:** アクティブ・セッションのリストを表示するには、コマンド [ibmcloud logging sessions](/docs/services/CloudLogAnalysis/reference/log_analysis_cli_cloud.html#session_list) を実行します。
 
 ## ステップ 4: ログ・データをファイルにダウンロードする
-{: #step4}
+{: #step41}
 
 セッション・パラメーターで指定されたログをダウンロードするには、次のコマンドを実行します。
 

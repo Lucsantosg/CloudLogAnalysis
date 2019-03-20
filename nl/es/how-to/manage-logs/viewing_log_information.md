@@ -1,27 +1,35 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Visualización de la información de registro
 {: #viewing_log_status}
 
-Utilice el mandato [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) para obtener información sobre los registros que se recopilan y almacenan en el componente de recopilación de registros.
+Utilice el mandato [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) para obtener información sobre los registros que se recopilan y almacenan en el componente de recopilación de registros.
 {:shortdesc}
 
 ## Obtención de información sobre los registros durante un periodo de tiempo
-{: #viewing_logs}
+{: #viewing_logs1}
 
 Utilice el mandato `cf logging status` para ver el tamaño, recuento, tipos de registros y si los registros están o no disponibles para su análisis en Kibana para los registros que se almacenan en el componente de recopilación de registros. 
 
@@ -60,7 +68,7 @@ Siga estos pasos para obtener para obtener información sobre los registros:
 
 
 ## Obtención de información sobre un tipo de registro durante un periodo de tiempo
-{: #viewing_logs_by_log_type}
+{: #viewing_logs_by_log_type1}
 
 Para obtener información sobre un tipo de registro durante un periodo de tiempo, utilice el mandato `cf logging status` con las opciones **-t** para especificar el tipo de registro, **-s** para definir la fecha inicial y **-e** para definir la fecha final. Por ejemplo,
 
@@ -106,7 +114,7 @@ Siga estos pasos para obtener información sobre un tipo de registro durante un 
 
 
 ## Obtención de información de cuenta sobre los registros
-{: #viewing_logs_account}
+{: #viewing_logs_account1}
 
 Para obtener información sobre los registros durante un periodo de tiempo de la cuenta de {{site.data.keyword.Bluemix_notm}}, utilice el mandato `cf logging status` con la opción **-a**. También puede especificar las opciones **-t** para especificar el tipo de registro, **-s** para definir la fecha inicial y **-e** para definir la fecha final. 
 

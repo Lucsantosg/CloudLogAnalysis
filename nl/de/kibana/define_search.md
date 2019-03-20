@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Angepasste Suchabfragen definieren
 {:#define_search}
@@ -47,7 +54,7 @@ Führen Sie folgende Schritte aus, um eine angepasste Suche zu definieren:
 
      Beispiel: Für eine CF-App können Sie die Abfrage `application_id:9d222152-8834-4bab-8685-3036cd25931a AND instance_id:["0" TO "1"]` erstellen, die nur die Einträge für die Instanzen *0* und *1* auflistet. 
 
-3. Speichern Sie die Abfrage, sodass Sie sie später wiederverwenden können. Weitere Informationen finden Sie unter [Suche speichern](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search). 
+3. Speichern Sie die Abfrage, sodass Sie sie später wiederverwenden können. Weitere Informationen finden Sie unter [Suche speichern](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1). 
 
 **Hinweis:** Wenn Sie eine Abfrage löschen müssen, finden Sie weitere Informationen hierzu unter [Suche löschen](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search).
 
@@ -111,7 +118,7 @@ Führen Sie die folgenden Schritte aus, um ein Aktualisierungsintervall festzule
 
 
 ## Suche neu laden
-{: #reload_search}
+{: #reload_search1}
 
 Führen Sie die folgenden Schritte aus, um eine gespeicherte Suche zu laden:
 
@@ -125,7 +132,7 @@ Führen Sie die folgenden Schritte aus, um eine gespeicherte Suche zu laden:
 Um eine neue Suche zu starten, klicken Sie auf die Schaltfläche **New Search** ![New Search](images/new_search_icon.jpg "New Search") in der Symbolleiste der Seite 'Discover'.
 
 ## Suche speichern 
-{: #save_search}
+{: #save_search1}
 
 Beachten Sie die die folgenden Informationen zum Speichern angepasster Suchen in Kibana:
 

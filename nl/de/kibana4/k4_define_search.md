@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Angepasste Suchabfragen definieren
 {:#k4_define_search}
@@ -30,7 +40,7 @@ Führen Sie folgende Schritte aus, um eine angepasste Suche zu definieren:
 
     2. Greifen Sie auf Kibana zu. Klicken Sie dazu auf **Erweiterte Ansicht** ![Link für erweiterte Ansicht](images/logging_advanced_view.jpg "Link für erweiterte Ansicht"). Das Kibana-Dashboard wird angezeigt.
     
-    Für Container, die in einem Kubernetes-Cluster ausgeführt werden, [starten Sie Kibana über den Browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser). 
+    Für Container, die in einem Kubernetes-Cluster ausgeführt werden, [starten Sie Kibana über den Browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1). 
     
     Wenn Sie auf Kibana zugreifen, wird die Standardsuche angewendet. Sie können die Protokolle für die Instanzenliste der Ressource anzeigen, für die Sie Kibana gestartet haben. Sie können die Protokolle für eine oder alle der {{site.data.keyword.Bluemix_notm}}-Ressourcen in diesem Bereich filtern.
 
@@ -123,7 +133,7 @@ Führen Sie die folgenden Schritte aus, um eine gespeicherte Suche zu laden:
 2. Wählen Sie die Suche aus, die Sie laden wollen. 
 
 ## Neue Suche starten
-{: #k4_new_search}
+{: #k4_new_search1}
 
 Um eine neue Suche zu starten, klicken Sie in der Symbolleiste der Seite 'Discover' auf die Schaltfläche **New Search** ![New Search](images/k4_new_search_icon.jpg "New Search").
 

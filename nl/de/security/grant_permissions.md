@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Berechtigungen zum Verwalten von Protokollen und zum Anzeigen von Kontoprotokollen erteilen
 {: #grant_permissions}
@@ -113,7 +121,7 @@ Führen Sie die folgenden Schritte aus, um einem Benutzer über die Befehlszeile
 
 	Dabei gilt:
     * USER_NAME ist die {{site.data.keyword.Bluemix_notm}}-ID des Benutzers.
-	* ROLE ist eine IAM-Rolle. Gültige Werte sind: *Administrator*, *Operator*, *Editor* und *Anzeigeberechtigter*. 
+	* ROLE ist eine IAM-Rolle. Gültige Werte sind: *Administrator*, *Operator*, *Editor* und *Anzeigeberechtigter*.
 
 5. Überprüfen Sie, ob die Richtlinie dem Benutzer zugewiesen wurde. Führen Sie den folgenden Befehl aus, um alle einem Benutzer zugewiesenen Richtlinien aufzulisten:
 

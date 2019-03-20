@@ -1,27 +1,35 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 檢視日誌資訊
 {: #viewing_log_status}
 
-使用 [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status) 指令，以取得「日誌收集」中所收集及儲存之日誌的相關資訊。
+使用 [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) 指令，以取得「日誌收集」中所收集及儲存之日誌的相關資訊。
 {:shortdesc}
 
 ## 取得一段時間內的日誌相關資訊
-{: #viewing_logs}
+{: #viewing_logs1}
 
 使用 `cf logging status` 指令，以查看「日誌收集」中所儲存日誌的大小、計數和日誌類型，以及是否可在 Kibana 中分析日誌。 
 
@@ -60,7 +68,7 @@ lastupdated: "2018-07-25"
 
 
 ## 取得一段時間內的某類型日誌相關資訊
-{: #viewing_logs_by_log_type}
+{: #viewing_logs_by_log_type1}
 
 若要取得一段時間內的某類型日誌相關資訊，請使用 `cf logging status` 指令與 **-t** 選項搭配來指定日誌類型、與 **-s** 選項搭配來設定開始日期，以及與 **-e** 選項搭配來設定結束日期。例如，
 
@@ -106,7 +114,7 @@ lastupdated: "2018-07-25"
 
 
 ## 取得有關日誌的帳戶資訊
-{: #viewing_logs_account}
+{: #viewing_logs_account1}
 
 若要取得 {{site.data.keyword.Bluemix_notm}} 帳戶一段時間內的日誌相關資訊，請使用 `cf logging status` 指令與 **-a** 選項搭配。您也可以指定 **-t** 選項來指定日誌類型、指定 **-s** 選項來設定開始日期，以及指定 **-e** 選項來設定結束日期。 
 

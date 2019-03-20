@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Log Analysis-Service bereitstellen
@@ -36,7 +43,7 @@ Führen Sie die folgenden Schritte aus, um eine Instanz des {{site.data.keyword.
 
 2. Klicken Sie auf **Katalog**. Die Liste der Services, die unter {{site.data.keyword.Bluemix_notm}} verfügbar sind, wird geöffnet.
 
-3. Wählen Sie die Kategorie **DevOps** aus, um die angezeigte Serviceliste zu filtern.
+3. Wählen Sie die Kategorie **Entwicklertool** aus, um die angezeigte Serviceliste zu filtern.
 
 4. Klicken Sie auf die Kachel **Log Analysis**.
 

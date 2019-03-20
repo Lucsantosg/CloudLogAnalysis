@@ -1,12 +1,15 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
-
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
@@ -16,6 +19,8 @@ lastupdated: "2018-07-25"
 {:codeblock: .codeblock}
 {:tip: .tip}
 {:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Protokolle in Kibana für eine App analysieren, die in einem Kubernetes-Cluster bereitgestellt ist
@@ -70,7 +75,7 @@ In diesem Lernprogramm werden die Schritte gezeigt, die erforderlich sind, um da
  
 
 ## Schritt 1: Bereitstellung in einem Kubernetes-Cluster
-{: #step1}
+{: #step25}
 
 Führen Sie die folgenden Schritte aus:
 
@@ -108,7 +113,7 @@ Führen Sie die folgenden Schritte aus:
 
 
 ## Schritt 2: Ihren Cluster für die automatische Weiterleitung von Protokollen an den {{site.data.keyword.loganalysisshort}}-Service konfigurieren
-{: #step2}
+{: #step26}
 
 Wenn die App bereitgestellt wird, werden Protokolle automatisch vom {{site.data.keyword.containershort}} erfasst. Jedoch werden Protokolle nicht automatisch an den {{site.data.keyword.loganalysisshort}}-Service weitergeleitet. Sie müssen mindestens eine Protokollierungskonfiguration in Ihrem Cluster erstellen, die Folgendes definiert:
 
@@ -228,7 +233,7 @@ ibmcloud cs logging-config-create mycluster --logsource worker  --type ibm --hos
 
 
 ## Schritt 3: Ihrem Benutzer Berechtigungen erteilen, damit dieser Protokolle in einer Bereichsdomäne anzeigen kann
-{: #step3}
+{: #step33}
 
 Um einem Benutzer Berechtigungen zum Anzeigen von Protokollen in einem Bereich zu erteilen, müssen Sie diesen Benutzer eine Cloud Foundry-Rolle zuweisen, die die Aktionen beschreibt, die dieser Benutzer mit dem {{site.data.keyword.loganalysisshort}}-Service im Bereich ausführen kann. 
 
@@ -266,7 +271,7 @@ Führen Sie die folgenden Schritte aus, um einem Benutzer Berechtigungen für di
 
 
 ## Schritt 4: Die {{site.data.keyword.containershort_notm}}-Schlüsseleignerberechtigungen erteilen
-{: #step4}
+{: #step52}
 
 Damit Clusterprotokolle an einen Bereich weitergeleitet werden können, muss der {{site.data.keyword.containershort_notm}}-Schlüsseleigner die folgenden Berechtigungen besitzen:
 
@@ -315,7 +320,7 @@ Führen Sie die folgenden Schritte aus:
 
 
 ## Schritt 5: Eine Beispielapp im Kubernetes-Cluster bereitstellen, um Inhalt in 'stdout' zu generieren
-{: #step5}
+{: #step53}
 
 Stellen Sie eine Beispielapp im Kubernetes-Cluster bereit und führen Sie sie aus. Führen Sie die Schritte des folgenden Lernprogramms aus, um die Beispielapp bereitzustellen: [Lerneinheit 1: Apps für einzelne Instanzen in Kubernetes-Cluster bereitstellen](/docs/containers/cs_tutorials_apps.html#cs_apps_tutorial_lesson1).
 

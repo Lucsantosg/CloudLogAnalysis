@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Kibana에서 대화식으로 로그 분석
 {:#analize_logs_interactively}
@@ -62,7 +69,7 @@ lastupdated: "2018-07-25"
 
 새 검색을 정의하려면 기본 검색 조회를 시작점으로 사용한 후에 다음 태스크를 수행하여 검색을 세분화하십시오.
 
-* 볼 수 있는 데이터 세트를 세분화하기 위한 필드 필터를 적용하십시오. 각 필터를 전환하고 페이지에 고정해서 필요에 따라 사용 또는 사용 안함으로 설정하고 값을 포함하거나 제외하도록 구성할 수 있습니다. 자세한 정보는 [Kibana에서 로그 필터링](filter_logs.html#filter_logs)을 참조하십시오.
+* 볼 수 있는 데이터 세트를 세분화하기 위한 필드 필터를 적용하십시오. 각 필터를 전환하고 페이지에 고정해서 필요에 따라 사용 또는 사용 안함으로 설정하고 값을 포함하거나 제외하도록 구성할 수 있습니다. 자세한 정보는 [Kibana에서 로그 필터링](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#filter_logs)을 참조하십시오.
 
     **팁:** *필드 목록*에서 보고자 하는 필드를 찾을 수 없거나 나열된 필드 옆의 돋보기 중 일부가 검색 페이지에서 사용할 수 없는 경우, 설정 페이지에서 인덱스 패턴을 새로 고치기해서 필드의 목록을 다시 로드하십시오. 자세한 정보는 [필드 목록 다시 로드](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#discover_view_reload_fields)를 참조하십시오.
 
@@ -79,7 +86,7 @@ lastupdated: "2018-07-25"
 |[검색 삭제](/docs/services/CloudLogAnalysis/kibana/define_search.html#delete_search) |더 이상 필요하지 않은 경우 검색을 삭제합니다. |
 |[검색 내보내기](/docs/services/CloudLogAnalysis/kibana/define_search.html#export_search) |검색을 공유하도록 내보냅니다.  |
 |[검색 가져오기](/docs/services/CloudLogAnalysis/kibana/define_search.html#import_search) |검색을 가져옵니다.  |
-|[검색 다시 로드](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search)  |데이터 세트를 다시 분석하도록 기존 검색을 업로드합니다. |
+|[검색 다시 로드](/docs/services/CloudLogAnalysis/kibana/define_search.html#reload_search1)  |데이터 세트를 다시 분석하도록 기존 검색을 업로드합니다. |
 |[검색의 데이터 새로 고치기](/docs/services/CloudLogAnalysis/kibana/define_search.html#refresh_search) |검색을 통해 표시된 데이터의 자동 새로 고치기를 구성합니다.  |
 |[검색 저장](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search) |나중에 다시 사용하도록 검색을 저장합니다.  |
 {: caption="표 3. 검색으로 작업하는 태스크" caption-side="top"}

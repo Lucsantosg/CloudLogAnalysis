@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
-
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 授與許可權以管理日誌以及檢視帳戶日誌
 {: #grant_permissions}
@@ -42,7 +50,7 @@ lastupdated: "2018-07-25"
 
     *使用者* 視窗會顯示目前所選取帳戶的使用者及其電子郵件位址的清單。
 	
-3. 如果使用者是帳戶成員，請從清單中選取使用者名稱，或按一下*動作* 功能表中的**管理使用者**。
+3. 如果使用者是帳戶成員，請從清單選取使用者名稱，或按一下*動作* 功能表中的**管理使用者**。
 
     如果使用者不是帳戶成員，請參閱[邀請使用者](/docs/iam/iamuserinv.html#iamuserinv)。
 
@@ -141,11 +149,11 @@ lastupdated: "2018-07-25"
 
     *使用者* 視窗會顯示目前所選取帳戶的使用者及其電子郵件位址的清單。
 	
-3. 如果使用者是帳戶成員，請從清單中選取使用者名稱，或按一下*動作* 功能表中的**管理使用者**。
+3. 如果使用者是帳戶成員，請從清單選取使用者名稱，或按一下*動作* 功能表中的**管理使用者**。
 
     如果使用者不是帳戶成員，請參閱[邀請使用者](/docs/iam/iamuserinv.html#iamuserinv)。
 
-4. 選取 **Cloud Foundry 存取**，然後選取組織。
+4. 選取 **Cloud Foundry 存取權**，然後選取組織。
 
     即會列出該組織中可用的空間清單。
 

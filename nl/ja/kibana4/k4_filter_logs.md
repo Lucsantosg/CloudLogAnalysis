@@ -1,16 +1,26 @@
 ---
 
 copyright:
-  years: 2015, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
+{:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Kibana でのログのフィルタリング
 {:#k4_filter_logs}
@@ -32,7 +42,7 @@ lastupdated: "2018-07-25"
  
 * ログで特定のフィールド値を検索したり、特定のフィールド値が含まれた項目をログから除外したりすることができます。 詳しくは、『[特定のフィールド値が含まれたログのフィルタリング](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#k4_filter_logs_spec_field)』を参照してください。
  
-* 特定の期間内の項目を表示するようにログをフィルタリングできます。 詳しくは、『[時間フィルターの設定](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter)』を参照してください。
+* 特定の期間内の項目を表示するようにログをフィルタリングできます。 詳しくは、『[時間フィルターの設定](/docs/services/CloudLogAnalysis/kibana4/k4_filter_logs.html#set_time_filter1)』を参照してください。
      
 
 ## *フィールド・リスト* でリストされない値のフィルターの追加
@@ -297,7 +307,7 @@ Elasticsearch では、ストリング・フィールドの値を分析する際
         
 
 ## 時間フィルターの設定
-{: #set_time_filter}
+{: #set_time_filter1}
 
 *時間ピッカー* を構成して、特定の期間内のログを表示およびフィルタリングします。
 

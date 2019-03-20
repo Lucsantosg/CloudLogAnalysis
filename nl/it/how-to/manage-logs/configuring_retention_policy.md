@@ -1,20 +1,29 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
 {:new_window: target="_blank"}
 {:shortdesc: .shortdesc}
 {:screen: .screen}
-{:codeblock: .codeblock}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Configurazione della politica di conservazione dei log
-{: #configuring_retention_policy}
+{: #configuring_retention_policy1}
 
 Utilizza il comando **cf logging option** per visualizzare e configurare la politica di conservazione che definisce il numero massimo di giorni in cui i log vengono conservati nella raccolta dei log. Per impostazione predefinita, la politica di conservazione è disabilitata e i log vengono conservati indefinitamente. Dopo la scadenza del periodo di conservazione, i log vengono eliminati automaticamente. 
 {:shortdesc}
@@ -23,7 +32,7 @@ Puoi disporre di diverse politiche di conservazione definite nell'account. Puoi 
 
 
 ## Disabilitazione della politica di conservazione dei log per uno spazio
-{: #disable_retention_policy_space}
+{: #disable_retention_policy_space1}
 
 Completa la seguente procedura per disabilitare una politica di conservazione:
 
@@ -61,7 +70,7 @@ L'output è:
 
 
 ## Verifica della politica di conservazione dei log per uno spazio
-{: #check_retention_policy_space}
+{: #check_retention_policy_space1}
 
 Per ottenere il periodo di conservazione impostato per uno spazio, completa la seguente procedura:
 
@@ -119,7 +128,7 @@ Per ottenere il periodo di conservazione impostato per ogni spazio in un account
     
 
 ## Configurazione di una politica di configurazione dei log al livello dell'account
-{: #set_retention_policy_space}
+{: #set_retention_policy_space1}
 
 Per visualizzare il periodo di conservazione per un account, completa la seguente procedura:
 

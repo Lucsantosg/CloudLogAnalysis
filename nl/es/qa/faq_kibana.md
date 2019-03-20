@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Preguntas más comunes sobre Kibana
@@ -23,7 +30,7 @@ A continuación encontrará las respuestas a preguntas comunes sobre cómo utili
 
 * [¿Qué puedo hacer si no veo datos en la página Descubrir en Kibana](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_discover_kibana)
 * [¿Qué puedo hacer si recibo una excepción de autenticación?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_no_data_dashboard_kibana)
-* [¿Por qué veo el símbolo ? en campos de la página Descubrir de Kibana? ](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_kibana_question)
+* [¿Por qué veo el símbolo ? en campos de la página Descubrir de Kibana?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#logging_qa_kibana_question)
 * [Recibo un error 403 cuando intento cambiar el patrón de índice predeterminado](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#error_403)
 * [El URL abreviado no funciona](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#short_url)
 * [¿Puedo buscar registros de mi cuenta en Bluemix?](/docs/services/CloudLogAnalysis/qa/faq_kibana.html#acc_logs_1)
@@ -43,7 +50,7 @@ Para solucionar este problema, siga estos pasos:
 
     **Nota**: De forma predeterminada, en {{site.data.keyword.Bluemix_notm}}, el *Selector de tiempo* está definido que muestre datos correspondientes a los 15 últimos minutos.
 
-    Para obtener más información sobre cómo definir el *Selector de tiempo*, consulte [Establecimiento de un filtro de tiempo](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+    Para obtener más información sobre cómo definir el *Selector de tiempo*, consulte [Establecimiento de un filtro de tiempo](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter1).
        
 2. Pulse la lupa que se encuentra en la barra de búsqueda de la página *Descubrir*. Los datos de la página se renuevan en función de la consulta de búsqueda predeterminada.
 
@@ -104,7 +111,7 @@ Como propietario de una cuenta, puede buscar y analizar los registros de su cuen
 
 Siga estos pasos para obtener para ver los registros de su cuenta:
 
-1. [Inicie Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) Por ejemplo, para la región EE.UU. Sur, utilice el URL `https://logging.ng.bluemix.net`,
+1. [Inicie Kibana.](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser) Por ejemplo, para la región EE.UU. sur, utilice el URL `https://logging.ng.bluemix.net`,
 
 2. Seleccione la opción **Ver registros de la cuenta NombreCuenta** para ver los registros de la cuenta. *NombreCuenta* es el nombre de la cuenta.
 

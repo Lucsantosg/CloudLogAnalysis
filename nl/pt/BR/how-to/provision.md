@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 
 # Provisionando o serviço de análise do log
@@ -36,7 +43,7 @@ Conclua as etapas a seguir para provisionar uma instância do serviço {{site.da
 
 2. Clique em **Catálogo**. A lista dos serviços que estão disponíveis no {{site.data.keyword.Bluemix_notm}} é aberta.
 
-3. Selecione a categoria **DevOps** para filtrar a lista de serviços exibida.
+3. Selecione a categoria **Ferramentas do desenvolvedor** para filtrar a lista de serviços que é exibida.
 
 4. Clique no quadro **Análise do log**.
 

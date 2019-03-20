@@ -1,19 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # 在 Kibana 中过滤日志
 {:#filter_logs}
@@ -25,7 +32,7 @@ lastupdated: "2018-07-25"
 
 * 可以从*字段列表*或从表条目添加过滤器。过滤器通过包含或排除信息来优化数据选择内容。可以启用或禁用过滤器，反转过滤操作，将过滤器切换为开启或关闭，或者完全除去过滤器。 
 
-在定义新搜索后将其保存，以便能够重复使用，将来在“发现”页面中用于分析，或用来创建可在定制仪表板中使用的可视化项。有关更多信息，请参阅[保存搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search)。
+在定义新搜索后将其保存，以便能够重复使用，将来在“发现”页面中用于分析，或用来创建可在定制仪表板中使用的可视化项。有关更多信息，请参阅[保存搜索](/docs/services/CloudLogAnalysis/kibana/define_search.html#save_search1)。
 
 执行新搜索时，直方图、表和字段列表会自动更新，以显示搜索结果。要了解显示哪些数据，请参阅[确定在“发现”页面中显示的数据](/docs/services/CloudLogAnalysis/kibana/analize_logs_interactively.html#identify_data)。
 

@@ -1,18 +1,26 @@
 ---
 
 copyright:
-  years: 2017, 2018
+  years: 2017, 2019
 
-lastupdated: "2018-07-25"
+lastupdated: "2019-03-06"
+
+keywords: IBM Cloud, logging
+
+subcollection: cloudloganalysis
 
 ---
 
-
-{:shortdesc: .shortdesc}
 {:new_window: target="_blank"}
-{:codeblock: .codeblock}
+{:shortdesc: .shortdesc}
 {:screen: .screen}
 {:pre: .pre}
+{:table: .aria-labeledby="caption"}
+{:codeblock: .codeblock}
+{:tip: .tip}
+{:download: .download}
+{:important: .important}
+{:note: .note}
 
 # Cloud Foundry アプリ
 {: #logging_cf_apps}
@@ -33,7 +41,7 @@ Cloud Foundry アプリのロギングは、Cloud Foundry インフラストラ�
 {{site.data.keyword.Bluemix_notm}} は、限られた量のログ情報を保持します。 情報がログに記録されると、古い情報が新しい情報に置き換えられます。 組織または業界の方針に準拠する必要があり、その方針では監査またはその他の目的のためにすべてのログ情報または一部のログ情報を保持しなければならない場合、外部ログ・ホスト (例えば、サード・パーティーのログ管理サービスまたはその他のホスト) にログをストリーミングできます。 詳しくは、『[外部ログ・ホストの構成](/docs/services/CloudLogAnalysis/external/logging_external_hosts.html#thirdparty_logging)』を参照してください。
 
 ## ログの取り込み
-{: #log_ingestion}
+{: #log_ingestion1}
 
 マルチテナント Logstash Forwarder を使用することによって、ログを {{site.data.keyword.loganalysisshort}} に送信できます。 詳しくは、『[マルチテナント Logstash Forwarder (mt-logstash-forwarder) を使用したログ・データの送信](/docs/services/CloudLogAnalysis/how-to/send-data/send_data_mt.html#send_data_mt)』を参照してください。
 
@@ -55,7 +63,7 @@ Cloud Foundry アプリのロギングは、Cloud Foundry インフラストラ�
 各プランの料金について詳しくは、『[サービス・プラン](/docs/services/CloudLogAnalysis/log_analysis_ov.html#plans)』を参照してください。
 
 ## ログ検索
-{: #log_search}
+{: #log_search1}
 
 デフォルトでは、{{site.data.keyword.Bluemix_notm}} では、1 日当たり 500 MB までのログを Kibana を使用して検索できます。 
 
