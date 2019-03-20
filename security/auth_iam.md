@@ -26,24 +26,24 @@ subcollection: cloudloganalysis
 # Getting the IAM token
 {: #auth_iam1}
 
-To manage the logs that are available in the account domain by using the {{site.data.keyword.loganalysisshort}} API, you must use an authentication token. Use the {{{site.data.keyword.Bluemix_notm}} CLI to get the IAM token. The token has an expiration time. 
+To manage the logs that are available in the account domain by using the {{site.data.keyword.loganalysisshort}} API, you must use an authentication token. Use the {{{site.data.keyword.cloud_notm}} CLI to get the IAM token. The token has an expiration time. 
 {:shortdesc}
 
 
 ## Getting the IAM token
 {: #iam_token_cli}
 
-To get the authorization token by using the {{site.data.keyword.Bluemix_notm}} CLI, complete the following steps from a terminal:
+To get the authorization token by using the {{site.data.keyword.cloud_notm}} CLI, complete the following steps from a terminal:
 
-1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
+1. Install the {{site.data.keyword.cloud_notm}} CLI.
 
    For more information, see [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/index.html#overview).
    
    If the CLI is installed, continue with the next step.
     
-2. Log in to a region in the {{site.data.keyword.Bluemix_notm}}. 
+2. Log in to a region in the {{site.data.keyword.cloud_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
 	
 3. Run the `ibmcloud iam oauth-tokens` command to get the IAM token.
 

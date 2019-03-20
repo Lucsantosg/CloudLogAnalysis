@@ -51,13 +51,13 @@ The {{site.data.keyword.loganalysisshort}} service supports the following authen
 ## Roles
 {: #roles3}
 
-There are two types of roles in the {{site.data.keyword.Bluemix_notm}} that control the actions users can do when they work with the {{site.data.keyword.loganalysisshort}} service:
+There are two types of roles in the {{site.data.keyword.cloud_notm}} that control the actions users can do when they work with the {{site.data.keyword.loganalysisshort}} service:
 
 * Cloud Foundry (CF) roles: You control what {{site.data.keyword.loganalysisshort}} actions a user can do by assigning one or more CF roles. With these roles, you control the user's permissions to view and manage logs in a space or in an organization.
 * IAM roles: You control what {{site.data.keyword.loganalysisshort}} actions a user can do by assigning one or more IAM roles. With these roles, you control the user's permissions to view and manage account logs. 
 
 
-The following table lists the type of roles and the domain in the {{site.data.keyword.Bluemix_notm}} that they control:
+The following table lists the type of roles and the domain in the {{site.data.keyword.cloud_notm}} that they control:
 
 <table>
   <caption>Table 1. Type of roles that control actions per domain</caption>
@@ -161,7 +161,7 @@ The following table lists the relationship between the API, a service action, an
     <td>GET /v1/logging/logs</td>
     <td>ibmcloud-log-analysis.domain.log_read</td>
 	<td>Administrator, Editor, Viewer</td>
-	<td>View information about the logs in a {{site.data.keyword.Bluemix_notm}} space or at account level.</td>
+	<td>View information about the logs in a {{site.data.keyword.cloud_notm}} space or at account level.</td>
   </tr>
   <tr>
     <td>GET /v1/logging/logs/download</td>
@@ -173,13 +173,13 @@ The following table lists the relationship between the API, a service action, an
     <td>GET /v1/logging/logs/retention</td>
     <td>ibmcloud-log-analysis.domain.policy_read</td>
     <td>Administrator, Editor, Viewer</td>
-    <td>Displays the retention period for logs that are available in a {{site.data.keyword.Bluemix_notm}} space or account.</td>
+    <td>Displays the retention period for logs that are available in a {{site.data.keyword.cloud_notm}} space or account.</td>
   </tr>
   <tr>
     <td>PUT /v1/logging/logs/retention</td>
     <td>ibmcloud-log-analysis.domain.policy_write</td>
     <td>Administrator, Editor</td>
-    <td>Updates the retention period for logs that are available in a {{site.data.keyword.Bluemix_notm}} space or account.</td>
+    <td>Updates the retention period for logs that are available in a {{site.data.keyword.cloud_notm}} space or account.</td>
   </tr>
   <tr>
     <td>GET /v1/logging/sessions</td>
@@ -221,7 +221,7 @@ For more information, see [Getting the UAA token](/docs/services/CloudLogAnalysi
 
 **Working with logs that are available in the account domain**
 
-* Use the {{{site.data.keyword.Bluemix_notm}} CLI to get the IAM token. 
+* Use the {{{site.data.keyword.cloud_notm}} CLI to get the IAM token. 
 * The token has an expiration time. 
 
 For more information, see [Getting the IAM token](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1).
@@ -234,7 +234,7 @@ To send logs into the {{site.data.keyword.loganalysisshort}} service, you need a
 
 To send logs to a space domain, choose any of the following methods:
 
-* [Getting the logging token to send logs to a space by using the {{site.data.keyword.Bluemix_notm}} command ibmcloud service ](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
+* [Getting the logging token to send logs to a space by using the {{site.data.keyword.cloud_notm}} command ibmcloud service ](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
 * [Getting the logging token to send logs to a space by using the Log Analysis CLI](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
 * [Getting the logging token to send logs to a space by using the Log Analysis API](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
 
@@ -242,15 +242,15 @@ To send logs to a space domain, choose any of the following methods:
 ## Granting permissions to a user to work with logs
 {: #grant_permissions1}
 
-For a user to be able to manage logs, or to view logs, the user must be granted permissions in the {{site.data.keyword.Bluemix_notm}} to work with the {{site.data.keyword.loganalysisshort}} service.
+For a user to be able to manage logs, or to view logs, the user must be granted permissions in the {{site.data.keyword.cloud_notm}} to work with the {{site.data.keyword.loganalysisshort}} service.
 
 * For information about permissions required to manage logs, see [Roles that are required by a user to manage logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
 * For information about permissions required to view logs, see [Roles that are required by a user to view logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
 
 For more information on how to grant permissions, see:
 
-* [Assign an IAM policy to a user through the {{site.data.keyword.Bluemix_notm}} UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions).
+* [Assign an IAM policy to a user through the {{site.data.keyword.cloud_notm}} UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions).
 * [Assign an IAM policy to a user by using the command line](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_commandline).
-* [Granting a user permissions to view space logs by using the {{site.data.keyword.Bluemix_notm}} UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
+* [Granting a user permissions to view space logs by using the {{site.data.keyword.cloud_notm}} UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
 
 
