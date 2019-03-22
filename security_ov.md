@@ -38,11 +38,11 @@ To work with the {{site.data.keyword.loganalysisshort}} service through the CLI 
 
 The {{site.data.keyword.loganalysisshort}} service supports the following authentication models:
 
-* [UAA authentication](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa)
+* [UAA authentication](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-auth_uaa#auth_uaa)
 
     You can only use the CLI to manage UAA tokens.
 	
-* [IAM Authentication](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1)
+* [IAM Authentication](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-auth_iam1#auth_iam1)
 
     The IAM authentication model offers UI, CLI, or API management capabilities. 
 
@@ -217,14 +217,14 @@ To manage logs by using the {{site.data.keyword.loganalysisshort}} API, you must
 * Use the {{site.data.keyword.loganalysisshort}} CLI to get the UAA token. 
 * The token has an expiration time. 
 
-For more information, see [Getting the UAA token](/docs/services/CloudLogAnalysis/security/auth_uaa.html#auth_uaa).
+For more information, see [Getting the UAA token](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-auth_uaa#auth_uaa).
 
 **Working with logs that are available in the account domain**
 
 * Use the {{{site.data.keyword.cloud_notm}} CLI to get the IAM token. 
 * The token has an expiration time. 
 
-For more information, see [Getting the IAM token](/docs/services/CloudLogAnalysis/security/auth_iam.html#auth_iam1).
+For more information, see [Getting the IAM token](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-auth_iam1#auth_iam1).
 
 
 ## Getting the logging token to send logs into Log Analysis
@@ -234,9 +234,9 @@ To send logs into the {{site.data.keyword.loganalysisshort}} service, you need a
 
 To send logs to a space domain, choose any of the following methods:
 
-* [Getting the logging token to send logs to a space by using the {{site.data.keyword.cloud_notm}} command ibmcloud service ](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_cloud_cli)
-* [Getting the logging token to send logs to a space by using the Log Analysis CLI](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_la_cloud_cli)
-* [Getting the logging token to send logs to a space by using the Log Analysis API](/docs/services/CloudLogAnalysis/security/logging_token.html#logging_token_api)
+* [Getting the logging token to send logs to a space by using the {{site.data.keyword.cloud_notm}} command ibmcloud service ](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-logging_token#logging_token_cloud_cli)
+* [Getting the logging token to send logs to a space by using the Log Analysis CLI](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-logging_token#logging_token_la_cloud_cli)
+* [Getting the logging token to send logs to a space by using the Log Analysis API](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-logging_token#logging_token_api)
 
 
 ## Granting permissions to a user to work with logs
@@ -244,13 +244,13 @@ To send logs to a space domain, choose any of the following methods:
 
 For a user to be able to manage logs, or to view logs, the user must be granted permissions in the {{site.data.keyword.cloud_notm}} to work with the {{site.data.keyword.loganalysisshort}} service.
 
-* For information about permissions required to manage logs, see [Roles that are required by a user to manage logs](/docs/services/CloudLogAnalysis/manage_logs.html#roles1).
-* For information about permissions required to view logs, see [Roles that are required by a user to view logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#roles).
+* For information about permissions required to manage logs, see [Roles that are required by a user to manage logs](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-manage_logs#roles1).
+* For information about permissions required to view logs, see [Roles that are required by a user to view logs](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analyzing_logs_Kibana#roles).
 
 For more information on how to grant permissions, see:
 
-* [Assign an IAM policy to a user through the {{site.data.keyword.cloud_notm}} UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions).
-* [Assign an IAM policy to a user by using the command line](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_commandline).
-* [Granting a user permissions to view space logs by using the {{site.data.keyword.cloud_notm}} UI](/docs/services/CloudLogAnalysis/security/grant_permissions.html#grant_permissions_ui_space).
+* [Assign an IAM policy to a user through the {{site.data.keyword.cloud_notm}} UI](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-grant_permissions#grant_permissions).
+* [Assign an IAM policy to a user by using the command line](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-grant_permissions#grant_permissions_commandline).
+* [Granting a user permissions to view space logs by using the {{site.data.keyword.cloud_notm}} UI](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-grant_permissions#grant_permissions_ui_space).
 
 

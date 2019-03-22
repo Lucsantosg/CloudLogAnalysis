@@ -51,13 +51,13 @@ In the Visualize page, you can perform any of the following tasks:
 
 | Task | More information |
 |------|------------------|
-| [Create a new visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_k4_visualizations_create) | You can create visualizations from a search that you define and save in the *Discover* page or from a new query that you define in the *Visualize* page. |
-| [Save a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_save) | You can save visualizations for later reuse. |
-| [Load a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_reload) | You can upload a visualization to either update its data, mofify it, analyze the data. |
-| [Delete a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_delete) | Delete visualizations that are not required. |
-| [Export a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_export) | You can export a visualization as a JSON file.  |
-| [Import a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_import) | You can import a visualization as a JSON file.  |
-| [Share a visualization](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_visualizations.html#logging_kibana_visualizations_share) | You can share a visualization through your HTML source or through the Kibana dashboard.  |
+| [Create a new visualization](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-logging_kibana_visualizations#logging_k4_visualizations_create) | You can create visualizations from a search that you define and save in the *Discover* page or from a new query that you define in the *Visualize* page. |
+| [Save a visualization](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-logging_kibana_visualizations#logging_kibana_visualizations_save) | You can save visualizations for later reuse. |
+| [Load a visualization](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-logging_kibana_visualizations#logging_kibana_visualizations_reload) | You can upload a visualization to either update its data, mofify it, analyze the data. |
+| [Delete a visualization](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-logging_kibana_visualizations#logging_kibana_visualizations_delete) | Delete visualizations that are not required. |
+| [Export a visualization](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-logging_kibana_visualizations#logging_kibana_visualizations_export) | You can export a visualization as a JSON file.  |
+| [Import a visualization](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-logging_kibana_visualizations#logging_kibana_visualizations_import) | You can import a visualization as a JSON file.  |
+| [Share a visualization](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-logging_kibana_visualizations#logging_kibana_visualizations_share) | You can share a visualization through your HTML source or through the Kibana dashboard.  |
 {: caption="Table 2. Tasks to work with visualizations" caption-side="top"}
 
 

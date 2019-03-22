@@ -42,11 +42,11 @@ Complete the following steps to disable a retention policy:
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 	
 2. Get the account ID.
 
-    For more information, see [How do I get the GUID of an account](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).
+    For more information, see [How do I get the GUID of an account](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#account_guid).
     
 3. Set the retention period to **-1** to disable the retention period. Run the command:
 
@@ -76,7 +76,7 @@ Complete the following steps to disable a retention policy:
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
     
 2. Set the retention period to **-1** to disable the retention period. Run the command:
 
@@ -104,11 +104,11 @@ To get the retention period that is set for an account, complete the following s
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 2. Get the account ID.
 
-    For more information, see [How do I get the GUID of an account](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).
+    For more information, see [How do I get the GUID of an account](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#account_guid).
     
 3. Get the retention period. Run the command:
 
@@ -135,7 +135,7 @@ To get the retention period that is set for a space, complete the following step
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
     
 2. Get the retention period. Run the command:
 
@@ -164,11 +164,11 @@ Complete the following steps:
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 2. Get the account ID.
 
-    For more information, see [How do I get the GUID of an account](/docs/services/CloudLogAnalysis/qa/cli_qa.html#account_guid).
+    For more information, see [How do I get the GUID of an account](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#account_guid).
     
 3. Set the retention period. Run the command:
 
@@ -198,7 +198,7 @@ To see the retention period for a space, complete the following steps:
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
     
 2. Set the retention period. Run the command:
 

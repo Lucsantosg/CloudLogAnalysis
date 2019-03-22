@@ -38,13 +38,13 @@ To get the authorization token, complete the following steps:
 
 1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
 
-   For more information, see [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli/index.html#overview).
+   For more information, see [Download and install the {{site.data.keyword.Bluemix}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
    
    If the CLI is installed, continue with the next step.
     
 2. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 	
 3. Run the `ibmcloud iam oauth-token` command to get the {{site.data.keyword.Bluemix_notm}} UAA token.
 

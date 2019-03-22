@@ -25,7 +25,7 @@ subcollection: cloudloganalysis
 # Deleting logs
 {: #deleting_logs1}
 
-Use the [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) command to delete logs from Log Collection. 
+Use the [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-logging_cli#status1) command to delete logs from Log Collection. 
 {:shortdesc}
 
 * You can delete logs within a specific time range.
@@ -40,7 +40,7 @@ Complete the following steps:
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
     
 2. Run the *status* command to see the logs that are available in Log Collection.
 
@@ -90,7 +90,7 @@ Complete the following steps:
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
     
 2. Run the *status* command to see the logs that are available in Log Collection.
 
@@ -142,7 +142,7 @@ Complete the following steps:
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
     
 2. Run the *status* command to see the logs that are available in Log Collection at the account level.
 

@@ -51,12 +51,12 @@ You can perform any of the following tasks to customize the table in the Discove
 
 | Task | Description | 
 |------|-------------|
-| [Add a field column](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_add_fields_to_table) | Add fields to see specific data that is required for analysis instead of the full message. |
-| [Rearrange a field column](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_rearrange_fields_in_table) | Move the position of a field in the table to the position where you want it. |
-| [View an entry](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_entry_in_table) | Expand an entry in the table to see the details of the entry parsed by field or as JSON. |
-| [Remove a field column](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_remove_fields_from_table) | Remove a field when it is not required in the view for analysis. |
-| [Order entries by value of an indexed field](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_sort_by_table) | Reorder the entries for easier analysis. |
-| [Automatically refresh the data](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_refresh_interval) | Refresh the data displayed in the table with the latest entries. By default, refresh is **OFF**. |
+| [Add a field column](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#kibana_discover_add_fields_to_table) | Add fields to see specific data that is required for analysis instead of the full message. |
+| [Rearrange a field column](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#kibana_discover_rearrange_fields_in_table) | Move the position of a field in the table to the position where you want it. |
+| [View an entry](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#kibana_discover_view_entry_in_table) | Expand an entry in the table to see the details of the entry parsed by field or as JSON. |
+| [Remove a field column](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#kibana_discover_remove_fields_from_table) | Remove a field when it is not required in the view for analysis. |
+| [Order entries by value of an indexed field](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#kibana_discover_sort_by_table) | Reorder the entries for easier analysis. |
+| [Automatically refresh the data](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#kibana_discover_view_refresh_interval) | Refresh the data displayed in the table with the latest entries. By default, refresh is **OFF**. |
 {: caption="Table 2. Tasks to customize a table" caption-side="top"}
 
 <br>
@@ -97,7 +97,7 @@ You can also look at statistics in the Discover page:
 * You can see stats per field. 
 * You can see stats in the histogram per the `@timestamp` that you have configured.
 
-For more information, see [Viewing Field Data Statistics](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#kibana_discover_view_fields_stats).
+For more information, see [Viewing Field Data Statistics](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#kibana_discover_view_fields_stats).
 
 **Note:** The data that is shown in the table and the histogram is static. To keep viewing the latest entries, you must set a refresh interval. 
 

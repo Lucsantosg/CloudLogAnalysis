@@ -30,9 +30,9 @@ The {{site.data.keyword.loganalysislong}} CLI is a plug-in to manage the logs fo
 
 **Prerequisites**
 * Before running the logging commands, log in to the {{site.data.keyword.Bluemix_notm}} with the `ibmcloud login` command to generate a {{site.data.keyword.Bluemix_short}}
- access token and authenticate your session. For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+ access token and authenticate your session. For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
-To find out about how to use the {{site.data.keyword.loganalysisshort}} CLI, see [Managing logs](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov).
+To find out about how to use the {{site.data.keyword.loganalysisshort}} CLI, see [Managing logs](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov).
 
 <table>
   <caption>Commands for managing logs</caption>
@@ -198,7 +198,7 @@ ibmcloud cf logging delete -s 2017-05-25 -e 2017-05-25 -t linux_syslog
 
 Downloads logs from Log Collection to a local file or pipes logs to another program such an Elastic Stack. 
 
-**Note:** To download files, you need to create a session first. A session defines which logs to download based on date range, log type, and account type. You download logs within the context of a session. For more information, see [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference/logging_cli.html#session_create1).
+**Note:** To download files, you need to create a session first. A session defines which logs to download based on date range, log type, and account type. You download logs within the context of a session. For more information, see [ibmcloud cf logging session create (Beta)](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-logging_cli#session_create1).
 
 ```
 ibmcloud cf logging download [parameters] [arguments]

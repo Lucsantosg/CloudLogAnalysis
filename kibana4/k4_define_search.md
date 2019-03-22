@@ -40,11 +40,11 @@ Complete the following tasks to define a custom search:
 
     2. Access Kibana. Click **Advanced View** ![Advanced view link](images/logging_advanced_view.jpg "Advanced view link"). The Kibana dashboard is displayed.
     
-    For containers that run in a Kubernetes cluster, [launch Kibana from the browser](/docs/services/CloudLogAnalysis/kibana4/k4_launch.html#launch_Kibana_from_browser1). 
+    For containers that run in a Kubernetes cluster, [launch Kibana from the browser](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-k4_launch#launch_Kibana_from_browser1). 
     
     When you access Kibana, the default search is applied. You can see the logs for the list of instances of the resource you launched Kibana for. You can filter the logs for any or all of the {{site.data.keyword.Bluemix_notm}} resources in that space.
 
-2. Look at the Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4/logging_kibana_analize_logs_interactively.html#k4_identify_data). Then, modify the default query to filter entries.
+2. Look at the Discover page to see what subset of your data it displays. For more information, see [Identifying the data that is displayed in your Kibana Discover page](/docs/services/CloudLogAnalysis/kibana4?topic=cloudloganalysis-kibana_analize_logs_interactively#k4_identify_data). Then, modify the default query to filter entries.
 
     **Note:** Use the Lucene query language to define your custom query. For more information, see [Apache Lucene - Query Parser Syntax  ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html){: new_window}
     

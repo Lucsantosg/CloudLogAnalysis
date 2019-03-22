@@ -35,7 +35,7 @@ By default, {{site.data.keyword.Bluemix_notm}} offers integrated logging capabil
 
 Your must have a user ID that is a member or an owner of an {{site.data.keyword.Bluemix_notm}} account. To get an {{site.data.keyword.Bluemix_notm}} user ID, go to: [Registration ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/registration/){:new_window}
 
-## Step1: Choose a cloud resource for which you want to see logs
+## Step 1: Choose a cloud resource for which you want to see logs
 {: #step1}
 
 In the {{site.data.keyword.Bluemix_notm}}, CF applications, containers that run on the {{site.data.keyword.containershort}}, and selected services collect log data automatically and they forward it to the {{site.data.keyword.loganalysisshort}} service.
@@ -52,7 +52,7 @@ The following table lists different cloud resources. Complete the tutorial for a
   </tr>
   <tr>
     <td>Containers running on the {{site.data.keyword.containershort}}</td>
-    <td>[Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/tutorials/container_logs.html#container_logs)</td>
+    <td>[Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/tutorials?topic=cloudloganalysis-container_logs#container_logs)</td>
     <td>Public </br>Dedicated</td>
     <td>![High level component overview for containers deployed in a Kubernetes cluster](containers/images/containers_kube_logs.png "High level component overview for containers deployed in a Kubernetes cluster")</td>
   </tr>
@@ -94,7 +94,7 @@ Complete the following steps to grant a user permissions to view logs in a space
 	
 3. If the user is a member of the account, select the user name from the list, or click **Manage user** from the *Actions* menu.
 
-    If the user is not a member of the account, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
+    If the user is not a member of the account, see [Inviting users](/docs/iam?topic=iam-iamuserinv#iamuserinv).
 
 4. Select **Cloud Foundry access**, then select the organization.
 
@@ -128,7 +128,7 @@ Complete the following steps to grant a user permissions to view account logs:
 	
 3. If the user is a member of the account, select the user name from the list, or click **Manage user** from the *Actions* menu.
 
-    If the user is not a member of the account, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
+    If the user is not a member of the account, see [Inviting users](/docs/iam?topic=iam-iamuserinv#iamuserinv).
 
 4. In the **Access policies** section, click **Assign access**, then select **Assign access to resources**.
 
@@ -156,7 +156,7 @@ Complete the following steps to grant a user permissions to view account logs:
 	  </tr>
 	  <tr>
 	    <td>Roles</td>
-		<td>Select one or more IAM roles. <br>Valid roles are: *administrator*, *operator*, *editor*, and *viewer*. <br>For more information about the actions that are allowed per role, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+		<td>Select one or more IAM roles. <br>Valid roles are: *administrator*, *operator*, *editor*, and *viewer*. <br>For more information about the actions that are allowed per role, see [IAM roles](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-security_ov#iam_roles).
 		</td>
 	  </tr>
      </table>
@@ -179,11 +179,11 @@ https://logging.ng.bluemix.net/
 {: codeblock}
 
 
-For more information on how to launch Kibana in other regions, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
+For more information on how to launch Kibana in other regions, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-launch#launch_Kibana_from_browser).
 
 **Note:** When you launch Kibana, if you get a message that indicates *bearer token not valid*, check your permissions in the account. This message is an indication that your user ID does not have permissions to see logs.
 
-Next, customize Kibana to view and analyze your log data. For more information, see [Viewing and analyzing logs](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#analyzing_logs_Kibana)
+Next, customize Kibana to view and analyze your log data. For more information, see [Viewing and analyzing logs](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analyzing_logs_Kibana#analyzing_logs_Kibana)
     
 
 

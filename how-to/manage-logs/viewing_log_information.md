@@ -25,7 +25,7 @@ subcollection: cloudloganalysis
 # Viewing log information
 {: #viewing_log_status}
 
-Use the [cf logging status](/docs/services/CloudLogAnalysis/reference/logging_cli.html#status1) command to obtain information about the logs that are collected and stored in Log Collection.
+Use the [cf logging status](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-logging_cli#status1) command to obtain information about the logs that are collected and stored in Log Collection.
 {:shortdesc}
 
 ## Obtaining information about logs over a period of time
@@ -43,7 +43,7 @@ Complete the following steps to get information about logs:
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
     
 2. Run the *status* command.
 
@@ -80,7 +80,7 @@ Complete the following steps to get information about a type of log over a perio
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
     
 2. Run the *status* command.
 
@@ -122,7 +122,7 @@ Complete the following steps to get account information about logs:
 
 1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
     
 2. Run the *status* command.
 

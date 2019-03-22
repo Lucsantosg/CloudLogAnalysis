@@ -92,7 +92,7 @@ You can configure Kibana to display in the *Discover* page the following fields 
 {: caption="Table 3. Fields for Docker containers" caption-side="top"}
 
 
-## Kibana log format for Message Hub
+## Kibana log format for {{site.data.keyword.messagehub}}
 {: #kibana_log_format_messagehub}
 
 You can configure Kibana to display in the *Discover* page the following fields for each log entry:
@@ -107,7 +107,7 @@ You can configure Kibana to display in the *Discover* page the following fields 
 | \_type | The type of log; for example, *syslog*. |
 | loglevel | The severity of the logged event, for example, **Info**. |
 | module | This field is set to **MessageHub**. |
-{: caption="Table 4. Fields for Message Hub events" caption-side="top"}
+{: caption="Table 4. Fields for {{site.data.keyword.messagehub}} events" caption-side="top"}
 
 Example of a log entry:
 

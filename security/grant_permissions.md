@@ -28,7 +28,7 @@ subcollection: cloudloganalysis
 In the {{site.data.keyword.Bluemix}}, you can assign a user one or more IAM roles. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service.  
 {:shortdesc}
 
-For example, you can grant a user the **operator** role to allow him to manage logs. If you just want a user to view account logs, then you can grant the user the **viewer** role. For more information, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+For example, you can grant a user the **operator** role to allow him to manage logs. If you just want a user to view account logs, then you can grant the user the **viewer** role. For more information, see [IAM roles](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-security_ov#iam_roles).
 
 **Note:** 
 
@@ -52,7 +52,7 @@ Complete the following steps to grant a user permissions to work with the {{site
 	
 3. If the user is a member of the account, select the user name from the list, or click **Manage user** from the *Actions* menu.
 
-    If the user is not a member of the account, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
+    If the user is not a member of the account, see [Inviting users](/docs/iam?topic=iam-iamuserinv#iamuserinv).
 
 4. In the **Access policies** section, click **Assign access**, then select **Assign access to resources**.
 
@@ -80,7 +80,7 @@ Complete the following steps to grant a user permissions to work with the {{site
 	  </tr>
 	  <tr>
 	    <td>Roles</td>
-		<td>Select one or more IAM roles. <br>Valid roles are: *administrator*, *operator*, *editor*, and *viewer*. <br>For more information about the actions that are allowed per role, see [IAM roles](/docs/services/CloudLogAnalysis/security_ov.html#iam_roles).
+		<td>Select one or more IAM roles. <br>Valid roles are: *administrator*, *operator*, *editor*, and *viewer*. <br>For more information about the actions that are allowed per role, see [IAM roles](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-security_ov#iam_roles).
 		</td>
 	  </tr>
      </table>
@@ -97,7 +97,7 @@ Complete the following steps to grant a user access to view account logs by usin
 
 1. From a terminal, log in to the {{site.data.keyword.Bluemix_notm}} account. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa/cli_qa.html#login).
+    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 2. Check that the user is a member of the account. Run the following command to get the list of users in the account:
 
@@ -108,7 +108,7 @@ Complete the following steps to grant a user access to view account logs by usin
 
 	A list of users with their GUIDs is displayed.
 
-3. If the user is not a member of the account, contact the account owner and request an invite of the user to the account. For more information, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
+3. If the user is not a member of the account, contact the account owner and request an invite of the user to the account. For more information, see [Inviting users](/docs/iam?topic=iam-iamuserinv#iamuserinv).
 
     **Tip:** The command to invite a user to an account is the following: `ibmcloud iam account-user-invite USER_EMAIL`
 		
@@ -152,7 +152,7 @@ Complete the following steps to grant a user permissions to work with the {{site
 	
 3. If the user is a member of the account, select the user name from the list, or click **Manage user** from the *Actions* menu.
 
-    If the user is not a member of the account, see [Inviting users](/docs/iam/iamuserinv.html#iamuserinv).
+    If the user is not a member of the account, see [Inviting users](/docs/iam?topic=iam-iamuserinv#iamuserinv).
 
 4. Select **Cloud Foundry access**, then select the organization.
 

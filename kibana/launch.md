@@ -83,7 +83,7 @@ Complete the following steps to launch Kibana from the dashboard of the {{site.d
 
 By default, the **Discover** page loads with the default index pattern selected and a time filter set to the last 15 minutes. 
 
-If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-filter_logs#set_time_filter).
 
 	
 	
@@ -98,7 +98,7 @@ Complete the following steps to launch Kibana from a browser:
 
 1. Open a web browser and launch Kibana. Then, log in to the Kibana user interface.
 
-    To see the list of URLs per region, see [URLs to launch Kibana](/docs/services/CloudLogAnalysis/kibana/analyzing_logs_Kibana.html#urls_kibana).
+    To see the list of URLs per region, see [URLs to launch Kibana](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analyzing_logs_Kibana#urls_kibana).
     
     The Discover page in Kibana opens.
 	
@@ -115,7 +115,7 @@ Complete the following steps to launch Kibana from a browser:
 	
 	    where *Space_ID* is the GUID of the space where you want to view and analyze log data. 
 	
-If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-filter_logs#set_time_filter).
 
 
 	
@@ -143,7 +143,7 @@ To see the logs of a Cloud Foundry application in Kibana, complete the following
 
     By default, the **Discover** page loads with the default index pattern selected and a time filter set to the last 15 minutes. The search query is set to match all entries for the CF app.
 
-    If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+    If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-filter_logs#set_time_filter).
 
 	
 	
@@ -192,7 +192,7 @@ To see the logs of a Docker container in Kibana, complete the following steps:
 
     By default, the **Discover** page loads with the default index pattern selected and a time filter set to the last 30 seconds. The search query is set to match all entries for the Docker container.
 
-    If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana/filter_logs.html#set_time_filter).
+    If the Discover page does not show any log entries, adjust the time picker. For more information, see [Setting a time filter](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-filter_logs#set_time_filter).
 
 	
 
