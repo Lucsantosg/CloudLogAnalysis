@@ -221,7 +221,7 @@ For more information, see [Getting the UAA token](/docs/services/CloudLogAnalysi
 
 **Working with logs that are available in the account domain**
 
-* Use the {{{site.data.keyword.cloud_notm}} CLI to get the IAM token. 
+* Use the {{site.data.keyword.cloud_notm}} CLI to get the IAM token. 
 * The token has an expiration time. 
 
 For more information, see [Getting the IAM token](/docs/services/CloudLogAnalysis/security?topic=cloudloganalysis-auth_iam1#auth_iam1).

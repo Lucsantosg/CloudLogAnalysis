@@ -26,7 +26,7 @@ subcollection: cloudloganalysis
 # Getting the IAM token
 {: #auth_iam1}
 
-To manage the logs that are available in the account domain by using the {{site.data.keyword.loganalysisshort}} API, you must use an authentication token. Use the {{{site.data.keyword.cloud_notm}} CLI to get the IAM token. The token has an expiration time. 
+To manage the logs that are available in the account domain by using the {{site.data.keyword.loganalysisshort}} API, you must use an authentication token. Use the {{site.data.keyword.cloud_notm}} CLI to get the IAM token. The token has an expiration time. 
 {:shortdesc}
 
 
