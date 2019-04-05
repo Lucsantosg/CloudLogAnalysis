@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 
 # 使用 IBM Cloud CLI 的常见问题及解答

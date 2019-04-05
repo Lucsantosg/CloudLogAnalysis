@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 
 # 取得記載記號

@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Applications Cloud Foundry
 {: #logging_cf_apps}

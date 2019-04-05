@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Riutilizzo di risorse Kibana per analizzare i log {{site.data.keyword.Bluemix_notm}}
 {:#k4_reuse_resource}

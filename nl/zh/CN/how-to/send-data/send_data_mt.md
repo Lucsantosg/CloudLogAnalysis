@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 将内部部署数据发送到 IBM Cloud 中的空间
 {: #send_data_mt}

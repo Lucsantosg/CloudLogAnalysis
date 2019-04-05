@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Lokale Daten an einen Bereich in IBM Cloud senden
 {: #send_data_mt}

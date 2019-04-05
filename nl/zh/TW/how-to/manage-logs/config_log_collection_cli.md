@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 配置 Log Analysis CLI（CF 外掛程式）已淘汰
 {: #config_log_collection_cli1}

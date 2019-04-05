@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Interface de ligne de commande d'IBM Cloud Log Analysis (plug-in CF)
 {: #logging_cli}

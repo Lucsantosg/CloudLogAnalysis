@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Log Analysis-Befehlszeilenschnittstelle (CF-Plug-in) konfigurieren (veraltet)
 {: #config_log_collection_cli1}

@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # CF アプリを使用したランタイム・アプリケーションのロギング
 {: #logging_writing_to_log_from_cf_app}

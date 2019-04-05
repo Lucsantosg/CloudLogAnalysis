@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 
 # Kubernetes 클러스터에 배치된 앱에 대한 Kibana에서 로그 분석

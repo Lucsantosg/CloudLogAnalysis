@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 로그 관리 및 계정 로그 보기를 위한 권한 부여
 {: #grant_permissions}

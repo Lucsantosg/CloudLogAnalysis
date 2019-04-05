@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # CLI de Log Analysis (plugin de {{site.data.keyword.Bluemix_notm}})
 {: #log_analysis_cli}

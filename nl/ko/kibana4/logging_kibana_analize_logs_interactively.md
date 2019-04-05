@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Kibana에서 대화식으로 로그 분석
 {:#kibana_analize_logs_interactively}

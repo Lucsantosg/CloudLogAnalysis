@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # IBM Cloud のスペースへのオンプレミス・データの送信
 {: #send_data_mt}

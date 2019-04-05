@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Cloud Foundry 앱의 로그로 이동
 {: #launch_logs_cloud_ui_cf}

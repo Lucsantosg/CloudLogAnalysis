@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 導覽至 Cloud Foundry 應用程式的日誌
 {: #launch_logs_cloud_ui_cf}

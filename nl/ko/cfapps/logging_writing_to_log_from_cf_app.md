@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # CF 앱을 통한 런타임 애플리케이션 로깅
 {: #logging_writing_to_log_from_cf_app}

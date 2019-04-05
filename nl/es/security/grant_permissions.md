@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Cómo otorgar permisos para gestionar registros y visualizar registros de cuentas
 {: #grant_permissions}

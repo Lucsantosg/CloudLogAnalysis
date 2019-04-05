@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Analyse interactive de journaux dans Kibana
 {:#kibana_analize_logs_interactively}

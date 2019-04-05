@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Configuration de l'interface de ligne de commande {{site.data.keyword.loganalysisshort}}
 {: #config_log_collection_cli}

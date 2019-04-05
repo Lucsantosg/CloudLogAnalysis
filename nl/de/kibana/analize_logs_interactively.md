@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Protokolle in Kibana interaktiv analysieren
 {:#analize_logs_interactively}

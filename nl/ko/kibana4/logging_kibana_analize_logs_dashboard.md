@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 대시보드를 통해 Kibana에서 로그 분석
 {:#kibana_analize_logs_dashboard}

@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Analyzing logs in Kibana through a dashboard
 {:#kibana_analize_logs_dashboard}

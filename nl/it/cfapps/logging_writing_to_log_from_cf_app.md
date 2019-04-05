@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Registrazione delle applicazioni di runtime attraverso le applicazioni CF
 {: #logging_writing_to_log_from_cf_app}

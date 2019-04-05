@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 
 # Questions fréquentes sur l'utilisation de l'interface de ligne de commande IBM Cloud et réponses

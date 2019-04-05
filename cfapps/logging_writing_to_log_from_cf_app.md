@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Runtime application logging through CF apps
 {: #logging_writing_to_log_from_cf_app}

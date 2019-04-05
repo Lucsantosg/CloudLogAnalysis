@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Die {{site.data.keyword.loganalysisshort}}-Befehlszeilenschnittstelle
 {: #config_log_collection_cli}

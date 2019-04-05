@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 
 # Envoi de journaux depuis un emplacement hors de {{site.data.keyword.Bluemix_notm}}

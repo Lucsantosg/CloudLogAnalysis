@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Análisis de registro en Kibana mediante un panel de control
 {:#analize_logs_dashboard}

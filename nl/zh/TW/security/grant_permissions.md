@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 授與許可權以管理日誌以及檢視帳戶日誌
 {: #grant_permissions}

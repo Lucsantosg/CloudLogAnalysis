@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 
 # Protokolle in Kibana für eine App analysieren, die in einem Kubernetes-Cluster bereitgestellt ist

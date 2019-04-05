@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Navegación a los registros de una app Cloud Foundry
 {: #launch_logs_cloud_ui_cf}

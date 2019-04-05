@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Log Analysis CLI(CF 플러그인) 구성(더 이상 사용되지 않음)
 {: #config_log_collection_cli1}

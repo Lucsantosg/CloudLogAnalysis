@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 在 Kibana 中使用可视化项分析日志 
 {:#logging_kibana_visualizations}

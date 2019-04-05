@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Passaggio ai log di un'applicazione Cloud Foundry
 {: #launch_logs_cloud_ui_cf}

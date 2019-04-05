@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # ログの管理許可とアカウント・ログの表示許可の付与
 {: #grant_permissions}

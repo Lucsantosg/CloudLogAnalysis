@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 在 Kibana 中以互動方式分析日誌
 {:#analize_logs_interactively}

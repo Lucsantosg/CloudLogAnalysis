@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 
 # Antworten auf häufig gestellte Fragen zur Verwendung der IBM Cloud-Befehlszeilenschnittstelle

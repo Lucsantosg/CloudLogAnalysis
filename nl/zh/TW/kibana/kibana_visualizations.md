@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 在 Kibana 中使用視覺效果來分析日誌 
 {:#kibana_visualizations}

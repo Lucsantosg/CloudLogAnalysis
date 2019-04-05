@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Log Analysis-Befehlszeilenschnittstelle ({{site.data.keyword.Bluemix_notm}}-Plug-in)
 {: #log_analysis_cli}

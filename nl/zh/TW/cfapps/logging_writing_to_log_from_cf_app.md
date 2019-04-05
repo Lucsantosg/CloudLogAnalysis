@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 透過 CF 應用程式的運行環境應用程式記載
 {: #logging_writing_to_log_from_cf_app}

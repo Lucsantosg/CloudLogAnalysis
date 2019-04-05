@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Configurando a CLI do Log Analysis (plug-in CF) Descontinuado
 {: #config_log_collection_cli1}

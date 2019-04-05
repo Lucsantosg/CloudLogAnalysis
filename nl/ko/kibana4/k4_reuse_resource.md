@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Kibana 리소스를 다시 사용하여 {{site.data.keyword.Bluemix_notm}} 로그 분석
 {:#k4_reuse_resource}

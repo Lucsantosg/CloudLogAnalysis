@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 通过 CF 应用程序进行运行时应用程序日志记录
 {: #logging_writing_to_log_from_cf_app}

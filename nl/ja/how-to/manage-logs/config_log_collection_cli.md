@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Log Analysis CLI (CF プラグイン) の構成 (非推奨)
 {: #config_log_collection_cli1}

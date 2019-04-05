@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Laufzeitanwendungsprotokollierung durch CF-Apps
 {: #logging_writing_to_log_from_cf_app}

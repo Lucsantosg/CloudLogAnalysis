@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 
 # 針對 Kubernetes 叢集中所部署的應用程式，在 Kibana 中分析日誌

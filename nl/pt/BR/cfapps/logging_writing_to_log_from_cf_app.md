@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Criação de log de aplicativo de tempo de execução por meio de apps CF
 {: #logging_writing_to_log_from_cf_app}

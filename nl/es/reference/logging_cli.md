@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # CLI de IBM Cloud Log Analysis (plugin CF)
 {: #logging_cli}

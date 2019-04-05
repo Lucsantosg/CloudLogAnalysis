@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Octroi de droits permettant de gérer des journaux et d'afficher des journaux de compte
 {: #grant_permissions}

@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Berechtigungen zum Verwalten von Protokollen und zum Anzeigen von Kontoprotokollen erteilen
 {: #grant_permissions}

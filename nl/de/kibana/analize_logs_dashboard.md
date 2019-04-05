@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Protokolle in Kibana über ein Dashboard analysieren
 {:#analize_logs_dashboard}

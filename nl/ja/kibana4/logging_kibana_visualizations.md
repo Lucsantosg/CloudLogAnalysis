@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # 視覚化を使用した Kibana でのログの分析 
 {:#logging_kibana_visualizations}

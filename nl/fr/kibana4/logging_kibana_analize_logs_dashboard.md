@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Analyse des journaux dans Kibana via un tableau de bord
 {:#kibana_analize_logs_dashboard}

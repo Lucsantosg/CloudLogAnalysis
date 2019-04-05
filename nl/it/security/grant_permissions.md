@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Concessione di autorizzazioni per gestire i log e visualizzare i log dell'account
 {: #grant_permissions}

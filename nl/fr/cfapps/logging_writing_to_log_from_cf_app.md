@@ -21,6 +21,7 @@ subcollection: cloudloganalysis
 {:download: .download}
 {:important: .important}
 {:note: .note}
+{:deprecated: .deprecated}
 
 # Journalisation des applications de contexte d'exécution via des applications CF
 {: #logging_writing_to_log_from_cf_app}
