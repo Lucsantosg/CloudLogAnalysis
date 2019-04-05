@@ -28,6 +28,9 @@ subcollection: cloudloganalysis
 In the the Discover page, you can view and analyze your {{site.data.keyword.Bluemix}} logs interactively. You can define search queries to filter that data by using the Lucene query language. For each search query, you can apply filters to refine the entries that are available for analysis. You can save a search for future reuse.
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 In the {{site.data.keyword.Bluemix_notm}}, by default, the set of data that is displayed in the Discover page when you launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI is configured to only show the entries for the Cloud Foundry (CF) application or container from which you launch Kibana. 
 
 The following table shows the default query per resource when you launch Kibana from the {{site.data.keyword.Bluemix_notm}}:

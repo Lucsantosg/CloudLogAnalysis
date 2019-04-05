@@ -28,6 +28,9 @@ subcollection: cloudloganalysis
 Use the [cf logging status](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-logging_cli#status1) command to obtain information about the logs that are collected and stored in Log Collection.
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 ## Obtaining information about logs over a period of time
 {: #viewing_logs1}
 

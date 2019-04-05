@@ -28,6 +28,9 @@ subcollection: cloudloganalysis
 You can use Kibana 5.1, an open source analytics and visualization platform, to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. Use Kibana to perform advanced analytical tasks.
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 Kibana is a browser-based interface where you can analyze data interactively and customize dashboards that you can then use to analyze log data and perform advance management tasks. For more information, see [Kibana User Guide ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://www.elastic.co/guide/en/kibana/5.1/index.html){: new_window}.
 
 The data that a Kibana page displays is constrained by a search. The default data set is defined by the pre-configured index pattern. To filter the information, you can add new search queries and apply filters to the default data set. Then, you can save the search for future reuse. 

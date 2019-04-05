@@ -28,6 +28,9 @@ subcollection: cloudloganalysis
 Use the command **cf logging option** to view and configure the retention policy that defines the maximum number of days that logs are kept in Log Collection. By default, the retention policy is disabled, and logs are kept indefinitely. After the retention period has expired, logs are deleted automatically. 
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 You can have different retention policies defined in the account. You can have a global account policy and individual space policies. The retention policy that you set at the account level sets the maximum number of days that you can keep logs. If you set a space retention policy for a period of time that is longer than the account level period, the policy that is applied is the last policy that you configure for that space. 
 
 

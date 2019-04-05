@@ -29,6 +29,9 @@ subcollection: cloudloganalysis
 In the {{site.data.keyword.Bluemix}}, you can view, filter, and analyze logs through the command line interface. 
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 To analyze Cloud Foundry (CF) application logs, use the following command: `ibmcloud cf logs`
 For more information, see [cf logs](/docs/cli/reference/ibmcloud?topic=cloud-cli-cf#cf_logs).
 

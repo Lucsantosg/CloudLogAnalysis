@@ -28,6 +28,9 @@ subcollection: cloudloganalysis
 In the {{site.data.keyword.Bluemix}}, you can assign a user one or more IAM roles. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service.  
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 For example, you can grant a user the **operator** role to allow him to manage logs. If you just want a user to view account logs, then you can grant the user the **viewer** role. For more information, see [IAM roles](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-security_ov#iam_roles).
 
 **Note:** 

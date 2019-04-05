@@ -29,6 +29,9 @@ subcollection: cloudloganalysis
 In the {{site.data.keyword.cloud_notm}}, you can use the {{site.data.keyword.loganalysisshort}} service to store and analyze container logs and Kubernetes cluster logs that are collected automatically by the {{site.data.keyword.containershort}} in Public, and in Dedicated.
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 You can have 1 or more Kubernetes clusters in an account. Logs are collected automatically by the {{site.data.keyword.containershort}} as soon as the cluster is provisioned. 
 
 To forward logs to the {{site.data.keyword.loganalysisshort}} from {{site.data.keyword.containershort}} you must create a logging configuration. You can enable logging through the [command line](/docs/containers/cs_health.html#logging), or through the cluster overview page in your {{site.data.keyword.containershort}} dashboard. With a configuration in place, logs are collected by {{site.data.keyword.containershort}} when the cluster is provisioned, or as soon as a pod is deployed. Information that a container prints to `stdout` or `stderr` is also automatically collected. By default, logs are forwarded to specific regions based on the location of the cluster.

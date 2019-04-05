@@ -29,6 +29,9 @@ subcollection: cloudloganalysis
 You can send logs from outside the {{site.data.keyword.IBM_notm}} Cloud into the {{site.data.keyword.loganalysisshort}} service by using the multi-tenant Logstash Forwarder. 
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 This feature is only available for service plans that allow log ingestion. For more information, see [Service plans](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#plans).
 
 To send logs from outside the {{site.data.keyword.IBM_notm}} Cloud into the {{site.data.keyword.loganalysisshort}} service, you need the following Cloud resources:

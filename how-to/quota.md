@@ -29,6 +29,9 @@ subcollection: cloudloganalysis
 To get the quota and current daily usage of a logs domain of the {{site.data.keyword.loganalysisshort}} service, you can run a cURL command. 
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 ## Calculating the search quota and daily usage by using the CLI
 {: #quota_cli}
 

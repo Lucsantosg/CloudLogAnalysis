@@ -28,6 +28,9 @@ subcollection: cloudloganalysis
 Use the *Visualize* page in Kibana to create visualizations such as graphs and tables that you can use to analyze your log data and compare results. 
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 You can use a visualization individually to analyze your logs. 
 
 * You can create visualizations from a search that you define and save in the *Discover* page or from a new query that you define in the *Visualize* page. The search define the subset of data that a visualization displays.

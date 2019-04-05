@@ -29,6 +29,9 @@ subcollection: cloudloganalysis
 To be able to view and analyse cluster logs in the {{site.data.keyword.loganalysisshort}} service, you must configure your cluster to forward those logs to the {{site.data.keyword.loganalysisshort}} service. 
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 ## Step 1: Check permissions for your user ID
 {: step1}
 

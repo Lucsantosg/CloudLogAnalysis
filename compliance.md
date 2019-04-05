@@ -29,6 +29,9 @@ subcollection: cloudloganalysis
 [The {{site.data.keyword.Bluemix}} provides a Cloud platform and services that are built to IBM's stringent security standards.](/docs/security/compliance.html#compliance). The {{site.data.keyword.loganalysislong}} service is a DevOps service that is built for the {{site.data.keyword.Bluemix_notm}}. 
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 
 ## General Data Protection Regulation
 

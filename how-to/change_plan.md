@@ -29,6 +29,9 @@ subcollection: cloudloganalysis
 You can change your {{site.data.keyword.loganalysisshort}} service plan through the {{site.data.keyword.Bluemix_notm}} UI or by running the `ibmcloud service update` command. You can upgrade or reduce your plan at any time.
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 ## Changing the service plan through the UI
 {: #change_plan_ui}
 

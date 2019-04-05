@@ -29,6 +29,9 @@ subcollection: cloudloganalysis
 You can launch Kibana from the {{site.data.keyword.loganalysisshort}} service, from the {{site.data.keyword.Bluemix}} UI, or directly from a web browser.
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 For CF apps and Docker containers, you can launch Kibana from the {{site.data.keyword.Bluemix_notm}} UI to view and analyze data in context to the resource from which you launch Kibana. For example, you can launch to your specific CF app logs in Kibana, in context to that specific App.
     
 For any cloud resource such as a Docker container that are deployed in a Kubernetes infrastructure, you can launch Kibana from a direct browser link or from the {{site.data.keyword.loganalysisshort}} service dashboard to see aggregated log data from services within a provided space. The query that is used to filter the data that is displayed in the dashboard retrieves log entries for a space in the organization. The log information that Kibana displays includes records for  all resources that are deployed within the space of the organization that you are logged in. 

@@ -29,6 +29,9 @@ subcollection: cloudloganalysis
 If you have problems or questions when using the {{site.data.keyword.loganalysislong}}, you can get help by searching for information or by asking questions through a forum. You can also open a support ticket.
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 * You can check whether the {{site.data.keyword.Bluemix_notm}} is available by going to the [{{site.data.keyword.Bluemix_notm}} status page](https://developer.ibm.com/bluemix/support/#status){:new_window}.
 
 * You can review the forums to see whether other users ran into the same problem. When using the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.Bluemix_notm}} development teams.

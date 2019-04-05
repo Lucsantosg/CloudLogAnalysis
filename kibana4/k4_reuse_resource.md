@@ -28,6 +28,9 @@ subcollection: cloudloganalysis
 To copy a search, a visualization, or a dashboard from one {{site.data.keyword.Bluemix}} space to a different one, use the export and import capabilities that are available in Kibana. You can copy resources individually or export all resources in Kibana.
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 | Task | Description |
 |------|-------------|
 | [Copy a search](/docs/services/CloudLogAnalysis/kibana4/k4_reuse_resource.html#k4_reuse_search) | Copy a search between spaces. |

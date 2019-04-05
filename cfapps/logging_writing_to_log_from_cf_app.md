@@ -28,6 +28,9 @@ subcollection: cloudloganalysis
 In {{site.data.keyword.Bluemix}}, to persist log data for a Cloud Foundry app and its runtime, you must write your logs to STDOUT and STDERR. 
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 In the {{site.data.keyword.Bluemix_notm}}, STDOUT and STDERR log records are collected automatically:
 
 * STDOUT (standard output) provides general information.  

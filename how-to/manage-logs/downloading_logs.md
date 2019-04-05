@@ -28,6 +28,9 @@ subcollection: cloudloganalysis
 You can download logs to a local file or pipe data into another program. You download of logs within the context of a session. A session specifies which logs will be downloaded. If the download of the logs is interrupted, the session enables resuming the download from where it left off. After the download is completed, you must delete the session.
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 Complete the following steps to download log data that is available in a {{site.data.keyword.Bluemix_notm}} space into a local file:
 
 ## Step 1: Log in to the IBM Cloud

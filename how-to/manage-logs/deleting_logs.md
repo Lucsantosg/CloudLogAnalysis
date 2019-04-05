@@ -28,6 +28,9 @@ subcollection: cloudloganalysis
 Use the [ibmcloud cf logging delete](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-logging_cli#status1) command to delete logs from Log Collection. 
 {:shortdesc}
 
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{: deprecated}
+
 * You can delete logs within a specific time range.
 * You can delete logs by type. Notice that each log file has only one type of log entries.
 * You can delete logs for a space, or at the account domain.
