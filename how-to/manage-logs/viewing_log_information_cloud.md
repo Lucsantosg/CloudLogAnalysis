@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -29,7 +29,7 @@ subcollection: cloudloganalysis
 Use the [ibmcloud logging log-show](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-log_analysis_cli#status) command to obtain information about the logs that are collected and stored in Log Collection. You can obtain information about the size, number of records, log types, and whether the logs are available or not for analysis in Kibana.
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
 ## Obtaining information about logs over a period of time

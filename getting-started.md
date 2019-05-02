@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-22"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -29,20 +29,20 @@ subcollection: cloudloganalysis
 Use this tutorial to learn how to start working with the {{site.data.keyword.loganalysislong}} service in the {{site.data.keyword.Bluemix}}. 
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
-By default, {{site.data.keyword.Bluemix_notm}} offers integrated logging capabilities for selected services. You can use the {{site.data.keyword.loganalysisshort}} service to expand your collection and retention capabilities when working with logs.
+By default, {{site.data.keyword.cloud_notm}} offers integrated logging capabilities for selected services. You can use the {{site.data.keyword.loganalysisshort}} service to expand your collection and retention capabilities when working with logs.
 
 ## Before you begin
 {: #gs_prereqs}
 
-Your must have a user ID that is a member or an owner of an {{site.data.keyword.Bluemix_notm}} account. To get an {{site.data.keyword.Bluemix_notm}} user ID, go to: [Registration ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://console.bluemix.net/registration/){:new_window}
+Your must have a user ID that is a member or an owner of an {{site.data.keyword.cloud_notm}} account. To get an {{site.data.keyword.cloud_notm}} user ID, go to: [Registration ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}
 
 ## Step 1: Choose a cloud resource for which you want to see logs
 {: #gs_step1}
 
-In the {{site.data.keyword.Bluemix_notm}}, CF applications, containers that run on the {{site.data.keyword.containershort}}, and selected services collect log data automatically and they forward it to the {{site.data.keyword.loganalysisshort}} service.
+In the {{site.data.keyword.cloud_notm}}, CF applications, containers that run on the {{site.data.keyword.containershort}}, and selected services collect log data automatically and they forward it to the {{site.data.keyword.loganalysisshort}} service.
 
 The following table lists different cloud resources. Complete the tutorial for a resource to get started working with the {{site.data.keyword.loganalysisshort}} service:
 
@@ -62,9 +62,9 @@ The following table lists different cloud resources. Complete the tutorial for a
   </tr>
   <tr>
     <td>CF apps</td>
-    <td>[Analyze logs in Kibana for a Cloud Foundry app](https://console.bluemix.net/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)</td>
+    <td>[Analyze logs in Kibana for a Cloud Foundry app](/docs/tutorials/application-log-analysis.html#generate-access-and-analyze-application-logs)</td>
     <td>Public</td>
-    <td>![High level view of logging of CF apps in the {{site.data.keyword.Bluemix_notm}}](cfapps/images/cfapps_logs.png "High level view of logging of CF apps in the {{site.data.keyword.Bluemix_notm}}")</td>
+    <td>![High level view of logging of CF apps in the {{site.data.keyword.cloud_notm}}](cfapps/images/cfapps_logs.png "High level view of logging of CF apps in the {{site.data.keyword.cloud_notm}}")</td>
   </tr>
 </table>
 
@@ -76,7 +76,7 @@ The following table lists different cloud resources. Complete the tutorial for a
 
 To control the {{site.data.keyword.loganalysisshort}} actions that a user is allowed to perform, you can assign roles and policies to a user. 
 
-There are two types of security permissions in the {{site.data.keyword.Bluemix_notm}} that control the actions users can do when they work with the {{site.data.keyword.loganalysisshort}} service:
+There are two types of security permissions in the {{site.data.keyword.cloud_notm}} that control the actions users can do when they work with the {{site.data.keyword.loganalysisshort}} service:
 
 * Cloud Foundry (CF) roles: You grant a user a CF role to define the permissions that the user has to view logs in a space.
 * IAM roles: You grant a user an IAM policy to define the permissions that the user has to view logs in the account domain.
@@ -86,11 +86,11 @@ There are two types of security permissions in the {{site.data.keyword.Bluemix_n
 
 Complete the following steps to grant a user permissions to view logs in a space:
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
+1. Log in to the {{site.data.keyword.cloud_notm}} console.
 
-    Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+    Open a web browser and launch the {{site.data.keyword.cloud_notm}} dashboard: [https://cloud.ibm.com/login ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}
 	
-	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
 2. From the menu bar, click **Manage > Account > Users**. 
 
@@ -120,11 +120,11 @@ Complete the following steps to grant a user permissions to view logs in a space
 
 Complete the following steps to grant a user permissions to view account logs:
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
+1. Log in to the {{site.data.keyword.cloud_notm}} console.
 
-    Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+    Open a web browser and launch the {{site.data.keyword.cloud_notm}} dashboard: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}
 	
-	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
 2. From the menu bar, click **Manage > Account > Users**. 
 

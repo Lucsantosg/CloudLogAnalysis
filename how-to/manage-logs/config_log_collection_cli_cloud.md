@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -26,21 +26,21 @@ subcollection: cloudloganalysis
 # Configuring the {{site.data.keyword.loganalysisshort}} CLI
 {: #config_log_collection_cli}
 
-The {{site.data.keyword.loganalysisshort}} service includes a command line interface (CLI) that you can use to manage logs in the cloud. You can use the {{site.data.keyword.Bluemix_notm}} plugin to view the status of the log, to download logs, and to configure the log retention policy. The CLI offers different types of help: general help to learn about the CLI and supported commands, command help to learn how to use a command, or subcommand help to learn how to use a subcommands for a command.
+The {{site.data.keyword.loganalysisshort}} service includes a command line interface (CLI) that you can use to manage logs in the cloud. You can use the {{site.data.keyword.cloud_notm}} plugin to view the status of the log, to download logs, and to configure the log retention policy. The CLI offers different types of help: general help to learn about the CLI and supported commands, command help to learn how to use a command, or subcommand help to learn how to use a subcommands for a command.
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
 
-## Installing the {{site.data.keyword.loganalysisshort}} plugin from the {{site.data.keyword.Bluemix_notm}} repo
+## Installing the {{site.data.keyword.loganalysisshort}} plugin from the {{site.data.keyword.cloud_notm}} repo
 {: #install_cli_repo}
 
 To install the {{site.data.keyword.loganalysisshort}} CLI, complete the following steps:
 
-1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
+1. Install the {{site.data.keyword.cloud_notm}} CLI.
 
-   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
+   For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
 
 2. Find out the name of the plugin in the repo. Run the following command:
 
@@ -54,7 +54,7 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
 3. Install the {{site.data.keyword.loganalysisshort}} plugin. Run the following command:
 
     ```
-    ibmcloud plugin install logging-cli -r Bluemix
+    ibmcloud plugin install logging-cli 
     ```
     {: codeblock}
 
@@ -84,9 +84,9 @@ To install the {{site.data.keyword.loganalysisshort}} CLI, complete the followin
 
 To install the {{site.data.keyword.loganalysisshort}} CLI, complete the following steps:
 
-1. Install the {{site.data.keyword.Bluemix_notm}} CLI.
+1. Install the {{site.data.keyword.cloud_notm}} CLI.
 
-   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
+   For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
 
 2. Install the {{site.data.keyword.loganalysisshort}} plugin.
 
@@ -123,7 +123,7 @@ Complete the following steps to install the Log Collection plugin on Linux:
 
 1. Install the plugin.
 
-    Download the latest release of the {{site.data.keyword.loganalysisshort}} service CLI plugin (IBM-Logging) from [the {{site.data.keyword.Bluemix_notm}} CLI page](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins).
+    Download the latest release of the {{site.data.keyword.loganalysisshort}} service CLI plugin (IBM-Logging) from [the {{site.data.keyword.cloud_notm}} CLI page](https://plugins.cloud.ibm.com/ui/repository.html).
 
 	* Select the platform value: **linux64**.
 
@@ -144,7 +144,7 @@ Complete the following steps to install the Log Collection plugin on Linux:
 
 Complete the following steps to install the Log Collection plugin on Windows:
 
-1. Download the latest release of the {{site.data.keyword.loganalysisshort}} service CLI plugin (IBM-Logging) from [the {{site.data.keyword.Bluemix_notm}} CLI page](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins).
+1. Download the latest release of the {{site.data.keyword.loganalysisshort}} service CLI plugin (IBM-Logging) from [the {{site.data.keyword.cloud_notm}} CLI page](https://plugins.cloud.ibm.com/ui/repository.html).
 
 	1. Select the platform value: **win64**.
 	2. Click **Save file**.  
@@ -163,7 +163,7 @@ Complete the following steps to install the Log Collection plugin on Windows:
 
 Complete the following steps to install the Log Collection plugin on Mac OS X:
 
-1. Download the latest release of the {{site.data.keyword.loganalysisshort}} service CLI plugin (IBM-Logging) from [the {{site.data.keyword.Bluemix_notm}} CLI page](https://clis.ng.bluemix.net/ui/repository.html#bluemix-plugins).
+1. Download the latest release of the {{site.data.keyword.loganalysisshort}} service CLI plugin (IBM-Logging) from [the {{site.data.keyword.cloud_notm}} CLI page](https://plugins.cloud.ibm.com/ui/repository.html).
 
 	1. Select the platform value: **osx**.
 	2. Click **Save file**.  
@@ -266,9 +266,9 @@ Complete the following steps to update the {{site.data.keyword.loganalysisshort}
 
 To get general information about the CLI and what commands are supported, complete the followimg steps:
 
-1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}.
+1. Log in to a region, organization, and space in the {{site.data.keyword.cloud_notm}}.
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
+    For more information, see [How do I log in to the {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 2. List information about the supported commands and the CLI. Run the following command:
 
@@ -284,9 +284,9 @@ To get general information about the CLI and what commands are supported, comple
 
 To get help on how to use a command, complete the followimg steps:
 
-1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}.
+1. Log in to a region, organization, and space in the {{site.data.keyword.cloud_notm}}.
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
+    For more information, see [How do I log in to the {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 2. Get the list of supported comnmands and identify the one that you need. Run the command:
 
@@ -311,9 +311,9 @@ To get help on how to use a command, complete the followimg steps:
 
 A command can have subcommands. To get help on subcommands, complete the followimg steps:
 
-1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}.
+1. Log in to a region, organization, and space in the {{site.data.keyword.cloud_notm}}.
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
+    For more information, see [How do I log in to the {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 2. Get the list of supported comnmands and identify the one that you need. Run the command:
 

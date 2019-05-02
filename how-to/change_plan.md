@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -27,22 +27,22 @@ subcollection: cloudloganalysis
 # Changing the plan
 {: #change_plan}
 
-You can change your {{site.data.keyword.loganalysisshort}} service plan through the {{site.data.keyword.Bluemix_notm}} UI or by running the `ibmcloud service update` command. You can upgrade or reduce your plan at any time.
+You can change your {{site.data.keyword.loganalysisshort}} service plan through the {{site.data.keyword.cloud_notm}} UI or by running the `ibmcloud service update` command. You can upgrade or reduce your plan at any time.
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
 ## Changing the service plan through the UI
 {: #change_plan_ui}
 
-To change your service plan in the {{site.data.keyword.Bluemix_notm}} UI, complete the following steps:
+To change your service plan in the {{site.data.keyword.cloud_notm}} UI, complete the following steps:
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}}: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}. 
+1. Log in to the {{site.data.keyword.cloud_notm}}: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}. 
 
 2. Select the region, organization, and space where the {{site.data.keyword.loganalysisshort}} service is available.  
 
-3. Click the {{site.data.keyword.loganalysisshort}} service instance from the {{site.data.keyword.Bluemix_notm}} *Dashboard*. 
+3. Click the {{site.data.keyword.loganalysisshort}} service instance from the {{site.data.keyword.cloud_notm}} *Dashboard*. 
     
 4. Select the **Plan** tab in the {{site.data.keyword.loganalysisshort}} dashboard.
 
@@ -60,9 +60,9 @@ To change your service plan in the {{site.data.keyword.Bluemix_notm}} UI, comple
 
 To change your service plan in Bluemix through the CLI, complete the following steps:
 
-1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
+1. Log in to a region, organization, and space in the {{site.data.keyword.cloud_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
+    For more information, see [How do I log in to the {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 	
 2. Run the `ibmcloud service list` command to check your current plan, and to get the {{site.data.keyword.loganalysisshort}} service name from the list of services that is available in the space. 
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -30,12 +30,12 @@ subcollection: cloudloganalysis
 In the {{site.data.keyword.cloud_notm}}, you can use the {{site.data.keyword.loganalysisshort}} service to store and analyze container logs and Kubernetes cluster logs that are collected automatically by the {{site.data.keyword.containershort}} in Public, and in Dedicated.
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
 You can have 1 or more Kubernetes clusters in an account. Logs are collected automatically by the {{site.data.keyword.containershort}} as soon as the cluster is provisioned. 
 
-To forward logs to the {{site.data.keyword.loganalysisshort}} from {{site.data.keyword.containershort}} you must create a logging configuration. You can enable logging through the [command line](/docs/containers/cs_health.html#logging), or through the cluster overview page in your {{site.data.keyword.containershort}} dashboard. With a configuration in place, logs are collected by {{site.data.keyword.containershort}} when the cluster is provisioned, or as soon as a pod is deployed. Information that a container prints to `stdout` or `stderr` is also automatically collected. By default, logs are forwarded to specific regions based on the location of the cluster.
+To forward logs to the {{site.data.keyword.loganalysisshort}} from {{site.data.keyword.containershort}} you must create a logging configuration. You can enable logging through the [command line](/docs/containers?topic=containers-health#logging), or through the cluster overview page in your {{site.data.keyword.containershort}} dashboard. With a configuration in place, logs are collected by {{site.data.keyword.containershort}} when the cluster is provisioned, or as soon as a pod is deployed. Information that a container prints to `stdout` or `stderr` is also automatically collected. By default, logs are forwarded to specific regions based on the location of the cluster.
 
 * Application logs are collected as soon as the pod is deployed. 
 * Information, that a container process prints to stdout (standard output) and stderr (standard error), is collected automatically by the {{site.data.keyword.containershort}}.
@@ -459,7 +459,7 @@ To manage logs in Log Collection, consider the following information:
 
 To analyze log data, use Kibana to perform advanced analytical tasks. Kibana is an open source analytics and visualization platform, that you can use to monitor, search, analyze, and visualize your data in a variety of graphs, for example charts and tables. For more information, see [Analyzing logs in Kibana](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-analyzing_logs_Kibana#analyzing_logs_Kibana).
 
-* You can launch Kibana directly from a web browser. For more information, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis/kibana/launch.html#launch_Kibana_from_browser).
+* You can launch Kibana directly from a web browser. For more information, see [Navigating to Kibana from a web browser](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-launch).
 * You can launch Kibana from the {{site.data.keyword.cloud_notm}} UI within the context of a cluster. For more information, see [Navigating to Kibana from the dashboard of a container that is deployed in a Kubernetes cluster](/docs/services/CloudLogAnalysis/kibana?topic=cloudloganalysis-launch#launch_Kibana_for_containers_kube).
 
 If you forward the log data of an app that runs in a container to the Container runtime log collector in JSON format, you can search and analyze log data in Kibana by using JSON fields. For more information, see [Sending logs so you can use the fields in a message as Kibana search fields](/docs/services/CloudLogAnalysis/containers?topic=cloudloganalysis-containers_kubernetes#send_data_in_json).

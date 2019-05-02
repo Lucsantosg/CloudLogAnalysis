@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -26,10 +26,10 @@ subcollection: cloudloganalysis
 
 # Analyze logs in Kibana for an app that is deployed in a Kubernetes cluster
 {: #container_logs}
-Use this tutoral to learn how to configure a cluster to forward logs to the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.Bluemix_notm}}.
+Use this tutoral to learn how to configure a cluster to forward logs to the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.cloud_notm}}.
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
 
@@ -37,9 +37,9 @@ Use this tutoral to learn how to configure a cluster to forward logs to the {{si
 {: #objectives}
 
 1. Configure logging configurations in a cluster. 
-2. Search and analyze container logs for an app that is deployed in a Kubernetes cluster in the {{site.data.keyword.Bluemix_notm}}.
+2. Search and analyze container logs for an app that is deployed in a Kubernetes cluster in the {{site.data.keyword.cloud_notm}}.
 
-This tutorial walks through the steps that are required to get the following end to end scenario working in the {{site.data.keyword.Bluemix_notm}}: Provisioning a cluster, configuring the cluster to send logs to the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.Bluemix_notm}}, deploying an app in the cluster, and using Kibana to view and filter container logs for that cluster.
+This tutorial walks through the steps that are required to get the following end to end scenario working in the {{site.data.keyword.cloud_notm}}: Provisioning a cluster, configuring the cluster to send logs to the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.cloud_notm}}, deploying an app in the cluster, and using Kibana to view and filter container logs for that cluster.
 
 
 **Note:** To complete this tutorial, you must complete the prerequisites and the tutorials that are linked from the different steps.
@@ -48,9 +48,9 @@ This tutorial walks through the steps that are required to get the following end
 ## Prerequisites
 {: #prereq}
 
-1. Be a member or an owner of an {{site.data.keyword.Bluemix_notm}} account with permissions to create Kubernetes standard clusters, deploy apps into clusters, and query the logs in {{site.data.keyword.Bluemix_notm}} for advanced analysis in Kibana.
+1. Be a member or an owner of an {{site.data.keyword.cloud_notm}} account with permissions to create Kubernetes standard clusters, deploy apps into clusters, and query the logs in {{site.data.keyword.cloud_notm}} for advanced analysis in Kibana.
 
-    Your user ID for the {{site.data.keyword.Bluemix_notm}} must have the following policies assigned:
+    Your user ID for the {{site.data.keyword.cloud_notm}} must have the following policies assigned:
     
     * An IAM policy for the {{site.data.keyword.containershort}} with *editor*, *operator* or *administrator* permissions.
     * A CF role for the space where the {{site.data.keyword.loganalysisshort}} service is provisioned with *developer* permissions.
@@ -61,7 +61,7 @@ This tutorial walks through the steps that are required to get the following end
 
 3. Install the CLIs to work with the {{site.data.keyword.containershort}} and the {{site.data.keyword.loganalysisshort}} in your Ubuntu system.
 
-    * Install the {{site.data.keyword.Bluemix_notm}} CLI. Install the {{site.data.keyword.containershort}} CLI to create and manage your Kubernetes clusters in {{site.data.keyword.containershort}}, and to deploy containerized apps to your cluster. For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
+    * Install the {{site.data.keyword.cloud_notm}} CLI. Install the {{site.data.keyword.containershort}} CLI to create and manage your Kubernetes clusters in {{site.data.keyword.containershort}}, and to deploy containerized apps to your cluster. For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
     
     * Install the {{site.data.keyword.loganalysisshort}} CLI. For more information, see [Configuring the Log Analysis CLI (IBM Cloud plugin)](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-config_log_collection_cli#config_log_collection_cli).
     
@@ -89,7 +89,7 @@ Complete the following steps:
 
 2. Set up the cluster context in a terminal. After the context is set, you can manage the Kubernetes cluster and deploy the application in the Kubernetes cluster.
 
-    Log in to the region, organization, and space in the {{site.data.keyword.Bluemix_notm}} that is associated with the cluster that you created. For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
+    Log in to the region, organization, and space in the {{site.data.keyword.cloud_notm}} that is associated with the cluster that you created. For more information, see [How do I log in to the {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 	Initialize the {{site.data.keyword.containershort}} service plug-in.
 
@@ -149,7 +149,6 @@ ae249c04-a3a9-4c29-a890-22d8da7bd1b2   container    *           ingest.logging.n
 ```
 {: screen}
 
-To see the list of log sources for which you can define a logging configuration, see [Log sources](/docs/services/CloudLogAnalysis/containers?topic=cloudloganalysis-containers_kubernetes#log_sources).
 
 
 ### Configure your cluster to forward stderr and stdout logs to the {{site.data.keyword.loganalysisshort}} service
@@ -162,7 +161,7 @@ Complete the following steps to send stdout and stderr logs to a space domain, w
 
     To check that your user ID has an IAM policy assigned to manage clusters, complete the following steps:
     
-    1. Log in to the {{site.data.keyword.Bluemix_notm}} console. Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window} After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+    1. Log in to the {{site.data.keyword.cloud_notm}} console. Open a web browser and launch the {{site.data.keyword.cloud_notm}} dashboard: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
     2. From the menu bar, click **Manage > Account > Users**.  The *Users* window displays a list of users with their email addresses for the currently selected account.
 	
@@ -204,7 +203,7 @@ Complete the following steps to send worker logs to a space domain, where the or
 
     To check that your user ID has an IAM policy assigned to manage clusters, complete the following steps:
     
-    1. Log in to the {{site.data.keyword.Bluemix_notm}} console. Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window} After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+    1. Log in to the {{site.data.keyword.cloud_notm}} console. Open a web browser and launch the {{site.data.keyword.cloud_notm}} dashboard: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
     2. From the menu bar, click **Manage > Account > Users**.  The *Users* window displays a list of users with their email addresses for the currently selected account.
 	
@@ -243,11 +242,11 @@ To grant a user permissions to view logs in a space, you must assign that user a
 
 Complete the following steps to grant a user permissions to work with the {{site.data.keyword.loganalysisshort}} service:
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
+1. Log in to the {{site.data.keyword.cloud_notm}} console.
 
-    Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+    Open a web browser and launch the {{site.data.keyword.cloud_notm}} dashboard: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}
 	
-	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
 2. From the menu bar, click **Manage > Account > Users**. 
 
@@ -295,7 +294,7 @@ Complete the following steps:
 
 2. Verify that the user that is identified as the {{site.data.keyword.containershort}} key owner has the *orgManager* role for the organization, and *SpaceManager* and *Developer* for the space.
 
-    Log in to the {{site.data.keyword.Bluemix_notm}} console. Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window} After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+    Log in to the {{site.data.keyword.cloud_notm}} console. Open a web browser and launch the {{site.data.keyword.cloud_notm}} dashboard: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
     From the menu bar, click **Manage > Account > Users**.  The *Users* window displays a list of users with their email addresses for the currently selected account.
 	
@@ -400,7 +399,7 @@ Complete the following steps:
               </tr>
               <tr>
                 <td>*ibm-containers.region_str*</td>
-                <td>The value of this field corresponds to the {{site.data.keyword.Bluemix_notm}} region where the log entry is collected.</td>
+                <td>The value of this field corresponds to the {{site.data.keyword.cloud_notm}} region where the log entry is collected.</td>
                 <td>us-south</td>
               </tr>
 			  <tr>

@@ -1,11 +1,12 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="cloudloganalysis" audience="service" arm="3663228" href="/docs/services/CloudLogAnalysis?topic=cloudloganalysis-getting-started-with-cla#getting-started-with-cla" path="services/CloudLogAnalysis"}
+{: .toc subcollection="cloudloganalysis" audience="service" arm="3663228" href="/docs/services/CloudLogAnalysis?topic=cloudloganalysis-getting-started" path="services/CloudLogAnalysis"}
 IBM Cloud Log Analysis
 
     {: .navgroup id="learn"}
-    index.md
+    getting-started.md
+    transition.md
     
     {: .topicgroup}
     About Log Analysis
@@ -70,8 +71,6 @@ IBM Cloud Log Analysis
     CF apps
         cfapps/launch_logs_cloud_ui_cf.md
         cfapps/logging_writing_to_log_from_cf_app.md
-        cfapps/logging_view_cli.md
-        external/logging_external_hosts.md
 
     {: .topicgroup}
     Containers
@@ -84,7 +83,7 @@ IBM Cloud Log Analysis
     qa/kibana_formats.md
     reference/log_analysis_cli_cloud.md  
 
-    [Log Analysis API](https://console.bluemix.net/apidocs/log-analysis-api)
+    [Log Analysis API](https://cloud.ibm.com/apidocs/log-analysis-api)
     {: .navgroup-end}     
     
     {: .navgroup id="help"}
@@ -98,23 +97,5 @@ IBM Cloud Log Analysis
     FAQ
         qa/faq_kibana.md
         qa/cli_qa.md
-
-    {: .topicgroup}
-    Managing logs (CF plugin) Deprecated
-        reference/logging_cli.md  
-        how-to/manage-logs/config_log_collection_cli.md
-        how-to/manage-logs/configuring_retention_policy.md
-        how-to/manage-logs/deleting_logs.md
-        how-to/manage-logs/downloading_logs.md
-        how-to/manage-logs/viewing_log_information.md
-
-    {: .topicgroup}
-    Log analysis (Kibana 4) Deprecated
-        kibana4/logging_kibana_analize_logs_interactively.md
-        kibana4/logging_kibana_visualizations.md
-        kibana4/logging_kibana_analize_logs_dashboard.md
-        kibana4/k4_define_search.md
-        kibana4/k4_filter_logs.md
-        kibana4/k4_launch.md
     {: .navgroup-end}
     

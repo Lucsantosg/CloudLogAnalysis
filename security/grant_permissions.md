@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -26,10 +26,10 @@ subcollection: cloudloganalysis
 # Granting permissions to manage logs and view account logs
 {: #grant_permissions}
 
-In the {{site.data.keyword.Bluemix}}, you can assign a user one or more IAM roles. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service.  
+In the {{site.data.keyword.cloud_notm}}, you can assign a user one or more IAM roles. These roles define what tasks are enabled for that user to work with the {{site.data.keyword.loganalysisshort}} service.  
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
 For example, you can grant a user the **operator** role to allow him to manage logs. If you just want a user to view account logs, then you can grant the user the **viewer** role. For more information, see [IAM roles](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-security_ov#iam_roles).
@@ -39,16 +39,16 @@ For example, you can grant a user the **operator** role to allow him to manage l
 * To grant a user permissions to manage logs or view account logs, you must have permissions to assign policies to other users in the account, or you must be the account owner. If you are not the account owner, you must have an IAM policy with editor, operator, or administrator role.
 * To grant a user permissions to view logs in a space, you must have permissions in the organization and space to assign the user a Cloud Foundry role that describes the actions that this user can do with the {{site.data.keyword.loganalysisshort}} service in that space. 
 
-## Assign an IAM policy to a user through the {{site.data.keyword.Bluemix_notm}} UI
+## Assign an IAM policy to a user through the {{site.data.keyword.cloud_notm}} UI
 {: #grant_permissions_ui_account}
 
 Complete the following steps to grant a user permissions to work with the {{site.data.keyword.loganalysisshort}} service:
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
+1. Log in to the {{site.data.keyword.cloud_notm}} console.
 
-    Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+    Open a web browser and launch the {{site.data.keyword.cloud_notm}} dashboard: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}
 	
-	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
 2. From the menu bar, click **Manage > Account > Users**. 
 
@@ -99,9 +99,9 @@ The policy that you configure is applicable to the selected regions.
 
 Complete the following steps to grant a user access to view account logs by using the command line:
 
-1. From a terminal, log in to the {{site.data.keyword.Bluemix_notm}} account. 
+1. From a terminal, log in to the {{site.data.keyword.cloud_notm}} account. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
+    For more information, see [How do I log in to the {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 
 2. Check that the user is a member of the account. Run the following command to get the list of users in the account:
 
@@ -124,7 +124,7 @@ Complete the following steps to grant a user access to view account logs by usin
 	{: codeblock}
 
 	where
-    * USER_NAME is the {{site.data.keyword.Bluemix_notm}} ID of the user.
+    * USER_NAME is the {{site.data.keyword.cloud_notm}} ID of the user.
 	* ROLE is an IAM role. Valid values are: *administrator*, *operator*, *editor*, and *viewer*
 
 5. Verify that the policy is assigned to the user. Run the following command to list all the policies assigned to a user:
@@ -137,18 +137,18 @@ Complete the following steps to grant a user access to view account logs by usin
 
 
 
-## Granting a user permissions to view space logs by using the {{site.data.keyword.Bluemix_notm}} UI
+## Granting a user permissions to view space logs by using the {{site.data.keyword.cloud_notm}} UI
 {: #grant_permissions_ui_space}
 
 To grant a user permissions to view logs in a space, you must assign the user a Cloud Foundry role that describes the actions that this user can do with the {{site.data.keyword.loganalysisshort}} service in the space. 
 
 Complete the following steps to grant a user permissions to work with the {{site.data.keyword.loganalysisshort}} service:
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console.
+1. Log in to the {{site.data.keyword.cloud_notm}} console.
 
-    Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+    Open a web browser and launch the {{site.data.keyword.cloud_notm}} dashboard: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}
 	
-	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
 2. From the menu bar, click **Manage > Account > Users**. 
 

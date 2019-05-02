@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -30,7 +30,7 @@ subcollection: cloudloganalysis
 To be able to view and analyse cluster logs in the {{site.data.keyword.loganalysisshort}} service, you must configure your cluster to forward those logs to the {{site.data.keyword.loganalysisshort}} service. 
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
 ## Step 1: Check permissions for your user ID
@@ -45,9 +45,9 @@ To check that your user ID has these IAM policies, complete the following steps:
 
 **Note:** Only the account owner or users with permissions to assign policies can perform this step.
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console. Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+1. Log in to the {{site.data.keyword.cloud_notm}} console. Open a web browser and launch the {{site.data.keyword.cloud_notm}} dashboard: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}
 	
-	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
 2. From the menu bar, click **Manage > Account > Users**.  The *Users* window displays a list of users with their email addresses for the currently selected account.
 	
@@ -61,9 +61,9 @@ To check that your user ID has these IAM policies, complete the following steps:
 
 Complete the following steps:
 
-1. Log in to a region, organization, and space in the {{site.data.keyword.Bluemix_notm}}. 
+1. Log in to a region, organization, and space in the {{site.data.keyword.cloud_notm}}. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
+    For more information, see [How do I log in to the {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
     
 2. Initialize the {{site.data.keyword.loganalysisshort}} service plug-in.
 
@@ -114,9 +114,9 @@ The {{site.data.keyword.containershort}} key owner needs the following AIM polic
 
 Complete the following steps: 
 
-1. Log in to the {{site.data.keyword.Bluemix_notm}} console. Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}
+1. Log in to the {{site.data.keyword.cloud_notm}} console. Open a web browser and launch the {{site.data.keyword.cloud_notm}} dashboard: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}
 	
-	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
 2. From the menu bar, click **Manage > Account > Users**.  The *Users* window displays a list of users with their email addresses for the currently selected account.
 	
@@ -138,7 +138,7 @@ Complete the following steps:
     
 2. Verify that the user that is identified as the {{site.data.keyword.containershort}} key owner has the *orgManager* role for the organization, and *SpaceManager* and *Developer* for the space.
 
-    Log in to the {{site.data.keyword.Bluemix_notm}} console. Open a web browser and launch the {{site.data.keyword.Bluemix_notm}} dashboard: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window} After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+    Log in to the {{site.data.keyword.cloud_notm}} console. Open a web browser and launch the {{site.data.keyword.cloud_notm}} dashboard: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window} After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
     From the menu bar, click **Manage > Account > Users**.  The *Users* window displays a list of users with their email addresses for the currently selected account.
 	

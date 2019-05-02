@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -30,18 +30,18 @@ subcollection: cloudloganalysis
 Use the {{site.data.keyword.loganalysisfull}} service to expand your log collection, log retention, and log search abilities in the {{site.data.keyword.Bluemix}}. Empower your DevOps team with features such as aggregation of application and environment logs for consolidated application or environment insights, encryption of logs, retention of log data for as long as it is required, and quick detection and troubleshooting of issues. Use Kibana for advanced analysis tasks.
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
-The {{site.data.keyword.Bluemix_notm}} logging capabilities are integrated in the platform:
+The {{site.data.keyword.cloud_notm}} logging capabilities are integrated in the platform:
 
-* Collection of data is automatically enabled for cloud resources. {{site.data.keyword.Bluemix_notm}}, by default, collects and displays logs for your apps, apps runtimes, and compute runtimes where those apps run. 
+* Collection of data is automatically enabled for cloud resources. {{site.data.keyword.cloud_notm}}, by default, collects and displays logs for your apps, apps runtimes, and compute runtimes where those apps run. 
 * You can search up to 500 MB of logs per day. 
 * Logs for the last 3 days are stored in Log Search, a component of the {{site.data.keyword.loganalysisshort}} service.
 
-You can use the logging capabilities in the {{site.data.keyword.Bluemix_notm}} to understand the behavior of the cloud platform and the resources that are running in it. No special instrumentation is required to collect the standard out and the standard err logs. For example, you can use logs to provide an audit trail for an application, detect problems in your service, identify vulnerabilities, troubleshoot your app deployments and runtime behavior, detect problems in the infrastructure where your app is running, trace your app across components in the cloud platform, and detect patterns that you can use to preempt actions that could affect your service SLA.
+You can use the logging capabilities in the {{site.data.keyword.cloud_notm}} to understand the behavior of the cloud platform and the resources that are running in it. No special instrumentation is required to collect the standard out and the standard err logs. For example, you can use logs to provide an audit trail for an application, detect problems in your service, identify vulnerabilities, troubleshoot your app deployments and runtime behavior, detect problems in the infrastructure where your app is running, trace your app across components in the cloud platform, and detect patterns that you can use to preempt actions that could affect your service SLA.
 
-The {{site.data.keyword.loganalysisfull}} service provides log collection and log search services for the {{site.data.keyword.Bluemix_notm}} platform, automatically collecting application and {{site.data.keyword.Bluemix_notm}} services’ data from select {{site.data.keyword.Bluemix_notm}} services.
+The {{site.data.keyword.loganalysisfull}} service provides log collection and log search services for the {{site.data.keyword.cloud_notm}} platform, automatically collecting application and {{site.data.keyword.cloud_notm}} services’ data from select {{site.data.keyword.cloud_notm}} services.
 
 The following figure shows a high level view of the {{site.data.keyword.loganalysisshort}} service: 
 
@@ -50,7 +50,7 @@ The following figure shows a high level view of the {{site.data.keyword.loganaly
 
 To collect and search logs of cloud resources that run in a space, you must provision an instance of the {{site.data.keyword.loganalysisshort}} service in the same space where those cloud resources are running. Logs are collected and stored in Log Search by default. When you select a service plan that includes extended search and collection capabilities, logs are also collected and stored in the Log Collection component. Log data that is stored in Log Collection is encrypted.
 
-By default, the {{site.data.keyword.Bluemix_notm}} stores log data for up to 3 days in Log Search:   
+By default, the {{site.data.keyword.cloud_notm}} stores log data for up to 3 days in Log Search:   
 
 * A maximum of 500MB per space of data is stored per day. Any logs beyond that 500 MB cap are discarded. Cap allotments reset each 
 day at 12:30 AM UTC.
@@ -73,13 +73,13 @@ You can delete logs automatically by setting a retention policy or manually by u
 
 1. **Spend less time instrumenting your application and more time enhancing its value**
 
-    {{site.data.keyword.loganalysislong_notm}} automatically collects data from selected {{site.data.keyword.Bluemix_notm}} services, no instrumentation is necessary.
+    {{site.data.keyword.loganalysislong_notm}} automatically collects data from selected {{site.data.keyword.cloud_notm}} services, no instrumentation is necessary.
 	
 	You can choose the amount of logs that you can search per day.  Different plans are available that you can use to search up to 500MB,  2GB, 5GB, and 10GB of logs per day.
 
 2. **Keep your log data near your application workloads and safe guarded on cloud class economical storage solutions**
 
-    Collect and store log data from traditional and micro-service driven applications running in the {{site.data.keyword.Bluemix_notm}} in a centralized log. Retain log data for as long as you need.
+    Collect and store log data from traditional and micro-service driven applications running in the {{site.data.keyword.cloud_notm}} in a centralized log. Retain log data for as long as you need.
 	
 	Logs are stored on {{site.data.keyword.IBM_notm}} Cloud storage. You can download logs when you need them.
 
@@ -145,7 +145,7 @@ The {{site.data.keyword.loganalysisshort}} service provides multiple plans. Each
 
 **NOTE:** The features that are included in a service plan are enabled only in the space where you provision the {{site.data.keyword.loganalysisshort}} service with that plan.
 
-You can change a plan through the {{site.data.keyword.Bluemix_notm}} UI or through the command line. You can upgrade or reduce your plan at any time. For more information about service plan upgrades, see [Changing the plan](/docs/services/CloudLogAnalysis/how-to?topic=cloudloganalysis-change_plan#change_plan). 
+You can change a plan through the {{site.data.keyword.cloud_notm}} UI or through the command line. You can upgrade or reduce your plan at any time. For more information about service plan upgrades, see [Changing the plan](/docs/services/CloudLogAnalysis/how-to?topic=cloudloganalysis-change_plan#change_plan). 
 
 The following table outlines the plans that are available:
 

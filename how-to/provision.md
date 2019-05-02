@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -27,25 +27,25 @@ subcollection: cloudloganalysis
 # Provisioning the Log Analysis service
 {: #provision}
 
-You can provision the {{site.data.keyword.loganalysisshort}} service from {{site.data.keyword.Bluemix}} UI, or from the command line.
+You can provision the {{site.data.keyword.loganalysisshort}} service from {{site.data.keyword.cloud_notm}} UI, or from the command line.
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. **As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances.** Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
 
 ## Provisioning from the UI
 {: #ui}
 
-Complete the following steps to provision an instance of the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.Bluemix_notm}}:
+Complete the following steps to provision an instance of the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.cloud_notm}}:
 
-1. Log in to your {{site.data.keyword.Bluemix_notm}} account.
+1. Log in to your {{site.data.keyword.cloud_notm}} account.
 
-    The {{site.data.keyword.Bluemix_notm}} dashboard can be found at: [http://bluemix.net ![External link icon](../../../icons/launch-glyph.svg "External link icon")](http://bluemix.net){:new_window}.
+    The {{site.data.keyword.cloud_notm}} dashboard can be found at: [https://cloud.ibm.com/login ![External link icon](../../../icons/launch-glyph.svg "External link icon")](https://cloud.ibm.com/login){:new_window}.
     
-	After you log in with your user ID and password, the {{site.data.keyword.Bluemix_notm}} UI opens.
+	After you log in with your user ID and password, the {{site.data.keyword.cloud_notm}} UI opens.
 
-2. Click **Catalog**. The list of the services that are available on {{site.data.keyword.Bluemix_notm}} opens.
+2. Click **Catalog**. The list of the services that are available on {{site.data.keyword.cloud_notm}} opens.
 
 3. Select the **Developer Tools** category to filter the list of services that is displayed.
 
@@ -55,24 +55,24 @@ Complete the following steps to provision an instance of the {{site.data.keyword
 
     For more information about the service plans, see [Service plans](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#plans).
 	
-6. Click **Create** to provision the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.Bluemix_notm}} space where you are logged in.
+6. Click **Create** to provision the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.cloud_notm}} space where you are logged in.
   
  
 
 ## Provisioning from the CLI
 {: #cli}
 
-Complete the following steps to provision an instance of the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.Bluemix_notm}} through the command line:
+Complete the following steps to provision an instance of the {{site.data.keyword.loganalysisshort}} service in the {{site.data.keyword.cloud_notm}} through the command line:
 
-1. [Pre-requisite] Install the {{site.data.keyword.Bluemix_notm}} CLI.
+1. [Pre-requisite] Install the {{site.data.keyword.cloud_notm}} CLI.
 
-   For more information, see [Installing the {{site.data.keyword.Bluemix_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
+   For more information, see [Installing the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
    
    If the CLI is installed, continue with the next step.
     
-2. Log in to the region, organization, and space in the {{site.data.keyword.Bluemix_notm}} where you want to provision the service. 
+2. Log in to the region, organization, and space in the {{site.data.keyword.cloud_notm}} where you want to provision the service. 
 
-    For more information, see [How do I log in to the {{site.data.keyword.Bluemix_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
+    For more information, see [How do I log in to the {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/qa?topic=cloudloganalysis-cli_qa#login).
 	
 3. Run the `ibmcloud service create` command to provision an instance.
 

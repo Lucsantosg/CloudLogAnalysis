@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -27,10 +27,10 @@ subcollection: cloudloganalysis
 # Compliance
 {: #compliance}
 
-[The {{site.data.keyword.Bluemix}} provides a Cloud platform and services that are built to IBM's stringent security standards.](/docs/security/compliance.html#compliance). The {{site.data.keyword.loganalysislong}} service is a DevOps service that is built for the {{site.data.keyword.Bluemix_notm}}. 
+The {{site.data.keyword.cloud_notm}} provides a Cloud platform and services that are built to IBM's stringent security standards. The {{site.data.keyword.loganalysislong}} service is a DevOps service that is built for the {{site.data.keyword.cloud_notm}}. 
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
 
@@ -38,12 +38,12 @@ subcollection: cloudloganalysis
 
 The General Data Protection Regulation (GDPR) seeks to create a harmonized data protection law framework across the EU and aims to give citizens back the control of their personal data, whilst imposing strict rules on those hosting and ‘processing’ this data, anywhere in the world. The Regulation also introduces rules relating to the free movement of personal data within and outside the EU. 
 
-**Disclaimer:** The {{site.data.keyword.loganalysisshort}} service stores and displays log records from Cloud resources that run in your account in the {{site.data.keyword.Bluemix_notm}}, and from logs that you might send from outside the {{site.data.keyword.Bluemix_notm}}. Personal information (PI) must not be included in any of the log entries stored in {{site.data.keyword.loganalysisshort}} as this data is accessible to other users within your Enterprise, as well as to {{site.data.keyword.IBM_notm}} to be able to support the Cloud Service.
+**Disclaimer:** The {{site.data.keyword.loganalysisshort}} service stores and displays log records from Cloud resources that run in your account in the {{site.data.keyword.cloud_notm}}, and from logs that you might send from outside the {{site.data.keyword.cloud_notm}}. Personal information (PI) must not be included in any of the log entries stored in {{site.data.keyword.loganalysisshort}} as this data is accessible to other users within your Enterprise, as well as to {{site.data.keyword.IBM_notm}} to be able to support the Cloud Service.
 
 ### Regions
 {: #regions}
 
-The {{site.data.keyword.loganalysisshort}} service is compliant with GDPR in the {{site.data.keyword.Bluemix_notm}} Public regions where the service is available.
+The {{site.data.keyword.loganalysisshort}} service is compliant with GDPR in the {{site.data.keyword.cloud_notm}} Public regions where the service is available.
 
 
 ### Data retention
@@ -70,11 +70,11 @@ Consider the following information:
 
 * Logs that are stored in Log Collection are deleted after a number of days when you configure a retention policy, or when you delete them manually. 
 
-    You can configure a log retention policy to define the number of days that you want to keep logs in Log Collection. For more information, see [Viewing and configuring the log retention policy by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-configuring_retention_policy#configuring_retention_policy).
+    You can configure a log retention policy to define the number of days that you want to keep logs in Log Collection. For more information, see [Viewing and configuring the log retention policy by using the {{site.data.keyword.cloud_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-configuring_retention_policy#configuring_retention_policy).
 
-    You can use the [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} or the [Log Collection CLI](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-log_analysis_cli#log_analysis_cli){: new_window} to delete logs manually from Log Collection. 
+    You can use the [Log Collection API](https://cloud.ibm.com/apidocs/log-analysis-api){: new_window} or the [Log Collection CLI](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-log_analysis_cli#log_analysis_cli){: new_window} to delete logs manually from Log Collection. 
 
-    You can use the CLI to delete logs manually from Log Collection. For more information, see [ibmcloud logging log-delete by using the {{site.data.keyword.Bluemix_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-deleting_logs#deleting_logs).
+    You can use the CLI to delete logs manually from Log Collection. For more information, see [ibmcloud logging log-delete by using the {{site.data.keyword.cloud_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-deleting_logs#deleting_logs).
 
 
 If you change from a paid plan to the standard or lite plan, logs in Log Collection will be deleted in about one day.
@@ -87,8 +87,6 @@ At any time, you can open a support ticket and request that all your data is del
 {: #info}
 
 For more information, see:
-
-[{{site.data.keyword.Bluemix_notm}} security compliance](/docs/security/compliance.html#compliance)
 
 [GDPR - {{site.data.keyword.IBM_notm}} official page](https://www.ibm.com/data-responsibility/gdpr/)
 

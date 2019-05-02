@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2019
 
-lastupdated: "2019-03-06"
+lastupdated: "2019-05-01"
 
 keywords: IBM Cloud, logging
 
@@ -30,7 +30,7 @@ subcollection: cloudloganalysis
 You can use the {{site.data.keyword.loganalysisshort}} CLI and the {{site.data.keyword.loganalysisshort}} API to manage logs that are stored in Log Collection.
 {:shortdesc}
 
-{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances, and all Lite plan instances are deleted. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.Bluemix_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
+{{site.data.keyword.loganalysisfull_notm}} is deprecated. As of 30 April 2019, you cannot provision new {{site.data.keyword.loganalysisshort_notm}} instances. Existing premium plan instances are supported until 30 September 2019. To continue managing system and application logs in {{site.data.keyword.cloud_notm}}, [set up {{site.data.keyword.la_full_notm}}](/docs/services/Log-Analysis-with-LogDNA?topic=LogDNA-getting-started#getting-started).
 {: deprecated}
 
 To manage logs, consider the following information:
@@ -45,10 +45,9 @@ To manage logs, consider the following information:
 
     For more information about the service plans, see [Service plans](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#plans).
 
-The {{site.data.keyword.loganalysisshort}} service offers two CLIs that you can use to manage logs:
+The {{site.data.keyword.loganalysisshort}} service offers the following CLI that you can use to manage logs:
 
 * A {{site.data.keyword.loganalysisshort}} {{site.data.keyword.cloud_notm}} plugin. For more information on the CLI, see [{{site.data.keyword.loganalysisshort}} CLI ({{site.data.keyword.cloud_notm}} plugin)](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-log_analysis_cli#log_analysis_cli).
-* A {{site.data.keyword.loganalysisshort}} CF plugin (Deprecated). For more information on the CLI, see [Configuring the Log Analysis CLI (CF plugin)](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-logging_cli#logging_cli).
 
 
 ## Configuring a log retention policy
@@ -65,10 +64,7 @@ You can use the {{site.data.keyword.loganalysisshort}} CLI to view and configure
 
 **Note:** When you disable the log retention policy, you must maintain the logs in Log Collection. You can use the CLI command [cf logging delete](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-logging_cli#delete4) to delete old logs.
 
-For more information, see:
-
-* [Viewing and configuring the log retention policy by using the {{site.data.keyword.cloud_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-configuring_retention_policy#configuring_retention_policy).
-* [Viewing and configuring the log retention policy by using the CF plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-configuring_retention_policy1#configuring_retention_policy).
+For more information, see [Viewing and configuring the log retention policy by using the {{site.data.keyword.cloud_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-configuring_retention_policy#configuring_retention_policy).
 
 
 ## Deleting logs
@@ -80,7 +76,7 @@ Logs that are stored in Log Collection are kept until you either configure a ret
 
 * You can configure a log retention policy to define the number of days that you want to keep logs in Log Collection. For more information, see [Viewing and configuring the log retention policy by using the {{site.data.keyword.cloud_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-configuring_retention_policy#configuring_retention_policy).
 
-* You can use the [Log Collection API](https://console.bluemix.net/apidocs/948-ibm-cloud-log-collection-api?&language=node&env_id=ibm%3Ayp%3Aus-south#introduction){: new_window} or the [Log Collection CLI](/docs/services/CloudLogAnalysis/reference?topic=cloudloganalysis-log_analysis_cli#log_analysis_cli){: new_window} to delete logs manually from Log Collection. 
+* You can use the [Log Collection API](https://cloud.ibm.com/apidocs/log-analysis-api){: new_window} or the [Log Collection CLI](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_cli){: new_window} to delete logs manually from Log Collection. 
 
 * You can use the CLI. For more information about deleting logs manually through the CLI, see [ibmcloud logging log-delete by using the {{site.data.keyword.cloud_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-deleting_logs#deleting_logs).
     
@@ -91,22 +87,17 @@ Logs that are stored in Log Collection are kept until you either configure a ret
 
 You can search logs for the last 3 days in Kibana. To be able to analyze older log data, you can download logs to a local file, or you can pipe these logs to other programs such as a local Elastic Stack. 
 
-For more information, see:
+For more information, see [Downloading logs by using the {{site.data.keyword.cloud_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-downloading_logs#downloading_logs).
 
-* [Downloading logs by using the {{site.data.keyword.cloud_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-downloading_logs#downloading_logs).
-* [Downloading logs by using the CF plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-downloading_logs1#downloading_logs1).
 
 
 
 ## Getting information about your logs
 {: #info_about_logs}
 
-To obtain general information about your logs, use the `ibmcloud logging log-show` or the `cf logging status` command. For more information, see:
+To obtain general information about your logs, use the `ibmcloud logging log-show` or the `cf logging status` command. For more information, see [Viewing log information by using the {{site.data.keyword.cloud_notm}} plugin](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-viewing_log_status1).
 
-* [Viewing log information by using the {{site.data.keyword.cloud_notm}} plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-viewing_log_status1#viewing_log_status1)
-* [Viewing log information by using the CF plugin](/docs/services/CloudLogAnalysis/how-to/manage-logs?topic=cloudloganalysis-viewing_log_status#viewing_log_status1).
-
-For example, to keep cost under control, you might want to monitor the size of the logs of your apps over a period of time. For example, you might want to know the size of each log type during a week for a {{site.data.keyword.cloud_notm}} space to identify if any app or service is generating more logs than expected. To check the size of your logs, use the `ibmcloud logging log-show` or the `cf logging status` command.
+For example, to keep cost under control, you might want to monitor the size of the logs of your apps over a period of time. For example, you might want to know the size of each log type during a week for a {{site.data.keyword.cloud_notm}} space to identify if any app or service is generating more logs than expected. To check the size of your logs, use the `ibmcloud logging log-show` command.
 
 You can view information about logs that are stored in a space domain, an organization domain, or an account domain.
 
